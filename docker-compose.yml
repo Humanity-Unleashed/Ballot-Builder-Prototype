@@ -1,0 +1,75 @@
+# ============================================
+# Ballot Builder - Docker Compose Configuration
+# ============================================
+# This file defines how to run the Ballot Builder backend using Docker.
+# The React Native mobile app runs locally (not in Docker).
+#
+# Quick start:
+#   docker compose up        (start the backend API)
+#   docker compose down      (stop everything)
+#   docker compose up -d     (start in background)
+#   docker compose logs -f   (view logs)
+
+services:
+  # --------------------------------------------
+  # Backend API (Node.js/Express) - Production
+  # --------------------------------------------
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # Maps port 3001 on your computer to port 3001 in the container
+      # API available at: http://localhost:3001
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    env_file:
+      - .env
+    restart: unless-stopped
+    # Uncomment when you add a database:
+    # depends_on:
+    #   - db
+
+  # --------------------------------------------
+  # Backend API - Development Mode (with hot reload)
+  # --------------------------------------------
+  # Use this for development: docker compose --profile dev up
+  api-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3001:3001"
+    volumes:
+      # Mount backend code for live updates
+      - ./backend:/app/backend
+      - /app/backend/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+    env_file:
+      - .env
+    profiles:
+      - dev
+
+  # --------------------------------------------
+  # Database (PostgreSQL) - For future use
+  # --------------------------------------------
+  # Uncomment when ready to use a database
+  # db:
+  #   image: postgres:16-alpine
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_USER: ballotbuilder
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+  #     POSTGRES_DB: ballotbuilder
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+# Uncomment when using the database
+# volumes:
+#   postgres_data:
