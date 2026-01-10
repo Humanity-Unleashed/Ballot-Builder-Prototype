@@ -1,0 +1,222 @@
+// ============================================
+// Ballot Builder - Prisma Schema
+// ============================================
+// This file defines the database schema for the application.
+//
+// Commands:
+//   npm run db:generate    - Generate Prisma Client
+//   npm run db:push        - Push schema to database (dev)
+//   npm run db:migrate     - Create and run migrations
+//   npm run db:studio      - Open Prisma Studio GUI
+
+generator client {
+  provider = "prisma-client"
+  output = "../app/generated/prisma
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// User & Authentication
+// ============================================
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  profile           UserProfile?
+  districts         UserDistrict[]
+  responses         UserResponse[]
+  ballotSelections  UserBallotSelection[]
+  confidenceAreas   UserConfidenceArea[]
+  refreshTokens     RefreshToken[]
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String   @map("user_id")
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("refresh_tokens")
+}
+
+model UserProfile {
+  id               String   @id @default(uuid())
+  userId           String   @unique @map("user_id")
+  ageRange         String?  @map("age_range")
+  location         String?
+  preferenceVector Float[]  @default([]) @map("preference_vector")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
+}
+
+model UserDistrict {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  districtType String   @map("district_type") // local, county, state, congressional, senate
+  districtId   String   @map("district_id")
+  districtName String?  @map("district_name")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, districtType])
+  @@map("user_districts")
+}
+
+// ============================================
+// Civic Blueprint (Policy Statements)
+// ============================================
+
+model PolicyStatement {
+  id               String   @id @default(uuid())
+  statementText    String   @map("statement_text")
+  issueArea        String   @map("issue_area") // healthcare, education, economy, etc.
+  specificityLevel String?  @map("specificity_level") // broad, moderate, specific
+  embedding        Float[]  @default([])
+  isActive         Boolean  @default(true) @map("is_active")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  // Relations
+  responses UserResponse[]
+
+  @@index([issueArea])
+  @@map("policy_statements")
+}
+
+model UserResponse {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  statementId String   @map("statement_id")
+  response    String   // approve, disapprove
+  respondedAt DateTime @default(now()) @map("responded_at")
+
+  // Relations
+  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  statement PolicyStatement @relation(fields: [statementId], references: [id])
+
+  @@unique([userId, statementId])
+  @@map("user_responses")
+}
+
+model UserConfidenceArea {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  issueArea       String   @map("issue_area")
+  confidenceScore Float    @default(0) @map("confidence_score")
+  responseCount   Int      @default(0) @map("response_count")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, issueArea])
+  @@map("user_confidence_areas")
+}
+
+// ============================================
+// Elections & Ballots
+// ============================================
+
+model Election {
+  id           String   @id @default(uuid())
+  name         String
+  electionDate DateTime @map("election_date")
+  jurisdiction String?
+  status       String   @default("upcoming") // upcoming, active, completed
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  // Relations
+  ballotItems BallotItem[]
+
+  @@index([electionDate])
+  @@index([status])
+  @@map("elections")
+}
+
+model BallotItem {
+  id           String   @id @default(uuid())
+  electionId   String   @map("election_id")
+  itemType     String   @map("item_type") // candidate_race, measure, retention
+  title        String
+  jurisdiction String?
+  officialText String?  @map("official_text")
+  aiSummary    String?  @map("ai_summary")
+  yesOutcome   String?  @map("yes_outcome")
+  noOutcome    String?  @map("no_outcome")
+  embedding    Float[]  @default([])
+  metadata     Json     @default("{}")
+  sortOrder    Int      @default(0) @map("sort_order")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  // Relations
+  election   Election              @relation(fields: [electionId], references: [id], onDelete: Cascade)
+  candidates Candidate[]
+  selections UserBallotSelection[]
+
+  @@index([electionId])
+  @@map("ballot_items")
+}
+
+model Candidate {
+  id              String   @id @default(uuid())
+  ballotItemId    String   @map("ballot_item_id")
+  name            String
+  party           String?
+  position        String?
+  biography       String?
+  aiSummary       String?  @map("ai_summary")
+  embedding       Float[]  @default([])
+  policyPositions Json     @default("[]") @map("policy_positions")
+  sortOrder       Int      @default(0) @map("sort_order")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  // Relations
+  ballotItem BallotItem            @relation(fields: [ballotItemId], references: [id], onDelete: Cascade)
+  selections UserBallotSelection[]
+
+  @@index([ballotItemId])
+  @@map("candidates")
+}
+
+// ============================================
+// User Ballot Selections
+// ============================================
+
+model UserBallotSelection {
+  id              String    @id @default(uuid())
+  userId          String    @map("user_id")
+  ballotItemId    String    @map("ballot_item_id")
+  candidateId     String?   @map("candidate_id")
+  selection       String?   // yes, no, or null for candidate races
+  confidenceScore Float?    @map("confidence_score")
+  viewedAt        DateTime? @map("viewed_at")
+  selectedAt      DateTime? @map("selected_at")
+
+  // Relations
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ballotItem BallotItem @relation(fields: [ballotItemId], references: [id], onDelete: Cascade)
+  candidate  Candidate? @relation(fields: [candidateId], references: [id])
+
+  @@unique([userId, ballotItemId])
+  @@map("user_ballot_selections")
+}

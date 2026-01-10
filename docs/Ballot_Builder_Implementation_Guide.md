@@ -1,6 +1,6 @@
 # Ballot Builder - Step-by-Step Implementation Guide
 
-**Version:** 1.0
+**Version:** 1.2
 **Last Updated:** January 9, 2026
 **Based on:** Ballot_Builder_PRD.md v1.0
 
@@ -8,13 +8,662 @@
 
 ## Table of Contents
 
-1. [Phase 0: Project Setup & Infrastructure](#phase-0-project-setup--infrastructure)
-2. [Phase 1: MVP Foundation](#phase-1-mvp-foundation)
-3. [Phase 2: Enhanced Intelligence](#phase-2-enhanced-intelligence)
-4. [Phase 3: User Experience Polish](#phase-3-user-experience-polish)
-5. [Phase 4: Scale & Optimization](#phase-4-scale--optimization)
-6. [API Integrations Checklist](#api-integrations-checklist)
-7. [Compliance Checklist](#compliance-checklist)
+1. [Two-Developer Task Split](#two-developer-task-split)
+2. [Phase 0: Project Setup & Infrastructure](#phase-0-project-setup--infrastructure)
+3. [Phase 1: MVP Foundation](#phase-1-mvp-foundation)
+4. [Phase 2: Enhanced Intelligence](#phase-2-enhanced-intelligence)
+5. [Phase 3: User Experience Polish](#phase-3-user-experience-polish)
+6. [Phase 4: Scale & Optimization](#phase-4-scale--optimization)
+7. [API Integrations Checklist](#api-integrations-checklist)
+8. [Compliance Checklist](#compliance-checklist)
+
+---
+
+## Two-Developer Task Split
+
+This section outlines how two developers can work on this project remotely without conflicts. The split is designed for a team with **one experienced developer** and **one less experienced developer** (vibe coder / AI-assisted).
+
+### Developer Roles Overview
+
+| Role | Experienced Dev: Architecture & Critical Systems | Vibe Coder: UI & Features |
+|------|--------------------------------------------------|---------------------------|
+| **Primary Focus** | Backend, database, auth, infrastructure, AI services, code review | Frontend screens, UI components, styling, simple integrations |
+| **Work Style** | Sets patterns, builds foundations, reviews PRs | Follows patterns, builds on foundations, gets PRs reviewed |
+| **Risk Level** | Owns security-critical and infrastructure code | Owns user-facing code where mistakes are visible but recoverable |
+| **Directories Owned** | `backend/`, `ml-services/`, `infrastructure/` | `frontend/` |
+
+### Why This Split Works
+
+**For the Experienced Dev:**
+- Owns all code where mistakes could cause security issues or hard-to-debug problems
+- Sets up patterns and examples for the vibe coder to follow
+- Reviews all frontend PRs before merge
+- Handles infrastructure (Docker, CI/CD) which requires debugging obscure errors
+
+**For the Vibe Coder:**
+- Gets immediate visual feedback (UI work shows results instantly)
+- Works from clear specifications and existing patterns
+- Lower-risk code - UI bugs are visible and fixable
+- Can use AI assistants effectively for React Native components
+- Has experienced dev available for questions and code review
+
+### File Ownership Map
+
+```
+ballot-builder/
+├── frontend/              # 👤 VIBE CODER (Experienced reviews PRs)
+│   ├── src/components/    #    UI components - great for learning
+│   ├── src/screens/       #    App screens - follow patterns
+│   ├── src/hooks/         #    Custom hooks - with guidance
+│   ├── src/services/      #    API calls - follow examples
+│   └── src/assets/        #    Images, fonts - low risk
+├── backend/               # 👤 EXPERIENCED DEV
+│   └── (all contents)     #    Security-critical, sets patterns
+├── ml-services/           # 👤 EXPERIENCED DEV
+│   └── (all contents)     #    Complex AI/ML code
+├── infrastructure/        # 👤 EXPERIENCED DEV
+│   └── (all contents)     #    Docker, K8s, CI/CD
+├── docs/                  # 🤝 SHARED (coordinate commits)
+├── docker-compose.yml     # 👤 EXPERIENCED DEV
+└── README.md              # 🤝 SHARED (coordinate commits)
+```
+
+### Coordination Points
+
+These items require both developers to coordinate:
+
+1. **API Contracts** - Experienced dev defines, explains to vibe coder
+2. **Component Specs** - Experienced dev writes specs, vibe coder implements
+3. **Code Reviews** - All vibe coder PRs reviewed before merge
+4. **Pairing Sessions** - Schedule time for complex features or when stuck
+
+### Recommended Workflow
+
+1. **Daily sync** (15-30 min) - Experienced dev unblocks vibe coder, reviews progress
+2. **Branch strategy** - Feature branches with required PR reviews
+3. **Spec-first development** - Experienced dev writes component specs with examples
+4. **Integration points** - Test frontend + backend together at milestones
+
+### Mentorship Approach
+
+The experienced developer should:
+- **Create example components first** - Build 1-2 reference components the vibe coder can copy
+- **Write clear specs** - "This screen needs X, Y, Z with this data shape"
+- **Review promptly** - Don't let PRs sit; vibe coder learns from feedback
+- **Pair on hard parts** - Jump on a call when the vibe coder is stuck
+- **Explain the "why"** - Help build understanding, not just copy/paste
+
+The vibe coder should:
+- **Ask questions early** - Don't spend hours stuck; ping the experienced dev
+- **Follow patterns exactly at first** - Copy existing code structure before improvising
+- **Test visually** - Run the app constantly to see changes
+- **Keep PRs small** - Easier to review and get feedback
+- **Document what you learned** - Add comments for your future self
+
+---
+
+### Phase 0 Task Split
+
+> **Note:** Phase 0 is mostly experienced dev work. Vibe coder can shadow/learn during this phase.
+
+#### Experienced Dev: All Foundation Work
+- [ ] **0.1.1** Create full directory structure
+- [ ] **0.1.2** Initialize git repository with branch protection
+- [ ] **0.2.1** Set up Docker Compose with all services
+- [ ] **0.2.2** Configure PostgreSQL container
+- [ ] **0.2.3** Configure Redis container
+- [ ] **0.2.4** Configure vector database container (Qdrant)
+- [ ] **0.2.5** Set up CI/CD pipeline (GitHub Actions)
+- [ ] **0.2.6** Create `.env.example` template
+- [ ] **0.3.1** Initialize Express.js/FastAPI project structure
+- [ ] **0.3.2** Set up authentication system (JWT, bcrypt)
+- [ ] **0.3.3** Configure database connection and ORM
+- [ ] **0.3.4** Create migration system (Knex/Prisma/Alembic)
+- [ ] **0.3.5** Write initial database migrations
+- [ ] **0.3.6** Set up logging (Winston/Pino)
+- [ ] **0.3.7** Create health check endpoints
+- [ ] **0.3.8** Set up LLM provider account and API client
+- [ ] **0.3.9** Initialize vector database client
+- [ ] **0.FE.1** Initialize React Native project (set up for vibe coder)
+- [ ] **0.FE.2** Set up navigation structure (React Navigation)
+- [ ] **0.FE.3** Configure state management (Context/Redux)
+- [ ] **0.FE.4** Set up error tracking (Sentry)
+- [ ] **0.FE.5** Create example component with patterns to follow
+- [ ] **0.FE.6** Write component spec template for vibe coder
+
+#### Vibe Coder: Learning & Simple Tasks
+- [ ] **0.V.1** Set up local development environment (with guidance)
+- [ ] **0.V.2** Run the app locally and understand the structure
+- [ ] **0.V.3** Read through example component, ask questions
+- [ ] **0.V.4** Make a tiny change to example component (practice PR flow)
+- [ ] **0.V.5** Review API contract document, ask clarifying questions
+
+---
+
+### Phase 1 Task Split
+
+> **Note:** This is where the vibe coder starts building real features! Experienced dev builds APIs first, then vibe coder builds UI against them.
+
+#### Experienced Dev: Backend MVP + API Foundation
+
+**Step 1.1 - Database Schema** (do first - blocks everything)
+- [ ] Create all table migrations (users, profiles, districts, statements, responses, elections, ballot_items, candidates, selections, confidence_areas)
+- [ ] Write seed data scripts
+- [ ] Document data shapes for vibe coder
+
+**Step 1.2 - Auth & User APIs**
+- [ ] `POST /api/auth/register` - User registration
+- [ ] `POST /api/auth/login` - User login
+- [ ] `POST /api/auth/refresh` - Token refresh
+- [ ] `POST /api/users/profile` - Update profile
+- [ ] `POST /api/users/districts` - Set districts
+- [ ] `POST /api/users/initial-preferences` - Initial prefs
+- [ ] `GET /api/users/me` - Get current user
+- [ ] **Write API service example** for vibe coder to copy
+
+**Step 1.3 - Blueprint APIs**
+- [ ] Seed 50 policy statements (10 categories × 5)
+- [ ] Generate embeddings for all statements
+- [ ] `GET /api/blueprint/statements` - Get statements
+- [ ] `POST /api/blueprint/response` - Record response
+- [ ] `GET /api/blueprint/progress` - Get progress
+- [ ] `GET /api/blueprint/summary` - Get summary
+- [ ] Implement preference vector update logic
+
+**Step 1.4 - Ballot Data Integration**
+- [ ] Build Ballotpedia API client
+- [ ] Create data transformation layer
+- [ ] Build ingestion pipeline
+- [ ] All ballot/election/candidate endpoints
+- [ ] `POST /api/admin/ingest-ballot` - Admin ingestion
+
+**Step 1.5 - User Ballot APIs**
+- [ ] `GET /api/users/:id/ballot` - User ballot
+- [ ] `GET /api/users/:id/ballot/progress` - Progress
+- [ ] `POST /api/users/:id/ballot/selections` - Save selection
+- [ ] `PUT /api/users/:id/ballot/selections/:itemId` - Update
+
+**Step 1.6 - Confidence Calculation**
+- [ ] Build similarity calculation service
+- [ ] All confidence endpoints
+- [ ] Implement caching
+
+**For Vibe Coder Support:**
+- [ ] Write screen specs with mockup data shapes
+- [ ] Create one example screen (e.g., Welcome) as reference
+- [ ] Set up API service pattern file
+- [ ] Review vibe coder PRs within 24 hours
+
+---
+
+#### Vibe Coder: Frontend MVP
+
+> Start each section only after experienced dev confirms the APIs are ready. Use mock data while waiting.
+
+**Step 1.2 - Onboarding Screens** (start here!)
+
+*Spec: 5 screens that guide new users through signup*
+
+| Screen | Complexity | Notes |
+|--------|------------|-------|
+| Welcome Screen | ⭐ Easy | Static content, one button. Great first task! |
+| Registration Screen | ⭐⭐ Medium | Form with validation - follow example pattern |
+| Demographics Screen | ⭐ Easy | Optional form, skip button |
+| District Entry Screen | ⭐⭐ Medium | State dropdown, text inputs |
+| Initial Preferences Screen | ⭐⭐ Medium | 10 questions with progress bar |
+
+- [ ] Welcome Screen with value proposition
+- [ ] Registration Screen with validation (copy auth service pattern)
+- [ ] Demographics Screen (optional, skippable)
+- [ ] District Entry Screen with state selector
+- [ ] Initial Preferences Screen (10 questions)
+- [ ] Wire up API calls using service pattern from experienced dev
+- [ ] Add loading states and error messages
+
+**Step 1.3 - Blueprint Builder UI** (swipe cards - fun!)
+
+*Spec: Tinder-style card swiping for policy statements*
+
+| Component | Complexity | Notes |
+|-----------|------------|-------|
+| ActionButtons | ⭐ Easy | Two buttons: agree/disagree |
+| ProgressIndicator | ⭐ Easy | Progress bar + text |
+| SwipeCard | ⭐⭐⭐ Hard | Gestures - ask for pairing session |
+| CardStack | ⭐⭐⭐ Hard | Manages cards - ask for pairing session |
+
+- [ ] ActionButtons component (agree/disagree) - start here
+- [ ] ProgressIndicator component - easy win
+- [ ] SwipeCard component with gestures - **pair with experienced dev**
+- [ ] CardStack component for queue management - **pair with experienced dev**
+- [ ] Haptic feedback (copy pattern from docs)
+- [ ] Connect to blueprint API
+
+**Step 1.5 - Ballot Browser UI**
+
+*Spec: Browse and select ballot items*
+
+| Screen/Component | Complexity | Notes |
+|------------------|------------|-------|
+| Ballot Overview Screen | ⭐⭐ Medium | List with sections |
+| Section list component | ⭐ Easy | Simple list item |
+| Ballot Item Detail Screen | ⭐⭐ Medium | Display data, selection buttons |
+| Status indicators | ⭐ Easy | Icon + color based on status |
+
+- [ ] Ballot Overview Screen
+- [ ] Section list component
+- [ ] Ballot Section Screen
+- [ ] Ballot Item Detail Screen
+- [ ] Selection buttons (candidates/yes-no)
+- [ ] Status indicators (icons + colors)
+- [ ] Navigation between items
+- [ ] Pull-to-refresh
+
+**Step 1.6 - Confidence Gauge UI**
+
+*Spec: Visual gauge showing alignment score*
+
+- [ ] ConfidenceGauge component (progress bar with colors)
+- [ ] Color coding logic (red < 50, yellow < 75, green >= 75)
+- [ ] "Improve Score" button
+- [ ] Loading states
+
+**Step 1.7 - Polish & Testing**
+- [ ] Test all screens on your device
+- [ ] Fix visual bugs
+- [ ] Test with experienced dev (integration)
+
+---
+
+### Phase 2 Task Split
+
+> **Note:** AI features are complex. Experienced dev builds all AI/ML backend. Vibe coder builds UI to display results.
+
+#### Experienced Dev: AI Services & Complex Backend
+
+**Step 2.1 - Adaptive Statement Generation**
+- [ ] Design LLM prompt templates
+- [ ] Set up RAG infrastructure
+- [ ] Build document ingestion pipeline
+- [ ] Create statement generation service
+- [ ] `POST /api/blueprint/generate-statements`
+- [ ] `GET /api/blueprint/coverage-report`
+- [ ] Implement generation caching
+
+**Step 2.2 - AI Summary Generator**
+- [ ] Design ballot measure summary prompts
+- [ ] Design candidate summary prompts
+- [ ] Build summary generation service
+- [ ] Implement Redis caching layer
+- [ ] Create batch generation job
+- [ ] Add quality validation
+
+**Step 2.3 - AI Chatbot Backend**
+- [ ] Set up chat RAG infrastructure
+- [ ] Index ballot and candidate data
+- [ ] Build ChatService class
+- [ ] `POST /api/chat/message`
+- [ ] `GET /api/chat/history`
+- [ ] `DELETE /api/chat/history`
+- [ ] Add source citations to responses
+
+**Step 2.4 - District Lookup**
+- [ ] Evaluate district API options
+- [ ] Build geocoding integration
+- [ ] Create DistrictLookupService
+- [ ] All district endpoints
+
+**Step 2.5 - Visualization APIs**
+- [ ] All visualization endpoints
+- [ ] Calculate political compass position
+- [ ] Build priority ranking algorithm
+
+**For Vibe Coder Support:**
+- [ ] Document chat message format and response shapes
+- [ ] Provide test data for visualizations
+- [ ] Create example chat integration
+
+---
+
+#### Vibe Coder: Enhanced Frontend
+
+**Step 2.3 - Chatbot UI**
+
+*Spec: Floating chat button that opens a chat panel*
+
+| Component | Complexity | Notes |
+|-----------|------------|-------|
+| FloatingChatButton | ⭐ Easy | Positioned button, opens modal |
+| ChatMessage | ⭐ Easy | Bubble with text, different styles for user/bot |
+| ChatPanel | ⭐⭐ Medium | Modal with message list and input |
+| Markdown rendering | ⭐⭐ Medium | Use library (react-native-markdown) |
+
+- [ ] FloatingChatButton component - start here
+- [ ] ChatMessage component (user vs assistant styling)
+- [ ] ChatPanel slide-up modal
+- [ ] Message input with send button
+- [ ] Markdown rendering (use a library!)
+- [ ] Source citations as tappable links
+- [ ] Conversation history display
+
+**Step 2.4 - Address Entry UI**
+
+*Spec: User enters address, sees their districts*
+
+| Component | Complexity | Notes |
+|-----------|------------|-------|
+| Address input | ⭐ Easy | Text input with button |
+| District results list | ⭐ Easy | Display API response |
+| Address autocomplete | ⭐⭐⭐ Hard | Use Google Places - **pair if needed** |
+
+- [ ] Basic address input form
+- [ ] District results display (list from API)
+- [ ] Edit/confirm buttons
+- [ ] Manual override fields
+- [ ] Address autocomplete - **pair with experienced dev**
+
+**Step 2.5 - Blueprint Visualization**
+
+*Spec: Charts and graphs showing user's political profile*
+
+| Component | Complexity | Notes |
+|-----------|------------|-------|
+| BlueprintStrengthScore | ⭐ Easy | Big number with label |
+| IssuePriorityChart | ⭐⭐ Medium | Horizontal bars - use chart library |
+| CompletionWheel | ⭐⭐ Medium | Circular progress - use library |
+| PoliticalCompass | ⭐⭐⭐ Hard | 2D scatter plot - **pair with experienced dev** |
+
+- [ ] BlueprintStrengthScore component (big percentage display)
+- [ ] IssuePriorityChart (use react-native-chart-kit or similar)
+- [ ] CompletionWheel (circular progress by category)
+- [ ] ImprovementSuggestions component (list of suggestions)
+- [ ] PoliticalCompass 2D plot - **pair with experienced dev**
+- [ ] Share button (use native share sheet)
+
+---
+
+### Phase 3 Task Split
+
+> **Note:** Phase 3 is UX polish. Vibe coder has lots of fun UI work here!
+
+#### Experienced Dev: Backend Services & Complex Integrations
+
+**Step 3.1 - Notifications Backend**
+- [ ] Set up FCM credentials
+- [ ] Configure APNs certificates
+- [ ] Build NotificationService
+- [ ] Schedule election reminders
+- [ ] All notification endpoints
+- [ ] Implement email notifications (SendGrid/SES)
+- [ ] Set up deep linking routes
+
+**Step 3.2 - Ballot Export**
+- [ ] Build BallotPDFGenerator service
+- [ ] Design print-friendly template
+- [ ] `POST /api/ballot/export/pdf`
+- [ ] `GET /api/ballot/export/:id/download`
+
+**Step 3.5 - Performance (Backend)**
+- [ ] API response optimization
+- [ ] Implement compression
+- [ ] Add caching headers
+
+**For Vibe Coder Support:**
+- [ ] Test notification delivery end-to-end
+- [ ] Provide sample PDF output for UI preview
+
+---
+
+#### Vibe Coder: UX Polish
+
+> This phase has lots of satisfying visual work!
+
+**Step 3.1 - Notifications Frontend**
+
+| Task | Complexity | Notes |
+|------|------------|-------|
+| Permission request flow | ⭐ Easy | Follow OS patterns |
+| Preferences UI | ⭐ Easy | Toggle switches |
+| Notification center | ⭐⭐ Medium | List of notifications |
+
+- [ ] Notification permissions request (follow React Native docs)
+- [ ] Notification preferences screen (toggle switches)
+- [ ] Notification center/history screen
+- [ ] Deep linking handling - **ask experienced dev for routing setup**
+
+**Step 3.2 - Export UI**
+
+| Task | Complexity | Notes |
+|------|------------|-------|
+| Export options | ⭐ Easy | Checkboxes and button |
+| Progress indicator | ⭐ Easy | Loading spinner/bar |
+| Share sheet | ⭐ Easy | Use native share |
+
+- [ ] Export options screen (checkboxes for what to include)
+- [ ] Download progress indicator
+- [ ] Share sheet integration (React Native Share)
+
+**Step 3.3 - Poll Locator**
+
+| Task | Complexity | Notes |
+|------|------------|-------|
+| WebView embed | ⭐⭐ Medium | Embed VIP widget |
+| Map button | ⭐ Easy | Open in maps app |
+
+- [ ] WebView integration for VIP widget
+- [ ] Address confirmation at top
+- [ ] "Open in Maps" button (use Linking API)
+
+**Step 3.4 - Ballot Browser Enhancements** (fun visual work!)
+
+| Task | Complexity | Notes |
+|------|------------|-------|
+| Card redesign | ⭐⭐ Medium | Shadows, spacing, polish |
+| Section icons | ⭐ Easy | Add icons to headers |
+| Quick nav | ⭐⭐ Medium | Bottom navigation dots |
+| Confetti | ⭐ Easy | Use a library! |
+| Badges | ⭐⭐ Medium | Achievement display |
+
+- [ ] Card-based layout redesign (shadows, rounded corners)
+- [ ] Section headers with icons
+- [ ] Quick navigation component
+- [ ] Completion confetti animation (use react-native-confetti-cannon)
+- [ ] Achievement/badge display
+
+**Step 3.5 - Mobile Optimization**
+
+| Task | Complexity | Notes |
+|------|------------|-------|
+| Image optimization | ⭐ Easy | Use WebP, add loading states |
+| Offline caching | ⭐⭐⭐ Hard | **Pair with experienced dev** |
+| Animation tuning | ⭐⭐ Medium | Adjust timing, test on devices |
+
+- [ ] Add image loading placeholders
+- [ ] Convert images to WebP format
+- [ ] Test on slower devices
+- [ ] Tune animation timing
+- [ ] Offline data caching - **pair with experienced dev**
+
+---
+
+### Phase 4 Task Split
+
+> **Note:** Phase 4 is advanced optimization. Mostly experienced dev work, with some analytics tasks for vibe coder.
+
+#### Experienced Dev: Scale & Infrastructure
+
+**Step 4.1 - Cost Optimization**
+- [ ] Implement multi-layer caching
+- [ ] Build LLM usage tracking
+- [ ] Set up budget alerts
+- [ ] Optimize LLM prompts
+- [ ] Add request batching
+
+**Step 4.2 - Database & Infrastructure Scale**
+- [ ] Add database indexes
+- [ ] Set up read replicas
+- [ ] Optimize slow queries
+- [ ] Configure Kubernetes deployment
+- [ ] Set up HorizontalPodAutoscaler
+- [ ] Configure load balancer
+- [ ] Set up CDN for static assets
+- [ ] Load test for 100K+ users
+- [ ] Document scaling procedures
+
+**Step 4.3 - Analytics Backend**
+- [ ] Set up analytics service (Mixpanel/Amplitude)
+- [ ] Build event ingestion pipeline
+- [ ] Create A/B testing framework
+- [ ] Build analytics dashboards
+
+**Step 4.4 - Coverage Expansion**
+- [ ] Expand district database
+- [ ] Add state-specific logic
+- [ ] Build historical data pipeline
+
+---
+
+#### Vibe Coder: Frontend Analytics & Documentation
+
+> By Phase 4, you'll have grown significantly! These tasks build on everything you've learned.
+
+**Step 4.3 - Frontend Analytics**
+
+| Task | Complexity | Notes |
+|------|------------|-------|
+| Add tracking calls | ⭐⭐ Medium | Follow pattern throughout app |
+| Performance monitoring | ⭐⭐ Medium | Add timing to key flows |
+
+- [ ] Add analytics tracking calls to all screens
+- [ ] Track key events (signup, swipe, selection, export)
+- [ ] Add performance timing to slow operations
+- [ ] Document what each event means
+
+**General Polish & Documentation**
+- [ ] Review all screens for consistency
+- [ ] Fix any lingering visual bugs
+- [ ] Help write user-facing help text
+- [ ] Test accessibility features
+
+---
+
+### Integration Milestones
+
+These are checkpoints where both developers should sync and test together:
+
+| Milestone | Experienced Dev Deliverable | Vibe Coder Deliverable | Test Together |
+|-----------|----------------------------|------------------------|---------------|
+| **M1: Auth Flow** | Auth API endpoints working | Onboarding screens complete | Full registration flow |
+| **M2: Blueprint MVP** | Blueprint API + embeddings | Swipe interface complete | 50 statement swipe-through |
+| **M3: Ballot Display** | Ballot data ingested | Ballot browser UI complete | View full sample ballot |
+| **M4: Confidence** | Confidence calculation API | Confidence gauge UI | Scores display correctly |
+| **M5: AI Features** | Chatbot + summaries working | Chat UI + summary display | Full AI interaction |
+| **M6: Notifications** | Notification service ready | Push notifications configured | End-to-end notification |
+| **M7: Production Ready** | APIs load tested | App performance optimized | Full user journey test |
+
+---
+
+### API Contract Template
+
+Experienced dev writes these specs. Vibe coder reads them to understand expected data shapes.
+
+```yaml
+# Example: Blueprint Response Endpoint
+endpoint: POST /api/blueprint/response
+owner: Experienced Dev
+consumer: Vibe Coder
+
+request:
+  headers:
+    Authorization: Bearer <token>
+  body:
+    statement_id: string (UUID)
+    response: "approve" | "disapprove"
+
+response:
+  success (200):
+    message: string
+    updated_progress:
+      total_answered: number
+      by_category: object
+    new_confidence_areas: object[]
+
+  error (400):
+    error: string
+    code: string
+
+notes:
+  - Returns updated progress for immediate UI feedback
+  - new_confidence_areas only included if scores changed
+
+# Vibe coder: Here's example mock data you can use while API is in progress:
+mock_response:
+  message: "Response recorded"
+  updated_progress:
+    total_answered: 15
+    by_category:
+      healthcare: 3
+      education: 2
+  new_confidence_areas:
+    - area: "healthcare"
+      score: 72.5
+```
+
+---
+
+### Communication Protocol
+
+1. **Daily sync** (15-30 min): Review vibe coder's progress, unblock issues
+2. **Blockers**: Vibe coder pings experienced dev immediately (don't spin for hours)
+3. **PR Reviews**: Experienced dev reviews all PRs before merge (same day if possible)
+4. **Pairing sessions**: Schedule when vibe coder hits ⭐⭐⭐ Hard tasks
+5. **End of day**: Both push work, even if WIP
+
+### Git Branch Strategy
+
+```
+main
+├── develop (integration branch)
+├── feat/exp-auth-system        # Experienced dev features
+├── feat/exp-blueprint-api
+├── feat/exp-ballot-ingestion
+├── feat/vibe-onboarding        # Vibe coder features
+├── feat/vibe-swipe-interface
+└── feat/vibe-ballot-browser
+```
+
+- Experienced dev prefixes: `feat/exp-*`, `fix/exp-*`
+- Vibe coder prefixes: `feat/vibe-*`, `fix/vibe-*`
+- **All vibe coder PRs require review before merge**
+- Merge to `develop` for integration testing
+- Merge to `main` for releases
+
+---
+
+### Tips for the Vibe Coder
+
+**When you're stuck:**
+1. Re-read the spec and example component
+2. Search for similar patterns in the codebase
+3. Ask your AI assistant (Claude, Copilot, etc.)
+4. If still stuck after 30 min, ping experienced dev
+
+**Good questions to ask:**
+- "Does this data shape look right for the API?"
+- "I'm not sure how to handle X error case"
+- "Can you review this before I go further?"
+
+**Avoid these patterns:**
+- Spending 3+ hours stuck without asking
+- Changing patterns the experienced dev set up
+- Skipping PR review to move faster
+- Ignoring TypeScript/lint errors
+
+**Your growth path:**
+- Phase 0: Learn the codebase, make tiny changes
+- Phase 1: Build screens by copying patterns
+- Phase 2: Build components with some creativity
+- Phase 3: Polish and improve existing work
+- Phase 4: You're now experienced enough to help set patterns!
 
 ---
 
@@ -1560,6 +2209,8 @@ class ABTestingService:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.2 | 2026-01-09 | Revised task split for experienced dev + vibe coder team, added complexity ratings and mentorship guidance |
+| 1.1 | 2026-01-09 | Added Two-Developer Task Split section |
 | 1.0 | 2026-01-09 | Initial implementation guide |
 
 ---

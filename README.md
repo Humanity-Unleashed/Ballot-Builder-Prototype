@@ -39,7 +39,7 @@ Ballot Builder activates only when an official ballot is available for the user'
 Users provide basic information (location, demographics, policy interests) to load their specific ballot.
 
 ### 2. Civic Blueprint
-An ongoing preference-learning system using sliders and swipe-based interactions to understand user values and priorities.
+An ongoing preference-learning system using swipe-based interactions to understand user values and priorities.
 
 ### 3. Ballot Exploration
 Users browse their ballot section-by-section with AI-generated explanations, candidate summaries, and alignment scores.
@@ -160,19 +160,22 @@ All data handling prioritizes accuracy, recency, and transparency about limitati
 
 ## Project Status
 
-**Current: Prototype / MVP**
+**Current: Phase 0 Complete - Foundation Ready**
 
-This project is in early development. Current state:
-- Single-page prototype
-- Static JSON data (mock ballots, candidates, personas)
-- Core UI components in development
-- AI integration in progress
+The project foundation is now set up with:
+- Full directory structure (backend, frontend, ml-services, infrastructure)
+- Docker Compose with PostgreSQL, Redis, Qdrant
+- Prisma ORM with complete database schema
+- Authentication system (JWT, bcrypt, refresh tokens)
+- Backend API with routes, middleware, logging
+- React Native frontend structure with example components
+- GitHub Actions CI/CD pipeline
 
-Not yet implemented:
-- Production database
-- Live ballot data ingestion
-- Full OCR pipeline
-- Analytics infrastructure
+**Next Steps (Phase 1 - MVP):**
+- Complete backend API endpoints (blueprint, ballot, confidence)
+- Build frontend screens (onboarding, swipe interface, ballot browser)
+- Integrate Ballotpedia data
+- Implement confidence calculation
 
 ---
 
@@ -264,9 +267,30 @@ Test it by visiting `http://localhost:3001/health` in your browser.
 |--------|---------|
 | Start backend | `docker compose up` |
 | Start in background | `docker compose up -d` |
+| Start with dev tools | `docker compose --profile dev up -d` |
 | Stop backend | `docker compose down` |
 | View logs | `docker compose logs -f api` |
 | Rebuild after changes | `docker compose up --build` |
+| Reset database | `docker compose down -v` |
+
+### Database Commands (run from `backend/` folder)
+
+| Action | Command |
+|--------|---------|
+| Generate Prisma client | `npm run db:generate` |
+| Run migrations | `npm run db:migrate` |
+| Push schema (dev) | `npm run db:push` |
+| Seed initial data | `npm run db:seed` |
+| Open database GUI | `npm run db:studio` |
+
+### Services (after docker compose up)
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| API | http://localhost:3001 | Backend API |
+| Health Check | http://localhost:3001/health | API health |
+| Adminer | http://localhost:8080 | Database GUI (dev profile) |
+| Qdrant | http://localhost:6333 | Vector DB dashboard |
 
 ---
 
@@ -413,9 +437,25 @@ The mobile app connects to the backend API. Make sure:
 
 ---
 
+## Documentation
+
+All project documentation is in the [`docs/`](docs/) folder:
+
+| Document | Description |
+|----------|-------------|
+| [Implementation Guide](docs/Ballot_Builder_Implementation_Guide.md) | Step-by-step development tasks with two-developer split |
+| [PRD](docs/Ballot_Builder_PRD.md) | Product Requirements Document |
+| [Beginner Tutorial](docs/BEGINNER_TUTORIAL.md) | Tutorial for developers new to the stack |
+| [Data Flow Guide](docs/DATA_FLOW_GUIDE.md) | How data moves through the system |
+| [First Tasks](docs/FIRST_TASKS.md) | Good first tasks for new contributors |
+| [Quick Reference](docs/QUICK_REFERENCE.md) | Common commands and patterns |
+| [Agents](docs/AGENTS.md) | AI agent guidelines and principles |
+
+---
+
 ## Contributing
 
-Contributions are welcome. Please read `AGENTS.md` for context on our non-partisan principles and tone requirements.
+Contributions are welcome. Please read [`docs/AGENTS.md`](docs/AGENTS.md) for context on our non-partisan principles and tone requirements.
 
 Key guidelines:
 - Maintain political neutrality in all content
