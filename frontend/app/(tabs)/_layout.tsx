@@ -74,6 +74,15 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="prototype"
+        options={{
+          title: 'Prototype',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="flask-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
