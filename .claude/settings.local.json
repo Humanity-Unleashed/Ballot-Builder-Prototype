@@ -5,7 +5,9 @@
       "Bash(test:*)",
       "Bash(ls:*)",
       "Bash(dir \"C:\\\\Users\\\\jonat\\\\OneDrive\\\\Documents\\\\Projects\\\\Ballot-Builder\\\\*.md\" /B)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
