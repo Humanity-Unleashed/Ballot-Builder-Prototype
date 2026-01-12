@@ -7,12 +7,14 @@
 const express = require('express');
 const authRoutes = require('./auth');
 const userRoutes = require('./users');
+const blueprintRoutes = require('./blueprint');
 
 const router = express.Router();
 
 // Mount route modules
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
+router.use('/blueprint', blueprintRoutes);
 
 // API root info
 router.get('/', (req, res) => {
@@ -31,6 +33,14 @@ router.get('/', (req, res) => {
         profile: 'POST /api/users/profile',
         districts: 'POST /api/users/districts',
         initialPreferences: 'POST /api/users/initial-preferences',
+      },
+      blueprint: {
+        statements: 'GET /api/blueprint/statements',
+        statementsForArea: 'GET /api/blueprint/statements/:issueArea',
+        response: 'POST /api/blueprint/response',
+        progress: 'GET /api/blueprint/progress',
+        summary: 'GET /api/blueprint/summary',
+        areas: 'GET /api/blueprint/areas',
       },
     },
   });
