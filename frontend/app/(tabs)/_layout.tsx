@@ -83,6 +83,15 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="adaptive-prototype"
+        options={{
+          title: 'Adaptive',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="git-branch-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
