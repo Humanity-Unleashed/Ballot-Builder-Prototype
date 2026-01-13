@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
+  StyleProp,
   ViewStyle,
   TextStyle,
   ActivityIndicator,
@@ -38,9 +39,9 @@ interface ButtonProps {
   /** Show loading spinner */
   loading?: boolean;
   /** Additional container styles */
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   /** Additional text styles */
-  textStyle?: TextStyle;
+  textStyle?: StyleProp<TextStyle>;
 }
 
 // ===========================================

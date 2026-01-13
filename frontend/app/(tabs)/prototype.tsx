@@ -53,7 +53,7 @@ export default function PrototypeScreen() {
     const userVector = calculateUserVector(responses);
 
     return ballotData.ballot.map((item) => {
-      if (item.type === 'candidate') {
+      if (item.type === 'candidate' && item.candidates) {
         // For candidates, find best match
         const candidateMatches = item.candidates.map((candidate) => {
           const similarity = cosineSimilarity(userVector, candidate.vector);
@@ -70,7 +70,7 @@ export default function PrototypeScreen() {
         };
       } else {
         // For measures
-        const similarity = cosineSimilarity(userVector, item.vector);
+        const similarity = cosineSimilarity(userVector, item.vector || []);
         const confidence = similarityToConfidence(similarity);
         const recommendation = confidence > 50 ? 'Yes' : 'No';
 
