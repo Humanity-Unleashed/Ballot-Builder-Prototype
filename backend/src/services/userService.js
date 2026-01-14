@@ -2,13 +2,12 @@
  * User Service
  *
  * Business logic for user management.
+ * Uses in-memory mock data store.
  */
 
-const { PrismaClient } = require('@prisma/client');
+const { Users, UserProfiles, UserDistricts, UserConfidenceAreas } = require('../data');
 const { NotFoundError } = require('../utils/errors');
 const logger = require('../utils/logger');
-
-const prisma = new PrismaClient();
 
 /**
  * Update user profile
@@ -17,26 +16,18 @@ const prisma = new PrismaClient();
  * @returns {Object} Updated profile
  */
 async function updateProfile(userId, { ageRange, location }) {
-  const profile = await prisma.userProfile.upsert({
-    where: { userId },
-    update: {
-      ageRange,
-      location,
-    },
-    create: {
-      userId,
-      ageRange,
-      location,
-    },
-    select: {
-      ageRange: true,
-      location: true,
-      updatedAt: true,
-    },
+  const profile = UserProfiles.upsert(userId, {
+    ageRange,
+    location,
   });
 
   logger.info('Profile updated', { userId });
-  return profile;
+
+  return {
+    ageRange: profile.ageRange,
+    location: profile.location,
+    updatedAt: profile.updatedAt,
+  };
 }
 
 /**
@@ -47,32 +38,24 @@ async function updateProfile(userId, { ageRange, location }) {
  */
 async function setDistricts(userId, districts) {
   // Delete existing districts
-  await prisma.userDistrict.deleteMany({
-    where: { userId },
-  });
+  UserDistricts.deleteAllForUser(userId);
 
   // Create new districts
-  const created = await prisma.userDistrict.createMany({
-    data: districts.map((d) => ({
-      userId,
-      districtType: d.districtType,
+  const created = [];
+  for (const d of districts) {
+    const district = UserDistricts.upsert(userId, d.districtType, {
       districtId: d.districtId,
       districtName: d.districtName,
-    })),
-  });
+    });
+    created.push({
+      districtType: district.districtType,
+      districtId: district.districtId,
+      districtName: district.districtName,
+    });
+  }
 
-  // Fetch and return the created districts
-  const result = await prisma.userDistrict.findMany({
-    where: { userId },
-    select: {
-      districtType: true,
-      districtId: true,
-      districtName: true,
-    },
-  });
-
-  logger.info('Districts updated', { userId, count: created.count });
-  return result;
+  logger.info('Districts updated', { userId, count: created.length });
+  return created;
 }
 
 /**
@@ -84,42 +67,22 @@ async function setDistricts(userId, districts) {
 async function setInitialPreferences(userId, preferences) {
   // Map preferences to confidence areas
   // Higher importance = higher initial confidence
-  const confidenceAreas = preferences.map((pref) => ({
-    userId,
-    issueArea: pref.issueArea,
-    confidenceScore: pref.importance * 20, // Scale 1-5 to 20-100
-    responseCount: 1,
-  }));
+  const results = [];
 
-  // Upsert confidence areas
-  for (const area of confidenceAreas) {
-    await prisma.userConfidenceArea.upsert({
-      where: {
-        userId_issueArea: {
-          userId: area.userId,
-          issueArea: area.issueArea,
-        },
-      },
-      update: {
-        confidenceScore: area.confidenceScore,
-        responseCount: area.responseCount,
-      },
-      create: area,
+  for (const pref of preferences) {
+    const area = UserConfidenceAreas.upsert(userId, pref.issueArea, {
+      confidenceScore: pref.importance * 20, // Scale 1-5 to 20-100
+      responseCount: 1,
+    });
+    results.push({
+      issueArea: area.issueArea,
+      confidenceScore: area.confidenceScore,
+      responseCount: area.responseCount,
     });
   }
 
-  // Fetch and return the created areas
-  const result = await prisma.userConfidenceArea.findMany({
-    where: { userId },
-    select: {
-      issueArea: true,
-      confidenceScore: true,
-      responseCount: true,
-    },
-  });
-
   logger.info('Initial preferences set', { userId, count: preferences.length });
-  return { confidenceAreas: result };
+  return { confidenceAreas: results };
 }
 
 /**
@@ -128,40 +91,37 @@ async function setInitialPreferences(userId, preferences) {
  * @returns {Object} User with profile, districts, confidence areas
  */
 async function getUserById(userId) {
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    select: {
-      id: true,
-      email: true,
-      createdAt: true,
-      profile: {
-        select: {
-          ageRange: true,
-          location: true,
-        },
-      },
-      districts: {
-        select: {
-          districtType: true,
-          districtId: true,
-          districtName: true,
-        },
-      },
-      confidenceAreas: {
-        select: {
-          issueArea: true,
-          confidenceScore: true,
-          responseCount: true,
-        },
-      },
-    },
-  });
+  const user = Users.findById(userId);
 
   if (!user) {
     throw new NotFoundError('User not found');
   }
 
-  return user;
+  const profile = UserProfiles.findByUserId(userId);
+  const districts = UserDistricts.findByUserId(userId);
+  const confidenceAreas = UserConfidenceAreas.findByUserId(userId);
+
+  return {
+    id: user.id,
+    email: user.email,
+    createdAt: user.createdAt,
+    profile: profile
+      ? {
+          ageRange: profile.ageRange,
+          location: profile.location,
+        }
+      : null,
+    districts: districts.map((d) => ({
+      districtType: d.districtType,
+      districtId: d.districtId,
+      districtName: d.districtName,
+    })),
+    confidenceAreas: confidenceAreas.map((a) => ({
+      issueArea: a.issueArea,
+      confidenceScore: a.confidenceScore,
+      responseCount: a.responseCount,
+    })),
+  };
 }
 
 module.exports = {

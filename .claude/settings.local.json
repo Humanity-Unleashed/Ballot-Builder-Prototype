@@ -1,13 +1,18 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(git config:*)",
-      "Bash(test:*)",
-      "Bash(ls:*)",
-      "Bash(dir \"C:\\\\Users\\\\jonat\\\\OneDrive\\\\Documents\\\\Projects\\\\Ballot-Builder\\\\*.md\" /B)",
-      "Bash(git mv:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)"
-    ]
-  }
+	"permissions": {
+		"allow": [
+			"Bash(git config:*)",
+			"Bash(test:*)",
+			"Bash(ls:*)",
+			"Bash(dir \"C:\\\\Users\\\\jonat\\\\OneDrive\\\\Documents\\\\Projects\\\\Ballot-Builder\\\\*.md\" /B)",
+			"Bash(git mv:*)",
+			"Bash(git add:*)",
+			"Bash(git commit:*)",
+			"Bash(grep:*)",
+			"Bash(node -c:*)",
+			"Bash(node -e:*)",
+			"Bash(git merge:*)",
+			"Bash(git stash:*)"
+		]
+	}
 }

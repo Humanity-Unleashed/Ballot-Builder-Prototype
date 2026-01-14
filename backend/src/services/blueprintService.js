@@ -3,27 +3,17 @@
  *
  * Business logic for the Civic Blueprint feature.
  * Handles policy statements, user responses, and confidence tracking.
+ * Uses in-memory mock data store.
  */
 
-const { PrismaClient } = require('@prisma/client');
+const {
+  Statements,
+  UserResponses,
+  UserConfidenceAreas,
+  ISSUE_AREAS,
+} = require('../data');
 const { NotFoundError } = require('../utils/errors');
 const logger = require('../utils/logger');
-
-const prisma = new PrismaClient();
-
-// Issue areas for the Civic Blueprint
-const ISSUE_AREAS = [
-  'healthcare',
-  'education',
-  'economy',
-  'environment',
-  'immigration',
-  'criminal_justice',
-  'taxes',
-  'housing',
-  'gun_policy',
-  'social_issues',
-];
 
 /**
  * Get policy statements for a user to respond to
@@ -36,43 +26,30 @@ async function getStatements(userId, options = {}) {
   const { limit = 10, issueArea = null } = options;
 
   // Get IDs of statements user has already responded to
-  const respondedStatements = await prisma.userResponse.findMany({
-    where: { userId },
-    select: { statementId: true },
-  });
+  const respondedIds = UserResponses.getRespondedStatementIds(userId);
 
-  const respondedIds = respondedStatements.map((r) => r.statementId);
-
-  // Build query for statements user hasn't seen
-  const where = {
+  // Build query options
+  const queryOptions = {
     isActive: true,
-    id: { notIn: respondedIds },
+    excludeIds: respondedIds,
+    limit,
   };
 
   // Filter by issue area if specified
   if (issueArea && ISSUE_AREAS.includes(issueArea)) {
-    where.issueArea = issueArea;
+    queryOptions.issueArea = issueArea;
   }
 
-  // Get statements, prioritizing areas with fewer responses
-  const statements = await prisma.policyStatement.findMany({
-    where,
-    take: limit,
-    orderBy: [
-      { issueArea: 'asc' }, // Group by area for variety
-      { createdAt: 'asc' }, // Older statements first
-    ],
-    select: {
-      id: true,
-      statementText: true,
-      issueArea: true,
-      specificityLevel: true,
-    },
-  });
+  const statements = Statements.findAll(queryOptions);
 
   logger.debug('Fetched statements for user', { userId, count: statements.length });
 
-  return statements;
+  return statements.map((s) => ({
+    id: s.id,
+    statementText: s.statementText,
+    issueArea: s.issueArea,
+    specificityLevel: s.specificityLevel,
+  }));
 }
 
 /**
@@ -89,32 +66,14 @@ async function recordResponse(userId, statementId, response) {
   }
 
   // Verify statement exists
-  const statement = await prisma.policyStatement.findUnique({
-    where: { id: statementId },
-  });
+  const statement = Statements.findById(statementId);
 
   if (!statement) {
     throw new NotFoundError('Statement not found');
   }
 
-  // Create or update the response (upsert)
-  await prisma.userResponse.upsert({
-    where: {
-      userId_statementId: {
-        userId,
-        statementId,
-      },
-    },
-    create: {
-      userId,
-      statementId,
-      response,
-    },
-    update: {
-      response,
-      respondedAt: new Date(),
-    },
-  });
+  // Create or update the response
+  UserResponses.upsert(userId, statementId, response);
 
   // Update confidence area for this issue
   await updateConfidenceArea(userId, statement.issueArea);
@@ -132,37 +91,16 @@ async function recordResponse(userId, statementId, response) {
  */
 async function updateConfidenceArea(userId, issueArea) {
   // Count responses in this area
-  const responseCount = await prisma.userResponse.count({
-    where: {
-      userId,
-      statement: {
-        issueArea,
-      },
-    },
-  });
+  const responseCount = UserResponses.countByUserIdAndArea(userId, issueArea);
 
   // Calculate confidence score (simple formula: more responses = higher confidence)
   // Max out at 100% after 5 responses per area
   const confidenceScore = Math.min((responseCount / 5) * 100, 100);
 
   // Upsert the confidence area record
-  await prisma.userConfidenceArea.upsert({
-    where: {
-      userId_issueArea: {
-        userId,
-        issueArea,
-      },
-    },
-    create: {
-      userId,
-      issueArea,
-      confidenceScore,
-      responseCount,
-    },
-    update: {
-      confidenceScore,
-      responseCount,
-    },
+  UserConfidenceAreas.upsert(userId, issueArea, {
+    confidenceScore,
+    responseCount,
   });
 }
 
@@ -172,32 +110,12 @@ async function updateConfidenceArea(userId, issueArea) {
  * @returns {Object} Progress information
  */
 async function getProgress(userId) {
-  // Get total responses
-  const totalResponses = await prisma.userResponse.count({
-    where: { userId },
-  });
+  // Get user responses with statements
+  const userResponses = UserResponses.findByUserIdWithStatements(userId);
+  const totalResponses = userResponses.length;
 
   // Get total available statements
-  const totalStatements = await prisma.policyStatement.count({
-    where: { isActive: true },
-  });
-
-  // Get responses by issue area
-  const responsesByArea = await prisma.userResponse.groupBy({
-    by: ['statementId'],
-    where: { userId },
-    _count: true,
-  });
-
-  // Get statement issue areas for the user's responses
-  const userResponses = await prisma.userResponse.findMany({
-    where: { userId },
-    include: {
-      statement: {
-        select: { issueArea: true },
-      },
-    },
-  });
+  const totalStatements = Statements.count({ isActive: true });
 
   // Count by area
   const byArea = {};
@@ -206,24 +124,23 @@ async function getProgress(userId) {
   }
 
   // Get confidence areas
-  const confidenceAreas = await prisma.userConfidenceArea.findMany({
-    where: { userId },
-    select: {
-      issueArea: true,
-      confidenceScore: true,
-      responseCount: true,
-    },
-  });
+  const confidenceAreas = UserConfidenceAreas.findByUserId(userId).map((a) => ({
+    issueArea: a.issueArea,
+    confidenceScore: a.confidenceScore,
+    responseCount: a.responseCount,
+  }));
 
   // Calculate overall completion percentage
-  const completionPercentage = totalStatements > 0
-    ? Math.round((totalResponses / totalStatements) * 100)
-    : 0;
+  const completionPercentage =
+    totalStatements > 0 ? Math.round((totalResponses / totalStatements) * 100) : 0;
 
   // Calculate overall confidence (average of all areas)
-  const overallConfidence = confidenceAreas.length > 0
-    ? Math.round(confidenceAreas.reduce((sum, a) => sum + a.confidenceScore, 0) / ISSUE_AREAS.length)
-    : 0;
+  const overallConfidence =
+    confidenceAreas.length > 0
+      ? Math.round(
+          confidenceAreas.reduce((sum, a) => sum + a.confidenceScore, 0) / ISSUE_AREAS.length
+        )
+      : 0;
 
   return {
     totalResponses,
@@ -243,25 +160,12 @@ async function getProgress(userId) {
  */
 async function getSummary(userId) {
   // Get all user responses with statement details
-  const responses = await prisma.userResponse.findMany({
-    where: { userId },
-    include: {
-      statement: {
-        select: {
-          statementText: true,
-          issueArea: true,
-          specificityLevel: true,
-        },
-      },
-    },
-    orderBy: { respondedAt: 'desc' },
-  });
+  const responses = UserResponses.findByUserIdWithStatements(userId);
 
   // Get confidence areas
-  const confidenceAreas = await prisma.userConfidenceArea.findMany({
-    where: { userId },
-    orderBy: { confidenceScore: 'desc' },
-  });
+  const confidenceAreas = UserConfidenceAreas.findByUserId(userId).sort(
+    (a, b) => b.confidenceScore - a.confidenceScore
+  );
 
   // Calculate approve/disapprove counts per area
   const areaStats = {};
@@ -288,7 +192,11 @@ async function getSummary(userId) {
   return {
     totalResponses: responses.length,
     areaStats,
-    confidenceAreas,
+    confidenceAreas: confidenceAreas.map((a) => ({
+      issueArea: a.issueArea,
+      confidenceScore: a.confidenceScore,
+      responseCount: a.responseCount,
+    })),
     strongestAreas,
     needsInput,
     recentResponses: responses.slice(0, 10).map((r) => ({

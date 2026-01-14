@@ -2,15 +2,14 @@
  * Authentication Service
  *
  * Business logic for user authentication.
+ * Uses in-memory mock data store.
  */
 
-const { PrismaClient } = require('@prisma/client');
+const { Users, RefreshTokens, UserProfiles, UserDistricts } = require('../data');
 const { hashPassword, verifyPassword } = require('../utils/password');
 const { generateAccessToken, generateRefreshToken } = require('../utils/jwt');
 const { ConflictError, UnauthorizedError, NotFoundError } = require('../utils/errors');
 const logger = require('../utils/logger');
-
-const prisma = new PrismaClient();
 
 /**
  * Register a new user
@@ -19,9 +18,7 @@ const prisma = new PrismaClient();
  */
 async function register({ email, password }) {
   // Check if user already exists
-  const existingUser = await prisma.user.findUnique({
-    where: { email: email.toLowerCase() },
-  });
+  const existingUser = Users.findByEmail(email.toLowerCase());
 
   if (existingUser) {
     throw new ConflictError('A user with this email already exists');
@@ -30,39 +27,34 @@ async function register({ email, password }) {
   // Hash password
   const passwordHash = await hashPassword(password);
 
-  // Create user with profile
-  const user = await prisma.user.create({
-    data: {
-      email: email.toLowerCase(),
-      passwordHash,
-      profile: {
-        create: {}, // Create empty profile
-      },
-    },
-    select: {
-      id: true,
-      email: true,
-      createdAt: true,
-    },
+  // Create user
+  const user = Users.create({
+    email: email.toLowerCase(),
+    passwordHash,
   });
+
+  // Create empty profile
+  UserProfiles.upsert(user.id, {});
 
   // Generate tokens
   const accessToken = generateAccessToken(user);
   const { token: refreshToken, expiresAt } = generateRefreshToken();
 
   // Store refresh token
-  await prisma.refreshToken.create({
-    data: {
-      token: refreshToken,
-      userId: user.id,
-      expiresAt,
-    },
+  RefreshTokens.create({
+    token: refreshToken,
+    userId: user.id,
+    expiresAt,
   });
 
   logger.info('User registered', { userId: user.id, email: user.email });
 
   return {
-    user,
+    user: {
+      id: user.id,
+      email: user.email,
+      createdAt: user.createdAt,
+    },
     accessToken,
     refreshToken,
   };
@@ -75,9 +67,7 @@ async function register({ email, password }) {
  */
 async function login({ email, password }) {
   // Find user
-  const user = await prisma.user.findUnique({
-    where: { email: email.toLowerCase() },
-  });
+  const user = Users.findByEmail(email.toLowerCase());
 
   if (!user) {
     throw new UnauthorizedError('Invalid email or password');
@@ -94,28 +84,11 @@ async function login({ email, password }) {
   const { token: refreshToken, expiresAt } = generateRefreshToken();
 
   // Store refresh token
-  await prisma.refreshToken.create({
-    data: {
-      token: refreshToken,
-      userId: user.id,
-      expiresAt,
-    },
+  RefreshTokens.create({
+    token: refreshToken,
+    userId: user.id,
+    expiresAt,
   });
-
-  // Clean up old refresh tokens (keep last 5)
-  const tokens = await prisma.refreshToken.findMany({
-    where: { userId: user.id },
-    orderBy: { createdAt: 'desc' },
-    skip: 5,
-  });
-
-  if (tokens.length > 0) {
-    await prisma.refreshToken.deleteMany({
-      where: {
-        id: { in: tokens.map((t) => t.id) },
-      },
-    });
-  }
 
   logger.info('User logged in', { userId: user.id });
 
@@ -137,42 +110,39 @@ async function login({ email, password }) {
  */
 async function refreshAccessToken(refreshToken) {
   // Find the refresh token
-  const storedToken = await prisma.refreshToken.findUnique({
-    where: { token: refreshToken },
-    include: { user: true },
-  });
+  const storedToken = RefreshTokens.findByToken(refreshToken);
 
   if (!storedToken) {
     throw new UnauthorizedError('Invalid refresh token');
   }
 
   // Check if expired
-  if (storedToken.expiresAt < new Date()) {
+  if (new Date(storedToken.expiresAt) < new Date()) {
     // Delete expired token
-    await prisma.refreshToken.delete({
-      where: { id: storedToken.id },
-    });
+    RefreshTokens.delete(refreshToken);
     throw new UnauthorizedError('Refresh token expired');
   }
 
+  // Get user
+  const user = Users.findById(storedToken.userId);
+  if (!user) {
+    RefreshTokens.delete(refreshToken);
+    throw new UnauthorizedError('User not found');
+  }
+
   // Generate new tokens
-  const accessToken = generateAccessToken(storedToken.user);
+  const accessToken = generateAccessToken(user);
   const { token: newRefreshToken, expiresAt } = generateRefreshToken();
 
   // Rotate refresh token (delete old, create new)
-  await prisma.refreshToken.delete({
-    where: { id: storedToken.id },
+  RefreshTokens.delete(refreshToken);
+  RefreshTokens.create({
+    token: newRefreshToken,
+    userId: user.id,
+    expiresAt,
   });
 
-  await prisma.refreshToken.create({
-    data: {
-      token: newRefreshToken,
-      userId: storedToken.userId,
-      expiresAt,
-    },
-  });
-
-  logger.debug('Token refreshed', { userId: storedToken.userId });
+  logger.debug('Token refreshed', { userId: user.id });
 
   return {
     accessToken,
@@ -185,14 +155,8 @@ async function refreshAccessToken(refreshToken) {
  * @param {string} refreshToken - The refresh token to invalidate
  */
 async function logout(refreshToken) {
-  try {
-    await prisma.refreshToken.delete({
-      where: { token: refreshToken },
-    });
-    logger.debug('User logged out');
-  } catch {
-    // Token might not exist, that's okay
-  }
+  RefreshTokens.delete(refreshToken);
+  logger.debug('User logged out');
 }
 
 /**
@@ -201,34 +165,32 @@ async function logout(refreshToken) {
  * @returns {Object} User data
  */
 async function getCurrentUser(userId) {
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    select: {
-      id: true,
-      email: true,
-      createdAt: true,
-      updatedAt: true,
-      profile: {
-        select: {
-          ageRange: true,
-          location: true,
-        },
-      },
-      districts: {
-        select: {
-          districtType: true,
-          districtId: true,
-          districtName: true,
-        },
-      },
-    },
-  });
+  const user = Users.findById(userId);
 
   if (!user) {
     throw new NotFoundError('User not found');
   }
 
-  return user;
+  const profile = UserProfiles.findByUserId(userId);
+  const districts = UserDistricts.findByUserId(userId);
+
+  return {
+    id: user.id,
+    email: user.email,
+    createdAt: user.createdAt,
+    updatedAt: user.updatedAt,
+    profile: profile
+      ? {
+          ageRange: profile.ageRange,
+          location: profile.location,
+        }
+      : null,
+    districts: districts.map((d) => ({
+      districtType: d.districtType,
+      districtId: d.districtId,
+      districtName: d.districtName,
+    })),
+  };
 }
 
 module.exports = {
