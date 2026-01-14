@@ -15,9 +15,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import PersonaCard from '../components/PersonaCard';
-import { personas } from '../data/personas/personas';
-import type { Persona } from '../types/persona';
+import PersonaCard from '../../components/PersonaCard';
+import { personas } from '../../data/personas/personas';
+import type { Persona } from '../../types/persona';
 
 export default function PersonaSelectionScreen() {
   const router = useRouter();

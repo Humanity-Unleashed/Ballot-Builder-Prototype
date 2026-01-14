@@ -58,6 +58,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const checkAuthStatus = async () => {
     try {
+      // TEMPORARY: Bypass auth for prototype testing
+      // TODO: Remove this before production!
+      const PROTOTYPE_MODE = true;
+
+      if (PROTOTYPE_MODE) {
+        // Create a mock user for testing
+        setUser({
+          id: 'prototype-user',
+          email: 'prototype@test.com',
+        } as User);
+        setIsLoading(false);
+        return;
+      }
+
       const token = await getAccessToken();
       if (token) {
         const currentUser = await authApi.getCurrentUser();
