@@ -1,4 +1,4 @@
-import type { Spec, SwipeResponse } from './types';
+import type { Spec, SwipeResponse } from '../types/civicAssessment';
 
 export interface SwipeEvent {
   item_id: string;

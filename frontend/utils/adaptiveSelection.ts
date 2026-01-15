@@ -6,6 +6,35 @@ interface AdaptiveState {
   axisScores: Record<string, AxisScore>;
   domainCoverage: Record<string, number>;
   totalQuestions: number;
+  selectedDomains?: Set<string>;
+}
+
+/**
+ * Get axes that belong to the selected domains
+ */
+function getAxesForDomains(spec: Spec, selectedDomains?: Set<string>): Set<string> {
+  if (!selectedDomains || selectedDomains.size === spec.domains.length) {
+    return new Set(spec.axes.map(a => a.id));
+  }
+  const axisIds = new Set<string>();
+  spec.domains
+    .filter(d => selectedDomains.has(d.id))
+    .forEach(d => d.axes.forEach(axisId => axisIds.add(axisId)));
+  return axisIds;
+}
+
+/**
+ * Filter items to only those belonging to selected domains
+ */
+function filterItemsByDomains(items: Item[], spec: Spec, selectedDomains?: Set<string>): Item[] {
+  if (!selectedDomains || selectedDomains.size === spec.domains.length) {
+    return items;
+  }
+  const validAxes = getAxesForDomains(spec, selectedDomains);
+  return items.filter(item => {
+    const itemAxes = Object.keys(item.axis_keys);
+    return itemAxes.some(axisId => validAxes.has(axisId));
+  });
 }
 
 /**
@@ -15,9 +44,12 @@ interface AdaptiveState {
 export function selectNextQuestion(
   spec: Spec,
   swipes: SwipeEvent[],
-  state: AdaptiveState
+  state: AdaptiveState,
+  selectedDomains?: Set<string>
 ): Item | null {
-  const availableItems = spec.items.filter(item => !state.answeredItems.has(item.id));
+  // Filter items by answered status and selected domains
+  let availableItems = spec.items.filter(item => !state.answeredItems.has(item.id));
+  availableItems = filterItemsByDomains(availableItems, spec, selectedDomains);
 
   if (availableItems.length === 0) {
     return null;
@@ -51,10 +83,14 @@ export function selectNextQuestion(
  */
 export function shouldStopEarly(
   state: AdaptiveState,
-  minQuestions: number = 15,
-  maxQuestions: number = 30,
+  selectedDomains?: Set<string>,
   targetConfidence: number = 0.7
 ): boolean {
+  // Adjust min/max based on number of selected domains
+  const numDomains = selectedDomains?.size || 5;
+  const minQuestions = Math.max(8, Math.round(numDomains * 3));
+  const maxQuestions = Math.max(15, Math.round(numDomains * 6));
+
   // Always ask at least minQuestions
   if (state.totalQuestions < minQuestions) {
     return false;
@@ -65,7 +101,7 @@ export function shouldStopEarly(
     return true;
   }
 
-  // Check if all axes have sufficient confidence
+  // Check if all relevant axes have sufficient confidence
   const axisScores = Object.values(state.axisScores);
   if (axisScores.length === 0) {
     return false;
@@ -83,17 +119,21 @@ export function shouldStopEarly(
 /**
  * Initialize adaptive state
  */
-export function initializeAdaptiveState(spec: Spec): AdaptiveState {
+export function initializeAdaptiveState(spec: Spec, selectedDomains?: Set<string>): AdaptiveState {
   const domainCoverage: Record<string, number> = {};
-  spec.domains.forEach(domain => {
-    domainCoverage[domain.id] = 0;
-  });
+  const domainsToTrack = selectedDomains || new Set(spec.domains.map(d => d.id));
+  spec.domains
+    .filter(d => domainsToTrack.has(d.id))
+    .forEach(domain => {
+      domainCoverage[domain.id] = 0;
+    });
 
   return {
     answeredItems: new Set(),
     axisScores: {},
     domainCoverage,
     totalQuestions: 0,
+    selectedDomains,
   };
 }
 
@@ -104,19 +144,20 @@ export function updateAdaptiveState(
   spec: Spec,
   state: AdaptiveState,
   swipes: SwipeEvent[],
-  lastItemId: string
+  lastItemId: string,
+  selectedDomains?: Set<string>
 ): AdaptiveState {
   // Mark item as answered
   state.answeredItems.add(lastItemId);
   state.totalQuestions++;
 
-  // Update domain coverage
+  // Update domain coverage (only for selected domains)
   const item = spec.items.find(i => i.id === lastItemId);
   if (item) {
     const axisIds = Object.keys(item.axis_keys);
     axisIds.forEach(axisId => {
       const axis = spec.axes.find(a => a.id === axisId);
-      if (axis) {
+      if (axis && (!selectedDomains || selectedDomains.has(axis.domain_id))) {
         state.domainCoverage[axis.domain_id] = (state.domainCoverage[axis.domain_id] || 0) + 1;
       }
     });
@@ -230,15 +271,17 @@ export function getAdaptiveProgress(state: AdaptiveState, spec: Spec): {
   estimatedTotal: number;
   dominantStrategy: string;
 } {
-  const minQ = 15;
-  const maxQ = 30;
+  // Adjust min/max based on number of selected domains
+  const numDomains = state.selectedDomains?.size || spec.domains.length;
+  const minQ = Math.max(8, Math.round(numDomains * 3));
+  const maxQ = Math.max(15, Math.round(numDomains * 6));
   const current = state.totalQuestions;
 
   // Estimate how many more questions we'll need
   let estimatedTotal = maxQ;
 
   if (current < minQ) {
-    estimatedTotal = Math.max(minQ, current + 10);
+    estimatedTotal = Math.max(minQ, current + Math.round(numDomains * 2));
   } else {
     // Check confidence levels
     const axisScores = Object.values(state.axisScores);
@@ -254,9 +297,9 @@ export function getAdaptiveProgress(state: AdaptiveState, spec: Spec): {
   }
 
   let strategy = 'Exploring your civic values';
-  if (current < 10) {
+  if (current < Math.round(numDomains * 2)) {
     strategy = 'Building your civic profile';
-  } else if (current < 20) {
+  } else if (current < Math.round(numDomains * 4)) {
     strategy = 'Refining your positions';
   } else {
     strategy = 'Finalizing your blueprint';

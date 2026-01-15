@@ -174,8 +174,8 @@
     {
       "id": "econ_safetynet",
       "domain_id": "econ",
-      "name": "Safety Net Breadth",
-      "description": "How broad and unconditional economic support should be versus targeted/conditional support.",
+      "name": "Government Support Programs",
+      "description": "Should government help be available to more people with fewer requirements, or targeted to specific groups with stricter rules?",
       "poleA": {
         "label": "Broader safety net",
         "interpretation": "More comfortable with robust benefits and fewer conditions; prioritizes reducing hardship."
@@ -189,8 +189,8 @@
     {
       "id": "econ_investment",
       "domain_id": "econ",
-      "name": "Taxes & Public Investment",
-      "description": "Willingness to fund public services/infrastructure through taxes or debt versus prioritizing low taxes and tight budgets.",
+      "name": "Taxes & Public Spending",
+      "description": "Should we pay more in taxes to fund schools, roads, and services, or keep taxes low and limit government spending?",
       "poleA": {
         "label": "More public investment",
         "interpretation": "More likely to support bonds/levies and expanded public services."
@@ -219,14 +219,14 @@
     {
       "id": "health_coverage_model",
       "domain_id": "health",
-      "name": "Coverage Model",
-      "description": "Preference for a public guarantee/public option versus a private insurance-centered system with targeted public support.",
+      "name": "Who Provides Health Insurance",
+      "description": "Should government offer health insurance to everyone, or should most people get insurance through private companies?",
       "poleA": {
-        "label": "Public guarantee / larger government role",
+        "label": "More government insurance",
         "interpretation": "Supports public option and expanded public programs to increase coverage."
       },
       "poleB": {
-        "label": "Private-centered / targeted public support",
+        "label": "More private insurance",
         "interpretation": "Prefers private insurance as default with government as backstop."
       },
       "recommended_cards_per_session": 6
@@ -234,14 +234,14 @@
     {
       "id": "health_cost_control",
       "domain_id": "health",
-      "name": "Cost Control Strategy",
-      "description": "Whether healthcare costs are best controlled through government negotiation/regulation or through competition, transparency, and consumer incentives.",
+      "name": "Lowering Healthcare Costs",
+      "description": "Should government set limits on what doctors and drug companies can charge, or should competition and price shopping bring costs down?",
       "poleA": {
-        "label": "Negotiation/regulation",
+        "label": "Government price limits",
         "interpretation": "More willing to use price caps/negotiation authority to limit costs."
       },
       "poleB": {
-        "label": "Competition/transparency",
+        "label": "Market competition",
         "interpretation": "Prefers market discipline, shopping, and incentives over price controls."
       },
       "recommended_cards_per_session": 6
@@ -249,14 +249,14 @@
     {
       "id": "health_public_health",
       "domain_id": "health",
-      "name": "Public Health & Addiction Response",
-      "description": "Support for prevention/harm reduction and strong public health capacity versus emphasizing voluntary choice and enforcement-led approaches.",
+      "name": "Public Health & Drug Policy",
+      "description": "Should government focus on prevention and treatment programs, or leave health choices to individuals and use law enforcement for drug issues?",
       "poleA": {
-        "label": "Prevention/harm reduction",
+        "label": "Prevention & treatment",
         "interpretation": "Supports proactive public health interventions and non-carceral responses."
       },
       "poleB": {
-        "label": "Voluntary/enforcement-first",
+        "label": "Personal choice & enforcement",
         "interpretation": "Prefers limited mandates and more enforcement-based approaches."
       },
       "recommended_cards_per_session": 6
@@ -264,8 +264,8 @@
     {
       "id": "housing_supply_zoning",
       "domain_id": "housing",
-      "name": "Housing Supply & Zoning",
-      "description": "Openness to increasing housing supply and density versus preserving existing neighborhood patterns and limiting growth.",
+      "name": "Building More Housing",
+      "description": "Should cities allow more apartments and housing to be built, or protect existing neighborhoods from new development?",
       "poleA": {
         "label": "Build more / allow density",
         "interpretation": "Supports zoning reform and faster permitting to increase supply."
@@ -279,14 +279,14 @@
     {
       "id": "housing_affordability_tools",
       "domain_id": "housing",
-      "name": "Affordability Tools",
-      "description": "Preference for tenant protections and public/nonprofit housing versus market-supply-first approaches and fewer price controls.",
+      "name": "Making Housing Affordable",
+      "description": "Should government control rents and build public housing, or focus on encouraging more private construction to bring prices down?",
       "poleA": {
-        "label": "Tenant protections + public/nonprofit build",
+        "label": "Rent limits & public housing",
         "interpretation": "Supports rent stabilization, subsidies, and public/nonprofit housing investment."
       },
       "poleB": {
-        "label": "Market supply focus / fewer controls",
+        "label": "Build more, fewer rules",
         "interpretation": "Prefers boosting supply and limiting rent controls/mandates that may reduce construction."
       },
       "recommended_cards_per_session": 6
@@ -294,14 +294,14 @@
     {
       "id": "housing_transport_priority",
       "domain_id": "housing",
-      "name": "Transportation Priorities",
-      "description": "Preference for transit/walk/bike and demand management versus prioritizing cars, parking, and road capacity.",
+      "name": "Getting Around",
+      "description": "Should cities invest more in buses, trains, and bike lanes, or focus on roads and parking for cars?",
       "poleA": {
-        "label": "Transit/walk/bike priority",
+        "label": "Transit, walking & biking",
         "interpretation": "Supports transit investment and street redesigns even with less road/parking."
       },
       "poleB": {
-        "label": "Car/parking/roads priority",
+        "label": "Cars & parking",
         "interpretation": "Prefers road capacity and parking availability as primary planning goals."
       },
       "recommended_cards_per_session": 6
@@ -309,14 +309,14 @@
     {
       "id": "justice_policing_accountability",
       "domain_id": "justice",
-      "name": "Policing Approach & Accountability",
-      "description": "Support for police accountability, de-escalation, and alternative responders versus enforcement-first proactive policing and broader discretion.",
+      "name": "How Police Should Work",
+      "description": "Should there be more oversight of police and alternatives like mental health responders, or more officers with freedom to enforce laws proactively?",
       "poleA": {
-        "label": "Accountability/alternatives",
+        "label": "More oversight & alternatives",
         "interpretation": "Supports oversight and non-police responses for some situations."
       },
       "poleB": {
-        "label": "Enforcement-first",
+        "label": "More police & enforcement",
         "interpretation": "Prioritizes proactive policing, staffing, and discretion to deter crime."
       },
       "recommended_cards_per_session": 6
@@ -324,14 +324,14 @@
     {
       "id": "justice_sentencing_goals",
       "domain_id": "justice",
-      "name": "Justice System Goals",
-      "description": "Whether public safety is best advanced via rehabilitation/restoration or via punitive sentencing and incarceration as deterrence.",
+      "name": "Prison vs. Rehabilitation",
+      "description": "Should the justice system focus on helping offenders change through treatment and job training, or on punishment and keeping people locked up longer?",
       "poleA": {
-        "label": "Rehabilitation/restorative",
+        "label": "Focus on rehabilitation",
         "interpretation": "Supports diversion, treatment, and reentry investments."
       },
       "poleB": {
-        "label": "Punitive/deterrence",
+        "label": "Focus on punishment",
         "interpretation": "Supports tougher sentencing and longer incarceration for deterrence and incapacitation."
       },
       "recommended_cards_per_session": 6
@@ -339,8 +339,8 @@
     {
       "id": "justice_firearms",
       "domain_id": "justice",
-      "name": "Firearm Policy",
-      "description": "Preference for tighter access and safety requirements versus fewer restrictions for law-abiding adults.",
+      "name": "Gun Laws",
+      "description": "Should there be more requirements to buy and own guns, or should law-abiding adults face fewer restrictions?",
       "poleA": {
         "label": "Stronger gun safety rules",
         "interpretation": "Supports training/permits, broader background checks, safe storage requirements."
@@ -354,14 +354,14 @@
     {
       "id": "climate_ambition",
       "domain_id": "climate",
-      "name": "Climate Policy Ambition",
-      "description": "Willingness to pursue aggressive near-term emissions cuts and resilience investment versus prioritizing affordability/reliability with a slower transition.",
+      "name": "How Fast to Act on Climate",
+      "description": "Should we act quickly on climate change even if it costs more now, or move slowly to keep energy affordable?",
       "poleA": {
-        "label": "Aggressive action",
+        "label": "Act fast on climate",
         "interpretation": "Accepts near-term costs/constraints for faster emissions cuts and resilience spending."
       },
       "poleB": {
-        "label": "Gradual/affordability-first",
+        "label": "Go slow, keep costs low",
         "interpretation": "Prioritizes energy cost, reliability, and jobs; prefers slower change."
       },
       "recommended_cards_per_session": 6
@@ -369,14 +369,14 @@
     {
       "id": "climate_energy_portfolio",
       "domain_id": "climate",
-      "name": "Energy Portfolio Preference",
-      "description": "Preference for renewables/electrification-first versus an all-of-the-above portfolio including nuclear, gas, and/or carbon capture.",
+      "name": "Energy Sources",
+      "description": "Should we focus mainly on solar and wind power, or use a mix that includes nuclear, natural gas, and oil?",
       "poleA": {
-        "label": "Renewables/electrification-first",
+        "label": "Solar & wind first",
         "interpretation": "Prioritizes renewables and electrification; limits fossil expansion."
       },
       "poleB": {
-        "label": "All-of-the-above",
+        "label": "Mix of all energy types",
         "interpretation": "Supports broader portfolio including nuclear and/or continued fossil fuels with mitigation."
       },
       "recommended_cards_per_session": 6
@@ -384,14 +384,14 @@
     {
       "id": "climate_permitting",
       "domain_id": "climate",
-      "name": "Environmental Rules vs Build Speed",
-      "description": "Preference for strong environmental review and local leverage versus streamlined permitting to build housing/energy/infrastructure faster.",
+      "name": "Building vs. Environmental Review",
+      "description": "Should we speed up approval for new housing and energy projects, or take more time to review environmental impacts?",
       "poleA": {
-        "label": "Stronger review/local leverage",
+        "label": "Thorough review first",
         "interpretation": "Accepts slower projects to preserve environmental safeguards."
       },
       "poleB": {
-        "label": "Streamlined permitting",
+        "label": "Faster approvals",
         "interpretation": "Prioritizes speed and scale of building over procedural delay."
       },
       "recommended_cards_per_session": 6

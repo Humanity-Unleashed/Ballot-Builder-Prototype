@@ -16,6 +16,7 @@ import { useFonts } from 'expo-font';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthProvider } from '@/context/AuthContext';
+import { BlueprintProvider } from '@/context/BlueprintContext';
 
 // Prevent splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -40,17 +41,19 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <AuthProvider>
-          <Stack
-            screenOptions={{
-              headerShown: false,
-              contentStyle: { backgroundColor: '#FFFFFF' },
-            }}
-          >
-            <Stack.Screen name="index" />
-            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          </Stack>
-          <StatusBar style="auto" />
+          <BlueprintProvider>
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                contentStyle: { backgroundColor: '#FFFFFF' },
+              }}
+            >
+              <Stack.Screen name="index" />
+              <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            </Stack>
+            <StatusBar style="auto" />
+          </BlueprintProvider>
         </AuthProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
