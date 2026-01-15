@@ -1,0 +1,1495 @@
+{
+  "spec_version": "1.0.0",
+  "generated_at_utc": "2026-01-14T17:07:19Z",
+  "app": {
+    "name": "Civic Blueprint (Swipe Assessment)",
+    "notes": [
+      "This file is designed to be LLM-readable and machine-parseable.",
+      "Items are keyed so that Agree pushes score toward poleA (key=+1) or poleB (key=-1).",
+      "You can add multi-axis items by adding multiple entries to axis_keys."
+    ]
+  },
+  "response_scale": {
+    "strong_disagree": -2,
+    "disagree": -1,
+    "agree": 1,
+    "strong_agree": 2,
+    "unsure": 0
+  },
+  "scoring": {
+    "axis_range": [
+      -1,
+      1
+    ],
+    "normalize_by_max": true,
+    "shrinkage_k": 6,
+    "unsure_treatment": "missing_for_axis_estimation_but_track_counts",
+    "confidence_heuristic": "confidence = n_answered / (n_answered + shrinkage_k)"
+  },
+  "domains": [
+    {
+      "id": "econ",
+      "name": "Economic Opportunity & Taxes",
+      "why": "Predicts voting on budgets, taxes, school funding, and the size/conditions of economic support programs across local, state, and national ballots.",
+      "axes": [
+        "econ_safetynet",
+        "econ_investment",
+        "econ_school_choice"
+      ],
+      "ballot_mapping_examples": {
+        "local": [
+          "school levies/bonds",
+          "city budget increases or cuts",
+          "property tax cap measures"
+        ],
+        "state": [
+          "EITC/child tax credits",
+          "minimum wage rules",
+          "charter/voucher expansion",
+          "unemployment eligibility"
+        ],
+        "national": [
+          "tax rate changes",
+          "child tax credit and benefits",
+          "welfare conditions",
+          "federal education funding"
+        ]
+      }
+    },
+    {
+      "id": "health",
+      "name": "Healthcare & Public Health",
+      "why": "Strongly predicts positions on Medicaid/coverage, insurance regulation, drug pricing, and public health approaches at multiple levels of government.",
+      "axes": [
+        "health_coverage_model",
+        "health_cost_control",
+        "health_public_health"
+      ],
+      "ballot_mapping_examples": {
+        "local": [
+          "clinic funding",
+          "county health department budgets",
+          "mental health response teams"
+        ],
+        "state": [
+          "Medicaid expansion",
+          "insurance mandates/standards",
+          "opioid program funding"
+        ],
+        "national": [
+          "public option / ACA rules",
+          "Medicare policy",
+          "drug price negotiation authority"
+        ]
+      }
+    },
+    {
+      "id": "housing",
+      "name": "Housing & Local Growth",
+      "why": "Highly predictive for city/county elections and referenda (zoning, development, transit), and for state housing production and tenant-protection policy.",
+      "axes": [
+        "housing_supply_zoning",
+        "housing_affordability_tools",
+        "housing_transport_priority"
+      ],
+      "ballot_mapping_examples": {
+        "local": [
+          "zoning reform votes",
+          "housing bonds",
+          "parking minimum rules",
+          "transit levies"
+        ],
+        "state": [
+          "housing production targets",
+          "tenant protection laws",
+          "statewide ADU legalization"
+        ],
+        "national": [
+          "housing tax credits",
+          "infrastructure/transit funding",
+          "housing grants"
+        ]
+      }
+    },
+    {
+      "id": "justice",
+      "name": "Public Safety & Justice",
+      "why": "Predicts candidate choice and ballot positions on policing budgets/oversight, sentencing, diversion programs, and firearm policy.",
+      "axes": [
+        "justice_policing_accountability",
+        "justice_sentencing_goals",
+        "justice_firearms"
+      ],
+      "ballot_mapping_examples": {
+        "local": [
+          "police budget and staffing",
+          "civilian oversight boards",
+          "crisis response programs",
+          "DA/judge elections"
+        ],
+        "state": [
+          "bail rules",
+          "sentencing reforms",
+          "statewide policing standards",
+          "carry/permit laws"
+        ],
+        "national": [
+          "federal gun rules",
+          "justice grants",
+          "DOJ priorities"
+        ]
+      }
+    },
+    {
+      "id": "climate",
+      "name": "Climate, Energy & Environment",
+      "why": "Predicts support for climate mitigation/resilience spending, energy standards, permitting tradeoffs, and national climate/energy platforms.",
+      "axes": [
+        "climate_ambition",
+        "climate_energy_portfolio",
+        "climate_permitting"
+      ],
+      "ballot_mapping_examples": {
+        "local": [
+          "resilience bonds",
+          "building electrification rules",
+          "EV charging investments"
+        ],
+        "state": [
+          "renewable standards",
+          "grid modernization",
+          "permitting reform",
+          "building codes"
+        ],
+        "national": [
+          "EPA rules",
+          "energy subsidies",
+          "public lands drilling policy",
+          "major climate bills"
+        ]
+      }
+    }
+  ],
+  "axes": [
+    {
+      "id": "econ_safetynet",
+      "domain_id": "econ",
+      "name": "Safety Net Breadth",
+      "description": "How broad and unconditional economic support should be versus targeted/conditional support.",
+      "poleA": {
+        "label": "Broader safety net",
+        "interpretation": "More comfortable with robust benefits and fewer conditions; prioritizes reducing hardship."
+      },
+      "poleB": {
+        "label": "More conditional/limited safety net",
+        "interpretation": "Prefers targeted aid, stricter eligibility, and limiting long-term dependency/cost."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "econ_investment",
+      "domain_id": "econ",
+      "name": "Taxes & Public Investment",
+      "description": "Willingness to fund public services/infrastructure through taxes or debt versus prioritizing low taxes and tight budgets.",
+      "poleA": {
+        "label": "More public investment",
+        "interpretation": "More likely to support bonds/levies and expanded public services."
+      },
+      "poleB": {
+        "label": "Lower taxes/tighter budgets",
+        "interpretation": "More skeptical of spending increases; prefers efficiency or private solutions."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "econ_school_choice",
+      "domain_id": "econ",
+      "name": "Public Schools vs School Choice",
+      "description": "Whether education improvement should focus on strengthening public schools or expanding school choice and competition.",
+      "poleA": {
+        "label": "Strengthen public schools",
+        "interpretation": "Prioritizes funding and stability for neighborhood public schools."
+      },
+      "poleB": {
+        "label": "Expand school choice",
+        "interpretation": "Prioritizes family choice and competitive pressure across school options."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "health_coverage_model",
+      "domain_id": "health",
+      "name": "Coverage Model",
+      "description": "Preference for a public guarantee/public option versus a private insurance-centered system with targeted public support.",
+      "poleA": {
+        "label": "Public guarantee / larger government role",
+        "interpretation": "Supports public option and expanded public programs to increase coverage."
+      },
+      "poleB": {
+        "label": "Private-centered / targeted public support",
+        "interpretation": "Prefers private insurance as default with government as backstop."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "health_cost_control",
+      "domain_id": "health",
+      "name": "Cost Control Strategy",
+      "description": "Whether healthcare costs are best controlled through government negotiation/regulation or through competition, transparency, and consumer incentives.",
+      "poleA": {
+        "label": "Negotiation/regulation",
+        "interpretation": "More willing to use price caps/negotiation authority to limit costs."
+      },
+      "poleB": {
+        "label": "Competition/transparency",
+        "interpretation": "Prefers market discipline, shopping, and incentives over price controls."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "health_public_health",
+      "domain_id": "health",
+      "name": "Public Health & Addiction Response",
+      "description": "Support for prevention/harm reduction and strong public health capacity versus emphasizing voluntary choice and enforcement-led approaches.",
+      "poleA": {
+        "label": "Prevention/harm reduction",
+        "interpretation": "Supports proactive public health interventions and non-carceral responses."
+      },
+      "poleB": {
+        "label": "Voluntary/enforcement-first",
+        "interpretation": "Prefers limited mandates and more enforcement-based approaches."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "housing_supply_zoning",
+      "domain_id": "housing",
+      "name": "Housing Supply & Zoning",
+      "description": "Openness to increasing housing supply and density versus preserving existing neighborhood patterns and limiting growth.",
+      "poleA": {
+        "label": "Build more / allow density",
+        "interpretation": "Supports zoning reform and faster permitting to increase supply."
+      },
+      "poleB": {
+        "label": "Preserve / limit growth",
+        "interpretation": "Prioritizes neighborhood stability and local control over growth."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "housing_affordability_tools",
+      "domain_id": "housing",
+      "name": "Affordability Tools",
+      "description": "Preference for tenant protections and public/nonprofit housing versus market-supply-first approaches and fewer price controls.",
+      "poleA": {
+        "label": "Tenant protections + public/nonprofit build",
+        "interpretation": "Supports rent stabilization, subsidies, and public/nonprofit housing investment."
+      },
+      "poleB": {
+        "label": "Market supply focus / fewer controls",
+        "interpretation": "Prefers boosting supply and limiting rent controls/mandates that may reduce construction."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "housing_transport_priority",
+      "domain_id": "housing",
+      "name": "Transportation Priorities",
+      "description": "Preference for transit/walk/bike and demand management versus prioritizing cars, parking, and road capacity.",
+      "poleA": {
+        "label": "Transit/walk/bike priority",
+        "interpretation": "Supports transit investment and street redesigns even with less road/parking."
+      },
+      "poleB": {
+        "label": "Car/parking/roads priority",
+        "interpretation": "Prefers road capacity and parking availability as primary planning goals."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "justice_policing_accountability",
+      "domain_id": "justice",
+      "name": "Policing Approach & Accountability",
+      "description": "Support for police accountability, de-escalation, and alternative responders versus enforcement-first proactive policing and broader discretion.",
+      "poleA": {
+        "label": "Accountability/alternatives",
+        "interpretation": "Supports oversight and non-police responses for some situations."
+      },
+      "poleB": {
+        "label": "Enforcement-first",
+        "interpretation": "Prioritizes proactive policing, staffing, and discretion to deter crime."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "justice_sentencing_goals",
+      "domain_id": "justice",
+      "name": "Justice System Goals",
+      "description": "Whether public safety is best advanced via rehabilitation/restoration or via punitive sentencing and incarceration as deterrence.",
+      "poleA": {
+        "label": "Rehabilitation/restorative",
+        "interpretation": "Supports diversion, treatment, and reentry investments."
+      },
+      "poleB": {
+        "label": "Punitive/deterrence",
+        "interpretation": "Supports tougher sentencing and longer incarceration for deterrence and incapacitation."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "justice_firearms",
+      "domain_id": "justice",
+      "name": "Firearm Policy",
+      "description": "Preference for tighter access and safety requirements versus fewer restrictions for law-abiding adults.",
+      "poleA": {
+        "label": "Stronger gun safety rules",
+        "interpretation": "Supports training/permits, broader background checks, safe storage requirements."
+      },
+      "poleB": {
+        "label": "Fewer restrictions",
+        "interpretation": "Prioritizes broad access and minimal barriers for self-defense and rights."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "climate_ambition",
+      "domain_id": "climate",
+      "name": "Climate Policy Ambition",
+      "description": "Willingness to pursue aggressive near-term emissions cuts and resilience investment versus prioritizing affordability/reliability with a slower transition.",
+      "poleA": {
+        "label": "Aggressive action",
+        "interpretation": "Accepts near-term costs/constraints for faster emissions cuts and resilience spending."
+      },
+      "poleB": {
+        "label": "Gradual/affordability-first",
+        "interpretation": "Prioritizes energy cost, reliability, and jobs; prefers slower change."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "climate_energy_portfolio",
+      "domain_id": "climate",
+      "name": "Energy Portfolio Preference",
+      "description": "Preference for renewables/electrification-first versus an all-of-the-above portfolio including nuclear, gas, and/or carbon capture.",
+      "poleA": {
+        "label": "Renewables/electrification-first",
+        "interpretation": "Prioritizes renewables and electrification; limits fossil expansion."
+      },
+      "poleB": {
+        "label": "All-of-the-above",
+        "interpretation": "Supports broader portfolio including nuclear and/or continued fossil fuels with mitigation."
+      },
+      "recommended_cards_per_session": 6
+    },
+    {
+      "id": "climate_permitting",
+      "domain_id": "climate",
+      "name": "Environmental Rules vs Build Speed",
+      "description": "Preference for strong environmental review and local leverage versus streamlined permitting to build housing/energy/infrastructure faster.",
+      "poleA": {
+        "label": "Stronger review/local leverage",
+        "interpretation": "Accepts slower projects to preserve environmental safeguards."
+      },
+      "poleB": {
+        "label": "Streamlined permitting",
+        "interpretation": "Prioritizes speed and scale of building over procedural delay."
+      },
+      "recommended_cards_per_session": 6
+    }
+  ],
+  "items": [
+    {
+      "id": "econ_safetynet_01",
+      "text": "Government should ensure no one falls below a basic standard of living.",
+      "axis_keys": {
+        "econ_safetynet": 1
+      },
+      "level": "general",
+      "tags": [
+        "values"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_safetynet_02",
+      "text": "Most public benefits should require work or job training when possible.",
+      "axis_keys": {
+        "econ_safetynet": -1
+      },
+      "level": "general",
+      "tags": [
+        "conditions"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_safetynet_03",
+      "text": "Cities should offer short-term rental assistance to prevent evictions.",
+      "axis_keys": {
+        "econ_safetynet": 1
+      },
+      "level": "local",
+      "tags": [
+        "housing",
+        "support"
+      ],
+      "tradeoff": "Costs local funds"
+    },
+    {
+      "id": "econ_safetynet_04",
+      "text": "Aid programs should be temporary and limited to emergencies.",
+      "axis_keys": {
+        "econ_safetynet": -1
+      },
+      "level": "general",
+      "tags": [
+        "limits"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_safetynet_05",
+      "text": "States should expand refundable tax credits for low-income workers.",
+      "axis_keys": {
+        "econ_safetynet": 1
+      },
+      "level": "state",
+      "tags": [
+        "tax",
+        "redistribution"
+      ],
+      "tradeoff": "Reduces state revenue"
+    },
+    {
+      "id": "econ_safetynet_06",
+      "text": "Private charities should lead poverty relief more than government programs.",
+      "axis_keys": {
+        "econ_safetynet": -1
+      },
+      "level": "general",
+      "tags": [
+        "private_role"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_investment_01",
+      "text": "I\u2019d vote for a local tax increase to fund public services like schools and roads.",
+      "axis_keys": {
+        "econ_investment": 1
+      },
+      "level": "local",
+      "tags": [
+        "tax",
+        "services"
+      ],
+      "tradeoff": "Higher local taxes"
+    },
+    {
+      "id": "econ_investment_02",
+      "text": "Government should cut spending before raising taxes.",
+      "axis_keys": {
+        "econ_investment": -1
+      },
+      "level": "general",
+      "tags": [
+        "fiscal"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_investment_03",
+      "text": "High-income households should pay a higher share of federal taxes.",
+      "axis_keys": {
+        "econ_investment": 1
+      },
+      "level": "national",
+      "tags": [
+        "tax",
+        "progressive"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_investment_04",
+      "text": "Property taxes should be capped, even if it limits local services.",
+      "axis_keys": {
+        "econ_investment": -1
+      },
+      "level": "local",
+      "tags": [
+        "tax_cap"
+      ],
+      "tradeoff": "Limits service funding"
+    },
+    {
+      "id": "econ_investment_05",
+      "text": "It\u2019s worth taking on some public debt for long-term infrastructure.",
+      "axis_keys": {
+        "econ_investment": 1
+      },
+      "level": "general",
+      "tags": [
+        "debt",
+        "infrastructure"
+      ],
+      "tradeoff": "Adds public debt"
+    },
+    {
+      "id": "econ_investment_06",
+      "text": "Balanced budgets are more important than expanding services.",
+      "axis_keys": {
+        "econ_investment": -1
+      },
+      "level": "general",
+      "tags": [
+        "fiscal"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_school_choice_01",
+      "text": "Teacher pay and training should get more funding.",
+      "axis_keys": {
+        "econ_school_choice": 1
+      },
+      "level": "local",
+      "tags": [
+        "education",
+        "investment"
+      ],
+      "tradeoff": "May raise school budget"
+    },
+    {
+      "id": "econ_school_choice_02",
+      "text": "Public funding should follow students to the school they choose, including private.",
+      "axis_keys": {
+        "econ_school_choice": -1
+      },
+      "level": "state",
+      "tags": [
+        "education",
+        "choice"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_school_choice_03",
+      "text": "Charter schools should be easier to open when families want them.",
+      "axis_keys": {
+        "econ_school_choice": -1
+      },
+      "level": "local",
+      "tags": [
+        "education",
+        "choice"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_school_choice_04",
+      "text": "Public dollars should stay in public schools, not pay for private tuition.",
+      "axis_keys": {
+        "econ_school_choice": 1
+      },
+      "level": "state",
+      "tags": [
+        "education",
+        "public_system"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_school_choice_05",
+      "text": "School performance data should be easy for parents to compare across schools.",
+      "axis_keys": {
+        "econ_school_choice": -1
+      },
+      "level": "state",
+      "tags": [
+        "education",
+        "accountability"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "econ_school_choice_06",
+      "text": "Neighborhood public schools should be protected from closures.",
+      "axis_keys": {
+        "econ_school_choice": 1
+      },
+      "level": "local",
+      "tags": [
+        "education",
+        "stability"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_coverage_model_01",
+      "text": "Everyone should have access to a public health insurance option.",
+      "axis_keys": {
+        "health_coverage_model": 1
+      },
+      "level": "national",
+      "tags": [
+        "coverage"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_coverage_model_02",
+      "text": "Insurance should mainly come from private plans; government should help only those in need.",
+      "axis_keys": {
+        "health_coverage_model": -1
+      },
+      "level": "general",
+      "tags": [
+        "coverage"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_coverage_model_03",
+      "text": "States should expand Medicaid if it increases coverage.",
+      "axis_keys": {
+        "health_coverage_model": 1
+      },
+      "level": "state",
+      "tags": [
+        "medicaid"
+      ],
+      "tradeoff": "Higher state spending"
+    },
+    {
+      "id": "health_coverage_model_04",
+      "text": "People should be able to buy bare-bones plans if they\u2019re cheaper.",
+      "axis_keys": {
+        "health_coverage_model": -1
+      },
+      "level": "national",
+      "tags": [
+        "insurance"
+      ],
+      "tradeoff": "Less comprehensive coverage"
+    },
+    {
+      "id": "health_coverage_model_05",
+      "text": "The federal government should set strong minimum coverage standards for all plans.",
+      "axis_keys": {
+        "health_coverage_model": 1
+      },
+      "level": "national",
+      "tags": [
+        "regulation"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_coverage_model_06",
+      "text": "Employers should not be required to provide health coverage.",
+      "axis_keys": {
+        "health_coverage_model": -1
+      },
+      "level": "national",
+      "tags": [
+        "employer"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_cost_control_01",
+      "text": "Government should negotiate prescription drug prices for public programs.",
+      "axis_keys": {
+        "health_cost_control": 1
+      },
+      "level": "national",
+      "tags": [
+        "drugs",
+        "prices"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_cost_control_02",
+      "text": "Price transparency and shopping around are the best ways to lower costs.",
+      "axis_keys": {
+        "health_cost_control": -1
+      },
+      "level": "general",
+      "tags": [
+        "market",
+        "transparency"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_cost_control_03",
+      "text": "States should cap surprise medical bills and out-of-network charges.",
+      "axis_keys": {
+        "health_cost_control": 1
+      },
+      "level": "state",
+      "tags": [
+        "consumer_protection"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_cost_control_04",
+      "text": "People should pay more when they choose higher-cost providers for the same care.",
+      "axis_keys": {
+        "health_cost_control": -1
+      },
+      "level": "general",
+      "tags": [
+        "incentives"
+      ],
+      "tradeoff": "Higher out-of-pocket costs for some choices"
+    },
+    {
+      "id": "health_cost_control_05",
+      "text": "It\u2019s acceptable for government to limit what hospitals can charge.",
+      "axis_keys": {
+        "health_cost_control": 1
+      },
+      "level": "state",
+      "tags": [
+        "regulation"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_cost_control_06",
+      "text": "Competition among insurers is better than price controls.",
+      "axis_keys": {
+        "health_cost_control": -1
+      },
+      "level": "general",
+      "tags": [
+        "market"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_public_health_01",
+      "text": "Cities should fund mental health crisis teams that aren\u2019t police-led.",
+      "axis_keys": {
+        "health_public_health": 1
+      },
+      "level": "local",
+      "tags": [
+        "mental_health"
+      ],
+      "tradeoff": "Requires local funding"
+    },
+    {
+      "id": "health_public_health_02",
+      "text": "Drug use should be addressed mainly through policing, not public health programs.",
+      "axis_keys": {
+        "health_public_health": -1
+      },
+      "level": "general",
+      "tags": [
+        "drugs"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_public_health_03",
+      "text": "During outbreaks, agencies should require vaccines in high-risk settings (like hospitals).",
+      "axis_keys": {
+        "health_public_health": 1
+      },
+      "level": "national",
+      "tags": [
+        "public_health"
+      ],
+      "tradeoff": "Limits individual choice in some settings"
+    },
+    {
+      "id": "health_public_health_04",
+      "text": "Public health rules should mostly be voluntary, not mandated.",
+      "axis_keys": {
+        "health_public_health": -1
+      },
+      "level": "general",
+      "tags": [
+        "freedom"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "health_public_health_05",
+      "text": "Overdose prevention (like naloxone access) should be widely funded.",
+      "axis_keys": {
+        "health_public_health": 1
+      },
+      "level": "state",
+      "tags": [
+        "harm_reduction"
+      ],
+      "tradeoff": "Public spending"
+    },
+    {
+      "id": "health_public_health_06",
+      "text": "Government shouldn\u2019t use taxes or bans to influence personal health choices.",
+      "axis_keys": {
+        "health_public_health": -1
+      },
+      "level": "general",
+      "tags": [
+        "freedom"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_supply_zoning_01",
+      "text": "Cities should allow more apartments near job centers and transit.",
+      "axis_keys": {
+        "housing_supply_zoning": 1
+      },
+      "level": "local",
+      "tags": [
+        "zoning"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_supply_zoning_02",
+      "text": "Single-family neighborhoods should be protected from major upzoning.",
+      "axis_keys": {
+        "housing_supply_zoning": -1
+      },
+      "level": "local",
+      "tags": [
+        "zoning"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_supply_zoning_03",
+      "text": "Accessory dwelling units (like backyard cottages) should be legal in most areas.",
+      "axis_keys": {
+        "housing_supply_zoning": 1
+      },
+      "level": "state",
+      "tags": [
+        "zoning"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_supply_zoning_04",
+      "text": "New development should be limited if it strains schools, roads, and parking.",
+      "axis_keys": {
+        "housing_supply_zoning": -1
+      },
+      "level": "local",
+      "tags": [
+        "services"
+      ],
+      "tradeoff": "Avoids infrastructure strain but limits new housing"
+    },
+    {
+      "id": "housing_supply_zoning_05",
+      "text": "Permitting for housing should be faster and simpler.",
+      "axis_keys": {
+        "housing_supply_zoning": 1
+      },
+      "level": "local",
+      "tags": [
+        "permitting"
+      ],
+      "tradeoff": "Less time for public review"
+    },
+    {
+      "id": "housing_supply_zoning_06",
+      "text": "Local residents should have broad power to block projects they dislike.",
+      "axis_keys": {
+        "housing_supply_zoning": -1
+      },
+      "level": "local",
+      "tags": [
+        "local_control"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_affordability_tools_01",
+      "text": "Rent increases should be capped for many tenants, even if some building slows.",
+      "axis_keys": {
+        "housing_affordability_tools": 1
+      },
+      "level": "local",
+      "tags": [
+        "rent"
+      ],
+      "tradeoff": "May reduce new construction"
+    },
+    {
+      "id": "housing_affordability_tools_02",
+      "text": "Building more homes is more effective than capping rents.",
+      "axis_keys": {
+        "housing_affordability_tools": -1
+      },
+      "level": "general",
+      "tags": [
+        "supply"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_affordability_tools_03",
+      "text": "Cities should invest in nonprofit or publicly owned affordable housing.",
+      "axis_keys": {
+        "housing_affordability_tools": 1
+      },
+      "level": "local",
+      "tags": [
+        "public_housing"
+      ],
+      "tradeoff": "Requires local funding"
+    },
+    {
+      "id": "housing_affordability_tools_04",
+      "text": "Developers shouldn\u2019t be required to include affordable units if it reduces total housing built.",
+      "axis_keys": {
+        "housing_affordability_tools": -1
+      },
+      "level": "local",
+      "tags": [
+        "mandates"
+      ],
+      "tradeoff": "Fewer affordability set-asides"
+    },
+    {
+      "id": "housing_affordability_tools_05",
+      "text": "Short-term rentals should be limited to protect long-term housing supply.",
+      "axis_keys": {
+        "housing_affordability_tools": 1
+      },
+      "level": "local",
+      "tags": [
+        "regulation"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_affordability_tools_06",
+      "text": "Housing vouchers are better than building public housing.",
+      "axis_keys": {
+        "housing_affordability_tools": -1
+      },
+      "level": "state",
+      "tags": [
+        "vouchers"
+      ],
+      "tradeoff": "Uses subsidies rather than building units"
+    },
+    {
+      "id": "housing_transport_priority_01",
+      "text": "Cities should invest more in public transit, even if it reduces driving lanes.",
+      "axis_keys": {
+        "housing_transport_priority": 1
+      },
+      "level": "local",
+      "tags": [
+        "transit"
+      ],
+      "tradeoff": "Less road capacity for cars"
+    },
+    {
+      "id": "housing_transport_priority_02",
+      "text": "Road capacity and parking should come before transit projects.",
+      "axis_keys": {
+        "housing_transport_priority": -1
+      },
+      "level": "local",
+      "tags": [
+        "roads"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "housing_transport_priority_03",
+      "text": "Protected bike lanes and safer sidewalks are worth the cost.",
+      "axis_keys": {
+        "housing_transport_priority": 1
+      },
+      "level": "local",
+      "tags": [
+        "active_transport"
+      ],
+      "tradeoff": "Public spending and street space tradeoffs"
+    },
+    {
+      "id": "housing_transport_priority_04",
+      "text": "New housing should include minimum parking requirements.",
+      "axis_keys": {
+        "housing_transport_priority": -1
+      },
+      "level": "local",
+      "tags": [
+        "parking"
+      ],
+      "tradeoff": "Can raise housing costs"
+    },
+    {
+      "id": "housing_transport_priority_05",
+      "text": "Charging drivers for congestion (tolls) is a fair way to reduce traffic.",
+      "axis_keys": {
+        "housing_transport_priority": 1
+      },
+      "level": "local",
+      "tags": [
+        "pricing"
+      ],
+      "tradeoff": "Higher costs for some drivers"
+    },
+    {
+      "id": "housing_transport_priority_06",
+      "text": "Transit projects cost too much; we should focus on roads instead.",
+      "axis_keys": {
+        "housing_transport_priority": -1
+      },
+      "level": "local",
+      "tags": [
+        "roads"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_policing_accountability_01",
+      "text": "Independent civilian oversight improves trust in policing.",
+      "axis_keys": {
+        "justice_policing_accountability": 1
+      },
+      "level": "local",
+      "tags": [
+        "oversight"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_policing_accountability_02",
+      "text": "Police need more funding and staffing to reduce crime.",
+      "axis_keys": {
+        "justice_policing_accountability": -1
+      },
+      "level": "local",
+      "tags": [
+        "budget"
+      ],
+      "tradeoff": "Higher local spending"
+    },
+    {
+      "id": "justice_policing_accountability_03",
+      "text": "Non-police responders should handle many mental health calls.",
+      "axis_keys": {
+        "justice_policing_accountability": 1
+      },
+      "level": "local",
+      "tags": [
+        "mental_health"
+      ],
+      "tradeoff": "Requires alternate-response funding"
+    },
+    {
+      "id": "justice_policing_accountability_04",
+      "text": "Officers should have broad discretion to stop and question people in high-crime areas.",
+      "axis_keys": {
+        "justice_policing_accountability": -1
+      },
+      "level": "local",
+      "tags": [
+        "enforcement"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_policing_accountability_05",
+      "text": "Body cameras should be required and used consistently.",
+      "axis_keys": {
+        "justice_policing_accountability": 1
+      },
+      "level": "local",
+      "tags": [
+        "accountability"
+      ],
+      "tradeoff": "Adds equipment and admin costs"
+    },
+    {
+      "id": "justice_policing_accountability_06",
+      "text": "High-visibility patrols and traffic stops are key to preventing crime.",
+      "axis_keys": {
+        "justice_policing_accountability": -1
+      },
+      "level": "local",
+      "tags": [
+        "enforcement"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_sentencing_goals_01",
+      "text": "Nonviolent drug offenses should be handled mainly with treatment, not jail.",
+      "axis_keys": {
+        "justice_sentencing_goals": 1
+      },
+      "level": "state",
+      "tags": [
+        "treatment"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_sentencing_goals_02",
+      "text": "Mandatory minimum sentences are necessary to deter crime.",
+      "axis_keys": {
+        "justice_sentencing_goals": -1
+      },
+      "level": "state",
+      "tags": [
+        "sentencing"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_sentencing_goals_03",
+      "text": "Bail should depend more on risk than on ability to pay.",
+      "axis_keys": {
+        "justice_sentencing_goals": 1
+      },
+      "level": "state",
+      "tags": [
+        "bail"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_sentencing_goals_04",
+      "text": "Keeping repeat offenders locked up longer makes communities safer.",
+      "axis_keys": {
+        "justice_sentencing_goals": -1
+      },
+      "level": "state",
+      "tags": [
+        "incarceration"
+      ],
+      "tradeoff": "Higher prison costs"
+    },
+    {
+      "id": "justice_sentencing_goals_05",
+      "text": "Job training and reentry support reduce crime and are worth funding.",
+      "axis_keys": {
+        "justice_sentencing_goals": 1
+      },
+      "level": "state",
+      "tags": [
+        "reentry"
+      ],
+      "tradeoff": "Public spending"
+    },
+    {
+      "id": "justice_sentencing_goals_06",
+      "text": "Parole should be harder to get for most offenses.",
+      "axis_keys": {
+        "justice_sentencing_goals": -1
+      },
+      "level": "state",
+      "tags": [
+        "parole"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_firearms_01",
+      "text": "Buying a gun should require a permit or safety training.",
+      "axis_keys": {
+        "justice_firearms": 1
+      },
+      "level": "state",
+      "tags": [
+        "training"
+      ],
+      "tradeoff": "Adds requirements for purchase"
+    },
+    {
+      "id": "justice_firearms_02",
+      "text": "Law-abiding adults should be able to carry for self-defense with minimal barriers.",
+      "axis_keys": {
+        "justice_firearms": -1
+      },
+      "level": "state",
+      "tags": [
+        "carry"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_firearms_03",
+      "text": "Background checks should apply to most gun sales, including private sales.",
+      "axis_keys": {
+        "justice_firearms": 1
+      },
+      "level": "national",
+      "tags": [
+        "background_checks"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_firearms_04",
+      "text": "Bans on certain firearms go too far.",
+      "axis_keys": {
+        "justice_firearms": -1
+      },
+      "level": "national",
+      "tags": [
+        "regulation"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_firearms_05",
+      "text": "Safe storage laws are reasonable to prevent accidents and theft.",
+      "axis_keys": {
+        "justice_firearms": 1
+      },
+      "level": "state",
+      "tags": [
+        "safety"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "justice_firearms_06",
+      "text": "Gun ownership is a fundamental right that should face few limits.",
+      "axis_keys": {
+        "justice_firearms": -1
+      },
+      "level": "general",
+      "tags": [
+        "rights"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_ambition_01",
+      "text": "The U.S. should set strong targets to cut emissions this decade.",
+      "axis_keys": {
+        "climate_ambition": 1
+      },
+      "level": "national",
+      "tags": [
+        "targets"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_ambition_02",
+      "text": "Energy policy should prioritize affordability and reliability, even if emissions fall slowly.",
+      "axis_keys": {
+        "climate_ambition": -1
+      },
+      "level": "general",
+      "tags": [
+        "affordability"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_ambition_03",
+      "text": "States should require utilities to increase clean energy over time.",
+      "axis_keys": {
+        "climate_ambition": 1
+      },
+      "level": "state",
+      "tags": [
+        "standards"
+      ],
+      "tradeoff": "May raise short-term electricity costs"
+    },
+    {
+      "id": "climate_ambition_04",
+      "text": "Regulations that raise gasoline and electricity prices should be limited.",
+      "axis_keys": {
+        "climate_ambition": -1
+      },
+      "level": "state",
+      "tags": [
+        "costs"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_ambition_05",
+      "text": "Local governments should spend more on climate resilience (flood, heat) even if taxes rise.",
+      "axis_keys": {
+        "climate_ambition": 1
+      },
+      "level": "local",
+      "tags": [
+        "resilience"
+      ],
+      "tradeoff": "Higher local taxes"
+    },
+    {
+      "id": "climate_ambition_06",
+      "text": "The U.S. shouldn\u2019t make costly climate commitments unless other countries do the same.",
+      "axis_keys": {
+        "climate_ambition": -1
+      },
+      "level": "international",
+      "tags": [
+        "coordination"
+      ],
+      "tradeoff": "Delays action without global alignment"
+    },
+    {
+      "id": "climate_energy_portfolio_01",
+      "text": "New buildings should be encouraged to use electric appliances instead of gas.",
+      "axis_keys": {
+        "climate_energy_portfolio": 1
+      },
+      "level": "local",
+      "tags": [
+        "buildings"
+      ],
+      "tradeoff": "Upfront retrofit costs for some"
+    },
+    {
+      "id": "climate_energy_portfolio_02",
+      "text": "Expanding nuclear power is important for reliable low-carbon energy.",
+      "axis_keys": {
+        "climate_energy_portfolio": -1
+      },
+      "level": "national",
+      "tags": [
+        "nuclear"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_energy_portfolio_03",
+      "text": "The U.S. should stop approving new oil and gas drilling on public lands.",
+      "axis_keys": {
+        "climate_energy_portfolio": 1
+      },
+      "level": "national",
+      "tags": [
+        "public_lands"
+      ],
+      "tradeoff": "Potentially higher energy prices/jobs impact"
+    },
+    {
+      "id": "climate_energy_portfolio_04",
+      "text": "Domestic oil and gas production should be supported for energy security.",
+      "axis_keys": {
+        "climate_energy_portfolio": -1
+      },
+      "level": "national",
+      "tags": [
+        "energy_security"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_energy_portfolio_05",
+      "text": "Public funding for EV charging is a good investment.",
+      "axis_keys": {
+        "climate_energy_portfolio": 1
+      },
+      "level": "state",
+      "tags": [
+        "ev"
+      ],
+      "tradeoff": "Public spending"
+    },
+    {
+      "id": "climate_energy_portfolio_06",
+      "text": "Carbon capture should be funded to cut emissions without ending fossil fuels.",
+      "axis_keys": {
+        "climate_energy_portfolio": -1
+      },
+      "level": "national",
+      "tags": [
+        "carbon_capture"
+      ],
+      "tradeoff": "Public subsidies"
+    },
+    {
+      "id": "climate_permitting_01",
+      "text": "Environmental reviews should be thorough, even if projects take longer.",
+      "axis_keys": {
+        "climate_permitting": 1
+      },
+      "level": "general",
+      "tags": [
+        "review"
+      ],
+      "tradeoff": "Slower build timelines"
+    },
+    {
+      "id": "climate_permitting_02",
+      "text": "Permitting for housing and clean energy should be faster, even if it limits lawsuits.",
+      "axis_keys": {
+        "climate_permitting": -1
+      },
+      "level": "state",
+      "tags": [
+        "streamlining"
+      ],
+      "tradeoff": "Less ability to challenge projects"
+    },
+    {
+      "id": "climate_permitting_03",
+      "text": "Protecting wetlands and habitat should outweigh most new development.",
+      "axis_keys": {
+        "climate_permitting": 1
+      },
+      "level": "state",
+      "tags": [
+        "conservation"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_permitting_04",
+      "text": "If a project meets clear standards, it shouldn\u2019t be delayed for years in court.",
+      "axis_keys": {
+        "climate_permitting": -1
+      },
+      "level": "general",
+      "tags": [
+        "streamlining"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_permitting_05",
+      "text": "Local communities should have veto power over major industrial projects nearby.",
+      "axis_keys": {
+        "climate_permitting": 1
+      },
+      "level": "local",
+      "tags": [
+        "local_control"
+      ],
+      "tradeoff": null
+    },
+    {
+      "id": "climate_permitting_06",
+      "text": "Building new transmission lines is urgent and should be easier to approve.",
+      "axis_keys": {
+        "climate_permitting": -1
+      },
+      "level": "state",
+      "tags": [
+        "grid"
+      ],
+      "tradeoff": "Impacts land use locally"
+    }
+  ]
+}
