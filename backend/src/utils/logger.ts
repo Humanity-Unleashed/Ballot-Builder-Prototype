@@ -5,14 +5,15 @@
  * Logs to console in development, JSON format in production.
  */
 
-const winston = require('winston');
+import winston from 'winston';
 
 const { combine, timestamp, printf, colorize, json } = winston.format;
 
 // Custom format for development (readable)
-const devFormat = printf(({ level, message, timestamp, ...meta }) => {
+const devFormat = printf((info) => {
+  const { level, message, timestamp: ts, ...meta } = info;
   const metaStr = Object.keys(meta).length ? JSON.stringify(meta, null, 2) : '';
-  return `${timestamp} [${level}]: ${message} ${metaStr}`;
+  return `${ts} [${level}]: ${message} ${metaStr}`;
 });
 
 // Create logger instance
@@ -46,4 +47,4 @@ if (process.env.NODE_ENV === 'production') {
   );
 }
 
-module.exports = logger;
+export default logger;

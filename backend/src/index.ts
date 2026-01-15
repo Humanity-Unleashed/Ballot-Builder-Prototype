@@ -1,23 +1,23 @@
 /**
- * Ballot Builder - Express API Server
+ * Ballot Builder - Express API Server (TypeScript)
  *
  * This is the main entry point for the backend API.
  * The React Native mobile app connects to this server.
  */
 
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
+import 'dotenv/config';
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import rateLimit from 'express-rate-limit';
 
-const logger = require('./utils/logger');
-const routes = require('./routes');
-const { notFoundHandler, errorHandler } = require('./middleware/errorHandler');
+import logger from './utils/logger';
+import routes from './routes';
+import { notFoundHandler, errorHandler } from './middleware/errorHandler';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
 
 // ===========================================
 // Security Middleware
@@ -52,7 +52,7 @@ app.use('/api/', limiter);
 // Request logging
 app.use(
   morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev', {
-    stream: { write: (message) => logger.http(message.trim()) },
+    stream: { write: (message: string) => logger.http(message.trim()) },
   })
 );
 
@@ -67,7 +67,7 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 // ===========================================
 
 // Health check endpoint (no rate limiting)
-app.get('/health', (req, res) => {
+app.get('/health', (_req: Request, res: Response) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
@@ -98,7 +98,7 @@ app.listen(PORT, '0.0.0.0', () => {
 
   console.log(`
 ╔════════════════════════════════════════════════════╗
-║       Ballot Builder API Server                     ║
+║       Ballot Builder API Server (TypeScript)        ║
 ╠════════════════════════════════════════════════════╣
 ║  Status:  Running                                   ║
 ║  Port:    ${String(PORT).padEnd(43)}║
@@ -111,14 +111,14 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 // Handle uncaught exceptions
-process.on('uncaughtException', (error) => {
+process.on('uncaughtException', (error: Error) => {
   logger.error('Uncaught Exception', { error: error.message, stack: error.stack });
   process.exit(1);
 });
 
 // Handle unhandled promise rejections
-process.on('unhandledRejection', (reason, promise) => {
+process.on('unhandledRejection', (reason: unknown, promise: Promise<unknown>) => {
   logger.error('Unhandled Rejection', { reason, promise });
 });
 
-module.exports = app;
+export default app;

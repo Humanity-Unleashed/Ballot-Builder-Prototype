@@ -4,8 +4,17 @@
  * Standardized error handling for the API.
  */
 
-class AppError extends Error {
-  constructor(message, statusCode, code = null) {
+export interface ValidationErrorItem {
+  field: string;
+  message: string;
+}
+
+export class AppError extends Error {
+  statusCode: number;
+  code: string;
+  isOperational: boolean;
+
+  constructor(message: string, statusCode: number, code: string | null = null) {
     super(message);
     this.statusCode = statusCode;
     this.code = code || this.constructor.name;
@@ -15,56 +24,47 @@ class AppError extends Error {
   }
 }
 
-class BadRequestError extends AppError {
+export class BadRequestError extends AppError {
   constructor(message = 'Bad request') {
     super(message, 400, 'BAD_REQUEST');
   }
 }
 
-class UnauthorizedError extends AppError {
+export class UnauthorizedError extends AppError {
   constructor(message = 'Unauthorized') {
     super(message, 401, 'UNAUTHORIZED');
   }
 }
 
-class ForbiddenError extends AppError {
+export class ForbiddenError extends AppError {
   constructor(message = 'Forbidden') {
     super(message, 403, 'FORBIDDEN');
   }
 }
 
-class NotFoundError extends AppError {
+export class NotFoundError extends AppError {
   constructor(message = 'Not found') {
     super(message, 404, 'NOT_FOUND');
   }
 }
 
-class ConflictError extends AppError {
+export class ConflictError extends AppError {
   constructor(message = 'Conflict') {
     super(message, 409, 'CONFLICT');
   }
 }
 
-class ValidationError extends AppError {
-  constructor(errors = []) {
+export class ValidationError extends AppError {
+  errors: ValidationErrorItem[];
+
+  constructor(errors: ValidationErrorItem[] = []) {
     super('Validation failed', 422, 'VALIDATION_ERROR');
     this.errors = errors;
   }
 }
 
-class InternalError extends AppError {
+export class InternalError extends AppError {
   constructor(message = 'Internal server error') {
     super(message, 500, 'INTERNAL_ERROR');
   }
 }
-
-module.exports = {
-  AppError,
-  BadRequestError,
-  UnauthorizedError,
-  ForbiddenError,
-  NotFoundError,
-  ConflictError,
-  ValidationError,
-  InternalError,
-};

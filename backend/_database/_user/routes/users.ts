@@ -5,24 +5,23 @@
  * POST /api/users/profile         - Update user profile
  * POST /api/users/districts       - Set user districts
  * POST /api/users/initial-preferences - Set initial preferences
+ *
+ * ARCHIVED: This file is kept for future use when authentication is re-enabled.
  */
 
-const express = require('express');
-const { body } = require('express-validator');
-const { validate } = require('../middleware/validate');
-const { requireAuth } = require('../middleware/auth');
-const authController = require('../controllers/authController');
-const userController = require('../controllers/userController');
+import { Router } from 'express';
+import { body } from 'express-validator';
+import { validate } from '../../src/middleware/validate';
+import * as userController from '../controllers/userController';
 
-const router = express.Router();
+const router = Router();
 
-// All routes require authentication
-router.use(requireAuth);
+// Prototype: No authentication required
 
 /**
  * GET /api/users/me
  */
-router.get('/me', authController.getCurrentUser);
+router.get('/me', userController.getCurrentUser);
 
 /**
  * POST /api/users/profile
@@ -77,4 +76,4 @@ router.post(
   userController.setInitialPreferences
 );
 
-module.exports = router;
+export default router;

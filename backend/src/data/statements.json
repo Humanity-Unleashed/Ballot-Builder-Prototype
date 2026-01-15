@@ -1,354 +1,124 @@
 {
   "statements": [
     {
-      "id": "stmt-001",
-      "statementText": "Healthcare should be provided by the government as a universal right for all citizens",
-      "issueArea": "healthcare",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "1",
+      "text": "Healthcare should be more affordable and accessible for everyone",
+      "category": "healthcare",
+      "vector": [0.8, 0.2, 0.1, 0.3, 0.5]
     },
     {
-      "id": "stmt-002",
-      "statementText": "Private health insurance companies should compete in an open market without government intervention",
-      "issueArea": "healthcare",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "2",
+      "text": "We should invest significantly more in renewable energy sources",
+      "category": "environment",
+      "vector": [0.2, 0.1, 0.9, 0.3, 0.4]
     },
     {
-      "id": "stmt-003",
-      "statementText": "Prescription drug prices should be regulated by the federal government",
-      "issueArea": "healthcare",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "3",
+      "text": "Education funding should be increased at all levels",
+      "category": "education",
+      "vector": [0.3, 0.9, 0.2, 0.1, 0.6]
     },
     {
-      "id": "stmt-004",
-      "statementText": "Employers should be required to provide health insurance to full-time employees",
-      "issueArea": "healthcare",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "4",
+      "text": "Income tax rates should be more progressive for higher earners",
+      "category": "economy",
+      "vector": [0.1, 0.3, 0.2, 0.8, 0.3]
     },
     {
-      "id": "stmt-005",
-      "statementText": "Mental health services should receive the same insurance coverage as physical health services",
-      "issueArea": "healthcare",
-      "specificityLevel": "specific",
-      "isActive": true
+      "id": "5",
+      "text": "Public transportation should be expanded and subsidized",
+      "category": "infrastructure",
+      "vector": [0.4, 0.5, 0.6, 0.4, 0.9]
     },
     {
-      "id": "stmt-006",
-      "statementText": "Public schools should receive increased federal funding to improve educational outcomes",
-      "issueArea": "education",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "6",
+      "text": "Criminal justice reform should focus on rehabilitation over punishment",
+      "category": "criminal-justice",
+      "vector": [0.7, 0.3, 0.2, 0.5, 0.4]
     },
     {
-      "id": "stmt-007",
-      "statementText": "Parents should be able to use public funds to send children to private or charter schools",
-      "issueArea": "education",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "7",
+      "text": "Immigration policies should be more welcoming to refugees",
+      "category": "immigration",
+      "vector": [0.6, 0.4, 0.3, 0.4, 0.5]
     },
     {
-      "id": "stmt-008",
-      "statementText": "College tuition at public universities should be free for all students",
-      "issueArea": "education",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "8",
+      "text": "Military spending should be reduced in favor of domestic programs",
+      "category": "foreign-policy",
+      "vector": [0.5, 0.6, 0.4, 0.7, 0.3]
     },
     {
-      "id": "stmt-009",
-      "statementText": "Teachers should be paid based on performance metrics and student outcomes",
-      "issueArea": "education",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "9",
+      "text": "Voting rights protections should be strengthened",
+      "category": "civil-rights",
+      "vector": [0.9, 0.4, 0.3, 0.5, 0.6]
     },
     {
-      "id": "stmt-010",
-      "statementText": "Student loan debt should be forgiven for borrowers earning below the median income",
-      "issueArea": "education",
-      "specificityLevel": "specific",
-      "isActive": true
+      "id": "10",
+      "text": "Tech companies should face stronger privacy regulations",
+      "category": "technology",
+      "vector": [0.6, 0.5, 0.4, 0.6, 0.5]
     },
     {
-      "id": "stmt-011",
-      "statementText": "The federal minimum wage should be significantly increased from current levels",
-      "issueArea": "economy",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "11",
+      "text": "Minimum wage should be raised significantly",
+      "category": "economy",
+      "vector": [0.3, 0.4, 0.2, 0.9, 0.4]
     },
     {
-      "id": "stmt-012",
-      "statementText": "Reducing regulations on businesses creates more jobs and economic growth",
-      "issueArea": "economy",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "12",
+      "text": "Climate change action should be a top government priority",
+      "category": "environment",
+      "vector": [0.2, 0.3, 0.95, 0.4, 0.5]
     },
     {
-      "id": "stmt-013",
-      "statementText": "Large corporations should pay a higher tax rate than small businesses",
-      "issueArea": "economy",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "13",
+      "text": "Police departments need more accountability and oversight",
+      "category": "criminal-justice",
+      "vector": [0.8, 0.4, 0.3, 0.6, 0.5]
     },
     {
-      "id": "stmt-014",
-      "statementText": "Workers should have the right to form and join labor unions without employer interference",
-      "issueArea": "economy",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "14",
+      "text": "College tuition should be free for all students",
+      "category": "education",
+      "vector": [0.4, 0.95, 0.3, 0.5, 0.6]
     },
     {
-      "id": "stmt-015",
-      "statementText": "Government should provide job training programs for workers displaced by automation",
-      "issueArea": "economy",
-      "specificityLevel": "specific",
-      "isActive": true
+      "id": "15",
+      "text": "Gun ownership regulations should be strengthened",
+      "category": "civil-rights",
+      "vector": [0.7, 0.5, 0.4, 0.6, 0.4]
     },
     {
-      "id": "stmt-016",
-      "statementText": "The government should take aggressive action to combat climate change even if it increases energy costs",
-      "issueArea": "environment",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "16",
+      "text": "Social safety net programs should be expanded",
+      "category": "economy",
+      "vector": [0.5, 0.6, 0.3, 0.85, 0.5]
     },
     {
-      "id": "stmt-017",
-      "statementText": "Environmental regulations should be reduced to allow for more economic development",
-      "issueArea": "environment",
-      "specificityLevel": "broad",
-      "isActive": true
+      "id": "17",
+      "text": "Renewable energy should replace fossil fuels as quickly as possible",
+      "category": "environment",
+      "vector": [0.3, 0.2, 0.9, 0.4, 0.6]
     },
     {
-      "id": "stmt-018",
-      "statementText": "The country should transition to 100% renewable energy sources within the next two decades",
-      "issueArea": "environment",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "18",
+      "text": "Mental health services should be more widely available",
+      "category": "healthcare",
+      "vector": [0.9, 0.4, 0.2, 0.5, 0.3]
     },
     {
-      "id": "stmt-019",
-      "statementText": "Carbon emissions should be taxed to discourage pollution and fund clean energy research",
-      "issueArea": "environment",
-      "specificityLevel": "moderate",
-      "isActive": true
+      "id": "19",
+      "text": "Infrastructure investments should prioritize green technologies",
+      "category": "infrastructure",
+      "vector": [0.4, 0.5, 0.8, 0.5, 0.9]
     },
     {
-      "id": "stmt-020",
-      "statementText": "Electric vehicle purchases should be subsidized by the government to accelerate adoption",
-      "issueArea": "environment",
-      "specificityLevel": "specific",
-      "isActive": true
-    },
-    {
-      "id": "stmt-021",
-      "statementText": "Immigration levels should be reduced to protect jobs for current citizens",
-      "issueArea": "immigration",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-022",
-      "statementText": "There should be a clear pathway to citizenship for undocumented immigrants already living in the country",
-      "issueArea": "immigration",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-023",
-      "statementText": "Border security funding should be significantly increased to prevent illegal crossings",
-      "issueArea": "immigration",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-024",
-      "statementText": "Employers who hire undocumented workers should face serious legal penalties",
-      "issueArea": "immigration",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-025",
-      "statementText": "Refugees fleeing violence and persecution should be welcomed and given legal protection",
-      "issueArea": "immigration",
-      "specificityLevel": "specific",
-      "isActive": true
-    },
-    {
-      "id": "stmt-026",
-      "statementText": "Police departments should receive more funding to improve public safety",
-      "issueArea": "criminal_justice",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-027",
-      "statementText": "The criminal justice system should focus more on rehabilitation than punishment",
-      "issueArea": "criminal_justice",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-028",
-      "statementText": "Cash bail should be eliminated as it discriminates against low-income defendants",
-      "issueArea": "criminal_justice",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-029",
-      "statementText": "Mandatory minimum sentences should be eliminated to give judges more discretion",
-      "issueArea": "criminal_justice",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-030",
-      "statementText": "Non-violent drug offenders should receive treatment instead of prison sentences",
-      "issueArea": "criminal_justice",
-      "specificityLevel": "specific",
-      "isActive": true
-    },
-    {
-      "id": "stmt-031",
-      "statementText": "Taxes on wealthy individuals should be significantly increased to fund public services",
-      "issueArea": "taxes",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-032",
-      "statementText": "Tax cuts for businesses lead to economic growth that benefits everyone",
-      "issueArea": "taxes",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-033",
-      "statementText": "The federal government should prioritize reducing the national debt over new spending programs",
-      "issueArea": "taxes",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-034",
-      "statementText": "Capital gains should be taxed at the same rate as regular income",
-      "issueArea": "taxes",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-035",
-      "statementText": "Social Security benefits should be expanded even if it requires higher payroll taxes",
-      "issueArea": "taxes",
-      "specificityLevel": "specific",
-      "isActive": true
-    },
-    {
-      "id": "stmt-036",
-      "statementText": "The government should build more public housing to address homelessness and affordability",
-      "issueArea": "housing",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-037",
-      "statementText": "Zoning regulations should be reduced to allow more housing construction",
-      "issueArea": "housing",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-038",
-      "statementText": "Rent control policies should be implemented to protect tenants from excessive increases",
-      "issueArea": "housing",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-039",
-      "statementText": "First-time homebuyers should receive government assistance for down payments",
-      "issueArea": "housing",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-040",
-      "statementText": "Foreign investors should be restricted from purchasing residential property",
-      "issueArea": "housing",
-      "specificityLevel": "specific",
-      "isActive": true
-    },
-    {
-      "id": "stmt-041",
-      "statementText": "The right to own firearms should be protected with minimal government restrictions",
-      "issueArea": "gun_policy",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-042",
-      "statementText": "Stricter gun control laws are necessary to reduce gun violence",
-      "issueArea": "gun_policy",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-043",
-      "statementText": "Universal background checks should be required for all gun purchases",
-      "issueArea": "gun_policy",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-044",
-      "statementText": "Assault-style weapons should be banned from civilian ownership",
-      "issueArea": "gun_policy",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-045",
-      "statementText": "Red flag laws allowing temporary removal of firearms from at-risk individuals should be enacted",
-      "issueArea": "gun_policy",
-      "specificityLevel": "specific",
-      "isActive": true
-    },
-    {
-      "id": "stmt-046",
-      "statementText": "Abortion should be legal and accessible without government restrictions",
-      "issueArea": "social_issues",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-047",
-      "statementText": "Marriage should be defined as between one man and one woman",
-      "issueArea": "social_issues",
-      "specificityLevel": "broad",
-      "isActive": true
-    },
-    {
-      "id": "stmt-048",
-      "statementText": "Transgender individuals should be able to use bathrooms matching their gender identity",
-      "issueArea": "social_issues",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-049",
-      "statementText": "Affirmative action policies in college admissions should continue to promote diversity",
-      "issueArea": "social_issues",
-      "specificityLevel": "moderate",
-      "isActive": true
-    },
-    {
-      "id": "stmt-050",
-      "statementText": "Social media companies should be regulated to prevent spread of misinformation",
-      "issueArea": "social_issues",
-      "specificityLevel": "specific",
-      "isActive": true
+      "id": "20",
+      "text": "Abortion access should be protected as a constitutional right",
+      "category": "civil-rights",
+      "vector": [0.85, 0.4, 0.3, 0.5, 0.4]
     }
   ]
 }
