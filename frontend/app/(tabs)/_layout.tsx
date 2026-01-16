@@ -92,6 +92,24 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="civic-assessment"
+        options={{
+          title: 'Assessment',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="analytics-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="adaptive-assessment"
+        options={{
+          title: 'Smart',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="sparkles-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

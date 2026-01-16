@@ -18,7 +18,11 @@
       "Bash(pkill:*)",
       "Bash(fuser:*)",
       "Bash(npm run typecheck:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(dir \"%ProgramFiles%\")",
+      "Bash(findstr:*)",
+      "Bash(powershell.exe -Command \"irm https://claude.ai/install.ps1 | iex\")",
+      "Bash(powershell.exe:*)"
     ]
   }
 }
