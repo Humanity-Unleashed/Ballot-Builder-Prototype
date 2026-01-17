@@ -2,6 +2,8 @@
 
 This guide explains how data flows through the app, from user input to final recommendations.
 
+> **New to the project?** Start with [BEGINNER_TUTORIAL.md](BEGINNER_TUTORIAL.md) for a high-level overview before diving into the technical details here.
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [User Journey with Data Flow](#user-journey-with-data-flow)

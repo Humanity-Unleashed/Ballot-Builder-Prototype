@@ -3,6 +3,7 @@
  *
  * Provides civic blueprint profile state and methods throughout the app.
  * Manages domain importance and axis stance values with persistence.
+ * Fetches spec and scoring from backend API.
  *
  * @example
  * const { profile, updateAxisValue, updateImportance, resetAxisToLearned } = useBlueprint();
@@ -10,8 +11,7 @@
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
-import civicSpec from '../data/civic_axes_spec_v1.json';
-import { scoreAxes, SwipeEvent, AxisScore } from '../utils/civicScoring';
+import { civicAxesApi, AxisScore, SwipeEvent } from '../services/api';
 import type { Spec } from '../types/civicAssessment';
 import type {
   BlueprintProfile,
@@ -38,8 +38,8 @@ interface BlueprintContextType {
   profile: BlueprintProfile | null;
   /** Whether profile is loading */
   isLoading: boolean;
-  /** The civic spec data */
-  spec: Spec;
+  /** The civic spec data (null while loading) */
+  spec: Spec | null;
   /** Recorded swipes for scoring */
   swipes: SwipeEvent[];
   /** Update an axis stance value */
@@ -67,23 +67,6 @@ const BlueprintContext = createContext<BlueprintContextType | undefined>(undefin
 // ===========================================
 // Helpers
 // ===========================================
-
-/**
- * Convert axis score [-1, 1] to slider value [0, 10]
- * 0 = poleA, 10 = poleB
- */
-function scoreToSliderValue(score: number): number {
-  // score -1 -> 0, score 0 -> 5, score +1 -> 10
-  const value = 5 - 5 * score;
-  return Math.round(Math.max(0, Math.min(10, value)));
-}
-
-/**
- * Convert slider value [0, 10] to score [-1, 1]
- */
-function sliderValueToScore(value: number): number {
-  return (5 - value) / 5;
-}
 
 /**
  * Create initial profile from spec with default values
@@ -125,16 +108,22 @@ function createDefaultProfile(spec: Spec, userId: string): BlueprintProfile {
 }
 
 /**
- * Update profile from axis scores (from swipes)
+ * Update profile from axis scores (from backend scoring)
  */
 function updateProfileFromScores(
   profile: BlueprintProfile,
-  scores: Record<string, AxisScore>
+  scores: AxisScore[]
 ): BlueprintProfile {
+  // Convert scores array to map for easier lookup
+  const scoresMap: Record<string, AxisScore> = {};
+  for (const score of scores) {
+    scoresMap[score.axis_id] = score;
+  }
+
   const updatedDomains = profile.domains.map(domain => ({
     ...domain,
     axes: domain.axes.map(axis => {
-      const score = scores[axis.axis_id];
+      const score = scoresMap[axis.axis_id];
       if (!score || score.n_answered === 0) {
         return axis;
       }
@@ -163,7 +152,7 @@ function updateProfileFromScores(
         evidence: {
           n_items_answered: score.n_answered,
           n_unsure: score.n_unsure,
-          top_driver_item_ids: score.top_drivers.map(d => d.item_id),
+          top_driver_item_ids: score.top_drivers,
         },
       };
     }),
@@ -181,38 +170,54 @@ function updateProfileFromScores(
 // ===========================================
 
 export function BlueprintProvider({ children }: { children: React.ReactNode }) {
-  const spec = civicSpec as unknown as Spec;
+  const [spec, setSpec] = useState<Spec | null>(null);
   const [profile, setProfile] = useState<BlueprintProfile | null>(null);
   const [swipes, setSwipes] = useState<SwipeEvent[]>([]);
   const [axisScores, setAxisScores] = useState<Record<string, AxisScore>>({});
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load saved profile and swipes on mount
+  // Load spec from backend and saved data on mount
   useEffect(() => {
-    loadSavedData();
+    loadData();
   }, []);
 
-  const loadSavedData = async () => {
+  const loadData = async () => {
     try {
+      // Fetch spec from backend
+      const fetchedSpec = await civicAxesApi.getSpec();
+      setSpec(fetchedSpec);
+
+      // Load saved swipes and profile
       const savedProfile = await SecureStore.getItemAsync(PROFILE_STORAGE_KEY);
       const savedSwipes = await SecureStore.getItemAsync(SWIPES_STORAGE_KEY);
 
       if (savedSwipes) {
         const parsedSwipes = JSON.parse(savedSwipes) as SwipeEvent[];
         setSwipes(parsedSwipes);
-        const scores = scoreAxes(spec, parsedSwipes);
-        setAxisScores(scores);
+
+        // Score using backend API
+        if (parsedSwipes.length > 0) {
+          const { scores } = await civicAxesApi.scoreResponses(parsedSwipes);
+          const scoresMap: Record<string, AxisScore> = {};
+          for (const score of scores) {
+            scoresMap[score.axis_id] = score;
+          }
+          setAxisScores(scoresMap);
+        }
       }
 
       if (savedProfile) {
         setProfile(JSON.parse(savedProfile));
       } else {
         // Create default profile
-        setProfile(createDefaultProfile(spec, 'prototype-user'));
+        setProfile(createDefaultProfile(fetchedSpec, 'prototype-user'));
       }
     } catch (error) {
       console.error('Failed to load blueprint data:', error);
-      setProfile(createDefaultProfile(spec, 'prototype-user'));
+      // If we have a spec, create default profile
+      if (spec) {
+        setProfile(createDefaultProfile(spec, 'prototype-user'));
+      }
     } finally {
       setIsLoading(false);
     }
@@ -338,32 +343,52 @@ export function BlueprintProvider({ children }: { children: React.ReactNode }) {
     saveProfile(updatedProfile);
   }, [profile]);
 
-  const recordSwipes = useCallback((newSwipes: SwipeEvent[]) => {
+  const recordSwipes = useCallback(async (newSwipes: SwipeEvent[]) => {
     const allSwipes = [...swipes, ...newSwipes];
     setSwipes(allSwipes);
     saveSwipes(allSwipes);
 
-    const scores = scoreAxes(spec, allSwipes);
-    setAxisScores(scores);
+    try {
+      // Score using backend API
+      const { scores } = await civicAxesApi.scoreResponses(allSwipes);
+      const scoresMap: Record<string, AxisScore> = {};
+      for (const score of scores) {
+        scoresMap[score.axis_id] = score;
+      }
+      setAxisScores(scoresMap);
 
-    if (profile) {
-      const updatedProfile = updateProfileFromScores(profile, scores);
-      setProfile(updatedProfile);
-      saveProfile(updatedProfile);
+      if (profile) {
+        const updatedProfile = updateProfileFromScores(profile, scores);
+        setProfile(updatedProfile);
+        saveProfile(updatedProfile);
+      }
+    } catch (error) {
+      console.error('Failed to score responses:', error);
     }
-  }, [swipes, profile, spec]);
+  }, [swipes, profile]);
 
-  const initializeFromSwipes = useCallback((newSwipes: SwipeEvent[]) => {
+  const initializeFromSwipes = useCallback(async (newSwipes: SwipeEvent[]) => {
     setSwipes(newSwipes);
     saveSwipes(newSwipes);
 
-    const scores = scoreAxes(spec, newSwipes);
-    setAxisScores(scores);
+    try {
+      // Score using backend API
+      const { scores } = await civicAxesApi.scoreResponses(newSwipes);
+      const scoresMap: Record<string, AxisScore> = {};
+      for (const score of scores) {
+        scoresMap[score.axis_id] = score;
+      }
+      setAxisScores(scoresMap);
 
-    const baseProfile = profile || createDefaultProfile(spec, 'prototype-user');
-    const updatedProfile = updateProfileFromScores(baseProfile, scores);
-    setProfile(updatedProfile);
-    saveProfile(updatedProfile);
+      const baseProfile = profile || (spec ? createDefaultProfile(spec, 'prototype-user') : null);
+      if (baseProfile) {
+        const updatedProfile = updateProfileFromScores(baseProfile, scores);
+        setProfile(updatedProfile);
+        saveProfile(updatedProfile);
+      }
+    } catch (error) {
+      console.error('Failed to initialize from swipes:', error);
+    }
   }, [profile, spec]);
 
   const getAxisScore = useCallback((axisId: string): AxisScore | null => {

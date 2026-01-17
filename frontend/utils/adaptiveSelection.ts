@@ -1,5 +1,5 @@
-import type { Spec, Item, SwipeResponse } from '../types/civicAssessment';
-import { scoreAxes, SwipeEvent, AxisScore } from './civicScoring';
+import type { Spec, Item } from '../types/civicAssessment';
+import type { AxisScore, SwipeEvent } from '../services/api';
 
 interface AdaptiveState {
   answeredItems: Set<string>;
@@ -138,12 +138,11 @@ export function initializeAdaptiveState(spec: Spec, selectedDomains?: Set<string
 }
 
 /**
- * Update adaptive state after a response
+ * Update adaptive state after a response (without scoring - scoring is done separately via API)
  */
-export function updateAdaptiveState(
+export function updateAdaptiveStateBasic(
   spec: Spec,
   state: AdaptiveState,
-  swipes: SwipeEvent[],
   lastItemId: string,
   selectedDomains?: Set<string>
 ): AdaptiveState {
@@ -163,9 +162,21 @@ export function updateAdaptiveState(
     });
   }
 
-  // Recalculate axis scores
-  state.axisScores = scoreAxes(spec, swipes);
+  return state;
+}
 
+/**
+ * Update adaptive state with new scores (after API call)
+ */
+export function updateAdaptiveStateWithScores(
+  state: AdaptiveState,
+  scores: AxisScore[]
+): AdaptiveState {
+  const scoresMap: Record<string, AxisScore> = {};
+  for (const score of scores) {
+    scoresMap[score.axis_id] = score;
+  }
+  state.axisScores = scoresMap;
   return state;
 }
 
@@ -248,13 +259,6 @@ function selectMostInformativeItem(items: Item[], state: AdaptiveState): Item | 
       }
     });
 
-    // Small bonus for underrepresented domains
-    // (not as important in late rounds)
-    const avgDomainCoverage = Object.values(state.domainCoverage).reduce((a, b) => a + b, 0) / Object.keys(state.domainCoverage).length;
-    Object.keys(item.axis_keys).forEach(axisId => {
-      // Would need spec here to look up domain, skip for now
-    });
-
     return { item, score };
   });
 
@@ -312,3 +316,6 @@ export function getAdaptiveProgress(state: AdaptiveState, spec: Spec): {
     dominantStrategy: strategy,
   };
 }
+
+// Re-export types for convenience
+export type { AdaptiveState };

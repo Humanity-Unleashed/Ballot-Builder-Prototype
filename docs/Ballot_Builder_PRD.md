@@ -1,8 +1,10 @@
 # Ballot Builder - Product Requirements Document
 
-**Version:** 1.0  
-**Last Updated:** January 9, 2026  
-**Document Owner:** Development Team  
+**Version:** 1.1
+**Last Updated:** January 16, 2026
+**Document Owner:** Development Team
+
+> **Implementation Status:** This PRD defines the full product vision. For current implementation progress and what's working today, see [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md).
 
 ---
 
@@ -90,7 +92,9 @@ Ballot Builder is a mobile-first application designed to help users make informe
 
 **Purpose**: Continuous preference learning through engaging interaction
 
-#### 2a. LLM-Generated Policy Statements
+> **Implementation Note:** The prototype implements this feature using a **Civic Axes** system with 97 pre-written assessment items across 12 political axes (grouped into 4 domains). This provides immediate functionality while LLM-generated statements remain a future enhancement. See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) for current state.
+
+#### 2a. LLM-Generated Policy Statements (Future Enhancement)
 
 **Functionality**:
 - Generate stream of policy statements across issue areas
@@ -138,7 +142,7 @@ Ballot Builder is a mobile-first application designed to help users make informe
 - Weight adjustment based on confidence
 - Store historical responses for transparency
 
-#### 2d. Adaptive Statement Generation
+#### 2d. Adaptive Statement Generation (Future Enhancement)
 
 **Functionality**:
 - Use evolving preference profile to generate increasingly targeted statements
@@ -149,6 +153,8 @@ Ballot Builder is a mobile-first application designed to help users make informe
 - LLM receives current user vector + response history
 - Generates statements designed to maximize information gain
 - Prioritizes areas with low confidence or few data points
+
+> **Current Implementation:** The prototype uses balanced session selection (picking items across all axes) rather than LLM-generated adaptive statements.
 
 #### 2e. Civic Blueprint Visualization
 

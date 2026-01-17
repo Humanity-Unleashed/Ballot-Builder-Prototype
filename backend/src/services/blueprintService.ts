@@ -5,8 +5,7 @@
  * Stateless design - frontend tracks user progress via Zustand.
  */
 
-import { Statements, CATEGORIES, ISSUE_AREAS } from '../data';
-import adaptiveFlowData from '../data/adaptiveFlow.json';
+import { Statements, CATEGORIES, ISSUE_AREAS, adaptiveFlow } from '../data';
 import logger from '../utils/logger';
 import type {
   Statement,
@@ -15,15 +14,6 @@ import type {
   NextStatementResult,
   AdaptiveStatement,
 } from '../types';
-
-// Type for adaptive flow data
-interface AdaptiveFlowMap {
-  start: string;
-  [key: string]: AdaptiveStatement | string;
-}
-
-// Load adaptive flow for branching statement logic
-const adaptiveFlow = adaptiveFlowData.flow as AdaptiveFlowMap;
 
 interface GetStatementsOptions {
   limit?: number;
@@ -104,7 +94,7 @@ export async function getNextStatement(
     logger.debug('Starting adaptive flow', { nextStatementId });
   } else {
     // Get current statement from adaptive flow
-    const currentStatement = adaptiveFlow[currentStatementId] as AdaptiveStatement | undefined;
+    const currentStatement = adaptiveFlow.nodes[currentStatementId] as AdaptiveStatement | undefined;
 
     if (!currentStatement || typeof currentStatement === 'string') {
       // Statement not in adaptive flow - fall back to returning null
@@ -138,7 +128,7 @@ export async function getNextStatement(
   }
 
   // Get the next statement details
-  const nextStatement = adaptiveFlow[nextStatementId] as AdaptiveStatement | undefined;
+  const nextStatement = adaptiveFlow.nodes[nextStatementId] as AdaptiveStatement | undefined;
 
   if (!nextStatement || typeof nextStatement === 'string') {
     logger.error('Next statement not found in flow', { nextStatementId });

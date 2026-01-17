@@ -14,13 +14,15 @@ export * from './ballot';
 export * from './personas';
 export * from './policyTopics';
 export * from './recommendations';
+export * from './civicAxes';
+export * from './adaptiveFlow';
 
 // Import statements data
-import statementsData from './statements.json';
+import { statements as statementsData } from './statements';
 
-// Load statements from JSON
+// Load statements into Map
 const statements = new Map<string, Statement>(
-  statementsData.statements.map((s) => [s.id, s as Statement])
+  statementsData.map((s) => [s.id, s])
 );
 
 // Categories from the statements

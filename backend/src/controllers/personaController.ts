@@ -10,7 +10,7 @@ import {
   getAllPersonas,
   getPersonaById,
   getPersonaPreferences,
-} from '../data';
+} from '../data/personas';
 
 /**
  * GET /api/personas

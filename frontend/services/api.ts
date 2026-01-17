@@ -248,6 +248,165 @@ export const blueprintApi = {
 };
 
 // ===========================================
+// Civic Axes API Methods
+// ===========================================
+
+import type {
+  Spec,
+  Domain,
+  Axis,
+  Item,
+  SwipeResponse,
+} from '../types/civicAssessment';
+
+export interface AxisScore {
+  axis_id: string;
+  raw_sum: number;
+  n_answered: number;
+  n_unsure: number;
+  normalized: number;
+  shrunk: number;
+  confidence: number;
+  top_drivers: string[];
+}
+
+export interface SwipeEvent {
+  item_id: string;
+  response: SwipeResponse;
+}
+
+export interface ScoreResponse {
+  scores: AxisScore[];
+  scoringConfig: {
+    axis_range: [number, number];
+    normalize_by_max: boolean;
+    shrinkage_k: number;
+    unsure_treatment: string;
+    confidence_heuristic: string;
+  };
+}
+
+export interface SessionResponse {
+  items: Item[];
+  count: number;
+  responseScale: Record<SwipeResponse, number>;
+}
+
+export const civicAxesApi = {
+  /**
+   * Get the full civic axes specification
+   */
+  async getSpec(): Promise<Spec> {
+    const response = await api.get<Spec>('/civic-axes/spec');
+    return response.data;
+  },
+
+  /**
+   * Get summary of the spec (counts, domain names)
+   */
+  async getSummary(): Promise<{
+    version: string;
+    domainCount: number;
+    axisCount: number;
+    itemCount: number;
+    domains: Array<{ id: string; name: string; axisCount: number }>;
+  }> {
+    const response = await api.get('/civic-axes/summary');
+    return response.data;
+  },
+
+  /**
+   * Get all policy domains
+   */
+  async getDomains(): Promise<{ domains: Domain[]; count: number }> {
+    const response = await api.get('/civic-axes/domains');
+    return response.data;
+  },
+
+  /**
+   * Get a domain with its axes
+   */
+  async getDomain(domainId: string): Promise<{ domain: Domain; axes: Axis[] }> {
+    const response = await api.get(`/civic-axes/domains/${domainId}`);
+    return response.data;
+  },
+
+  /**
+   * Get all axes
+   */
+  async getAxes(): Promise<{ axes: Axis[]; count: number }> {
+    const response = await api.get('/civic-axes/axes');
+    return response.data;
+  },
+
+  /**
+   * Get a single axis
+   */
+  async getAxis(axisId: string): Promise<Axis> {
+    const response = await api.get(`/civic-axes/axes/${axisId}`);
+    return response.data;
+  },
+
+  /**
+   * Get items for an assessment session
+   */
+  async getSessionItems(options?: {
+    count?: number;
+    level?: string;
+    excludeIds?: string[];
+  }): Promise<SessionResponse> {
+    const params = new URLSearchParams();
+    if (options?.count) params.append('count', options.count.toString());
+    if (options?.level) params.append('level', options.level);
+    if (options?.excludeIds?.length) params.append('excludeIds', options.excludeIds.join(','));
+
+    const response = await api.get<SessionResponse>(`/civic-axes/session?${params}`);
+    return response.data;
+  },
+
+  /**
+   * Get all items (with optional filters)
+   */
+  async getItems(options?: {
+    level?: string;
+    tag?: string;
+    axisId?: string;
+  }): Promise<{ items: Item[]; count: number }> {
+    const params = new URLSearchParams();
+    if (options?.level) params.append('level', options.level);
+    if (options?.tag) params.append('tag', options.tag);
+    if (options?.axisId) params.append('axisId', options.axisId);
+
+    const response = await api.get(`/civic-axes/items?${params}`);
+    return response.data;
+  },
+
+  /**
+   * Score responses using the backend scoring algorithm
+   */
+  async scoreResponses(responses: SwipeEvent[]): Promise<ScoreResponse> {
+    const response = await api.post<ScoreResponse>('/civic-axes/score', { responses });
+    return response.data;
+  },
+
+  /**
+   * Get the response scale mapping
+   */
+  async getResponseScale(): Promise<Record<SwipeResponse, number>> {
+    const response = await api.get('/civic-axes/response-scale');
+    return response.data;
+  },
+
+  /**
+   * Get all unique tags
+   */
+  async getTags(): Promise<{ tags: string[]; count: number }> {
+    const response = await api.get('/civic-axes/tags');
+    return response.data;
+  },
+};
+
+// ===========================================
 // Export
 // ===========================================
 

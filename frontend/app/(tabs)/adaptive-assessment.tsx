@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
-import civicSpec from '../../data/civic_axes_spec_v1.json';
-import { scoreAxes, SwipeEvent, AxisScore } from '../../utils/civicScoring';
+import { civicAxesApi, AxisScore, SwipeEvent } from '../../services/api';
 import {
   selectNextQuestion,
   shouldStopEarly,
   initializeAdaptiveState,
-  updateAdaptiveState,
+  updateAdaptiveStateBasic,
+  updateAdaptiveStateWithScores,
   getAdaptiveProgress,
 } from '../../utils/adaptiveSelection';
 import type { Spec, Item, SwipeResponse, Domain } from '../../types/civicAssessment';
@@ -16,19 +16,42 @@ import type { Spec, Item, SwipeResponse, Domain } from '../../types/civicAssessm
 type AssessmentMode = 'intro' | 'assessment' | 'results';
 
 export default function AdaptiveCivicAssessmentScreen() {
-  const spec = civicSpec as unknown as Spec;
+  const [spec, setSpec] = useState<Spec | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [mode, setMode] = useState<AssessmentMode>('intro');
-  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set(spec.domains.map(d => d.id)));
+  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const [swipes, setSwipes] = useState<SwipeEvent[]>([]);
   const [axisScores, setAxisScores] = useState<Record<string, AxisScore>>({});
-  const [adaptiveState, setAdaptiveState] = useState(() => initializeAdaptiveState(spec));
+  const [adaptiveState, setAdaptiveState] = useState<ReturnType<typeof initializeAdaptiveState> | null>(null);
   const [fadeAnim] = useState(new Animated.Value(1));
   const [showTransition, setShowTransition] = useState(false);
   const [transitionMessage, setTransitionMessage] = useState('');
 
+  // Fetch spec from backend on mount
+  useEffect(() => {
+    async function loadSpec() {
+      try {
+        setIsLoading(true);
+        const specData = await civicAxesApi.getSpec();
+        setSpec(specData);
+        setSelectedDomains(new Set(specData.domains.map(d => d.id)));
+        setAdaptiveState(initializeAdaptiveState(specData));
+        setError(null);
+      } catch (err) {
+        console.error('Failed to load civic axes spec:', err);
+        setError('Failed to load assessment. Please try again.');
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadSpec();
+  }, []);
+
   // Start assessment with selected domains
   const startAssessment = (domains: Set<string>) => {
+    if (!spec) return;
     setSelectedDomains(domains);
     const state = initializeAdaptiveState(spec, domains);
     setAdaptiveState(state);
@@ -37,17 +60,17 @@ export default function AdaptiveCivicAssessmentScreen() {
     setMode('assessment');
   };
 
-  const progress = getAdaptiveProgress(adaptiveState, spec);
+  const progress = spec && adaptiveState ? getAdaptiveProgress(adaptiveState, spec) : null;
 
-  const handleResponse = (response: SwipeResponse) => {
-    if (!currentItem) return;
+  const handleResponse = async (response: SwipeResponse) => {
+    if (!currentItem || !spec || !adaptiveState) return;
 
     // Fade out animation
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 200,
       useNativeDriver: true,
-    }).start(() => {
+    }).start(async () => {
       // Record the swipe
       const newSwipe: SwipeEvent = {
         item_id: currentItem.id,
@@ -56,53 +79,119 @@ export default function AdaptiveCivicAssessmentScreen() {
       const updatedSwipes = [...swipes, newSwipe];
       setSwipes(updatedSwipes);
 
-      // Update adaptive state
-      const newState = updateAdaptiveState(spec, { ...adaptiveState }, updatedSwipes, currentItem.id, selectedDomains);
-      setAdaptiveState(newState);
+      // Update adaptive state (basic update without scoring)
+      let newState = updateAdaptiveStateBasic(spec, { ...adaptiveState }, currentItem.id, selectedDomains);
 
-      // Check if we should stop
-      if (shouldStopEarly(newState, selectedDomains)) {
-        const scores = scoreAxes(spec, updatedSwipes);
-        setAxisScores(scores);
-        setMode('results');
-        return;
-      }
+      // Get scores from backend API
+      try {
+        const scoreResponse = await civicAxesApi.scoreResponses(updatedSwipes);
+        newState = updateAdaptiveStateWithScores(newState, scoreResponse.scores);
+        setAdaptiveState(newState);
 
-      // Select next question
-      const nextItem = selectNextQuestion(spec, updatedSwipes, newState, selectedDomains);
+        // Convert scores array to record for component state
+        const scoresRecord: Record<string, AxisScore> = {};
+        for (const score of scoreResponse.scores) {
+          scoresRecord[score.axis_id] = score;
+        }
 
-      if (!nextItem) {
-        // No more questions available
-        const scores = scoreAxes(spec, updatedSwipes);
-        setAxisScores(scores);
-        setMode('results');
-        return;
-      }
+        // Check if we should stop
+        if (shouldStopEarly(newState, selectedDomains)) {
+          setAxisScores(scoresRecord);
+          setMode('results');
+          return;
+        }
 
-      // Show transition message at certain milestones
-      const shouldShowTransition = checkForTransition(newState);
-      if (shouldShowTransition) {
-        setTransitionMessage(shouldShowTransition);
-        setShowTransition(true);
-        setTimeout(() => {
-          setShowTransition(false);
+        // Select next question
+        const nextItem = selectNextQuestion(spec, updatedSwipes, newState, selectedDomains);
+
+        if (!nextItem) {
+          // No more questions available
+          setAxisScores(scoresRecord);
+          setMode('results');
+          return;
+        }
+
+        // Show transition message at certain milestones
+        const shouldShowTransitionMsg = checkForTransition(newState);
+        if (shouldShowTransitionMsg) {
+          setTransitionMessage(shouldShowTransitionMsg);
+          setShowTransition(true);
+          setTimeout(() => {
+            setShowTransition(false);
+            setCurrentItem(nextItem);
+            Animated.timing(fadeAnim, {
+              toValue: 1,
+              duration: 200,
+              useNativeDriver: true,
+            }).start();
+          }, 1500);
+        } else {
           setCurrentItem(nextItem);
           Animated.timing(fadeAnim, {
             toValue: 1,
             duration: 200,
             useNativeDriver: true,
           }).start();
-        }, 1500);
-      } else {
-        setCurrentItem(nextItem);
-        Animated.timing(fadeAnim, {
-          toValue: 1,
-          duration: 200,
-          useNativeDriver: true,
-        }).start();
+        }
+      } catch (err) {
+        console.error('Failed to score responses:', err);
+        // Continue with basic state update even if scoring fails
+        setAdaptiveState(newState);
+        const nextItem = selectNextQuestion(spec, updatedSwipes, newState, selectedDomains);
+        if (nextItem) {
+          setCurrentItem(nextItem);
+          Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 200,
+            useNativeDriver: true,
+          }).start();
+        }
       }
     });
   };
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={Colors.primary} />
+        <Text style={styles.loadingText}>Loading assessment...</Text>
+      </View>
+    );
+  }
+
+  // Retry loading spec
+  const retryLoad = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const specData = await civicAxesApi.getSpec();
+      setSpec(specData);
+      setSelectedDomains(new Set(specData.domains.map(d => d.id)));
+      setAdaptiveState(initializeAdaptiveState(specData));
+    } catch (err) {
+      console.error('Failed to load civic axes spec:', err);
+      setError('Failed to load assessment. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Show error state
+  if (error || !spec) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Ionicons name="alert-circle-outline" size={48} color={Colors.error} />
+        <Text style={styles.errorText}>{error || 'Failed to load assessment'}</Text>
+        <TouchableOpacity
+          style={styles.retryButton}
+          onPress={retryLoad}
+        >
+          <Text style={styles.retryButtonText}>Try Again</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   // Render intro/domain selection screen
   if (mode === 'intro') {
@@ -152,20 +241,22 @@ export default function AdaptiveCivicAssessmentScreen() {
   return (
     <View style={styles.container}>
       {/* Adaptive Progress Bar */}
-      <View style={styles.progressContainer}>
-        <View style={styles.progressHeader}>
-          <Text style={styles.progressStrategy}>{progress.dominantStrategy}</Text>
-          <Text style={styles.progressCount}>
-            {progress.questionsAnswered} / ~{progress.estimatedTotal}
+      {progress && (
+        <View style={styles.progressContainer}>
+          <View style={styles.progressHeader}>
+            <Text style={styles.progressStrategy}>{progress.dominantStrategy}</Text>
+            <Text style={styles.progressCount}>
+              {progress.questionsAnswered} / ~{progress.estimatedTotal}
+            </Text>
+          </View>
+          <View style={styles.progressBarBackground}>
+            <View style={[styles.progressBarFill, { width: `${progress.percentage}%` }]} />
+          </View>
+          <Text style={styles.progressHint}>
+            We adapt based on your responses • Usually 15-30 questions
           </Text>
         </View>
-        <View style={styles.progressBarBackground}>
-          <View style={[styles.progressBarFill, { width: `${progress.percentage}%` }]} />
-        </View>
-        <Text style={styles.progressHint}>
-          We adapt based on your responses • Usually 15-30 questions
-        </Text>
-      </View>
+      )}
 
       {/* Card */}
       <Animated.View style={[styles.cardContainer, { opacity: fadeAnim }]}>
@@ -654,6 +745,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    padding: 20,
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#666',
+  },
+  errorText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#D32F2F',
+    textAlign: 'center',
+  },
+  retryButton: {
+    marginTop: 20,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#fff',
   },
   transitionContainer: {
     flex: 1,

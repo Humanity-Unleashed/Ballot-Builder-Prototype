@@ -367,3 +367,144 @@ export interface MockRecommendation {
   confidenceLevel: Confidence;
   summary: string;
 }
+
+// ============================================
+// Civic Axes Types
+// ============================================
+
+export type GovernmentLevel = 'local' | 'state' | 'national' | 'international' | 'general';
+
+export type SwipeResponse = 'strong_disagree' | 'disagree' | 'agree' | 'strong_agree' | 'unsure';
+
+export interface AxisPole {
+  label: string;
+  interpretation: string;
+}
+
+export interface CivicAxis {
+  id: string;
+  domain_id: string;
+  name: string;
+  description: string;
+  poleA: AxisPole;
+  poleB: AxisPole;
+  recommended_cards_per_session: number;
+}
+
+export interface CivicDomain {
+  id: string;
+  name: string;
+  why: string;
+  axes: string[];
+  ballot_mapping_examples: Record<string, string[]>;
+}
+
+export interface CivicItem {
+  id: string;
+  text: string;
+  axis_keys: Record<string, 1 | -1>;
+  level: GovernmentLevel;
+  tags: string[];
+  tradeoff: string | null;
+}
+
+export interface CivicAxesScoring {
+  axis_range: [number, number];
+  normalize_by_max: boolean;
+  shrinkage_k: number;
+  unsure_treatment: string;
+  confidence_heuristic: string;
+}
+
+export interface CivicAxesSpec {
+  spec_version: string;
+  generated_at_utc: string;
+  app: { name: string; notes: string[] };
+  response_scale: Record<SwipeResponse, number>;
+  scoring: CivicAxesScoring;
+  domains: CivicDomain[];
+  axes: CivicAxis[];
+  items: CivicItem[];
+}
+
+// ============================================
+// Blueprint Profile Types
+// ============================================
+
+export type ProfileSource = 'learned_from_swipes' | 'user_edited' | 'default';
+
+export type LearningMode = 'normal' | 'dampened' | 'frozen';
+
+export interface AxisEvidence {
+  n_items_answered: number;
+  n_unsure: number;
+  top_driver_item_ids: string[];
+}
+
+export interface AxisEstimates {
+  /** Raw learned score from swipes, range [-1, 1] */
+  learned_score: number;
+  /** Mapped to 0-10 scale as float before rounding */
+  learned_value_float: number;
+}
+
+export interface AxisProfile {
+  axis_id: string;
+  /** Displayed value, 0-10 discrete */
+  value_0_10: number;
+  /** Where this value came from */
+  source: ProfileSource;
+  /** Confidence level 0-1 */
+  confidence_0_1: number;
+  /** Whether user has locked this axis */
+  locked: boolean;
+  /** How future swipes affect this value */
+  learning_mode: LearningMode;
+  /** Raw estimates from swipes */
+  estimates: AxisEstimates;
+  /** Evidence for transparency */
+  evidence: AxisEvidence;
+}
+
+export interface DomainImportance {
+  /** Importance value 0-10 */
+  value_0_10: number;
+  /** Where this value came from */
+  source: ProfileSource;
+  /** Confidence level 0-1 */
+  confidence_0_1: number;
+  /** Last time this was updated */
+  last_updated_at: string;
+}
+
+export interface DomainProfile {
+  domain_id: string;
+  importance: DomainImportance;
+  axes: AxisProfile[];
+}
+
+export interface BlueprintProfile {
+  profile_version: string;
+  user_id: string;
+  updated_at: string;
+  domains: DomainProfile[];
+}
+
+// Swipe event for tracking user responses
+export interface SwipeEvent {
+  item_id: string;
+  response: SwipeResponse;
+  timestamp: string;
+}
+
+// Axis score result from scoring function
+export interface AxisScore {
+  axis_id: string;
+  raw_sum: number;
+  n_answered: number;
+  n_unsure: number;
+  normalized: number;
+  shrunk: number;
+  confidence: number;
+  top_drivers: string[];
+}

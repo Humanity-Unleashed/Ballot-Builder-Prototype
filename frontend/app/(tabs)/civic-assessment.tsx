@@ -1,34 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import civicSpec from '../../data/civic_axes_spec_v1.json';
-import { scoreAxes, SwipeEvent, AxisScore } from '../../utils/civicScoring';
+import { civicAxesApi, AxisScore, SwipeEvent } from '../../services/api';
 import type { Spec, Item, SwipeResponse } from '../../types/civicAssessment';
 
-type Direction = 'strong_agree' | 'agree' | 'disagree' | 'strong_disagree' | 'unsure';
-
 export default function CivicAssessmentScreen() {
-  const spec = civicSpec as Spec;
+  const [spec, setSpec] = useState<Spec | null>(null);
+  const [items, setItems] = useState<Item[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swipes, setSwipes] = useState<SwipeEvent[]>([]);
   const [showResults, setShowResults] = useState(false);
-  const [axisScores, setAxisScores] = useState<Record<string, AxisScore>>({});
+  const [axisScores, setAxisScores] = useState<AxisScore[]>([]);
   const [fadeAnim] = useState(new Animated.Value(1));
 
-  const items = spec.items;
-  const currentItem = items[currentIndex];
-  const progress = ((currentIndex + 1) / items.length) * 100;
+  // Load spec and items from backend
+  useEffect(() => {
+    loadData();
+  }, []);
 
-  const handleResponse = (response: SwipeResponse) => {
+  const loadData = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      // Fetch spec and session items in parallel
+      const [fetchedSpec, sessionData] = await Promise.all([
+        civicAxesApi.getSpec(),
+        civicAxesApi.getSessionItems({ count: 20 }),
+      ]);
+
+      setSpec(fetchedSpec);
+      setItems(sessionData.items);
+    } catch (err) {
+      console.error('Failed to load assessment data:', err);
+      setError('Failed to load assessment. Please check your connection and try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleResponse = async (response: SwipeResponse) => {
+    if (!items[currentIndex]) return;
+
     // Fade out animation
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 200,
       useNativeDriver: true,
-    }).start(() => {
+    }).start(async () => {
       // Record the swipe
       const newSwipe: SwipeEvent = {
-        item_id: currentItem.id,
+        item_id: items[currentIndex].id,
         response,
       };
       const updatedSwipes = [...swipes, newSwipe];
@@ -36,9 +60,15 @@ export default function CivicAssessmentScreen() {
 
       // Check if we're done
       if (currentIndex === items.length - 1) {
-        const scores = scoreAxes(spec, updatedSwipes);
-        setAxisScores(scores);
-        setShowResults(true);
+        try {
+          // Score using backend API
+          const { scores } = await civicAxesApi.scoreResponses(updatedSwipes);
+          setAxisScores(scores);
+          setShowResults(true);
+        } catch (err) {
+          console.error('Failed to score responses:', err);
+          setError('Failed to calculate results. Please try again.');
+        }
       } else {
         setCurrentIndex(currentIndex + 1);
       }
@@ -51,6 +81,41 @@ export default function CivicAssessmentScreen() {
       }).start();
     });
   };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#4CAF50" />
+        <Text style={styles.loadingText}>Loading assessment...</Text>
+      </View>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Ionicons name="alert-circle" size={48} color="#D32F2F" />
+        <Text style={styles.errorText}>{error}</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={loadData}>
+          <Text style={styles.retryButtonText}>Retry</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  // No data
+  if (!spec || items.length === 0) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}>No assessment items available.</Text>
+      </View>
+    );
+  }
+
+  const currentItem = items[currentIndex];
+  const progress = ((currentIndex + 1) / items.length) * 100;
 
   if (showResults) {
     return <ResultsScreen spec={spec} axisScores={axisScores} />;
@@ -145,16 +210,22 @@ export default function CivicAssessmentScreen() {
   );
 }
 
-function ResultsScreen({ spec, axisScores }: { spec: Spec; axisScores: Record<string, AxisScore> }) {
+function ResultsScreen({ spec, axisScores }: { spec: Spec; axisScores: AxisScore[] }) {
   const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
+
+  // Convert scores array to map for easier lookup
+  const scoresMap: Record<string, AxisScore> = {};
+  for (const score of axisScores) {
+    scoresMap[score.axis_id] = score;
+  }
 
   // Group axes by domain
   const domainAxes = spec.domains.map(domain => ({
     domain,
     axes: domain.axes.map(axisId => ({
       axis: spec.axes.find(a => a.id === axisId)!,
-      score: axisScores[axisId],
-    })),
+      score: scoresMap[axisId],
+    })).filter(item => item.axis && item.score),
   }));
 
   return (
@@ -298,6 +369,42 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
     padding: 20,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#666',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    padding: 24,
+  },
+  errorText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+  },
+  retryButton: {
+    marginTop: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    backgroundColor: '#4CAF50',
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
   progressContainer: {
     marginBottom: 20,
