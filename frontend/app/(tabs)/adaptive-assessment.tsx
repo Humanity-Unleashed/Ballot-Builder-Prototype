@@ -29,7 +29,6 @@ export default function AdaptiveCivicAssessmentScreen() {
   const [showTransition, setShowTransition] = useState(false);
   const [transitionMessage, setTransitionMessage] = useState('');
   const [showTopicPicker, setShowTopicPicker] = useState(false);
-  const [showExplanation, setShowExplanation] = useState(false);
 
   // Start assessment with selected domains
   const startAssessment = (domains: Set<string>) => {
@@ -101,7 +100,6 @@ export default function AdaptiveCivicAssessmentScreen() {
         }, 1500);
       } else {
         setCurrentItem(nextItem);
-        setShowExplanation(false); // Reset explanation when moving to next question
         Animated.timing(fadeAnim, {
           toValue: 1,
           duration: 200,
@@ -315,14 +313,16 @@ export default function AdaptiveCivicAssessmentScreen() {
         </Text>
       </View>
 
+      {/* Domain Context - moved above card */}
+      <View style={styles.domainContextTop}>
+        <Text style={styles.domainTitleTop}>
+          {getDomainForItem(spec, currentItem)?.name || 'Policy Statement'}
+        </Text>
+      </View>
+
       {/* Card */}
       <Animated.View style={[styles.cardContainer, { opacity: fadeAnim }]}>
         <View style={styles.card}>
-          {/* Level Badge */}
-          <View style={[styles.levelBadge, getLevelBadgeStyle(currentItem.level)]}>
-            <Text style={styles.levelText}>{currentItem.level.toUpperCase()}</Text>
-          </View>
-
           {/* Statement */}
           <Text style={styles.statementText}>{currentItem.text}</Text>
 
@@ -334,52 +334,30 @@ export default function AdaptiveCivicAssessmentScreen() {
             </View>
           )}
 
-          {/* Explain Button */}
-          <TouchableOpacity
-            style={styles.explainButton}
-            onPress={() => setShowExplanation(!showExplanation)}
-            activeOpacity={0.7}
-          >
-            <Ionicons
-              name={showExplanation ? "chevron-up-circle-outline" : "help-circle-outline"}
-              size={18}
-              color={Colors.primary}
-            />
-            <Text style={styles.explainButtonText}>
-              {showExplanation ? "Hide explanation" : "What does this mean?"}
-            </Text>
-          </TouchableOpacity>
-
-          {/* Expandable Explanation */}
-          {showExplanation && currentItem && (() => {
+          {/* Always-visible Explanation with lighter styling */}
+          {currentItem && (() => {
             const explanation = getExplanationContent(currentItem);
             if (!explanation) return null;
             return (
-              <View style={styles.explanationContainer}>
-                <Text style={styles.explanationTitle}>This question measures:</Text>
-                <Text style={styles.explanationAxisName}>{explanation.axisName}</Text>
-                <Text style={styles.explanationQuestion}>{explanation.question}</Text>
-
-                <View style={styles.explanationDivider} />
-
-                <View style={styles.explanationRow}>
-                  <View style={[styles.explanationBadge, { backgroundColor: '#E8F5E9' }]}>
-                    <Ionicons name="checkmark" size={14} color="#4CAF50" />
+              <View style={styles.explanationContainerLight}>
+                <View style={styles.explanationRowLight}>
+                  <View style={[styles.explanationBadgeSmall, { backgroundColor: '#E8F5E9' }]}>
+                    <Ionicons name="checkmark" size={12} color="#4CAF50" />
                   </View>
-                  <View style={styles.explanationTextContainer}>
-                    <Text style={styles.explanationLabel}>If you agree:</Text>
-                    <Text style={styles.explanationValue}>{explanation.agreesWith.label}</Text>
-                  </View>
+                  <Text style={styles.explanationTextLight}>
+                    <Text style={styles.explanationLabelLight}>Agree → </Text>
+                    {explanation.agreesWith.label}
+                  </Text>
                 </View>
 
-                <View style={styles.explanationRow}>
-                  <View style={[styles.explanationBadge, { backgroundColor: '#FFEBEE' }]}>
-                    <Ionicons name="close" size={14} color="#F44336" />
+                <View style={styles.explanationRowLight}>
+                  <View style={[styles.explanationBadgeSmall, { backgroundColor: '#FFEBEE' }]}>
+                    <Ionicons name="close" size={12} color="#F44336" />
                   </View>
-                  <View style={styles.explanationTextContainer}>
-                    <Text style={styles.explanationLabel}>If you disagree:</Text>
-                    <Text style={styles.explanationValue}>{explanation.disagreesWith.label}</Text>
-                  </View>
+                  <Text style={styles.explanationTextLight}>
+                    <Text style={styles.explanationLabelLight}>Disagree → </Text>
+                    {explanation.disagreesWith.label}
+                  </Text>
                 </View>
               </View>
             );
@@ -429,16 +407,6 @@ export default function AdaptiveCivicAssessmentScreen() {
           </View>
         </View>
       </Animated.View>
-
-      {/* Domain Context */}
-      <View style={styles.domainContext}>
-        <Text style={styles.domainTitle}>
-          {getDomainForItem(spec, currentItem)?.name || 'Policy Statement'}
-        </Text>
-        <Text style={styles.domainSubtext}>
-          Questions adapt based on your responses
-        </Text>
-      </View>
     </View>
   );
 }
@@ -876,19 +844,45 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textAlign: 'center',
   },
-  domainContext: {
-    marginTop: 16,
+  domainContextTop: {
     alignItems: 'center',
+    marginBottom: 12,
   },
-  domainTitle: {
-    fontSize: 16,
+  domainTitleTop: {
+    fontSize: 14,
     fontWeight: '600',
-    color: '#212121',
-    marginBottom: 4,
+    color: Colors.gray[500],
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
-  domainSubtext: {
+  explanationContainerLight: {
+    marginTop: 16,
+    paddingTop: 16,
+    borderTopWidth: 1,
+    borderTopColor: '#E0E0E0',
+    gap: 8,
+  },
+  explanationRowLight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  explanationBadgeSmall: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  explanationTextLight: {
+    flex: 1,
     fontSize: 13,
-    color: '#666',
+    color: Colors.gray[400],
+    lineHeight: 18,
+  },
+  explanationLabelLight: {
+    fontWeight: '600',
+    color: Colors.gray[500],
   },
   resultsContainer: {
     flex: 1,

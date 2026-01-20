@@ -66,6 +66,15 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="blueprint-v3"
+        options={{
+          title: 'Blueprint V3',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="grid-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="ballot"
         options={{
           title: 'Ballot',
