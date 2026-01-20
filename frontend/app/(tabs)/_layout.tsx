@@ -57,11 +57,30 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="blueprint-v2"
+        options={{
+          title: 'Blueprint V2',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ribbon-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="ballot"
         options={{
           title: 'Ballot',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="checkbox-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="ballot-builder"
+        options={{
+          title: 'Builder',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="construct-outline" size={size} color={color} />
           ),
         }}
       />

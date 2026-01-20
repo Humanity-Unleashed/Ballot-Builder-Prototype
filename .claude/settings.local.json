@@ -11,7 +11,8 @@
       "Bash(dir \"%ProgramFiles%\")",
       "Bash(findstr:*)",
       "Bash(powershell.exe -Command \"irm https://claude.ai/install.ps1 | iex\")",
-      "Bash(powershell.exe:*)"
+      "Bash(powershell.exe:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
