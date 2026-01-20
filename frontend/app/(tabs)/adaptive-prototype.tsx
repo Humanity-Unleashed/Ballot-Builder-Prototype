@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, Modal } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, ActivityIndicator } from 'react-native';
 import { SwipeCard } from '../../components/SwipeCard';
 import { ConfidenceGauge } from '../../components/ConfidenceGauge';
-import adaptiveFlowData from '../../data/adaptiveFlow.json';
-import ballotData from '../../data/ballot.json';
+import { adaptiveFlowApi, ballotApi, AdaptiveStatement, BallotItem } from '../../services/api';
 import {
   Response,
   calculateUserVector,
@@ -11,40 +10,46 @@ import {
   similarityToConfidence,
 } from '../../utils/scoring';
 
-interface AdaptiveQuestion {
-  id: string;
-  round: number;
-  text: string;
-  category: string;
-  vector: number[];
-  agree: string | null;
-  disagree: string | null;
-  transitionBefore: string | null;
-}
-
 /**
  * Adaptive Prototype Screen
  * Questions adapt based on user responses, becoming more specific over time
  */
 export default function AdaptivePrototypeScreen() {
-  const [currentQuestionId, setCurrentQuestionId] = useState<string>('start');
+  const [currentQuestion, setCurrentQuestion] = useState<AdaptiveStatement | null>(null);
+  const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
   const [responses, setResponses] = useState<Response[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [showTransition, setShowTransition] = useState(false);
   const [transitionMessage, setTransitionMessage] = useState('');
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Get current question from flow
-  const getCurrentQuestion = (): AdaptiveQuestion | null => {
-    if (currentQuestionId === 'start') {
-      return adaptiveFlowData.flow[adaptiveFlowData.flow.start] as AdaptiveQuestion;
+  useEffect(() => {
+    loadInitialData();
+  }, []);
+
+  const loadInitialData = async () => {
+    try {   
+      setIsLoading(true);
+      setError(null);
+      const [startResult, ballotData] = await Promise.all([
+        adaptiveFlowApi.getStart(),
+        ballotApi.getDefault(),
+      ]);
+      if (startResult.statement) {
+        setCurrentQuestion(startResult.statement);
+      }
+      setBallotItems(ballotData.items);
+    } catch (err) {
+      console.error('Failed to load data:', err);
+      setError('Failed to load data. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
-    return (adaptiveFlowData.flow[currentQuestionId] as AdaptiveQuestion) || null;
   };
 
-  const currentQuestion = getCurrentQuestion();
-
-  const handleSwipe = (direction: 'agree' | 'disagree') => {
+  const handleSwipe = async (direction: 'agree' | 'disagree') => {
     if (!currentQuestion) return;
 
     // Save response
@@ -58,48 +63,57 @@ export default function AdaptivePrototypeScreen() {
     setResponses(updatedResponses);
     setQuestionsAnswered(questionsAnswered + 1);
 
-    // Get next question ID based on response
-    const nextQuestionId = direction === 'agree'
-      ? currentQuestion.agree
-      : currentQuestion.disagree;
+    try {
+      // Get next question from API
+      const apiResponse = direction === 'agree' ? 'approve' : 'disapprove';
+      const result = await adaptiveFlowApi.getNext(currentQuestion.id, apiResponse);
 
-    // Check if we're done
-    if (!nextQuestionId) {
+      // Check if we're done
+      if (result.complete || !result.statement) {
+        setShowResults(true);
+        return;
+      }
+
+      // Show transition message if exists
+      if (result.transitionText) {
+        setTransitionMessage(result.transitionText);
+        setShowTransition(true);
+
+        // After 1.5 seconds, hide transition and show next question
+        setTimeout(() => {
+          setShowTransition(false);
+          setCurrentQuestion(result.statement!);
+        }, 1500);
+      } else {
+        // Go straight to next question
+        setCurrentQuestion(result.statement);
+      }
+    } catch (err) {
+      console.error('Failed to get next question:', err);
       setShowResults(true);
-      return;
-    }
-
-    // Get next question to check for transition
-    const nextQuestion = adaptiveFlowData.flow[nextQuestionId] as AdaptiveQuestion;
-
-    // Show transition message if exists
-    if (nextQuestion.transitionBefore) {
-      setTransitionMessage(nextQuestion.transitionBefore);
-      setShowTransition(true);
-
-      // After 1.5 seconds, hide transition and show next question
-      setTimeout(() => {
-        setShowTransition(false);
-        setCurrentQuestionId(nextQuestionId);
-      }, 1500);
-    } else {
-      // Go straight to next question
-      setCurrentQuestionId(nextQuestionId);
     }
   };
 
-  const handleReset = () => {
-    setCurrentQuestionId('start');
+  const handleReset = async () => {
     setResponses([]);
     setShowResults(false);
     setQuestionsAnswered(0);
+    // Reload the starting question
+    try {
+      const result = await adaptiveFlowApi.getStart();
+      if (result.statement) {
+        setCurrentQuestion(result.statement);
+      }
+    } catch (err) {
+      console.error('Failed to reset:', err);
+    }
   };
 
   // Calculate recommendations
   const getRecommendations = () => {
     const userVector = calculateUserVector(responses);
 
-    return ballotData.ballot.map((item) => {
+    return ballotItems.map((item) => {
       if (item.type === 'candidate' && item.candidates) {
         const candidateMatches = item.candidates.map((candidate) => {
           const similarity = cosineSimilarity(userVector, candidate.vector);
@@ -114,7 +128,7 @@ export default function AdaptivePrototypeScreen() {
           topCandidate: candidateMatches[0],
           allCandidates: candidateMatches,
         };
-      } else {
+      } else if (item.type === 'measure') {
         const similarity = cosineSimilarity(userVector, item.vector || []);
         const confidence = similarityToConfidence(similarity);
         const recommendation = confidence > 50 ? 'Yes' : 'No';
@@ -124,9 +138,34 @@ export default function AdaptivePrototypeScreen() {
           confidence,
           recommendation,
         };
+      } else {
+        return item;
       }
     });
   };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#3AAFA9" />
+          <Text style={styles.loadingText}>Loading...</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.errorText}>{error}</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   // Transition Modal
   if (showTransition) {
@@ -269,6 +308,21 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 12,
+    fontSize: 16,
+    color: '#666',
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#EF4444',
+    textAlign: 'center',
   },
   container: {
     flex: 1,

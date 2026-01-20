@@ -17,13 +17,49 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import * as SecureStore from 'expo-secure-store';
 import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 
 // ===========================================
 // Configuration
 // ===========================================
 
-// API base URL - adjust for your environment
-const API_URL = Constants.expoConfig?.extra?.apiUrl || 'http://localhost:3001/api';
+/**
+ * Get the API URL based on the current environment.
+ *
+ * - Web: uses localhost
+ * - Expo Go (device): extracts host IP from Expo's debuggerHost
+ * - Production: uses configured apiUrl from app.json extra
+ */
+function getApiUrl(): string {
+  // Check for explicit config first
+  if (Constants.expoConfig?.extra?.apiUrl) {
+    return Constants.expoConfig.extra.apiUrl;
+  }
+
+  // For web, localhost works fine
+  if (Platform.OS === 'web') {
+    return 'http://localhost:3001/api';
+  }
+
+  // For Expo Go on device, extract the host IP from debuggerHost
+  // debuggerHost looks like "192.168.1.100:8081"
+  const debuggerHost = Constants.expoConfig?.hostUri ?? Constants.expoGoConfig?.debuggerHost;
+
+  if (debuggerHost) {
+    const hostIp = "192.168.86.199" // debuggerHost.split(':')[0];
+    return `http://${hostIp}:3001/api`;
+  }
+
+  // Fallback to localhost (will fail on device but works in simulators with proper setup)
+  return 'http://localhost:3001/api';
+}
+
+const API_URL = getApiUrl();
+
+// Log the API URL in development for debugging
+if (__DEV__) {
+  console.log('API URL:', API_URL);
+}
 
 // Token storage keys
 const ACCESS_TOKEN_KEY = 'accessToken';
@@ -402,6 +438,170 @@ export const civicAxesApi = {
    */
   async getTags(): Promise<{ tags: string[]; count: number }> {
     const response = await api.get('/civic-axes/tags');
+    return response.data;
+  },
+};
+
+// ===========================================
+// Persona API Methods
+// ===========================================
+
+export interface Persona {
+  id: string;
+  name: string;
+  county: string;
+  city?: string;
+  age: number;
+  incomeLevel: 'low' | 'medium' | 'high';
+  gender: 'male' | 'female' | 'nonbinary' | 'other' | 'prefer_not_to_say';
+  story: string;
+}
+
+export interface PersonaPreferences {
+  personaId: string;
+  items: Array<{
+    topicId: string;
+    topicLabel: string;
+    stance: 'support' | 'against' | 'mixed' | 'unknown';
+    importance?: number;
+    intensity?: number;
+  }>;
+}
+
+export const personaApi = {
+  async getAll(): Promise<Persona[]> {
+    const response = await api.get<{ personas: Persona[] }>('/personas');
+    return response.data.personas;
+  },
+
+  async getById(id: string): Promise<Persona> {
+    const response = await api.get<{ persona: Persona }>(`/personas/${id}`);
+    return response.data.persona;
+  },
+
+  async getPreferences(id: string): Promise<PersonaPreferences> {
+    const response = await api.get<{ preferences: PersonaPreferences }>(`/personas/${id}/preferences`);
+    return response.data.preferences;
+  },
+};
+
+// ===========================================
+// Statements API Methods
+// ===========================================
+
+export interface Statement {
+  id: string;
+  text: string;
+  category: string;
+  vector: number[];
+}
+
+export const statementsApi = {
+  async getAll(options?: { limit?: number; excludeIds?: string[] }): Promise<Statement[]> {
+    const params = new URLSearchParams();
+    if (options?.limit) params.append('limit', options.limit.toString());
+    if (options?.excludeIds?.length) params.append('excludeIds', options.excludeIds.join(','));
+
+    const response = await api.get<{ statements: Statement[] }>(`/blueprint/statements?${params}`);
+    return response.data.statements;
+  },
+};
+
+// ===========================================
+// Adaptive Flow API Methods
+// ===========================================
+
+export interface AdaptiveStatement {
+  id: string;
+  text: string;
+  category: string;
+  vector: number[];
+  round: number;
+  transitionText?: string | null;
+}
+
+export interface AdaptiveFlowResult {
+  complete: boolean;
+  statement?: AdaptiveStatement;
+  transitionText?: string | null;
+  message?: string;
+}
+
+export const adaptiveFlowApi = {
+  async getStart(): Promise<AdaptiveFlowResult> {
+    const response = await api.get<AdaptiveFlowResult>('/blueprint/start');
+    return response.data;
+  },
+
+  async getNext(currentStatementId: string, response: 'approve' | 'disapprove'): Promise<AdaptiveFlowResult> {
+    const params = new URLSearchParams();
+    params.append('currentStatementId', currentStatementId);
+    params.append('response', response);
+
+    const res = await api.get<AdaptiveFlowResult>(`/blueprint/next?${params}`);
+    return res.data;
+  },
+};
+
+// ===========================================
+// Ballot API Methods
+// ===========================================
+
+export interface BallotCandidate {
+  id?: string;
+  name: string;
+  party: string;
+  vector: number[];
+  positions?: string[];
+}
+
+export interface BallotContest {
+  id: string;
+  type: 'candidate';
+  position?: string;
+  title: string;
+  candidates: BallotCandidate[];
+}
+
+export interface BallotMeasure {
+  id: string;
+  type: 'measure';
+  title: string;
+  shortTitle?: string;
+  description: string;
+  vector: number[];
+  outcomes: {
+    yes: string;
+    no: string;
+  };
+  explanation?: string;
+  supporters?: string[];
+  opponents?: string[];
+}
+
+export type BallotItem = BallotContest | BallotMeasure;
+
+export interface Ballot {
+  id: string;
+  electionDate: string;
+  state: string;
+  county: string;
+  items: BallotItem[];
+}
+
+export const ballotApi = {
+  async getDefault(): Promise<Ballot> {
+    const response = await api.get<Ballot>('/ballot');
+    return response.data;
+  },
+
+  async getById(ballotId: string): Promise<Ballot> {
+    const response = await api.get<Ballot>(`/ballot/${ballotId}`);
+    return response.data;
+  },
+
+  async getAll(): Promise<Ballot[]> {
+    const response = await api.get<Ballot[]>('/ballot/all');
     return response.data;
   },
 };

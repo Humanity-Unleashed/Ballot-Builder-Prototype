@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, ActivityIndicator } from 'react-native';
 import { SwipeCard } from '../../components/SwipeCard';
 import { ConfidenceGauge } from '../../components/ConfidenceGauge';
-import statementsData from '../../data/statements.json';
-import ballotData from '../../data/ballot.json';
+import { statementsApi, ballotApi, Statement, BallotItem } from '../../services/api';
 import {
   Response,
   calculateUserVector,
@@ -15,13 +14,39 @@ import {
  * Prototype Screen - Test the swipe functionality and confidence calculation
  */
 export default function PrototypeScreen() {
+  const [statements, setStatements] = useState<Statement[]>([]);
+  const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [responses, setResponses] = useState<Response[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const currentStatement = statementsData.statements[currentIndex];
-  const totalStatements = statementsData.statements.length;
-  const progress = ((currentIndex + 1) / totalStatements) * 100;
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const [statementsData, ballotData] = await Promise.all([
+        statementsApi.getAll(),
+        ballotApi.getDefault(),
+      ]);
+      setStatements(statementsData);
+      setBallotItems(ballotData.items);
+    } catch (err) {
+      console.error('Failed to load data:', err);
+      setError('Failed to load data. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const currentStatement = statements[currentIndex];
+  const totalStatements = statements.length;
+  const progress = totalStatements > 0 ? ((currentIndex + 1) / totalStatements) * 100 : 0;
 
   const handleSwipe = (direction: 'agree' | 'disagree') => {
     // Save response
@@ -52,7 +77,7 @@ export default function PrototypeScreen() {
   const getRecommendations = () => {
     const userVector = calculateUserVector(responses);
 
-    return ballotData.ballot.map((item) => {
+    return ballotItems.map((item) => {
       if (item.type === 'candidate' && item.candidates) {
         // For candidates, find best match
         const candidateMatches = item.candidates.map((candidate) => {
@@ -68,7 +93,7 @@ export default function PrototypeScreen() {
           topCandidate: candidateMatches[0],
           allCandidates: candidateMatches,
         };
-      } else {
+      } else if (item.type === 'measure') {
         // For measures
         const similarity = cosineSimilarity(userVector, item.vector || []);
         const confidence = similarityToConfidence(similarity);
@@ -79,9 +104,32 @@ export default function PrototypeScreen() {
           confidence,
           recommendation,
         };
+      } else {
+        return item;
       }
     });
   };
+
+  if (isLoading) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#007AFF" />
+          <Text style={styles.loadingText}>Loading...</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  if (error || !currentStatement) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.errorText}>{error || 'No statements available'}</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   if (showResults) {
     const recommendations = getRecommendations();
@@ -181,6 +229,21 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 12,
+    fontSize: 16,
+    color: '#666',
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#EF4444',
+    textAlign: 'center',
   },
   container: {
     flex: 1,

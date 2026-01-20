@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import type { Persona } from '../types/persona';
+import type { Persona } from '../services/api';
 
 interface PersonaCardProps {
   persona: Persona;

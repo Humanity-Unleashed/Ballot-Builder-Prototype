@@ -5,23 +5,43 @@
  * a lengthy intake questionnaire. Based on ballot-builder-prototype.
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   ScrollView,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
+  StyleSheet,TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import PersonaCard from '../../components/PersonaCard';
-import { personas } from '../../data/personas/personas';
-import type { Persona } from '../../types/persona';
+import { personaApi, Persona } from '../../services/api';
 
 export default function PersonaSelectionScreen() {
   const router = useRouter();
+  const [personas, setPersonas] = useState<Persona[]>([]);
   const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    loadPersonas();
+  }, []);
+
+  const loadPersonas = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const data = await personaApi.getAll();
+      setPersonas(data);
+    } catch (err) {
+      console.error('Failed to load personas:', err);
+      setError('Failed to load personas. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleSelectPersona = (persona: Persona) => {
     setSelectedPersona(persona);
@@ -31,9 +51,33 @@ export default function PersonaSelectionScreen() {
     if (selectedPersona) {
       // TODO: Store selected persona in state/context
       // TODO: Navigate to preferences/blueprint screen
-      router.push('/(tabs)');
+      router.push('/');
     }
   };
+
+  if (isLoading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#3AAFA9" />
+          <Text style={styles.loadingText}>Loading personas...</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>{error}</Text>
+          <TouchableOpacity style={styles.retryButton} onPress={loadPersonas}>
+            <Text style={styles.retryButtonText}>Retry</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -87,6 +131,39 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 12,
+    fontSize: 16,
+    color: '#6B7280',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#EF4444',
+    textAlign: 'center',
+    marginBottom: 16,
+  },
+  retryButton: {
+    backgroundColor: '#3AAFA9',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
   },
   header: {
     paddingHorizontal: 20,
