@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, Modal, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { civicAxesApi, AxisScore, SwipeEvent } from '../../services/api';
@@ -11,7 +11,8 @@ import {
   updateAdaptiveStateWithScores,
   getAdaptiveProgress,
 } from '../../utils/adaptiveSelection';
-import type { Spec, Item, SwipeResponse, Domain } from '../../types/civicAssessment';
+import { useBlueprint } from '@/context/BlueprintContext';
+import type { Spec, Item, SwipeResponse } from '../../types/civicAssessment';
 
 type AssessmentMode = 'intro' | 'assessment' | 'results';
 
@@ -19,6 +20,7 @@ export default function AdaptiveCivicAssessmentScreen() {
   const [spec, setSpec] = useState<Spec | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { initializeFromSwipes } = useBlueprint();
   const [mode, setMode] = useState<AssessmentMode>('intro');
   const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
@@ -28,6 +30,8 @@ export default function AdaptiveCivicAssessmentScreen() {
   const [fadeAnim] = useState(new Animated.Value(1));
   const [showTransition, setShowTransition] = useState(false);
   const [transitionMessage, setTransitionMessage] = useState('');
+  const [showTopicPicker, setShowTopicPicker] = useState(false);
+  const [showExplanation, setShowExplanation] = useState(false);
 
   // Fetch spec from backend on mount
   useEffect(() => {
@@ -53,9 +57,7 @@ export default function AdaptiveCivicAssessmentScreen() {
   const startAssessment = (domains: Set<string>) => {
     if (!spec) return;
     setSelectedDomains(domains);
-    const state = initializeAdaptiveState(spec, domains);
-    setAdaptiveState(state);
-    const firstItem = selectNextQuestion(spec, [], state, domains);
+    const firstItem = selectNextQuestion(spec, [], adaptiveState, domains);
     setCurrentItem(firstItem);
     setMode('assessment');
   };
@@ -82,11 +84,23 @@ export default function AdaptiveCivicAssessmentScreen() {
       // Update adaptive state (basic update without scoring)
       let newState = updateAdaptiveStateBasic(spec, { ...adaptiveState }, currentItem.id, selectedDomains);
 
+<<<<<<< HEAD
       // Get scores from backend API
       try {
         const scoreResponse = await civicAxesApi.scoreResponses(updatedSwipes);
         newState = updateAdaptiveStateWithScores(newState, scoreResponse.scores);
         setAdaptiveState(newState);
+=======
+      // Check if we should stop
+      if (shouldStopEarly(newState, selectedDomains)) {
+        const scores = scoreAxes(spec, updatedSwipes);
+        setAxisScores(scores);
+        // Save swipes to BlueprintContext for use in Blueprint and Ballot Builder
+        initializeFromSwipes(updatedSwipes);
+        setMode('results');
+        return;
+      }
+>>>>>>> prototype/web-app
 
         // Convert scores array to record for component state
         const scoresRecord: Record<string, AxisScore> = {};
@@ -94,6 +108,7 @@ export default function AdaptiveCivicAssessmentScreen() {
           scoresRecord[score.axis_id] = score;
         }
 
+<<<<<<< HEAD
         // Check if we should stop
         if (shouldStopEarly(newState, selectedDomains)) {
           setAxisScores(scoresRecord);
@@ -110,6 +125,17 @@ export default function AdaptiveCivicAssessmentScreen() {
           setMode('results');
           return;
         }
+=======
+      if (!nextItem) {
+        // No more questions available
+        const scores = scoreAxes(spec, updatedSwipes);
+        setAxisScores(scores);
+        // Save swipes to BlueprintContext for use in Blueprint and Ballot Builder
+        initializeFromSwipes(updatedSwipes);
+        setMode('results');
+        return;
+      }
+>>>>>>> prototype/web-app
 
         // Show transition message at certain milestones
         const shouldShowTransitionMsg = checkForTransition(newState);
@@ -132,6 +158,7 @@ export default function AdaptiveCivicAssessmentScreen() {
             duration: 200,
             useNativeDriver: true,
           }).start();
+<<<<<<< HEAD
         }
       } catch (err) {
         console.error('Failed to score responses:', err);
@@ -146,10 +173,22 @@ export default function AdaptiveCivicAssessmentScreen() {
             useNativeDriver: true,
           }).start();
         }
+=======
+        }, 1500);
+      } else {
+        setCurrentItem(nextItem);
+        setShowExplanation(false); // Reset explanation when moving to next question
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 200,
+          useNativeDriver: true,
+        }).start();
+>>>>>>> prototype/web-app
       }
     });
   };
 
+<<<<<<< HEAD
   // Show loading state
   if (isLoading) {
     return (
@@ -193,6 +232,24 @@ export default function AdaptiveCivicAssessmentScreen() {
     );
   }
 
+=======
+  // Get explanation content for the current item
+  const getExplanationContent = (item: Item) => {
+    const axisId = Object.keys(item.axis_keys)[0];
+    const axis = spec.axes.find(a => a.id === axisId);
+    if (!axis) return null;
+
+    const key = item.axis_keys[axisId];
+    // key=+1 means Agree pushes toward poleA, key=-1 means Agree pushes toward poleB
+    return {
+      axisName: axis.name,
+      question: axis.description,
+      agreesWith: key > 0 ? axis.poleA : axis.poleB,
+      disagreesWith: key > 0 ? axis.poleB : axis.poleA,
+    };
+  };
+
+>>>>>>> prototype/web-app
   // Render intro/domain selection screen
   if (mode === 'intro') {
     return (
@@ -215,6 +272,9 @@ export default function AdaptiveCivicAssessmentScreen() {
         onRestart={() => {
           setSwipes([]);
           setAxisScores({});
+          setAdaptiveState(initializeAdaptiveState(spec));
+          setSelectedDomains(new Set(spec.domains.map(d => d.id)));
+          setCurrentItem(null);
           setMode('intro');
         }}
       />
@@ -238,25 +298,145 @@ export default function AdaptiveCivicAssessmentScreen() {
     );
   }
 
+  const getDomainIcon = (domainId: string): string => {
+    switch (domainId) {
+      case 'econ': return 'cash-outline';
+      case 'health': return 'medkit-outline';
+      case 'housing': return 'home-outline';
+      case 'justice': return 'shield-outline';
+      case 'climate': return 'leaf-outline';
+      default: return 'ellipse-outline';
+    }
+  };
+
+  const toggleDomain = (domainId: string) => {
+    const newSelected = new Set(selectedDomains);
+    if (newSelected.has(domainId)) {
+      // Don't allow deselecting if it's the last one
+      if (newSelected.size > 1) {
+        newSelected.delete(domainId);
+      }
+    } else {
+      newSelected.add(domainId);
+    }
+    setSelectedDomains(newSelected);
+  };
+
+  const selectAllDomains = () => {
+    setSelectedDomains(new Set(spec.domains.map(d => d.id)));
+  };
+
+  const getTopicFilterLabel = () => {
+    if (selectedDomains.size === spec.domains.length) {
+      return 'All Topics';
+    }
+    if (selectedDomains.size === 1) {
+      const domainId = Array.from(selectedDomains)[0];
+      const domain = spec.domains.find(d => d.id === domainId);
+      return domain?.name || 'Filtered';
+    }
+    return `${selectedDomains.size} Topics`;
+  };
+
   return (
     <View style={styles.container}>
-      {/* Adaptive Progress Bar */}
-      {progress && (
-        <View style={styles.progressContainer}>
-          <View style={styles.progressHeader}>
-            <Text style={styles.progressStrategy}>{progress.dominantStrategy}</Text>
-            <Text style={styles.progressCount}>
-              {progress.questionsAnswered} / ~{progress.estimatedTotal}
+      {/* Topic Picker Modal */}
+      <Modal
+        visible={showTopicPicker}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={() => setShowTopicPicker(false)}
+      >
+        <Pressable style={styles.modalOverlay} onPress={() => setShowTopicPicker(false)}>
+          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Filter Topics</Text>
+              <TouchableOpacity onPress={() => setShowTopicPicker(false)}>
+                <Ionicons name="close" size={24} color={Colors.gray[500]} />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.modalSubtitle}>
+              Select which policy areas to include in questions
             </Text>
-          </View>
-          <View style={styles.progressBarBackground}>
-            <View style={[styles.progressBarFill, { width: `${progress.percentage}%` }]} />
-          </View>
-          <Text style={styles.progressHint}>
-            We adapt based on your responses • Usually 15-30 questions
-          </Text>
+
+            <ScrollView style={styles.modalDomainList}>
+              {spec.domains.map(domain => {
+                const isSelected = selectedDomains.has(domain.id);
+                return (
+                  <TouchableOpacity
+                    key={domain.id}
+                    style={[
+                      styles.modalDomainCard,
+                      isSelected && styles.modalDomainCardSelected,
+                    ]}
+                    onPress={() => toggleDomain(domain.id)}
+                    activeOpacity={0.7}
+                  >
+                    <View style={[
+                      styles.modalDomainIcon,
+                      isSelected && styles.modalDomainIconSelected,
+                    ]}>
+                      <Ionicons
+                        name={getDomainIcon(domain.id) as any}
+                        size={20}
+                        color={isSelected ? Colors.white : Colors.gray[500]}
+                      />
+                    </View>
+                    <Text style={[
+                      styles.modalDomainName,
+                      isSelected && styles.modalDomainNameSelected,
+                    ]}>
+                      {domain.name}
+                    </Text>
+                    <View style={[
+                      styles.modalCheckbox,
+                      isSelected && styles.modalCheckboxSelected,
+                    ]}>
+                      {isSelected && <Ionicons name="checkmark" size={14} color={Colors.white} />}
+                    </View>
+                  </TouchableOpacity>
+                );
+              })}
+            </ScrollView>
+
+            <View style={styles.modalFooter}>
+              <TouchableOpacity
+                style={styles.selectAllButton}
+                onPress={selectAllDomains}
+              >
+                <Text style={styles.selectAllText}>Select All</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.applyButton}
+                onPress={() => setShowTopicPicker(false)}
+              >
+                <Text style={styles.applyButtonText}>Apply Filter</Text>
+              </TouchableOpacity>
+            </View>
+          </Pressable>
+        </Pressable>
+      </Modal>
+
+      {/* Adaptive Progress Bar */}
+      <View style={styles.progressContainer}>
+        <View style={styles.progressHeader}>
+          <Text style={styles.progressStrategy}>{progress.dominantStrategy}</Text>
+          <TouchableOpacity
+            style={styles.topicFilterButton}
+            onPress={() => setShowTopicPicker(true)}
+          >
+            <Ionicons name="filter-outline" size={16} color={Colors.primary} />
+            <Text style={styles.topicFilterText}>{getTopicFilterLabel()}</Text>
+            <Ionicons name="chevron-down" size={14} color={Colors.primary} />
+          </TouchableOpacity>
         </View>
-      )}
+        <View style={styles.progressBarBackground}>
+          <View style={[styles.progressBarFill, { width: `${progress.percentage}%` }]} />
+        </View>
+        <Text style={styles.progressHint}>
+          {progress.questionsAnswered} / ~{progress.estimatedTotal} • Adapts to your responses
+        </Text>
+      </View>
 
       {/* Card */}
       <Animated.View style={[styles.cardContainer, { opacity: fadeAnim }]}>
@@ -276,6 +456,57 @@ export default function AdaptiveCivicAssessmentScreen() {
               <Text style={styles.tradeoffText}>{currentItem.tradeoff}</Text>
             </View>
           )}
+
+          {/* Explain Button */}
+          <TouchableOpacity
+            style={styles.explainButton}
+            onPress={() => setShowExplanation(!showExplanation)}
+            activeOpacity={0.7}
+          >
+            <Ionicons
+              name={showExplanation ? "chevron-up-circle-outline" : "help-circle-outline"}
+              size={18}
+              color={Colors.primary}
+            />
+            <Text style={styles.explainButtonText}>
+              {showExplanation ? "Hide explanation" : "What does this mean?"}
+            </Text>
+          </TouchableOpacity>
+
+          {/* Expandable Explanation */}
+          {showExplanation && currentItem && (() => {
+            const explanation = getExplanationContent(currentItem);
+            if (!explanation) return null;
+            return (
+              <View style={styles.explanationContainer}>
+                <Text style={styles.explanationTitle}>This question measures:</Text>
+                <Text style={styles.explanationAxisName}>{explanation.axisName}</Text>
+                <Text style={styles.explanationQuestion}>{explanation.question}</Text>
+
+                <View style={styles.explanationDivider} />
+
+                <View style={styles.explanationRow}>
+                  <View style={[styles.explanationBadge, { backgroundColor: '#E8F5E9' }]}>
+                    <Ionicons name="checkmark" size={14} color="#4CAF50" />
+                  </View>
+                  <View style={styles.explanationTextContainer}>
+                    <Text style={styles.explanationLabel}>If you agree:</Text>
+                    <Text style={styles.explanationValue}>{explanation.agreesWith.label}</Text>
+                  </View>
+                </View>
+
+                <View style={styles.explanationRow}>
+                  <View style={[styles.explanationBadge, { backgroundColor: '#FFEBEE' }]}>
+                    <Ionicons name="close" size={14} color="#F44336" />
+                  </View>
+                  <View style={styles.explanationTextContainer}>
+                    <Text style={styles.explanationLabel}>If you disagree:</Text>
+                    <Text style={styles.explanationValue}>{explanation.disagreesWith.label}</Text>
+                  </View>
+                </View>
+              </View>
+            );
+          })()}
 
           {/* Response Buttons */}
           <View style={styles.responseContainer}>
@@ -349,186 +580,6 @@ function checkForTransition(state: any): string | null {
   return null;
 }
 
-// ===========================================
-// Intro Screen with Domain Selection
-// ===========================================
-
-function IntroScreen({
-  spec,
-  onStartAll,
-  onStartSelected,
-}: {
-  spec: Spec;
-  onStartAll: () => void;
-  onStartSelected: (domains: Set<string>) => void;
-}) {
-  const [showDomainPicker, setShowDomainPicker] = useState(false);
-  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(
-    new Set(spec.domains.map(d => d.id))
-  );
-
-  const toggleDomain = (domainId: string) => {
-    const newSelected = new Set(selectedDomains);
-    if (newSelected.has(domainId)) {
-      newSelected.delete(domainId);
-    } else {
-      newSelected.add(domainId);
-    }
-    setSelectedDomains(newSelected);
-  };
-
-  const getDomainIcon = (domainId: string): string => {
-    switch (domainId) {
-      case 'econ': return 'cash-outline';
-      case 'health': return 'medkit-outline';
-      case 'housing': return 'home-outline';
-      case 'justice': return 'shield-outline';
-      case 'climate': return 'leaf-outline';
-      default: return 'ellipse-outline';
-    }
-  };
-
-  if (showDomainPicker) {
-    return (
-      <ScrollView style={introStyles.container}>
-        <View style={introStyles.header}>
-          <TouchableOpacity onPress={() => setShowDomainPicker(false)} style={introStyles.backButton}>
-            <Ionicons name="arrow-back" size={24} color={Colors.gray[700]} />
-          </TouchableOpacity>
-          <Text style={introStyles.title}>Choose Topics</Text>
-          <Text style={introStyles.subtitle}>
-            Select which policy areas you want to answer questions about
-          </Text>
-        </View>
-
-        <View style={introStyles.domainList}>
-          {spec.domains.map(domain => {
-            const isSelected = selectedDomains.has(domain.id);
-            return (
-              <TouchableOpacity
-                key={domain.id}
-                style={[
-                  introStyles.domainCard,
-                  isSelected && introStyles.domainCardSelected,
-                ]}
-                onPress={() => toggleDomain(domain.id)}
-                activeOpacity={0.7}
-              >
-                <View style={[
-                  introStyles.domainIconContainer,
-                  isSelected && introStyles.domainIconContainerSelected,
-                ]}>
-                  <Ionicons
-                    name={getDomainIcon(domain.id) as any}
-                    size={24}
-                    color={isSelected ? Colors.white : Colors.gray[500]}
-                  />
-                </View>
-                <View style={introStyles.domainInfo}>
-                  <Text style={[
-                    introStyles.domainName,
-                    isSelected && introStyles.domainNameSelected,
-                  ]}>
-                    {domain.name}
-                  </Text>
-                  <Text style={introStyles.domainDescription} numberOfLines={2}>
-                    {domain.why}
-                  </Text>
-                </View>
-                <View style={[
-                  introStyles.checkbox,
-                  isSelected && introStyles.checkboxSelected,
-                ]}>
-                  {isSelected && <Ionicons name="checkmark" size={16} color={Colors.white} />}
-                </View>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-
-        <View style={introStyles.footer}>
-          <Text style={introStyles.selectedCount}>
-            {selectedDomains.size} of {spec.domains.length} topics selected
-          </Text>
-          <TouchableOpacity
-            style={[
-              introStyles.startButton,
-              selectedDomains.size === 0 && introStyles.startButtonDisabled,
-            ]}
-            onPress={() => onStartSelected(selectedDomains)}
-            disabled={selectedDomains.size === 0}
-          >
-            <Text style={introStyles.startButtonText}>
-              Start Assessment
-            </Text>
-            <Ionicons name="arrow-forward" size={20} color={Colors.white} />
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-    );
-  }
-
-  return (
-    <View style={introStyles.container}>
-      <View style={introStyles.heroSection}>
-        <View style={introStyles.iconCircle}>
-          <Ionicons name="bulb" size={48} color={Colors.primary} />
-        </View>
-        <Text style={introStyles.heroTitle}>Civic Assessment</Text>
-        <Text style={introStyles.heroSubtitle}>
-          Answer questions about policy topics to build your civic profile.
-          We'll adapt based on your responses.
-        </Text>
-      </View>
-
-      <View style={introStyles.optionsSection}>
-        {/* All Topics Option */}
-        <TouchableOpacity
-          style={introStyles.optionCard}
-          onPress={onStartAll}
-          activeOpacity={0.7}
-        >
-          <View style={introStyles.optionIconContainer}>
-            <Ionicons name="grid-outline" size={28} color={Colors.primary} />
-          </View>
-          <View style={introStyles.optionContent}>
-            <Text style={introStyles.optionTitle}>All Topics</Text>
-            <Text style={introStyles.optionDescription}>
-              Questions from all {spec.domains.length} policy areas, adaptively selected
-            </Text>
-          </View>
-          <View style={introStyles.recommendedBadge}>
-            <Text style={introStyles.recommendedText}>Recommended</Text>
-          </View>
-          <Ionicons name="chevron-forward" size={24} color={Colors.gray[400]} />
-        </TouchableOpacity>
-
-        {/* Choose Topics Option */}
-        <TouchableOpacity
-          style={introStyles.optionCard}
-          onPress={() => setShowDomainPicker(true)}
-          activeOpacity={0.7}
-        >
-          <View style={[introStyles.optionIconContainer, { backgroundColor: Colors.gray[100] }]}>
-            <Ionicons name="options-outline" size={28} color={Colors.gray[600]} />
-          </View>
-          <View style={introStyles.optionContent}>
-            <Text style={introStyles.optionTitle}>Choose Topics</Text>
-            <Text style={introStyles.optionDescription}>
-              Select specific policy areas to focus on
-            </Text>
-          </View>
-          <Ionicons name="chevron-forward" size={24} color={Colors.gray[400]} />
-        </TouchableOpacity>
-      </View>
-
-      <View style={introStyles.infoSection}>
-        <Ionicons name="time-outline" size={16} color={Colors.gray[400]} />
-        <Text style={introStyles.infoText}>Usually takes 3-5 minutes</Text>
-      </View>
-    </View>
-  );
-}
 
 // ===========================================
 // Results Screen
@@ -858,13 +909,83 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF3E0',
     padding: 12,
     borderRadius: 8,
-    marginBottom: 20,
+    marginBottom: 12,
   },
   tradeoffText: {
     marginLeft: 8,
     fontSize: 13,
     color: '#666',
     flex: 1,
+  },
+  explainButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 8,
+    marginBottom: 12,
+    gap: 6,
+  },
+  explainButtonText: {
+    fontSize: 14,
+    color: Colors.primary,
+    fontWeight: '500',
+  },
+  explanationContainer: {
+    backgroundColor: '#F5F5F5',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#E0E0E0',
+  },
+  explanationTitle: {
+    fontSize: 12,
+    color: '#666',
+    fontWeight: '500',
+    marginBottom: 4,
+  },
+  explanationAxisName: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#212121',
+    marginBottom: 4,
+  },
+  explanationQuestion: {
+    fontSize: 14,
+    color: '#666',
+    lineHeight: 20,
+  },
+  explanationDivider: {
+    height: 1,
+    backgroundColor: '#E0E0E0',
+    marginVertical: 12,
+  },
+  explanationRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 10,
+    gap: 10,
+  },
+  explanationBadge: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 2,
+  },
+  explanationTextContainer: {
+    flex: 1,
+  },
+  explanationLabel: {
+    fontSize: 12,
+    color: '#666',
+    fontWeight: '500',
+  },
+  explanationValue: {
+    fontSize: 14,
+    color: '#212121',
+    fontWeight: '600',
   },
   responseContainer: {
     flexDirection: 'row',
@@ -1115,7 +1236,316 @@ const styles = StyleSheet.create({
     marginTop: 8,
     lineHeight: 20,
   },
+  // Topic filter button styles
+  topicFilterButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Colors.primary + '15',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    gap: 4,
+  },
+  topicFilterText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: Colors.primary,
+  },
+  // Modal styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    backgroundColor: Colors.white,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    paddingTop: 20,
+    paddingBottom: 40,
+    maxHeight: '80%',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    marginBottom: 4,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: Colors.gray[900],
+  },
+  modalSubtitle: {
+    fontSize: 14,
+    color: Colors.gray[500],
+    paddingHorizontal: 20,
+    marginBottom: 16,
+  },
+  modalDomainList: {
+    paddingHorizontal: 20,
+  },
+  modalDomainCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    marginBottom: 8,
+    backgroundColor: Colors.gray[50],
+    gap: 12,
+  },
+  modalDomainCardSelected: {
+    backgroundColor: Colors.primary + '10',
+  },
+  modalDomainIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 10,
+    backgroundColor: Colors.gray[200],
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalDomainIconSelected: {
+    backgroundColor: Colors.primary,
+  },
+  modalDomainName: {
+    flex: 1,
+    fontSize: 15,
+    fontWeight: '500',
+    color: Colors.gray[700],
+  },
+  modalDomainNameSelected: {
+    color: Colors.primary,
+    fontWeight: '600',
+  },
+  modalCheckbox: {
+    width: 22,
+    height: 22,
+    borderRadius: 6,
+    borderWidth: 2,
+    borderColor: Colors.gray[300],
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalCheckboxSelected: {
+    backgroundColor: Colors.primary,
+    borderColor: Colors.primary,
+  },
+  modalFooter: {
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    paddingTop: 16,
+    gap: 12,
+  },
+  selectAllButton: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: Colors.gray[300],
+    alignItems: 'center',
+  },
+  selectAllText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: Colors.gray[600],
+  },
+  applyButton: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 12,
+    backgroundColor: Colors.primary,
+    alignItems: 'center',
+  },
+  applyButtonText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: Colors.white,
+  },
 });
+
+// ===========================================
+// Intro Screen with Domain Selection
+// ===========================================
+
+function IntroScreen({
+  spec,
+  onStartAll,
+  onStartSelected,
+}: {
+  spec: Spec;
+  onStartAll: () => void;
+  onStartSelected: (domains: Set<string>) => void;
+}) {
+  const [showDomainPicker, setShowDomainPicker] = useState(false);
+  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(
+    new Set(spec.domains.map(d => d.id))
+  );
+
+  const toggleDomain = (domainId: string) => {
+    const newSelected = new Set(selectedDomains);
+    if (newSelected.has(domainId)) {
+      newSelected.delete(domainId);
+    } else {
+      newSelected.add(domainId);
+    }
+    setSelectedDomains(newSelected);
+  };
+
+  const getDomainIcon = (domainId: string): string => {
+    switch (domainId) {
+      case 'econ': return 'cash-outline';
+      case 'health': return 'medkit-outline';
+      case 'housing': return 'home-outline';
+      case 'justice': return 'shield-outline';
+      case 'climate': return 'leaf-outline';
+      default: return 'ellipse-outline';
+    }
+  };
+
+  if (showDomainPicker) {
+    return (
+      <ScrollView style={introStyles.container}>
+        <View style={introStyles.header}>
+          <TouchableOpacity onPress={() => setShowDomainPicker(false)} style={introStyles.backButton}>
+            <Ionicons name="arrow-back" size={24} color={Colors.gray[700]} />
+          </TouchableOpacity>
+          <Text style={introStyles.title}>Choose Topics</Text>
+          <Text style={introStyles.subtitle}>
+            Select which policy areas you want to answer questions about
+          </Text>
+        </View>
+
+        <View style={introStyles.domainList}>
+          {spec.domains.map(domain => {
+            const isSelected = selectedDomains.has(domain.id);
+            return (
+              <TouchableOpacity
+                key={domain.id}
+                style={[
+                  introStyles.domainCard,
+                  isSelected && introStyles.domainCardSelected,
+                ]}
+                onPress={() => toggleDomain(domain.id)}
+                activeOpacity={0.7}
+              >
+                <View style={[
+                  introStyles.domainIconContainer,
+                  isSelected && introStyles.domainIconContainerSelected,
+                ]}>
+                  <Ionicons
+                    name={getDomainIcon(domain.id) as any}
+                    size={24}
+                    color={isSelected ? Colors.white : Colors.gray[500]}
+                  />
+                </View>
+                <View style={introStyles.domainInfo}>
+                  <Text style={[
+                    introStyles.domainName,
+                    isSelected && introStyles.domainNameSelected,
+                  ]}>
+                    {domain.name}
+                  </Text>
+                  <Text style={introStyles.domainDescription} numberOfLines={2}>
+                    {domain.why}
+                  </Text>
+                </View>
+                <View style={[
+                  introStyles.checkbox,
+                  isSelected && introStyles.checkboxSelected,
+                ]}>
+                  {isSelected && <Ionicons name="checkmark" size={16} color={Colors.white} />}
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+
+        <View style={introStyles.footer}>
+          <Text style={introStyles.selectedCount}>
+            {selectedDomains.size} of {spec.domains.length} topics selected
+          </Text>
+          <TouchableOpacity
+            style={[
+              introStyles.startButton,
+              selectedDomains.size === 0 && introStyles.startButtonDisabled,
+            ]}
+            onPress={() => onStartSelected(selectedDomains)}
+            disabled={selectedDomains.size === 0}
+          >
+            <Text style={introStyles.startButtonText}>
+              Start Assessment
+            </Text>
+            <Ionicons name="arrow-forward" size={20} color={Colors.white} />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    );
+  }
+
+  return (
+    <View style={introStyles.container}>
+      <View style={introStyles.heroSection}>
+        <View style={introStyles.iconCircle}>
+          <Ionicons name="sparkles" size={48} color={Colors.primary} />
+        </View>
+        <Text style={introStyles.heroTitle}>Smart Assessment</Text>
+        <Text style={introStyles.heroSubtitle}>
+          Answer questions about policy topics to build your civic profile.
+          We'll adapt based on your responses.
+        </Text>
+      </View>
+
+      <View style={introStyles.optionsSection}>
+        {/* All Topics Option */}
+        <TouchableOpacity
+          style={introStyles.optionCard}
+          onPress={onStartAll}
+          activeOpacity={0.7}
+        >
+          <View style={introStyles.optionIconContainer}>
+            <Ionicons name="grid-outline" size={28} color={Colors.primary} />
+          </View>
+          <View style={introStyles.optionContent}>
+            <Text style={introStyles.optionTitle}>All Topics</Text>
+            <Text style={introStyles.optionDescription}>
+              Questions from all {spec.domains.length} policy areas, adaptively selected
+            </Text>
+          </View>
+          <View style={introStyles.recommendedBadge}>
+            <Text style={introStyles.recommendedText}>Recommended</Text>
+          </View>
+          <Ionicons name="chevron-forward" size={24} color={Colors.gray[400]} />
+        </TouchableOpacity>
+
+        {/* Choose Topics Option */}
+        <TouchableOpacity
+          style={introStyles.optionCard}
+          onPress={() => setShowDomainPicker(true)}
+          activeOpacity={0.7}
+        >
+          <View style={[introStyles.optionIconContainer, { backgroundColor: Colors.gray[100] }]}>
+            <Ionicons name="options-outline" size={28} color={Colors.gray[600]} />
+          </View>
+          <View style={introStyles.optionContent}>
+            <Text style={introStyles.optionTitle}>Choose Topics</Text>
+            <Text style={introStyles.optionDescription}>
+              Select specific policy areas to focus on
+            </Text>
+          </View>
+          <Ionicons name="chevron-forward" size={24} color={Colors.gray[400]} />
+        </TouchableOpacity>
+      </View>
+
+      <View style={introStyles.infoSection}>
+        <Ionicons name="time-outline" size={16} color={Colors.gray[400]} />
+        <Text style={introStyles.infoText}>Usually takes 3-5 minutes</Text>
+      </View>
+    </View>
+  );
+}
 
 // ===========================================
 // Intro Screen Styles
@@ -1320,3 +1750,4 @@ const introStyles = StyleSheet.create({
     color: Colors.white,
   },
 });
+
