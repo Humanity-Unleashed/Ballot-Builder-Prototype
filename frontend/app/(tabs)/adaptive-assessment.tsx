@@ -1,27 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, Modal, Pressable } from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, Modal, Pressable, PanResponder, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import civicSpec from '../../data/civic_axes_spec_v1.json';
 import { scoreAxes, SwipeEvent, AxisScore } from '../../utils/civicScoring';
 import {
-  selectNextQuestion,
-  shouldStopEarly,
   initializeAdaptiveState,
-  updateAdaptiveState,
   getAdaptiveProgress,
 } from '../../utils/adaptiveSelection';
 import { useBlueprint } from '@/context/BlueprintContext';
-import type { Spec, Item, SwipeResponse } from '../../types/civicAssessment';
+import type { Spec, SwipeResponse } from '../../types/civicAssessment';
+import { getSliderConfig, AxisSliderConfig, getPositionColor, sliderPositionToScore } from '../../data/sliderPositions';
 
 type AssessmentMode = 'intro' | 'assessment' | 'results';
+
+// Get axes for selected domains
+function getAxesForDomains(spec: Spec, selectedDomains: Set<string>): string[] {
+  const axes: string[] = [];
+  spec.domains.forEach(domain => {
+    if (selectedDomains.has(domain.id)) {
+      axes.push(...domain.axes);
+    }
+  });
+  return axes;
+}
 
 export default function AdaptiveCivicAssessmentScreen() {
   const spec = civicSpec as unknown as Spec;
   const { initializeFromSwipes } = useBlueprint();
   const [mode, setMode] = useState<AssessmentMode>('intro');
   const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set(spec.domains.map(d => d.id)));
-  const [currentItem, setCurrentItem] = useState<Item | null>(null);
+  const [axisQueue, setAxisQueue] = useState<string[]>([]);
+  const [currentAxisIndex, setCurrentAxisIndex] = useState(0);
+  const [sliderPosition, setSliderPosition] = useState(2); // Start at center (current policy)
+  const [axisResponses, setAxisResponses] = useState<Record<string, number>>({}); // axisId -> position
   const [swipes, setSwipes] = useState<SwipeEvent[]>([]);
   const [axisScores, setAxisScores] = useState<Record<string, AxisScore>>({});
   const [adaptiveState, setAdaptiveState] = useState(() => initializeAdaptiveState(spec));
@@ -30,18 +42,82 @@ export default function AdaptiveCivicAssessmentScreen() {
   const [transitionMessage, setTransitionMessage] = useState('');
   const [showTopicPicker, setShowTopicPicker] = useState(false);
 
+  const screenWidth = Dimensions.get('window').width;
+  const sliderWidth = screenWidth - 120; // Account for padding and pole labels
+
   // Start assessment with selected domains
   const startAssessment = (domains: Set<string>) => {
     setSelectedDomains(domains);
-    const firstItem = selectNextQuestion(spec, [], adaptiveState, domains);
-    setCurrentItem(firstItem);
+    const axes = getAxesForDomains(spec, domains);
+    setAxisQueue(axes);
+    setCurrentAxisIndex(0);
+    setSliderPosition(2); // Reset to center
+    setAxisResponses({});
     setMode('assessment');
   };
 
-  const progress = getAdaptiveProgress(adaptiveState, spec);
+  // Get current axis config
+  const currentAxisId = axisQueue[currentAxisIndex];
+  const currentAxisConfig = currentAxisId ? getSliderConfig(currentAxisId) : null;
+  const currentAxis = currentAxisId ? spec.axes.find(a => a.id === currentAxisId) : null;
+  const currentDomain = currentAxis ? spec.domains.find(d => d.id === currentAxis.domain_id) : null;
 
-  const handleResponse = (response: SwipeResponse) => {
-    if (!currentItem) return;
+  // Progress calculation
+  const totalAxes = axisQueue.length;
+  const progressPercentage = totalAxes > 0 ? ((currentAxisIndex) / totalAxes) * 100 : 0;
+
+  // Convert axis responses to swipe events for scoring
+  const convertResponsesToSwipes = (responses: Record<string, number>): SwipeEvent[] => {
+    const swipeEvents: SwipeEvent[] = [];
+
+    Object.entries(responses).forEach(([axisId, position]) => {
+      const config = getSliderConfig(axisId);
+      if (!config) return;
+
+      const totalPositions = config.positions.length;
+      const score = sliderPositionToScore(position, totalPositions);
+
+      // Find items for this axis and create appropriate swipe responses
+      const axisItems = spec.items.filter(item => axisId in item.axis_keys);
+
+      // Use first two items for the axis to establish position
+      axisItems.slice(0, 2).forEach(item => {
+        const key = item.axis_keys[axisId];
+        // Convert score to response based on key direction
+        let response: SwipeResponse;
+        const effectiveScore = score * key; // If key is -1, flip the direction
+
+        if (effectiveScore <= -0.6) {
+          response = 'strong_disagree';
+        } else if (effectiveScore <= -0.2) {
+          response = 'disagree';
+        } else if (effectiveScore >= 0.6) {
+          response = 'strong_agree';
+        } else if (effectiveScore >= 0.2) {
+          response = 'agree';
+        } else {
+          response = 'unsure';
+        }
+
+        swipeEvents.push({
+          item_id: item.id,
+          response,
+        });
+      });
+    });
+
+    return swipeEvents;
+  };
+
+  const handleNext = () => {
+    if (!currentAxisId || !currentAxisConfig) return;
+
+    // Save current position
+    const newResponses = {
+      ...axisResponses,
+      [currentAxisId]: sliderPosition,
+    };
+    setAxisResponses(newResponses);
 
     // Fade out animation
     Animated.timing(fadeAnim, {
@@ -49,49 +125,29 @@ export default function AdaptiveCivicAssessmentScreen() {
       duration: 200,
       useNativeDriver: true,
     }).start(() => {
-      // Record the swipe
-      const newSwipe: SwipeEvent = {
-        item_id: currentItem.id,
-        response,
-      };
-      const updatedSwipes = [...swipes, newSwipe];
-      setSwipes(updatedSwipes);
-
-      // Update adaptive state
-      const newState = updateAdaptiveState(spec, { ...adaptiveState }, updatedSwipes, currentItem.id, selectedDomains);
-      setAdaptiveState(newState);
-
-      // Check if we should stop
-      if (shouldStopEarly(newState, selectedDomains)) {
-        const scores = scoreAxes(spec, updatedSwipes);
+      // Check if we're done
+      if (currentAxisIndex >= axisQueue.length - 1) {
+        // Convert responses to swipes and calculate scores
+        const finalSwipes = convertResponsesToSwipes(newResponses);
+        setSwipes(finalSwipes);
+        const scores = scoreAxes(spec, finalSwipes);
         setAxisScores(scores);
-        // Save swipes to BlueprintContext for use in Blueprint and Ballot Builder
-        initializeFromSwipes(updatedSwipes);
+        initializeFromSwipes(finalSwipes);
         setMode('results');
         return;
       }
 
-      // Select next question
-      const nextItem = selectNextQuestion(spec, updatedSwipes, newState, selectedDomains);
+      // Check for transition message
+      const nextIndex = currentAxisIndex + 1;
+      const shouldShowTransitionMsg = checkForAxisTransition(nextIndex, totalAxes);
 
-      if (!nextItem) {
-        // No more questions available
-        const scores = scoreAxes(spec, updatedSwipes);
-        setAxisScores(scores);
-        // Save swipes to BlueprintContext for use in Blueprint and Ballot Builder
-        initializeFromSwipes(updatedSwipes);
-        setMode('results');
-        return;
-      }
-
-      // Show transition message at certain milestones
-      const shouldShowTransition = checkForTransition(newState);
-      if (shouldShowTransition) {
-        setTransitionMessage(shouldShowTransition);
+      if (shouldShowTransitionMsg) {
+        setTransitionMessage(shouldShowTransitionMsg);
         setShowTransition(true);
         setTimeout(() => {
           setShowTransition(false);
-          setCurrentItem(nextItem);
+          setCurrentAxisIndex(nextIndex);
+          setSliderPosition(2); // Reset to center for next axis
           Animated.timing(fadeAnim, {
             toValue: 1,
             duration: 200,
@@ -99,7 +155,8 @@ export default function AdaptiveCivicAssessmentScreen() {
           }).start();
         }, 1500);
       } else {
-        setCurrentItem(nextItem);
+        setCurrentAxisIndex(nextIndex);
+        setSliderPosition(2); // Reset to center for next axis
         Animated.timing(fadeAnim, {
           toValue: 1,
           duration: 200,
@@ -109,20 +166,60 @@ export default function AdaptiveCivicAssessmentScreen() {
     });
   };
 
-  // Get explanation content for the current item
-  const getExplanationContent = (item: Item) => {
-    const axisId = Object.keys(item.axis_keys)[0];
-    const axis = spec.axes.find(a => a.id === axisId);
-    if (!axis) return null;
+  const handleBack = () => {
+    if (currentAxisIndex > 0) {
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        const prevIndex = currentAxisIndex - 1;
+        const prevAxisId = axisQueue[prevIndex];
+        setCurrentAxisIndex(prevIndex);
+        // Restore previous position if available
+        setSliderPosition(axisResponses[prevAxisId] ?? 2);
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 200,
+          useNativeDriver: true,
+        }).start();
+      });
+    }
+  };
 
-    const key = item.axis_keys[axisId];
-    // key=+1 means Agree pushes toward poleA, key=-1 means Agree pushes toward poleB
-    return {
-      axisName: axis.name,
-      question: axis.description,
-      agreesWith: key > 0 ? axis.poleA : axis.poleB,
-      disagreesWith: key > 0 ? axis.poleB : axis.poleA,
+  const handleSkip = () => {
+    if (!currentAxisId) return;
+
+    // Save center position (current policy = unsure/neutral)
+    const newResponses = {
+      ...axisResponses,
+      [currentAxisId]: 2,
     };
+    setAxisResponses(newResponses);
+
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start(() => {
+      if (currentAxisIndex >= axisQueue.length - 1) {
+        const finalSwipes = convertResponsesToSwipes(newResponses);
+        setSwipes(finalSwipes);
+        const scores = scoreAxes(spec, finalSwipes);
+        setAxisScores(scores);
+        initializeFromSwipes(finalSwipes);
+        setMode('results');
+        return;
+      }
+
+      setCurrentAxisIndex(currentAxisIndex + 1);
+      setSliderPosition(2);
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
+    });
   };
 
   // Render intro/domain selection screen
@@ -147,9 +244,12 @@ export default function AdaptiveCivicAssessmentScreen() {
         onRestart={() => {
           setSwipes([]);
           setAxisScores({});
+          setAxisResponses({});
           setAdaptiveState(initializeAdaptiveState(spec));
           setSelectedDomains(new Set(spec.domains.map(d => d.id)));
-          setCurrentItem(null);
+          setAxisQueue([]);
+          setCurrentAxisIndex(0);
+          setSliderPosition(2);
           setMode('intro');
         }}
       />
@@ -159,13 +259,13 @@ export default function AdaptiveCivicAssessmentScreen() {
   if (showTransition) {
     return (
       <View style={styles.transitionContainer}>
-        <Ionicons name="bulb" size={64} color="#4CAF50" />
+        <Ionicons name="bulb" size={64} color="#7C3AED" />
         <Text style={styles.transitionText}>{transitionMessage}</Text>
       </View>
     );
   }
 
-  if (!currentItem) {
+  if (!currentAxisConfig || !currentAxis) {
     return (
       <View style={styles.loadingContainer}>
         <Text>Loading...</Text>
@@ -184,10 +284,20 @@ export default function AdaptiveCivicAssessmentScreen() {
     }
   };
 
+  const getDomainEmoji = (domainId: string): string => {
+    switch (domainId) {
+      case 'econ': return '💰';
+      case 'health': return '🏥';
+      case 'housing': return '🏠';
+      case 'justice': return '🛡️';
+      case 'climate': return '🌱';
+      default: return '📋';
+    }
+  };
+
   const toggleDomain = (domainId: string) => {
     const newSelected = new Set(selectedDomains);
     if (newSelected.has(domainId)) {
-      // Don't allow deselecting if it's the last one
       if (newSelected.size > 1) {
         newSelected.delete(domainId);
       }
@@ -213,8 +323,13 @@ export default function AdaptiveCivicAssessmentScreen() {
     return `${selectedDomains.size} Topics`;
   };
 
+  // Current position data
+  const currentPosition = currentAxisConfig.positions[sliderPosition];
+  const positionColor = getPositionColor(sliderPosition, currentAxisConfig.positions.length, currentAxisConfig.currentPolicyIndex);
+  const totalPositions = currentAxisConfig.positions.length;
+
   return (
-    <View style={styles.container}>
+    <View style={styles.sliderScreenContainer}>
       {/* Topic Picker Modal */}
       <Modal
         visible={showTopicPicker}
@@ -231,7 +346,7 @@ export default function AdaptiveCivicAssessmentScreen() {
               </TouchableOpacity>
             </View>
             <Text style={styles.modalSubtitle}>
-              Select which policy areas to include in questions
+              Select which policy areas to include
             </Text>
 
             <ScrollView style={styles.modalDomainList}>
@@ -285,141 +400,145 @@ export default function AdaptiveCivicAssessmentScreen() {
                 style={styles.applyButton}
                 onPress={() => setShowTopicPicker(false)}
               >
-                <Text style={styles.applyButtonText}>Apply Filter</Text>
+                <Text style={styles.applyButtonText}>Apply</Text>
               </TouchableOpacity>
             </View>
           </Pressable>
         </Pressable>
       </Modal>
 
-      {/* Adaptive Progress Bar */}
-      <View style={styles.progressContainer}>
-        <View style={styles.progressHeader}>
-          <Text style={styles.progressStrategy}>{progress.dominantStrategy}</Text>
-          <TouchableOpacity
-            style={styles.topicFilterButton}
-            onPress={() => setShowTopicPicker(true)}
-          >
-            <Ionicons name="filter-outline" size={16} color={Colors.primary} />
-            <Text style={styles.topicFilterText}>{getTopicFilterLabel()}</Text>
-            <Ionicons name="chevron-down" size={14} color={Colors.primary} />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.progressBarBackground}>
-          <View style={[styles.progressBarFill, { width: `${progress.percentage}%` }]} />
-        </View>
-        <Text style={styles.progressHint}>
-          {progress.questionsAnswered} / ~{progress.estimatedTotal} • Adapts to your responses
-        </Text>
-      </View>
-
-      {/* Domain Context - moved above card */}
-      <View style={styles.domainContextTop}>
-        <Text style={styles.domainTitleTop}>
-          {getDomainForItem(spec, currentItem)?.name || 'Policy Statement'}
-        </Text>
-      </View>
-
-      {/* Card */}
-      <Animated.View style={[styles.cardContainer, { opacity: fadeAnim }]}>
-        <View style={styles.card}>
-          {/* Statement */}
-          <Text style={styles.statementText}>{currentItem.text}</Text>
-
-          {/* Tradeoff */}
-          {currentItem.tradeoff && (
-            <View style={styles.tradeoffContainer}>
-              <Ionicons name="information-circle-outline" size={16} color="#666" />
-              <Text style={styles.tradeoffText}>{currentItem.tradeoff}</Text>
-            </View>
-          )}
-
-          {/* Always-visible Explanation with lighter styling */}
-          {currentItem && (() => {
-            const explanation = getExplanationContent(currentItem);
-            if (!explanation) return null;
-            return (
-              <View style={styles.explanationContainerLight}>
-                <View style={styles.explanationRowLight}>
-                  <View style={[styles.explanationBadgeSmall, { backgroundColor: '#E8F5E9' }]}>
-                    <Ionicons name="checkmark" size={12} color="#4CAF50" />
-                  </View>
-                  <Text style={styles.explanationTextLight}>
-                    <Text style={styles.explanationLabelLight}>Agree → </Text>
-                    {explanation.agreesWith.label}
-                  </Text>
-                </View>
-
-                <View style={styles.explanationRowLight}>
-                  <View style={[styles.explanationBadgeSmall, { backgroundColor: '#FFEBEE' }]}>
-                    <Ionicons name="close" size={12} color="#F44336" />
-                  </View>
-                  <Text style={styles.explanationTextLight}>
-                    <Text style={styles.explanationLabelLight}>Disagree → </Text>
-                    {explanation.disagreesWith.label}
-                  </Text>
-                </View>
-              </View>
-            );
-          })()}
-
-          {/* Response Buttons */}
-          <View style={styles.responseContainer}>
-            <TouchableOpacity
-              style={[styles.responseButton, styles.strongDisagreeButton]}
-              onPress={() => handleResponse('strong_disagree')}
-            >
-              <Ionicons name="close-circle" size={32} color="#fff" />
-              <Text style={styles.responseButtonText}>Strongly{'\n'}Disagree</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.responseButton, styles.disagreeButton]}
-              onPress={() => handleResponse('disagree')}
-            >
-              <Ionicons name="close" size={28} color="#fff" />
-              <Text style={styles.responseButtonText}>Disagree</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.responseButton, styles.unsureButton]}
-              onPress={() => handleResponse('unsure')}
-            >
-              <Ionicons name="help" size={24} color="#666" />
-              <Text style={[styles.responseButtonText, { color: '#666' }]}>Unsure</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.responseButton, styles.agreeButton]}
-              onPress={() => handleResponse('agree')}
-            >
-              <Ionicons name="checkmark" size={28} color="#fff" />
-              <Text style={styles.responseButtonText}>Agree</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.responseButton, styles.strongAgreeButton]}
-              onPress={() => handleResponse('strong_agree')}
-            >
-              <Ionicons name="checkmark-circle" size={32} color="#fff" />
-              <Text style={styles.responseButtonText}>Strongly{'\n'}Agree</Text>
-            </TouchableOpacity>
+      {/* Header Section */}
+      <View style={styles.sliderHeader}>
+        <View style={styles.sliderProgressContainer}>
+          <View style={styles.sliderProgressLabel}>
+            <Text style={styles.sliderProgressDomain}>{currentDomain?.name}</Text>
+            <Text style={styles.sliderProgressCount}>Question {currentAxisIndex + 1} of {totalAxes}</Text>
+          </View>
+          <View style={styles.sliderProgressBar}>
+            <View style={[styles.sliderProgressFill, { width: `${progressPercentage}%` }]} />
           </View>
         </View>
-      </Animated.View>
+        <View style={styles.sliderDomainBadge}>
+          <Text style={styles.sliderDomainEmoji}>{getDomainEmoji(currentDomain?.id || '')}</Text>
+          <Text style={styles.sliderDomainBadgeText}>{currentDomain?.name}</Text>
+        </View>
+      </View>
+
+      {/* Main Content Area */}
+      <View style={styles.sliderContent}>
+        <Animated.View style={[styles.sliderQuestionCard, { opacity: fadeAnim }]}>
+          {/* Axis Title & Question */}
+          <Text style={styles.sliderAxisTitle}>{currentAxis.name}</Text>
+          <Text style={styles.sliderAxisQuestion}>{currentAxisConfig.question}</Text>
+
+          {/* Position Display Area */}
+          <View style={styles.sliderPositionDisplay}>
+            {/* Position Card */}
+            <View style={[styles.sliderPositionCard, { borderColor: positionColor }]}>
+              <Text style={styles.sliderPositionTitle}>{currentPosition.title}</Text>
+              <Text style={styles.sliderPositionDescription}>{currentPosition.description}</Text>
+              {currentPosition.isCurrentPolicy && (
+                <View style={styles.sliderCurrentPolicyBadge}>
+                  <Text style={styles.sliderCurrentPolicyText}>Current US Policy</Text>
+                </View>
+              )}
+            </View>
+
+            {/* Slider Section */}
+            <View style={styles.sliderSliderSection}>
+              <View style={styles.sliderWithLabels}>
+                <Text style={[styles.sliderPoleLabel, styles.sliderPoleLabelLeft]}>
+                  {currentAxisConfig.poleALabel}
+                </Text>
+
+                <View style={styles.sliderTrackContainer}>
+                  {/* Gradient Track */}
+                  <View style={styles.sliderTrackOuter}>
+                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#A855F7' }]} />
+                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#C084FC' }]} />
+                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#9CA3AF' }]} />
+                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#5EEAD4' }]} />
+                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#14B8A6' }]} />
+                    {/* Thumb on the track */}
+                    <View
+                      style={[
+                        styles.sliderThumbNew,
+                        { left: `${(sliderPosition / (totalPositions - 1)) * 100}%` },
+                      ]}
+                    >
+                      <View style={styles.sliderThumbInnerNew} />
+                    </View>
+                  </View>
+
+                  {/* Tick Marks - Below the track */}
+                  <View style={styles.sliderTickMarks}>
+                    {currentAxisConfig.positions.map((_, idx) => (
+                      <TouchableOpacity
+                        key={idx}
+                        style={styles.sliderTickTouchArea}
+                        onPress={() => setSliderPosition(idx)}
+                      >
+                        <View style={[
+                          styles.sliderTick,
+                          idx === sliderPosition && styles.sliderTickActive,
+                        ]} />
+                      </TouchableOpacity>
+                    ))}
+                  </View>
+                </View>
+
+                <Text style={[styles.sliderPoleLabel, styles.sliderPoleLabelRight]}>
+                  {currentAxisConfig.poleBLabel}
+                </Text>
+              </View>
+
+              <Text style={styles.sliderPositionCounter}>
+                Position {sliderPosition + 1} of {totalPositions}
+              </Text>
+            </View>
+          </View>
+        </Animated.View>
+      </View>
+
+      {/* Navigation Footer */}
+      <View style={styles.sliderNavSection}>
+        <View style={styles.sliderNavButtons}>
+          <TouchableOpacity
+            style={[styles.sliderNavBtn, styles.sliderNavBtnSecondary]}
+            onPress={handleBack}
+            disabled={currentAxisIndex === 0}
+          >
+            <Text style={[
+              styles.sliderNavBtnTextSecondary,
+              currentAxisIndex === 0 && styles.sliderNavBtnTextDisabled
+            ]}>
+              Back
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.sliderNavBtn, styles.sliderNavBtnPrimary]}
+            onPress={handleNext}
+          >
+            <Text style={styles.sliderNavBtnTextPrimary}>
+              {currentAxisIndex >= axisQueue.length - 1 ? 'Finish' : 'Next →'}
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.sliderSkipLink} onPress={handleSkip}>
+          <Text style={styles.sliderSkipLinkText}>Skip this question</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
-function checkForTransition(state: any): string | null {
-  const q = state.totalQuestions;
+function checkForAxisTransition(currentIndex: number, totalAxes: number): string | null {
+  const progress = currentIndex / totalAxes;
 
-  if (q === 5) {
-    return "Great start! Now we're diving deeper into your views...";
-  } else if (q === 10) {
-    return "You're halfway there! Refining your civic profile...";
-  } else if (q === 15) {
-    return "Almost done! Just a few more to perfect your blueprint...";
+  if (currentIndex === Math.floor(totalAxes * 0.33)) {
+    return "Great start! Building your civic profile...";
+  } else if (currentIndex === Math.floor(totalAxes * 0.66)) {
+    return "Almost there! Refining your positions...";
   }
 
   return null;
@@ -593,8 +712,7 @@ function ResultsScreen({
   );
 }
 
-function getDomainForItem(spec: Spec, item: Item) {
-  const axisId = Object.keys(item.axis_keys)[0];
+function getDomainForAxis(spec: Spec, axisId: string) {
   const axis = spec.axes.find(a => a.id === axisId);
   if (!axis) return null;
   return spec.domains.find(d => d.id === axis.domain_id);
@@ -683,6 +801,9 @@ const styles = StyleSheet.create({
   progressBarFill: {
     height: '100%',
     backgroundColor: '#4CAF50',
+  },
+  gradientProgressFill: {
+    backgroundColor: '#7C3AED',
   },
   progressHint: {
     fontSize: 11,
@@ -883,6 +1004,477 @@ const styles = StyleSheet.create({
   explanationLabelLight: {
     fontWeight: '600',
     color: Colors.gray[500],
+  },
+  // Slider Assessment Styles
+  domainBadgeContainer: {
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  domainBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: 'rgba(124, 58, 237, 0.1)',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+  },
+  domainBadgeText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#7C3AED',
+  },
+  axisTitle: {
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#111',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  axisQuestion: {
+    fontSize: 15,
+    color: '#666',
+    lineHeight: 22,
+    marginBottom: 24,
+    textAlign: 'center',
+  },
+  positionCard: {
+    backgroundColor: 'rgba(124, 58, 237, 0.06)',
+    borderWidth: 2,
+    borderRadius: 16,
+    padding: 20,
+    alignItems: 'center',
+    minHeight: 120,
+    justifyContent: 'center',
+    marginBottom: 24,
+  },
+  positionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#111',
+    textAlign: 'center',
+    lineHeight: 24,
+    marginBottom: 8,
+  },
+  positionDescription: {
+    fontSize: 14,
+    color: '#888',
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  currentPolicyBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: '#D1FAE5',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginTop: 12,
+  },
+  currentPolicyText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#059669',
+  },
+  sliderSection: {
+    width: '100%',
+    marginBottom: 24,
+  },
+  sliderWithLabels: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  poleLabel: {
+    fontSize: 10,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+    textAlign: 'center',
+    width: 55,
+  },
+  poleLabelLeft: {
+    color: '#A855F7',
+  },
+  poleLabelRight: {
+    color: '#14B8A6',
+  },
+  sliderTrackWrapper: {
+    flex: 1,
+    position: 'relative',
+    paddingVertical: 20,
+  },
+  sliderTrack: {
+    height: 12,
+    borderRadius: 6,
+    overflow: 'hidden',
+    flexDirection: 'row',
+  },
+  sliderSegment: {
+    flex: 1,
+    height: '100%',
+  },
+  tickMarks: {
+    position: 'absolute',
+    top: 20,
+    left: 0,
+    right: 0,
+    height: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 4,
+  },
+  tickTouchArea: {
+    padding: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tick: {
+    width: 3,
+    height: 10,
+    backgroundColor: 'rgba(255,255,255,0.6)',
+    borderRadius: 1.5,
+  },
+  tickActive: {
+    backgroundColor: '#7C3AED',
+    height: 14,
+    width: 4,
+  },
+  sliderThumb: {
+    position: 'absolute',
+    top: 14,
+    width: 36,
+    height: 36,
+    backgroundColor: '#fff',
+    borderRadius: 18,
+    borderWidth: 4,
+    borderColor: '#7C3AED',
+    marginLeft: -18,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sliderThumbInner: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: '#7C3AED',
+  },
+  positionCounter: {
+    textAlign: 'center',
+    fontSize: 12,
+    color: '#888',
+    marginTop: 12,
+  },
+  navButtons: {
+    flexDirection: 'row',
+    gap: 12,
+    marginTop: 8,
+  },
+  navBtn: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+  },
+  navBtnSecondary: {
+    backgroundColor: '#f3f4f6',
+  },
+  navBtnPrimary: {
+    backgroundColor: '#7C3AED',
+  },
+  navBtnText: {
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  navBtnTextSecondary: {
+    color: '#666',
+  },
+  navBtnTextPrimary: {
+    color: '#fff',
+  },
+  navBtnTextDisabled: {
+    color: '#ccc',
+  },
+  skipLink: {
+    alignItems: 'center',
+    marginTop: 16,
+  },
+  skipLinkText: {
+    fontSize: 13,
+    color: '#888',
+  },
+  // ============================================
+  // NEW SLIDER SCREEN STYLES (Matching Mockup)
+  // ============================================
+  sliderScreenContainer: {
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+  },
+  sliderHeader: {
+    padding: 16,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e5e7eb',
+  },
+  sliderProgressContainer: {
+    marginBottom: 12,
+  },
+  sliderProgressLabel: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 6,
+  },
+  sliderProgressDomain: {
+    fontSize: 12,
+    color: '#666',
+    fontWeight: '500',
+  },
+  sliderProgressCount: {
+    fontSize: 12,
+    color: '#666',
+  },
+  sliderProgressBar: {
+    height: 6,
+    backgroundColor: '#e5e7eb',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  sliderProgressFill: {
+    height: '100%',
+    borderRadius: 3,
+    backgroundColor: '#A855F7',
+  },
+  sliderDomainBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    gap: 6,
+    backgroundColor: 'rgba(168, 85, 247, 0.1)',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+  },
+  sliderDomainEmoji: {
+    fontSize: 14,
+  },
+  sliderDomainBadgeText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#7C3AED',
+  },
+  sliderContent: {
+    flex: 1,
+    padding: 20,
+  },
+  sliderQuestionCard: {
+    flex: 1,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+  },
+  sliderAxisTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#111',
+    marginBottom: 8,
+  },
+  sliderAxisQuestion: {
+    fontSize: 14,
+    color: '#666',
+    lineHeight: 21,
+    marginBottom: 32,
+  },
+  sliderPositionDisplay: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  sliderPositionCard: {
+    backgroundColor: 'rgba(124, 58, 237, 0.04)',
+    borderWidth: 2,
+    borderRadius: 16,
+    padding: 20,
+    alignItems: 'center',
+    minHeight: 130,
+    justifyContent: 'center',
+    marginBottom: 24,
+  },
+  sliderPositionTitle: {
+    fontSize: 17,
+    fontWeight: '600',
+    color: '#111',
+    textAlign: 'center',
+    lineHeight: 24,
+  },
+  sliderPositionDescription: {
+    fontSize: 13,
+    color: '#888',
+    textAlign: 'center',
+    lineHeight: 19,
+    marginTop: 6,
+  },
+  sliderCurrentPolicyBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: '#D1FAE5',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginTop: 12,
+  },
+  sliderCurrentPolicyText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#059669',
+  },
+  sliderSliderSection: {
+    width: '100%',
+  },
+  sliderWithLabels: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  sliderPoleLabel: {
+    fontSize: 10,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+    textAlign: 'center',
+    width: 55,
+  },
+  sliderPoleLabelLeft: {
+    color: '#A855F7',
+  },
+  sliderPoleLabelRight: {
+    color: '#14B8A6',
+  },
+  sliderTrackContainer: {
+    flex: 1,
+  },
+  sliderTrackOuter: {
+    height: 12,
+    borderRadius: 6,
+    flexDirection: 'row',
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  sliderTrackSegment: {
+    flex: 1,
+    height: '100%',
+  },
+  sliderThumbNew: {
+    position: 'absolute',
+    top: '50%',
+    width: 36,
+    height: 36,
+    backgroundColor: '#fff',
+    borderRadius: 18,
+    borderWidth: 4,
+    borderColor: '#7C3AED',
+    marginLeft: -18,
+    marginTop: -18,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sliderThumbInnerNew: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: '#7C3AED',
+  },
+  sliderTickMarks: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 14,
+    marginTop: 8,
+  },
+  sliderTickTouchArea: {
+    padding: 4,
+    alignItems: 'center',
+  },
+  sliderTick: {
+    width: 2,
+    height: 8,
+    backgroundColor: '#d1d5db',
+    borderRadius: 1,
+  },
+  sliderTickActive: {
+    backgroundColor: '#7C3AED',
+    height: 12,
+  },
+  sliderPositionCounter: {
+    textAlign: 'center',
+    fontSize: 12,
+    color: '#888',
+    marginTop: 8,
+  },
+  sliderNavSection: {
+    padding: 20,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderTopColor: '#e5e7eb',
+  },
+  sliderNavButtons: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  sliderNavBtn: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sliderNavBtnSecondary: {
+    backgroundColor: '#f3f4f6',
+  },
+  sliderNavBtnPrimary: {
+    backgroundColor: '#7C3AED',
+  },
+  sliderNavBtnTextSecondary: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#666',
+  },
+  sliderNavBtnTextPrimary: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff',
+  },
+  sliderNavBtnTextDisabled: {
+    color: '#ccc',
+  },
+  sliderSkipLink: {
+    alignItems: 'center',
+    marginTop: 12,
+  },
+  sliderSkipLinkText: {
+    fontSize: 13,
+    color: '#888',
   },
   resultsContainer: {
     flex: 1,

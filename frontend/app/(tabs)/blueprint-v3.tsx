@@ -63,12 +63,6 @@ export default function BlueprintV3Screen() {
     }
   };
 
-  const getStanceColor = (value: number): string => {
-    if (value <= 3) return '#A855F7'; // Purple - left
-    if (value >= 7) return '#14B8A6'; // Teal - right
-    return Colors.gray[400]; // Neutral
-  };
-
   const handleSaveDomain = () => {
     setEditingDomain(null);
   };
@@ -86,14 +80,11 @@ export default function BlueprintV3Screen() {
           </Text>
         </View>
 
-        {/* All Domains - Compact Cards */}
+        {/* All Domains - Compact Multi-Bar Cards */}
         {spec.domains.map((domain) => {
           const domProfile = profile.domains.find((d) => d.domain_id === domain.id);
           const importance = domProfile?.importance.value_0_10 ?? 5;
-          const primaryAxis = domProfile?.axes[0];
-          const primaryAxisDef = primaryAxis
-            ? spec.axes.find(a => a.id === primaryAxis.axis_id)
-            : null;
+          const domainAxes = domProfile?.axes ?? [];
 
           return (
             <TouchableOpacity
@@ -114,37 +105,24 @@ export default function BlueprintV3Screen() {
                 <Ionicons name="pencil-outline" size={18} color={Colors.gray[400]} />
               </View>
 
-              {/* Primary Stance Preview */}
-              {primaryAxis && primaryAxisDef && (
-                <View style={styles.stancePreview}>
-                  <View style={styles.stanceLabels}>
-                    <Text style={[styles.stanceLabel, { color: '#A855F7' }]} numberOfLines={1}>
-                      {primaryAxisDef.poleA.label}
-                    </Text>
-                    <Text style={[styles.stanceLabel, { color: '#14B8A6', textAlign: 'right' }]} numberOfLines={1}>
-                      {primaryAxisDef.poleB.label}
-                    </Text>
-                  </View>
-                  <View style={styles.stanceTrack}>
-                    <View
-                      style={[
-                        styles.stanceIndicator,
-                        {
-                          left: `${(primaryAxis.value_0_10 / 10) * 100}%`,
-                          backgroundColor: getStanceColor(primaryAxis.value_0_10),
-                        }
-                      ]}
-                    />
-                    <View style={styles.stanceCenterMark} />
-                  </View>
-                </View>
-              )}
+              {/* All Axes as Compact Bars */}
+              {domainAxes.length > 0 && (
+                <View style={styles.axesList}>
+                  {domainAxes.map((axis) => {
+                    const axisDef = spec.axes.find(a => a.id === axis.axis_id);
+                    if (!axisDef) return null;
 
-              {/* Additional axes count */}
-              {domProfile && domProfile.axes.length > 1 && (
-                <Text style={styles.moreAxesText}>
-                  +{domProfile.axes.length - 1} more position{domProfile.axes.length > 2 ? 's' : ''}
-                </Text>
+                    return (
+                      <CompactAxisBar
+                        key={axis.axis_id}
+                        name={axisDef.name}
+                        value={axis.value_0_10}
+                        poleALabel={axisDef.poleA.label}
+                        poleBLabel={axisDef.poleB.label}
+                      />
+                    );
+                  })}
+                </View>
               )}
             </TouchableOpacity>
           );
@@ -227,6 +205,136 @@ const importanceStyles = StyleSheet.create({
   label: {
     fontSize: 12,
     color: Colors.gray[500],
+  },
+});
+
+// =====================================================
+// CompactAxisBar Component - Single axis display
+// =====================================================
+
+function CompactAxisBar({
+  name,
+  value,
+  poleALabel,
+  poleBLabel,
+}: {
+  name: string;
+  value: number;
+  poleALabel: string;
+  poleBLabel: string;
+}) {
+  const position = (value / 10) * 100;
+  const indicatorColor = getStanceColorForBar(value);
+
+  return (
+    <View style={axisBarStyles.container}>
+      <Text style={axisBarStyles.name}>{name}</Text>
+      <View style={axisBarStyles.barContainer}>
+        <View style={axisBarStyles.gradientBar}>
+          <View style={[axisBarStyles.gradientLeft]} />
+          <View style={[axisBarStyles.gradientCenter]} />
+          <View style={[axisBarStyles.gradientRight]} />
+        </View>
+        <View style={axisBarStyles.centerMark} />
+        <View
+          style={[
+            axisBarStyles.indicator,
+            { left: `${position}%`, backgroundColor: indicatorColor },
+          ]}
+        />
+      </View>
+      <View style={axisBarStyles.labels}>
+        <Text style={[axisBarStyles.label, axisBarStyles.labelLeft]} numberOfLines={1}>
+          {poleALabel}
+        </Text>
+        <Text style={[axisBarStyles.label, axisBarStyles.labelRight]} numberOfLines={1}>
+          {poleBLabel}
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+function getStanceColorForBar(value: number): string {
+  if (value <= 3) return '#A855F7'; // Purple - poleA
+  if (value >= 7) return '#14B8A6'; // Teal - poleB
+  return '#9CA3AF'; // Gray - neutral/mixed
+}
+
+const axisBarStyles = StyleSheet.create({
+  container: {
+    gap: 4,
+  },
+  name: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.gray[600],
+  },
+  barContainer: {
+    position: 'relative',
+    height: 10,
+  },
+  gradientBar: {
+    flexDirection: 'row',
+    height: 8,
+    borderRadius: 4,
+    overflow: 'hidden',
+  },
+  gradientLeft: {
+    flex: 1,
+    backgroundColor: '#A855F7',
+    opacity: 0.3,
+  },
+  gradientCenter: {
+    flex: 1,
+    backgroundColor: Colors.gray[200],
+  },
+  gradientRight: {
+    flex: 1,
+    backgroundColor: '#14B8A6',
+    opacity: 0.3,
+  },
+  centerMark: {
+    position: 'absolute',
+    left: '50%',
+    top: 0,
+    bottom: 2,
+    width: 2,
+    marginLeft: -1,
+    backgroundColor: Colors.gray[400],
+    opacity: 0.5,
+  },
+  indicator: {
+    position: 'absolute',
+    top: -3,
+    width: 14,
+    height: 14,
+    borderRadius: 7,
+    marginLeft: -7,
+    borderWidth: 2,
+    borderColor: Colors.white,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+  },
+  labels: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 2,
+  },
+  label: {
+    fontSize: 10,
+    color: Colors.gray[400],
+    maxWidth: '48%',
+  },
+  labelLeft: {
+    color: '#A855F7',
+  },
+  labelRight: {
+    textAlign: 'right',
+    color: '#14B8A6',
   },
 });
 
@@ -658,58 +766,12 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.gray[900],
   },
-  stancePreview: {
+  axesList: {
     marginTop: 14,
     paddingTop: 14,
     borderTopWidth: 1,
     borderTopColor: Colors.gray[100],
-  },
-  stanceLabels: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 6,
-  },
-  stanceLabel: {
-    fontSize: 11,
-    fontWeight: '600',
-    maxWidth: '45%',
-  },
-  stanceTrack: {
-    height: 8,
-    backgroundColor: Colors.gray[200],
-    borderRadius: 4,
-    position: 'relative',
-  },
-  stanceIndicator: {
-    position: 'absolute',
-    top: -4,
-    width: 16,
-    height: 16,
-    borderRadius: 8,
-    marginLeft: -8,
-    borderWidth: 2,
-    borderColor: Colors.white,
-    shadowColor: '#000',
-    shadowOpacity: 0.15,
-    shadowRadius: 2,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 2,
-  },
-  stanceCenterMark: {
-    position: 'absolute',
-    left: '50%',
-    top: 0,
-    bottom: 0,
-    width: 2,
-    marginLeft: -1,
-    backgroundColor: Colors.gray[400],
-    opacity: 0.5,
-  },
-  moreAxesText: {
-    marginTop: 10,
-    fontSize: 12,
-    color: Colors.gray[400],
-    fontStyle: 'italic',
+    gap: 14,
   },
   footerHint: {
     textAlign: 'center',
