@@ -1,8 +1,12 @@
 # Ballot Builder - Step-by-Step Implementation Guide
 
-**Version:** 1.2
-**Last Updated:** January 9, 2026
+**Version:** 1.4
+**Last Updated:** January 16, 2026
 **Based on:** Ballot_Builder_PRD.md v1.0
+
+> **Note:** This guide focuses on **how** to implement features. For the **what** and **why** (requirements, design principles, success metrics), see [Ballot_Builder_PRD.md](Ballot_Builder_PRD.md).
+
+> **Current Status:** The project is in **prototype phase**. See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) for what's currently working, immediate next steps, and the future roadmap.
 
 ---
 
@@ -669,6 +673,8 @@ main
 
 ## Phase 0: Project Setup & Infrastructure
 
+> See [PRD Section: Development Roadmap](Ballot_Builder_PRD.md#development-roadmap--staging-plan) for phase goals and success criteria.
+
 ### Step 0.1: Initialize Project Structure
 
 Create the following directory structure:
@@ -776,6 +782,8 @@ ballot-builder/
 ---
 
 ## Phase 1: MVP Foundation
+
+> See [PRD Section: Phase 1 MVP Foundation](Ballot_Builder_PRD.md#phase-1-mvp-foundation-3-4-months) for deliverables and success criteria.
 
 ### Step 1.1: Database Schema Design
 
@@ -1265,6 +1273,8 @@ const ConfidenceGauge = ({ score, onImprove }) => {
 
 ## Phase 2: Enhanced Intelligence
 
+> See [PRD Section: Phase 2 Enhanced Intelligence](Ballot_Builder_PRD.md#phase-2-enhanced-intelligence-2-3-months) for deliverables and success criteria.
+
 ### Step 2.1: Build Adaptive Statement Generation
 
 #### LLM Prompt Template
@@ -1642,6 +1652,8 @@ GET /api/blueprint/priorities
 
 ## Phase 3: User Experience Polish
 
+> See [PRD Section: Phase 3 User Experience Polish](Ballot_Builder_PRD.md#phase-3-user-experience-polish-2-months) for deliverables and success criteria.
+
 ### Step 3.1: Implement Election Reminders
 
 #### Notification Types
@@ -1915,6 +1927,8 @@ const cacheStrategy = {
 ---
 
 ## Phase 4: Scale & Optimization
+
+> See [PRD Section: Phase 4 Scale & Optimization](Ballot_Builder_PRD.md#phase-4-scale--optimization-ongoing) for deliverables and success criteria.
 
 ### Step 4.1: Cost Optimization
 
@@ -2209,6 +2223,8 @@ class ABTestingService:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.4 | 2026-01-16 | Added reference to IMPLEMENTATION_STATUS.md for current project state |
+| 1.3 | 2026-01-16 | Added cross-references to PRD for each phase; consolidated with other docs |
 | 1.2 | 2026-01-09 | Revised task split for experienced dev + vibe coder team, added complexity ratings and mentorship guidance |
 | 1.1 | 2026-01-09 | Added Two-Developer Task Split section |
 | 1.0 | 2026-01-09 | Initial implementation guide |

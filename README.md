@@ -74,9 +74,9 @@ Print or export the virtual ballot. Receive election reminders and poll location
 
 | Layer | Technology |
 |-------|------------|
-| Mobile App | React Native, TypeScript |
-| Backend API | Node.js / Express (Dockerized) |
-| Data | Static JSON (MVP); Postgres + ClickHouse (planned) |
+| Mobile App | React Native, TypeScript, Expo |
+| Backend API | Node.js / Express / TypeScript |
+| Data | In-memory mock data (prototype); Postgres + ClickHouse (planned) |
 | AI | OpenAI / Claude / Groq / DeepInfra with RAG |
 
 ---
@@ -160,22 +160,27 @@ All data handling prioritizes accuracy, recency, and transparency about limitati
 
 ## Project Status
 
-**Current: Phase 0 Complete - Foundation Ready**
+**Current: Prototype Phase**
 
-The project foundation is now set up with:
-- Full directory structure (backend, frontend, ml-services, infrastructure)
-- Docker Compose with PostgreSQL, Redis, Qdrant
-- Prisma ORM with complete database schema
-- Authentication system (JWT, bcrypt, refresh tokens)
-- Backend API with routes, middleware, logging
-- React Native frontend structure with example components
-- GitHub Actions CI/CD pipeline
+The prototype is set up with:
+- Full directory structure (backend, frontend)
+- Backend API in TypeScript with mock data
+- Blueprint API endpoints (statements, responses, progress, adaptive flow)
+- User API endpoints (profile, districts, preferences)
+- React Native / Expo frontend with swipe-based UI prototype
+- Adaptive statement flow for preference learning
 
-**Next Steps (Phase 1 - MVP):**
-- Complete backend API endpoints (blueprint, ballot, confidence)
-- Build frontend screens (onboarding, swipe interface, ballot browser)
-- Integrate Ballotpedia data
-- Implement confidence calculation
+**Backend Features:**
+- TypeScript with full type definitions
+- In-memory mock data store (no database required)
+- Adaptive statement branching based on user responses
+- Category-based confidence tracking
+
+**Next Steps:**
+- Connect frontend to backend API
+- Implement vector-based similarity matching
+- Add more statements to the adaptive flow
+- Build ballot browser screens
 
 ---
 

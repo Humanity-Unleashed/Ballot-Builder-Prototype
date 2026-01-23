@@ -2,6 +2,8 @@
 
 A quick lookup guide for common tasks, commands, and patterns in Ballot Builder.
 
+> **New to the project?** Start with [BEGINNER_TUTORIAL.md](BEGINNER_TUTORIAL.md) for context on what Ballot Builder is and how it works.
+
 ## File Organization
 
 ```
@@ -778,4 +780,4 @@ try {
 
 **Keep this file handy! Bookmark it in your browser or IDE.**
 
-*Last updated: January 9, 2026*
+*Last updated: January 16, 2026*

@@ -47,7 +47,7 @@ export default function TabsLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="blueprint"
         options={{
           title: 'Blueprint',
@@ -55,8 +55,26 @@ export default function TabsLayout() {
             <Ionicons name="document-text-outline" size={size} color={color} />
           ),
         }}
+      /> */}
+      <Tabs.Screen
+        name="blueprint-v2"
+        options={{
+          title: 'Blueprint V2',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ribbon-outline" size={size} color={color} />
+          ),
+        }}
       />
       <Tabs.Screen
+        name="blueprint-v3"
+        options={{
+          title: 'Blueprint V3',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="grid-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      {/* <Tabs.Screen
         name="ballot"
         options={{
           title: 'Ballot',
@@ -64,8 +82,18 @@ export default function TabsLayout() {
             <Ionicons name="checkbox-outline" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
       <Tabs.Screen
+        name="ballot-builder"
+        options={{
+          title: 'Builder',
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="construct-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      {/* <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
@@ -80,6 +108,33 @@ export default function TabsLayout() {
           title: 'Prototype',
           tabBarIcon: ({ color, size}) => (
             <Ionicons name="flask-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="adaptive-prototype"
+        options={{
+          title: 'Adaptive',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="git-branch-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="civic-assessment"
+        options={{
+          title: 'Assessment',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="analytics-outline" size={size} color={color} />
+          ),
+        }}
+      /> */}
+      <Tabs.Screen
+        name="adaptive-assessment"
+        options={{
+          title: 'Smart',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="sparkles-outline" size={size} color={color} />
           ),
         }}
       />

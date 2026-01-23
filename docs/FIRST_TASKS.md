@@ -2,6 +2,8 @@
 
 This guide walks you through your first actual coding contributions to Ballot Builder. These tasks are designed for beginners and will help you understand the codebase.
 
+> **Prerequisite:** Complete [BEGINNER_TUTORIAL.md](BEGINNER_TUTORIAL.md) first to understand the project concepts and architecture.
+
 ## Before You Start
 
 Make sure you have:

@@ -1,6 +1,8 @@
-# Ballot Builder - Beginner's Tutorial 🗳️
+# Ballot Builder - Beginner's Tutorial
 
 Welcome to Ballot Builder! This tutorial will help you understand how the app works and how to contribute, even if you're new to coding.
+
+> **Current Status:** This project is in **prototype phase**. Core assessment and blueprint features work, but authentication is bypassed and data is not persisted. See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) for details on what's working and what's next.
 
 ## Table of Contents
 1. [What is Ballot Builder?](#what-is-ballot-builder)
@@ -80,6 +82,8 @@ Voting is complicated! Ballots can have dozens of items, and understanding what 
 ---
 
 ## Understanding the App Flow
+
+> **Want more technical depth?** See [DATA_FLOW_GUIDE.md](DATA_FLOW_GUIDE.md) for detailed data transformations, state management patterns, and API call flows.
 
 Let's walk through what happens when someone uses Ballot Builder:
 
@@ -312,113 +316,136 @@ Here's what we're building with and why:
 
 ## Project Structure
 
-Here's how the code will be organized:
+Here's how the code is organized (current state):
 
 ```
-Ballot-Builder/
-├── src/
-│   ├── screens/              # Full-page views
-│   │   ├── IntakeScreen.tsx
-│   │   ├── CivicBlueprintScreen.tsx
-│   │   ├── BallotBrowserScreen.tsx
-│   │   └── PollLocatorScreen.tsx
+ballot-builder/
+├── frontend/                     # React Native app (Expo)
+│   ├── app/                      # Expo Router pages
+│   │   ├── _layout.tsx           # Root layout
+│   │   ├── index.tsx             # Welcome screen
+│   │   ├── (auth)/               # Auth screens (login, register)
+│   │   └── (tabs)/               # Main app screens
+│   │       ├── home.tsx          # Dashboard
+│   │       ├── civic-assessment.tsx  # Swipe assessment ✅
+│   │       ├── blueprint.tsx     # Profile viewer ✅
+│   │       ├── ballot.tsx        # Ballot browser (skeleton)
+│   │       └── profile.tsx       # Settings
 │   │
-│   ├── components/           # Reusable UI pieces
-│   │   ├── SwipeCard.tsx
-│   │   ├── BallotItem.tsx
-│   │   ├── ConfidenceGauge.tsx
-│   │   └── AIChatbot.tsx
+│   ├── components/               # Reusable UI pieces
+│   │   ├── SwipeCard.tsx         # Gesture-based card ✅
+│   │   ├── BlueprintSlider.tsx   # 0-10 slider ✅
+│   │   ├── ConfidenceGauge.tsx   # Progress indicator ✅
+│   │   └── EvidenceDrawer.tsx    # Scoring explanation ✅
 │   │
-│   ├── services/             # Business logic
-│   │   ├── api.ts                  # API client
-│   │   ├── districtLookup.ts       # Address → districts
-│   │   ├── ballotRetrieval.ts      # Get ballot data
-│   │   ├── statementGenerator.ts   # Generate questions
-│   │   ├── preferenceEngine.ts     # Update user vector
-│   │   ├── matchingEngine.ts       # Calculate matches
-│   │   └── aiSummarizer.ts         # Explain ballot items
+│   ├── context/                  # React Context providers
+│   │   ├── AuthContext.tsx       # Auth state (prototype mode)
+│   │   └── BlueprintContext.tsx  # Blueprint profile ✅
 │   │
-│   ├── models/               # Data structures
-│   │   ├── User.ts
-│   │   ├── BallotItem.ts
-│   │   ├── Candidate.ts
-│   │   └── Statement.ts
+│   ├── services/                 # API client
+│   │   └── api.ts                # Axios + API modules ✅
 │   │
-│   ├── utils/                # Helper functions
-│   │   ├── cosineSimilarity.ts
-│   │   ├── vectorOperations.ts
-│   │   └── validators.ts
-│   │
-│   ├── navigation/           # App navigation setup
-│   │   └── AppNavigator.tsx
-│   │
-│   └── App.tsx              # Main app entry point
+│   ├── types/                    # TypeScript definitions
+│   └── utils/                    # Helper functions
+│       └── scoring.ts            # Cosine similarity ✅
 │
-├── backend/                  # Server code (separate folder)
-│   ├── routes/
-│   ├── controllers/
-│   ├── services/
-│   └── database/
+├── backend/                      # Express API server
+│   ├── src/
+│   │   ├── index.ts              # Express app setup ✅
+│   │   ├── routes/               # Route definitions ✅
+│   │   ├── controllers/          # Request handlers ✅
+│   │   ├── services/             # Business logic ✅
+│   │   └── data/                 # JSON data files
+│   │       └── civicAxes/        # Assessment spec ✅
+│   └── _database/
+│       └── prisma/
+│           └── schema.prisma     # DB schema (not connected)
 │
-├── tests/                    # Automated tests
-├── docs/                     # Documentation
-└── package.json             # Dependencies list
+├── docs/                         # Documentation
+└── README.md
 ```
+
+**Legend:** ✅ = Implemented and working
 
 ---
 
 ## Development Phases
 
-We're building this in stages. Here's what comes first:
+We're building this in stages. Here's where we are:
 
-### Phase 1: MVP (Minimum Viable Product) - First 3-4 months
+### Current: Prototype Phase ✅
 
-**Goal:** Get the basic flow working end-to-end
+**What's working now:**
+- ✅ Swipe-based civic assessment (97 questions)
+- ✅ Blueprint profile viewer and editor
+- ✅ Axis scoring with confidence calculation
+- ✅ Backend API for assessments and scoring
+- ✅ Basic ballot browser (skeleton UI)
+
+**What's NOT working yet:**
+- ❌ User authentication (bypassed for testing)
+- ❌ Data persistence (lost on refresh)
+- ❌ Ballot item details and selection
+- ❌ Real ballot data integration
+
+### Next: Minimum Prototype
+
+**Goal:** Demonstrable end-to-end ballot flow
 
 **What we're building:**
-1. Simple intake form (manual district entry, no fancy address lookup yet)
-2. Swipe interface with 50 pre-written questions
-3. Basic ballot display with recommendations
-4. Simple confidence scores
+1. Ballot item detail screen with selection
+2. Connect ballot data to backend API
+3. Show confidence scores on ballot items
+4. Persist blueprint to backend
 
 **Good tasks for beginners:**
-- Design and build the intake form UI
-- Create the swipe card component
-- Style the ballot item cards
-- Write validation functions for user input
+- Create ballot item detail screen
+- Add navigation from ballot list to detail
+- Implement selection UI (radio buttons, Yes/No)
+- Display confidence gauge on ballot items
 
-### Phase 2: Smart Features - Next 2-3 months
+### Future: Production Features
 
-**Goal:** Add AI intelligence
+**Goal:** Full-featured application
 
-**What we're building:**
-1. AI-generated questions (not pre-written)
-2. AI explanations of ballot measures
-3. Chatbot to answer questions
-4. Address-based district lookup
+**Coming later:**
+1. Database persistence (PostgreSQL + Prisma)
+2. Real user authentication
+3. District lookup from address
+4. Ballotpedia API integration
+5. AI summaries and chatbot
+6. Push notifications
+7. PDF export
 
-**Medium difficulty tasks:**
-- Integrate AI APIs
-- Build the chatbot interface
-- Create visualization components
-
-### Phase 3: Polish - 2 months
-
-**Goal:** Make it beautiful and complete
-
-**What we're building:**
-1. Push notifications for election reminders
-2. PDF export
-3. Poll location finder
-4. Performance improvements
-
-### Phase 4: Scale - Ongoing
-
-**Goal:** Handle lots of users, reduce costs
+> **Full roadmap:** See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md) for detailed next steps and future iterations.
 
 ---
 
 ## How to Contribute
+
+### Running the Prototype
+
+```bash
+# Terminal 1: Start the backend
+cd backend
+npm install
+npm run dev
+
+# Terminal 2: Start the frontend
+cd frontend
+npm install
+npx expo start
+```
+
+The prototype bypasses authentication automatically. You can:
+- Complete the Civic Assessment (swipe through questions)
+- View and edit your Civic Blueprint
+- Browse the Ballot Browser (hardcoded data)
+
+### Getting Started
+1. **Read [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md)** - Understand what exists
+2. **Look at the GitHub Issues** - We tag easy ones with "good first issue"
+3. **Start small** - Pick one small thing and do it well
 
 ### As a Beginner, You Can:
 
@@ -717,62 +744,7 @@ AI API calls cost money! Cache everything we can reuse.
 
 ## Quick Reference
 
-### Common Commands
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-
-# Run on iOS simulator
-npm run ios
-
-# Run on Android emulator
-npm run android
-
-# Run tests
-npm test
-
-# Check for TypeScript errors
-npm run type-check
-
-# Format code
-npm run format
-```
-
-### Useful Code Snippets
-
-**Loading state:**
-```typescript
-const [loading, setLoading] = useState(false);
-
-const fetchData = async () => {
-  setLoading(true);
-  try {
-    const data = await api.getData();
-    // handle data
-  } catch (error) {
-    // handle error
-  } finally {
-    setLoading(false);
-  }
-};
-```
-
-**Error handling:**
-```typescript
-try {
-  await riskyOperation();
-} catch (error) {
-  if (error instanceof NetworkError) {
-    showError('Check your internet connection');
-  } else {
-    showError('Something went wrong');
-  }
-}
-```
+For a comprehensive cheat sheet of commands, code patterns, and common solutions, see **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)**.
 
 ---
 
@@ -796,7 +768,7 @@ try {
 1. **Set up your development environment** - Follow React Native setup guide
 2. **Clone the repo** - Get the code on your computer
 3. **Run the app** - Make sure everything works
-4. **Pick a small task** - Start with something simple like styling a component
+4. **Complete [FIRST_TASKS.md](FIRST_TASKS.md)** - Hands-on coding exercises to practice what you learned
 5. **Make your first commit** - Get comfortable with the workflow
 6. **Ask questions** - Don't be shy!
 
@@ -814,5 +786,5 @@ Welcome to the project! 🎉
 
 ---
 
-*Last updated: January 9, 2026*
+*Last updated: January 16, 2026*
 *For questions or suggestions about this tutorial, contact the development team*
