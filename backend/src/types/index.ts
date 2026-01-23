@@ -319,7 +319,7 @@ export interface PreferenceItemBase {
   intensity?: number; // -1 to +1 (-1 strongly oppose, +1 strongly support)
 }
 
-export interface UserPreferenceItem extends PreferenceItemBase {}
+export type UserPreferenceItem = PreferenceItemBase;
 
 export interface CandidatePreferenceItem extends PreferenceItemBase {
   summary?: string;

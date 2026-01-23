@@ -44,7 +44,9 @@
       "Bash(bash -c 'cd /workspace && git worktree list && git branch -d fix/unsafe-type-assertions 2>/dev/null; echo \"\"Done\"\"')",
       "Bash(git -C /workspace branch:*)",
       "Bash(git -C /workspace/claude-worktree worktree list:*)",
-      "Bash(git -C /workspace/claude-worktree branch:*)"
+      "Bash(git -C /workspace/claude-worktree branch:*)",
+      "Bash(npm ls:*)",
+      "Bash(npm run lint:*)"
     ]
   }
 }
