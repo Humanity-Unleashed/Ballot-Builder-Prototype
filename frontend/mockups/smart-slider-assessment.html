@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Assessment - Slider UI Mockup</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    .phone-frame {
+      max-width: 390px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      overflow: hidden;
+      border: 8px solid #1a1a1a;
+    }
+
+    .screen {
+      background: #f8f9fa;
+      min-height: 750px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      padding: 16px 20px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .progress-container {
+      margin-bottom: 8px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 35%;
+      background: linear-gradient(90deg, #A855F7, #14B8A6);
+      border-radius: 3px;
+    }
+
+    .domain-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(168, 85, 247, 0.1);
+      color: #7C3AED;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .content {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .question-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7eb;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .axis-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    .axis-question {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Slider Section */
+    .slider-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slider-container {
+      display: flex;
+      gap: 16px;
+      flex: 1;
+    }
+
+    /* Position Labels */
+    .position-labels {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+
+    .position-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+      position: relative;
+    }
+
+    .position-item:hover {
+      background: #f3f4f6;
+    }
+
+    .position-item.selected {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(20, 184, 166, 0.1));
+      border-color: #7C3AED;
+    }
+
+    .position-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .position-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .position-text {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .position-item.selected .position-text {
+      font-weight: 600;
+      color: #111;
+    }
+
+    .current-policy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: #059669;
+      background: #D1FAE5;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .current-policy-badge::before {
+      content: '✓';
+      font-size: 9px;
+    }
+
+    /* Vertical Slider Track */
+    .slider-track-container {
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    .pole-label-top {
+      font-size: 9px;
+      font-weight: 700;
+      color: #A855F7;
+      text-align: center;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .pole-label-bottom {
+      font-size: 9px;
+      font-weight: 700;
+      color: #14B8A6;
+      text-align: center;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    .slider-track {
+      width: 10px;
+      flex: 1;
+      border-radius: 5px;
+      background: linear-gradient(to bottom,
+        #A855F7 0%,
+        #C084FC 25%,
+        #9CA3AF 50%,
+        #5EEAD4 75%,
+        #14B8A6 100%
+      );
+      position: relative;
+    }
+
+    .slider-thumb {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border: 3px solid #7C3AED;
+      cursor: grab;
+      transition: top 0.2s ease;
+    }
+
+    .slider-thumb::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      background: #7C3AED;
+      border-radius: 50%;
+    }
+
+    /* Hide old pole labels - now integrated with slider */
+    .pole-labels {
+      display: none;
+    }
+
+    .pole-label {
+      font-size: 11px;
+      font-weight: 600;
+      max-width: 45%;
+    }
+
+    .pole-label.left {
+      color: #A855F7;
+    }
+
+    .pole-label.right {
+      color: #14B8A6;
+      text-align: right;
+    }
+
+    /* Navigation */
+    .nav-section {
+      padding: 20px;
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .nav-btn.secondary {
+      background: #f3f4f6;
+      color: #666;
+    }
+
+    .nav-btn.primary {
+      background: #7C3AED;
+      color: #fff;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .skip-link {
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .skip-link a {
+      color: #888;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    /* Alternative Layout - Horizontal */
+    .alt-title {
+      text-align: center;
+      margin: 30px 0 10px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .phone-frame.alt {
+      margin-top: 10px;
+    }
+
+    .horizontal-slider-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .selected-position-display {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(20, 184, 166, 0.1));
+      border: 2px solid #7C3AED;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .selected-position-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .horizontal-track-container {
+      padding: 20px 0;
+    }
+
+    .horizontal-track {
+      height: 12px;
+      border-radius: 6px;
+      background: linear-gradient(to right,
+        #A855F7 0%,
+        #C084FC 25%,
+        #9CA3AF 50%,
+        #5EEAD4 75%,
+        #14B8A6 100%
+      );
+      position: relative;
+    }
+
+    .horizontal-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      border: 3px solid #7C3AED;
+      cursor: grab;
+    }
+
+    .tick-marks {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+
+    .tick {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60px;
+    }
+
+    .tick-line {
+      width: 2px;
+      height: 8px;
+      background: #ccc;
+      margin-bottom: 4px;
+    }
+
+    .tick-label {
+      font-size: 9px;
+      color: #888;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .position-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .position-btn {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      font-size: 13px;
+      color: #444;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .position-btn:hover {
+      background: #f9fafb;
+      border-color: #d1d5db;
+    }
+
+    .position-btn.selected {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(20, 184, 166, 0.1));
+      border-color: #7C3AED;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .comparison-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+      margin: 40px 0 20px;
+    }
+
+    .layouts-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .layout-label {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="comparison-title">Smart Assessment - Slider UI (Option A Refined)</h1>
+
+  <div class="layouts-container">
+    <!-- Layout A: Vertical with all labels visible -->
+    <div>
+      <div class="layout-label">Healthcare: Who Provides Insurance</div>
+      <div class="phone-frame">
+        <div class="screen">
+          <div class="header">
+            <div class="progress-container">
+              <div class="progress-label">
+                <span>Healthcare</span>
+                <span>Question 1 of 3</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+            <div class="domain-badge">
+              <span>🏥</span>
+              <span>Healthcare & Public Health</span>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="question-card">
+              <div class="axis-title">Who Provides Health Insurance</div>
+              <div class="axis-question">Should government offer health insurance to everyone, or should most people get insurance through private companies?</div>
+
+              <div class="slider-section">
+                <div class="slider-container">
+                  <div class="position-labels">
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #A855F7;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Universal government healthcare for all</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #C084FC;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Public option available alongside private insurance</div>
+                      </div>
+                    </div>
+                    <div class="position-item selected">
+                      <div class="position-dot" style="background: #9CA3AF;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Expand Medicaid; private insurance for most workers</div>
+                        <div class="current-policy-badge">Current US Policy</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #5EEAD4;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Private default; government only for elderly/poor</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #14B8A6;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Pure private market with minimal government role</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="slider-track-container">
+                    <div class="pole-label-top">More<br>Gov't</div>
+                    <div class="slider-track">
+                      <div class="slider-thumb" style="top: 45%;"></div>
+                    </div>
+                    <div class="pole-label-bottom">More<br>Private</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-buttons">
+              <button class="nav-btn secondary">Back</button>
+              <button class="nav-btn primary">Next →</button>
+            </div>
+            <div class="skip-link">
+              <a href="#">Skip this question</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example 2: Gun Laws -->
+    <div>
+      <div class="layout-label">Justice: Gun Laws</div>
+      <div class="phone-frame alt">
+        <div class="screen">
+          <div class="header">
+            <div class="progress-container">
+              <div class="progress-label">
+                <span>Justice</span>
+                <span>Question 2 of 3</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 55%;"></div>
+              </div>
+            </div>
+            <div class="domain-badge">
+              <span>🛡️</span>
+              <span>Public Safety & Justice</span>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="question-card">
+              <div class="axis-title">Gun Laws</div>
+              <div class="axis-question">Should there be more requirements to buy and own guns, or should law-abiding adults face fewer restrictions?</div>
+
+              <div class="slider-section">
+                <div class="slider-container">
+                  <div class="position-labels">
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #A855F7;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Permits, training, and registration required for all firearms</div>
+                      </div>
+                    </div>
+                    <div class="position-item selected">
+                      <div class="position-dot" style="background: #C084FC;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Background checks for all sales; safe storage laws</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #9CA3AF;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Current federal standards maintained</div>
+                        <div class="current-policy-badge">Current US Policy</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #5EEAD4;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Minimal restrictions for law-abiding adults</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #14B8A6;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Constitutional carry; no permits or training required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="slider-track-container">
+                    <div class="pole-label-top">Stronger<br>Rules</div>
+                    <div class="slider-track">
+                      <div class="slider-thumb" style="top: 22%;"></div>
+                    </div>
+                    <div class="pole-label-bottom">Fewer<br>Rules</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-buttons">
+              <button class="nav-btn secondary">Back</button>
+              <button class="nav-btn primary">Next →</button>
+            </div>
+            <div class="skip-link">
+              <a href="#">Skip this question</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example 3: Climate -->
+  <div class="layouts-container" style="margin-top: 30px;">
+    <div>
+      <div class="layout-label">Climate: How Fast to Act</div>
+      <div class="phone-frame">
+        <div class="screen">
+          <div class="header">
+            <div class="progress-container">
+              <div class="progress-label">
+                <span>Climate</span>
+                <span>Question 1 of 3</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 70%;"></div>
+              </div>
+            </div>
+            <div class="domain-badge">
+              <span>🌱</span>
+              <span>Climate, Energy & Environment</span>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="question-card">
+              <div class="axis-title">How Fast to Act on Climate</div>
+              <div class="axis-question">Should we act quickly on climate change even if it costs more now, or move slowly to keep energy affordable?</div>
+
+              <div class="slider-section">
+                <div class="slider-container">
+                  <div class="position-labels">
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #A855F7;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Aggressive emissions cuts this decade regardless of cost</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #C084FC;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Strong targets with investment in resilience and clean energy</div>
+                        <div class="current-policy-badge">Current US Policy (IRA)</div>
+                      </div>
+                    </div>
+                    <div class="position-item selected">
+                      <div class="position-dot" style="background: #9CA3AF;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Gradual transition balancing climate and affordability</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #5EEAD4;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Prioritize energy costs; slow voluntary transition</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #14B8A6;"></div>
+                      <div class="position-content">
+                        <div class="position-text">No new climate regulations; focus on reliability and jobs</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="slider-track-container">
+                    <div class="pole-label-top">Act<br>Fast</div>
+                    <div class="slider-track">
+                      <div class="slider-thumb" style="top: 45%;"></div>
+                    </div>
+                    <div class="pole-label-bottom">Go<br>Slow</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-buttons">
+              <button class="nav-btn secondary">Back</button>
+              <button class="nav-btn primary">Next →</button>
+            </div>
+            <div class="skip-link">
+              <a href="#">Skip this question</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example 4: Housing -->
+    <div>
+      <div class="layout-label">Housing: Building More Housing</div>
+      <div class="phone-frame">
+        <div class="screen">
+          <div class="header">
+            <div class="progress-container">
+              <div class="progress-label">
+                <span>Housing</span>
+                <span>Question 1 of 3</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 20%;"></div>
+              </div>
+            </div>
+            <div class="domain-badge">
+              <span>🏠</span>
+              <span>Housing & Local Growth</span>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="question-card">
+              <div class="axis-title">Building More Housing</div>
+              <div class="axis-question">Should cities allow more apartments and housing to be built, or protect existing neighborhoods from new development?</div>
+
+              <div class="slider-section">
+                <div class="slider-container">
+                  <div class="position-labels">
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #A855F7;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Allow dense apartments everywhere; fast-track permits</div>
+                      </div>
+                    </div>
+                    <div class="position-item selected">
+                      <div class="position-dot" style="background: #C084FC;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Allow more housing near transit and job centers</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #9CA3AF;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Moderate upzoning with community input</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #5EEAD4;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Protect most neighborhoods; limited new development</div>
+                        <div class="current-policy-badge">Current in most US cities</div>
+                      </div>
+                    </div>
+                    <div class="position-item">
+                      <div class="position-dot" style="background: #14B8A6;"></div>
+                      <div class="position-content">
+                        <div class="position-text">Strict growth limits to preserve neighborhood character</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="slider-track-container">
+                    <div class="pole-label-top">Build<br>More</div>
+                    <div class="slider-track">
+                      <div class="slider-thumb" style="top: 22%;"></div>
+                    </div>
+                    <div class="pole-label-bottom">Limit<br>Growth</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-buttons">
+              <button class="nav-btn secondary">Back</button>
+              <button class="nav-btn primary">Next →</button>
+            </div>
+            <div class="skip-link">
+              <a href="#">Skip this question</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

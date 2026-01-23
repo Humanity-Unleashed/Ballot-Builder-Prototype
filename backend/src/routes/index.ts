@@ -13,6 +13,7 @@ import ballotRoutes from './ballot';
 import contestRoutes from './contests';
 import measureRoutes from './measures';
 import candidateRoutes from './candidates';
+import assessmentRoutes from './assessment';
 
 const router = Router();
 
@@ -24,6 +25,7 @@ router.use('/ballot', ballotRoutes);
 router.use('/contests', contestRoutes);
 router.use('/measures', measureRoutes);
 router.use('/candidates', candidateRoutes);
+router.use('/assessment', assessmentRoutes);
 
 // API root info
 router.get('/', (_req: Request, res: Response) => {
@@ -81,6 +83,13 @@ router.get('/', (_req: Request, res: Response) => {
         get: 'GET /api/candidates/:candidateId',
         context: 'GET /api/candidates/:candidateId/context?topicId=',
         sources: 'GET /api/candidates/:candidateId/sources',
+      },
+      assessment: {
+        start: 'POST /api/assessment/start',
+        getSession: 'GET /api/assessment/:sessionId',
+        submitAnswer: 'POST /api/assessment/:sessionId/answer',
+        complete: 'POST /api/assessment/:sessionId/complete',
+        delete: 'DELETE /api/assessment/:sessionId',
       },
     },
   });

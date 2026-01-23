@@ -14,7 +14,7 @@
  * - Candidate races with match percentage recommendations
  */
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -27,6 +27,13 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useBlueprint } from '@/context/BlueprintContext';
+import {
+  ballotApi,
+  type Ballot as ApiBallot,
+  type BallotContest,
+  type BallotMeasure,
+  type BallotCandidate,
+} from '@/services/api';
 
 // ===========================================
 // TypeScript Interfaces
@@ -130,260 +137,92 @@ interface UserVote {
 }
 
 // ===========================================
-// Mock Data with Candidate Profiles
+// Data Transformation Functions
 // ===========================================
 
-const MOCK_CATEGORIES: Category[] = [
-  { id: 'props', name: 'State Propositions', icon: 'document-text-outline', color: '#3B82F6' },
-  { id: 'local', name: 'Local Measures', icon: 'business-outline', color: '#10B981' },
-  { id: 'offices', name: 'Elected Offices', icon: 'people-outline', color: '#8B5CF6' },
+/** Default categories for ballot items */
+const DEFAULT_CATEGORIES: Category[] = [
+  { id: 'measures', name: 'Ballot Measures', icon: 'document-text-outline', color: '#3B82F6' },
+  { id: 'contests', name: 'Elected Offices', icon: 'people-outline', color: '#8B5CF6' },
 ];
 
-// =====================================================
-// MOCK BALLOT DATA - Uses REAL axis IDs from civic spec
-// These axis IDs match what users swipe on in Smart Assessment
-// =====================================================
+/** Transform API candidate to internal Candidate type */
+function transformCandidate(apiCandidate: BallotCandidate): Candidate {
+  return {
+    id: apiCandidate.id,
+    name: apiCandidate.name.ballotDisplay || apiCandidate.name.full,
+    party: apiCandidate.party,
+    incumbent: apiCandidate.incumbencyStatus === 'incumbent',
+    profile: {
+      stances: apiCandidate.axisStances || {},
+      summary: apiCandidate.profileSummary,
+    },
+  };
+}
 
-// IMPORTANT: Polarity explanation
-// - poleA = LOW slider values (0-4), score towards +1
-// - poleB = HIGH slider values (6-10), score towards -1
-// - NEGATIVE yesAxisEffect = YES aligns with poleA preferences (user with low slider should vote YES)
-// - POSITIVE yesAxisEffect = YES aligns with poleB preferences (user with high slider should vote YES)
+/** Transform API contest to internal BallotItem type */
+function transformContest(contest: BallotContest): BallotItem {
+  // Extract relevant axes from all candidates' stances
+  const allAxisIds = new Set<string>();
+  contest.candidates.forEach((candidate) => {
+    if (candidate.axisStances) {
+      Object.keys(candidate.axisStances).forEach((axisId) => allAxisIds.add(axisId));
+    }
+  });
 
-const MOCK_BALLOT_ITEMS: BallotItem[] = [
-  // === STATE PROPOSITIONS ===
-  {
-    id: 'prop_housing_bond',
-    categoryId: 'props',
-    type: 'proposition',
-    title: 'Proposition 1: Housing Bond',
-    questionText: 'Should the state issue $10 billion in bonds to fund affordable housing construction and rental assistance programs?',
-    explanation: 'This bond would fund construction of 100,000+ affordable units, provide down payment assistance for first-time buyers, and expand rental vouchers for low-income families. Repayment would come from state general funds over 30 years.',
-    relevantAxes: ['econ_investment', 'housing_affordability_tools', 'econ_safetynet'],
-    yesAxisEffects: {
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = more public investment = aligns with poleA = NEGATIVE
-      econ_investment: -0.8,
-      // housing_affordability_tools: poleA = "Rent limits & public housing", poleB = "Build more, fewer rules"
-      // YES = public housing = aligns with poleA = NEGATIVE
-      housing_affordability_tools: -0.7,
-      // econ_safetynet: poleA = "Broader safety net", poleB = "More conditional"
-      // YES = broader support = aligns with poleA = NEGATIVE
-      econ_safetynet: -0.6,
-    },
-  },
-  {
-    id: 'prop_school_choice',
-    categoryId: 'props',
-    type: 'proposition',
-    title: 'Proposition 2: Education Savings Accounts',
-    questionText: 'Should parents receive $7,000 per child annually to use at any school, including private and religious schools?',
-    explanation: 'This measure creates Education Savings Accounts funded by diverting per-pupil state funding. Supporters say it empowers family choice; opponents say it defunds public schools.',
-    relevantAxes: ['econ_school_choice', 'econ_investment'],
-    yesAxisEffects: {
-      // econ_school_choice: poleA = "Strengthen public schools", poleB = "Expand school choice"
-      // YES = expand choice = aligns with poleB = POSITIVE
-      econ_school_choice: 0.9,
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = diverts from public = aligns with poleB = POSITIVE
-      econ_investment: 0.5,
-    },
-  },
-  {
-    id: 'prop_climate',
-    categoryId: 'props',
-    type: 'proposition',
-    title: 'Proposition 3: Clean Energy Standard',
-    questionText: 'Should utilities be required to generate 100% of electricity from renewable sources by 2035?',
-    explanation: 'This measure mandates a transition away from fossil fuels for electricity generation. It may increase electricity rates in the short term but aims to reduce emissions and create clean energy jobs.',
-    relevantAxes: ['climate_ambition', 'climate_energy_portfolio'],
-    yesAxisEffects: {
-      // climate_ambition: poleA = "Act fast on climate", poleB = "Go slow, keep costs low"
-      // YES = act fast = aligns with poleA = NEGATIVE
-      climate_ambition: -0.9,
-      // climate_energy_portfolio: poleA = "Solar & wind first", poleB = "Mix of all energy types"
-      // YES = renewables only = aligns with poleA = NEGATIVE
-      climate_energy_portfolio: -0.8,
-    },
-  },
-
-  // === LOCAL MEASURES ===
-  {
-    id: 'measure_transit',
-    categoryId: 'local',
-    type: 'proposition',
-    title: 'Measure A: Transit Expansion',
-    questionText: 'Should the county raise sales tax by 0.5% to fund bus and rail expansion over the next 20 years?',
-    explanation: 'Funds would add 3 new rail lines, increase bus frequency, and reduce fares for low-income riders. The tax would add about $50/year for the median household.',
-    relevantAxes: ['housing_transport_priority', 'econ_investment'],
-    yesAxisEffects: {
-      // housing_transport_priority: poleA = "Transit, walking & biking", poleB = "Cars & parking"
-      // YES = transit = aligns with poleA = NEGATIVE
-      housing_transport_priority: -0.8,
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = public investment = aligns with poleA = NEGATIVE
-      econ_investment: -0.6,
-    },
-  },
-  {
-    id: 'measure_rent',
-    categoryId: 'local',
-    type: 'proposition',
-    title: 'Measure B: Rent Stabilization',
-    questionText: 'Should annual rent increases be limited to 5% for buildings older than 15 years?',
-    explanation: 'This measure caps rent increases to protect existing tenants from displacement. Critics argue it may reduce new housing construction and maintenance investment.',
-    relevantAxes: ['housing_affordability_tools', 'housing_supply_zoning'],
-    yesAxisEffects: {
-      // housing_affordability_tools: poleA = "Rent limits & public housing", poleB = "Build more, fewer rules"
-      // YES = rent limits = aligns with poleA = NEGATIVE
-      housing_affordability_tools: -0.9,
-      // housing_supply_zoning: poleA = "Build more / allow density", poleB = "Preserve / limit growth"
-      // YES = may slow building = slightly aligns with poleB = slight POSITIVE
-      housing_supply_zoning: 0.3,
-    },
-  },
-  {
-    id: 'measure_police',
-    categoryId: 'local',
-    type: 'proposition',
-    title: 'Measure C: Public Safety Funding',
-    questionText: 'Should the city hire 200 additional police officers and increase police department funding by 15%?',
-    explanation: 'This measure responds to concerns about crime rates by expanding the police force. It would be funded by reallocating funds from other city departments.',
-    relevantAxes: ['justice_policing_accountability', 'econ_investment'],
-    yesAxisEffects: {
-      // justice_policing_accountability: poleA = "More oversight & alternatives", poleB = "More police & enforcement"
-      // YES = more police = aligns with poleB = POSITIVE
-      justice_policing_accountability: 0.8,
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = spending on police = aligns with poleA (it IS spending) = NEGATIVE
-      econ_investment: -0.3,
-    },
-  },
-
-  // === CANDIDATE RACES ===
-  // CANDIDATE PROFILES: Values 0-10 where:
-  // - LOW (0-4) = leans toward poleA
-  // - HIGH (6-10) = leans toward poleB
-  // These are compared directly to user slider values
-  {
-    id: 'mayor',
-    categoryId: 'offices',
+  return {
+    id: contest.id,
+    categoryId: 'contests',
     type: 'candidate_race',
-    title: 'Mayor',
-    questionText: 'Vote for ONE candidate for Mayor',
-    explanation: 'The Mayor serves a 4-year term and oversees city operations, proposes the annual budget, and represents the city in regional matters.',
-    relevantAxes: ['econ_investment', 'housing_affordability_tools', 'climate_ambition', 'justice_policing_accountability'],
-    candidates: [
-      {
-        id: 'martinez',
-        name: 'Elena Martinez',
-        party: 'Democratic',
-        incumbent: true,
-        profile: {
-          stances: {
-            // Low values = poleA positions
-            econ_investment: 2,                   // poleA: More public investment
-            econ_safetynet: 3,                    // poleA: Broader safety net
-            housing_affordability_tools: 2,       // poleA: Rent limits & public housing
-            housing_supply_zoning: 3,             // poleA: Build more / allow density
-            climate_ambition: 2,                  // poleA: Act fast on climate
-            justice_policing_accountability: 3,   // poleA: More oversight & alternatives
-          },
-          summary: 'Prioritizes affordable housing, transit expansion, and climate action. Supports civilian oversight of police.',
-        }
-      },
-      {
-        id: 'thompson',
-        name: 'David Thompson',
-        party: 'Republican',
-        profile: {
-          stances: {
-            // High values = poleB positions
-            econ_investment: 8,                   // poleB: Lower taxes/tighter budgets
-            econ_safetynet: 7,                    // poleB: More conditional safety net
-            housing_affordability_tools: 8,       // poleB: Build more, fewer rules
-            housing_supply_zoning: 7,             // poleB: Preserve / limit growth
-            climate_ambition: 8,                  // poleB: Go slow, keep costs low
-            justice_policing_accountability: 8,   // poleB: More police & enforcement
-          },
-          summary: 'Focuses on fiscal responsibility, public safety, and reducing regulations on businesses and housing development.',
-        }
-      },
-      {
-        id: 'patel',
-        name: 'Priya Patel',
-        party: 'Independent',
-        profile: {
-          stances: {
-            econ_investment: 5,                   // Balanced
-            econ_safetynet: 5,                    // Balanced
-            housing_affordability_tools: 6,       // Slight lean to market solutions (poleB)
-            housing_supply_zoning: 2,             // Strong pro-building (poleA)
-            climate_ambition: 4,                  // Moderate climate action (slight poleA)
-            justice_policing_accountability: 5,   // Balanced approach
-          },
-          summary: 'Pro-housing centrist who supports building more at all price points. Pragmatic on climate and policing.',
-        }
-      },
-    ],
+    title: contest.office,
+    questionText: `Vote for ${contest.votingFor === 1 ? 'ONE' : contest.votingFor || 'ONE'} candidate for ${contest.office}`,
+    explanation: contest.termInfo || `Choose your preferred candidate for ${contest.office}.`,
+    relevantAxes: Array.from(allAxisIds),
+    candidates: contest.candidates.map(transformCandidate),
     allowWriteIn: true,
-  },
-  {
-    id: 'council_d5',
-    categoryId: 'offices',
-    type: 'candidate_race',
-    title: 'City Council - District 5',
-    questionText: 'Vote for ONE candidate for City Council District 5',
-    explanation: 'City Council members serve 2-year terms and vote on local ordinances, zoning decisions, and the city budget.',
-    relevantAxes: ['econ_investment', 'housing_supply_zoning', 'housing_affordability_tools', 'justice_policing_accountability'],
-    candidates: [
-      {
-        id: 'nguyen',
-        name: 'Kevin Nguyen',
-        party: 'Democratic',
-        profile: {
-          stances: {
-            econ_investment: 3,                   // poleA: More public investment
-            housing_supply_zoning: 1,             // Strong poleA: Build more / allow density
-            housing_affordability_tools: 4,       // Mixed - slight poleA
-            justice_policing_accountability: 4,   // Slight poleA: Leans oversight
-          },
-          summary: 'YIMBY advocate focused on housing production. Supports upzoning and streamlined permitting.',
-        }
-      },
-      {
-        id: 'oconnor',
-        name: 'Sarah O\'Connor',
-        party: 'Democratic',
-        incumbent: true,
-        profile: {
-          stances: {
-            econ_investment: 2,                   // poleA: More public investment
-            housing_supply_zoning: 5,             // Balanced on density
-            housing_affordability_tools: 1,       // Strong poleA: Rent limits
-            justice_policing_accountability: 2,   // poleA: Strong oversight advocate
-          },
-          summary: 'Tenant rights champion. Prioritizes rent stabilization and community land trusts over market-rate development.',
-        }
-      },
-      {
-        id: 'brooks',
-        name: 'Michael Brooks',
-        party: 'Republican',
-        profile: {
-          stances: {
-            econ_investment: 8,                   // poleB: Lower taxes
-            housing_supply_zoning: 7,             // poleB: Preserve neighborhoods
-            housing_affordability_tools: 9,       // poleB: No rent control
-            justice_policing_accountability: 9,   // poleB: Pro-police
-          },
-          summary: 'Neighborhood preservation advocate. Opposes density increases and supports traditional policing.',
-        }
-      },
-    ],
-    allowWriteIn: true,
-  },
-];
+  };
+}
+
+/** Transform API measure to internal BallotItem type */
+function transformMeasure(measure: BallotMeasure): BallotItem {
+  return {
+    id: measure.id,
+    categoryId: 'measures',
+    type: 'proposition',
+    title: measure.title,
+    questionText: measure.description,
+    explanation: measure.explanation,
+    relevantAxes: measure.relevantAxes || [],
+    yesAxisEffects: measure.yesAxisEffects || {},
+  };
+}
+
+/** Transform entire API ballot to internal types */
+function transformBallot(ballot: ApiBallot): { categories: Category[]; items: BallotItem[] } {
+  const items: BallotItem[] = [];
+
+  ballot.items.forEach((item) => {
+    if (item.type === 'candidate') {
+      items.push(transformContest(item as BallotContest));
+    } else if (item.type === 'measure') {
+      items.push(transformMeasure(item as BallotMeasure));
+    }
+  });
+
+  // Determine which categories are actually present
+  const hasMeasures = items.some((item) => item.type === 'proposition');
+  const hasContests = items.some((item) => item.type === 'candidate_race');
+
+  const categories: Category[] = [];
+  if (hasMeasures) {
+    categories.push(DEFAULT_CATEGORIES.find((c) => c.id === 'measures')!);
+  }
+  if (hasContests) {
+    categories.push(DEFAULT_CATEGORIES.find((c) => c.id === 'contests')!);
+  }
+
+  return { categories, items };
+}
 
 // ===========================================
 // Recommendation Logic
@@ -1995,12 +1834,38 @@ const navStyles = StyleSheet.create({
 export default function BallotBuilderScreen() {
   const { profile, spec, isLoading, updateAxisValue } = useBlueprint();
 
+  // Ballot data from API
+  const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [isBallotLoading, setIsBallotLoading] = useState(true);
+  const [ballotError, setBallotError] = useState<string | null>(null);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [savedVotes, setSavedVotes] = useState<UserVote[]>([]);
   const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
   const [writeInName, setWriteInName] = useState('');
   const [valuesExpanded, setValuesExpanded] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
+
+  // Fetch ballot data from API
+  useEffect(() => {
+    async function fetchBallot() {
+      try {
+        setIsBallotLoading(true);
+        setBallotError(null);
+        const ballot = await ballotApi.getDefault();
+        const { categories: fetchedCategories, items } = transformBallot(ballot);
+        setBallotItems(items);
+        setCategories(fetchedCategories);
+      } catch (error) {
+        console.error('Failed to fetch ballot:', error);
+        setBallotError('Failed to load ballot data');
+      } finally {
+        setIsBallotLoading(false);
+      }
+    }
+    fetchBallot();
+  }, []);
 
   // Derive ValueAxis[] from profile + spec
   const userAxes = useMemo((): ValueAxis[] => {
@@ -2025,15 +1890,15 @@ export default function BallotBuilderScreen() {
     return result;
   }, [profile, spec]);
 
-  const currentItem = MOCK_BALLOT_ITEMS[currentIndex];
-  const currentCategory = MOCK_CATEGORIES.find(c => c.id === currentItem?.categoryId) || MOCK_CATEGORIES[0];
-  const categoryItems = MOCK_BALLOT_ITEMS.filter(i => i.categoryId === currentCategory.id);
+  const currentItem = ballotItems[currentIndex];
+  const currentCategory = categories.find(c => c.id === currentItem?.categoryId) || categories[0];
+  const categoryItems = ballotItems.filter(i => i.categoryId === currentCategory?.id);
   const categoryIndex = categoryItems.findIndex(i => i.id === currentItem?.id);
 
   // Compute recommendations
   const propositionRec = useMemo(() => {
     if (!currentItem || currentItem.type !== 'proposition') {
-      return { vote: null, confidence: 0, explanation: '', factors: [] };
+      return { vote: null, confidence: 0, explanation: '', factors: [], breakdown: [] };
     }
     return computePropositionRecommendation(currentItem, userAxes);
   }, [currentItem, userAxes]);
@@ -2078,24 +1943,24 @@ export default function BallotBuilderScreen() {
 
   const handleNext = useCallback(() => {
     saveCurrentVote();
-    if (currentIndex < MOCK_BALLOT_ITEMS.length - 1) {
+    if (currentIndex < ballotItems.length - 1) {
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
-      restoreVote(MOCK_BALLOT_ITEMS[nextIndex].id);
+      restoreVote(ballotItems[nextIndex].id);
       setValuesExpanded(false);
     } else {
       // Show summary screen when finished
       setShowSummary(true);
     }
-  }, [currentIndex, saveCurrentVote, restoreVote]);
+  }, [currentIndex, saveCurrentVote, restoreVote, ballotItems]);
 
   // Jump to a specific ballot item (for editing from summary)
   const handleEditItem = useCallback((itemIndex: number) => {
     setCurrentIndex(itemIndex);
-    restoreVote(MOCK_BALLOT_ITEMS[itemIndex].id);
+    restoreVote(ballotItems[itemIndex].id);
     setShowSummary(false);
     setValuesExpanded(false);
-  }, [restoreVote]);
+  }, [restoreVote, ballotItems]);
 
   // Start over - reset everything
   const handleStartOver = useCallback(() => {
@@ -2116,24 +1981,24 @@ export default function BallotBuilderScreen() {
     if (currentIndex > 0) {
       const prevIndex = currentIndex - 1;
       setCurrentIndex(prevIndex);
-      restoreVote(MOCK_BALLOT_ITEMS[prevIndex].id);
+      restoreVote(ballotItems[prevIndex].id);
       setValuesExpanded(false);
     }
-  }, [currentIndex, restoreVote]);
+  }, [currentIndex, restoreVote, ballotItems]);
 
   const handleSkip = useCallback(() => {
-    if (currentIndex < MOCK_BALLOT_ITEMS.length - 1) {
+    if (currentIndex < ballotItems.length - 1) {
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
-      restoreVote(MOCK_BALLOT_ITEMS[nextIndex].id);
+      restoreVote(ballotItems[nextIndex].id);
       setCurrentVote(null);
       setWriteInName('');
       setValuesExpanded(false);
     }
-  }, [currentIndex, restoreVote]);
+  }, [currentIndex, restoreVote, ballotItems]);
 
   // Loading state
-  if (isLoading || !profile) {
+  if (isLoading || isBallotLoading || !profile) {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color={Colors.primary} />
@@ -2142,7 +2007,17 @@ export default function BallotBuilderScreen() {
     );
   }
 
-  if (!currentItem) {
+  // Error state
+  if (ballotError) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Ionicons name="alert-circle-outline" size={48} color={Colors.error} />
+        <Text style={styles.loadingText}>{ballotError}</Text>
+      </View>
+    );
+  }
+
+  if (!currentItem || ballotItems.length === 0) {
     return (
       <View style={styles.loadingContainer}>
         <Text style={styles.loadingText}>No ballot items available</Text>
@@ -2155,8 +2030,8 @@ export default function BallotBuilderScreen() {
     return (
       <BallotSummary
         votes={savedVotes}
-        ballotItems={MOCK_BALLOT_ITEMS}
-        categories={MOCK_CATEGORIES}
+        ballotItems={ballotItems}
+        categories={categories}
         onEditItem={handleEditItem}
         onStartOver={handleStartOver}
         onPrint={handlePrint}
@@ -2224,7 +2099,7 @@ export default function BallotBuilderScreen() {
           onBack={handleBack}
           onNext={handleNext}
           onSkip={handleSkip}
-          isLast={currentIndex === MOCK_BALLOT_ITEMS.length - 1}
+          isLast={currentIndex === ballotItems.length - 1}
         />
       </ScrollView>
     </View>

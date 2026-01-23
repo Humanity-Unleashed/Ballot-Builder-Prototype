@@ -11,20 +11,20 @@ import { BALLOT_IDS, CONTEST_IDS } from './ballot/ids';
 export const mockRecommendations: Record<string, MockRecommendation[]> = {
   [BALLOT_IDS.SAMPLE]: [
     {
-      contestId: CONTEST_IDS.GOVERNOR,
-      recommendedCandidateId: 'cand_gov_jane_smith',
+      contestId: CONTEST_IDS.MAYOR,
+      recommendedCandidateId: 'martinez',
       confidence: 78,
       confidenceLevel: 'high',
       summary:
-        "Based on your healthcare and climate priorities, this candidate's focus on universal healthcare and clean energy investment aligns well with your preferences.",
+        "Based on your housing and climate priorities, this candidate's focus on affordable housing, transit expansion, and climate action aligns well with your preferences.",
     },
     {
-      contestId: CONTEST_IDS.STATE_SENATE_D10,
-      recommendedCandidateId: 'cand_senate_maria_garcia',
+      contestId: CONTEST_IDS.COUNCIL_D5,
+      recommendedCandidateId: 'oconnor',
       confidence: 82,
       confidenceLevel: 'high',
       summary:
-        "Strong alignment with your housing and healthcare priorities. This candidate's rent control and healthcare expansion positions match your stated preferences.",
+        "Strong alignment with your housing and tenant priorities. This candidate's rent stabilization and oversight positions match your stated preferences.",
     },
   ],
 };

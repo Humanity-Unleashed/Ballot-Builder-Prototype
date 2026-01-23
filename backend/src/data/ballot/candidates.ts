@@ -2,92 +2,162 @@
  * Candidate Data
  *
  * Fake candidates for prototype ballot.
+ * Data aligned with frontend mock data.
  */
 
 import type { Candidate } from '../../types';
 import { CONTEST_IDS } from './ids';
 
+// CANDIDATE PROFILES: Values 0-10 where:
+// - LOW (0-4) = leans toward poleA
+// - HIGH (6-10) = leans toward poleB
+// These are compared directly to user slider values
+
 // ============================================
-// Candidates - Governor
+// Candidates - Mayor
 // ============================================
 
-export const candidatesGovernor: Candidate[] = [
+export const candidatesMayor: Candidate[] = [
   {
-    id: 'cand_gov_jane_smith',
-    contestId: CONTEST_IDS.GOVERNOR,
-    name: { full: 'Jane Smith', ballotDisplay: 'Jane Smith' },
+    id: 'martinez',
+    contestId: CONTEST_IDS.MAYOR,
+    name: { full: 'Elena Martinez', ballotDisplay: 'Elena Martinez' },
     party: 'Democratic',
+    incumbencyStatus: 'incumbent',
     ballotOrder: 1,
-    vector: [0.7, 0.6, 0.8, 0.7, 0.6],
     positions: [
-      'Support universal healthcare expansion',
-      'Invest $50B in clean energy infrastructure',
-      'Increase education funding by 20%',
-      'Criminal justice reform with focus on rehabilitation',
+      'Prioritizes affordable housing expansion',
+      'Supports transit expansion and climate action',
+      'Advocates for civilian oversight of police',
+      'Focused on tenant protections',
     ],
+    // Low values = poleA positions
+    axisStances: {
+      econ_investment: 2,                   // poleA: More public investment
+      econ_safetynet: 3,                    // poleA: Broader safety net
+      housing_affordability_tools: 2,       // poleA: Rent limits & public housing
+      housing_supply_zoning: 3,             // poleA: Build more / allow density
+      climate_ambition: 2,                  // poleA: Act fast on climate
+      justice_policing_accountability: 3,   // poleA: More oversight & alternatives
+    },
+    profileSummary: 'Prioritizes affordable housing, transit expansion, and climate action. Supports civilian oversight of police.',
   },
   {
-    id: 'cand_gov_john_doe',
-    contestId: CONTEST_IDS.GOVERNOR,
-    name: { full: 'John Doe', ballotDisplay: 'John Doe' },
+    id: 'thompson',
+    contestId: CONTEST_IDS.MAYOR,
+    name: { full: 'David Thompson', ballotDisplay: 'David Thompson' },
     party: 'Republican',
+    incumbencyStatus: 'challenger',
     ballotOrder: 2,
-    vector: [0.3, 0.4, 0.2, 0.3, 0.4],
     positions: [
-      'Promote healthcare market competition',
-      'Balance energy independence with environmental concerns',
-      'Support school choice and voucher programs',
-      'Maintain law and order with strong policing',
+      'Focus on fiscal responsibility',
+      'Prioritizes public safety and policing',
+      'Reduces regulations on businesses',
+      'Market-based housing solutions',
     ],
+    // High values = poleB positions
+    axisStances: {
+      econ_investment: 8,                   // poleB: Lower taxes/tighter budgets
+      econ_safetynet: 7,                    // poleB: More conditional safety net
+      housing_affordability_tools: 8,       // poleB: Build more, fewer rules
+      housing_supply_zoning: 7,             // poleB: Preserve / limit growth
+      climate_ambition: 8,                  // poleB: Go slow, keep costs low
+      justice_policing_accountability: 8,   // poleB: More police & enforcement
+    },
+    profileSummary: 'Focuses on fiscal responsibility, public safety, and reducing regulations on businesses and housing development.',
   },
   {
-    id: 'cand_gov_sarah_johnson',
-    contestId: CONTEST_IDS.GOVERNOR,
-    name: { full: 'Sarah Johnson', ballotDisplay: 'Sarah Johnson' },
+    id: 'patel',
+    contestId: CONTEST_IDS.MAYOR,
+    name: { full: 'Priya Patel', ballotDisplay: 'Priya Patel' },
     party: 'Independent',
+    incumbencyStatus: 'challenger',
     ballotOrder: 3,
-    vector: [0.5, 0.5, 0.6, 0.5, 0.7],
     positions: [
-      'Mixed public-private healthcare approach',
-      'Gradual transition to renewable energy',
-      'Education reform with accountability measures',
-      'Balanced approach to criminal justice',
+      'Pro-housing centrist',
+      'Supports building more at all price points',
+      'Pragmatic approach to climate',
+      'Balanced policing strategy',
     ],
+    axisStances: {
+      econ_investment: 5,                   // Balanced
+      econ_safetynet: 5,                    // Balanced
+      housing_affordability_tools: 6,       // Slight lean to market solutions (poleB)
+      housing_supply_zoning: 2,             // Strong pro-building (poleA)
+      climate_ambition: 4,                  // Moderate climate action (slight poleA)
+      justice_policing_accountability: 5,   // Balanced approach
+    },
+    profileSummary: 'Pro-housing centrist who supports building more at all price points. Pragmatic on climate and policing.',
   },
 ];
 
 // ============================================
-// Candidates - State Senate District 10
+// Candidates - City Council District 5
 // ============================================
 
-export const candidatesStateSenate: Candidate[] = [
+export const candidatesCouncilD5: Candidate[] = [
   {
-    id: 'cand_senate_maria_garcia',
-    contestId: CONTEST_IDS.STATE_SENATE_D10,
-    name: { full: 'Maria Garcia', ballotDisplay: 'Maria Garcia' },
+    id: 'nguyen',
+    contestId: CONTEST_IDS.COUNCIL_D5,
+    name: { full: 'Kevin Nguyen', ballotDisplay: 'Kevin Nguyen' },
     party: 'Democratic',
+    incumbencyStatus: 'challenger',
     ballotOrder: 1,
-    vector: [0.8, 0.7, 0.75, 0.8, 0.7],
     positions: [
-      'Expand healthcare access to undocumented immigrants',
-      'Fast-track renewable energy projects',
-      'Increase minimum wage to $20/hour',
-      'Support rent control measures',
+      'YIMBY advocate focused on housing production',
+      'Supports upzoning and streamlined permitting',
+      'Favors public investment in infrastructure',
+      'Leans toward police oversight',
     ],
+    axisStances: {
+      econ_investment: 3,                   // poleA: More public investment
+      housing_supply_zoning: 1,             // Strong poleA: Build more / allow density
+      housing_affordability_tools: 4,       // Mixed - slight poleA
+      justice_policing_accountability: 4,   // Slight poleA: Leans oversight
+    },
+    profileSummary: 'YIMBY advocate focused on housing production. Supports upzoning and streamlined permitting.',
   },
   {
-    id: 'cand_senate_robert_chen',
-    contestId: CONTEST_IDS.STATE_SENATE_D10,
-    name: { full: 'Robert Chen', ballotDisplay: 'Robert Chen' },
-    party: 'Republican',
+    id: 'oconnor',
+    contestId: CONTEST_IDS.COUNCIL_D5,
+    name: { full: "Sarah O'Connor", ballotDisplay: "Sarah O'Connor" },
+    party: 'Democratic',
+    incumbencyStatus: 'incumbent',
     ballotOrder: 2,
-    vector: [0.4, 0.5, 0.3, 0.4, 0.5],
     positions: [
-      'Reduce business regulations to encourage growth',
-      'Support traditional energy alongside renewables',
-      'Oppose mandated minimum wage increases',
-      'Protect property owner rights',
+      'Tenant rights champion',
+      'Prioritizes rent stabilization',
+      'Supports community land trusts',
+      'Strong advocate for police oversight',
     ],
+    axisStances: {
+      econ_investment: 2,                   // poleA: More public investment
+      housing_supply_zoning: 5,             // Balanced on density
+      housing_affordability_tools: 1,       // Strong poleA: Rent limits
+      justice_policing_accountability: 2,   // poleA: Strong oversight advocate
+    },
+    profileSummary: "Tenant rights champion. Prioritizes rent stabilization and community land trusts over market-rate development.",
+  },
+  {
+    id: 'brooks',
+    contestId: CONTEST_IDS.COUNCIL_D5,
+    name: { full: 'Michael Brooks', ballotDisplay: 'Michael Brooks' },
+    party: 'Republican',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 3,
+    positions: [
+      'Neighborhood preservation advocate',
+      'Opposes density increases',
+      'Supports traditional policing',
+      'Favors lower taxes',
+    ],
+    axisStances: {
+      econ_investment: 8,                   // poleB: Lower taxes
+      housing_supply_zoning: 7,             // poleB: Preserve neighborhoods
+      housing_affordability_tools: 9,       // poleB: No rent control
+      justice_policing_accountability: 9,   // poleB: Pro-police
+    },
+    profileSummary: 'Neighborhood preservation advocate. Opposes density increases and supports traditional policing.',
   },
 ];
 
@@ -96,8 +166,8 @@ export const candidatesStateSenate: Candidate[] = [
 // ============================================
 
 export const allCandidates: Candidate[] = [
-  ...candidatesGovernor,
-  ...candidatesStateSenate,
+  ...candidatesMayor,
+  ...candidatesCouncilD5,
 ];
 
 export function getCandidateById(candidateId: string): Candidate | null {

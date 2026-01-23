@@ -7,8 +7,12 @@
 export {
   useUserStore,
   type SwipeEvent,
+  type SwipeInput,
   type AxisScore,
   // Selectors
+  selectSpec,
+  selectIsSpecLoading,
+  selectSpecError,
   selectPersona,
   selectSwipes,
   selectBlueprintProfile,
@@ -19,10 +23,3 @@ export {
   selectAxisProfile,
   selectDomainProfile,
 } from './userStore';
-
-export {
-  createDefaultProfile,
-  updateProfileFromScores,
-  scoreAndUpdateProfile,
-  initializeProfileFromSwipes,
-} from './blueprintHelpers';

@@ -29,7 +29,14 @@
       "Bash(lsof:*)",
       "Bash(python3:*)",
       "mcp__ide__getDiagnostics",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(netstat:*)",
+      "Bash(ss:*)",
+      "Bash(timeout 25 npm start:*)",
+      "Bash(jobs:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.expo.dev)"
     ]
   }
 }

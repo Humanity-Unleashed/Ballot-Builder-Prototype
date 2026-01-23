@@ -2,28 +2,31 @@
  * Contest Data
  *
  * Candidate race definitions for the ballot.
+ * Data aligned with frontend mock data.
  */
 
 import type { Contest } from '../../types';
 import { CONTEST_IDS } from './ids';
-import { candidatesGovernor, candidatesStateSenate } from './candidates';
+import { candidatesMayor, candidatesCouncilD5 } from './candidates';
 
 export const contests: Contest[] = [
   {
-    id: CONTEST_IDS.GOVERNOR,
+    id: CONTEST_IDS.MAYOR,
     type: 'candidate',
-    office: 'Governor',
-    jurisdiction: 'state',
+    office: 'Mayor',
+    jurisdiction: 'city',
+    termInfo: 'The Mayor serves a 4-year term and oversees city operations, proposes the annual budget, and represents the city in regional matters.',
     votingFor: 1,
-    candidates: candidatesGovernor,
+    candidates: candidatesMayor,
   },
   {
-    id: CONTEST_IDS.STATE_SENATE_D10,
+    id: CONTEST_IDS.COUNCIL_D5,
     type: 'candidate',
-    office: 'State Senate District 10',
-    jurisdiction: 'state',
+    office: 'City Council - District 5',
+    jurisdiction: 'city',
+    termInfo: 'City Council members serve 2-year terms and vote on local ordinances, zoning decisions, and the city budget.',
     votingFor: 1,
-    candidates: candidatesStateSenate,
+    candidates: candidatesCouncilD5,
   },
 ];
 

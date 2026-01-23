@@ -11,12 +11,15 @@ export const BALLOT_IDS = {
 } as const;
 
 export const CONTEST_IDS = {
-  GOVERNOR: 'gov-2025',
-  STATE_SENATE_D10: 'state-senate-d10-2025',
+  MAYOR: 'mayor',
+  COUNCIL_D5: 'council_d5',
 } as const;
 
 export const MEASURE_IDS = {
-  PROP_42: 'prop-42-education',
-  MEASURE_A: 'measure-a-housing',
-  PROP_15: 'prop-15-energy',
+  PROP_HOUSING_BOND: 'prop_housing_bond',
+  PROP_SCHOOL_CHOICE: 'prop_school_choice',
+  PROP_CLIMATE: 'prop_climate',
+  MEASURE_TRANSIT: 'measure_transit',
+  MEASURE_RENT: 'measure_rent',
+  MEASURE_POLICE: 'measure_police',
 } as const;

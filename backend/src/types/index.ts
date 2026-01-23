@@ -212,7 +212,11 @@ export interface Measure {
   title: string; // e.g., "Proposition 42: Education Funding Act"
   shortTitle: string; // e.g., "Prop 42"
   description: string;
-  vector: number[]; // Policy alignment vector
+  vector?: number[]; // Legacy policy alignment vector (deprecated)
+  /** Axis effects: how YES vote affects each axis. Negative = toward poleA, Positive = toward poleB */
+  yesAxisEffects?: Record<string, number>;
+  /** Which axes are relevant for this measure */
+  relevantAxes?: string[];
   outcomes: {
     yes: string;
     no: string;
@@ -249,8 +253,12 @@ export interface Candidate {
   isWriteIn?: boolean;
   ballotOrder?: number;
   description?: string;
-  vector?: number[]; // Policy alignment vector
+  vector?: number[]; // Legacy policy alignment vector (deprecated)
   positions?: string[]; // Key policy positions
+  /** Axis-based stances: axisId -> value (0-10 scale, where 0=poleA, 10=poleB) */
+  axisStances?: Record<string, number>;
+  /** Summary of candidate's policy profile */
+  profileSummary?: string;
   policyProfile?: CandidatePreferenceItem[];
 }
 
@@ -507,4 +515,81 @@ export interface AxisScore {
   shrunk: number;
   confidence: number;
   top_drivers: string[];
+}
+
+// ============================================
+// Assessment Session Types
+// ============================================
+
+export type AssessmentStatus = 'in_progress' | 'completed' | 'abandoned';
+
+export interface AssessmentProgress {
+  questionsAnswered: number;
+  estimatedTotal: number;
+  percentage: number;
+  dominantStrategy: string;
+}
+
+export interface AdaptiveState {
+  answeredItems: string[];
+  axisScores: Record<string, AxisScore>;
+  domainCoverage: Record<string, number>;
+  totalQuestions: number;
+  selectedDomains: string[];
+}
+
+export interface AssessmentSession {
+  id: string;
+  userId?: string;
+  status: AssessmentStatus;
+  selectedDomains: string[];
+  adaptiveState: AdaptiveState;
+  swipes: SwipeEvent[];
+  currentItemId: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface StartAssessmentRequest {
+  selectedDomains?: string[];
+  userId?: string;
+}
+
+export interface StartAssessmentResponse {
+  sessionId: string;
+  firstQuestion: CivicItem;
+  progress: AssessmentProgress;
+  selectedDomains: string[];
+}
+
+export interface SubmitAnswerRequest {
+  itemId: string;
+  response: SwipeResponse;
+}
+
+export interface SubmitAnswerResponse {
+  nextQuestion: CivicItem | null;
+  scores: AxisScore[];
+  progress: AssessmentProgress;
+  isComplete: boolean;
+}
+
+export interface GetSessionResponse {
+  sessionId: string;
+  status: AssessmentStatus;
+  currentQuestion: CivicItem | null;
+  answeredItems: string[];
+  scores: AxisScore[];
+  progress: AssessmentProgress;
+  selectedDomains: string[];
+}
+
+export interface CompleteAssessmentRequest {
+  saveToProfile?: boolean;
+}
+
+export interface CompleteAssessmentResponse {
+  sessionId: string;
+  finalScores: AxisScore[];
+  profileSaved: boolean;
 }

@@ -8,7 +8,7 @@
 export { ELECTION_ID, BALLOT_IDS, CONTEST_IDS, MEASURE_IDS } from './ids';
 
 // Candidates
-export { candidatesGovernor, candidatesStateSenate, allCandidates, getCandidateById, getCandidatesByContest } from './candidates';
+export { candidatesMayor, candidatesCouncilD5, allCandidates, getCandidateById, getCandidatesByContest } from './candidates';
 
 // Candidate Context (quotes, records, sources)
 export {

@@ -11,14 +11,24 @@ import { measures } from './measures';
 
 // ============================================
 // All Ballot Items (in ballot order)
+// Matches frontend MOCK_BALLOT_ITEMS order:
+// 1. State Propositions
+// 2. Local Measures
+// 3. Elected Offices
 // ============================================
 
 const allBallotItems: BallotItem[] = [
-  contests[0], // Governor
-  measures[0], // Prop 42
-  measures[1], // Measure A
-  measures[2], // Prop 15
-  contests[1], // State Senate
+  // State Propositions
+  measures[0], // Prop 1: Housing Bond
+  measures[1], // Prop 2: Education Savings Accounts
+  measures[2], // Prop 3: Clean Energy Standard
+  // Local Measures
+  measures[3], // Measure A: Transit Expansion
+  measures[4], // Measure B: Rent Stabilization
+  measures[5], // Measure C: Public Safety Funding
+  // Elected Offices
+  contests[0], // Mayor
+  contests[1], // City Council D5
 ];
 
 // ============================================
