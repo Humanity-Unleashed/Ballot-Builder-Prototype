@@ -46,7 +46,8 @@
       "Bash(git -C /workspace/claude-worktree worktree list:*)",
       "Bash(git -C /workspace/claude-worktree branch:*)",
       "Bash(npm ls:*)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "Bash(npm test:*)"
     ]
   }
 }
