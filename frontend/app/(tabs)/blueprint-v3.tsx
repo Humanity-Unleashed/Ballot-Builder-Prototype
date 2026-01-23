@@ -20,11 +20,45 @@ import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useBlueprint } from '@/context/BlueprintContext';
 import type { AxisProfile } from '../../types/blueprintProfile';
+import { getSliderConfig } from '../../data/sliderPositions';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
+// Helper function to convert 0-10 value to position index
+function valueToPositionIndex(value: number, totalPositions: number): number {
+  return Math.round((value / 10) * (totalPositions - 1));
+}
+
+// Helper function to get position label for an axis
+function getPositionLabel(axisId: string, value: number): string {
+  const config = getSliderConfig(axisId);
+  if (!config) return `${Math.round(value)}/10`;
+
+  const positionIndex = valueToPositionIndex(value, config.positions.length);
+  const position = config.positions[positionIndex];
+
+  return position?.title || `${Math.round(value)}/10`;
+}
+
+// Helper function to get segment color based on position
+function getPositionSegmentColor(index: number, totalPositions: number, currentPolicyIndex: number): string {
+  if (index === currentPolicyIndex) {
+    return '#9CA3AF'; // Grey - current policy
+  }
+
+  const distanceFromCenter = Math.abs(index - currentPolicyIndex) / currentPolicyIndex;
+
+  if (index < currentPolicyIndex) {
+    // Purple side (poleA)
+    return distanceFromCenter > 0.5 ? '#A855F7' : '#C084FC';
+  } else {
+    // Teal side (poleB)
+    return distanceFromCenter > 0.5 ? '#14B8A6' : '#5EEAD4';
+  }
+}
+
 export default function BlueprintV3Screen() {
-  const { profile, spec, isLoading, updateAxisValue, updateImportance } = useBlueprint();
+  const { profile, spec, isLoading, updateAxisValue, updateAxisImportance } = useBlueprint();
   const [editingDomain, setEditingDomain] = useState<string | null>(null);
 
   if (isLoading || !profile) {
@@ -100,7 +134,6 @@ export default function BlueprintV3Screen() {
                 </View>
                 <View style={styles.domainTitleArea}>
                   <Text style={styles.domainName}>{domain.name}</Text>
-                  <ImportanceBar value={importance} />
                 </View>
                 <Ionicons name="pencil-outline" size={18} color={Colors.gray[400]} />
               </View>
@@ -119,6 +152,8 @@ export default function BlueprintV3Screen() {
                         value={axis.value_0_10}
                         poleALabel={axisDef.poleA.label}
                         poleBLabel={axisDef.poleB.label}
+                        axisId={axis.axis_id}
+                        importance={axis.importance}
                       />
                     );
                   })}
@@ -141,7 +176,7 @@ export default function BlueprintV3Screen() {
           profile={profile}
           spec={spec}
           onClose={() => setEditingDomain(null)}
-          onChangeImportance={updateImportance}
+          onChangeAxisImportance={updateAxisImportance}
           onChangeAxis={updateAxisValue}
         />
       )}
@@ -154,7 +189,8 @@ export default function BlueprintV3Screen() {
 // =====================================================
 
 function ImportanceBar({ value }: { value: number }) {
-  const filled = Math.round(value / 2); // 0-5 dots
+  // Map 0-10 value to 0-4 dots filled (5 positions)
+  const filled = Math.round((value / 10) * 4);
   const label = getImportanceLabel(value);
 
   return (
@@ -165,7 +201,7 @@ function ImportanceBar({ value }: { value: number }) {
             key={i}
             style={[
               importanceStyles.dot,
-              i < filled && importanceStyles.dotFilled,
+              i <= filled && importanceStyles.dotFilled,
             ]}
           />
         ))}
@@ -176,10 +212,12 @@ function ImportanceBar({ value }: { value: number }) {
 }
 
 function getImportanceLabel(v: number): string {
-  if (v <= 2) return 'Low priority';
-  if (v <= 5) return 'Moderate';
-  if (v <= 8) return 'Important';
-  return 'Top priority';
+  // Map to 5 positions: 0, 2.5, 5, 7.5, 10
+  if (v <= 1) return 'Not much';
+  if (v <= 3.5) return 'A little';
+  if (v <= 6) return 'Matters to me';
+  if (v <= 8.5) return 'Really matters';
+  return 'Deal breaker';
 }
 
 const importanceStyles = StyleSheet.create({
@@ -217,39 +255,37 @@ function CompactAxisBar({
   value,
   poleALabel,
   poleBLabel,
+  axisId,
+  importance,
 }: {
   name: string;
   value: number;
   poleALabel: string;
   poleBLabel: string;
+  axisId: string;
+  importance?: number;
 }) {
-  const position = (value / 10) * 100;
-  const indicatorColor = getStanceColorForBar(value);
+  const positionLabel = getPositionLabel(axisId, value);
+  const config = getSliderConfig(axisId);
+  const positionIndex = config ? valueToPositionIndex(value, config.positions.length) : -1;
+  const currentPosition = config?.positions[positionIndex];
+  const importanceValue = importance ?? 5;
 
   return (
     <View style={axisBarStyles.container}>
-      <Text style={axisBarStyles.name}>{name}</Text>
-      <View style={axisBarStyles.barContainer}>
-        <View style={axisBarStyles.gradientBar}>
-          <View style={[axisBarStyles.gradientLeft]} />
-          <View style={[axisBarStyles.gradientCenter]} />
-          <View style={[axisBarStyles.gradientRight]} />
-        </View>
-        <View style={axisBarStyles.centerMark} />
-        <View
-          style={[
-            axisBarStyles.indicator,
-            { left: `${position}%`, backgroundColor: indicatorColor },
-          ]}
-        />
+      <View style={axisBarStyles.header}>
+        <Text style={axisBarStyles.name}>{name}</Text>
+        <ImportanceBar value={importanceValue} />
       </View>
-      <View style={axisBarStyles.labels}>
-        <Text style={[axisBarStyles.label, axisBarStyles.labelLeft]} numberOfLines={1}>
-          {poleALabel}
+      <View style={axisBarStyles.positionDisplay}>
+        <Text style={axisBarStyles.positionText}>
+          {currentPosition?.title || positionLabel}
         </Text>
-        <Text style={[axisBarStyles.label, axisBarStyles.labelRight]} numberOfLines={1}>
-          {poleBLabel}
-        </Text>
+        {currentPosition?.isCurrentPolicy && (
+          <View style={axisBarStyles.currentPolicyBadge}>
+            <Text style={axisBarStyles.currentPolicyText}>Current Policy</Text>
+          </View>
+        )}
       </View>
     </View>
   );
@@ -263,78 +299,45 @@ function getStanceColorForBar(value: number): string {
 
 const axisBarStyles = StyleSheet.create({
   container: {
-    gap: 4,
+    gap: 6,
   },
-  name: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: Colors.gray[600],
-  },
-  barContainer: {
-    position: 'relative',
-    height: 10,
-  },
-  gradientBar: {
-    flexDirection: 'row',
-    height: 8,
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  gradientLeft: {
-    flex: 1,
-    backgroundColor: '#A855F7',
-    opacity: 0.3,
-  },
-  gradientCenter: {
-    flex: 1,
-    backgroundColor: Colors.gray[200],
-  },
-  gradientRight: {
-    flex: 1,
-    backgroundColor: '#14B8A6',
-    opacity: 0.3,
-  },
-  centerMark: {
-    position: 'absolute',
-    left: '50%',
-    top: 0,
-    bottom: 2,
-    width: 2,
-    marginLeft: -1,
-    backgroundColor: Colors.gray[400],
-    opacity: 0.5,
-  },
-  indicator: {
-    position: 'absolute',
-    top: -3,
-    width: 14,
-    height: 14,
-    borderRadius: 7,
-    marginLeft: -7,
-    borderWidth: 2,
-    borderColor: Colors.white,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 2,
-  },
-  labels: {
+  header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 2,
+    alignItems: 'center',
+    marginBottom: 2,
   },
-  label: {
+  name: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: Colors.gray[700],
+    flex: 1,
+  },
+  positionDisplay: {
+    backgroundColor: Colors.gray[50],
+    borderRadius: 8,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: Colors.gray[200],
+  },
+  positionText: {
+    fontSize: 13,
+    fontWeight: '500',
+    color: Colors.gray[900],
+    lineHeight: 18,
+  },
+  currentPolicyBadge: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#D1FAE5',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 8,
+    marginTop: 6,
+  },
+  currentPolicyText: {
     fontSize: 10,
-    color: Colors.gray[400],
-    maxWidth: '48%',
-  },
-  labelLeft: {
-    color: '#A855F7',
-  },
-  labelRight: {
-    textAlign: 'right',
-    color: '#14B8A6',
+    fontWeight: '600',
+    color: '#059669',
   },
 });
 
@@ -367,14 +370,14 @@ function DomainEditModal({
   profile,
   spec,
   onClose,
-  onChangeImportance,
+  onChangeAxisImportance,
   onChangeAxis,
 }: {
   domainId: string;
   profile: Profile;
   spec: Spec;
   onClose: () => void;
-  onChangeImportance: (domain_id: string, value: number) => void;
+  onChangeAxisImportance: (axis_id: string, value: number) => void;
   onChangeAxis: (axis_id: string, value: number) => void;
 }) {
   const domain = spec.domains.find(d => d.id === domainId);
@@ -394,22 +397,7 @@ function DomainEditModal({
           </View>
 
           <ScrollView contentContainerStyle={modalStyles.content}>
-            {/* Importance Slider */}
-            <View style={modalStyles.section}>
-              <Text style={modalStyles.sectionLabel}>PRIORITY LEVEL</Text>
-              <DiscreteSlider
-                value={domProfile.importance.value_0_10}
-                onChange={(v) => onChangeImportance(domainId, v)}
-                leftLabel="Not a priority"
-                midLabel="Moderate"
-                rightLabel="Top priority"
-                variant="importance"
-              />
-            </View>
-
-            <View style={modalStyles.divider} />
-
-            {/* All Axes */}
+            {/* All Axes with Position and Importance */}
             <View style={modalStyles.section}>
               <Text style={modalStyles.sectionLabel}>YOUR POSITIONS</Text>
               {domProfile.axes.map((axis) => {
@@ -420,14 +408,35 @@ function DomainEditModal({
                   <View key={axis.axis_id} style={modalStyles.axisCard}>
                     <Text style={modalStyles.axisName}>{axisDef.name}</Text>
                     <Text style={modalStyles.axisDesc}>{axisDef.description}</Text>
-                    <DiscreteSlider
-                      value={Math.round(axis.value_0_10)}
-                      onChange={(v) => onChangeAxis(axis.axis_id, v)}
-                      leftLabel={axisDef.poleA.label}
-                      midLabel="Mixed"
-                      rightLabel={axisDef.poleB.label}
-                      variant="stance"
-                    />
+
+                    {/* Importance Slider for this axis */}
+                    <View style={modalStyles.importanceSection}>
+                      <Text style={modalStyles.importanceLabel}>Priority:</Text>
+                      <DiscreteSlider
+                        value={axis.importance ?? 5}
+                        onChange={(v) => onChangeAxisImportance(axis.axis_id, v)}
+                        leftLabel="Not much"
+                        midLabel="Matters to me"
+                        rightLabel="Deal breaker"
+                        variant="importance"
+                      />
+                    </View>
+
+                    <View style={modalStyles.miniDivider} />
+
+                    {/* Position Slider */}
+                    <View style={modalStyles.positionSection}>
+                      <Text style={modalStyles.positionLabel}>Your position:</Text>
+                      <DiscreteSlider
+                        value={Math.round(axis.value_0_10)}
+                        onChange={(v) => onChangeAxis(axis.axis_id, v)}
+                        leftLabel={axisDef.poleA.label}
+                        midLabel="Mixed"
+                        rightLabel={axisDef.poleB.label}
+                        variant="stance"
+                        axisId={axis.axis_id}
+                      />
+                    </View>
                   </View>
                 );
               })}
@@ -452,13 +461,14 @@ const modalStyles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   sheet: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.gray[50],
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     maxHeight: '90%',
   },
   header: {
     padding: 20,
+    backgroundColor: Colors.white,
     borderBottomWidth: 1,
     borderBottomColor: Colors.gray[200],
     flexDirection: 'row',
@@ -472,39 +482,76 @@ const modalStyles = StyleSheet.create({
   },
   content: {
     padding: 20,
-    gap: 20,
+    gap: 24,
+    paddingBottom: 40,
   },
   section: {
-    gap: 12,
+    gap: 16,
   },
   sectionLabel: {
     fontSize: 12,
     fontWeight: '700',
     color: Colors.gray[500],
     letterSpacing: 0.5,
+    textTransform: 'uppercase',
+    marginBottom: 4,
   },
   divider: {
     height: 1,
     backgroundColor: Colors.gray[200],
   },
   axisCard: {
-    padding: 16,
-    backgroundColor: Colors.gray[50],
-    borderRadius: 12,
-    gap: 8,
+    padding: 20,
+    backgroundColor: Colors.white,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: Colors.gray[200],
+    gap: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   axisName: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: '700',
     color: Colors.gray[900],
   },
   axisDesc: {
-    fontSize: 13,
-    color: Colors.gray[500],
+    fontSize: 14,
+    color: Colors.gray[600],
+    lineHeight: 20,
     marginBottom: 4,
+  },
+  importanceSection: {
+    gap: 8,
+  },
+  importanceLabel: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: Colors.gray[500],
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  miniDivider: {
+    height: 1,
+    backgroundColor: Colors.gray[200],
+    marginVertical: 8,
+  },
+  positionSection: {
+    gap: 8,
+  },
+  positionLabel: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: Colors.gray[500],
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
   },
   footer: {
     padding: 20,
+    backgroundColor: Colors.white,
     borderTopWidth: 1,
     borderTopColor: Colors.gray[200],
   },
@@ -543,10 +590,15 @@ function getGradientColor(position: number, variant: 'importance' | 'stance' = '
   const t = position / 10;
 
   if (variant === 'importance') {
-    if (t < 0.5) {
-      return interpolateColor('#E5E7EB', '#93C5FD', t * 2);
+    // 5 color stops for importance: light grey → light blue → medium blue → bright blue → deep blue
+    if (t <= 0.25) {
+      return interpolateColor('#E5E7EB', '#BFDBFE', t * 4);
+    } else if (t <= 0.5) {
+      return interpolateColor('#BFDBFE', '#93C5FD', (t - 0.25) * 4);
+    } else if (t <= 0.75) {
+      return interpolateColor('#93C5FD', '#60A5FA', (t - 0.5) * 4);
     } else {
-      return interpolateColor('#93C5FD', '#3B82F6', (t - 0.5) * 2);
+      return interpolateColor('#60A5FA', '#3B82F6', (t - 0.75) * 4);
     }
   } else {
     if (t < 0.5) {
@@ -564,6 +616,7 @@ function DiscreteSlider({
   midLabel,
   rightLabel,
   variant = 'stance',
+  axisId,
 }: {
   value: number;
   onChange: (v: number) => void;
@@ -571,67 +624,204 @@ function DiscreteSlider({
   midLabel?: string;
   rightLabel?: string;
   variant?: 'importance' | 'stance';
+  axisId?: string;
 }) {
-  const segments = Array.from({ length: 11 }, (_, i) => i);
-  const thumbPosition = (value / 10) * 100;
+  // Get position details if axisId is provided
+  const config = axisId ? getSliderConfig(axisId) : undefined;
+
+  // Use position-based segments for axes, 5 segments for importance
+  const usePositions = config && config.positions.length > 0;
+  const numSegments = usePositions ? config.positions.length : 5; // Changed from 11 to 5 for importance
+  const segments = Array.from({ length: numSegments }, (_, i) => i);
+
+  // Convert value to position index
+  const positionIndex = usePositions
+    ? valueToPositionIndex(value, numSegments)
+    : Math.round((value / 10) * (numSegments - 1)); // Convert 0-10 to 0-4 for importance
+  const thumbPosition = (positionIndex / (numSegments - 1)) * 100;
+  const currentPosition = config?.positions[positionIndex];
 
   return (
     <View style={sliderStyles.wrapper}>
+      {/* Position display card for axes, or importance label for priority */}
+      {currentPosition ? (
+        <View style={sliderStyles.positionCard}>
+          <Text style={sliderStyles.positionTitle}>{currentPosition.title}</Text>
+          <Text style={sliderStyles.positionDescription}>{currentPosition.description}</Text>
+          {currentPosition.isCurrentPolicy && (
+            <View style={sliderStyles.currentPolicyBadge}>
+              <Text style={sliderStyles.currentPolicyText}>Current US Policy</Text>
+            </View>
+          )}
+        </View>
+      ) : (
+        <View style={sliderStyles.importanceLabelContainer}>
+          <Text style={sliderStyles.importanceLabelText}>{getImportanceLabel(value)}</Text>
+        </View>
+      )}
+
       <View style={sliderStyles.trackContainer}>
+        {/* Gradient track */}
         <View style={sliderStyles.gradientTrack}>
-          {segments.map((i) => (
-            <TouchableOpacity
-              key={i}
-              style={[
-                sliderStyles.segment,
-                { backgroundColor: getGradientColor(i, variant) },
-                i === 0 && sliderStyles.segmentFirst,
-                i === 10 && sliderStyles.segmentLast,
-              ]}
-              onPress={() => onChange(i)}
-              activeOpacity={0.8}
-            />
-          ))}
+          {segments.map((i) => {
+            // Get color based on segment type
+            let segmentColor: string;
+            if (usePositions) {
+              segmentColor = getPositionSegmentColor(i, numSegments, config?.currentPolicyIndex || 2);
+            } else {
+              // For importance, convert segment index to 0-10 scale for color
+              const colorValue = Math.round((i / (numSegments - 1)) * 10);
+              segmentColor = getGradientColor(colorValue, variant);
+            }
+
+            return (
+              <TouchableOpacity
+                key={i}
+                style={[
+                  sliderStyles.segment,
+                  { backgroundColor: segmentColor },
+                  i === 0 && sliderStyles.segmentFirst,
+                  i === numSegments - 1 && sliderStyles.segmentLast,
+                ]}
+                onPress={() => {
+                  // Convert position index to 0-10 value
+                  const newValue = Math.round((i / (numSegments - 1)) * 10);
+                  onChange(newValue);
+                }}
+                activeOpacity={0.8}
+              />
+            );
+          })}
         </View>
 
+        {/* Thumb indicator */}
         <View
           style={[sliderStyles.thumb, { left: `${thumbPosition}%` }]}
           pointerEvents="none"
         >
-          <View style={[sliderStyles.thumbInner, { backgroundColor: getGradientColor(value, variant) }]}>
+          <View style={[sliderStyles.thumbInner, { borderColor: '#7C3AED' }]}>
             <View style={sliderStyles.thumbDot} />
           </View>
         </View>
 
+        {/* Center marker */}
         <View style={sliderStyles.centerMarker} pointerEvents="none" />
       </View>
 
+      {/* Tick marks below track */}
+      <View style={sliderStyles.tickMarks}>
+        {segments.map((i) => {
+          const isCenterPosition = usePositions
+            ? i === config?.currentPolicyIndex
+            : i === Math.floor(numSegments / 2); // Center position for importance (position 2 of 5)
+          const isActivePosition = i === positionIndex;
+          const newValue = Math.round((i / (numSegments - 1)) * 10);
+
+          return (
+            <TouchableOpacity
+              key={i}
+              style={sliderStyles.tickTouchArea}
+              onPress={() => onChange(newValue)}
+              activeOpacity={0.8}
+            >
+              <View style={[
+                sliderStyles.tick,
+                isCenterPosition && sliderStyles.tickCenter,
+                isActivePosition && sliderStyles.tickActive,
+              ]} />
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
+      {/* Labels */}
       <View style={sliderStyles.labels}>
-        <Text style={[sliderStyles.labelText, { color: variant === 'stance' ? '#A855F7' : Colors.gray[500] }]} numberOfLines={1}>
-          {leftLabel ?? ''}
+        <Text style={[sliderStyles.labelText, sliderStyles.labelLeft, { color: variant === 'stance' ? '#A855F7' : Colors.gray[500] }]} numberOfLines={2}>
+          {usePositions ? config?.poleALabel.replace('\n', ' ') : leftLabel ?? ''}
         </Text>
-        <Text style={[sliderStyles.labelText, sliderStyles.mid]} numberOfLines={1}>
-          {midLabel ?? 'Mixed'}
-        </Text>
-        <Text style={[sliderStyles.labelText, sliderStyles.right, { color: variant === 'stance' ? '#14B8A6' : '#3B82F6' }]} numberOfLines={1}>
-          {rightLabel ?? ''}
+        {!usePositions && (
+          <Text style={[sliderStyles.labelText, sliderStyles.labelCenter, { color: Colors.gray[400] }]} numberOfLines={2}>
+            {midLabel ?? 'Mixed'}
+          </Text>
+        )}
+        <Text style={[sliderStyles.labelText, sliderStyles.labelRight, { color: variant === 'stance' ? '#14B8A6' : '#3B82F6' }]} numberOfLines={2}>
+          {usePositions ? config?.poleBLabel.replace('\n', ' ') : rightLabel ?? ''}
         </Text>
       </View>
+
+      {/* Position counter for axes only */}
+      {usePositions && (
+        <Text style={sliderStyles.positionCounter}>
+          Position {positionIndex + 1} of {numSegments}
+        </Text>
+      )}
     </View>
   );
 }
 
 const sliderStyles = StyleSheet.create({
-  wrapper: { gap: 8 },
+  wrapper: { gap: 16 },
+  positionCard: {
+    backgroundColor: 'rgba(124, 58, 237, 0.04)',
+    borderWidth: 2,
+    borderColor: 'rgba(124, 58, 237, 0.2)',
+    borderRadius: 12,
+    padding: 16,
+    minHeight: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  positionTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: Colors.gray[900],
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  positionDescription: {
+    fontSize: 13,
+    color: Colors.gray[600],
+    textAlign: 'center',
+    lineHeight: 18,
+  },
+  currentPolicyBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: '#D1FAE5',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginTop: 8,
+  },
+  currentPolicyText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#059669',
+  },
+  importanceLabelContainer: {
+    alignItems: 'center',
+    paddingVertical: 12,
+  },
+  importanceLabelText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: Colors.gray[900],
+  },
+  valueChipText: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: Colors.gray[900],
+  },
   trackContainer: {
     position: 'relative',
-    height: 32,
+    height: 40,
     justifyContent: 'center',
   },
   gradientTrack: {
     flexDirection: 'row',
-    height: 10,
-    borderRadius: 5,
+    height: 12,
+    borderRadius: 6,
     overflow: 'hidden',
   },
   segment: {
@@ -639,42 +829,42 @@ const sliderStyles = StyleSheet.create({
     height: '100%',
   },
   segmentFirst: {
-    borderTopLeftRadius: 5,
-    borderBottomLeftRadius: 5,
+    borderTopLeftRadius: 6,
+    borderBottomLeftRadius: 6,
   },
   segmentLast: {
-    borderTopRightRadius: 5,
-    borderBottomRightRadius: 5,
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
   },
   thumb: {
     position: 'absolute',
     top: '50%',
-    marginTop: -14,
-    marginLeft: -14,
-    width: 28,
-    height: 28,
+    marginTop: -18,
+    marginLeft: -18,
+    width: 36,
+    height: 36,
     alignItems: 'center',
     justifyContent: 'center',
   },
   thumbInner: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
-    borderWidth: 2,
-    borderColor: Colors.white,
+    elevation: 5,
+    borderWidth: 4,
   },
   thumbDot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
-    backgroundColor: Colors.white,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: '#7C3AED',
   },
   centerMarker: {
     position: 'absolute',
@@ -684,21 +874,63 @@ const sliderStyles = StyleSheet.create({
     width: 2,
     marginLeft: -1,
     backgroundColor: Colors.gray[400],
-    opacity: 0.4,
+    opacity: 0.5,
+  },
+  tickMarks: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 4,
+    marginTop: 8,
+  },
+  tickTouchArea: {
+    width: 32,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tick: {
+    width: 2,
+    height: 8,
+    backgroundColor: Colors.gray[300],
+    borderRadius: 1,
+  },
+  tickCenter: {
+    height: 12,
+    backgroundColor: Colors.gray[400],
+  },
+  tickActive: {
+    backgroundColor: '#7C3AED',
+    height: 12,
   },
   labels: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
+    marginTop: 4,
+    paddingHorizontal: 4,
   },
   labelText: {
     flex: 1,
     fontSize: 11,
-    color: Colors.gray[500],
-    fontWeight: '600',
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
   },
-  mid: { textAlign: 'center' },
-  right: { textAlign: 'right' },
+  labelLeft: {
+    textAlign: 'left',
+  },
+  labelCenter: {
+    textAlign: 'center',
+  },
+  labelRight: {
+    textAlign: 'right',
+  },
+  positionCounter: {
+    textAlign: 'center',
+    fontSize: 12,
+    color: Colors.gray[500],
+    marginTop: 4,
+  },
 });
 
 // =====================================================
@@ -744,6 +976,11 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderWidth: 1,
     borderColor: Colors.gray[200],
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
   domainHeader: {
     flexDirection: 'row',

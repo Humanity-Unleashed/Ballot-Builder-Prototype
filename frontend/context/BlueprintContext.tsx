@@ -37,6 +37,8 @@ interface BlueprintContextType {
   updateAxisValue: (axisId: string, value: number) => void;
   /** Update domain importance */
   updateImportance: (domainId: string, value: number) => void;
+  /** Update axis importance */
+  updateAxisImportance: (axisId: string, value: number) => void;
   /** Toggle axis lock */
   toggleAxisLock: (axisId: string) => void;
   /** Reset axis to learned value */
@@ -75,6 +77,27 @@ export function BlueprintProvider({ children }: { children: React.ReactNode }) {
     swipes: store.swipes,
     updateAxisValue: store.updateAxisValue,
     updateImportance: store.updateDomainImportance,
+    updateAxisImportance: (axisId: string, value: number) => {
+      // For now, axis importance isn't directly supported in userStore
+      // You could extend the store if needed, or handle it here
+      const { blueprintProfile } = store;
+      if (!blueprintProfile) return;
+
+      const updatedDomains = blueprintProfile.domains.map(domain => ({
+        ...domain,
+        axes: domain.axes.map(axis =>
+          axis.axis_id === axisId
+            ? { ...axis, importance: value }
+            : axis
+        ),
+      }));
+
+      store.setBlueprintProfile({
+        ...blueprintProfile,
+        updated_at: new Date().toISOString(),
+        domains: updatedDomains,
+      });
+    },
     toggleAxisLock: store.toggleAxisLock,
     resetAxisToLearned: store.resetAxisToLearned,
     recordSwipes: (newSwipes) => {

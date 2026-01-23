@@ -37,6 +37,8 @@ export interface AxisProfile {
   estimates: AxisEstimates;
   /** Evidence for transparency */
   evidence: AxisEvidence;
+  /** Importance/priority for this specific axis, 0-10 (defaults to 5 if not set) */
+  importance?: number;
 }
 
 export interface DomainImportance {
