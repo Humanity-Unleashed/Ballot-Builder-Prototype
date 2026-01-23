@@ -19,30 +19,32 @@ jobs:
     name: Backend CI
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_USER: ballotbuilder
-          POSTGRES_PASSWORD: testpassword
-          POSTGRES_DB: ballotbuilder_test
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    # NOTE: Database services disabled for prototype phase (using mock data)
+    # Uncomment when ready to use PostgreSQL/Redis:
+    # services:
+    #   postgres:
+    #     image: postgres:16-alpine
+    #     env:
+    #       POSTGRES_USER: ballotbuilder
+    #       POSTGRES_PASSWORD: testpassword
+    #       POSTGRES_DB: ballotbuilder_test
+    #     ports:
+    #       - 5432:5432
+    #     options: >-
+    #       --health-cmd pg_isready
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
+    #
+    #   redis:
+    #     image: redis:7-alpine
+    #     ports:
+    #       - 6379:6379
+    #     options: >-
+    #       --health-cmd "redis-cli ping"
+    #       --health-interval 10s
+    #       --health-timeout 5s
+    #       --health-retries 5
 
     steps:
       - name: Checkout code
@@ -59,15 +61,17 @@ jobs:
         working-directory: ./backend
         run: npm ci
 
-      - name: Generate Prisma Client
-        working-directory: ./backend
-        run: npx prisma generate
-
-      - name: Run database migrations
-        working-directory: ./backend
-        env:
-          DATABASE_URL: postgresql://ballotbuilder:testpassword@localhost:5432/ballotbuilder_test
-        run: npx prisma migrate deploy
+      # NOTE: Prisma disabled for prototype phase (using mock data)
+      # Uncomment when ready to use database:
+      # - name: Generate Prisma Client
+      #   working-directory: ./backend
+      #   run: npx prisma generate
+      #
+      # - name: Run database migrations
+      #   working-directory: ./backend
+      #   env:
+      #     DATABASE_URL: postgresql://ballotbuilder:testpassword@localhost:5432/ballotbuilder_test
+      #   run: npx prisma migrate deploy
 
       - name: Run linter
         working-directory: ./backend
@@ -76,8 +80,6 @@ jobs:
       - name: Run tests
         working-directory: ./backend
         env:
-          DATABASE_URL: postgresql://ballotbuilder:testpassword@localhost:5432/ballotbuilder_test
-          REDIS_URL: redis://localhost:6379
           JWT_SECRET: test-jwt-secret-for-ci
           NODE_ENV: test
         run: npm test

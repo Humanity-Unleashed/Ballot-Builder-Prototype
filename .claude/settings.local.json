@@ -36,7 +36,15 @@
       "Bash(jobs:*)",
       "WebSearch",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:docs.expo.dev)"
+      "WebFetch(domain:docs.expo.dev)",
+      "Bash(find:*)",
+      "Bash(git worktree:*)",
+      "Bash(git branch:*)",
+      "Bash(git -C /workspace worktree:*)",
+      "Bash(bash -c 'cd /workspace && git worktree list && git branch -d fix/unsafe-type-assertions 2>/dev/null; echo \"\"Done\"\"')",
+      "Bash(git -C /workspace branch:*)",
+      "Bash(git -C /workspace/claude-worktree worktree list:*)",
+      "Bash(git -C /workspace/claude-worktree branch:*)"
     ]
   }
 }
