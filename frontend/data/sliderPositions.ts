@@ -26,7 +26,478 @@ export interface AxisSliderConfig {
 
 export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
   // ============================================
-  // ECONOMIC OPPORTUNITY & TAXES
+  // LEGACY AXIS CONFIGS (matching backend spec IDs)
+  // These ensure labels work with the current profile data
+  // ============================================
+
+  econ_safetynet: {
+    axisId: 'econ_safetynet',
+    question: 'Should government help be available to more people with fewer requirements?',
+    poleALabel: 'Broader\nSafety Net',
+    poleBLabel: 'More Conditional\nSafety Net',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Universal support programs',
+        description: 'Robust benefits available to all with minimal conditions',
+      },
+      {
+        title: 'Broad eligibility with some conditions',
+        description: 'Wide access to assistance with basic requirements',
+      },
+      {
+        title: 'Targeted programs with work incentives',
+        description: 'Benefits for those in need with participation requirements',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Strict eligibility and conditions',
+        description: 'Aid limited to verified need with strong work requirements',
+      },
+      {
+        title: 'Minimal safety net',
+        description: 'Limited government assistance, emphasize self-reliance',
+      },
+    ],
+  },
+
+  econ_investment: {
+    axisId: 'econ_investment',
+    question: 'Should we pay more in taxes to fund public services?',
+    poleALabel: 'More Public\nInvestment',
+    poleBLabel: 'Lower Taxes\nLess Spending',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Major expansion of public services',
+        description: 'Significantly increase spending on schools, infrastructure, and services',
+      },
+      {
+        title: 'Targeted public investments',
+        description: 'Increase funding for high-priority community needs',
+      },
+      {
+        title: 'Maintain current balance',
+        description: 'Keep existing service and tax levels',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Reduce spending, lower taxes',
+        description: 'Cut programs to return money to taxpayers',
+      },
+      {
+        title: 'Minimal government spending',
+        description: 'Dramatically reduce taxes and public programs',
+      },
+    ],
+  },
+
+  econ_school_choice: {
+    axisId: 'econ_school_choice',
+    question: 'Should education funding focus on public schools or follow student choice?',
+    poleALabel: 'Strengthen\nPublic Schools',
+    poleBLabel: 'Expand School\nChoice',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Fund public schools exclusively',
+        description: 'All education dollars go to neighborhood public schools',
+      },
+      {
+        title: 'Prioritize public schools',
+        description: 'Most funding to public schools with limited alternatives',
+      },
+      {
+        title: 'Mixed public and choice options',
+        description: 'Public schools alongside charter and magnet programs',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Expand school choice',
+        description: 'Significant funding for charters, vouchers, and alternatives',
+      },
+      {
+        title: 'Full funding portability',
+        description: 'Families choose any school, funding follows the student',
+      },
+    ],
+  },
+
+  health_coverage_model: {
+    axisId: 'health_coverage_model',
+    question: 'Should government offer health insurance to everyone?',
+    poleALabel: 'More Government\nInsurance',
+    poleBLabel: 'More Private\nInsurance',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Single-payer government health system',
+        description: 'One public program covers everyone',
+      },
+      {
+        title: 'Public option available to all',
+        description: 'Government plan competes with private insurance',
+      },
+      {
+        title: 'Mix of public and private coverage',
+        description: 'Medicare/Medicaid for some, employer plans for others',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Private insurance with subsidies',
+        description: 'Market-based coverage with help for those who need it',
+      },
+      {
+        title: 'Fully private insurance market',
+        description: 'Individuals buy coverage directly from insurers',
+      },
+    ],
+  },
+
+  health_cost_control: {
+    axisId: 'health_cost_control',
+    question: 'Should government set limits on healthcare prices?',
+    poleALabel: 'Government\nPrice Limits',
+    poleBLabel: 'Market\nCompetition',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Comprehensive price controls',
+        description: 'Government sets all healthcare prices',
+      },
+      {
+        title: 'Regulate prices in key areas',
+        description: 'Negotiate drug prices, cap hospital charges',
+      },
+      {
+        title: 'Mix of regulation and competition',
+        description: 'Some price rules plus transparency for shopping',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Promote competition and transparency',
+        description: 'Require price disclosure so consumers can compare',
+      },
+      {
+        title: 'Let market set prices',
+        description: 'Competition between providers drives efficiency',
+      },
+    ],
+  },
+
+  health_public_health: {
+    axisId: 'health_public_health',
+    question: 'How should government approach public health and drug policy?',
+    poleALabel: 'Prevention &\nTreatment',
+    poleBLabel: 'Personal Choice\n& Enforcement',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Proactive public health programs',
+        description: 'Government leads prevention, treatment, and harm reduction',
+      },
+      {
+        title: 'Robust health education and services',
+        description: 'Fund community health and treatment programs',
+      },
+      {
+        title: 'Balanced approach',
+        description: 'Some public health programs alongside personal responsibility',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Limited intervention',
+        description: 'Focus on essential disease control only',
+      },
+      {
+        title: 'Minimal government role',
+        description: 'Leave health decisions to individuals, enforce drug laws',
+      },
+    ],
+  },
+
+  housing_supply_zoning: {
+    axisId: 'housing_supply_zoning',
+    question: 'Should cities allow more housing to be built in existing neighborhoods?',
+    poleALabel: 'Build More\nAllow Density',
+    poleBLabel: 'Preserve\nLimit Growth',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Allow housing everywhere by right',
+        description: 'Remove most zoning restrictions to maximize supply',
+      },
+      {
+        title: 'Significantly expand where housing can go',
+        description: 'Allow apartments near transit, jobs, and commercial areas',
+      },
+      {
+        title: 'Moderate density in select areas',
+        description: 'Some upzoning while protecting established neighborhoods',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Limited growth with community input',
+        description: 'New density requires neighborhood approval',
+      },
+      {
+        title: 'Preserve current neighborhood character',
+        description: 'Maintain existing zoning to protect communities',
+      },
+    ],
+  },
+
+  housing_affordability_tools: {
+    axisId: 'housing_affordability_tools',
+    question: 'Should government control rents and build public housing?',
+    poleALabel: 'Rent Limits &\nPublic Housing',
+    poleBLabel: 'Build More\nFewer Rules',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Strong rent control and public housing',
+        description: 'Cap rents and invest heavily in public/nonprofit housing',
+      },
+      {
+        title: 'Rent stabilization with affordability requirements',
+        description: 'Limit rent increases and require affordable units',
+      },
+      {
+        title: 'Mix of regulations and supply incentives',
+        description: 'Some rent protections alongside encouraging construction',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Focus on increasing supply',
+        description: 'Build more housing, limit regulations that slow construction',
+      },
+      {
+        title: 'Let the market work',
+        description: 'Remove rent controls and mandates to maximize building',
+      },
+    ],
+  },
+
+  housing_transport_priority: {
+    axisId: 'housing_transport_priority',
+    question: 'Should cities invest more in transit or roads?',
+    poleALabel: 'Transit &\nBiking',
+    poleBLabel: 'Roads &\nParking',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Prioritize transit, walking, and biking',
+        description: 'Shift funding toward sustainable transportation',
+      },
+      {
+        title: 'Major transit expansion',
+        description: 'Grow bus and rail while maintaining roads',
+      },
+      {
+        title: 'Balanced investment',
+        description: 'Fund transit, roads, and active transportation equally',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Maintain roads with selective transit',
+        description: 'Focus on road capacity, add transit where clearly needed',
+      },
+      {
+        title: 'Prioritize roads and parking',
+        description: 'Ensure drivers can get where they need to go',
+      },
+    ],
+  },
+
+  justice_policing_accountability: {
+    axisId: 'justice_policing_accountability',
+    question: 'How much oversight should police have?',
+    poleALabel: 'More Oversight\n& Alternatives',
+    poleBLabel: 'More Police\n& Enforcement',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Strong independent oversight and alternatives',
+        description: 'Civilian control and non-police crisis response',
+      },
+      {
+        title: 'Civilian review with alternative responders',
+        description: 'Oversight plus mental health teams for some calls',
+      },
+      {
+        title: 'Advisory oversight, co-responder model',
+        description: 'Police and mental health work together',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Support police with crisis training',
+        description: 'More officers trained in crisis intervention',
+      },
+      {
+        title: 'Expand police presence and authority',
+        description: 'More officers with freedom to enforce proactively',
+      },
+    ],
+  },
+
+  justice_sentencing_goals: {
+    axisId: 'justice_sentencing_goals',
+    question: 'Should the justice system focus on rehabilitation or punishment?',
+    poleALabel: 'Focus on\nRehabilitation',
+    poleBLabel: 'Focus on\nPunishment',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Rehabilitation and restoration',
+        description: 'Focus on treatment, education, and reentry support',
+      },
+      {
+        title: 'Shorter sentences with programming',
+        description: 'Address root causes, invest in alternatives to prison',
+      },
+      {
+        title: 'Balance punishment and rehabilitation',
+        description: 'Consequences plus programs for those who want them',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Accountability with some programs',
+        description: 'Clear punishment, programs available for motivated individuals',
+      },
+      {
+        title: 'Strict punishment and longer sentences',
+        description: 'Remove offenders to protect the public',
+      },
+    ],
+  },
+
+  justice_firearms: {
+    axisId: 'justice_firearms',
+    question: 'How much regulation should there be on firearms?',
+    poleALabel: 'Stronger Gun\nSafety Rules',
+    poleBLabel: 'Fewer\nRestrictions',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Comprehensive licensing and registration',
+        description: 'Mandatory training, licensing, and registration for all firearms',
+      },
+      {
+        title: 'Universal background checks and waiting periods',
+        description: 'Close private sale loopholes, add cooling-off periods',
+      },
+      {
+        title: 'Current standards with state flexibility',
+        description: 'Background checks for dealers, states set additional rules',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Streamlined purchasing',
+        description: 'Quick background checks, fewer restrictions',
+      },
+      {
+        title: 'Minimal regulation',
+        description: 'Few government barriers for law-abiding citizens',
+      },
+    ],
+  },
+
+  climate_ambition: {
+    axisId: 'climate_ambition',
+    question: 'How quickly should we act on climate change?',
+    poleALabel: 'Act Fast\non Climate',
+    poleBLabel: 'Go Slow\nKeep Costs Low',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Emergency climate mobilization',
+        description: 'Aggressive action even with significant short-term costs',
+      },
+      {
+        title: 'Ambitious transition this decade',
+        description: 'Major emissions cuts by 2035, net-zero by 2050',
+      },
+      {
+        title: 'Steady transition balancing priorities',
+        description: 'Meaningful progress while managing economic impacts',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Gradual shift prioritizing affordability',
+        description: 'Transition as clean energy becomes cost-competitive',
+      },
+      {
+        title: 'Slow transition for stability',
+        description: 'Avoid disrupting reliable, affordable energy',
+      },
+    ],
+  },
+
+  climate_energy_portfolio: {
+    axisId: 'climate_energy_portfolio',
+    question: 'What energy sources should we prioritize?',
+    poleALabel: 'Solar &\nWind First',
+    poleBLabel: 'Mix of\nAll Energy',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Renewables only',
+        description: 'Phase out all fossil fuels, prioritize solar and wind',
+      },
+      {
+        title: 'Primarily renewables',
+        description: 'Major investment in clean energy, limit fossil expansion',
+      },
+      {
+        title: 'Diverse energy mix',
+        description: 'Support renewables alongside existing energy sources',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'All-of-the-above including fossil fuels',
+        description: 'Support domestic production across all energy types',
+      },
+      {
+        title: 'Energy independence first',
+        description: 'Maximize domestic fossil fuel production',
+      },
+    ],
+  },
+
+  climate_permitting: {
+    axisId: 'climate_permitting',
+    question: 'How should we balance environmental review with project speed?',
+    poleALabel: 'Thorough\nReview First',
+    poleBLabel: 'Faster\nApprovals',
+    currentPolicyIndex: 2,
+    positions: [
+      {
+        title: 'Comprehensive environmental review',
+        description: 'Full impact assessment for all projects',
+      },
+      {
+        title: 'Thorough review with timelines',
+        description: 'Complete assessment within defined time limits',
+      },
+      {
+        title: 'Balanced review process',
+        description: 'Standard review with expedited paths for some projects',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Streamlined approval for priority projects',
+        description: 'Faster permitting for clean energy and housing',
+      },
+      {
+        title: 'Rapid approval with basic safeguards',
+        description: 'Minimize delays while maintaining core protections',
+      },
+    ],
+  },
+
+  // ============================================
+  // DETAILED AXIS CONFIGS (new design)
+  // For future use when backend spec is updated
   // ============================================
 
   // DECOUPLED from old "econ_safetynet" which had false binary of "Support vs Initiative"

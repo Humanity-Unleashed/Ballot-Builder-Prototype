@@ -342,10 +342,38 @@ function CompactAxisBar({
       {/* Gradient bar with marker */}
       <View style={axisBarStyles.barWrapper}>
         <View style={axisBarStyles.gradientBar}>
-          {/* We simulate gradient with 3 sections */}
-          <View style={axisBarStyles.barSectionPurple} />
-          <View style={axisBarStyles.barSectionGray} />
-          <View style={axisBarStyles.barSectionTeal} />
+          {/* Simulate smooth gradient with multiple segments */}
+          {Array.from({ length: 20 }, (_, i) => {
+            const t = i / 19; // 0 to 1
+            // Interpolate: purple (0) -> gray (0.5) -> teal (1)
+            let color: string;
+            if (t < 0.5) {
+              // Purple to gray
+              const factor = t * 2;
+              const r = Math.round(168 + (229 - 168) * factor);
+              const g = Math.round(85 + (231 - 85) * factor);
+              const b = Math.round(247 + (235 - 247) * factor);
+              color = `rgb(${r}, ${g}, ${b})`;
+            } else {
+              // Gray to teal
+              const factor = (t - 0.5) * 2;
+              const r = Math.round(229 + (20 - 229) * factor);
+              const g = Math.round(231 + (184 - 231) * factor);
+              const b = Math.round(235 + (166 - 235) * factor);
+              color = `rgb(${r}, ${g}, ${b})`;
+            }
+            return (
+              <View
+                key={i}
+                style={[
+                  axisBarStyles.gradientSegment,
+                  { backgroundColor: color },
+                  i === 0 && axisBarStyles.gradientSegmentFirst,
+                  i === 19 && axisBarStyles.gradientSegmentLast,
+                ]}
+              />
+            );
+          })}
         </View>
 
         {/* Marker */}
@@ -410,17 +438,17 @@ const axisBarStyles = StyleSheet.create({
     borderRadius: 6,
     overflow: 'hidden',
   },
-  barSectionPurple: {
+  gradientSegment: {
     flex: 1,
-    backgroundColor: '#A855F7',
+    height: '100%',
   },
-  barSectionGray: {
-    flex: 1,
-    backgroundColor: '#E5E7EB',
+  gradientSegmentFirst: {
+    borderTopLeftRadius: 6,
+    borderBottomLeftRadius: 6,
   },
-  barSectionTeal: {
-    flex: 1,
-    backgroundColor: '#14B8A6',
+  gradientSegmentLast: {
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
   },
   marker: {
     position: 'absolute',
