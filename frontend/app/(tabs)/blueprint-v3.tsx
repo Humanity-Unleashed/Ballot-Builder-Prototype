@@ -95,7 +95,7 @@ function getPositionSegmentColor(index: number, totalPositions: number, currentP
 
 export default function BlueprintV3Screen() {
   const { profile, spec, isLoading, updateAxisValue, updateAxisImportance } = useBlueprint();
-  const [editingDomain, setEditingDomain] = useState<string | null>(null);
+  const [editingAxisId, setEditingAxisId] = useState<string | null>(null);
 
   if (isLoading || !profile) {
     return (
@@ -133,10 +133,6 @@ export default function BlueprintV3Screen() {
     }
   };
 
-  const handleSaveDomain = () => {
-    setEditingDomain(null);
-  };
-
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
@@ -153,16 +149,10 @@ export default function BlueprintV3Screen() {
         {/* All Domains - Compact Multi-Bar Cards */}
         {spec.domains.map((domain) => {
           const domProfile = profile.domains.find((d) => d.domain_id === domain.id);
-          const importance = domProfile?.importance.value_0_10 ?? 5;
           const domainAxes = domProfile?.axes ?? [];
 
           return (
-            <TouchableOpacity
-              key={domain.id}
-              style={styles.domainCard}
-              onPress={() => setEditingDomain(domain.id)}
-              activeOpacity={0.7}
-            >
+            <View key={domain.id} style={styles.domainCard}>
               {/* Domain Header Row */}
               <View style={styles.domainHeader}>
                 <View style={styles.domainIconContainer}>
@@ -171,10 +161,9 @@ export default function BlueprintV3Screen() {
                 <View style={styles.domainTitleArea}>
                   <Text style={styles.domainName}>{domain.name}</Text>
                 </View>
-                <Ionicons name="pencil-outline" size={18} color={Colors.gray[400]} />
               </View>
 
-              {/* All Axes as Compact Bars */}
+              {/* All Axes as Compact Bars - each is tappable */}
               {domainAxes.length > 0 && (
                 <View style={styles.axesList}>
                   {domainAxes.map((axis) => {
@@ -182,22 +171,31 @@ export default function BlueprintV3Screen() {
                     if (!axisDef) return null;
 
                     return (
-                      <CompactAxisBar
+                      <TouchableOpacity
                         key={axis.axis_id}
-                        name={axisDef.name}
-                        value={axis.value_0_10}
-                        poleALabel={axisDef.poleA.label}
-                        poleBLabel={axisDef.poleB.label}
-                        axisId={axis.axis_id}
-                        importance={axis.importance}
-                        source={axis.source}
-                        confidence={axis.confidence_0_1}
-                      />
+                        onPress={() => setEditingAxisId(axis.axis_id)}
+                        activeOpacity={0.7}
+                        style={styles.axisCardTouchable}
+                      >
+                        <CompactAxisBar
+                          name={axisDef.name}
+                          value={axis.value_0_10}
+                          poleALabel={axisDef.poleA.label}
+                          poleBLabel={axisDef.poleB.label}
+                          axisId={axis.axis_id}
+                          importance={axis.importance}
+                          source={axis.source}
+                          confidence={axis.confidence_0_1}
+                        />
+                        <View style={styles.editHint}>
+                          <Ionicons name="pencil-outline" size={14} color={Colors.gray[400]} />
+                        </View>
+                      </TouchableOpacity>
                     );
                   })}
                 </View>
               )}
-            </TouchableOpacity>
+            </View>
           );
         })}
 
@@ -207,13 +205,13 @@ export default function BlueprintV3Screen() {
         </Text>
       </ScrollView>
 
-      {/* Edit Domain Modal */}
-      {editingDomain && (
-        <DomainEditModal
-          domainId={editingDomain}
+      {/* Edit Single Axis Modal */}
+      {editingAxisId && (
+        <AxisEditModal
+          axisId={editingAxisId}
           profile={profile}
           spec={spec}
-          onClose={() => setEditingDomain(null)}
+          onClose={() => setEditingAxisId(null)}
           onChangeAxisImportance={updateAxisImportance}
           onChangeAxis={updateAxisValue}
         />
@@ -248,6 +246,95 @@ function ImportanceBar({ value }: { value: number }) {
     </View>
   );
 }
+
+// Editable version of ImportanceBar for the modal
+function EditableImportanceBubbles({
+  value,
+  onChange
+}: {
+  value: number;
+  onChange: (v: number) => void;
+}) {
+  // Map 0-10 value to 0-4 position (5 bubbles)
+  const currentPosition = Math.round((value / 10) * 4);
+  const label = getImportanceLabel(value);
+
+  const handlePress = (position: number) => {
+    // Convert position (0-4) back to value (0-10)
+    const newValue = Math.round((position / 4) * 10);
+    onChange(newValue);
+  };
+
+  return (
+    <View style={editableImportanceStyles.container}>
+      <Text style={editableImportanceStyles.label}>{label}</Text>
+      <View style={editableImportanceStyles.bubblesRow}>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <TouchableOpacity
+            key={i}
+            onPress={() => handlePress(i)}
+            style={editableImportanceStyles.bubbleTouchArea}
+            activeOpacity={0.7}
+          >
+            <View
+              style={[
+                editableImportanceStyles.bubble,
+                i <= currentPosition && editableImportanceStyles.bubbleFilled,
+              ]}
+            />
+          </TouchableOpacity>
+        ))}
+      </View>
+      <View style={editableImportanceStyles.labelsRow}>
+        <Text style={editableImportanceStyles.endLabel}>Not much</Text>
+        <Text style={editableImportanceStyles.endLabel}>Deal breaker</Text>
+      </View>
+    </View>
+  );
+}
+
+const editableImportanceStyles = StyleSheet.create({
+  container: {
+    gap: 8,
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: Colors.gray[900],
+    textAlign: 'center',
+  },
+  bubblesRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  bubbleTouchArea: {
+    padding: 8,
+  },
+  bubble: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: Colors.gray[200],
+    borderWidth: 2,
+    borderColor: Colors.gray[300],
+  },
+  bubbleFilled: {
+    backgroundColor: Colors.primary,
+    borderColor: Colors.primary,
+  },
+  labelsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 8,
+  },
+  endLabel: {
+    fontSize: 11,
+    color: Colors.gray[500],
+    textTransform: 'uppercase',
+    fontWeight: '600',
+  },
+});
 
 function getImportanceLabel(v: number): string {
   // Map to 5 positions: 0, 2.5, 5, 7.5, 10
@@ -324,8 +411,11 @@ function CompactAxisBar({
 
   return (
     <View style={axisBarStyles.container}>
-      {/* Header with axis name */}
-      <Text style={axisBarStyles.name}>{name}</Text>
+      {/* Header with axis name and importance indicator */}
+      <View style={axisBarStyles.headerRow}>
+        <Text style={axisBarStyles.name}>{name}</Text>
+        <ImportanceBar value={importance ?? 5} />
+      </View>
 
       {/* Stance box - prominent display of the position title */}
       <View style={[axisBarStyles.stanceBox, { borderLeftColor: getAccentColor() }]}>
@@ -395,10 +485,17 @@ const axisBarStyles = StyleSheet.create({
   container: {
     gap: 8,
   },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 8,
+  },
   name: {
     fontSize: 14,
     fontWeight: '700',
     color: Colors.gray[800],
+    flex: 1,
   },
   stanceBox: {
     backgroundColor: '#F5F3FF', // Light purple-tinted background
@@ -491,7 +588,7 @@ const axisBarStyles = StyleSheet.create({
 });
 
 // =====================================================
-// DomainEditModal - Full editing interface
+// AxisEditModal - Edit a single policy topic
 // =====================================================
 
 interface Spec {
@@ -514,81 +611,72 @@ interface Profile {
   }>;
 }
 
-function DomainEditModal({
-  domainId,
+function AxisEditModal({
+  axisId,
   profile,
   spec,
   onClose,
   onChangeAxisImportance,
   onChangeAxis,
 }: {
-  domainId: string;
+  axisId: string;
   profile: Profile;
   spec: Spec;
   onClose: () => void;
   onChangeAxisImportance: (axis_id: string, value: number) => void;
   onChangeAxis: (axis_id: string, value: number) => void;
 }) {
-  const domain = spec.domains.find(d => d.id === domainId);
-  const domProfile = profile.domains.find(d => d.domain_id === domainId);
+  const axisDef = spec.axes.find(a => a.id === axisId);
 
-  if (!domain || !domProfile) return null;
+  // Find the axis data from profile
+  let axisData: AxisProfile | undefined;
+  for (const domain of profile.domains) {
+    const found = domain.axes.find(a => a.axis_id === axisId);
+    if (found) {
+      axisData = found;
+      break;
+    }
+  }
+
+  if (!axisDef || !axisData) return null;
 
   return (
     <Modal visible animationType="slide" transparent>
       <View style={modalStyles.backdrop}>
         <View style={modalStyles.sheet}>
           <View style={modalStyles.header}>
-            <Text style={modalStyles.title}>{domain.name}</Text>
+            <Text style={modalStyles.title}>{axisDef.name}</Text>
             <TouchableOpacity onPress={onClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
               <Ionicons name="close" size={24} color={Colors.gray[500]} />
             </TouchableOpacity>
           </View>
 
           <ScrollView contentContainerStyle={modalStyles.content}>
-            {/* All Axes with Position and Importance */}
-            <View style={modalStyles.section}>
-              <Text style={modalStyles.sectionLabel}>YOUR POSITIONS</Text>
-              {domProfile.axes.map((axis) => {
-                const axisDef = spec.axes.find(a => a.id === axis.axis_id);
-                if (!axisDef) return null;
+            <Text style={modalStyles.axisDesc}>{axisDef.description}</Text>
 
-                return (
-                  <View key={axis.axis_id} style={modalStyles.axisCard}>
-                    <Text style={modalStyles.axisName}>{axisDef.name}</Text>
-                    <Text style={modalStyles.axisDesc}>{axisDef.description}</Text>
+            {/* Position Slider */}
+            <View style={modalStyles.positionSection}>
+              <Text style={modalStyles.positionLabel}>Your position:</Text>
+              <DiscreteSlider
+                value={Math.round(axisData.value_0_10)}
+                onChange={(v) => onChangeAxis(axisId, v)}
+                leftLabel={axisDef.poleA.label}
+                midLabel="Mixed"
+                rightLabel={axisDef.poleB.label}
+                variant="stance"
+                axisId={axisId}
+              />
+            </View>
 
-                    {/* Importance Slider for this axis */}
-                    <View style={modalStyles.importanceSection}>
-                      <Text style={modalStyles.importanceLabel}>Priority:</Text>
-                      <DiscreteSlider
-                        value={axis.importance ?? 5}
-                        onChange={(v) => onChangeAxisImportance(axis.axis_id, v)}
-                        leftLabel="Not much"
-                        midLabel="Matters to me"
-                        rightLabel="Deal breaker"
-                        variant="importance"
-                      />
-                    </View>
+            <View style={modalStyles.miniDivider} />
 
-                    <View style={modalStyles.miniDivider} />
-
-                    {/* Position Slider */}
-                    <View style={modalStyles.positionSection}>
-                      <Text style={modalStyles.positionLabel}>Your position:</Text>
-                      <DiscreteSlider
-                        value={Math.round(axis.value_0_10)}
-                        onChange={(v) => onChangeAxis(axis.axis_id, v)}
-                        leftLabel={axisDef.poleA.label}
-                        midLabel="Mixed"
-                        rightLabel={axisDef.poleB.label}
-                        variant="stance"
-                        axisId={axis.axis_id}
-                      />
-                    </View>
-                  </View>
-                );
-              })}
+            {/* Importance Bubbles */}
+            <View style={modalStyles.importanceSection}>
+              <Text style={modalStyles.importanceLabel}>How much does this matter to you?</Text>
+              <EditableImportanceBubbles
+                value={axisData.importance ?? 5}
+                onChange={(v) => onChangeAxisImportance(axisId, v)}
+              />
             </View>
           </ScrollView>
 
@@ -758,6 +846,20 @@ function getGradientColor(position: number, variant: 'importance' | 'stance' = '
   }
 }
 
+// Helper function to get thumb color based on stance value
+function getThumbColor(value: number): string {
+  if (value <= 3) return '#A855F7'; // Purple - toward poleA
+  if (value >= 7) return '#14B8A6'; // Teal - toward poleB
+  return '#6B7280'; // Gray - center/mixed
+}
+
+// Helper function to get thumb color for importance slider
+function getImportanceThumbColor(value: number): string {
+  if (value <= 2) return '#9CA3AF'; // Light gray
+  if (value <= 5) return '#60A5FA'; // Medium blue
+  return '#3B82F6'; // Deep blue
+}
+
 function DiscreteSlider({
   value,
   onChange,
@@ -825,46 +927,76 @@ function DiscreteSlider({
       )}
 
       <View style={sliderStyles.trackContainer}>
-        {/* Gradient track */}
+        {/* Gradient track - smooth gradient matching main page */}
         <View style={sliderStyles.gradientTrack}>
-          {segments.map((i) => {
-            // Get color based on segment type
-            let segmentColor: string;
-            if (usePositions) {
-              segmentColor = getPositionSegmentColor(i, numSegments, config?.currentPolicyIndex || 2);
-            } else {
-              // For importance, convert segment index to 0-10 scale for color
-              const colorValue = Math.round((i / (numSegments - 1)) * 10);
-              segmentColor = getGradientColor(colorValue, variant);
-            }
-
-            return (
-              <TouchableOpacity
-                key={i}
-                style={[
-                  sliderStyles.segment,
-                  { backgroundColor: segmentColor },
-                  i === 0 && sliderStyles.segmentFirst,
-                  i === numSegments - 1 && sliderStyles.segmentLast,
-                ]}
-                onPress={() => {
-                  // Convert position index to 0-10 value
-                  const newValue = Math.round((i / (numSegments - 1)) * 10);
-                  onChange(newValue);
-                }}
-                activeOpacity={0.8}
-              />
-            );
-          })}
+          {variant === 'stance' ? (
+            // Smooth gradient for stance: purple -> gray -> teal
+            Array.from({ length: 20 }, (_, i) => {
+              const t = i / 19;
+              let color: string;
+              if (t < 0.5) {
+                const factor = t * 2;
+                const r = Math.round(168 + (229 - 168) * factor);
+                const g = Math.round(85 + (231 - 85) * factor);
+                const b = Math.round(247 + (235 - 247) * factor);
+                color = `rgb(${r}, ${g}, ${b})`;
+              } else {
+                const factor = (t - 0.5) * 2;
+                const r = Math.round(229 + (20 - 229) * factor);
+                const g = Math.round(231 + (184 - 231) * factor);
+                const b = Math.round(235 + (166 - 235) * factor);
+                color = `rgb(${r}, ${g}, ${b})`;
+              }
+              return (
+                <TouchableOpacity
+                  key={i}
+                  style={[
+                    sliderStyles.gradientSegment,
+                    { backgroundColor: color },
+                    i === 0 && sliderStyles.segmentFirst,
+                    i === 19 && sliderStyles.segmentLast,
+                  ]}
+                  onPress={() => {
+                    const newValue = Math.round((i / 19) * 10);
+                    onChange(newValue);
+                  }}
+                  activeOpacity={0.8}
+                />
+              );
+            })
+          ) : (
+            // Importance slider gradient: gray -> blue
+            Array.from({ length: 20 }, (_, i) => {
+              const t = i / 19;
+              const colorValue = Math.round(t * 10);
+              const color = getGradientColor(colorValue, 'importance');
+              return (
+                <TouchableOpacity
+                  key={i}
+                  style={[
+                    sliderStyles.gradientSegment,
+                    { backgroundColor: color },
+                    i === 0 && sliderStyles.segmentFirst,
+                    i === 19 && sliderStyles.segmentLast,
+                  ]}
+                  onPress={() => {
+                    const newValue = Math.round((i / 19) * 10);
+                    onChange(newValue);
+                  }}
+                  activeOpacity={0.8}
+                />
+              );
+            })
+          )}
         </View>
 
-        {/* Thumb indicator */}
+        {/* Thumb indicator - color changes based on position */}
         <View
           style={[sliderStyles.thumb, { left: `${thumbPosition}%` }]}
           pointerEvents="none"
         >
-          <View style={[sliderStyles.thumbInner, { borderColor: '#7C3AED' }]}>
-            <View style={sliderStyles.thumbDot} />
+          <View style={[sliderStyles.thumbInner, { borderColor: variant === 'stance' ? getThumbColor(value) : getImportanceThumbColor(value) }]}>
+            <View style={[sliderStyles.thumbDot, { backgroundColor: variant === 'stance' ? getThumbColor(value) : getImportanceThumbColor(value) }]} />
           </View>
         </View>
 
@@ -983,6 +1115,10 @@ const sliderStyles = StyleSheet.create({
     overflow: 'hidden',
   },
   segment: {
+    flex: 1,
+    height: '100%',
+  },
+  gradientSegment: {
     flex: 1,
     height: '100%',
   },
@@ -1160,7 +1296,18 @@ const styles = StyleSheet.create({
     paddingTop: 14,
     borderTopWidth: 1,
     borderTopColor: Colors.gray[100],
-    gap: 14,
+    gap: 12,
+  },
+  axisCardTouchable: {
+    backgroundColor: Colors.gray[50],
+    borderRadius: 12,
+    padding: 12,
+    position: 'relative',
+  },
+  editHint: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
   },
   footerHint: {
     textAlign: 'center',
