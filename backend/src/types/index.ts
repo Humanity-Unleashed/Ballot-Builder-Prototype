@@ -472,6 +472,12 @@ export interface AxisProfile {
   estimates: AxisEstimates;
   /** Evidence for transparency */
   evidence: AxisEvidence;
+  /**
+   * Importance weight (0-10) for this axis when comparing against candidates.
+   * Used in Builder tab for weighted matching. Higher = more important to user.
+   * Default is 5 (neutral importance).
+   */
+  importance?: number;
 }
 
 export interface DomainImportance {
@@ -592,4 +598,98 @@ export interface CompleteAssessmentResponse {
   sessionId: string;
   finalScores: AxisScore[];
   profileSaved: boolean;
+}
+
+// ============================================
+// Fine-Tuning Types
+// ============================================
+
+/**
+ * A sub-dimension within an axis for fine-grained position capture.
+ * Example: "Assault-Style Weapons" under the "Gun Laws" axis.
+ */
+export interface SubDimensionPosition {
+  title: string;
+  description: string;
+  isCurrentPolicy?: boolean;
+}
+
+export interface SubDimension {
+  id: string;
+  parentAxisId: string;
+  name: string;
+  question: string;
+  poleALabel: string;
+  poleBLabel: string;
+  positions: SubDimensionPosition[];
+  currentPolicyIndex: number;
+}
+
+export interface AxisFineTuning {
+  axisId: string;
+  axisName: string;
+  subDimensions: SubDimension[];
+}
+
+/**
+ * A user's response to a fine-tuning sub-dimension.
+ * Position is 0-indexed (0 = full poleA, 4 = full poleB for 5 positions).
+ */
+export interface SubDimensionResponse {
+  subDimensionId: string;
+  position: number;
+  timestamp: string;
+}
+
+/**
+ * Fine-tuning data for a single axis.
+ */
+export interface AxisFineTuningData {
+  axisId: string;
+  responses: SubDimensionResponse[];
+  /** Aggregated score from responses, range [-1, 1] */
+  aggregatedScore: number;
+  /** Mapped to 0-10 scale */
+  aggregatedValue_0_10: number;
+  completedAt: string;
+}
+
+/**
+ * Complete fine-tuning data for a user session.
+ */
+export interface FineTuningSession {
+  id: string;
+  userId?: string;
+  assessmentSessionId?: string;
+  axes: Record<string, AxisFineTuningData>;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// Fine-Tuning API Request/Response Types
+
+export interface SubmitFineTuningRequest {
+  axisId: string;
+  responses: Array<{
+    subDimensionId: string;
+    position: number;
+  }>;
+}
+
+export interface SubmitFineTuningResponse {
+  axisId: string;
+  aggregatedScore: number;
+  aggregatedValue_0_10: number;
+  breakdown: Array<{
+    subDimensionId: string;
+    name: string;
+    position: number;
+    positionTitle: string;
+    score: number;
+  }>;
+}
+
+export interface GetFineTuningResponse {
+  sessionId: string;
+  axes: Record<string, AxisFineTuningData>;
 }

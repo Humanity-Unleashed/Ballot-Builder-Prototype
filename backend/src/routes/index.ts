@@ -14,6 +14,7 @@ import contestRoutes from './contests';
 import measureRoutes from './measures';
 import candidateRoutes from './candidates';
 import assessmentRoutes from './assessment';
+import fineTuningRoutes from './fineTuning';
 
 const router = Router();
 
@@ -26,6 +27,7 @@ router.use('/contests', contestRoutes);
 router.use('/measures', measureRoutes);
 router.use('/candidates', candidateRoutes);
 router.use('/assessment', assessmentRoutes);
+router.use('/fine-tuning', fineTuningRoutes);
 
 // API root info
 router.get('/', (_req: Request, res: Response) => {
@@ -90,6 +92,14 @@ router.get('/', (_req: Request, res: Response) => {
         submitAnswer: 'POST /api/assessment/:sessionId/answer',
         complete: 'POST /api/assessment/:sessionId/complete',
         delete: 'DELETE /api/assessment/:sessionId',
+      },
+      fineTuning: {
+        submit: 'POST /api/fine-tuning/submit',
+        sessions: 'GET /api/fine-tuning/sessions',
+        getSession: 'GET /api/fine-tuning/:sessionId',
+        getAxisData: 'GET /api/fine-tuning/:sessionId/axis/:axisId',
+        deleteSession: 'DELETE /api/fine-tuning/:sessionId',
+        clearAxis: 'DELETE /api/fine-tuning/:sessionId/axis/:axisId',
       },
     },
   });
