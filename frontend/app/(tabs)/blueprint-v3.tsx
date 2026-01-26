@@ -29,15 +29,51 @@ function valueToPositionIndex(value: number, totalPositions: number): number {
   return Math.round((value / 10) * (totalPositions - 1));
 }
 
+// Helper function to get a descriptive stance label based on value (for axes without slider config)
+function getGenericStanceLabel(value: number): string {
+  if (value <= 2) return 'Strongly lean left';
+  if (value <= 4) return 'Lean left';
+  if (value <= 6) return 'Balanced / Mixed';
+  if (value <= 8) return 'Lean right';
+  return 'Strongly lean right';
+}
+
 // Helper function to get position label for an axis
 function getPositionLabel(axisId: string, value: number): string {
   const config = getSliderConfig(axisId);
-  if (!config) return `${Math.round(value)}/10`;
+  if (!config) return getGenericStanceLabel(value);
 
   const positionIndex = valueToPositionIndex(value, config.positions.length);
   const position = config.positions[positionIndex];
 
-  return position?.title || `${Math.round(value)}/10`;
+  return position?.title || getGenericStanceLabel(value);
+}
+
+// Helper function to convert source type to display text
+function getSourceLabel(source: string): string | null {
+  switch (source) {
+    case 'learned_from_swipes':
+      return 'From assessment';
+    case 'user_edited':
+      return 'You set this';
+    case 'default':
+    default:
+      return null; // Hide for default values
+  }
+}
+
+// Helper function to convert 0-1 confidence to label
+function getConfidenceLabel(confidence: number): string {
+  if (confidence >= 0.7) return 'High confidence';
+  if (confidence >= 0.4) return 'Medium confidence';
+  return 'Low confidence';
+}
+
+// Helper function to get color based on confidence level
+function getConfidenceColor(confidence: number): string {
+  if (confidence >= 0.7) return '#10B981'; // Green
+  if (confidence >= 0.4) return '#F59E0B'; // Amber
+  return '#EF4444'; // Red
 }
 
 // Helper function to get segment color based on position
@@ -154,6 +190,8 @@ export default function BlueprintV3Screen() {
                         poleBLabel={axisDef.poleB.label}
                         axisId={axis.axis_id}
                         importance={axis.importance}
+                        source={axis.source}
+                        confidence={axis.confidence_0_1}
                       />
                     );
                   })}
@@ -247,7 +285,7 @@ const importanceStyles = StyleSheet.create({
 });
 
 // =====================================================
-// CompactAxisBar Component - Single axis display
+// CompactAxisBar Component - Style B: Gradient Bar with Marker
 // =====================================================
 
 function CompactAxisBar({
@@ -257,6 +295,8 @@ function CompactAxisBar({
   poleBLabel,
   axisId,
   importance,
+  source,
+  confidence,
 }: {
   name: string;
   value: number;
@@ -264,21 +304,32 @@ function CompactAxisBar({
   poleBLabel: string;
   axisId: string;
   importance?: number;
+  source?: string;
+  confidence?: number;
 }) {
   const positionLabel = getPositionLabel(axisId, value);
   const config = getSliderConfig(axisId);
   const positionIndex = config ? valueToPositionIndex(value, config.positions.length) : -1;
   const currentPosition = config?.positions[positionIndex];
-  const importanceValue = importance ?? 5;
+
+  // Calculate marker position (0-100%)
+  const markerPosition = (value / 10) * 100;
+
+  // Determine accent color based on position
+  const getAccentColor = () => {
+    if (value <= 3) return '#A855F7'; // Purple - toward poleA
+    if (value >= 7) return '#14B8A6'; // Teal - toward poleB
+    return '#6B7280'; // Gray - center/mixed
+  };
 
   return (
     <View style={axisBarStyles.container}>
-      <View style={axisBarStyles.header}>
-        <Text style={axisBarStyles.name}>{name}</Text>
-        <ImportanceBar value={importanceValue} />
-      </View>
-      <View style={axisBarStyles.positionDisplay}>
-        <Text style={axisBarStyles.positionText}>
+      {/* Header with axis name */}
+      <Text style={axisBarStyles.name}>{name}</Text>
+
+      {/* Stance box - prominent display of the position title */}
+      <View style={[axisBarStyles.stanceBox, { borderLeftColor: getAccentColor() }]}>
+        <Text style={axisBarStyles.stanceText}>
           {currentPosition?.title || positionLabel}
         </Text>
         {currentPosition?.isCurrentPolicy && (
@@ -287,44 +338,52 @@ function CompactAxisBar({
           </View>
         )}
       </View>
+
+      {/* Gradient bar with marker */}
+      <View style={axisBarStyles.barWrapper}>
+        <View style={axisBarStyles.gradientBar}>
+          {/* We simulate gradient with 3 sections */}
+          <View style={axisBarStyles.barSectionPurple} />
+          <View style={axisBarStyles.barSectionGray} />
+          <View style={axisBarStyles.barSectionTeal} />
+        </View>
+
+        {/* Marker */}
+        <View style={[axisBarStyles.marker, { left: `${markerPosition}%` }]}>
+          <View style={[axisBarStyles.markerInner, { borderColor: getAccentColor() }]} />
+        </View>
+      </View>
+
+      {/* Pole labels */}
+      <View style={axisBarStyles.labelsRow}>
+        <Text style={axisBarStyles.poleLabelLeft}>{poleALabel}</Text>
+        <Text style={axisBarStyles.poleLabelRight}>{poleBLabel}</Text>
+      </View>
     </View>
   );
 }
 
-function getStanceColorForBar(value: number): string {
-  if (value <= 3) return '#A855F7'; // Purple - poleA
-  if (value >= 7) return '#14B8A6'; // Teal - poleB
-  return '#9CA3AF'; // Gray - neutral/mixed
-}
-
 const axisBarStyles = StyleSheet.create({
   container: {
-    gap: 6,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 2,
+    gap: 8,
   },
   name: {
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: '700',
-    color: Colors.gray[700],
-    flex: 1,
+    color: Colors.gray[800],
   },
-  positionDisplay: {
-    backgroundColor: Colors.gray[50],
+  stanceBox: {
+    backgroundColor: '#F5F3FF', // Light purple-tinted background
     borderRadius: 8,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: Colors.gray[200],
+    padding: 12,
+    borderLeftWidth: 4,
+    borderLeftColor: '#A855F7',
   },
-  positionText: {
-    fontSize: 13,
-    fontWeight: '500',
+  stanceText: {
+    fontSize: 14,
+    fontWeight: '600',
     color: Colors.gray[900],
-    lineHeight: 18,
+    lineHeight: 20,
   },
   currentPolicyBadge: {
     alignSelf: 'flex-start',
@@ -332,12 +391,74 @@ const axisBarStyles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 3,
     borderRadius: 8,
-    marginTop: 6,
+    marginTop: 8,
   },
   currentPolicyText: {
     fontSize: 10,
     fontWeight: '600',
     color: '#059669',
+  },
+  barWrapper: {
+    position: 'relative',
+    height: 20,
+    justifyContent: 'center',
+    marginTop: 4,
+  },
+  gradientBar: {
+    flexDirection: 'row',
+    height: 12,
+    borderRadius: 6,
+    overflow: 'hidden',
+  },
+  barSectionPurple: {
+    flex: 1,
+    backgroundColor: '#A855F7',
+  },
+  barSectionGray: {
+    flex: 1,
+    backgroundColor: '#E5E7EB',
+  },
+  barSectionTeal: {
+    flex: 1,
+    backgroundColor: '#14B8A6',
+  },
+  marker: {
+    position: 'absolute',
+    top: '50%',
+    marginTop: -12,
+    marginLeft: -12,
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  markerInner: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: Colors.white,
+    borderWidth: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 3,
+  },
+  labelsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  poleLabelLeft: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: '#A855F7',
+    textTransform: 'uppercase',
+  },
+  poleLabelRight: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: '#14B8A6',
+    textTransform: 'uppercase',
   },
 });
 
@@ -641,20 +762,35 @@ function DiscreteSlider({
   const thumbPosition = (positionIndex / (numSegments - 1)) * 100;
   const currentPosition = config?.positions[positionIndex];
 
+  // For stance sliders without config, show a generic stance label
+  const getStanceDisplayLabel = () => {
+    if (value <= 2) return 'Strongly toward ' + (leftLabel || 'left');
+    if (value <= 4) return 'Leaning toward ' + (leftLabel || 'left');
+    if (value <= 6) return 'Balanced / Mixed';
+    if (value <= 8) return 'Leaning toward ' + (rightLabel || 'right');
+    return 'Strongly toward ' + (rightLabel || 'right');
+  };
+
   return (
     <View style={sliderStyles.wrapper}>
       {/* Position display card for axes, or importance label for priority */}
-      {currentPosition ? (
+      {variant === 'stance' ? (
+        // Stance slider - show position card
         <View style={sliderStyles.positionCard}>
-          <Text style={sliderStyles.positionTitle}>{currentPosition.title}</Text>
-          <Text style={sliderStyles.positionDescription}>{currentPosition.description}</Text>
-          {currentPosition.isCurrentPolicy && (
+          <Text style={sliderStyles.positionTitle}>
+            {currentPosition?.title || getStanceDisplayLabel()}
+          </Text>
+          {currentPosition?.description && (
+            <Text style={sliderStyles.positionDescription}>{currentPosition.description}</Text>
+          )}
+          {currentPosition?.isCurrentPolicy && (
             <View style={sliderStyles.currentPolicyBadge}>
               <Text style={sliderStyles.currentPolicyText}>Current US Policy</Text>
             </View>
           )}
         </View>
       ) : (
+        // Importance slider - show importance label
         <View style={sliderStyles.importanceLabelContainer}>
           <Text style={sliderStyles.importanceLabelText}>{getImportanceLabel(value)}</Text>
         </View>
@@ -749,12 +885,6 @@ function DiscreteSlider({
         </Text>
       </View>
 
-      {/* Position counter for axes only */}
-      {usePositions && (
-        <Text style={sliderStyles.positionCounter}>
-          Position {positionIndex + 1} of {numSegments}
-        </Text>
-      )}
     </View>
   );
 }
@@ -924,12 +1054,6 @@ const sliderStyles = StyleSheet.create({
   },
   labelRight: {
     textAlign: 'right',
-  },
-  positionCounter: {
-    textAlign: 'center',
-    fontSize: 12,
-    color: Colors.gray[500],
-    marginTop: 4,
   },
 });
 

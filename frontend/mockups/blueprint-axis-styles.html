@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Axis Display Mockups</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f3f4f6;
+      padding: 20px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #111827;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .mockup-description {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* ====== STYLE A: 8values Split Bar ====== */
+    .style-a-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .style-a-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .style-a-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .style-a-importance {
+      display: flex;
+      gap: 3px;
+    }
+
+    .style-a-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e5e7eb;
+    }
+
+    .style-a-dot.filled {
+      background: #6366f1;
+    }
+
+    .style-a-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .style-a-pole-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      width: 50px;
+      color: #6b7280;
+    }
+
+    .style-a-pole-label.left {
+      text-align: right;
+      color: #a855f7;
+    }
+
+    .style-a-pole-label.right {
+      text-align: left;
+      color: #14b8a6;
+    }
+
+    .style-a-bar {
+      flex: 1;
+      height: 24px;
+      display: flex;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+
+    .style-a-bar-left {
+      background: linear-gradient(90deg, #a855f7, #c084fc);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 6px;
+    }
+
+    .style-a-bar-right {
+      background: linear-gradient(90deg, #5eead4, #14b8a6);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 6px;
+    }
+
+    .style-a-bar-percent {
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .style-a-stance {
+      font-size: 13px;
+      font-weight: 500;
+      color: #374151;
+      text-align: center;
+      padding: 8px 12px;
+      background: #f9fafb;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* ====== STYLE B: Single Bar with Marker ====== */
+    .style-b-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .style-b-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .style-b-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .style-b-stance-box {
+      background: linear-gradient(135deg, #f3e8ff, #e0f2fe);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      border-left: 4px solid #a855f7;
+    }
+
+    .style-b-stance-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .style-b-bar-wrapper {
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .style-b-bar {
+      height: 12px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #a855f7 0%, #e5e7eb 50%, #14b8a6 100%);
+    }
+
+    .style-b-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      background: white;
+      border: 4px solid #7c3aed;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .style-b-labels {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .style-b-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #9ca3af;
+    }
+
+    /* ====== STYLE C: Segmented Bar (current policy highlighted) ====== */
+    .style-c-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .style-c-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .style-c-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .style-c-segments {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 8px;
+    }
+
+    .style-c-segment {
+      flex: 1;
+      height: 32px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .style-c-segment:hover {
+      transform: scaleY(1.1);
+    }
+
+    .style-c-segment.selected {
+      outline: 3px solid #1f2937;
+      outline-offset: 2px;
+      transform: scaleY(1.15);
+    }
+
+    .style-c-segment.current-policy {
+      position: relative;
+    }
+
+    .style-c-segment.current-policy::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: #059669;
+      border-radius: 50%;
+    }
+
+    .style-c-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .style-c-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .style-c-label.left { color: #a855f7; }
+    .style-c-label.right { color: #14b8a6; }
+
+    .style-c-stance-card {
+      background: #faf5ff;
+      border: 2px solid #e9d5ff;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .style-c-stance-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .style-c-stance-desc {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    .style-c-current-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #d1fae5;
+      color: #059669;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 12px;
+      margin-top: 8px;
+    }
+
+    /* ====== STYLE D: Minimal with Color Accent ====== */
+    .style-d-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-left: 5px solid;
+    }
+
+    .style-d-card.lean-left { border-color: #a855f7; }
+    .style-d-card.center { border-color: #9ca3af; }
+    .style-d-card.lean-right { border-color: #14b8a6; }
+
+    .style-d-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .style-d-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .style-d-stance {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .style-d-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .style-d-source {
+      font-size: 11px;
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .style-d-confidence {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .style-d-confidence-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .style-d-confidence-dot.high { background: #10b981; }
+    .style-d-confidence-dot.medium { background: #f59e0b; }
+
+    .style-d-confidence-text {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    /* ====== STYLE E: Compact List with Mini Bar ====== */
+    .style-e-card {
+      background: white;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .style-e-mini-bar-container {
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .style-e-mini-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #a855f7 0%, #e5e7eb 50%, #14b8a6 100%);
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .style-e-mini-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      background: white;
+      border: 3px solid #7c3aed;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .style-e-mini-labels {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .style-e-mini-label {
+      font-size: 8px;
+      font-weight: 600;
+      color: #9ca3af;
+    }
+
+    .style-e-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .style-e-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 2px;
+    }
+
+    .style-e-stance {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111827;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .style-e-arrow {
+      color: #d1d5db;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Blueprint Axis Display Mockups</h1>
+  <p class="mockup-description">Different visual approaches for showing policy positions, inspired by 8values. All examples show the same data: "Healthcare Coverage System" axis with position at 30% (leaning toward Public System).</p>
+
+  <!-- STYLE A -->
+  <div class="section-label">Style A: 8values Split Bar</div>
+  <p class="mockup-description">Classic 8values style with dual-colored bars showing percentage on each side. Good for showing the balance between poles.</p>
+
+  <div class="style-a-card">
+    <div class="style-a-header">
+      <span class="style-a-name">Healthcare Coverage System</span>
+      <div class="style-a-importance">
+        <div class="style-a-dot filled"></div>
+        <div class="style-a-dot filled"></div>
+        <div class="style-a-dot filled"></div>
+        <div class="style-a-dot"></div>
+        <div class="style-a-dot"></div>
+      </div>
+    </div>
+    <div class="style-a-bar-container">
+      <span class="style-a-pole-label left">Public</span>
+      <div class="style-a-bar">
+        <div class="style-a-bar-left" style="width: 70%;">
+          <span class="style-a-bar-percent">70%</span>
+        </div>
+        <div class="style-a-bar-right" style="width: 30%;">
+          <span class="style-a-bar-percent">30%</span>
+        </div>
+      </div>
+      <span class="style-a-pole-label right">Private</span>
+    </div>
+    <div class="style-a-stance">Public option competes with private plans</div>
+  </div>
+
+  <!-- STYLE B -->
+  <div class="section-label">Style B: Gradient Bar with Marker</div>
+  <p class="mockup-description">Single gradient bar with a thumb marker. Stance title is prominently displayed above the bar.</p>
+
+  <div class="style-b-card">
+    <div class="style-b-header">
+      <span class="style-b-name">Healthcare Coverage System</span>
+    </div>
+    <div class="style-b-stance-box">
+      <div class="style-b-stance-text">Public option competes with private plans</div>
+    </div>
+    <div class="style-b-bar-wrapper">
+      <div class="style-b-bar"></div>
+      <div class="style-b-marker" style="left: 30%;"></div>
+    </div>
+    <div class="style-b-labels">
+      <span class="style-b-label">Public System</span>
+      <span class="style-b-label">Private Market</span>
+    </div>
+  </div>
+
+  <!-- STYLE C -->
+  <div class="section-label">Style C: Segmented Positions</div>
+  <p class="mockup-description">Shows all 5 positions as clickable segments. Current US policy is marked with a green dot. Selected position is highlighted.</p>
+
+  <div class="style-c-card">
+    <div class="style-c-header">
+      <span class="style-c-name">Healthcare Coverage System</span>
+    </div>
+    <div class="style-c-segments">
+      <div class="style-c-segment" style="background: #a855f7;"></div>
+      <div class="style-c-segment selected" style="background: #c084fc;"></div>
+      <div class="style-c-segment current-policy" style="background: #9ca3af;"></div>
+      <div class="style-c-segment" style="background: #5eead4;"></div>
+      <div class="style-c-segment" style="background: #14b8a6;"></div>
+    </div>
+    <div class="style-c-labels">
+      <span class="style-c-label left">Public System</span>
+      <span class="style-c-label right">Private Market</span>
+    </div>
+    <div class="style-c-stance-card">
+      <div class="style-c-stance-title">Public option competes with private plans</div>
+      <div class="style-c-stance-desc">Government plan available to all who want it</div>
+    </div>
+  </div>
+
+  <!-- Another Style C example showing current policy selected -->
+  <div class="style-c-card">
+    <div class="style-c-header">
+      <span class="style-c-name">Benefit Eligibility</span>
+    </div>
+    <div class="style-c-segments">
+      <div class="style-c-segment" style="background: #a855f7;"></div>
+      <div class="style-c-segment" style="background: #c084fc;"></div>
+      <div class="style-c-segment selected current-policy" style="background: #9ca3af;"></div>
+      <div class="style-c-segment" style="background: #5eead4;"></div>
+      <div class="style-c-segment" style="background: #14b8a6;"></div>
+    </div>
+    <div class="style-c-labels">
+      <span class="style-c-label left">Universal Access</span>
+      <span class="style-c-label right">Targeted Need</span>
+    </div>
+    <div class="style-c-stance-card">
+      <div class="style-c-stance-title">Moderate means-testing</div>
+      <div class="style-c-stance-desc">Benefits phase out as income rises above median</div>
+      <div class="style-c-current-badge">
+        <span>Current US Policy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE D -->
+  <div class="section-label">Style D: Minimal Card with Color Accent</div>
+  <p class="mockup-description">Clean, text-focused design. Left border color indicates position direction. Good for readability.</p>
+
+  <div class="style-d-card lean-left">
+    <div class="style-d-header">
+      <span class="style-d-name">Healthcare Coverage System</span>
+    </div>
+    <div class="style-d-stance">Public option competes with private plans</div>
+    <div class="style-d-meta">
+      <span class="style-d-source">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20V10M18 20V4M6 20v-4"/>
+        </svg>
+        From assessment
+      </span>
+      <div class="style-d-confidence">
+        <div class="style-d-confidence-dot high"></div>
+        <span class="style-d-confidence-text">High confidence</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="style-d-card center">
+    <div class="style-d-header">
+      <span class="style-d-name">Benefit Eligibility</span>
+    </div>
+    <div class="style-d-stance">Moderate means-testing</div>
+    <div class="style-d-meta">
+      <span class="style-d-source">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20V10M18 20V4M6 20v-4"/>
+        </svg>
+        From assessment
+      </span>
+      <div class="style-d-confidence">
+        <div class="style-d-confidence-dot medium"></div>
+        <span class="style-d-confidence-text">Medium confidence</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="style-d-card lean-right">
+    <div class="style-d-header">
+      <span class="style-d-name">Education Funding</span>
+    </div>
+    <div class="style-d-stance">Significant funding portability</div>
+    <div class="style-d-meta">
+      <span class="style-d-source">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+        </svg>
+        You set this
+      </span>
+      <div class="style-d-confidence">
+        <div class="style-d-confidence-dot high"></div>
+        <span class="style-d-confidence-text">High confidence</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE E -->
+  <div class="section-label">Style E: Compact List with Mini Bar</div>
+  <p class="mockup-description">Space-efficient list view with small visual indicator. Good for showing many axes at once.</p>
+
+  <div class="style-e-card">
+    <div class="style-e-mini-bar-container">
+      <div class="style-e-mini-bar">
+        <div class="style-e-mini-marker" style="left: 30%;"></div>
+      </div>
+      <div class="style-e-mini-labels">
+        <span class="style-e-mini-label">PUB</span>
+        <span class="style-e-mini-label">PRV</span>
+      </div>
+    </div>
+    <div class="style-e-content">
+      <div class="style-e-name">Healthcare Coverage System</div>
+      <div class="style-e-stance">Public option competes with private plans</div>
+    </div>
+    <span class="style-e-arrow">›</span>
+  </div>
+
+  <div class="style-e-card">
+    <div class="style-e-mini-bar-container">
+      <div class="style-e-mini-bar">
+        <div class="style-e-mini-marker" style="left: 50%;"></div>
+      </div>
+      <div class="style-e-mini-labels">
+        <span class="style-e-mini-label">UNI</span>
+        <span class="style-e-mini-label">TGT</span>
+      </div>
+    </div>
+    <div class="style-e-content">
+      <div class="style-e-name">Benefit Eligibility</div>
+      <div class="style-e-stance">Moderate means-testing</div>
+    </div>
+    <span class="style-e-arrow">›</span>
+  </div>
+
+  <div class="style-e-card">
+    <div class="style-e-mini-bar-container">
+      <div class="style-e-mini-bar">
+        <div class="style-e-mini-marker" style="left: 70%;"></div>
+      </div>
+      <div class="style-e-mini-labels">
+        <span class="style-e-mini-label">DST</span>
+        <span class="style-e-mini-label">STU</span>
+      </div>
+    </div>
+    <div class="style-e-content">
+      <div class="style-e-name">Education Funding</div>
+      <div class="style-e-stance">Significant funding portability</div>
+    </div>
+    <span class="style-e-arrow">›</span>
+  </div>
+
+</body>
+</html>
