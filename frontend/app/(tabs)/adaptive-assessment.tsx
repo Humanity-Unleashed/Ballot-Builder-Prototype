@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, Modal, Pressable, PanResponder, Dimensions } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Animated, Modal, Pressable, PanResponder, Dimensions, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
-import civicSpec from '../../data/civic_axes_spec_v1.json';
-import { scoreAxes, SwipeEvent, AxisScore } from '../../utils/civicScoring';
+import { civicAxesApi, SwipeEvent, AxisScore } from '@/services/api';
 import {
   initializeAdaptiveState,
   getAdaptiveProgress,
@@ -21,6 +20,35 @@ import {
 
 type AssessmentMode = 'intro' | 'assessment' | 'results' | 'fine-tuning';
 
+// Helper function to get thumb color based on slider position (0-4 for 5 positions)
+function getSliderThumbColor(position: number, totalPositions: number): string {
+  const normalizedPosition = position / (totalPositions - 1); // 0 to 1
+  if (normalizedPosition <= 0.3) return '#A855F7'; // Purple - toward poleA
+  if (normalizedPosition >= 0.7) return '#14B8A6'; // Teal - toward poleB
+  return '#6B7280'; // Gray - center/mixed
+}
+
+// Helper function to generate gradient color for a segment
+function getGradientSegmentColor(index: number, totalSegments: number): string {
+  const t = index / (totalSegments - 1); // 0 to 1
+  // Interpolate: purple (0) -> gray (0.5) -> teal (1)
+  if (t < 0.5) {
+    // Purple to gray
+    const factor = t * 2;
+    const r = Math.round(168 + (229 - 168) * factor);
+    const g = Math.round(85 + (231 - 85) * factor);
+    const b = Math.round(247 + (235 - 247) * factor);
+    return `rgb(${r}, ${g}, ${b})`;
+  } else {
+    // Gray to teal
+    const factor = (t - 0.5) * 2;
+    const r = Math.round(229 + (20 - 229) * factor);
+    const g = Math.round(231 + (184 - 231) * factor);
+    const b = Math.round(235 + (166 - 235) * factor);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+}
+
 // Get axes for selected domains
 function getAxesForDomains(spec: Spec, selectedDomains: Set<string>): string[] {
   const axes: string[] = [];
@@ -32,18 +60,221 @@ function getAxesForDomains(spec: Spec, selectedDomains: Set<string>): string[] {
   return axes;
 }
 
+// Draggable Slider Component
+function DraggableSlider({
+  position,
+  totalPositions,
+  onPositionChange,
+  poleALabel,
+  poleBLabel,
+  style,
+}: {
+  position: number;
+  totalPositions: number;
+  onPositionChange: (pos: number) => void;
+  poleALabel: string;
+  poleBLabel: string;
+  style?: any;
+}) {
+  const trackRef = useRef<View>(null);
+  const trackWidth = useRef(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderGrant: (evt) => {
+        setIsDragging(true);
+        // Handle initial tap position
+        if (trackWidth.current > 0) {
+          const touchX = evt.nativeEvent.locationX;
+          const newPos = Math.round((touchX / trackWidth.current) * (totalPositions - 1));
+          const clampedPos = Math.max(0, Math.min(totalPositions - 1, newPos));
+          onPositionChange(clampedPos);
+        }
+      },
+      onPanResponderMove: (evt, gestureState) => {
+        if (trackWidth.current > 0) {
+          // Calculate position from gesture
+          const currentThumbX = (position / (totalPositions - 1)) * trackWidth.current;
+          const newX = currentThumbX + gestureState.dx;
+          const newPos = Math.round((newX / trackWidth.current) * (totalPositions - 1));
+          const clampedPos = Math.max(0, Math.min(totalPositions - 1, newPos));
+          if (clampedPos !== position) {
+            onPositionChange(clampedPos);
+          }
+        }
+      },
+      onPanResponderRelease: () => {
+        setIsDragging(false);
+      },
+      onPanResponderTerminate: () => {
+        setIsDragging(false);
+      },
+    })
+  ).current;
+
+  const thumbColor = getSliderThumbColor(position, totalPositions);
+  const thumbPosition = (position / (totalPositions - 1)) * 100;
+
+  return (
+    <View style={[draggableSliderStyles.container, style]}>
+      <Text style={[draggableSliderStyles.poleLabel, draggableSliderStyles.poleLabelLeft]}>
+        {poleALabel}
+      </Text>
+
+      <View style={draggableSliderStyles.trackContainer}>
+        <View
+          ref={trackRef}
+          style={draggableSliderStyles.trackOuter}
+          onLayout={(e) => {
+            trackWidth.current = e.nativeEvent.layout.width;
+          }}
+          {...panResponder.panHandlers}
+        >
+          {/* Smooth Gradient */}
+          {Array.from({ length: 20 }, (_, i) => (
+            <View
+              key={i}
+              style={[
+                draggableSliderStyles.trackSegment,
+                { backgroundColor: getGradientSegmentColor(i, 20) },
+              ]}
+            />
+          ))}
+          {/* Draggable Thumb */}
+          <Animated.View
+            style={[
+              draggableSliderStyles.thumb,
+              {
+                left: `${thumbPosition}%`,
+                borderColor: thumbColor,
+                transform: [{ scale: isDragging ? 1.15 : 1 }],
+              },
+            ]}
+          >
+            <View style={[draggableSliderStyles.thumbInner, { backgroundColor: thumbColor }]} />
+          </Animated.View>
+        </View>
+
+        {/* Tick Marks */}
+        <View style={draggableSliderStyles.tickMarks}>
+          {Array.from({ length: totalPositions }, (_, idx) => (
+            <TouchableOpacity
+              key={idx}
+              style={draggableSliderStyles.tickTouchArea}
+              onPress={() => onPositionChange(idx)}
+            >
+              <View style={[
+                draggableSliderStyles.tick,
+                idx === position && draggableSliderStyles.tickActive,
+              ]} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
+
+      <Text style={[draggableSliderStyles.poleLabel, draggableSliderStyles.poleLabelRight]}>
+        {poleBLabel}
+      </Text>
+    </View>
+  );
+}
+
+const draggableSliderStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  poleLabel: {
+    fontSize: 10,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+    textAlign: 'center',
+    width: 55,
+  },
+  poleLabelLeft: {
+    color: '#A855F7',
+  },
+  poleLabelRight: {
+    color: '#14B8A6',
+  },
+  trackContainer: {
+    flex: 1,
+  },
+  trackOuter: {
+    height: 12,
+    borderRadius: 6,
+    flexDirection: 'row',
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  trackSegment: {
+    flex: 1,
+    height: '100%',
+  },
+  thumb: {
+    position: 'absolute',
+    top: '50%',
+    width: 36,
+    height: 36,
+    backgroundColor: '#fff',
+    borderRadius: 18,
+    borderWidth: 4,
+    marginLeft: -18,
+    marginTop: -18,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  thumbInner: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+  },
+  tickMarks: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 14,
+    marginTop: 8,
+  },
+  tickTouchArea: {
+    padding: 4,
+    alignItems: 'center',
+  },
+  tick: {
+    width: 2,
+    height: 8,
+    backgroundColor: '#d1d5db',
+    borderRadius: 1,
+  },
+  tickActive: {
+    backgroundColor: '#7C3AED',
+    height: 12,
+  },
+});
+
 export default function AdaptiveCivicAssessmentScreen() {
-  const spec = civicSpec as unknown as Spec;
   const { initializeFromSwipes } = useBlueprint();
+  const [spec, setSpec] = useState<Spec | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [mode, setMode] = useState<AssessmentMode>('intro');
-  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set(spec.domains.map(d => d.id)));
+  const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [axisQueue, setAxisQueue] = useState<string[]>([]);
   const [currentAxisIndex, setCurrentAxisIndex] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(2); // Start at center (current policy)
   const [axisResponses, setAxisResponses] = useState<Record<string, number>>({}); // axisId -> position
   const [swipes, setSwipes] = useState<SwipeEvent[]>([]);
   const [axisScores, setAxisScores] = useState<Record<string, AxisScore>>({});
-  const [adaptiveState, setAdaptiveState] = useState(() => initializeAdaptiveState(spec));
+  const [adaptiveState, setAdaptiveState] = useState<any>(null);
   const [fadeAnim] = useState(new Animated.Value(1));
   const [showTransition, setShowTransition] = useState(false);
   const [transitionMessage, setTransitionMessage] = useState('');
@@ -52,11 +283,32 @@ export default function AdaptiveCivicAssessmentScreen() {
   const [fineTuningAxisId, setFineTuningAxisId] = useState<string | null>(null);
   const [fineTuningResponses, setFineTuningResponses] = useState<Record<string, Record<string, number>>>({});
 
+  // Fetch civic axes spec from API
+  useEffect(() => {
+    async function fetchSpec() {
+      try {
+        setLoading(true);
+        const fetchedSpec = await civicAxesApi.getSpec();
+        setSpec(fetchedSpec);
+        setSelectedDomains(new Set(fetchedSpec.domains.map(d => d.id)));
+        setAdaptiveState(initializeAdaptiveState(fetchedSpec));
+        setError(null);
+      } catch (err) {
+        console.error('Failed to load civic axes spec:', err);
+        setError('Failed to load assessment data. Please try again.');
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchSpec();
+  }, []);
+
   const screenWidth = Dimensions.get('window').width;
   const sliderWidth = screenWidth - 120; // Account for padding and pole labels
 
   // Start assessment with selected domains
   const startAssessment = (domains: Set<string>) => {
+    if (!spec) return;
     setSelectedDomains(domains);
     const axes = getAxesForDomains(spec, domains);
     setAxisQueue(axes);
@@ -65,6 +317,48 @@ export default function AdaptiveCivicAssessmentScreen() {
     setAxisResponses({});
     setMode('assessment');
   };
+
+  // Show loading state
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={Colors.primary} />
+        <Text style={styles.loadingText}>Loading assessment...</Text>
+      </View>
+    );
+  }
+
+  // Show error state
+  if (error || !spec) {
+    const handleRetry = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const fetchedSpec = await civicAxesApi.getSpec();
+        setSpec(fetchedSpec);
+        setSelectedDomains(new Set(fetchedSpec.domains.map(d => d.id)));
+        setAdaptiveState(initializeAdaptiveState(fetchedSpec));
+      } catch (err) {
+        console.error('Failed to load civic axes spec:', err);
+        setError('Failed to load assessment data. Please try again.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    return (
+      <View style={styles.errorContainer}>
+        <Ionicons name="alert-circle" size={48} color={Colors.error} />
+        <Text style={styles.errorText}>{error || 'Failed to load assessment'}</Text>
+        <TouchableOpacity
+          style={styles.retryButton}
+          onPress={handleRetry}
+        >
+          <Text style={styles.retryButtonText}>Retry</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   // Get current axis config
   const currentAxisId = axisQueue[currentAxisIndex];
@@ -76,8 +370,25 @@ export default function AdaptiveCivicAssessmentScreen() {
   const totalAxes = axisQueue.length;
   const progressPercentage = totalAxes > 0 ? ((currentAxisIndex) / totalAxes) * 100 : 0;
 
+  // Calculate scores using backend API
+  const calculateScores = async (swipes: SwipeEvent[]) => {
+    try {
+      const response = await civicAxesApi.scoreResponses(swipes);
+      // Convert array of scores to Record<string, AxisScore>
+      const scoresRecord: Record<string, AxisScore> = {};
+      response.scores.forEach(score => {
+        scoresRecord[score.axis_id] = score;
+      });
+      return scoresRecord;
+    } catch (error) {
+      console.error('Failed to calculate scores:', error);
+      return {};
+    }
+  };
+
   // Convert axis responses to swipe events for scoring
   const convertResponsesToSwipes = (responses: Record<string, number>): SwipeEvent[] => {
+    if (!spec) return [];
     const swipeEvents: SwipeEvent[] = [];
 
     Object.entries(responses).forEach(([axisId, position]) => {
@@ -134,13 +445,13 @@ export default function AdaptiveCivicAssessmentScreen() {
       toValue: 0,
       duration: 200,
       useNativeDriver: true,
-    }).start(() => {
+    }).start(async () => {
       // Check if we're done
       if (currentAxisIndex >= axisQueue.length - 1) {
         // Convert responses to swipes and calculate scores
         const finalSwipes = convertResponsesToSwipes(newResponses);
         setSwipes(finalSwipes);
-        const scores = scoreAxes(spec, finalSwipes);
+        const scores = await calculateScores(finalSwipes);
         setAxisScores(scores);
         initializeFromSwipes(finalSwipes);
         setMode('results');
@@ -211,11 +522,11 @@ export default function AdaptiveCivicAssessmentScreen() {
       toValue: 0,
       duration: 200,
       useNativeDriver: true,
-    }).start(() => {
+    }).start(async () => {
       if (currentAxisIndex >= axisQueue.length - 1) {
         const finalSwipes = convertResponsesToSwipes(newResponses);
         setSwipes(finalSwipes);
-        const scores = scoreAxes(spec, finalSwipes);
+        const scores = await calculateScores(finalSwipes);
         setAxisScores(scores);
         initializeFromSwipes(finalSwipes);
         setMode('results');
@@ -485,51 +796,13 @@ export default function AdaptiveCivicAssessmentScreen() {
 
             {/* Slider Section */}
             <View style={styles.sliderSliderSection}>
-              <View style={styles.sliderWithLabels}>
-                <Text style={[styles.sliderPoleLabel, styles.sliderPoleLabelLeft]}>
-                  {currentAxisConfig.poleALabel}
-                </Text>
-
-                <View style={styles.sliderTrackContainer}>
-                  {/* Gradient Track */}
-                  <View style={styles.sliderTrackOuter}>
-                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#A855F7' }]} />
-                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#C084FC' }]} />
-                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#9CA3AF' }]} />
-                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#5EEAD4' }]} />
-                    <View style={[styles.sliderTrackSegment, { backgroundColor: '#14B8A6' }]} />
-                    {/* Thumb on the track */}
-                    <View
-                      style={[
-                        styles.sliderThumbNew,
-                        { left: `${(sliderPosition / (totalPositions - 1)) * 100}%` },
-                      ]}
-                    >
-                      <View style={styles.sliderThumbInnerNew} />
-                    </View>
-                  </View>
-
-                  {/* Tick Marks - Below the track */}
-                  <View style={styles.sliderTickMarks}>
-                    {currentAxisConfig.positions.map((_, idx) => (
-                      <TouchableOpacity
-                        key={idx}
-                        style={styles.sliderTickTouchArea}
-                        onPress={() => setSliderPosition(idx)}
-                      >
-                        <View style={[
-                          styles.sliderTick,
-                          idx === sliderPosition && styles.sliderTickActive,
-                        ]} />
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                </View>
-
-                <Text style={[styles.sliderPoleLabel, styles.sliderPoleLabelRight]}>
-                  {currentAxisConfig.poleBLabel}
-                </Text>
-              </View>
+              <DraggableSlider
+                position={sliderPosition}
+                totalPositions={totalPositions}
+                onPositionChange={setSliderPosition}
+                poleALabel={currentAxisConfig.poleALabel}
+                poleBLabel={currentAxisConfig.poleBLabel}
+              />
 
               <Text style={styles.sliderPositionCounter}>
                 Position {sliderPosition + 1} of {totalPositions}
@@ -1049,48 +1322,13 @@ function FineTuningScreen({
 
             {/* Slider */}
             <View style={fineTuneStyles.sliderSection}>
-              <View style={fineTuneStyles.sliderWithLabels}>
-                <Text style={[fineTuneStyles.poleLabel, fineTuneStyles.poleLabelLeft]}>
-                  {currentSubDimension.poleALabel}
-                </Text>
-
-                <View style={fineTuneStyles.sliderTrackContainer}>
-                  <View style={fineTuneStyles.sliderTrackOuter}>
-                    <View style={[fineTuneStyles.sliderTrackSegment, { backgroundColor: '#A855F7' }]} />
-                    <View style={[fineTuneStyles.sliderTrackSegment, { backgroundColor: '#C084FC' }]} />
-                    <View style={[fineTuneStyles.sliderTrackSegment, { backgroundColor: '#9CA3AF' }]} />
-                    <View style={[fineTuneStyles.sliderTrackSegment, { backgroundColor: '#5EEAD4' }]} />
-                    <View style={[fineTuneStyles.sliderTrackSegment, { backgroundColor: '#14B8A6' }]} />
-                    <View
-                      style={[
-                        fineTuneStyles.sliderThumb,
-                        { left: `${(sliderPosition / (totalPositions - 1)) * 100}%` },
-                      ]}
-                    >
-                      <View style={fineTuneStyles.sliderThumbInner} />
-                    </View>
-                  </View>
-
-                  <View style={fineTuneStyles.tickMarks}>
-                    {currentSubDimension.positions.map((_, idx) => (
-                      <TouchableOpacity
-                        key={idx}
-                        style={fineTuneStyles.tickTouchArea}
-                        onPress={() => setSliderPosition(idx)}
-                      >
-                        <View style={[
-                          fineTuneStyles.tick,
-                          idx === sliderPosition && fineTuneStyles.tickActive,
-                        ]} />
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                </View>
-
-                <Text style={[fineTuneStyles.poleLabel, fineTuneStyles.poleLabelRight]}>
-                  {currentSubDimension.poleBLabel}
-                </Text>
-              </View>
+              <DraggableSlider
+                position={sliderPosition}
+                totalPositions={totalPositions}
+                onPositionChange={setSliderPosition}
+                poleALabel={currentSubDimension.poleALabel}
+                poleBLabel={currentSubDimension.poleBLabel}
+              />
             </View>
           </View>
         </Animated.View>
@@ -1308,7 +1546,7 @@ const fineTuneStyles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 18,
     borderWidth: 4,
-    borderColor: '#7C3AED',
+    borderColor: '#6B7280', // Default, overridden dynamically
     marginLeft: -18,
     marginTop: -18,
     shadowColor: '#000',
@@ -1323,7 +1561,7 @@ const fineTuneStyles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#7C3AED',
+    backgroundColor: '#6B7280', // Default, overridden dynamically
   },
   tickMarks: {
     flexDirection: 'row',
@@ -1432,6 +1670,35 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: Colors.gray[600],
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: Colors.gray[700],
+    textAlign: 'center',
+  },
+  retryButton: {
+    marginTop: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    backgroundColor: Colors.primary,
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: '600',
   },
   transitionContainer: {
     flex: 1,
@@ -2062,7 +2329,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 18,
     borderWidth: 4,
-    borderColor: '#7C3AED',
+    borderColor: '#6B7280', // Default, overridden dynamically
     marginLeft: -18,
     marginTop: -18,
     shadowColor: '#000',
@@ -2077,7 +2344,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#7C3AED',
+    backgroundColor: '#6B7280', // Default, overridden dynamically
   },
   sliderTickMarks: {
     flexDirection: 'row',
