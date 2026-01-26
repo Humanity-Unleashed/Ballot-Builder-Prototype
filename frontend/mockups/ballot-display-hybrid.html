@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ballot Display - Hybrid Collapsible Approach</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    .phone-frame {
+      width: 390px;
+      height: 844px;
+      background: #fff;
+      margin: 20px auto;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    .screen {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      padding: 60px 20px 12px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .progress-badge {
+      font-size: 12px;
+      color: #666;
+      background: #f3f4f6;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    /* Collapsible Ballot Panel */
+    .ballot-panel {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .ballot-panel.collapsed {
+      max-height: 52px;
+    }
+
+    .ballot-panel.expanded {
+      max-height: 400px;
+    }
+
+    .ballot-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      cursor: pointer;
+    }
+
+    .ballot-panel-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .ballot-panel-title .icon {
+      font-size: 16px;
+    }
+
+    .ballot-panel-toggle {
+      color: #a5b4fc;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .toggle-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .ballot-panel.expanded .toggle-arrow {
+      transform: rotate(180deg);
+    }
+
+    .ballot-panel-content {
+      padding: 0 20px 20px;
+    }
+
+    /* Full ballot preview with clickable regions */
+    .ballot-full-preview {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .ballot-header-mini {
+      text-align: center;
+      font-size: 9px;
+      color: #666;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 8px;
+    }
+
+    .ballot-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px;
+      margin: 4px -8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .ballot-item-row:hover {
+      background: #E0E7FF;
+    }
+
+    .ballot-item-row.current {
+      background: #C7D2FE;
+      border-color: #7C3AED;
+    }
+
+    .ballot-item-row.completed {
+      opacity: 0.7;
+    }
+
+    .ballot-item-status {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #9ca3af;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .ballot-item-status.current {
+      border-color: #7C3AED;
+      background: #7C3AED;
+      color: #fff;
+    }
+
+    .ballot-item-status.completed {
+      border-color: #059669;
+      background: #059669;
+      color: #fff;
+    }
+
+    .ballot-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ballot-item-name {
+      font-size: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .ballot-item-preview {
+      font-size: 8px;
+      color: #666;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ballot-item-choice {
+      font-size: 9px;
+      color: #059669;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .jump-hint {
+      text-align: center;
+      font-size: 10px;
+      color: #a5b4fc;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Content area */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    /* Digitized Content Card */
+    .digitized-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .current-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #7C3AED;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .item-type-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #EEF2FF;
+      color: #4338CA;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      margin-left: 8px;
+    }
+
+    .item-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 12px;
+    }
+
+    .item-description {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Plain Language Box */
+    .plain-language {
+      background: #F0FDF4;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .plain-language-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #059669;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .plain-language-text {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Blueprint Alignment */
+    .blueprint-alignment {
+      background: #F5F3FF;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .blueprint-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #7C3AED;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .blueprint-text {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .recommendation {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(124, 58, 237, 0.2);
+    }
+
+    .recommendation-badge {
+      background: #7C3AED;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .recommendation-text {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Choice Buttons */
+    .choice-section {
+      padding: 16px;
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .choice-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .choice-btn {
+      flex: 1;
+      padding: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .choice-btn.yes:hover {
+      border-color: #059669;
+      background: #F0FDF4;
+    }
+
+    .choice-btn.no:hover {
+      border-color: #DC2626;
+      background: #FEF2F2;
+    }
+
+    .choice-btn.yes.selected {
+      border-color: #059669;
+      background: #059669;
+      color: #fff;
+    }
+
+    .choice-btn.no.selected {
+      border-color: #DC2626;
+      background: #DC2626;
+      color: #fff;
+    }
+
+    .nav-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .nav-btn.secondary {
+      background: #f3f4f6;
+      color: #666;
+    }
+
+    .nav-btn.primary {
+      background: #7C3AED;
+      color: #fff;
+    }
+
+    .skip-link {
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .skip-link a {
+      font-size: 13px;
+      color: #888;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="screen">
+      <div class="header">
+        <div class="header-top">
+          <div class="header-title">Ballot Builder</div>
+          <div class="progress-badge">1 of 3</div>
+        </div>
+      </div>
+
+      <!-- Collapsible Ballot Panel -->
+      <div class="ballot-panel expanded" id="ballotPanel">
+        <div class="ballot-panel-header" onclick="togglePanel()">
+          <div class="ballot-panel-title">
+            <span class="icon">📄</span>
+            Your Official Ballot
+          </div>
+          <div class="ballot-panel-toggle">
+            <span id="toggleText">Hide</span>
+            <span class="toggle-arrow">▲</span>
+          </div>
+        </div>
+
+        <div class="ballot-panel-content">
+          <div class="ballot-full-preview">
+            <div class="ballot-header-mini">
+              Official Ballot — General Election, November 5, 2024 — Sample County
+            </div>
+
+            <!-- Clickable ballot items for navigation -->
+            <div class="ballot-item-row current" onclick="jumpTo(1)">
+              <div class="ballot-item-status current">1</div>
+              <div class="ballot-item-info">
+                <div class="ballot-item-name">PROPOSITION 1</div>
+                <div class="ballot-item-preview">Clean water as a fundamental right...</div>
+              </div>
+            </div>
+
+            <div class="ballot-item-row" onclick="jumpTo(2)">
+              <div class="ballot-item-status">2</div>
+              <div class="ballot-item-info">
+                <div class="ballot-item-name">PROPOSITION 2</div>
+                <div class="ballot-item-preview">$50 million bonds for school improvements...</div>
+              </div>
+            </div>
+
+            <div class="ballot-item-row completed" onclick="jumpTo(3)">
+              <div class="ballot-item-status completed">✓</div>
+              <div class="ballot-item-info">
+                <div class="ballot-item-name">MEASURE A</div>
+                <div class="ballot-item-preview">0.5% sales tax for transit...</div>
+                <div class="ballot-item-choice">Your choice: NO</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="jump-hint">
+            Tap any item above to jump directly to it
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- Digitized Content -->
+        <div class="digitized-card">
+          <span class="current-indicator">● Currently viewing</span>
+          <span class="item-type-badge">State Constitutional Amendment</span>
+
+          <div class="item-title">Proposition 1: Clean Water Rights</div>
+
+          <div class="plain-language">
+            <div class="plain-language-label">In Plain Language</div>
+            <div class="plain-language-text">
+              This would add clean water access to the state constitution as a fundamental right. The state would be required to ensure all residents have access to safe drinking water.
+            </div>
+          </div>
+
+          <div class="blueprint-alignment">
+            <div class="blueprint-label">Your Blueprint Match</div>
+            <div class="blueprint-text">
+              Based on your positions on environmental protection and public health, this measure aligns with your values.
+            </div>
+            <div class="recommendation">
+              <span class="recommendation-badge">87% Match</span>
+              <span class="recommendation-text">Suggested: Vote Yes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="choice-section">
+        <div class="choice-buttons">
+          <button class="choice-btn yes">✓ Yes</button>
+          <button class="choice-btn no">✗ No</button>
+        </div>
+        <div class="nav-row">
+          <button class="nav-btn secondary">← Back</button>
+          <button class="nav-btn primary">Next →</button>
+        </div>
+        <div class="skip-link">
+          <a href="#">Skip this item for now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePanel() {
+      const panel = document.getElementById('ballotPanel');
+      const toggleText = document.getElementById('toggleText');
+
+      if (panel.classList.contains('expanded')) {
+        panel.classList.remove('expanded');
+        panel.classList.add('collapsed');
+        toggleText.textContent = 'View Ballot';
+      } else {
+        panel.classList.remove('collapsed');
+        panel.classList.add('expanded');
+        toggleText.textContent = 'Hide';
+      }
+    }
+
+    function jumpTo(itemNum) {
+      alert(`Jumping to item ${itemNum}!\n\nThis would navigate to that ballot item.`);
+    }
+
+    // Choice button interaction
+    document.querySelectorAll('.choice-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>

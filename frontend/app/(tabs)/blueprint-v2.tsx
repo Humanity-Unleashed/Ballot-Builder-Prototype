@@ -666,6 +666,7 @@ const sliderStyles = StyleSheet.create({
     fontSize: 11,
     color: Colors.gray[500],
     fontWeight: '600',
+    lineHeight: 14,
   },
   mid: { textAlign: 'center' },
   right: { textAlign: 'right' },
@@ -722,8 +723,8 @@ const axisStyles = StyleSheet.create({
     gap: 12,
     alignItems: 'flex-start',
   },
-  name: { fontSize: 14, fontWeight: '700', color: Colors.gray[900] },
-  desc: { color: Colors.gray[500], marginTop: 2, fontSize: 12 },
+  name: { fontSize: 14, fontWeight: '700', color: Colors.gray[900], lineHeight: 18 },
+  desc: { color: Colors.gray[500], marginTop: 2, fontSize: 12, lineHeight: 17 },
   editedBadge: {
     color: Colors.primary,
     fontSize: 12,
@@ -771,6 +772,7 @@ const styles = StyleSheet.create({
   sectionSubtitle: {
     color: Colors.gray[500],
     fontSize: 14,
+    lineHeight: 20,
   },
   domainCard: {
     backgroundColor: Colors.white,

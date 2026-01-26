@@ -487,7 +487,7 @@ const axisBarStyles = StyleSheet.create({
   },
   headerRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
     gap: 8,
   },
@@ -496,6 +496,7 @@ const axisBarStyles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.gray[800],
     flex: 1,
+    lineHeight: 18,
   },
   stanceBox: {
     backgroundColor: '#F5F3FF', // Light purple-tinted background
@@ -509,6 +510,8 @@ const axisBarStyles = StyleSheet.create({
     fontWeight: '600',
     color: Colors.gray[900],
     lineHeight: 20,
+    flexShrink: 1,
+    flexWrap: 'wrap',
   },
   currentPolicyBadge: {
     alignSelf: 'flex-start',
@@ -574,16 +577,21 @@ const axisBarStyles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   poleLabelLeft: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '600',
     color: '#A855F7',
     textTransform: 'uppercase',
+    flexShrink: 1,
+    maxWidth: '45%',
   },
   poleLabelRight: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '600',
     color: '#14B8A6',
     textTransform: 'uppercase',
+    flexShrink: 1,
+    maxWidth: '45%',
+    textAlign: 'right',
   },
 });
 
@@ -1072,7 +1080,8 @@ const sliderStyles = StyleSheet.create({
     fontSize: 13,
     color: Colors.gray[600],
     textAlign: 'center',
-    lineHeight: 18,
+    lineHeight: 19,
+    paddingHorizontal: 4,
   },
   currentPolicyBadge: {
     flexDirection: 'row',
@@ -1256,6 +1265,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Colors.gray[500],
     marginTop: 4,
+    lineHeight: 20,
   },
   domainCard: {
     backgroundColor: Colors.white,

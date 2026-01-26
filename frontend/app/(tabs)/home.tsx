@@ -140,14 +140,16 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   greeting: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#111827',
     marginBottom: 4,
+    lineHeight: 28,
   },
   email: {
     fontSize: 14,
     color: '#6B7280',
+    lineHeight: 20,
   },
 
   // Cards
@@ -184,6 +186,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6B7280',
     marginBottom: 16,
+    lineHeight: 20,
   },
   progressBar: {
     height: 8,

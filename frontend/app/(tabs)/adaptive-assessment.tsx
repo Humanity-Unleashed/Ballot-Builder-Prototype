@@ -186,15 +186,16 @@ const draggableSliderStyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
+    gap: 10,
   },
   poleLabel: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '700',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
     textAlign: 'center',
-    width: 55,
+    width: 60,
+    lineHeight: 14,
   },
   poleLabelLeft: {
     color: '#A855F7',
@@ -1466,12 +1467,13 @@ const fineTuneStyles = StyleSheet.create({
     fontWeight: '700',
     color: '#111',
     marginBottom: 8,
+    lineHeight: 24,
   },
   subDimensionQuestion: {
     fontSize: 14,
     color: '#666',
     lineHeight: 21,
-    marginBottom: 24,
+    marginBottom: 20,
   },
   positionDisplay: {
     flex: 1,
@@ -1521,15 +1523,16 @@ const fineTuneStyles = StyleSheet.create({
   sliderWithLabels: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
+    gap: 10,
   },
   poleLabel: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '700',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
     textAlign: 'center',
-    width: 55,
+    width: 60,
+    lineHeight: 14,
   },
   poleLabelLeft: {
     color: '#A855F7',
@@ -1978,18 +1981,21 @@ const styles = StyleSheet.create({
     color: '#7C3AED',
   },
   axisTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: '700',
     color: '#111',
     marginBottom: 8,
     textAlign: 'center',
+    lineHeight: 26,
+    paddingHorizontal: 8,
   },
   axisQuestion: {
     fontSize: 15,
     color: '#666',
     lineHeight: 22,
-    marginBottom: 24,
+    marginBottom: 20,
     textAlign: 'center',
+    paddingHorizontal: 4,
   },
   positionCard: {
     backgroundColor: 'rgba(124, 58, 237, 0.06)',
@@ -2040,12 +2046,13 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   poleLabel: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '700',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
     textAlign: 'center',
-    width: 55,
+    width: 60,
+    lineHeight: 14,
   },
   poleLabelLeft: {
     color: '#A855F7',
@@ -2248,12 +2255,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#111',
     marginBottom: 8,
+    lineHeight: 26,
   },
   sliderAxisQuestion: {
     fontSize: 14,
     color: '#666',
     lineHeight: 21,
-    marginBottom: 32,
+    marginBottom: 24,
   },
   sliderPositionDisplay: {
     flex: 1,
@@ -2270,11 +2278,12 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   sliderPositionTitle: {
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: '600',
     color: '#111',
     textAlign: 'center',
-    lineHeight: 24,
+    lineHeight: 22,
+    paddingHorizontal: 4,
   },
   sliderPositionDescription: {
     fontSize: 13,
@@ -2282,6 +2291,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 19,
     marginTop: 6,
+    paddingHorizontal: 4,
   },
   sliderCurrentPolicyBadge: {
     flexDirection: 'row',
@@ -2304,7 +2314,7 @@ const styles = StyleSheet.create({
   sliderWithLabels: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
+    gap: 10,
   },
   sliderPoleLabel: {
     fontSize: 10,
@@ -2439,16 +2449,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   resultsTitle: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: '700',
     color: '#212121',
     marginTop: 16,
+    lineHeight: 32,
+    textAlign: 'center',
+    paddingHorizontal: 16,
   },
   resultsSubtitle: {
     fontSize: 14,
     color: '#666',
     marginTop: 8,
     textAlign: 'center',
+    lineHeight: 20,
+    paddingHorizontal: 16,
   },
   efficiencyCard: {
     backgroundColor: '#E8F5E9',
@@ -2504,6 +2519,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#666',
     marginTop: 4,
+    lineHeight: 18,
+    flex: 1,
   },
   axesContainer: {
     paddingHorizontal: 16,
@@ -2525,6 +2542,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#666',
     marginBottom: 16,
+    lineHeight: 19,
   },
   spectrumContainer: {
     marginVertical: 16,
@@ -2598,7 +2616,7 @@ const styles = StyleSheet.create({
   interpretationText: {
     fontSize: 13,
     color: '#424242',
-    lineHeight: 18,
+    lineHeight: 19,
   },
   fineTuneButton: {
     flexDirection: 'row',
@@ -2666,6 +2684,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '500',
     color: '#374151',
+    lineHeight: 18,
   },
   miniSpectrumContainer: {
     marginTop: 4,
@@ -3096,16 +3115,17 @@ const introStyles = StyleSheet.create({
     marginBottom: 24,
   },
   heroTitle: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: '700',
     color: Colors.gray[900],
     marginBottom: 12,
+    textAlign: 'center',
   },
   heroSubtitle: {
-    fontSize: 16,
+    fontSize: 15,
     color: Colors.gray[500],
     textAlign: 'center',
-    lineHeight: 24,
+    lineHeight: 22,
   },
   optionsSection: {
     paddingHorizontal: 20,
@@ -3133,10 +3153,11 @@ const introStyles = StyleSheet.create({
     flex: 1,
   },
   optionTitle: {
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: '600',
     color: Colors.gray[900],
     marginBottom: 4,
+    lineHeight: 22,
   },
   optionDescription: {
     fontSize: 14,

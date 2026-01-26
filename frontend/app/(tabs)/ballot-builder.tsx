@@ -465,10 +465,10 @@ function BallotItemHeader({ item }: { item: BallotItem }) {
 
 const headerStyles = StyleSheet.create({
   container: { gap: 12 },
-  title: { fontSize: 14, fontWeight: '700', color: Colors.primary, textTransform: 'uppercase', letterSpacing: 0.5 },
-  question: { fontSize: 20, fontWeight: '700', color: Colors.gray[900], lineHeight: 28 },
-  infoBox: { flexDirection: 'row', backgroundColor: Colors.primary + '10', padding: 12, borderRadius: 12, gap: 10 },
-  infoText: { flex: 1, fontSize: 14, color: Colors.gray[700], lineHeight: 20 },
+  title: { fontSize: 13, fontWeight: '700', color: Colors.primary, textTransform: 'uppercase', letterSpacing: 0.5 },
+  question: { fontSize: 18, fontWeight: '700', color: Colors.gray[900], lineHeight: 26 },
+  infoBox: { flexDirection: 'row', backgroundColor: Colors.primary + '10', padding: 12, borderRadius: 12, gap: 10, alignItems: 'flex-start' },
+  infoText: { flex: 1, fontSize: 14, color: Colors.gray[700], lineHeight: 21 },
 });
 
 // --- Recommendation Banner (for propositions) ---
@@ -642,9 +642,9 @@ const recStyles = StyleSheet.create({
   noBanner: { backgroundColor: '#FEF2F2', borderColor: '#FECACA' },
   neutralBanner: { backgroundColor: Colors.gray[100], borderColor: Colors.gray[200] },
   bannerHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  bannerTitle: { fontSize: 15, fontWeight: '700' },
-  neutralTitle: { fontSize: 15, fontWeight: '700', color: Colors.gray[600] },
-  bannerText: { fontSize: 14, color: Colors.gray[700], lineHeight: 20 },
+  bannerTitle: { fontSize: 15, fontWeight: '700', flex: 1, lineHeight: 20 },
+  neutralTitle: { fontSize: 15, fontWeight: '700', color: Colors.gray[600], flex: 1, lineHeight: 20 },
+  bannerText: { fontSize: 14, color: Colors.gray[700], lineHeight: 21 },
   confidenceBar: { height: 4, backgroundColor: Colors.gray[200], borderRadius: 2, overflow: 'hidden' },
   confidenceFill: { height: '100%', borderRadius: 2 },
   // Expandable breakdown styles
@@ -670,7 +670,7 @@ const recStyles = StyleSheet.create({
   breakdownIntro: {
     fontSize: 13,
     color: Colors.gray[600],
-    lineHeight: 18,
+    lineHeight: 19,
     marginBottom: 4,
   },
   breakdownItem: {
@@ -1170,12 +1170,12 @@ const candStyles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   candidateInfo: { flex: 1, gap: 4 },
-  nameRow: { flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' },
-  name: { fontSize: 16, fontWeight: '700', color: Colors.gray[900] },
+  nameRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
+  name: { fontSize: 16, fontWeight: '700', color: Colors.gray[900], lineHeight: 22 },
   nameSelected: { color: Colors.primary },
-  party: { fontSize: 13, color: Colors.gray[500] },
-  summary: { fontSize: 12, color: Colors.gray[600], lineHeight: 16, marginTop: 4 },
-  matchDetail: { fontSize: 11, color: '#16A34A', marginTop: 4 },
+  party: { fontSize: 13, color: Colors.gray[500], lineHeight: 18 },
+  summary: { fontSize: 12, color: Colors.gray[600], lineHeight: 17, marginTop: 4 },
+  matchDetail: { fontSize: 11, color: '#16A34A', marginTop: 4, lineHeight: 15 },
   incumbentBadge: {
     paddingHorizontal: 8,
     paddingVertical: 2,
@@ -1668,13 +1668,17 @@ const summaryStyles = StyleSheet.create({
     gap: 8,
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '800',
     color: Colors.gray[900],
+    textAlign: 'center',
+    lineHeight: 28,
   },
   headerSubtitle: {
     fontSize: 15,
     color: Colors.gray[500],
+    textAlign: 'center',
+    lineHeight: 21,
   },
   scrollView: {
     flex: 1,
@@ -1715,6 +1719,7 @@ const summaryStyles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     color: Colors.gray[900],
+    lineHeight: 20,
   },
   voteBadge: {
     flexDirection: 'row',
@@ -1792,7 +1797,7 @@ const summaryStyles = StyleSheet.create({
     flex: 1,
     fontSize: 13,
     color: Colors.gray[500],
-    lineHeight: 18,
+    lineHeight: 19,
   },
 });
 
