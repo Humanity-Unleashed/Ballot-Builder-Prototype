@@ -955,26 +955,39 @@ function ResultsScreen({
                   <Text style={styles.axisDescription}>{axis.description}</Text>
 
                   {/* Axis Spectrum Visualization */}
-                  <View style={styles.spectrumContainer}>
-                    <View style={styles.spectrumLabels}>
-                      <Text style={styles.poleLabel}>{axis.poleA.label}</Text>
-                      <Text style={styles.poleLabel}>{axis.poleB.label}</Text>
-                    </View>
-                    <View style={styles.spectrumBar}>
-                      <View style={styles.spectrumMidpoint} />
-                      {score && (
-                        <View
-                          style={[
-                            styles.spectrumIndicator,
-                            {
-                              left: `${((score.shrunk + 1) / 2) * 100}%`,
-                              opacity: Math.max(score.confidence, 0.3),
-                            },
-                          ]}
-                        />
-                      )}
-                    </View>
-                  </View>
+                  {(() => {
+                    // Use fine-tuned score if available, otherwise use original score
+                    const refinedScore = fineTuningResponses[axis.id]
+                      ? calculateFineTunedScore(axis.id, fineTuningResponses[axis.id])
+                      : null;
+                    const displayScore = refinedScore !== null ? refinedScore : (score?.shrunk ?? 0);
+                    const displayConfidence = refinedScore !== null ? 1 : (score?.confidence ?? 0.3);
+
+                    return (
+                      <View style={styles.spectrumContainer}>
+                        <View style={styles.spectrumLabels}>
+                          <Text style={styles.poleLabel}>{axis.poleA.label}</Text>
+                          <Text style={styles.poleLabel}>{axis.poleB.label}</Text>
+                        </View>
+                        <View style={styles.spectrumBar}>
+                          <View style={styles.spectrumMidpoint} />
+                          <View
+                            style={[
+                              styles.spectrumIndicator,
+                              {
+                                left: `${((displayScore + 1) / 2) * 100}%`,
+                                opacity: Math.max(displayConfidence, 0.3),
+                                borderColor: refinedScore !== null ? '#059669' : '#7C3AED',
+                              },
+                            ]}
+                          />
+                        </View>
+                        {refinedScore !== null && (
+                          <Text style={styles.refinedIndicatorLabel}>Position refined</Text>
+                        )}
+                      </View>
+                    );
+                  })()}
 
                   {/* Confidence & Stats */}
                   {score && (
@@ -1037,63 +1050,63 @@ function ResultsScreen({
                       {fineTuningResponses[axis.id] && (
                         <View style={styles.fineTuneBreakdown}>
                           <Text style={styles.fineTuneBreakdownTitle}>Your Nuanced Positions:</Text>
-                          {getFineTuningBreakdown(axis.id, fineTuningResponses[axis.id]).map((item) => (
-                            <View key={item.subDimensionId} style={styles.fineTuneBreakdownItem}>
-                              <View style={styles.fineTuneBreakdownHeader}>
+                          {getFineTuningBreakdown(axis.id, fineTuningResponses[axis.id]).map((item) => {
+                            // Determine accent color based on position
+                            const accentColor = item.score < -0.3 ? '#A855F7' : item.score > 0.3 ? '#14B8A6' : '#6B7280';
+                            return (
+                              <View key={item.subDimensionId} style={styles.fineTuneBreakdownItem}>
                                 <Text style={styles.fineTuneBreakdownName}>{item.name}</Text>
-                                <View style={[
-                                  styles.fineTuneScoreBadge,
-                                  item.score < -0.3 && styles.fineTuneScoreBadgePurple,
-                                  item.score > 0.3 && styles.fineTuneScoreBadgeTeal,
-                                ]}>
-                                  <Text style={[
-                                    styles.fineTuneScoreText,
-                                    item.score < -0.3 && styles.fineTuneScoreTextPurple,
-                                    item.score > 0.3 && styles.fineTuneScoreTextTeal,
-                                  ]}>
-                                    {item.score > 0 ? '+' : ''}{(item.score * 100).toFixed(0)}
-                                  </Text>
+                                <View style={[styles.fineTunePositionBox, { borderLeftColor: accentColor }]}>
+                                  <Text style={styles.fineTuneBreakdownPosition}>{item.positionTitle}</Text>
+                                </View>
+                                {/* Mini gradient bar with indicator */}
+                                <View style={styles.miniSpectrumContainer}>
+                                  <View style={styles.miniGradientBar}>
+                                    {Array.from({ length: 10 }, (_, i) => {
+                                      const t = i / 9;
+                                      let color: string;
+                                      if (t < 0.5) {
+                                        const factor = t * 2;
+                                        const r = Math.round(168 + (200 - 168) * factor);
+                                        const g = Math.round(85 + (200 - 85) * factor);
+                                        const b = Math.round(247 + (200 - 247) * factor);
+                                        color = `rgb(${r}, ${g}, ${b})`;
+                                      } else {
+                                        const factor = (t - 0.5) * 2;
+                                        const r = Math.round(200 + (20 - 200) * factor);
+                                        const g = Math.round(200 + (184 - 200) * factor);
+                                        const b = Math.round(200 + (166 - 200) * factor);
+                                        color = `rgb(${r}, ${g}, ${b})`;
+                                      }
+                                      return <View key={i} style={[styles.miniGradientSegment, { backgroundColor: color }]} />;
+                                    })}
+                                    <View
+                                      style={[
+                                        styles.miniSpectrumIndicator,
+                                        { left: `${((item.score + 1) / 2) * 100}%`, borderColor: accentColor },
+                                      ]}
+                                    />
+                                  </View>
                                 </View>
                               </View>
-                              <Text style={styles.fineTuneBreakdownPosition}>{item.positionTitle}</Text>
-                              {/* Mini spectrum bar */}
-                              <View style={styles.miniSpectrumContainer}>
-                                <View style={styles.miniSpectrumBar}>
-                                  <View style={styles.miniSpectrumMidpoint} />
-                                  <View
-                                    style={[
-                                      styles.miniSpectrumIndicator,
-                                      { left: `${((item.score + 1) / 2) * 100}%` },
-                                    ]}
-                                  />
-                                </View>
-                              </View>
-                            </View>
-                          ))}
+                            );
+                          })}
 
-                          {/* Refined Score Summary */}
+                          {/* Refined Position Summary */}
                           {(() => {
                             const refinedScore = calculateFineTunedScore(axis.id, fineTuningResponses[axis.id]);
                             if (refinedScore === null) return null;
+                            const summaryColor = refinedScore < -0.2 ? '#A855F7' : refinedScore > 0.2 ? '#14B8A6' : '#6B7280';
                             return (
-                              <View style={styles.refinedScoreBox}>
-                                <Text style={styles.refinedScoreLabel}>Refined Position</Text>
-                                <View style={styles.refinedScoreValueContainer}>
-                                  <Text style={[
-                                    styles.refinedScoreValue,
-                                    refinedScore < -0.2 && { color: '#A855F7' },
-                                    refinedScore > 0.2 && { color: '#14B8A6' },
-                                  ]}>
-                                    {refinedScore > 0 ? '+' : ''}{(refinedScore * 100).toFixed(0)}
-                                  </Text>
-                                  <Text style={styles.refinedScoreDescription}>
-                                    {Math.abs(refinedScore) < 0.2
-                                      ? 'Balanced across sub-topics'
-                                      : refinedScore < 0
-                                      ? `Leans toward ${axis.poleA.label}`
-                                      : `Leans toward ${axis.poleB.label}`}
-                                  </Text>
-                                </View>
+                              <View style={[styles.refinedScoreBox, { borderLeftColor: summaryColor }]}>
+                                <Text style={styles.refinedScoreLabel}>Overall Position</Text>
+                                <Text style={[styles.refinedScoreDescription, { color: summaryColor }]}>
+                                  {Math.abs(refinedScore) < 0.2
+                                    ? 'Balanced across sub-topics'
+                                    : refinedScore < 0
+                                    ? `Leans toward ${axis.poleA.label}`
+                                    : `Leans toward ${axis.poleB.label}`}
+                                </Text>
                               </View>
                             );
                           })()}
@@ -2635,55 +2648,38 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#e5e7eb',
   },
-  fineTuneBreakdownHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 4,
-  },
   fineTuneBreakdownName: {
     fontSize: 13,
-    fontWeight: '600',
-    color: '#374151',
-    flex: 1,
-  },
-  fineTuneScoreBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 10,
-    backgroundColor: '#e5e7eb',
-  },
-  fineTuneScoreBadgePurple: {
-    backgroundColor: 'rgba(168, 85, 247, 0.15)',
-  },
-  fineTuneScoreBadgeTeal: {
-    backgroundColor: 'rgba(20, 184, 166, 0.15)',
-  },
-  fineTuneScoreText: {
-    fontSize: 11,
     fontWeight: '700',
-    color: '#6b7280',
+    color: '#374151',
+    marginBottom: 6,
   },
-  fineTuneScoreTextPurple: {
-    color: '#A855F7',
-  },
-  fineTuneScoreTextTeal: {
-    color: '#14B8A6',
+  fineTunePositionBox: {
+    backgroundColor: '#F5F3FF',
+    borderRadius: 8,
+    padding: 10,
+    borderLeftWidth: 3,
+    borderLeftColor: '#6B7280',
+    marginBottom: 8,
   },
   fineTuneBreakdownPosition: {
-    fontSize: 12,
-    color: '#6b7280',
-    marginBottom: 6,
+    fontSize: 13,
+    fontWeight: '500',
+    color: '#374151',
   },
   miniSpectrumContainer: {
     marginTop: 4,
   },
-  miniSpectrumBar: {
-    height: 6,
-    backgroundColor: '#e5e7eb',
-    borderRadius: 3,
+  miniGradientBar: {
+    height: 8,
+    borderRadius: 4,
+    flexDirection: 'row',
+    overflow: 'hidden',
     position: 'relative',
-    overflow: 'visible',
+  },
+  miniGradientSegment: {
+    flex: 1,
+    height: '100%',
   },
   miniSpectrumMidpoint: {
     position: 'absolute',
@@ -2695,22 +2691,27 @@ const styles = StyleSheet.create({
   },
   miniSpectrumIndicator: {
     position: 'absolute',
-    top: -2,
-    width: 10,
-    height: 10,
-    backgroundColor: '#7C3AED',
-    borderRadius: 5,
-    marginLeft: -5,
-    borderWidth: 2,
-    borderColor: '#fff',
+    top: -3,
+    width: 14,
+    height: 14,
+    backgroundColor: '#fff',
+    borderRadius: 7,
+    marginLeft: -7,
+    borderWidth: 3,
+    borderColor: '#6B7280',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 2,
   },
   refinedScoreBox: {
-    marginTop: 8,
+    marginTop: 12,
     padding: 12,
     backgroundColor: '#fff',
     borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderLeftWidth: 4,
+    borderLeftColor: '#6B7280',
   },
   refinedScoreLabel: {
     fontSize: 10,
@@ -2720,20 +2721,17 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     marginBottom: 4,
   },
-  refinedScoreValueContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  refinedScoreValue: {
-    fontSize: 24,
-    fontWeight: '700',
+  refinedScoreDescription: {
+    fontSize: 14,
+    fontWeight: '600',
     color: '#374151',
   },
-  refinedScoreDescription: {
-    fontSize: 12,
-    color: '#6b7280',
-    flex: 1,
+  refinedIndicatorLabel: {
+    fontSize: 11,
+    color: '#059669',
+    fontWeight: '600',
+    marginTop: 4,
+    textAlign: 'center',
   },
   noDataText: {
     fontSize: 13,
