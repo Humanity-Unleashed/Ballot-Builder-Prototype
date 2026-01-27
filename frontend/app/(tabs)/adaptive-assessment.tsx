@@ -186,22 +186,24 @@ const draggableSliderStyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 8,
   },
   poleLabel: {
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
-    textAlign: 'center',
-    width: 60,
-    lineHeight: 14,
+    flexShrink: 1,
+    maxWidth: '20%',
+    lineHeight: 15,
   },
   poleLabelLeft: {
     color: '#A855F7',
+    textAlign: 'left',
   },
   poleLabelRight: {
     color: '#14B8A6',
+    textAlign: 'right',
   },
   trackContainer: {
     flex: 1,
@@ -762,16 +764,15 @@ export default function AdaptiveCivicAssessmentScreen() {
       <View style={styles.sliderHeader}>
         <View style={styles.sliderProgressContainer}>
           <View style={styles.sliderProgressLabel}>
-            <Text style={styles.sliderProgressDomain}>{currentDomain?.name}</Text>
+            <View style={styles.sliderDomainBadge}>
+              <Text style={styles.sliderDomainEmoji}>{getDomainEmoji(currentDomain?.id || '')}</Text>
+              <Text style={styles.sliderDomainBadgeText}>{currentDomain?.name}</Text>
+            </View>
             <Text style={styles.sliderProgressCount}>Question {currentAxisIndex + 1} of {totalAxes}</Text>
           </View>
           <View style={styles.sliderProgressBar}>
             <View style={[styles.sliderProgressFill, { width: `${progressPercentage}%` }]} />
           </View>
-        </View>
-        <View style={styles.sliderDomainBadge}>
-          <Text style={styles.sliderDomainEmoji}>{getDomainEmoji(currentDomain?.id || '')}</Text>
-          <Text style={styles.sliderDomainBadgeText}>{currentDomain?.name}</Text>
         </View>
       </View>
 
@@ -1463,16 +1464,16 @@ const fineTuneStyles = StyleSheet.create({
     borderColor: '#e5e7eb',
   },
   subDimensionName: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '700',
-    color: '#111',
+    color: Colors.gray[900],
     marginBottom: 8,
-    lineHeight: 24,
+    lineHeight: 22,
   },
   subDimensionQuestion: {
     fontSize: 14,
-    color: '#666',
-    lineHeight: 21,
+    color: Colors.gray[600],
+    lineHeight: 20,
     marginBottom: 20,
   },
   positionDisplay: {
@@ -1482,23 +1483,23 @@ const fineTuneStyles = StyleSheet.create({
   positionCard: {
     backgroundColor: 'rgba(124, 58, 237, 0.04)',
     borderWidth: 2,
-    borderRadius: 16,
-    padding: 20,
+    borderRadius: 12,
+    padding: 16,
     alignItems: 'center',
-    minHeight: 120,
+    minHeight: 100,
     justifyContent: 'center',
-    marginBottom: 24,
+    marginBottom: 20,
   },
   positionTitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: '600',
-    color: '#111',
+    color: Colors.gray[900],
     textAlign: 'center',
-    lineHeight: 22,
+    lineHeight: 20,
   },
   positionDescription: {
     fontSize: 13,
-    color: '#888',
+    color: Colors.gray[600],
     textAlign: 'center',
     lineHeight: 19,
     marginTop: 6,
@@ -1523,22 +1524,24 @@ const fineTuneStyles = StyleSheet.create({
   sliderWithLabels: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 8,
   },
   poleLabel: {
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
-    textAlign: 'center',
-    width: 60,
-    lineHeight: 14,
+    flexShrink: 1,
+    maxWidth: '20%',
+    lineHeight: 15,
   },
   poleLabelLeft: {
     color: '#A855F7',
+    textAlign: 'left',
   },
   poleLabelRight: {
     color: '#14B8A6',
+    textAlign: 'right',
   },
   sliderTrackContainer: {
     flex: 1,
@@ -2047,18 +2050,20 @@ const styles = StyleSheet.create({
   },
   poleLabel: {
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
-    textAlign: 'center',
-    width: 60,
-    lineHeight: 14,
+    flexShrink: 1,
+    maxWidth: '20%',
+    lineHeight: 15,
   },
   poleLabelLeft: {
     color: '#A855F7',
+    textAlign: 'left',
   },
   poleLabelRight: {
     color: '#14B8A6',
+    textAlign: 'right',
   },
   sliderTrackWrapper: {
     flex: 1,
@@ -2195,14 +2200,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 6,
   },
-  sliderProgressDomain: {
-    fontSize: 12,
-    color: '#666',
-    fontWeight: '500',
-  },
   sliderProgressCount: {
     fontSize: 12,
-    color: '#666',
+    color: Colors.gray[500],
   },
   sliderProgressBar: {
     height: 6,
@@ -2218,18 +2218,17 @@ const styles = StyleSheet.create({
   sliderDomainBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'flex-start',
-    gap: 6,
+    gap: 5,
     backgroundColor: 'rgba(168, 85, 247, 0.1)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 16,
   },
   sliderDomainEmoji: {
-    fontSize: 14,
+    fontSize: 12,
   },
   sliderDomainBadgeText: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: '600',
     color: '#7C3AED',
   },
@@ -2251,16 +2250,16 @@ const styles = StyleSheet.create({
     borderColor: '#e5e7eb',
   },
   sliderAxisTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '700',
     color: '#111',
     marginBottom: 8,
-    lineHeight: 26,
+    lineHeight: 24,
   },
   sliderAxisQuestion: {
     fontSize: 14,
     color: '#666',
-    lineHeight: 21,
+    lineHeight: 20,
     marginBottom: 24,
   },
   sliderPositionDisplay: {
@@ -2270,24 +2269,24 @@ const styles = StyleSheet.create({
   sliderPositionCard: {
     backgroundColor: 'rgba(124, 58, 237, 0.04)',
     borderWidth: 2,
-    borderRadius: 16,
-    padding: 20,
+    borderRadius: 12,
+    padding: 16,
     alignItems: 'center',
-    minHeight: 130,
+    minHeight: 100,
     justifyContent: 'center',
-    marginBottom: 24,
+    marginBottom: 20,
   },
   sliderPositionTitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: '600',
-    color: '#111',
+    color: Colors.gray[900],
     textAlign: 'center',
-    lineHeight: 22,
+    lineHeight: 20,
     paddingHorizontal: 4,
   },
   sliderPositionDescription: {
     fontSize: 13,
-    color: '#888',
+    color: Colors.gray[600],
     textAlign: 'center',
     lineHeight: 19,
     marginTop: 6,
@@ -2317,18 +2316,21 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   sliderPoleLabel: {
-    fontSize: 10,
-    fontWeight: '700',
+    fontSize: 11,
+    fontWeight: '600',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
-    textAlign: 'center',
-    width: 55,
+    flexShrink: 1,
+    maxWidth: '20%',
+    lineHeight: 15,
   },
   sliderPoleLabelLeft: {
     color: '#A855F7',
+    textAlign: 'left',
   },
   sliderPoleLabelRight: {
     color: '#14B8A6',
+    textAlign: 'right',
   },
   sliderTrackContainer: {
     flex: 1,
@@ -2450,16 +2452,16 @@ const styles = StyleSheet.create({
   },
   resultsTitle: {
     fontSize: 24,
-    fontWeight: '700',
-    color: '#212121',
+    fontWeight: '800',
+    color: Colors.gray[900],
     marginTop: 16,
-    lineHeight: 32,
+    lineHeight: 30,
     textAlign: 'center',
     paddingHorizontal: 16,
   },
   resultsSubtitle: {
     fontSize: 14,
-    color: '#666',
+    color: Colors.gray[500],
     marginTop: 8,
     textAlign: 'center',
     lineHeight: 20,
@@ -2511,13 +2513,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   domainName: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#212121',
+    fontSize: 16,
+    fontWeight: '700',
+    color: Colors.gray[900],
   },
   domainWhy: {
     fontSize: 13,
-    color: '#666',
+    color: Colors.gray[600],
     marginTop: 4,
     lineHeight: 18,
     flex: 1,
@@ -2533,14 +2535,15 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   axisName: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#212121',
+    fontSize: 14,
+    fontWeight: '700',
+    color: Colors.gray[900],
     marginBottom: 4,
+    lineHeight: 18,
   },
   axisDescription: {
     fontSize: 13,
-    color: '#666',
+    color: Colors.gray[600],
     marginBottom: 16,
     lineHeight: 19,
   },
@@ -3115,17 +3118,17 @@ const introStyles = StyleSheet.create({
     marginBottom: 24,
   },
   heroTitle: {
-    fontSize: 26,
-    fontWeight: '700',
+    fontSize: 24,
+    fontWeight: '800',
     color: Colors.gray[900],
     marginBottom: 12,
     textAlign: 'center',
   },
   heroSubtitle: {
-    fontSize: 15,
+    fontSize: 14,
     color: Colors.gray[500],
     textAlign: 'center',
-    lineHeight: 22,
+    lineHeight: 20,
   },
   optionsSection: {
     paddingHorizontal: 20,
@@ -3199,14 +3202,14 @@ const introStyles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '800',
     color: Colors.gray[900],
     marginBottom: 8,
   },
   subtitle: {
-    fontSize: 15,
+    fontSize: 14,
     color: Colors.gray[500],
-    lineHeight: 22,
+    lineHeight: 20,
   },
   domainList: {
     padding: 20,
