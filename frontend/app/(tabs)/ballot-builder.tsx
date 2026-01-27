@@ -917,11 +917,20 @@ function CandidateCard({
             </Text>
           )}
 
-          {/* Match info */}
-          {match && match.keyAgreements.length > 0 && (
-            <Text style={candStyles.matchDetail}>
-              Agrees on: {match.keyAgreements.join(', ')}
-            </Text>
+          {/* Match info - based on user's values */}
+          {match && (match.keyAgreements.length > 0 || match.keyDisagreements.length > 0) && (
+            <View style={candStyles.matchInfoContainer}>
+              {match.keyAgreements.length > 0 && (
+                <Text style={candStyles.matchDetail}>
+                  Shares your views on {match.keyAgreements.join(', ')}
+                </Text>
+              )}
+              {match.keyDisagreements.length > 0 && (
+                <Text style={candStyles.matchWarning}>
+                  Differs on {match.keyDisagreements.join(', ')}
+                </Text>
+              )}
+            </View>
           )}
         </View>
 
@@ -962,82 +971,52 @@ function CandidateCard({
           {showBreakdown && (
             <View style={candStyles.breakdownContent}>
               <Text style={candStyles.breakdownIntro}>
-                Comparing your values to {candidate.name.split(' ')[0]}'s positions:
+                Based on the values you shared, here's how you compare:
               </Text>
 
-              {match.axisComparisons.map(comparison => (
-                <View key={comparison.axisId} style={candStyles.comparisonItem}>
-                  <View style={candStyles.comparisonHeader}>
-                    <Text style={candStyles.comparisonAxisName}>{comparison.axisName}</Text>
-                    <View style={[
-                      candStyles.alignmentPill,
-                      { backgroundColor: getAlignmentColor(comparison.alignment) + '20' }
+              {match.axisComparisons.map(comparison => {
+                const isAgreement = comparison.alignment === 'strong' || comparison.alignment === 'moderate';
+                const alignmentIcon = isAgreement ? 'checkmark-circle' : 'close-circle';
+                const alignmentColor = isAgreement ? '#22C55E' : '#EF4444';
+
+                return (
+                  <View key={comparison.axisId} style={candStyles.comparisonItem}>
+                    {/* Topic header with agreement indicator */}
+                    <View style={candStyles.comparisonHeader}>
+                      <View style={candStyles.comparisonTopicRow}>
+                        <Ionicons name={alignmentIcon} size={16} color={alignmentColor} />
+                        <Text style={candStyles.comparisonAxisName}>{comparison.axisName}</Text>
+                      </View>
+                    </View>
+
+                    {/* Natural language comparison */}
+                    <View style={candStyles.stanceComparison}>
+                      <View style={candStyles.stanceRow}>
+                        <Text style={candStyles.stanceWho}>You:</Text>
+                        <Text style={candStyles.stanceText}>{comparison.userLabel}</Text>
+                      </View>
+                      <View style={candStyles.stanceRow}>
+                        <Text style={candStyles.stanceWho}>{candidate.name.split(' ')[0]}:</Text>
+                        <Text style={candStyles.stanceText}>{comparison.candidateLabel}</Text>
+                      </View>
+                    </View>
+
+                    {/* Summary message */}
+                    <Text style={[
+                      candStyles.comparisonSummary,
+                      { color: alignmentColor }
                     ]}>
-                      <Text style={[
-                        candStyles.alignmentPillText,
-                        { color: getAlignmentColor(comparison.alignment) }
-                      ]}>
-                        {getAlignmentLabel(comparison.alignment)}
-                      </Text>
-                    </View>
-                  </View>
-
-                  <View style={candStyles.comparisonBars}>
-                    {/* Your position */}
-                    <View style={candStyles.barRow}>
-                      <Text style={candStyles.barLabel}>You</Text>
-                      <View style={candStyles.barTrack}>
-                        <View
-                          style={[
-                            candStyles.barFill,
-                            candStyles.barFillUser,
-                            { width: `${(comparison.userValue / 10) * 100}%` }
-                          ]}
-                        />
-                        <View
-                          style={[
-                            candStyles.barMarker,
-                            { left: `${(comparison.userValue / 10) * 100}%` }
-                          ]}
-                        />
-                      </View>
-                      <Text style={candStyles.barValue}>{comparison.userValue}</Text>
-                    </View>
-
-                    {/* Candidate position */}
-                    <View style={candStyles.barRow}>
-                      <Text style={candStyles.barLabel}>{candidate.name.split(' ')[0]}</Text>
-                      <View style={candStyles.barTrack}>
-                        <View
-                          style={[
-                            candStyles.barFill,
-                            candStyles.barFillCandidate,
-                            { width: `${(comparison.candidateValue / 10) * 100}%` }
-                          ]}
-                        />
-                        <View
-                          style={[
-                            candStyles.barMarker,
-                            candStyles.barMarkerCandidate,
-                            { left: `${(comparison.candidateValue / 10) * 100}%` }
-                          ]}
-                        />
-                      </View>
-                      <Text style={candStyles.barValue}>{comparison.candidateValue}</Text>
-                    </View>
-                  </View>
-
-                  {comparison.alignment === 'opposed' && (
-                    <Text style={candStyles.comparisonNote}>
-                      Difference of {comparison.difference} points - you may disagree on this issue
+                      {isAgreement
+                        ? '✓ You share similar views on this'
+                        : '✗ You have different perspectives here'}
                     </Text>
-                  )}
-                </View>
-              ))}
+                  </View>
+                );
+              })}
 
               <View style={candStyles.matchSummary}>
                 <Text style={candStyles.matchSummaryText}>
-                  Overall: {match.axisComparisons.filter(c => c.alignment === 'strong' || c.alignment === 'moderate').length} of {match.axisComparisons.length} values align well
+                  You align on {match.axisComparisons.filter(c => c.alignment === 'strong' || c.alignment === 'moderate').length} of {match.axisComparisons.length} policy areas
                 </Text>
               </View>
             </View>
@@ -1080,6 +1059,9 @@ function CandidateVoteButtons({
   return (
     <View style={candStyles.container}>
       <Text style={candStyles.label}>SELECT ONE CANDIDATE</Text>
+      <Text style={candStyles.sublabel}>
+        Match scores reflect how closely each candidate aligns with the values you shared in your Civic Blueprint
+      </Text>
 
       <View style={candStyles.list}>
         {sortedCandidates.map((candidate) => (
@@ -1130,6 +1112,7 @@ function CandidateVoteButtons({
 const candStyles = StyleSheet.create({
   container: { gap: 12 },
   label: { fontSize: 12, fontWeight: '700', color: Colors.gray[500], letterSpacing: 0.5 },
+  sublabel: { fontSize: 12, color: Colors.gray[500], lineHeight: 16, marginTop: -4 },
   list: { gap: 12 },
   candidateCard: {
     padding: 16,
@@ -1177,7 +1160,9 @@ const candStyles = StyleSheet.create({
   nameSelected: { color: Colors.primary },
   party: { fontSize: 13, color: Colors.gray[500], lineHeight: 18 },
   summary: { fontSize: 12, color: Colors.gray[600], lineHeight: 17, marginTop: 4 },
-  matchDetail: { fontSize: 11, color: '#16A34A', marginTop: 4, lineHeight: 15 },
+  matchInfoContainer: { marginTop: 6, gap: 2 },
+  matchDetail: { fontSize: 11, color: '#16A34A', lineHeight: 15 },
+  matchWarning: { fontSize: 11, color: '#F59E0B', lineHeight: 15 },
   incumbentBadge: {
     paddingHorizontal: 8,
     paddingVertical: 2,
@@ -1254,85 +1239,48 @@ const candStyles = StyleSheet.create({
   },
   comparisonItem: {
     backgroundColor: Colors.white,
-    borderRadius: 8,
-    padding: 10,
-    gap: 8,
+    borderRadius: 10,
+    padding: 12,
+    gap: 10,
   },
   comparisonHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'wrap',
-    gap: 6,
   },
-  comparisonAxisName: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: Colors.gray[800],
-    flex: 1,
-  },
-  alignmentPill: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 10,
-  },
-  alignmentPillText: {
-    fontSize: 10,
-    fontWeight: '700',
-  },
-  comparisonBars: {
-    gap: 6,
-  },
-  barRow: {
+  comparisonTopicRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
   },
-  barLabel: {
-    fontSize: 10,
+  comparisonAxisName: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: Colors.gray[800],
+  },
+  stanceComparison: {
+    gap: 6,
+    paddingLeft: 24,
+  },
+  stanceRow: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  stanceWho: {
+    fontSize: 12,
+    fontWeight: '600',
     color: Colors.gray[500],
     width: 50,
   },
-  barTrack: {
+  stanceText: {
+    fontSize: 12,
+    color: Colors.gray[700],
     flex: 1,
-    height: 8,
-    backgroundColor: Colors.gray[200],
-    borderRadius: 4,
-    position: 'relative',
+    lineHeight: 16,
   },
-  barFill: {
-    height: '100%',
-    borderRadius: 4,
-  },
-  barFillUser: {
-    backgroundColor: Colors.primary + '60',
-  },
-  barFillCandidate: {
-    backgroundColor: '#22C55E60',
-  },
-  barMarker: {
-    position: 'absolute',
-    width: 4,
-    height: 12,
-    backgroundColor: Colors.primary,
-    borderRadius: 2,
-    top: -2,
-    marginLeft: -2,
-  },
-  barMarkerCandidate: {
-    backgroundColor: '#22C55E',
-  },
-  barValue: {
-    fontSize: 10,
-    fontWeight: '700',
-    color: Colors.gray[600],
-    width: 20,
-    textAlign: 'right',
-  },
-  comparisonNote: {
-    fontSize: 10,
-    color: '#EF4444',
-    fontStyle: 'italic',
+  comparisonSummary: {
+    fontSize: 11,
+    fontWeight: '600',
+    paddingLeft: 24,
     marginTop: 2,
   },
   matchSummary: {
