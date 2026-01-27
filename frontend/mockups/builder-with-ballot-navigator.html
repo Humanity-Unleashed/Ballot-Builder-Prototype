@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Builder Tab with Official Ballot Navigator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      padding: 16px;
+      background: #EDE9FE;
+      border-radius: 12px;
+      border-left: 4px solid #7C3AED;
+    }
+
+    .description h2 {
+      font-size: 16px;
+      color: #5B21B6;
+      margin-bottom: 8px;
+    }
+
+    .description p {
+      font-size: 14px;
+      color: #4B5563;
+      line-height: 1.5;
+    }
+
+    .description ul {
+      margin-top: 8px;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #4B5563;
+    }
+
+    .phone-frame {
+      width: 390px;
+      height: 844px;
+      background: #fff;
+      margin: 0 auto;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      padding: 50px 20px 12px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+    }
+
+    /* ============================================ */
+    /* YOUR OFFICIAL BALLOT NAVIGATOR - NEW SECTION */
+    /* ============================================ */
+    .ballot-navigator {
+      background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+      padding: 12px 16px;
+      flex-shrink: 0;
+    }
+
+    .ballot-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .ballot-nav-title {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .verified-badge {
+      background: rgba(5, 150, 105, 0.2);
+      color: #6EE7B7;
+      font-size: 9px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .ballot-items-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .ballot-items-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .ballot-items-scroll::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+
+    .ballot-items-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+    }
+
+    .ballot-nav-item {
+      flex-shrink: 0;
+      width: 130px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      scroll-snap-align: start;
+      border: 2px solid transparent;
+      font-family: 'Times New Roman', serif;
+    }
+
+    .ballot-nav-item:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .ballot-nav-item.current {
+      border-color: #7C3AED;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3);
+    }
+
+    .ballot-nav-item.completed {
+      opacity: 0.85;
+    }
+
+    .ballot-nav-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .ballot-nav-item-title {
+      font-size: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .ballot-nav-item-status {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: bold;
+    }
+
+    .ballot-nav-item-status.current {
+      background: #7C3AED;
+      color: #fff;
+    }
+
+    .ballot-nav-item-status.pending {
+      background: #e5e7eb;
+      color: #666;
+    }
+
+    .ballot-nav-item-status.completed {
+      background: #059669;
+      color: #fff;
+    }
+
+    .ballot-nav-item-text {
+      font-size: 7px;
+      color: #555;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .ballot-nav-item-choices {
+      display: flex;
+      gap: 8px;
+      font-size: 7px;
+    }
+
+    .mini-choice {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .mini-oval {
+      width: 10px;
+      height: 6px;
+      border: 1px solid #333;
+      border-radius: 50%;
+    }
+
+    .mini-oval.filled {
+      background: #059669;
+      border-color: #059669;
+    }
+
+    .mini-oval.selected {
+      background: #7C3AED;
+      border-color: #7C3AED;
+    }
+
+    .nav-hint {
+      text-align: center;
+      font-size: 10px;
+      color: #a5b4fc;
+      margin-top: 6px;
+    }
+
+    /* ============================================ */
+    /* EXISTING BUILDER TAB CONTENT */
+    /* ============================================ */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      padding-bottom: 20px;
+      background: #f9fafb;
+    }
+
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #DBEAFE;
+      color: #1D4ED8;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .question-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #E5E7EB;
+    }
+
+    .question-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 14px;
+      color: #6B7280;
+      line-height: 1.5;
+    }
+
+    /* Recommendation banner */
+    .rec-banner {
+      background: #F0FDF4;
+      border: 2px solid #86EFAC;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .rec-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .rec-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #16A34A;
+    }
+
+    .rec-text {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .rec-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      color: #3B82F6;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Vote buttons */
+    .vote-section {
+      margin-bottom: 16px;
+    }
+
+    .vote-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6B7280;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .vote-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .vote-btn {
+      flex: 1;
+      padding: 20px;
+      border-radius: 14px;
+      border: 2px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .vote-btn.yes {
+      border-color: #22C55E;
+      background: #F0FDF4;
+    }
+
+    .vote-btn.yes.selected {
+      background: #22C55E;
+      color: #fff;
+    }
+
+    .vote-btn.no {
+      border-color: #EF4444;
+      background: #FEF2F2;
+    }
+
+    .vote-btn.no.selected {
+      background: #EF4444;
+      color: #fff;
+    }
+
+    .vote-btn-icon {
+      font-size: 28px;
+    }
+
+    .vote-btn-text {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    /* Navigation buttons */
+    .nav-buttons {
+      margin-top: 16px;
+    }
+
+    .primary-button {
+      width: 100%;
+      padding: 16px;
+      background: #7C3AED;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .secondary-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .secondary-button {
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      color: #6B7280;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      position: absolute;
+      top: 62px;
+      left: 0;
+      right: 0;
+      height: 155px;
+      border: 3px dashed #7C3AED;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .highlight-label {
+      position: absolute;
+      top: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #7C3AED;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <div class="description">
+    <h2>Builder Tab with Official Ballot Navigator</h2>
+    <p>The "Your Official Ballot" section is added at the top, showing a horizontally scrollable view of all ballot items. Users can see their progress and tap to jump to any item.</p>
+    <ul>
+      <li><strong>Visual connection:</strong> See how digital choices map to actual ballot</li>
+      <li><strong>Progress tracking:</strong> Completed items show green checkmarks</li>
+      <li><strong>Quick navigation:</strong> Tap any item to jump directly to it</li>
+      <li><strong>Current item highlighted:</strong> Purple border shows active item</li>
+    </ul>
+  </div>
+
+  <div class="phone-frame">
+    <div class="header">
+      <div class="header-title">Ballot Builder</div>
+    </div>
+
+    <!-- YOUR OFFICIAL BALLOT NAVIGATOR -->
+    <div class="ballot-navigator">
+      <div class="ballot-nav-header">
+        <div class="ballot-nav-title">
+          <span>&#128196;</span>
+          Your Official Ballot
+        </div>
+        <span class="verified-badge">&#10003; Verified</span>
+      </div>
+
+      <div class="ballot-items-scroll">
+        <!-- Completed measure -->
+        <div class="ballot-nav-item completed">
+          <div class="ballot-nav-item-header">
+            <div class="ballot-nav-item-title">MEASURE A</div>
+            <div class="ballot-nav-item-status completed">&#10003;</div>
+          </div>
+          <div class="ballot-nav-item-text">
+            Shall the county increase sales tax by 0.5% for transit improvements?
+          </div>
+          <div class="ballot-nav-item-choices">
+            <div class="mini-choice"><div class="mini-oval"></div> YES</div>
+            <div class="mini-choice"><div class="mini-oval filled"></div> NO</div>
+          </div>
+        </div>
+
+        <!-- Current item -->
+        <div class="ballot-nav-item current">
+          <div class="ballot-nav-item-header">
+            <div class="ballot-nav-item-title">PROPOSITION 1</div>
+            <div class="ballot-nav-item-status current">2</div>
+          </div>
+          <div class="ballot-nav-item-text">
+            Shall the state establish clean water as a fundamental right?
+          </div>
+          <div class="ballot-nav-item-choices">
+            <div class="mini-choice"><div class="mini-oval selected"></div> YES</div>
+            <div class="mini-choice"><div class="mini-oval"></div> NO</div>
+          </div>
+        </div>
+
+        <!-- Pending -->
+        <div class="ballot-nav-item">
+          <div class="ballot-nav-item-header">
+            <div class="ballot-nav-item-title">CITY COUNCIL</div>
+            <div class="ballot-nav-item-status pending">3</div>
+          </div>
+          <div class="ballot-nav-item-text">
+            Vote for ONE candidate for City Council District 5
+          </div>
+          <div class="ballot-nav-item-choices">
+            <div class="mini-choice"><div class="mini-oval"></div> Santos</div>
+            <div class="mini-choice"><div class="mini-oval"></div> Wilson</div>
+          </div>
+        </div>
+
+        <!-- Pending -->
+        <div class="ballot-nav-item">
+          <div class="ballot-nav-item-header">
+            <div class="ballot-nav-item-title">MEASURE B</div>
+            <div class="ballot-nav-item-status pending">4</div>
+          </div>
+          <div class="ballot-nav-item-text">
+            Shall the city charter be amended to establish term limits?
+          </div>
+          <div class="ballot-nav-item-choices">
+            <div class="mini-choice"><div class="mini-oval"></div> YES</div>
+            <div class="mini-choice"><div class="mini-oval"></div> NO</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-hint">&#8592; Scroll to see all items &#8226; Tap to jump &#8594;</div>
+    </div>
+
+    <!-- EXISTING BUILDER TAB CONTENT -->
+    <div class="content">
+      <div class="category-badge">
+        <span>&#128220;</span> Ballot Measures &bull; 2 of 3
+      </div>
+
+      <div class="question-card">
+        <div class="question-title">Proposition 1: Clean Water Rights</div>
+        <div class="question-text">
+          Shall the state constitution be amended to establish clean water as a fundamental right for all residents?
+        </div>
+      </div>
+
+      <!-- Recommendation -->
+      <div class="rec-banner">
+        <div class="rec-header">
+          <span>&#10024;</span>
+          <span class="rec-title">Strong recommendation: Vote YES</span>
+        </div>
+        <div class="rec-text">
+          Based on your values around environmental protection and public health, this measure strongly aligns with your Civic Blueprint.
+        </div>
+        <div class="rec-link">
+          <span>&#128290;</span> How we calculated this <span>&#8599;</span>
+        </div>
+      </div>
+
+      <!-- Vote buttons -->
+      <div class="vote-section">
+        <div class="vote-label">YOUR VOTE</div>
+        <div class="vote-buttons">
+          <div class="vote-btn yes selected">
+            <span class="vote-btn-icon">&#10003;</span>
+            <span class="vote-btn-text">YES</span>
+          </div>
+          <div class="vote-btn no">
+            <span class="vote-btn-icon">&#10007;</span>
+            <span class="vote-btn-text">NO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="nav-buttons">
+        <button class="primary-button">
+          Save & Continue <span>&#8594;</span>
+        </button>
+        <div class="secondary-row">
+          <button class="secondary-button">
+            <span>&#8592;</span> Back
+          </button>
+          <button class="secondary-button">
+            Skip for now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box"></div>
+    <div class="highlight-label">&#8593; New: Official Ballot Navigator</div>
+  </div>
+
+  <script>
+    // Demo interactions
+    document.querySelectorAll('.ballot-nav-item').forEach(item => {
+      item.addEventListener('click', function() {
+        document.querySelectorAll('.ballot-nav-item').forEach(i => i.classList.remove('current'));
+        if (!this.classList.contains('completed')) {
+          this.classList.add('current');
+        }
+      });
+    });
+
+    document.querySelectorAll('.vote-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.vote-btn').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>

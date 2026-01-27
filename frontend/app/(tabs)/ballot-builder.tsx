@@ -1634,6 +1634,272 @@ function NavigationButtons({
   );
 }
 
+// --- Ballot Navigator (shows official ballot at top) ---
+function BallotNavigator({
+  ballotItems,
+  savedVotes,
+  currentIndex,
+  onJumpTo,
+}: {
+  ballotItems: BallotItem[];
+  savedVotes: UserVote[];
+  currentIndex: number;
+  onJumpTo: (index: number) => void;
+}) {
+  const scrollViewRef = React.useRef<ScrollView>(null);
+
+  // Get status for each item
+  const getItemStatus = (item: BallotItem, index: number): 'completed' | 'current' | 'pending' => {
+    if (index === currentIndex) return 'current';
+    const vote = savedVotes.find(v => v.itemId === item.id);
+    return vote ? 'completed' : 'pending';
+  };
+
+  // Get choice display for mini ovals
+  const getChoiceDisplay = (item: BallotItem): { label: string; filled: boolean }[] => {
+    const vote = savedVotes.find(v => v.itemId === item.id);
+
+    if (item.type === 'proposition') {
+      return [
+        { label: 'YES', filled: vote?.choice === 'yes' },
+        { label: 'NO', filled: vote?.choice === 'no' },
+      ];
+    } else if (item.candidates && item.candidates.length > 0) {
+      // Show first two candidates
+      return item.candidates.slice(0, 2).map(c => ({
+        label: c.name.split(' ').pop() || c.name, // Last name
+        filled: vote?.choice === c.id,
+      }));
+    }
+    return [];
+  };
+
+  // Scroll to current item when it changes
+  React.useEffect(() => {
+    if (scrollViewRef.current) {
+      // Each card is ~140px wide + 10px gap
+      const scrollX = Math.max(0, currentIndex * 150 - 20);
+      scrollViewRef.current.scrollTo({ x: scrollX, animated: true });
+    }
+  }, [currentIndex]);
+
+  return (
+    <View style={ballotNavStyles.container}>
+      <View style={ballotNavStyles.header}>
+        <View style={ballotNavStyles.titleRow}>
+          <Ionicons name="document-text" size={14} color="#fff" />
+          <Text style={ballotNavStyles.title}>Your Official Ballot</Text>
+        </View>
+        <View style={ballotNavStyles.verifiedBadge}>
+          <Ionicons name="checkmark" size={10} color="#6EE7B7" />
+          <Text style={ballotNavStyles.verifiedText}>Verified</Text>
+        </View>
+      </View>
+
+      <ScrollView
+        ref={scrollViewRef}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={ballotNavStyles.scrollContent}
+      >
+        {ballotItems.map((item, index) => {
+          const status = getItemStatus(item, index);
+          const choices = getChoiceDisplay(item);
+
+          return (
+            <TouchableOpacity
+              key={item.id}
+              style={[
+                ballotNavStyles.card,
+                status === 'current' && ballotNavStyles.cardCurrent,
+                status === 'completed' && ballotNavStyles.cardCompleted,
+              ]}
+              onPress={() => onJumpTo(index)}
+              activeOpacity={0.8}
+            >
+              <View style={ballotNavStyles.cardHeader}>
+                <Text style={ballotNavStyles.cardTitle} numberOfLines={1}>
+                  {item.title.toUpperCase()}
+                </Text>
+                <View style={[
+                  ballotNavStyles.statusBadge,
+                  status === 'current' && ballotNavStyles.statusCurrent,
+                  status === 'completed' && ballotNavStyles.statusCompleted,
+                  status === 'pending' && ballotNavStyles.statusPending,
+                ]}>
+                  {status === 'completed' ? (
+                    <Ionicons name="checkmark" size={10} color="#fff" />
+                  ) : (
+                    <Text style={ballotNavStyles.statusNumber}>{index + 1}</Text>
+                  )}
+                </View>
+              </View>
+
+              <Text style={ballotNavStyles.cardText} numberOfLines={2}>
+                {item.questionText}
+              </Text>
+
+              <View style={ballotNavStyles.choicesRow}>
+                {choices.map((choice, i) => (
+                  <View key={i} style={ballotNavStyles.miniChoice}>
+                    <View style={[
+                      ballotNavStyles.miniOval,
+                      choice.filled && (status === 'current'
+                        ? ballotNavStyles.miniOvalSelected
+                        : ballotNavStyles.miniOvalFilled),
+                    ]} />
+                    <Text style={ballotNavStyles.miniLabel}>{choice.label}</Text>
+                  </View>
+                ))}
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+      </ScrollView>
+
+      <Text style={ballotNavStyles.hint}>← Scroll to see all items • Tap to jump →</Text>
+    </View>
+  );
+}
+
+const ballotNavStyles = StyleSheet.create({
+  container: {
+    backgroundColor: '#1e1b4b',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  title: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  verifiedBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: 'rgba(5, 150, 105, 0.2)',
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 10,
+  },
+  verifiedText: {
+    color: '#6EE7B7',
+    fontSize: 9,
+    fontWeight: '500',
+  },
+  scrollContent: {
+    paddingRight: 16,
+    gap: 10,
+  },
+  card: {
+    width: 140,
+    backgroundColor: 'rgba(255,255,255,0.95)',
+    borderRadius: 10,
+    padding: 10,
+    borderWidth: 2,
+    borderColor: 'transparent',
+  },
+  cardCurrent: {
+    borderColor: '#7C3AED',
+    shadowColor: '#7C3AED',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  cardCompleted: {
+    opacity: 0.85,
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 6,
+  },
+  cardTitle: {
+    fontSize: 8,
+    fontWeight: '700',
+    color: '#333',
+    flex: 1,
+    fontFamily: 'serif',
+  },
+  statusBadge: {
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  statusCurrent: {
+    backgroundColor: '#7C3AED',
+  },
+  statusCompleted: {
+    backgroundColor: '#059669',
+  },
+  statusPending: {
+    backgroundColor: '#e5e7eb',
+  },
+  statusNumber: {
+    fontSize: 8,
+    fontWeight: '700',
+    color: '#666',
+  },
+  cardText: {
+    fontSize: 7,
+    color: '#555',
+    lineHeight: 10,
+    marginBottom: 8,
+    fontFamily: 'serif',
+  },
+  choicesRow: {
+    flexDirection: 'row',
+    gap: 10,
+  },
+  miniChoice: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+  },
+  miniOval: {
+    width: 10,
+    height: 6,
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: '#333',
+    backgroundColor: 'transparent',
+  },
+  miniOvalFilled: {
+    backgroundColor: '#059669',
+    borderColor: '#059669',
+  },
+  miniOvalSelected: {
+    backgroundColor: '#7C3AED',
+    borderColor: '#7C3AED',
+  },
+  miniLabel: {
+    fontSize: 7,
+    color: '#555',
+    fontFamily: 'serif',
+  },
+  hint: {
+    textAlign: 'center',
+    fontSize: 10,
+    color: '#a5b4fc',
+    marginTop: 8,
+  },
+});
+
 // --- Ballot Summary Screen ---
 function BallotSummary({
   votes,
@@ -2091,6 +2357,17 @@ export default function BallotBuilderScreen() {
     setValuesExpanded(false);
   }, [restoreVote, ballotItems]);
 
+  // Jump to a specific ballot item (from navigator)
+  const handleJumpTo = useCallback((itemIndex: number) => {
+    // Save current vote before jumping
+    if (currentVote) {
+      saveCurrentVote();
+    }
+    setCurrentIndex(itemIndex);
+    restoreVote(ballotItems[itemIndex].id);
+    setValuesExpanded(false);
+  }, [currentVote, saveCurrentVote, restoreVote, ballotItems]);
+
   // Start over - reset everything
   const handleStartOver = useCallback(() => {
     setCurrentIndex(0);
@@ -2173,6 +2450,14 @@ export default function BallotBuilderScreen() {
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Ballot Builder</Text>
       </View>
+
+      {/* Official Ballot Navigator */}
+      <BallotNavigator
+        ballotItems={ballotItems}
+        savedVotes={savedVotes}
+        currentIndex={currentIndex}
+        onJumpTo={handleJumpTo}
+      />
 
       <ScrollView
         style={styles.scrollView}
