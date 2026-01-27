@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Summary Variants - Level 1 Options</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f3f4f6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .page-title {
+      text-align: center;
+      color: #1a1a2e;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .variants-container {
+      display: flex;
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .variant-column {
+      flex: 1;
+      min-width: 340px;
+      max-width: 400px;
+    }
+
+    .variant-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #667eea;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .variant-description {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* Phone frame */
+    .phone-frame {
+      background: #1a1a2e;
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    }
+
+    .phone-screen {
+      background: #ffffff;
+      border-radius: 36px;
+      overflow: hidden;
+      min-height: 680px;
+    }
+
+    .phone-notch {
+      height: 44px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 8px;
+    }
+
+    .notch-pill {
+      width: 100px;
+      height: 28px;
+      background: #1a1a2e;
+      border-radius: 14px;
+    }
+
+    /* ============================================
+       VARIANT A: CONVERSATIONAL SUMMARY
+       ============================================ */
+
+    .conversational-screen {
+      padding: 24px 20px;
+      background: linear-gradient(180deg, #fafafa 0%, #fff 50%);
+    }
+
+    .conv-header {
+      margin-bottom: 24px;
+    }
+
+    .conv-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .conv-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    /* AI Avatar */
+    .ai-intro {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    .ai-avatar {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .ai-bubble {
+      background: #f8f9fa;
+      border-radius: 0 18px 18px 18px;
+      padding: 16px;
+      flex: 1;
+    }
+
+    .ai-text {
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    .ai-text strong {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+
+    .ai-text .highlight {
+      background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.15));
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #5b4b8a;
+    }
+
+    /* Key Insights */
+    .insights-section {
+      margin-bottom: 24px;
+    }
+
+    .insights-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .insight-card {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .insight-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .insight-icon.priority { background: #fef3c7; }
+    .insight-icon.stance { background: #dbeafe; }
+    .insight-icon.unique { background: #fce7f3; }
+
+    .insight-content {
+      flex: 1;
+    }
+
+    .insight-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .insight-text {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    /* CTA */
+    .conv-cta {
+      width: 100%;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+
+    .conv-secondary-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .conv-secondary-btn {
+      flex: 1;
+      background: #f3f4f6;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ============================================
+       VARIANT B: WHAT YOU BELIEVE LIST
+       ============================================ */
+
+    .beliefs-screen {
+      background: #fff;
+    }
+
+    .beliefs-header {
+      padding: 24px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .beliefs-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .beliefs-subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .beliefs-body {
+      padding: 20px;
+    }
+
+    /* Tab Switcher */
+    .beliefs-tabs {
+      display: flex;
+      background: #f3f4f6;
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 20px;
+    }
+
+    .beliefs-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+      background: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .beliefs-tab.active {
+      background: white;
+      color: #1a1a2e;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Belief Items */
+    .beliefs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .belief-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      background: #fafafa;
+      border-radius: 14px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .belief-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .belief-check.strong {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .belief-check.moderate {
+      background: #fef9c3;
+      color: #ca8a04;
+    }
+
+    .belief-check.mixed {
+      background: #f3f4f6;
+      color: #6b7280;
+    }
+
+    .belief-content {
+      flex: 1;
+    }
+
+    .belief-domain {
+      font-size: 10px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .belief-domain-icon {
+      font-size: 12px;
+    }
+
+    .belief-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a2e;
+      line-height: 1.5;
+    }
+
+    .belief-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .belief-importance {
+      display: flex;
+      gap: 2px;
+    }
+
+    .importance-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e5e7eb;
+    }
+
+    .importance-dot.filled {
+      background: #667eea;
+    }
+
+    .belief-source {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    /* Expand Button */
+    .expand-btn {
+      width: 100%;
+      padding: 14px;
+      background: none;
+      border: 2px dashed #e5e7eb;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #6b7280;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    /* ============================================
+       VARIANT C: PRIORITY MATRIX
+       ============================================ */
+
+    .matrix-screen {
+      background: #f8fafc;
+    }
+
+    .matrix-header {
+      padding: 24px 20px 16px;
+      background: white;
+    }
+
+    .matrix-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .matrix-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .matrix-body {
+      padding: 16px;
+    }
+
+    /* 2x2 Matrix */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .matrix-cell {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .matrix-cell-header {
+      margin-bottom: 12px;
+    }
+
+    .matrix-cell-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+    }
+
+    .matrix-cell-subtitle {
+      font-size: 10px;
+      color: #9ca3af;
+    }
+
+    .matrix-cell.define .matrix-cell-title { color: #7c3aed; }
+    .matrix-cell.open .matrix-cell-title { color: #0891b2; }
+    .matrix-cell.firm .matrix-cell-title { color: #059669; }
+    .matrix-cell.flex .matrix-cell-title { color: #6b7280; }
+
+    .matrix-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .matrix-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .matrix-item-icon {
+      font-size: 16px;
+    }
+
+    .matrix-item-name {
+      font-weight: 500;
+    }
+
+    /* Legend */
+    .matrix-legend {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .legend-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .legend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.define { background: #7c3aed; }
+    .legend-dot.open { background: #0891b2; }
+    .legend-dot.firm { background: #059669; }
+    .legend-dot.flex { background: #9ca3af; }
+
+    /* Summary Sentence */
+    .matrix-summary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 16px;
+      padding: 20px;
+      color: white;
+    }
+
+    .matrix-summary-text {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .matrix-cta {
+      width: 100%;
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Pros/Cons */
+    .pros-cons {
+      margin-top: 20px;
+      padding: 16px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .pros-cons-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+
+    .pros-cons-list {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.8;
+    }
+
+    .pros-cons-list .pro { color: #059669; }
+    .pros-cons-list .con { color: #dc2626; }
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Level 1 Summary Variants</h1>
+  <p class="page-subtitle">Three different approaches for the default Blueprint view</p>
+
+  <div class="variants-container">
+    <!-- VARIANT A: CONVERSATIONAL -->
+    <div class="variant-column">
+      <div class="variant-label">Variant A: Conversational</div>
+      <p class="variant-description">
+        AI-style summary that feels personal and readable. Uses natural language
+        to describe the user's civic identity.
+      </p>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="conversational-screen">
+            <div class="conv-header">
+              <h1 class="conv-title">Your Blueprint</h1>
+              <p class="conv-subtitle">Here's what we learned about you</p>
+            </div>
+
+            <!-- AI Summary -->
+            <div class="ai-intro">
+              <div class="ai-avatar">🗳️</div>
+              <div class="ai-bubble">
+                <p class="ai-text">
+                  Based on your responses, you're someone who believes
+                  <strong>government should play an active role</strong> in
+                  <span class="highlight">healthcare</span> and
+                  <span class="highlight">climate</span>, but you also value
+                  <strong>fiscal responsibility</strong> and
+                  <strong>practical outcomes</strong> over ideology.
+                </p>
+              </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="insights-section">
+              <div class="insights-label">Key Insights</div>
+
+              <div class="insight-card">
+                <div class="insight-icon priority">⭐</div>
+                <div class="insight-content">
+                  <div class="insight-title">Healthcare is your #1</div>
+                  <div class="insight-text">You'd support a public option competing with private plans</div>
+                </div>
+              </div>
+
+              <div class="insight-card">
+                <div class="insight-icon stance">📊</div>
+                <div class="insight-content">
+                  <div class="insight-title">Progressive on climate</div>
+                  <div class="insight-text">You're more climate-focused than 68% of voters</div>
+                </div>
+              </div>
+
+              <div class="insight-card">
+                <div class="insight-icon unique">💡</div>
+                <div class="insight-content">
+                  <div class="insight-title">Pragmatic approach</div>
+                  <div class="insight-text">You prioritize what works over ideological purity</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <button class="conv-cta">Explore All Positions →</button>
+            <div class="conv-secondary-row">
+              <button class="conv-secondary-btn">📤 Share</button>
+              <button class="conv-secondary-btn">✏️ Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros-cons-title">Pros & Cons</div>
+        <div class="pros-cons-list">
+          <div class="pro">✓ Most intuitive, feels personal</div>
+          <div class="pro">✓ No learning curve</div>
+          <div class="pro">✓ Highly shareable insights</div>
+          <div class="con">✗ Less precise</div>
+          <div class="con">✗ May miss nuances</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VARIANT B: WHAT YOU BELIEVE -->
+    <div class="variant-column">
+      <div class="variant-label">Variant B: What You Believe</div>
+      <p class="variant-description">
+        Plain-language list of policy positions. Users can verify their
+        accuracy and quickly see what they support.
+      </p>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="beliefs-screen">
+            <div class="beliefs-header">
+              <h1 class="beliefs-title">What You Believe</h1>
+              <p class="beliefs-subtitle">Your positions in plain language</p>
+            </div>
+
+            <div class="beliefs-body">
+              <!-- Tabs -->
+              <div class="beliefs-tabs">
+                <button class="beliefs-tab active">Top Priorities</button>
+                <button class="beliefs-tab">All Issues</button>
+              </div>
+
+              <!-- Beliefs List -->
+              <div class="beliefs-list">
+                <div class="belief-item">
+                  <div class="belief-check strong">✓</div>
+                  <div class="belief-content">
+                    <div class="belief-domain">
+                      <span class="belief-domain-icon">🏥</span>
+                      Healthcare
+                    </div>
+                    <div class="belief-text">
+                      Government should offer a public insurance option that competes with private plans
+                    </div>
+                    <div class="belief-meta">
+                      <div class="belief-importance">
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot"></div>
+                      </div>
+                      <span class="belief-source">From assessment</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="belief-item">
+                  <div class="belief-check strong">✓</div>
+                  <div class="belief-content">
+                    <div class="belief-domain">
+                      <span class="belief-domain-icon">🌍</span>
+                      Climate
+                    </div>
+                    <div class="belief-text">
+                      Aggressive action needed with major government investment in clean energy
+                    </div>
+                    <div class="belief-meta">
+                      <div class="belief-importance">
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot"></div>
+                      </div>
+                      <span class="belief-source">From assessment</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="belief-item">
+                  <div class="belief-check mixed">○</div>
+                  <div class="belief-content">
+                    <div class="belief-domain">
+                      <span class="belief-domain-icon">🏠</span>
+                      Housing
+                    </div>
+                    <div class="belief-text">
+                      Balance local control with housing supply needs
+                    </div>
+                    <div class="belief-meta">
+                      <div class="belief-importance">
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot filled"></div>
+                        <div class="importance-dot"></div>
+                        <div class="importance-dot"></div>
+                      </div>
+                      <span class="belief-source">Mixed views</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="expand-btn">
+                  + Show 2 more issues
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros-cons-title">Pros & Cons</div>
+        <div class="pros-cons-list">
+          <div class="pro">✓ Immediately understandable</div>
+          <div class="pro">✓ Users can verify accuracy</div>
+          <div class="pro">✓ Easy to share specific positions</div>
+          <div class="con">✗ Less visual appeal</div>
+          <div class="con">✗ Doesn't show relative positions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VARIANT C: PRIORITY MATRIX -->
+    <div class="variant-column">
+      <div class="variant-label">Variant C: Priority Matrix</div>
+      <p class="variant-description">
+        2x2 grid showing priority vs. conviction. Quick overview of
+        what matters most and where views are strongest.
+      </p>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="matrix-screen">
+            <div class="matrix-header">
+              <h1 class="matrix-title">Your Civic Identity</h1>
+              <p class="matrix-subtitle">What matters and how strongly you feel</p>
+            </div>
+
+            <div class="matrix-body">
+              <!-- 2x2 Matrix -->
+              <div class="matrix-grid">
+                <div class="matrix-cell define">
+                  <div class="matrix-cell-header">
+                    <div class="matrix-cell-title">These Define You</div>
+                    <div class="matrix-cell-subtitle">High priority + Strong views</div>
+                  </div>
+                  <div class="matrix-items">
+                    <div class="matrix-item">
+                      <span class="matrix-item-icon">🏥</span>
+                      <span class="matrix-item-name">Healthcare</span>
+                    </div>
+                    <div class="matrix-item">
+                      <span class="matrix-item-icon">🌍</span>
+                      <span class="matrix-item-name">Climate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="matrix-cell open">
+                  <div class="matrix-cell-header">
+                    <div class="matrix-cell-title">Open to Options</div>
+                    <div class="matrix-cell-subtitle">High priority + Mixed views</div>
+                  </div>
+                  <div class="matrix-items">
+                    <div class="matrix-item">
+                      <span class="matrix-item-icon">🏠</span>
+                      <span class="matrix-item-name">Housing</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="matrix-cell firm">
+                  <div class="matrix-cell-header">
+                    <div class="matrix-cell-title">Firm but Flexible</div>
+                    <div class="matrix-cell-subtitle">Lower priority + Strong views</div>
+                  </div>
+                  <div class="matrix-items">
+                    <div class="matrix-item">
+                      <span class="matrix-item-icon">💰</span>
+                      <span class="matrix-item-name">Economy</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="matrix-cell flex">
+                  <div class="matrix-cell-header">
+                    <div class="matrix-cell-title">Go With the Flow</div>
+                    <div class="matrix-cell-subtitle">Lower priority + Mixed views</div>
+                  </div>
+                  <div class="matrix-items">
+                    <div class="matrix-item">
+                      <span class="matrix-item-icon">⚖️</span>
+                      <span class="matrix-item-name">Justice</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Legend -->
+              <div class="matrix-legend">
+                <div class="legend-title">What this means</div>
+                <div class="legend-grid">
+                  <div class="legend-item">
+                    <div class="legend-dot define"></div>
+                    <span>Core values</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot open"></div>
+                    <span>Wants to learn more</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot firm"></div>
+                    <span>Won't compromise much</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot flex"></div>
+                    <span>Not a dealbreaker</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Summary CTA -->
+              <div class="matrix-summary">
+                <p class="matrix-summary-text">
+                  Healthcare and climate are where you have strong, unwavering views. These issues will likely drive your voting decisions.
+                </p>
+                <button class="matrix-cta">Explore Each Issue →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros-cons-title">Pros & Cons</div>
+        <div class="pros-cons-list">
+          <div class="pro">✓ Shows both priority AND conviction</div>
+          <div class="pro">✓ Creates memorable categories</div>
+          <div class="pro">✓ Quick to scan</div>
+          <div class="con">✗ Doesn't show actual positions</div>
+          <div class="con">✗ Categorization may oversimplify</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

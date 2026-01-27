@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Hybrid Approach - 3 Levels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1a1a2e;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .page-title {
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #a0a0b0;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .mockups-container {
+      display: flex;
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mockup-column {
+      flex: 1;
+      min-width: 320px;
+      max-width: 400px;
+    }
+
+    .level-label {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .level-badge {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+    }
+
+    .level-description {
+      color: #8888a0;
+      font-size: 13px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* Phone frame */
+    .phone-frame {
+      background: #000;
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .phone-screen {
+      background: #f5f5f7;
+      border-radius: 32px;
+      overflow: hidden;
+      min-height: 600px;
+    }
+
+    .phone-notch {
+      height: 30px;
+      background: #f5f5f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .notch-pill {
+      width: 80px;
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 3px;
+    }
+
+    /* ============================================
+       LEVEL 1: SUMMARY VIEW
+       ============================================ */
+
+    .summary-screen {
+      padding: 20px;
+      background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+    }
+
+    .summary-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .summary-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .summary-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    /* Identity Card */
+    .identity-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      padding: 24px;
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .identity-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+
+    .identity-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .identity-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .identity-tagline {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.4;
+    }
+
+    /* Summary Text */
+    .summary-text-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .summary-text {
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    .summary-text strong {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+
+    .summary-highlight {
+      background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.15));
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #5b4b8a;
+    }
+
+    /* Top Priorities */
+    .priorities-section {
+      margin-bottom: 16px;
+    }
+
+    .priorities-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .priority-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .priority-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      padding: 10px 14px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .priority-chip-icon {
+      font-size: 18px;
+    }
+
+    .priority-chip-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .priority-chip-rank {
+      font-size: 10px;
+      font-weight: 700;
+      color: #9ca3af;
+    }
+
+    /* CTA Button */
+    .explore-btn {
+      width: 100%;
+      background: #1a1a2e;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .explore-btn:hover {
+      background: #2a2a4e;
+    }
+
+    .share-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .share-btn {
+      flex: 1;
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    /* ============================================
+       LEVEL 2: PRIORITY CARDS
+       ============================================ */
+
+    .cards-screen {
+      background: #f5f5f7;
+    }
+
+    .cards-header {
+      background: white;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .cards-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .back-btn {
+      font-size: 14px;
+      color: #667eea;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cards-progress {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .cards-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-top: 8px;
+    }
+
+    /* Progress dots */
+    .progress-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 16px;
+    }
+
+    .progress-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e5e7eb;
+    }
+
+    .progress-dot.active {
+      background: #667eea;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .progress-dot.completed {
+      background: #10b981;
+    }
+
+    /* Priority Card */
+    .priority-card {
+      background: white;
+      margin: 0 16px 16px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .card-header {
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .card-priority-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card-domain-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .card-domain-name {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    /* Position Statement */
+    .position-statement {
+      background: #f8f7ff;
+      border-left: 4px solid #667eea;
+      padding: 16px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 20px;
+    }
+
+    .position-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #667eea;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .position-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a2e;
+      line-height: 1.5;
+    }
+
+    /* Simple Scale */
+    .scale-section {
+      margin-bottom: 20px;
+    }
+
+    .scale-label {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .scale-bar {
+      position: relative;
+      height: 8px;
+      background: linear-gradient(90deg, #a855f7 0%, #e5e7eb 50%, #14b8a6 100%);
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .scale-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 4px solid #667eea;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .scale-labels .left { color: #a855f7; }
+    .scale-labels .right { color: #14b8a6; }
+
+    /* Social Comparison */
+    .social-comparison {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .comparison-icon {
+      font-size: 20px;
+    }
+
+    .comparison-text {
+      font-size: 13px;
+      color: #166534;
+      flex: 1;
+    }
+
+    .comparison-text strong {
+      font-weight: 700;
+    }
+
+    /* Card Actions */
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .adjust-btn {
+      flex: 1;
+      background: #f3f4f6;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .next-btn {
+      flex: 2;
+      background: #1a1a2e;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ============================================
+       LEVEL 3: DETAILED ADJUSTMENT
+       ============================================ */
+
+    .detail-screen {
+      background: #f5f5f7;
+    }
+
+    .detail-header {
+      background: white;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .detail-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .close-btn {
+      width: 32px;
+      height: 32px;
+      background: #f3f4f6;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      color: #6b7280;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .detail-body {
+      padding: 20px;
+    }
+
+    .detail-description {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* Position Selector */
+    .position-selector {
+      margin-bottom: 24px;
+    }
+
+    .position-selector-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .positions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .position-option {
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .position-option:hover {
+      border-color: #c7d2fe;
+    }
+
+    .position-option.selected {
+      border-color: #667eea;
+      background: #f8f7ff;
+    }
+
+    .position-option.current-policy {
+      position: relative;
+    }
+
+    .current-policy-badge {
+      position: absolute;
+      top: -8px;
+      right: 12px;
+      background: #d1fae5;
+      color: #059669;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 8px;
+      text-transform: uppercase;
+    }
+
+    .position-option-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+
+    .position-option-desc {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    .position-option.selected .position-option-title {
+      color: #667eea;
+    }
+
+    /* Importance Section */
+    .importance-section {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .importance-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .importance-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .importance-bubbles {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .importance-bubble {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      border: 2px solid #d1d5db;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .importance-bubble.filled {
+      background: #667eea;
+      border-color: #667eea;
+    }
+
+    .importance-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #9ca3af;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Done Button */
+    .done-btn {
+      width: 100%;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Flow Arrow */
+    .flow-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+      color: #667eea;
+    }
+
+    .flow-arrow-icon {
+      font-size: 32px;
+      animation: bounce 2s infinite;
+    }
+
+    .flow-arrow-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: #a0a0b0;
+      margin-top: 4px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .mockups-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .flow-arrow {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Blueprint Hybrid Approach</h1>
+  <p class="page-subtitle">3-Level Progressive Disclosure: Summary → Cards → Details</p>
+
+  <div class="mockups-container">
+    <!-- LEVEL 1: SUMMARY VIEW -->
+    <div class="mockup-column">
+      <div class="level-label">
+        <span class="level-badge">Level 1</span>
+        Summary View
+      </div>
+      <p class="level-description">
+        Default view. Shows a conversational summary of the user's civic identity.
+        Highly shareable, minimal cognitive load.
+      </p>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="summary-screen">
+            <div class="summary-header">
+              <h1 class="summary-title">Your Civic Blueprint</h1>
+              <p class="summary-subtitle">Based on 47 responses</p>
+            </div>
+
+            <!-- Identity Card -->
+            <div class="identity-card">
+              <div class="identity-label">Your Civic Identity</div>
+              <div class="identity-title">Healthcare-First Pragmatist</div>
+              <div class="identity-tagline">You prioritize practical solutions with a strong safety net</div>
+            </div>
+
+            <!-- Summary Text -->
+            <div class="summary-text-card">
+              <p class="summary-text">
+                You believe <strong>government should play an active role</strong> in
+                <span class="summary-highlight">healthcare</span> and
+                <span class="summary-highlight">climate action</span>,
+                but you also value <strong>fiscal responsibility</strong> and
+                <strong>practical outcomes</strong> over ideology.
+              </p>
+            </div>
+
+            <!-- Top Priorities -->
+            <div class="priorities-section">
+              <div class="priorities-label">Your Top Priorities</div>
+              <div class="priority-chips">
+                <div class="priority-chip">
+                  <span class="priority-chip-icon">🏥</span>
+                  <span class="priority-chip-text">Healthcare</span>
+                  <span class="priority-chip-rank">#1</span>
+                </div>
+                <div class="priority-chip">
+                  <span class="priority-chip-icon">🌍</span>
+                  <span class="priority-chip-text">Climate</span>
+                  <span class="priority-chip-rank">#2</span>
+                </div>
+                <div class="priority-chip">
+                  <span class="priority-chip-icon">🏠</span>
+                  <span class="priority-chip-text">Housing</span>
+                  <span class="priority-chip-rank">#3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <button class="explore-btn">
+              Explore Your Positions
+              <span>→</span>
+            </button>
+
+            <div class="share-row">
+              <button class="share-btn">
+                <span>📤</span> Share
+              </button>
+              <button class="share-btn">
+                <span>🖼️</span> Save Image
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow Arrow -->
+    <div class="flow-arrow">
+      <span class="flow-arrow-icon">→</span>
+      <span class="flow-arrow-text">Tap to explore</span>
+    </div>
+
+    <!-- LEVEL 2: PRIORITY CARDS -->
+    <div class="mockup-column">
+      <div class="level-label">
+        <span class="level-badge">Level 2</span>
+        Priority Cards
+      </div>
+      <p class="level-description">
+        One issue at a time, ordered by importance. Shows position in plain language
+        with simple visual scale and social comparison.
+      </p>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="cards-screen">
+            <div class="cards-header">
+              <div class="cards-nav">
+                <button class="back-btn">← Summary</button>
+                <span class="cards-progress">1 of 5</span>
+              </div>
+              <h2 class="cards-title">Your Positions</h2>
+            </div>
+
+            <!-- Progress Dots -->
+            <div class="progress-dots">
+              <div class="progress-dot active"></div>
+              <div class="progress-dot"></div>
+              <div class="progress-dot"></div>
+              <div class="progress-dot"></div>
+              <div class="progress-dot"></div>
+            </div>
+
+            <!-- Priority Card -->
+            <div class="priority-card">
+              <div class="card-header">
+                <div class="card-priority-badge">
+                  ⭐ Your #1 Priority
+                </div>
+                <div class="card-domain-icon">🏥</div>
+                <div class="card-domain-name">Healthcare</div>
+              </div>
+
+              <div class="card-body">
+                <!-- Position Statement -->
+                <div class="position-statement">
+                  <div class="position-label">Your Position</div>
+                  <div class="position-text">
+                    Government should offer a public insurance option that competes with private plans
+                  </div>
+                </div>
+
+                <!-- Simple Scale -->
+                <div class="scale-section">
+                  <div class="scale-label">Where you stand:</div>
+                  <div class="scale-bar">
+                    <div class="scale-marker" style="left: 30%;"></div>
+                  </div>
+                  <div class="scale-labels">
+                    <span class="left">More Public</span>
+                    <span class="right">More Private</span>
+                  </div>
+                </div>
+
+                <!-- Social Comparison -->
+                <div class="social-comparison">
+                  <span class="comparison-icon">👥</span>
+                  <span class="comparison-text">
+                    <strong>42%</strong> of voters share this view
+                  </span>
+                </div>
+
+                <!-- Actions -->
+                <div class="card-actions">
+                  <button class="adjust-btn">
+                    ✏️ Adjust
+                  </button>
+                  <button class="next-btn">
+                    Next: Climate →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flow Arrow -->
+    <div class="flow-arrow">
+      <span class="flow-arrow-icon">→</span>
+      <span class="flow-arrow-text">Tap to adjust</span>
+    </div>
+
+    <!-- LEVEL 3: DETAILED ADJUSTMENT -->
+    <div class="mockup-column">
+      <div class="level-label">
+        <span class="level-badge">Level 3</span>
+        Detailed Adjustment
+      </div>
+      <p class="level-description">
+        On-demand fine-tuning. Shows all position options with descriptions.
+        Current US policy marked for reference.
+      </p>
+
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="phone-notch">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="detail-screen">
+            <div class="detail-header">
+              <h2 class="detail-title">Healthcare Coverage</h2>
+              <button class="close-btn">×</button>
+            </div>
+
+            <div class="detail-body">
+              <p class="detail-description">
+                This is about how health insurance should be provided — through government programs,
+                private markets, or a mix of both.
+              </p>
+
+              <!-- Position Selector -->
+              <div class="position-selector">
+                <div class="position-selector-label">Choose your position</div>
+                <div class="positions-list">
+                  <div class="position-option">
+                    <div class="position-option-title">Single-payer system</div>
+                    <div class="position-option-desc">Government provides insurance for everyone, replacing private insurance</div>
+                  </div>
+
+                  <div class="position-option selected">
+                    <div class="position-option-title">Public option available</div>
+                    <div class="position-option-desc">Government plan competes with private plans; people can choose</div>
+                  </div>
+
+                  <div class="position-option current-policy">
+                    <div class="current-policy-badge">Current Policy</div>
+                    <div class="position-option-title">Regulated private market</div>
+                    <div class="position-option-desc">Private insurance with government subsidies and regulations (ACA model)</div>
+                  </div>
+
+                  <div class="position-option">
+                    <div class="position-option-title">Free market approach</div>
+                    <div class="position-option-desc">Reduce regulations, let competition lower prices</div>
+                  </div>
+
+                  <div class="position-option">
+                    <div class="position-option-title">Fully privatized</div>
+                    <div class="position-option-desc">No government involvement; purely market-driven healthcare</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Importance Section -->
+              <div class="importance-section">
+                <div class="importance-label">How much does this matter to you?</div>
+                <div class="importance-value">Really matters</div>
+                <div class="importance-bubbles">
+                  <div class="importance-bubble filled"></div>
+                  <div class="importance-bubble filled"></div>
+                  <div class="importance-bubble filled"></div>
+                  <div class="importance-bubble filled"></div>
+                  <div class="importance-bubble"></div>
+                </div>
+                <div class="importance-labels">
+                  <span>Not much</span>
+                  <span>Deal breaker</span>
+                </div>
+              </div>
+
+              <!-- Done Button -->
+              <button class="done-btn">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

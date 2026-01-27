@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Cards Flow - Swipeable Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f3f4f6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .page-title {
+      text-align: center;
+      color: #1a1a2e;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .section-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 16px;
+      padding-left: 8px;
+      border-left: 3px solid #667eea;
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px 0;
+      margin-bottom: 40px;
+    }
+
+    /* Card Styles */
+    .flow-card {
+      flex-shrink: 0;
+      width: 320px;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Card Header Gradients */
+    .header-healthcare { background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); }
+    .header-climate { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); }
+    .header-housing { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); }
+    .header-economy { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+    .header-justice { background: linear-gradient(135deg, #64748b 0%, #475569 100%); }
+
+    .card-header {
+      padding: 24px;
+      color: white;
+      position: relative;
+    }
+
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.2) 0%, transparent 70%);
+    }
+
+    .priority-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .domain-icon {
+      font-size: 40px;
+      margin-bottom: 8px;
+    }
+
+    .domain-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .domain-subtitle {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    /* Position Display */
+    .your-view-section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .view-card {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 16px;
+      border-left: 4px solid #667eea;
+    }
+
+    .view-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .view-description {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Scale Visualization */
+    .scale-container {
+      margin-bottom: 20px;
+    }
+
+    .scale-track {
+      position: relative;
+      height: 10px;
+      background: linear-gradient(90deg,
+        #a855f7 0%,
+        #c084fc 25%,
+        #e5e7eb 45%,
+        #e5e7eb 55%,
+        #5eead4 75%,
+        #14b8a6 100%
+      );
+      border-radius: 5px;
+      margin-bottom: 8px;
+    }
+
+    .scale-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scale-thumb-inner {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .thumb-left { background: #a855f7; }
+    .thumb-center { background: #9ca3af; }
+    .thumb-right { background: #14b8a6; }
+
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .scale-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .label-left { color: #a855f7; }
+    .label-right { color: #14b8a6; }
+
+    /* Stats Row */
+    .stats-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      flex: 1;
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+    }
+
+    /* Context Badge */
+    .context-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .context-icon {
+      font-size: 18px;
+    }
+
+    .context-text {
+      font-size: 13px;
+      color: #166534;
+      line-height: 1.4;
+    }
+
+    .context-badge.info {
+      background: #eff6ff;
+    }
+
+    .context-badge.info .context-text {
+      color: #1e40af;
+    }
+
+    /* Action Buttons */
+    .action-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .btn-primary {
+      background: #1e293b;
+      color: white;
+    }
+
+    /* Swipe Hint */
+    .swipe-hint {
+      text-align: center;
+      padding: 16px;
+      color: #94a3b8;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ============================================
+       SHAREABLE CARDS SECTION
+       ============================================ */
+
+    .share-cards-section {
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid #e5e7eb;
+    }
+
+    .share-cards-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .share-card {
+      width: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Share Card 1: Identity Card */
+    .identity-share-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 32px 24px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .identity-share-card::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -30%;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    }
+
+    .share-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .share-identity {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .share-tagline {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .share-priorities {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .share-priority {
+      text-align: center;
+    }
+
+    .share-priority-icon {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .share-priority-name {
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    .share-branding {
+      font-size: 11px;
+      opacity: 0.6;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Share Card 2: Stats Card */
+    .stats-share-card {
+      background: white;
+    }
+
+    .stats-header {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      padding: 20px 24px;
+      color: white;
+    }
+
+    .stats-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .stats-body {
+      padding: 24px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 16px;
+      background: #f8fafc;
+      border-radius: 12px;
+    }
+
+    .stat-item-value {
+      font-size: 24px;
+      font-weight: 800;
+      color: #667eea;
+    }
+
+    .stat-item-label {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .alignment-bar {
+      margin-bottom: 16px;
+    }
+
+    .alignment-label {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .alignment-track {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .alignment-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .fill-progressive { background: linear-gradient(90deg, #667eea, #8b5cf6); }
+    .fill-moderate { background: linear-gradient(90deg, #6b7280, #9ca3af); }
+
+    .stats-footer {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .stats-footer-text {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    /* Share Card 3: Single Issue Card */
+    .issue-share-card {
+      background: white;
+    }
+
+    .issue-header {
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .issue-icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .issue-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .issue-body {
+      padding: 0 24px 24px;
+    }
+
+    .issue-position {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .issue-position-label {
+      font-size: 10px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .issue-position-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+
+    .issue-scale {
+      margin-bottom: 16px;
+    }
+
+    .issue-scale-track {
+      height: 6px;
+      background: linear-gradient(90deg, #a855f7, #e5e7eb, #14b8a6);
+      border-radius: 3px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .issue-scale-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      background: white;
+      border: 3px solid #667eea;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .issue-scale-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .issue-footer {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .issue-footer-text {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Blueprint Cards Flow</h1>
+  <p class="page-subtitle">Swipeable priority cards showing one issue at a time</p>
+
+  <!-- Level 2: Swipeable Cards -->
+  <div class="section-label">Level 2: Priority Cards (Swipe Left/Right)</div>
+
+  <div class="cards-row">
+    <!-- Card 1: Healthcare -->
+    <div class="flow-card">
+      <div class="card-header header-healthcare">
+        <div class="priority-tag">⭐ #1 Priority</div>
+        <div class="domain-icon">🏥</div>
+        <div class="domain-title">Healthcare</div>
+        <div class="domain-subtitle">Coverage & Access</div>
+      </div>
+      <div class="card-body">
+        <div class="your-view-section">
+          <div class="section-title">Your Position</div>
+          <div class="view-card">
+            <div class="view-title">Public option alongside private plans</div>
+            <div class="view-description">Government offers insurance that competes with private options</div>
+          </div>
+        </div>
+
+        <div class="scale-container">
+          <div class="scale-track">
+            <div class="scale-thumb" style="left: 30%;">
+              <div class="scale-thumb-inner thumb-left"></div>
+            </div>
+          </div>
+          <div class="scale-labels">
+            <span class="scale-label label-left">Gov't System</span>
+            <span class="scale-label label-right">Free Market</span>
+          </div>
+        </div>
+
+        <div class="context-badge">
+          <span class="context-icon">👥</span>
+          <span class="context-text"><strong>42%</strong> of Americans share this view</span>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-secondary">✏️ Adjust</button>
+          <button class="btn btn-primary">Next →</button>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        ← Swipe to navigate →
+      </div>
+    </div>
+
+    <!-- Card 2: Climate -->
+    <div class="flow-card">
+      <div class="card-header header-climate">
+        <div class="priority-tag">⭐ #2 Priority</div>
+        <div class="domain-icon">🌍</div>
+        <div class="domain-title">Climate</div>
+        <div class="domain-subtitle">Environment & Energy</div>
+      </div>
+      <div class="card-body">
+        <div class="your-view-section">
+          <div class="section-title">Your Position</div>
+          <div class="view-card">
+            <div class="view-title">Aggressive action with government investment</div>
+            <div class="view-description">Major spending on clean energy, regulations on emissions</div>
+          </div>
+        </div>
+
+        <div class="scale-container">
+          <div class="scale-track">
+            <div class="scale-thumb" style="left: 25%;">
+              <div class="scale-thumb-inner thumb-left"></div>
+            </div>
+          </div>
+          <div class="scale-labels">
+            <span class="scale-label label-left">Urgent Action</span>
+            <span class="scale-label label-right">Market Solutions</span>
+          </div>
+        </div>
+
+        <div class="context-badge info">
+          <span class="context-icon">📊</span>
+          <span class="context-text">You're more climate-focused than <strong>68%</strong> of voters</span>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-secondary">✏️ Adjust</button>
+          <button class="btn btn-primary">Next →</button>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        ← Swipe to navigate →
+      </div>
+    </div>
+
+    <!-- Card 3: Housing -->
+    <div class="flow-card">
+      <div class="card-header header-housing">
+        <div class="priority-tag">⭐ #3 Priority</div>
+        <div class="domain-icon">🏠</div>
+        <div class="domain-title">Housing</div>
+        <div class="domain-subtitle">Affordability & Development</div>
+      </div>
+      <div class="card-body">
+        <div class="your-view-section">
+          <div class="section-title">Your Position</div>
+          <div class="view-card">
+            <div class="view-title">Balance local control with housing supply needs</div>
+            <div class="view-description">Some zoning reform, incentives for affordable units</div>
+          </div>
+        </div>
+
+        <div class="scale-container">
+          <div class="scale-track">
+            <div class="scale-thumb" style="left: 50%;">
+              <div class="scale-thumb-inner thumb-center"></div>
+            </div>
+          </div>
+          <div class="scale-labels">
+            <span class="scale-label label-left">More Building</span>
+            <span class="scale-label label-right">Local Control</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-value">Mixed</div>
+            <div class="stat-label">Your Stance</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">⭐⭐⭐</div>
+            <div class="stat-label">Importance</div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-secondary">✏️ Adjust</button>
+          <button class="btn btn-primary">Next →</button>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        ← Swipe to navigate →
+      </div>
+    </div>
+
+    <!-- Card 4: Economy -->
+    <div class="flow-card">
+      <div class="card-header header-economy">
+        <div class="priority-tag">#4</div>
+        <div class="domain-icon">💰</div>
+        <div class="domain-title">Economy</div>
+        <div class="domain-subtitle">Taxes & Spending</div>
+      </div>
+      <div class="card-body">
+        <div class="your-view-section">
+          <div class="section-title">Your Position</div>
+          <div class="view-card">
+            <div class="view-title">Higher taxes on wealthy, maintain middle-class rates</div>
+            <div class="view-description">Fund programs through progressive taxation</div>
+          </div>
+        </div>
+
+        <div class="scale-container">
+          <div class="scale-track">
+            <div class="scale-thumb" style="left: 35%;">
+              <div class="scale-thumb-inner thumb-left"></div>
+            </div>
+          </div>
+          <div class="scale-labels">
+            <span class="scale-label label-left">More Services</span>
+            <span class="scale-label label-right">Lower Taxes</span>
+          </div>
+        </div>
+
+        <div class="context-badge">
+          <span class="context-icon">📍</span>
+          <span class="context-text">This is close to <strong>current US policy</strong></span>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-secondary">✏️ Adjust</button>
+          <button class="btn btn-primary">Next →</button>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        ← Swipe to navigate →
+      </div>
+    </div>
+
+    <!-- Card 5: Justice -->
+    <div class="flow-card">
+      <div class="card-header header-justice">
+        <div class="priority-tag">#5</div>
+        <div class="domain-icon">⚖️</div>
+        <div class="domain-title">Justice</div>
+        <div class="domain-subtitle">Policing & Reform</div>
+      </div>
+      <div class="card-body">
+        <div class="your-view-section">
+          <div class="section-title">Your Position</div>
+          <div class="view-card">
+            <div class="view-title">Reform with maintained funding</div>
+            <div class="view-description">Improve training, accountability; keep police presence</div>
+          </div>
+        </div>
+
+        <div class="scale-container">
+          <div class="scale-track">
+            <div class="scale-thumb" style="left: 45%;">
+              <div class="scale-thumb-inner thumb-center"></div>
+            </div>
+          </div>
+          <div class="scale-labels">
+            <span class="scale-label label-left">Major Reform</span>
+            <span class="scale-label label-right">More Policing</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-value">Moderate</div>
+            <div class="stat-label">Your Stance</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">⭐⭐</div>
+            <div class="stat-label">Importance</div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-secondary">✏️ Adjust</button>
+          <button class="btn btn-primary">Done ✓</button>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        ← Swipe to navigate →
+      </div>
+    </div>
+  </div>
+
+  <!-- Shareable Cards Section -->
+  <div class="share-cards-section">
+    <div class="section-label">Shareable Summary Cards (from Level 1)</div>
+    <p style="color: #6b7280; margin-bottom: 24px; font-size: 14px;">
+      These cards can be saved as images or shared directly to social media.
+    </p>
+
+    <div class="share-cards-row">
+      <!-- Identity Card -->
+      <div class="share-card">
+        <div class="identity-share-card">
+          <div class="share-label">My Civic Identity</div>
+          <div class="share-identity">Healthcare-First Pragmatist</div>
+          <div class="share-tagline">I believe in practical solutions backed by a strong safety net</div>
+
+          <div class="share-priorities">
+            <div class="share-priority">
+              <div class="share-priority-icon">🏥</div>
+              <div class="share-priority-name">Healthcare</div>
+            </div>
+            <div class="share-priority">
+              <div class="share-priority-icon">🌍</div>
+              <div class="share-priority-name">Climate</div>
+            </div>
+            <div class="share-priority">
+              <div class="share-priority-icon">🏠</div>
+              <div class="share-priority-name">Housing</div>
+            </div>
+          </div>
+
+          <div class="share-branding">Made with Ballot Builder</div>
+        </div>
+      </div>
+
+      <!-- Stats Card -->
+      <div class="share-card stats-share-card">
+        <div class="stats-header">
+          <div class="stats-title">My Blueprint Stats</div>
+        </div>
+        <div class="stats-body">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-item-value">5</div>
+              <div class="stat-item-label">Issues Ranked</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item-value">47</div>
+              <div class="stat-item-label">Questions Answered</div>
+            </div>
+          </div>
+
+          <div class="alignment-bar">
+            <div class="alignment-label">
+              <span>Overall Lean</span>
+              <span>Progressive</span>
+            </div>
+            <div class="alignment-track">
+              <div class="alignment-fill fill-progressive" style="width: 65%;"></div>
+            </div>
+          </div>
+
+          <div class="alignment-bar">
+            <div class="alignment-label">
+              <span>Approach</span>
+              <span>Pragmatic</span>
+            </div>
+            <div class="alignment-track">
+              <div class="alignment-fill fill-moderate" style="width: 55%;"></div>
+            </div>
+          </div>
+
+          <div class="stats-footer">
+            <div class="stats-footer-text">Made with Ballot Builder</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Issue Card -->
+      <div class="share-card issue-share-card">
+        <div class="issue-header">
+          <div class="issue-icon">🏥</div>
+          <div class="issue-name">Healthcare</div>
+        </div>
+        <div class="issue-body">
+          <div class="issue-position">
+            <div class="issue-position-label">I believe in</div>
+            <div class="issue-position-text">A public option that competes with private insurance</div>
+          </div>
+
+          <div class="issue-scale">
+            <div class="issue-scale-track">
+              <div class="issue-scale-marker" style="left: 30%;"></div>
+            </div>
+            <div class="issue-scale-labels">
+              <span style="color: #a855f7;">Gov't System</span>
+              <span style="color: #14b8a6;">Free Market</span>
+            </div>
+          </div>
+
+          <div class="issue-footer">
+            <div class="issue-footer-text">Made with Ballot Builder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

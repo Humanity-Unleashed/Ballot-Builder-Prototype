@@ -21,7 +21,19 @@
       "Bash(git fetch:*)",
       "Bash(git merge:*)",
       "Bash(git stash:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(curl:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(timeout:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:8values.github.io)",
+      "Bash(git push)",
+      "Bash(git status:*)",
+      "Bash(git update-index:*)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:dribbble.com)",
+      "Bash(git reset:*)"
     ]
   }
 }
