@@ -5,7 +5,7 @@
  * No animal archetypes - just clear, actionable policy positions.
  */
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,8 @@ import {
   Modal,
   ActivityIndicator,
   Dimensions,
+  Animated,
+  PanResponder,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
@@ -96,6 +98,63 @@ function getPositionSegmentColor(index: number, totalPositions: number, currentP
 export default function BlueprintV3Screen() {
   const { profile, spec, isLoading, updateAxisValue, updateAxisImportance } = useBlueprint();
   const [editingAxisId, setEditingAxisId] = useState<string | null>(null);
+  const [currentDomainIndex, setCurrentDomainIndex] = useState(0);
+
+  // Use ref to track current index for gesture handler (avoids stale closure)
+  const currentIndexRef = useRef(currentDomainIndex);
+  currentIndexRef.current = currentDomainIndex;
+
+  // Animation for swipe transitions
+  const translateX = useRef(new Animated.Value(0)).current;
+
+  // Get total domains count (safe access)
+  const totalDomains = spec?.domains?.length ?? 0;
+
+  // Swipe gesture handling
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => false,
+      onMoveShouldSetPanResponder: (_, gestureState) => {
+        // Only respond to horizontal swipes
+        return Math.abs(gestureState.dx) > 20 && Math.abs(gestureState.dy) < 50;
+      },
+      onPanResponderMove: (_, gestureState) => {
+        translateX.setValue(gestureState.dx);
+      },
+      onPanResponderRelease: (_, gestureState) => {
+        const threshold = SCREEN_WIDTH * 0.25;
+        const idx = currentIndexRef.current;
+
+        if (gestureState.dx > threshold && idx > 0) {
+          // Swipe right - go to previous
+          Animated.timing(translateX, {
+            toValue: SCREEN_WIDTH,
+            duration: 200,
+            useNativeDriver: true,
+          }).start(() => {
+            setCurrentDomainIndex(prev => prev - 1);
+            translateX.setValue(0);
+          });
+        } else if (gestureState.dx < -threshold && idx < 4) {
+          // Swipe left - go to next (5 domains, so max index is 4)
+          Animated.timing(translateX, {
+            toValue: -SCREEN_WIDTH,
+            duration: 200,
+            useNativeDriver: true,
+          }).start(() => {
+            setCurrentDomainIndex(prev => prev + 1);
+            translateX.setValue(0);
+          });
+        } else {
+          // Snap back
+          Animated.spring(translateX, {
+            toValue: 0,
+            useNativeDriver: true,
+          }).start();
+        }
+      },
+    })
+  ).current;
 
   if (isLoading || !profile) {
     return (
@@ -105,22 +164,6 @@ export default function BlueprintV3Screen() {
       </View>
     );
   }
-
-  // Compute summary stats
-  const stats = useMemo(() => {
-    const topPriorities = profile.domains
-      .filter(d => d.importance.value_0_10 >= 7)
-      .map(d => spec.domains.find(sd => sd.id === d.domain_id)?.name)
-      .filter(Boolean);
-
-    const totalAxes = profile.domains.reduce((sum, d) => sum + d.axes.length, 0);
-    const editedAxes = profile.domains.reduce(
-      (sum, d) => sum + d.axes.filter(a => a.source === 'user_edited').length,
-      0
-    );
-
-    return { topPriorities, totalAxes, editedAxes };
-  }, [profile, spec]);
 
   const getDomainIcon = (domainId: string): string => {
     switch (domainId) {
@@ -133,77 +176,128 @@ export default function BlueprintV3Screen() {
     }
   };
 
+  const navigateSection = (direction: number) => {
+    const newIndex = currentDomainIndex + direction;
+    if (newIndex >= 0 && newIndex < spec.domains.length) {
+      // Animate out
+      Animated.timing(translateX, {
+        toValue: direction > 0 ? -SCREEN_WIDTH : SCREEN_WIDTH,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        setCurrentDomainIndex(newIndex);
+        translateX.setValue(0);
+      });
+    }
+  };
+
+  // Get current domain data
+  const currentDomain = spec.domains[currentDomainIndex];
+  const currentDomProfile = profile.domains.find(d => d.domain_id === currentDomain?.id);
+  const currentDomainAxes = currentDomProfile?.axes ?? [];
+
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.content}>
-        {/* Header */}
+      {/* Sticky Header with Title + Navigation */}
+      <View style={styles.stickyHeader}>
+        {/* Title */}
         <View style={styles.header}>
           <Text style={styles.title}>Your Civic Blueprint</Text>
-          <Text style={styles.subtitle}>
-            {stats.topPriorities.length > 0
-              ? `Top priorities: ${stats.topPriorities.slice(0, 3).join(', ')}`
-              : 'Tap any area to adjust your positions'}
-          </Text>
+          <Text style={styles.subtitle}>Swipe or use arrows to browse topics</Text>
         </View>
 
-        {/* All Domains - Compact Multi-Bar Cards */}
-        {spec.domains.map((domain) => {
-          const domProfile = profile.domains.find((d) => d.domain_id === domain.id);
-          const domainAxes = domProfile?.axes ?? [];
+        {/* Section Navigator */}
+        <View style={styles.sectionNav}>
+          <TouchableOpacity
+            style={[styles.navArrow, currentDomainIndex === 0 && styles.navArrowDisabled]}
+            onPress={() => navigateSection(-1)}
+            disabled={currentDomainIndex === 0}
+          >
+            <Ionicons
+              name="chevron-back"
+              size={24}
+              color={currentDomainIndex === 0 ? Colors.gray[300] : Colors.gray[700]}
+            />
+          </TouchableOpacity>
 
-          return (
-            <View key={domain.id} style={styles.domainCard}>
-              {/* Domain Header Row */}
-              <View style={styles.domainHeader}>
-                <View style={styles.domainIconContainer}>
-                  <Ionicons name={getDomainIcon(domain.id) as any} size={20} color={Colors.primary} />
-                </View>
-                <View style={styles.domainTitleArea}>
-                  <Text style={styles.domainName}>{domain.name}</Text>
-                </View>
-              </View>
-
-              {/* All Axes as Compact Bars - each is tappable */}
-              {domainAxes.length > 0 && (
-                <View style={styles.axesList}>
-                  {domainAxes.map((axis) => {
-                    const axisDef = spec.axes.find(a => a.id === axis.axis_id);
-                    if (!axisDef) return null;
-
-                    return (
-                      <TouchableOpacity
-                        key={axis.axis_id}
-                        onPress={() => setEditingAxisId(axis.axis_id)}
-                        activeOpacity={0.7}
-                        style={styles.axisCardTouchable}
-                      >
-                        <CompactAxisBar
-                          name={axisDef.name}
-                          value={axis.value_0_10}
-                          poleALabel={axisDef.poleA.label}
-                          poleBLabel={axisDef.poleB.label}
-                          axisId={axis.axis_id}
-                          importance={axis.importance}
-                          source={axis.source}
-                          confidence={axis.confidence_0_1}
-                        />
-                        <View style={styles.editHint}>
-                          <Ionicons name="pencil-outline" size={14} color={Colors.gray[400]} />
-                        </View>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </View>
-              )}
+          <View style={styles.currentSection}>
+            <View style={styles.sectionIconContainer}>
+              <Ionicons
+                name={getDomainIcon(currentDomain?.id) as any}
+                size={24}
+                color={Colors.primary}
+              />
             </View>
-          );
-        })}
+            <View style={styles.sectionInfo}>
+              <Text style={styles.sectionName}>{currentDomain?.name}</Text>
+              <Text style={styles.sectionProgress}>
+                {currentDomainIndex + 1} of {spec.domains.length} topics
+              </Text>
+            </View>
+          </View>
 
-        {/* Footer hint */}
-        <Text style={styles.footerHint}>
-          Tap any policy area to fine-tune your positions
-        </Text>
-      </ScrollView>
+          <TouchableOpacity
+            style={[styles.navArrow, currentDomainIndex === spec.domains.length - 1 && styles.navArrowDisabled]}
+            onPress={() => navigateSection(1)}
+            disabled={currentDomainIndex === spec.domains.length - 1}
+          >
+            <Ionicons
+              name="chevron-forward"
+              size={24}
+              color={currentDomainIndex === spec.domains.length - 1 ? Colors.gray[300] : Colors.gray[700]}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Swipeable Domain Content */}
+      <Animated.View
+        style={[styles.domainContainer, { transform: [{ translateX }] }]}
+        {...panResponder.panHandlers}
+      >
+        <ScrollView contentContainerStyle={styles.content}>
+          {/* Current Domain Card */}
+          <View style={styles.domainCard}>
+            {/* All Axes as Compact Bars - each is tappable */}
+            {currentDomainAxes.length > 0 && (
+              <View style={styles.axesList}>
+                {currentDomainAxes.map((axis) => {
+                  const axisDef = spec.axes.find(a => a.id === axis.axis_id);
+                  if (!axisDef) return null;
+
+                  return (
+                    <TouchableOpacity
+                      key={axis.axis_id}
+                      onPress={() => setEditingAxisId(axis.axis_id)}
+                      activeOpacity={0.7}
+                      style={styles.axisCardTouchable}
+                    >
+                      <CompactAxisBar
+                        name={axisDef.name}
+                        value={axis.value_0_10}
+                        poleALabel={axisDef.poleA.label}
+                        poleBLabel={axisDef.poleB.label}
+                        axisId={axis.axis_id}
+                        importance={axis.importance}
+                        source={axis.source}
+                        confidence={axis.confidence_0_1}
+                      />
+                      <View style={styles.editHint}>
+                        <Ionicons name="pencil-outline" size={14} color={Colors.gray[400]} />
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            )}
+          </View>
+
+          {/* Footer hint */}
+          <Text style={styles.footerHint}>
+            Tap any policy area to fine-tune your positions
+          </Text>
+        </ScrollView>
+      </Animated.View>
 
       {/* Edit Single Axis Modal */}
       {editingAxisId && (
@@ -1249,12 +1343,22 @@ const styles = StyleSheet.create({
     marginTop: 12,
     color: Colors.gray[500],
   },
-  content: {
-    padding: 16,
-    paddingBottom: 40,
+  stickyHeader: {
+    backgroundColor: Colors.white,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.gray[200],
+    paddingTop: 8,
+    paddingBottom: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
   },
   header: {
-    marginBottom: 20,
+    paddingHorizontal: 16,
+    paddingTop: 8,
+    paddingBottom: 12,
   },
   title: {
     fontSize: 24,
@@ -1266,6 +1370,60 @@ const styles = StyleSheet.create({
     color: Colors.gray[500],
     marginTop: 4,
     lineHeight: 20,
+  },
+  sectionNav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+    gap: 8,
+  },
+  navArrow: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: Colors.gray[100],
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  navArrowDisabled: {
+    backgroundColor: Colors.gray[50],
+  },
+  currentSection: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Colors.gray[50],
+    borderRadius: 12,
+    padding: 12,
+    gap: 12,
+  },
+  sectionIconContainer: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: Colors.primary + '15',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sectionInfo: {
+    flex: 1,
+  },
+  sectionName: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: Colors.gray[900],
+  },
+  sectionProgress: {
+    fontSize: 13,
+    color: Colors.gray[500],
+    marginTop: 2,
+  },
+  domainContainer: {
+    flex: 1,
+  },
+  content: {
+    padding: 16,
+    paddingBottom: 40,
   },
   domainCard: {
     backgroundColor: Colors.white,
@@ -1302,10 +1460,6 @@ const styles = StyleSheet.create({
     color: Colors.gray[900],
   },
   axesList: {
-    marginTop: 14,
-    paddingTop: 14,
-    borderTopWidth: 1,
-    borderTopColor: Colors.gray[100],
     gap: 12,
   },
   axisCardTouchable: {
