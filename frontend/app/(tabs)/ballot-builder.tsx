@@ -1417,10 +1417,7 @@ function ValueSlider({ axis, onChange }: { axis: ValueAxis; onChange: (value: nu
 
   return (
     <View style={sliderStyles.container}>
-      <View style={sliderStyles.header}>
-        <Text style={sliderStyles.name}>{axis.name}</Text>
-        <Text style={sliderStyles.value}>{axis.value}/10</Text>
-      </View>
+      <Text style={sliderStyles.name}>{axis.name}</Text>
 
       {/* Gradient bar with marker */}
       <TouchableOpacity
@@ -1505,11 +1502,9 @@ const sliderStyles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: Colors.gray[200],
-    gap: 10,
+    gap: 8,
   },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   name: { fontSize: 14, fontWeight: '600', color: Colors.gray[900] },
-  value: { fontSize: 13, fontWeight: '700', color: Colors.primary },
   barWrapper: {
     position: 'relative',
     height: 24,
