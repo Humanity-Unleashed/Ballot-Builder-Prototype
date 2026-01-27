@@ -882,6 +882,17 @@ function ResultsScreen({
 }) {
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
 
+  const getDomainIcon = (domainId: string): string => {
+    switch (domainId) {
+      case 'econ': return 'cash-outline';
+      case 'health': return 'medkit-outline';
+      case 'housing': return 'home-outline';
+      case 'justice': return 'shield-outline';
+      case 'climate': return 'leaf-outline';
+      default: return 'ellipse-outline';
+    }
+  };
+
   // Group axes by domain
   const domainAxes = spec.domains.map(domain => ({
     domain,
@@ -937,7 +948,14 @@ function ResultsScreen({
             onPress={() => setExpandedDomain(expandedDomain === domain.id ? null : domain.id)}
           >
             <View style={styles.domainHeader}>
-              <View>
+              <View style={styles.domainIconContainer}>
+                <Ionicons
+                  name={getDomainIcon(domain.id) as any}
+                  size={22}
+                  color={Colors.primary}
+                />
+              </View>
+              <View style={styles.domainTextContainer}>
                 <Text style={styles.domainName}>{domain.name}</Text>
                 <Text style={styles.domainWhy}>{domain.why}</Text>
               </View>
@@ -951,38 +969,76 @@ function ResultsScreen({
 
           {expandedDomain === domain.id && (
             <View style={styles.axesContainer}>
-              {axes.map(({ axis, score }) => (
+              {axes.map(({ axis, score }) => {
+                // Calculate scores for this axis (used by visualization and interpretation)
+                const refinedScore = fineTuningResponses[axis.id]
+                  ? calculateFineTunedScore(axis.id, fineTuningResponses[axis.id])
+                  : null;
+                const displayScore = refinedScore !== null ? refinedScore : (score?.shrunk ?? 0);
+                const isRefined = refinedScore !== null;
+
+                return (
                 <View key={axis.id} style={styles.axisCard}>
                   <Text style={styles.axisName}>{axis.name}</Text>
                   <Text style={styles.axisDescription}>{axis.description}</Text>
 
-                  {/* Axis Spectrum Visualization */}
+                  {/* Axis Spectrum Visualization - Matching Blueprint V3 */}
                   {(() => {
-                    // Use fine-tuned score if available, otherwise use original score
-                    const refinedScore = fineTuningResponses[axis.id]
-                      ? calculateFineTunedScore(axis.id, fineTuningResponses[axis.id])
-                      : null;
-                    const displayScore = refinedScore !== null ? refinedScore : (score?.shrunk ?? 0);
-                    const displayConfidence = refinedScore !== null ? 1 : (score?.confidence ?? 0.3);
+                    // Convert -1 to +1 score to 0-10 value for marker position
+                    const value010 = ((displayScore + 1) / 2) * 10;
+                    const markerPosition = (value010 / 10) * 100;
+
+                    // Determine accent color based on position (matching blueprint-v3)
+                    const getAccentColor = () => {
+                      if (value010 <= 3) return '#A855F7'; // Purple - toward poleA
+                      if (value010 >= 7) return '#14B8A6'; // Teal - toward poleB
+                      return '#6B7280'; // Gray - center/mixed
+                    };
 
                     return (
                       <View style={styles.spectrumContainer}>
-                        <View style={styles.spectrumLabels}>
-                          <Text style={styles.poleLabel}>{axis.poleA.label}</Text>
-                          <Text style={styles.poleLabel}>{axis.poleB.label}</Text>
+                        {/* Gradient bar with marker - matching Blueprint V3 */}
+                        <View style={styles.gradientBarWrapper}>
+                          <View style={styles.gradientBar}>
+                            {/* Simulate smooth gradient with multiple segments */}
+                            {Array.from({ length: 20 }, (_, i) => {
+                              const t = i / 19; // 0 to 1
+                              let color: string;
+                              if (t < 0.5) {
+                                const factor = t * 2;
+                                const r = Math.round(168 + (229 - 168) * factor);
+                                const g = Math.round(85 + (231 - 85) * factor);
+                                const b = Math.round(247 + (235 - 247) * factor);
+                                color = `rgb(${r}, ${g}, ${b})`;
+                              } else {
+                                const factor = (t - 0.5) * 2;
+                                const r = Math.round(229 + (20 - 229) * factor);
+                                const g = Math.round(231 + (184 - 231) * factor);
+                                const b = Math.round(235 + (166 - 235) * factor);
+                                color = `rgb(${r}, ${g}, ${b})`;
+                              }
+                              return (
+                                <View
+                                  key={i}
+                                  style={[
+                                    styles.gradientSegment,
+                                    { backgroundColor: color },
+                                    i === 0 && styles.gradientSegmentFirst,
+                                    i === 19 && styles.gradientSegmentLast,
+                                  ]}
+                                />
+                              );
+                            })}
+                          </View>
+                          {/* Marker */}
+                          <View style={[styles.gradientMarker, { left: `${markerPosition}%` }]}>
+                            <View style={[styles.gradientMarkerInner, { borderColor: getAccentColor() }]} />
+                          </View>
                         </View>
-                        <View style={styles.spectrumBar}>
-                          <View style={styles.spectrumMidpoint} />
-                          <View
-                            style={[
-                              styles.spectrumIndicator,
-                              {
-                                left: `${((displayScore + 1) / 2) * 100}%`,
-                                opacity: Math.max(displayConfidence, 0.3),
-                                borderColor: refinedScore !== null ? '#059669' : '#7C3AED',
-                              },
-                            ]}
-                          />
+                        {/* Pole labels */}
+                        <View style={styles.spectrumLabels}>
+                          <Text style={[styles.poleLabel, styles.poleLabelLeft]}>{axis.poleA.label}</Text>
+                          <Text style={[styles.poleLabel, styles.poleLabelRight]}>{axis.poleB.label}</Text>
                         </View>
                         {refinedScore !== null && (
                           <Text style={styles.refinedIndicatorLabel}>Position refined</Text>
@@ -1013,7 +1069,7 @@ function ResultsScreen({
                       <View style={styles.interpretationBox}>
                         <Text style={styles.interpretationTitle}>Your Position:</Text>
                         <Text style={styles.interpretationText}>
-                          {getInterpretation(axis, score)}
+                          {getInterpretation(axis, displayScore, isRefined)}
                         </Text>
                       </View>
 
@@ -1123,7 +1179,8 @@ function ResultsScreen({
                     </Text>
                   )}
                 </View>
-              ))}
+              );
+              })}
             </View>
           )}
         </View>
@@ -1468,13 +1525,15 @@ const fineTuneStyles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.gray[900],
     marginBottom: 8,
-    lineHeight: 22,
+    lineHeight: 24,
+    flexWrap: 'wrap',
   },
   subDimensionQuestion: {
     fontSize: 14,
     color: Colors.gray[600],
-    lineHeight: 20,
+    lineHeight: 22,
     marginBottom: 20,
+    flexWrap: 'wrap',
   },
   positionDisplay: {
     flex: 1,
@@ -1485,7 +1544,7 @@ const fineTuneStyles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 12,
     padding: 16,
-    alignItems: 'center',
+    alignItems: 'stretch',
     minHeight: 100,
     justifyContent: 'center',
     marginBottom: 20,
@@ -1495,14 +1554,16 @@ const fineTuneStyles = StyleSheet.create({
     fontWeight: '600',
     color: Colors.gray[900],
     textAlign: 'center',
-    lineHeight: 20,
+    lineHeight: 22,
+    flexWrap: 'wrap',
   },
   positionDescription: {
     fontSize: 13,
     color: Colors.gray[600],
     textAlign: 'center',
-    lineHeight: 19,
-    marginTop: 6,
+    lineHeight: 20,
+    marginTop: 8,
+    flexWrap: 'wrap',
   },
   currentPolicyBadge: {
     flexDirection: 'row',
@@ -1648,19 +1709,21 @@ const fineTuneStyles = StyleSheet.create({
   },
 });
 
-function getInterpretation(axis: any, score: AxisScore): string {
-  if (score.n_answered < 2) {
-    return 'Not enough responses to determine position';
-  }
-
-  if (Math.abs(score.shrunk) < 0.2) {
+function getInterpretation(axis: any, displayScore: number, isRefined: boolean): string {
+  // Use the actual display score to determine position
+  if (Math.abs(displayScore) < 0.2) {
     return 'You appear to be balanced between both perspectives on this issue.';
   }
 
-  if (score.shrunk > 0) {
-    return axis.poleA.interpretation;
+  // displayScore is -1 to +1, where negative = poleA, positive = poleB
+  if (displayScore < 0) {
+    // Leaning toward poleA
+    const strength = Math.abs(displayScore) >= 0.6 ? 'strongly ' : '';
+    return axis.poleA.interpretation || `You ${strength}lean toward ${axis.poleA.label}.`;
   } else {
-    return axis.poleB.interpretation;
+    // Leaning toward poleB
+    const strength = displayScore >= 0.6 ? 'strongly ' : '';
+    return axis.poleB.interpretation || `You ${strength}lean toward ${axis.poleB.label}.`;
   }
 }
 
@@ -2254,13 +2317,15 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#111',
     marginBottom: 8,
-    lineHeight: 24,
+    lineHeight: 26,
+    flexWrap: 'wrap',
   },
   sliderAxisQuestion: {
     fontSize: 14,
     color: '#666',
-    lineHeight: 20,
+    lineHeight: 22,
     marginBottom: 24,
+    flexWrap: 'wrap',
   },
   sliderPositionDisplay: {
     flex: 1,
@@ -2271,7 +2336,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 12,
     padding: 16,
-    alignItems: 'center',
+    alignItems: 'stretch',
     minHeight: 100,
     justifyContent: 'center',
     marginBottom: 20,
@@ -2281,16 +2346,16 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: Colors.gray[900],
     textAlign: 'center',
-    lineHeight: 20,
-    paddingHorizontal: 4,
+    lineHeight: 22,
+    flexWrap: 'wrap',
   },
   sliderPositionDescription: {
     fontSize: 13,
     color: Colors.gray[600],
     textAlign: 'center',
-    lineHeight: 19,
-    marginTop: 6,
-    paddingHorizontal: 4,
+    lineHeight: 20,
+    marginTop: 8,
+    flexWrap: 'wrap',
   },
   sliderCurrentPolicyBadge: {
     flexDirection: 'row',
@@ -2451,13 +2516,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   resultsTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '800',
     color: Colors.gray[900],
     marginTop: 16,
-    lineHeight: 30,
+    lineHeight: 28,
     textAlign: 'center',
-    paddingHorizontal: 16,
+    paddingHorizontal: 20,
+    flexWrap: 'wrap',
   },
   resultsSubtitle: {
     fontSize: 14,
@@ -2465,7 +2531,8 @@ const styles = StyleSheet.create({
     marginTop: 8,
     textAlign: 'center',
     lineHeight: 20,
-    paddingHorizontal: 16,
+    paddingHorizontal: 20,
+    flexWrap: 'wrap',
   },
   efficiencyCard: {
     backgroundColor: '#E8F5E9',
@@ -2508,21 +2575,36 @@ const styles = StyleSheet.create({
   },
   domainHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     padding: 16,
+    gap: 12,
+  },
+  domainIconContainer: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: Colors.primary + '15',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  domainTextContainer: {
+    flex: 1,
+    flexShrink: 1,
   },
   domainName: {
     fontSize: 16,
     fontWeight: '700',
     color: Colors.gray[900],
+    lineHeight: 22,
+    flexWrap: 'wrap',
   },
   domainWhy: {
     fontSize: 13,
     color: Colors.gray[600],
     marginTop: 4,
     lineHeight: 18,
-    flex: 1,
+    flexWrap: 'wrap',
   },
   axesContainer: {
     paddingHorizontal: 16,
@@ -2539,28 +2621,85 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.gray[900],
     marginBottom: 4,
-    lineHeight: 18,
+    lineHeight: 20,
+    flexWrap: 'wrap',
   },
   axisDescription: {
     fontSize: 13,
     color: Colors.gray[600],
     marginBottom: 16,
-    lineHeight: 19,
+    lineHeight: 20,
+    flexWrap: 'wrap',
   },
   spectrumContainer: {
     marginVertical: 16,
+    gap: 8,
+  },
+  gradientBarWrapper: {
+    position: 'relative',
+    height: 20,
+    justifyContent: 'center',
+  },
+  gradientBar: {
+    flexDirection: 'row',
+    height: 12,
+    borderRadius: 6,
+    overflow: 'hidden',
+  },
+  gradientSegment: {
+    flex: 1,
+    height: '100%',
+  },
+  gradientSegmentFirst: {
+    borderTopLeftRadius: 6,
+    borderBottomLeftRadius: 6,
+  },
+  gradientSegmentLast: {
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
+  },
+  gradientMarker: {
+    position: 'absolute',
+    top: '50%',
+    marginTop: -12,
+    marginLeft: -12,
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gradientMarkerInner: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: '#fff',
+    borderWidth: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 3,
   },
   spectrumLabels: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 8,
   },
   poleLabel: {
     fontSize: 11,
     fontWeight: '600',
-    color: '#666',
-    flex: 1,
+    textTransform: 'uppercase',
+    flexShrink: 1,
+    maxWidth: '45%',
   },
+  poleLabelLeft: {
+    color: '#A855F7',
+    textAlign: 'left',
+  },
+  poleLabelRight: {
+    color: '#14B8A6',
+    textAlign: 'right',
+  },
+  // Legacy spectrum styles (kept for fallback)
   spectrumBar: {
     height: 32,
     backgroundColor: '#e0e0e0',
@@ -2619,7 +2758,8 @@ const styles = StyleSheet.create({
   interpretationText: {
     fontSize: 13,
     color: '#424242',
-    lineHeight: 19,
+    lineHeight: 20,
+    flexWrap: 'wrap',
   },
   fineTuneButton: {
     flexDirection: 'row',
@@ -2674,6 +2814,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#374151',
     marginBottom: 6,
+    lineHeight: 18,
+    flexWrap: 'wrap',
   },
   fineTunePositionBox: {
     backgroundColor: '#F5F3FF',
@@ -2687,7 +2829,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '500',
     color: '#374151',
-    lineHeight: 18,
+    lineHeight: 20,
+    flexWrap: 'wrap',
   },
   miniSpectrumContainer: {
     marginTop: 4,
