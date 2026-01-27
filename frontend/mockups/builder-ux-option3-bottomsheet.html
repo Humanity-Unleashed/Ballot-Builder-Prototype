@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Builder UX - Option 3: Bottom Sheet for Details</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      padding: 16px;
+      background: #DBEAFE;
+      border-radius: 12px;
+      border-left: 4px solid #3B82F6;
+    }
+
+    .description h2 {
+      font-size: 16px;
+      color: #1E40AF;
+      margin-bottom: 8px;
+    }
+
+    .description p {
+      font-size: 14px;
+      color: #4B5563;
+      line-height: 1.5;
+    }
+
+    .description ul {
+      margin-top: 8px;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #4B5563;
+    }
+
+    .phone-frame {
+      width: 390px;
+      height: 844px;
+      background: #fff;
+      margin: 0 auto;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding: 50px 20px 12px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+    }
+
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      padding-bottom: 20px;
+    }
+
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #F3E8FF;
+      color: #7C3AED;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .question-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #E5E7EB;
+    }
+
+    .question-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 14px;
+      color: #6B7280;
+    }
+
+    .candidate-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 2px solid #E5E7EB;
+    }
+
+    .candidate-card.selected {
+      border-color: #7C3AED;
+      background: #FAF5FF;
+    }
+
+    .candidate-card.best-match {
+      border-color: #22C55E;
+    }
+
+    .candidate-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .radio {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #D1D5DB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .radio.selected {
+      border-color: #7C3AED;
+    }
+
+    .radio-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #7C3AED;
+    }
+
+    .candidate-info {
+      flex: 1;
+    }
+
+    .candidate-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .candidate-party {
+      font-size: 13px;
+      color: #6B7280;
+    }
+
+    .match-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #DCFCE7;
+    }
+
+    .match-percent {
+      font-size: 14px;
+      font-weight: 700;
+      color: #166534;
+    }
+
+    .match-label {
+      font-size: 10px;
+      color: #166534;
+    }
+
+    /* Simple "See comparison" link */
+    .compare-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px;
+      margin-top: 12px;
+      border-top: 1px solid #E5E7EB;
+      color: #3B82F6;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* Navigation buttons in normal flow */
+    .nav-buttons {
+      margin-top: 20px;
+      padding: 16px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .primary-button {
+      width: 100%;
+      padding: 16px;
+      background: #7C3AED;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .secondary-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .secondary-button {
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      color: #6B7280;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* BOTTOM SHEET OVERLAY - KEY FEATURE */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 50;
+    }
+
+    .bottom-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 24px 24px 0 0;
+      max-height: 70%;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sheet-handle {
+      width: 36px;
+      height: 4px;
+      background: #D1D5DB;
+      border-radius: 2px;
+      margin: 12px auto;
+    }
+
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px 16px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .sheet-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .sheet-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      background: #F3F4F6;
+      border: none;
+      font-size: 18px;
+      color: #6B7280;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sheet-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 20px 34px;
+    }
+
+    .breakdown-intro {
+      font-size: 14px;
+      color: #6B7280;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .comparison-item {
+      background: #F9FAFB;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .comparison-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .comparison-icon {
+      font-size: 16px;
+    }
+
+    .comparison-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .stance-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .stance-who {
+      color: #6B7280;
+      min-width: 55px;
+      font-weight: 500;
+    }
+
+    .stance-text {
+      color: #374151;
+    }
+
+    .comparison-summary {
+      font-size: 12px;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .summary-agree { color: #22C55E; }
+    .summary-differ { color: #EF4444; }
+
+    .highlight-box {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 460px;
+      border: 3px dashed #3B82F6;
+      border-radius: 24px 24px 40px 40px;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .highlight-label {
+      position: absolute;
+      bottom: 470px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #3B82F6;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      z-index: 200;
+    }
+  </style>
+</head>
+<body>
+  <div class="description">
+    <h2>Option 3: Bottom Sheet for Details</h2>
+    <p>Detailed comparisons open in a dismissible bottom sheet overlay. The main content stays clean and compact, with details available on-demand.</p>
+    <ul>
+      <li><strong>Pro:</strong> Main flow stays uncluttered</li>
+      <li><strong>Pro:</strong> Clear modal pattern - easy to dismiss</li>
+      <li><strong>Pro:</strong> Buttons always visible on main screen</li>
+      <li><strong>Con:</strong> Extra layer/interaction to see details</li>
+    </ul>
+  </div>
+
+  <div class="phone-frame">
+    <div class="header">
+      <div class="header-title">Ballot Builder</div>
+    </div>
+
+    <div class="content">
+      <div class="category-badge">
+        <span>&#128101;</span> Elected Offices &bull; 1 of 3
+      </div>
+
+      <div class="question-card">
+        <div class="question-title">City Council - District 5</div>
+        <div class="question-text">Vote for ONE candidate for City Council</div>
+      </div>
+
+      <!-- Compact candidate cards -->
+      <div class="candidate-card best-match selected">
+        <div class="candidate-main">
+          <div class="radio selected">
+            <div class="radio-dot"></div>
+          </div>
+          <div class="candidate-info">
+            <div class="candidate-name">Maria Santos</div>
+            <div class="candidate-party">Democratic Party</div>
+          </div>
+          <div class="match-circle">
+            <div class="match-percent">78%</div>
+            <div class="match-label">match</div>
+          </div>
+        </div>
+        <div class="compare-link">
+          <span>&#128200;</span> See how we compare <span>&#8599;</span>
+        </div>
+      </div>
+
+      <div class="candidate-card">
+        <div class="candidate-main">
+          <div class="radio"></div>
+          <div class="candidate-info">
+            <div class="candidate-name">James Wilson</div>
+            <div class="candidate-party">Republican Party</div>
+          </div>
+          <div class="match-circle" style="background: #FEF3C7;">
+            <div class="match-percent" style="color: #92400E;">52%</div>
+            <div class="match-label" style="color: #92400E;">match</div>
+          </div>
+        </div>
+        <div class="compare-link">
+          <span>&#128200;</span> See how we compare <span>&#8599;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay + Bottom Sheet -->
+    <div class="overlay"></div>
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <div class="sheet-title">Comparing with Maria Santos</div>
+        <button class="sheet-close">&#10005;</button>
+      </div>
+      <div class="sheet-content">
+        <div class="breakdown-intro">Based on the values you shared, here's how you compare:</div>
+
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <span class="comparison-icon" style="color: #22C55E;">&#10004;</span>
+            <span class="comparison-name">Housing Policy</span>
+          </div>
+          <div class="stance-row">
+            <span class="stance-who">You:</span>
+            <span class="stance-text">Support more affordable housing</span>
+          </div>
+          <div class="stance-row">
+            <span class="stance-who">Maria:</span>
+            <span class="stance-text">Strongly supports affordable housing</span>
+          </div>
+          <div class="comparison-summary summary-agree">&#10003; You share similar views on this</div>
+        </div>
+
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <span class="comparison-icon" style="color: #22C55E;">&#10004;</span>
+            <span class="comparison-name">Climate Action</span>
+          </div>
+          <div class="stance-row">
+            <span class="stance-who">You:</span>
+            <span class="stance-text">Prioritize environmental protection</span>
+          </div>
+          <div class="stance-row">
+            <span class="stance-who">Maria:</span>
+            <span class="stance-text">Strong climate advocate</span>
+          </div>
+          <div class="comparison-summary summary-agree">&#10003; You share similar views on this</div>
+        </div>
+
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <span class="comparison-icon" style="color: #EF4444;">&#10008;</span>
+            <span class="comparison-name">Public Safety</span>
+          </div>
+          <div class="stance-row">
+            <span class="stance-who">You:</span>
+            <span class="stance-text">Balance reform with safety</span>
+          </div>
+          <div class="stance-row">
+            <span class="stance-who">Maria:</span>
+            <span class="stance-text">Focus on community programs</span>
+          </div>
+          <div class="comparison-summary summary-differ">&#10007; You have different perspectives here</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box"></div>
+    <div class="highlight-label">&#8593; Dismissible bottom sheet overlay</div>
+  </div>
+</body>
+</html>

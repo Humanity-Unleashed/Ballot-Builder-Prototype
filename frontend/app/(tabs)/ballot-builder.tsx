@@ -23,6 +23,8 @@ import {
   TouchableOpacity,
   TextInput,
   ActivityIndicator,
+  Modal,
+  Pressable,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
@@ -474,12 +476,172 @@ const headerStyles = StyleSheet.create({
 });
 
 // --- Recommendation Banner (for propositions) ---
+// --- Proposition Breakdown Bottom Sheet ---
+function PropositionBreakdownSheet({
+  visible,
+  recommendation,
+  onClose,
+}: {
+  visible: boolean;
+  recommendation: PropositionRecommendation;
+  onClose: () => void;
+}) {
+  if (!recommendation || recommendation.breakdown.length === 0) return null;
+
+  const isYes = recommendation.vote === 'yes';
+  const accentColor = !recommendation.vote ? Colors.gray[600] : isYes ? '#16A34A' : '#DC2626';
+
+  return (
+    <Modal
+      visible={visible}
+      animationType="slide"
+      transparent={true}
+      onRequestClose={onClose}
+    >
+      <Pressable style={sheetStyles.overlay} onPress={onClose}>
+        <Pressable style={sheetStyles.sheet} onPress={(e) => e.stopPropagation()}>
+          {/* Handle bar */}
+          <View style={sheetStyles.handleBar} />
+
+          {/* Header */}
+          <View style={sheetStyles.header}>
+            <Text style={sheetStyles.headerTitle}>How we calculated this</Text>
+            <TouchableOpacity style={sheetStyles.closeButton} onPress={onClose}>
+              <Ionicons name="close" size={20} color={Colors.gray[600]} />
+            </TouchableOpacity>
+          </View>
+
+          {/* Content */}
+          <ScrollView style={sheetStyles.content} showsVerticalScrollIndicator={false}>
+            <Text style={sheetStyles.intro}>
+              We compare your values to what YES and NO mean for this measure:
+            </Text>
+
+            {recommendation.breakdown.map(axis => (
+              <View key={axis.axisId} style={propSheetStyles.breakdownItem}>
+                <Text style={propSheetStyles.axisName}>{axis.axisName}</Text>
+
+                <View style={propSheetStyles.stanceRow}>
+                  <Ionicons name="person" size={14} color={Colors.primary} />
+                  <Text style={propSheetStyles.stanceLabel}>Your stance:</Text>
+                  <Text style={propSheetStyles.stanceValue}>{axis.userStanceLabel}</Text>
+                </View>
+
+                <View style={propSheetStyles.stanceRow}>
+                  <Ionicons name="checkmark-circle" size={14} color="#22C55E" />
+                  <Text style={propSheetStyles.stanceLabel}>YES means:</Text>
+                  <Text style={propSheetStyles.stanceValue}>{axis.yesAlignsWith}</Text>
+                </View>
+
+                <View style={propSheetStyles.stanceRow}>
+                  <Ionicons name="close-circle" size={14} color="#EF4444" />
+                  <Text style={propSheetStyles.stanceLabel}>NO means:</Text>
+                  <Text style={propSheetStyles.stanceValue}>{axis.noAlignsWith}</Text>
+                </View>
+
+                <View style={[
+                  propSheetStyles.alignmentBadge,
+                  axis.alignment === 'yes' && propSheetStyles.alignmentYes,
+                  axis.alignment === 'no' && propSheetStyles.alignmentNo,
+                  axis.alignment === 'neutral' && propSheetStyles.alignmentNeutral,
+                ]}>
+                  <Text style={propSheetStyles.alignmentText}>
+                    {axis.alignment === 'yes' ? '→ Your values suggest YES' :
+                     axis.alignment === 'no' ? '→ Your values suggest NO' :
+                     '→ Neutral on this issue'}
+                  </Text>
+                </View>
+              </View>
+            ))}
+
+            <View style={propSheetStyles.summary}>
+              <Text style={propSheetStyles.summaryText}>
+                Overall: {recommendation.breakdown.filter(a => a.alignment === 'yes').length} value(s) suggest YES, {' '}
+                {recommendation.breakdown.filter(a => a.alignment === 'no').length} suggest NO
+              </Text>
+            </View>
+          </ScrollView>
+        </Pressable>
+      </Pressable>
+    </Modal>
+  );
+}
+
+const propSheetStyles = StyleSheet.create({
+  breakdownItem: {
+    backgroundColor: Colors.gray[50],
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 12,
+    gap: 8,
+    borderLeftWidth: 3,
+    borderLeftColor: Colors.gray[300],
+  },
+  axisName: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: Colors.gray[800],
+    marginBottom: 4,
+  },
+  stanceRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+  },
+  stanceLabel: {
+    fontSize: 13,
+    color: Colors.gray[500],
+    width: 85,
+  },
+  stanceValue: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: Colors.gray[700],
+    flex: 1,
+    lineHeight: 18,
+  },
+  alignmentBadge: {
+    marginTop: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 6,
+    alignSelf: 'flex-start',
+  },
+  alignmentYes: {
+    backgroundColor: '#DCFCE7',
+  },
+  alignmentNo: {
+    backgroundColor: '#FEE2E2',
+  },
+  alignmentNeutral: {
+    backgroundColor: Colors.gray[100],
+  },
+  alignmentText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.gray[700],
+  },
+  summary: {
+    paddingTop: 12,
+    paddingBottom: 8,
+    borderTopWidth: 1,
+    borderTopColor: Colors.gray[200],
+    marginTop: 4,
+  },
+  summaryText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: Colors.gray[600],
+    textAlign: 'center',
+  },
+});
+
 function RecommendationBanner({
   recommendation
 }: {
   recommendation: PropositionRecommendation
 }) {
-  const [showBreakdown, setShowBreakdown] = useState(false);
+  const [showSheet, setShowSheet] = useState(false);
 
   if (!recommendation.vote || recommendation.confidence < 0.2) {
     return (
@@ -490,62 +652,24 @@ function RecommendationBanner({
         </View>
         <Text style={recStyles.bannerText}>{recommendation.explanation}</Text>
 
-        {/* How we calculated - expandable */}
+        {/* How we calculated - opens bottom sheet */}
         {recommendation.breakdown.length > 0 && (
-          <>
-            <TouchableOpacity
-              style={recStyles.howButton}
-              onPress={() => setShowBreakdown(!showBreakdown)}
-              activeOpacity={0.7}
-            >
-              <Ionicons name="calculator-outline" size={16} color={Colors.gray[500]} />
-              <Text style={recStyles.howButtonText}>
-                {showBreakdown ? 'Hide details' : 'How we calculated this'}
-              </Text>
-              <Ionicons name={showBreakdown ? 'chevron-up' : 'chevron-down'} size={16} color={Colors.gray[400]} />
-            </TouchableOpacity>
-
-            {showBreakdown && (
-              <View style={recStyles.breakdownContainer}>
-                <Text style={recStyles.breakdownIntro}>
-                  We compare your values to what YES and NO mean for this measure:
-                </Text>
-                {recommendation.breakdown.map(axis => (
-                  <View key={axis.axisId} style={recStyles.breakdownItem}>
-                    <Text style={recStyles.breakdownAxisName}>{axis.axisName}</Text>
-                    <View style={recStyles.breakdownRow}>
-                      <Ionicons name="person" size={14} color={Colors.primary} />
-                      <Text style={recStyles.breakdownLabel}>Your stance: </Text>
-                      <Text style={recStyles.breakdownValue}>{axis.userStanceLabel}</Text>
-                    </View>
-                    <View style={recStyles.breakdownRow}>
-                      <Ionicons name="checkmark-circle" size={14} color="#22C55E" />
-                      <Text style={recStyles.breakdownLabel}>YES means: </Text>
-                      <Text style={recStyles.breakdownValue}>{axis.yesAlignsWith}</Text>
-                    </View>
-                    <View style={recStyles.breakdownRow}>
-                      <Ionicons name="close-circle" size={14} color="#EF4444" />
-                      <Text style={recStyles.breakdownLabel}>NO means: </Text>
-                      <Text style={recStyles.breakdownValue}>{axis.noAlignsWith}</Text>
-                    </View>
-                    <View style={[
-                      recStyles.alignmentBadge,
-                      axis.alignment === 'yes' && recStyles.alignmentYes,
-                      axis.alignment === 'no' && recStyles.alignmentNo,
-                      axis.alignment === 'neutral' && recStyles.alignmentNeutral,
-                    ]}>
-                      <Text style={recStyles.alignmentText}>
-                        {axis.alignment === 'yes' ? '→ Your values suggest YES' :
-                         axis.alignment === 'no' ? '→ Your values suggest NO' :
-                         '→ Neutral on this issue'}
-                      </Text>
-                    </View>
-                  </View>
-                ))}
-              </View>
-            )}
-          </>
+          <TouchableOpacity
+            style={recStyles.howButton}
+            onPress={() => setShowSheet(true)}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="calculator-outline" size={14} color="#3B82F6" />
+            <Text style={recStyles.howButtonText}>How we calculated this</Text>
+            <Ionicons name="open-outline" size={14} color="#3B82F6" />
+          </TouchableOpacity>
         )}
+
+        <PropositionBreakdownSheet
+          visible={showSheet}
+          recommendation={recommendation}
+          onClose={() => setShowSheet(false)}
+        />
       </View>
     );
   }
@@ -569,66 +693,24 @@ function RecommendationBanner({
         ]} />
       </View>
 
-      {/* How we calculated - expandable */}
+      {/* How we calculated - opens bottom sheet */}
       {recommendation.breakdown.length > 0 && (
-        <>
-          <TouchableOpacity
-            style={recStyles.howButton}
-            onPress={() => setShowBreakdown(!showBreakdown)}
-            activeOpacity={0.7}
-          >
-            <Ionicons name="calculator-outline" size={16} color={isYes ? '#16A34A' : '#DC2626'} />
-            <Text style={[recStyles.howButtonText, { color: isYes ? '#16A34A' : '#DC2626' }]}>
-              {showBreakdown ? 'Hide details' : 'How we calculated this'}
-            </Text>
-            <Ionicons name={showBreakdown ? 'chevron-up' : 'chevron-down'} size={16} color={isYes ? '#16A34A' : '#DC2626'} />
-          </TouchableOpacity>
-
-          {showBreakdown && (
-            <View style={recStyles.breakdownContainer}>
-              <Text style={recStyles.breakdownIntro}>
-                We compare your values to what YES and NO mean for this measure:
-              </Text>
-              {recommendation.breakdown.map(axis => (
-                <View key={axis.axisId} style={recStyles.breakdownItem}>
-                  <Text style={recStyles.breakdownAxisName}>{axis.axisName}</Text>
-                  <View style={recStyles.breakdownRow}>
-                    <Ionicons name="person" size={14} color={Colors.primary} />
-                    <Text style={recStyles.breakdownLabel}>Your stance: </Text>
-                    <Text style={recStyles.breakdownValue}>{axis.userStanceLabel}</Text>
-                  </View>
-                  <View style={recStyles.breakdownRow}>
-                    <Ionicons name="checkmark-circle" size={14} color="#22C55E" />
-                    <Text style={recStyles.breakdownLabel}>YES means: </Text>
-                    <Text style={recStyles.breakdownValue}>{axis.yesAlignsWith}</Text>
-                  </View>
-                  <View style={recStyles.breakdownRow}>
-                    <Ionicons name="close-circle" size={14} color="#EF4444" />
-                    <Text style={recStyles.breakdownLabel}>NO means: </Text>
-                    <Text style={recStyles.breakdownValue}>{axis.noAlignsWith}</Text>
-                  </View>
-                  <View style={[
-                    recStyles.alignmentBadge,
-                    axis.alignment === 'yes' && recStyles.alignmentYes,
-                    axis.alignment === 'no' && recStyles.alignmentNo,
-                    axis.alignment === 'neutral' && recStyles.alignmentNeutral,
-                  ]}>
-                    <Text style={recStyles.alignmentText}>
-                      {axis.alignment === 'yes' ? '→ Your values suggest YES' :
-                       axis.alignment === 'no' ? '→ Your values suggest NO' :
-                       '→ Neutral on this issue'}
-                    </Text>
-                  </View>
-                </View>
-              ))}
-              <Text style={recStyles.breakdownSummary}>
-                Overall: {recommendation.breakdown.filter(a => a.alignment === 'yes').length} value(s) suggest YES, {' '}
-                {recommendation.breakdown.filter(a => a.alignment === 'no').length} suggest NO
-              </Text>
-            </View>
-          )}
-        </>
+        <TouchableOpacity
+          style={recStyles.howButton}
+          onPress={() => setShowSheet(true)}
+          activeOpacity={0.7}
+        >
+          <Ionicons name="calculator-outline" size={14} color="#3B82F6" />
+          <Text style={recStyles.howButtonText}>How we calculated this</Text>
+          <Ionicons name="open-outline" size={14} color="#3B82F6" />
+        </TouchableOpacity>
       )}
+
+      <PropositionBreakdownSheet
+        visible={showSheet}
+        recommendation={recommendation}
+        onClose={() => setShowSheet(false)}
+      />
     </View>
   );
 }
@@ -649,91 +731,21 @@ const recStyles = StyleSheet.create({
   bannerText: { fontSize: 14, color: Colors.gray[700], lineHeight: 21 },
   confidenceBar: { height: 4, backgroundColor: Colors.gray[200], borderRadius: 2, overflow: 'hidden' },
   confidenceFill: { height: '100%', borderRadius: 2 },
-  // Expandable breakdown styles
+  // Link to open breakdown sheet (matches candidate compare link)
   howButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: 6,
-    paddingVertical: 8,
+    paddingVertical: 10,
     marginTop: 4,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0,0,0,0.08)',
   },
   howButtonText: {
     fontSize: 13,
     fontWeight: '600',
-    color: Colors.gray[500],
-  },
-  breakdownContainer: {
-    backgroundColor: Colors.white,
-    borderRadius: 12,
-    padding: 14,
-    marginTop: 8,
-    gap: 12,
-  },
-  breakdownIntro: {
-    fontSize: 13,
-    color: Colors.gray[600],
-    lineHeight: 19,
-    marginBottom: 4,
-  },
-  breakdownItem: {
-    borderLeftWidth: 3,
-    borderLeftColor: Colors.gray[200],
-    paddingLeft: 12,
-    paddingVertical: 8,
-    gap: 6,
-  },
-  breakdownAxisName: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: Colors.gray[800],
-    marginBottom: 4,
-  },
-  breakdownRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-    flexWrap: 'wrap',
-  },
-  breakdownLabel: {
-    fontSize: 12,
-    color: Colors.gray[500],
-  },
-  breakdownValue: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: Colors.gray[700],
-    flex: 1,
-  },
-  alignmentBadge: {
-    marginTop: 6,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 6,
-    alignSelf: 'flex-start',
-  },
-  alignmentYes: {
-    backgroundColor: '#DCFCE7',
-  },
-  alignmentNo: {
-    backgroundColor: '#FEE2E2',
-  },
-  alignmentNeutral: {
-    backgroundColor: Colors.gray[100],
-  },
-  alignmentText: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: Colors.gray[700],
-  },
-  breakdownSummary: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: Colors.gray[600],
-    textAlign: 'center',
-    marginTop: 8,
-    paddingTop: 12,
-    borderTopWidth: 1,
-    borderTopColor: Colors.gray[200],
+    color: '#3B82F6',
   },
 });
 
@@ -842,41 +854,218 @@ const voteStyles = StyleSheet.create({
   },
 });
 
-// --- Candidate Card with Expandable Breakdown ---
+// --- Candidate Comparison Bottom Sheet ---
+function CandidateComparisonSheet({
+  visible,
+  candidate,
+  match,
+  onClose,
+}: {
+  visible: boolean;
+  candidate: Candidate | null;
+  match: CandidateMatch | undefined;
+  onClose: () => void;
+}) {
+  if (!candidate || !match) return null;
+
+  return (
+    <Modal
+      visible={visible}
+      animationType="slide"
+      transparent={true}
+      onRequestClose={onClose}
+    >
+      <Pressable style={sheetStyles.overlay} onPress={onClose}>
+        <Pressable style={sheetStyles.sheet} onPress={(e) => e.stopPropagation()}>
+          {/* Handle bar */}
+          <View style={sheetStyles.handleBar} />
+
+          {/* Header */}
+          <View style={sheetStyles.header}>
+            <Text style={sheetStyles.headerTitle}>Comparing with {candidate.name}</Text>
+            <TouchableOpacity style={sheetStyles.closeButton} onPress={onClose}>
+              <Ionicons name="close" size={20} color={Colors.gray[600]} />
+            </TouchableOpacity>
+          </View>
+
+          {/* Content */}
+          <ScrollView style={sheetStyles.content} showsVerticalScrollIndicator={false}>
+            <Text style={sheetStyles.intro}>
+              Based on the values you shared, here's how you compare:
+            </Text>
+
+            {match.axisComparisons.map(comparison => {
+              const isAgreement = comparison.alignment === 'strong' || comparison.alignment === 'moderate';
+              const alignmentIcon = isAgreement ? 'checkmark-circle' : 'close-circle';
+              const alignmentColor = isAgreement ? '#22C55E' : '#EF4444';
+
+              return (
+                <View key={comparison.axisId} style={sheetStyles.comparisonItem}>
+                  <View style={sheetStyles.comparisonHeader}>
+                    <Ionicons name={alignmentIcon} size={18} color={alignmentColor} />
+                    <Text style={sheetStyles.comparisonAxisName}>{comparison.axisName}</Text>
+                  </View>
+
+                  <View style={sheetStyles.stanceComparison}>
+                    <View style={sheetStyles.stanceRow}>
+                      <Text style={sheetStyles.stanceWho}>You:</Text>
+                      <Text style={sheetStyles.stanceText}>{comparison.userLabel}</Text>
+                    </View>
+                    <View style={sheetStyles.stanceRow}>
+                      <Text style={sheetStyles.stanceWho}>{candidate.name.split(' ')[0]}:</Text>
+                      <Text style={sheetStyles.stanceText}>{comparison.candidateLabel}</Text>
+                    </View>
+                  </View>
+
+                  <Text style={[sheetStyles.comparisonSummary, { color: alignmentColor }]}>
+                    {isAgreement
+                      ? '✓ You share similar views on this'
+                      : '✗ You have different perspectives here'}
+                  </Text>
+                </View>
+              );
+            })}
+
+            <View style={sheetStyles.matchSummary}>
+              <Text style={sheetStyles.matchSummaryText}>
+                You align on {match.axisComparisons.filter(c => c.alignment === 'strong' || c.alignment === 'moderate').length} of {match.axisComparisons.length} policy areas
+              </Text>
+            </View>
+          </ScrollView>
+        </Pressable>
+      </Pressable>
+    </Modal>
+  );
+}
+
+const sheetStyles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    justifyContent: 'flex-end',
+  },
+  sheet: {
+    backgroundColor: Colors.white,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    maxHeight: '75%',
+    paddingBottom: 34,
+  },
+  handleBar: {
+    width: 36,
+    height: 4,
+    backgroundColor: Colors.gray[300],
+    borderRadius: 2,
+    alignSelf: 'center',
+    marginTop: 12,
+    marginBottom: 8,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.gray[200],
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: Colors.gray[900],
+    flex: 1,
+  },
+  closeButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: Colors.gray[100],
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  content: {
+    padding: 20,
+  },
+  intro: {
+    fontSize: 14,
+    color: Colors.gray[600],
+    marginBottom: 16,
+    fontStyle: 'italic',
+  },
+  comparisonItem: {
+    backgroundColor: Colors.gray[50],
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 12,
+    gap: 10,
+  },
+  comparisonHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  comparisonAxisName: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: Colors.gray[800],
+  },
+  stanceComparison: {
+    gap: 8,
+    paddingLeft: 28,
+  },
+  stanceRow: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  stanceWho: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: Colors.gray[500],
+    width: 55,
+  },
+  stanceText: {
+    fontSize: 13,
+    color: Colors.gray[700],
+    flex: 1,
+    lineHeight: 18,
+  },
+  comparisonSummary: {
+    fontSize: 12,
+    fontWeight: '600',
+    paddingLeft: 28,
+    marginTop: 2,
+  },
+  matchSummary: {
+    paddingTop: 12,
+    paddingBottom: 8,
+    borderTopWidth: 1,
+    borderTopColor: Colors.gray[200],
+    marginTop: 4,
+  },
+  matchSummaryText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: Colors.gray[600],
+    textAlign: 'center',
+  },
+});
+
+// --- Candidate Card (compact, with link to open sheet) ---
 function CandidateCard({
   candidate,
   isSelected,
   match,
   onSelect,
+  onCompare,
 }: {
   candidate: Candidate;
   isSelected: boolean;
   match: CandidateMatch | undefined;
   onSelect: () => void;
+  onCompare: () => void;
 }) {
-  const [showBreakdown, setShowBreakdown] = useState(false);
   const matchPercent = match?.matchPercent || 0;
   const isBestMatch = match?.isBestMatch || false;
-
-  const getAlignmentColor = (alignment: string) => {
-    switch (alignment) {
-      case 'strong': return '#22C55E';
-      case 'moderate': return '#84CC16';
-      case 'weak': return '#F59E0B';
-      case 'opposed': return '#EF4444';
-      default: return Colors.gray[400];
-    }
-  };
-
-  const getAlignmentLabel = (alignment: string) => {
-    switch (alignment) {
-      case 'strong': return 'Strong match';
-      case 'moderate': return 'Good match';
-      case 'weak': return 'Weak match';
-      case 'opposed': return 'Differs';
-      default: return 'Unknown';
-    }
-  };
 
   return (
     <View style={[
@@ -953,75 +1142,17 @@ function CandidateCard({
         </View>
       </TouchableOpacity>
 
-      {/* Expandable breakdown */}
+      {/* Link to open comparison sheet */}
       {match && match.axisComparisons.length > 0 && (
-        <View style={candStyles.breakdownSection}>
-          <TouchableOpacity
-            style={candStyles.breakdownToggle}
-            onPress={() => setShowBreakdown(!showBreakdown)}
-            activeOpacity={0.7}
-          >
-            <Ionicons name="analytics-outline" size={14} color={Colors.gray[500]} />
-            <Text style={candStyles.breakdownToggleText}>
-              {showBreakdown ? 'Hide comparison' : 'See how we compare'}
-            </Text>
-            <Ionicons name={showBreakdown ? 'chevron-up' : 'chevron-down'} size={14} color={Colors.gray[400]} />
-          </TouchableOpacity>
-
-          {showBreakdown && (
-            <View style={candStyles.breakdownContent}>
-              <Text style={candStyles.breakdownIntro}>
-                Based on the values you shared, here's how you compare:
-              </Text>
-
-              {match.axisComparisons.map(comparison => {
-                const isAgreement = comparison.alignment === 'strong' || comparison.alignment === 'moderate';
-                const alignmentIcon = isAgreement ? 'checkmark-circle' : 'close-circle';
-                const alignmentColor = isAgreement ? '#22C55E' : '#EF4444';
-
-                return (
-                  <View key={comparison.axisId} style={candStyles.comparisonItem}>
-                    {/* Topic header with agreement indicator */}
-                    <View style={candStyles.comparisonHeader}>
-                      <View style={candStyles.comparisonTopicRow}>
-                        <Ionicons name={alignmentIcon} size={16} color={alignmentColor} />
-                        <Text style={candStyles.comparisonAxisName}>{comparison.axisName}</Text>
-                      </View>
-                    </View>
-
-                    {/* Natural language comparison */}
-                    <View style={candStyles.stanceComparison}>
-                      <View style={candStyles.stanceRow}>
-                        <Text style={candStyles.stanceWho}>You:</Text>
-                        <Text style={candStyles.stanceText}>{comparison.userLabel}</Text>
-                      </View>
-                      <View style={candStyles.stanceRow}>
-                        <Text style={candStyles.stanceWho}>{candidate.name.split(' ')[0]}:</Text>
-                        <Text style={candStyles.stanceText}>{comparison.candidateLabel}</Text>
-                      </View>
-                    </View>
-
-                    {/* Summary message */}
-                    <Text style={[
-                      candStyles.comparisonSummary,
-                      { color: alignmentColor }
-                    ]}>
-                      {isAgreement
-                        ? '✓ You share similar views on this'
-                        : '✗ You have different perspectives here'}
-                    </Text>
-                  </View>
-                );
-              })}
-
-              <View style={candStyles.matchSummary}>
-                <Text style={candStyles.matchSummaryText}>
-                  You align on {match.axisComparisons.filter(c => c.alignment === 'strong' || c.alignment === 'moderate').length} of {match.axisComparisons.length} policy areas
-                </Text>
-              </View>
-            </View>
-          )}
-        </View>
+        <TouchableOpacity
+          style={candStyles.compareLink}
+          onPress={onCompare}
+          activeOpacity={0.7}
+        >
+          <Ionicons name="analytics-outline" size={14} color="#3B82F6" />
+          <Text style={candStyles.compareLinkText}>See how we compare</Text>
+          <Ionicons name="open-outline" size={14} color="#3B82F6" />
+        </TouchableOpacity>
       )}
     </View>
   );
@@ -1045,6 +1176,7 @@ function CandidateVoteButtons({
   onSelect: (choice: string) => void;
   onWriteInChange: (name: string) => void;
 }) {
+  const [compareCandidate, setCompareCandidate] = useState<Candidate | null>(null);
   const isWriteIn = selected === 'write_in';
 
   const getMatch = (candidateId: string) => matches.find(m => m.candidateId === candidateId);
@@ -1071,6 +1203,7 @@ function CandidateVoteButtons({
             isSelected={selected === candidate.id}
             match={getMatch(candidate.id)}
             onSelect={() => onSelect(candidate.id)}
+            onCompare={() => setCompareCandidate(candidate)}
           />
         ))}
 
@@ -1105,6 +1238,14 @@ function CandidateVoteButtons({
           </TouchableOpacity>
         )}
       </View>
+
+      {/* Comparison Bottom Sheet */}
+      <CandidateComparisonSheet
+        visible={compareCandidate !== null}
+        candidate={compareCandidate}
+        match={compareCandidate ? getMatch(compareCandidate.id) : undefined}
+        onClose={() => setCompareCandidate(null)}
+      />
     </View>
   );
 }
@@ -1207,92 +1348,21 @@ const candStyles = StyleSheet.create({
     fontSize: 15,
     color: Colors.gray[900],
   },
-  // Breakdown section styles
-  breakdownSection: {
+  // Compare link styles (opens bottom sheet)
+  compareLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
     marginTop: 12,
     paddingTop: 12,
     borderTopWidth: 1,
     borderTopColor: Colors.gray[100],
   },
-  breakdownToggle: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-  },
-  breakdownToggleText: {
-    fontSize: 12,
+  compareLinkText: {
+    fontSize: 13,
     fontWeight: '600',
-    color: Colors.gray[500],
-    flex: 1,
-  },
-  breakdownContent: {
-    marginTop: 12,
-    backgroundColor: Colors.gray[50],
-    borderRadius: 10,
-    padding: 12,
-    gap: 12,
-  },
-  breakdownIntro: {
-    fontSize: 12,
-    color: Colors.gray[600],
-    lineHeight: 16,
-  },
-  comparisonItem: {
-    backgroundColor: Colors.white,
-    borderRadius: 10,
-    padding: 12,
-    gap: 10,
-  },
-  comparisonHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  comparisonTopicRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  comparisonAxisName: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: Colors.gray[800],
-  },
-  stanceComparison: {
-    gap: 6,
-    paddingLeft: 24,
-  },
-  stanceRow: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-  stanceWho: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: Colors.gray[500],
-    width: 50,
-  },
-  stanceText: {
-    fontSize: 12,
-    color: Colors.gray[700],
-    flex: 1,
-    lineHeight: 16,
-  },
-  comparisonSummary: {
-    fontSize: 11,
-    fontWeight: '600',
-    paddingLeft: 24,
-    marginTop: 2,
-  },
-  matchSummary: {
-    paddingTop: 8,
-    borderTopWidth: 1,
-    borderTopColor: Colors.gray[200],
-  },
-  matchSummaryText: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: Colors.gray[600],
-    textAlign: 'center',
+    color: '#3B82F6',
   },
 });
 
