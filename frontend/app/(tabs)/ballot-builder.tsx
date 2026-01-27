@@ -292,10 +292,11 @@ function computePropositionRecommendation(
       alignment: axisAlignment,
     });
 
-    // Calculate alignment for overall score
+    // Calculate alignment for overall score, weighted by user's importance
     const alignment = yesEffect * userPreference;
-    alignmentScore += alignment;
-    totalWeight += Math.abs(yesEffect);
+    const importanceWeight = userAxis.weight; // 0-1, already normalized from importance
+    alignmentScore += alignment * importanceWeight;
+    totalWeight += Math.abs(yesEffect) * importanceWeight;
 
     if (Math.abs(alignment) > 0.15) {
       factors.push(userAxis.name);
@@ -350,8 +351,9 @@ function computeCandidateMatches(
       if (userAxis === undefined || candidateStance === undefined) continue;
 
       const diff = Math.abs(userAxis.value - candidateStance);
-      totalDiff += diff;
-      axisCount++;
+      const importanceWeight = userAxis.weight; // 0-1, already normalized from importance
+      totalDiff += diff * importanceWeight;
+      axisCount += importanceWeight; // Weight the count by importance
 
       // Determine alignment level
       let alignment: 'strong' | 'moderate' | 'weak' | 'opposed';
@@ -1392,7 +1394,26 @@ function ValuesSection({
 }
 
 function ValueSlider({ axis, onChange }: { axis: ValueAxis; onChange: (value: number) => void }) {
-  const segments = Array.from({ length: 11 }, (_, i) => i);
+  const [barWidth, setBarWidth] = useState(0);
+
+  // Calculate marker position (0-100%)
+  const markerPosition = (axis.value / 10) * 100;
+
+  // Determine accent color based on position
+  const getAccentColor = () => {
+    if (axis.value <= 3) return '#A855F7'; // Purple - toward poleA
+    if (axis.value >= 7) return '#14B8A6'; // Teal - toward poleB
+    return '#6B7280'; // Gray - center/mixed
+  };
+
+  // Handle tap on the gradient bar to change value
+  const handleBarPress = (event: any) => {
+    const { locationX } = event.nativeEvent;
+    const width = barWidth || 280;
+    const percentage = Math.max(0, Math.min(1, locationX / width));
+    const newValue = Math.round(percentage * 10);
+    onChange(newValue);
+  };
 
   return (
     <View style={sliderStyles.container}>
@@ -1400,24 +1421,58 @@ function ValueSlider({ axis, onChange }: { axis: ValueAxis; onChange: (value: nu
         <Text style={sliderStyles.name}>{axis.name}</Text>
         <Text style={sliderStyles.value}>{axis.value}/10</Text>
       </View>
-      <View style={sliderStyles.track}>
-        {segments.map((i) => (
-          <TouchableOpacity
-            key={i}
-            style={[
-              sliderStyles.segment,
-              i === 0 && sliderStyles.segmentFirst,
-              i === 10 && sliderStyles.segmentLast,
-              i <= axis.value && sliderStyles.segmentFilled,
-            ]}
-            onPress={() => onChange(i)}
-            activeOpacity={0.8}
-          />
-        ))}
-      </View>
+
+      {/* Gradient bar with marker */}
+      <TouchableOpacity
+        activeOpacity={0.9}
+        onPress={handleBarPress}
+        onLayout={(e) => setBarWidth(e.nativeEvent.layout.width)}
+        style={sliderStyles.barWrapper}
+      >
+        <View style={sliderStyles.gradientBar}>
+          {/* Smooth gradient with multiple segments */}
+          {Array.from({ length: 20 }, (_, i) => {
+            const t = i / 19; // 0 to 1
+            // Interpolate: purple (0) -> gray (0.5) -> teal (1)
+            let color: string;
+            if (t < 0.5) {
+              // Purple to gray
+              const factor = t * 2;
+              const r = Math.round(168 + (229 - 168) * factor);
+              const g = Math.round(85 + (231 - 85) * factor);
+              const b = Math.round(247 + (235 - 247) * factor);
+              color = `rgb(${r}, ${g}, ${b})`;
+            } else {
+              // Gray to teal
+              const factor = (t - 0.5) * 2;
+              const r = Math.round(229 + (20 - 229) * factor);
+              const g = Math.round(231 + (184 - 231) * factor);
+              const b = Math.round(235 + (166 - 235) * factor);
+              color = `rgb(${r}, ${g}, ${b})`;
+            }
+            return (
+              <View
+                key={i}
+                style={[
+                  sliderStyles.gradientSegment,
+                  { backgroundColor: color },
+                  i === 0 && sliderStyles.gradientSegmentFirst,
+                  i === 19 && sliderStyles.gradientSegmentLast,
+                ]}
+              />
+            );
+          })}
+        </View>
+
+        {/* Marker */}
+        <View style={[sliderStyles.marker, { left: `${markerPosition}%` }]}>
+          <View style={[sliderStyles.markerInner, { borderColor: getAccentColor() }]} />
+        </View>
+      </TouchableOpacity>
+
       <View style={sliderStyles.labels}>
-        <Text style={sliderStyles.poleLabel}>{axis.poleA}</Text>
-        <Text style={[sliderStyles.poleLabel, { textAlign: 'right' }]}>{axis.poleB}</Text>
+        <Text style={sliderStyles.poleLabelLeft}>{axis.poleA}</Text>
+        <Text style={sliderStyles.poleLabelRight}>{axis.poleB}</Text>
       </View>
     </View>
   );
@@ -1455,13 +1510,69 @@ const sliderStyles = StyleSheet.create({
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   name: { fontSize: 14, fontWeight: '600', color: Colors.gray[900] },
   value: { fontSize: 13, fontWeight: '700', color: Colors.primary },
-  track: { flexDirection: 'row', height: 8, borderRadius: 4, overflow: 'hidden' },
-  segment: { flex: 1, height: '100%', backgroundColor: Colors.gray[200] },
-  segmentFirst: { borderTopLeftRadius: 4, borderBottomLeftRadius: 4 },
-  segmentLast: { borderTopRightRadius: 4, borderBottomRightRadius: 4 },
-  segmentFilled: { backgroundColor: Colors.primary },
+  barWrapper: {
+    position: 'relative',
+    height: 24,
+    justifyContent: 'center',
+  },
+  gradientBar: {
+    flexDirection: 'row',
+    height: 12,
+    borderRadius: 6,
+    overflow: 'hidden',
+  },
+  gradientSegment: {
+    flex: 1,
+    height: '100%',
+  },
+  gradientSegmentFirst: {
+    borderTopLeftRadius: 6,
+    borderBottomLeftRadius: 6,
+  },
+  gradientSegmentLast: {
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
+  },
+  marker: {
+    position: 'absolute',
+    top: '50%',
+    marginTop: -12,
+    marginLeft: -12,
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  markerInner: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: Colors.white,
+    borderWidth: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 3,
+  },
   labels: { flexDirection: 'row', justifyContent: 'space-between' },
-  poleLabel: { fontSize: 11, color: Colors.gray[500], flex: 1 },
+  poleLabelLeft: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#A855F7',
+    textTransform: 'uppercase',
+    flexShrink: 1,
+    maxWidth: '45%',
+  },
+  poleLabelRight: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#14B8A6',
+    textTransform: 'uppercase',
+    flexShrink: 1,
+    maxWidth: '45%',
+    textAlign: 'right',
+  },
 });
 
 // --- Navigation Buttons ---
@@ -1887,7 +1998,7 @@ export default function BallotBuilderScreen() {
             value: axis.value_0_10,
             poleA: axisDef.poleA.label,
             poleB: axisDef.poleB.label,
-            weight: 0.5,
+            weight: (axis.importance ?? 5) / 10, // Normalize importance (0-10) to weight (0-1)
           });
         }
       }
