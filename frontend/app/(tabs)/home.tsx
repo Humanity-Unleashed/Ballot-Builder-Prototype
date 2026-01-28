@@ -508,10 +508,14 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
 
-  // Welcome Section
+  // Welcome Section (Page Header)
   welcomeSection: {
-    padding: 20,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 16,
     backgroundColor: Colors.white,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.grayBorder,
   },
   greeting: {
     fontSize: 24,

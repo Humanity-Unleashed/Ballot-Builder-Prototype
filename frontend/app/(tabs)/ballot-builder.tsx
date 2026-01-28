@@ -2448,7 +2448,8 @@ export default function BallotBuilderScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Ballot Builder</Text>
+        <Text style={styles.headerTitle}>Build Your Ballot</Text>
+        <Text style={styles.headerSubtitle}>Make your choices for each race and measure</Text>
       </View>
 
       {/* Official Ballot Navigator */}
@@ -2531,17 +2532,21 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingHorizontal: 16,
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 16,
+    paddingBottom: 16,
     backgroundColor: Colors.white,
     borderBottomWidth: 1,
     borderBottomColor: Colors.gray[200],
   },
   headerTitle: {
-    fontSize: 18,
-    fontWeight: '700',
+    fontSize: 24,
+    fontWeight: '800',
     color: Colors.gray[900],
-    textAlign: 'center',
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    color: Colors.gray[500],
+    marginTop: 4,
   },
   scrollView: {
     flex: 1,

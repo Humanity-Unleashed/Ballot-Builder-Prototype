@@ -760,7 +760,13 @@ export default function AdaptiveCivicAssessmentScreen() {
         </Pressable>
       </Modal>
 
-      {/* Header Section */}
+      {/* Page Header */}
+      <View style={styles.pageHeader}>
+        <Text style={styles.pageTitle}>Smart Assessment</Text>
+        <Text style={styles.pageSubtitle}>Discover your values through adaptive questions</Text>
+      </View>
+
+      {/* Progress Section */}
       <View style={styles.sliderHeader}>
         <View style={styles.sliderProgressContainer}>
           <View style={styles.sliderProgressLabel}>
@@ -903,14 +909,21 @@ function ResultsScreen({
   }));
 
   return (
-    <ScrollView style={styles.resultsContainer}>
-      <View style={styles.resultsHeader}>
-        <Ionicons name="sparkles" size={48} color="#4CAF50" />
-        <Text style={styles.resultsTitle}>Your Adaptive Civic Blueprint</Text>
-        <Text style={styles.resultsSubtitle}>
-          Created from {swipes.length} intelligently selected questions
-        </Text>
+    <View style={styles.resultsScreenContainer}>
+      {/* Page Header */}
+      <View style={styles.pageHeader}>
+        <Text style={styles.pageTitle}>Assessment Results</Text>
+        <Text style={styles.pageSubtitle}>Your personalized civic blueprint</Text>
       </View>
+
+      <ScrollView style={styles.resultsContainer}>
+        <View style={styles.resultsHeader}>
+          <Ionicons name="checkmark-circle" size={48} color="#4CAF50" />
+          <Text style={styles.resultsTitle}>Assessment Complete!</Text>
+          <Text style={styles.resultsSubtitle}>
+            Created from {swipes.length} intelligently selected questions
+          </Text>
+        </View>
 
       {/* Efficiency Stats */}
       <View style={styles.efficiencyCard}>
@@ -1186,15 +1199,16 @@ function ResultsScreen({
         </View>
       ))}
 
-      <View style={styles.ballotPreview}>
-        <Ionicons name="checkbox-outline" size={32} color="#2196F3" />
-        <Text style={styles.ballotPreviewTitle}>Ready for Ballot Matching</Text>
-        <Text style={styles.ballotPreviewText}>
-          Your adaptive civic blueprint efficiently captured your priorities and can now match you
-          with candidates and ballot measures.
-        </Text>
-      </View>
-    </ScrollView>
+        <View style={styles.ballotPreview}>
+          <Ionicons name="checkbox-outline" size={32} color="#2196F3" />
+          <Text style={styles.ballotPreviewTitle}>Ready for Ballot Matching</Text>
+          <Text style={styles.ballotPreviewText}>
+            Your adaptive civic blueprint efficiently captured your priorities and can now match you
+            with candidates and ballot measures.
+          </Text>
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -2248,12 +2262,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f8f9fa',
   },
+  pageHeader: {
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 16,
+    backgroundColor: Colors.white,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.gray[200],
+  },
+  pageTitle: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: Colors.gray[900],
+  },
+  pageSubtitle: {
+    fontSize: 14,
+    color: Colors.gray[500],
+    marginTop: 4,
+    lineHeight: 20,
+  },
   sliderHeader: {
     padding: 16,
     paddingHorizontal: 20,
+    paddingTop: 12,
     backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e5e7eb',
   },
   sliderProgressContainer: {
     marginBottom: 12,
@@ -2506,13 +2538,17 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#888',
   },
+  resultsScreenContainer: {
+    flex: 1,
+    backgroundColor: Colors.white,
+  },
   resultsContainer: {
     flex: 1,
     backgroundColor: '#f5f5f5',
   },
   resultsHeader: {
     alignItems: 'center',
-    padding: 32,
+    padding: 24,
     backgroundColor: '#fff',
   },
   resultsTitle: {
@@ -3176,16 +3212,22 @@ function IntroScreen({
 
   return (
     <View style={introStyles.container}>
-      <View style={introStyles.heroSection}>
-        <View style={introStyles.iconCircle}>
-          <Ionicons name="sparkles" size={48} color={Colors.primary} />
-        </View>
-        <Text style={introStyles.heroTitle}>Smart Assessment</Text>
-        <Text style={introStyles.heroSubtitle}>
-          Answer questions about policy topics to build your civic profile.
-          We'll adapt based on your responses.
-        </Text>
+      {/* Page Header */}
+      <View style={introStyles.pageHeader}>
+        <Text style={introStyles.pageTitle}>Smart Assessment</Text>
+        <Text style={introStyles.pageSubtitle}>Discover your values through adaptive questions</Text>
       </View>
+
+      <ScrollView style={introStyles.scrollContent} showsVerticalScrollIndicator={false}>
+        <View style={introStyles.heroSection}>
+          <View style={introStyles.iconCircle}>
+            <Ionicons name="compass" size={40} color={Colors.primary} />
+          </View>
+          <Text style={introStyles.heroSubtitle}>
+            Answer questions about policy topics to build your civic profile.
+            We'll adapt based on your responses.
+          </Text>
+        </View>
 
       <View style={introStyles.optionsSection}>
         {/* All Topics Option */}
@@ -3228,10 +3270,11 @@ function IntroScreen({
         </TouchableOpacity>
       </View>
 
-      <View style={introStyles.infoSection}>
-        <Ionicons name="time-outline" size={16} color={Colors.gray[400]} />
-        <Text style={introStyles.infoText}>Usually takes 3-5 minutes</Text>
-      </View>
+        <View style={introStyles.infoSection}>
+          <Ionicons name="time-outline" size={16} color={Colors.gray[400]} />
+          <Text style={introStyles.infoText}>Usually takes 3-5 minutes</Text>
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -3245,27 +3288,42 @@ const introStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.white,
   },
-  heroSection: {
-    alignItems: 'center',
-    paddingTop: 60,
-    paddingBottom: 40,
-    paddingHorizontal: 24,
+  pageHeader: {
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 16,
+    backgroundColor: Colors.white,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.gray[200],
   },
-  iconCircle: {
-    width: 96,
-    height: 96,
-    borderRadius: 48,
-    backgroundColor: Colors.primary + '15',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 24,
-  },
-  heroTitle: {
+  pageTitle: {
     fontSize: 24,
     fontWeight: '800',
     color: Colors.gray[900],
-    marginBottom: 12,
-    textAlign: 'center',
+  },
+  pageSubtitle: {
+    fontSize: 14,
+    color: Colors.gray[500],
+    marginTop: 4,
+    lineHeight: 20,
+  },
+  scrollContent: {
+    flex: 1,
+  },
+  heroSection: {
+    alignItems: 'center',
+    paddingTop: 32,
+    paddingBottom: 24,
+    paddingHorizontal: 24,
+  },
+  iconCircle: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: Colors.primary + '15',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 16,
   },
   heroSubtitle: {
     fontSize: 14,
