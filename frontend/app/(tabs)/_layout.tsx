@@ -52,17 +52,19 @@ export default function TabsLayout() {
         name="home"
         options={{
           title: 'Home',
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="flag-outline" size={size} color={color} />
+            <Ionicons name="home-outline" size={size} color={color} />
           ),
         }}
       />
 
-      {/* 2. Smart - Adaptive assessment to discover values */}
+      {/* 2. Assess - Adaptive assessment to discover values */}
       <Tabs.Screen
         name="adaptive-assessment"
         options={{
-          title: 'Smart',
+          title: 'Assess',
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="compass-outline" size={size} color={color} />
           ),
@@ -74,6 +76,7 @@ export default function TabsLayout() {
         name="blueprint-v3"
         options={{
           title: 'Blueprint',
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="map-outline" size={size} color={color} />
           ),

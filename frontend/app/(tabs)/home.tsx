@@ -24,7 +24,7 @@ import { useState, useEffect } from 'react';
 // ===========================================
 
 interface StepStatus {
-  discover: 'not_started' | 'in_progress' | 'complete';
+  assess: 'not_started' | 'in_progress' | 'complete';
   blueprint: 'not_started' | 'in_progress' | 'complete';
   build: 'not_started' | 'in_progress' | 'complete';
   buildProgress?: { decided: number; total: number };
@@ -79,7 +79,7 @@ export default function HomeScreen() {
 
   // Mock state - in production this would come from a context/store
   const [stepStatus] = useState<StepStatus>({
-    discover: 'complete',
+    assess: 'complete',
     blueprint: 'in_progress',
     build: 'not_started',
     blueprintProgress: { domains: 3, total: 5 },
@@ -106,7 +106,7 @@ export default function HomeScreen() {
   // Calculate overall progress
   const calculateProgress = (): number => {
     let progress = 0;
-    if (stepStatus.discover === 'complete') progress += 33;
+    if (stepStatus.assess === 'complete') progress += 33;
     if (stepStatus.blueprint === 'complete') progress += 33;
     else if (stepStatus.blueprint === 'in_progress' && stepStatus.blueprintProgress) {
       progress += Math.round(33 * (stepStatus.blueprintProgress.domains / stepStatus.blueprintProgress.total));
@@ -153,13 +153,13 @@ export default function HomeScreen() {
           {/* Steps Row */}
           <View style={styles.stepsRow}>
             <StepIndicator
-              label="Discover"
+              label="Assess"
               step={1}
-              status={stepStatus.discover}
+              status={stepStatus.assess}
             />
             <View style={[
               styles.stepConnector,
-              stepStatus.discover === 'complete' && styles.stepConnectorComplete
+              stepStatus.assess === 'complete' && styles.stepConnectorComplete
             ]} />
             <StepIndicator
               label="Blueprint"
@@ -183,12 +183,12 @@ export default function HomeScreen() {
         <View style={styles.quickActions}>
           <QuickActionCard
             icon="search-outline"
-            title="Discover"
-            status={stepStatus.discover === 'complete' ? 'Complete' : 'Not Started'}
-            statusType={stepStatus.discover === 'complete' ? 'complete' : 'default'}
+            title="Assess"
+            status={stepStatus.assess === 'complete' ? 'Complete' : 'Not Started'}
+            statusType={stepStatus.assess === 'complete' ? 'complete' : 'default'}
             color={Colors.primary}
             onPress={() => router.push('/(tabs)/adaptive-assessment')}
-            isActive={stepStatus.discover === 'in_progress'}
+            isActive={stepStatus.assess === 'in_progress'}
           />
           <QuickActionCard
             icon="document-text-outline"
