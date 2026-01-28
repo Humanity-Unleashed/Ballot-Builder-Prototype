@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Dashboard - Design C Enhanced</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+
+    .design-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      margin: 20px 0 10px;
+    }
+
+    .design-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .mockup-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .mockup-container {
+      width: 375px;
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .mockup-label {
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      color: white;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .screen {
+      background: #F9FAFB;
+      min-height: 750px;
+      padding-bottom: 20px;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      padding: 20px;
+      background: white;
+    }
+
+    .greeting {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .user-email {
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+    }
+
+    /* Hero Progress Ring */
+    .hero-progress {
+      margin: 16px;
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      border-radius: 20px;
+      padding: 24px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-progress::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 150px;
+      height: 150px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    .hero-progress::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      right: -10%;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .hero-ring {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 16px;
+      position: relative;
+    }
+
+    .hero-ring svg {
+      transform: rotate(-90deg);
+    }
+
+    .hero-ring-bg {
+      fill: none;
+      stroke: rgba(255,255,255,0.2);
+      stroke-width: 8;
+    }
+
+    .hero-ring-progress {
+      fill: none;
+      stroke: white;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 339.292;
+    }
+
+    .hero-ring-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .hero-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    /* Step indicators */
+    .steps-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .step-dot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 70px;
+    }
+
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .step-circle.complete {
+      background: white;
+      color: #7C3AED;
+    }
+
+    .step-circle.current {
+      background: white;
+      color: #7C3AED;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+    }
+
+    .step-label {
+      font-size: 11px;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    .step-connector {
+      width: 30px;
+      height: 3px;
+      background: rgba(255,255,255,0.3);
+      margin-top: 16px;
+      border-radius: 2px;
+    }
+
+    .step-connector.complete {
+      background: white;
+    }
+
+    /* Section Title */
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      padding: 0 16px;
+      margin: 20px 0 12px;
+    }
+
+    /* Quick Actions Grid */
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .quick-action {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #E5E7EB;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quick-action:hover {
+      border-color: #7C3AED;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    }
+
+    .quick-action.active {
+      border-color: #7C3AED;
+      border-width: 2px;
+      background: #FAFAFF;
+    }
+
+    .quick-action-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .quick-action-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .quick-action-status {
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .quick-action-status.complete {
+      color: #10B981;
+      font-weight: 600;
+    }
+
+    .quick-action-status.in-progress {
+      color: #F59E0B;
+      font-weight: 600;
+    }
+
+    /* Upcoming/Deadlines Card */
+    .upcoming-card {
+      margin: 0 16px 16px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #E5E7EB;
+    }
+
+    .upcoming-header {
+      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+
+    .upcoming-header-icon {
+      font-size: 18px;
+    }
+
+    .upcoming-header-text {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .upcoming-header-countdown {
+      margin-left: auto;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .upcoming-content {
+      padding: 12px 16px;
+    }
+
+    .upcoming-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    .upcoming-row:last-child {
+      border-bottom: none;
+      padding-bottom: 4px;
+    }
+
+    .upcoming-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .upcoming-info {
+      flex: 1;
+    }
+
+    .upcoming-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .upcoming-detail {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .upcoming-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .upcoming-badge.days {
+      background: #DBEAFE;
+      color: #1D4ED8;
+    }
+
+    .upcoming-badge.urgent {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    .upcoming-badge.action {
+      background: #7C3AED;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Poll Locator Card */
+    .poll-card {
+      margin: 0 16px 16px;
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .poll-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .poll-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(239, 68, 68, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .poll-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .poll-subtitle {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .poll-location {
+      background: #F9FAFB;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid #E5E7EB;
+      margin-bottom: 12px;
+    }
+
+    .poll-location-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .poll-location-address {
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .poll-location-hours {
+      font-size: 12px;
+      color: #10B981;
+      font-weight: 600;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .poll-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .poll-action {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background: #F3F4F6;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .poll-action:hover {
+      background: #E5E7EB;
+    }
+
+    .poll-action.primary {
+      background: #EF4444;
+      color: white;
+    }
+
+    .poll-action.primary:hover {
+      background: #DC2626;
+    }
+
+    .poll-not-set {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .poll-not-set-text {
+      font-size: 14px;
+      color: #6B7280;
+      margin-bottom: 12px;
+    }
+
+    .poll-set-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #7C3AED;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Naming options note */
+    .naming-note {
+      background: #FEF3C7;
+      margin: 0 16px 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      color: #92400E;
+      line-height: 1.5;
+    }
+
+    .naming-note strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #78350F;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="design-title">Home Dashboard - Design C Enhanced</h1>
+  <p class="design-subtitle">Combined with deadline features from Design B + building-themed naming</p>
+
+  <div class="mockup-row">
+    <!-- =============================================
+         OPTION 1: "Discover" naming
+         ============================================= -->
+    <div class="mockup-container">
+      <div class="mockup-label">Option 1: "Discover" Step Name</div>
+      <div class="screen">
+        <div class="welcome-section">
+          <div class="greeting">Welcome back!</div>
+          <div class="user-email">voter@example.com</div>
+        </div>
+
+        <!-- Hero Progress Ring - 60% complete -->
+        <div class="hero-progress">
+          <div class="hero-ring">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="hero-ring-bg" cx="60" cy="60" r="54"/>
+              <circle class="hero-ring-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 135.717;"/>
+            </svg>
+            <div class="hero-ring-text">60%</div>
+          </div>
+          <div class="hero-title">Ballot Ready</div>
+          <div class="hero-subtitle">Complete your journey to be 100% prepared</div>
+
+          <div class="steps-row">
+            <div class="step-dot">
+              <div class="step-circle complete">&#10003;</div>
+              <div class="step-label">Discover</div>
+            </div>
+            <div class="step-connector complete"></div>
+            <div class="step-dot">
+              <div class="step-circle current">2</div>
+              <div class="step-label">Blueprint</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-dot">
+              <div class="step-circle">3</div>
+              <div class="step-label">Build</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="section-title">Your Building Blocks</div>
+        <div class="quick-actions">
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(124,58,237,0.12);">&#128270;</div>
+            <div class="quick-action-title">Discover</div>
+            <div class="quick-action-status complete">&#10003; Complete</div>
+          </div>
+          <div class="quick-action active">
+            <div class="quick-action-icon" style="background: rgba(59,130,246,0.12);">&#128209;</div>
+            <div class="quick-action-title">Blueprint</div>
+            <div class="quick-action-status in-progress">3/5 domains</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#9745;</div>
+            <div class="quick-action-title">Build</div>
+            <div class="quick-action-status">0/12 decided</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(239,68,68,0.12);">&#128205;</div>
+            <div class="quick-action-title">Poll Finder</div>
+            <div class="quick-action-status">Set location</div>
+          </div>
+        </div>
+
+        <!-- Election + Deadlines Card -->
+        <div class="upcoming-card">
+          <div class="upcoming-header">
+            <span class="upcoming-header-icon">&#128197;</span>
+            <span class="upcoming-header-text">2026 General Election</span>
+            <span class="upcoming-header-countdown">23 days</span>
+          </div>
+          <div class="upcoming-content">
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #FEE2E2;">&#9888;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Voter Registration</div>
+                <div class="upcoming-detail">Last day to register to vote</div>
+              </div>
+              <div class="upcoming-badge urgent">8 days</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #DBEAFE;">&#128230;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Mail-in Ballot Request</div>
+                <div class="upcoming-detail">Request your mail ballot</div>
+              </div>
+              <div class="upcoming-badge action">Request &rarr;</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #D1FAE5;">&#128197;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Early Voting Begins</div>
+                <div class="upcoming-detail">Vote before Election Day</div>
+              </div>
+              <div class="upcoming-badge days">12 days</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poll Locator -->
+        <div class="section-title">Your Polling Place</div>
+        <div class="poll-card">
+          <div class="poll-header">
+            <div class="poll-icon">&#128205;</div>
+            <div>
+              <div class="poll-title">City Hall - Room 48</div>
+              <div class="poll-subtitle">0.3 miles from your address</div>
+            </div>
+          </div>
+          <div class="poll-location">
+            <div class="poll-location-name">San Francisco City Hall</div>
+            <div class="poll-location-address">1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102</div>
+            <div class="poll-location-hours">&#128339; Open 7:00 AM - 8:00 PM on Election Day</div>
+          </div>
+          <div class="poll-actions">
+            <div class="poll-action primary">&#128204; Get Directions</div>
+            <div class="poll-action">&#128197; Early Voting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================
+         OPTION 2: "Foundation" naming
+         ============================================= -->
+    <div class="mockup-container">
+      <div class="mockup-label">Option 2: "Foundation" Step Name</div>
+      <div class="screen">
+        <div class="welcome-section">
+          <div class="greeting">Welcome back!</div>
+          <div class="user-email">voter@example.com</div>
+        </div>
+
+        <!-- Hero Progress Ring - 33% complete (just finished step 1) -->
+        <div class="hero-progress">
+          <div class="hero-ring">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="hero-ring-bg" cx="60" cy="60" r="54"/>
+              <circle class="hero-ring-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 226.195;"/>
+            </svg>
+            <div class="hero-ring-text">33%</div>
+          </div>
+          <div class="hero-title">Ballot Ready</div>
+          <div class="hero-subtitle">You've laid the foundation - keep building!</div>
+
+          <div class="steps-row">
+            <div class="step-dot">
+              <div class="step-circle complete">&#10003;</div>
+              <div class="step-label">Foundation</div>
+            </div>
+            <div class="step-connector complete"></div>
+            <div class="step-dot">
+              <div class="step-circle current">2</div>
+              <div class="step-label">Blueprint</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-dot">
+              <div class="step-circle">3</div>
+              <div class="step-label">Build</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="section-title">Your Building Blocks</div>
+        <div class="quick-actions">
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(124,58,237,0.12);">&#127959;</div>
+            <div class="quick-action-title">Foundation</div>
+            <div class="quick-action-status complete">&#10003; Complete</div>
+          </div>
+          <div class="quick-action active">
+            <div class="quick-action-icon" style="background: rgba(59,130,246,0.12);">&#128209;</div>
+            <div class="quick-action-title">Blueprint</div>
+            <div class="quick-action-status in-progress">In Progress</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#128296;</div>
+            <div class="quick-action-title">Build</div>
+            <div class="quick-action-status">Not Started</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(239,68,68,0.12);">&#128205;</div>
+            <div class="quick-action-title">Poll Finder</div>
+            <div class="quick-action-status">Set location</div>
+          </div>
+        </div>
+
+        <!-- Election + Deadlines Card -->
+        <div class="upcoming-card">
+          <div class="upcoming-header">
+            <span class="upcoming-header-icon">&#128197;</span>
+            <span class="upcoming-header-text">2026 General Election</span>
+            <span class="upcoming-header-countdown">23 days</span>
+          </div>
+          <div class="upcoming-content">
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #FEE2E2;">&#9888;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Voter Registration</div>
+                <div class="upcoming-detail">Last day to register to vote</div>
+              </div>
+              <div class="upcoming-badge urgent">8 days</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #DBEAFE;">&#128230;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Mail-in Ballot Request</div>
+                <div class="upcoming-detail">Request your mail ballot</div>
+              </div>
+              <div class="upcoming-badge action">Request &rarr;</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #D1FAE5;">&#128197;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Early Voting Begins</div>
+                <div class="upcoming-detail">Vote before Election Day</div>
+              </div>
+              <div class="upcoming-badge days">12 days</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poll Locator - Not Set State -->
+        <div class="section-title">Your Polling Place</div>
+        <div class="poll-card">
+          <div class="poll-not-set">
+            <div class="poll-not-set-text">Enter your address to find your polling location</div>
+            <div class="poll-set-btn">&#128205; Set My Location</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================
+         OPTION 3: "Survey" naming (construction survey)
+         ============================================= -->
+    <div class="mockup-container">
+      <div class="mockup-label">Option 3: "Survey" Step Name</div>
+      <div class="screen">
+        <div class="welcome-section">
+          <div class="greeting">Welcome back!</div>
+          <div class="user-email">voter@example.com</div>
+        </div>
+
+        <!-- Hero Progress Ring - 100% complete! -->
+        <div class="hero-progress" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+          <div class="hero-ring">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="hero-ring-bg" cx="60" cy="60" r="54"/>
+              <circle class="hero-ring-progress" cx="60" cy="60" r="54" style="stroke-dashoffset: 0;"/>
+            </svg>
+            <div class="hero-ring-text">&#10003;</div>
+          </div>
+          <div class="hero-title">Ballot Ready!</div>
+          <div class="hero-subtitle">You're fully prepared to vote</div>
+
+          <div class="steps-row">
+            <div class="step-dot">
+              <div class="step-circle complete">&#10003;</div>
+              <div class="step-label">Survey</div>
+            </div>
+            <div class="step-connector complete"></div>
+            <div class="step-dot">
+              <div class="step-circle complete">&#10003;</div>
+              <div class="step-label">Blueprint</div>
+            </div>
+            <div class="step-connector complete"></div>
+            <div class="step-dot">
+              <div class="step-circle complete">&#10003;</div>
+              <div class="step-label">Build</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="section-title">Your Building Blocks</div>
+        <div class="quick-actions">
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#128270;</div>
+            <div class="quick-action-title">Survey</div>
+            <div class="quick-action-status complete">&#10003; Complete</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#128209;</div>
+            <div class="quick-action-title">Blueprint</div>
+            <div class="quick-action-status complete">&#10003; Complete</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#9745;</div>
+            <div class="quick-action-title">Build</div>
+            <div class="quick-action-status complete">&#10003; 12/12</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#128205;</div>
+            <div class="quick-action-title">Poll Finder</div>
+            <div class="quick-action-status complete">&#10003; Set</div>
+          </div>
+        </div>
+
+        <!-- Election + Deadlines Card -->
+        <div class="upcoming-card">
+          <div class="upcoming-header">
+            <span class="upcoming-header-icon">&#128197;</span>
+            <span class="upcoming-header-text">2026 General Election</span>
+            <span class="upcoming-header-countdown">23 days</span>
+          </div>
+          <div class="upcoming-content">
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #D1FAE5;">&#10003;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">You're Registered!</div>
+                <div class="upcoming-detail">San Francisco County</div>
+              </div>
+              <div class="upcoming-badge days" style="background: #D1FAE5; color: #059669;">Verified</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #DBEAFE;">&#128230;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Mail-in Ballot Requested</div>
+                <div class="upcoming-detail">Arriving by Oct 20</div>
+              </div>
+              <div class="upcoming-badge days">Sent</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #D1FAE5;">&#128197;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Early Voting Available</div>
+                <div class="upcoming-detail">You can vote now!</div>
+              </div>
+              <div class="upcoming-badge action">Vote Now &rarr;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poll Locator with location set -->
+        <div class="section-title">Your Polling Place</div>
+        <div class="poll-card">
+          <div class="poll-header">
+            <div class="poll-icon">&#128205;</div>
+            <div>
+              <div class="poll-title">City Hall - Room 48</div>
+              <div class="poll-subtitle">0.3 miles from your address</div>
+            </div>
+          </div>
+          <div class="poll-actions">
+            <div class="poll-action primary">&#128204; Get Directions</div>
+            <div class="poll-action">&#128221; View Ballot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Naming comparison -->
+  <h2 class="design-title">Step Naming Options</h2>
+  <p class="design-subtitle">All building-themed to match "Ballot Builder"</p>
+
+  <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div style="background: white; border-radius: 16px; padding: 24px; text-align: center;">
+        <div style="font-size: 40px; margin-bottom: 12px;">&#128270;</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Discover</h3>
+        <p style="font-size: 13px; color: #666; line-height: 1.5;">Discover your values and priorities through the smart assessment</p>
+        <div style="margin-top: 12px; padding: 8px; background: #F3F4F6; border-radius: 8px; font-size: 12px; color: #6B7280;">
+          Discover → Blueprint → Build
+        </div>
+      </div>
+      <div style="background: white; border-radius: 16px; padding: 24px; text-align: center; border: 2px solid #7C3AED;">
+        <div style="font-size: 40px; margin-bottom: 12px;">&#127959;</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #7C3AED;">Foundation</h3>
+        <p style="font-size: 13px; color: #666; line-height: 1.5;">Lay the foundation for your ballot by understanding your values</p>
+        <div style="margin-top: 12px; padding: 8px; background: #7C3AED; border-radius: 8px; font-size: 12px; color: white;">
+          Foundation → Blueprint → Build
+        </div>
+        <div style="margin-top: 8px; font-size: 11px; color: #7C3AED; font-weight: 600;">RECOMMENDED</div>
+      </div>
+      <div style="background: white; border-radius: 16px; padding: 24px; text-align: center;">
+        <div style="font-size: 40px; margin-bottom: 12px;">&#128270;</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Survey</h3>
+        <p style="font-size: 13px; color: #666; line-height: 1.5;">Survey your political landscape before building (like land surveying)</p>
+        <div style="margin-top: 12px; padding: 8px; background: #F3F4F6; border-radius: 8px; font-size: 12px; color: #6B7280;">
+          Survey → Blueprint → Build
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

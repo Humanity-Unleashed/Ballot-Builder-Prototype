@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Dashboard - Design Options</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+
+    .design-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      margin: 20px 0 10px;
+    }
+
+    .design-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .mockup-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .mockup-container {
+      width: 375px;
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .mockup-label {
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      color: white;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .screen {
+      background: #F9FAFB;
+      min-height: 700px;
+      padding-bottom: 20px;
+    }
+
+    /* =============================================
+       COMMON STYLES
+       ============================================= */
+
+    .welcome-section {
+      padding: 20px;
+      background: white;
+    }
+
+    .greeting {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .user-email {
+      font-size: 14px;
+      color: #6B7280;
+      margin-top: 4px;
+    }
+
+    /* =============================================
+       DESIGN A: Card-Based Dashboard
+       ============================================= */
+
+    .election-banner {
+      margin: 16px;
+      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+      border-radius: 16px;
+      padding: 20px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .election-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    .election-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    .election-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 8px 0 4px;
+    }
+
+    .election-date {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .countdown-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .countdown-item {
+      text-align: center;
+    }
+
+    .countdown-number {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      padding: 0 16px;
+      margin: 20px 0 12px;
+    }
+
+    /* Progress Cards */
+    .progress-card {
+      margin: 0 16px 12px;
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #E5E7EB;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .card-icon.purple { background: rgba(124, 58, 237, 0.12); }
+    .card-icon.blue { background: rgba(59, 130, 246, 0.12); }
+    .card-icon.green { background: rgba(16, 185, 129, 0.12); }
+
+    .card-title-row {
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .card-status {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .card-status.complete {
+      color: #10B981;
+      font-weight: 600;
+    }
+
+    .card-status.in-progress {
+      color: #F59E0B;
+      font-weight: 600;
+    }
+
+    .progress-bar-container {
+      margin: 12px 0;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #E5E7EB;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .progress-fill.purple { background: #7C3AED; }
+    .progress-fill.blue { background: #3B82F6; }
+    .progress-fill.green { background: #10B981; }
+
+    .progress-text {
+      font-size: 12px;
+      color: #9CA3AF;
+      margin-top: 6px;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background: #F3F4F6;
+      border-radius: 10px;
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .card-action.primary {
+      background: #7C3AED;
+      color: white;
+    }
+
+    /* Poll Locator Card */
+    .poll-card {
+      margin: 0 16px 12px;
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #E5E7EB;
+    }
+
+    .poll-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .poll-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(239, 68, 68, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .poll-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .poll-subtitle {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .poll-location {
+      background: #F9FAFB;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .poll-location-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .poll-location-address {
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .poll-location-hours {
+      font-size: 12px;
+      color: #10B981;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .poll-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .poll-action {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background: #F3F4F6;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .poll-action.primary {
+      background: #EF4444;
+      color: white;
+    }
+
+    .address-input-section {
+      margin-bottom: 12px;
+    }
+
+    .address-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #E5E7EB;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .address-input:focus {
+      border-color: #7C3AED;
+    }
+
+    .use-location-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 8px;
+      font-size: 13px;
+      color: #7C3AED;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* =============================================
+       DESIGN B: Compact Dashboard
+       ============================================= */
+
+    .compact-election {
+      margin: 16px;
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #E5E7EB;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .compact-countdown {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .compact-countdown-number {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .compact-countdown-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .compact-election-info {
+      flex: 1;
+    }
+
+    .compact-election-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .compact-election-date {
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .compact-registration {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #FEF3C7;
+      color: #D97706;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+
+    /* Mini Progress Cards */
+    .mini-cards-row {
+      display: flex;
+      gap: 10px;
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .mini-card {
+      flex: 1;
+      background: white;
+      border-radius: 14px;
+      padding: 14px;
+      border: 1px solid #E5E7EB;
+      text-align: center;
+    }
+
+    .mini-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .mini-card-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #6B7280;
+      margin-bottom: 4px;
+    }
+
+    .mini-card-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111;
+    }
+
+    .mini-card-value span {
+      font-size: 12px;
+      font-weight: 600;
+      color: #9CA3AF;
+    }
+
+    .mini-card-status {
+      font-size: 11px;
+      color: #10B981;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .mini-card-status.warning {
+      color: #F59E0B;
+    }
+
+    .mini-card-status.inactive {
+      color: #9CA3AF;
+    }
+
+    /* Action List */
+    .action-list {
+      margin: 0 16px;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: white;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      border: 1px solid #E5E7EB;
+      cursor: pointer;
+    }
+
+    .action-item:hover {
+      border-color: #7C3AED;
+      background: #FAFAFF;
+    }
+
+    .action-item-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .action-item-content {
+      flex: 1;
+    }
+
+    .action-item-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .action-item-desc {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .action-item-chevron {
+      color: #9CA3AF;
+      font-size: 20px;
+    }
+
+    /* =============================================
+       DESIGN C: Visual Progress Dashboard
+       ============================================= */
+
+    .hero-progress {
+      margin: 16px;
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      border-radius: 20px;
+      padding: 24px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-progress::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 150px;
+      height: 150px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    .hero-progress::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      right: -10%;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .hero-ring {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 16px;
+      position: relative;
+    }
+
+    .hero-ring svg {
+      transform: rotate(-90deg);
+    }
+
+    .hero-ring-bg {
+      fill: none;
+      stroke: rgba(255,255,255,0.2);
+      stroke-width: 8;
+    }
+
+    .hero-ring-progress {
+      fill: none;
+      stroke: white;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 339.292;
+      stroke-dashoffset: 135.717; /* 60% complete: 339.292 * 0.4 */
+    }
+
+    .hero-ring-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .hero-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    /* Step indicators */
+    .steps-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .step-dot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .step-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .step-circle.complete {
+      background: white;
+      color: #7C3AED;
+    }
+
+    .step-circle.current {
+      background: white;
+      color: #7C3AED;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+    }
+
+    .step-label {
+      font-size: 10px;
+      opacity: 0.8;
+    }
+
+    .step-connector {
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin-top: 15px;
+    }
+
+    .step-connector.complete {
+      background: white;
+    }
+
+    /* Quick Actions Grid */
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .quick-action {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #E5E7EB;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .quick-action:hover {
+      border-color: #7C3AED;
+    }
+
+    .quick-action-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .quick-action-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .quick-action-status {
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .quick-action-status.highlight {
+      color: #10B981;
+      font-weight: 600;
+    }
+
+    /* Upcoming section */
+    .upcoming-card {
+      margin: 0 16px 16px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #E5E7EB;
+    }
+
+    .upcoming-header {
+      background: #FEF3C7;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .upcoming-header-icon {
+      font-size: 16px;
+    }
+
+    .upcoming-header-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #D97706;
+    }
+
+    .upcoming-content {
+      padding: 16px;
+    }
+
+    .upcoming-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    .upcoming-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .upcoming-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .upcoming-info {
+      flex: 1;
+    }
+
+    .upcoming-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .upcoming-detail {
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+
+    .upcoming-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .upcoming-badge.days {
+      background: #DBEAFE;
+      color: #1D4ED8;
+    }
+
+    .divider {
+      height: 8px;
+      background: #F3F4F6;
+    }
+
+  </style>
+</head>
+<body>
+  <h1 class="design-title">Home Dashboard Redesign</h1>
+  <p class="design-subtitle">Three design options for the new home page</p>
+
+  <div class="mockup-row">
+    <!-- =============================================
+         DESIGN A: Card-Based Dashboard
+         ============================================= -->
+    <div class="mockup-container">
+      <div class="mockup-label">Design A: Card-Based Dashboard</div>
+      <div class="screen">
+        <div class="welcome-section">
+          <div class="greeting">Welcome back!</div>
+          <div class="user-email">voter@example.com</div>
+        </div>
+
+        <!-- Election Countdown Banner -->
+        <div class="election-banner">
+          <div class="election-label">Next Election</div>
+          <div class="election-name">2026 General Election</div>
+          <div class="election-date">Tuesday, November 3, 2026</div>
+          <div class="countdown-row">
+            <div class="countdown-item">
+              <div class="countdown-number">23</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">14</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">32</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Your Progress</div>
+
+        <!-- Smart Assessment Card -->
+        <div class="progress-card">
+          <div class="card-header">
+            <div class="card-icon purple">&#10024;</div>
+            <div class="card-title-row">
+              <div class="card-title">Smart Assessment</div>
+              <div class="card-status complete">&#10003; Complete</div>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress-fill purple" style="width: 100%;"></div>
+            </div>
+            <div class="progress-text">12 questions answered</div>
+          </div>
+          <div class="card-action">View Results &#8594;</div>
+        </div>
+
+        <!-- Blueprint Card -->
+        <div class="progress-card">
+          <div class="card-header">
+            <div class="card-icon blue">&#128209;</div>
+            <div class="card-title-row">
+              <div class="card-title">Civic Blueprint</div>
+              <div class="card-status in-progress">In Progress</div>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress-fill blue" style="width: 60%;"></div>
+            </div>
+            <div class="progress-text">3 of 5 domains fine-tuned</div>
+          </div>
+          <div class="card-action primary">Continue Fine-tuning &#8594;</div>
+        </div>
+
+        <!-- Ballot Builder Card -->
+        <div class="progress-card">
+          <div class="card-header">
+            <div class="card-icon green">&#9745;</div>
+            <div class="card-title-row">
+              <div class="card-title">Ballot Builder</div>
+              <div class="card-status">Not Started</div>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress-fill green" style="width: 0%;"></div>
+            </div>
+            <div class="progress-text">0 of 12 decisions made</div>
+          </div>
+          <div class="card-action">Start Building &#8594;</div>
+        </div>
+
+        <div class="section-title">Find Your Polling Place</div>
+
+        <!-- Poll Locator -->
+        <div class="poll-card">
+          <div class="address-input-section">
+            <input type="text" class="address-input" placeholder="Enter your address..." value="123 Main St, San Francisco, CA">
+          </div>
+          <div class="poll-location">
+            <div class="poll-location-name">City Hall - Room 48</div>
+            <div class="poll-location-address">1 Dr Carlton B Goodlett Pl<br>San Francisco, CA 94102</div>
+            <div class="poll-location-hours">&#128339; Open 7am - 8pm on Election Day</div>
+          </div>
+          <div class="poll-actions">
+            <div class="poll-action primary">&#128204; Get Directions</div>
+            <div class="poll-action">&#128197; Early Voting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================
+         DESIGN B: Compact Dashboard
+         ============================================= -->
+    <div class="mockup-container">
+      <div class="mockup-label">Design B: Compact Dashboard</div>
+      <div class="screen">
+        <div class="welcome-section">
+          <div class="greeting">Welcome back!</div>
+          <div class="user-email">voter@example.com</div>
+        </div>
+
+        <!-- Compact Election Info -->
+        <div class="compact-election">
+          <div class="compact-countdown">
+            <div class="compact-countdown-number">23</div>
+            <div class="compact-countdown-label">days</div>
+          </div>
+          <div class="compact-election-info">
+            <div class="compact-election-name">2026 General Election</div>
+            <div class="compact-election-date">Tuesday, November 3, 2026</div>
+            <div class="compact-registration">&#9888; Register by Oct 19</div>
+          </div>
+        </div>
+
+        <!-- Mini Progress Cards -->
+        <div class="section-title">Your Voting Journey</div>
+        <div class="mini-cards-row">
+          <div class="mini-card">
+            <div class="mini-card-icon purple" style="background: rgba(124,58,237,0.12);">&#10024;</div>
+            <div class="mini-card-title">Assessment</div>
+            <div class="mini-card-value">100<span>%</span></div>
+            <div class="mini-card-status">Complete</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-icon blue" style="background: rgba(59,130,246,0.12);">&#128209;</div>
+            <div class="mini-card-title">Blueprint</div>
+            <div class="mini-card-value">3<span>/5</span></div>
+            <div class="mini-card-status warning">In Progress</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-icon green" style="background: rgba(16,185,129,0.12);">&#9745;</div>
+            <div class="mini-card-title">Ballot</div>
+            <div class="mini-card-value">0<span>/12</span></div>
+            <div class="mini-card-status inactive">Not Started</div>
+          </div>
+        </div>
+
+        <div class="section-title">Quick Actions</div>
+        <div class="action-list">
+          <div class="action-item">
+            <div class="action-item-icon purple" style="background: rgba(124,58,237,0.12);">&#128209;</div>
+            <div class="action-item-content">
+              <div class="action-item-title">Continue Fine-tuning</div>
+              <div class="action-item-desc">2 domains left to refine</div>
+            </div>
+            <span class="action-item-chevron">&#8250;</span>
+          </div>
+          <div class="action-item">
+            <div class="action-item-icon green" style="background: rgba(16,185,129,0.12);">&#9745;</div>
+            <div class="action-item-content">
+              <div class="action-item-title">Build Your Ballot</div>
+              <div class="action-item-desc">12 contests to decide</div>
+            </div>
+            <span class="action-item-chevron">&#8250;</span>
+          </div>
+          <div class="action-item">
+            <div class="action-item-icon" style="background: rgba(239,68,68,0.12);">&#128205;</div>
+            <div class="action-item-content">
+              <div class="action-item-title">Find Polling Place</div>
+              <div class="action-item-desc">Get directions to vote</div>
+            </div>
+            <span class="action-item-chevron">&#8250;</span>
+          </div>
+          <div class="action-item">
+            <div class="action-item-icon" style="background: rgba(59,130,246,0.12);">&#128197;</div>
+            <div class="action-item-content">
+              <div class="action-item-title">Early Voting Options</div>
+              <div class="action-item-desc">Vote before Nov 3</div>
+            </div>
+            <span class="action-item-chevron">&#8250;</span>
+          </div>
+        </div>
+
+        <div class="section-title">Upcoming Deadlines</div>
+        <div class="upcoming-card">
+          <div class="upcoming-content">
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #FEF3C7;">&#128221;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Voter Registration</div>
+                <div class="upcoming-detail">Last day to register</div>
+              </div>
+              <div class="upcoming-badge days">15 days</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #DBEAFE;">&#128230;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Mail Ballot Request</div>
+                <div class="upcoming-detail">Request vote-by-mail</div>
+              </div>
+              <div class="upcoming-badge days">10 days</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #D1FAE5;">&#128197;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Early Voting Begins</div>
+                <div class="upcoming-detail">Vote in person early</div>
+              </div>
+              <div class="upcoming-badge days">8 days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================
+         DESIGN C: Visual Progress Dashboard
+         ============================================= -->
+    <div class="mockup-container">
+      <div class="mockup-label">Design C: Visual Progress</div>
+      <div class="screen">
+        <div class="welcome-section">
+          <div class="greeting">Welcome back!</div>
+          <div class="user-email">voter@example.com</div>
+        </div>
+
+        <!-- Hero Progress Ring -->
+        <div class="hero-progress">
+          <div class="hero-ring">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="hero-ring-bg" cx="60" cy="60" r="54"/>
+              <circle class="hero-ring-progress" cx="60" cy="60" r="54"/>
+            </svg>
+            <div class="hero-ring-text">60%</div>
+          </div>
+          <div class="hero-title">Ballot Ready</div>
+          <div class="hero-subtitle">Complete your journey to be 100% prepared</div>
+
+          <div class="steps-row">
+            <div class="step-dot">
+              <div class="step-circle complete">&#10003;</div>
+              <div class="step-label">Assess</div>
+            </div>
+            <div class="step-connector complete"></div>
+            <div class="step-dot">
+              <div class="step-circle current">2</div>
+              <div class="step-label">Blueprint</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-dot">
+              <div class="step-circle">3</div>
+              <div class="step-label">Build</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="section-title">Continue Your Journey</div>
+        <div class="quick-actions">
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(124,58,237,0.12);">&#10024;</div>
+            <div class="quick-action-title">Assessment</div>
+            <div class="quick-action-status highlight">&#10003; Complete</div>
+          </div>
+          <div class="quick-action" style="border-color: #7C3AED; background: #FAFAFF;">
+            <div class="quick-action-icon" style="background: rgba(124,58,237,0.12);">&#128209;</div>
+            <div class="quick-action-title">Blueprint</div>
+            <div class="quick-action-status">3/5 domains</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(16,185,129,0.12);">&#9745;</div>
+            <div class="quick-action-title">Ballot</div>
+            <div class="quick-action-status">0/12 decided</div>
+          </div>
+          <div class="quick-action">
+            <div class="quick-action-icon" style="background: rgba(239,68,68,0.12);">&#128205;</div>
+            <div class="quick-action-title">Poll Finder</div>
+            <div class="quick-action-status">Find location</div>
+          </div>
+        </div>
+
+        <!-- Upcoming Alert -->
+        <div class="upcoming-card">
+          <div class="upcoming-header">
+            <span class="upcoming-header-icon">&#9888;</span>
+            <span class="upcoming-header-text">Important Dates Coming Up</span>
+          </div>
+          <div class="upcoming-content">
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white;">&#128197;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">2026 General Election</div>
+                <div class="upcoming-detail">Tuesday, November 3, 2026</div>
+              </div>
+              <div class="upcoming-badge days">23 days</div>
+            </div>
+            <div class="upcoming-row">
+              <div class="upcoming-icon" style="background: #FEF3C7;">&#128221;</div>
+              <div class="upcoming-info">
+                <div class="upcoming-title">Registration Deadline</div>
+                <div class="upcoming-detail">Last day to register</div>
+              </div>
+              <div class="upcoming-badge days">15 days</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poll Locator Mini -->
+        <div class="section-title">Your Polling Place</div>
+        <div class="poll-card">
+          <div class="poll-header">
+            <div class="poll-icon">&#128205;</div>
+            <div>
+              <div class="poll-title">City Hall - Room 48</div>
+              <div class="poll-subtitle">0.3 miles away</div>
+            </div>
+          </div>
+          <div class="poll-actions">
+            <div class="poll-action primary">&#128204; Directions</div>
+            <div class="poll-action">&#128197; Hours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="design-title">Feature Breakdown</h2>
+  <p class="design-subtitle">Key components across all designs</p>
+
+  <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <div style="background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px;">
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">1. Tab Status Cards</h3>
+      <ul style="line-height: 1.8; color: #666;">
+        <li><strong>Smart Assessment:</strong> Shows completion status, questions answered, and confidence score</li>
+        <li><strong>Blueprint:</strong> Shows domains configured, fine-tuning progress</li>
+        <li><strong>Ballot Builder:</strong> Shows contests decided, measures reviewed</li>
+      </ul>
+    </div>
+
+    <div style="background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px;">
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">2. Election Countdown</h3>
+      <ul style="line-height: 1.8; color: #666;">
+        <li>Days/hours/minutes until Election Day</li>
+        <li>Election name and type (Primary, General, Special)</li>
+        <li>Registration deadline warning</li>
+        <li>Early voting dates</li>
+      </ul>
+    </div>
+
+    <div style="background: white; border-radius: 16px; padding: 24px; margin-bottom: 20px;">
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">3. Poll Locator</h3>
+      <ul style="line-height: 1.8; color: #666;">
+        <li>Address input or GPS location</li>
+        <li>Nearest polling place with address</li>
+        <li>Operating hours</li>
+        <li>Directions link (Google Maps integration)</li>
+        <li>Early voting location option</li>
+      </ul>
+    </div>
+
+    <div style="background: white; border-radius: 16px; padding: 24px;">
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">API Options for Poll Locator</h3>
+      <ul style="line-height: 1.8; color: #666;">
+        <li><strong>Google Civic Information API:</strong> Free, reliable, official data</li>
+        <li><strong>Vote.org API:</strong> Nonprofit, election-focused</li>
+        <li><strong>State Election Board APIs:</strong> Direct from source, varies by state</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

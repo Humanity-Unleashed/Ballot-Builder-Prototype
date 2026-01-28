@@ -426,7 +426,7 @@
       line-height: 1.5;
     }
 
-    /* Simple Scale */
+    /* Bi-Directional Scale with Percentages */
     .scale-section {
       margin-bottom: 20px;
     }
@@ -437,24 +437,39 @@
       margin-bottom: 8px;
     }
 
-    .scale-bar {
-      position: relative;
-      height: 8px;
-      background: linear-gradient(90deg, #a855f7 0%, #e5e7eb 50%, #14b8a6 100%);
-      border-radius: 4px;
+    .scale-percentages {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .scale-percent {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .scale-percent.left { color: #a855f7; }
+    .scale-percent.right { color: #14b8a6; }
+
+    .scale-bar-container {
+      display: flex;
+      gap: 2px;
+      height: 12px;
       margin-bottom: 8px;
     }
 
-    .scale-marker {
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      background: white;
-      border: 4px solid #667eea;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    .scale-bar-left {
+      height: 100%;
+      background: #a855f7;
+      border-radius: 6px 0 0 6px;
+      transition: width 0.3s ease;
+    }
+
+    .scale-bar-right {
+      height: 100%;
+      background: #14b8a6;
+      border-radius: 0 6px 6px 0;
+      transition: width 0.3s ease;
     }
 
     .scale-labels {
@@ -467,6 +482,81 @@
 
     .scale-labels .left { color: #a855f7; }
     .scale-labels .right { color: #14b8a6; }
+
+    /* Confidence Indicator */
+    .confidence-section {
+      background: #fef3c7;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .confidence-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .confidence-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fcd34d;
+    }
+
+    .confidence-dot.filled {
+      background: #f59e0b;
+    }
+
+    .confidence-text {
+      font-size: 12px;
+      color: #92400e;
+      font-weight: 500;
+    }
+
+    /* Trade-off Visualization */
+    .tradeoff-section {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tradeoff-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .tradeoff-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .tradeoff-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .tradeoff-icon {
+      font-size: 14px;
+    }
+
+    .tradeoff-up {
+      color: #059669;
+    }
+
+    .tradeoff-down {
+      color: #dc2626;
+    }
 
     /* Social Comparison */
     .social-comparison {
@@ -907,15 +997,46 @@
                   </div>
                 </div>
 
-                <!-- Simple Scale -->
+                <!-- Bi-Directional Scale with Percentages -->
                 <div class="scale-section">
                   <div class="scale-label">Where you stand:</div>
-                  <div class="scale-bar">
-                    <div class="scale-marker" style="left: 30%;"></div>
+                  <div class="scale-percentages">
+                    <span class="scale-percent left">70%</span>
+                    <span class="scale-percent right">30%</span>
+                  </div>
+                  <div class="scale-bar-container">
+                    <div class="scale-bar-left" style="width: 70%;"></div>
+                    <div class="scale-bar-right" style="width: 30%;"></div>
                   </div>
                   <div class="scale-labels">
                     <span class="left">More Public</span>
                     <span class="right">More Private</span>
+                  </div>
+                </div>
+
+                <!-- Confidence Indicator -->
+                <div class="confidence-section">
+                  <div class="confidence-dots">
+                    <div class="confidence-dot filled"></div>
+                    <div class="confidence-dot filled"></div>
+                    <div class="confidence-dot filled"></div>
+                    <div class="confidence-dot"></div>
+                  </div>
+                  <span class="confidence-text">High confidence based on 8 related answers</span>
+                </div>
+
+                <!-- Trade-off Visualization -->
+                <div class="tradeoff-section">
+                  <div class="tradeoff-label">This position means:</div>
+                  <div class="tradeoff-items">
+                    <div class="tradeoff-item tradeoff-up">
+                      <span class="tradeoff-icon">↑</span>
+                      <span>More universal access to coverage</span>
+                    </div>
+                    <div class="tradeoff-item tradeoff-down">
+                      <span class="tradeoff-icon">↓</span>
+                      <span>Higher government spending & taxes</span>
+                    </div>
                   </div>
                 </div>
 

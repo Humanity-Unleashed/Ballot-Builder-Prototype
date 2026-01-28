@@ -392,6 +392,7 @@
       align-items: center;
       gap: 12px;
       margin-top: 8px;
+      flex-wrap: wrap;
     }
 
     .belief-importance {
@@ -410,9 +411,77 @@
       background: #667eea;
     }
 
+    .belief-confidence {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #fef3c7;
+      padding: 3px 8px;
+      border-radius: 10px;
+    }
+
+    .confidence-mini-dots {
+      display: flex;
+      gap: 2px;
+    }
+
+    .confidence-mini-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #fcd34d;
+    }
+
+    .confidence-mini-dot.filled {
+      background: #f59e0b;
+    }
+
+    .confidence-mini-label {
+      font-size: 9px;
+      color: #92400e;
+      font-weight: 600;
+    }
+
     .belief-source {
       font-size: 11px;
       color: #9ca3af;
+    }
+
+    /* Belief Scale Bar (bi-directional) */
+    .belief-scale {
+      margin-top: 10px;
+    }
+
+    .belief-scale-percentages {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+
+    .belief-percent {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .belief-percent-left { color: #a855f7; }
+    .belief-percent-right { color: #14b8a6; }
+
+    .belief-scale-bar {
+      display: flex;
+      gap: 1px;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .belief-bar-left {
+      height: 100%;
+      background: #a855f7;
+    }
+
+    .belief-bar-right {
+      height: 100%;
+      background: #14b8a6;
     }
 
     /* Expand Button */
@@ -740,6 +809,16 @@
                     <div class="belief-text">
                       Government should offer a public insurance option that competes with private plans
                     </div>
+                    <div class="belief-scale">
+                      <div class="belief-scale-percentages">
+                        <span class="belief-percent belief-percent-left">70%</span>
+                        <span class="belief-percent belief-percent-right">30%</span>
+                      </div>
+                      <div class="belief-scale-bar">
+                        <div class="belief-bar-left" style="width: 70%;"></div>
+                        <div class="belief-bar-right" style="width: 30%;"></div>
+                      </div>
+                    </div>
                     <div class="belief-meta">
                       <div class="belief-importance">
                         <div class="importance-dot filled"></div>
@@ -748,7 +827,15 @@
                         <div class="importance-dot filled"></div>
                         <div class="importance-dot"></div>
                       </div>
-                      <span class="belief-source">From assessment</span>
+                      <div class="belief-confidence">
+                        <div class="confidence-mini-dots">
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot"></div>
+                        </div>
+                        <span class="confidence-mini-label">High</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -763,6 +850,16 @@
                     <div class="belief-text">
                       Aggressive action needed with major government investment in clean energy
                     </div>
+                    <div class="belief-scale">
+                      <div class="belief-scale-percentages">
+                        <span class="belief-percent belief-percent-left">75%</span>
+                        <span class="belief-percent belief-percent-right">25%</span>
+                      </div>
+                      <div class="belief-scale-bar">
+                        <div class="belief-bar-left" style="width: 75%;"></div>
+                        <div class="belief-bar-right" style="width: 25%;"></div>
+                      </div>
+                    </div>
                     <div class="belief-meta">
                       <div class="belief-importance">
                         <div class="importance-dot filled"></div>
@@ -771,7 +868,15 @@
                         <div class="importance-dot filled"></div>
                         <div class="importance-dot"></div>
                       </div>
-                      <span class="belief-source">From assessment</span>
+                      <div class="belief-confidence">
+                        <div class="confidence-mini-dots">
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot filled"></div>
+                        </div>
+                        <span class="confidence-mini-label">Very High</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -786,6 +891,16 @@
                     <div class="belief-text">
                       Balance local control with housing supply needs
                     </div>
+                    <div class="belief-scale">
+                      <div class="belief-scale-percentages">
+                        <span class="belief-percent belief-percent-left">50%</span>
+                        <span class="belief-percent belief-percent-right">50%</span>
+                      </div>
+                      <div class="belief-scale-bar">
+                        <div class="belief-bar-left" style="width: 50%;"></div>
+                        <div class="belief-bar-right" style="width: 50%;"></div>
+                      </div>
+                    </div>
                     <div class="belief-meta">
                       <div class="belief-importance">
                         <div class="importance-dot filled"></div>
@@ -794,7 +909,15 @@
                         <div class="importance-dot"></div>
                         <div class="importance-dot"></div>
                       </div>
-                      <span class="belief-source">Mixed views</span>
+                      <div class="belief-confidence">
+                        <div class="confidence-mini-dots">
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot filled"></div>
+                          <div class="confidence-mini-dot"></div>
+                          <div class="confidence-mini-dot"></div>
+                        </div>
+                        <span class="confidence-mini-label">Moderate</span>
+                      </div>
                     </div>
                   </div>
                 </div>
