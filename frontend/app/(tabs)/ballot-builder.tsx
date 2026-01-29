@@ -415,44 +415,6 @@ function computeCandidateMatches(
 // Components
 // ===========================================
 
-// --- Category & Progress Header ---
-function CategoryHeader({
-  category,
-  currentIndex,
-  total,
-}: {
-  category: Category;
-  currentIndex: number;
-  total: number;
-}) {
-  const progress = ((currentIndex + 1) / total) * 100;
-
-  return (
-    <View style={catStyles.container}>
-      <View style={catStyles.row}>
-        <View style={[catStyles.badge, { backgroundColor: category.color + '20' }]}>
-          <Ionicons name={category.icon as any} size={16} color={category.color} />
-          <Text style={[catStyles.badgeText, { color: category.color }]}>{category.name}</Text>
-        </View>
-        <Text style={catStyles.counter}>{currentIndex + 1} of {total}</Text>
-      </View>
-      <View style={catStyles.progressBg}>
-        <View style={[catStyles.progressFill, { width: `${progress}%`, backgroundColor: category.color }]} />
-      </View>
-    </View>
-  );
-}
-
-const catStyles = StyleSheet.create({
-  container: { gap: 8 },
-  row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  badge: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20, gap: 6 },
-  badgeText: { fontSize: 13, fontWeight: '600' },
-  counter: { fontSize: 13, color: Colors.gray[500], fontWeight: '500' },
-  progressBg: { height: 4, backgroundColor: Colors.gray[200], borderRadius: 2, overflow: 'hidden' },
-  progressFill: { height: '100%', borderRadius: 2 },
-});
-
 // --- Ballot Item Header ---
 function BallotItemHeader({ item }: { item: BallotItem }) {
   return (
@@ -2089,9 +2051,6 @@ export default function BallotBuilderScreen() {
   }, [profile, spec]);
 
   const currentItem = ballotItems[currentIndex];
-  const currentCategory = categories.find(c => c.id === currentItem?.categoryId) || categories[0];
-  const categoryItems = ballotItems.filter(i => i.categoryId === currentCategory?.id);
-  const categoryIndex = categoryItems.findIndex(i => i.id === currentItem?.id);
 
   // Compute recommendations
   const propositionRec = useMemo(() => {
@@ -2268,12 +2227,6 @@ export default function BallotBuilderScreen() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <CategoryHeader
-          category={currentCategory}
-          currentIndex={categoryIndex}
-          total={categoryItems.length}
-        />
-
         <BallotItemHeader item={currentItem} />
 
         {/* Recommendation Section */}
