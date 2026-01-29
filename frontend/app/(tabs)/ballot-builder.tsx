@@ -468,11 +468,11 @@ function BallotItemHeader({ item }: { item: BallotItem }) {
 }
 
 const headerStyles = StyleSheet.create({
-  container: { gap: 12 },
-  title: { fontSize: 13, fontWeight: '700', color: Colors.primary, textTransform: 'uppercase', letterSpacing: 0.5 },
-  question: { fontSize: 18, fontWeight: '700', color: Colors.gray[900], lineHeight: 26 },
-  infoBox: { flexDirection: 'row', backgroundColor: Colors.primary + '10', padding: 12, borderRadius: 12, gap: 10, alignItems: 'flex-start' },
-  infoText: { flex: 1, fontSize: 14, color: Colors.gray[700], lineHeight: 21 },
+  container: { gap: 8 },
+  title: { fontSize: 12, fontWeight: '700', color: Colors.primary, textTransform: 'uppercase', letterSpacing: 0.5 },
+  question: { fontSize: 16, fontWeight: '700', color: Colors.gray[900], lineHeight: 22 },
+  infoBox: { flexDirection: 'row', backgroundColor: Colors.primary + '10', padding: 10, borderRadius: 10, gap: 8, alignItems: 'flex-start' },
+  infoText: { flex: 1, fontSize: 13, color: Colors.gray[700], lineHeight: 19 },
 });
 
 // --- Recommendation Banner (for propositions) ---
@@ -645,26 +645,14 @@ function RecommendationBanner({
 
   if (!recommendation.vote || recommendation.confidence < 0.2) {
     return (
-      <View style={[recStyles.banner, recStyles.neutralBanner]}>
-        <View style={recStyles.bannerHeader}>
-          <Ionicons name="help-circle-outline" size={20} color={Colors.gray[500]} />
-          <Text style={recStyles.neutralTitle}>Close Call</Text>
-        </View>
-        <Text style={recStyles.bannerText}>{recommendation.explanation}</Text>
-
-        {/* How we calculated - opens bottom sheet */}
+      <View style={recStyles.inline}>
+        <Ionicons name="help-circle-outline" size={16} color={Colors.gray[500]} />
+        <Text style={recStyles.inlineTextNeutral}>Close call — your values don't clearly favor either side</Text>
         {recommendation.breakdown.length > 0 && (
-          <TouchableOpacity
-            style={recStyles.howButton}
-            onPress={() => setShowSheet(true)}
-            activeOpacity={0.7}
-          >
-            <Ionicons name="calculator-outline" size={14} color="#3B82F6" />
-            <Text style={recStyles.howButtonText}>How we calculated this</Text>
-            <Ionicons name="open-outline" size={14} color="#3B82F6" />
+          <TouchableOpacity onPress={() => setShowSheet(true)}>
+            <Text style={recStyles.inlineLink}>Details ›</Text>
           </TouchableOpacity>
         )}
-
         <PropositionBreakdownSheet
           visible={showSheet}
           recommendation={recommendation}
@@ -675,37 +663,18 @@ function RecommendationBanner({
   }
 
   const isYes = recommendation.vote === 'yes';
-  const confidenceLabel = recommendation.confidence > 0.7 ? 'Strong' : recommendation.confidence > 0.4 ? 'Moderate' : 'Slight';
 
   return (
-    <View style={[recStyles.banner, isYes ? recStyles.yesBanner : recStyles.noBanner]}>
-      <View style={recStyles.bannerHeader}>
-        <Ionicons name="sparkles" size={20} color={isYes ? '#16A34A' : '#DC2626'} />
-        <Text style={[recStyles.bannerTitle, { color: isYes ? '#16A34A' : '#DC2626' }]}>
-          {confidenceLabel} recommendation: Vote {isYes ? 'YES' : 'NO'}
-        </Text>
-      </View>
-      <Text style={recStyles.bannerText}>{recommendation.explanation}</Text>
-      <View style={recStyles.confidenceBar}>
-        <View style={[
-          recStyles.confidenceFill,
-          { width: `${recommendation.confidence * 100}%`, backgroundColor: isYes ? '#22C55E' : '#EF4444' }
-        ]} />
-      </View>
-
-      {/* How we calculated - opens bottom sheet */}
+    <View style={[recStyles.inline, isYes ? recStyles.inlineYes : recStyles.inlineNo]}>
+      <Ionicons name="sparkles" size={16} color={isYes ? '#16A34A' : '#DC2626'} />
+      <Text style={[recStyles.inlineText, { color: isYes ? '#16A34A' : '#DC2626' }]}>
+        Aligns with your values — Vote {isYes ? 'YES' : 'NO'}
+      </Text>
       {recommendation.breakdown.length > 0 && (
-        <TouchableOpacity
-          style={recStyles.howButton}
-          onPress={() => setShowSheet(true)}
-          activeOpacity={0.7}
-        >
-          <Ionicons name="calculator-outline" size={14} color="#3B82F6" />
-          <Text style={recStyles.howButtonText}>How we calculated this</Text>
-          <Ionicons name="open-outline" size={14} color="#3B82F6" />
+        <TouchableOpacity onPress={() => setShowSheet(true)}>
+          <Text style={recStyles.inlineLink}>Details ›</Text>
         </TouchableOpacity>
       )}
-
       <PropositionBreakdownSheet
         visible={showSheet}
         recommendation={recommendation}
@@ -716,37 +685,20 @@ function RecommendationBanner({
 }
 
 const recStyles = StyleSheet.create({
-  banner: {
-    padding: 16,
-    borderRadius: 14,
-    borderWidth: 2,
-    gap: 10,
-  },
-  yesBanner: { backgroundColor: '#F0FDF4', borderColor: '#86EFAC' },
-  noBanner: { backgroundColor: '#FEF2F2', borderColor: '#FECACA' },
-  neutralBanner: { backgroundColor: Colors.gray[100], borderColor: Colors.gray[200] },
-  bannerHeader: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  bannerTitle: { fontSize: 15, fontWeight: '700', flex: 1, lineHeight: 20 },
-  neutralTitle: { fontSize: 15, fontWeight: '700', color: Colors.gray[600], flex: 1, lineHeight: 20 },
-  bannerText: { fontSize: 14, color: Colors.gray[700], lineHeight: 21 },
-  confidenceBar: { height: 4, backgroundColor: Colors.gray[200], borderRadius: 2, overflow: 'hidden' },
-  confidenceFill: { height: '100%', borderRadius: 2 },
-  // Link to open breakdown sheet (matches candidate compare link)
-  howButton: {
+  inline: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: 6,
-    paddingVertical: 10,
-    marginTop: 4,
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(0,0,0,0.08)',
+    gap: 8,
+    padding: 10,
+    paddingHorizontal: 14,
+    borderRadius: 10,
+    backgroundColor: Colors.gray[100],
   },
-  howButtonText: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: '#3B82F6',
-  },
+  inlineYes: { backgroundColor: '#F0FDF4' },
+  inlineNo: { backgroundColor: '#FEF2F2' },
+  inlineText: { fontSize: 13, fontWeight: '600', flex: 1, lineHeight: 18 },
+  inlineTextNeutral: { fontSize: 13, fontWeight: '600', flex: 1, lineHeight: 18, color: Colors.gray[600] },
+  inlineLink: { fontSize: 12, fontWeight: '600', color: '#3B82F6' },
 });
 
 // --- Proposition Vote Buttons (YES/NO) ---
@@ -778,13 +730,13 @@ function PropositionVoteButtons({
           activeOpacity={0.8}
         >
           {isYesRecommended && selected !== 'yes' && (
-            <View style={voteStyles.recBadge}>
-              <Ionicons name="sparkles" size={12} color="#16A34A" />
+            <View style={voteStyles.recTag}>
+              <Text style={voteStyles.recTagText}>Recommended</Text>
             </View>
           )}
           <Ionicons
             name={selected === 'yes' ? 'checkmark-circle' : 'checkmark-circle-outline'}
-            size={32}
+            size={20}
             color={selected === 'yes' ? '#fff' : '#22C55E'}
           />
           <Text style={[voteStyles.voteText, selected === 'yes' && voteStyles.voteTextSelected]}>
@@ -803,13 +755,13 @@ function PropositionVoteButtons({
           activeOpacity={0.8}
         >
           {isNoRecommended && selected !== 'no' && (
-            <View style={[voteStyles.recBadge, { backgroundColor: '#FEE2E2' }]}>
-              <Ionicons name="sparkles" size={12} color="#DC2626" />
+            <View style={[voteStyles.recTag, { backgroundColor: '#FEE2E2' }]}>
+              <Text style={[voteStyles.recTagText, { color: '#DC2626' }]}>Recommended</Text>
             </View>
           )}
           <Ionicons
             name={selected === 'no' ? 'close-circle' : 'close-circle-outline'}
-            size={32}
+            size={20}
             color={selected === 'no' ? '#fff' : '#EF4444'}
           />
           <Text style={[voteStyles.voteText, selected === 'no' && voteStyles.voteTextSelected]}>
@@ -822,15 +774,16 @@ function PropositionVoteButtons({
 }
 
 const voteStyles = StyleSheet.create({
-  container: { gap: 12 },
+  container: { gap: 8 },
   label: { fontSize: 12, fontWeight: '700', color: Colors.gray[500], letterSpacing: 0.5 },
-  buttonRow: { flexDirection: 'row', gap: 12 },
+  buttonRow: { flexDirection: 'row', gap: 10 },
   voteButton: {
     flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 24,
-    borderRadius: 16,
+    paddingVertical: 14,
+    borderRadius: 12,
     borderWidth: 2,
     gap: 8,
     position: 'relative',
@@ -839,18 +792,21 @@ const voteStyles = StyleSheet.create({
   yesButtonSelected: { backgroundColor: '#22C55E', borderColor: '#22C55E' },
   noButton: { borderColor: '#EF4444', backgroundColor: '#FEF2F2' },
   noButtonSelected: { backgroundColor: '#EF4444', borderColor: '#EF4444' },
-  voteText: { fontSize: 20, fontWeight: '800', color: Colors.gray[700] },
+  voteText: { fontSize: 16, fontWeight: '800', color: Colors.gray[700] },
   voteTextSelected: { color: '#fff' },
-  recBadge: {
+  recTag: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    width: 24,
-    height: 24,
-    borderRadius: 12,
+    top: -8,
+    right: 8,
     backgroundColor: '#DCFCE7',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 6,
+  },
+  recTagText: {
+    fontSize: 10,
+    fontWeight: '700',
+    color: '#16A34A',
   },
 });
 
@@ -1251,13 +1207,13 @@ function CandidateVoteButtons({
 }
 
 const candStyles = StyleSheet.create({
-  container: { gap: 12 },
-  label: { fontSize: 12, fontWeight: '700', color: Colors.gray[500], letterSpacing: 0.5 },
-  sublabel: { fontSize: 12, color: Colors.gray[500], lineHeight: 16, marginTop: -4 },
-  list: { gap: 12 },
+  container: { gap: 10 },
+  label: { fontSize: 11, fontWeight: '700', color: Colors.gray[500], letterSpacing: 0.5 },
+  sublabel: { fontSize: 11, color: Colors.gray[500], lineHeight: 15, marginTop: -4 },
+  list: { gap: 10 },
   candidateCard: {
-    padding: 16,
-    borderRadius: 14,
+    padding: 12,
+    borderRadius: 12,
     borderWidth: 2,
     borderColor: Colors.gray[200],
     backgroundColor: Colors.white,
@@ -1265,7 +1221,7 @@ const candStyles = StyleSheet.create({
   candidateMainRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: 12,
+    gap: 10,
   },
   candidateSelected: {
     borderColor: Colors.primary,
@@ -1276,9 +1232,9 @@ const candStyles = StyleSheet.create({
     backgroundColor: '#F0FDF4',
   },
   radio: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
     borderWidth: 2,
     borderColor: Colors.gray[300],
     alignItems: 'center',
@@ -1290,14 +1246,14 @@ const candStyles = StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   radioDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
     backgroundColor: Colors.white,
   },
-  candidateInfo: { flex: 1, gap: 4 },
+  candidateInfo: { flex: 1, gap: 2 },
   nameRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
-  name: { fontSize: 16, fontWeight: '700', color: Colors.gray[900], lineHeight: 22 },
+  name: { fontSize: 15, fontWeight: '700', color: Colors.gray[900], lineHeight: 20 },
   nameSelected: { color: Colors.primary },
   party: { fontSize: 13, color: Colors.gray[500], lineHeight: 18 },
   summary: { fontSize: 12, color: Colors.gray[600], lineHeight: 17, marginTop: 4 },
@@ -1317,27 +1273,27 @@ const candStyles = StyleSheet.create({
   },
   bestMatchBadge: {
     backgroundColor: '#22C55E',
-    width: 18,
-    height: 18,
-    borderRadius: 9,
+    width: 16,
+    height: 16,
+    borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 2,
   },
   matchCircle: {
-    width: 54,
-    height: 54,
-    borderRadius: 27,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 3,
+    borderWidth: 2.5,
   },
   matchHigh: { borderColor: '#22C55E', backgroundColor: '#F0FDF4' },
   matchMedium: { borderColor: '#F59E0B', backgroundColor: '#FFFBEB' },
   matchLow: { borderColor: Colors.gray[300], backgroundColor: Colors.gray[50] },
   matchUnknown: { borderColor: Colors.gray[200], backgroundColor: Colors.gray[50] },
-  matchPercent: { fontSize: 14, fontWeight: '800', color: Colors.gray[900] },
-  matchLabel: { fontSize: 9, color: Colors.gray[500], textTransform: 'uppercase' },
+  matchPercent: { fontSize: 13, fontWeight: '800', color: Colors.gray[900] },
+  matchLabel: { fontSize: 8, color: Colors.gray[500], textTransform: 'uppercase' },
   writeInInput: {
     marginTop: 8,
     padding: 12,
@@ -1354,8 +1310,8 @@ const candStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 6,
-    marginTop: 12,
-    paddingTop: 12,
+    marginTop: 10,
+    paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: Colors.gray[100],
   },
@@ -1634,7 +1590,7 @@ function NavigationButtons({
   );
 }
 
-// --- Ballot Navigator (shows official ballot at top) ---
+// --- Ballot Navigator (slim progress bar) ---
 function BallotNavigator({
   ballotItems,
   savedVotes,
@@ -1646,257 +1602,104 @@ function BallotNavigator({
   currentIndex: number;
   onJumpTo: (index: number) => void;
 }) {
-  const scrollViewRef = React.useRef<ScrollView>(null);
+  const completedCount = savedVotes.length;
 
-  // Get status for each item
   const getItemStatus = (item: BallotItem, index: number): 'completed' | 'current' | 'pending' => {
     if (index === currentIndex) return 'current';
     const vote = savedVotes.find(v => v.itemId === item.id);
     return vote ? 'completed' : 'pending';
   };
 
-  // Get choice display for mini ovals
-  const getChoiceDisplay = (item: BallotItem): { label: string; filled: boolean }[] => {
-    const vote = savedVotes.find(v => v.itemId === item.id);
-
-    if (item.type === 'proposition') {
-      return [
-        { label: 'YES', filled: vote?.choice === 'yes' },
-        { label: 'NO', filled: vote?.choice === 'no' },
-      ];
-    } else if (item.candidates && item.candidates.length > 0) {
-      // Show first two candidates
-      return item.candidates.slice(0, 2).map(c => ({
-        label: c.name.split(' ').pop() || c.name, // Last name
-        filled: vote?.choice === c.id,
-      }));
-    }
-    return [];
-  };
-
-  // Scroll to current item when it changes
-  React.useEffect(() => {
-    if (scrollViewRef.current) {
-      // Each card is ~140px wide + 10px gap
-      const scrollX = Math.max(0, currentIndex * 150 - 20);
-      scrollViewRef.current.scrollTo({ x: scrollX, animated: true });
-    }
-  }, [currentIndex]);
-
   return (
     <View style={ballotNavStyles.container}>
       <View style={ballotNavStyles.header}>
         <View style={ballotNavStyles.titleRow}>
-          <Ionicons name="document-text" size={14} color="#fff" />
-          <Text style={ballotNavStyles.title}>Your Official Ballot</Text>
+          <Ionicons name="document-text" size={12} color={Colors.gray[600]} />
+          <Text style={ballotNavStyles.title}>
+            Item {currentIndex + 1} of {ballotItems.length}
+          </Text>
         </View>
-        <View style={ballotNavStyles.verifiedBadge}>
-          <Ionicons name="checkmark" size={10} color="#6EE7B7" />
-          <Text style={ballotNavStyles.verifiedText}>Verified</Text>
-        </View>
+        <Text style={ballotNavStyles.completedText}>
+          {completedCount} completed
+        </Text>
       </View>
 
-      <ScrollView
-        ref={scrollViewRef}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={ballotNavStyles.scrollContent}
-      >
+      <View style={ballotNavStyles.dotsRow}>
         {ballotItems.map((item, index) => {
           const status = getItemStatus(item, index);
-          const choices = getChoiceDisplay(item);
-
           return (
             <TouchableOpacity
               key={item.id}
               style={[
-                ballotNavStyles.card,
-                status === 'current' && ballotNavStyles.cardCurrent,
-                status === 'completed' && ballotNavStyles.cardCompleted,
+                ballotNavStyles.dot,
+                status === 'current' && ballotNavStyles.dotCurrent,
+                status === 'completed' && ballotNavStyles.dotCompleted,
               ]}
               onPress={() => onJumpTo(index)}
-              activeOpacity={0.8}
+              activeOpacity={0.7}
             >
-              <View style={ballotNavStyles.cardHeader}>
-                <Text style={ballotNavStyles.cardTitle} numberOfLines={1}>
-                  {item.title.toUpperCase()}
-                </Text>
-                <View style={[
-                  ballotNavStyles.statusBadge,
-                  status === 'current' && ballotNavStyles.statusCurrent,
-                  status === 'completed' && ballotNavStyles.statusCompleted,
-                  status === 'pending' && ballotNavStyles.statusPending,
-                ]}>
-                  {status === 'completed' ? (
-                    <Ionicons name="checkmark" size={10} color="#fff" />
-                  ) : (
-                    <Text style={ballotNavStyles.statusNumber}>{index + 1}</Text>
-                  )}
-                </View>
-              </View>
-
-              <Text style={ballotNavStyles.cardText} numberOfLines={2}>
-                {item.questionText}
-              </Text>
-
-              <View style={ballotNavStyles.choicesRow}>
-                {choices.map((choice, i) => (
-                  <View key={i} style={ballotNavStyles.miniChoice}>
-                    <View style={[
-                      ballotNavStyles.miniOval,
-                      choice.filled && (status === 'current'
-                        ? ballotNavStyles.miniOvalSelected
-                        : ballotNavStyles.miniOvalFilled),
-                    ]} />
-                    <Text style={ballotNavStyles.miniLabel}>{choice.label}</Text>
-                  </View>
-                ))}
-              </View>
+              {status === 'completed' && (
+                <Ionicons name="checkmark" size={8} color="#fff" />
+              )}
             </TouchableOpacity>
           );
         })}
-      </ScrollView>
-
-      <Text style={ballotNavStyles.hint}>← Scroll to see all items • Tap to jump →</Text>
+      </View>
     </View>
   );
 }
 
 const ballotNavStyles = StyleSheet.create({
   container: {
-    backgroundColor: '#1e1b4b',
-    paddingVertical: 12,
+    backgroundColor: Colors.gray[50],
+    paddingVertical: 10,
     paddingHorizontal: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.gray[200],
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 8,
   },
   titleRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: 4,
   },
   title: {
-    color: '#fff',
     fontSize: 12,
     fontWeight: '600',
+    color: Colors.gray[700],
   },
-  verifiedBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    backgroundColor: 'rgba(5, 150, 105, 0.2)',
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: 10,
-  },
-  verifiedText: {
-    color: '#6EE7B7',
-    fontSize: 9,
+  completedText: {
+    fontSize: 11,
     fontWeight: '500',
+    color: Colors.gray[500],
   },
-  scrollContent: {
-    paddingRight: 16,
-    gap: 10,
-  },
-  card: {
-    width: 140,
-    backgroundColor: 'rgba(255,255,255,0.95)',
-    borderRadius: 10,
-    padding: 10,
-    borderWidth: 2,
-    borderColor: 'transparent',
-  },
-  cardCurrent: {
-    borderColor: '#7C3AED',
-    shadowColor: '#7C3AED',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  cardCompleted: {
-    opacity: 0.85,
-  },
-  cardHeader: {
+  dotsRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 6,
+    gap: 6,
+    alignItems: 'center',
   },
-  cardTitle: {
-    fontSize: 8,
-    fontWeight: '700',
-    color: '#333',
+  dot: {
     flex: 1,
-    fontFamily: 'serif',
-  },
-  statusBadge: {
-    width: 16,
-    height: 16,
-    borderRadius: 8,
+    height: 6,
+    borderRadius: 3,
+    backgroundColor: Colors.gray[200],
     alignItems: 'center',
     justifyContent: 'center',
   },
-  statusCurrent: {
-    backgroundColor: '#7C3AED',
+  dotCurrent: {
+    backgroundColor: Colors.primary,
+    height: 8,
+    borderRadius: 4,
   },
-  statusCompleted: {
+  dotCompleted: {
     backgroundColor: '#059669',
-  },
-  statusPending: {
-    backgroundColor: '#e5e7eb',
-  },
-  statusNumber: {
-    fontSize: 8,
-    fontWeight: '700',
-    color: '#666',
-  },
-  cardText: {
-    fontSize: 7,
-    color: '#555',
-    lineHeight: 10,
-    marginBottom: 8,
-    fontFamily: 'serif',
-  },
-  choicesRow: {
-    flexDirection: 'row',
-    gap: 10,
-  },
-  miniChoice: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 3,
-  },
-  miniOval: {
-    width: 10,
     height: 6,
     borderRadius: 3,
-    borderWidth: 1,
-    borderColor: '#333',
-    backgroundColor: 'transparent',
-  },
-  miniOvalFilled: {
-    backgroundColor: '#059669',
-    borderColor: '#059669',
-  },
-  miniOvalSelected: {
-    backgroundColor: '#7C3AED',
-    borderColor: '#7C3AED',
-  },
-  miniLabel: {
-    fontSize: 7,
-    color: '#555',
-    fontFamily: 'serif',
-  },
-  hint: {
-    textAlign: 'center',
-    fontSize: 10,
-    color: '#a5b4fc',
-    marginTop: 8,
   },
 });
 
@@ -2192,33 +1995,33 @@ const summaryStyles = StyleSheet.create({
 });
 
 const navStyles = StyleSheet.create({
-  container: { gap: 12, paddingTop: 8 },
+  container: { gap: 8, paddingTop: 4 },
   primaryButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Colors.primary,
-    paddingVertical: 16,
-    borderRadius: 14,
-    gap: 8,
+    paddingVertical: 12,
+    borderRadius: 12,
+    gap: 6,
   },
   primaryDisabled: { backgroundColor: Colors.gray[300] },
-  primaryText: { fontSize: 17, fontWeight: '700', color: Colors.white },
-  secondaryRow: { flexDirection: 'row', gap: 12 },
+  primaryText: { fontSize: 15, fontWeight: '700', color: Colors.white },
+  secondaryRow: { flexDirection: 'row', gap: 10 },
   secondaryButton: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    borderRadius: 12,
+    paddingVertical: 10,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: Colors.gray[300],
     backgroundColor: Colors.white,
     gap: 6,
   },
   secondaryDisabled: { borderColor: Colors.gray[200] },
-  secondaryText: { fontSize: 15, fontWeight: '600', color: Colors.gray[600] },
+  secondaryText: { fontSize: 14, fontWeight: '600', color: Colors.gray[600] },
   secondaryTextDisabled: { color: Colors.gray[300] },
 });
 
@@ -2553,7 +2356,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     padding: 16,
-    gap: 20,
+    gap: 12,
     paddingBottom: 40,
   },
   loadingContainer: {
