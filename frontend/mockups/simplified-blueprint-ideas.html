@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simplified Blueprint - Design Ideas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      color: #111;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 60px;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-number {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: #7C3AED;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-right: 12px;
+    }
+
+    .section-title {
+      display: inline;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .section-desc {
+      margin-top: 8px;
+      margin-left: 44px;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .mockup-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .mockup-container {
+      width: 375px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+
+    .mockup-label {
+      background: #7C3AED;
+      color: white;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .screen {
+      background: #fff;
+      min-height: 600px;
+      overflow-y: auto;
+    }
+
+    /* ===========================================
+       IDEA 1: Single Scrollable Page
+       =========================================== */
+
+    .single-page {
+      padding: 24px 20px;
+    }
+
+    .sp-intro {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .sp-intro h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sp-intro p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .sp-question {
+      margin-bottom: 28px;
+    }
+
+    .sp-question-label {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .sp-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sp-pole {
+      font-size: 11px;
+      color: #888;
+      width: 60px;
+      text-align: center;
+    }
+
+    .sp-track {
+      flex: 1;
+      height: 8px;
+      background: linear-gradient(to right, #A855F7, #E5E7EB 50%, #14B8A6);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .sp-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 3px solid #7C3AED;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .sp-divider {
+      height: 1px;
+      background: #eee;
+      margin: 32px 0;
+    }
+
+    .sp-results {
+      background: #F9FAFB;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .sp-results-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #7C3AED;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sp-result-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .sp-result-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7C3AED;
+    }
+
+    .sp-cta {
+      margin-top: 24px;
+      background: #7C3AED;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    /* ===========================================
+       IDEA 2: Minimal Radio Buttons
+       =========================================== */
+
+    .minimal-page {
+      padding: 32px 24px;
+    }
+
+    .min-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .min-question {
+      margin-bottom: 32px;
+    }
+
+    .min-question-text {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .min-options {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .min-option {
+      flex: 1;
+      height: 44px;
+      border: 2px solid #E5E7EB;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+    }
+
+    .min-option.selected {
+      border-color: #7C3AED;
+      background: #F5F3FF;
+      color: #7C3AED;
+      font-weight: 600;
+    }
+
+    .min-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      font-size: 11px;
+      color: #999;
+    }
+
+    .min-submit {
+      margin-top: 40px;
+      background: #7C3AED;
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    /* ===========================================
+       IDEA 3: Cards with Live Preview
+       =========================================== */
+
+    .cards-page {
+      background: #F9FAFB;
+      min-height: 600px;
+    }
+
+    .cards-header {
+      background: white;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cards-header h1 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .cards-header p {
+      font-size: 13px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .cards-live-preview {
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      margin: 16px;
+      border-radius: 12px;
+      padding: 16px;
+      color: white;
+    }
+
+    .cards-preview-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .cards-preview-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cards-preview-chip {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .cards-questions {
+      padding: 0 16px 16px;
+    }
+
+    .cards-q {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .cards-q-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .cards-q-slider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cards-q-pole {
+      font-size: 10px;
+      color: #888;
+      width: 50px;
+    }
+
+    .cards-q-pole.right {
+      text-align: right;
+    }
+
+    .cards-q-track {
+      flex: 1;
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .cards-q-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background: #7C3AED;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* ===========================================
+       IDEA 4: Ultra Minimal (Text Only)
+       =========================================== */
+
+    .ultra-page {
+      padding: 40px 24px;
+    }
+
+    .ultra-title {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+
+    .ultra-subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 48px;
+    }
+
+    .ultra-q {
+      margin-bottom: 40px;
+    }
+
+    .ultra-q-label {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .ultra-q-text {
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .ultra-scale {
+      display: flex;
+      gap: 4px;
+    }
+
+    .ultra-scale-item {
+      flex: 1;
+      height: 40px;
+      background: #F5F5F5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .ultra-scale-item:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+
+    .ultra-scale-item:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+
+    .ultra-scale-item.selected {
+      background: #7C3AED;
+      color: white;
+      font-weight: 600;
+    }
+
+    .ultra-next {
+      margin-top: 48px;
+      color: #7C3AED;
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    /* ===========================================
+       IDEA 5: Horizontal Swipe Cards
+       =========================================== */
+
+    .swipe-page {
+      background: #F9FAFB;
+      padding: 24px 0;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .swipe-progress {
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+
+    .swipe-progress-bar {
+      height: 4px;
+      background: #E5E7EB;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .swipe-progress-fill {
+      height: 100%;
+      background: #7C3AED;
+      width: 40%;
+    }
+
+    .swipe-progress-text {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .swipe-card-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .swipe-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      text-align: center;
+    }
+
+    .swipe-card-q {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 32px;
+      line-height: 1.4;
+    }
+
+    .swipe-card-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .swipe-card-opt {
+      padding: 14px 20px;
+      border: 2px solid #E5E7EB;
+      border-radius: 10px;
+      font-size: 14px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .swipe-card-opt.selected {
+      border-color: #7C3AED;
+      background: #F5F3FF;
+    }
+
+    .swipe-nav {
+      padding: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .swipe-nav-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .swipe-nav-btn.secondary {
+      background: #F3F4F6;
+      color: #666;
+    }
+
+    .swipe-nav-btn.primary {
+      background: #7C3AED;
+      color: white;
+    }
+
+    /* ===========================================
+       IDEA 6: Conversational / Chat Style
+       =========================================== */
+
+    .chat-page {
+      background: #F9FAFB;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background: white;
+      padding: 16px 20px;
+      border-bottom: 1px solid #eee;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .chat-bubble {
+      max-width: 85%;
+      margin-bottom: 16px;
+    }
+
+    .chat-bubble.bot {
+      background: white;
+      padding: 14px 16px;
+      border-radius: 16px 16px 16px 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .chat-bubble.user {
+      background: #7C3AED;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 16px 16px 4px 16px;
+      margin-left: auto;
+    }
+
+    .chat-bubble p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .chat-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chat-option {
+      background: #F5F3FF;
+      color: #7C3AED;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid #E9E3FF;
+    }
+
+    .chat-option:hover {
+      background: #EDE9FE;
+    }
+
+    .chat-typing {
+      display: flex;
+      gap: 4px;
+      padding: 8px 0;
+    }
+
+    .chat-typing span {
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+    }
+
+    /* ===========================================
+       Comparison Table
+       =========================================== */
+
+    .comparison {
+      max-width: 900px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .comparison h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .comparison table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison th, .comparison td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .comparison th {
+      font-weight: 600;
+      color: #666;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .comparison td:first-child {
+      font-weight: 600;
+      color: #7C3AED;
+    }
+
+    .check {
+      color: #10B981;
+    }
+
+    .x {
+      color: #EF4444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Simplified Blueprint Ideas</h1>
+  <p class="page-subtitle">6 approaches to reduce complexity for a demo</p>
+
+  <!-- =========================================== -->
+  <!-- IDEA 1: Single Scrollable Page -->
+  <!-- =========================================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">1</span>
+      <h2 class="section-title">Single Scrollable Page</h2>
+      <p class="section-desc">All questions visible at once. No screen transitions. Results update in real-time at the bottom as you answer.</p>
+    </div>
+    <div class="mockup-row">
+      <div class="mockup-container">
+        <div class="mockup-label">Single Page - All Questions Visible</div>
+        <div class="screen">
+          <div class="single-page">
+            <div class="sp-intro">
+              <h1>Draft Your Blueprint</h1>
+              <p>Move the sliders to see where you stand.</p>
+            </div>
+
+            <div class="sp-question">
+              <div class="sp-question-label">Government's role in the economy</div>
+              <div class="sp-slider-row">
+                <span class="sp-pole">More govt</span>
+                <div class="sp-track">
+                  <div class="sp-thumb" style="left: 25%;"></div>
+                </div>
+                <span class="sp-pole">Less govt</span>
+              </div>
+            </div>
+
+            <div class="sp-question">
+              <div class="sp-question-label">Healthcare system</div>
+              <div class="sp-slider-row">
+                <span class="sp-pole">Public</span>
+                <div class="sp-track">
+                  <div class="sp-thumb" style="left: 40%;"></div>
+                </div>
+                <span class="sp-pole">Private</span>
+              </div>
+            </div>
+
+            <div class="sp-question">
+              <div class="sp-question-label">Climate policy</div>
+              <div class="sp-slider-row">
+                <span class="sp-pole">Regulate</span>
+                <div class="sp-track">
+                  <div class="sp-thumb" style="left: 20%;"></div>
+                </div>
+                <span class="sp-pole">Market</span>
+              </div>
+            </div>
+
+            <div class="sp-question">
+              <div class="sp-question-label">Immigration policy</div>
+              <div class="sp-slider-row">
+                <span class="sp-pole">Open</span>
+                <div class="sp-track">
+                  <div class="sp-thumb" style="left: 50%;"></div>
+                </div>
+                <span class="sp-pole">Restrict</span>
+              </div>
+            </div>
+
+            <div class="sp-question">
+              <div class="sp-question-label">Criminal justice</div>
+              <div class="sp-slider-row">
+                <span class="sp-pole">Reform</span>
+                <div class="sp-track">
+                  <div class="sp-thumb" style="left: 30%;"></div>
+                </div>
+                <span class="sp-pole">Tough</span>
+              </div>
+            </div>
+
+            <div class="sp-divider"></div>
+
+            <div class="sp-results">
+              <div class="sp-results-title">Your Blueprint</div>
+              <div class="sp-result-item">
+                <span class="sp-result-dot"></span>
+                Progressive on economy
+              </div>
+              <div class="sp-result-item">
+                <span class="sp-result-dot"></span>
+                Lean left on healthcare
+              </div>
+              <div class="sp-result-item">
+                <span class="sp-result-dot"></span>
+                Strong on climate action
+              </div>
+              <div class="sp-result-item">
+                <span class="sp-result-dot"></span>
+                Moderate on immigration
+              </div>
+              <div class="sp-result-item">
+                <span class="sp-result-dot"></span>
+                Reform-minded on justice
+              </div>
+            </div>
+
+            <div class="sp-cta">Continue to Ballot Builder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== -->
+  <!-- IDEA 2: Minimal Radio Buttons -->
+  <!-- =========================================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">2</span>
+      <h2 class="section-title">Minimal 5-Point Scale</h2>
+      <p class="section-desc">Simple clickable options instead of sliders. No fancy UI, just clear choices. Web-form style.</p>
+    </div>
+    <div class="mockup-row">
+      <div class="mockup-container">
+        <div class="mockup-label">Simple Radio Buttons</div>
+        <div class="screen">
+          <div class="minimal-page">
+            <h1 class="min-title">5 Quick Questions</h1>
+
+            <div class="min-question">
+              <div class="min-question-text">How involved should the government be in the economy?</div>
+              <div class="min-options">
+                <div class="min-option">1</div>
+                <div class="min-option selected">2</div>
+                <div class="min-option">3</div>
+                <div class="min-option">4</div>
+                <div class="min-option">5</div>
+              </div>
+              <div class="min-labels">
+                <span>Very involved</span>
+                <span>Hands off</span>
+              </div>
+            </div>
+
+            <div class="min-question">
+              <div class="min-question-text">How should healthcare be funded?</div>
+              <div class="min-options">
+                <div class="min-option">1</div>
+                <div class="min-option">2</div>
+                <div class="min-option selected">3</div>
+                <div class="min-option">4</div>
+                <div class="min-option">5</div>
+              </div>
+              <div class="min-labels">
+                <span>Fully public</span>
+                <span>Fully private</span>
+              </div>
+            </div>
+
+            <div class="min-question">
+              <div class="min-question-text">How aggressively should we address climate change?</div>
+              <div class="min-options">
+                <div class="min-option selected">1</div>
+                <div class="min-option">2</div>
+                <div class="min-option">3</div>
+                <div class="min-option">4</div>
+                <div class="min-option">5</div>
+              </div>
+              <div class="min-labels">
+                <span>Aggressive action</span>
+                <span>Market solutions</span>
+              </div>
+            </div>
+
+            <div class="min-question">
+              <div class="min-question-text">What's your view on immigration?</div>
+              <div class="min-options">
+                <div class="min-option">1</div>
+                <div class="min-option">2</div>
+                <div class="min-option">3</div>
+                <div class="min-option selected">4</div>
+                <div class="min-option">5</div>
+              </div>
+              <div class="min-labels">
+                <span>More open</span>
+                <span>More restrictive</span>
+              </div>
+            </div>
+
+            <div class="min-submit">See My Blueprint</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== -->
+  <!-- IDEA 3: Cards with Live Preview -->
+  <!-- =========================================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">3</span>
+      <h2 class="section-title">Live Preview Header</h2>
+      <p class="section-desc">Blueprint summary stays visible at top and updates as you answer. Immediate feedback.</p>
+    </div>
+    <div class="mockup-row">
+      <div class="mockup-container">
+        <div class="mockup-label">Sticky Live Preview</div>
+        <div class="screen">
+          <div class="cards-page">
+            <div class="cards-header">
+              <h1>Your Blueprint</h1>
+              <p>Adjust the sliders below</p>
+            </div>
+
+            <div class="cards-live-preview">
+              <div class="cards-preview-label">Building your profile...</div>
+              <div class="cards-preview-items">
+                <span class="cards-preview-chip">Progressive economy</span>
+                <span class="cards-preview-chip">Public healthcare</span>
+                <span class="cards-preview-chip">Climate action</span>
+              </div>
+            </div>
+
+            <div class="cards-questions">
+              <div class="cards-q">
+                <div class="cards-q-title">Government Role</div>
+                <div class="cards-q-slider">
+                  <span class="cards-q-pole">More</span>
+                  <div class="cards-q-track">
+                    <div class="cards-q-thumb" style="left: 25%;"></div>
+                  </div>
+                  <span class="cards-q-pole right">Less</span>
+                </div>
+              </div>
+
+              <div class="cards-q">
+                <div class="cards-q-title">Healthcare System</div>
+                <div class="cards-q-slider">
+                  <span class="cards-q-pole">Public</span>
+                  <div class="cards-q-track">
+                    <div class="cards-q-thumb" style="left: 30%;"></div>
+                  </div>
+                  <span class="cards-q-pole right">Private</span>
+                </div>
+              </div>
+
+              <div class="cards-q">
+                <div class="cards-q-title">Climate Policy</div>
+                <div class="cards-q-slider">
+                  <span class="cards-q-pole">Regulate</span>
+                  <div class="cards-q-track">
+                    <div class="cards-q-thumb" style="left: 20%;"></div>
+                  </div>
+                  <span class="cards-q-pole right">Market</span>
+                </div>
+              </div>
+
+              <div class="cards-q">
+                <div class="cards-q-title">Immigration</div>
+                <div class="cards-q-slider">
+                  <span class="cards-q-pole">Open</span>
+                  <div class="cards-q-track">
+                    <div class="cards-q-thumb" style="left: 50%;"></div>
+                  </div>
+                  <span class="cards-q-pole right">Restrict</span>
+                </div>
+              </div>
+
+              <div class="cards-q">
+                <div class="cards-q-title">Criminal Justice</div>
+                <div class="cards-q-slider">
+                  <span class="cards-q-pole">Reform</span>
+                  <div class="cards-q-track">
+                    <div class="cards-q-thumb" style="left: 35%;"></div>
+                  </div>
+                  <span class="cards-q-pole right">Tough</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== -->
+  <!-- IDEA 4: Ultra Minimal -->
+  <!-- =========================================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">4</span>
+      <h2 class="section-title">Ultra Minimal</h2>
+      <p class="section-desc">Maximum whitespace, minimum UI. Typography-focused. One question at a time with simple horizontal scale.</p>
+    </div>
+    <div class="mockup-row">
+      <div class="mockup-container">
+        <div class="mockup-label">Ultra Clean</div>
+        <div class="screen">
+          <div class="ultra-page">
+            <h1 class="ultra-title">Quick Questions</h1>
+            <p class="ultra-subtitle">Tap to select your position</p>
+
+            <div class="ultra-q">
+              <div class="ultra-q-label">Economy</div>
+              <div class="ultra-q-text">How involved should government be in the economy?</div>
+              <div class="ultra-scale">
+                <div class="ultra-scale-item">Very</div>
+                <div class="ultra-scale-item selected">More</div>
+                <div class="ultra-scale-item">Neutral</div>
+                <div class="ultra-scale-item">Less</div>
+                <div class="ultra-scale-item">Minimal</div>
+              </div>
+            </div>
+
+            <div class="ultra-q">
+              <div class="ultra-q-label">Healthcare</div>
+              <div class="ultra-q-text">How should healthcare be funded?</div>
+              <div class="ultra-scale">
+                <div class="ultra-scale-item">Public</div>
+                <div class="ultra-scale-item">Mostly</div>
+                <div class="ultra-scale-item selected">Mixed</div>
+                <div class="ultra-scale-item">Mostly</div>
+                <div class="ultra-scale-item">Private</div>
+              </div>
+            </div>
+
+            <div class="ultra-q">
+              <div class="ultra-q-label">Climate</div>
+              <div class="ultra-q-text">How should we address climate change?</div>
+              <div class="ultra-scale">
+                <div class="ultra-scale-item selected">Urgent</div>
+                <div class="ultra-scale-item">Important</div>
+                <div class="ultra-scale-item">Balanced</div>
+                <div class="ultra-scale-item">Gradual</div>
+                <div class="ultra-scale-item">Market</div>
+              </div>
+            </div>
+
+            <div class="ultra-next">
+              Done <span style="font-size: 20px;">&#8594;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== -->
+  <!-- IDEA 5: One Question at a Time (Simplified) -->
+  <!-- =========================================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">5</span>
+      <h2 class="section-title">One at a Time (Simplified)</h2>
+      <p class="section-desc">Keep the one-question-per-screen approach but strip it down. No animations, no badges, just question + choices.</p>
+    </div>
+    <div class="mockup-row">
+      <div class="mockup-container">
+        <div class="mockup-label">Simple Card Flow</div>
+        <div class="screen">
+          <div class="swipe-page">
+            <div class="swipe-progress">
+              <div class="swipe-progress-bar">
+                <div class="swipe-progress-fill"></div>
+              </div>
+              <div class="swipe-progress-text">2 of 5</div>
+            </div>
+
+            <div class="swipe-card-area">
+              <div class="swipe-card">
+                <div class="swipe-card-q">How should healthcare be funded?</div>
+                <div class="swipe-card-options">
+                  <div class="swipe-card-opt">Fully government-funded (single payer)</div>
+                  <div class="swipe-card-opt selected">Mix of public and private</div>
+                  <div class="swipe-card-opt">Primarily private insurance</div>
+                  <div class="swipe-card-opt">Fully private / free market</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swipe-nav">
+              <div class="swipe-nav-btn secondary">Back</div>
+              <div class="swipe-nav-btn primary">Next</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== -->
+  <!-- IDEA 6: Conversational / Chat -->
+  <!-- =========================================== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">6</span>
+      <h2 class="section-title">Conversational Chat</h2>
+      <p class="section-desc">Question and answer as a conversation. Feels personal and less like a form. Trendy "AI chat" feel.</p>
+    </div>
+    <div class="mockup-row">
+      <div class="mockup-container">
+        <div class="mockup-label">Chat-Style Flow</div>
+        <div class="screen">
+          <div class="chat-page">
+            <div class="chat-header">Blueprint Builder</div>
+            <div class="chat-messages">
+              <div class="chat-bubble bot">
+                <p>Hey! Let's figure out where you stand on a few key issues. It'll only take a minute.</p>
+              </div>
+
+              <div class="chat-bubble bot">
+                <p>First up: <strong>How involved should government be in the economy?</strong></p>
+                <div class="chat-options">
+                  <div class="chat-option">Very involved</div>
+                  <div class="chat-option">Somewhat involved</div>
+                  <div class="chat-option">Neutral</div>
+                  <div class="chat-option">Less involved</div>
+                  <div class="chat-option">Minimal</div>
+                </div>
+              </div>
+
+              <div class="chat-bubble user">
+                <p>Somewhat involved</p>
+              </div>
+
+              <div class="chat-bubble bot">
+                <p>Got it! You lean toward some government involvement.</p>
+              </div>
+
+              <div class="chat-bubble bot">
+                <p>Next: <strong>How should we fund healthcare?</strong></p>
+                <div class="chat-options">
+                  <div class="chat-option">Public / single-payer</div>
+                  <div class="chat-option">Public option + private</div>
+                  <div class="chat-option">Mostly private</div>
+                  <div class="chat-option">Fully private</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================== -->
+  <!-- Comparison Table -->
+  <!-- =========================================== -->
+  <div class="comparison">
+    <h2>Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>Screens</th>
+          <th>Complexity</th>
+          <th>Mobile-First</th>
+          <th>Demo Ready</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Single Scrollable</td>
+          <td>1</td>
+          <td>Low</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+        <tr>
+          <td>2. Minimal Radio</td>
+          <td>1</td>
+          <td>Very Low</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+        <tr>
+          <td>3. Live Preview</td>
+          <td>1</td>
+          <td>Low</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+        <tr>
+          <td>4. Ultra Minimal</td>
+          <td>1</td>
+          <td>Very Low</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+        <tr>
+          <td>5. Simple Cards</td>
+          <td>5</td>
+          <td>Low</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+        <tr>
+          <td>6. Chat Style</td>
+          <td>1</td>
+          <td>Medium</td>
+          <td class="check">&#10003;</td>
+          <td class="check">&#10003;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="text-align: center; color: #888; font-size: 14px; margin-top: 40px;">
+    My recommendation: <strong>#1 Single Scrollable</strong> or <strong>#4 Ultra Minimal</strong> for the simplest demo experience.
+  </p>
+
+</body>
+</html>

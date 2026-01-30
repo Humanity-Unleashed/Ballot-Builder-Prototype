@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Tab - Streamlined Mockups</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #e5e5e5;
+      padding: 20px;
+    }
+    .page-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      color: #111;
+      margin: 10px 0 4px;
+    }
+    .page-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .comparison-row {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+    .mockup-container {
+      width: 375px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .mockup-label {
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: white;
+    }
+    .label-current { background: #6B7280; }
+    .label-streamlined { background: linear-gradient(135deg, #7C3AED, #5B21B6); }
+    .label-alt { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
+    .screen {
+      background: #F9FAFB;
+      min-height: 700px;
+    }
+
+    /* ======================== */
+    /* SHARED STYLES            */
+    /* ======================== */
+    .header {
+      padding: 16px;
+      background: white;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .header-title { font-size: 24px; font-weight: 800; color: #111827; }
+    .header-subtitle { font-size: 14px; color: #6B7280; margin-top: 4px; }
+
+    /* Ballot Navigator */
+    .ballot-nav {
+      background: #1e1b4b;
+      padding: 12px 16px;
+    }
+    .ballot-nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ballot-nav-title {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .verified-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(5,150,105,0.2);
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: #6EE7B7;
+      font-size: 9px;
+      font-weight: 500;
+    }
+    .ballot-cards {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+    .ballot-card {
+      min-width: 140px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 10px;
+      border: 2px solid transparent;
+    }
+    .ballot-card.current {
+      border-color: #7C3AED;
+      box-shadow: 0 0 12px rgba(124,58,237,0.3);
+    }
+    .ballot-card.completed { opacity: 0.85; }
+    .ballot-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    .ballot-card-title {
+      font-size: 8px;
+      font-weight: 700;
+      color: #333;
+      font-family: serif;
+      text-transform: uppercase;
+    }
+    .status-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 700;
+      color: #666;
+    }
+    .status-dot.current { background: #7C3AED; color: white; }
+    .status-dot.completed { background: #059669; color: white; }
+    .status-dot.pending { background: #e5e7eb; }
+    .ballot-card-text {
+      font-size: 7px;
+      color: #555;
+      font-family: serif;
+      line-height: 10px;
+      margin-bottom: 8px;
+    }
+    .ballot-hint {
+      text-align: center;
+      font-size: 10px;
+      color: #a5b4fc;
+      margin-top: 8px;
+    }
+
+    /* Content area */
+    .content { padding: 16px; }
+    .content-current { display: flex; flex-direction: column; gap: 20px; }
+    .content-streamlined { display: flex; flex-direction: column; gap: 12px; }
+
+    /* Category Header */
+    .cat-header { display: flex; flex-direction: column; gap: 8px; }
+    .cat-row { display: flex; justify-content: space-between; align-items: center; }
+    .cat-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .cat-counter { font-size: 13px; color: #6B7280; font-weight: 500; }
+    .cat-progress { height: 4px; background: #E5E7EB; border-radius: 2px; overflow: hidden; }
+    .cat-progress-fill { height: 100%; border-radius: 2px; }
+
+    /* Ballot Item Header */
+    .item-header { display: flex; flex-direction: column; gap: 12px; }
+    .item-title { font-size: 13px; font-weight: 700; color: #3B82F6; text-transform: uppercase; letter-spacing: 0.5px; }
+    .item-question { font-size: 18px; font-weight: 700; color: #111827; line-height: 26px; }
+    .item-info {
+      display: flex;
+      gap: 10px;
+      background: rgba(59,130,246,0.1);
+      padding: 12px;
+      border-radius: 12px;
+      align-items: flex-start;
+    }
+    .item-info-icon { color: #3B82F6; font-size: 18px; flex-shrink: 0; }
+    .item-info-text { font-size: 14px; color: #374151; line-height: 21px; }
+
+    /* ======================== */
+    /* CURRENT VOTE BUTTONS     */
+    /* ======================== */
+    .vote-current .vote-label { font-size: 12px; font-weight: 700; color: #6B7280; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .vote-current .vote-row { display: flex; gap: 12px; }
+    .vote-current .vote-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      border-radius: 16px;
+      border: 2px solid;
+      gap: 8px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s;
+    }
+    .vote-current .vote-btn.yes { border-color: #22C55E; background: #F0FDF4; }
+    .vote-current .vote-btn.yes.selected { background: #22C55E; }
+    .vote-current .vote-btn.no { border-color: #EF4444; background: #FEF2F2; }
+    .vote-current .vote-btn.no.selected { background: #EF4444; }
+    .vote-current .vote-icon { font-size: 32px; }
+    .vote-current .vote-text { font-size: 20px; font-weight: 800; color: #374151; }
+    .vote-current .vote-btn.selected .vote-text { color: white; }
+    .vote-current .rec-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background: #DCFCE7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* Recommendation Banner - Current */
+    .rec-banner {
+      padding: 16px;
+      border-radius: 14px;
+      border: 2px solid;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rec-banner.yes { background: #F0FDF4; border-color: #86EFAC; }
+    .rec-banner.no { background: #FEF2F2; border-color: #FECACA; }
+    .rec-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rec-title { font-size: 15px; font-weight: 700; line-height: 20px; }
+    .rec-title.yes { color: #16A34A; }
+    .rec-title.no { color: #DC2626; }
+    .rec-text { font-size: 14px; color: #374151; line-height: 21px; }
+    .rec-confidence { height: 4px; background: #E5E7EB; border-radius: 2px; overflow: hidden; }
+    .rec-confidence-fill { height: 100%; border-radius: 2px; }
+    .rec-how {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding-top: 10px;
+      margin-top: 4px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      font-size: 13px;
+      font-weight: 600;
+      color: #3B82F6;
+      cursor: pointer;
+    }
+
+    /* ======================== */
+    /* STREAMLINED VOTE BUTTONS */
+    /* ======================== */
+
+    /* Option A: Compact Pill Buttons */
+    .vote-compact .vote-label { font-size: 12px; font-weight: 700; color: #6B7280; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .vote-compact .vote-row { display: flex; gap: 10px; }
+    .vote-compact .vote-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 2px solid;
+      gap: 8px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s;
+    }
+    .vote-compact .vote-btn.yes { border-color: #22C55E; background: #F0FDF4; }
+    .vote-compact .vote-btn.yes.selected { background: #22C55E; }
+    .vote-compact .vote-btn.no { border-color: #EF4444; background: #FEF2F2; }
+    .vote-compact .vote-btn.no.selected { background: #EF4444; }
+    .vote-compact .vote-icon { font-size: 20px; }
+    .vote-compact .vote-text { font-size: 16px; font-weight: 800; color: #374151; }
+    .vote-compact .vote-btn.selected .vote-text { color: white; }
+    .vote-compact .rec-tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: #16A34A;
+      background: #DCFCE7;
+      padding: 2px 6px;
+      border-radius: 6px;
+      position: absolute;
+      top: -8px;
+      right: 8px;
+    }
+
+    /* Option B: Segmented Control */
+    .vote-segmented .vote-label { font-size: 12px; font-weight: 700; color: #6B7280; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .vote-segmented .vote-row {
+      display: flex;
+      background: #F3F4F6;
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .vote-segmented .vote-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-radius: 10px;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+      border: none;
+    }
+    .vote-segmented .vote-btn.yes.selected { background: #22C55E; box-shadow: 0 2px 8px rgba(34,197,94,0.3); }
+    .vote-segmented .vote-btn.no.selected { background: #EF4444; box-shadow: 0 2px 8px rgba(239,68,68,0.3); }
+    .vote-segmented .vote-icon { font-size: 18px; }
+    .vote-segmented .vote-text { font-size: 15px; font-weight: 700; color: #6B7280; }
+    .vote-segmented .vote-btn.selected .vote-text { color: white; }
+
+    /* Integrated Recommendation (inline) */
+    .rec-inline {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 18px;
+    }
+    .rec-inline.yes { background: #F0FDF4; color: #16A34A; }
+    .rec-inline.no { background: #FEF2F2; color: #DC2626; }
+    .rec-inline-icon { font-size: 16px; flex-shrink: 0; }
+    .rec-inline-text { font-weight: 600; flex: 1; }
+    .rec-inline-link {
+      font-size: 12px;
+      color: #3B82F6;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    /* ======================== */
+    /* NAVIGATION - CURRENT     */
+    /* ======================== */
+    .nav-current { display: flex; flex-direction: column; gap: 12px; padding-top: 8px; }
+    .nav-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #3B82F6;
+      padding: 16px;
+      border-radius: 14px;
+      gap: 8px;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .nav-secondary-row { display: flex; gap: 12px; }
+    .nav-secondary {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #D1D5DB;
+      background: white;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #4B5563;
+      cursor: pointer;
+    }
+
+    /* ======================== */
+    /* NAVIGATION - STREAMLINED */
+    /* ======================== */
+    .nav-streamlined { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; }
+    .nav-slim-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #3B82F6;
+      padding: 14px;
+      border-radius: 12px;
+      gap: 6px;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .nav-slim-row { display: flex; gap: 8px; }
+    .nav-slim-secondary {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6B7280;
+      cursor: pointer;
+    }
+
+    /* ======================== */
+    /* COMPACT NAVIGATOR        */
+    /* ======================== */
+    .ballot-nav-slim {
+      background: #1e1b4b;
+      padding: 8px 16px;
+    }
+    .ballot-nav-slim-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ballot-nav-slim-title {
+      font-size: 11px;
+      color: #a5b4fc;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .ballot-nav-slim-progress {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .ballot-nav-slim-fill {
+      height: 100%;
+      background: #7C3AED;
+      border-radius: 3px;
+    }
+    .ballot-nav-slim-count {
+      font-size: 11px;
+      color: #fff;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* ======================== */
+    /* COMPACT ITEM HEADER      */
+    /* ======================== */
+    .item-header-compact { display: flex; flex-direction: column; gap: 8px; }
+    .item-title-compact { font-size: 12px; font-weight: 700; color: #3B82F6; text-transform: uppercase; letter-spacing: 0.5px; }
+    .item-question-compact { font-size: 16px; font-weight: 700; color: #111827; line-height: 22px; }
+    .item-info-compact {
+      display: flex;
+      gap: 8px;
+      background: rgba(59,130,246,0.06);
+      padding: 10px;
+      border-radius: 10px;
+      align-items: flex-start;
+    }
+    .item-info-compact .item-info-text { font-size: 13px; line-height: 19px; }
+
+    /* ======================== */
+    /* CANDIDATE CARD           */
+    /* ======================== */
+    .cand-card {
+      padding: 16px;
+      border-radius: 14px;
+      border: 2px solid #E5E7EB;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cand-card.best { border-color: #86EFAC; background: #F0FDF4; }
+    .cand-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .cand-radio {
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      border: 2px solid #D1D5DB;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .cand-info { flex: 1; }
+    .cand-name { font-size: 16px; font-weight: 700; color: #111827; }
+    .cand-party { font-size: 13px; color: #6B7280; margin-top: 2px; }
+    .cand-summary { font-size: 12px; color: #4B5563; line-height: 17px; margin-top: 4px; }
+    .cand-match-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 27px;
+      border: 3px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cand-match-circle.high { border-color: #22C55E; background: #F0FDF4; }
+    .cand-match-circle.mid { border-color: #F59E0B; background: #FFFBEB; }
+    .cand-match-pct { font-size: 14px; font-weight: 800; color: #111827; }
+    .cand-match-label { font-size: 9px; color: #6B7280; text-transform: uppercase; }
+
+    /* Compact Candidate Card */
+    .cand-card-compact {
+      padding: 12px;
+      border-radius: 12px;
+      border: 2px solid #E5E7EB;
+      background: white;
+    }
+    .cand-card-compact.best { border-color: #86EFAC; background: #F0FDF4; }
+    .cand-main-compact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cand-radio-compact {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      border: 2px solid #D1D5DB;
+      flex-shrink: 0;
+    }
+    .cand-info-compact { flex: 1; }
+    .cand-name-compact { font-size: 15px; font-weight: 700; color: #111827; }
+    .cand-party-compact { font-size: 12px; color: #6B7280; }
+    .cand-match-compact {
+      width: 44px;
+      height: 44px;
+      border-radius: 22px;
+      border: 3px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cand-match-compact.high { border-color: #22C55E; background: #F0FDF4; }
+    .cand-match-compact.mid { border-color: #F59E0B; background: #FFFBEB; }
+    .cand-match-pct-compact { font-size: 13px; font-weight: 800; color: #111827; }
+    .cand-match-label-compact { font-size: 7px; color: #6B7280; text-transform: uppercase; }
+    .cand-details-compact { font-size: 11px; color: #16A34A; margin-top: 4px; padding-left: 30px; }
+    .cand-compare-compact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #3B82F6;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #F3F4F6;
+      cursor: pointer;
+    }
+
+    /* Section title */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6B7280;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Build Tab - Streamlined Mockups</h1>
+  <p class="page-subtitle">Comparing current design with streamlined alternatives</p>
+
+  <!-- =============================================
+       SECTION 1: PROPOSITION VOTE - Current vs Streamlined
+       ============================================= -->
+  <h2 style="text-align:center; font-size:20px; font-weight:700; margin:30px 0 20px; color:#374151;">Proposition View</h2>
+
+  <div class="comparison-row">
+    <!-- CURRENT DESIGN -->
+    <div class="mockup-container">
+      <div class="mockup-label label-current">Current Design</div>
+      <div class="screen">
+        <div class="header">
+          <div class="header-title">Build Your Ballot</div>
+          <div class="header-subtitle">Make your choices for each race and measure</div>
+        </div>
+
+        <!-- Full Ballot Navigator -->
+        <div class="ballot-nav">
+          <div class="ballot-nav-header">
+            <div class="ballot-nav-title">&#128196; Your Official Ballot</div>
+            <div class="verified-badge">&#10003; Verified</div>
+          </div>
+          <div class="ballot-cards">
+            <div class="ballot-card completed">
+              <div class="ballot-card-header">
+                <span class="ballot-card-title">PROP A</span>
+                <span class="status-dot completed">&#10003;</span>
+              </div>
+              <div class="ballot-card-text">Shall the city issue bonds...</div>
+            </div>
+            <div class="ballot-card current">
+              <div class="ballot-card-header">
+                <span class="ballot-card-title">PROP B</span>
+                <span class="status-dot current">2</span>
+              </div>
+              <div class="ballot-card-text">Shall the minimum wage...</div>
+            </div>
+            <div class="ballot-card">
+              <div class="ballot-card-header">
+                <span class="ballot-card-title">PROP C</span>
+                <span class="status-dot pending">3</span>
+              </div>
+              <div class="ballot-card-text">Shall the city enact a tax...</div>
+            </div>
+          </div>
+          <div class="ballot-hint">&larr; Scroll to see all items &bull; Tap to jump &rarr;</div>
+        </div>
+
+        <div class="content content-current">
+          <div class="cat-header">
+            <div class="cat-row">
+              <div class="cat-badge" style="background:rgba(59,130,246,0.12); color:#3B82F6;">&#128196; Ballot Measures</div>
+              <span class="cat-counter">2 of 4</span>
+            </div>
+            <div class="cat-progress"><div class="cat-progress-fill" style="width:50%; background:#3B82F6;"></div></div>
+          </div>
+
+          <div class="item-header">
+            <div class="item-title">Proposition B</div>
+            <div class="item-question">Shall the city increase the minimum wage to $18/hour by 2028?</div>
+            <div class="item-info">
+              <span class="item-info-icon">&#9432;</span>
+              <span class="item-info-text">This measure would gradually raise the minimum wage from $15.50 to $18 over three years, affecting approximately 45,000 workers.</span>
+            </div>
+          </div>
+
+          <!-- Recommendation Banner (separate) -->
+          <div class="rec-banner yes">
+            <div class="rec-header">
+              <span>&#10024;</span>
+              <span class="rec-title yes">Moderate recommendation: Vote YES</span>
+            </div>
+            <div class="rec-text">Based on your values around worker protections and economic equity, a YES vote aligns with your priorities.</div>
+            <div class="rec-confidence"><div class="rec-confidence-fill" style="width:65%; background:#22C55E;"></div></div>
+            <div class="rec-how">&#128290; How we calculated this &#8599;</div>
+          </div>
+
+          <!-- Current Vote Buttons -->
+          <div class="vote-current">
+            <div class="vote-label">YOUR VOTE</div>
+            <div class="vote-row">
+              <div class="vote-btn yes">
+                <div class="rec-badge">&#10024;</div>
+                <div class="vote-icon" style="color:#22C55E;">&#10003;</div>
+                <div class="vote-text">YES</div>
+              </div>
+              <div class="vote-btn no">
+                <div class="vote-icon" style="color:#EF4444;">&#10007;</div>
+                <div class="vote-text">NO</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="nav-current">
+            <div class="nav-primary">Save & Continue &#8594;</div>
+            <div class="nav-secondary-row">
+              <div class="nav-secondary">&#8592; Back</div>
+              <div class="nav-secondary">Skip for now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STREAMLINED DESIGN -->
+    <div class="mockup-container">
+      <div class="mockup-label label-streamlined">Streamlined Design</div>
+      <div class="screen">
+        <div class="header">
+          <div class="header-title">Build Your Ballot</div>
+          <div class="header-subtitle">Make your choices for each race and measure</div>
+        </div>
+
+        <!-- Slim Navigator -->
+        <div class="ballot-nav-slim">
+          <div class="ballot-nav-slim-row">
+            <span class="ballot-nav-slim-title">&#128196; Ballot</span>
+            <div class="ballot-nav-slim-progress">
+              <div class="ballot-nav-slim-fill" style="width: 25%;"></div>
+            </div>
+            <span class="ballot-nav-slim-count">2 / 8</span>
+          </div>
+        </div>
+
+        <div class="content content-streamlined">
+          <div class="cat-header">
+            <div class="cat-row">
+              <div class="cat-badge" style="background:rgba(59,130,246,0.12); color:#3B82F6;">&#128196; Ballot Measures</div>
+              <span class="cat-counter">2 of 4</span>
+            </div>
+            <div class="cat-progress"><div class="cat-progress-fill" style="width:50%; background:#3B82F6;"></div></div>
+          </div>
+
+          <div class="item-header-compact">
+            <div class="item-title-compact">Proposition B</div>
+            <div class="item-question-compact">Shall the city increase the minimum wage to $18/hour by 2028?</div>
+            <div class="item-info-compact">
+              <span class="item-info-icon" style="font-size:16px;">&#9432;</span>
+              <span class="item-info-text">This measure would gradually raise the minimum wage from $15.50 to $18 over three years, affecting approximately 45,000 workers.</span>
+            </div>
+          </div>
+
+          <!-- Inline Recommendation (integrated) -->
+          <div class="rec-inline yes">
+            <span class="rec-inline-icon">&#10024;</span>
+            <span class="rec-inline-text">Aligns with your values &mdash; Vote YES</span>
+            <span class="rec-inline-link">Details &#8250;</span>
+          </div>
+
+          <!-- Compact Vote Buttons -->
+          <div class="vote-compact">
+            <div class="vote-label">YOUR VOTE</div>
+            <div class="vote-row">
+              <div class="vote-btn yes" style="position:relative;">
+                <span class="rec-tag">Recommended</span>
+                <span class="vote-icon" style="color:#22C55E;">&#10003;</span>
+                <span class="vote-text">YES</span>
+              </div>
+              <div class="vote-btn no">
+                <span class="vote-icon" style="color:#EF4444;">&#10007;</span>
+                <span class="vote-text">NO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slim Navigation -->
+          <div class="nav-streamlined">
+            <div class="nav-slim-primary">Save & Continue &#8594;</div>
+            <div class="nav-slim-row">
+              <div class="nav-slim-secondary">&#8592; Back</div>
+              <div class="nav-slim-secondary">Skip</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALT: SEGMENTED CONTROL -->
+    <div class="mockup-container">
+      <div class="mockup-label label-alt">Alt: Segmented Control</div>
+      <div class="screen">
+        <div class="header">
+          <div class="header-title">Build Your Ballot</div>
+          <div class="header-subtitle">Make your choices for each race and measure</div>
+        </div>
+
+        <!-- Slim Navigator -->
+        <div class="ballot-nav-slim">
+          <div class="ballot-nav-slim-row">
+            <span class="ballot-nav-slim-title">&#128196; Ballot</span>
+            <div class="ballot-nav-slim-progress">
+              <div class="ballot-nav-slim-fill" style="width: 25%;"></div>
+            </div>
+            <span class="ballot-nav-slim-count">2 / 8</span>
+          </div>
+        </div>
+
+        <div class="content content-streamlined">
+          <div class="cat-header">
+            <div class="cat-row">
+              <div class="cat-badge" style="background:rgba(59,130,246,0.12); color:#3B82F6;">&#128196; Ballot Measures</div>
+              <span class="cat-counter">2 of 4</span>
+            </div>
+            <div class="cat-progress"><div class="cat-progress-fill" style="width:50%; background:#3B82F6;"></div></div>
+          </div>
+
+          <div class="item-header-compact">
+            <div class="item-title-compact">Proposition B</div>
+            <div class="item-question-compact">Shall the city increase the minimum wage to $18/hour by 2028?</div>
+            <div class="item-info-compact">
+              <span class="item-info-icon" style="font-size:16px;">&#9432;</span>
+              <span class="item-info-text">This measure would gradually raise the minimum wage from $15.50 to $18 over three years, affecting approximately 45,000 workers.</span>
+            </div>
+          </div>
+
+          <!-- Inline Recommendation -->
+          <div class="rec-inline yes">
+            <span class="rec-inline-icon">&#10024;</span>
+            <span class="rec-inline-text">Aligns with your values &mdash; Vote YES</span>
+            <span class="rec-inline-link">Details &#8250;</span>
+          </div>
+
+          <!-- Segmented Control Vote -->
+          <div class="vote-segmented">
+            <div class="vote-label">YOUR VOTE</div>
+            <div class="vote-row">
+              <div class="vote-btn yes">
+                <span class="vote-icon" style="color:#22C55E;">&#10003;</span>
+                <span class="vote-text">YES</span>
+              </div>
+              <div class="vote-btn no selected">
+                <span class="vote-icon" style="color:white;">&#10007;</span>
+                <span class="vote-text">NO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slim Navigation -->
+          <div class="nav-streamlined">
+            <div class="nav-slim-primary">Save & Continue &#8594;</div>
+            <div class="nav-slim-row">
+              <div class="nav-slim-secondary">&#8592; Back</div>
+              <div class="nav-slim-secondary">Skip</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+       SECTION 2: CANDIDATE RACE - Current vs Streamlined
+       ============================================= -->
+  <h2 style="text-align:center; font-size:20px; font-weight:700; margin:30px 0 20px; color:#374151;">Candidate Race View</h2>
+
+  <div class="comparison-row">
+    <!-- CURRENT CANDIDATE DESIGN -->
+    <div class="mockup-container">
+      <div class="mockup-label label-current">Current Design</div>
+      <div class="screen">
+        <div class="header">
+          <div class="header-title">Build Your Ballot</div>
+          <div class="header-subtitle">Make your choices for each race and measure</div>
+        </div>
+        <div class="ballot-nav" style="padding-bottom: 8px;">
+          <div class="ballot-nav-header">
+            <div class="ballot-nav-title">&#128196; Your Official Ballot</div>
+            <div class="verified-badge">&#10003; Verified</div>
+          </div>
+        </div>
+        <div class="content content-current">
+          <div class="cat-header">
+            <div class="cat-row">
+              <div class="cat-badge" style="background:rgba(139,92,246,0.12); color:#8B5CF6;">&#128101; Elected Offices</div>
+              <span class="cat-counter">1 of 3</span>
+            </div>
+            <div class="cat-progress"><div class="cat-progress-fill" style="width:33%; background:#8B5CF6;"></div></div>
+          </div>
+
+          <div class="item-header">
+            <div class="item-title" style="color: #8B5CF6;">District 5 Supervisor</div>
+            <div class="item-question">Select your candidate for District 5 Supervisor</div>
+          </div>
+
+          <div class="section-label">SELECT ONE CANDIDATE</div>
+
+          <!-- Current: Full candidate cards -->
+          <div class="cand-card best">
+            <div class="cand-main">
+              <div class="cand-radio"></div>
+              <div class="cand-info">
+                <div class="cand-name">Maria Chen</div>
+                <div class="cand-party">Democratic Party</div>
+                <div class="cand-summary">Former education board member focused on affordable housing and transit</div>
+                <div style="font-size:11px; color:#16A34A; margin-top:6px;">Shares your views on housing, climate</div>
+              </div>
+              <div class="cand-match-circle high">
+                <div class="cand-match-pct">82%</div>
+                <div class="cand-match-label">match</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-top:4px; padding-top:12px; border-top:1px solid #E5E7EB; font-size:13px; font-weight:600; color:#3B82F6; cursor:pointer;">
+              &#128202; See how we compare &#8599;
+            </div>
+          </div>
+
+          <div class="cand-card">
+            <div class="cand-main">
+              <div class="cand-radio"></div>
+              <div class="cand-info">
+                <div class="cand-name">James Wilson</div>
+                <div class="cand-party">Republican Party</div>
+                <div class="cand-summary">Business owner advocating for tax reform and public safety</div>
+                <div style="font-size:11px; color:#F59E0B; margin-top:6px;">Differs on climate, healthcare</div>
+              </div>
+              <div class="cand-match-circle mid">
+                <div class="cand-match-pct">51%</div>
+                <div class="cand-match-label">match</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-top:4px; padding-top:12px; border-top:1px solid #E5E7EB; font-size:13px; font-weight:600; color:#3B82F6; cursor:pointer;">
+              &#128202; See how we compare &#8599;
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STREAMLINED CANDIDATE DESIGN -->
+    <div class="mockup-container">
+      <div class="mockup-label label-streamlined">Streamlined Design</div>
+      <div class="screen">
+        <div class="header">
+          <div class="header-title">Build Your Ballot</div>
+          <div class="header-subtitle">Make your choices for each race and measure</div>
+        </div>
+        <div class="ballot-nav-slim">
+          <div class="ballot-nav-slim-row">
+            <span class="ballot-nav-slim-title">&#128196; Ballot</span>
+            <div class="ballot-nav-slim-progress">
+              <div class="ballot-nav-slim-fill" style="width: 62%;"></div>
+            </div>
+            <span class="ballot-nav-slim-count">5 / 8</span>
+          </div>
+        </div>
+        <div class="content content-streamlined">
+          <div class="cat-header">
+            <div class="cat-row">
+              <div class="cat-badge" style="background:rgba(139,92,246,0.12); color:#8B5CF6;">&#128101; Elected Offices</div>
+              <span class="cat-counter">1 of 3</span>
+            </div>
+            <div class="cat-progress"><div class="cat-progress-fill" style="width:33%; background:#8B5CF6;"></div></div>
+          </div>
+
+          <div class="item-header-compact">
+            <div class="item-title-compact" style="color:#8B5CF6;">District 5 Supervisor</div>
+            <div class="item-question-compact">Select your candidate for District 5 Supervisor</div>
+          </div>
+
+          <div class="section-label">SELECT ONE CANDIDATE</div>
+
+          <!-- Compact Candidate Cards -->
+          <div class="cand-card-compact best">
+            <div class="cand-main-compact">
+              <div class="cand-radio-compact"></div>
+              <div class="cand-info-compact">
+                <div class="cand-name-compact">Maria Chen</div>
+                <div class="cand-party-compact">Democratic Party</div>
+              </div>
+              <div class="cand-match-compact high">
+                <div class="cand-match-pct-compact">82%</div>
+                <div class="cand-match-label-compact">match</div>
+              </div>
+            </div>
+            <div class="cand-details-compact">Shares your views on housing, climate</div>
+            <div class="cand-compare-compact">&#128202; Compare &#8250;</div>
+          </div>
+
+          <div class="cand-card-compact">
+            <div class="cand-main-compact">
+              <div class="cand-radio-compact"></div>
+              <div class="cand-info-compact">
+                <div class="cand-name-compact">James Wilson</div>
+                <div class="cand-party-compact">Republican Party</div>
+              </div>
+              <div class="cand-match-compact mid">
+                <div class="cand-match-pct-compact">51%</div>
+                <div class="cand-match-label-compact">match</div>
+              </div>
+            </div>
+            <div class="cand-details-compact" style="color:#F59E0B;">Differs on climate, healthcare</div>
+            <div class="cand-compare-compact">&#128202; Compare &#8250;</div>
+          </div>
+
+          <!-- Slim Navigation -->
+          <div class="nav-streamlined">
+            <div class="nav-slim-primary">Save & Continue &#8594;</div>
+            <div class="nav-slim-row">
+              <div class="nav-slim-secondary">&#8592; Back</div>
+              <div class="nav-slim-secondary">Skip</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+       SUMMARY OF CHANGES
+       ============================================= -->
+  <div style="max-width: 800px; margin: 30px auto; background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+    <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #111;">Summary of Streamlining Changes</h2>
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+      <thead>
+        <tr style="border-bottom: 2px solid #E5E7EB;">
+          <th style="text-align: left; padding: 10px; color: #6B7280;">Area</th>
+          <th style="text-align: left; padding: 10px; color: #6B7280;">Current</th>
+          <th style="text-align: left; padding: 10px; color: #6B7280;">Streamlined</th>
+          <th style="text-align: left; padding: 10px; color: #6B7280;">Space Saved</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px; font-weight: 600;">Yes/No Buttons</td>
+          <td style="padding: 10px;">~80px tall, 32px icons</td>
+          <td style="padding: 10px;">~48px tall, 20px icons</td>
+          <td style="padding: 10px; color: #16A34A; font-weight: 600;">~32px</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px; font-weight: 600;">Recommendation</td>
+          <td style="padding: 10px;">Full banner card (~120px)</td>
+          <td style="padding: 10px;">Inline tag (~40px)</td>
+          <td style="padding: 10px; color: #16A34A; font-weight: 600;">~80px</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px; font-weight: 600;">Ballot Navigator</td>
+          <td style="padding: 10px;">Full card carousel (~140px)</td>
+          <td style="padding: 10px;">Slim progress bar (~30px)</td>
+          <td style="padding: 10px; color: #16A34A; font-weight: 600;">~110px</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px; font-weight: 600;">Section Gaps</td>
+          <td style="padding: 10px;">20px between sections</td>
+          <td style="padding: 10px;">12px between sections</td>
+          <td style="padding: 10px; color: #16A34A; font-weight: 600;">~40px total</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px; font-weight: 600;">Navigation</td>
+          <td style="padding: 10px;">16px padding, 17px text</td>
+          <td style="padding: 10px;">14px padding, 15px text</td>
+          <td style="padding: 10px; color: #16A34A; font-weight: 600;">~16px</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; font-weight: 600;">Candidate Cards</td>
+          <td style="padding: 10px;">54px match circle, 16px pad</td>
+          <td style="padding: 10px;">44px match circle, 12px pad</td>
+          <td style="padding: 10px; color: #16A34A; font-weight: 600;">~30px per card</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="border-top: 2px solid #7C3AED;">
+          <td colspan="3" style="padding: 10px; font-weight: 700; color: #7C3AED;">Estimated total vertical space saved</td>
+          <td style="padding: 10px; color: #7C3AED; font-weight: 800; font-size: 16px;">~300px</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</body>
+</html>

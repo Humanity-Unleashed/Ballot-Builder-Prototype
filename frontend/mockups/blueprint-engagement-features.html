@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Engagement: Animal Archetypes vs. Values Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f0f1a;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+
+    .page-title {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      color: #9ca3af;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .page-subtitle strong { color: #c4b5fd; }
+
+    /* Research callout */
+    .research-box {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      background: rgba(99,102,241,0.08);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+
+    .research-title {
+      color: #a78bfa;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .research-item {
+      font-size: 12px;
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    .research-item strong { color: #fff; }
+
+    /* Section headers */
+    .section-divider {
+      max-width: 1400px;
+      margin: 48px auto 24px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .section-desc {
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* Layout */
+    .mockups-row {
+      display: flex;
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mockup-col {
+      flex: 1;
+      min-width: 340px;
+      max-width: 400px;
+    }
+
+    .mockup-label {
+      color: #c4b5fd;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .mockup-desc {
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* Phone */
+    .phone {
+      background: #1a1a2e;
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    .screen {
+      background: #fff;
+      border-radius: 36px;
+      overflow: hidden;
+    }
+
+    .notch-bar {
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 8px;
+    }
+
+    .notch-pill {
+      width: 100px;
+      height: 28px;
+      background: #1a1a2e;
+      border-radius: 14px;
+    }
+
+    /* ============================================
+       SHARED: Existing Blueprint Components
+       (Domain tabs, axis bars — unchanged)
+       ============================================ */
+
+    .blueprint-header {
+      padding: 16px 20px 12px;
+      background: #fff;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .bp-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #111827;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .header-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      color: #6b7280;
+      cursor: pointer;
+    }
+
+    .bp-subtitle {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* Domain tabs */
+    .domain-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      background: #fff;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .domain-tab {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #6b7280;
+      background: #f3f4f6;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .domain-tab.active {
+      background: #7C3AED;
+      color: #fff;
+    }
+
+    /* Axis bars (matching existing CompactAxisBar) */
+    .axes-list {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .axis-card {
+      cursor: pointer;
+    }
+
+    .axis-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .axis-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1f2937;
+      line-height: 1.3;
+    }
+
+    .importance-dots {
+      display: flex;
+      gap: 3px;
+    }
+
+    .imp-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      background: #e5e7eb;
+    }
+
+    .imp-dot.filled {
+      background: #3B82F6;
+    }
+
+    .stance-box {
+      background: #F5F3FF;
+      border-radius: 8px;
+      padding: 10px 12px;
+      border-left: 4px solid;
+      font-size: 13px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    /* ============================================
+       VARIANT A: Animal Archetypes
+       (Uses existing archetypes.ts data)
+       ============================================ */
+
+    .archetype-card {
+      margin: 14px 20px;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #a78bfa 100%);
+      border-radius: 18px;
+      padding: 20px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .archetype-card::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -25%;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    }
+
+    .archetype-emoji {
+      font-size: 36px;
+      margin-bottom: 6px;
+      position: relative;
+    }
+
+    .archetype-tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.7;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    .archetype-name {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .archetype-traits {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .trait-chip {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .archetype-summary {
+      font-size: 13px;
+      opacity: 0.9;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    /* ============================================
+       VARIANT B: Values Spectrum Profile
+       (8values / MFT / 16personalities style)
+       ============================================ */
+
+    .values-card {
+      margin: 14px 20px;
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 18px 20px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .values-type-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .type-badge {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 70px;
+    }
+
+    .type-code {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .type-code-label {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    .type-info {
+      flex: 1;
+    }
+
+    .type-name {
+      font-size: 18px;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 3px;
+    }
+
+    .type-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* Spectrum bars (8values style) */
+    .spectrum-section {
+      margin-bottom: 4px;
+    }
+
+    .spectrum-row {
+      margin-bottom: 12px;
+    }
+
+    .spectrum-poles {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .spectrum-pole {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .spectrum-pole.left { color: #6366f1; }
+    .spectrum-pole.right { color: #0ea5e9; }
+
+    .spectrum-bar-wrap {
+      height: 10px;
+      display: flex;
+      gap: 2px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 3px;
+    }
+
+    .spectrum-fill-l {
+      height: 100%;
+      background: linear-gradient(90deg, #6366f1, #818cf8);
+    }
+
+    .spectrum-fill-r {
+      height: 100%;
+      background: linear-gradient(90deg, #7dd3fc, #0ea5e9);
+    }
+
+    .spectrum-percents {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .spectrum-pct {
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .spectrum-pct.left { color: #6366f1; }
+    .spectrum-pct.right { color: #0ea5e9; }
+
+    /* ============================================
+       SHARED: Insight + CTA (same for both)
+       ============================================ */
+
+    .insight-card {
+      margin: 0 20px 14px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .insight-text {
+      font-size: 13px;
+      color: #166534;
+      line-height: 1.5;
+    }
+
+    .insight-text strong {
+      color: #14532d;
+      font-weight: 700;
+    }
+
+    .vote-cta {
+      margin: 6px 20px 20px;
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .vote-cta-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .vote-cta-desc {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .vote-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #7C3AED;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ============================================
+       COMPLETION MOMENT
+       ============================================ */
+
+    .reveal-screen {
+      padding: 40px 24px;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 50%, #e0e7ff 100%);
+      text-align: center;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reveal-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #7c3aed;
+      margin-bottom: 24px;
+    }
+
+    .reveal-emoji {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    .reveal-name {
+      font-size: 28px;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+
+    .reveal-traits {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .reveal-trait {
+      background: #e0e7ff;
+      color: #4338ca;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .reveal-summary {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto 32px;
+    }
+
+    .reveal-btn {
+      background: #7C3AED;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reveal-note {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 16px;
+    }
+
+    /* Values variant reveal */
+    .reveal-type-badge {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .reveal-type-code {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .reveal-type-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    .reveal-spectrums {
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto 24px;
+      text-align: left;
+    }
+
+    .reveal-spectrum-row {
+      margin-bottom: 10px;
+    }
+
+    .reveal-spectrum-poles {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+
+    .reveal-spectrum-pole {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .reveal-spectrum-bar {
+      height: 8px;
+      display: flex;
+      gap: 2px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .reveal-sfill-l {
+      height: 100%;
+      background: #818cf8;
+    }
+
+    .reveal-sfill-r {
+      height: 100%;
+      background: #bae6fd;
+    }
+
+    /* ============================================
+       SHAREABLE CARDS
+       ============================================ */
+
+    .share-section {
+      max-width: 1400px;
+      margin: 48px auto 0;
+    }
+
+    .share-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .share-card {
+      width: 300px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Archetype share */
+    .share-archetype {
+      background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
+      padding: 32px 24px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .share-archetype::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -30%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    }
+
+    .share-a-tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.5;
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .share-a-emoji {
+      font-size: 48px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .share-a-name {
+      font-size: 24px;
+      font-weight: 900;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .share-a-desc {
+      font-size: 13px;
+      opacity: 0.85;
+      line-height: 1.5;
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .share-a-traits {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .share-a-chip {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 14px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .share-a-priorities {
+      position: relative;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .share-a-priority-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+
+    .share-a-priority-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .share-a-priority-item {
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+    }
+
+    .share-a-rank {
+      font-size: 10px;
+      font-weight: 800;
+      opacity: 0.5;
+      width: 16px;
+    }
+
+    .share-brand {
+      font-size: 10px;
+      opacity: 0.3;
+      position: relative;
+      margin-top: 16px;
+    }
+
+    /* Values spectrum share */
+    .share-values {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 28px 24px;
+      color: white;
+    }
+
+    .share-v-tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.4;
+      margin-bottom: 14px;
+    }
+
+    .share-v-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .share-v-badge {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    .share-v-code {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .share-v-name {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .share-v-desc {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .share-v-spectrums {
+      margin-bottom: 20px;
+    }
+
+    .share-v-row {
+      margin-bottom: 10px;
+    }
+
+    .share-v-poles {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+
+    .share-v-pole {
+      font-size: 9px;
+      font-weight: 600;
+      opacity: 0.6;
+    }
+
+    .share-v-bar {
+      height: 6px;
+      display: flex;
+      gap: 2px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+
+    .share-vfill-l {
+      height: 100%;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .share-vfill-r {
+      height: 100%;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .share-v-pcts {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .share-v-pct {
+      font-size: 10px;
+      font-weight: 800;
+      opacity: 0.5;
+    }
+
+    /* Priorities share (works for either variant) */
+    .share-priorities {
+      background: white;
+    }
+
+    .share-p-header {
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      padding: 24px;
+      color: white;
+      text-align: center;
+    }
+
+    .share-p-tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.6;
+      margin-bottom: 6px;
+    }
+
+    .share-p-title {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .share-p-body {
+      padding: 20px 24px;
+    }
+
+    .share-p-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .share-p-item:last-child { border-bottom: none; }
+
+    .share-p-rank {
+      font-size: 18px;
+      font-weight: 900;
+      color: #c7d2fe;
+      width: 28px;
+      text-align: center;
+    }
+
+    .share-p-icon {
+      font-size: 20px;
+    }
+
+    .share-p-info { flex: 1; }
+
+    .share-p-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .share-p-importance {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .share-p-footer {
+      text-align: center;
+      padding: 14px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    /* Annotation boxes */
+    .annotation {
+      margin: 14px 0 0;
+      padding: 12px 16px;
+      background: rgba(234,179,8,0.1);
+      border: 1px solid rgba(234,179,8,0.25);
+      border-radius: 10px;
+    }
+
+    .annotation-text {
+      font-size: 11px;
+      color: #d97706;
+      line-height: 1.5;
+    }
+
+    .annotation-text strong {
+      color: #f59e0b;
+    }
+
+    /* VS divider */
+    .vs-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 16px 0;
+    }
+
+    .vs-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1 class="page-title">Blueprint: Engagement Features</h1>
+    <p class="page-subtitle">
+      Two identity approaches for the Blueprint's post-assessment view.
+      Both add the <strong>same 4 research-backed features</strong> (archetype/identity, insight,
+      share, vote CTA) — the difference is <strong>how the identity is framed</strong>.
+    </p>
+  </div>
+
+  <div class="research-box">
+    <div class="research-title">What the Research Says to Add</div>
+    <div class="research-grid">
+      <div class="research-item">
+        <strong>Identity framing</strong> — "Being a voter" increased
+        turnout 79% to 89.9%. Give users a civic identity, not just data.
+      </div>
+      <div class="research-item">
+        <strong>Shareable results</strong> — Personality-test-style
+        outputs people want to share. No policy stances in the share card.
+      </div>
+      <div class="research-item">
+        <strong>Values to action</strong> — Connect the blueprint to
+        a voting plan while users are still engaged with their results.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 1: COMPLETION MOMENT
+       ============================================ -->
+  <div class="section-divider">
+    <div class="section-title">Step 1: Completion Moment</div>
+    <div class="section-desc">
+      Brief reveal screen after assessment finishes.
+      Shows for 2-3 seconds or until the user taps "See Your Blueprint."
+    </div>
+  </div>
+
+  <div class="mockups-row">
+    <!-- Variant A: Animal Archetype Reveal -->
+    <div class="mockup-col">
+      <div class="mockup-label">Variant A: Animal Archetype</div>
+      <div class="mockup-desc">
+        Uses the 8 archetypes already built in archetypes.ts:
+        Caring Koala, Independent Stallion, Thoughtful Owl, Pragmatic Fox,
+        Steady Turtle, Agile Panther, Principled Elephant, Loyal Retriever.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+          <div class="reveal-screen">
+            <div class="reveal-tag">Your Civic Blueprint is Ready</div>
+            <div class="reveal-emoji">&#x1F428;</div>
+            <div class="reveal-name">Caring Koala</div>
+            <div class="reveal-traits">
+              <span class="reveal-trait">Community-minded</span>
+              <span class="reveal-trait">Steady</span>
+              <span class="reveal-trait">Systems-oriented</span>
+            </div>
+            <div class="reveal-summary">
+              You tend to prioritize shared well-being and steady
+              solutions, especially when systems protect people from harm.
+            </div>
+            <button class="reveal-btn">
+              See Your Blueprint <span>&#x2192;</span>
+            </button>
+            <div class="reveal-note">Based on your 12 responses</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="annotation">
+        <div class="annotation-text">
+          <strong>Pro:</strong> Memorable, fun, shareable ("I'm a Caring Koala!").
+          Similar energy to BuzzFeed quizzes — familiar format that drives sharing.<br>
+          <strong>Con:</strong> Might feel unserious for a civic tool. Animal metaphors could
+          feel arbitrary.
+        </div>
+      </div>
+    </div>
+
+    <!-- Variant B: Values Profile Reveal -->
+    <div class="mockup-col">
+      <div class="mockup-label">Variant B: Values Spectrum</div>
+      <div class="mockup-desc">
+        Uses the same 3 meta-dimensions from archetypes.ts but
+        presents them as spectrums (8values style) with a personality
+        type code (16personalities style). More analytical, still novel.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+          <div class="reveal-screen">
+            <div class="reveal-tag">Your Civic Blueprint is Ready</div>
+            <div class="reveal-type-badge">
+              <div class="reveal-type-code">CSR</div>
+              <div class="reveal-type-label">Your Type</div>
+            </div>
+            <div class="reveal-name">The Steward</div>
+            <div class="reveal-summary">
+              You tend to prioritize shared well-being and steady
+              solutions, especially when systems protect people from harm.
+            </div>
+
+            <div class="reveal-spectrums">
+              <div class="reveal-spectrum-row">
+                <div class="reveal-spectrum-poles">
+                  <span class="reveal-spectrum-pole">Community</span>
+                  <span class="reveal-spectrum-pole">Individual</span>
+                </div>
+                <div class="reveal-spectrum-bar">
+                  <div class="reveal-sfill-l" style="width: 72%;"></div>
+                  <div class="reveal-sfill-r" style="width: 28%;"></div>
+                </div>
+              </div>
+              <div class="reveal-spectrum-row">
+                <div class="reveal-spectrum-poles">
+                  <span class="reveal-spectrum-pole">Stability</span>
+                  <span class="reveal-spectrum-pole">Change</span>
+                </div>
+                <div class="reveal-spectrum-bar">
+                  <div class="reveal-sfill-l" style="width: 62%;"></div>
+                  <div class="reveal-sfill-r" style="width: 38%;"></div>
+                </div>
+              </div>
+              <div class="reveal-spectrum-row">
+                <div class="reveal-spectrum-poles">
+                  <span class="reveal-spectrum-pole">Standards</span>
+                  <span class="reveal-spectrum-pole">Flexibility</span>
+                </div>
+                <div class="reveal-spectrum-bar">
+                  <div class="reveal-sfill-l" style="width: 58%;"></div>
+                  <div class="reveal-sfill-r" style="width: 42%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <button class="reveal-btn">
+              See Your Blueprint <span>&#x2192;</span>
+            </button>
+            <div class="reveal-note">Based on your 12 responses</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="annotation">
+        <div class="annotation-text">
+          <strong>Pro:</strong> Feels more substantive and analytical.
+          3-letter type codes (like MBTI's INFJ) are already familiar.
+          Spectrums show nuance, not just a label.<br>
+          <strong>Con:</strong> Less instantly fun/shareable than animals.
+          Requires more cognitive effort to understand.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 2: ENHANCED BLUEPRINT VIEW
+       ============================================ -->
+  <div class="section-divider">
+    <div class="section-title">Step 2: Enhanced Blueprint View</div>
+    <div class="section-desc">
+      The existing Blueprint "complete" view with 4 additions layered on top.
+      Existing domain tabs and axis bars remain unchanged underneath.
+    </div>
+  </div>
+
+  <div class="mockups-row">
+    <!-- Variant A: Animal Archetype Blueprint -->
+    <div class="mockup-col">
+      <div class="mockup-label">Variant A: With Animal Archetype</div>
+      <div class="mockup-desc">
+        Archetype card at top, then insight, then existing domain tabs
+        and axis bars, then vote CTA at bottom.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+
+          <!-- Header (existing + share button) -->
+          <div class="blueprint-header">
+            <div class="header-row">
+              <div class="bp-title">Your Civic Blueprint</div>
+              <div class="header-actions">
+                <button class="header-btn">&#x1F4E4; Share</button>
+                <button class="header-btn">&#x21BB; Retake</button>
+              </div>
+            </div>
+            <div class="bp-subtitle">Tap any position to fine-tune</div>
+          </div>
+
+          <!-- NEW: Archetype Card -->
+          <div class="archetype-card">
+            <div class="archetype-emoji">&#x1F428;</div>
+            <div class="archetype-tag">Your Civic Personality</div>
+            <div class="archetype-name">Caring Koala</div>
+            <div class="archetype-traits">
+              <span class="trait-chip">Community-minded</span>
+              <span class="trait-chip">Steady</span>
+              <span class="trait-chip">Systems-oriented</span>
+            </div>
+            <div class="archetype-summary">
+              You tend to prioritize shared well-being and steady solutions,
+              especially when systems protect people from harm.
+            </div>
+          </div>
+
+          <!-- NEW: Priority Insight -->
+          <div class="insight-card">
+            <div class="insight-text">
+              <strong>Healthcare</strong> and <strong>Climate</strong>
+              are your top priorities. You lean strongest on coverage models.
+            </div>
+          </div>
+
+          <!-- EXISTING: Domain Tabs -->
+          <div class="domain-tabs">
+            <div class="domain-tab active">&#x1F3E5; Health</div>
+            <div class="domain-tab">&#x1F4B0; Economy</div>
+            <div class="domain-tab">&#x1F3E0; Housing</div>
+            <div class="domain-tab">&#x1F6E1; Justice</div>
+            <div class="domain-tab">&#x1F331; Climate</div>
+          </div>
+
+          <!-- EXISTING: Axis Bars -->
+          <div class="axes-list">
+            <div class="axis-card">
+              <div class="axis-header">
+                <div class="axis-name">Coverage Model</div>
+                <div class="importance-dots">
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot"></div>
+                </div>
+              </div>
+              <div class="stance-box" style="border-left-color: #A855F7;">
+                Broader public coverage with private options
+              </div>
+            </div>
+
+            <div class="axis-card">
+              <div class="axis-header">
+                <div class="axis-name">Cost Control</div>
+                <div class="importance-dots">
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot"></div>
+                  <div class="imp-dot"></div>
+                </div>
+              </div>
+              <div class="stance-box" style="border-left-color: #6B7280;">
+                Mix of regulation and market forces
+              </div>
+            </div>
+
+            <div class="axis-card">
+              <div class="axis-header">
+                <div class="axis-name">Public Health Authority</div>
+                <div class="importance-dots">
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                </div>
+              </div>
+              <div class="stance-box" style="border-left-color: #A855F7;">
+                Stronger public health mandate
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW: Vote CTA -->
+          <div class="vote-cta">
+            <div class="vote-cta-title">Ready to put this to work?</div>
+            <div class="vote-cta-desc">
+              Find your polling place, see what's on your ballot,
+              and make a plan.
+            </div>
+            <button class="vote-cta-btn">
+              Make My Voting Plan &#x2192;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variant B: Values Profile Blueprint -->
+    <div class="mockup-col">
+      <div class="mockup-label">Variant B: With Values Spectrum</div>
+      <div class="mockup-desc">
+        Type code + spectrums at top, then insight, then existing
+        domain tabs and axis bars, then vote CTA at bottom.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+
+          <!-- Header -->
+          <div class="blueprint-header">
+            <div class="header-row">
+              <div class="bp-title">Your Civic Blueprint</div>
+              <div class="header-actions">
+                <button class="header-btn">&#x1F4E4; Share</button>
+                <button class="header-btn">&#x21BB; Retake</button>
+              </div>
+            </div>
+            <div class="bp-subtitle">Tap any position to fine-tune</div>
+          </div>
+
+          <!-- NEW: Values Spectrum Card -->
+          <div class="values-card">
+            <div class="values-type-header">
+              <div class="type-badge">
+                <div class="type-code">CSR</div>
+                <div class="type-code-label">Your Type</div>
+              </div>
+              <div class="type-info">
+                <div class="type-name">The Steward</div>
+                <div class="type-desc">Shared well-being through steady systems</div>
+              </div>
+            </div>
+
+            <div class="spectrum-section">
+              <div class="spectrum-row">
+                <div class="spectrum-poles">
+                  <span class="spectrum-pole left">Community</span>
+                  <span class="spectrum-pole right">Individual</span>
+                </div>
+                <div class="spectrum-bar-wrap">
+                  <div class="spectrum-fill-l" style="width: 72%;"></div>
+                  <div class="spectrum-fill-r" style="width: 28%;"></div>
+                </div>
+                <div class="spectrum-percents">
+                  <span class="spectrum-pct left">72%</span>
+                  <span class="spectrum-pct right">28%</span>
+                </div>
+              </div>
+
+              <div class="spectrum-row">
+                <div class="spectrum-poles">
+                  <span class="spectrum-pole left">Stability</span>
+                  <span class="spectrum-pole right">Change</span>
+                </div>
+                <div class="spectrum-bar-wrap">
+                  <div class="spectrum-fill-l" style="width: 62%;"></div>
+                  <div class="spectrum-fill-r" style="width: 38%;"></div>
+                </div>
+                <div class="spectrum-percents">
+                  <span class="spectrum-pct left">62%</span>
+                  <span class="spectrum-pct right">38%</span>
+                </div>
+              </div>
+
+              <div class="spectrum-row">
+                <div class="spectrum-poles">
+                  <span class="spectrum-pole left">Standards</span>
+                  <span class="spectrum-pole right">Flexibility</span>
+                </div>
+                <div class="spectrum-bar-wrap">
+                  <div class="spectrum-fill-l" style="width: 58%;"></div>
+                  <div class="spectrum-fill-r" style="width: 42%;"></div>
+                </div>
+                <div class="spectrum-percents">
+                  <span class="spectrum-pct left">58%</span>
+                  <span class="spectrum-pct right">42%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW: Priority Insight -->
+          <div class="insight-card">
+            <div class="insight-text">
+              <strong>Healthcare</strong> and <strong>Climate</strong>
+              are your top priorities. You lean strongest on coverage models.
+            </div>
+          </div>
+
+          <!-- EXISTING: Domain Tabs -->
+          <div class="domain-tabs">
+            <div class="domain-tab active">&#x1F3E5; Health</div>
+            <div class="domain-tab">&#x1F4B0; Economy</div>
+            <div class="domain-tab">&#x1F3E0; Housing</div>
+            <div class="domain-tab">&#x1F6E1; Justice</div>
+            <div class="domain-tab">&#x1F331; Climate</div>
+          </div>
+
+          <!-- EXISTING: Axis Bars -->
+          <div class="axes-list">
+            <div class="axis-card">
+              <div class="axis-header">
+                <div class="axis-name">Coverage Model</div>
+                <div class="importance-dots">
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot"></div>
+                </div>
+              </div>
+              <div class="stance-box" style="border-left-color: #A855F7;">
+                Broader public coverage with private options
+              </div>
+            </div>
+
+            <div class="axis-card">
+              <div class="axis-header">
+                <div class="axis-name">Cost Control</div>
+                <div class="importance-dots">
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot"></div>
+                  <div class="imp-dot"></div>
+                </div>
+              </div>
+              <div class="stance-box" style="border-left-color: #6B7280;">
+                Mix of regulation and market forces
+              </div>
+            </div>
+
+            <div class="axis-card">
+              <div class="axis-header">
+                <div class="axis-name">Public Health Authority</div>
+                <div class="importance-dots">
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                  <div class="imp-dot filled"></div>
+                </div>
+              </div>
+              <div class="stance-box" style="border-left-color: #A855F7;">
+                Stronger public health mandate
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW: Vote CTA -->
+          <div class="vote-cta">
+            <div class="vote-cta-title">Ready to put this to work?</div>
+            <div class="vote-cta-desc">
+              Find your polling place, see what's on your ballot,
+              and make a plan.
+            </div>
+            <button class="vote-cta-btn">
+              Make My Voting Plan &#x2192;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SECTION 3: SHAREABLE CARDS
+       ============================================ -->
+  <div class="section-divider">
+    <div class="section-title">Shareable Cards</div>
+    <div class="section-desc">
+      What gets shared. Personality-test energy. No policy stances —
+      just identity and priorities.
+    </div>
+  </div>
+
+  <div class="share-row">
+    <!-- Archetype Share (Variant A) -->
+    <div class="share-card">
+      <div class="share-archetype">
+        <div class="share-a-tag">My Civic Personality</div>
+        <div class="share-a-emoji">&#x1F428;</div>
+        <div class="share-a-name">Caring Koala</div>
+        <div class="share-a-desc">
+          I prioritize shared well-being and steady solutions
+        </div>
+        <div class="share-a-traits">
+          <span class="share-a-chip">Community-minded</span>
+          <span class="share-a-chip">Steady</span>
+          <span class="share-a-chip">Systems-oriented</span>
+        </div>
+        <div class="share-a-priorities">
+          <div class="share-a-priority-label">My Top Priorities</div>
+          <div class="share-a-priority-list">
+            <div class="share-a-priority-item">
+              <span class="share-a-rank">1</span>
+              &#x1F3E5; Healthcare
+            </div>
+            <div class="share-a-priority-item">
+              <span class="share-a-rank">2</span>
+              &#x1F331; Climate
+            </div>
+            <div class="share-a-priority-item">
+              <span class="share-a-rank">3</span>
+              &#x1F3E0; Housing
+            </div>
+          </div>
+        </div>
+        <div class="share-brand">Made with Ballot Builder</div>
+      </div>
+    </div>
+
+    <!-- Values Spectrum Share (Variant B) -->
+    <div class="share-card">
+      <div class="share-values">
+        <div class="share-v-tag">My Civic Profile</div>
+        <div class="share-v-header">
+          <div class="share-v-badge">
+            <div class="share-v-code">CSR</div>
+          </div>
+          <div>
+            <div class="share-v-name">The Steward</div>
+            <div class="share-v-desc">Shared well-being through steady systems</div>
+          </div>
+        </div>
+
+        <div class="share-v-spectrums">
+          <div class="share-v-row">
+            <div class="share-v-poles">
+              <span class="share-v-pole">Community</span>
+              <span class="share-v-pole">Individual</span>
+            </div>
+            <div class="share-v-bar">
+              <div class="share-vfill-l" style="width: 72%;"></div>
+              <div class="share-vfill-r" style="width: 28%;"></div>
+            </div>
+            <div class="share-v-pcts">
+              <span class="share-v-pct">72%</span>
+              <span class="share-v-pct">28%</span>
+            </div>
+          </div>
+
+          <div class="share-v-row">
+            <div class="share-v-poles">
+              <span class="share-v-pole">Stability</span>
+              <span class="share-v-pole">Change</span>
+            </div>
+            <div class="share-v-bar">
+              <div class="share-vfill-l" style="width: 62%;"></div>
+              <div class="share-vfill-r" style="width: 38%;"></div>
+            </div>
+            <div class="share-v-pcts">
+              <span class="share-v-pct">62%</span>
+              <span class="share-v-pct">38%</span>
+            </div>
+          </div>
+
+          <div class="share-v-row">
+            <div class="share-v-poles">
+              <span class="share-v-pole">Standards</span>
+              <span class="share-v-pole">Flexibility</span>
+            </div>
+            <div class="share-v-bar">
+              <div class="share-vfill-l" style="width: 58%;"></div>
+              <div class="share-vfill-r" style="width: 42%;"></div>
+            </div>
+            <div class="share-v-pcts">
+              <span class="share-v-pct">58%</span>
+              <span class="share-v-pct">42%</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 10px; opacity: 0.3; text-align: center;">
+          Made with Ballot Builder
+        </div>
+      </div>
+    </div>
+
+    <!-- Priorities Share (works for either) -->
+    <div class="share-card">
+      <div class="share-priorities">
+        <div class="share-p-header">
+          <div class="share-p-tag">What I Care About</div>
+          <div class="share-p-title">My Priorities</div>
+        </div>
+        <div class="share-p-body">
+          <div class="share-p-item">
+            <div class="share-p-rank">1</div>
+            <div class="share-p-icon">&#x1F3E5;</div>
+            <div class="share-p-info">
+              <div class="share-p-name">Healthcare</div>
+              <div class="share-p-importance">Top priority</div>
+            </div>
+          </div>
+          <div class="share-p-item">
+            <div class="share-p-rank">2</div>
+            <div class="share-p-icon">&#x1F331;</div>
+            <div class="share-p-info">
+              <div class="share-p-name">Climate</div>
+              <div class="share-p-importance">Very important</div>
+            </div>
+          </div>
+          <div class="share-p-item">
+            <div class="share-p-rank">3</div>
+            <div class="share-p-icon">&#x1F3E0;</div>
+            <div class="share-p-info">
+              <div class="share-p-name">Housing</div>
+              <div class="share-p-importance">Important</div>
+            </div>
+          </div>
+          <div class="share-p-item">
+            <div class="share-p-rank">4</div>
+            <div class="share-p-icon">&#x1F4B0;</div>
+            <div class="share-p-info">
+              <div class="share-p-name">Economy</div>
+              <div class="share-p-importance">Matters to me</div>
+            </div>
+          </div>
+          <div class="share-p-item">
+            <div class="share-p-rank">5</div>
+            <div class="share-p-icon">&#x1F6E1;</div>
+            <div class="share-p-info">
+              <div class="share-p-name">Justice</div>
+              <div class="share-p-importance">A little</div>
+            </div>
+          </div>
+        </div>
+        <div class="share-p-footer">Made with Ballot Builder</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

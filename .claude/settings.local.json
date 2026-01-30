@@ -33,7 +33,20 @@
       "Bash(git update-index:*)",
       "mcp__ide__getDiagnostics",
       "WebFetch(domain:dribbble.com)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\home-dashboard.html\")",
+      "Bash(explorer.exe \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\home-dashboard.html\")",
+      "Bash(cmd.exe /c start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\home-dashboard.html\")",
+      "Bash(cmd.exe /c start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\smart-assessment-improvements.html\")",
+      "Bash(cmd.exe /c start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\home-dashboard-v2.html\")",
+      "Bash(cmd.exe /c start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\combined-foundation-tab.html\")",
+      "Bash(npm install:*)",
+      "Bash(pushd:*)",
+      "Bash(popd)",
+      "Bash(git checkout:*)",
+      "Bash(powershell -Command \"Start-Process -FilePath ''npx'' -ArgumentList ''expo'',''start'',''--web'' -NoNewWindow\")",
+      "Bash(cmd.exe /c start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\build-tab-streamlined.html\")",
+      "Bash(git push:*)"
     ]
   }
 }

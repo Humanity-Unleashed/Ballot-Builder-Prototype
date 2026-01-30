@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Reframed - Values Profile (Not Political Positions)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f0f1a;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .page-title {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+      color: #9ca3af;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .page-subtitle strong {
+      color: #c4b5fd;
+    }
+
+    .section-divider {
+      max-width: 1400px;
+      margin: 48px auto 32px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .mockups-row {
+      display: flex;
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .mockup-col {
+      flex: 1;
+      min-width: 340px;
+      max-width: 400px;
+    }
+
+    .mockup-label {
+      color: #c4b5fd;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .mockup-desc {
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* Phone frame */
+    .phone {
+      background: #1a1a2e;
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    .screen {
+      background: #fff;
+      border-radius: 36px;
+      overflow: hidden;
+      min-height: 700px;
+    }
+
+    .notch-bar {
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 8px;
+    }
+
+    .notch-pill {
+      width: 100px;
+      height: 28px;
+      background: #1a1a2e;
+      border-radius: 14px;
+    }
+
+    /* ============================================
+       SCREEN 1: MORAL PALATE (Values Profile)
+       ============================================ */
+
+    .palate-screen {
+      padding: 20px;
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    }
+
+    .palate-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .palate-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+    }
+
+    .palate-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    /* Identity Card */
+    .values-identity {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #a78bfa 100%);
+      border-radius: 20px;
+      padding: 24px;
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .values-identity::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -30%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    }
+
+    .archetype-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .archetype-name {
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      position: relative;
+    }
+
+    .archetype-desc {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    /* Moral Palate Visualization */
+    .palate-section {
+      margin-bottom: 20px;
+    }
+
+    .palate-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .foundation-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .foundation-icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .icon-care { background: #fce7f3; }
+    .icon-fairness { background: #dbeafe; }
+    .icon-loyalty { background: #ffedd5; }
+    .icon-authority { background: #e0e7ff; }
+    .icon-sanctity { background: #fef3c7; }
+    .icon-liberty { background: #d1fae5; }
+
+    .foundation-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .foundation-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .foundation-bar-track {
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .foundation-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .fill-care { background: linear-gradient(90deg, #ec4899, #f472b6); }
+    .fill-fairness { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+    .fill-loyalty { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+    .fill-authority { background: linear-gradient(90deg, #6366f1, #818cf8); }
+    .fill-sanctity { background: linear-gradient(90deg, #eab308, #facc15); }
+    .fill-liberty { background: linear-gradient(90deg, #10b981, #34d399); }
+
+    .foundation-level {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: right;
+    }
+
+    /* Sensitivity Labels */
+    .sensitivity-legend {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: -6px;
+      margin-bottom: 16px;
+      padding: 0 48px 0 48px;
+    }
+
+    /* Insight callout */
+    .palate-insight {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .palate-insight-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .palate-insight-text {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .palate-insight-text strong {
+      color: #1e293b;
+    }
+
+    /* Actions */
+    .palate-cta {
+      width: 100%;
+      background: #1e293b;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .palate-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .palate-action-btn {
+      flex: 1;
+      background: #f1f5f9;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ============================================
+       SCREEN 2: VALUES MAP (Circumplex)
+       ============================================ */
+
+    .map-screen {
+      padding: 20px;
+      background: #fff;
+    }
+
+    .map-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .map-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+    }
+
+    .map-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    /* Circumplex Visualization */
+    .circumplex-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 20px;
+    }
+
+    .circumplex-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f8fafc 0%, #f1f5f9 60%, #e2e8f0 100%);
+      border: 2px solid #e2e8f0;
+    }
+
+    /* Quadrant labels */
+    .quad-label {
+      position: absolute;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .quad-top {
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #059669;
+    }
+
+    .quad-bottom {
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #dc2626;
+    }
+
+    .quad-left {
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #2563eb;
+    }
+
+    .quad-right {
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #d97706;
+    }
+
+    /* Cross lines */
+    .quad-line-h {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    .quad-line-v {
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      bottom: 10%;
+      width: 1px;
+      background: #e2e8f0;
+    }
+
+    /* User's center of gravity */
+    .gravity-point {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,102,241,0.5) 0%, rgba(99,102,241,0.15) 60%, transparent 100%);
+      border: 3px solid #6366f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gravity-inner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #6366f1;
+      box-shadow: 0 0 12px rgba(99,102,241,0.5);
+    }
+
+    .gravity-label {
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      font-weight: 700;
+      color: #6366f1;
+      white-space: nowrap;
+    }
+
+    /* Quadrant descriptions */
+    .quad-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .quad-card {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .quad-card.active {
+      border-color: #c7d2fe;
+      background: #f5f3ff;
+    }
+
+    .quad-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .quad-card-desc {
+      font-size: 10px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .quad-card.q-open .quad-card-title { color: #2563eb; }
+    .quad-card.q-conserve .quad-card-title { color: #d97706; }
+    .quad-card.q-transcend .quad-card-title { color: #059669; }
+    .quad-card.q-enhance .quad-card-title { color: #dc2626; }
+
+    /* Map insight */
+    .map-insight {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 14px;
+      padding: 16px;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .map-insight-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .map-cta {
+      width: 100%;
+      background: #1e293b;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* ============================================
+       SCREEN 3: VALUE DETAIL → POLICY BRIDGE
+       ============================================ */
+
+    .detail-screen {
+      background: #f8fafc;
+    }
+
+    .detail-nav {
+      background: white;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .detail-back {
+      font-size: 14px;
+      color: #6366f1;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .detail-progress {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .detail-body {
+      padding: 20px;
+    }
+
+    /* Value Hero */
+    .value-hero {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .value-hero-top {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .value-hero-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .value-hero-name {
+      font-size: 22px;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .value-hero-subtitle {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Sensitivity meter */
+    .sensitivity-meter {
+      padding: 20px 24px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .meter-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .meter-value {
+      color: #ec4899;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 13px;
+    }
+
+    .meter-track {
+      height: 12px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .meter-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #ec4899, #f472b6);
+    }
+
+    .meter-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    /* What this means */
+    .value-meaning {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .meaning-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .meaning-text {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .meaning-text strong {
+      color: #1e293b;
+    }
+
+    /* Tension pair */
+    .tension-card {
+      background: #faf5ff;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid #e9d5ff;
+    }
+
+    .tension-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: #7c3aed;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .tension-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .tension-pole {
+      font-size: 11px;
+      font-weight: 700;
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .tension-pole.left { color: #ec4899; text-align: right; }
+    .tension-pole.right { color: #64748b; text-align: left; }
+
+    .tension-track {
+      flex: 1;
+      height: 8px;
+      background: linear-gradient(90deg, #ec4899 0%, #f1f5f9 50%, #94a3b8 100%);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .tension-marker {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background: white;
+      border: 3px solid #6366f1;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .tension-desc {
+      font-size: 11px;
+      color: #7c3aed;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* Policy Bridge */
+    .policy-bridge {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .bridge-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .bridge-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      align-items: flex-start;
+    }
+
+    .bridge-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .bridge-arrow {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .bridge-content {}
+
+    .bridge-domain {
+      font-size: 10px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 3px;
+    }
+
+    .bridge-text {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .bridge-text strong {
+      color: #1e293b;
+    }
+
+    /* ============================================
+       SHAREABLE CARDS SECTION
+       ============================================ */
+
+    .share-section {
+      max-width: 1400px;
+      margin: 48px auto 0;
+    }
+
+    .share-cards-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .share-card {
+      width: 300px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Share Card 1: Palate Card */
+    .palate-share {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      padding: 32px 24px;
+      color: white;
+    }
+
+    .palate-share-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+
+    .palate-share-name {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .palate-share-desc {
+      font-size: 13px;
+      opacity: 0.8;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .palate-share-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .share-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .share-bar-icon {
+      font-size: 14px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .share-bar-name {
+      font-size: 10px;
+      font-weight: 600;
+      width: 52px;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    .share-bar-track {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .share-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .share-fill-care { background: #f472b6; }
+    .share-fill-fairness { background: #60a5fa; }
+    .share-fill-loyalty { background: #fbbf24; }
+    .share-fill-authority { background: #818cf8; }
+    .share-fill-sanctity { background: #facc15; }
+    .share-fill-liberty { background: #34d399; }
+
+    .share-branding {
+      font-size: 10px;
+      opacity: 0.4;
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Share Card 2: Archetype */
+    .archetype-share {
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      padding: 40px 24px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .archetype-share::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -40%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    }
+
+    .archetype-share-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+
+    .archetype-share-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .archetype-share-name {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .archetype-share-tagline {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .archetype-share-traits {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .trait-chip {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .archetype-share-branding {
+      font-size: 10px;
+      opacity: 0.4;
+      position: relative;
+    }
+
+    /* Share Card 3: Tension Card */
+    .tension-share {
+      background: white;
+    }
+
+    .tension-share-header {
+      background: #1e293b;
+      padding: 24px;
+      color: white;
+      text-align: center;
+    }
+
+    .tension-share-title {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .tension-share-body {
+      padding: 24px;
+    }
+
+    .tension-share-item {
+      margin-bottom: 20px;
+    }
+
+    .tension-share-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .tension-share-poles {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .tension-share-pole {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .tension-share-track {
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      gap: 1px;
+    }
+
+    .tension-share-left {
+      height: 100%;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .tension-share-right {
+      height: 100%;
+      border-radius: 0 4px 4px 0;
+      background: #e2e8f0;
+    }
+
+    .tension-share-footer {
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .tension-share-footer-text {
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    /* Comparison callout */
+    .comparison-note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .comparison-title {
+      color: #c4b5fd;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .comparison-item {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .comparison-item .old {
+      color: #f87171;
+      text-decoration: line-through;
+    }
+
+    .comparison-item .new {
+      color: #a5f3fc;
+    }
+
+    .comparison-arrow {
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1 class="page-title">Blueprint Reframed: Values, Not Positions</h1>
+    <p class="page-subtitle">
+      Instead of showing political stances people already know, the Blueprint reveals their
+      <strong>moral foundations</strong> and <strong>value tensions</strong> — things people
+      have never mapped about themselves. Novel, shareable, non-partisan.
+    </p>
+
+    <div class="comparison-note">
+      <div class="comparison-title">What Changed</div>
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <span class="old">Healthcare: 70% Public</span><br>
+          <span class="comparison-arrow">becomes</span><br>
+          <span class="new">Care: High Sensitivity</span>
+        </div>
+        <div class="comparison-item">
+          <span class="old">Economy: 65% More Services</span><br>
+          <span class="comparison-arrow">becomes</span><br>
+          <span class="new">Fairness vs. Liberty tension</span>
+        </div>
+        <div class="comparison-item">
+          <span class="old">"Healthcare-First Pragmatist"</span><br>
+          <span class="comparison-arrow">becomes</span><br>
+          <span class="new">"The Guardian" (values archetype)</span>
+        </div>
+        <div class="comparison-item">
+          <span class="old">Party-adjacent framing</span><br>
+          <span class="comparison-arrow">becomes</span><br>
+          <span class="new">Psychological self-discovery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       ROW 1: PRIMARY VIEWS
+       ============================================ -->
+  <div class="section-divider">
+    <div class="section-title">Level 1: Two Summary Options</div>
+    <div class="section-desc">Either view works as the default. Both are shareable and non-political.</div>
+  </div>
+
+  <div class="mockups-row">
+    <!-- SCREEN 1: MORAL PALATE -->
+    <div class="mockup-col">
+      <div class="mockup-label">Option A: Moral Palate</div>
+      <div class="mockup-desc">
+        Shows the user's "taste buds" — their sensitivity across 6 moral foundations.
+        Like an audio equalizer for your values. Novel self-discovery.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="palate-screen">
+            <div class="palate-header">
+              <h1 class="palate-title">Your Values</h1>
+              <p class="palate-subtitle">Your moral foundations profile</p>
+            </div>
+
+            <!-- Identity Card -->
+            <div class="values-identity">
+              <div class="archetype-label">Your Values Archetype</div>
+              <div class="archetype-name">The Guardian</div>
+              <div class="archetype-desc">You lead with empathy and fairness, and you want systems that protect people</div>
+            </div>
+
+            <!-- Moral Palate -->
+            <div class="palate-section">
+              <div class="palate-label">Your Moral Foundations</div>
+
+              <div class="foundation-row">
+                <div class="foundation-icon-wrap icon-care">&#x1F90D;</div>
+                <div class="foundation-info">
+                  <div class="foundation-name">Care</div>
+                  <div class="foundation-bar-track">
+                    <div class="foundation-bar-fill fill-care" style="width: 88%;"></div>
+                  </div>
+                </div>
+                <div class="foundation-level">88</div>
+              </div>
+
+              <div class="foundation-row">
+                <div class="foundation-icon-wrap icon-fairness">&#x2696;</div>
+                <div class="foundation-info">
+                  <div class="foundation-name">Fairness</div>
+                  <div class="foundation-bar-track">
+                    <div class="foundation-bar-fill fill-fairness" style="width: 82%;"></div>
+                  </div>
+                </div>
+                <div class="foundation-level">82</div>
+              </div>
+
+              <div class="foundation-row">
+                <div class="foundation-icon-wrap icon-liberty">&#x1F54A;</div>
+                <div class="foundation-info">
+                  <div class="foundation-name">Liberty</div>
+                  <div class="foundation-bar-track">
+                    <div class="foundation-bar-fill fill-liberty" style="width: 65%;"></div>
+                  </div>
+                </div>
+                <div class="foundation-level">65</div>
+              </div>
+
+              <div class="foundation-row">
+                <div class="foundation-icon-wrap icon-loyalty">&#x1F91D;</div>
+                <div class="foundation-info">
+                  <div class="foundation-name">Loyalty</div>
+                  <div class="foundation-bar-track">
+                    <div class="foundation-bar-fill fill-loyalty" style="width: 52%;"></div>
+                  </div>
+                </div>
+                <div class="foundation-level">52</div>
+              </div>
+
+              <div class="foundation-row">
+                <div class="foundation-icon-wrap icon-authority">&#x1F3DB;</div>
+                <div class="foundation-info">
+                  <div class="foundation-name">Authority</div>
+                  <div class="foundation-bar-track">
+                    <div class="foundation-bar-fill fill-authority" style="width: 35%;"></div>
+                  </div>
+                </div>
+                <div class="foundation-level">35</div>
+              </div>
+
+              <div class="foundation-row">
+                <div class="foundation-icon-wrap icon-sanctity">&#x2728;</div>
+                <div class="foundation-info">
+                  <div class="foundation-name">Sanctity</div>
+                  <div class="foundation-bar-track">
+                    <div class="foundation-bar-fill fill-sanctity" style="width: 28%;"></div>
+                  </div>
+                </div>
+                <div class="foundation-level">28</div>
+              </div>
+
+              <div class="sensitivity-legend">
+                <span>Lower sensitivity</span>
+                <span>Higher sensitivity</span>
+              </div>
+            </div>
+
+            <!-- Insight -->
+            <div class="palate-insight">
+              <span class="palate-insight-icon">&#x1F4A1;</span>
+              <span class="palate-insight-text">
+                You're driven by <strong>Care</strong> and <strong>Fairness</strong> — the
+                foundations linked to protecting individuals and ensuring equal treatment.
+              </span>
+            </div>
+
+            <!-- CTA -->
+            <button class="palate-cta">
+              Explore What Drives You
+              <span>&#x2192;</span>
+            </button>
+            <div class="palate-actions">
+              <button class="palate-action-btn">&#x1F4E4; Share</button>
+              <button class="palate-action-btn">&#x1F5BC; Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: VALUES MAP -->
+    <div class="mockup-col">
+      <div class="mockup-label">Option B: Values Map</div>
+      <div class="mockup-desc">
+        Based on Schwartz's circumplex. Shows the user's "center of gravity"
+        across 4 value quadrants. Spatial and intuitive.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="map-screen">
+            <div class="map-header">
+              <h1 class="map-title">Your Values Map</h1>
+              <p class="map-subtitle">Where your values center</p>
+            </div>
+
+            <!-- Circumplex -->
+            <div class="circumplex-container">
+              <div class="circumplex-bg"></div>
+              <div class="quad-line-h"></div>
+              <div class="quad-line-v"></div>
+
+              <div class="quad-label quad-top">Self-<br>Transcendence</div>
+              <div class="quad-label quad-bottom">Self-<br>Enhancement</div>
+              <div class="quad-label quad-left">Openness<br>to Change</div>
+              <div class="quad-label quad-right">Conser-<br>vation</div>
+
+              <!-- User's center of gravity: upper-left quadrant -->
+              <div class="gravity-point" style="top: 28%; left: 34%;">
+                <div class="gravity-inner"></div>
+                <div class="gravity-label">You are here</div>
+              </div>
+            </div>
+
+            <!-- Quadrant Cards -->
+            <div class="quad-cards">
+              <div class="quad-card q-transcend active">
+                <div class="quad-card-title">Self-Transcendence</div>
+                <div class="quad-card-desc">Concern for the welfare of others and the world</div>
+              </div>
+              <div class="quad-card q-open active">
+                <div class="quad-card-title">Openness to Change</div>
+                <div class="quad-card-desc">Valuing autonomy, exploration, and new ideas</div>
+              </div>
+              <div class="quad-card q-conserve">
+                <div class="quad-card-title">Conservation</div>
+                <div class="quad-card-desc">Valuing stability, tradition, and security</div>
+              </div>
+              <div class="quad-card q-enhance">
+                <div class="quad-card-title">Self-Enhancement</div>
+                <div class="quad-card-desc">Pursuing achievement, power, and personal success</div>
+              </div>
+            </div>
+
+            <!-- Insight -->
+            <div class="map-insight">
+              <p class="map-insight-text">
+                Your values center on <strong>caring for others</strong> while staying
+                <strong>open to new approaches</strong>. You're drawn to solutions
+                that are both compassionate and innovative.
+              </p>
+            </div>
+
+            <button class="map-cta">See Your Full Profile &#x2192;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: VALUE DETAIL -->
+    <div class="mockup-col">
+      <div class="mockup-label">Level 2: Value Detail + Policy Bridge</div>
+      <div class="mockup-desc">
+        Tap any foundation to see what it means, its tensions with other values,
+        and how it connects to real-world policy positions.
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="notch-bar">
+            <div class="notch-pill"></div>
+          </div>
+
+          <div class="detail-screen">
+            <div class="detail-nav">
+              <button class="detail-back">&#x2190; Values</button>
+              <span class="detail-progress">1 of 6</span>
+            </div>
+
+            <div class="detail-body">
+              <!-- Value Hero -->
+              <div class="value-hero">
+                <div class="value-hero-top">
+                  <div class="value-hero-icon icon-care" style="width: 64px; height: 64px; border-radius: 20px; font-size: 32px;">&#x1F90D;</div>
+                  <div class="value-hero-name">Care</div>
+                  <div class="value-hero-subtitle">Protecting the vulnerable from harm</div>
+                </div>
+
+                <div class="sensitivity-meter">
+                  <div class="meter-label">
+                    <span>Your Sensitivity</span>
+                    <span class="meter-value">Very High</span>
+                  </div>
+                  <div class="meter-track">
+                    <div class="meter-fill" style="width: 88%;"></div>
+                  </div>
+                  <div class="meter-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- What this means -->
+              <div class="value-meaning">
+                <div class="meaning-title">What This Means For You</div>
+                <p class="meaning-text">
+                  You have a <strong>strong instinct to protect people from suffering</strong>.
+                  You're drawn to kindness, empathy, and systems that care for the vulnerable.
+                  This shapes how you think about everything from policy to personal relationships.
+                </p>
+
+                <!-- Tension -->
+                <div class="tension-card">
+                  <div class="tension-title">Your Key Tension</div>
+                  <div class="tension-bar-container">
+                    <span class="tension-pole left">Care</span>
+                    <div class="tension-track">
+                      <div class="tension-marker" style="left: 25%;"></div>
+                    </div>
+                    <span class="tension-pole right">Liberty</span>
+                  </div>
+                  <div class="tension-desc">You lean toward protection over individual autonomy</div>
+                </div>
+              </div>
+
+              <!-- Policy Bridge -->
+              <div class="policy-bridge">
+                <div class="bridge-title">How This Shows Up in Policy</div>
+
+                <div class="bridge-item">
+                  <span class="bridge-arrow">&#x2192;</span>
+                  <div class="bridge-content">
+                    <div class="bridge-domain">Healthcare</div>
+                    <div class="bridge-text">
+                      Your Care value drives you toward <strong>universal access</strong> — systems
+                      where no one falls through the cracks
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bridge-item">
+                  <span class="bridge-arrow">&#x2192;</span>
+                  <div class="bridge-content">
+                    <div class="bridge-domain">Climate</div>
+                    <div class="bridge-text">
+                      Protecting future generations matters to you — you favor
+                      <strong>proactive action</strong> even at short-term cost
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bridge-item">
+                  <span class="bridge-arrow">&#x2192;</span>
+                  <div class="bridge-content">
+                    <div class="bridge-domain">Housing</div>
+                    <div class="bridge-text">
+                      You see housing as a basic need — you support
+                      <strong>affordability protections</strong> over pure market dynamics
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SHAREABLE CARDS
+       ============================================ -->
+  <div class="share-section">
+    <div class="section-divider">
+      <div class="section-title">Shareable Cards</div>
+      <div class="section-desc">Non-political, personality-test-style cards people would actually want to share.</div>
+    </div>
+
+    <div class="share-cards-row">
+      <!-- Palate Share -->
+      <div class="share-card">
+        <div class="palate-share">
+          <div class="palate-share-label">My Values Profile</div>
+          <div class="palate-share-name">The Guardian</div>
+          <div class="palate-share-desc">I lead with empathy and fairness, and I want systems that protect people</div>
+
+          <div class="palate-share-bars">
+            <div class="share-bar-row">
+              <span class="share-bar-icon">&#x1F90D;</span>
+              <span class="share-bar-name">Care</span>
+              <div class="share-bar-track">
+                <div class="share-bar-fill share-fill-care" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div class="share-bar-row">
+              <span class="share-bar-icon">&#x2696;</span>
+              <span class="share-bar-name">Fairness</span>
+              <div class="share-bar-track">
+                <div class="share-bar-fill share-fill-fairness" style="width: 82%;"></div>
+              </div>
+            </div>
+            <div class="share-bar-row">
+              <span class="share-bar-icon">&#x1F54A;</span>
+              <span class="share-bar-name">Liberty</span>
+              <div class="share-bar-track">
+                <div class="share-bar-fill share-fill-liberty" style="width: 65%;"></div>
+              </div>
+            </div>
+            <div class="share-bar-row">
+              <span class="share-bar-icon">&#x1F91D;</span>
+              <span class="share-bar-name">Loyalty</span>
+              <div class="share-bar-track">
+                <div class="share-bar-fill share-fill-loyalty" style="width: 52%;"></div>
+              </div>
+            </div>
+            <div class="share-bar-row">
+              <span class="share-bar-icon">&#x1F3DB;</span>
+              <span class="share-bar-name">Authority</span>
+              <div class="share-bar-track">
+                <div class="share-bar-fill share-fill-authority" style="width: 35%;"></div>
+              </div>
+            </div>
+            <div class="share-bar-row">
+              <span class="share-bar-icon">&#x2728;</span>
+              <span class="share-bar-name">Sanctity</span>
+              <div class="share-bar-track">
+                <div class="share-bar-fill share-fill-sanctity" style="width: 28%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="share-branding">Made with Ballot Builder</div>
+        </div>
+      </div>
+
+      <!-- Archetype Share -->
+      <div class="share-card">
+        <div class="archetype-share">
+          <div class="archetype-share-label">My Values Archetype</div>
+          <div class="archetype-share-icon">&#x1F6E1;</div>
+          <div class="archetype-share-name">The Guardian</div>
+          <div class="archetype-share-tagline">I lead with empathy and fairness, and want systems that protect people</div>
+          <div class="archetype-share-traits">
+            <span class="trait-chip">High Care</span>
+            <span class="trait-chip">High Fairness</span>
+            <span class="trait-chip">Open-Minded</span>
+          </div>
+          <div class="archetype-share-branding">Made with Ballot Builder</div>
+        </div>
+      </div>
+
+      <!-- Tensions Share -->
+      <div class="share-card">
+        <div class="tension-share">
+          <div class="tension-share-header">
+            <div class="tension-share-title">My Value Tensions</div>
+          </div>
+          <div class="tension-share-body">
+            <div class="tension-share-item">
+              <div class="tension-share-label">Protection vs. Freedom</div>
+              <div class="tension-share-poles">
+                <span class="tension-share-pole" style="color: #ec4899;">Care</span>
+                <span class="tension-share-pole" style="color: #10b981;">Liberty</span>
+              </div>
+              <div class="tension-share-track">
+                <div class="tension-share-left" style="width: 72%; background: #ec4899;"></div>
+                <div class="tension-share-right" style="width: 28%;"></div>
+              </div>
+            </div>
+
+            <div class="tension-share-item">
+              <div class="tension-share-label">Equality vs. Achievement</div>
+              <div class="tension-share-poles">
+                <span class="tension-share-pole" style="color: #3b82f6;">Fairness</span>
+                <span class="tension-share-pole" style="color: #6366f1;">Authority</span>
+              </div>
+              <div class="tension-share-track">
+                <div class="tension-share-left" style="width: 65%; background: #3b82f6;"></div>
+                <div class="tension-share-right" style="width: 35%;"></div>
+              </div>
+            </div>
+
+            <div class="tension-share-item">
+              <div class="tension-share-label">Change vs. Tradition</div>
+              <div class="tension-share-poles">
+                <span class="tension-share-pole" style="color: #2563eb;">Openness</span>
+                <span class="tension-share-pole" style="color: #d97706;">Conservation</span>
+              </div>
+              <div class="tension-share-track">
+                <div class="tension-share-left" style="width: 60%; background: #2563eb;"></div>
+                <div class="tension-share-right" style="width: 40%;"></div>
+              </div>
+            </div>
+
+            <div class="tension-share-footer">
+              <div class="tension-share-footer-text">Made with Ballot Builder</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

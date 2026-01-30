@@ -2,8 +2,10 @@
  * Tabs Layout
  *
  * Main app navigation for authenticated users.
- * Tab order: Home → Smart → Blueprint → Build
- * Icons blend construction/building with civic/democracy themes.
+ * Tab order: Home → Blueprint → Build
+ *
+ * This is the combined Blueprint version where Assessment + Blueprint
+ * are merged into a single "Blueprint" tab with 3 states.
  */
 
 import { Tabs } from 'expo-router';
@@ -59,21 +61,9 @@ export default function TabsLayout() {
         }}
       />
 
-      {/* 2. Assess - Adaptive assessment to discover values */}
+      {/* 2. Blueprint - Combined Assessment + Blueprint view */}
       <Tabs.Screen
-        name="adaptive-assessment"
-        options={{
-          title: 'Assess',
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="compass-outline" size={size} color={color} />
-          ),
-        }}
-      />
-
-      {/* 3. Blueprint - View and edit policy positions */}
-      <Tabs.Screen
-        name="blueprint-v3"
+        name="blueprint"
         options={{
           title: 'Blueprint',
           headerShown: false,
@@ -83,7 +73,7 @@ export default function TabsLayout() {
         }}
       />
 
-      {/* 4. Build - Build your ballot with candidate selection */}
+      {/* 3. Build - Build your ballot with candidate selection */}
       <Tabs.Screen
         name="ballot-builder"
         options={{
@@ -97,7 +87,19 @@ export default function TabsLayout() {
 
       {/* ==================== HIDDEN TABS ==================== */}
 
-      {/* Legacy blueprint versions - hidden from tab bar */}
+      {/* Legacy tabs - hidden from tab bar */}
+      <Tabs.Screen
+        name="adaptive-assessment"
+        options={{
+          href: null, // Hides from tab bar
+        }}
+      />
+      <Tabs.Screen
+        name="blueprint-v3"
+        options={{
+          href: null, // Hides from tab bar
+        }}
+      />
       <Tabs.Screen
         name="blueprint-v2"
         options={{

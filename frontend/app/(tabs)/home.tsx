@@ -24,7 +24,6 @@ import { useState, useEffect } from 'react';
 // ===========================================
 
 interface StepStatus {
-  assess: 'not_started' | 'in_progress' | 'complete';
   blueprint: 'not_started' | 'in_progress' | 'complete';
   build: 'not_started' | 'in_progress' | 'complete';
   buildProgress?: { decided: number; total: number };
@@ -79,7 +78,6 @@ export default function HomeScreen() {
 
   // Mock state - in production this would come from a context/store
   const [stepStatus] = useState<StepStatus>({
-    assess: 'complete',
     blueprint: 'in_progress',
     build: 'not_started',
     blueprintProgress: { domains: 3, total: 5 },
@@ -103,17 +101,16 @@ export default function HomeScreen() {
     earlyVotingStart: new Date('2026-10-24'),
   });
 
-  // Calculate overall progress
+  // Calculate overall progress (2 steps: Blueprint 50%, Build 50%)
   const calculateProgress = (): number => {
     let progress = 0;
-    if (stepStatus.assess === 'complete') progress += 33;
-    if (stepStatus.blueprint === 'complete') progress += 33;
+    if (stepStatus.blueprint === 'complete') progress += 50;
     else if (stepStatus.blueprint === 'in_progress' && stepStatus.blueprintProgress) {
-      progress += Math.round(33 * (stepStatus.blueprintProgress.domains / stepStatus.blueprintProgress.total));
+      progress += Math.round(50 * (stepStatus.blueprintProgress.domains / stepStatus.blueprintProgress.total));
     }
-    if (stepStatus.build === 'complete') progress += 34;
+    if (stepStatus.build === 'complete') progress += 50;
     else if (stepStatus.build === 'in_progress' && stepStatus.buildProgress) {
-      progress += Math.round(34 * (stepStatus.buildProgress.decided / stepStatus.buildProgress.total));
+      progress += Math.round(50 * (stepStatus.buildProgress.decided / stepStatus.buildProgress.total));
     }
     return progress;
   };
@@ -153,17 +150,8 @@ export default function HomeScreen() {
           {/* Steps Row */}
           <View style={styles.stepsRow}>
             <StepIndicator
-              label="Assess"
-              step={1}
-              status={stepStatus.assess}
-            />
-            <View style={[
-              styles.stepConnector,
-              stepStatus.assess === 'complete' && styles.stepConnectorComplete
-            ]} />
-            <StepIndicator
               label="Blueprint"
-              step={2}
+              step={1}
               status={stepStatus.blueprint}
             />
             <View style={[
@@ -172,7 +160,7 @@ export default function HomeScreen() {
             ]} />
             <StepIndicator
               label="Build"
-              step={3}
+              step={2}
               status={stepStatus.build}
             />
           </View>
@@ -182,16 +170,7 @@ export default function HomeScreen() {
         <Text style={styles.sectionTitle}>Your Building Blocks</Text>
         <View style={styles.quickActions}>
           <QuickActionCard
-            icon="search-outline"
-            title="Assess"
-            status={stepStatus.assess === 'complete' ? 'Complete' : 'Not Started'}
-            statusType={stepStatus.assess === 'complete' ? 'complete' : 'default'}
-            color={Colors.primary}
-            onPress={() => router.push('/(tabs)/adaptive-assessment')}
-            isActive={stepStatus.assess === 'in_progress'}
-          />
-          <QuickActionCard
-            icon="document-text-outline"
+            icon="map-outline"
             title="Blueprint"
             status={
               stepStatus.blueprint === 'complete' ? 'Complete' :
@@ -203,8 +182,8 @@ export default function HomeScreen() {
               stepStatus.blueprint === 'complete' ? 'complete' :
               stepStatus.blueprint === 'in_progress' ? 'in_progress' : 'default'
             }
-            color={Colors.blue}
-            onPress={() => router.push('/(tabs)/blueprint-v3')}
+            color={Colors.primary}
+            onPress={() => router.push('/(tabs)/blueprint')}
             isActive={stepStatus.blueprint === 'in_progress'}
           />
           <QuickActionCard
@@ -231,6 +210,15 @@ export default function HomeScreen() {
             statusType={pollingPlace ? 'complete' : 'default'}
             color={Colors.red}
             onPress={() => {/* TODO: Open poll finder modal */}}
+            isActive={false}
+          />
+          <QuickActionCard
+            icon="book-outline"
+            title="Resources"
+            status="Learn more"
+            statusType="default"
+            color={Colors.blue}
+            onPress={() => {/* TODO: Open resources */}}
             isActive={false}
           />
         </View>
