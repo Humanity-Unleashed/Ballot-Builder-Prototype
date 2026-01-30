@@ -14,11 +14,30 @@ export interface MetaDimensionScores {
   governance_style: number;           // -1 = Rules & standards, +1 = Flexibility & choice
 }
 
-// Which axes contribute to each meta-dimension
+// Which axes contribute to each meta-dimension (all 15 axes mapped)
 const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
-  responsibility_orientation: ['econ_safetynet', 'health_coverage_model', 'health_public_health', 'housing_affordability_tools'],
-  change_tempo: ['housing_supply_zoning', 'climate_ambition', 'climate_permitting'],
-  governance_style: ['health_cost_control', 'justice_policing_accountability', 'climate_permitting']
+  responsibility_orientation: [
+    'econ_safetynet',            // broader safety net ↔ conditional/limited
+    'econ_investment',           // public investment ↔ lower taxes
+    'health_coverage_model',     // government insurance ↔ private insurance
+    'health_public_health',      // prevention & treatment ↔ personal choice
+    'housing_affordability_tools' // rent limits & public housing ↔ fewer rules
+  ],
+  change_tempo: [
+    'housing_supply_zoning',      // build more / density ↔ preserve / limit
+    'housing_transport_priority', // transit & biking ↔ cars & parking
+    'justice_sentencing_goals',   // rehabilitation ↔ punishment
+    'climate_ambition',           // act fast ↔ go slow
+    'climate_energy_portfolio',   // solar & wind first ↔ mix of all types
+    'climate_permitting'          // thorough review ↔ faster approvals
+  ],
+  governance_style: [
+    'econ_school_choice',             // public schools ↔ school choice
+    'health_cost_control',            // government price limits ↔ market competition
+    'justice_policing_accountability', // oversight & alternatives ↔ more police
+    'justice_firearms',               // stronger gun rules ↔ fewer restrictions
+    'climate_permitting'              // thorough review ↔ faster approvals
+  ]
 };
 
 // Convert stance value (0..10) to axis_score in [-1,+1]
