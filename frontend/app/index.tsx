@@ -20,10 +20,10 @@ export default function WelcomeScreen() {
   const router = useRouter();
   const { isAuthenticated, isLoading } = useAuth();
 
-  // Redirect to home if already logged in
+  // Redirect to blueprint if already logged in
   useEffect(() => {
     if (!isLoading && isAuthenticated) {
-      router.replace('/(tabs)/home');
+      router.replace('/(tabs)/blueprint');
     }
   }, [isAuthenticated, isLoading]);
 

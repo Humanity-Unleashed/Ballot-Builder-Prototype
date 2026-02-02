@@ -62,7 +62,7 @@ export default function RegisterScreen() {
     setIsLoading(true);
     try {
       await register(email, password);
-      router.replace('/(tabs)/home');
+      router.replace('/(tabs)/blueprint');
     } catch (error: any) {
       Alert.alert(
         'Registration Failed',

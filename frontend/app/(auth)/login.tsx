@@ -49,7 +49,7 @@ export default function LoginScreen() {
     setIsLoading(true);
     try {
       await login(email, password);
-      router.replace('/(tabs)/home');
+      router.replace('/(tabs)/blueprint');
     } catch (error: any) {
       Alert.alert(
         'Login Failed',
