@@ -29,6 +29,9 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/Colors';
 import { useBlueprint } from '@/context/BlueprintContext';
+import { deriveMetaDimensions, type MetaDimensionScores } from '@/utils/archetypes';
+import { getAxisMetaDimension } from '@/utils/archetypes';
+import { generatePolicyFraming, derivePolicyMetaAlignment, getUserValueFramings, getValueFraming } from '@/utils/valueFraming';
 import {
   ballotApi,
   type Ballot as ApiBallot,
@@ -420,21 +423,44 @@ function BallotItemHeader({ item }: { item: BallotItem }) {
   return (
     <View style={headerStyles.container}>
       <Text style={headerStyles.title}>{item.title}</Text>
-      <Text style={headerStyles.question}>{item.questionText}</Text>
+
+      {/* Actual ballot language */}
+      <View style={headerStyles.ballotBox}>
+        <Text style={headerStyles.ballotLabel}>FROM YOUR BALLOT</Text>
+        <Text style={headerStyles.question}>{item.questionText}</Text>
+      </View>
+
+      {/* App explanation */}
       <View style={headerStyles.infoBox}>
-        <Ionicons name="information-circle-outline" size={18} color={Colors.primary} />
-        <Text style={headerStyles.infoText}>{item.explanation}</Text>
+        <Ionicons name="bulb-outline" size={16} color={Colors.gray[500]} />
+        <View style={headerStyles.infoContent}>
+          <Text style={headerStyles.infoLabel}>What this means</Text>
+          <Text style={headerStyles.infoText}>{item.explanation}</Text>
+        </View>
       </View>
     </View>
   );
 }
 
 const headerStyles = StyleSheet.create({
-  container: { gap: 8 },
+  container: { gap: 10 },
   title: { fontSize: 12, fontWeight: '700', color: Colors.primary, textTransform: 'uppercase', letterSpacing: 0.5 },
-  question: { fontSize: 16, fontWeight: '700', color: Colors.gray[900], lineHeight: 22 },
-  infoBox: { flexDirection: 'row', backgroundColor: Colors.primary + '10', padding: 10, borderRadius: 10, gap: 8, alignItems: 'flex-start' },
-  infoText: { flex: 1, fontSize: 13, color: Colors.gray[700], lineHeight: 19 },
+  ballotBox: {
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.gray[300],
+    borderLeftWidth: 3,
+    borderLeftColor: Colors.gray[500],
+    borderRadius: 8,
+    padding: 12,
+    gap: 4,
+  },
+  ballotLabel: { fontSize: 10, fontWeight: '700', color: Colors.gray[400], letterSpacing: 0.5 },
+  question: { fontSize: 15, fontWeight: '700', color: Colors.gray[700], lineHeight: 22 },
+  infoBox: { flexDirection: 'row', backgroundColor: Colors.gray[100], padding: 10, borderRadius: 10, gap: 8, alignItems: 'flex-start' },
+  infoContent: { flex: 1, gap: 2 },
+  infoLabel: { fontSize: 10, fontWeight: '700', color: Colors.gray[400], letterSpacing: 0.3, textTransform: 'uppercase' },
+  infoText: { flex: 1, fontSize: 13, color: Colors.gray[600], lineHeight: 19 },
 });
 
 // --- Recommendation Banner (for propositions) ---
@@ -599,44 +625,77 @@ const propSheetStyles = StyleSheet.create({
 });
 
 function RecommendationBanner({
-  recommendation
+  recommendation,
+  valueFraming,
 }: {
-  recommendation: PropositionRecommendation
+  recommendation: PropositionRecommendation;
+  valueFraming?: { resonance: string[]; tension: string[] };
 }) {
   const [showSheet, setShowSheet] = useState(false);
 
-  if (!recommendation.vote || recommendation.confidence < 0.2) {
+  const hasValuePhrases = valueFraming && (valueFraming.resonance.length > 0 || valueFraming.tension.length > 0);
+
+  const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+  // Top vote line
+  const renderVoteLine = () => {
+    if (!recommendation.vote || recommendation.confidence < 0.2) {
+      return (
+        <View style={recStyles.voteLine}>
+          <Ionicons name="help-circle-outline" size={16} color={Colors.gray[500]} />
+          <Text style={recStyles.inlineTextNeutral}>Close call — your values don't clearly favor either side</Text>
+        </View>
+      );
+    }
+    const isYes = recommendation.vote === 'yes';
     return (
-      <View style={recStyles.inline}>
-        <Ionicons name="help-circle-outline" size={16} color={Colors.gray[500]} />
-        <Text style={recStyles.inlineTextNeutral}>Close call — your values don't clearly favor either side</Text>
-        {recommendation.breakdown.length > 0 && (
-          <TouchableOpacity onPress={() => setShowSheet(true)}>
-            <Text style={recStyles.inlineLink}>Details ›</Text>
-          </TouchableOpacity>
-        )}
-        <PropositionBreakdownSheet
-          visible={showSheet}
-          recommendation={recommendation}
-          onClose={() => setShowSheet(false)}
-        />
+      <View style={[recStyles.voteLine, isYes ? recStyles.voteLineYes : recStyles.voteLineNo]}>
+        <Ionicons name="sparkles" size={16} color={isYes ? '#16A34A' : '#DC2626'} />
+        <Text style={[recStyles.inlineText, { color: isYes ? '#16A34A' : '#DC2626' }]}>
+          Aligns with your values — Vote {isYes ? 'YES' : 'NO'}
+        </Text>
       </View>
     );
-  }
+  };
 
-  const isYes = recommendation.vote === 'yes';
+  // Build a concise summary from the recommendation data
+  const summaryText = (() => {
+    if (!recommendation.vote || recommendation.confidence < 0.2) {
+      if (recommendation.factors.length > 0) {
+        return `Your values on ${recommendation.factors.slice(0, 2).join(' and ')} pull in different directions on this one.`;
+      }
+      return 'This measure touches values you hold on both sides.';
+    }
+    return recommendation.explanation;
+  })();
 
   return (
-    <View style={[recStyles.inline, isYes ? recStyles.inlineYes : recStyles.inlineNo]}>
-      <Ionicons name="sparkles" size={16} color={isYes ? '#16A34A' : '#DC2626'} />
-      <Text style={[recStyles.inlineText, { color: isYes ? '#16A34A' : '#DC2626' }]}>
-        Aligns with your values — Vote {isYes ? 'YES' : 'NO'}
-      </Text>
-      {recommendation.breakdown.length > 0 && (
-        <TouchableOpacity onPress={() => setShowSheet(true)}>
-          <Text style={recStyles.inlineLink}>Details ›</Text>
-        </TouchableOpacity>
-      )}
+    <View style={recStyles.card}>
+      {renderVoteLine()}
+      <View style={recStyles.valueBody}>
+        <Text style={recStyles.summaryText}>{summaryText}</Text>
+        {hasValuePhrases && (
+          <>
+            {valueFraming.resonance.map((phrase, i) => (
+              <View key={`r-${i}`} style={recStyles.resonanceRow}>
+                <View style={recStyles.resonanceIcon} />
+                <Text style={recStyles.phraseText}>{capitalize(phrase)}</Text>
+              </View>
+            ))}
+            {valueFraming.tension.map((phrase, i) => (
+              <View key={`t-${i}`} style={recStyles.tensionRow}>
+                <View style={recStyles.tensionIcon} />
+                <Text style={recStyles.phraseText}>{capitalize(phrase)}</Text>
+              </View>
+            ))}
+          </>
+        )}
+        {recommendation.breakdown.length > 0 && (
+          <TouchableOpacity onPress={() => setShowSheet(true)}>
+            <Text style={recStyles.detailsLink}>See full breakdown ›</Text>
+          </TouchableOpacity>
+        )}
+      </View>
       <PropositionBreakdownSheet
         visible={showSheet}
         recommendation={recommendation}
@@ -647,20 +706,67 @@ function RecommendationBanner({
 }
 
 const recStyles = StyleSheet.create({
-  inline: {
+  card: {
+    borderRadius: 12,
+    backgroundColor: Colors.gray[50],
+    borderWidth: 1,
+    borderColor: Colors.gray[200],
+    overflow: 'hidden',
+  },
+  voteLine: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     padding: 10,
     paddingHorizontal: 14,
-    borderRadius: 10,
     backgroundColor: Colors.gray[100],
+    flex: 1,
   },
-  inlineYes: { backgroundColor: '#F0FDF4' },
-  inlineNo: { backgroundColor: '#FEF2F2' },
+  voteLineYes: { backgroundColor: '#F0FDF4' },
+  voteLineNo: { backgroundColor: '#FEF2F2' },
   inlineText: { fontSize: 13, fontWeight: '600', flex: 1, lineHeight: 18 },
   inlineTextNeutral: { fontSize: 13, fontWeight: '600', flex: 1, lineHeight: 18, color: Colors.gray[600] },
-  inlineLink: { fontSize: 12, fontWeight: '600', color: '#3B82F6' },
+  summaryText: { fontSize: 13, color: Colors.gray[600], lineHeight: 19 },
+  valueBody: {
+    padding: 12,
+    gap: 8,
+  },
+  resonanceRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+  },
+  tensionRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
+  },
+  resonanceIcon: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#22C55E',
+    marginTop: 5,
+  },
+  tensionIcon: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#F59E0B',
+    marginTop: 5,
+  },
+  phraseText: {
+    fontSize: 13,
+    color: Colors.gray[700],
+    lineHeight: 18,
+    flex: 1,
+  },
+  detailsLink: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#3B82F6',
+    marginTop: 4,
+  },
 });
 
 // --- Proposition Vote Buttons (YES/NO) ---
@@ -975,15 +1081,64 @@ function CandidateCard({
   match,
   onSelect,
   onCompare,
+  metaDimensions,
 }: {
   candidate: Candidate;
   isSelected: boolean;
   match: CandidateMatch | undefined;
   onSelect: () => void;
   onCompare: () => void;
+  metaDimensions: MetaDimensionScores | null;
 }) {
   const matchPercent = match?.matchPercent || 0;
   const isBestMatch = match?.isBestMatch || false;
+
+  // Compute value-framed agreement/disagreement lines
+  const valueFramedReasons = useMemo(() => {
+    if (!match || !metaDimensions || match.axisComparisons.length === 0) return null;
+
+    // Group axes by meta-dimension
+    const agreementsByDim: Record<string, string[]> = {};
+    const disagreementsByDim: Record<string, string[]> = {};
+
+    for (const comp of match.axisComparisons) {
+      const dims = getAxisMetaDimension(comp.axisId);
+      const dim = dims[0]; // use first dimension
+      if (!dim) continue;
+
+      if (comp.difference <= 2) {
+        if (!agreementsByDim[dim]) agreementsByDim[dim] = [];
+        agreementsByDim[dim].push(comp.axisName);
+      } else if (comp.difference >= 4) {
+        if (!disagreementsByDim[dim]) disagreementsByDim[dim] = [];
+        disagreementsByDim[dim].push(comp.axisName);
+      }
+    }
+
+    const agreements: { axes: string; phrase: string }[] = [];
+    const disagreements: { axes: string; phrase: string }[] = [];
+
+    for (const [dim, axes] of Object.entries(agreementsByDim)) {
+      const framing = getValueFraming(dim as keyof MetaDimensionScores, metaDimensions[dim as keyof MetaDimensionScores]);
+      const phrase = framing ? framing.fragments.alignmentPhrase : '';
+      agreements.push({ axes: axes.join(', '), phrase });
+    }
+
+    for (const [dim, axes] of Object.entries(disagreementsByDim)) {
+      const framing = getValueFraming(dim as keyof MetaDimensionScores, metaDimensions[dim as keyof MetaDimensionScores]);
+      const phrase = framing ? framing.fragments.tensionPhrase : '';
+      disagreements.push({ axes: axes.join(', '), phrase });
+    }
+
+    // Limit to 2 agreement + 1 disagreement
+    return {
+      agreements: agreements.slice(0, 2),
+      disagreements: disagreements.slice(0, 1),
+    };
+  }, [match, metaDimensions]);
+
+  const hasValueReasons = valueFramedReasons &&
+    (valueFramedReasons.agreements.length > 0 || valueFramedReasons.disagreements.length > 0);
 
   return (
     <View style={[
@@ -1024,21 +1179,42 @@ function CandidateCard({
             </Text>
           )}
 
-          {/* Match info - based on user's values */}
-          {match && (match.keyAgreements.length > 0 || match.keyDisagreements.length > 0) && (
+          {/* Value-framed match info */}
+          {hasValueReasons ? (
+            <View style={candStyles.matchInfoContainer}>
+              {valueFramedReasons.agreements.length > 0 && (
+                <Text style={candStyles.matchSectionLabel}>Where you align</Text>
+              )}
+              {valueFramedReasons.agreements.map((a, i) => (
+                <Text key={`a-${i}`} style={candStyles.matchDetail}>
+                  <Text style={candStyles.matchAxisBold}>{a.axes}</Text>
+                  {a.phrase ? `: ${a.phrase}` : ''}
+                </Text>
+              ))}
+              {valueFramedReasons.disagreements.length > 0 && (
+                <Text style={[candStyles.matchSectionLabel, { marginTop: 4 }]}>Where you differ</Text>
+              )}
+              {valueFramedReasons.disagreements.map((d, i) => (
+                <Text key={`d-${i}`} style={candStyles.matchWarning}>
+                  <Text style={candStyles.matchAxisBold}>{d.axes}</Text>
+                  {d.phrase ? `: ${d.phrase}` : ''}
+                </Text>
+              ))}
+            </View>
+          ) : match && (match.keyAgreements.length > 0 || match.keyDisagreements.length > 0) ? (
             <View style={candStyles.matchInfoContainer}>
               {match.keyAgreements.length > 0 && (
                 <Text style={candStyles.matchDetail}>
-                  Shares your views on {match.keyAgreements.join(', ')}
+                  Where you align: {match.keyAgreements.join(', ')}
                 </Text>
               )}
               {match.keyDisagreements.length > 0 && (
                 <Text style={candStyles.matchWarning}>
-                  Differs on {match.keyDisagreements.join(', ')}
+                  Where you differ: {match.keyDisagreements.join(', ')}
                 </Text>
               )}
             </View>
-          )}
+          ) : null}
         </View>
 
         {/* Match percentage */}
@@ -1085,6 +1261,7 @@ function CandidateVoteButtons({
   matches,
   onSelect,
   onWriteInChange,
+  metaDimensions,
 }: {
   candidates: Candidate[];
   allowWriteIn: boolean;
@@ -1093,6 +1270,7 @@ function CandidateVoteButtons({
   matches: CandidateMatch[];
   onSelect: (choice: string) => void;
   onWriteInChange: (name: string) => void;
+  metaDimensions: MetaDimensionScores | null;
 }) {
   const [compareCandidate, setCompareCandidate] = useState<Candidate | null>(null);
   const isWriteIn = selected === 'write_in';
@@ -1122,6 +1300,7 @@ function CandidateVoteButtons({
             match={getMatch(candidate.id)}
             onSelect={() => onSelect(candidate.id)}
             onCompare={() => setCompareCandidate(candidate)}
+            metaDimensions={metaDimensions}
           />
         ))}
 
@@ -1220,8 +1399,10 @@ const candStyles = StyleSheet.create({
   party: { fontSize: 13, color: Colors.gray[500], lineHeight: 18 },
   summary: { fontSize: 12, color: Colors.gray[600], lineHeight: 17, marginTop: 4 },
   matchInfoContainer: { marginTop: 6, gap: 2 },
+  matchSectionLabel: { fontSize: 10, fontWeight: '700', color: Colors.gray[400], textTransform: 'uppercase', letterSpacing: 0.3 },
   matchDetail: { fontSize: 11, color: '#16A34A', lineHeight: 15 },
   matchWarning: { fontSize: 11, color: '#F59E0B', lineHeight: 15 },
+  matchAxisBold: { fontWeight: '700' },
   incumbentBadge: {
     paddingHorizontal: 8,
     paddingVertical: 2,
@@ -1574,17 +1755,9 @@ function BallotNavigator({
 
   return (
     <View style={ballotNavStyles.container}>
-      <View style={ballotNavStyles.header}>
-        <View style={ballotNavStyles.titleRow}>
-          <Ionicons name="document-text" size={12} color={Colors.gray[600]} />
-          <Text style={ballotNavStyles.title}>
-            Item {currentIndex + 1} of {ballotItems.length}
-          </Text>
-        </View>
-        <Text style={ballotNavStyles.completedText}>
-          {completedCount} completed
-        </Text>
-      </View>
+      <Text style={ballotNavStyles.title}>
+        {currentIndex + 1} of {ballotItems.length} · {completedCount} completed
+      </Text>
 
       <View style={ballotNavStyles.dotsRow}>
         {ballotItems.map((item, index) => {
@@ -1599,11 +1772,7 @@ function BallotNavigator({
               ]}
               onPress={() => onJumpTo(index)}
               activeOpacity={0.7}
-            >
-              {status === 'completed' && (
-                <Ionicons name="checkmark" size={8} color="#fff" />
-              )}
-            </TouchableOpacity>
+            />
           );
         })}
       </View>
@@ -1619,26 +1788,12 @@ const ballotNavStyles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: Colors.gray[200],
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 8,
-  },
-  titleRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-  },
   title: {
     fontSize: 12,
-    fontWeight: '600',
-    color: Colors.gray[700],
-  },
-  completedText: {
-    fontSize: 11,
     fontWeight: '500',
     color: Colors.gray[500],
+    marginBottom: 8,
+    textAlign: 'center',
   },
   dotsRow: {
     flexDirection: 'row',
@@ -1647,20 +1802,18 @@ const ballotNavStyles = StyleSheet.create({
   },
   dot: {
     flex: 1,
-    height: 6,
+    height: 5,
     borderRadius: 3,
     backgroundColor: Colors.gray[200],
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   dotCurrent: {
-    backgroundColor: Colors.primary,
-    height: 8,
+    backgroundColor: '#B4A0D9',
+    height: 7,
     borderRadius: 4,
   },
   dotCompleted: {
-    backgroundColor: '#059669',
-    height: 6,
+    backgroundColor: '#86CFAC',
+    height: 5,
     borderRadius: 3,
   },
 });
@@ -2050,6 +2203,10 @@ export default function BallotBuilderScreen() {
     return result;
   }, [profile, spec]);
 
+  const metaDimensions = useMemo(() => {
+    return profile ? deriveMetaDimensions(profile) : null;
+  }, [profile]);
+
   const currentItem = ballotItems[currentIndex];
 
   // Compute recommendations
@@ -2059,6 +2216,14 @@ export default function BallotBuilderScreen() {
     }
     return computePropositionRecommendation(currentItem, userAxes);
   }, [currentItem, userAxes]);
+
+  const propositionValueFraming = useMemo(() => {
+    if (!currentItem || currentItem.type !== 'proposition' || !metaDimensions || !currentItem.yesAxisEffects) {
+      return { resonance: [] as string[], tension: [] as string[] };
+    }
+    const alignment = derivePolicyMetaAlignment(currentItem.yesAxisEffects);
+    return generatePolicyFraming(metaDimensions, alignment);
+  }, [currentItem, metaDimensions]);
 
   const candidateMatches = useMemo(() => {
     if (!currentItem || currentItem.type !== 'candidate_race') {
@@ -2209,12 +2374,7 @@ export default function BallotBuilderScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Build Your Ballot</Text>
-        <Text style={styles.headerSubtitle}>Make your choices for each race and measure</Text>
-      </View>
-
-      {/* Official Ballot Navigator */}
+      {/* Ballot Navigator */}
       <BallotNavigator
         ballotItems={ballotItems}
         savedVotes={savedVotes}
@@ -2231,7 +2391,7 @@ export default function BallotBuilderScreen() {
 
         {/* Recommendation Section */}
         {currentItem.type === 'proposition' && (
-          <RecommendationBanner recommendation={propositionRec} />
+          <RecommendationBanner recommendation={propositionRec} valueFraming={propositionValueFraming} />
         )}
 
         {/* Vote Selection */}
@@ -2250,6 +2410,7 @@ export default function BallotBuilderScreen() {
             matches={candidateMatches}
             onSelect={handleVoteSelect}
             onWriteInChange={setWriteInName}
+            metaDimensions={metaDimensions}
           />
         )}
 

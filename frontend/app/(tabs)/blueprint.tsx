@@ -495,10 +495,6 @@ export default function BlueprintScreen() {
         {/* Progress Header */}
         <View style={styles.assessmentHeader}>
           <View style={styles.progressRow}>
-            <View style={styles.domainBadge}>
-              <Text style={styles.domainEmoji}>{getDomainEmoji(currentDomain?.id || '')}</Text>
-              <Text style={styles.domainBadgeText}>{currentDomain?.name}</Text>
-            </View>
             <Text style={styles.progressCount}>Question {currentAxisIndex + 1} of {totalAxes}</Text>
           </View>
           <View style={styles.progressBar}>
@@ -509,7 +505,6 @@ export default function BlueprintScreen() {
         {/* Question Card */}
         <ScrollView contentContainerStyle={styles.assessmentContent}>
           <Animated.View style={[styles.questionCard, { opacity: fadeAnim }]}>
-            <Text style={styles.axisTitle}>{currentAxis.name}</Text>
             <Text style={styles.axisQuestion}>{currentAxisConfig.question}</Text>
 
             {/* Position Display */}
@@ -556,9 +551,6 @@ export default function BlueprintScreen() {
               </Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.skipLink} onPress={handleSkip}>
-            <Text style={styles.skipLinkText}>Skip this question</Text>
-          </TouchableOpacity>
         </View>
       </View>
     );

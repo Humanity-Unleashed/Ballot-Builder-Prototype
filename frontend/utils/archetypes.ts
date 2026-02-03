@@ -15,7 +15,7 @@ export interface MetaDimensionScores {
 }
 
 // Which axes contribute to each meta-dimension (all 15 axes mapped)
-const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
+export const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
   responsibility_orientation: [
     'econ_safetynet',            // broader safety net ↔ conditional/limited
     'econ_investment',           // public investment ↔ lower taxes
@@ -39,6 +39,18 @@ const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
     'climate_permitting'              // thorough review ↔ faster approvals
   ]
 };
+
+/**
+ * Returns which meta-dimension(s) an axis contributes to.
+ * Most axes map to 1 dimension; climate_permitting maps to 2.
+ */
+export function getAxisMetaDimension(axisId: string): (keyof MetaDimensionScores)[] {
+  const dims: (keyof MetaDimensionScores)[] = [];
+  for (const [dim, axes] of Object.entries(META_AXIS_MAP) as [keyof MetaDimensionScores, string[]][]) {
+    if (axes.includes(axisId)) dims.push(dim);
+  }
+  return dims;
+}
 
 // Convert stance value (0..10) to axis_score in [-1,+1]
 // 0 => +1 (max left/poleA), 5 => 0 (neutral), 10 => -1 (max right/poleB)
