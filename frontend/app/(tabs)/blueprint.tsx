@@ -40,6 +40,84 @@ import { getFineTuningConfig, getFineTuningBreakdown, calculateFineTunedScore } 
 // Blueprint state type
 type BlueprintState = 'not_started' | 'assessment' | 'complete' | 'fine_tuning';
 
+// ===========================================
+// Top Navigation Component
+// ===========================================
+
+function TopNav({ activeTab }: { activeTab: 'blueprint' | 'build' }) {
+  const router = useRouter();
+  return (
+    <View style={topNavStyles.container}>
+      <Text style={topNavStyles.appName}>Ballot Builder</Text>
+      <View style={topNavStyles.pills}>
+        <TouchableOpacity
+          style={[topNavStyles.pill, activeTab === 'blueprint' && topNavStyles.pillActive]}
+          onPress={() => router.push('/(tabs)/blueprint')}
+        >
+          <Text style={[topNavStyles.pillText, activeTab === 'blueprint' && topNavStyles.pillTextActive]}>
+            Blueprint
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[topNavStyles.pill, activeTab === 'build' && topNavStyles.pillActive]}
+          onPress={() => router.push('/(tabs)/ballot-builder')}
+        >
+          <Text style={[topNavStyles.pillText, activeTab === 'build' && topNavStyles.pillTextActive]}>
+            Build
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const topNavStyles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  appName: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#1F2937',
+  },
+  pills: {
+    flexDirection: 'row',
+    backgroundColor: '#F3F4F6',
+    borderRadius: 20,
+    padding: 3,
+  },
+  pill: {
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+    borderRadius: 17,
+  },
+  pillActive: {
+    backgroundColor: '#FFFFFF',
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+    borderWidth: 0.5,
+    borderColor: '#E5E7EB',
+  },
+  pillText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#6B7280',
+  },
+  pillTextActive: {
+    color: '#111827',
+  },
+});
+
 const DOMAIN_DISPLAY_NAMES: Record<string, string> = {
   econ: 'Economy',
   health: 'Healthcare',
@@ -125,13 +203,91 @@ function getPositionLabel(axisId: string, value: number): string {
   return config.positions[positionIndex]?.title || 'Mixed';
 }
 
+type StrengthLevel = { label: string; value: number };
+
+const STRENGTH_LEVELS: StrengthLevel[] = [
+  { label: 'A little', value: 3 },
+  { label: 'Moderately', value: 5 },
+  { label: 'Strongly', value: 8 },
+];
+
+const DEFAULT_STRENGTH_VALUE = 5;
+
 function getImportanceLabel(v: number): string {
-  if (v <= 1) return 'Not much';
-  if (v <= 3.5) return 'A little';
-  if (v <= 6) return 'Matters to me';
-  if (v <= 8.5) return 'Really matters';
-  return 'Deal breaker';
+  if (v < 4) return 'A little';
+  if (v <= 7) return 'Moderately';
+  return 'Strongly';
 }
+
+// ===========================================
+// Strength Chips Component
+// ===========================================
+
+function StrengthChips({
+  selectedValue,
+  onSelect,
+}: {
+  selectedValue: number;
+  onSelect: (value: number) => void;
+}) {
+  const selectedLabel = getImportanceLabel(selectedValue);
+  return (
+    <View style={strengthChipStyles.container}>
+      <Text style={strengthChipStyles.label}>How strongly do you feel?</Text>
+      <View style={strengthChipStyles.row}>
+        {STRENGTH_LEVELS.map((level) => (
+          <TouchableOpacity
+            key={level.label}
+            style={[strengthChipStyles.chip, level.label === selectedLabel && strengthChipStyles.chipSelected]}
+            onPress={() => onSelect(level.value)}
+          >
+            <Text style={[strengthChipStyles.chipText, level.label === selectedLabel && strengthChipStyles.chipTextSelected]}>
+              {level.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    </View>
+  );
+}
+
+const strengthChipStyles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+  },
+  label: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#6B7280',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 10,
+  },
+  chip: {
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#D1D5DB',
+    backgroundColor: '#FFFFFF',
+  },
+  chipSelected: {
+    borderColor: '#7C3AED',
+    backgroundColor: '#F5F3FF',
+  },
+  chipText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#9CA3AF',
+  },
+  chipTextSelected: {
+    color: '#7C3AED',
+  },
+});
 
 // ===========================================
 // Main Component
@@ -150,6 +306,8 @@ export default function BlueprintScreen() {
   const [currentAxisIndex, setCurrentAxisIndex] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(2);
   const [axisResponses, setAxisResponses] = useState<Record<string, number>>({});
+  const [axisImportances, setAxisImportances] = useState<Record<string, number>>({});
+  const [currentStrength, setCurrentStrength] = useState(DEFAULT_STRENGTH_VALUE);
   const [swipes, setSwipes] = useState<SwipeEvent[]>([]);
   const [fadeAnim] = useState(new Animated.Value(1));
   const [showTransition, setShowTransition] = useState(false);
@@ -235,6 +393,8 @@ export default function BlueprintScreen() {
     setCurrentAxisIndex(0);
     setSliderPosition(2);
     setAxisResponses({});
+    setAxisImportances({});
+    setCurrentStrength(DEFAULT_STRENGTH_VALUE);
     setBlueprintState('assessment');
   };
 
@@ -305,6 +465,9 @@ export default function BlueprintScreen() {
     };
     setAxisResponses(newResponses);
 
+    const newImportances = { ...axisImportances, [currentAxisId]: currentStrength };
+    setAxisImportances(newImportances);
+
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 200,
@@ -315,11 +478,15 @@ export default function BlueprintScreen() {
         setSwipes(finalSwipes);
         await calculateScores(finalSwipes);
         initializeFromSwipes(finalSwipes);
+        Object.entries(newImportances).forEach(([axisId, value]) => {
+          updateAxisImportance(axisId, value);
+        });
         setBlueprintState('complete');
         return;
       }
 
       const nextIndex = currentAxisIndex + 1;
+      const nextAxisId = axisQueue[nextIndex];
       const shouldShowTransitionMsg = checkForAxisTransition(nextIndex, axisQueue.length);
 
       if (shouldShowTransitionMsg) {
@@ -329,6 +496,7 @@ export default function BlueprintScreen() {
           setShowTransition(false);
           setCurrentAxisIndex(nextIndex);
           setSliderPosition(2);
+          setCurrentStrength(newImportances[nextAxisId] ?? DEFAULT_STRENGTH_VALUE);
           Animated.timing(fadeAnim, {
             toValue: 1,
             duration: 200,
@@ -338,6 +506,7 @@ export default function BlueprintScreen() {
       } else {
         setCurrentAxisIndex(nextIndex);
         setSliderPosition(2);
+        setCurrentStrength(newImportances[nextAxisId] ?? DEFAULT_STRENGTH_VALUE);
         Animated.timing(fadeAnim, {
           toValue: 1,
           duration: 200,
@@ -358,6 +527,7 @@ export default function BlueprintScreen() {
         const prevAxisId = axisQueue[prevIndex];
         setCurrentAxisIndex(prevIndex);
         setSliderPosition(axisResponses[prevAxisId] ?? 2);
+        setCurrentStrength(axisImportances[prevAxisId] ?? DEFAULT_STRENGTH_VALUE);
         Animated.timing(fadeAnim, {
           toValue: 1,
           duration: 200,
@@ -377,6 +547,9 @@ export default function BlueprintScreen() {
     };
     setAxisResponses(newResponses);
 
+    const newImportances = { ...axisImportances, [currentAxisId]: DEFAULT_STRENGTH_VALUE };
+    setAxisImportances(newImportances);
+
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 200,
@@ -387,12 +560,18 @@ export default function BlueprintScreen() {
         setSwipes(finalSwipes);
         await calculateScores(finalSwipes);
         initializeFromSwipes(finalSwipes);
+        Object.entries(newImportances).forEach(([axisId, value]) => {
+          updateAxisImportance(axisId, value);
+        });
         setBlueprintState('complete');
         return;
       }
 
-      setCurrentAxisIndex(currentAxisIndex + 1);
+      const nextIndex = currentAxisIndex + 1;
+      const nextAxisId = axisQueue[nextIndex];
+      setCurrentAxisIndex(nextIndex);
       setSliderPosition(2);
+      setCurrentStrength(newImportances[nextAxisId] ?? DEFAULT_STRENGTH_VALUE);
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 200,
@@ -404,6 +583,8 @@ export default function BlueprintScreen() {
   const handleRetake = () => {
     setSwipes([]);
     setAxisResponses({});
+    setAxisImportances({});
+    setCurrentStrength(DEFAULT_STRENGTH_VALUE);
     setAxisQueue([]);
     setCurrentAxisIndex(0);
     setSliderPosition(2);
@@ -526,6 +707,12 @@ export default function BlueprintScreen() {
               poleALabel={currentAxisConfig.poleALabel}
               poleBLabel={currentAxisConfig.poleBLabel}
             />
+
+            {/* Strength Chips */}
+            <StrengthChips
+              selectedValue={currentStrength}
+              onSelect={setCurrentStrength}
+            />
           </Animated.View>
         </ScrollView>
 
@@ -592,19 +779,19 @@ export default function BlueprintScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Blueprint Header */}
-      <View style={styles.blueprintHeader}>
-        <View style={styles.blueprintTitleRow}>
+      {/* Top Navigation */}
+      <TopNav activeTab="blueprint" />
+
+      {/* Single ScrollView with all content */}
+      <ScrollView contentContainerStyle={styles.blueprintContent}>
+        {/* Section Header */}
+        <View style={styles.blueprintSectionHeader}>
           <Text style={styles.blueprintTitle}>Your Civic Blueprint</Text>
           <TouchableOpacity style={styles.retakeBtn} onPress={handleRetake}>
             <Ionicons name="refresh-outline" size={16} color={Colors.gray[600]} />
             <Text style={styles.retakeBtnText}>Retake</Text>
           </TouchableOpacity>
         </View>
-      </View>
-
-      {/* Single ScrollView with all content */}
-      <ScrollView contentContainerStyle={styles.blueprintContent}>
         {/* Values Spectrum Card */}
         {metaDimensions && <ValuesSpectrumCard metaDimensions={metaDimensions} />}
 
@@ -1435,22 +1622,14 @@ function CompactAxisBar({
     return '#6B7280';
   };
 
-  const filled = Math.round(((importance ?? 5) / 10) * 4);
-
   return (
     <View style={axisBarStyles.container}>
       <View style={axisBarStyles.headerRow}>
         <Text style={axisBarStyles.name}>{name}</Text>
-        <View style={axisBarStyles.importanceDots}>
-          {[0, 1, 2, 3, 4].map((i) => (
-            <View
-              key={i}
-              style={[
-                axisBarStyles.importanceDot,
-                i <= filled && axisBarStyles.importanceDotFilled,
-              ]}
-            />
-          ))}
+        <View style={axisBarStyles.strengthBadge}>
+          <Text style={axisBarStyles.strengthBadgeText}>
+            {getImportanceLabel(importance ?? DEFAULT_STRENGTH_VALUE)}
+          </Text>
         </View>
       </View>
 
@@ -1487,18 +1666,18 @@ const axisBarStyles = StyleSheet.create({
     flex: 1,
     lineHeight: 18,
   },
-  importanceDots: {
-    flexDirection: 'row',
-    gap: 3,
+  strengthBadge: {
+    paddingVertical: 2,
+    paddingHorizontal: 8,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#7C3AED',
+    backgroundColor: '#F5F3FF',
   },
-  importanceDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: Colors.gray[200],
-  },
-  importanceDotFilled: {
-    backgroundColor: Colors.primary,
+  strengthBadgeText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#7C3AED',
   },
   stanceBox: {
     backgroundColor: '#F5F3FF',
@@ -1613,34 +1792,10 @@ function AxisEditModal({
 
             {/* Importance */}
             <View style={modalStyles.section}>
-              <Text style={modalStyles.sectionLabel}>How much does this matter to you?</Text>
-              <Text style={modalStyles.importanceValue}>{getImportanceLabel(axisData.importance ?? 5)}</Text>
-              <View style={modalStyles.importanceBubbles}>
-                {[0, 1, 2, 3, 4].map((i) => {
-                  const currentPosition = Math.round(((axisData.importance ?? 5) / 10) * 4);
-                  return (
-                    <TouchableOpacity
-                      key={i}
-                      style={modalStyles.importanceBubbleTouchArea}
-                      onPress={() => {
-                        const newValue = Math.round((i / 4) * 10);
-                        onChangeAxisImportance(axisId, newValue);
-                      }}
-                    >
-                      <View
-                        style={[
-                          modalStyles.importanceBubble,
-                          i <= currentPosition && modalStyles.importanceBubbleFilled,
-                        ]}
-                      />
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
-              <View style={modalStyles.importanceLabels}>
-                <Text style={modalStyles.importanceEndLabel}>Not much</Text>
-                <Text style={modalStyles.importanceEndLabel}>Deal breaker</Text>
-              </View>
+              <StrengthChips
+                selectedValue={axisData.importance ?? DEFAULT_STRENGTH_VALUE}
+                onSelect={(value) => onChangeAxisImportance(axisId, value)}
+              />
             </View>
 
             {/* Fine-tuning section */}
@@ -1763,43 +1918,6 @@ const modalStyles = StyleSheet.create({
     height: 1,
     backgroundColor: Colors.gray[200],
   },
-  importanceValue: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: Colors.gray[900],
-    textAlign: 'center',
-  },
-  importanceBubbles: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 8,
-  },
-  importanceBubbleTouchArea: {
-    padding: 8,
-  },
-  importanceBubble: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: Colors.gray[200],
-    borderWidth: 2,
-    borderColor: Colors.gray[300],
-  },
-  importanceBubbleFilled: {
-    backgroundColor: Colors.primary,
-    borderColor: Colors.primary,
-  },
-  importanceLabels: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 8,
-  },
-  importanceEndLabel: {
-    fontSize: 11,
-    color: Colors.gray[500],
-    textTransform: 'uppercase',
-    fontWeight: '600',
-  },
   footer: {
     padding: 20,
     backgroundColor: Colors.white,
@@ -1881,6 +1999,8 @@ function FineTuningScreen({
     existingResponses[fineTuningConfig?.subDimensions[0]?.id || ''] ?? 2
   );
   const [responses, setResponses] = useState<Record<string, number>>(existingResponses);
+  const [strengthResponses, setStrengthResponses] = useState<Record<string, number>>({});
+  const [currentStrength, setCurrentStrength] = useState(DEFAULT_STRENGTH_VALUE);
   const [fadeAnim] = useState(new Animated.Value(1));
 
   if (!fineTuningConfig || !axis) {
@@ -1923,6 +2043,9 @@ function FineTuningScreen({
     };
     setResponses(newResponses);
 
+    const newStrength = { ...strengthResponses, [currentSubDimension.id]: currentStrength };
+    setStrengthResponses(newStrength);
+
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 200,
@@ -1936,6 +2059,7 @@ function FineTuningScreen({
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
       setSliderPosition(newResponses[subDimensions[nextIndex].id] ?? 2);
+      setCurrentStrength(newStrength[subDimensions[nextIndex].id] ?? DEFAULT_STRENGTH_VALUE);
 
       Animated.timing(fadeAnim, {
         toValue: 1,
@@ -1955,6 +2079,7 @@ function FineTuningScreen({
         const prevIndex = currentIndex - 1;
         setCurrentIndex(prevIndex);
         setSliderPosition(responses[subDimensions[prevIndex].id] ?? 2);
+        setCurrentStrength(strengthResponses[subDimensions[prevIndex].id] ?? DEFAULT_STRENGTH_VALUE);
 
         Animated.timing(fadeAnim, {
           toValue: 1,
@@ -1972,6 +2097,9 @@ function FineTuningScreen({
     };
     setResponses(newResponses);
 
+    const newStrength = { ...strengthResponses, [currentSubDimension.id]: DEFAULT_STRENGTH_VALUE };
+    setStrengthResponses(newStrength);
+
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 200,
@@ -1985,6 +2113,7 @@ function FineTuningScreen({
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
       setSliderPosition(newResponses[subDimensions[nextIndex].id] ?? 2);
+      setCurrentStrength(newStrength[subDimensions[nextIndex].id] ?? DEFAULT_STRENGTH_VALUE);
 
       Animated.timing(fadeAnim, {
         toValue: 1,
@@ -2049,6 +2178,12 @@ function FineTuningScreen({
                 poleBLabel={currentSubDimension.poleBLabel}
               />
             </View>
+
+            {/* Strength Chips */}
+            <StrengthChips
+              selectedValue={currentStrength}
+              onSelect={setCurrentStrength}
+            />
           </View>
         </Animated.View>
       </View>
@@ -2589,16 +2724,11 @@ const styles = StyleSheet.create({
   },
 
   // Blueprint view styles
-  blueprintHeader: {
-    backgroundColor: Colors.white,
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.gray[200],
-  },
-  blueprintTitleRow: {
+  blueprintSectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: 12,
   },
   blueprintTitle: {
     fontSize: 20,

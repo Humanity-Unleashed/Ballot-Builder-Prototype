@@ -27,6 +27,7 @@ import {
   Pressable,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/Colors';
 import { useBlueprint } from '@/context/BlueprintContext';
 import { deriveMetaDimensions, type MetaDimensionScores } from '@/utils/archetypes';
@@ -140,6 +141,84 @@ interface UserVote {
   writeInName?: string;
   timestamp: string;
 }
+
+// ===========================================
+// Top Navigation Component
+// ===========================================
+
+function TopNav({ activeTab }: { activeTab: 'blueprint' | 'build' }) {
+  const router = useRouter();
+  return (
+    <View style={topNavStyles.container}>
+      <Text style={topNavStyles.appName}>Ballot Builder</Text>
+      <View style={topNavStyles.pills}>
+        <TouchableOpacity
+          style={[topNavStyles.pill, activeTab === 'blueprint' && topNavStyles.pillActive]}
+          onPress={() => router.push('/(tabs)/blueprint')}
+        >
+          <Text style={[topNavStyles.pillText, activeTab === 'blueprint' && topNavStyles.pillTextActive]}>
+            Blueprint
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[topNavStyles.pill, activeTab === 'build' && topNavStyles.pillActive]}
+          onPress={() => router.push('/(tabs)/ballot-builder')}
+        >
+          <Text style={[topNavStyles.pillText, activeTab === 'build' && topNavStyles.pillTextActive]}>
+            Build
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const topNavStyles = StyleSheet.create({
+  container: {
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  appName: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#1F2937',
+  },
+  pills: {
+    flexDirection: 'row',
+    backgroundColor: '#F3F4F6',
+    borderRadius: 20,
+    padding: 3,
+  },
+  pill: {
+    paddingHorizontal: 14,
+    paddingVertical: 6,
+    borderRadius: 17,
+  },
+  pillActive: {
+    backgroundColor: '#FFFFFF',
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+    borderWidth: 0.5,
+    borderColor: '#E5E7EB',
+  },
+  pillText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#6B7280',
+  },
+  pillTextActive: {
+    color: '#111827',
+  },
+});
 
 // ===========================================
 // Data Transformation Functions
@@ -1873,6 +1952,7 @@ function BallotSummary({
 
   return (
     <View style={summaryStyles.container}>
+      <TopNav activeTab="build" />
       <View style={summaryStyles.header}>
         <Ionicons name="checkmark-done-circle" size={48} color="#22C55E" />
         <Text style={summaryStyles.headerTitle}>Your Ballot is Ready!</Text>
@@ -2374,6 +2454,9 @@ export default function BallotBuilderScreen() {
 
   return (
     <View style={styles.container}>
+      {/* Top Navigation */}
+      <TopNav activeTab="build" />
+
       {/* Ballot Navigator */}
       <BallotNavigator
         ballotItems={ballotItems}

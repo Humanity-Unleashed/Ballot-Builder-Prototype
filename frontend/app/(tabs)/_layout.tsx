@@ -2,10 +2,10 @@
  * Tabs Layout
  *
  * Main app navigation for authenticated users.
- * Tab order: Home → Blueprint → Build
+ * Tab order: Blueprint → Build
  *
- * This is the combined Blueprint version where Assessment + Blueprint
- * are merged into a single "Blueprint" tab with 3 states.
+ * Blueprint is the landing tab (combined Assessment + Blueprint with 3 states).
+ * Home is hidden from the tab bar.
  */
 
 import { Tabs } from 'expo-router';
@@ -37,8 +37,8 @@ export default function TabsLayout() {
         tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: Colors.inactive,
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',
-          borderTopColor: '#E5E7EB',
+          display: 'none',
+          height: 0,
         },
         headerStyle: {
           backgroundColor: '#FFFFFF',
@@ -49,19 +49,7 @@ export default function TabsLayout() {
     >
       {/* ==================== ACTIVE TABS ==================== */}
 
-      {/* 1. Home - Dashboard with progress overview */}
-      <Tabs.Screen
-        name="home"
-        options={{
-          title: 'Home',
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home-outline" size={size} color={color} />
-          ),
-        }}
-      />
-
-      {/* 2. Blueprint - Combined Assessment + Blueprint view */}
+      {/* 1. Blueprint - Combined Assessment + Blueprint view (landing tab) */}
       <Tabs.Screen
         name="blueprint"
         options={{
@@ -73,7 +61,7 @@ export default function TabsLayout() {
         }}
       />
 
-      {/* 3. Build - Build your ballot with candidate selection */}
+      {/* 2. Build - Build your ballot with candidate selection */}
       <Tabs.Screen
         name="ballot-builder"
         options={{
@@ -87,23 +75,31 @@ export default function TabsLayout() {
 
       {/* ==================== HIDDEN TABS ==================== */}
 
+      {/* Home - hidden from tab bar */}
+      <Tabs.Screen
+        name="home"
+        options={{
+          href: null,
+        }}
+      />
+
       {/* Legacy tabs - hidden from tab bar */}
       <Tabs.Screen
         name="adaptive-assessment"
         options={{
-          href: null, // Hides from tab bar
+          href: null,
         }}
       />
       <Tabs.Screen
         name="blueprint-v3"
         options={{
-          href: null, // Hides from tab bar
+          href: null,
         }}
       />
       <Tabs.Screen
         name="blueprint-v2"
         options={{
-          href: null, // Hides from tab bar
+          href: null,
         }}
       />
     </Tabs>
