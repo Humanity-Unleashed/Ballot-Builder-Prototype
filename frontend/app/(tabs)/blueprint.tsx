@@ -23,8 +23,11 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { Colors } from '@/constants/Colors';
 import { civicAxesApi, SwipeEvent, AxisScore } from '@/services/api';
+import { deriveMetaDimensions, MetaDimensionScores } from '../../utils/archetypes';
+import { generateValueSummary, getUserValueFramings, type ValueFramingConfig } from '../../utils/valueFraming';
 import {
   initializeAdaptiveState,
 } from '../../utils/adaptiveSelection';
@@ -32,9 +35,18 @@ import { useBlueprint } from '@/context/BlueprintContext';
 import type { Spec, SwipeResponse } from '../../types/civicAssessment';
 import type { AxisProfile } from '../../types/blueprintProfile';
 import { getSliderConfig, getPositionColor, sliderPositionToScore } from '../../data/sliderPositions';
+import { getFineTuningConfig, getFineTuningBreakdown, calculateFineTunedScore } from '../../data/fineTuningPositions';
 
 // Blueprint state type
-type BlueprintState = 'not_started' | 'assessment' | 'complete';
+type BlueprintState = 'not_started' | 'assessment' | 'complete' | 'fine_tuning';
+
+const DOMAIN_DISPLAY_NAMES: Record<string, string> = {
+  econ: 'Economy',
+  health: 'Healthcare',
+  housing: 'Housing',
+  justice: 'Justice',
+  climate: 'Climate',
+};
 
 // ===========================================
 // Helper Functions
@@ -146,6 +158,32 @@ export default function BlueprintScreen() {
   // Blueprint view state
   const [currentDomainIndex, setCurrentDomainIndex] = useState(0);
   const [editingAxisId, setEditingAxisId] = useState<string | null>(null);
+  const [fineTuningAxisId, setFineTuningAxisId] = useState<string | null>(null);
+  const [fineTuningResponses, setFineTuningResponses] = useState<Record<string, Record<string, number>>>({});
+  const router = useRouter();
+
+  // Derived data for complete state cards
+  const metaDimensions = useMemo(() => {
+    if (!profile) return null;
+    return deriveMetaDimensions(profile);
+  }, [profile]);
+
+  const topPriorities = useMemo(() => {
+    if (!profile) return [];
+    return [...profile.domains]
+      .sort((a, b) => (b.importance.value_0_10 ?? 0) - (a.importance.value_0_10 ?? 0))
+      .slice(0, 2)
+      .map(d => DOMAIN_DISPLAY_NAMES[d.domain_id] || d.domain_id);
+  }, [profile]);
+
+  const valueSummary = useMemo(() => {
+    return metaDimensions ? generateValueSummary(metaDimensions) : null;
+  }, [metaDimensions]);
+
+  const valueFramings = useMemo(() => {
+    return metaDimensions ? getUserValueFramings(metaDimensions) : [];
+  }, [metaDimensions]);
+
   // Fetch spec and check if user has completed assessment
   useEffect(() => {
     async function fetchSpec() {
@@ -369,6 +407,8 @@ export default function BlueprintScreen() {
     setAxisQueue([]);
     setCurrentAxisIndex(0);
     setSliderPosition(2);
+    setFineTuningResponses({});
+    setFineTuningAxisId(null);
     setBlueprintState('not_started');
   };
 
@@ -524,6 +564,26 @@ export default function BlueprintScreen() {
     );
   }
 
+  // STATE 2.5: Fine-Tuning
+  if (blueprintState === 'fine_tuning' && fineTuningAxisId && spec) {
+    return (
+      <FineTuningScreen
+        axisId={fineTuningAxisId}
+        spec={spec}
+        existingResponses={fineTuningResponses[fineTuningAxisId] || {}}
+        onComplete={(responses) => {
+          setFineTuningResponses(prev => ({ ...prev, [fineTuningAxisId]: responses }));
+          setFineTuningAxisId(null);
+          setBlueprintState('complete');
+        }}
+        onCancel={() => {
+          setFineTuningAxisId(null);
+          setBlueprintState('complete');
+        }}
+      />
+    );
+  }
+
   // STATE 3: Complete - Show Blueprint View
   if (!profile || !blueprintSpec) {
     return (
@@ -549,77 +609,92 @@ export default function BlueprintScreen() {
             <Text style={styles.retakeBtnText}>Retake</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.blueprintSubtitle}>Tap any position to fine-tune</Text>
       </View>
 
-      {/* Domain Tabs */}
-      <View style={styles.domainTabsBar}>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.domainTabs}
-        >
-          {blueprintSpec.domains.map((domain, index) => (
-            <TouchableOpacity
-              key={domain.id}
-              style={[
-                styles.domainTab,
-                index === currentDomainIndex && styles.domainTabActive,
-              ]}
-              onPress={() => setCurrentDomainIndex(index)}
-            >
-              <Ionicons
-                name={getDomainIcon(domain.id) as any}
-                size={14}
-                color={index === currentDomainIndex ? Colors.white : Colors.gray[600]}
-              />
-              <Text
+      {/* Single ScrollView with all content */}
+      <ScrollView contentContainerStyle={styles.blueprintContent}>
+        {/* Values Spectrum Card */}
+        {metaDimensions && <ValuesSpectrumCard metaDimensions={metaDimensions} />}
+
+        {/* Value Summary Card */}
+        {metaDimensions && valueSummary && (
+          <ValueSummaryCard summary={valueSummary} framings={valueFramings} />
+        )}
+
+        {/* Priority Insight Card */}
+        {topPriorities.length >= 2 && (
+          <PriorityInsightCard priorities={topPriorities} />
+        )}
+
+        {/* Domain Tabs */}
+        <View style={styles.domainTabsInline}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.domainTabs}
+          >
+            {blueprintSpec.domains.map((domain, index) => (
+              <TouchableOpacity
+                key={domain.id}
                 style={[
-                  styles.domainTabText,
-                  index === currentDomainIndex && styles.domainTabTextActive,
+                  styles.domainTab,
+                  index === currentDomainIndex && styles.domainTabActive,
                 ]}
+                onPress={() => setCurrentDomainIndex(index)}
               >
-                {domain.name}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
+                <Ionicons
+                  name={getDomainIcon(domain.id) as any}
+                  size={14}
+                  color={index === currentDomainIndex ? Colors.white : Colors.gray[600]}
+                />
+                <Text
+                  style={[
+                    styles.domainTabText,
+                    index === currentDomainIndex && styles.domainTabTextActive,
+                  ]}
+                >
+                  {domain.name}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
 
-      {/* Domain Content */}
-      <View style={{ flex: 1 }}>
-        <ScrollView contentContainerStyle={styles.blueprintContent}>
-          <View style={styles.domainCard}>
-            {currentDomainAxes.length > 0 && (
-              <View style={styles.axesList}>
-                {currentDomainAxes.map((axis) => {
-                  const axisDef = blueprintSpec.axes.find(a => a.id === axis.axis_id);
-                  if (!axisDef) return null;
+        {/* Domain Content - Axis Bars */}
+        <Text style={styles.fineTuneHint}>Tap any position to fine-tune</Text>
+        <View style={styles.domainCard}>
+          {currentDomainAxes.length > 0 && (
+            <View style={styles.axesList}>
+              {currentDomainAxes.map((axis) => {
+                const axisDef = blueprintSpec.axes.find(a => a.id === axis.axis_id);
+                if (!axisDef) return null;
 
-                  return (
-                    <TouchableOpacity
-                      key={axis.axis_id}
-                      onPress={() => setEditingAxisId(axis.axis_id)}
-                      activeOpacity={0.7}
-                      style={styles.axisCardTouchable}
-                    >
-                      <CompactAxisBar
-                        name={axisDef.name}
-                        value={axis.value_0_10}
-                        poleALabel={axisDef.poleA.label}
-                        poleBLabel={axisDef.poleB.label}
-                        axisId={axis.axis_id}
-                        importance={axis.importance}
-                      />
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
-            )}
-          </View>
+                return (
+                  <TouchableOpacity
+                    key={axis.axis_id}
+                    onPress={() => setEditingAxisId(axis.axis_id)}
+                    activeOpacity={0.7}
+                    style={styles.axisCardTouchable}
+                  >
+                    <CompactAxisBar
+                      name={axisDef.name}
+                      value={axis.value_0_10}
+                      poleALabel={axisDef.poleA.label}
+                      poleBLabel={axisDef.poleB.label}
+                      axisId={axis.axis_id}
+                      importance={axis.importance}
+                      isFineTuned={!!fineTuningResponses[axis.axis_id]}
+                    />
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          )}
+        </View>
 
-        </ScrollView>
-      </View>
+        {/* Vote CTA Card */}
+        <VoteCTACard onPress={() => router.push('/(tabs)/ballot-builder')} />
+      </ScrollView>
 
       {/* Edit Axis Modal */}
       {editingAxisId && (
@@ -630,11 +705,363 @@ export default function BlueprintScreen() {
           onClose={() => setEditingAxisId(null)}
           onChangeAxisImportance={updateAxisImportance}
           onChangeAxis={updateAxisValue}
+          onFineTune={(axisId) => {
+            setEditingAxisId(null);
+            setFineTuningAxisId(axisId);
+            setBlueprintState('fine_tuning');
+          }}
+          fineTuningResponses={fineTuningResponses[editingAxisId] || {}}
         />
       )}
     </View>
   );
 }
+
+// ===========================================
+// Values Spectrum Card Component
+// ===========================================
+
+function scoreToPercents(score: number, invert: boolean): { leftPct: number; rightPct: number } {
+  const leftPct = Math.round(((invert ? score : -score) + 1) / 2 * 100);
+  return { leftPct, rightPct: 100 - leftPct };
+}
+
+const SPECTRUM_BARS: {
+  key: keyof MetaDimensionScores;
+  axisName: string;
+  leftLabel: string;
+  rightLabel: string;
+  leftIdLabel: string;
+  rightIdLabel: string;
+  leftColor: string;
+  rightColor: string;
+  invert: boolean;
+}[] = [
+  {
+    key: 'responsibility_orientation',
+    axisName: 'Social Model',
+    leftLabel: 'Community',
+    rightLabel: 'Individual',
+    leftIdLabel: 'Communitarian',
+    rightIdLabel: 'Individualist',
+    leftColor: '#6366F1', // indigo
+    rightColor: '#F97316', // orange
+    invert: false,
+  },
+  {
+    key: 'change_tempo',
+    axisName: 'Reform Appetite',
+    leftLabel: 'Stability',
+    rightLabel: 'Change',
+    leftIdLabel: 'Incrementalist',
+    rightIdLabel: 'Reformist',
+    leftColor: '#0EA5E9', // sky
+    rightColor: '#E11D48', // rose
+    invert: true,
+  },
+  {
+    key: 'governance_style',
+    axisName: 'Oversight',
+    leftLabel: 'Standards',
+    rightLabel: 'Flexibility',
+    leftIdLabel: 'Regulationist',
+    rightIdLabel: 'Autonomist',
+    leftColor: '#EAB308', // amber
+    rightColor: '#16A34A', // green
+    invert: false,
+  },
+];
+
+function ValuesSpectrumCard({ metaDimensions }: { metaDimensions: MetaDimensionScores }) {
+  return (
+    <View style={spectrumStyles.card}>
+      <Text style={spectrumStyles.title}>Your Values Spectrum</Text>
+      {SPECTRUM_BARS.map((bar) => {
+        const { leftPct, rightPct } = scoreToPercents(metaDimensions[bar.key], bar.invert);
+        const leftWins = leftPct >= rightPct;
+        const winnerLabel = leftPct === rightPct ? 'Balanced' : leftWins ? bar.leftIdLabel : bar.rightIdLabel;
+        const winnerColor = leftPct === rightPct ? Colors.gray[500] : leftWins ? bar.leftColor : bar.rightColor;
+        return (
+          <View key={bar.key} style={spectrumStyles.row}>
+            <View style={spectrumStyles.axisHeader}>
+              <Text style={spectrumStyles.axisName}>{bar.axisName}</Text>
+              <Text style={[spectrumStyles.winnerLabel, { color: winnerColor }]}>{winnerLabel}</Text>
+            </View>
+            <View style={spectrumStyles.barRow}>
+              <Text style={[spectrumStyles.pct, { color: bar.leftColor }]}>{leftPct}%</Text>
+              <View style={spectrumStyles.barTrack}>
+                <View style={[spectrumStyles.barLeft, { width: `${leftPct}%`, backgroundColor: bar.leftColor }]} />
+                <View style={[spectrumStyles.barRight, { width: `${rightPct}%`, backgroundColor: bar.rightColor }]} />
+              </View>
+              <Text style={[spectrumStyles.pct, { color: bar.rightColor, textAlign: 'right' }]}>{rightPct}%</Text>
+            </View>
+            <View style={spectrumStyles.labelRow}>
+              <Text style={[spectrumStyles.label, { color: bar.leftColor }]}>{bar.leftLabel}</Text>
+              <Text style={[spectrumStyles.label, { color: bar.rightColor, textAlign: 'right' }]}>{bar.rightLabel}</Text>
+            </View>
+          </View>
+        );
+      })}
+    </View>
+  );
+}
+
+const spectrumStyles = StyleSheet.create({
+  card: {
+    backgroundColor: Colors.white,
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: Colors.gray[200],
+    shadowColor: '#000',
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: Colors.gray[900],
+    marginBottom: 12,
+  },
+  row: {
+    marginBottom: 14,
+  },
+  axisHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginBottom: 6,
+  },
+  axisName: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: Colors.gray[400],
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  winnerLabel: {
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  labelRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 4,
+  },
+  label: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: Colors.gray[400],
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+  },
+  barRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  pct: {
+    fontSize: 12,
+    fontWeight: '700',
+    width: 32,
+  },
+  barTrack: {
+    flex: 1,
+    height: 10,
+    borderRadius: 5,
+    flexDirection: 'row',
+    overflow: 'hidden',
+  },
+  barLeft: {
+    height: '100%',
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5,
+  },
+  barRight: {
+    height: '100%',
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
+  },
+});
+
+// ===========================================
+// Value Summary Card Component
+// ===========================================
+
+function ValueSummaryCard({ summary, framings }: { summary: string; framings: ValueFramingConfig[] }) {
+  // Bold the coreValueLabels within the summary text
+  const renderSummaryText = () => {
+    if (framings.length === 0) {
+      return <Text style={valueSummaryStyles.summaryText}>{summary}</Text>;
+    }
+
+    const labels = framings.map(f => f.coreValueLabel);
+    // Build a regex that matches any of the labels
+    const pattern = new RegExp(`(${labels.map(l => l.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
+    const parts = summary.split(pattern);
+
+    return (
+      <Text style={valueSummaryStyles.summaryText}>
+        {parts.map((part, i) =>
+          labels.includes(part) ? (
+            <Text key={i} style={valueSummaryStyles.summaryBold}>{part}</Text>
+          ) : (
+            <Text key={i}>{part}</Text>
+          )
+        )}
+      </Text>
+    );
+  };
+
+  return (
+    <View style={valueSummaryStyles.card}>
+      <Text style={valueSummaryStyles.label}>YOUR CIVIC PERSPECTIVE</Text>
+      {renderSummaryText()}
+      {framings.length > 0 && (
+        <View style={valueSummaryStyles.chipsRow}>
+          {framings.map((f) => (
+            <View key={f.metaDimension} style={valueSummaryStyles.chip}>
+              <Text style={valueSummaryStyles.chipText}>{f.coreValueLabel}</Text>
+            </View>
+          ))}
+        </View>
+      )}
+    </View>
+  );
+}
+
+const valueSummaryStyles = StyleSheet.create({
+  card: {
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 12,
+    backgroundColor: '#F5F3FF',
+    borderWidth: 1,
+    borderColor: '#DDD6FE',
+  },
+  label: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: '#7C3AED',
+    letterSpacing: 0.5,
+    marginBottom: 8,
+  },
+  summaryText: {
+    fontSize: 15,
+    color: '#374151',
+    lineHeight: 22,
+  },
+  summaryBold: {
+    fontWeight: '700',
+    color: '#5B21B6',
+  },
+  chipsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginTop: 12,
+  },
+  chip: {
+    backgroundColor: '#EDE9FE',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+  },
+  chipText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#6D28D9',
+  },
+});
+
+// ===========================================
+// Priority Insight Card Component
+// ===========================================
+
+function PriorityInsightCard({ priorities }: { priorities: string[] }) {
+  return (
+    <View style={insightStyles.card}>
+      <Ionicons name="trending-up" size={20} color="#059669" />
+      <Text style={insightStyles.text}>
+        <Text style={insightStyles.bold}>{priorities[0]}</Text> and{' '}
+        <Text style={insightStyles.bold}>{priorities[1]}</Text> are your top priorities
+      </Text>
+    </View>
+  );
+}
+
+const insightStyles = StyleSheet.create({
+  card: {
+    backgroundColor: '#ECFDF5',
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+  },
+  text: {
+    fontSize: 14,
+    color: '#065F46',
+    flex: 1,
+    lineHeight: 20,
+  },
+  bold: {
+    fontWeight: '700',
+  },
+});
+
+// ===========================================
+// Vote CTA Card Component
+// ===========================================
+
+function VoteCTACard({ onPress }: { onPress: () => void }) {
+  return (
+    <TouchableOpacity style={ctaStyles.card} onPress={onPress} activeOpacity={0.85}>
+      <View style={ctaStyles.content}>
+        <Ionicons name="checkbox-outline" size={24} color={Colors.white} />
+        <View style={ctaStyles.textWrap}>
+          <Text style={ctaStyles.title}>Make My Voting Plan</Text>
+          <Text style={ctaStyles.subtitle}>Match your blueprint to real candidates</Text>
+        </View>
+        <Ionicons name="arrow-forward" size={20} color="rgba(255,255,255,0.7)" />
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+const ctaStyles = StyleSheet.create({
+  card: {
+    backgroundColor: '#1F2937',
+    borderRadius: 16,
+    padding: 18,
+    marginTop: 4,
+    marginBottom: 12,
+  },
+  content: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  textWrap: {
+    flex: 1,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: Colors.white,
+  },
+  subtitle: {
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.6)',
+    marginTop: 2,
+  },
+});
 
 // ===========================================
 // Intro Screen Component
@@ -995,6 +1422,7 @@ function CompactAxisBar({
   poleBLabel,
   axisId,
   importance,
+  isFineTuned,
 }: {
   name: string;
   value: number;
@@ -1002,6 +1430,7 @@ function CompactAxisBar({
   poleBLabel: string;
   axisId: string;
   importance?: number;
+  isFineTuned?: boolean;
 }) {
   const config = getSliderConfig(axisId);
   const positionIndex = config ? valueToPositionIndex(value, config.positions.length) : -1;
@@ -1039,6 +1468,12 @@ function CompactAxisBar({
         </Text>
       </View>
 
+      {isFineTuned && (
+        <View style={axisBarStyles.fineTunedBadge}>
+          <Ionicons name="checkmark-circle" size={12} color="#059669" />
+          <Text style={axisBarStyles.fineTunedText}>Position refined</Text>
+        </View>
+      )}
     </View>
   );
 }
@@ -1085,6 +1520,16 @@ const axisBarStyles = StyleSheet.create({
     color: Colors.gray[900],
     lineHeight: 20,
   },
+  fineTunedBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  fineTunedText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#059669',
+  },
 });
 
 // ===========================================
@@ -1098,6 +1543,8 @@ function AxisEditModal({
   onClose,
   onChangeAxisImportance,
   onChangeAxis,
+  onFineTune,
+  fineTuningResponses,
 }: {
   axisId: string;
   profile: any;
@@ -1105,6 +1552,8 @@ function AxisEditModal({
   onClose: () => void;
   onChangeAxisImportance: (axis_id: string, value: number) => void;
   onChangeAxis: (axis_id: string, value: number) => void;
+  onFineTune: (axisId: string) => void;
+  fineTuningResponses: Record<string, number>;
 }) {
   const axisDef = spec.axes.find((a: any) => a.id === axisId);
 
@@ -1201,6 +1650,42 @@ function AxisEditModal({
                 <Text style={modalStyles.importanceEndLabel}>Deal breaker</Text>
               </View>
             </View>
+
+            {/* Fine-tuning section */}
+            {getFineTuningConfig(axisId) && (
+              <>
+                <View style={modalStyles.divider} />
+
+                {Object.keys(fineTuningResponses).length > 0 ? (
+                  <View style={modalStyles.section}>
+                    <FineTuneBreakdownView axisId={axisId} responses={fineTuningResponses} />
+                    <TouchableOpacity
+                      style={modalStyles.fineTuneButtonCompleted}
+                      onPress={() => onFineTune(axisId)}
+                    >
+                      <Ionicons name="refresh-outline" size={16} color="#059669" />
+                      <Text style={modalStyles.fineTuneButtonTextCompleted}>Re-fine-tune position</Text>
+                    </TouchableOpacity>
+                  </View>
+                ) : (
+                  <View style={modalStyles.section}>
+                    <TouchableOpacity
+                      style={modalStyles.fineTuneButton}
+                      onPress={() => onFineTune(axisId)}
+                    >
+                      <Ionicons name="options-outline" size={18} color={Colors.primary} />
+                      <View style={{ flex: 1 }}>
+                        <Text style={modalStyles.fineTuneButtonText}>Fine-tune my position</Text>
+                        <Text style={modalStyles.fineTuneQuestionCount}>
+                          {getFineTuningConfig(axisId)!.subDimensions.length} sub-topics to explore
+                        </Text>
+                      </View>
+                      <Ionicons name="chevron-forward" size={18} color={Colors.gray[400]} />
+                    </TouchableOpacity>
+                  </View>
+                )}
+              </>
+            )}
           </ScrollView>
 
           <View style={modalStyles.footer}>
@@ -1339,6 +1824,553 @@ const modalStyles = StyleSheet.create({
     color: Colors.white,
     fontWeight: '700',
     fontSize: 16,
+  },
+  fineTuneButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    backgroundColor: `${Colors.primary}08`,
+    borderWidth: 1,
+    borderColor: `${Colors.primary}25`,
+    borderRadius: 12,
+    padding: 14,
+  },
+  fineTuneButtonCompleted: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: '#ECFDF5',
+    borderWidth: 1,
+    borderColor: '#A7F3D0',
+    borderRadius: 12,
+    padding: 12,
+    marginTop: 12,
+  },
+  fineTuneButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: Colors.primary,
+  },
+  fineTuneButtonTextCompleted: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#059669',
+  },
+  fineTuneQuestionCount: {
+    fontSize: 12,
+    color: Colors.gray[500],
+    marginTop: 2,
+  },
+});
+
+// ===========================================
+// Fine-Tuning Screen Component
+// ===========================================
+
+function FineTuningScreen({
+  axisId,
+  spec,
+  existingResponses,
+  onComplete,
+  onCancel,
+}: {
+  axisId: string;
+  spec: Spec;
+  existingResponses: Record<string, number>;
+  onComplete: (responses: Record<string, number>) => void;
+  onCancel: () => void;
+}) {
+  const fineTuningConfig = getFineTuningConfig(axisId);
+  const axis = spec.axes.find(a => a.id === axisId);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [sliderPosition, setSliderPosition] = useState(
+    existingResponses[fineTuningConfig?.subDimensions[0]?.id || ''] ?? 2
+  );
+  const [responses, setResponses] = useState<Record<string, number>>(existingResponses);
+  const [fadeAnim] = useState(new Animated.Value(1));
+
+  if (!fineTuningConfig || !axis) {
+    return (
+      <View style={fineTuneStyles.container}>
+        <Text>Fine-tuning data not available</Text>
+      </View>
+    );
+  }
+
+  const subDimensions = fineTuningConfig.subDimensions;
+  const currentSubDimension = subDimensions[currentIndex];
+  const totalQuestions = subDimensions.length;
+  const progressPercentage = (currentIndex / totalQuestions) * 100;
+
+  const currentPosition = currentSubDimension.positions[sliderPosition];
+  const totalPositions = currentSubDimension.positions.length;
+
+  const getPositionColorForFineTuning = (index: number, total: number, centerIndex: number): string => {
+    if (index === centerIndex) return '#9CA3AF';
+    const midpoint = centerIndex;
+    const distanceFromCenter = Math.abs(index - midpoint) / midpoint;
+    if (index < midpoint) {
+      return distanceFromCenter > 0.5 ? '#A855F7' : '#C084FC';
+    } else {
+      return distanceFromCenter > 0.5 ? '#14B8A6' : '#5EEAD4';
+    }
+  };
+
+  const positionColor = getPositionColorForFineTuning(
+    sliderPosition,
+    totalPositions,
+    currentSubDimension.currentPolicyIndex
+  );
+
+  const handleNext = () => {
+    const newResponses = {
+      ...responses,
+      [currentSubDimension.id]: sliderPosition,
+    };
+    setResponses(newResponses);
+
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start(() => {
+      if (currentIndex >= totalQuestions - 1) {
+        onComplete(newResponses);
+        return;
+      }
+
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      setSliderPosition(newResponses[subDimensions[nextIndex].id] ?? 2);
+
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
+
+  const handleBack = () => {
+    if (currentIndex > 0) {
+      Animated.timing(fadeAnim, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        const prevIndex = currentIndex - 1;
+        setCurrentIndex(prevIndex);
+        setSliderPosition(responses[subDimensions[prevIndex].id] ?? 2);
+
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 200,
+          useNativeDriver: true,
+        }).start();
+      });
+    }
+  };
+
+  const handleSkip = () => {
+    const newResponses = {
+      ...responses,
+      [currentSubDimension.id]: 2,
+    };
+    setResponses(newResponses);
+
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start(() => {
+      if (currentIndex >= totalQuestions - 1) {
+        onComplete(newResponses);
+        return;
+      }
+
+      const nextIndex = currentIndex + 1;
+      setCurrentIndex(nextIndex);
+      setSliderPosition(newResponses[subDimensions[nextIndex].id] ?? 2);
+
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
+
+  return (
+    <View style={fineTuneStyles.container}>
+      {/* Header */}
+      <View style={fineTuneStyles.header}>
+        <View style={fineTuneStyles.headerTop}>
+          <TouchableOpacity onPress={onCancel} style={fineTuneStyles.cancelButton}>
+            <Ionicons name="close" size={24} color="#666" />
+          </TouchableOpacity>
+          <View style={fineTuneStyles.headerTitleContainer}>
+            <Text style={fineTuneStyles.headerSubtitle}>Fine-tuning</Text>
+            <Text style={fineTuneStyles.headerTitle}>{axis.name}</Text>
+          </View>
+          <View style={{ width: 40 }} />
+        </View>
+
+        <View style={fineTuneStyles.progressContainer}>
+          <View style={fineTuneStyles.progressLabel}>
+            <Text style={fineTuneStyles.progressText}>
+              Sub-topic {currentIndex + 1} of {totalQuestions}
+            </Text>
+          </View>
+          <View style={fineTuneStyles.progressBar}>
+            <View style={[fineTuneStyles.progressFill, { width: `${progressPercentage}%` }]} />
+          </View>
+        </View>
+      </View>
+
+      {/* Main Content */}
+      <View style={fineTuneStyles.content}>
+        <Animated.View style={[fineTuneStyles.questionCard, { opacity: fadeAnim }]}>
+          <Text style={fineTuneStyles.subDimensionName}>{currentSubDimension.name}</Text>
+          <Text style={fineTuneStyles.subDimensionQuestion}>{currentSubDimension.question}</Text>
+
+          {/* Position Card */}
+          <View style={fineTuneStyles.positionDisplay}>
+            <View style={[fineTuneStyles.positionCard, { borderColor: positionColor }]}>
+              <Text style={fineTuneStyles.positionTitle}>{currentPosition.title}</Text>
+              <Text style={fineTuneStyles.positionDescription}>{currentPosition.description}</Text>
+              {currentPosition.isCurrentPolicy && (
+                <View style={fineTuneStyles.currentPolicyBadge}>
+                  <Text style={fineTuneStyles.currentPolicyText}>Current US Policy</Text>
+                </View>
+              )}
+            </View>
+
+            {/* Slider */}
+            <View style={fineTuneStyles.sliderSection}>
+              <DraggableSlider
+                position={sliderPosition}
+                totalPositions={totalPositions}
+                onPositionChange={setSliderPosition}
+                poleALabel={currentSubDimension.poleALabel}
+                poleBLabel={currentSubDimension.poleBLabel}
+              />
+            </View>
+          </View>
+        </Animated.View>
+      </View>
+
+      {/* Navigation Footer */}
+      <View style={fineTuneStyles.navSection}>
+        <View style={fineTuneStyles.navButtons}>
+          <TouchableOpacity
+            style={[fineTuneStyles.navBtn, fineTuneStyles.navBtnSecondary]}
+            onPress={handleBack}
+            disabled={currentIndex === 0}
+          >
+            <Text style={[
+              fineTuneStyles.navBtnTextSecondary,
+              currentIndex === 0 && fineTuneStyles.navBtnTextDisabled
+            ]}>
+              Back
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[fineTuneStyles.navBtn, fineTuneStyles.navBtnPrimary]}
+            onPress={handleNext}
+          >
+            <Text style={fineTuneStyles.navBtnTextPrimary}>
+              {currentIndex >= totalQuestions - 1 ? 'Finish' : 'Next \u2192'}
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={fineTuneStyles.skipLink} onPress={handleSkip}>
+          <Text style={fineTuneStyles.skipLinkText}>Skip this sub-topic</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const fineTuneStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+  },
+  header: {
+    padding: 16,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e5e7eb',
+  },
+  headerTop: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  cancelButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#f3f4f6',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  headerTitleContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  headerSubtitle: {
+    fontSize: 12,
+    color: '#7C3AED',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  headerTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#111',
+    marginTop: 2,
+  },
+  progressContainer: {
+    marginTop: 8,
+  },
+  progressLabel: {
+    marginBottom: 6,
+  },
+  progressText: {
+    fontSize: 12,
+    color: '#666',
+    textAlign: 'center',
+  },
+  progressBar: {
+    height: 6,
+    backgroundColor: '#e5e7eb',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 3,
+    backgroundColor: '#7C3AED',
+  },
+  content: {
+    flex: 1,
+    padding: 20,
+  },
+  questionCard: {
+    flex: 1,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+  },
+  subDimensionName: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: Colors.gray[900],
+    marginBottom: 8,
+    lineHeight: 24,
+    flexWrap: 'wrap',
+  },
+  subDimensionQuestion: {
+    fontSize: 14,
+    color: Colors.gray[600],
+    lineHeight: 22,
+    marginBottom: 20,
+    flexWrap: 'wrap',
+  },
+  positionDisplay: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  positionCard: {
+    backgroundColor: 'rgba(124, 58, 237, 0.04)',
+    borderWidth: 2,
+    borderRadius: 12,
+    padding: 16,
+    alignItems: 'stretch',
+    minHeight: 100,
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
+  positionTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: Colors.gray[900],
+    textAlign: 'center',
+    lineHeight: 22,
+    flexWrap: 'wrap',
+  },
+  positionDescription: {
+    fontSize: 13,
+    color: Colors.gray[600],
+    textAlign: 'center',
+    lineHeight: 20,
+    marginTop: 8,
+    flexWrap: 'wrap',
+  },
+  currentPolicyBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#D1FAE5',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginTop: 12,
+    alignSelf: 'center',
+  },
+  currentPolicyText: {
+    fontSize: 11,
+    fontWeight: '600',
+    color: '#059669',
+  },
+  sliderSection: {
+    width: '100%',
+  },
+  navSection: {
+    padding: 20,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderTopColor: '#e5e7eb',
+  },
+  navButtons: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  navBtn: {
+    flex: 1,
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  navBtnSecondary: {
+    backgroundColor: '#f3f4f6',
+  },
+  navBtnPrimary: {
+    backgroundColor: '#7C3AED',
+  },
+  navBtnTextSecondary: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#666',
+  },
+  navBtnTextPrimary: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff',
+  },
+  navBtnTextDisabled: {
+    color: '#ccc',
+  },
+  skipLink: {
+    alignItems: 'center',
+    marginTop: 12,
+  },
+  skipLinkText: {
+    fontSize: 13,
+    color: '#888',
+  },
+});
+
+// ===========================================
+// Fine-Tune Breakdown View Component (for modal)
+// ===========================================
+
+function FineTuneBreakdownView({
+  axisId,
+  responses,
+}: {
+  axisId: string;
+  responses: Record<string, number>;
+}) {
+  const breakdown = getFineTuningBreakdown(axisId, responses);
+  const overallScore = calculateFineTunedScore(axisId, responses);
+
+  if (breakdown.length === 0) return null;
+
+  const getAccentColor = (score: number) => {
+    if (score <= -0.3) return '#A855F7';
+    if (score >= 0.3) return '#14B8A6';
+    return '#6B7280';
+  };
+
+  return (
+    <View style={ftBreakdownStyles.container}>
+      <Text style={ftBreakdownStyles.title}>Your fine-tuned positions</Text>
+
+      {breakdown.map((item) => (
+        <View key={item.subDimensionId} style={[ftBreakdownStyles.itemBox, { borderLeftColor: getAccentColor(item.score) }]}>
+          <Text style={ftBreakdownStyles.itemName}>{item.name}</Text>
+          <Text style={ftBreakdownStyles.itemPosition}>{item.positionTitle}</Text>
+        </View>
+      ))}
+
+      {overallScore !== null && (
+        <View style={ftBreakdownStyles.summaryBox}>
+          <Ionicons name="analytics-outline" size={14} color={Colors.gray[500]} />
+          <Text style={ftBreakdownStyles.summaryText}>
+            Overall: {overallScore <= -0.3 ? 'Leans progressive' : overallScore >= 0.3 ? 'Leans conservative' : 'Mixed / balanced'}
+          </Text>
+        </View>
+      )}
+    </View>
+  );
+}
+
+const ftBreakdownStyles = StyleSheet.create({
+  container: {
+    gap: 8,
+  },
+  title: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: Colors.gray[500],
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
+    marginBottom: 4,
+  },
+  itemBox: {
+    backgroundColor: '#F5F3FF',
+    borderRadius: 8,
+    padding: 10,
+    borderLeftWidth: 4,
+  },
+  itemName: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: Colors.gray[500],
+    marginBottom: 2,
+  },
+  itemPosition: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: Colors.gray[900],
+    lineHeight: 18,
+  },
+  summaryBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: Colors.gray[100],
+    borderRadius: 8,
+    padding: 10,
+    marginTop: 4,
+  },
+  summaryText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: Colors.gray[600],
   },
 });
 
@@ -1600,10 +2632,19 @@ const styles = StyleSheet.create({
     color: Colors.gray[500],
     marginTop: 4,
   },
+  fineTuneHint: {
+    fontSize: 12,
+    color: Colors.gray[400],
+    textAlign: 'center',
+    marginBottom: 8,
+  },
   domainTabsBar: {
     backgroundColor: Colors.white,
     borderBottomWidth: 1,
     borderBottomColor: Colors.gray[200],
+  },
+  domainTabsInline: {
+    marginBottom: 12,
   },
   domainTabs: {
     paddingHorizontal: 12,
@@ -1631,7 +2672,8 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   blueprintContent: {
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingTop: 16,
     paddingBottom: 40,
   },
   domainCard: {
