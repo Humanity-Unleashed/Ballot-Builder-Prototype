@@ -150,7 +150,12 @@ function TopNav({ activeTab }: { activeTab: 'blueprint' | 'build' }) {
   const router = useRouter();
   return (
     <View style={topNavStyles.container}>
-      <Text style={topNavStyles.appName}>Ballot Builder</Text>
+      <View style={topNavStyles.brand}>
+        <View style={topNavStyles.iconMark}>
+          <Ionicons name="checkbox" size={14} color="#FFFFFF" />
+        </View>
+        <Text style={topNavStyles.appName}>Ballot Builder</Text>
+      </View>
       <View style={topNavStyles.pills}>
         <TouchableOpacity
           style={[topNavStyles.pill, activeTab === 'blueprint' && topNavStyles.pillActive]}
@@ -183,6 +188,19 @@ const topNavStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  brand: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  iconMark: {
+    width: 24,
+    height: 24,
+    borderRadius: 6,
+    backgroundColor: '#7C3AED',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   appName: {
     fontSize: 16,

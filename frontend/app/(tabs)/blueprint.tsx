@@ -48,7 +48,12 @@ function TopNav({ activeTab }: { activeTab: 'blueprint' | 'build' }) {
   const router = useRouter();
   return (
     <View style={topNavStyles.container}>
-      <Text style={topNavStyles.appName}>Ballot Builder</Text>
+      <View style={topNavStyles.brand}>
+        <View style={topNavStyles.iconMark}>
+          <Ionicons name="checkbox" size={14} color="#FFFFFF" />
+        </View>
+        <Text style={topNavStyles.appName}>Ballot Builder</Text>
+      </View>
       <View style={topNavStyles.pills}>
         <TouchableOpacity
           style={[topNavStyles.pill, activeTab === 'blueprint' && topNavStyles.pillActive]}
@@ -81,6 +86,19 @@ const topNavStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  brand: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  iconMark: {
+    width: 24,
+    height: 24,
+    borderRadius: 6,
+    backgroundColor: '#7C3AED',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   appName: {
     fontSize: 16,
@@ -792,13 +810,13 @@ export default function BlueprintScreen() {
             <Text style={styles.retakeBtnText}>Retake</Text>
           </TouchableOpacity>
         </View>
-        {/* Values Spectrum Card */}
-        {metaDimensions && <ValuesSpectrumCard metaDimensions={metaDimensions} />}
-
-        {/* Value Summary Card */}
+        {/* Civic Perspective Card (narrative summary + dimension explanations) */}
         {metaDimensions && valueSummary && (
-          <ValueSummaryCard summary={valueSummary} framings={valueFramings} />
+          <ValueSummaryCard summary={valueSummary} framings={valueFramings} metaDimensions={metaDimensions} />
         )}
+
+        {/* Values Spectrum Card (visual backing data) */}
+        {metaDimensions && <ValuesSpectrumCard metaDimensions={metaDimensions} />}
 
         {/* Priority Insight Card */}
         {topPriorities.length >= 2 && (
@@ -1070,7 +1088,18 @@ const spectrumStyles = StyleSheet.create({
 // Value Summary Card Component
 // ===========================================
 
-function ValueSummaryCard({ summary, framings }: { summary: string; framings: ValueFramingConfig[] }) {
+function ValueSummaryCard({ summary, framings, metaDimensions }: { summary: string; framings: ValueFramingConfig[]; metaDimensions: MetaDimensionScores }) {
+  // Build per-dimension explanations by matching framings to SPECTRUM_BARS
+  const dimensionDetails = framings.map((f) => {
+    const bar = SPECTRUM_BARS.find(b => b.key === f.metaDimension);
+    if (!bar) return null;
+    const { leftPct, rightPct } = scoreToPercents(metaDimensions[bar.key], bar.invert);
+    const leftWins = leftPct >= rightPct;
+    const winnerLabel = leftPct === rightPct ? 'Balanced' : leftWins ? bar.leftIdLabel : bar.rightIdLabel;
+    const winnerColor = leftPct === rightPct ? Colors.gray[500] : leftWins ? bar.leftColor : bar.rightColor;
+    return { framing: f, bar, winnerLabel, winnerColor };
+  }).filter(Boolean) as { framing: ValueFramingConfig; bar: typeof SPECTRUM_BARS[0]; winnerLabel: string; winnerColor: string }[];
+
   // Bold the coreValueLabels within the summary text
   const renderSummaryText = () => {
     if (framings.length === 0) {
@@ -1078,7 +1107,6 @@ function ValueSummaryCard({ summary, framings }: { summary: string; framings: Va
     }
 
     const labels = framings.map(f => f.coreValueLabel);
-    // Build a regex that matches any of the labels
     const pattern = new RegExp(`(${labels.map(l => l.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
     const parts = summary.split(pattern);
 
@@ -1099,11 +1127,18 @@ function ValueSummaryCard({ summary, framings }: { summary: string; framings: Va
     <View style={valueSummaryStyles.card}>
       <Text style={valueSummaryStyles.label}>YOUR CIVIC PERSPECTIVE</Text>
       {renderSummaryText()}
-      {framings.length > 0 && (
-        <View style={valueSummaryStyles.chipsRow}>
-          {framings.map((f) => (
-            <View key={f.metaDimension} style={valueSummaryStyles.chip}>
-              <Text style={valueSummaryStyles.chipText}>{f.coreValueLabel}</Text>
+
+      {dimensionDetails.length > 0 && (
+        <View style={valueSummaryStyles.dimensionsList}>
+          {dimensionDetails.map(({ framing, bar, winnerLabel, winnerColor }) => (
+            <View key={framing.metaDimension} style={valueSummaryStyles.dimensionItem}>
+              <View style={valueSummaryStyles.dimensionHeader}>
+                <Text style={[valueSummaryStyles.dimensionLabel, { color: winnerColor }]}>{winnerLabel}</Text>
+                <Text style={valueSummaryStyles.dimensionAxis}>{bar.axisName}</Text>
+              </View>
+              <Text style={valueSummaryStyles.dimensionExplain}>
+                You value {framing.shortPhrase}. {framing.resonanceFraming}
+              </Text>
             </View>
           ))}
         </View>
@@ -1137,22 +1172,36 @@ const valueSummaryStyles = StyleSheet.create({
     fontWeight: '700',
     color: '#5B21B6',
   },
-  chipsRow: {
+  dimensionsList: {
+    marginTop: 14,
+    gap: 10,
+  },
+  dimensionItem: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 12,
+    gap: 6,
+  },
+  dimensionHeader: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    alignItems: 'center',
     gap: 8,
-    marginTop: 12,
   },
-  chip: {
-    backgroundColor: '#EDE9FE',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
+  dimensionLabel: {
+    fontSize: 14,
+    fontWeight: '700',
   },
-  chipText: {
-    fontSize: 12,
+  dimensionAxis: {
+    fontSize: 11,
     fontWeight: '600',
-    color: '#6D28D9',
+    color: '#9CA3AF',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+  },
+  dimensionExplain: {
+    fontSize: 13,
+    color: '#4B5563',
+    lineHeight: 19,
   },
 });
 
