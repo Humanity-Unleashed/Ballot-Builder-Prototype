@@ -150,8 +150,8 @@ const DOMAIN_DISPLAY_NAMES: Record<string, string> = {
 
 function getSliderThumbColor(position: number, totalPositions: number): string {
   const normalizedPosition = position / (totalPositions - 1);
-  if (normalizedPosition <= 0.3) return '#A855F7';
-  if (normalizedPosition >= 0.7) return '#14B8A6';
+  if (normalizedPosition <= 0.3) return '#8B7AAF';
+  if (normalizedPosition >= 0.7) return '#5B9E94';
   return '#6B7280';
 }
 
@@ -159,15 +159,15 @@ function getGradientSegmentColor(index: number, totalSegments: number): string {
   const t = index / (totalSegments - 1);
   if (t < 0.5) {
     const factor = t * 2;
-    const r = Math.round(168 + (229 - 168) * factor);
-    const g = Math.round(85 + (231 - 85) * factor);
-    const b = Math.round(247 + (235 - 247) * factor);
+    const r = Math.round(139 + (229 - 139) * factor);
+    const g = Math.round(122 + (231 - 122) * factor);
+    const b = Math.round(175 + (235 - 175) * factor);
     return `rgb(${r}, ${g}, ${b})`;
   } else {
     const factor = (t - 0.5) * 2;
-    const r = Math.round(229 + (20 - 229) * factor);
-    const g = Math.round(231 + (184 - 231) * factor);
-    const b = Math.round(235 + (166 - 235) * factor);
+    const r = Math.round(229 + (91 - 229) * factor);
+    const g = Math.round(231 + (158 - 231) * factor);
+    const b = Math.round(235 + (148 - 235) * factor);
     return `rgb(${r}, ${g}, ${b})`;
   }
 }
@@ -950,8 +950,8 @@ const SPECTRUM_BARS: {
     leftModerateLabel: 'Community Pragmatist',
     rightModerateLabel: 'Independent Cooperator',
     balancedLabel: 'Civic Pluralist',
-    leftColor: '#6366F1', // indigo
-    rightColor: '#F97316', // orange
+    leftColor: '#6E72A8', // slate blue
+    rightColor: '#C4895A', // terracotta
     invert: false,
   },
   {
@@ -964,8 +964,8 @@ const SPECTRUM_BARS: {
     leftModerateLabel: 'Cautious Reformer',
     rightModerateLabel: 'Measured Reformist',
     balancedLabel: 'Adaptive Moderate',
-    leftColor: '#0EA5E9', // sky
-    rightColor: '#E11D48', // rose
+    leftColor: '#5B8DA6', // steel blue
+    rightColor: '#B5616E', // dusty rose
     invert: true,
   },
   {
@@ -978,8 +978,8 @@ const SPECTRUM_BARS: {
     leftModerateLabel: 'Principled Pragmatist',
     rightModerateLabel: 'Guided Autonomist',
     balancedLabel: 'Contextual Evaluator',
-    leftColor: '#EAB308', // amber
-    rightColor: '#16A34A', // green
+    leftColor: '#B5A05A', // antique gold
+    rightColor: '#5E9A6E', // sage
     invert: false,
   },
 ];
@@ -1603,6 +1603,11 @@ function DraggableSlider({
   const trackWidth = useRef(0);
   const [isDragging, setIsDragging] = useState(false);
 
+  const positionRef = useRef(position);
+  const onPositionChangeRef = useRef(onPositionChange);
+  positionRef.current = position;
+  onPositionChangeRef.current = onPositionChange;
+
   const panResponder = useRef(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -1613,17 +1618,17 @@ function DraggableSlider({
           const touchX = evt.nativeEvent.locationX;
           const newPos = Math.round((touchX / trackWidth.current) * (totalPositions - 1));
           const clampedPos = Math.max(0, Math.min(totalPositions - 1, newPos));
-          onPositionChange(clampedPos);
+          onPositionChangeRef.current(clampedPos);
         }
       },
       onPanResponderMove: (evt, gestureState) => {
         if (trackWidth.current > 0) {
-          const currentThumbX = (position / (totalPositions - 1)) * trackWidth.current;
+          const currentThumbX = (positionRef.current / (totalPositions - 1)) * trackWidth.current;
           const newX = currentThumbX + gestureState.dx;
           const newPos = Math.round((newX / trackWidth.current) * (totalPositions - 1));
           const clampedPos = Math.max(0, Math.min(totalPositions - 1, newPos));
-          if (clampedPos !== position) {
-            onPositionChange(clampedPos);
+          if (clampedPos !== positionRef.current) {
+            onPositionChangeRef.current(clampedPos);
           }
         }
       },
@@ -1717,11 +1722,11 @@ const sliderStyles = StyleSheet.create({
     lineHeight: 15,
   },
   poleLabelLeft: {
-    color: '#A855F7',
+    color: '#8B7AAF',
     textAlign: 'left',
   },
   poleLabelRight: {
-    color: '#14B8A6',
+    color: '#5B9E94',
     textAlign: 'right',
   },
   trackContainer: {
@@ -1810,8 +1815,8 @@ function CompactAxisBar({
   const positionLabel = getPositionLabel(axisId, value);
 
   const getAccentColor = () => {
-    if (value <= 3) return '#A855F7';
-    if (value >= 7) return '#14B8A6';
+    if (value <= 3) return '#8B7AAF';
+    if (value >= 7) return '#5B9E94';
     return '#6B7280';
   };
 
@@ -1934,9 +1939,23 @@ function AxisEditModal({
 
   const config = getSliderConfig(axisId);
   const totalPositions = config?.positions.length || 5;
-  const currentPositionIndex = config
+  const initialPositionIndex = config
     ? valueToPositionIndex(axisData.value_0_10, totalPositions)
     : Math.round(axisData.value_0_10 / 2);
+
+  const [localPosition, setLocalPosition] = useState(initialPositionIndex);
+  const [localImportance, setLocalImportance] = useState(axisData.importance ?? DEFAULT_STRENGTH_VALUE);
+
+  const handleClose = () => {
+    const newValue = Math.round((localPosition / (totalPositions - 1)) * 10);
+    if (newValue !== axisData.value_0_10) {
+      onChangeAxis(axisId, newValue);
+    }
+    if (localImportance !== (axisData.importance ?? DEFAULT_STRENGTH_VALUE)) {
+      onChangeAxisImportance(axisId, localImportance);
+    }
+    onClose();
+  };
 
   return (
     <Modal visible animationType="slide" transparent>
@@ -1944,7 +1963,7 @@ function AxisEditModal({
         <View style={modalStyles.sheet}>
           <View style={modalStyles.header}>
             <Text style={modalStyles.title}>{axisDef.name}</Text>
-            <TouchableOpacity onPress={onClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+            <TouchableOpacity onPress={handleClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
               <Ionicons name="close" size={24} color={Colors.gray[500]} />
             </TouchableOpacity>
           </View>
@@ -1956,11 +1975,11 @@ function AxisEditModal({
             {config && (
               <View style={modalStyles.positionCard}>
                 <Text style={modalStyles.positionTitle}>
-                  {config.positions[currentPositionIndex]?.title || 'Mixed'}
+                  {config.positions[localPosition]?.title || 'Mixed'}
                 </Text>
-                {config.positions[currentPositionIndex]?.description && (
+                {config.positions[localPosition]?.description && (
                   <Text style={modalStyles.positionDescription}>
-                    {config.positions[currentPositionIndex].description}
+                    {config.positions[localPosition].description}
                   </Text>
                 )}
               </View>
@@ -1970,12 +1989,9 @@ function AxisEditModal({
             <View style={modalStyles.section}>
               <Text style={modalStyles.sectionLabel}>Your position:</Text>
               <DraggableSlider
-                position={currentPositionIndex}
+                position={localPosition}
                 totalPositions={totalPositions}
-                onPositionChange={(pos) => {
-                  const newValue = Math.round((pos / (totalPositions - 1)) * 10);
-                  onChangeAxis(axisId, newValue);
-                }}
+                onPositionChange={setLocalPosition}
                 poleALabel={config?.poleALabel || axisDef.poleA.label}
                 poleBLabel={config?.poleBLabel || axisDef.poleB.label}
               />
@@ -1986,8 +2002,8 @@ function AxisEditModal({
             {/* Importance */}
             <View style={modalStyles.section}>
               <StrengthChips
-                selectedValue={axisData.importance ?? DEFAULT_STRENGTH_VALUE}
-                onSelect={(value) => onChangeAxisImportance(axisId, value)}
+                selectedValue={localImportance}
+                onSelect={setLocalImportance}
               />
             </View>
 
@@ -2029,7 +2045,7 @@ function AxisEditModal({
           </ScrollView>
 
           <View style={modalStyles.footer}>
-            <TouchableOpacity style={modalStyles.doneButton} onPress={onClose}>
+            <TouchableOpacity style={modalStyles.doneButton} onPress={handleClose}>
               <Text style={modalStyles.doneButtonText}>Done</Text>
             </TouchableOpacity>
           </View>
@@ -2217,9 +2233,9 @@ function FineTuningScreen({
     const midpoint = centerIndex;
     const distanceFromCenter = Math.abs(index - midpoint) / midpoint;
     if (index < midpoint) {
-      return distanceFromCenter > 0.5 ? '#A855F7' : '#C084FC';
+      return distanceFromCenter > 0.5 ? '#8B7AAF' : '#A99BC4';
     } else {
-      return distanceFromCenter > 0.5 ? '#14B8A6' : '#5EEAD4';
+      return distanceFromCenter > 0.5 ? '#5B9E94' : '#89BCB5';
     }
   };
 
@@ -2475,7 +2491,7 @@ const fineTuneStyles = StyleSheet.create({
   progressFill: {
     height: '100%',
     borderRadius: 3,
-    backgroundColor: '#7C3AED',
+    backgroundColor: '#8B7AAF',
   },
   content: {
     flex: 1,
@@ -2620,8 +2636,8 @@ function FineTuneBreakdownView({
   if (breakdown.length === 0) return null;
 
   const getAccentColor = (score: number) => {
-    if (score <= -0.3) return '#A855F7';
-    if (score >= 0.3) return '#14B8A6';
+    if (score <= -0.3) return '#8B7AAF';
+    if (score >= 0.3) return '#5B9E94';
     return '#6B7280';
   };
 
@@ -2810,7 +2826,7 @@ const styles = StyleSheet.create({
   },
   progressFill: {
     height: '100%',
-    backgroundColor: '#A855F7',
+    backgroundColor: '#8B7AAF',
     borderRadius: 3,
   },
   assessmentContent: {

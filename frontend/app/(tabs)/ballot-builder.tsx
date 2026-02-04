@@ -14,7 +14,7 @@
  * - Candidate races with match percentage recommendations
  */
 
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -25,6 +25,8 @@ import {
   ActivityIndicator,
   Modal,
   Pressable,
+  PanResponder,
+  Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -33,6 +35,7 @@ import { useBlueprint } from '@/context/BlueprintContext';
 import { deriveMetaDimensions, type MetaDimensionScores } from '@/utils/archetypes';
 import { getAxisMetaDimension } from '@/utils/archetypes';
 import { generatePolicyFraming, derivePolicyMetaAlignment, getUserValueFramings, getValueFraming } from '@/utils/valueFraming';
+import { getSliderConfig } from '../../data/sliderPositions';
 import {
   ballotApi,
   type Ballot as ApiBallot,
@@ -96,6 +99,42 @@ interface Category {
 }
 
 type VoteChoice = 'yes' | 'no' | string | null;
+
+// ===========================================
+// Slider Helper Functions
+// ===========================================
+
+function valueToPositionIndex(value: number, totalPositions: number): number {
+  return Math.round((value / 10) * (totalPositions - 1));
+}
+
+function positionIndexToValue(index: number, totalPositions: number): number {
+  return Math.round((index / (totalPositions - 1)) * 10);
+}
+
+function getGradientSegmentColor(index: number, totalSegments: number): string {
+  const t = index / (totalSegments - 1);
+  if (t < 0.5) {
+    const factor = t * 2;
+    const r = Math.round(139 + (229 - 139) * factor);
+    const g = Math.round(122 + (231 - 122) * factor);
+    const b = Math.round(175 + (235 - 175) * factor);
+    return `rgb(${r}, ${g}, ${b})`;
+  } else {
+    const factor = (t - 0.5) * 2;
+    const r = Math.round(229 + (91 - 229) * factor);
+    const g = Math.round(231 + (158 - 231) * factor);
+    const b = Math.round(235 + (148 - 235) * factor);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+}
+
+function getSliderThumbColor(position: number, totalPositions: number): string {
+  const normalizedPosition = position / (totalPositions - 1);
+  if (normalizedPosition <= 0.3) return '#8B7AAF';
+  if (normalizedPosition >= 0.7) return '#5B9E94';
+  return '#6B7280';
+}
 
 interface AxisBreakdown {
   axisId: string;
@@ -1608,81 +1647,214 @@ function ValuesSection({
 }
 
 function ValueSlider({ axis, onChange }: { axis: ValueAxis; onChange: (value: number) => void }) {
-  const [barWidth, setBarWidth] = useState(0);
+  const config = getSliderConfig(axis.id);
 
-  // Calculate marker position (0-100%)
-  const markerPosition = (axis.value / 10) * 100;
+  if (!config) {
+    return <SimpleValueSlider axis={axis} onChange={onChange} />;
+  }
 
-  // Determine accent color based on position
-  const getAccentColor = () => {
-    if (axis.value <= 3) return '#A855F7'; // Purple - toward poleA
-    if (axis.value >= 7) return '#14B8A6'; // Teal - toward poleB
-    return '#6B7280'; // Gray - center/mixed
-  };
+  const totalPositions = config.positions.length;
+  const positionIndex = valueToPositionIndex(axis.value, totalPositions);
+  const currentPosition = config.positions[positionIndex];
+  const thumbColor = getSliderThumbColor(positionIndex, totalPositions);
+  const thumbPercent = (positionIndex / (totalPositions - 1)) * 100;
 
-  // Handle tap on the gradient bar to change value
-  const handleBarPress = (event: any) => {
-    const { locationX } = event.nativeEvent;
-    const width = barWidth || 280;
-    const percentage = Math.max(0, Math.min(1, locationX / width));
-    const newValue = Math.round(percentage * 10);
-    onChange(newValue);
-  };
+  const trackRef = useRef<View>(null);
+  const trackWidth = useRef(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const positionRef = useRef(positionIndex);
+  const onChangeRef = useRef(onChange);
+  positionRef.current = positionIndex;
+  onChangeRef.current = onChange;
+
+  const handlePositionChange = useCallback((newPosIndex: number) => {
+    const clamped = Math.max(0, Math.min(totalPositions - 1, newPosIndex));
+    const newValue = positionIndexToValue(clamped, totalPositions);
+    onChangeRef.current(newValue);
+  }, [totalPositions]);
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderGrant: (evt) => {
+        setIsDragging(true);
+        if (trackWidth.current > 0) {
+          const touchX = evt.nativeEvent.locationX;
+          const newPos = Math.round((touchX / trackWidth.current) * (totalPositions - 1));
+          handlePositionChange(newPos);
+        }
+      },
+      onPanResponderMove: (evt, gestureState) => {
+        if (trackWidth.current > 0) {
+          const currentThumbX = (positionRef.current / (totalPositions - 1)) * trackWidth.current;
+          const newX = currentThumbX + gestureState.dx;
+          const newPos = Math.round((newX / trackWidth.current) * (totalPositions - 1));
+          const clamped = Math.max(0, Math.min(totalPositions - 1, newPos));
+          if (clamped !== positionRef.current) {
+            handlePositionChange(clamped);
+          }
+        }
+      },
+      onPanResponderRelease: () => setIsDragging(false),
+      onPanResponderTerminate: () => setIsDragging(false),
+    })
+  ).current;
+
+  // Accent color for the position label card border
+  const accentColor = thumbColor;
 
   return (
     <View style={sliderStyles.container}>
       <Text style={sliderStyles.name}>{axis.name}</Text>
 
-      {/* Gradient bar with marker */}
-      <TouchableOpacity
-        activeOpacity={0.9}
-        onPress={handleBarPress}
-        onLayout={(e) => setBarWidth(e.nativeEvent.layout.width)}
-        style={sliderStyles.barWrapper}
-      >
-        <View style={sliderStyles.gradientBar}>
-          {/* Smooth gradient with multiple segments */}
-          {Array.from({ length: 20 }, (_, i) => {
-            const t = i / 19; // 0 to 1
-            // Interpolate: purple (0) -> gray (0.5) -> teal (1)
-            let color: string;
-            if (t < 0.5) {
-              // Purple to gray
-              const factor = t * 2;
-              const r = Math.round(168 + (229 - 168) * factor);
-              const g = Math.round(85 + (231 - 85) * factor);
-              const b = Math.round(247 + (235 - 247) * factor);
-              color = `rgb(${r}, ${g}, ${b})`;
-            } else {
-              // Gray to teal
-              const factor = (t - 0.5) * 2;
-              const r = Math.round(229 + (20 - 229) * factor);
-              const g = Math.round(231 + (184 - 231) * factor);
-              const b = Math.round(235 + (166 - 235) * factor);
-              color = `rgb(${r}, ${g}, ${b})`;
-            }
-            return (
+      {/* Position title card */}
+      {currentPosition && (
+        <View style={[sliderStyles.positionCard, { borderLeftColor: accentColor }]}>
+          <Text style={sliderStyles.positionTitle}>{currentPosition.title}</Text>
+          {currentPosition.isCurrentPolicy && (
+            <View style={sliderStyles.currentPolicyBadge}>
+              <Text style={sliderStyles.currentPolicyText}>Current US Policy</Text>
+            </View>
+          )}
+        </View>
+      )}
+
+      {/* Slider row: poleA label | track | poleB label */}
+      <View style={sliderStyles.sliderRow}>
+        <Text style={sliderStyles.poleLabelLeft}>{config.poleALabel}</Text>
+
+        <View style={sliderStyles.trackContainer}>
+          <View
+            ref={trackRef}
+            style={sliderStyles.trackOuter}
+            onLayout={(e) => { trackWidth.current = e.nativeEvent.layout.width; }}
+            {...panResponder.panHandlers}
+          >
+            {Array.from({ length: 20 }, (_, i) => (
               <View
                 key={i}
                 style={[
-                  sliderStyles.gradientSegment,
-                  { backgroundColor: color },
-                  i === 0 && sliderStyles.gradientSegmentFirst,
-                  i === 19 && sliderStyles.gradientSegmentLast,
+                  sliderStyles.trackSegment,
+                  { backgroundColor: getGradientSegmentColor(i, 20) },
                 ]}
               />
-            );
-          })}
+            ))}
+            <Animated.View
+              style={[
+                sliderStyles.thumb,
+                {
+                  left: `${thumbPercent}%`,
+                  borderColor: thumbColor,
+                  transform: [{ scale: isDragging ? 1.15 : 1 }],
+                },
+              ]}
+            >
+              <View style={[sliderStyles.thumbInner, { backgroundColor: thumbColor }]} />
+            </Animated.View>
+          </View>
+
+          {/* Tick marks */}
+          <View style={sliderStyles.tickMarks}>
+            {Array.from({ length: totalPositions }, (_, idx) => (
+              <TouchableOpacity
+                key={idx}
+                style={sliderStyles.tickTouchArea}
+                onPress={() => handlePositionChange(idx)}
+              >
+                <View style={[
+                  sliderStyles.tick,
+                  idx === positionIndex && sliderStyles.tickActive,
+                ]} />
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
 
-        {/* Marker */}
-        <View style={[sliderStyles.marker, { left: `${markerPosition}%` }]}>
-          <View style={[sliderStyles.markerInner, { borderColor: getAccentColor() }]} />
-        </View>
-      </TouchableOpacity>
+        <Text style={sliderStyles.poleLabelRight}>{config.poleBLabel}</Text>
+      </View>
+    </View>
+  );
+}
 
-      <View style={sliderStyles.labels}>
+function SimpleValueSlider({ axis, onChange }: { axis: ValueAxis; onChange: (value: number) => void }) {
+  const trackRef = useRef<View>(null);
+  const trackWidth = useRef(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const valueRef = useRef(axis.value);
+  const onChangeRef = useRef(onChange);
+  valueRef.current = axis.value;
+  onChangeRef.current = onChange;
+
+  const handleValueFromX = useCallback((x: number) => {
+    if (trackWidth.current <= 0) return;
+    const pct = Math.max(0, Math.min(1, x / trackWidth.current));
+    const newVal = Math.round(pct * 10);
+    onChangeRef.current(newVal);
+  }, []);
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderGrant: (evt) => {
+        setIsDragging(true);
+        handleValueFromX(evt.nativeEvent.locationX);
+      },
+      onPanResponderMove: (evt, gestureState) => {
+        if (trackWidth.current > 0) {
+          const currentX = (valueRef.current / 10) * trackWidth.current;
+          handleValueFromX(currentX + gestureState.dx);
+        }
+      },
+      onPanResponderRelease: () => setIsDragging(false),
+      onPanResponderTerminate: () => setIsDragging(false),
+    })
+  ).current;
+
+  const thumbColor = getSliderThumbColor(axis.value, 11);
+  const thumbPercent = (axis.value / 10) * 100;
+
+  return (
+    <View style={sliderStyles.container}>
+      <Text style={sliderStyles.name}>{axis.name}</Text>
+
+      <View style={sliderStyles.sliderRow}>
         <Text style={sliderStyles.poleLabelLeft}>{axis.poleA}</Text>
+
+        <View style={sliderStyles.trackContainer}>
+          <View
+            ref={trackRef}
+            style={sliderStyles.trackOuter}
+            onLayout={(e) => { trackWidth.current = e.nativeEvent.layout.width; }}
+            {...panResponder.panHandlers}
+          >
+            {Array.from({ length: 20 }, (_, i) => (
+              <View
+                key={i}
+                style={[
+                  sliderStyles.trackSegment,
+                  { backgroundColor: getGradientSegmentColor(i, 20) },
+                ]}
+              />
+            ))}
+            <Animated.View
+              style={[
+                sliderStyles.thumb,
+                {
+                  left: `${thumbPercent}%`,
+                  borderColor: thumbColor,
+                  transform: [{ scale: isDragging ? 1.15 : 1 }],
+                },
+              ]}
+            >
+              <View style={[sliderStyles.thumbInner, { backgroundColor: thumbColor }]} />
+            </Animated.View>
+          </View>
+        </View>
+
         <Text style={sliderStyles.poleLabelRight}>{axis.poleB}</Text>
       </View>
     </View>
@@ -1719,68 +1891,116 @@ const sliderStyles = StyleSheet.create({
     gap: 8,
   },
   name: { fontSize: 14, fontWeight: '600', color: Colors.gray[900] },
-  barWrapper: {
-    position: 'relative',
-    height: 24,
-    justifyContent: 'center',
+  positionCard: {
+    borderLeftWidth: 3,
+    borderLeftColor: '#6B7280',
+    backgroundColor: Colors.gray[50],
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 6,
+    gap: 4,
   },
-  gradientBar: {
+  positionTitle: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: Colors.gray[700],
+    lineHeight: 18,
+  },
+  currentPolicyBadge: {
+    alignSelf: 'flex-start',
+    backgroundColor: Colors.gray[200],
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  currentPolicyText: {
+    fontSize: 10,
+    fontWeight: '700',
+    color: Colors.gray[500],
+    letterSpacing: 0.3,
+  },
+  sliderRow: {
     flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  poleLabelLeft: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: '#8B7AAF',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+    flexShrink: 1,
+    maxWidth: '18%',
+    lineHeight: 14,
+  },
+  poleLabelRight: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: '#5B9E94',
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+    textAlign: 'right',
+    flexShrink: 1,
+    maxWidth: '18%',
+    lineHeight: 14,
+  },
+  trackContainer: {
+    flex: 1,
+  },
+  trackOuter: {
     height: 12,
     borderRadius: 6,
+    flexDirection: 'row',
     overflow: 'hidden',
+    position: 'relative',
   },
-  gradientSegment: {
+  trackSegment: {
     flex: 1,
     height: '100%',
   },
-  gradientSegmentFirst: {
-    borderTopLeftRadius: 6,
-    borderBottomLeftRadius: 6,
-  },
-  gradientSegmentLast: {
-    borderTopRightRadius: 6,
-    borderBottomRightRadius: 6,
-  },
-  marker: {
+  thumb: {
     position: 'absolute',
     top: '50%',
-    marginTop: -12,
-    marginLeft: -12,
-    width: 24,
-    height: 24,
+    width: 28,
+    height: 28,
+    backgroundColor: '#fff',
+    borderRadius: 14,
+    borderWidth: 3.5,
+    marginLeft: -14,
+    marginTop: -14,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.22,
+    shadowRadius: 3,
+    elevation: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  markerInner: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: Colors.white,
-    borderWidth: 4,
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 3,
+  thumbInner: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
   },
-  labels: { flexDirection: 'row', justifyContent: 'space-between' },
-  poleLabelLeft: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: '#A855F7',
-    textTransform: 'uppercase',
-    flexShrink: 1,
-    maxWidth: '45%',
+  tickMarks: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+    marginTop: 6,
   },
-  poleLabelRight: {
-    fontSize: 11,
-    fontWeight: '600',
-    color: '#14B8A6',
-    textTransform: 'uppercase',
-    flexShrink: 1,
-    maxWidth: '45%',
-    textAlign: 'right',
+  tickTouchArea: {
+    padding: 4,
+    alignItems: 'center',
+  },
+  tick: {
+    width: 2,
+    height: 8,
+    backgroundColor: '#d1d5db',
+    borderRadius: 1,
+  },
+  tickActive: {
+    backgroundColor: '#7C3AED',
+    height: 12,
   },
 });
 

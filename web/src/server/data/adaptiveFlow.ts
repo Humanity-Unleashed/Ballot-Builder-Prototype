@@ -1,0 +1,358 @@
+/**
+ * Adaptive Flow Data
+ *
+ * A flow graph for adaptive questionnaire navigation.
+ * Each node represents a question with paths based on agree/disagree responses.
+ */
+
+import type { Category } from '../types';
+
+export interface AdaptiveFlowNode {
+  id: string;
+  round: number;
+  text: string;
+  category: Category;
+  vector: number[];
+  agree: string | null;
+  disagree: string | null;
+  transitionBefore: string | null;
+}
+
+export interface AdaptiveFlow {
+  start: string;
+  nodes: Record<string, AdaptiveFlowNode>;
+}
+
+export const adaptiveFlow: AdaptiveFlow = {
+  start: 'healthcare_broad',
+  nodes: {
+    healthcare_broad: {
+      id: 'healthcare_broad',
+      round: 1,
+      text: 'Healthcare should be more affordable and accessible for everyone',
+      category: 'healthcare',
+      vector: [0.8, 0.2, 0.1, 0.3, 0.5],
+      agree: 'healthcare_government',
+      disagree: 'healthcare_market',
+      transitionBefore: null,
+    },
+
+    healthcare_government: {
+      id: 'healthcare_government',
+      round: 2,
+      text: 'The government should play a larger role in providing healthcare',
+      category: 'healthcare',
+      vector: [0.9, 0.3, 0.2, 0.7, 0.4],
+      agree: 'healthcare_singlepayer',
+      disagree: 'healthcare_publicoption',
+      transitionBefore: "You care about healthcare. Let's explore your views more...",
+    },
+
+    healthcare_market: {
+      id: 'healthcare_market',
+      round: 2,
+      text: 'Market competition is the best way to lower healthcare costs',
+      category: 'healthcare',
+      vector: [0.3, 0.2, 0.1, 0.2, 0.4],
+      agree: 'healthcare_deregulation',
+      disagree: 'healthcare_regulation',
+      transitionBefore: "You prefer market solutions. Let's explore that...",
+    },
+
+    healthcare_singlepayer: {
+      id: 'healthcare_singlepayer',
+      round: 3,
+      text: 'The US should adopt a single-payer Medicare-for-All system',
+      category: 'healthcare',
+      vector: [0.95, 0.4, 0.3, 0.8, 0.5],
+      agree: 'environment_broad',
+      disagree: 'environment_broad',
+      transitionBefore: 'Getting specific now...',
+    },
+
+    healthcare_publicoption: {
+      id: 'healthcare_publicoption',
+      round: 3,
+      text: 'A public option should compete with private insurance',
+      category: 'healthcare',
+      vector: [0.7, 0.3, 0.2, 0.6, 0.4],
+      agree: 'environment_broad',
+      disagree: 'environment_broad',
+      transitionBefore: 'Almost there...',
+    },
+
+    healthcare_deregulation: {
+      id: 'healthcare_deregulation',
+      round: 3,
+      text: 'Health insurance regulations should be significantly reduced',
+      category: 'healthcare',
+      vector: [0.2, 0.1, 0.1, 0.1, 0.3],
+      agree: 'environment_broad',
+      disagree: 'environment_broad',
+      transitionBefore: "Let's dive deeper...",
+    },
+
+    healthcare_regulation: {
+      id: 'healthcare_regulation',
+      round: 3,
+      text: 'Insurance companies should be required to cover pre-existing conditions',
+      category: 'healthcare',
+      vector: [0.6, 0.3, 0.2, 0.4, 0.4],
+      agree: 'environment_broad',
+      disagree: 'environment_broad',
+      transitionBefore: 'One more on healthcare...',
+    },
+
+    environment_broad: {
+      id: 'environment_broad',
+      round: 1,
+      text: 'Climate change requires urgent government action',
+      category: 'environment',
+      vector: [0.3, 0.2, 0.9, 0.4, 0.5],
+      agree: 'environment_aggressive',
+      disagree: 'environment_balanced',
+      transitionBefore: 'Moving to environment...',
+    },
+
+    environment_aggressive: {
+      id: 'environment_aggressive',
+      round: 2,
+      text: 'We should transition to 100% renewable energy by 2035',
+      category: 'environment',
+      vector: [0.2, 0.3, 0.95, 0.4, 0.6],
+      agree: 'environment_fossilfuel_ban',
+      disagree: 'environment_gradual',
+      transitionBefore: 'You support climate action. How aggressive?',
+    },
+
+    environment_balanced: {
+      id: 'environment_balanced',
+      round: 2,
+      text: 'Environmental protection and economic growth should be balanced',
+      category: 'environment',
+      vector: [0.4, 0.4, 0.5, 0.4, 0.6],
+      agree: 'environment_innovation',
+      disagree: 'environment_marketdriven',
+      transitionBefore: "Let's explore your environmental views...",
+    },
+
+    environment_fossilfuel_ban: {
+      id: 'environment_fossilfuel_ban',
+      round: 3,
+      text: 'New fossil fuel projects should be banned immediately',
+      category: 'environment',
+      vector: [0.3, 0.2, 0.95, 0.5, 0.7],
+      agree: 'education_broad',
+      disagree: 'education_broad',
+      transitionBefore: 'Last one on environment...',
+    },
+
+    environment_gradual: {
+      id: 'environment_gradual',
+      round: 3,
+      text: 'Climate goals should be pursued gradually to protect jobs',
+      category: 'environment',
+      vector: [0.4, 0.4, 0.6, 0.5, 0.6],
+      agree: 'education_broad',
+      disagree: 'education_broad',
+      transitionBefore: 'Refining your position...',
+    },
+
+    environment_innovation: {
+      id: 'environment_innovation',
+      round: 3,
+      text: 'Government should fund green technology research and development',
+      category: 'environment',
+      vector: [0.4, 0.6, 0.7, 0.5, 0.7],
+      agree: 'education_broad',
+      disagree: 'education_broad',
+      transitionBefore: 'Getting specific...',
+    },
+
+    environment_marketdriven: {
+      id: 'environment_marketdriven',
+      round: 3,
+      text: 'Market forces, not regulations, should drive environmental solutions',
+      category: 'environment',
+      vector: [0.3, 0.3, 0.3, 0.3, 0.5],
+      agree: 'education_broad',
+      disagree: 'education_broad',
+      transitionBefore: 'One more on climate...',
+    },
+
+    education_broad: {
+      id: 'education_broad',
+      round: 1,
+      text: 'Education funding should be significantly increased',
+      category: 'education',
+      vector: [0.3, 0.9, 0.2, 0.6, 0.6],
+      agree: 'education_publicschools',
+      disagree: 'education_choice',
+      transitionBefore: "Now let's talk education...",
+    },
+
+    education_publicschools: {
+      id: 'education_publicschools',
+      round: 2,
+      text: 'Public schools should be the primary focus of education funding',
+      category: 'education',
+      vector: [0.4, 0.95, 0.3, 0.7, 0.5],
+      agree: 'education_college_free',
+      disagree: 'education_college_affordable',
+      transitionBefore: 'Drilling into education priorities...',
+    },
+
+    education_choice: {
+      id: 'education_choice',
+      round: 2,
+      text: 'School choice and voucher programs should be expanded',
+      category: 'education',
+      vector: [0.3, 0.4, 0.2, 0.3, 0.4],
+      agree: 'education_private',
+      disagree: 'education_accountability',
+      transitionBefore: 'Exploring education approaches...',
+    },
+
+    education_college_free: {
+      id: 'education_college_free',
+      round: 3,
+      text: 'Public college tuition should be free for all students',
+      category: 'education',
+      vector: [0.4, 0.95, 0.3, 0.8, 0.6],
+      agree: 'economy_broad',
+      disagree: 'economy_broad',
+      transitionBefore: 'Final education question...',
+    },
+
+    education_college_affordable: {
+      id: 'education_college_affordable',
+      round: 3,
+      text: 'College should be more affordable but not necessarily free',
+      category: 'education',
+      vector: [0.4, 0.7, 0.3, 0.5, 0.5],
+      agree: 'economy_broad',
+      disagree: 'economy_broad',
+      transitionBefore: 'Narrowing down your view...',
+    },
+
+    education_private: {
+      id: 'education_private',
+      round: 3,
+      text: 'Parents should be able to use public funds for private schools',
+      category: 'education',
+      vector: [0.2, 0.3, 0.2, 0.2, 0.4],
+      agree: 'economy_broad',
+      disagree: 'economy_broad',
+      transitionBefore: 'Last question on education...',
+    },
+
+    education_accountability: {
+      id: 'education_accountability',
+      round: 3,
+      text: 'Schools should have more accountability and performance standards',
+      category: 'education',
+      vector: [0.3, 0.5, 0.2, 0.4, 0.5],
+      agree: 'economy_broad',
+      disagree: 'economy_broad',
+      transitionBefore: 'Almost done with education...',
+    },
+
+    economy_broad: {
+      id: 'economy_broad',
+      round: 1,
+      text: 'Minimum wage should be raised significantly',
+      category: 'economy',
+      vector: [0.4, 0.5, 0.3, 0.85, 0.4],
+      agree: 'economy_progressive_tax',
+      disagree: 'economy_market_wage',
+      transitionBefore: "Let's discuss the economy...",
+    },
+
+    economy_progressive_tax: {
+      id: 'economy_progressive_tax',
+      round: 2,
+      text: 'Wealthy individuals should pay significantly higher tax rates',
+      category: 'economy',
+      vector: [0.4, 0.5, 0.3, 0.9, 0.4],
+      agree: 'economy_wealth_tax',
+      disagree: 'economy_income_tax',
+      transitionBefore: 'You support worker protections. What about taxes?',
+    },
+
+    economy_market_wage: {
+      id: 'economy_market_wage',
+      round: 2,
+      text: 'Wages should be determined by market forces, not government mandates',
+      category: 'economy',
+      vector: [0.2, 0.3, 0.2, 0.2, 0.3],
+      agree: 'economy_lower_taxes',
+      disagree: 'economy_moderate_tax',
+      transitionBefore: 'Exploring your economic philosophy...',
+    },
+
+    economy_wealth_tax: {
+      id: 'economy_wealth_tax',
+      round: 3,
+      text: 'A wealth tax should be imposed on billionaires',
+      category: 'economy',
+      vector: [0.5, 0.6, 0.4, 0.95, 0.5],
+      agree: 'rights_broad',
+      disagree: 'rights_broad',
+      transitionBefore: 'Final economic question...',
+    },
+
+    economy_income_tax: {
+      id: 'economy_income_tax',
+      round: 3,
+      text: 'Higher income taxes on the wealthy are preferable to a wealth tax',
+      category: 'economy',
+      vector: [0.4, 0.5, 0.3, 0.7, 0.4],
+      agree: 'rights_broad',
+      disagree: 'rights_broad',
+      transitionBefore: 'Getting specific on taxes...',
+    },
+
+    economy_lower_taxes: {
+      id: 'economy_lower_taxes',
+      round: 3,
+      text: 'Lower taxes on businesses and wealthy individuals stimulate the economy',
+      category: 'economy',
+      vector: [0.2, 0.3, 0.2, 0.1, 0.3],
+      agree: 'rights_broad',
+      disagree: 'rights_broad',
+      transitionBefore: 'One more on economics...',
+    },
+
+    economy_moderate_tax: {
+      id: 'economy_moderate_tax',
+      round: 3,
+      text: 'Tax policy should balance revenue needs with economic growth',
+      category: 'economy',
+      vector: [0.4, 0.4, 0.3, 0.5, 0.4],
+      agree: 'rights_broad',
+      disagree: 'rights_broad',
+      transitionBefore: 'Finalizing your economic stance...',
+    },
+
+    rights_broad: {
+      id: 'rights_broad',
+      round: 1,
+      text: 'Voting rights protections should be strengthened and expanded',
+      category: 'civil-rights',
+      vector: [0.9, 0.4, 0.3, 0.5, 0.6],
+      agree: null,
+      disagree: null,
+      transitionBefore: "Finally, let's discuss rights...",
+    },
+  },
+};
+
+// Helper to get a node by ID
+export function getFlowNode(nodeId: string): AdaptiveFlowNode | null {
+  return adaptiveFlow.nodes[nodeId] || null;
+}
+
+// Helper to get the start node
+export function getStartNode(): AdaptiveFlowNode {
+  return adaptiveFlow.nodes[adaptiveFlow.start];
+}

@@ -1515,7 +1515,7 @@ const fineTuneStyles = StyleSheet.create({
   progressFill: {
     height: '100%',
     borderRadius: 3,
-    backgroundColor: '#7C3AED',
+    backgroundColor: '#8B7AAF',
   },
   content: {
     flex: 1,
@@ -1836,7 +1836,7 @@ const styles = StyleSheet.create({
   },
   progressBarFill: {
     height: '100%',
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#8B7AAF',
   },
   gradientProgressFill: {
     backgroundColor: '#7C3AED',
