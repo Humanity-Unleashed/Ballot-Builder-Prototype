@@ -429,9 +429,6 @@
       font-weight: 700;
     }
 
-    .spectrum-pole.left { color: #6366f1; }
-    .spectrum-pole.right { color: #0ea5e9; }
-
     .spectrum-bar-wrap {
       height: 10px;
       display: flex;
@@ -439,16 +436,6 @@
       border-radius: 5px;
       overflow: hidden;
       margin-bottom: 3px;
-    }
-
-    .spectrum-fill-l {
-      height: 100%;
-      background: linear-gradient(90deg, #6366f1, #818cf8);
-    }
-
-    .spectrum-fill-r {
-      height: 100%;
-      background: linear-gradient(90deg, #7dd3fc, #0ea5e9);
     }
 
     .spectrum-percents {
@@ -461,8 +448,29 @@
       font-weight: 800;
     }
 
-    .spectrum-pct.left { color: #6366f1; }
-    .spectrum-pct.right { color: #0ea5e9; }
+    /* Per-spectrum colors: Community/Individual */
+    .spectrum-row.s-responsibility .spectrum-pole.left,
+    .spectrum-row.s-responsibility .spectrum-pct.left { color: #6366f1; }
+    .spectrum-row.s-responsibility .spectrum-pole.right,
+    .spectrum-row.s-responsibility .spectrum-pct.right { color: #0d9488; }
+    .spectrum-row.s-responsibility .spectrum-fill-l { background: linear-gradient(90deg, #6366f1, #818cf8); }
+    .spectrum-row.s-responsibility .spectrum-fill-r { background: linear-gradient(90deg, #5eead4, #0d9488); }
+
+    /* Per-spectrum colors: Stability/Change */
+    .spectrum-row.s-tempo .spectrum-pole.left,
+    .spectrum-row.s-tempo .spectrum-pct.left { color: #d97706; }
+    .spectrum-row.s-tempo .spectrum-pole.right,
+    .spectrum-row.s-tempo .spectrum-pct.right { color: #7c3aed; }
+    .spectrum-row.s-tempo .spectrum-fill-l { background: linear-gradient(90deg, #d97706, #fbbf24); }
+    .spectrum-row.s-tempo .spectrum-fill-r { background: linear-gradient(90deg, #c4b5fd, #7c3aed); }
+
+    /* Per-spectrum colors: Standards/Flexibility */
+    .spectrum-row.s-governance .spectrum-pole.left,
+    .spectrum-row.s-governance .spectrum-pct.left { color: #e11d48; }
+    .spectrum-row.s-governance .spectrum-pole.right,
+    .spectrum-row.s-governance .spectrum-pct.right { color: #059669; }
+    .spectrum-row.s-governance .spectrum-fill-l { background: linear-gradient(90deg, #e11d48, #fb7185); }
+    .spectrum-row.s-governance .spectrum-fill-r { background: linear-gradient(90deg, #6ee7b7, #059669); }
 
     /* ============================================
        SHARED: Insight + CTA (same for both)
@@ -648,7 +656,6 @@
     .reveal-spectrum-pole {
       font-size: 10px;
       font-weight: 700;
-      color: #64748b;
     }
 
     .reveal-spectrum-bar {
@@ -659,15 +666,21 @@
       overflow: hidden;
     }
 
-    .reveal-sfill-l {
-      height: 100%;
-      background: #818cf8;
-    }
+    /* Reveal per-spectrum colors */
+    .reveal-spectrum-row.s-responsibility .reveal-spectrum-pole:first-child { color: #6366f1; }
+    .reveal-spectrum-row.s-responsibility .reveal-spectrum-pole:last-child { color: #0d9488; }
+    .reveal-spectrum-row.s-responsibility .reveal-sfill-l { background: #818cf8; }
+    .reveal-spectrum-row.s-responsibility .reveal-sfill-r { background: #5eead4; }
 
-    .reveal-sfill-r {
-      height: 100%;
-      background: #bae6fd;
-    }
+    .reveal-spectrum-row.s-tempo .reveal-spectrum-pole:first-child { color: #d97706; }
+    .reveal-spectrum-row.s-tempo .reveal-spectrum-pole:last-child { color: #7c3aed; }
+    .reveal-spectrum-row.s-tempo .reveal-sfill-l { background: #fbbf24; }
+    .reveal-spectrum-row.s-tempo .reveal-sfill-r { background: #c4b5fd; }
+
+    .reveal-spectrum-row.s-governance .reveal-spectrum-pole:first-child { color: #e11d48; }
+    .reveal-spectrum-row.s-governance .reveal-spectrum-pole:last-child { color: #059669; }
+    .reveal-spectrum-row.s-governance .reveal-sfill-l { background: #fb7185; }
+    .reveal-spectrum-row.s-governance .reveal-sfill-r { background: #6ee7b7; }
 
     /* ============================================
        SHAREABLE CARDS
@@ -875,16 +888,6 @@
       margin-bottom: 2px;
     }
 
-    .share-vfill-l {
-      height: 100%;
-      background: rgba(255,255,255,0.55);
-    }
-
-    .share-vfill-r {
-      height: 100%;
-      background: rgba(255,255,255,0.15);
-    }
-
     .share-v-pcts {
       display: flex;
       justify-content: space-between;
@@ -893,8 +896,23 @@
     .share-v-pct {
       font-size: 10px;
       font-weight: 800;
-      opacity: 0.5;
     }
+
+    /* Share card per-spectrum colors (on dark bg) */
+    .share-v-row.s-responsibility .share-vfill-l { background: #818cf8; }
+    .share-v-row.s-responsibility .share-vfill-r { background: #5eead4; opacity: 0.5; }
+    .share-v-row.s-responsibility .share-v-pct:first-child { color: #a5b4fc; }
+    .share-v-row.s-responsibility .share-v-pct:last-child { color: #5eead4; }
+
+    .share-v-row.s-tempo .share-vfill-l { background: #fbbf24; }
+    .share-v-row.s-tempo .share-vfill-r { background: #c4b5fd; opacity: 0.5; }
+    .share-v-row.s-tempo .share-v-pct:first-child { color: #fbbf24; }
+    .share-v-row.s-tempo .share-v-pct:last-child { color: #c4b5fd; }
+
+    .share-v-row.s-governance .share-vfill-l { background: #fb7185; }
+    .share-v-row.s-governance .share-vfill-r { background: #6ee7b7; opacity: 0.5; }
+    .share-v-row.s-governance .share-v-pct:first-child { color: #fb7185; }
+    .share-v-row.s-governance .share-v-pct:last-child { color: #6ee7b7; }
 
     /* Priorities share (works for either variant) */
     .share-priorities {
@@ -1099,9 +1117,9 @@
     <div class="mockup-col">
       <div class="mockup-label">Variant B: Values Spectrum</div>
       <div class="mockup-desc">
-        Uses the same 3 meta-dimensions from archetypes.ts but
-        presents them as spectrums (8values style) with a personality
-        type code (16personalities style). More analytical, still novel.
+        Uses the same 3 meta-dimensions from archetypes.ts,
+        presented as color-coded spectrums (8values style).
+        Each dimension gets its own color pair for visibility.
       </div>
 
       <div class="phone">
@@ -1111,18 +1129,12 @@
           </div>
           <div class="reveal-screen">
             <div class="reveal-tag">Your Civic Blueprint is Ready</div>
-            <div class="reveal-type-badge">
-              <div class="reveal-type-code">CSR</div>
-              <div class="reveal-type-label">Your Type</div>
-            </div>
-            <div class="reveal-name">The Steward</div>
-            <div class="reveal-summary">
-              You tend to prioritize shared well-being and steady
-              solutions, especially when systems protect people from harm.
+            <div class="reveal-summary" style="margin-bottom: 24px;">
+              Here's how your values break down across three dimensions.
             </div>
 
             <div class="reveal-spectrums">
-              <div class="reveal-spectrum-row">
+              <div class="reveal-spectrum-row s-responsibility">
                 <div class="reveal-spectrum-poles">
                   <span class="reveal-spectrum-pole">Community</span>
                   <span class="reveal-spectrum-pole">Individual</span>
@@ -1132,7 +1144,7 @@
                   <div class="reveal-sfill-r" style="width: 28%;"></div>
                 </div>
               </div>
-              <div class="reveal-spectrum-row">
+              <div class="reveal-spectrum-row s-tempo">
                 <div class="reveal-spectrum-poles">
                   <span class="reveal-spectrum-pole">Stability</span>
                   <span class="reveal-spectrum-pole">Change</span>
@@ -1142,7 +1154,7 @@
                   <div class="reveal-sfill-r" style="width: 38%;"></div>
                 </div>
               </div>
-              <div class="reveal-spectrum-row">
+              <div class="reveal-spectrum-row s-governance">
                 <div class="reveal-spectrum-poles">
                   <span class="reveal-spectrum-pole">Standards</span>
                   <span class="reveal-spectrum-pole">Flexibility</span>
@@ -1164,11 +1176,11 @@
 
       <div class="annotation">
         <div class="annotation-text">
-          <strong>Pro:</strong> Feels more substantive and analytical.
-          3-letter type codes (like MBTI's INFJ) are already familiar.
-          Spectrums show nuance, not just a label.<br>
+          <strong>Pro:</strong> Feels substantive and analytical.
+          Color-coded spectrums show nuance without needing a label.
+          Each dimension is visually distinct at a glance.<br>
           <strong>Con:</strong> Less instantly fun/shareable than animals.
-          Requires more cognitive effort to understand.
+          No single "identity" to rally around.
         </div>
       </div>
     </div>
@@ -1315,7 +1327,7 @@
     <div class="mockup-col">
       <div class="mockup-label">Variant B: With Values Spectrum</div>
       <div class="mockup-desc">
-        Type code + spectrums at top, then insight, then existing
+        Color-coded spectrums at top, then insight, then existing
         domain tabs and axis bars, then vote CTA at bottom.
       </div>
 
@@ -1339,19 +1351,8 @@
 
           <!-- NEW: Values Spectrum Card -->
           <div class="values-card">
-            <div class="values-type-header">
-              <div class="type-badge">
-                <div class="type-code">CSR</div>
-                <div class="type-code-label">Your Type</div>
-              </div>
-              <div class="type-info">
-                <div class="type-name">The Steward</div>
-                <div class="type-desc">Shared well-being through steady systems</div>
-              </div>
-            </div>
-
             <div class="spectrum-section">
-              <div class="spectrum-row">
+              <div class="spectrum-row s-responsibility">
                 <div class="spectrum-poles">
                   <span class="spectrum-pole left">Community</span>
                   <span class="spectrum-pole right">Individual</span>
@@ -1366,7 +1367,7 @@
                 </div>
               </div>
 
-              <div class="spectrum-row">
+              <div class="spectrum-row s-tempo">
                 <div class="spectrum-poles">
                   <span class="spectrum-pole left">Stability</span>
                   <span class="spectrum-pole right">Change</span>
@@ -1381,7 +1382,7 @@
                 </div>
               </div>
 
-              <div class="spectrum-row">
+              <div class="spectrum-row s-governance">
                 <div class="spectrum-poles">
                   <span class="spectrum-pole left">Standards</span>
                   <span class="spectrum-pole right">Flexibility</span>
@@ -1532,19 +1533,10 @@
     <!-- Values Spectrum Share (Variant B) -->
     <div class="share-card">
       <div class="share-values">
-        <div class="share-v-tag">My Civic Profile</div>
-        <div class="share-v-header">
-          <div class="share-v-badge">
-            <div class="share-v-code">CSR</div>
-          </div>
-          <div>
-            <div class="share-v-name">The Steward</div>
-            <div class="share-v-desc">Shared well-being through steady systems</div>
-          </div>
-        </div>
+        <div class="share-v-tag">My Civic Values</div>
 
         <div class="share-v-spectrums">
-          <div class="share-v-row">
+          <div class="share-v-row s-responsibility">
             <div class="share-v-poles">
               <span class="share-v-pole">Community</span>
               <span class="share-v-pole">Individual</span>
@@ -1559,7 +1551,7 @@
             </div>
           </div>
 
-          <div class="share-v-row">
+          <div class="share-v-row s-tempo">
             <div class="share-v-poles">
               <span class="share-v-pole">Stability</span>
               <span class="share-v-pole">Change</span>
@@ -1574,7 +1566,7 @@
             </div>
           </div>
 
-          <div class="share-v-row">
+          <div class="share-v-row s-governance">
             <div class="share-v-poles">
               <span class="share-v-pole">Standards</span>
               <span class="share-v-pole">Flexibility</span>

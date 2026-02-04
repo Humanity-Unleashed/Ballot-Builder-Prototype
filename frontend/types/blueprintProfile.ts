@@ -81,17 +81,15 @@ export const STANCE_BANDS: DescriptorBand[] = [
 ];
 
 export const IMPORTANCE_BANDS: DescriptorBand[] = [
-  { min: 0, max: 0, label: 'Not a priority' },
-  { min: 1, max: 2, label: 'Low priority' },
-  { min: 3, max: 4, label: 'Minor factor' },
-  { min: 5, max: 6, label: 'Important' },
-  { min: 7, max: 8, label: 'Very important' },
-  { min: 9, max: 10, label: 'Top priority' },
+  { min: 0, max: 3, label: 'A little' },
+  { min: 4, max: 7, label: 'Moderately' },
+  { min: 8, max: 10, label: 'Strongly' },
 ];
 
 export function getImportanceLabel(value: number): string {
-  const band = IMPORTANCE_BANDS.find(b => value >= b.min && value <= b.max);
-  return band?.label ?? '';
+  if (value < 4) return 'A little';
+  if (value <= 7) return 'Moderately';
+  return 'Strongly';
 }
 
 export function getStanceLabel(value: number, poleALabel: string, poleBLabel: string): string {

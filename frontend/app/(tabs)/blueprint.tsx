@@ -923,6 +923,9 @@ function scoreToPercents(score: number, invert: boolean): { leftPct: number; rig
   return { leftPct, rightPct: 100 - leftPct };
 }
 
+const STRONG_THRESHOLD = 70;
+const MODERATE_THRESHOLD = 58;
+
 const SPECTRUM_BARS: {
   key: keyof MetaDimensionScores;
   axisName: string;
@@ -930,6 +933,9 @@ const SPECTRUM_BARS: {
   rightLabel: string;
   leftIdLabel: string;
   rightIdLabel: string;
+  leftModerateLabel: string;
+  rightModerateLabel: string;
+  balancedLabel: string;
   leftColor: string;
   rightColor: string;
   invert: boolean;
@@ -941,6 +947,9 @@ const SPECTRUM_BARS: {
     rightLabel: 'Individual',
     leftIdLabel: 'Communitarian',
     rightIdLabel: 'Individualist',
+    leftModerateLabel: 'Community Pragmatist',
+    rightModerateLabel: 'Independent Cooperator',
+    balancedLabel: 'Civic Pluralist',
     leftColor: '#6366F1', // indigo
     rightColor: '#F97316', // orange
     invert: false,
@@ -952,6 +961,9 @@ const SPECTRUM_BARS: {
     rightLabel: 'Change',
     leftIdLabel: 'Incrementalist',
     rightIdLabel: 'Reformist',
+    leftModerateLabel: 'Cautious Reformer',
+    rightModerateLabel: 'Measured Reformist',
+    balancedLabel: 'Adaptive Moderate',
     leftColor: '#0EA5E9', // sky
     rightColor: '#E11D48', // rose
     invert: true,
@@ -963,11 +975,37 @@ const SPECTRUM_BARS: {
     rightLabel: 'Flexibility',
     leftIdLabel: 'Regulationist',
     rightIdLabel: 'Autonomist',
+    leftModerateLabel: 'Principled Pragmatist',
+    rightModerateLabel: 'Guided Autonomist',
+    balancedLabel: 'Contextual Evaluator',
     leftColor: '#EAB308', // amber
     rightColor: '#16A34A', // green
     invert: false,
   },
 ];
+
+function getGraduatedLabel(
+  leftPct: number,
+  rightPct: number,
+  bar: typeof SPECTRUM_BARS[number]
+): { label: string; color: string } {
+  const winnerPct = Math.max(leftPct, rightPct);
+  const leftWins = leftPct > rightPct;
+
+  if (winnerPct < MODERATE_THRESHOLD) {
+    return { label: bar.balancedLabel, color: Colors.gray[500] };
+  }
+  if (winnerPct < STRONG_THRESHOLD) {
+    return {
+      label: leftWins ? bar.leftModerateLabel : bar.rightModerateLabel,
+      color: leftWins ? bar.leftColor : bar.rightColor,
+    };
+  }
+  return {
+    label: leftWins ? bar.leftIdLabel : bar.rightIdLabel,
+    color: leftWins ? bar.leftColor : bar.rightColor,
+  };
+}
 
 function ValuesSpectrumCard({ metaDimensions }: { metaDimensions: MetaDimensionScores }) {
   return (
@@ -975,9 +1013,7 @@ function ValuesSpectrumCard({ metaDimensions }: { metaDimensions: MetaDimensionS
       <Text style={spectrumStyles.title}>Your Values Spectrum</Text>
       {SPECTRUM_BARS.map((bar) => {
         const { leftPct, rightPct } = scoreToPercents(metaDimensions[bar.key], bar.invert);
-        const leftWins = leftPct >= rightPct;
-        const winnerLabel = leftPct === rightPct ? 'Balanced' : leftWins ? bar.leftIdLabel : bar.rightIdLabel;
-        const winnerColor = leftPct === rightPct ? Colors.gray[500] : leftWins ? bar.leftColor : bar.rightColor;
+        const { label: winnerLabel, color: winnerColor } = getGraduatedLabel(leftPct, rightPct, bar);
         return (
           <View key={bar.key} style={spectrumStyles.row}>
             <View style={spectrumStyles.axisHeader}>
@@ -1094,9 +1130,7 @@ function ValueSummaryCard({ summary, framings, metaDimensions }: { summary: stri
     const bar = SPECTRUM_BARS.find(b => b.key === f.metaDimension);
     if (!bar) return null;
     const { leftPct, rightPct } = scoreToPercents(metaDimensions[bar.key], bar.invert);
-    const leftWins = leftPct >= rightPct;
-    const winnerLabel = leftPct === rightPct ? 'Balanced' : leftWins ? bar.leftIdLabel : bar.rightIdLabel;
-    const winnerColor = leftPct === rightPct ? Colors.gray[500] : leftWins ? bar.leftColor : bar.rightColor;
+    const { label: winnerLabel, color: winnerColor } = getGraduatedLabel(leftPct, rightPct, bar);
     return { framing: f, bar, winnerLabel, winnerColor };
   }).filter(Boolean) as { framing: ValueFramingConfig; bar: typeof SPECTRUM_BARS[0]; winnerLabel: string; winnerColor: string }[];
 
@@ -1304,47 +1338,99 @@ function IntroScreen({
 }) {
   return (
     <View style={introStyles.container}>
-      <View style={introStyles.content}>
-        <View style={introStyles.iconCircle}>
-          <Ionicons name="map-outline" size={48} color={Colors.primary} />
+      <TopNav activeTab="blueprint" />
+
+      <ScrollView contentContainerStyle={introStyles.content}>
+        {/* Hero */}
+        <View style={introStyles.hero}>
+          <Text style={introStyles.title}>Draft Your{'\n'}Civic Blueprint</Text>
+          <Text style={introStyles.subtitle}>
+            Answer a few quick questions about your values. We'll map your positions and match you to candidates who share them.
+          </Text>
         </View>
 
-        <Text style={introStyles.title}>Draft Your Civic Blueprint</Text>
-        <Text style={introStyles.description}>
-          Answer a few questions to discover your policy positions. We'll create a personalized civic blueprint you can fine-tune.
-        </Text>
+        {/* How It Works Card */}
+        <View style={introStyles.howCard}>
+          <Text style={introStyles.howLabel}>HOW IT WORKS</Text>
 
-        <View style={introStyles.steps}>
-          <View style={introStyles.step}>
-            <View style={introStyles.stepNumber}>
-              <Text style={introStyles.stepNumberText}>1</Text>
+          <View style={introStyles.stepRow}>
+            <View style={introStyles.stepNum}>
+              <Text style={introStyles.stepNumText}>1</Text>
             </View>
-            <Text style={introStyles.stepText}>Answer adaptive questions</Text>
+            <View style={introStyles.stepContent}>
+              <Text style={introStyles.stepTitle}>Share your values</Text>
+              <Text style={introStyles.stepDesc}>Slide through questions on economy, healthcare, justice, and more</Text>
+            </View>
           </View>
-          <View style={introStyles.step}>
-            <View style={introStyles.stepNumber}>
-              <Text style={introStyles.stepNumberText}>2</Text>
+
+          <View style={introStyles.stepRow}>
+            <View style={introStyles.stepNum}>
+              <Text style={introStyles.stepNumText}>2</Text>
             </View>
-            <Text style={introStyles.stepText}>See your civic blueprint</Text>
+            <View style={introStyles.stepContent}>
+              <Text style={introStyles.stepTitle}>See your blueprint</Text>
+              <Text style={introStyles.stepDesc}>Get a personalized civic profile with your positions mapped</Text>
+            </View>
           </View>
-          <View style={introStyles.step}>
-            <View style={introStyles.stepNumber}>
-              <Text style={introStyles.stepNumberText}>3</Text>
+
+          <View style={introStyles.stepRow}>
+            <View style={introStyles.stepNum}>
+              <Text style={introStyles.stepNumText}>3</Text>
             </View>
-            <Text style={introStyles.stepText}>Fine-tune your positions</Text>
+            <View style={introStyles.stepContent}>
+              <Text style={introStyles.stepTitle}>Build your ballot</Text>
+              <Text style={introStyles.stepDesc}>Match your values to real candidates and ballot measures</Text>
+            </View>
           </View>
         </View>
 
-        <TouchableOpacity style={introStyles.startButton} onPress={onStart}>
-          <Text style={introStyles.startButtonText}>Start Drafting</Text>
+        {/* CTA Button */}
+        <TouchableOpacity style={introStyles.ctaButton} onPress={onStart}>
+          <Text style={introStyles.ctaButtonText}>Start Drafting</Text>
           <Ionicons name="arrow-forward" size={20} color={Colors.white} />
         </TouchableOpacity>
 
+        {/* Time Hint */}
         <View style={introStyles.timeHint}>
           <Ionicons name="time-outline" size={16} color={Colors.gray[400]} />
           <Text style={introStyles.timeHintText}>Takes about 3-5 minutes</Text>
         </View>
-      </View>
+
+        {/* What You'll Get Card */}
+        <View style={introStyles.outcomeCard}>
+          <Text style={introStyles.outcomeLabel}>WHAT YOU'LL GET</Text>
+
+          <View style={introStyles.outcomeRow}>
+            <View style={introStyles.outcomeIcon}>
+              <Ionicons name="analytics-outline" size={18} color={Colors.primary} />
+            </View>
+            <View style={introStyles.outcomeText}>
+              <Text style={introStyles.outcomeTitle}>Values Spectrum</Text>
+              <Text style={introStyles.outcomeDesc}>See where you fall on community vs. individual, reform vs. stability</Text>
+            </View>
+          </View>
+
+          <View style={introStyles.outcomeRow}>
+            <View style={introStyles.outcomeIcon}>
+              <Ionicons name="document-text-outline" size={18} color={Colors.primary} />
+            </View>
+            <View style={introStyles.outcomeText}>
+              <Text style={introStyles.outcomeTitle}>Policy Positions</Text>
+              <Text style={introStyles.outcomeDesc}>Detailed stances across 5 policy domains, 15 axes</Text>
+            </View>
+          </View>
+
+          <View style={introStyles.outcomeRow}>
+            <View style={introStyles.outcomeIcon}>
+              <Ionicons name="checkmark-done-outline" size={18} color={Colors.primary} />
+            </View>
+            <View style={introStyles.outcomeText}>
+              <Text style={introStyles.outcomeTitle}>Candidate Matches</Text>
+              <Text style={introStyles.outcomeDesc}>Percentage match scores for every race on your ballot</Text>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -1355,73 +1441,88 @@ const introStyles = StyleSheet.create({
     backgroundColor: Colors.gray[50],
   },
   content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 24,
+    padding: 20,
+    paddingBottom: 40,
   },
-  iconCircle: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    backgroundColor: `${Colors.primary}15`,
-    justifyContent: 'center',
-    alignItems: 'center',
+  hero: {
     marginBottom: 24,
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: '800',
     color: Colors.gray[900],
-    textAlign: 'center',
-    marginBottom: 12,
+    lineHeight: 26,
+    marginBottom: 10,
   },
-  description: {
+  subtitle: {
     fontSize: 15,
-    color: Colors.gray[600],
-    textAlign: 'center',
+    color: Colors.gray[500],
     lineHeight: 22,
-    marginBottom: 32,
-    maxWidth: 300,
   },
-  steps: {
-    gap: 12,
-    marginBottom: 32,
-    width: '100%',
-    maxWidth: 280,
+  howCard: {
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.gray[200],
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 16,
+    shadowColor: '#000',
+    shadowOpacity: 0.04,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
   },
-  step: {
+  howLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: Colors.gray[400],
+    letterSpacing: 0.5,
+    marginBottom: 14,
+  },
+  stepRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 12,
+    marginBottom: 14,
   },
-  stepNumber: {
+  stepNum: {
     width: 28,
     height: 28,
     borderRadius: 14,
     backgroundColor: Colors.primary,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  stepNumberText: {
+  stepNumText: {
     fontSize: 13,
     fontWeight: '700',
     color: Colors.white,
   },
-  stepText: {
-    fontSize: 14,
-    color: Colors.gray[700],
+  stepContent: {
+    flex: 1,
   },
-  startButton: {
+  stepTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: Colors.gray[900],
+    marginBottom: 2,
+  },
+  stepDesc: {
+    fontSize: 13,
+    color: Colors.gray[500],
+    lineHeight: 18,
+  },
+  ctaButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: 8,
     backgroundColor: Colors.primary,
     paddingVertical: 16,
-    paddingHorizontal: 32,
     borderRadius: 12,
+    marginBottom: 12,
   },
-  startButtonText: {
+  ctaButtonText: {
     fontSize: 16,
     fontWeight: '700',
     color: Colors.white,
@@ -1429,12 +1530,55 @@ const introStyles = StyleSheet.create({
   timeHint: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     gap: 6,
-    marginTop: 16,
+    marginBottom: 24,
   },
   timeHintText: {
     fontSize: 13,
     color: Colors.gray[400],
+  },
+  outcomeCard: {
+    backgroundColor: '#F5F3FF',
+    borderWidth: 1,
+    borderColor: '#DDD6FE',
+    borderRadius: 16,
+    padding: 16,
+  },
+  outcomeLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: Colors.primary,
+    letterSpacing: 0.5,
+    marginBottom: 12,
+  },
+  outcomeRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 10,
+    marginBottom: 12,
+  },
+  outcomeIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 8,
+    backgroundColor: '#EDE9FE',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  outcomeText: {
+    flex: 1,
+  },
+  outcomeTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: Colors.gray[900],
+    marginBottom: 1,
+  },
+  outcomeDesc: {
+    fontSize: 13,
+    color: Colors.gray[500],
+    lineHeight: 18,
   },
 });
 

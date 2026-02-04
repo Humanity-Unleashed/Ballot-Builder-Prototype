@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Value-Based Assessment - Three Approaches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f0f1a;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto 16px;
+    }
+
+    .page-title {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      color: #9ca3af;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .page-subtitle strong { color: #c4b5fd; }
+
+    /* Comparison note */
+    .comparison-note {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      background: rgba(99,102,241,0.08);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: #d1d5db;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .comparison-note strong { color: #a78bfa; }
+
+    /* Layout */
+    .approaches-row {
+      display: flex;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .approach-column {
+      flex: 1;
+      min-width: 340px;
+      max-width: 390px;
+    }
+
+    .approach-label {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .approach-letter {
+      display: inline-block;
+      background: #7C3AED;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+    }
+
+    .approach-name {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .approach-desc {
+      color: #9ca3af;
+      font-size: 11px;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* Phone frame */
+    .phone-frame {
+      background: #fff;
+      border-radius: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      border: 8px solid #1a1a1a;
+    }
+
+    .screen {
+      background: #f8f9fa;
+      min-height: 700px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Shared header */
+    .header {
+      padding: 16px 20px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .domain-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(124,58,237,0.1);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #7C3AED;
+    }
+
+    .progress-count {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #7C3AED;
+      border-radius: 3px;
+      width: 25%;
+    }
+
+    /* Content area */
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    /* Nav footer */
+    .nav-footer {
+      padding: 16px 20px;
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-btn-secondary {
+      background: #f3f4f6;
+      color: #666;
+    }
+
+    .nav-btn-primary {
+      background: #7C3AED;
+      color: #fff;
+    }
+
+    .skip-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #999;
+      cursor: pointer;
+    }
+
+    /* =========================================
+       APPROACH A: Value Statement Cards
+       ========================================= */
+
+    .question-prompt-a {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .question-context-a {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .value-card {
+      background: #fff;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .value-card:hover {
+      border-color: #c4b5fd;
+      background: #faf8ff;
+    }
+
+    .value-card.selected {
+      border-color: #7C3AED;
+      background: rgba(124,58,237,0.04);
+    }
+
+    .value-card.selected .value-card-title {
+      color: #7C3AED;
+    }
+
+    .value-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .value-card-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .value-card-radio {
+      float: right;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #d1d5db;
+      margin-left: 12px;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-card.selected .value-card-radio {
+      border-color: #7C3AED;
+      background: #7C3AED;
+    }
+
+    .value-card.selected .value-card-radio::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    /* Approach A strength section */
+    .a-strength-section {
+      margin-top: 6px;
+      background: #fff;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    .a-strength-section.visible {
+      border-color: rgba(124,58,237,0.2);
+      background: rgba(124,58,237,0.02);
+    }
+
+    /* =========================================
+       APPROACH B: Value Trade-off Pair
+       ========================================= */
+
+    .tradeoff-topic {
+      font-size: 11px;
+      font-weight: 700;
+      color: #7C3AED;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .tradeoff-question {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .tradeoff-context {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .tradeoff-container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .tradeoff-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tradeoff-value {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tradeoff-value:hover {
+      border-color: #c4b5fd;
+    }
+
+    .tradeoff-value-a {
+      /* purple side */
+    }
+
+    .tradeoff-value-a.leaning {
+      border-color: #A855F7;
+      background: rgba(168,85,247,0.04);
+    }
+
+    .tradeoff-value-b.leaning {
+      border-color: #14B8A6;
+      background: rgba(20,184,166,0.04);
+    }
+
+    .tradeoff-icon {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .tradeoff-value-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .tradeoff-value-detail {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .tradeoff-or {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .tradeoff-or::before,
+    .tradeoff-or::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 35%;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .tradeoff-or::before { left: 0; }
+    .tradeoff-or::after { right: 0; }
+
+    /* Strength indicator */
+    .strength-section {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #f3f4f6;
+    }
+
+    .strength-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .strength-chips {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .strength-chip {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 2px solid #e5e7eb;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .strength-chip:hover {
+      border-color: #c4b5fd;
+    }
+
+    .strength-chip.selected {
+      border-color: #7C3AED;
+      background: rgba(124,58,237,0.06);
+      color: #7C3AED;
+    }
+
+    /* =========================================
+       APPROACH C: Agree/Disagree Statements
+       ========================================= */
+
+    .statement-topic {
+      font-size: 11px;
+      font-weight: 700;
+      color: #7C3AED;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .statement-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .statement-emoji {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .statement-text {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .statement-subtext {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .response-pair {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .response-btn {
+      flex: 1;
+      padding: 16px 8px;
+      border-radius: 12px;
+      border: 2px solid #e5e7eb;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .response-btn:hover {
+      border-color: #c4b5fd;
+    }
+
+    .response-btn.selected {
+      border-color: #7C3AED;
+      background: rgba(124,58,237,0.04);
+    }
+
+    .response-btn-emoji {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .response-btn-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .response-btn.selected .response-btn-label {
+      color: #7C3AED;
+    }
+
+    .c-strength-section {
+      background: #fff;
+      border: 2px solid rgba(124,58,237,0.2);
+      background: rgba(124,58,237,0.02);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    /* Pros/cons section */
+    .section-divider {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .section-desc {
+      color: #9ca3af;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .tradeoffs-grid {
+      max-width: 1200px;
+      margin: 0 auto 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1100px) {
+      .tradeoffs-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+    }
+
+    .tradeoff-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .tradeoff-box-title {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .pro-con-item {
+      font-size: 12px;
+      line-height: 1.6;
+      padding: 3px 0;
+    }
+
+    .pro { color: #6ee7b7; }
+    .con { color: #fca5a5; }
+    .neutral { color: #9ca3af; }
+
+    @media (max-width: 1100px) {
+      .approaches-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1 class="page-title">Value-Based Assessment: Three Approaches</h1>
+    <p class="page-subtitle">
+      Replacing policy-stance sliders with <strong>value-based questions</strong> and <strong>tappable cards</strong>.
+      All three approaches ask about the same topic (Government Support Programs) using different formats.
+    </p>
+  </div>
+
+  <div class="comparison-note">
+    <strong>Current approach:</strong> A horizontal slider with 5 policy positions like "Universal support programs" → "Minimal safety net".
+    The user drags a thumb along a gradient bar.<br><br>
+    <strong>What changes below:</strong> Questions are reframed around values and principles. Users tap cards instead of dragging sliders.
+    All three approaches now include a <strong>"How strongly?"</strong> step that separates direction (what you believe)
+    from intensity (how firmly you hold it). This two-step pattern captures both position and conviction in a clean, tap-friendly way.
+  </div>
+
+  <!-- ===================== THREE APPROACHES ===================== -->
+
+  <div class="approaches-row">
+
+    <!-- ===================== APPROACH A ===================== -->
+    <div class="approach-column">
+      <div class="approach-label">
+        <div class="approach-letter">A</div>
+        <div class="approach-name">Value Statement Cards</div>
+        <div class="approach-desc">Pick the statement that resonates most with you</div>
+      </div>
+
+      <div class="phone-frame">
+        <div class="screen">
+          <div class="header">
+            <div class="header-row">
+              <div class="domain-badge">💰 Economy</div>
+              <div class="progress-count">Question 1 of 15</div>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 7%"></div></div>
+          </div>
+
+          <div class="content">
+            <div class="question-prompt-a">When people fall on hard times, what role should government play?</div>
+            <div class="question-context-a">Think about unemployment, food assistance, housing help, and similar programs.</div>
+
+            <div class="value-card">
+              <div class="value-card-radio"></div>
+              <div class="value-card-title">Everyone deserves a safety net — no questions asked</div>
+              <div class="value-card-desc">A compassionate society ensures no one goes without basic needs, regardless of circumstances.</div>
+            </div>
+
+            <div class="value-card">
+              <div class="value-card-radio"></div>
+              <div class="value-card-title">Help should be generous, with some basic expectations</div>
+              <div class="value-card-desc">Broad support is important, but it's fair to ask that people take steps to get back on their feet.</div>
+            </div>
+
+            <div class="value-card selected">
+              <div class="value-card-radio"></div>
+              <div class="value-card-title">Help those in need, but encourage self-sufficiency</div>
+              <div class="value-card-desc">Government should help people who are genuinely struggling, while creating incentives to become independent.</div>
+            </div>
+
+            <div class="value-card">
+              <div class="value-card-radio"></div>
+              <div class="value-card-title">Assistance should be limited and earned</div>
+              <div class="value-card-desc">Aid should go only to those who truly can't help themselves, with clear requirements to participate.</div>
+            </div>
+
+            <div class="value-card">
+              <div class="value-card-radio"></div>
+              <div class="value-card-title">People thrive most through self-reliance</div>
+              <div class="value-card-desc">Minimal government aid builds stronger individuals and communities. Private charity can fill gaps.</div>
+            </div>
+
+            <div class="a-strength-section visible" id="a-strength">
+              <div class="strength-label">How strongly do you feel?</div>
+              <div class="strength-chips">
+                <div class="strength-chip a-strength-chip selected">A little</div>
+                <div class="strength-chip a-strength-chip">Moderately</div>
+                <div class="strength-chip a-strength-chip">Strongly</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-footer">
+            <div class="nav-buttons">
+              <button class="nav-btn nav-btn-secondary">Back</button>
+              <button class="nav-btn nav-btn-primary">Next →</button>
+            </div>
+            <div class="skip-link">Skip this question</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== APPROACH B ===================== -->
+    <div class="approach-column">
+      <div class="approach-label">
+        <div class="approach-letter">B</div>
+        <div class="approach-name">Value Trade-off</div>
+        <div class="approach-desc">Which value do you lean toward, and how strongly?</div>
+      </div>
+
+      <div class="phone-frame">
+        <div class="screen">
+          <div class="header">
+            <div class="header-row">
+              <div class="domain-badge">💰 Economy</div>
+              <div class="progress-count">Question 1 of 15</div>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 7%"></div></div>
+          </div>
+
+          <div class="content">
+            <div class="tradeoff-topic">Government Support Programs</div>
+            <div class="tradeoff-question">Which matters more to you?</div>
+            <div class="tradeoff-context">There's no wrong answer — we're looking for what you value, not what's "correct."</div>
+
+            <div class="tradeoff-container">
+              <div class="tradeoff-pair">
+                <div class="tradeoff-value tradeoff-value-a leaning">
+                  <div class="tradeoff-icon">🤝</div>
+                  <div class="tradeoff-value-text">Collective safety net</div>
+                  <div class="tradeoff-value-detail">Ensuring no one falls through the cracks, even if it means more taxes and some people take advantage</div>
+                </div>
+
+                <div class="tradeoff-or">or</div>
+
+                <div class="tradeoff-value tradeoff-value-b">
+                  <div class="tradeoff-icon">💪</div>
+                  <div class="tradeoff-value-text">Personal responsibility</div>
+                  <div class="tradeoff-value-detail">People are best motivated by owning their outcomes, even if some struggle without help</div>
+                </div>
+              </div>
+
+              <div class="strength-section">
+                <div class="strength-label">How strongly?</div>
+                <div class="strength-chips">
+                  <div class="strength-chip selected">A little</div>
+                  <div class="strength-chip">Moderately</div>
+                  <div class="strength-chip">Strongly</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-footer">
+            <div class="nav-buttons">
+              <button class="nav-btn nav-btn-secondary">Back</button>
+              <button class="nav-btn nav-btn-primary">Next →</button>
+            </div>
+            <div class="skip-link">I value both equally</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== APPROACH C ===================== -->
+    <div class="approach-column">
+      <div class="approach-label">
+        <div class="approach-letter">C</div>
+        <div class="approach-name">Agree / Disagree</div>
+        <div class="approach-desc">React to a value statement with your gut feeling</div>
+      </div>
+
+      <div class="phone-frame">
+        <div class="screen">
+          <div class="header">
+            <div class="header-row">
+              <div class="domain-badge">💰 Economy</div>
+              <div class="progress-count">Question 1 of 15</div>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 7%"></div></div>
+          </div>
+
+          <div class="content">
+            <div class="statement-topic">Government Support</div>
+
+            <div class="statement-card">
+              <div class="statement-emoji">🤝</div>
+              <div class="statement-text">"No one should go hungry or homeless in a wealthy country, even if it means higher taxes for everyone."</div>
+              <div class="statement-subtext">This is about safety net generosity — not about any specific program.</div>
+            </div>
+
+            <div class="response-pair">
+              <div class="response-btn selected">
+                <div class="response-btn-emoji">👍</div>
+                <div class="response-btn-label">Agree</div>
+              </div>
+              <div class="response-btn">
+                <div class="response-btn-emoji">👎</div>
+                <div class="response-btn-label">Disagree</div>
+              </div>
+            </div>
+
+            <div class="c-strength-section">
+              <div class="strength-label">How strongly?</div>
+              <div class="strength-chips">
+                <div class="strength-chip c-strength-chip">A little</div>
+                <div class="strength-chip c-strength-chip selected">Moderately</div>
+                <div class="strength-chip c-strength-chip">Strongly</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-footer">
+            <div class="nav-buttons">
+              <button class="nav-btn nav-btn-secondary">Back</button>
+              <button class="nav-btn nav-btn-primary">Next →</button>
+            </div>
+            <div class="skip-link">Skip this question</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+
+  <div class="section-divider">
+    <div class="section-title">Trade-offs at a Glance</div>
+    <div class="section-desc">Each approach has different strengths depending on what you optimize for</div>
+  </div>
+
+  <div class="tradeoffs-grid">
+    <div class="tradeoff-box">
+      <div class="tradeoff-box-title">A — Value Statement Cards + Strength</div>
+      <div class="pro-con-item pro">✓ Most granularity (5 cards × 3 strengths)</div>
+      <div class="pro-con-item pro">✓ Users see full range of positions at once</div>
+      <div class="pro-con-item pro">✓ Strength captures conviction separately</div>
+      <div class="pro-con-item con">✗ Most text to read per question</div>
+      <div class="pro-con-item con">✗ 5 cards + strength may feel like two steps</div>
+      <div class="pro-con-item neutral">≈ Scoring: card index → position, strength → importance</div>
+    </div>
+
+    <div class="tradeoff-box">
+      <div class="tradeoff-box-title">B — Value Trade-off + Strength</div>
+      <div class="pro-con-item pro">✓ Fastest to answer — two taps</div>
+      <div class="pro-con-item pro">✓ Reveals underlying value tension clearly</div>
+      <div class="pro-con-item pro">✓ Side + strength = clean 7-point scale</div>
+      <div class="pro-con-item con">✗ Binary framing may oversimplify some axes</div>
+      <div class="pro-con-item con">✗ Needs more questions per axis for precision</div>
+      <div class="pro-con-item neutral">≈ Scoring: side × strength → 7 positions (incl. center)</div>
+    </div>
+
+    <div class="tradeoff-box">
+      <div class="tradeoff-box-title">C — Agree / Disagree + Strength</div>
+      <div class="pro-con-item pro">✓ Clean two-step UX — direction then intensity</div>
+      <div class="pro-con-item pro">✓ Single statement is easy to digest</div>
+      <div class="pro-con-item pro">✓ Swipe-friendly (agree/disagree as gesture)</div>
+      <div class="pro-con-item con">✗ Only captures one "side" per question</div>
+      <div class="pro-con-item con">✗ Needs 2+ statements per axis for balance</div>
+      <div class="pro-con-item con">✗ Statement wording heavily influences result</div>
+      <div class="pro-con-item neutral">≈ Scoring: direction × strength → 7 positions (incl. center)</div>
+    </div>
+  </div>
+
+  <!-- ===================== INTERACTIVITY ===================== -->
+  <script>
+    // Make value cards selectable (Approach A)
+    document.querySelectorAll('.value-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.closest('.content').querySelectorAll('.value-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        // Show the strength section
+        const strengthEl = document.getElementById('a-strength');
+        if (strengthEl) strengthEl.classList.add('visible');
+      });
+    });
+
+    // Make Approach A strength chips selectable
+    document.querySelectorAll('.a-strength-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.a-strength-chip').forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+      });
+    });
+
+    // Make tradeoff values selectable (Approach B)
+    document.querySelectorAll('.tradeoff-value').forEach(val => {
+      val.addEventListener('click', () => {
+        val.closest('.tradeoff-pair').querySelectorAll('.tradeoff-value').forEach(v => v.classList.remove('leaning'));
+        val.classList.add('leaning');
+      });
+    });
+
+    // Make Approach B strength chips selectable
+    document.querySelectorAll('.strength-section .strength-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.closest('.strength-chips').querySelectorAll('.strength-chip').forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+      });
+    });
+
+    // Make response buttons selectable (Approach C)
+    document.querySelectorAll('.response-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.response-pair').querySelectorAll('.response-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Make Approach C strength chips selectable
+    document.querySelectorAll('.c-strength-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.c-strength-chip').forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>
