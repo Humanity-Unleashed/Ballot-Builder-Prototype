@@ -215,6 +215,8 @@ export interface Measure {
   vector?: number[]; // Legacy policy alignment vector (deprecated)
   /** Axis effects: how YES vote affects each axis. Negative = toward poleA, Positive = toward poleB */
   yesAxisEffects?: Record<string, number>;
+  /** Schwartz value effects: how YES vote aligns with each value. Positive = aligns, Negative = conflicts */
+  yesValueEffects?: Record<string, number>;
   /** Which axes are relevant for this measure */
   relevantAxes?: string[];
   outcomes: {
@@ -257,6 +259,8 @@ export interface Candidate {
   positions?: string[]; // Key policy positions
   /** Axis-based stances: axisId -> value (0-10 scale, where 0=poleA, 10=poleB) */
   axisStances?: Record<string, number>;
+  /** Schwartz value stances: valueId -> alignment (-1 to 1, where positive = emphasizes value) */
+  valueStances?: Record<string, number>;
   /** Summary of candidate's policy profile */
   profileSummary?: string;
   policyProfile?: CandidatePreferenceItem[];

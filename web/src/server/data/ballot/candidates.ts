@@ -13,6 +13,11 @@ import { CONTEST_IDS } from './ids';
 // - HIGH (6-10) = leans toward poleB
 // These are compared directly to user slider values
 
+// Schwartz Value Stances: -1 to +1 where:
+// - Positive = candidate emphasizes/aligns with that value
+// - Negative = candidate de-emphasizes/conflicts with that value
+// Values: universalism, benevolence, tradition, conformity, security, power, achievement, hedonism, stimulation, self_direction
+
 // ============================================
 // Candidates - Mayor
 // ============================================
@@ -40,6 +45,16 @@ export const candidatesMayor: Candidate[] = [
       climate_ambition: 2,                  // poleA: Act fast on climate
       justice_policing_accountability: 3,   // poleA: More oversight & alternatives
     },
+    // Progressive values profile: caring for community, environment, equality
+    valueStances: {
+      universalism: 0.8,    // Strong focus on equality and environment
+      benevolence: 0.7,     // Community-focused policies
+      self_direction: 0.4,  // Supports diverse communities
+      stimulation: 0.3,     // Open to new approaches
+      security: 0.2,        // Housing stability for vulnerable
+      conformity: -0.3,     // Willing to challenge status quo
+      power: -0.5,          // Skeptical of concentrated power
+    },
     profileSummary: 'Prioritizes affordable housing, transit expansion, and climate action. Supports civilian oversight of police.',
   },
   {
@@ -64,6 +79,17 @@ export const candidatesMayor: Candidate[] = [
       climate_ambition: 8,                  // poleB: Go slow, keep costs low
       justice_policing_accountability: 8,   // poleB: More police & enforcement
     },
+    // Conservative values profile: security, order, achievement, tradition
+    valueStances: {
+      security: 0.8,        // Strong law and order focus
+      conformity: 0.7,      // Respect for rules and authority
+      power: 0.6,           // Business success, economic power
+      achievement: 0.6,     // Personal responsibility
+      tradition: 0.5,       // Traditional approaches
+      self_direction: 0.3,  // Economic freedom
+      universalism: -0.4,   // Less focus on collective welfare
+      benevolence: -0.2,    // Conditional support programs
+    },
     profileSummary: 'Focuses on fiscal responsibility, public safety, and reducing regulations on businesses and housing development.',
   },
   {
@@ -86,6 +112,17 @@ export const candidatesMayor: Candidate[] = [
       housing_supply_zoning: 2,             // Strong pro-building (poleA)
       climate_ambition: 4,                  // Moderate climate action (slight poleA)
       justice_policing_accountability: 5,   // Balanced approach
+    },
+    // Centrist values profile: pragmatic, achievement-oriented, moderate on all
+    valueStances: {
+      achievement: 0.6,     // Results-oriented
+      self_direction: 0.5,  // Independent thinking
+      stimulation: 0.4,     // Open to innovation
+      universalism: 0.3,    // Moderate concern for all
+      benevolence: 0.3,     // Community-minded
+      security: 0.3,        // Balanced stability
+      conformity: 0.0,      // Neutral on rules
+      tradition: -0.2,      // Willing to try new approaches
     },
     profileSummary: 'Pro-housing centrist who supports building more at all price points. Pragmatic on climate and policing.',
   },
@@ -115,6 +152,16 @@ export const candidatesCouncilD5: Candidate[] = [
       housing_affordability_tools: 4,       // Mixed - slight poleA
       justice_policing_accountability: 4,   // Slight poleA: Leans oversight
     },
+    // YIMBY values: innovation, self-direction, achievement, some universalism
+    valueStances: {
+      self_direction: 0.7,  // Independent housing choices
+      achievement: 0.6,     // Building, progress
+      stimulation: 0.5,     // New development, change
+      universalism: 0.4,    // Housing for all
+      benevolence: 0.3,     // Community investment
+      tradition: -0.5,      // Willing to change neighborhoods
+      conformity: -0.3,     // Challenges NIMBY status quo
+    },
     profileSummary: 'YIMBY advocate focused on housing production. Supports upzoning and streamlined permitting.',
   },
   {
@@ -136,6 +183,16 @@ export const candidatesCouncilD5: Candidate[] = [
       housing_affordability_tools: 1,       // Strong poleA: Rent limits
       justice_policing_accountability: 2,   // poleA: Strong oversight advocate
     },
+    // Progressive tenant advocate: universalism, benevolence, security for vulnerable
+    valueStances: {
+      universalism: 0.8,    // Protecting vulnerable tenants
+      benevolence: 0.7,     // Community support
+      security: 0.5,        // Housing stability
+      conformity: 0.2,      // Following fair rules
+      self_direction: -0.2, // Limits landlord freedom for tenant protection
+      power: -0.6,          // Challenges landlord power
+      achievement: -0.3,    // Prioritizes protection over profit
+    },
     profileSummary: "Tenant rights champion. Prioritizes rent stabilization and community land trusts over market-rate development.",
   },
   {
@@ -156,6 +213,17 @@ export const candidatesCouncilD5: Candidate[] = [
       housing_supply_zoning: 7,             // poleB: Preserve neighborhoods
       housing_affordability_tools: 9,       // poleB: No rent control
       justice_policing_accountability: 9,   // poleB: Pro-police
+    },
+    // Conservative neighborhood advocate: tradition, security, conformity
+    valueStances: {
+      tradition: 0.8,       // Preserve neighborhood character
+      security: 0.8,        // Law and order, stable neighborhoods
+      conformity: 0.7,      // Following established rules
+      power: 0.5,           // Property rights
+      achievement: 0.4,     // Property values, fiscal responsibility
+      stimulation: -0.6,    // Resists change and development
+      universalism: -0.5,   // Less focus on broader needs
+      self_direction: -0.3, // Prefers established norms
     },
     profileSummary: 'Neighborhood preservation advocate. Opposes density increases and supports traditional policing.',
   },

@@ -8,11 +8,16 @@
 import type { Measure } from '../../types';
 import { MEASURE_IDS } from './ids';
 
-// IMPORTANT: Polarity explanation
+// IMPORTANT: Polarity explanation for axis effects (legacy)
 // - poleA = LOW slider values (0-4), score towards +1
 // - poleB = HIGH slider values (6-10), score towards -1
 // - NEGATIVE yesAxisEffect = YES aligns with poleA preferences (user with low slider should vote YES)
 // - POSITIVE yesAxisEffect = YES aligns with poleB preferences (user with high slider should vote YES)
+
+// Schwartz Value Effects explanation:
+// - POSITIVE yesValueEffect = YES aligns with high scores on that value
+// - NEGATIVE yesValueEffect = YES conflicts with that value
+// Values: universalism, benevolence, tradition, conformity, security, power, achievement, hedonism, stimulation, self_direction
 
 export const measures: Measure[] = [
   // === STATE PROPOSITIONS ===
@@ -26,15 +31,16 @@ export const measures: Measure[] = [
     vector: [0.3, 0.9, 0.2, 0.6, 0.5],
     relevantAxes: ['econ_investment', 'housing_affordability_tools', 'econ_safetynet'],
     yesAxisEffects: {
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = more public investment = aligns with poleA = NEGATIVE
       econ_investment: -0.8,
-      // housing_affordability_tools: poleA = "Rent limits & public housing", poleB = "Build more, fewer rules"
-      // YES = public housing = aligns with poleA = NEGATIVE
       housing_affordability_tools: -0.7,
-      // econ_safetynet: poleA = "Broader safety net", poleB = "More conditional"
-      // YES = broader support = aligns with poleA = NEGATIVE
       econ_safetynet: -0.6,
+    },
+    // Schwartz value effects: YES on housing bond aligns with caring for others
+    yesValueEffects: {
+      universalism: 0.8,    // Helps ensure equal access to housing
+      benevolence: 0.7,     // Helps families in need
+      security: 0.5,        // Provides housing stability
+      power: -0.3,          // May increase taxes on wealthy
     },
     outcomes: {
       yes: 'This bond would fund construction of 100,000+ affordable units, provide down payment assistance for first-time buyers, and expand rental vouchers for low-income families.',
@@ -55,12 +61,15 @@ export const measures: Measure[] = [
     vector: [0.6, 0.4, 0.3, 0.7, 0.8],
     relevantAxes: ['econ_school_choice', 'econ_investment'],
     yesAxisEffects: {
-      // econ_school_choice: poleA = "Strengthen public schools", poleB = "Expand school choice"
-      // YES = expand choice = aligns with poleB = POSITIVE
       econ_school_choice: 0.9,
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = diverts from public = aligns with poleB = POSITIVE
       econ_investment: 0.5,
+    },
+    // Schwartz value effects: YES on school choice emphasizes independence and tradition
+    yesValueEffects: {
+      self_direction: 0.8,  // Family choice in education
+      tradition: 0.5,       // Allows religious school options
+      achievement: 0.4,     // Competition may drive excellence
+      universalism: -0.5,   // May reduce public school equity
     },
     outcomes: {
       yes: 'Parents receive $7,000 per child annually for any school of their choice, including private and religious schools. Public school funding reduced proportionally.',
@@ -81,12 +90,15 @@ export const measures: Measure[] = [
     vector: [0.2, 0.3, 0.95, 0.4, 0.6],
     relevantAxes: ['climate_ambition', 'climate_energy_portfolio'],
     yesAxisEffects: {
-      // climate_ambition: poleA = "Act fast on climate", poleB = "Go slow, keep costs low"
-      // YES = act fast = aligns with poleA = NEGATIVE
       climate_ambition: -0.9,
-      // climate_energy_portfolio: poleA = "Solar & wind first", poleB = "Mix of all energy types"
-      // YES = renewables only = aligns with poleA = NEGATIVE
       climate_energy_portfolio: -0.8,
+    },
+    // Schwartz value effects: YES on clean energy strongly aligns with universalism
+    yesValueEffects: {
+      universalism: 0.9,    // Environmental protection for all
+      stimulation: 0.4,     // New technology and innovation
+      benevolence: 0.3,     // Protecting future generations
+      security: -0.3,       // Short-term cost increases
     },
     outcomes: {
       yes: 'State commits to 100% renewable electricity by 2035. Estimated $30B investment in solar, wind, and battery storage. Natural gas plants shut down on rolling schedule.',
@@ -109,12 +121,15 @@ export const measures: Measure[] = [
     vector: [0.4, 0.6, 0.7, 0.5, 0.6],
     relevantAxes: ['housing_transport_priority', 'econ_investment'],
     yesAxisEffects: {
-      // housing_transport_priority: poleA = "Transit, walking & biking", poleB = "Cars & parking"
-      // YES = transit = aligns with poleA = NEGATIVE
       housing_transport_priority: -0.8,
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = public investment = aligns with poleA = NEGATIVE
       econ_investment: -0.6,
+    },
+    // Schwartz value effects: YES on transit expansion serves community and environment
+    yesValueEffects: {
+      universalism: 0.7,    // Public good, environmental benefit
+      benevolence: 0.6,     // Helps low-income riders
+      conformity: 0.3,      // Shared public systems
+      self_direction: -0.3, // Less flexibility than car travel
     },
     outcomes: {
       yes: 'Funds would add 3 new rail lines, increase bus frequency, and reduce fares for low-income riders. The tax would add about $50/year for the median household.',
@@ -135,12 +150,16 @@ export const measures: Measure[] = [
     vector: [0.7, 0.5, 0.4, 0.8, 0.6],
     relevantAxes: ['housing_affordability_tools', 'housing_supply_zoning'],
     yesAxisEffects: {
-      // housing_affordability_tools: poleA = "Rent limits & public housing", poleB = "Build more, fewer rules"
-      // YES = rent limits = aligns with poleA = NEGATIVE
       housing_affordability_tools: -0.9,
-      // housing_supply_zoning: poleA = "Build more / allow density", poleB = "Preserve / limit growth"
-      // YES = may slow building = slightly aligns with poleB = slight POSITIVE
       housing_supply_zoning: 0.3,
+    },
+    // Schwartz value effects: YES on rent stabilization protects vulnerable tenants
+    yesValueEffects: {
+      universalism: 0.7,    // Protects vulnerable populations
+      benevolence: 0.6,     // Helps renters stay in homes
+      security: 0.5,        // Housing stability for tenants
+      self_direction: -0.5, // Limits landlord freedom
+      power: -0.4,          // Restricts property owner control
     },
     outcomes: {
       yes: 'Annual rent increases capped at 5% for buildings older than 15 years. Protects existing tenants from large rent hikes.',
@@ -161,12 +180,16 @@ export const measures: Measure[] = [
     vector: [0.5, 0.4, 0.3, 0.6, 0.5],
     relevantAxes: ['justice_policing_accountability', 'econ_investment'],
     yesAxisEffects: {
-      // justice_policing_accountability: poleA = "More oversight & alternatives", poleB = "More police & enforcement"
-      // YES = more police = aligns with poleB = POSITIVE
       justice_policing_accountability: 0.8,
-      // econ_investment: poleA = "More public investment", poleB = "Lower taxes"
-      // YES = spending on police = aligns with poleA (it IS spending) = NEGATIVE
       econ_investment: -0.3,
+    },
+    // Schwartz value effects: YES on police funding emphasizes security and conformity
+    yesValueEffects: {
+      security: 0.8,        // Safety and crime prevention
+      conformity: 0.6,      // Law enforcement and order
+      power: 0.4,           // Authority and control
+      universalism: -0.4,   // May reduce other social services
+      self_direction: -0.3, // More enforcement/authority
     },
     outcomes: {
       yes: '200 additional police officers hired, police department funding increased by 15%. Funds reallocated from other city departments.',

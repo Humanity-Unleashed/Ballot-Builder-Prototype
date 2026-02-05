@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { CheckCircle, XCircle } from 'lucide-react';
-import type { PropositionRecommendation, VoteChoice } from '@/lib/ballotHelpers';
+import type { ValuePropositionRecommendation, VoteChoice } from '@/lib/ballotHelpers';
 
 interface PropositionVoteButtonsProps {
   selected: VoteChoice;
   onSelect: (choice: 'yes' | 'no') => void;
-  recommendation: PropositionRecommendation;
+  recommendation: ValuePropositionRecommendation;
 }
 
 export default function PropositionVoteButtons({

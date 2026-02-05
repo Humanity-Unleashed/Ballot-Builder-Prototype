@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { Candidate, CandidateMatch, VoteChoice } from '@/lib/ballotHelpers';
-import type { MetaDimensionScores } from '@/lib/archetypes';
+import type { Candidate, ValueCandidateMatch, VoteChoice } from '@/lib/ballotHelpers';
 import CandidateCard from './CandidateCard';
 import CandidateComparisonSheet from './CandidateComparisonSheet';
 
@@ -11,10 +10,9 @@ interface CandidateVoteButtonsProps {
   allowWriteIn: boolean;
   selected: VoteChoice;
   writeInName: string;
-  matches: CandidateMatch[];
+  matches: ValueCandidateMatch[];
   onSelect: (choice: string) => void;
   onWriteInChange: (name: string) => void;
-  metaDimensions: MetaDimensionScores | null;
 }
 
 export default function CandidateVoteButtons({
@@ -25,7 +23,6 @@ export default function CandidateVoteButtons({
   matches,
   onSelect,
   onWriteInChange,
-  metaDimensions,
 }: CandidateVoteButtonsProps) {
   const [compareCandidate, setCompareCandidate] = useState<Candidate | null>(null);
   const isWriteIn = selected === 'write_in';
@@ -58,7 +55,6 @@ export default function CandidateVoteButtons({
             match={getMatch(candidate.id)}
             onSelect={() => onSelect(candidate.id)}
             onCompare={() => setCompareCandidate(candidate)}
-            metaDimensions={metaDimensions}
           />
         ))}
 

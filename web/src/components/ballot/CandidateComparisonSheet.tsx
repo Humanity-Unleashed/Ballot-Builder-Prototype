@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import { X, CheckCircle, XCircle } from 'lucide-react';
-import type { Candidate, CandidateMatch } from '@/lib/ballotHelpers';
+import { X, Check, AlertTriangle, Minus } from 'lucide-react';
+import type { Candidate, ValueCandidateMatch } from '@/lib/ballotHelpers';
 
 interface CandidateComparisonSheetProps {
   visible: boolean;
   candidate: Candidate | null;
-  match: CandidateMatch | undefined;
+  match: ValueCandidateMatch | undefined;
   onClose: () => void;
 }
 
@@ -18,6 +18,13 @@ export default function CandidateComparisonSheet({
   onClose,
 }: CandidateComparisonSheetProps) {
   if (!visible || !candidate || !match) return null;
+
+  // Separate aligned and conflicting values
+  const alignedDetails = match.details.filter(
+    (d) => d.alignment === 'strong' || d.alignment === 'moderate'
+  );
+  const conflictingDetails = match.details.filter((d) => d.alignment === 'opposed');
+  const neutralDetails = match.details.filter((d) => d.alignment === 'weak');
 
   return (
     <div
@@ -35,9 +42,12 @@ export default function CandidateComparisonSheet({
 
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-          <h3 className="text-lg font-bold text-gray-900 flex-1">
-            Comparing with {candidate.name}
-          </h3>
+          <div className="flex-1">
+            <h3 className="text-lg font-bold text-gray-900">
+              {candidate.name}
+            </h3>
+            <p className="text-sm text-gray-500">{match.matchPercent}% match with your values</p>
+          </div>
           <button
             onClick={onClose}
             className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
@@ -47,68 +57,104 @@ export default function CandidateComparisonSheet({
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto p-5 space-y-3">
-          <p className="text-sm text-gray-600 italic mb-4">
-            Based on the values you shared, here&apos;s how you compare:
-          </p>
-
-          {match.axisComparisons.map((comparison) => {
-            const isAgreement =
-              comparison.alignment === 'strong' || comparison.alignment === 'moderate';
-            const AlignIcon = isAgreement ? CheckCircle : XCircle;
-            const alignmentColor = isAgreement ? 'text-green-500' : 'text-red-500';
-
-            return (
-              <div key={comparison.axisId} className="bg-gray-50 rounded-xl p-3.5 space-y-2.5">
-                {/* Axis name + icon */}
-                <div className="flex items-center gap-2.5">
-                  <AlignIcon className={`h-[18px] w-[18px] ${alignmentColor}`} />
-                  <span className="text-[15px] font-bold text-gray-800">
-                    {comparison.axisName}
-                  </span>
-                </div>
-
-                {/* Stance comparison */}
-                <div className="pl-7 space-y-2">
-                  <div className="flex gap-2">
-                    <span className="text-[13px] font-semibold text-gray-500 w-14 shrink-0">
-                      You:
-                    </span>
-                    <span className="text-[13px] text-gray-700 flex-1 leading-[18px]">
-                      {comparison.userLabel}
-                    </span>
+        <div className="overflow-y-auto p-5 space-y-4">
+          {/* Where you align */}
+          {alignedDetails.length > 0 && (
+            <div className="space-y-2.5">
+              <p className="text-xs font-bold text-green-600 uppercase tracking-wide">
+                Where you align
+              </p>
+              {alignedDetails.map((detail) => (
+                <div key={detail.valueId} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-green-600" />
                   </div>
-                  <div className="flex gap-2">
-                    <span className="text-[13px] font-semibold text-gray-500 w-14 shrink-0">
-                      {candidate.name.split(' ')[0]}:
-                    </span>
-                    <span className="text-[13px] text-gray-700 flex-1 leading-[18px]">
-                      {comparison.candidateLabel}
-                    </span>
+                  <div className="flex-1">
+                    <p className="text-[13px] text-gray-700 leading-relaxed">
+                      <strong className="text-gray-900">{detail.policyContext}:</strong>{' '}
+                      {detail.explanation}
+                    </p>
                   </div>
                 </div>
+              ))}
+            </div>
+          )}
 
-                {/* Agreement summary */}
-                <p className={`text-xs font-semibold pl-7 mt-0.5 ${alignmentColor}`}>
-                  {isAgreement
-                    ? 'You share similar views on this'
-                    : 'You have different perspectives here'}
-                </p>
-              </div>
-            );
-          })}
+          {/* Where you differ */}
+          {conflictingDetails.length > 0 && (
+            <div className="space-y-2.5">
+              <p className="text-xs font-bold text-amber-600 uppercase tracking-wide">
+                Where you differ
+              </p>
+              {conflictingDetails.map((detail) => (
+                <div key={detail.valueId} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center shrink-0 mt-0.5">
+                    <AlertTriangle className="h-3 w-3 text-amber-600" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[13px] text-gray-700 leading-relaxed">
+                      <strong className="text-gray-900">{detail.policyContext}:</strong>{' '}
+                      {detail.explanation}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
-          {/* Overall summary */}
-          <div className="pt-3 border-t border-gray-200 mt-1">
-            <p className="text-sm font-semibold text-gray-600 text-center">
-              You align on{' '}
-              {
-                match.axisComparisons.filter(
-                  (c) => c.alignment === 'strong' || c.alignment === 'moderate'
-                ).length
-              }{' '}
-              of {match.axisComparisons.length} policy areas
+          {/* Neutral areas (if any significant ones) */}
+          {neutralDetails.length > 0 && alignedDetails.length + conflictingDetails.length < 4 && (
+            <div className="space-y-2.5">
+              <p className="text-xs font-bold text-gray-500 uppercase tracking-wide">
+                Similar stance on
+              </p>
+              {neutralDetails.slice(0, 2).map((detail) => (
+                <div key={detail.valueId} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                    <Minus className="h-3 w-3 text-gray-500" />
+                  </div>
+                  <p className="text-[13px] text-gray-600 leading-relaxed flex-1">
+                    {detail.valueName}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* No data case */}
+          {match.details.length === 0 && (
+            <p className="text-sm text-gray-500 text-center py-4">
+              We don&apos;t have enough data about this candidate&apos;s positions to show a detailed comparison.
             </p>
+          )}
+
+          {/* Summary */}
+          <div className="pt-4 border-t border-gray-200">
+            <div className="bg-gray-50 rounded-xl p-4">
+              <p className="text-sm text-gray-700 leading-relaxed text-center">
+                {alignedDetails.length > conflictingDetails.length ? (
+                  <>
+                    <strong className="text-green-600">Overall:</strong> You share common ground on{' '}
+                    {alignedDetails.length} key value{alignedDetails.length !== 1 ? 's' : ''}
+                    {conflictingDetails.length > 0 &&
+                      `, with some differences on ${conflictingDetails.length}`}
+                    .
+                  </>
+                ) : conflictingDetails.length > alignedDetails.length ? (
+                  <>
+                    <strong className="text-amber-600">Overall:</strong> You differ on{' '}
+                    {conflictingDetails.length} key value{conflictingDetails.length !== 1 ? 's' : ''}
+                    {alignedDetails.length > 0 &&
+                      `, but align on ${alignedDetails.length}`}
+                    .
+                  </>
+                ) : (
+                  <>
+                    <strong className="text-gray-600">Overall:</strong> Mixed alignment — you agree and disagree on roughly equal terms.
+                  </>
+                )}
+              </p>
+            </div>
           </div>
         </div>
       </div>

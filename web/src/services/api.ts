@@ -600,4 +600,103 @@ export const candidateApi = {
   },
 };
 
+// ────────────────────────────────────────
+// Schwartz Values API
+// ────────────────────────────────────────
+
+export interface SchwartzValue {
+  id: string;
+  name: string;
+  schwartzName: string;
+  description: string;
+  dimension: string;
+  oppositeValue: string;
+}
+
+export interface SchwartzDimension {
+  id: string;
+  name: string;
+  schwartzName: string;
+  description: string;
+  values: string[];
+  oppositeDimension: string;
+}
+
+export interface SchwartzAssessmentItem {
+  id: string;
+  text: string;
+  valueId: string;
+  weight: number;
+  reversed: boolean;
+}
+
+export interface SchwartzSpec {
+  spec_version: string;
+  generated_at_utc: string;
+  response_scale: {
+    strongly_disagree: number;
+    disagree: number;
+    neutral: number;
+    agree: number;
+    strongly_agree: number;
+  };
+  scoring: {
+    value_range: [number, number];
+    use_ipsatization: boolean;
+    ipsatization_note: string;
+  };
+  dimensions: SchwartzDimension[];
+  values: SchwartzValue[];
+  items: SchwartzAssessmentItem[];
+}
+
+export interface SchwartzItemResponse {
+  item_id: string;
+  response: 1 | 2 | 3 | 4 | 5;
+}
+
+export interface SchwartzValueScore {
+  value_id: string;
+  name: string;
+  raw_mean: number;
+  ipsatized: number;
+  n_answered: number;
+  dimension_id: string;
+}
+
+export interface SchwartzDimensionScore {
+  dimension_id: string;
+  name: string;
+  raw_mean: number;
+  ipsatized: number;
+  values: string[];
+}
+
+export interface SchwartzScoringResult {
+  values: SchwartzValueScore[];
+  dimensions: SchwartzDimensionScore[];
+  individual_mean: number;
+}
+
+export const schwartzApi = {
+  async getSpec(): Promise<SchwartzSpec> {
+    const response = await api.get<SchwartzSpec>('/schwartz-values/spec');
+    return response.data;
+  },
+
+  async getItems(randomize: boolean = true): Promise<{ items: SchwartzAssessmentItem[] }> {
+    const response = await api.get<{ items: SchwartzAssessmentItem[] }>(
+      `/schwartz-values/items?randomize=${randomize}`
+    );
+    return response.data;
+  },
+
+  async scoreResponses(responses: SchwartzItemResponse[]): Promise<SchwartzScoringResult> {
+    const response = await api.post<SchwartzScoringResult>('/schwartz-values/score', {
+      responses,
+    });
+    return response.data;
+  },
+};
+
 export default api;

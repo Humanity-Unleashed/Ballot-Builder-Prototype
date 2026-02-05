@@ -10,6 +10,7 @@ import type {
   BallotContest,
   BallotMeasure,
   BallotCandidate,
+  SchwartzValueScore,
 } from '@/services/api';
 
 // =============================================
@@ -385,6 +386,329 @@ export function computeCandidateMatches(
 
   matches.sort((a, b) => b.matchPercent - a.matchPercent);
   if (matches.length > 0 && matches[0].matchPercent > 50) {
+    matches[0].isBestMatch = true;
+  }
+
+  return matches;
+}
+
+// =============================================
+// Schwartz Value-Based Recommendations
+// =============================================
+
+/** Value names for display */
+export const VALUE_DISPLAY_NAMES: Record<string, string> = {
+  universalism: 'Fairness & Equality',
+  benevolence: 'Helping Others',
+  tradition: 'Tradition',
+  conformity: 'Respect for Rules',
+  security: 'Safety & Stability',
+  power: 'Influence & Leadership',
+  achievement: 'Personal Success',
+  hedonism: 'Enjoying Life',
+  stimulation: 'New Experiences',
+  self_direction: 'Independence',
+};
+
+/** Rich value-framing phrases for generating explanations */
+export const VALUE_ALIGNMENT_PHRASES: Record<string, { align: string; differ: string }> = {
+  universalism: {
+    align: 'shares your belief that we do better when we look out for everyone',
+    differ: 'takes a different view on ensuring equal opportunity for all',
+  },
+  benevolence: {
+    align: 'shares your focus on helping others in the community',
+    differ: 'prioritizes differently when it comes to community support',
+  },
+  tradition: {
+    align: 'shares your respect for established ways and traditions',
+    differ: 'is more open to moving away from traditional approaches',
+  },
+  conformity: {
+    align: 'shares your belief in following rules and maintaining order',
+    differ: 'favors more flexibility in how rules are applied',
+  },
+  security: {
+    align: 'shares your priority for safety and stability',
+    differ: 'weighs safety concerns differently than you do',
+  },
+  power: {
+    align: 'shares your view on strong leadership and decisive action',
+    differ: 'takes a different approach to authority and influence',
+  },
+  achievement: {
+    align: 'shares your drive for success and results',
+    differ: 'measures success differently than you do',
+  },
+  hedonism: {
+    align: 'shares your appreciation for quality of life',
+    differ: 'prioritizes personal fulfillment differently',
+  },
+  stimulation: {
+    align: 'shares your appetite for new approaches and change',
+    differ: 'prefers more measured, incremental change',
+  },
+  self_direction: {
+    align: 'shares your value of independence and personal choice',
+    differ: 'favors more collective approaches over individual freedom',
+  },
+};
+
+/** Policy domain labels for candidate stances */
+export const VALUE_POLICY_CONTEXT: Record<string, string[]> = {
+  universalism: ['social equity', 'environmental protection', 'civil rights'],
+  benevolence: ['community programs', 'social services', 'healthcare'],
+  tradition: ['cultural policy', 'family values', 'religious liberty'],
+  conformity: ['law enforcement', 'regulatory compliance', 'civic duty'],
+  security: ['public safety', 'national security', 'economic stability'],
+  power: ['governance', 'leadership', 'institutional authority'],
+  achievement: ['economic growth', 'competitiveness', 'performance standards'],
+  hedonism: ['arts & culture', 'recreation', 'quality of life'],
+  stimulation: ['innovation', 'reform', 'new initiatives'],
+  self_direction: ['personal freedom', 'entrepreneurship', 'individual rights'],
+};
+
+export interface ValueBreakdown {
+  valueId: string;
+  valueName: string;
+  userScore: number;      // 1-5 raw mean
+  userPercent: number;    // 0-100
+  effectDirection: number; // -1 to 1 (how YES affects this value)
+  alignment: 'yes' | 'no' | 'neutral';
+}
+
+export interface ValuePropositionRecommendation {
+  vote: 'yes' | 'no' | null;
+  confidence: number;
+  explanation: string;
+  topFactors: string[];
+  breakdown: ValueBreakdown[];
+}
+
+export interface ValueComparisonDetail {
+  valueId: string;
+  valueName: string;
+  policyContext: string;
+  userPreference: number;     // -1 to 1 (how much user values this)
+  candidateStance: number;    // -1 to 1 (candidate's position)
+  alignment: 'strong' | 'moderate' | 'weak' | 'opposed';
+  explanation: string;        // Rich value-framed explanation
+}
+
+export interface ValueCandidateMatch {
+  candidateId: string;
+  matchPercent: number;
+  isBestMatch: boolean;
+  alignedValues: string[];
+  conflictingValues: string[];
+  // Rich details for comparison view
+  details: ValueComparisonDetail[];
+}
+
+/**
+ * Compute proposition recommendation based on Schwartz values.
+ * Uses yesValueEffects from measure data and user's value scores.
+ */
+export function computeValuePropositionRecommendation(
+  measure: BallotMeasure,
+  userValues: SchwartzValueScore[]
+): ValuePropositionRecommendation {
+  const yesEffects = (measure as any).yesValueEffects as Record<string, number> | undefined;
+
+  if (!yesEffects || Object.keys(yesEffects).length === 0) {
+    return { vote: null, confidence: 0, explanation: 'No value mapping available.', topFactors: [], breakdown: [] };
+  }
+
+  // Build user value map: valueId -> raw_mean (1-5)
+  const userValueMap: Record<string, number> = {};
+  for (const score of userValues) {
+    userValueMap[score.value_id] = score.raw_mean;
+  }
+
+  let alignmentScore = 0;
+  let totalWeight = 0;
+  const breakdown: ValueBreakdown[] = [];
+  const factors: { name: string; impact: number }[] = [];
+
+  for (const [valueId, yesEffect] of Object.entries(yesEffects)) {
+    const userScore = userValueMap[valueId];
+    if (userScore === undefined) continue;
+
+    // Convert user's 1-5 score to -1 to +1 preference
+    // High score (4-5) = strong preference for this value
+    // Low score (1-2) = weak preference for this value
+    const userPreference = (userScore - 3) / 2; // -1 to +1
+
+    // Calculate alignment: if user values X highly and YES supports X, that's positive
+    const alignment = yesEffect * userPreference;
+
+    // Weight by how strongly user feels about this value
+    const weight = Math.abs(userPreference);
+    alignmentScore += alignment * weight;
+    totalWeight += Math.abs(yesEffect) * weight;
+
+    // Convert to 0-100 percent for display
+    const userPercent = Math.round(((userScore - 1) / 4) * 100);
+
+    // Determine alignment direction
+    let voteAlignment: 'yes' | 'no' | 'neutral' = 'neutral';
+    if (alignment > 0.1) voteAlignment = 'yes';
+    else if (alignment < -0.1) voteAlignment = 'no';
+
+    breakdown.push({
+      valueId,
+      valueName: VALUE_DISPLAY_NAMES[valueId] || valueId,
+      userScore,
+      userPercent,
+      effectDirection: yesEffect,
+      alignment: voteAlignment,
+    });
+
+    if (Math.abs(alignment) > 0.15) {
+      factors.push({ name: VALUE_DISPLAY_NAMES[valueId] || valueId, impact: alignment });
+    }
+  }
+
+  // Normalize score
+  const normalizedScore = totalWeight > 0 ? alignmentScore / totalWeight : 0;
+  const confidence = Math.min(Math.abs(normalizedScore) * 1.5, 1);
+
+  // Determine vote
+  let vote: 'yes' | 'no' | null = null;
+  if (normalizedScore > 0.12) vote = 'yes';
+  else if (normalizedScore < -0.12) vote = 'no';
+
+  // Sort factors by impact and get top ones
+  factors.sort((a, b) => Math.abs(b.impact) - Math.abs(a.impact));
+  const topFactors = factors.slice(0, 3).map((f) => f.name);
+
+  // Generate explanation
+  let explanation = '';
+  if (vote === 'yes') {
+    explanation = `Voting YES aligns with your values${topFactors.length > 0 ? `, especially ${topFactors.slice(0, 2).join(' and ')}` : ''}.`;
+  } else if (vote === 'no') {
+    explanation = `Voting NO better matches your priorities${topFactors.length > 0 ? `, especially ${topFactors.slice(0, 2).join(' and ')}` : ''}.`;
+  } else {
+    explanation = `This measure has mixed implications for your values.`;
+  }
+
+  return { vote, confidence, explanation, topFactors, breakdown };
+}
+
+/**
+ * Compute candidate matches based on Schwartz values.
+ * Uses valueStances from candidate data and user's value scores.
+ * Returns rich value-framed explanations for display.
+ */
+export function computeValueCandidateMatches(
+  candidates: BallotCandidate[],
+  userValues: SchwartzValueScore[]
+): ValueCandidateMatch[] {
+  // Build user value map: valueId -> raw_mean (1-5) normalized to -1 to +1
+  const userValueMap: Record<string, number> = {};
+  for (const score of userValues) {
+    // Normalize 1-5 to -1 to +1
+    userValueMap[score.value_id] = (score.raw_mean - 3) / 2;
+  }
+
+  const matches: ValueCandidateMatch[] = [];
+
+  for (const candidate of candidates) {
+    const valueStances = (candidate as any).valueStances as Record<string, number> | undefined;
+
+    if (!valueStances || Object.keys(valueStances).length === 0) {
+      // No value data - give neutral match
+      matches.push({
+        candidateId: candidate.id,
+        matchPercent: 50,
+        isBestMatch: false,
+        alignedValues: [],
+        conflictingValues: [],
+        details: [],
+      });
+      continue;
+    }
+
+    let alignmentSum = 0;
+    let count = 0;
+    const alignedValues: string[] = [];
+    const conflictingValues: string[] = [];
+    const details: ValueComparisonDetail[] = [];
+
+    for (const [valueId, candidateStance] of Object.entries(valueStances)) {
+      const userPreference = userValueMap[valueId];
+      if (userPreference === undefined) continue;
+
+      // Both are -1 to +1 scale
+      // Alignment = how much candidate's stance matches user's preference direction
+      const alignmentProduct = candidateStance * userPreference;
+
+      // Weight by how strongly both feel
+      const weight = Math.abs(userPreference) * Math.abs(candidateStance);
+      alignmentSum += alignmentProduct * weight;
+      count += weight;
+
+      const valueName = VALUE_DISPLAY_NAMES[valueId] || valueId;
+      const phrases = VALUE_ALIGNMENT_PHRASES[valueId];
+      const contexts = VALUE_POLICY_CONTEXT[valueId] || [];
+
+      // Determine alignment level
+      let alignment: 'strong' | 'moderate' | 'weak' | 'opposed';
+      if (alignmentProduct > 0.4) alignment = 'strong';
+      else if (alignmentProduct > 0.15) alignment = 'moderate';
+      else if (alignmentProduct > -0.15) alignment = 'weak';
+      else alignment = 'opposed';
+
+      // Generate rich explanation
+      let explanation: string;
+      if (alignment === 'strong' || alignment === 'moderate') {
+        alignedValues.push(valueName);
+        explanation = phrases?.align || `shares your values on ${valueName.toLowerCase()}`;
+      } else if (alignment === 'opposed') {
+        conflictingValues.push(valueName);
+        explanation = phrases?.differ || `has different priorities on ${valueName.toLowerCase()}`;
+      } else {
+        explanation = `has a similar stance on ${valueName.toLowerCase()}`;
+      }
+
+      // Pick a relevant policy context
+      const policyContext = contexts[0] || valueName.toLowerCase();
+
+      details.push({
+        valueId,
+        valueName,
+        policyContext,
+        userPreference,
+        candidateStance,
+        alignment,
+        explanation,
+      });
+    }
+
+    // Sort details: aligned first (strong, moderate), then opposed
+    details.sort((a, b) => {
+      const order = { strong: 0, moderate: 1, weak: 2, opposed: 3 };
+      return order[a.alignment] - order[b.alignment];
+    });
+
+    // Calculate match percent
+    // alignment ranges from -1 to +1, convert to 0-100
+    const avgAlignment = count > 0 ? alignmentSum / count : 0;
+    const matchPercent = Math.round(((avgAlignment + 1) / 2) * 100);
+
+    matches.push({
+      candidateId: candidate.id,
+      matchPercent: Math.max(0, Math.min(100, matchPercent)),
+      isBestMatch: false,
+      alignedValues: alignedValues.slice(0, 3),
+      conflictingValues: conflictingValues.slice(0, 2),
+      details,
+    });
+  }
+
+  // Sort by match percent and mark best match
+  matches.sort((a, b) => b.matchPercent - a.matchPercent);
+  if (matches.length > 0 && matches[0].matchPercent > 55) {
     matches[0].isBestMatch = true;
   }
 

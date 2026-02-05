@@ -1,19 +1,15 @@
 'use client';
 
-import React, { useMemo } from 'react';
-import { Sparkles, BarChart3, ExternalLink } from 'lucide-react';
-import type { Candidate, CandidateMatch } from '@/lib/ballotHelpers';
-import type { MetaDimensionScores } from '@/lib/archetypes';
-import { getAxisMetaDimension } from '@/lib/archetypes';
-import { getValueFraming } from '@/lib/valueFraming';
+import React from 'react';
+import { Sparkles } from 'lucide-react';
+import type { Candidate, ValueCandidateMatch } from '@/lib/ballotHelpers';
 
 interface CandidateCardProps {
   candidate: Candidate;
   isSelected: boolean;
-  match: CandidateMatch | undefined;
+  match: ValueCandidateMatch | undefined;
   onSelect: () => void;
   onCompare: () => void;
-  metaDimensions: MetaDimensionScores | null;
 }
 
 export default function CandidateCard({
@@ -22,62 +18,11 @@ export default function CandidateCard({
   match,
   onSelect,
   onCompare,
-  metaDimensions,
 }: CandidateCardProps) {
-  const matchPercent = match?.matchPercent || 0;
+  const matchPercent = match?.matchPercent || 50;
   const isBestMatch = match?.isBestMatch || false;
-
-  // Value-framed agreement / disagreement lines
-  const valueFramedReasons = useMemo(() => {
-    if (!match || !metaDimensions || match.axisComparisons.length === 0) return null;
-
-    const agreementsByDim: Record<string, string[]> = {};
-    const disagreementsByDim: Record<string, string[]> = {};
-
-    for (const comp of match.axisComparisons) {
-      const dims = getAxisMetaDimension(comp.axisId);
-      const dim = dims[0];
-      if (!dim) continue;
-
-      if (comp.difference <= 2) {
-        if (!agreementsByDim[dim]) agreementsByDim[dim] = [];
-        agreementsByDim[dim].push(comp.axisName);
-      } else if (comp.difference >= 4) {
-        if (!disagreementsByDim[dim]) disagreementsByDim[dim] = [];
-        disagreementsByDim[dim].push(comp.axisName);
-      }
-    }
-
-    const agreements: { axes: string; phrase: string }[] = [];
-    const disagreements: { axes: string; phrase: string }[] = [];
-
-    for (const [dim, axes] of Object.entries(agreementsByDim)) {
-      const framing = getValueFraming(
-        dim as keyof MetaDimensionScores,
-        metaDimensions[dim as keyof MetaDimensionScores]
-      );
-      const phrase = framing ? framing.fragments.alignmentPhrase : '';
-      agreements.push({ axes: axes.join(', '), phrase });
-    }
-
-    for (const [dim, axes] of Object.entries(disagreementsByDim)) {
-      const framing = getValueFraming(
-        dim as keyof MetaDimensionScores,
-        metaDimensions[dim as keyof MetaDimensionScores]
-      );
-      const phrase = framing ? framing.fragments.tensionPhrase : '';
-      disagreements.push({ axes: axes.join(', '), phrase });
-    }
-
-    return {
-      agreements: agreements.slice(0, 2),
-      disagreements: disagreements.slice(0, 1),
-    };
-  }, [match, metaDimensions]);
-
-  const hasValueReasons =
-    valueFramedReasons &&
-    (valueFramedReasons.agreements.length > 0 || valueFramedReasons.disagreements.length > 0);
+  const alignedValues = match?.alignedValues || [];
+  const conflictingValues = match?.conflictingValues || [];
 
   // Border classes
   const borderClass = isSelected
@@ -88,9 +33,9 @@ export default function CandidateCard({
 
   // Match circle classes
   const matchCircleClass =
-    matchPercent >= 70
+    matchPercent >= 65
       ? 'border-green-500 bg-green-50'
-      : matchPercent >= 40
+      : matchPercent >= 45
         ? 'border-amber-500 bg-amber-50'
         : 'border-gray-300 bg-gray-50';
 
@@ -136,47 +81,44 @@ export default function CandidateCard({
             </p>
           )}
 
-          {/* Value-framed match info */}
-          {hasValueReasons ? (
+          {/* Value-based match info */}
+          {(alignedValues.length > 0 || conflictingValues.length > 0) && (
             <div className="mt-1.5 space-y-0.5">
-              {valueFramedReasons.agreements.length > 0 && (
-                <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">
-                  Where you align
-                </span>
+              {alignedValues.length > 0 && (
+                <>
+                  <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">
+                    Shared values
+                  </span>
+                  <p className="text-[11px] text-green-600 leading-[15px]">
+                    {alignedValues.join(', ')}
+                  </p>
+                </>
               )}
-              {valueFramedReasons.agreements.map((a, i) => (
-                <p key={`a-${i}`} className="text-[11px] text-green-600 leading-[15px]">
-                  <span className="font-bold">{a.axes}</span>
-                  {a.phrase ? `: ${a.phrase}` : ''}
-                </p>
-              ))}
-              {valueFramedReasons.disagreements.length > 0 && (
-                <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide mt-1">
-                  Where you differ
-                </span>
-              )}
-              {valueFramedReasons.disagreements.map((d, i) => (
-                <p key={`d-${i}`} className="text-[11px] text-amber-500 leading-[15px]">
-                  <span className="font-bold">{d.axes}</span>
-                  {d.phrase ? `: ${d.phrase}` : ''}
-                </p>
-              ))}
-            </div>
-          ) : match &&
-            (match.keyAgreements.length > 0 || match.keyDisagreements.length > 0) ? (
-            <div className="mt-1.5 space-y-0.5">
-              {match.keyAgreements.length > 0 && (
-                <p className="text-[11px] text-green-600 leading-[15px]">
-                  Where you align: {match.keyAgreements.join(', ')}
-                </p>
-              )}
-              {match.keyDisagreements.length > 0 && (
-                <p className="text-[11px] text-amber-500 leading-[15px]">
-                  Where you differ: {match.keyDisagreements.join(', ')}
-                </p>
+              {conflictingValues.length > 0 && (
+                <>
+                  <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide mt-1">
+                    Different priorities
+                  </span>
+                  <p className="text-[11px] text-amber-500 leading-[15px]">
+                    {conflictingValues.join(', ')}
+                  </p>
+                </>
               )}
             </div>
-          ) : null}
+          )}
+
+          {/* Compare link */}
+          {match && match.details && match.details.length > 0 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onCompare();
+              }}
+              className="text-xs font-semibold text-blue-500 mt-2 hover:underline"
+            >
+              See value comparison &rsaquo;
+            </button>
+          )}
         </div>
 
         {/* Match percentage circle */}
@@ -194,18 +136,6 @@ export default function CandidateCard({
           </div>
         </div>
       </button>
-
-      {/* Compare link */}
-      {match && match.axisComparisons.length > 0 && (
-        <button
-          onClick={onCompare}
-          className="flex items-center justify-center gap-1.5 mt-2.5 pt-2.5 border-t border-gray-100 w-full hover:opacity-80 transition-opacity"
-        >
-          <BarChart3 className="h-3.5 w-3.5 text-blue-500" />
-          <span className="text-[13px] font-semibold text-blue-500">See how we compare</span>
-          <ExternalLink className="h-3.5 w-3.5 text-blue-500" />
-        </button>
-      )}
     </div>
   );
 }
