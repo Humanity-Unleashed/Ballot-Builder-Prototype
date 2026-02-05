@@ -13,7 +13,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { useBlueprint } from '@/context/BlueprintContext';
-import { useUserStore } from '@/stores/userStore';
+import { useUserStore, selectHasHydrated } from '@/stores/userStore';
 import { civicAxesApi } from '@/services/api';
 import type { SwipeEvent, AxisScore } from '@/services/api';
 import type { Spec } from '@/types/civicAssessment';
@@ -49,6 +49,8 @@ export default function BlueprintPage() {
     updateAxisValue,
     updateAxisImportance,
   } = useBlueprint();
+
+  const hasHydrated = useUserStore(selectHasHydrated);
 
   // Spec + loading
   const [spec, setSpec] = useState<Spec | null>(null);
@@ -88,6 +90,7 @@ export default function BlueprintPage() {
   // ────────────────────────────────────────
   // Fetch spec on mount
   // ────────────────────────────────────────
+  // Fetch spec on mount (runs once)
   useEffect(() => {
     async function fetchSpec() {
       try {
@@ -96,16 +99,6 @@ export default function BlueprintPage() {
         setSpec(fetchedSpec);
         setSelectedDomains(new Set(fetchedSpec.domains.map((d) => d.id)));
         setError(null);
-
-        // If user already has a completed profile, go straight to complete
-        if (profile && profile.domains && profile.domains.length > 0) {
-          const hasSetAxes = profile.domains.some((d) =>
-            d.axes.some((a) => a.source !== 'default'),
-          );
-          if (hasSetAxes) {
-            setBlueprintState('complete');
-          }
-        }
       } catch (err) {
         console.error('Failed to load civic axes spec:', err);
         setError('Failed to load assessment data. Please try again.');
@@ -114,10 +107,12 @@ export default function BlueprintPage() {
       }
     }
     fetchSpec();
-  }, [profile]);
+  }, []);
 
-  // Keep blueprint state in sync when profile shows up
+  // Check if user has completed profile and set state accordingly
+  // This runs after spec loads and whenever profile changes
   useEffect(() => {
+    if (!spec) return; // Wait for spec to load first
     if (profile && profile.domains && profile.domains.length > 0) {
       const hasSetAxes = profile.domains.some((d) =>
         d.axes.some((a) => a.source !== 'default'),
@@ -126,7 +121,7 @@ export default function BlueprintPage() {
         setBlueprintState('complete');
       }
     }
-  }, [profile, blueprintState]);
+  }, [profile, spec, blueprintState]);
 
   // ────────────────────────────────────────
   // Helpers for the assessment flow
@@ -259,7 +254,7 @@ export default function BlueprintPage() {
   // ────────────────────────────────────────
   // Loading & error states
   // ────────────────────────────────────────
-  if (loading || blueprintLoading) {
+  if (loading || blueprintLoading || !hasHydrated) {
     return (
       <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center bg-gray-50">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-violet-600" />

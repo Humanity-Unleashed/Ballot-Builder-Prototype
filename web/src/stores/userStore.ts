@@ -34,6 +34,7 @@ export interface AxisScore {
 }
 
 interface UserState {
+  _hasHydrated: boolean;
   spec: Spec | null;
   isSpecLoading: boolean;
   specError: string | null;
@@ -165,6 +166,7 @@ function updateProfileFromScores(
 }
 
 const initialState: UserState = {
+  _hasHydrated: false,
   spec: null,
   isSpecLoading: false,
   specError: null,
@@ -506,10 +508,16 @@ export const useUserStore = create<UserStore>()(
         hasCompletedOnboarding: state.hasCompletedOnboarding,
         hasCompletedAssessment: state.hasCompletedAssessment,
       }),
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          state._hasHydrated = true;
+        }
+      },
     }
   )
 );
 
+export const selectHasHydrated = (state: UserStore) => state._hasHydrated;
 export const selectSpec = (state: UserStore) => state.spec;
 export const selectIsSpecLoading = (state: UserStore) => state.isSpecLoading;
 export const selectSpecError = (state: UserStore) => state.specError;
