@@ -30,9 +30,13 @@ export interface SchwartzDimension {
 export interface AssessmentItem {
   id: string;
   text: string;
-  valueId: string;        // Which value this item measures
+  valueId: string;        // Which value this item measures (primary)
   weight: number;         // Scoring weight (typically 1, can be higher for core items)
   reversed: boolean;      // If true, disagree = higher score for value
+  tradeoff?: {            // Optional: for tradeoff items that measure two values
+    opposingValueId: string;  // The second value being measured
+    opposingWeight: number;   // Usually negative (e.g., -0.5) - disagreeing boosts this value
+  };
 }
 
 export interface SchwartzSpec {
@@ -204,234 +208,285 @@ export const schwartzSpec: SchwartzSpec = {
     },
   ],
   items: [
-    // Universalism (Fairness & Equality) - 3 items
+    // ============================================================
+    // SINGLE-VALUE ITEMS (20 total: 2 per value)
+    // These are civic-framed statements measuring one value each
+    // ============================================================
+
+    // Universalism (Fairness & Equality) - 2 items
     {
       id: 'univ_1',
-      text: 'Everyone deserves equal opportunities regardless of their background.',
+      text: 'Everyone deserves equal access to opportunities, regardless of their background.',
       valueId: 'universalism',
       weight: 1,
       reversed: false,
     },
     {
       id: 'univ_2',
-      text: 'Protecting the environment should be a top priority, even if it costs money.',
-      valueId: 'universalism',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'univ_3',
-      text: 'We should try to understand people who are different from us.',
+      text: 'Policies should protect the environment, even when it costs money or jobs.',
       valueId: 'universalism',
       weight: 1,
       reversed: false,
     },
 
-    // Benevolence (Helping Others) - 3 items
+    // Benevolence (Helping Others) - 2 items
     {
       id: 'bene_1',
-      text: 'Helping people close to me is one of my most important goals.',
+      text: 'Government should fund programs that help struggling families in our community.',
       valueId: 'benevolence',
       weight: 1,
       reversed: false,
     },
     {
       id: 'bene_2',
-      text: 'I go out of my way to be a reliable and trustworthy friend.',
-      valueId: 'benevolence',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'bene_3',
-      text: 'Loyalty to family and friends is extremely important to me.',
+      text: 'A strong society takes care of its most vulnerable members.',
       valueId: 'benevolence',
       weight: 1,
       reversed: false,
     },
 
-    // Tradition - 3 items
+    // Tradition - 2 items
     {
       id: 'trad_1',
-      text: 'Traditional values and customs give life meaning.',
+      text: 'Policies should respect and preserve traditional values and ways of life.',
       valueId: 'tradition',
       weight: 1,
       reversed: false,
     },
     {
       id: 'trad_2',
-      text: 'I respect the traditions of my culture or religion.',
-      valueId: 'tradition',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'trad_3',
-      text: 'Maintaining time-honored practices is important to me.',
+      text: 'Religious and cultural traditions should have a voice in public life.',
       valueId: 'tradition',
       weight: 1,
       reversed: false,
     },
 
-    // Conformity (Respect for Rules) - 3 items
+    // Conformity (Respect for Rules) - 2 items
     {
       id: 'conf_1',
-      text: 'People should follow rules even when no one is watching.',
+      text: 'Strong law enforcement is essential for a well-functioning society.',
       valueId: 'conformity',
       weight: 1,
       reversed: false,
     },
     {
       id: 'conf_2',
-      text: 'It is important to be polite and not bother others.',
-      valueId: 'conformity',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'conf_3',
-      text: 'I try to avoid doing anything that people would consider wrong.',
+      text: 'People have a duty to follow laws and social norms, even ones they disagree with.',
       valueId: 'conformity',
       weight: 1,
       reversed: false,
     },
 
-    // Security (Safety & Stability) - 3 items
+    // Security (Safety & Stability) - 2 items
     {
       id: 'secu_1',
-      text: 'Living in a safe and secure environment is essential to me.',
+      text: 'Public safety should be a top priority for government.',
       valueId: 'security',
       weight: 1,
       reversed: false,
     },
     {
       id: 'secu_2',
-      text: 'A stable government and social order are very important.',
-      valueId: 'security',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'secu_3',
-      text: 'I prefer to avoid risks and stick with what I know.',
+      text: 'A stable, predictable society is better than one that is constantly changing.',
       valueId: 'security',
       weight: 1,
       reversed: false,
     },
 
-    // Power (Influence & Leadership) - 3 items
+    // Power (Influence & Leadership) - 2 items
     {
       id: 'powr_1',
-      text: 'Being in charge and having authority over others appeals to me.',
+      text: 'Effective leaders need the authority to make decisions without too much interference.',
       valueId: 'power',
       weight: 1,
       reversed: false,
     },
     {
       id: 'powr_2',
-      text: 'Having wealth and material possessions is important to me.',
-      valueId: 'power',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'powr_3',
-      text: 'I like to be the one making decisions in a group.',
+      text: 'Those who have built success and wealth have earned their influence in society.',
       valueId: 'power',
       weight: 1,
       reversed: false,
     },
 
-    // Achievement (Personal Success) - 3 items
+    // Achievement (Personal Success) - 2 items
     {
       id: 'achi_1',
-      text: 'Being very successful is important to me.',
+      text: 'People who work hard and excel should be rewarded more than those who do not.',
       valueId: 'achievement',
       weight: 1,
       reversed: false,
     },
     {
       id: 'achi_2',
-      text: 'I want people to recognize my accomplishments.',
-      valueId: 'achievement',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'achi_3',
-      text: 'I am ambitious and work hard to achieve my goals.',
+      text: 'Competition brings out the best in people and drives progress.',
       valueId: 'achievement',
       weight: 1,
       reversed: false,
     },
 
-    // Hedonism (Enjoying Life) - 3 items
+    // Hedonism (Enjoying Life) - 2 items
     {
       id: 'hedo_1',
-      text: "Enjoying life's pleasures is very important to me.",
+      text: 'Quality of life and personal happiness matter as much as economic productivity.',
       valueId: 'hedonism',
       weight: 1,
       reversed: false,
     },
     {
       id: 'hedo_2',
-      text: 'I try to have as much fun as possible.',
-      valueId: 'hedonism',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'hedo_3',
-      text: 'Taking time to enjoy myself is a priority.',
+      text: 'Government should not restrict personal lifestyle choices that do not harm others.',
       valueId: 'hedonism',
       weight: 1,
       reversed: false,
     },
 
-    // Stimulation (New Experiences) - 3 items
+    // Stimulation (New Experiences) - 2 items
     {
       id: 'stim_1',
-      text: 'I seek out new and exciting experiences.',
+      text: 'We should embrace new technologies and ways of doing things, even if they are disruptive.',
       valueId: 'stimulation',
       weight: 1,
       reversed: false,
     },
     {
       id: 'stim_2',
-      text: 'Variety and change make life more interesting.',
-      valueId: 'stimulation',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'stim_3',
-      text: 'I like to take risks and try new things.',
+      text: 'Taking calculated risks on innovative policies can lead to better outcomes.',
       valueId: 'stimulation',
       weight: 1,
       reversed: false,
     },
 
-    // Self-Direction (Independence) - 3 items
+    // Self-Direction (Independence) - 2 items
     {
       id: 'sdir_1',
-      text: 'Making my own decisions is very important to me.',
+      text: 'People should be free to make their own choices without government interference.',
       valueId: 'self_direction',
       weight: 1,
       reversed: false,
     },
     {
       id: 'sdir_2',
-      text: 'I value being creative and thinking for myself.',
+      text: 'Individual liberty is one of the most important values a society can protect.',
       valueId: 'self_direction',
       weight: 1,
       reversed: false,
     },
+
+    // ============================================================
+    // TRADEOFF ITEMS (10 total)
+    // These measure two values simultaneously - agreeing increases
+    // one value score while decreasing the other (opposite/adjacent pairs)
+    // ============================================================
+
+    // Tradeoff 1: Security (+) vs Universalism (-)
+    // Agreeing = prioritize security over openness/inclusion
     {
-      id: 'sdir_3',
-      text: 'Freedom to choose what I do is essential to me.',
+      id: 'trade_1',
+      text: 'When national security and welcoming immigrants conflict, security should come first.',
+      valueId: 'security',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'universalism', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 2: Benevolence (+) vs Achievement (-)
+    // Agreeing = prioritize helping others over rewarding merit
+    {
+      id: 'trade_2',
+      text: 'Government programs should prioritize helping those who are struggling, even if it means less reward for high achievers.',
+      valueId: 'benevolence',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'achievement', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 3: Self-Direction (+) vs Conformity (-)
+    // Agreeing = prioritize personal freedom over social norms
+    {
+      id: 'trade_3',
+      text: 'People should be free to live by their own rules, even if their choices go against social norms.',
       valueId: 'self_direction',
       weight: 1,
       reversed: false,
+      tradeoff: { opposingValueId: 'conformity', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 4: Tradition (+) vs Stimulation (-)
+    // Agreeing = prioritize tradition over innovation/change
+    {
+      id: 'trade_4',
+      text: 'It is better to preserve time-tested traditions than to constantly experiment with new approaches.',
+      valueId: 'tradition',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'stimulation', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 5: Security (+) vs Self-Direction (-)
+    // Agreeing = prioritize safety over personal freedom
+    {
+      id: 'trade_5',
+      text: 'Some personal freedoms are worth sacrificing for greater public safety.',
+      valueId: 'security',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'self_direction', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 6: Universalism (+) vs Power (-)
+    // Agreeing = prioritize equality over protecting advantages of successful
+    {
+      id: 'trade_6',
+      text: 'Reducing inequality is more important than protecting the advantages of those who have already succeeded.',
+      valueId: 'universalism',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'power', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 7: Benevolence (+) vs Power (-)
+    // Agreeing = prioritize community support over self-reliance
+    {
+      id: 'trade_7',
+      text: 'We should help those in need through community support, not just expect everyone to be self-reliant.',
+      valueId: 'benevolence',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'power', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 8: Achievement (+) vs Universalism (-)
+    // Agreeing = prioritize merit-based outcomes over equal outcomes
+    {
+      id: 'trade_8',
+      text: 'A society that rewards individual merit is fairer than one focused on equal outcomes for everyone.',
+      valueId: 'achievement',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'universalism', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 9: Tradition (+) vs Self-Direction (-)
+    // Agreeing = prioritize established customs over self-expression
+    {
+      id: 'trade_9',
+      text: 'Respecting established customs and institutions matters more than individual self-expression.',
+      valueId: 'tradition',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'self_direction', opposingWeight: -0.5 },
+    },
+
+    // Tradeoff 10: Conformity (+) vs Hedonism (-)
+    // Agreeing = prioritize social responsibility over personal enjoyment
+    {
+      id: 'trade_10',
+      text: 'People have a responsibility to contribute to society, even if it means sacrificing personal enjoyment.',
+      valueId: 'conformity',
+      weight: 1,
+      reversed: false,
+      tradeoff: { opposingValueId: 'hedonism', opposingWeight: -0.5 },
     },
   ],
 };
