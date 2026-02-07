@@ -46,7 +46,10 @@
       "Bash(git checkout:*)",
       "Bash(powershell -Command \"Start-Process -FilePath ''npx'' -ArgumentList ''expo'',''start'',''--web'' -NoNewWindow\")",
       "Bash(cmd.exe /c start \"\" \"C:\\\\Users\\\\soraw\\\\Ballot-Builder\\\\frontend\\\\mockups\\\\build-tab-streamlined.html\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git -C /c/Users/jonat/OneDrive/Documents/Projects/Ballot-Builder-Prototype log --oneline -10)",
+      "Bash(git -C /c/Users/jonat/OneDrive/Documents/Projects/Ballot-Builder-Prototype show --name-only 82e04bc)",
+      "Bash(npm run dev:*)"
     ]
   }
 }

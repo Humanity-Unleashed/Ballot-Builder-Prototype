@@ -1,5 +1,5 @@
 # ============================================
-# Ballot Builder - Git Ignore
+# Ballot Builder - Next.js
 # ============================================
 
 # --------------------------------------------
@@ -7,7 +7,12 @@
 # --------------------------------------------
 node_modules/
 .pnp
-.pnp.js
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # --------------------------------------------
 # Environment & Secrets
@@ -18,12 +23,12 @@ node_modules/
 *.pem
 
 # --------------------------------------------
-# Build Output
+# Next.js Build Output
 # --------------------------------------------
-dist/
-build/
 .next/
 out/
+build/
+dist/
 
 # --------------------------------------------
 # Testing
@@ -39,6 +44,7 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
 # --------------------------------------------
 # IDE & Editor
@@ -48,48 +54,6 @@ yarn-error.log*
 *.swp
 *.swo
 *~
-.DS_Store
-Thumbs.db
-
-# --------------------------------------------
-# React Native / Mobile
-# --------------------------------------------
-# iOS
-ios/Pods/
-ios/*.xcworkspace
-ios/*.xcodeproj/xcuserdata/
-ios/*.xcodeproj/project.xcworkspace/
-*.ipa
-
-# Android
-android/.gradle/
-android/app/build/
-android/build/
-*.apk
-*.aab
-*.keystore
-!debug.keystore
-
-# Metro
-.metro-health-check*
-
-# --------------------------------------------
-# Prisma
-# --------------------------------------------
-# Don't ignore prisma/migrations - they should be committed
-
-# --------------------------------------------
-# Docker
-# --------------------------------------------
-# Don't ignore docker-compose.yml or Dockerfiles
-
-# --------------------------------------------
-# Temporary Files
-# --------------------------------------------
-tmp/
-temp/
-*.tmp
-*.bak
 
 # --------------------------------------------
 # OS Generated
@@ -101,3 +65,22 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# --------------------------------------------
+# Vercel
+# --------------------------------------------
+.vercel
+
+# --------------------------------------------
+# TypeScript
+# --------------------------------------------
+*.tsbuildinfo
+next-env.d.ts
+
+# --------------------------------------------
+# Temporary Files
+# --------------------------------------------
+tmp/
+temp/
+*.tmp
+*.bak
