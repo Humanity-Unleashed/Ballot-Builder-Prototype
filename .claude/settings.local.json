@@ -49,7 +49,9 @@
       "Bash(git push:*)",
       "Bash(git -C /c/Users/jonat/OneDrive/Documents/Projects/Ballot-Builder-Prototype log --oneline -10)",
       "Bash(git -C /c/Users/jonat/OneDrive/Documents/Projects/Ballot-Builder-Prototype show --name-only 82e04bc)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(tasklist:*)",
+      "Bash(taskkill:*)"
     ]
   }
 }
