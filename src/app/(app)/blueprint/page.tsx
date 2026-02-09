@@ -5,7 +5,7 @@
  *
  * Manages three states:
  *   1. not_started  - Shows intro screen
- *   2. assessment   - 5-point Likert questions
+ *   2. assessment   - Pick-one vignette scenarios
  *   3. complete     - Spider chart results view (civic blueprint)
  */
 
@@ -21,11 +21,11 @@ import {
   selectValueScores,
   selectDimensionScores,
 } from '@/stores/schwartzStore';
-import { schwartzApi, type SchwartzAssessmentItem } from '@/services/api';
+import { schwartzApi, type SchwartzVignette } from '@/services/api';
 
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import ValuesIntro from '@/components/schwartz/ValuesIntro';
-import AssessmentQuestion from '@/components/schwartz/AssessmentQuestion';
+import VignetteQuestion from '@/components/schwartz/VignetteQuestion';
 import ValuesResults from '@/components/schwartz/ValuesResults';
 
 type ValuesState = 'not_started' | 'assessment' | 'complete';
@@ -48,9 +48,9 @@ export default function ValuesPage() {
 
   // Local state
   const [pageState, setPageState] = useState<ValuesState>('not_started');
-  const [items, setItems] = useState<SchwartzAssessmentItem[]>([]);
+  const [vignettes, setVignettes] = useState<SchwartzVignette[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [localResponses, setLocalResponses] = useState<Record<string, 1 | 2 | 3 | 4 | 5>>({});
+  const [localResponses, setLocalResponses] = useState<Record<string, string>>({}); // vignette_id → option_id
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -61,11 +61,11 @@ export default function ValuesPage() {
     if (pageState === 'not_started') {
       setScreenLabel('Blueprint - Intro');
     } else if (pageState === 'assessment') {
-      setScreenLabel(`Blueprint - Assessment (Q${currentIndex + 1}/${items.length || '?'})`);
+      setScreenLabel(`Blueprint - Assessment (Q${currentIndex + 1}/${vignettes.length || '?'})`);
     } else if (pageState === 'complete') {
       setScreenLabel('Blueprint - Results');
     }
-  }, [pageState, currentIndex, items.length, setScreenLabel]);
+  }, [pageState, currentIndex, vignettes.length, setScreenLabel]);
 
   // Load spec on mount
   useEffect(() => {
@@ -80,39 +80,40 @@ export default function ValuesPage() {
     }
   }, [hasHydrated, spec, hasCompletedAssessment, valueScores, pageState]);
 
-  // Current item
-  const currentItem = items[currentIndex];
-  const currentValue = currentItem ? localResponses[currentItem.id] ?? null : null;
+  // Current vignette
+  const currentVignette = vignettes[currentIndex];
+  const currentSelection = currentVignette ? localResponses[currentVignette.id] ?? null : null;
 
   // Start assessment
   const handleStart = async () => {
     try {
       setError(null);
-      const { items: fetchedItems } = await schwartzApi.getItems(true);
-      setItems(fetchedItems);
+      clearResponses(); // clear any stale store data (e.g. old Likert responses)
+      const { vignettes: fetched } = await schwartzApi.getVignettes(true);
+      setVignettes(fetched);
       setCurrentIndex(0);
       setLocalResponses({});
       setPageState('assessment');
     } catch (err) {
-      console.error('Failed to load items:', err);
-      setError('Failed to load assessment questions. Please try again.');
+      console.error('Failed to load vignettes:', err);
+      setError('Failed to load assessment scenarios. Please try again.');
     }
   };
 
-  // Record response and optionally advance
-  const handleResponse = (value: 1 | 2 | 3 | 4 | 5) => {
-    if (!currentItem) return;
+  // Record a vignette pick
+  const handleSelect = (optionId: string) => {
+    if (!currentVignette) return;
     setLocalResponses((prev) => ({
       ...prev,
-      [currentItem.id]: value,
+      [currentVignette.id]: optionId,
     }));
     // Also record to store for persistence
-    recordResponse({ item_id: currentItem.id, response: value });
+    recordResponse({ vignette_id: currentVignette.id, selected_option_id: optionId });
   };
 
   // Navigate to next question or submit
   const handleNext = async () => {
-    if (currentIndex >= items.length - 1) {
+    if (currentIndex >= vignettes.length - 1) {
       // Submit and score
       setIsSubmitting(true);
       try {
@@ -139,7 +140,7 @@ export default function ValuesPage() {
   // Retake assessment
   const handleRetake = () => {
     clearResponses();
-    setItems([]);
+    setVignettes([]);
     setCurrentIndex(0);
     setLocalResponses({});
     setPageState('not_started');
@@ -178,7 +179,7 @@ export default function ValuesPage() {
 
   // Intro screen
   if (pageState === 'not_started') {
-    return <ValuesIntro onStart={handleStart} itemCount={spec.items.length} />;
+    return <ValuesIntro onStart={handleStart} />;
   }
 
   // Assessment flow
@@ -192,25 +193,25 @@ export default function ValuesPage() {
       );
     }
 
-    if (!currentItem) {
+    if (!currentVignette) {
       return (
         <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center bg-gray-50">
-          <p className="text-gray-500">No questions available</p>
+          <p className="text-gray-500">No scenarios available</p>
         </div>
       );
     }
 
     return (
-      <AssessmentQuestion
-        item={currentItem}
+      <VignetteQuestion
+        vignette={currentVignette}
         currentIndex={currentIndex}
-        totalItems={items.length}
-        currentValue={currentValue}
-        onResponse={handleResponse}
+        totalVignettes={vignettes.length}
+        selectedOptionId={currentSelection}
+        onSelect={handleSelect}
         onNext={handleNext}
         onBack={handleBack}
         canGoBack={currentIndex > 0}
-        isLast={currentIndex >= items.length - 1}
+        isLast={currentIndex >= vignettes.length - 1}
       />
     );
   }

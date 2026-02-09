@@ -5,10 +5,9 @@ import { Compass, ArrowRight, MessageSquarePlus } from 'lucide-react';
 
 interface ValuesIntroProps {
   onStart: () => void;
-  itemCount: number;
 }
 
-export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
+export default function ValuesIntro({ onStart }: ValuesIntroProps) {
   return (
     <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gradient-to-b from-violet-50 to-white">
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
@@ -55,7 +54,7 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
                 1
               </span>
               <span>
-                You&apos;ll see {itemCount} statements about values and priorities
+                You&apos;ll see 10 scenarios about civic decisions
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -63,7 +62,7 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
                 2
               </span>
               <span>
-                Rate each one from Strongly Disagree to Strongly Agree
+                Pick the option that matters most to you
               </span>
             </li>
             <li className="flex items-start gap-3">

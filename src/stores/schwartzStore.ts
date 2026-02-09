@@ -3,6 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import {
   schwartzApi,
   type SchwartzSpec,
+  type SchwartzVignetteResponse,
   type SchwartzItemResponse,
   type SchwartzValueScore,
   type SchwartzDimensionScore,
@@ -21,8 +22,8 @@ interface SchwartzState {
   isSpecLoading: boolean;
   specError: string | null;
 
-  // Assessment state
-  responses: SchwartzItemResponse[];
+  // Assessment state (vignette picks)
+  responses: SchwartzVignetteResponse[];
   hasCompletedAssessment: boolean;
 
   // Scores
@@ -30,7 +31,7 @@ interface SchwartzState {
   dimensionScores: SchwartzDimensionScore[];
   individualMean: number;
 
-  // Booster state
+  // Booster state (still Likert-based)
   boosterResponses: Record<string, SchwartzItemResponse[]>; // keyed by boosterId
   completedBoosters: CompletedBooster[];
   dismissedBoosters: string[]; // booster IDs
@@ -40,8 +41,8 @@ interface SchwartzActions {
   loadSpec: () => Promise<void>;
   setSpec: (spec: SchwartzSpec) => void;
 
-  recordResponse: (response: SchwartzItemResponse) => void;
-  recordResponses: (responses: SchwartzItemResponse[]) => void;
+  recordResponse: (response: SchwartzVignetteResponse) => void;
+  recordResponses: (responses: SchwartzVignetteResponse[]) => void;
   clearResponses: () => void;
 
   submitAndScore: () => Promise<void>;
@@ -101,8 +102,8 @@ export const useSchwartzStore = create<SchwartzStore>()(
 
       recordResponse: (response) => {
         set((state) => {
-          // Replace existing response for same item or add new
-          const existing = state.responses.findIndex((r) => r.item_id === response.item_id);
+          // Replace existing response for same vignette or add new
+          const existing = state.responses.findIndex((r) => r.vignette_id === response.vignette_id);
           if (existing >= 0) {
             const newResponses = [...state.responses];
             newResponses[existing] = response;
@@ -173,15 +174,12 @@ export const useSchwartzStore = create<SchwartzStore>()(
 
       reScoreWithBoosters: async () => {
         const { responses, boosterResponses } = get();
-        // Merge baseline + all booster responses
-        const allResponses = [
-          ...responses,
-          ...Object.values(boosterResponses).flat(),
-        ];
-        if (allResponses.length === 0) return;
+        // Merge baseline vignette responses + all booster Likert responses
+        const allBoosterResponses = Object.values(boosterResponses).flat();
+        if (responses.length === 0 && allBoosterResponses.length === 0) return;
 
         try {
-          const result = await schwartzApi.scoreResponses(allResponses);
+          const result = await schwartzApi.scoreResponses(responses, allBoosterResponses);
           set({
             valueScores: result.values,
             dimensionScores: result.dimensions,

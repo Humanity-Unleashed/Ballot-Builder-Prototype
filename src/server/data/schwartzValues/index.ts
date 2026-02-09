@@ -2,12 +2,13 @@ export {
   schwartzSpec,
   getValueById,
   getDimensionById,
-  getItemsForValue,
-  getItemsForDimension,
+  getVignetteItems,
   type SchwartzSpec,
   type SchwartzValue,
   type SchwartzDimension,
   type AssessmentItem,
+  type Vignette,
+  type VignetteOption,
 } from './spec';
 
 export {

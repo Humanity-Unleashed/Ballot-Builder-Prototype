@@ -1,10 +1,10 @@
 /**
- * Schwartz Values Specification v1.0.0
+ * Schwartz Values Specification v2.0.0
  *
  * Based on Schwartz's Theory of Basic Human Values with:
  * - 10 basic values (with relatable display names)
  * - 4 higher-order dimensions
- * - 5-point Likert scale assessment items
+ * - 10 pick-one vignette scenarios (replacing Likert items)
  *
  * Reference: Schwartz, S.H. (1992, 2012)
  */
@@ -39,16 +39,21 @@ export interface AssessmentItem {
   };
 }
 
+export interface VignetteOption {
+  id: string;
+  text: string;
+  valueId: string;        // Which Schwartz value this option maps to
+}
+
+export interface Vignette {
+  id: string;
+  scenario: string;       // The situation description
+  options: VignetteOption[];
+}
+
 export interface SchwartzSpec {
   spec_version: string;
   generated_at_utc: string;
-  response_scale: {
-    strongly_disagree: number;
-    disagree: number;
-    neutral: number;
-    agree: number;
-    strongly_agree: number;
-  };
   scoring: {
     value_range: [number, number];
     use_ipsatization: boolean;
@@ -56,19 +61,12 @@ export interface SchwartzSpec {
   };
   dimensions: SchwartzDimension[];
   values: SchwartzValue[];
-  items: AssessmentItem[];
+  vignettes: Vignette[];
 }
 
 export const schwartzSpec: SchwartzSpec = {
-  spec_version: '1.0.0',
+  spec_version: '2.0.0',
   generated_at_utc: new Date().toISOString(),
-  response_scale: {
-    strongly_disagree: 1,
-    disagree: 2,
-    neutral: 3,
-    agree: 4,
-    strongly_agree: 5,
-  },
   scoring: {
     value_range: [1, 5],
     use_ipsatization: true,
@@ -207,289 +205,140 @@ export const schwartzSpec: SchwartzSpec = {
       oppositeValue: 'tradition',
     },
   ],
-  items: [
-    // ============================================================
-    // SINGLE-VALUE ITEMS (20 total: 2 per value)
-    // These are civic-framed statements measuring one value each
-    // ============================================================
-
-    // Universalism (Fairness & Equality) - 2 items
+  vignettes: [
+    // 1. City Budget → Security, Benevolence, Self-Direction, Tradition
     {
-      id: 'univ_1',
-      text: 'Everyone should get a fair shot, no matter where they come from.',
-      valueId: 'universalism',
-      weight: 1,
-      reversed: false,
+      id: 'v_city_budget',
+      scenario: 'Your city has extra money in the budget this year. Which use do you think matters most?',
+      options: [
+        { id: 'v_city_budget_a', text: 'Hire more police officers and upgrade public safety systems', valueId: 'security' },
+        { id: 'v_city_budget_b', text: 'Fund job training and housing assistance for low-income families', valueId: 'benevolence' },
+        { id: 'v_city_budget_c', text: 'Cut taxes so people keep more of what they earn', valueId: 'self_direction' },
+        { id: 'v_city_budget_d', text: 'Restore historic buildings and fund cultural preservation programs', valueId: 'tradition' },
+      ],
     },
+    // 2. Vacant Land → Universalism, Achievement, Hedonism, Tradition
     {
-      id: 'univ_2',
-      text: 'We should protect the environment, even if it costs us money.',
-      valueId: 'universalism',
-      weight: 1,
-      reversed: false,
+      id: 'v_vacant_land',
+      scenario: 'A large vacant lot opens up in your neighborhood. What should go there?',
+      options: [
+        { id: 'v_vacant_land_a', text: 'Affordable housing for families who can\'t afford rent nearby', valueId: 'universalism' },
+        { id: 'v_vacant_land_b', text: 'A business hub that attracts companies and creates competitive jobs', valueId: 'achievement' },
+        { id: 'v_vacant_land_c', text: 'A park, food hall, and entertainment space for the community to enjoy', valueId: 'hedonism' },
+        { id: 'v_vacant_land_d', text: 'A community center modeled after the neighborhood\'s original architecture', valueId: 'tradition' },
+      ],
     },
-
-    // Benevolence (Helping Others) - 2 items
+    // 3. School Priorities → Conformity, Self-Direction, Achievement, Benevolence
     {
-      id: 'bene_1',
-      text: 'The government should help families who are struggling to get by.',
-      valueId: 'benevolence',
-      weight: 1,
-      reversed: false,
+      id: 'v_school',
+      scenario: 'Your school district is choosing a new focus. Which matters most?',
+      options: [
+        { id: 'v_school_a', text: 'Clear rules, discipline, and respect for authority', valueId: 'conformity' },
+        { id: 'v_school_b', text: 'Letting students choose their own courses and learning pace', valueId: 'self_direction' },
+        { id: 'v_school_c', text: 'Rigorous academics and college prep to help students compete', valueId: 'achievement' },
+        { id: 'v_school_d', text: 'Community service requirements so students learn to help others', valueId: 'benevolence' },
+      ],
     },
+    // 4. Immigration → Security, Universalism, Power, Benevolence
     {
-      id: 'bene_2',
-      text: 'A good society looks out for people who need the most help.',
-      valueId: 'benevolence',
-      weight: 1,
-      reversed: false,
+      id: 'v_immigration',
+      scenario: 'Which approach to immigration do you most support?',
+      options: [
+        { id: 'v_immigration_a', text: 'Stricter border enforcement and reduced immigration levels', valueId: 'security' },
+        { id: 'v_immigration_b', text: 'Equal paths to citizenship regardless of where someone comes from', valueId: 'universalism' },
+        { id: 'v_immigration_c', text: 'Prioritize immigrants who bring investment, skills, or business experience', valueId: 'power' },
+        { id: 'v_immigration_d', text: 'Expand local programs that help immigrants settle in and get on their feet', valueId: 'benevolence' },
+      ],
     },
-
-    // Tradition - 2 items
+    // 5. New Technology → Security, Self-Direction, Stimulation, Universalism
     {
-      id: 'trad_1',
-      text: 'Our laws should protect traditional values and ways of life.',
-      valueId: 'tradition',
-      weight: 1,
-      reversed: false,
+      id: 'v_technology',
+      scenario: 'A new technology could change how people work and live, but it\'s unpredictable. What\'s the right approach?',
+      options: [
+        { id: 'v_technology_a', text: 'Regulate it carefully to prevent harm and protect existing jobs', valueId: 'security' },
+        { id: 'v_technology_b', text: 'Let people and businesses decide for themselves whether to adopt it', valueId: 'self_direction' },
+        { id: 'v_technology_c', text: 'Invest heavily in it \u2014 bold moves are how real progress happens', valueId: 'stimulation' },
+        { id: 'v_technology_d', text: 'Use it to help close gaps between those who have the most and the least', valueId: 'universalism' },
+      ],
     },
+    // 6. Noise Complaint → Hedonism, Tradition, Conformity, Achievement
     {
-      id: 'trad_2',
-      text: 'Religious and cultural traditions should play a role in public life.',
-      valueId: 'tradition',
-      weight: 1,
-      reversed: false,
+      id: 'v_noise',
+      scenario: 'A popular new restaurant/bar wants to expand its hours in a residential neighborhood. Neighbors are divided.',
+      options: [
+        { id: 'v_noise_a', text: 'Let them expand \u2014 people deserve places to enjoy themselves', valueId: 'hedonism' },
+        { id: 'v_noise_b', text: 'Block it \u2014 the neighborhood\'s established character should come first', valueId: 'tradition' },
+        { id: 'v_noise_c', text: 'Allow it only with strict noise limits and operating rules', valueId: 'conformity' },
+        { id: 'v_noise_d', text: 'Support it if the owner is a local entrepreneur building something successful', valueId: 'achievement' },
+      ],
     },
-
-    // Conformity (Respect for Rules) - 2 items
+    // 7. Public Health → Security, Self-Direction, Benevolence, Conformity
     {
-      id: 'conf_1',
-      text: 'Strong law enforcement is needed for society to work well.',
-      valueId: 'conformity',
-      weight: 1,
-      reversed: false,
+      id: 'v_health',
+      scenario: 'A serious health risk is spreading. What approach makes the most sense?',
+      options: [
+        { id: 'v_health_a', text: 'Mandatory measures \u2014 masks, closures, whatever it takes to keep people safe', valueId: 'security' },
+        { id: 'v_health_b', text: 'Voluntary guidelines \u2014 people should decide their own risk tolerance', valueId: 'self_direction' },
+        { id: 'v_health_c', text: 'Focus resources on the people who are most at risk and least able to cope', valueId: 'benevolence' },
+        { id: 'v_health_d', text: 'Defer to the leaders and experts who know the situation best', valueId: 'conformity' },
+      ],
     },
+    // 8. Economic Policy → Power, Achievement, Universalism, Hedonism
     {
-      id: 'conf_2',
-      text: 'People should follow the rules, even if they don\'t agree with them.',
-      valueId: 'conformity',
-      weight: 1,
-      reversed: false,
+      id: 'v_economy',
+      scenario: 'The economy is growing but unevenly. What matters most?',
+      options: [
+        { id: 'v_economy_a', text: 'Make sure business leaders and job creators have the influence to keep things moving', valueId: 'power' },
+        { id: 'v_economy_b', text: 'Reward the people who are working hardest and producing the most', valueId: 'achievement' },
+        { id: 'v_economy_c', text: 'Raise taxes on the wealthy to fund programs that help everyone equally', valueId: 'universalism' },
+        { id: 'v_economy_d', text: 'Focus less on growth and more on making sure people can enjoy their lives', valueId: 'hedonism' },
+      ],
     },
-
-    // Security (Safety & Stability) - 2 items
+    // 9. Education Funding → Stimulation, Tradition, Universalism, Power
     {
-      id: 'secu_1',
-      text: 'Keeping people safe should be the government\'s top job.',
-      valueId: 'security',
-      weight: 1,
-      reversed: false,
+      id: 'v_education',
+      scenario: 'The state has new education funding to allocate. Where should it go?',
+      options: [
+        { id: 'v_education_a', text: 'Experimental programs \u2014 new teaching methods, technology, pilot projects', valueId: 'stimulation' },
+        { id: 'v_education_b', text: 'Civics and history \u2014 students should understand the traditions that built this country', valueId: 'tradition' },
+        { id: 'v_education_c', text: 'Schools in the poorest districts, to level the playing field', valueId: 'universalism' },
+        { id: 'v_education_d', text: 'Leadership and management academies to develop future decision-makers', valueId: 'power' },
+      ],
     },
+    // 10. Criminal Justice → Conformity, Benevolence, Security, Self-Direction
     {
-      id: 'secu_2',
-      text: 'A steady, predictable society is better than one that keeps changing.',
-      valueId: 'security',
-      weight: 1,
-      reversed: false,
-    },
-
-    // Power (Influence & Leadership) - 2 items
-    {
-      id: 'powr_1',
-      text: 'Good leaders need the power to make decisions without too many roadblocks.',
-      valueId: 'power',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'powr_2',
-      text: 'People who built their success have earned their say in how things work.',
-      valueId: 'power',
-      weight: 1,
-      reversed: false,
-    },
-
-    // Achievement (Personal Success) - 2 items
-    {
-      id: 'achi_1',
-      text: 'People who work harder should get more rewards.',
-      valueId: 'achievement',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'achi_2',
-      text: 'Competition pushes people to do their best.',
-      valueId: 'achievement',
-      weight: 1,
-      reversed: false,
-    },
-
-    // Hedonism (Enjoying Life) - 2 items
-    {
-      id: 'hedo_1',
-      text: 'Being happy matters just as much as being productive.',
-      valueId: 'hedonism',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'hedo_2',
-      text: 'The government shouldn\'t tell people how to live if they\'re not hurting anyone.',
-      valueId: 'hedonism',
-      weight: 1,
-      reversed: false,
-    },
-
-    // Stimulation (New Experiences) - 2 items
-    {
-      id: 'stim_1',
-      text: 'We should try new ideas and technology, even if it shakes things up.',
-      valueId: 'stimulation',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'stim_2',
-      text: 'It\'s worth taking risks on bold new ideas if they could make things better.',
-      valueId: 'stimulation',
-      weight: 1,
-      reversed: false,
-    },
-
-    // Self-Direction (Independence) - 2 items
-    {
-      id: 'sdir_1',
-      text: 'People should be free to make their own choices without the government stepping in.',
-      valueId: 'self_direction',
-      weight: 1,
-      reversed: false,
-    },
-    {
-      id: 'sdir_2',
-      text: 'Personal freedom is one of the most important things to protect.',
-      valueId: 'self_direction',
-      weight: 1,
-      reversed: false,
-    },
-
-    // ============================================================
-    // TRADEOFF ITEMS (10 total)
-    // These measure two values simultaneously - agreeing increases
-    // one value score while decreasing the other (opposite/adjacent pairs)
-    // ============================================================
-
-    // Tradeoff 1: Security (+) vs Universalism (-)
-    // Agreeing = prioritize security over openness/inclusion
-    {
-      id: 'trade_1',
-      text: 'If safety and welcoming newcomers clash, safety should win.',
-      valueId: 'security',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'universalism', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 2: Benevolence (+) vs Achievement (-)
-    // Agreeing = prioritize helping others over rewarding merit
-    {
-      id: 'trade_2',
-      text: 'Helping people who are struggling matters more than rewarding top performers.',
-      valueId: 'benevolence',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'achievement', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 3: Self-Direction (+) vs Conformity (-)
-    // Agreeing = prioritize personal freedom over social norms
-    {
-      id: 'trade_3',
-      text: 'People should live how they want, even if others disapprove.',
-      valueId: 'self_direction',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'conformity', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 4: Tradition (+) vs Stimulation (-)
-    // Agreeing = prioritize tradition over innovation/change
-    {
-      id: 'trade_4',
-      text: 'Sticking with what\'s worked is better than always trying something new.',
-      valueId: 'tradition',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'stimulation', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 5: Security (+) vs Self-Direction (-)
-    // Agreeing = prioritize safety over personal freedom
-    {
-      id: 'trade_5',
-      text: 'It\'s okay to give up some freedom if it makes everyone safer.',
-      valueId: 'security',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'self_direction', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 6: Universalism (+) vs Power (-)
-    // Agreeing = prioritize equality over protecting advantages of successful
-    {
-      id: 'trade_6',
-      text: 'Closing the gap between rich and poor matters more than protecting what the wealthy have built.',
-      valueId: 'universalism',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'power', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 7: Benevolence (+) vs Power (-)
-    // Agreeing = prioritize community support over self-reliance
-    {
-      id: 'trade_7',
-      text: 'Communities should step up to help people in need, not just tell them to figure it out.',
-      valueId: 'benevolence',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'power', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 8: Achievement (+) vs Universalism (-)
-    // Agreeing = prioritize merit-based outcomes over equal outcomes
-    {
-      id: 'trade_8',
-      text: 'Rewarding people based on what they earn is fairer than making sure everyone gets the same.',
-      valueId: 'achievement',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'universalism', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 9: Tradition (+) vs Self-Direction (-)
-    // Agreeing = prioritize established customs over self-expression
-    {
-      id: 'trade_9',
-      text: 'Following traditions matters more than doing your own thing.',
-      valueId: 'tradition',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'self_direction', opposingWeight: -0.5 },
-    },
-
-    // Tradeoff 10: Conformity (+) vs Hedonism (-)
-    // Agreeing = prioritize social responsibility over personal enjoyment
-    {
-      id: 'trade_10',
-      text: 'Doing your part for society is more important than enjoying yourself.',
-      valueId: 'conformity',
-      weight: 1,
-      reversed: false,
-      tradeoff: { opposingValueId: 'hedonism', opposingWeight: -0.5 },
+      id: 'v_justice',
+      scenario: 'Someone commits a nonviolent crime. What\'s the right response?',
+      options: [
+        { id: 'v_justice_a', text: 'Consistent punishment \u2014 the law is the law, no exceptions', valueId: 'conformity' },
+        { id: 'v_justice_b', text: 'Focus on rehabilitation and getting them the help they need', valueId: 'benevolence' },
+        { id: 'v_justice_c', text: 'Whatever makes the community safest, including monitoring after release', valueId: 'security' },
+        { id: 'v_justice_d', text: 'Minimize government involvement \u2014 keep people out of the system when possible', valueId: 'self_direction' },
+      ],
     },
   ],
 };
+
+/**
+ * Derive synthetic AssessmentItems from vignettes.
+ * Each vignette option becomes one item with weight 1.
+ * Used by the scoring algorithm to score vignette picks as synthetic Likert responses.
+ */
+export function getVignetteItems(): AssessmentItem[] {
+  const items: AssessmentItem[] = [];
+  for (const vignette of schwartzSpec.vignettes) {
+    for (const option of vignette.options) {
+      items.push({
+        id: option.id,
+        text: option.text,
+        valueId: option.valueId,
+        weight: 1,
+        reversed: false,
+      });
+    }
+  }
+  return items;
+}
 
 // Helper to get value by ID
 export function getValueById(id: string): SchwartzValue | undefined {
@@ -499,18 +348,4 @@ export function getValueById(id: string): SchwartzValue | undefined {
 // Helper to get dimension by ID
 export function getDimensionById(id: string): SchwartzDimension | undefined {
   return schwartzSpec.dimensions.find((d) => d.id === id);
-}
-
-// Helper to get items for a value
-export function getItemsForValue(valueId: string): AssessmentItem[] {
-  return schwartzSpec.items.filter((item) => item.valueId === valueId);
-}
-
-// Helper to get all items for a dimension
-export function getItemsForDimension(dimensionId: string): AssessmentItem[] {
-  const dimension = getDimensionById(dimensionId);
-  if (!dimension) return [];
-  return schwartzSpec.items.filter((item) =>
-    dimension.values.includes(item.valueId)
-  );
 }

@@ -2,20 +2,28 @@
  * Schwartz Values Scoring Service
  *
  * Implements scoring algorithm for Schwartz Value Survey responses:
- * 1. Calculate raw mean score for each value (sum / count)
- * 2. Optionally apply ipsatization (center on individual mean)
- * 3. Aggregate to dimension level
+ * 1. Convert vignette picks into synthetic item-level responses
+ * 2. Calculate raw mean score for each value (sum / count)
+ * 3. Optionally apply ipsatization (center on individual mean)
+ * 4. Aggregate to dimension level
  */
 
 import {
   schwartzSpec,
+  getVignetteItems,
   getAllBoosterItems,
   type SchwartzSpec,
+  type Vignette,
 } from '../data/schwartzValues';
 
 export interface ItemResponse {
   item_id: string;
   response: 1 | 2 | 3 | 4 | 5; // 5-point Likert
+}
+
+export interface VignetteResponse {
+  vignette_id: string;
+  selected_option_id: string;
 }
 
 export interface ValueScore {
@@ -42,6 +50,28 @@ export interface ScoringResult {
 }
 
 /**
+ * Expand vignette picks into synthetic ItemResponse[].
+ * Selected option → 5 (strongly agree), non-selected options → 1 (strongly disagree).
+ */
+export function expandVignetteResponses(vignetteResponses: VignetteResponse[]): ItemResponse[] {
+  const synthetic: ItemResponse[] = [];
+
+  for (const vr of vignetteResponses) {
+    const vignette = schwartzSpec.vignettes.find((v) => v.id === vr.vignette_id);
+    if (!vignette) continue;
+
+    for (const option of vignette.options) {
+      synthetic.push({
+        item_id: option.id,
+        response: option.id === vr.selected_option_id ? 5 : 1,
+      });
+    }
+  }
+
+  return synthetic;
+}
+
+/**
  * Score a set of item responses and return value/dimension scores
  */
 export function scoreResponses(responses: ItemResponse[]): ScoringResult {
@@ -52,9 +82,9 @@ export function scoreResponses(responses: ItemResponse[]): ScoringResult {
   }
 
   // Calculate raw scores per value
-  // Merge baseline items with booster items so boosters are scored identically
+  // Merge vignette-derived items with booster items so boosters are scored identically
   const valueScores: Map<string, { sum: number; count: number }> = new Map();
-  const allItems = [...schwartzSpec.items, ...getAllBoosterItems()];
+  const allItems = [...getVignetteItems(), ...getAllBoosterItems()];
 
   for (const item of allItems) {
     const response = responseMap.get(item.id);
@@ -142,6 +172,20 @@ export function scoreResponses(responses: ItemResponse[]): ScoringResult {
 }
 
 /**
+ * Score a full assessment: expand vignette picks + merge with booster responses, then score.
+ */
+export function scoreAssessment(
+  vignetteResponses: VignetteResponse[],
+  boosterResponses?: ItemResponse[],
+): ScoringResult {
+  const syntheticResponses = expandVignetteResponses(vignetteResponses);
+  const allResponses = boosterResponses
+    ? [...syntheticResponses, ...boosterResponses]
+    : syntheticResponses;
+  return scoreResponses(allResponses);
+}
+
+/**
  * Get the spec
  */
 export function getSpec(): SchwartzSpec {
@@ -149,18 +193,26 @@ export function getSpec(): SchwartzSpec {
 }
 
 /**
- * Get items for assessment (optionally randomized)
+ * Get vignettes for assessment (optionally randomized)
  */
-export function getAssessmentItems(randomize: boolean = true): typeof schwartzSpec.items {
-  const items = [...schwartzSpec.items];
+export function getVignettes(randomize: boolean = true): Vignette[] {
+  const vignettes = [...schwartzSpec.vignettes];
   if (randomize) {
     // Fisher-Yates shuffle
-    for (let i = items.length - 1; i > 0; i--) {
+    for (let i = vignettes.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [items[i], items[j]] = [items[j], items[i]];
+      [vignettes[i], vignettes[j]] = [vignettes[j], vignettes[i]];
+    }
+    // Also shuffle options within each vignette
+    for (const v of vignettes) {
+      v.options = [...v.options];
+      for (let i = v.options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [v.options[i], v.options[j]] = [v.options[j], v.options[i]];
+      }
     }
   }
-  return items;
+  return vignettes;
 }
 
 /**

@@ -632,16 +632,21 @@ export interface SchwartzAssessmentItem {
   reversed: boolean;
 }
 
+export interface SchwartzVignetteOption {
+  id: string;
+  text: string;
+  valueId: string;
+}
+
+export interface SchwartzVignette {
+  id: string;
+  scenario: string;
+  options: SchwartzVignetteOption[];
+}
+
 export interface SchwartzSpec {
   spec_version: string;
   generated_at_utc: string;
-  response_scale: {
-    strongly_disagree: number;
-    disagree: number;
-    neutral: number;
-    agree: number;
-    strongly_agree: number;
-  };
   scoring: {
     value_range: [number, number];
     use_ipsatization: boolean;
@@ -649,7 +654,12 @@ export interface SchwartzSpec {
   };
   dimensions: SchwartzDimension[];
   values: SchwartzValue[];
-  items: SchwartzAssessmentItem[];
+  vignettes: SchwartzVignette[];
+}
+
+export interface SchwartzVignetteResponse {
+  vignette_id: string;
+  selected_option_id: string;
 }
 
 export interface SchwartzItemResponse {
@@ -702,16 +712,20 @@ export const schwartzApi = {
     return response.data;
   },
 
-  async getItems(randomize: boolean = true): Promise<{ items: SchwartzAssessmentItem[] }> {
-    const response = await api.get<{ items: SchwartzAssessmentItem[] }>(
+  async getVignettes(randomize: boolean = true): Promise<{ vignettes: SchwartzVignette[] }> {
+    const response = await api.get<{ vignettes: SchwartzVignette[] }>(
       `/schwartz-values/items?randomize=${randomize}`
     );
     return response.data;
   },
 
-  async scoreResponses(responses: SchwartzItemResponse[]): Promise<SchwartzScoringResult> {
+  async scoreResponses(
+    vignetteResponses: SchwartzVignetteResponse[],
+    boosterResponses?: SchwartzItemResponse[],
+  ): Promise<SchwartzScoringResult> {
     const response = await api.post<SchwartzScoringResult>('/schwartz-values/score', {
-      responses,
+      vignetteResponses,
+      boosterResponses,
     });
     return response.data;
   },
