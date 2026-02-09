@@ -23,6 +23,7 @@ import {
 } from '@/stores/schwartzStore';
 import { schwartzApi, type SchwartzAssessmentItem } from '@/services/api';
 
+import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import ValuesIntro from '@/components/schwartz/ValuesIntro';
 import AssessmentQuestion from '@/components/schwartz/AssessmentQuestion';
 import ValuesResults from '@/components/schwartz/ValuesResults';
@@ -52,6 +53,19 @@ export default function ValuesPage() {
   const [localResponses, setLocalResponses] = useState<Record<string, 1 | 2 | 3 | 4 | 5>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Feedback screen context
+  const { setScreenLabel } = useFeedbackScreen();
+
+  useEffect(() => {
+    if (pageState === 'not_started') {
+      setScreenLabel('Blueprint - Intro');
+    } else if (pageState === 'assessment') {
+      setScreenLabel(`Blueprint - Assessment (Q${currentIndex + 1}/${items.length || '?'})`);
+    } else if (pageState === 'complete') {
+      setScreenLabel('Blueprint - Results');
+    }
+  }, [pageState, currentIndex, items.length, setScreenLabel]);
 
   // Load spec on mount
   useEffect(() => {

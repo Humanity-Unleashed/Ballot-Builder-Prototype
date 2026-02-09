@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { usePathname } from 'next/navigation';
 import { MessageSquarePlus, X } from 'lucide-react';
 import { useFeedbackStore, type FeedbackEntry } from '@/stores/feedbackStore';
+import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 
 const SCREEN_NAMES: Record<string, string> = {
   '/': 'Home',
@@ -31,6 +32,7 @@ export default function FeedbackButton() {
   const [message, setMessage] = useState('');
   const [showThanks, setShowThanks] = useState(false);
   const pathname = usePathname();
+  const { screenLabel } = useFeedbackScreen();
   const addFeedback = useFeedbackStore((s) => s.addFeedback);
 
   const close = useCallback(() => {
@@ -62,7 +64,7 @@ export default function FeedbackButton() {
       id: crypto.randomUUID(),
       timestamp: new Date().toISOString(),
       screen: pathname,
-      screenName: getScreenName(pathname),
+      screenName,
       type: feedbackType,
       message: message.trim(),
     };
@@ -90,7 +92,7 @@ export default function FeedbackButton() {
     }, 1500);
   };
 
-  const screenName = getScreenName(pathname);
+  const screenName = screenLabel || getScreenName(pathname);
 
   // Floating trigger button
   const trigger = (

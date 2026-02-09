@@ -19,6 +19,7 @@ import {
   type VoteChoice,
 } from '@/lib/ballotHelpers';
 
+import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
 import PropositionVoteButtons from '@/components/ballot/PropositionVoteButtons';
@@ -50,6 +51,9 @@ export default function BallotPage() {
   const [writeInName, setWriteInName] = useState('');
   const [showSummary, setShowSummary] = useState(false);
 
+  // Feedback screen context
+  const { setScreenLabel } = useFeedbackScreen();
+
   // --------------------------------------------------
   // Fetch ballot data from API on mount
   // --------------------------------------------------
@@ -74,6 +78,27 @@ export default function BallotPage() {
   }, []);
 
   const currentItem = ballotItems[currentIndex];
+
+  // Update feedback screen label based on current sub-screen
+  useEffect(() => {
+    if (!hasHydrated || isBallotLoading) {
+      setScreenLabel('Ballot - Loading');
+    } else if (!hasCompletedAssessment || valueScores.length === 0) {
+      setScreenLabel('Ballot - Needs Blueprint');
+    } else if (ballotError) {
+      setScreenLabel('Ballot - Error');
+    } else if (showSummary) {
+      setScreenLabel('Ballot - Summary');
+    } else if (currentItem) {
+      setScreenLabel(`Ballot - Item ${currentIndex + 1}/${ballotItems.length}`);
+    } else {
+      setScreenLabel('Ballot');
+    }
+  }, [
+    hasHydrated, isBallotLoading, hasCompletedAssessment, valueScores.length,
+    ballotError, showSummary, currentItem, currentIndex, ballotItems.length,
+    setScreenLabel,
+  ]);
 
   // Get the raw ballot data for value-based recommendations
   const [rawBallot, setRawBallot] = useState<Ballot | null>(null);
