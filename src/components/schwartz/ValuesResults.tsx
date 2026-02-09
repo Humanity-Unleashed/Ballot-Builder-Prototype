@@ -1,10 +1,21 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect, useCallback } from 'react';
 import { RefreshCw, ArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import SpiderChart from './SpiderChart';
-import type { SchwartzValueScore, SchwartzDimensionScore, SchwartzSpec } from '@/services/api';
+import BoosterBanner from './BoosterBanner';
+import BoosterFlow from './BoosterFlow';
+import type {
+  SchwartzValueScore,
+  SchwartzDimensionScore,
+  SchwartzSpec,
+  SchwartzItemResponse,
+  BoosterSetMeta,
+  BoosterSet,
+} from '@/services/api';
+import { schwartzApi } from '@/services/api';
+import { useSchwartzStore } from '@/stores/schwartzStore';
 import { rawMeanToPercent } from '@/stores/schwartzStore';
 
 interface ValuesResultsProps {
@@ -157,6 +168,71 @@ export default function ValuesResults({
     [dimensionScores, valueScores]
   );
 
+  // ── Booster state ──
+  const {
+    recordBoosterResponses,
+    completeBooster,
+    dismissBooster,
+    reScoreWithBoosters,
+    getPendingBoosters,
+  } = useSchwartzStore();
+
+  const [pendingBoosters, setPendingBoosters] = useState<BoosterSetMeta[]>([]);
+  const [activeBooster, setActiveBooster] = useState<BoosterSet | null>(null);
+
+  // Fetch available boosters on mount
+  useEffect(() => {
+    let cancelled = false;
+    schwartzApi.getBoosters().then((all) => {
+      if (cancelled) return;
+      const pending = getPendingBoosters(all);
+      setPendingBoosters(pending);
+    }).catch(() => {});
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleStartBooster = useCallback(async (meta: BoosterSetMeta) => {
+    try {
+      const full = await schwartzApi.getBooster(meta.id);
+      setActiveBooster(full);
+    } catch {
+      console.error('Failed to load booster set');
+    }
+  }, []);
+
+  const handleCompleteBooster = useCallback(
+    async (boosterId: string, responses: SchwartzItemResponse[]) => {
+      const booster = activeBooster;
+      if (!booster) return;
+
+      recordBoosterResponses(boosterId, responses);
+      completeBooster(boosterId, booster.version);
+      setActiveBooster(null);
+      setPendingBoosters((prev) => prev.filter((b) => b.id !== boosterId));
+
+      // Re-score with all responses merged
+      try {
+        await reScoreWithBoosters();
+      } catch {
+        console.error('Failed to re-score after booster');
+      }
+    },
+    [activeBooster, recordBoosterResponses, completeBooster, reScoreWithBoosters],
+  );
+
+  const handleDismissBooster = useCallback(
+    (boosterId: string) => {
+      dismissBooster(boosterId);
+      setPendingBoosters((prev) => prev.filter((b) => b.id !== boosterId));
+    },
+    [dismissBooster],
+  );
+
+  const handleCancelBooster = useCallback(() => {
+    setActiveBooster(null);
+  }, []);
+
   // Parse markdown-style bold text
   const renderBoldText = (text: string) => {
     const parts = text.split(/\*\*([^*]+)\*\*/g);
@@ -182,8 +258,32 @@ export default function ValuesResults({
       </div>
 
       <div className="mx-auto max-w-lg px-4">
-        {/* Civic Perspective Summary Card - THE KEY ADDITION */}
-        <div className="-mt-4 rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200 p-5 shadow-sm mb-4">
+        {/* Booster Flow (inline when active) */}
+        {activeBooster && (
+          <div className="-mt-4 mb-4">
+            <BoosterFlow
+              boosterId={activeBooster.id}
+              title={activeBooster.title}
+              items={activeBooster.items}
+              onComplete={handleCompleteBooster}
+              onCancel={handleCancelBooster}
+            />
+          </div>
+        )}
+
+        {/* Booster Banner (when pending and not actively answering) */}
+        {!activeBooster && pendingBoosters.length > 0 && (
+          <div className="-mt-4 mb-4">
+            <BoosterBanner
+              booster={pendingBoosters[0]}
+              onStart={() => handleStartBooster(pendingBoosters[0])}
+              onDismiss={() => handleDismissBooster(pendingBoosters[0].id)}
+            />
+          </div>
+        )}
+
+        {/* Civic Perspective Summary Card */}
+        <div className={`${!activeBooster && pendingBoosters.length === 0 ? '-mt-4' : ''} rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200 p-5 shadow-sm mb-4`}>
           <p className="text-xs font-bold text-violet-600 uppercase tracking-wide mb-2">
             Your Civic Perspective
           </p>

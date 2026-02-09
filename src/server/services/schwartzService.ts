@@ -9,6 +9,7 @@
 
 import {
   schwartzSpec,
+  getAllBoosterItems,
   type SchwartzSpec,
 } from '../data/schwartzValues';
 
@@ -51,9 +52,11 @@ export function scoreResponses(responses: ItemResponse[]): ScoringResult {
   }
 
   // Calculate raw scores per value
+  // Merge baseline items with booster items so boosters are scored identically
   const valueScores: Map<string, { sum: number; count: number }> = new Map();
+  const allItems = [...schwartzSpec.items, ...getAllBoosterItems()];
 
-  for (const item of schwartzSpec.items) {
+  for (const item of allItems) {
     const response = responseMap.get(item.id);
     if (response === undefined) continue;
 
@@ -61,10 +64,27 @@ export function scoreResponses(responses: ItemResponse[]): ScoringResult {
     const score = item.reversed ? (6 - response) : response;
     const weightedScore = score * item.weight;
 
+    // Add to primary value
     const current = valueScores.get(item.valueId) || { sum: 0, count: 0 };
     current.sum += weightedScore;
     current.count += item.weight; // Weight counts toward denominator
     valueScores.set(item.valueId, current);
+
+    // Handle tradeoff items: also update the opposing value
+    // For tradeoffs, agreeing with the statement boosts the primary value
+    // and slightly decreases the opposing value (and vice versa)
+    if (item.tradeoff) {
+      const { opposingValueId, opposingWeight } = item.tradeoff;
+      // For opposing value: invert the score direction
+      // If user agrees (5) with primary, that's low (1) for opposing
+      // opposingWeight is typically negative, so we use 6-score
+      const opposingScore = (6 - score) * Math.abs(opposingWeight);
+
+      const opposingCurrent = valueScores.get(opposingValueId) || { sum: 0, count: 0 };
+      opposingCurrent.sum += opposingScore;
+      opposingCurrent.count += Math.abs(opposingWeight);
+      valueScores.set(opposingValueId, opposingCurrent);
+    }
   }
 
   // Calculate individual mean (across all answered items) for ipsatization

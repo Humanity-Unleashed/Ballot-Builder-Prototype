@@ -680,6 +680,22 @@ export interface SchwartzScoringResult {
   individual_mean: number;
 }
 
+export interface BoosterSetMeta {
+  id: string;
+  version: number;
+  title: string;
+  description: string;
+  itemCount: number;
+}
+
+export interface BoosterSet {
+  id: string;
+  version: number;
+  title: string;
+  description: string;
+  items: SchwartzAssessmentItem[];
+}
+
 export const schwartzApi = {
   async getSpec(): Promise<SchwartzSpec> {
     const response = await api.get<SchwartzSpec>('/schwartz-values/spec');
@@ -697,6 +713,16 @@ export const schwartzApi = {
     const response = await api.post<SchwartzScoringResult>('/schwartz-values/score', {
       responses,
     });
+    return response.data;
+  },
+
+  async getBoosters(): Promise<BoosterSetMeta[]> {
+    const response = await api.get<{ boosters: BoosterSetMeta[] }>('/schwartz-values/boosters');
+    return response.data.boosters;
+  },
+
+  async getBooster(id: string): Promise<BoosterSet> {
+    const response = await api.get<BoosterSet>(`/schwartz-values/boosters?id=${id}`);
     return response.data;
   },
 };

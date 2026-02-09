@@ -9,3 +9,12 @@ export {
   type SchwartzDimension,
   type AssessmentItem,
 } from './spec';
+
+export {
+  boosterSets,
+  getBoosterSetsMeta,
+  getBoosterSetById,
+  getAllBoosterItems,
+  type BoosterSet,
+  type BoosterSetMeta,
+} from './boosters';
