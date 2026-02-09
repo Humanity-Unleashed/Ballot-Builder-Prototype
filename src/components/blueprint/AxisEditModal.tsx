@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { X, SlidersHorizontal, RefreshCw, ChevronRight } from 'lucide-react';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { getFineTuningConfig } from '@/data/fineTuningPositions';
@@ -56,6 +56,17 @@ export default function AxisEditModal({
     axisData?.importance ?? DEFAULT_STRENGTH_VALUE,
   );
 
+  const handleClose = useCallback(() => {
+    const newValue = Math.round((localPosition / (totalPositions - 1)) * 10);
+    if (axisData && newValue !== axisData.value_0_10) {
+      onChangeAxis(axisId, newValue);
+    }
+    if (axisData && localImportance !== (axisData.importance ?? DEFAULT_STRENGTH_VALUE)) {
+      onChangeAxisImportance(axisId, localImportance);
+    }
+    onClose();
+  }, [localPosition, totalPositions, axisData, axisId, localImportance, onChangeAxis, onChangeAxisImportance, onClose]);
+
   // Keep ESC key to close
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -63,20 +74,9 @@ export default function AxisEditModal({
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [localPosition, localImportance]);
+  }, [handleClose]);
 
   if (!axisDef || !axisData) return null;
-
-  const handleClose = () => {
-    const newValue = Math.round((localPosition / (totalPositions - 1)) * 10);
-    if (newValue !== axisData!.value_0_10) {
-      onChangeAxis(axisId, newValue);
-    }
-    if (localImportance !== (axisData!.importance ?? DEFAULT_STRENGTH_VALUE)) {
-      onChangeAxisImportance(axisId, localImportance);
-    }
-    onClose();
-  };
 
   const fineTuningConfig = getFineTuningConfig(axisId);
   const hasFineTuningResponses = Object.keys(fineTuningResponses).length > 0;

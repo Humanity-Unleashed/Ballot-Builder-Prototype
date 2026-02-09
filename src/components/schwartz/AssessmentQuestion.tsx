@@ -29,9 +29,15 @@ export default function AssessmentQuestion({
   isLast,
 }: AssessmentQuestionProps) {
   const [fadeIn, setFadeIn] = useState(false);
+  const [prevItemId, setPrevItemId] = useState(item.id);
+
+  // Reset fade when item changes (React-recommended derived state pattern)
+  if (prevItemId !== item.id) {
+    setPrevItemId(item.id);
+    setFadeIn(false);
+  }
 
   useEffect(() => {
-    setFadeIn(false);
     const timer = setTimeout(() => setFadeIn(true), 50);
     return () => clearTimeout(timer);
   }, [item.id]);
@@ -69,7 +75,7 @@ export default function AssessmentQuestion({
           {/* Statement */}
           <div className="mb-8 rounded-xl bg-white p-6 shadow-sm">
             <p className="text-center text-lg font-medium text-gray-900">
-              "{item.text}"
+              &ldquo;{item.text}&rdquo;
             </p>
           </div>
 

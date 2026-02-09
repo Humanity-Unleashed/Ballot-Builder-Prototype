@@ -9,7 +9,7 @@
  *   3. complete     - Spider chart results view (civic blueprint)
  */
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AlertCircle } from 'lucide-react';
 import {
   useSchwartzStore,
@@ -17,12 +17,11 @@ import {
   selectSpec,
   selectIsSpecLoading,
   selectSpecError,
-  selectResponses,
   selectHasCompletedAssessment,
   selectValueScores,
   selectDimensionScores,
 } from '@/stores/schwartzStore';
-import { schwartzApi, type SchwartzAssessmentItem, type SchwartzItemResponse } from '@/services/api';
+import { schwartzApi, type SchwartzAssessmentItem } from '@/services/api';
 
 import ValuesIntro from '@/components/schwartz/ValuesIntro';
 import AssessmentQuestion from '@/components/schwartz/AssessmentQuestion';
@@ -36,7 +35,6 @@ export default function ValuesPage() {
   const spec = useSchwartzStore(selectSpec);
   const isSpecLoading = useSchwartzStore(selectIsSpecLoading);
   const specError = useSchwartzStore(selectSpecError);
-  const storedResponses = useSchwartzStore(selectResponses);
   const hasCompletedAssessment = useSchwartzStore(selectHasCompletedAssessment);
   const valueScores = useSchwartzStore(selectValueScores);
   const dimensionScores = useSchwartzStore(selectDimensionScores);

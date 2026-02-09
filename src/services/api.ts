@@ -451,6 +451,7 @@ export interface BallotCandidate {
   vector?: number[];
   positions?: string[];
   axisStances?: Record<string, number>;
+  valueStances?: Record<string, number>;
   profileSummary?: string;
 }
 
@@ -472,6 +473,7 @@ export interface BallotMeasure {
   description: string;
   vector?: number[];
   yesAxisEffects?: Record<string, number>;
+  yesValueEffects?: Record<string, number>;
   relevantAxes?: string[];
   outcomes: {
     yes: string;
@@ -594,7 +596,7 @@ export const candidateApi = {
 
   async getById(
     candidateId: string,
-  ): Promise<BallotCandidate & { context?: any[]; sources?: any[] }> {
+  ): Promise<BallotCandidate & { context?: unknown[]; sources?: unknown[] }> {
     const response = await api.get(`/candidates/${candidateId}`);
     return response.data;
   },

@@ -513,7 +513,7 @@ export function computeValuePropositionRecommendation(
   measure: BallotMeasure,
   userValues: SchwartzValueScore[]
 ): ValuePropositionRecommendation {
-  const yesEffects = (measure as any).yesValueEffects as Record<string, number> | undefined;
+  const yesEffects = (measure).yesAxisEffects as Record<string, number> | undefined;
 
   if (!yesEffects || Object.keys(yesEffects).length === 0) {
     return { vote: null, confidence: 0, explanation: 'No value mapping available.', topFactors: [], breakdown: [] };
@@ -614,7 +614,7 @@ export function computeValueCandidateMatches(
   const matches: ValueCandidateMatch[] = [];
 
   for (const candidate of candidates) {
-    const valueStances = (candidate as any).valueStances as Record<string, number> | undefined;
+    const valueStances = (candidate).axisStances as Record<string, number> | undefined;
 
     if (!valueStances || Object.keys(valueStances).length === 0) {
       // No value data - give neutral match

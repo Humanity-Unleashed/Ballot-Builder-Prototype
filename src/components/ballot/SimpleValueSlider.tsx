@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { getGradientSegmentColor, getSliderThumbColor } from '@/lib/ballotHelpers';
 import type { ValueAxis } from '@/lib/ballotHelpers';
 
@@ -19,7 +19,9 @@ export default function SimpleValueSlider({ axis, onChange }: SimpleValueSliderP
   const [isDragging, setIsDragging] = useState(false);
 
   const onChangeRef = useRef(onChange);
-  onChangeRef.current = onChange;
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
 
   const resolveValue = useCallback((clientX: number) => {
     if (!trackRef.current) return;

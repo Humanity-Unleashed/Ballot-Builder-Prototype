@@ -177,7 +177,7 @@ export default function ValuesResults({
       <div className="bg-gradient-to-b from-violet-600 to-violet-700 px-6 py-8 text-white">
         <h1 className="text-center text-2xl font-bold">Your Civic Blueprint</h1>
         <p className="mt-2 text-center text-violet-100">
-          Here's what matters most to you
+          Here&apos;s what matters most to you
         </p>
       </div>
 
@@ -290,10 +290,6 @@ export default function ValuesResults({
           <div className="grid grid-cols-2 gap-3">
             {sortedDimensions.map((dimension) => {
               const percent = rawMeanToPercent(dimension.raw_mean);
-              const specDimension = spec.dimensions.find(
-                (d) => d.id === dimension.dimension_id
-              );
-
               return (
                 <div
                   key={dimension.dimension_id}

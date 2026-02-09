@@ -6,7 +6,7 @@
  * Data aligned with frontend mock data.
  */
 
-import type { CandidateContext, SourceRef } from '../../types';
+import type { CandidateContext, SourceRef, PolicyTopicId } from '../../types';
 
 // ============================================
 // Elena Martinez - Mayor (Democratic, Incumbent)
@@ -452,7 +452,7 @@ export function getContextByCandidateAndTopic(
   topicId: string
 ): CandidateContext[] {
   return allCandidateContext.filter(
-    (ctx) => ctx.candidateId === candidateId && ctx.topicId.includes(topicId as any)
+    (ctx) => ctx.candidateId === candidateId && ctx.topicId.includes(topicId as PolicyTopicId)
   );
 }
 
@@ -467,5 +467,5 @@ export function getSourcesByCandidateId(candidateId: string): SourceRef[] {
  * Get all context records for a given topic across all candidates
  */
 export function getContextByTopic(topicId: string): CandidateContext[] {
-  return allCandidateContext.filter((ctx) => ctx.topicId.includes(topicId as any));
+  return allCandidateContext.filter((ctx) => ctx.topicId.includes(topicId as PolicyTopicId));
 }

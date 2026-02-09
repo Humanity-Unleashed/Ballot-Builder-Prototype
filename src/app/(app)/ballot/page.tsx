@@ -8,12 +8,11 @@ import {
   selectHasCompletedAssessment,
   selectValueScores,
 } from '@/stores/schwartzStore';
-import { ballotApi, type BallotMeasure, type BallotCandidate } from '@/services/api';
+import { ballotApi, type BallotMeasure, type BallotCandidate, Ballot, BallotContest } from '@/services/api';
 import {
   transformBallot,
   computeValuePropositionRecommendation,
   computeValueCandidateMatches,
-  VALUE_DISPLAY_NAMES,
   type BallotItem,
   type Category,
   type UserVote,
@@ -77,7 +76,7 @@ export default function BallotPage() {
   const currentItem = ballotItems[currentIndex];
 
   // Get the raw ballot data for value-based recommendations
-  const [rawBallot, setRawBallot] = useState<any>(null);
+  const [rawBallot, setRawBallot] = useState<Ballot | null>(null);
 
   // --------------------------------------------------
   // Value-based recommendation computations
@@ -88,7 +87,7 @@ export default function BallotPage() {
     }
     // Find the raw measure data with yesValueEffects
     const rawMeasure = rawBallot.items.find(
-      (item: any) => item.type === 'measure' && item.id === currentItem.id
+      (item) => item.type === 'measure' && item.id === currentItem.id
     ) as BallotMeasure | undefined;
     if (!rawMeasure) {
       return { vote: null, confidence: 0, explanation: '', topFactors: [], breakdown: [] };
@@ -123,8 +122,8 @@ export default function BallotPage() {
     }
     // Find the raw contest data with candidates
     const rawContest = rawBallot.items.find(
-      (item: any) => item.type === 'candidate' && item.id === currentItem.id
-    );
+      (item) => item.type === 'candidate' && item.id === currentItem.id
+    ) as BallotContest | undefined;
     if (!rawContest || !rawContest.candidates) {
       return [];
     }

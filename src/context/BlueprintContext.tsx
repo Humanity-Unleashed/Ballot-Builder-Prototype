@@ -26,10 +26,11 @@ const BlueprintContext = createContext<BlueprintContextType | undefined>(undefin
 
 export function BlueprintProvider({ children }: { children: React.ReactNode }) {
   const store = useUserStore();
+  const { loadSpec } = store;
 
   useEffect(() => {
-    store.loadSpec();
-  }, []);
+    loadSpec();
+  }, [loadSpec]);
 
   const value: BlueprintContextType = {
     profile: store.blueprintProfile,

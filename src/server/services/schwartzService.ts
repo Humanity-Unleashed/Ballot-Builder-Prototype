@@ -9,8 +9,6 @@
 
 import {
   schwartzSpec,
-  getValueById,
-  getDimensionById,
   type SchwartzSpec,
 } from '../data/schwartzValues';
 

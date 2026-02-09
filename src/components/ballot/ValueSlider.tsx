@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import {
   valueToPositionIndex,
   positionIndexToValue,
@@ -51,8 +51,10 @@ function ConfiguredSlider({
 
   const positionRef = useRef(positionIndex);
   const onChangeRef = useRef(onChange);
-  positionRef.current = positionIndex;
-  onChangeRef.current = onChange;
+  useEffect(() => {
+    positionRef.current = positionIndex;
+    onChangeRef.current = onChange;
+  }, [positionIndex, onChange]);
 
   const handlePositionChange = useCallback(
     (newPosIndex: number) => {

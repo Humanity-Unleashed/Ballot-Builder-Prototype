@@ -37,7 +37,7 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
                 1
               </span>
               <span>
-                You'll see {itemCount} statements about values and priorities
+                You&apos;ll see {itemCount} statements about values and priorities
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -70,7 +70,7 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
 
         {/* Note */}
         <p className="mt-6 text-center text-xs text-gray-400">
-          Based on Schwartz's Theory of Basic Human Values
+          Based on Schwartz&apos;s Theory of Basic Human Values
         </p>
       </div>
     </div>

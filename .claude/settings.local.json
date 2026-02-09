@@ -51,7 +51,10 @@
       "Bash(git -C /c/Users/jonat/OneDrive/Documents/Projects/Ballot-Builder-Prototype show --name-only 82e04bc)",
       "Bash(npm run dev:*)",
       "Bash(tasklist:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npx next build:*)"
     ]
   }
 }

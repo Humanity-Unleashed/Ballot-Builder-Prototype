@@ -4,7 +4,7 @@
  * Derives insight chips and evidence data from the user's profile.
  */
 
-import type { BlueprintProfile, AxisProfile } from '../types/blueprintProfile';
+import type { BlueprintProfile } from '../types/blueprintProfile';
 import type { Spec } from '../types/civicAssessment';
 
 export interface InsightChipData {
