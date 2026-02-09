@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Compass, ArrowRight } from 'lucide-react';
+import { Compass, ArrowRight, MessageSquarePlus } from 'lucide-react';
 
 interface ValuesIntroProps {
   onStart: () => void;
@@ -27,6 +27,24 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
           Your civic blueprint helps us match you with candidates and policies
           that align with what matters most to you.
         </p>
+
+        {/* Prototype Banner */}
+        <div className="mb-6 w-full max-w-md rounded-xl border border-amber-200 bg-amber-50 p-4">
+          <p className="mb-1.5 text-sm font-bold text-amber-900">
+            This is an early prototype!
+          </p>
+          <p className="mb-3 text-[13px] leading-[19px] text-amber-800">
+            Ballot Builder helps you vote in a way that aligns with your values.
+            We&apos;d love your feedback &mdash; what feels useful, what&apos;s
+            confusing, what you&apos;d change.
+          </p>
+          <div className="flex items-center gap-2 text-[13px] text-amber-700">
+            <MessageSquarePlus className="h-4 w-4 shrink-0" />
+            <span>
+              Tap the <span className="font-semibold">feedback button</span> in the bottom-right corner anytime.
+            </span>
+          </div>
+        </div>
 
         {/* What to expect */}
         <div className="mb-8 w-full max-w-md rounded-xl bg-white p-6 shadow-sm">

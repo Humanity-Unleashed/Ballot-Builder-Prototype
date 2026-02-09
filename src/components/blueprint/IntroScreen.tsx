@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, Clock, BarChart3, FileText, CheckCheck } from 'lucide-react';
+import { ArrowRight, Clock, BarChart3, FileText, CheckCheck, MessageSquarePlus } from 'lucide-react';
 import type { Spec } from '@/types/civicAssessment';
 
 interface IntroScreenProps {
@@ -13,6 +13,28 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
   return (
     <div className="min-h-[calc(100vh-56px)] bg-gray-50">
       <div className="p-5 pb-10">
+        {/* Prototype Welcome Banner */}
+        <div className="mb-5 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <p className="mb-1.5 text-sm font-bold text-amber-900">
+            Welcome to the Ballot Builder prototype!
+          </p>
+          <p className="mb-3 text-[13px] leading-[19px] text-amber-800">
+            Ballot Builder helps you vote in a way that aligns with your values.
+            Take a short assessment, get a personalized civic blueprint, then
+            browse your ballot with guidance tailored to you.
+          </p>
+          <p className="mb-1.5 text-[13px] leading-[19px] text-amber-800">
+            This is an early prototype and we&apos;d love your feedback &mdash; what
+            feels useful, what&apos;s confusing, what you&apos;d change.
+          </p>
+          <div className="flex items-center gap-2 text-[13px] text-amber-700">
+            <MessageSquarePlus className="h-4 w-4 shrink-0" />
+            <span>
+              Tap the <span className="font-semibold">feedback button</span> in the bottom-right corner anytime.
+            </span>
+          </div>
+        </div>
+
         {/* Hero */}
         <div className="mb-6">
           <h1 className="mb-2.5 text-xl font-extrabold leading-[26px] text-gray-900">
