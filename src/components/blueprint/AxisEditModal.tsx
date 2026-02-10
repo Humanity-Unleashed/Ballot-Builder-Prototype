@@ -7,7 +7,7 @@ import { getFineTuningConfig } from '@/data/fineTuningPositions';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
 import { valueToPositionIndex, DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
-import DraggableSlider from './DraggableSlider';
+import DomainLeanMeter from './DomainLeanMeter';
 import StrengthChips from './StrengthChips';
 import FineTuneBreakdownView from './FineTuneBreakdownView';
 
@@ -125,12 +125,11 @@ export default function AxisEditModal({
             <span className="text-xs font-bold uppercase tracking-wide text-gray-500">
               Your position:
             </span>
-            <DraggableSlider
-              position={localPosition}
-              totalPositions={totalPositions}
-              onPositionChange={setLocalPosition}
-              poleALabel={config?.poleALabel || axisDef.poleA.label}
-              poleBLabel={config?.poleBLabel || axisDef.poleB.label}
+            <DomainLeanMeter
+              value={(localPosition / (totalPositions - 1)) * 100}
+              leftLabel={(config?.poleALabel || axisDef.poleA.label).replace(/\n/g, ' ')}
+              rightLabel={(config?.poleBLabel || axisDef.poleB.label).replace(/\n/g, ' ')}
+              onChange={(v) => setLocalPosition(Math.round((v / 100) * (totalPositions - 1)))}
             />
           </div>
 
