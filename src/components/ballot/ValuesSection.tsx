@@ -3,7 +3,7 @@
 import React from 'react';
 import { SlidersHorizontal, ChevronUp, ChevronDown } from 'lucide-react';
 import type { ValueAxis } from '@/lib/ballotHelpers';
-import ValueSlider from './ValueSlider';
+import DomainLeanMeter from '@/components/blueprint/DomainLeanMeter';
 
 interface ValuesSectionProps {
   axes: ValueAxis[];
@@ -48,11 +48,15 @@ export default function ValuesSection({
             Changing these will update recommendations across your ballot.
           </p>
           {relevantAxes.map((axis) => (
-            <ValueSlider
-              key={axis.id}
-              axis={axis}
-              onChange={(value) => onValueChange(axis.id, value)}
-            />
+            <div key={axis.id} className="space-y-1">
+              <span className="text-sm font-semibold text-gray-700">{axis.name}</span>
+              <DomainLeanMeter
+                value={axis.value * 10}
+                leftLabel={axis.poleA}
+                rightLabel={axis.poleB}
+                onChange={(v) => onValueChange(axis.id, v / 10)}
+              />
+            </div>
           ))}
         </div>
       )}

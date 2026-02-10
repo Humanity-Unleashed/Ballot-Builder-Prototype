@@ -31,6 +31,7 @@ import CandidateVoteButtons from '@/components/ballot/CandidateVoteButtons';
 import NavigationButtons from '@/components/ballot/NavigationButtons';
 import BallotNavigator from '@/components/ballot/BallotNavigator';
 import BallotSummary from '@/components/ballot/BallotSummary';
+import ValuesSection from '@/components/ballot/ValuesSection';
 
 // =============================================
 // Main Ballot Page Orchestrator
@@ -82,6 +83,7 @@ export default function BallotPage() {
   const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
   const [writeInName, setWriteInName] = useState('');
   const [showSummary, setShowSummary] = useState(false);
+  const [valuesExpanded, setValuesExpanded] = useState(false);
 
   // Feedback screen context
   const { setScreenLabel } = useFeedbackScreen();
@@ -185,6 +187,10 @@ export default function BallotPage() {
     },
     [savedVotes]
   );
+
+  const handleValueChange = useCallback((axisId: string, value: number) => {
+    useUserStore.getState().updateAxisValue(axisId, value);
+  }, []);
 
   const handleVoteSelect = useCallback((choice: VoteChoice) => {
     setCurrentVote(choice);
@@ -374,6 +380,15 @@ export default function BallotPage() {
             onWriteInChange={setWriteInName}
           />
         )}
+
+        {/* Adjust your values */}
+        <ValuesSection
+          axes={valueAxes}
+          relevantAxisIds={currentItem.relevantAxes || []}
+          onValueChange={handleValueChange}
+          expanded={valuesExpanded}
+          onToggle={() => setValuesExpanded((v) => !v)}
+        />
 
         {/* Navigation buttons */}
         <NavigationButtons
