@@ -382,12 +382,6 @@ export default function BallotPage() {
         {/* Demographic-based personal impact insights */}
         <PersonalImpactSection impacts={personalImpacts} />
 
-        {/* Adjust your profile (demographics) */}
-        <DemographicSection
-          expanded={demographicExpanded}
-          onToggle={() => setDemographicExpanded((v) => !v)}
-        />
-
         {/* Vote selection */}
         {currentItem.type === 'proposition' ? (
           <PropositionVoteButtons
@@ -414,6 +408,12 @@ export default function BallotPage() {
           onValueChange={handleValueChange}
           expanded={valuesExpanded}
           onToggle={() => setValuesExpanded((v) => !v)}
+        />
+
+        {/* Adjust your profile (demographics) */}
+        <DemographicSection
+          expanded={demographicExpanded}
+          onToggle={() => setDemographicExpanded((v) => !v)}
         />
 
         {/* Navigation buttons */}
