@@ -3,10 +3,10 @@
 /**
  * Blueprint Page - Slider-Based Civic Blueprint Assessment
  *
- * State machine: intro → assessment → [fine_tuning] → results
+ * State machine: intro → [demographics] → assessment → [fine_tuning] → results
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { AlertCircle } from 'lucide-react';
 
 import { useBlueprint } from '@/context/BlueprintContext';
@@ -14,13 +14,15 @@ import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { deriveMetaDimensions } from '@/lib/archetypes';
 import { checkForAxisTransition, DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
+import { useDemographicStore } from '@/stores/demographicStore';
 
+import DemographicScreen from '@/components/demographics/DemographicScreen';
 import IntroScreen from '@/components/blueprint/IntroScreen';
 import AssessmentView from '@/components/blueprint/AssessmentView';
 import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
 import FineTuningScreen from '@/components/blueprint/FineTuningScreen';
 
-type PageState = 'intro' | 'assessment' | 'fine_tuning' | 'results';
+type PageState = 'intro' | 'demographics' | 'assessment' | 'fine_tuning' | 'results';
 
 export default function BlueprintPage() {
   const {
@@ -33,9 +35,11 @@ export default function BlueprintPage() {
   } = useBlueprint();
 
   const { setScreenLabel } = useFeedbackScreen();
+  const { hasCompletedDemographics } = useDemographicStore();
 
   // ── Page state machine ──
   const [pageState, setPageState] = useState<PageState>('intro');
+  const isRetaking = useRef(false);
 
   // ── Assessment state ──
   const [axisQueue, setAxisQueue] = useState<string[]>([]);
@@ -58,6 +62,8 @@ export default function BlueprintPage() {
   useEffect(() => {
     if (pageState === 'intro') {
       setScreenLabel('Blueprint - Intro');
+    } else if (pageState === 'demographics') {
+      setScreenLabel('Blueprint - Demographics');
     } else if (pageState === 'assessment') {
       setScreenLabel(
         `Blueprint - Assessment (Q${currentAxisIndex + 1}/${axisQueue.length || '?'})`,
@@ -72,6 +78,7 @@ export default function BlueprintPage() {
   // ── If profile already has real scores, jump to results ──
   useEffect(() => {
     if (!spec || !profile || pageState !== 'intro') return;
+    if (isRetaking.current) return;
     const hasRealScores = profile.domains.some((d) =>
       d.axes.some((a) => a.source !== 'default'),
     );
@@ -97,10 +104,11 @@ export default function BlueprintPage() {
 
   // ── Handlers ──
 
-  const handleStart = () => {
+  const startAssessment = () => {
     const queue = buildAxisQueue();
     if (queue.length === 0) return;
 
+    isRetaking.current = false;
     setAxisQueue(queue);
     setCurrentAxisIndex(0);
     setSliderPositions({});
@@ -108,6 +116,18 @@ export default function BlueprintPage() {
     setFadeVisible(true);
     setShowTransition(false);
     setPageState('assessment');
+  };
+
+  const handleStart = () => {
+    if (hasCompletedDemographics) {
+      startAssessment();
+    } else {
+      setPageState('demographics');
+    }
+  };
+
+  const handleDemographicsComplete = () => {
+    startAssessment();
   };
 
   const currentAxisId = axisQueue[currentAxisIndex] ?? '';
@@ -172,6 +192,7 @@ export default function BlueprintPage() {
   };
 
   const handleRetake = () => {
+    isRetaking.current = true;
     setSliderPositions({});
     setStrengthValues({});
     setFineTuningResponses({});
@@ -225,6 +246,11 @@ export default function BlueprintPage() {
   // ── Intro ──
   if (pageState === 'intro') {
     return <IntroScreen spec={spec} onStart={handleStart} />;
+  }
+
+  // ── Demographics ──
+  if (pageState === 'demographics') {
+    return <DemographicScreen onComplete={handleDemographicsComplete} />;
   }
 
   // ── Assessment ──
