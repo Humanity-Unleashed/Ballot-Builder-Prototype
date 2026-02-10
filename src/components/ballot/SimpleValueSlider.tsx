@@ -61,7 +61,7 @@ export default function SimpleValueSlider({ axis, onChange }: SimpleValueSliderP
       <p className="text-sm font-semibold text-gray-900">{axis.name}</p>
 
       <div className="flex items-center gap-2">
-        <span className="text-[10px] font-semibold text-[#8B7AAF] uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0">
+        <span className={`text-[10px] font-semibold uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0 ${thumbPercent < 50 ? 'text-violet-600' : 'text-gray-400'}`}>
           {axis.poleA}
         </span>
 
@@ -97,7 +97,7 @@ export default function SimpleValueSlider({ axis, onChange }: SimpleValueSliderP
           </div>
         </div>
 
-        <span className="text-[10px] font-semibold text-[#5B9E94] uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0">
+        <span className={`text-[10px] font-semibold uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0 ${thumbPercent > 50 ? 'text-violet-600' : 'text-gray-400'}`}>
           {axis.poleB}
         </span>
       </div>

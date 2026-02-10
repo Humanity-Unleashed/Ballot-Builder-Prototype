@@ -55,7 +55,7 @@ export default function DomainLeanMeter({
   return (
     <div className="flex items-center gap-1.5">
       {/* Left pole label */}
-      <span className="w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] text-violet-600">
+      <span className={`w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value < 50 ? 'text-violet-600' : 'text-gray-400'}`}>
         {leftLabel}
       </span>
 
@@ -104,7 +104,7 @@ export default function DomainLeanMeter({
       </div>
 
       {/* Right pole label */}
-      <span className="w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] text-gray-400">
+      <span className={`w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value > 50 ? 'text-violet-600' : 'text-gray-400'}`}>
         {rightLabel}
       </span>
     </div>
