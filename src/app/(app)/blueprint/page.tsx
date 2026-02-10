@@ -35,7 +35,7 @@ export default function BlueprintPage() {
   } = useBlueprint();
 
   const { setScreenLabel } = useFeedbackScreen();
-  const { hasCompletedDemographics } = useDemographicStore();
+  const { hasCompletedDemographics, reset: resetDemographics } = useDemographicStore();
 
   // ── Page state machine ──
   const [pageState, setPageState] = useState<PageState>('intro');
@@ -198,6 +198,7 @@ export default function BlueprintPage() {
     setFineTuningResponses({});
     setAxisQueue([]);
     setCurrentAxisIndex(0);
+    resetDemographics();
     setPageState('intro');
   };
 
