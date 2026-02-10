@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model FeedbackEntry {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  screen     String
+  screenName String   @map("screen_name")
+  type       String?
+  message    String
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("feedback_entries")
+}
