@@ -3,39 +3,81 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { Loader2, AlertCircle } from 'lucide-react';
 import {
-  useSchwartzStore,
+  useUserStore,
   selectHasHydrated,
   selectHasCompletedAssessment,
-  selectValueScores,
-} from '@/stores/schwartzStore';
-import { ballotApi, type BallotMeasure, type BallotCandidate, Ballot, BallotContest } from '@/services/api';
+  selectBlueprintProfile,
+  selectSpec,
+} from '@/stores/userStore';
+import { useDemographicStore } from '@/stores/demographicStore';
+import { ballotApi } from '@/services/api';
 import {
   transformBallot,
-  computeValuePropositionRecommendation,
-  computeValueCandidateMatches,
+  computePropositionRecommendation,
+  computeCandidateMatches,
+  computeDemographicInsights,
   type BallotItem,
   type Category,
   type UserVote,
   type VoteChoice,
+  type ValueAxis,
 } from '@/lib/ballotHelpers';
+import type { BlueprintProfile } from '@/types/blueprintProfile';
+import type { Spec } from '@/types/civicAssessment';
 
+import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
+import PersonalImpactSection from '@/components/ballot/PersonalImpactSection';
 import PropositionVoteButtons from '@/components/ballot/PropositionVoteButtons';
 import CandidateVoteButtons from '@/components/ballot/CandidateVoteButtons';
 import NavigationButtons from '@/components/ballot/NavigationButtons';
 import BallotNavigator from '@/components/ballot/BallotNavigator';
 import BallotSummary from '@/components/ballot/BallotSummary';
+import ValuesSection from '@/components/ballot/ValuesSection';
+import DemographicSection from '@/components/ballot/DemographicSection';
 
 // =============================================
 // Main Ballot Page Orchestrator
 // =============================================
 
+/** Convert blueprint profile axes to ValueAxis[] for recommendation functions */
+function profileToValueAxes(profile: BlueprintProfile, spec: Spec): ValueAxis[] {
+  const axes: ValueAxis[] = [];
+  for (const domain of profile.domains) {
+    for (const axis of domain.axes) {
+      const axisDef = spec.axes.find((a) => a.id === axis.axis_id);
+      if (!axisDef) continue;
+      axes.push({
+        id: axis.axis_id,
+        name: axisDef.name,
+        description: axisDef.description,
+        value: axis.value_0_10,
+        poleA: axisDef.poleA.label,
+        poleB: axisDef.poleB.label,
+        weight: (axis.importance ?? 5) / 5, // normalize 0-10 → 0-2 weight
+      });
+    }
+  }
+  return axes;
+}
+
 export default function BallotPage() {
-  // Schwartz values store
-  const hasHydrated = useSchwartzStore(selectHasHydrated);
-  const hasCompletedAssessment = useSchwartzStore(selectHasCompletedAssessment);
-  const valueScores = useSchwartzStore(selectValueScores);
+  // Blueprint profile store
+  const hasHydrated = useUserStore(selectHasHydrated);
+  const hasCompletedAssessment = useUserStore(selectHasCompletedAssessment);
+  const blueprintProfile = useUserStore(selectBlueprintProfile);
+  const blueprintSpec = useUserStore(selectSpec);
+
+  // Demographic profile store
+  const demographicProfile = useDemographicStore((s) => s.profile);
+  const demographicsWasSkipped = useDemographicStore((s) => s.wasSkipped);
+
+  // Derive value axes from blueprint profile
+  const valueAxes = useMemo(() => {
+    if (!blueprintProfile || !blueprintSpec) return [];
+    return profileToValueAxes(blueprintProfile, blueprintSpec);
+  }, [blueprintProfile, blueprintSpec]);
 
   // Ballot data from API
   const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
@@ -49,6 +91,11 @@ export default function BallotPage() {
   const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
   const [writeInName, setWriteInName] = useState('');
   const [showSummary, setShowSummary] = useState(false);
+  const [valuesExpanded, setValuesExpanded] = useState(false);
+  const [demographicExpanded, setDemographicExpanded] = useState(false);
+
+  // Feedback screen context
+  const { setScreenLabel } = useFeedbackScreen();
 
   // --------------------------------------------------
   // Fetch ballot data from API on mount
@@ -59,7 +106,6 @@ export default function BallotPage() {
         setIsBallotLoading(true);
         setBallotError(null);
         const ballot = await ballotApi.getDefault();
-        setRawBallot(ballot); // Store raw ballot for value-based recommendations
         const { categories: fetchedCategories, items } = transformBallot(ballot);
         setBallotItems(items);
         setCategories(fetchedCategories);
@@ -75,25 +121,36 @@ export default function BallotPage() {
 
   const currentItem = ballotItems[currentIndex];
 
-  // Get the raw ballot data for value-based recommendations
-  const [rawBallot, setRawBallot] = useState<Ballot | null>(null);
+  // Update feedback screen label based on current sub-screen
+  useEffect(() => {
+    if (!hasHydrated || isBallotLoading) {
+      setScreenLabel('Ballot - Loading');
+    } else if (!hasCompletedAssessment || valueAxes.length === 0) {
+      setScreenLabel('Ballot - Needs Blueprint');
+    } else if (ballotError) {
+      setScreenLabel('Ballot - Error');
+    } else if (showSummary) {
+      setScreenLabel('Ballot - Summary');
+    } else if (currentItem) {
+      setScreenLabel(`Ballot - Item ${currentIndex + 1}/${ballotItems.length}`);
+    } else {
+      setScreenLabel('Ballot');
+    }
+  }, [
+    hasHydrated, isBallotLoading, hasCompletedAssessment, valueAxes.length,
+    ballotError, showSummary, currentItem, currentIndex, ballotItems.length,
+    setScreenLabel,
+  ]);
 
   // --------------------------------------------------
   // Value-based recommendation computations
   // --------------------------------------------------
   const propositionRec = useMemo(() => {
-    if (!currentItem || currentItem.type !== 'proposition' || !rawBallot || valueScores.length === 0) {
-      return { vote: null, confidence: 0, explanation: '', topFactors: [], breakdown: [] };
+    if (!currentItem || currentItem.type !== 'proposition' || valueAxes.length === 0) {
+      return { vote: null, confidence: 0, explanation: '', factors: [], breakdown: [] };
     }
-    // Find the raw measure data with yesValueEffects
-    const rawMeasure = rawBallot.items.find(
-      (item) => item.type === 'measure' && item.id === currentItem.id
-    ) as BallotMeasure | undefined;
-    if (!rawMeasure) {
-      return { vote: null, confidence: 0, explanation: '', topFactors: [], breakdown: [] };
-    }
-    return computeValuePropositionRecommendation(rawMeasure, valueScores);
-  }, [currentItem, rawBallot, valueScores]);
+    return computePropositionRecommendation(currentItem, valueAxes);
+  }, [currentItem, valueAxes]);
 
   // Generate value framing from the recommendation breakdown
   const propositionValueFraming = useMemo(() => {
@@ -104,31 +161,32 @@ export default function BallotPage() {
     const tension: string[] = [];
     for (const item of propositionRec.breakdown) {
       if (item.alignment === 'yes' && propositionRec.vote === 'yes') {
-        resonance.push(`Supports your value of ${item.valueName}`);
+        resonance.push(`Supports your stance on ${item.axisName}`);
       } else if (item.alignment === 'no' && propositionRec.vote === 'no') {
-        resonance.push(`Aligns with your value of ${item.valueName}`);
+        resonance.push(`Aligns with your stance on ${item.axisName}`);
       } else if (item.alignment === 'yes' && propositionRec.vote === 'no') {
-        tension.push(`Conflicts with ${item.valueName}`);
+        tension.push(`Conflicts with ${item.axisName}`);
       } else if (item.alignment === 'no' && propositionRec.vote === 'yes') {
-        tension.push(`Some tension with ${item.valueName}`);
+        tension.push(`Some tension with ${item.axisName}`);
       }
     }
     return { resonance: resonance.slice(0, 2), tension: tension.slice(0, 2) };
   }, [propositionRec]);
 
   const candidateMatches = useMemo(() => {
-    if (!currentItem || currentItem.type !== 'candidate_race' || !rawBallot || valueScores.length === 0) {
+    if (!currentItem || currentItem.type !== 'candidate_race' || valueAxes.length === 0) {
       return [];
     }
-    // Find the raw contest data with candidates
-    const rawContest = rawBallot.items.find(
-      (item) => item.type === 'candidate' && item.id === currentItem.id
-    ) as BallotContest | undefined;
-    if (!rawContest || !rawContest.candidates) {
-      return [];
-    }
-    return computeValueCandidateMatches(rawContest.candidates as BallotCandidate[], valueScores);
-  }, [currentItem, rawBallot, valueScores]);
+    return computeCandidateMatches(currentItem, valueAxes);
+  }, [currentItem, valueAxes]);
+
+  // --------------------------------------------------
+  // Demographic-based personal impact insights
+  // --------------------------------------------------
+  const personalImpacts = useMemo(() => {
+    if (!currentItem || demographicsWasSkipped) return [];
+    return computeDemographicInsights(currentItem.id, demographicProfile);
+  }, [currentItem, demographicProfile, demographicsWasSkipped]);
 
   // --------------------------------------------------
   // Vote management helpers
@@ -146,6 +204,10 @@ export default function BallotPage() {
     },
     [savedVotes]
   );
+
+  const handleValueChange = useCallback((axisId: string, value: number) => {
+    useUserStore.getState().updateAxisValue(axisId, value);
+  }, []);
 
   const handleVoteSelect = useCallback((choice: VoteChoice) => {
     setCurrentVote(choice);
@@ -241,7 +303,7 @@ export default function BallotPage() {
   }
 
   // Check if user has completed the blueprint assessment
-  if (!hasCompletedAssessment || valueScores.length === 0) {
+  if (!hasCompletedAssessment || valueAxes.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 p-6">
         <AlertCircle className="h-12 w-12 text-amber-500" />
@@ -317,6 +379,9 @@ export default function BallotPage() {
           />
         )}
 
+        {/* Demographic-based personal impact insights */}
+        <PersonalImpactSection impacts={personalImpacts} />
+
         {/* Vote selection */}
         {currentItem.type === 'proposition' ? (
           <PropositionVoteButtons
@@ -335,6 +400,21 @@ export default function BallotPage() {
             onWriteInChange={setWriteInName}
           />
         )}
+
+        {/* Adjust your values */}
+        <ValuesSection
+          axes={valueAxes}
+          relevantAxisIds={currentItem.relevantAxes || []}
+          onValueChange={handleValueChange}
+          expanded={valuesExpanded}
+          onToggle={() => setValuesExpanded((v) => !v)}
+        />
+
+        {/* Adjust your profile (demographics) */}
+        <DemographicSection
+          expanded={demographicExpanded}
+          onToggle={() => setDemographicExpanded((v) => !v)}
+        />
 
         {/* Navigation buttons */}
         <NavigationButtons

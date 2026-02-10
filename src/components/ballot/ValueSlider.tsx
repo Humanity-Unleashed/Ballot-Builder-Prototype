@@ -124,7 +124,7 @@ function ConfiguredSlider({
 
       {/* Slider row: poleA | track | poleB */}
       <div className="flex items-center gap-2">
-        <span className="text-[10px] font-semibold text-[#8B7AAF] uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line">
+        <span className={`text-[10px] font-semibold uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent < 50 ? 'text-violet-600' : 'text-gray-400'}`}>
           {config.poleALabel}
         </span>
 
@@ -179,7 +179,7 @@ function ConfiguredSlider({
           </div>
         </div>
 
-        <span className="text-[10px] font-semibold text-[#5B9E94] uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line">
+        <span className={`text-[10px] font-semibold uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent > 50 ? 'text-violet-600' : 'text-gray-400'}`}>
           {config.poleBLabel}
         </span>
       </div>

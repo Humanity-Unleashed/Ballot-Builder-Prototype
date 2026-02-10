@@ -1,14 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Compass, ArrowRight } from 'lucide-react';
+import { Compass, ArrowRight, MessageSquarePlus } from 'lucide-react';
 
 interface ValuesIntroProps {
   onStart: () => void;
-  itemCount: number;
 }
 
-export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
+export default function ValuesIntro({ onStart }: ValuesIntroProps) {
   return (
     <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gradient-to-b from-violet-50 to-white">
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
@@ -28,6 +27,24 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
           that align with what matters most to you.
         </p>
 
+        {/* Prototype Banner */}
+        <div className="mb-6 w-full max-w-md rounded-xl border border-amber-200 bg-amber-50 p-4">
+          <p className="mb-1.5 text-sm font-bold text-amber-900">
+            This is an early prototype!
+          </p>
+          <p className="mb-3 text-[13px] leading-[19px] text-amber-800">
+            Ballot Builder helps you vote in a way that aligns with your values.
+            We&apos;d love your feedback &mdash; what feels useful, what&apos;s
+            confusing, what you&apos;d change.
+          </p>
+          <div className="flex items-center gap-2 text-[13px] text-amber-700">
+            <MessageSquarePlus className="h-4 w-4 shrink-0" />
+            <span>
+              Tap the <span className="font-semibold">feedback button</span> in the bottom-right corner anytime.
+            </span>
+          </div>
+        </div>
+
         {/* What to expect */}
         <div className="mb-8 w-full max-w-md rounded-xl bg-white p-6 shadow-sm">
           <h2 className="mb-4 font-semibold text-gray-900">What to expect</h2>
@@ -37,7 +54,7 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
                 1
               </span>
               <span>
-                You&apos;ll see {itemCount} statements about values and priorities
+                You&apos;ll see 10 scenarios about civic decisions
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -45,7 +62,7 @@ export default function ValuesIntro({ onStart, itemCount }: ValuesIntroProps) {
                 2
               </span>
               <span>
-                Rate each one from Strongly Disagree to Strongly Agree
+                Pick the option that matters most to you
               </span>
             </li>
             <li className="flex items-start gap-3">

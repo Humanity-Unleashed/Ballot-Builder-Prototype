@@ -3,10 +3,18 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import {
   schwartzApi,
   type SchwartzSpec,
+  type SchwartzVignetteResponse,
   type SchwartzItemResponse,
   type SchwartzValueScore,
   type SchwartzDimensionScore,
+  type BoosterSetMeta,
 } from '../services/api';
+
+/** Tracks which booster version the user completed */
+interface CompletedBooster {
+  id: string;
+  version: number;
+}
 
 interface SchwartzState {
   _hasHydrated: boolean;
@@ -14,25 +22,37 @@ interface SchwartzState {
   isSpecLoading: boolean;
   specError: string | null;
 
-  // Assessment state
-  responses: SchwartzItemResponse[];
+  // Assessment state (vignette picks)
+  responses: SchwartzVignetteResponse[];
   hasCompletedAssessment: boolean;
 
   // Scores
   valueScores: SchwartzValueScore[];
   dimensionScores: SchwartzDimensionScore[];
   individualMean: number;
+
+  // Booster state (still Likert-based)
+  boosterResponses: Record<string, SchwartzItemResponse[]>; // keyed by boosterId
+  completedBoosters: CompletedBooster[];
+  dismissedBoosters: string[]; // booster IDs
 }
 
 interface SchwartzActions {
   loadSpec: () => Promise<void>;
   setSpec: (spec: SchwartzSpec) => void;
 
-  recordResponse: (response: SchwartzItemResponse) => void;
-  recordResponses: (responses: SchwartzItemResponse[]) => void;
+  recordResponse: (response: SchwartzVignetteResponse) => void;
+  recordResponses: (responses: SchwartzVignetteResponse[]) => void;
   clearResponses: () => void;
 
   submitAndScore: () => Promise<void>;
+
+  // Booster actions
+  recordBoosterResponses: (boosterId: string, responses: SchwartzItemResponse[]) => void;
+  completeBooster: (boosterId: string, version: number) => void;
+  dismissBooster: (boosterId: string) => void;
+  reScoreWithBoosters: () => Promise<void>;
+  getPendingBoosters: (available: BoosterSetMeta[]) => BoosterSetMeta[];
 
   reset: () => void;
 }
@@ -49,6 +69,9 @@ const initialState: SchwartzState = {
   valueScores: [],
   dimensionScores: [],
   individualMean: 3,
+  boosterResponses: {},
+  completedBoosters: [],
+  dismissedBoosters: [],
 };
 
 export const useSchwartzStore = create<SchwartzStore>()(
@@ -79,8 +102,8 @@ export const useSchwartzStore = create<SchwartzStore>()(
 
       recordResponse: (response) => {
         set((state) => {
-          // Replace existing response for same item or add new
-          const existing = state.responses.findIndex((r) => r.item_id === response.item_id);
+          // Replace existing response for same vignette or add new
+          const existing = state.responses.findIndex((r) => r.vignette_id === response.vignette_id);
           if (existing >= 0) {
             const newResponses = [...state.responses];
             newResponses[existing] = response;
@@ -122,6 +145,62 @@ export const useSchwartzStore = create<SchwartzStore>()(
         }
       },
 
+      recordBoosterResponses: (boosterId, responses) => {
+        set((state) => ({
+          boosterResponses: {
+            ...state.boosterResponses,
+            [boosterId]: responses,
+          },
+        }));
+      },
+
+      completeBooster: (boosterId, version) => {
+        set((state) => {
+          // Replace if same id exists (version upgrade), otherwise append
+          const filtered = state.completedBoosters.filter((b) => b.id !== boosterId);
+          return {
+            completedBoosters: [...filtered, { id: boosterId, version }],
+          };
+        });
+      },
+
+      dismissBooster: (boosterId) => {
+        set((state) => ({
+          dismissedBoosters: state.dismissedBoosters.includes(boosterId)
+            ? state.dismissedBoosters
+            : [...state.dismissedBoosters, boosterId],
+        }));
+      },
+
+      reScoreWithBoosters: async () => {
+        const { responses, boosterResponses } = get();
+        // Merge baseline vignette responses + all booster Likert responses
+        const allBoosterResponses = Object.values(boosterResponses).flat();
+        if (responses.length === 0 && allBoosterResponses.length === 0) return;
+
+        try {
+          const result = await schwartzApi.scoreResponses(responses, allBoosterResponses);
+          set({
+            valueScores: result.values,
+            dimensionScores: result.dimensions,
+            individualMean: result.individual_mean,
+          });
+        } catch (error) {
+          console.error('Failed to re-score with boosters:', error);
+          throw error;
+        }
+      },
+
+      getPendingBoosters: (available) => {
+        const { completedBoosters, dismissedBoosters } = get();
+        return available.filter((b) => {
+          if (dismissedBoosters.includes(b.id)) return false;
+          const completed = completedBoosters.find((c) => c.id === b.id);
+          // Pending if never completed, or completed at older version
+          return !completed || completed.version < b.version;
+        });
+      },
+
       reset: () => {
         set(initialState);
       },
@@ -135,6 +214,9 @@ export const useSchwartzStore = create<SchwartzStore>()(
         valueScores: state.valueScores,
         dimensionScores: state.dimensionScores,
         individualMean: state.individualMean,
+        boosterResponses: state.boosterResponses,
+        completedBoosters: state.completedBoosters,
+        dismissedBoosters: state.dismissedBoosters,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {
@@ -169,6 +251,11 @@ export function ipsatizedToPercent(ipsatized: number): number {
   const clamped = Math.max(-2, Math.min(2, ipsatized));
   return Math.round(((clamped + 2) / 4) * 100);
 }
+
+// Booster selectors
+export const selectBoosterResponses = (state: SchwartzStore) => state.boosterResponses;
+export const selectCompletedBoosters = (state: SchwartzStore) => state.completedBoosters;
+export const selectDismissedBoosters = (state: SchwartzStore) => state.dismissedBoosters;
 
 // Convert raw mean (1-5) to 0-100 for visualization
 export function rawMeanToPercent(rawMean: number): number {
