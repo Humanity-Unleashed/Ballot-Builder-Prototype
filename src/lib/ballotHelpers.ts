@@ -12,6 +12,8 @@ import type {
   BallotCandidate,
   SchwartzValueScore,
 } from '@/services/api';
+import type { DemographicProfile } from '@/stores/demographicStore';
+import { demographicImpacts, type DemographicImpactRule } from '@/data/demographicImpacts';
 
 // =============================================
 // Type definitions
@@ -713,4 +715,57 @@ export function computeValueCandidateMatches(
   }
 
   return matches;
+}
+
+// =============================================
+// Demographic-Based Personal Impact Insights
+// =============================================
+
+export interface PersonalImpact {
+  effect: 'benefit' | 'concern' | 'mixed' | 'context';
+  headline: string;
+  detail?: string;
+}
+
+const EFFECT_PRIORITY: Record<PersonalImpact['effect'], number> = {
+  benefit: 0,
+  concern: 1,
+  mixed: 2,
+  context: 3,
+};
+
+/**
+ * Compute personalized demographic insights for a ballot item.
+ * Returns up to 4 matched impacts, sorted by directness (benefits/concerns first, context last).
+ */
+export function computeDemographicInsights(
+  itemId: string,
+  demographics: DemographicProfile
+): PersonalImpact[] {
+  const rules = demographicImpacts[itemId];
+  if (!rules) return [];
+
+  const matched: PersonalImpact[] = [];
+  const seenHeadlines = new Set<string>();
+
+  for (const rule of rules) {
+    const userValue = demographics[rule.field];
+    if (userValue == null) continue;
+    if (!rule.matchValues.includes(userValue as string)) continue;
+
+    if (seenHeadlines.has(rule.headline)) continue;
+    seenHeadlines.add(rule.headline);
+
+    matched.push({
+      effect: rule.effect,
+      headline: rule.headline,
+      detail: rule.detail,
+    });
+  }
+
+  // Sort: direct impacts first (benefit, concern, mixed), context last
+  matched.sort((a, b) => EFFECT_PRIORITY[a.effect] - EFFECT_PRIORITY[b.effect]);
+
+  // Cap at 4 insights
+  return matched.slice(0, 4);
 }

@@ -9,11 +9,13 @@ import {
   selectBlueprintProfile,
   selectSpec,
 } from '@/stores/userStore';
+import { useDemographicStore } from '@/stores/demographicStore';
 import { ballotApi } from '@/services/api';
 import {
   transformBallot,
   computePropositionRecommendation,
   computeCandidateMatches,
+  computeDemographicInsights,
   type BallotItem,
   type Category,
   type UserVote,
@@ -26,6 +28,7 @@ import type { Spec } from '@/types/civicAssessment';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
+import PersonalImpactSection from '@/components/ballot/PersonalImpactSection';
 import PropositionVoteButtons from '@/components/ballot/PropositionVoteButtons';
 import CandidateVoteButtons from '@/components/ballot/CandidateVoteButtons';
 import NavigationButtons from '@/components/ballot/NavigationButtons';
@@ -64,6 +67,10 @@ export default function BallotPage() {
   const hasCompletedAssessment = useUserStore(selectHasCompletedAssessment);
   const blueprintProfile = useUserStore(selectBlueprintProfile);
   const blueprintSpec = useUserStore(selectSpec);
+
+  // Demographic profile store
+  const demographicProfile = useDemographicStore((s) => s.profile);
+  const demographicsWasSkipped = useDemographicStore((s) => s.wasSkipped);
 
   // Derive value axes from blueprint profile
   const valueAxes = useMemo(() => {
@@ -170,6 +177,14 @@ export default function BallotPage() {
     }
     return computeCandidateMatches(currentItem, valueAxes);
   }, [currentItem, valueAxes]);
+
+  // --------------------------------------------------
+  // Demographic-based personal impact insights
+  // --------------------------------------------------
+  const personalImpacts = useMemo(() => {
+    if (!currentItem || demographicsWasSkipped) return [];
+    return computeDemographicInsights(currentItem.id, demographicProfile);
+  }, [currentItem, demographicProfile, demographicsWasSkipped]);
 
   // --------------------------------------------------
   // Vote management helpers
@@ -361,6 +376,9 @@ export default function BallotPage() {
             valueFraming={propositionValueFraming}
           />
         )}
+
+        {/* Demographic-based personal impact insights */}
+        <PersonalImpactSection impacts={personalImpacts} />
 
         {/* Vote selection */}
         {currentItem.type === 'proposition' ? (
