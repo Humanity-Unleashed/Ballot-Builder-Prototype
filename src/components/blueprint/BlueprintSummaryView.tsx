@@ -209,10 +209,19 @@ export default function BlueprintSummaryView({
               key={config.domainId}
               className="mb-2.5 rounded-[14px] border border-gray-200 bg-white px-4 py-3.5 shadow-sm"
             >
-              {/* Header: icon + domain name */}
-              <div className="mb-2.5 flex items-center gap-1.5">
-                <span className="text-sm">{emoji}</span>
-                <span className="text-xs font-bold text-gray-700">{displayName}</span>
+              {/* Header: icon + domain name + fine-tune */}
+              <div className="mb-2.5 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-sm">{emoji}</span>
+                  <span className="text-xs font-bold text-gray-700">{displayName}</span>
+                </div>
+                <button
+                  onClick={() => handleFineTune(config.domainId)}
+                  className="flex items-center gap-0.5 text-[11px] font-semibold text-violet-500 transition-colors hover:text-violet-700"
+                >
+                  {hasFT ? 'Fine-tuned' : 'Fine-tune'}
+                  <ChevronRight className="h-3 w-3" />
+                </button>
               </div>
 
               {/* Bold statement */}
@@ -227,15 +236,6 @@ export default function BlueprintSummaryView({
                 rightLabel={config.rightPole}
                 onChange={(v) => handleDomainChange(config.domainId, v)}
               />
-
-              {/* Fine-tune button */}
-              <button
-                onClick={() => handleFineTune(config.domainId)}
-                className="mt-3 flex items-center gap-1 text-[11px] font-semibold text-violet-500 transition-colors hover:text-violet-700"
-              >
-                {hasFT ? 'Fine-tuned' : 'Fine-tune'}
-                <ChevronRight className="h-3 w-3" />
-              </button>
             </div>
           );
         })}
