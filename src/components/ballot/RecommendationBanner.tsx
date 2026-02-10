@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { Sparkles, HelpCircle } from 'lucide-react';
-import type { ValuePropositionRecommendation } from '@/lib/ballotHelpers';
+import type { PropositionRecommendation } from '@/lib/ballotHelpers';
 import PropositionBreakdownSheet from './PropositionBreakdownSheet';
 
 interface RecommendationBannerProps {
-  recommendation: ValuePropositionRecommendation;
+  recommendation: PropositionRecommendation;
   valueFraming?: { resonance: string[]; tension: string[] };
 }
 
@@ -24,8 +24,8 @@ export default function RecommendationBanner({
   // Build summary text
   const summaryText = (() => {
     if (!recommendation.vote || recommendation.confidence < 0.2) {
-      if (recommendation.topFactors.length > 0) {
-        return `Your values on ${recommendation.topFactors.slice(0, 2).join(' and ')} pull in different directions on this one.`;
+      if (recommendation.factors.length > 0) {
+        return `Your values on ${recommendation.factors.slice(0, 2).join(' and ')} pull in different directions on this one.`;
       }
       return 'This measure touches values you hold on both sides.';
     }

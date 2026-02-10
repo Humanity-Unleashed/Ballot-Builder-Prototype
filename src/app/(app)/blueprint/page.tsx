@@ -17,7 +17,7 @@ import { checkForAxisTransition, DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintH
 
 import IntroScreen from '@/components/blueprint/IntroScreen';
 import AssessmentView from '@/components/blueprint/AssessmentView';
-import BlueprintView from '@/components/blueprint/BlueprintView';
+import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
 import FineTuningScreen from '@/components/blueprint/FineTuningScreen';
 
 type PageState = 'intro' | 'assessment' | 'fine_tuning' | 'results';
@@ -263,13 +263,12 @@ export default function BlueprintPage() {
   // ── Results ──
   if (pageState === 'results' && profile) {
     return (
-      <BlueprintView
+      <BlueprintSummaryView
         profile={profile}
-        blueprintSpec={spec}
+        spec={spec}
         metaDimensions={metaDimensions}
         fineTuningResponses={fineTuningResponses}
         onRetake={handleRetake}
-        onEditingAxisChange={() => {}}
         onFineTune={handleFineTune}
         onChangeAxis={handleChangeAxis}
         onChangeAxisImportance={handleChangeAxisImportance}

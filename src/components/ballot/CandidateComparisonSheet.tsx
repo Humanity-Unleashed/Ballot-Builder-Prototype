@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { X, Check, AlertTriangle, Minus } from 'lucide-react';
-import type { Candidate, ValueCandidateMatch } from '@/lib/ballotHelpers';
+import type { Candidate, CandidateMatch } from '@/lib/ballotHelpers';
 
 interface CandidateComparisonSheetProps {
   visible: boolean;
   candidate: Candidate | null;
-  match: ValueCandidateMatch | undefined;
+  match: CandidateMatch | undefined;
   onClose: () => void;
 }
 
@@ -19,12 +19,12 @@ export default function CandidateComparisonSheet({
 }: CandidateComparisonSheetProps) {
   if (!visible || !candidate || !match) return null;
 
-  // Separate aligned and conflicting values
-  const alignedDetails = match.details.filter(
+  // Separate aligned and conflicting axes
+  const alignedDetails = match.axisComparisons.filter(
     (d) => d.alignment === 'strong' || d.alignment === 'moderate'
   );
-  const conflictingDetails = match.details.filter((d) => d.alignment === 'opposed');
-  const neutralDetails = match.details.filter((d) => d.alignment === 'weak');
+  const conflictingDetails = match.axisComparisons.filter((d) => d.alignment === 'opposed');
+  const neutralDetails = match.axisComparisons.filter((d) => d.alignment === 'weak');
 
   return (
     <div
@@ -65,14 +65,14 @@ export default function CandidateComparisonSheet({
                 Where you align
               </p>
               {alignedDetails.map((detail) => (
-                <div key={detail.valueId} className="flex items-start gap-3">
+                <div key={detail.axisId} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="h-3 w-3 text-green-600" />
                   </div>
                   <div className="flex-1">
                     <p className="text-[13px] text-gray-700 leading-relaxed">
-                      <strong className="text-gray-900">{detail.policyContext}:</strong>{' '}
-                      {detail.explanation}
+                      <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
+                      You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
                   </div>
                 </div>
@@ -87,14 +87,14 @@ export default function CandidateComparisonSheet({
                 Where you differ
               </p>
               {conflictingDetails.map((detail) => (
-                <div key={detail.valueId} className="flex items-start gap-3">
+                <div key={detail.axisId} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center shrink-0 mt-0.5">
                     <AlertTriangle className="h-3 w-3 text-amber-600" />
                   </div>
                   <div className="flex-1">
                     <p className="text-[13px] text-gray-700 leading-relaxed">
-                      <strong className="text-gray-900">{detail.policyContext}:</strong>{' '}
-                      {detail.explanation}
+                      <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
+                      You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
                   </div>
                 </div>
@@ -109,12 +109,12 @@ export default function CandidateComparisonSheet({
                 Similar stance on
               </p>
               {neutralDetails.slice(0, 2).map((detail) => (
-                <div key={detail.valueId} className="flex items-start gap-3">
+                <div key={detail.axisId} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
                     <Minus className="h-3 w-3 text-gray-500" />
                   </div>
                   <p className="text-[13px] text-gray-600 leading-relaxed flex-1">
-                    {detail.valueName}
+                    {detail.axisName}
                   </p>
                 </div>
               ))}
@@ -122,7 +122,7 @@ export default function CandidateComparisonSheet({
           )}
 
           {/* No data case */}
-          {match.details.length === 0 && (
+          {match.axisComparisons.length === 0 && (
             <p className="text-sm text-gray-500 text-center py-4">
               We don&apos;t have enough data about this candidate&apos;s positions to show a detailed comparison.
             </p>

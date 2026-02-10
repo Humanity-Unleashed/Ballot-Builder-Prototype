@@ -2,29 +2,21 @@
 
 import React from 'react';
 import { X, Check, AlertTriangle } from 'lucide-react';
-import type { ValuePropositionRecommendation } from '@/lib/ballotHelpers';
+import type { PropositionRecommendation } from '@/lib/ballotHelpers';
 
 interface PropositionBreakdownSheetProps {
   visible: boolean;
-  recommendation: ValuePropositionRecommendation;
+  recommendation: PropositionRecommendation;
   onClose: () => void;
 }
 
 // Generate value-framed resonance/tension phrases
-function getResonancePhrase(valueName: string, effectDirection: number): string {
-  // Positive effect on a value the user cares about
-  if (effectDirection > 0.5) {
-    return `This strongly supports your value of **${valueName}**`;
-  }
-  return `This aligns with your value of **${valueName}**`;
+function getResonancePhrase(axisName: string): string {
+  return `This aligns with your stance on **${axisName}**`;
 }
 
-function getTensionPhrase(valueName: string, effectDirection: number): string {
-  // Negative effect on a value the user cares about
-  if (effectDirection < -0.5) {
-    return `This may conflict with your value of **${valueName}**`;
-  }
-  return `This creates some tension with your value of **${valueName}**`;
+function getTensionPhrase(axisName: string): string {
+  return `This creates tension with your stance on **${axisName}**`;
 }
 
 function renderBoldText(text: string) {
@@ -89,12 +81,12 @@ export default function PropositionBreakdownSheet({
                 Where it aligns
               </p>
               {resonanceItems.map((item) => (
-                <div key={item.valueId} className="flex items-start gap-3">
+                <div key={item.axisId} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="h-3 w-3 text-green-600" />
                   </div>
                   <p className="text-[13px] text-gray-700 leading-relaxed flex-1">
-                    {renderBoldText(getResonancePhrase(item.valueName, item.effectDirection))}
+                    {renderBoldText(getResonancePhrase(item.axisName))}
                   </p>
                 </div>
               ))}
@@ -108,12 +100,12 @@ export default function PropositionBreakdownSheet({
                 Where it creates tension
               </p>
               {tensionItems.map((item) => (
-                <div key={item.valueId} className="flex items-start gap-3">
+                <div key={item.axisId} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center shrink-0 mt-0.5">
                     <AlertTriangle className="h-3 w-3 text-amber-600" />
                   </div>
                   <p className="text-[13px] text-gray-700 leading-relaxed flex-1">
-                    {renderBoldText(getTensionPhrase(item.valueName, item.effectDirection))}
+                    {renderBoldText(getTensionPhrase(item.axisName))}
                   </p>
                 </div>
               ))}
@@ -127,7 +119,7 @@ export default function PropositionBreakdownSheet({
                 Minimal effect on
               </p>
               <p className="text-[13px] text-gray-500 leading-relaxed">
-                {neutralItems.map((item) => item.valueName).join(', ')}
+                {neutralItems.map((item) => item.axisName).join(', ')}
               </p>
             </div>
           )}

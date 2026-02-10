@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { Candidate, ValueCandidateMatch, VoteChoice } from '@/lib/ballotHelpers';
+import type { Candidate, CandidateMatch, VoteChoice } from '@/lib/ballotHelpers';
 import CandidateCard from './CandidateCard';
 import CandidateComparisonSheet from './CandidateComparisonSheet';
 
@@ -10,7 +10,7 @@ interface CandidateVoteButtonsProps {
   allowWriteIn: boolean;
   selected: VoteChoice;
   writeInName: string;
-  matches: ValueCandidateMatch[];
+  matches: CandidateMatch[];
   onSelect: (choice: string) => void;
   onWriteInChange: (name: string) => void;
 }
