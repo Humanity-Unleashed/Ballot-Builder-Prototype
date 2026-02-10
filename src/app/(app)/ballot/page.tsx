@@ -35,6 +35,7 @@ import NavigationButtons from '@/components/ballot/NavigationButtons';
 import BallotNavigator from '@/components/ballot/BallotNavigator';
 import BallotSummary from '@/components/ballot/BallotSummary';
 import ValuesSection from '@/components/ballot/ValuesSection';
+import DemographicSection from '@/components/ballot/DemographicSection';
 
 // =============================================
 // Main Ballot Page Orchestrator
@@ -91,6 +92,7 @@ export default function BallotPage() {
   const [writeInName, setWriteInName] = useState('');
   const [showSummary, setShowSummary] = useState(false);
   const [valuesExpanded, setValuesExpanded] = useState(false);
+  const [demographicExpanded, setDemographicExpanded] = useState(false);
 
   // Feedback screen context
   const { setScreenLabel } = useFeedbackScreen();
@@ -379,6 +381,12 @@ export default function BallotPage() {
 
         {/* Demographic-based personal impact insights */}
         <PersonalImpactSection impacts={personalImpacts} />
+
+        {/* Adjust your profile (demographics) */}
+        <DemographicSection
+          expanded={demographicExpanded}
+          onToggle={() => setDemographicExpanded((v) => !v)}
+        />
 
         {/* Vote selection */}
         {currentItem.type === 'proposition' ? (
