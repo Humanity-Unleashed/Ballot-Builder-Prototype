@@ -4,6 +4,7 @@ import React from 'react';
 import { SlidersHorizontal, ChevronUp, ChevronDown } from 'lucide-react';
 import type { ValueAxis } from '@/lib/ballotHelpers';
 import DomainLeanMeter from '@/components/blueprint/DomainLeanMeter';
+import { getSliderConfig } from '@/data/sliderPositions';
 
 interface ValuesSectionProps {
   axes: ValueAxis[];
@@ -47,17 +48,32 @@ export default function ValuesSection({
           <p className="text-[13px] text-gray-500 leading-[18px]">
             Changing these will update recommendations across your ballot.
           </p>
-          {relevantAxes.map((axis) => (
-            <div key={axis.id} className="space-y-1">
-              <span className="text-sm font-semibold text-gray-700">{axis.name}</span>
-              <DomainLeanMeter
-                value={axis.value * 10}
-                leftLabel={axis.poleA}
-                rightLabel={axis.poleB}
-                onChange={(v) => onValueChange(axis.id, v / 10)}
-              />
-            </div>
-          ))}
+          {relevantAxes.map((axis) => {
+            const pct = axis.value * 10;
+            const config = getSliderConfig(axis.id);
+            const positions = config?.positions;
+            const stopCount = positions?.length ?? 5;
+            const stopIdx = Math.round((pct / 100) * (stopCount - 1));
+            const pos = positions?.[stopIdx];
+
+            return (
+              <div key={axis.id} className="space-y-1">
+                <span className="text-sm font-semibold text-gray-700">{axis.name}</span>
+                <DomainLeanMeter
+                  value={pct}
+                  leftLabel={axis.poleA}
+                  rightLabel={axis.poleB}
+                  onChange={(v) => onValueChange(axis.id, v / 10)}
+                />
+                {pos && (
+                  <div className="text-center">
+                    <p className="text-xs font-semibold text-gray-600">{pos.title}</p>
+                    <p className="text-[11px] text-gray-400 italic">{pos.description}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
