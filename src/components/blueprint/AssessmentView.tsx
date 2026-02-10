@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { Lightbulb } from 'lucide-react';
-import { getSliderConfig, getPositionColor } from '@/data/sliderPositions';
+import { getSliderConfig } from '@/data/sliderPositions';
 import type { Spec } from '@/types/civicAssessment';
-import DraggableSlider from './DraggableSlider';
+import DomainLeanMeter from './DomainLeanMeter';
 import StrengthChips from './StrengthChips';
 
 interface AssessmentViewProps {
@@ -63,11 +63,6 @@ export default function AssessmentView({
   const totalAxes = axisQueue.length;
   const progressPercentage = totalAxes > 0 ? (currentAxisIndex / totalAxes) * 100 : 0;
   const currentPosition = currentAxisConfig.positions[sliderPosition];
-  const positionColor = getPositionColor(
-    sliderPosition,
-    currentAxisConfig.positions.length,
-    currentAxisConfig.currentPolicyIndex,
-  );
   const totalPositions = currentAxisConfig.positions.length;
 
   return (
@@ -96,13 +91,7 @@ export default function AssessmentView({
           <p className="mb-5 text-sm leading-5 text-gray-600">{currentAxisConfig.question}</p>
 
           {/* Position display */}
-          <div
-            className="mb-5 rounded-xl border-2 p-4"
-            style={{
-              borderColor: positionColor,
-              backgroundColor: 'rgba(124, 58, 237, 0.04)',
-            }}
-          >
+          <div className="mb-5 rounded-xl border-2 border-violet-200 bg-violet-50/40 p-4">
             <p className="text-[15px] font-semibold text-gray-900">{currentPosition.title}</p>
             <p className="mt-1 text-[13px] leading-[19px] text-gray-600">
               {currentPosition.description}
@@ -115,12 +104,11 @@ export default function AssessmentView({
           </div>
 
           {/* Slider */}
-          <DraggableSlider
-            position={sliderPosition}
-            totalPositions={totalPositions}
-            onPositionChange={onSliderChange}
-            poleALabel={currentAxisConfig.poleALabel}
-            poleBLabel={currentAxisConfig.poleBLabel}
+          <DomainLeanMeter
+            value={(sliderPosition / (totalPositions - 1)) * 100}
+            leftLabel={currentAxisConfig.poleALabel.replace(/\n/g, ' ')}
+            rightLabel={currentAxisConfig.poleBLabel.replace(/\n/g, ' ')}
+            onChange={(v) => onSliderChange(Math.round((v / 100) * (totalPositions - 1)))}
           />
 
           {/* Strength chips */}
