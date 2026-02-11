@@ -10,6 +10,13 @@ import {
   selectSpec,
 } from '@/stores/userStore';
 import { useDemographicStore } from '@/stores/demographicStore';
+import {
+  useBallotStore,
+  selectBallotHasHydrated,
+  selectSavedVotes,
+  selectCurrentIndex,
+  selectShowSummary,
+} from '@/stores/ballotStore';
 import { ballotApi } from '@/services/api';
 import {
   transformBallot,
@@ -79,18 +86,26 @@ export default function BallotPage() {
     return profileToValueAxes(blueprintProfile, blueprintSpec);
   }, [blueprintProfile, blueprintSpec]);
 
+  // Ballot store (persisted)
+  const ballotHydrated = useBallotStore(selectBallotHasHydrated);
+  const savedVotes = useBallotStore(selectSavedVotes);
+  const currentIndex = useBallotStore(selectCurrentIndex);
+  const showSummary = useBallotStore(selectShowSummary);
+  const saveVote = useBallotStore((s) => s.saveVote);
+  const setCurrentIndex = useBallotStore((s) => s.setCurrentIndex);
+  const setShowSummary = useBallotStore((s) => s.setShowSummary);
+  const clearBallot = useBallotStore((s) => s.clearBallot);
+  const getVoteForItem = useBallotStore((s) => s.getVoteForItem);
+
   // Ballot data from API
   const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isBallotLoading, setIsBallotLoading] = useState(true);
   const [ballotError, setBallotError] = useState<string | null>(null);
 
-  // UI state
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [savedVotes, setSavedVotes] = useState<UserVote[]>([]);
+  // Ephemeral UI state (current selection before saving)
   const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
   const [writeInName, setWriteInName] = useState('');
-  const [showSummary, setShowSummary] = useState(false);
   const [valuesExpanded, setValuesExpanded] = useState(false);
   const [demographicExpanded, setDemographicExpanded] = useState(false);
 
@@ -119,11 +134,21 @@ export default function BallotPage() {
     fetchBallot();
   }, []);
 
+  // Restore current vote from persisted store after ballot loads
+  useEffect(() => {
+    if (ballotItems.length === 0 || !ballotHydrated) return;
+    const saved = getVoteForItem(ballotItems[currentIndex]?.id);
+    if (saved) {
+      setCurrentVote(saved.choice);
+      setWriteInName(saved.writeInName || '');
+    }
+  }, [ballotItems, ballotHydrated, currentIndex, getVoteForItem]);
+
   const currentItem = ballotItems[currentIndex];
 
   // Update feedback screen label based on current sub-screen
   useEffect(() => {
-    if (!hasHydrated || isBallotLoading) {
+    if (!hasHydrated || !ballotHydrated || isBallotLoading) {
       setScreenLabel('Ballot - Loading');
     } else if (!hasCompletedAssessment || valueAxes.length === 0) {
       setScreenLabel('Ballot - Needs Blueprint');
@@ -137,7 +162,7 @@ export default function BallotPage() {
       setScreenLabel('Ballot');
     }
   }, [
-    hasHydrated, isBallotLoading, hasCompletedAssessment, valueAxes.length,
+    hasHydrated, ballotHydrated, isBallotLoading, hasCompletedAssessment, valueAxes.length,
     ballotError, showSummary, currentItem, currentIndex, ballotItems.length,
     setScreenLabel,
   ]);
@@ -193,7 +218,7 @@ export default function BallotPage() {
   // --------------------------------------------------
   const restoreVote = useCallback(
     (itemId: string) => {
-      const saved = savedVotes.find((v) => v.itemId === itemId);
+      const saved = getVoteForItem(itemId);
       if (saved) {
         setCurrentVote(saved.choice);
         setWriteInName(saved.writeInName || '');
@@ -202,7 +227,7 @@ export default function BallotPage() {
         setWriteInName('');
       }
     },
-    [savedVotes]
+    [getVoteForItem]
   );
 
   const handleValueChange = useCallback((axisId: string, value: number) => {
@@ -221,8 +246,8 @@ export default function BallotPage() {
       writeInName: currentVote === 'write_in' ? writeInName : undefined,
       timestamp: new Date().toISOString(),
     };
-    setSavedVotes((prev) => [...prev.filter((v) => v.itemId !== currentItem.id), vote]);
-  }, [currentItem, currentVote, writeInName]);
+    saveVote(vote);
+  }, [currentItem, currentVote, writeInName, saveVote]);
 
   // --------------------------------------------------
   // Navigation handlers
@@ -233,18 +258,18 @@ export default function BallotPage() {
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
       restoreVote(ballotItems[nextIndex].id);
-          } else {
+    } else {
       setShowSummary(true);
     }
-  }, [currentIndex, saveCurrentVote, restoreVote, ballotItems]);
+  }, [currentIndex, saveCurrentVote, restoreVote, ballotItems, setCurrentIndex, setShowSummary]);
 
   const handleEditItem = useCallback(
     (itemIndex: number) => {
       setCurrentIndex(itemIndex);
       restoreVote(ballotItems[itemIndex].id);
       setShowSummary(false);
-          },
-    [restoreVote, ballotItems]
+    },
+    [restoreVote, ballotItems, setCurrentIndex, setShowSummary]
   );
 
   const handleJumpTo = useCallback(
@@ -254,17 +279,15 @@ export default function BallotPage() {
       }
       setCurrentIndex(itemIndex);
       restoreVote(ballotItems[itemIndex].id);
-          },
-    [currentVote, saveCurrentVote, restoreVote, ballotItems]
+    },
+    [currentVote, saveCurrentVote, restoreVote, ballotItems, setCurrentIndex]
   );
 
   const handleStartOver = useCallback(() => {
-    setCurrentIndex(0);
-    setSavedVotes([]);
+    clearBallot();
     setCurrentVote(null);
     setWriteInName('');
-    setShowSummary(false);
-      }, []);
+  }, [clearBallot]);
 
   const handlePrint = useCallback(() => {
     alert(
@@ -277,8 +300,8 @@ export default function BallotPage() {
       const prevIndex = currentIndex - 1;
       setCurrentIndex(prevIndex);
       restoreVote(ballotItems[prevIndex].id);
-          }
-  }, [currentIndex, restoreVote, ballotItems]);
+    }
+  }, [currentIndex, restoreVote, ballotItems, setCurrentIndex]);
 
   const handleSkip = useCallback(() => {
     if (currentIndex < ballotItems.length - 1) {
@@ -287,13 +310,13 @@ export default function BallotPage() {
       restoreVote(ballotItems[nextIndex].id);
       setCurrentVote(null);
       setWriteInName('');
-          }
-  }, [currentIndex, restoreVote, ballotItems]);
+    }
+  }, [currentIndex, restoreVote, ballotItems, setCurrentIndex]);
 
   // --------------------------------------------------
   // Loading / error states
   // --------------------------------------------------
-  if (!hasHydrated || isBallotLoading) {
+  if (!hasHydrated || !ballotHydrated || isBallotLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
         <Loader2 className="h-8 w-8 text-violet-600 animate-spin" />
