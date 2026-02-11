@@ -15,6 +15,7 @@ import {
   insuranceOptions,
   veteranOptions,
 } from '@/components/demographics/DemographicScreen';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface DemographicSectionProps {
   expanded: boolean;
@@ -22,13 +23,14 @@ interface DemographicSectionProps {
 }
 
 export default function DemographicSection({ expanded, onToggle }: DemographicSectionProps) {
+  const { track } = useAnalyticsContext();
   const { profile, setField } = useDemographicStore();
 
   return (
     <div className="bg-gray-50 rounded-[14px] border border-gray-200 overflow-hidden">
       {/* Collapsible header */}
       <button
-        onClick={onToggle}
+        onClick={() => { track('click', { element: 'toggle_demographics', expanded: !expanded }); onToggle(); }}
         className="flex items-center justify-between w-full p-3.5 hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-2.5">

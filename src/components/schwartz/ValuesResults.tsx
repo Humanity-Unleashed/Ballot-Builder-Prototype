@@ -17,6 +17,7 @@ import type {
 import { schwartzApi } from '@/services/api';
 import { useSchwartzStore } from '@/stores/schwartzStore';
 import { rawMeanToPercent } from '@/stores/schwartzStore';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface ValuesResultsProps {
   spec: SchwartzSpec;
@@ -159,6 +160,7 @@ export default function ValuesResults({
   onRetake,
 }: ValuesResultsProps) {
   const router = useRouter();
+  const { track } = useAnalyticsContext();
   const topValues = getTopValues(valueScores).slice(0, 3);
   const sortedDimensions = [...dimensionScores].sort((a, b) => b.raw_mean - a.raw_mean);
 
@@ -319,7 +321,7 @@ export default function ValuesResults({
 
           {/* CTA to ballot */}
           <button
-            onClick={() => router.push('/ballot')}
+            onClick={() => { track('click', { element: 'view_ballot' }); router.push('/ballot'); }}
             className="mt-4 w-full flex items-center justify-center gap-2 bg-violet-600 text-white font-semibold py-3 rounded-xl hover:bg-violet-700 transition-colors"
           >
             <span>See how this affects your ballot</span>
@@ -452,7 +454,7 @@ export default function ValuesResults({
         {/* Retake button */}
         <div className="mt-8 flex justify-center">
           <button
-            onClick={onRetake}
+            onClick={() => { track('click', { element: 'retake_assessment' }); onRetake(); }}
             className="flex items-center gap-2 rounded-lg px-6 py-3 text-gray-600 transition-colors hover:bg-gray-100"
           >
             <RefreshCw className="h-4 w-4" />

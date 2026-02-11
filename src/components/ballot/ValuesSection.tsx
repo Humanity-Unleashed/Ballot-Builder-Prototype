@@ -5,6 +5,7 @@ import { SlidersHorizontal, ChevronUp, ChevronDown } from 'lucide-react';
 import type { ValueAxis } from '@/lib/ballotHelpers';
 import DomainLeanMeter from '@/components/blueprint/DomainLeanMeter';
 import { getSliderConfig } from '@/data/sliderPositions';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface ValuesSectionProps {
   axes: ValueAxis[];
@@ -21,6 +22,7 @@ export default function ValuesSection({
   expanded,
   onToggle,
 }: ValuesSectionProps) {
+  const { track } = useAnalyticsContext();
   const relevantAxes = axes.filter((a) => relevantAxisIds.includes(a.id));
   if (relevantAxes.length === 0) return null;
 
@@ -28,7 +30,7 @@ export default function ValuesSection({
     <div className="bg-gray-50 rounded-[14px] border border-gray-200 overflow-hidden">
       {/* Collapsible header */}
       <button
-        onClick={onToggle}
+        onClick={() => { track('click', { element: 'toggle_values', expanded: !expanded }); onToggle(); }}
         className="flex items-center justify-between w-full p-3.5 hover:bg-gray-100 transition-colors"
       >
         <div className="flex items-center gap-2.5">

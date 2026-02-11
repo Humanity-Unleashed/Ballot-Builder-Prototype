@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model FeedbackEntry {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  screen     String
+  screenName String   @map("screen_name")
+  type       String?
+  message    String
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("feedback_entries")
+}
+
+model AnalyticsEvent {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sessionId  String   @map("session_id")
+  eventType  String   @map("event_type")
+  screen     String
+  screenName String   @map("screen_name")
+  properties Json     @default("{}")
+  referrer   String?
+  duration   Int?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([sessionId])
+  @@index([eventType])
+  @@index([createdAt])
+  @@map("analytics_events")
+}

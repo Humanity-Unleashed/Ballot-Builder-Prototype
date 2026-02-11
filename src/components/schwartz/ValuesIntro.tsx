@@ -2,12 +2,15 @@
 
 import React from 'react';
 import { Compass, ArrowRight, MessageSquarePlus } from 'lucide-react';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface ValuesIntroProps {
   onStart: () => void;
 }
 
 export default function ValuesIntro({ onStart }: ValuesIntroProps) {
+  const { track } = useAnalyticsContext();
+
   return (
     <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gradient-to-b from-violet-50 to-white">
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
@@ -78,7 +81,7 @@ export default function ValuesIntro({ onStart }: ValuesIntroProps) {
 
         {/* Start button */}
         <button
-          onClick={onStart}
+          onClick={() => { track('click', { element: 'start_assessment' }); onStart(); }}
           className="flex items-center gap-2 rounded-xl bg-violet-600 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-violet-700 hover:shadow-xl active:scale-95"
         >
           <span>Get Started</span>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { MessageSquarePlus } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import Button from '@/components/ui/Button';
 
 interface ValueItemProps {
@@ -28,6 +29,7 @@ function ValueItem({ emoji, title, description }: ValueItemProps) {
 export default function WelcomePage() {
   const router = useRouter();
   const { isAuthenticated, isLoading } = useAuth();
+  const { track } = useAnalyticsContext();
 
   useEffect(() => {
     if (!isLoading && isAuthenticated) {
@@ -94,11 +96,11 @@ export default function WelcomePage() {
 
         {/* Action Buttons */}
         <div className="pb-6">
-          <Link href="/register">
+          <Link href="/register" onClick={() => track('click', { element: 'get_started' })}>
             <Button title="Get Started" />
           </Link>
           <div className="mt-3">
-            <Link href="/login">
+            <Link href="/login" onClick={() => track('click', { element: 'has_account' })}>
               <Button title="I Already Have an Account" variant="outline" />
             </Link>
           </div>

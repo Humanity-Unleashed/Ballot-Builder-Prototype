@@ -7,13 +7,22 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "postinstall": "prisma generate",
+    "db:generate": "dotenv -e .env.local -- prisma generate",
+    "db:push": "dotenv -e .env.local -- prisma db push",
+    "db:migrate:dev": "dotenv -e .env.local -- prisma migrate dev",
+    "db:migrate:deploy": "dotenv -e .env.local -- prisma migrate deploy",
+    "db:studio": "dotenv -e .env.local -- prisma studio"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
     "axios": "^1.13.4",
     "framer-motion": "^12.31.0",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
+    "pg": "^8.18.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "uuid": "^13.0.0",
@@ -22,11 +31,14 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.16.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "prisma": "^7.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

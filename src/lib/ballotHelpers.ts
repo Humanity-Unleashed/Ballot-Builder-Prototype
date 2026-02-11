@@ -13,7 +13,7 @@ import type {
   SchwartzValueScore,
 } from '@/services/api';
 import type { DemographicProfile } from '@/stores/demographicStore';
-import { demographicImpacts, type DemographicImpactRule } from '@/data/demographicImpacts';
+import { demographicImpacts } from '@/data/demographicImpacts';
 
 // =============================================
 // Type definitions
