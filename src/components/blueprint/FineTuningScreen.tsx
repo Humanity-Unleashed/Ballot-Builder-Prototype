@@ -5,6 +5,7 @@ import { X } from 'lucide-react';
 import { getFineTuningConfig } from '@/data/fineTuningPositions';
 import type { Spec } from '@/types/civicAssessment';
 import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import DomainLeanMeter from './DomainLeanMeter';
 import StrengthChips from './StrengthChips';
 
@@ -23,6 +24,7 @@ export default function FineTuningScreen({
   onComplete,
   onCancel,
 }: FineTuningScreenProps) {
+  const { track } = useAnalyticsContext();
   const fineTuningConfig = getFineTuningConfig(axisId);
   const axis = spec.axes.find((a) => a.id === axisId);
 
@@ -63,6 +65,9 @@ export default function FineTuningScreen({
   const totalPositions = currentSubDimension.positions.length;
 
   const handleNext = () => {
+    const isLast = currentIndex >= totalQuestions - 1;
+    track('click', { element: isLast ? 'finetune_finish' : 'finetune_next', axisId, questionIndex: currentIndex });
+
     const newResponses = { ...responses, [currentSubDimension.id]: sliderPosition };
     setResponses(newResponses);
 
@@ -70,7 +75,7 @@ export default function FineTuningScreen({
     setStrengthResponses(newStrength);
 
     animateTransition(() => {
-      if (currentIndex >= totalQuestions - 1) {
+      if (isLast) {
         onComplete(newResponses);
         return;
       }
@@ -95,6 +100,7 @@ export default function FineTuningScreen({
   };
 
   const handleSkip = () => {
+    track('click', { element: 'finetune_skip', axisId, questionIndex: currentIndex });
     const newResponses = { ...responses, [currentSubDimension.id]: 2 };
     setResponses(newResponses);
 
@@ -122,7 +128,7 @@ export default function FineTuningScreen({
       <div className="border-b border-gray-200 bg-white px-5 py-4">
         <div className="mb-4 flex items-center">
           <button
-            onClick={onCancel}
+            onClick={() => { track('click', { element: 'finetune_cancel', axisId }); onCancel(); }}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-gray-200"
           >
             <X className="h-6 w-6" />

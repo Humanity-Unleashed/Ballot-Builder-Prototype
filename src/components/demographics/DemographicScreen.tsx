@@ -5,6 +5,7 @@ import { Info } from 'lucide-react';
 
 import { useDemographicStore } from '@/stores/demographicStore';
 import type { DemographicProfile } from '@/stores/demographicStore';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 // ── OptionButtonGroup ──
 
@@ -153,13 +154,20 @@ interface DemographicScreenProps {
 
 export default function DemographicScreen({ onComplete }: DemographicScreenProps) {
   const { profile, setField, submitProfile, skipProfile } = useDemographicStore();
+  const { track } = useAnalyticsContext();
 
   const handleSkip = () => {
+    track('click', { element: 'skip_demographics' });
     skipProfile();
     onComplete();
   };
 
   const handleContinue = () => {
+    // Count how many fields were filled out
+    const filledCount = Object.entries(profile).filter(
+      ([key, val]) => key !== 'zipCode' ? val !== null : val !== '',
+    ).length;
+    track('click', { element: 'submit_demographics', filledCount });
     submitProfile();
     onComplete();
   };

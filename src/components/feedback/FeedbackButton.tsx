@@ -6,14 +6,7 @@ import { usePathname } from 'next/navigation';
 import { MessageSquarePlus, X } from 'lucide-react';
 import { useFeedbackStore, type FeedbackEntry } from '@/stores/feedbackStore';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
-
-const SCREEN_NAMES: Record<string, string> = {
-  '/': 'Home',
-  '/blueprint': 'Blueprint',
-  '/ballot': 'Ballot',
-  '/login': 'Login',
-  '/register': 'Register',
-};
+import { getScreenName } from '@/lib/screenNames';
 
 const FEEDBACK_TYPES = [
   { value: 'bug', label: 'Bug' },
@@ -21,10 +14,6 @@ const FEEDBACK_TYPES = [
   { value: 'confusing', label: 'Confusing' },
   { value: 'like', label: 'Like it' },
 ] as const;
-
-function getScreenName(pathname: string): string {
-  return SCREEN_NAMES[pathname] ?? pathname;
-}
 
 export default function FeedbackButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,7 +81,7 @@ export default function FeedbackButton() {
     }, 1500);
   };
 
-  const screenName = screenLabel || getScreenName(pathname);
+  const screenName = getScreenName(pathname, screenLabel);
 
   // Floating trigger button
   const trigger = (

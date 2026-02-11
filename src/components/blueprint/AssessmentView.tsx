@@ -4,6 +4,7 @@ import React from 'react';
 import { Lightbulb } from 'lucide-react';
 import { getSliderConfig } from '@/data/sliderPositions';
 import type { Spec } from '@/types/civicAssessment';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import DomainLeanMeter from './DomainLeanMeter';
 import StrengthChips from './StrengthChips';
 
@@ -36,6 +37,8 @@ export default function AssessmentView({
   onNext,
   onBack,
 }: AssessmentViewProps) {
+  const { track } = useAnalyticsContext();
+
   // Transition interstitial
   if (showTransition) {
     return (
@@ -120,7 +123,7 @@ export default function AssessmentView({
       <div className="border-t border-gray-200 bg-white p-5">
         <div className="flex gap-3">
           <button
-            onClick={onBack}
+            onClick={() => { track('click', { element: 'assessment_back', questionIndex: currentAxisIndex }); onBack(); }}
             disabled={currentAxisIndex === 0}
             className={[
               'flex-1 rounded-xl py-3.5 text-[15px] font-semibold transition-colors',
@@ -132,7 +135,7 @@ export default function AssessmentView({
             Back
           </button>
           <button
-            onClick={onNext}
+            onClick={() => { track('click', { element: currentAxisIndex >= axisQueue.length - 1 ? 'assessment_finish' : 'assessment_next', questionIndex: currentAxisIndex }); onNext(); }}
             className="flex-1 rounded-xl bg-violet-600 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
           >
             {currentAxisIndex >= axisQueue.length - 1 ? 'Finish' : 'Next \u2192'}

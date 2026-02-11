@@ -13,6 +13,7 @@ import {
   scoreToPercents,
   SPECTRUM_BARS,
 } from '@/lib/blueprintHelpers';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import DomainLeanMeter from './DomainLeanMeter';
 
 // ─── Domain config for V3 cards ───────────────────────────
@@ -113,6 +114,7 @@ export default function BlueprintSummaryView({
   onChangeAxis,
 }: BlueprintSummaryViewProps) {
   const router = useRouter();
+  const { track } = useAnalyticsContext();
 
   // ── Derived data ──
   const valueSummary = useMemo(() => {
@@ -168,7 +170,7 @@ export default function BlueprintSummaryView({
         <div className="mb-1 flex items-center justify-between">
           <h1 className="text-xl font-extrabold text-gray-900">Your Civic Priorities</h1>
           <button
-            onClick={onRetake}
+            onClick={() => { track('click', { element: 'retake_blueprint' }); onRetake(); }}
             className="flex items-center gap-1 rounded-lg bg-gray-100 px-3 py-2 transition-colors hover:bg-gray-200"
           >
             <RefreshCw className="h-4 w-4 text-gray-600" />
@@ -216,7 +218,7 @@ export default function BlueprintSummaryView({
                   <span className="text-xs font-bold text-gray-700">{displayName}</span>
                 </div>
                 <button
-                  onClick={() => handleFineTune(config.domainId)}
+                  onClick={() => { track('click', { element: 'fine_tune', domainId: config.domainId }); handleFineTune(config.domainId); }}
                   className="flex items-center gap-0.5 text-[11px] font-semibold text-violet-500 transition-colors hover:text-violet-700"
                 >
                   {hasFT ? 'Fine-tuned' : 'Fine-tune'}
@@ -285,7 +287,7 @@ export default function BlueprintSummaryView({
 
         {/* ── CTA button ── */}
         <button
-          onClick={() => router.push('/ballot')}
+          onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
           className="mb-3 w-full rounded-[14px] bg-violet-600 py-4 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
         >
           Build my ballot &rarr;

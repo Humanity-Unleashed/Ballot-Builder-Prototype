@@ -3,14 +3,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
-
-const SCREEN_NAMES: Record<string, string> = {
-  '/': 'Home',
-  '/blueprint': 'Blueprint',
-  '/ballot': 'Ballot',
-  '/login': 'Login',
-  '/register': 'Register',
-};
+import { getScreenName } from '@/lib/screenNames';
 
 function getSessionId(): string {
   if (typeof window === 'undefined') return '';
@@ -22,8 +15,20 @@ function getSessionId(): string {
   return id;
 }
 
-function getScreenName(pathname: string, screenLabel: string): string {
-  return screenLabel || SCREEN_NAMES[pathname] || pathname;
+/** Send a JSON payload via sendBeacon (with correct Content-Type) or fetch fallback. */
+function beacon(url: string, payload: object): void {
+  const body = JSON.stringify(payload);
+  if (navigator.sendBeacon) {
+    const blob = new Blob([body], { type: 'application/json' });
+    navigator.sendBeacon(url, blob);
+  } else {
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+      keepalive: true,
+    }).catch(() => {});
+  }
 }
 
 export function useAnalytics() {
@@ -32,6 +37,7 @@ export function useAnalytics() {
 
   const prevPathnameRef = useRef<string | null>(null);
   const enterTimeRef = useRef<number>(Date.now());
+  const enterScreenNameRef = useRef<string>('');
   const hasSentLeaveRef = useRef(false);
   const sessionIdRef = useRef<string>('');
 
@@ -45,8 +51,6 @@ export function useAnalytics() {
       const sessionId = sessionIdRef.current;
       if (!sessionId) return;
 
-      const screenName = getScreenName(pathname, screenLabel);
-
       fetch('/api/analytics', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -54,17 +58,16 @@ export function useAnalytics() {
           sessionId,
           eventType,
           screen: pathname,
-          screenName,
+          screenName: getScreenName(pathname, screenLabel),
           properties: properties ?? {},
           referrer: prevPathnameRef.current,
         }),
-      }).catch(() => {
-        // Silently fail — fire-and-forget
-      });
+      }).catch(() => {});
     },
     [pathname, screenLabel],
   );
 
+  /** Send page_leave for the current page. Guard prevents duplicate sends. */
   const sendLeave = useCallback(() => {
     if (hasSentLeaveRef.current) return;
     hasSentLeaveRef.current = true;
@@ -72,67 +75,34 @@ export function useAnalytics() {
     const sessionId = sessionIdRef.current;
     if (!sessionId) return;
 
-    const duration = Date.now() - enterTimeRef.current;
-    const leavePath = prevPathnameRef.current ?? pathname;
-    const screenName = getScreenName(leavePath, screenLabel);
-
-    const payload = JSON.stringify({
+    beacon('/api/analytics', {
       sessionId,
       eventType: 'page_leave',
-      screen: leavePath,
-      screenName,
+      screen: pathname,
+      screenName: enterScreenNameRef.current || getScreenName(pathname, screenLabel),
       properties: {},
       referrer: null,
-      duration,
+      duration: Date.now() - enterTimeRef.current,
     });
-
-    // Use sendBeacon for reliability during unload, fall back to fetch
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon('/api/analytics', payload);
-    } else {
-      fetch('/api/analytics', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: payload,
-        keepalive: true,
-      }).catch(() => {});
-    }
   }, [pathname, screenLabel]);
 
   // Track page_view on pathname change
   useEffect(() => {
-    // Send page_leave for previous page
+    // Send page_leave for previous page before entering new one
     if (prevPathnameRef.current !== null && prevPathnameRef.current !== pathname) {
-      const sessionId = sessionIdRef.current;
-      if (sessionId && !hasSentLeaveRef.current) {
-        const duration = Date.now() - enterTimeRef.current;
-        const prevScreenName = getScreenName(prevPathnameRef.current, '');
-
-        fetch('/api/analytics', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            sessionId,
-            eventType: 'page_leave',
-            screen: prevPathnameRef.current,
-            screenName: prevScreenName,
-            properties: {},
-            referrer: null,
-            duration,
-          }),
-        }).catch(() => {});
-      }
+      sendLeave();
     }
 
     // Reset for new page
     hasSentLeaveRef.current = false;
     enterTimeRef.current = Date.now();
 
+    const screenName = getScreenName(pathname, screenLabel);
+    enterScreenNameRef.current = screenName;
+
     // Send page_view
     const sessionId = sessionIdRef.current;
     if (sessionId) {
-      const screenName = getScreenName(pathname, screenLabel);
-
       fetch('/api/analytics', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -150,11 +120,15 @@ export function useAnalytics() {
     prevPathnameRef.current = pathname;
   }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Handle tab hide and beforeunload
+  // Handle tab hide / restore and beforeunload
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'hidden') {
         sendLeave();
+      } else if (document.visibilityState === 'visible') {
+        // User returned to tab — reset guard so next leave fires correctly
+        hasSentLeaveRef.current = false;
+        enterTimeRef.current = Date.now();
       }
     };
 
