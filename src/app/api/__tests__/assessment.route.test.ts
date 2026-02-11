@@ -50,7 +50,7 @@ describe('Assessment API flow', () => {
     const startRes = await startPost(startReq);
     const startData = await startRes.json();
     const sessionId = startData.session.id;
-    let currentQuestion = startData.firstQuestion;
+    const currentQuestion = startData.firstQuestion;
 
     // Answer first question
     expect(currentQuestion).not.toBeNull();
