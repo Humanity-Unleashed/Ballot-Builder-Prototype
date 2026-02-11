@@ -87,7 +87,7 @@ export default function FeedbackButton() {
   const trigger = (
     <button
       onClick={() => setIsOpen(true)}
-      className="fixed bottom-6 right-6 z-50 flex h-10 items-center gap-1.5 rounded-full bg-indigo-600 px-4 text-white shadow-lg transition-transform hover:scale-105 hover:bg-indigo-700 active:scale-95"
+      className="fixed bottom-28 right-4 z-50 flex h-10 items-center gap-1.5 rounded-full bg-indigo-600 px-4 text-white shadow-lg transition-transform hover:scale-105 hover:bg-indigo-700 active:scale-95 sm:bottom-6 sm:right-6"
       aria-label="Send feedback"
     >
       <MessageSquarePlus size={18} />
