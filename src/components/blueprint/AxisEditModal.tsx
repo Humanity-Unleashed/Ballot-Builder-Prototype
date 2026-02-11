@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, SlidersHorizontal, RefreshCw, ChevronRight } from 'lucide-react';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { getFineTuningConfig } from '@/data/fineTuningPositions';
@@ -56,7 +56,7 @@ export default function AxisEditModal({
     axisData?.importance ?? DEFAULT_STRENGTH_VALUE,
   );
 
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     const newValue = Math.round((localPosition / (totalPositions - 1)) * 10);
     if (axisData && newValue !== axisData.value_0_10) {
       onChangeAxis(axisId, newValue);
@@ -65,16 +65,16 @@ export default function AxisEditModal({
       onChangeAxisImportance(axisId, localImportance);
     }
     onClose();
-  }, [localPosition, totalPositions, axisData, axisId, localImportance, onChangeAxis, onChangeAxisImportance, onClose]);
+  };
 
   // Keep ESC key to close
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') handleClose();
+      if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [handleClose]);
+  }, [onClose]);
 
   if (!axisDef || !axisData) return null;
 

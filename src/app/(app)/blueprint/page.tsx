@@ -38,7 +38,12 @@ export default function BlueprintPage() {
   const { hasCompletedDemographics, reset: resetDemographics } = useDemographicStore();
 
   // ── Page state machine ──
-  const [pageState, setPageState] = useState<PageState>('intro');
+  const hasRealScores = profile?.domains.some((d) =>
+    d.axes.some((a) => a.source !== 'default'),
+  ) ?? false;
+  const [pageState, setPageState] = useState<PageState>(() =>
+    hasRealScores ? 'results' : 'intro',
+  );
   const isRetaking = useRef(false);
 
   // ── Assessment state ──
@@ -74,18 +79,6 @@ export default function BlueprintPage() {
       setScreenLabel('Blueprint - Results');
     }
   }, [pageState, currentAxisIndex, axisQueue.length, setScreenLabel]);
-
-  // ── If profile already has real scores, jump to results ──
-  useEffect(() => {
-    if (!spec || !profile || pageState !== 'intro') return;
-    if (isRetaking.current) return;
-    const hasRealScores = profile.domains.some((d) =>
-      d.axes.some((a) => a.source !== 'default'),
-    );
-    if (hasRealScores) {
-      setPageState('results');
-    }
-  }, [spec, profile, pageState]);
 
   // ── Build axis queue from spec ──
   const buildAxisQueue = useCallback((): string[] => {
