@@ -22,6 +22,10 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Legacy build artifacts
     "web/**",
+    // Test output artifacts
+    "coverage/**",
+    "playwright-report/**",
+    "test-results/**",
   ]),
 ]);
 
