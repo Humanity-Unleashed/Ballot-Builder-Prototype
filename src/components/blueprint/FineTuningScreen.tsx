@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 import { getFineTuningConfig } from '@/data/fineTuningPositions';
 import type { Spec } from '@/types/civicAssessment';
 import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
-import DraggableSlider from './DraggableSlider';
+import DomainLeanMeter from './DomainLeanMeter';
 import StrengthChips from './StrengthChips';
 
 interface FineTuningScreenProps {
@@ -61,27 +61,6 @@ export default function FineTuningScreen({
 
   const currentPosition = currentSubDimension.positions[sliderPosition];
   const totalPositions = currentSubDimension.positions.length;
-
-  const getPositionColorForFineTuning = (
-    index: number,
-    _total: number,
-    centerIndex: number,
-  ): string => {
-    if (index === centerIndex) return '#9CA3AF';
-    const midpoint = centerIndex;
-    const distanceFromCenter = Math.abs(index - midpoint) / midpoint;
-    if (index < midpoint) {
-      return distanceFromCenter > 0.5 ? '#8B7AAF' : '#A99BC4';
-    } else {
-      return distanceFromCenter > 0.5 ? '#5B9E94' : '#89BCB5';
-    }
-  };
-
-  const positionColor = getPositionColorForFineTuning(
-    sliderPosition,
-    totalPositions,
-    currentSubDimension.currentPolicyIndex,
-  );
 
   const handleNext = () => {
     const newResponses = { ...responses, [currentSubDimension.id]: sliderPosition };
@@ -184,13 +163,7 @@ export default function FineTuningScreen({
           </p>
 
           {/* Position card */}
-          <div
-            className="mb-5 min-h-[100px] rounded-xl border-2 p-4"
-            style={{
-              borderColor: positionColor,
-              backgroundColor: 'rgba(124, 58, 237, 0.04)',
-            }}
-          >
+          <div className="mb-5 min-h-[100px] rounded-xl border-2 border-violet-200 bg-violet-50/40 p-4">
             <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-900">
               {currentPosition.title}
             </p>
@@ -207,12 +180,11 @@ export default function FineTuningScreen({
           </div>
 
           {/* Slider */}
-          <DraggableSlider
-            position={sliderPosition}
-            totalPositions={totalPositions}
-            onPositionChange={setSliderPosition}
-            poleALabel={currentSubDimension.poleALabel}
-            poleBLabel={currentSubDimension.poleBLabel}
+          <DomainLeanMeter
+            value={(sliderPosition / (totalPositions - 1)) * 100}
+            leftLabel={currentSubDimension.poleALabel.replace(/\n/g, ' ')}
+            rightLabel={currentSubDimension.poleBLabel.replace(/\n/g, ' ')}
+            onChange={(v) => setSliderPosition(Math.round((v / 100) * (totalPositions - 1)))}
           />
 
           {/* Strength chips */}

@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { Sparkles } from 'lucide-react';
-import type { Candidate, ValueCandidateMatch } from '@/lib/ballotHelpers';
+import type { Candidate, CandidateMatch } from '@/lib/ballotHelpers';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface CandidateCardProps {
   candidate: Candidate;
   isSelected: boolean;
-  match: ValueCandidateMatch | undefined;
+  match: CandidateMatch | undefined;
   onSelect: () => void;
   onCompare: () => void;
 }
@@ -23,8 +23,8 @@ export default function CandidateCard({
   const { track } = useAnalyticsContext();
   const matchPercent = match?.matchPercent || 50;
   const isBestMatch = match?.isBestMatch || false;
-  const alignedValues = match?.alignedValues || [];
-  const conflictingValues = match?.conflictingValues || [];
+  const alignedValues = match?.keyAgreements || [];
+  const conflictingValues = match?.keyDisagreements || [];
 
   // Border classes
   const borderClass = isSelected
@@ -110,7 +110,7 @@ export default function CandidateCard({
           )}
 
           {/* Compare link */}
-          {match && match.details && match.details.length > 0 && (
+          {match && match.axisComparisons && match.axisComparisons.length > 0 && (
             <button
               onClick={(e) => {
                 e.stopPropagation();
