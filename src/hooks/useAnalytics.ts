@@ -36,15 +36,17 @@ export function useAnalytics() {
   const { screenLabel } = useFeedbackScreen();
 
   const prevPathnameRef = useRef<string | null>(null);
-  const enterTimeRef = useRef<number>(Date.now());
+  const enterTimeRef = useRef<number>(0);
   const enterScreenNameRef = useRef<string>('');
   const hasSentLeaveRef = useRef(false);
-  const sessionIdRef = useRef<string>('');
+  const sessionIdRef = useRef<string | null>(null);
 
-  // Lazily initialize session ID on client
-  if (typeof window !== 'undefined' && !sessionIdRef.current) {
-    sessionIdRef.current = getSessionId();
-  }
+  // Initialize session ID on mount (client only)
+  useEffect(() => {
+    if (sessionIdRef.current === null) {
+      sessionIdRef.current = getSessionId();
+    }
+  }, []);
 
   const track = useCallback(
     (eventType: string, properties?: Record<string, unknown>) => {
