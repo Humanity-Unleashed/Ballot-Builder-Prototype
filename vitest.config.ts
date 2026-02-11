@@ -15,10 +15,6 @@ export default defineConfig({
     setupFiles: ['src/__tests__/setup.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
     exclude: ['node_modules', '.next', 'e2e'],
-    environmentMatchGlobs: [
-      ['src/server/**/*.test.ts', 'node'],
-      ['src/app/api/**/*.test.ts', 'node'],
-    ],
     coverage: {
       provider: 'v8',
       include: ['src/lib/**', 'src/server/services/**', 'src/stores/**'],
