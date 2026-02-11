@@ -477,6 +477,7 @@ export const useUserStore = create<UserStore>()(
             updated_at: new Date().toISOString(),
             domains: updatedDomains,
           },
+          hasCompletedAssessment: true,
         });
       },
 
