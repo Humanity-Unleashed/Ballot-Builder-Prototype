@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 
 export default function LoginPage() {
   const router = useRouter();
   const { login } = useAuth();
+  const { track } = useAnalyticsContext();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,6 +43,7 @@ export default function LoginPage() {
     if (!validate()) return;
 
     setIsLoading(true);
+    track('click', { element: 'sign_in' });
     try {
       await login(email, password);
       router.replace('/blueprint');

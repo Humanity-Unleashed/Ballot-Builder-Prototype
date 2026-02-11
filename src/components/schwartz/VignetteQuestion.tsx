@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { SchwartzVignette } from '@/services/api';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface VignetteQuestionProps {
   vignette: SchwartzVignette;
@@ -27,6 +28,7 @@ export default function VignetteQuestion({
   canGoBack,
   isLast,
 }: VignetteQuestionProps) {
+  const { track } = useAnalyticsContext();
   const [fadeIn, setFadeIn] = useState(false);
   const [prevId, setPrevId] = useState(vignette.id);
 
@@ -81,7 +83,7 @@ export default function VignetteQuestion({
               return (
                 <button
                   key={option.id}
-                  onClick={() => onSelect(option.id)}
+                  onClick={() => { track('click', { element: 'vignette_option', vignetteId: vignette.id, optionId: option.id, questionIndex: currentIndex }); onSelect(option.id); }}
                   className={`w-full rounded-xl border-2 px-5 py-4 text-left text-[15px] leading-snug transition-all ${
                     isSelected
                       ? 'border-violet-600 bg-violet-50 text-violet-900'
@@ -113,7 +115,7 @@ export default function VignetteQuestion({
           </button>
 
           <button
-            onClick={onNext}
+            onClick={() => { track('click', { element: isLast ? 'see_results' : 'vignette_next', questionIndex: currentIndex }); onNext(); }}
             disabled={selectedOptionId === null}
             className={`flex items-center gap-1 rounded-lg px-6 py-3 font-medium transition-all ${
               selectedOptionId !== null

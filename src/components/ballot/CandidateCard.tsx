@@ -3,6 +3,7 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
 import type { Candidate, ValueCandidateMatch } from '@/lib/ballotHelpers';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface CandidateCardProps {
   candidate: Candidate;
@@ -19,6 +20,7 @@ export default function CandidateCard({
   onSelect,
   onCompare,
 }: CandidateCardProps) {
+  const { track } = useAnalyticsContext();
   const matchPercent = match?.matchPercent || 50;
   const isBestMatch = match?.isBestMatch || false;
   const alignedValues = match?.alignedValues || [];
@@ -43,7 +45,7 @@ export default function CandidateCard({
     <div className={`p-3 rounded-xl border-2 ${borderClass}`}>
       {/* Main row: radio + info + match */}
       <button
-        onClick={onSelect}
+        onClick={() => { track('click', { element: 'select_candidate', candidateId: candidate.id, candidateName: candidate.name }); onSelect(); }}
         className="flex items-start gap-2.5 w-full text-left"
       >
         {/* Radio */}
@@ -112,6 +114,7 @@ export default function CandidateCard({
             <button
               onClick={(e) => {
                 e.stopPropagation();
+                track('click', { element: 'value_comparison', candidateId: candidate.id });
                 onCompare();
               }}
               className="text-xs font-semibold text-blue-500 mt-2 hover:underline"

@@ -14,6 +14,7 @@ import {
   Users,
 } from 'lucide-react';
 import type { BallotItem, Category, UserVote } from '@/lib/ballotHelpers';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface BallotSummaryProps {
   votes: UserVote[];
@@ -38,6 +39,7 @@ export default function BallotSummary({
   onStartOver,
   onPrint,
 }: BallotSummaryProps) {
+  const { track } = useAnalyticsContext();
   const votedCount = votes.length;
   const skippedCount = ballotItems.length - votedCount;
 
@@ -157,7 +159,7 @@ export default function BallotSummary({
         {/* Action buttons */}
         <div className="space-y-3 mt-2">
           <button
-            onClick={onPrint}
+            onClick={() => { track('click', { element: 'print_ballot', votedCount, skippedCount }); onPrint(); }}
             className="w-full flex items-center justify-center gap-2.5 py-4 rounded-[14px] bg-violet-600 hover:bg-violet-700 transition-colors"
           >
             <Printer className="h-[22px] w-[22px] text-white" />
@@ -165,7 +167,7 @@ export default function BallotSummary({
           </button>
 
           <button
-            onClick={onStartOver}
+            onClick={() => { track('click', { element: 'start_over' }); onStartOver(); }}
             className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border border-gray-300 bg-white hover:bg-gray-50 transition-colors"
           >
             <RefreshCw className="h-[18px] w-[18px] text-gray-600" />

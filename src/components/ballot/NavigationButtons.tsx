@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface NavigationButtonsProps {
   canGoBack: boolean;
@@ -20,11 +21,13 @@ export default function NavigationButtons({
   onSkip,
   isLast,
 }: NavigationButtonsProps) {
+  const { track } = useAnalyticsContext();
+
   return (
     <div className="space-y-2 pt-1">
       {/* Primary action */}
       <button
-        onClick={onNext}
+        onClick={() => { track('click', { element: isLast ? 'finish_ballot' : 'save_continue' }); onNext(); }}
         disabled={!hasSelection}
         className={[
           'w-full flex items-center justify-center gap-1.5 py-3 rounded-xl text-[15px] font-bold text-white transition-colors',
@@ -60,7 +63,7 @@ export default function NavigationButtons({
         </button>
 
         <button
-          onClick={onSkip}
+          onClick={() => { track('click', { element: 'skip_item' }); onSkip(); }}
           className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-[10px] border border-gray-300 bg-white text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
         >
           <span>Skip for now</span>

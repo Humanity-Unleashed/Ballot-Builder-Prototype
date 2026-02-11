@@ -3,6 +3,7 @@
 import React from 'react';
 import { CheckCircle, XCircle } from 'lucide-react';
 import type { ValuePropositionRecommendation, VoteChoice } from '@/lib/ballotHelpers';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface PropositionVoteButtonsProps {
   selected: VoteChoice;
@@ -15,6 +16,7 @@ export default function PropositionVoteButtons({
   onSelect,
   recommendation,
 }: PropositionVoteButtonsProps) {
+  const { track } = useAnalyticsContext();
   const isYesRecommended = recommendation.vote === 'yes';
   const isNoRecommended = recommendation.vote === 'no';
 
@@ -25,7 +27,7 @@ export default function PropositionVoteButtons({
       <div className="flex gap-2.5">
         {/* YES button */}
         <button
-          onClick={() => onSelect('yes')}
+          onClick={() => { track('click', { element: 'vote_yes' }); onSelect('yes'); }}
           className={[
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'yes'
@@ -46,7 +48,7 @@ export default function PropositionVoteButtons({
 
         {/* NO button */}
         <button
-          onClick={() => onSelect('no')}
+          onClick={() => { track('click', { element: 'vote_no' }); onSelect('no'); }}
           className={[
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'no'

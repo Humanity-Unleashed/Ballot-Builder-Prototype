@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
+import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 
 export default function RegisterPage() {
   const router = useRouter();
   const { register } = useAuth();
+  const { track } = useAnalyticsContext();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,6 +56,7 @@ export default function RegisterPage() {
     if (!validate()) return;
 
     setIsLoading(true);
+    track('click', { element: 'create_account' });
     try {
       await register(email, password);
       router.replace('/blueprint');
