@@ -32,6 +32,8 @@ export default function BlueprintPage() {
     applySliderValues,
     updateAxisValue,
     updateAxisImportance,
+    completeAssessment,
+    resetBlueprint,
   } = useBlueprint();
 
   const { setScreenLabel } = useFeedbackScreen();
@@ -154,6 +156,7 @@ export default function BlueprintPage() {
     if (currentAxisIndex >= axisQueue.length - 1) {
       // Finished — apply all slider values to the profile
       applySliderValues(updatedPositions, updatedStrengths);
+      completeAssessment();
       setPageState('results');
       return;
     }
@@ -192,6 +195,7 @@ export default function BlueprintPage() {
     setAxisQueue([]);
     setCurrentAxisIndex(0);
     resetDemographics();
+    resetBlueprint();
     setPageState('intro');
   };
 

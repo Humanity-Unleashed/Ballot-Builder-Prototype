@@ -20,6 +20,8 @@ interface BlueprintContextType {
   initializeFromSwipes: (swipes: SwipeInput[]) => Promise<void>;
   applySliderValues: (responses: Record<string, number>, importances: Record<string, number>) => void;
   getAxisScore: (axisId: string) => AxisScore | null;
+  completeAssessment: () => void;
+  resetBlueprint: () => void;
 }
 
 const BlueprintContext = createContext<BlueprintContextType | undefined>(undefined);
@@ -48,6 +50,8 @@ export function BlueprintProvider({ children }: { children: React.ReactNode }) {
     initializeFromSwipes: store.initializeFromSwipes,
     applySliderValues: store.applySliderValues,
     getAxisScore: store.getAxisScore,
+    completeAssessment: store.completeAssessment,
+    resetBlueprint: store.reset,
   };
 
   return <BlueprintContext.Provider value={value}>{children}</BlueprintContext.Provider>;
