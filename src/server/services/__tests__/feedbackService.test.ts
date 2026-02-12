@@ -8,6 +8,10 @@ vi.mock('@/server/utils/logger', () => ({
   default: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
+vi.mock('@/lib/googleSheets', () => ({
+  appendFeedbackRow: vi.fn().mockResolvedValue(undefined),
+}));
+
 beforeEach(() => {
   vi.clearAllMocks();
 });

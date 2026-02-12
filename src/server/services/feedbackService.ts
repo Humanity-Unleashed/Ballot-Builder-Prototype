@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { appendFeedbackRow } from '@/lib/googleSheets';
 import { BadRequestError, InternalError } from '@/server/utils/errors';
 import logger from '@/server/utils/logger';
 
@@ -46,7 +47,7 @@ export async function createFeedback(input: CreateFeedbackInput): Promise<Feedba
 
     logger.info('Feedback created', { id: entry.id, screen });
 
-    return {
+    const response = {
       id: entry.id,
       screen: entry.screen,
       screenName: entry.screenName,
@@ -54,6 +55,10 @@ export async function createFeedback(input: CreateFeedbackInput): Promise<Feedba
       message: entry.message,
       createdAt: entry.createdAt.toISOString(),
     };
+
+    appendFeedbackRow(response).catch(() => {});
+
+    return response;
   } catch (error) {
     logger.error('Failed to create feedback', {
       error: error instanceof Error ? error.message : String(error),
