@@ -114,7 +114,7 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
             {
               icon: <FileText className="h-[18px] w-[18px] text-violet-600" />,
               title: 'Policy Positions',
-              desc: 'Detailed stances across 5 policy domains, 15 axes',
+              desc: 'Know exactly where you stand before you step into the voting booth',
             },
             {
               icon: <CheckCheck className="h-[18px] w-[18px] text-violet-600" />,
