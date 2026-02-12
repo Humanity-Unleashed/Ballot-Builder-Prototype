@@ -10,8 +10,6 @@ import { generateValueSummary } from '@/lib/valueFraming';
 import {
   DOMAIN_DISPLAY_NAMES,
   getDomainEmoji,
-  scoreToPercents,
-  SPECTRUM_BARS,
 } from '@/lib/blueprintHelpers';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import { useDemographicStore } from '@/stores/demographicStore';
@@ -276,36 +274,7 @@ export default function BlueprintSummaryView({
           );
         })}
 
-        {/* ── Underlying values footer ── */}
-        {metaDimensions && (
-          <div className="mb-4 rounded-[14px] border border-gray-200 bg-gray-50 px-4 py-3.5">
-            <div className="mb-2 text-[10px] font-bold uppercase tracking-[1px] text-gray-400">
-              Underlying values
-            </div>
-            {SPECTRUM_BARS.map((bar) => {
-              const score = metaDimensions[bar.key];
-              const { leftPct } = scoreToPercents(score, bar.invert);
-              // Map leftPct (0-100) to a fill width
-              const fillPct = Math.max(10, leftPct);
-
-              return (
-                <div key={bar.key} className="flex items-center gap-2 py-1">
-                  <span className="w-[100px] shrink-0 text-xs font-semibold text-gray-700">
-                    {bar.leftLabel} / {bar.rightLabel}
-                  </span>
-                  <div className="flex-1">
-                    <div className="h-1 rounded-sm bg-gray-200">
-                      <div
-                        className="h-full rounded-sm bg-violet-400"
-                        style={{ width: `${fillPct}%` }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
+        {/* ── Underlying values footer — hidden for now (data still computed for scoring) ── */}
 
         {/* ── Bridge card ── */}
         <div className="mb-3 rounded-2xl border border-emerald-200 bg-gradient-to-br from-green-50 via-emerald-50 to-emerald-100 p-5">
