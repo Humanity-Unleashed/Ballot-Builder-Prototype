@@ -82,6 +82,11 @@ Open the Neon Console to browse tables, run queries, and inspect analytics/feedb
 
 > **[Neon Console — Ballot Builder Database](https://console.neon.tech/app/projects/wandering-hall-89025086/branches/br-broad-breeze-ait03zw9/tables)**
 
+**View feedback:**
+Feedback entries are automatically mirrored to a Google Sheet for easy browsing:
+
+> **[Google Sheet — Feedback Entries](https://docs.google.com/spreadsheets/d/1Ade9LhD3BSFkrdGANjHJqs8PA2j2GyOtD4U8yMckYcM/edit?gid=0#gid=0)**
+
 **Database commands:**
 
 ```bash
