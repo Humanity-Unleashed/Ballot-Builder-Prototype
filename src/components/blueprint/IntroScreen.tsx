@@ -108,8 +108,8 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
           {[
             {
               icon: <BarChart3 className="h-[18px] w-[18px] text-violet-600" />,
-              title: 'Values Spectrum',
-              desc: 'See where you fall on community vs. individual, reform vs. stability',
+              title: 'Civic Blueprint',
+              desc: 'A personalized profile mapping your stance across key policy areas',
             },
             {
               icon: <FileText className="h-[18px] w-[18px] text-violet-600" />,
