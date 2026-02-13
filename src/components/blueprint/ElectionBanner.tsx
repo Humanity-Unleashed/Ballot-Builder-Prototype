@@ -20,7 +20,7 @@ export default function ElectionBanner({
   daysUntilElection,
   electionLabel,
 }: ElectionBannerProps) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [modalFeature, setModalFeature] = useState<string | null>(null);
 
   // ── Collapsed state ──
