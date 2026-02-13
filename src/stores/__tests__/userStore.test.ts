@@ -154,6 +154,49 @@ describe('userStore', () => {
     });
   });
 
+  describe('assessmentProgress', () => {
+    const progress = {
+      axisQueue: ['axis-1', 'axis-2', 'axis-3'],
+      currentAxisIndex: 1,
+      sliderPositions: { 'axis-1': 3 },
+      strengthValues: { 'axis-1': 7 },
+    };
+
+    it('starts as null', () => {
+      expect(useUserStore.getState().assessmentProgress).toBeNull();
+    });
+
+    it('saveAssessmentProgress stores progress', () => {
+      useUserStore.getState().saveAssessmentProgress(progress);
+      expect(useUserStore.getState().assessmentProgress).toEqual(progress);
+    });
+
+    it('saveAssessmentProgress overwrites previous progress', () => {
+      useUserStore.getState().saveAssessmentProgress(progress);
+      const updated = { ...progress, currentAxisIndex: 2 };
+      useUserStore.getState().saveAssessmentProgress(updated);
+      expect(useUserStore.getState().assessmentProgress?.currentAxisIndex).toBe(2);
+    });
+
+    it('clearAssessmentProgress sets progress to null', () => {
+      useUserStore.getState().saveAssessmentProgress(progress);
+      useUserStore.getState().clearAssessmentProgress();
+      expect(useUserStore.getState().assessmentProgress).toBeNull();
+    });
+
+    it('resetUserData clears assessmentProgress', () => {
+      useUserStore.getState().saveAssessmentProgress(progress);
+      useUserStore.getState().resetUserData();
+      expect(useUserStore.getState().assessmentProgress).toBeNull();
+    });
+
+    it('reset clears assessmentProgress', () => {
+      useUserStore.getState().saveAssessmentProgress(progress);
+      useUserStore.getState().reset();
+      expect(useUserStore.getState().assessmentProgress).toBeNull();
+    });
+  });
+
   describe('selectors', () => {
     it('selectHasCompletedOnboarding works', () => {
       expect(useUserStore.getState().hasCompletedOnboarding).toBe(false);
