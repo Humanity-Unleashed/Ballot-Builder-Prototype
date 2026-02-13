@@ -56,7 +56,7 @@ export async function createFeedback(input: CreateFeedbackInput): Promise<Feedba
       createdAt: entry.createdAt.toISOString(),
     };
 
-    appendFeedbackRow(response).catch(() => {});
+    await appendFeedbackRow(response);
 
     return response;
   } catch (error) {
