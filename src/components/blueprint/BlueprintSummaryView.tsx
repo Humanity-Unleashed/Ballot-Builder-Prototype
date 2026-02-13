@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useMemo } from 'react';
+import { getNextElectionDay, daysUntil } from '@/lib/electionDate';
+import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
 import { RefreshCw, ChevronRight } from 'lucide-react';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
@@ -148,6 +150,16 @@ export default function BlueprintSummaryView({
   const demographicProfile = useDemographicStore((s) => s.profile);
   const demographicChips = useMemo(() => getDemographicChips(demographicProfile), [demographicProfile]);
 
+  // ── Election date ──
+  const { electionLabel, daysRemaining } = useMemo(() => {
+    const electionDay = getNextElectionDay();
+    const year = electionDay.getFullYear();
+    return {
+      electionLabel: `${year} General Election`,
+      daysRemaining: daysUntil(electionDay),
+    };
+  }, []);
+
   // ── Derived data ──
   const valueSummary = useMemo(() => {
     return metaDimensions ? generateValueSummary(metaDimensions) : null;
@@ -212,6 +224,9 @@ export default function BlueprintSummaryView({
         <p className="mb-5 text-[13px] leading-[1.4] text-gray-500">
           Here&apos;s where your values place you on key policy questions.
         </p>
+
+        {/* ── Election banner ── */}
+        <ElectionBanner daysUntilElection={daysRemaining} electionLabel={electionLabel} />
 
         {/* ── Values context card ── */}
         {metaDimensions && valueSummary && (
