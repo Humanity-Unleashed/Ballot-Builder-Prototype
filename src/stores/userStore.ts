@@ -66,6 +66,7 @@ interface UserActions {
   getAxisScore: (axisId: string) => AxisScore | null;
   completeOnboarding: () => void;
   completeAssessment: () => void;
+  resetUserData: () => void;
   reset: () => void;
 }
 
@@ -492,6 +493,20 @@ export const useUserStore = create<UserStore>()(
 
       completeAssessment: () => {
         set({ hasCompletedAssessment: true });
+      },
+
+      resetUserData: () => {
+        const { spec } = get();
+        set({
+          selectedPersona: null,
+          swipes: [],
+          blueprintProfile: spec
+            ? createDefaultProfile(spec, 'prototype-user')
+            : null,
+          axisScores: {},
+          hasCompletedOnboarding: false,
+          hasCompletedAssessment: false,
+        });
       },
 
       reset: () => {

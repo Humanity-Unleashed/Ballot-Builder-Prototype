@@ -51,7 +51,7 @@ export function BlueprintProvider({ children }: { children: React.ReactNode }) {
     applySliderValues: store.applySliderValues,
     getAxisScore: store.getAxisScore,
     completeAssessment: store.completeAssessment,
-    resetBlueprint: store.reset,
+    resetBlueprint: store.resetUserData,
   };
 
   return <BlueprintContext.Provider value={value}>{children}</BlueprintContext.Provider>;
