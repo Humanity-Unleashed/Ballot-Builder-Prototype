@@ -5,7 +5,7 @@
 
 /** Returns the next US general election day on or after `from`. */
 export function getNextElectionDay(from: Date = new Date()): Date {
-  let year = from.getFullYear();
+  const year = from.getFullYear();
 
   const candidate = electionDayForYear(year);
   if (candidate >= stripTime(from)) return candidate;
