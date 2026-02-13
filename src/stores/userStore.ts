@@ -33,6 +33,13 @@ export interface AxisScore {
   top_drivers: string[];
 }
 
+export interface AssessmentProgress {
+  axisQueue: string[];
+  currentAxisIndex: number;
+  sliderPositions: Record<string, number>;
+  strengthValues: Record<string, number>;
+}
+
 interface UserState {
   _hasHydrated: boolean;
   spec: Spec | null;
@@ -44,6 +51,7 @@ interface UserState {
   axisScores: Record<string, AxisScore>;
   hasCompletedOnboarding: boolean;
   hasCompletedAssessment: boolean;
+  assessmentProgress: AssessmentProgress | null;
 }
 
 interface UserActions {
@@ -64,6 +72,8 @@ interface UserActions {
   initializeFromSwipes: (swipes: SwipeInput[]) => Promise<void>;
   applySliderValues: (responses: Record<string, number>, importances: Record<string, number>) => void;
   getAxisScore: (axisId: string) => AxisScore | null;
+  saveAssessmentProgress: (progress: AssessmentProgress) => void;
+  clearAssessmentProgress: () => void;
   completeOnboarding: () => void;
   completeAssessment: () => void;
   resetUserData: () => void;
@@ -177,6 +187,7 @@ const initialState: UserState = {
   axisScores: {},
   hasCompletedOnboarding: false,
   hasCompletedAssessment: false,
+  assessmentProgress: null,
 };
 
 export const useUserStore = create<UserStore>()(
@@ -487,6 +498,14 @@ export const useUserStore = create<UserStore>()(
         return axisScores[axisId] ?? null;
       },
 
+      saveAssessmentProgress: (progress) => {
+        set({ assessmentProgress: progress });
+      },
+
+      clearAssessmentProgress: () => {
+        set({ assessmentProgress: null });
+      },
+
       completeOnboarding: () => {
         set({ hasCompletedOnboarding: true });
       },
@@ -506,6 +525,7 @@ export const useUserStore = create<UserStore>()(
           axisScores: {},
           hasCompletedOnboarding: false,
           hasCompletedAssessment: false,
+          assessmentProgress: null,
         });
       },
 
@@ -523,6 +543,7 @@ export const useUserStore = create<UserStore>()(
         axisScores: state.axisScores,
         hasCompletedOnboarding: state.hasCompletedOnboarding,
         hasCompletedAssessment: state.hasCompletedAssessment,
+        assessmentProgress: state.assessmentProgress,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {
@@ -543,6 +564,7 @@ export const selectBlueprintProfile = (state: UserStore) => state.blueprintProfi
 export const selectAxisScores = (state: UserStore) => state.axisScores;
 export const selectHasCompletedOnboarding = (state: UserStore) => state.hasCompletedOnboarding;
 export const selectHasCompletedAssessment = (state: UserStore) => state.hasCompletedAssessment;
+export const selectAssessmentProgress = (state: UserStore) => state.assessmentProgress;
 
 export const selectAxisScore = (axisId: string) => (state: UserStore) =>
   state.axisScores[axisId] ?? null;

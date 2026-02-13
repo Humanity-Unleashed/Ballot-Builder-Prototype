@@ -32,6 +32,9 @@ export default function BlueprintPage() {
     applySliderValues,
     updateAxisValue,
     updateAxisImportance,
+    assessmentProgress,
+    saveAssessmentProgress,
+    clearAssessmentProgress,
     completeAssessment,
     resetBlueprint,
   } = useBlueprint();
@@ -43,16 +46,25 @@ export default function BlueprintPage() {
   const hasRealScores = profile?.domains.some((d) =>
     d.axes.some((a) => a.source !== 'default'),
   ) ?? false;
-  const [pageState, setPageState] = useState<PageState>(() =>
-    hasRealScores ? 'results' : 'intro',
-  );
+  const [pageState, setPageState] = useState<PageState>(() => {
+    if (assessmentProgress) return 'assessment';
+    return hasRealScores ? 'results' : 'intro';
+  });
   const isRetaking = useRef(false);
 
-  // ── Assessment state ──
-  const [axisQueue, setAxisQueue] = useState<string[]>([]);
-  const [currentAxisIndex, setCurrentAxisIndex] = useState(0);
-  const [sliderPositions, setSliderPositions] = useState<Record<string, number>>({});
-  const [strengthValues, setStrengthValues] = useState<Record<string, number>>({});
+  // ── Assessment state (restored from saved progress if available) ──
+  const [axisQueue, setAxisQueue] = useState<string[]>(
+    () => assessmentProgress?.axisQueue ?? [],
+  );
+  const [currentAxisIndex, setCurrentAxisIndex] = useState(
+    () => assessmentProgress?.currentAxisIndex ?? 0,
+  );
+  const [sliderPositions, setSliderPositions] = useState<Record<string, number>>(
+    () => assessmentProgress?.sliderPositions ?? {},
+  );
+  const [strengthValues, setStrengthValues] = useState<Record<string, number>>(
+    () => assessmentProgress?.strengthValues ?? {},
+  );
 
   // ── Animation state ──
   const [fadeVisible, setFadeVisible] = useState(true);
@@ -82,6 +94,24 @@ export default function BlueprintPage() {
     }
   }, [pageState, currentAxisIndex, axisQueue.length, setScreenLabel]);
 
+  // ── Persist assessment progress helper ──
+  const saveProgress = useCallback(
+    (
+      queue: string[],
+      index: number,
+      positions: Record<string, number>,
+      strengths: Record<string, number>,
+    ) => {
+      saveAssessmentProgress({
+        axisQueue: queue,
+        currentAxisIndex: index,
+        sliderPositions: positions,
+        strengthValues: strengths,
+      });
+    },
+    [saveAssessmentProgress],
+  );
+
   // ── Build axis queue from spec ──
   const buildAxisQueue = useCallback((): string[] => {
     if (!spec) return [];
@@ -110,6 +140,7 @@ export default function BlueprintPage() {
     setStrengthValues({});
     setFadeVisible(true);
     setShowTransition(false);
+    saveProgress(queue, 0, {}, {});
     setPageState('assessment');
   };
 
@@ -131,11 +162,15 @@ export default function BlueprintPage() {
   const currentStrength = strengthValues[currentAxisId] ?? DEFAULT_STRENGTH_VALUE;
 
   const handleSliderChange = (pos: number) => {
-    setSliderPositions((prev) => ({ ...prev, [currentAxisId]: pos }));
+    const updated = { ...sliderPositions, [currentAxisId]: pos };
+    setSliderPositions(updated);
+    saveProgress(axisQueue, currentAxisIndex, updated, strengthValues);
   };
 
   const handleStrengthChange = (val: number) => {
-    setStrengthValues((prev) => ({ ...prev, [currentAxisId]: val }));
+    const updated = { ...strengthValues, [currentAxisId]: val };
+    setStrengthValues(updated);
+    saveProgress(axisQueue, currentAxisIndex, sliderPositions, updated);
   };
 
   const animateTransition = useCallback((callback: () => void) => {
@@ -157,32 +192,39 @@ export default function BlueprintPage() {
       // Finished — apply all slider values to the profile
       applySliderValues(updatedPositions, updatedStrengths);
       completeAssessment();
+      clearAssessmentProgress();
       setPageState('results');
       return;
     }
 
+    const nextIndex = currentAxisIndex + 1;
+
     // Check for domain transition message
-    const message = checkForAxisTransition(currentAxisIndex + 1, axisQueue.length);
+    const message = checkForAxisTransition(nextIndex, axisQueue.length);
     if (message) {
       setTransitionMessage(message);
       setShowTransition(true);
       setTimeout(() => {
         setShowTransition(false);
         animateTransition(() => {
-          setCurrentAxisIndex((i) => i + 1);
+          setCurrentAxisIndex(nextIndex);
+          saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
         });
       }, 1500);
     } else {
       animateTransition(() => {
-        setCurrentAxisIndex((i) => i + 1);
+        setCurrentAxisIndex(nextIndex);
+        saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
       });
     }
   };
 
   const handleBack = () => {
     if (currentAxisIndex > 0) {
+      const prevIndex = currentAxisIndex - 1;
       animateTransition(() => {
-        setCurrentAxisIndex((i) => i - 1);
+        setCurrentAxisIndex(prevIndex);
+        saveProgress(axisQueue, prevIndex, sliderPositions, strengthValues);
       });
     }
   };
@@ -194,6 +236,7 @@ export default function BlueprintPage() {
     setFineTuningResponses({});
     setAxisQueue([]);
     setCurrentAxisIndex(0);
+    clearAssessmentProgress();
     resetDemographics();
     resetBlueprint();
     setPageState('intro');

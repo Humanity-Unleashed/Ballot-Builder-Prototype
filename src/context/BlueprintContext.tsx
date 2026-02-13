@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect } from 'react';
 import { useUserStore } from '../stores/userStore';
-import type { SwipeEvent, SwipeInput, AxisScore } from '../stores/userStore';
+import type { SwipeEvent, SwipeInput, AxisScore, AssessmentProgress } from '../stores/userStore';
 import type { Spec } from '../types/civicAssessment';
 import type { BlueprintProfile } from '../types/blueprintProfile';
 
@@ -20,6 +20,9 @@ interface BlueprintContextType {
   initializeFromSwipes: (swipes: SwipeInput[]) => Promise<void>;
   applySliderValues: (responses: Record<string, number>, importances: Record<string, number>) => void;
   getAxisScore: (axisId: string) => AxisScore | null;
+  assessmentProgress: AssessmentProgress | null;
+  saveAssessmentProgress: (progress: AssessmentProgress) => void;
+  clearAssessmentProgress: () => void;
   completeAssessment: () => void;
   resetBlueprint: () => void;
 }
@@ -50,6 +53,9 @@ export function BlueprintProvider({ children }: { children: React.ReactNode }) {
     initializeFromSwipes: store.initializeFromSwipes,
     applySliderValues: store.applySliderValues,
     getAxisScore: store.getAxisScore,
+    assessmentProgress: store.assessmentProgress,
+    saveAssessmentProgress: store.saveAssessmentProgress,
+    clearAssessmentProgress: store.clearAssessmentProgress,
     completeAssessment: store.completeAssessment,
     resetBlueprint: store.resetUserData,
   };
