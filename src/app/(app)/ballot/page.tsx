@@ -381,7 +381,7 @@ export default function BallotPage() {
   // Main ballot builder view
   // --------------------------------------------------
   return (
-    <div className="flex flex-col min-h-[calc(100vh-3.5rem)] bg-gray-50">
+    <div className="flex flex-col h-[calc(100vh-3.5rem)] overflow-hidden -mx-4 bg-gray-50">
       {/* Ballot Navigator (progress bar) */}
       <BallotNavigator
         ballotItems={ballotItems}
@@ -391,7 +391,7 @@ export default function BallotPage() {
       />
 
       {/* Scrollable ballot content */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-10">
+      <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-4">
         <BallotItemHeader item={currentItem} />
 
         {/* Recommendation section (propositions only) */}
@@ -438,8 +438,10 @@ export default function BallotPage() {
           expanded={demographicExpanded}
           onToggle={() => setDemographicExpanded((v) => !v)}
         />
+      </div>
 
-        {/* Navigation buttons */}
+      {/* Sticky navigation buttons */}
+      <div className="shrink-0 border-t border-gray-200 bg-gray-50 px-4 pb-4 pt-3">
         <NavigationButtons
           canGoBack={currentIndex > 0}
           hasSelection={
