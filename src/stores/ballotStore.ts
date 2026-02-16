@@ -7,12 +7,14 @@ interface BallotState {
   savedVotes: UserVote[];
   currentIndex: number;
   showSummary: boolean;
+  hasSeenIntro: boolean;
 }
 
 interface BallotActions {
   saveVote: (vote: UserVote) => void;
   setCurrentIndex: (index: number) => void;
   setShowSummary: (show: boolean) => void;
+  dismissIntro: () => void;
   clearBallot: () => void;
   getVoteForItem: (itemId: string) => UserVote | undefined;
 }
@@ -24,6 +26,7 @@ const initialState: BallotState = {
   savedVotes: [],
   currentIndex: 0,
   showSummary: false,
+  hasSeenIntro: false,
 };
 
 export const useBallotStore = create<BallotStore>()(
@@ -48,6 +51,10 @@ export const useBallotStore = create<BallotStore>()(
         set({ showSummary: show });
       },
 
+      dismissIntro: () => {
+        set({ hasSeenIntro: true });
+      },
+
       clearBallot: () => {
         set({
           savedVotes: [],
@@ -67,6 +74,7 @@ export const useBallotStore = create<BallotStore>()(
         savedVotes: state.savedVotes,
         currentIndex: state.currentIndex,
         showSummary: state.showSummary,
+        hasSeenIntro: state.hasSeenIntro,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {
@@ -82,3 +90,4 @@ export const selectBallotHasHydrated = (state: BallotStore) => state._hasHydrate
 export const selectSavedVotes = (state: BallotStore) => state.savedVotes;
 export const selectCurrentIndex = (state: BallotStore) => state.currentIndex;
 export const selectShowSummary = (state: BallotStore) => state.showSummary;
+export const selectHasSeenIntro = (state: BallotStore) => state.hasSeenIntro;

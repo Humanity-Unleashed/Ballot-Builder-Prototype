@@ -32,7 +32,7 @@ export default function PropositionVoteButtons({
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'yes'
               ? 'bg-green-500 border-green-500 text-white'
-              : 'bg-green-50 border-green-500 text-gray-700',
+              : 'bg-white border-gray-300 text-gray-700 hover:border-green-400',
           ].join(' ')}
         >
           {isYesRecommended && selected !== 'yes' && (
@@ -41,7 +41,7 @@ export default function PropositionVoteButtons({
             </span>
           )}
           <CheckCircle
-            className={`h-5 w-5 ${selected === 'yes' ? 'text-white' : 'text-green-500'}`}
+            className={`h-5 w-5 ${selected === 'yes' ? 'text-white' : 'text-gray-400'}`}
           />
           <span className="text-base font-extrabold">YES</span>
         </button>
@@ -53,7 +53,7 @@ export default function PropositionVoteButtons({
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'no'
               ? 'bg-red-500 border-red-500 text-white'
-              : 'bg-red-50 border-red-500 text-gray-700',
+              : 'bg-white border-gray-300 text-gray-700 hover:border-red-400',
           ].join(' ')}
         >
           {isNoRecommended && selected !== 'no' && (
@@ -62,7 +62,7 @@ export default function PropositionVoteButtons({
             </span>
           )}
           <XCircle
-            className={`h-5 w-5 ${selected === 'no' ? 'text-white' : 'text-red-500'}`}
+            className={`h-5 w-5 ${selected === 'no' ? 'text-white' : 'text-gray-400'}`}
           />
           <span className="text-base font-extrabold">NO</span>
         </button>

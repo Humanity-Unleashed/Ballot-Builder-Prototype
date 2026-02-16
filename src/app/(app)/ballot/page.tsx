@@ -16,6 +16,7 @@ import {
   selectSavedVotes,
   selectCurrentIndex,
   selectShowSummary,
+  selectHasSeenIntro,
 } from '@/stores/ballotStore';
 import { ballotApi } from '@/services/api';
 import {
@@ -91,9 +92,11 @@ export default function BallotPage() {
   const savedVotes = useBallotStore(selectSavedVotes);
   const currentIndex = useBallotStore(selectCurrentIndex);
   const showSummary = useBallotStore(selectShowSummary);
+  const hasSeenIntro = useBallotStore(selectHasSeenIntro);
   const saveVote = useBallotStore((s) => s.saveVote);
   const setCurrentIndex = useBallotStore((s) => s.setCurrentIndex);
   const setShowSummary = useBallotStore((s) => s.setShowSummary);
+  const dismissIntro = useBallotStore((s) => s.dismissIntro);
   const clearBallot = useBallotStore((s) => s.clearBallot);
   const getVoteForItem = useBallotStore((s) => s.getVoteForItem);
 
@@ -108,7 +111,6 @@ export default function BallotPage() {
   const [writeInName, setWriteInName] = useState('');
   const [valuesExpanded, setValuesExpanded] = useState(false);
   const [demographicExpanded, setDemographicExpanded] = useState(false);
-  const [showIntro, setShowIntro] = useState(true);
 
   // Feedback screen context
   const { setScreenLabel } = useFeedbackScreen();
@@ -381,7 +383,7 @@ export default function BallotPage() {
   // --------------------------------------------------
   // Intro screen (first-time users only)
   // --------------------------------------------------
-  if (showIntro && Object.keys(savedVotes).length === 0) {
+  if (!hasSeenIntro) {
     return (
       <div className="flex min-h-[calc(100vh-3.5rem)] flex-col items-center justify-center bg-gray-50 px-6">
         <div className="w-full max-w-sm">
@@ -435,7 +437,7 @@ export default function BallotPage() {
           </div>
 
           <button
-            onClick={() => setShowIntro(false)}
+            onClick={dismissIntro}
             className="mt-8 w-full rounded-xl bg-violet-600 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
           >
             Get Started
