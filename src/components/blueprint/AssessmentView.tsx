@@ -91,6 +91,16 @@ export default function AssessmentView({
           className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-opacity duration-200"
           style={{ opacity: fadeVisible ? 1 : 0 }}
         >
+          {currentAxisIndex === 0 && (
+            <div className="mb-4 rounded-lg bg-violet-50 px-4 py-3 text-[13px] leading-5 text-gray-600">
+              <span className="font-semibold text-gray-700">Here&apos;s how it works: </span>
+              Use the <span className="font-semibold">slider</span> to choose the policy position
+              closest to your view — each notch represents a different stance. Then tell us{' '}
+              <span className="font-semibold">how important</span> this issue is to you by picking
+              one of the buttons below. There are no right or wrong answers.
+            </div>
+          )}
+
           <p className="mb-5 text-sm leading-5 text-gray-600">{currentAxisConfig.question}</p>
 
           {/* Position display */}
