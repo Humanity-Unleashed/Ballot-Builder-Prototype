@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { Loader2, AlertCircle } from 'lucide-react';
+import { Loader2, AlertCircle, BarChart3, Sparkles, Hand, SlidersHorizontal } from 'lucide-react';
 import {
   useUserStore,
   selectHasHydrated,
@@ -108,6 +108,7 @@ export default function BallotPage() {
   const [writeInName, setWriteInName] = useState('');
   const [valuesExpanded, setValuesExpanded] = useState(false);
   const [demographicExpanded, setDemographicExpanded] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   // Feedback screen context
   const { setScreenLabel } = useFeedbackScreen();
@@ -374,6 +375,73 @@ export default function BallotPage() {
         onStartOver={handleStartOver}
         onPrint={handlePrint}
       />
+    );
+  }
+
+  // --------------------------------------------------
+  // Intro screen (first-time users only)
+  // --------------------------------------------------
+  if (showIntro && Object.keys(savedVotes).length === 0) {
+    return (
+      <div className="flex min-h-[calc(100vh-3.5rem)] flex-col items-center justify-center bg-gray-50 px-6">
+        <div className="w-full max-w-sm">
+          <h1 className="mb-2 text-center text-xl font-bold text-gray-900">
+            Your Personalized Ballot
+          </h1>
+          <p className="mb-6 text-center text-sm text-gray-500">
+            Here&apos;s what to expect as you work through each item.
+          </p>
+
+          <div className="space-y-4">
+            <div className="flex gap-3">
+              <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <div>
+                <p className="text-sm font-semibold text-gray-800">Match scores</p>
+                <p className="text-[13px] leading-snug text-gray-500">
+                  Each candidate gets a match percentage based on your Civic Blueprint values.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <div>
+                <p className="text-sm font-semibold text-gray-800">Recommendations</p>
+                <p className="text-[13px] leading-snug text-gray-500">
+                  For ballot measures, you&apos;ll see a suggested vote with reasoning tied to your values.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <Hand className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <div>
+                <p className="text-sm font-semibold text-gray-800">It&apos;s your call</p>
+                <p className="text-[13px] leading-snug text-gray-500">
+                  Pick a candidate or vote YES/NO to save your choice, or skip any item you&apos;re unsure about.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <SlidersHorizontal className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <div>
+                <p className="text-sm font-semibold text-gray-800">Fine-tune anytime</p>
+                <p className="text-[13px] leading-snug text-gray-500">
+                  Adjust your values or profile on any item to see how recommendations shift.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={() => setShowIntro(false)}
+            className="mt-8 w-full rounded-xl bg-violet-600 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
     );
   }
 
