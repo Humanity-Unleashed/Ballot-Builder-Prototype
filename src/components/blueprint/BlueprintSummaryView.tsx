@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useState, useCallback } from 'react';
 import { getNextElectionDay, daysUntil } from '@/lib/electionDate';
 import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
@@ -48,81 +48,6 @@ function getDemographicChips(profile: DemographicProfile): string[] {
   return chips;
 }
 
-// ─── Domain config for V3 cards ───────────────────────────
-
-interface DomainCardConfig {
-  domainId: string;
-  leftPole: string;
-  rightPole: string;
-  leftStatement: string;
-  rightStatement: string;
-  balancedStatement: string;
-}
-
-const DOMAIN_CARD_CONFIGS: DomainCardConfig[] = [
-  {
-    domainId: 'econ',
-    leftPole: 'Safety nets',
-    rightPole: 'Lower taxes',
-    leftStatement: "You'd invest in safety nets — with accountability built in.",
-    rightStatement: "You'd rely on markets and reward individual effort.",
-    balancedStatement: "You balance social support with economic freedom.",
-  },
-  {
-    domainId: 'housing',
-    leftPole: 'Protections',
-    rightPole: 'Market freedom',
-    leftStatement: "You'd protect renters before deregulating the market.",
-    rightStatement: "You'd let the market set prices and expand supply.",
-    balancedStatement: "You'd mix tenant protections with market incentives.",
-  },
-  {
-    domainId: 'health',
-    leftPole: 'Public option',
-    rightPole: 'Private market',
-    leftStatement: "You'd expand public coverage — phased in, evidence-based.",
-    rightStatement: "You'd let people choose coverage in a competitive market.",
-    balancedStatement: "You'd blend public coverage with private options.",
-  },
-  {
-    domainId: 'climate',
-    leftPole: 'Regulation',
-    rightPole: 'Market-led',
-    leftStatement: "You'd regulate based on science, not urgency alone.",
-    rightStatement: "You'd incentivize innovation rather than mandate compliance.",
-    balancedStatement: "You'd pair smart regulation with market incentives.",
-  },
-  {
-    domainId: 'justice',
-    leftPole: 'Reform',
-    rightPole: 'Status quo',
-    leftStatement: "You'd reform institutions from within, not dismantle them.",
-    rightStatement: "You'd maintain tested systems that keep society stable.",
-    balancedStatement: "You'd make targeted reforms while preserving what works.",
-  },
-];
-
-// ─── Helpers ──────────────────────────────────────────────
-
-/** Compute domain average position (0-100, where 0 = poleA, 100 = poleB) */
-function computeDomainPosition(
-  profile: BlueprintProfile,
-  domainId: string,
-): number {
-  const domain = profile.domains.find((d) => d.domain_id === domainId);
-  if (!domain || domain.axes.length === 0) return 50;
-  const avg =
-    domain.axes.reduce((sum, a) => sum + a.value_0_10, 0) / domain.axes.length;
-  return Math.round((avg / 10) * 100);
-}
-
-/** Pick the appropriate statement based on position */
-function getDomainStatement(config: DomainCardConfig, position: number): string {
-  if (position <= 35) return config.leftStatement;
-  if (position >= 65) return config.rightStatement;
-  return config.balancedStatement;
-}
-
 // ─── Props ────────────────────────────────────────────────
 
 interface BlueprintSummaryViewProps {
@@ -165,32 +90,24 @@ export default function BlueprintSummaryView({
     return metaDimensions ? generateValueSummary(metaDimensions) : null;
   }, [metaDimensions]);
 
-  /** Compute position per domain: { domainId: 0-100 } */
-  const domainPositions = useMemo(() => {
-    const positions: Record<string, number> = {};
-    for (const config of DOMAIN_CARD_CONFIGS) {
-      positions[config.domainId] = computeDomainPosition(profile, config.domainId);
-    }
-    return positions;
-  }, [profile]);
+  // ── Carousel state ──
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+
+  const handleCarouselScroll = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el || el.clientWidth === 0) return;
+    const index = Math.round(el.scrollLeft / el.clientWidth);
+    setActiveCardIndex(index);
+  }, []);
+
+  const scrollToCard = useCallback((index: number) => {
+    const el = carouselRef.current;
+    if (!el) return;
+    el.scrollTo({ left: index * el.clientWidth, behavior: 'smooth' });
+  }, []);
 
   // ── Handlers ──
-
-  /** When user drags a domain lean meter, shift all axes in that domain proportionally */
-  const handleDomainChange = (domainId: string, newPosition: number) => {
-    const domain = profile.domains.find((d) => d.domain_id === domainId);
-    if (!domain || domain.axes.length === 0) return;
-
-    const currentAvg =
-      domain.axes.reduce((sum, a) => sum + a.value_0_10, 0) / domain.axes.length;
-    const newAvg = (newPosition / 100) * 10;
-    const delta = newAvg - currentAvg;
-
-    for (const axis of domain.axes) {
-      const newValue = Math.max(0, Math.min(10, Math.round(axis.value_0_10 + delta)));
-      onChangeAxis(axis.axis_id, newValue);
-    }
-  };
 
   /** Fine-tune: pass first axis of the domain */
   const handleFineTune = (domainId: string) => {
@@ -245,49 +162,86 @@ export default function BlueprintSummaryView({
           Your policy leanings
         </div>
 
-        {/* ── Domain cards ── */}
-        {DOMAIN_CARD_CONFIGS.map((config) => {
-          const position = domainPositions[config.domainId] ?? 50;
-          const statement = getDomainStatement(config, position);
-          const emoji = getDomainEmoji(config.domainId);
-          const displayName = DOMAIN_DISPLAY_NAMES[config.domainId] ?? config.domainId;
-          const hasFT = domainHasFineTuning(config.domainId);
+        {/* ── Domain cards carousel ── */}
+        <div
+          ref={carouselRef}
+          onScroll={handleCarouselScroll}
+          className="hide-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {spec.domains.map((specDomain) => {
+            const profileDomain = profile.domains.find((d) => d.domain_id === specDomain.id);
+            const emoji = getDomainEmoji(specDomain.id);
+            const displayName = DOMAIN_DISPLAY_NAMES[specDomain.id] ?? specDomain.name;
+            const hasFT = domainHasFineTuning(specDomain.id);
 
-          return (
-            <div
-              key={config.domainId}
-              className="mb-2.5 rounded-[14px] border border-gray-200 bg-white px-4 py-3.5 shadow-sm"
-            >
-              {/* Header: icon + domain name + fine-tune */}
-              <div className="mb-2.5 flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-sm">{emoji}</span>
-                  <span className="text-xs font-bold text-gray-700">{displayName}</span>
+            return (
+              <div
+                key={specDomain.id}
+                className="min-w-full snap-start rounded-[14px] border border-gray-200 bg-white px-4 py-3.5 shadow-sm"
+              >
+                {/* Header: icon + domain name + fine-tune */}
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm">{emoji}</span>
+                    <span className="text-xs font-bold text-gray-700">{displayName}</span>
+                  </div>
+                  <button
+                    onClick={() => { track('click', { element: 'fine_tune', domainId: specDomain.id }); handleFineTune(specDomain.id); }}
+                    className="flex items-center gap-0.5 text-[11px] font-semibold text-violet-500 transition-colors hover:text-violet-700"
+                  >
+                    {hasFT ? 'Fine-tuned' : 'Fine-tune'}
+                    <ChevronRight className="h-3 w-3" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => { track('click', { element: 'fine_tune', domainId: config.domainId }); handleFineTune(config.domainId); }}
-                  className="flex items-center gap-0.5 text-[11px] font-semibold text-violet-500 transition-colors hover:text-violet-700"
-                >
-                  {hasFT ? 'Fine-tuned' : 'Fine-tune'}
-                  <ChevronRight className="h-3 w-3" />
-                </button>
-              </div>
 
-              {/* Bold statement */}
-              <div className="mb-3 text-sm font-semibold leading-5 text-gray-900">
-                {statement}
-              </div>
+                {/* Per-axis compact meters */}
+                <div className="flex flex-col gap-2">
+                  {specDomain.axes.map((axisId) => {
+                    const axisDef = spec.axes.find((a) => a.id === axisId);
+                    const axisProfile = profileDomain?.axes.find((a) => a.axis_id === axisId);
+                    if (!axisDef) return null;
 
-              {/* Lean meter */}
-              <DomainLeanMeter
-                value={position}
-                leftLabel={config.leftPole}
-                rightLabel={config.rightPole}
-                onChange={(v) => handleDomainChange(config.domainId, v)}
-              />
-            </div>
-          );
-        })}
+                    const value010 = axisProfile?.value_0_10 ?? 5;
+                    const position = Math.round((value010 / 10) * 100);
+
+                    return (
+                      <div key={axisId}>
+                        <div className="mb-0.5 text-[10px] font-semibold text-gray-500">
+                          {axisDef.name}
+                        </div>
+                        <DomainLeanMeter
+                          compact
+                          value={position}
+                          leftLabel={axisDef.poleA.label}
+                          rightLabel={axisDef.poleB.label}
+                          onChange={(v) => {
+                            const newValue010 = Math.round((v / 100) * 10);
+                            onChangeAxis(axisId, newValue010);
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── Carousel dot indicators ── */}
+        <div className="mb-2.5 mt-3 flex justify-center gap-1.5">
+          {spec.domains.map((d, i) => (
+            <button
+              key={d.id}
+              aria-label={`Go to ${DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}`}
+              onClick={() => scrollToCard(i)}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                i === activeCardIndex ? 'bg-violet-600' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
 
         {/* ── Underlying values footer — hidden for now (data still computed for scoring) ── */}
 

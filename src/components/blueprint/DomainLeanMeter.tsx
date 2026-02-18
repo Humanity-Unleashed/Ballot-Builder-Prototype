@@ -8,6 +8,8 @@ interface DomainLeanMeterProps {
   leftLabel: string;
   rightLabel: string;
   onChange: (value: number) => void;
+  /** Compact variant: smaller track, dot, and labels for per-axis display */
+  compact?: boolean;
 }
 
 export default function DomainLeanMeter({
@@ -15,6 +17,7 @@ export default function DomainLeanMeter({
   leftLabel,
   rightLabel,
   onChange,
+  compact = false,
 }: DomainLeanMeterProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -52,34 +55,47 @@ export default function DomainLeanMeter({
     setIsDragging(false);
   }, []);
 
+  const trackHeight = compact ? 'h-1' : 'h-1.5';
+  const trackRadius = compact ? 'rounded-[2px]' : 'rounded-[3px]';
+  const trackPadding = compact ? 'py-1.5' : 'py-2';
+  const centerNotch = compact ? 'h-2 w-px bg-gray-300' : 'h-2.5 w-px bg-gray-300';
+  const sideNotch = compact ? 'h-1 w-px bg-gray-200' : 'h-1.5 w-px bg-gray-200';
+  const dotSize = compact
+    ? 'h-2.5 w-2.5 rounded-full bg-violet-600 shadow-[0_1px_3px_rgba(0,0,0,0.18)]'
+    : 'h-3.5 w-3.5 rounded-full bg-violet-600 shadow-[0_1px_4px_rgba(0,0,0,0.2)]';
+
+  const leftLabelClass = compact
+    ? `w-[80px] shrink-0 text-right text-[10px] font-semibold leading-snug ${value < 50 ? 'text-violet-600' : 'text-gray-400'}`
+    : `w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value < 50 ? 'text-violet-600' : 'text-gray-400'}`;
+
+  const rightLabelClass = compact
+    ? `w-[80px] shrink-0 text-left text-[10px] font-semibold leading-snug ${value > 50 ? 'text-violet-600' : 'text-gray-400'}`
+    : `w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value > 50 ? 'text-violet-600' : 'text-gray-400'}`;
+
   return (
     <div className="flex items-center gap-1.5">
       {/* Left pole label */}
-      <span className={`w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value < 50 ? 'text-violet-600' : 'text-gray-400'}`}>
+      <span className={leftLabelClass}>
         {leftLabel}
       </span>
 
       {/* Track */}
       <div
         ref={trackRef}
-        className="relative flex-1 cursor-pointer py-2"
+        className={`relative flex-1 cursor-pointer ${trackPadding}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         style={{ touchAction: 'none' }}
       >
         {/* Track bar */}
-        <div className="h-1.5 rounded-[3px] bg-gray-100">
+        <div className={`${trackHeight} ${trackRadius} bg-gray-100`}>
           {/* 5 notch marks */}
           <div className="absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center justify-between">
             {[0, 1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className={
-                  i === 2
-                    ? 'h-2.5 w-px bg-gray-300'
-                    : 'h-1.5 w-px bg-gray-200'
-                }
+                className={i === 2 ? centerNotch : sideNotch}
               />
             ))}
           </div>
@@ -93,7 +109,7 @@ export default function DomainLeanMeter({
             }}
           >
             <div
-              className="h-3.5 w-3.5 rounded-full bg-violet-600 shadow-[0_1px_4px_rgba(0,0,0,0.2)]"
+              className={dotSize}
               style={{
                 transform: isDragging ? 'scale(1.2)' : 'scale(1)',
                 transition: isDragging ? 'none' : 'transform 0.15s ease',
@@ -104,7 +120,7 @@ export default function DomainLeanMeter({
       </div>
 
       {/* Right pole label */}
-      <span className={`w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value > 50 ? 'text-violet-600' : 'text-gray-400'}`}>
+      <span className={rightLabelClass}>
         {rightLabel}
       </span>
     </div>

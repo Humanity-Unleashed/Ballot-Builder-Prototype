@@ -27,3 +27,8 @@ body {
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+
+/* Hide scrollbar for carousel containers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
