@@ -17,7 +17,7 @@ export default function TopNav() {
       <div className="mx-auto flex h-14 max-w-lg items-center px-4">
         {/* App name with icon */}
         <div className="flex items-center gap-2 mr-6">
-          <CheckSquare className="h-5 w-5 text-blue-500" />
+          <CheckSquare className="h-5 w-5 text-brand-primary" />
           <span className="text-base font-bold text-gray-900">Ballot Builder</span>
         </div>
 
@@ -31,12 +31,12 @@ export default function TopNav() {
                 href={tab.href}
                 className={[
                   'relative pb-0.5 text-sm font-semibold transition-colors',
-                  isActive ? 'text-blue-500' : 'text-gray-500 hover:text-gray-700',
+                  isActive ? 'text-brand-primary' : 'text-gray-500 hover:text-gray-700',
                 ].join(' ')}
               >
                 {tab.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 -mb-[17px] h-0.5 rounded-full bg-blue-500" />
+                  <span className="absolute bottom-0 left-0 right-0 -mb-[17px] h-0.5 rounded-full bg-brand-primary" />
                 )}
               </Link>
             );

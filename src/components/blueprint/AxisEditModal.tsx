@@ -108,7 +108,7 @@ export default function AxisEditModal({
 
           {/* Position display */}
           {config && (
-            <div className="rounded-xl border-2 border-violet-600/20 bg-violet-600/[0.04] p-4">
+            <div className="rounded-xl border-2 border-brand-primary/20 bg-brand-primary/[0.04] p-4">
               <p className="text-center text-[15px] font-semibold text-gray-900">
                 {config.positions[localPosition]?.title || 'Mixed'}
               </p>
@@ -159,11 +159,11 @@ export default function AxisEditModal({
               ) : (
                 <button
                   onClick={() => onFineTune(axisId)}
-                  className="flex w-full items-center gap-3 rounded-xl border border-violet-600/15 bg-violet-600/[0.03] p-3.5"
+                  className="flex w-full items-center gap-3 rounded-xl border border-brand-primary/15 bg-brand-primary/[0.03] p-3.5"
                 >
-                  <SlidersHorizontal className="h-[18px] w-[18px] shrink-0 text-violet-600" />
+                  <SlidersHorizontal className="h-[18px] w-[18px] shrink-0 text-brand-primary" />
                   <div className="flex-1 text-left">
-                    <span className="block text-sm font-semibold text-violet-600">
+                    <span className="block text-sm font-semibold text-brand-primary">
                       Fine-tune my position
                     </span>
                     <span className="block text-xs text-gray-500">
@@ -181,7 +181,7 @@ export default function AxisEditModal({
         <div className="border-t border-gray-200 bg-white p-5">
           <button
             onClick={handleClose}
-            className="w-full rounded-xl bg-violet-600 py-3.5 text-base font-bold text-white transition-opacity hover:opacity-90"
+            className="w-full rounded-xl bg-brand-primary py-3.5 text-base font-bold text-white transition-opacity hover:opacity-90"
           >
             Done
           </button>

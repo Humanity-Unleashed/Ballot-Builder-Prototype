@@ -322,7 +322,7 @@ export default function BallotPage() {
   if (!hasHydrated || !ballotHydrated || isBallotLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
-        <Loader2 className="h-8 w-8 text-violet-600 animate-spin" />
+        <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
         <p className="text-base text-gray-500">Loading your ballot...</p>
       </div>
     );
@@ -339,7 +339,7 @@ export default function BallotPage() {
         </p>
         <a
           href="/blueprint"
-          className="mt-2 px-6 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition-colors"
+          className="mt-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 transition-colors"
         >
           Go to Blueprint
         </a>
@@ -396,7 +396,7 @@ export default function BallotPage() {
 
           <div className="space-y-4">
             <div className="flex gap-3">
-              <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
               <div>
                 <p className="text-sm font-semibold text-gray-800">Match scores</p>
                 <p className="text-[13px] leading-snug text-gray-500">
@@ -406,7 +406,7 @@ export default function BallotPage() {
             </div>
 
             <div className="flex gap-3">
-              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
               <div>
                 <p className="text-sm font-semibold text-gray-800">Recommendations</p>
                 <p className="text-[13px] leading-snug text-gray-500">
@@ -416,7 +416,7 @@ export default function BallotPage() {
             </div>
 
             <div className="flex gap-3">
-              <Hand className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <Hand className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
               <div>
                 <p className="text-sm font-semibold text-gray-800">It&apos;s your call</p>
                 <p className="text-[13px] leading-snug text-gray-500">
@@ -426,7 +426,7 @@ export default function BallotPage() {
             </div>
 
             <div className="flex gap-3">
-              <SlidersHorizontal className="mt-0.5 h-5 w-5 shrink-0 text-violet-600" />
+              <SlidersHorizontal className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
               <div>
                 <p className="text-sm font-semibold text-gray-800">Fine-tune anytime</p>
                 <p className="text-[13px] leading-snug text-gray-500">
@@ -438,7 +438,7 @@ export default function BallotPage() {
 
           <button
             onClick={dismissIntro}
-            className="mt-8 w-full rounded-xl bg-violet-600 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+            className="mt-8 w-full rounded-xl bg-brand-primary py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
           >
             Get Started
           </button>

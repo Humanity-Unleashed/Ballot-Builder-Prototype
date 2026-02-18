@@ -87,7 +87,7 @@ export default function FeedbackButton() {
   const trigger = (
     <button
       onClick={() => setIsOpen(true)}
-      className="fixed bottom-28 right-4 z-50 flex h-10 items-center gap-1.5 rounded-full bg-indigo-600 px-4 text-white shadow-lg transition-transform hover:scale-105 hover:bg-indigo-700 active:scale-95 sm:bottom-6 sm:right-6"
+      className="fixed bottom-28 right-4 z-50 flex h-10 items-center gap-1.5 rounded-full bg-brand-primary px-4 text-white shadow-lg transition-transform hover:scale-105 hover:bg-brand-primary/90 active:scale-95 sm:bottom-6 sm:right-6"
       aria-label="Send feedback"
     >
       <MessageSquarePlus size={18} />
@@ -145,7 +145,7 @@ export default function FeedbackButton() {
                   }
                   className={`rounded-full border px-3 py-1 text-sm transition-colors ${
                     feedbackType === t.value
-                      ? 'border-indigo-600 bg-indigo-50 text-indigo-700'
+                      ? 'border-brand-primary bg-brand-primary-light text-brand-primary'
                       : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
                   }`}
                 >
@@ -160,14 +160,14 @@ export default function FeedbackButton() {
               onChange={(e) => setMessage(e.target.value)}
               placeholder="What's on your mind?"
               rows={3}
-              className="mb-3 w-full resize-none rounded-xl border border-gray-200 p-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="mb-3 w-full resize-none rounded-xl border border-gray-200 p-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
             />
 
             {/* Submit */}
             <button
               onClick={handleSubmit}
               disabled={!message.trim()}
-              className="w-full rounded-xl bg-indigo-600 py-2.5 text-sm font-medium text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+              className="w-full rounded-xl bg-brand-primary py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-primary/90 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Submit
             </button>

@@ -28,7 +28,7 @@ export default function CandidateCard({
 
   // Border classes
   const borderClass = isSelected
-    ? 'border-violet-600 bg-violet-600/[0.03]'
+    ? 'border-brand-primary bg-brand-primary/[0.03]'
     : isBestMatch
       ? 'border-green-300 bg-green-50'
       : 'border-gray-200 bg-white';
@@ -52,7 +52,7 @@ export default function CandidateCard({
         <div
           className={[
             'w-5 h-5 rounded-full border-2 flex items-center justify-center mt-0.5 shrink-0',
-            isSelected ? 'border-violet-600 bg-violet-600' : 'border-gray-300',
+            isSelected ? 'border-brand-primary bg-brand-primary' : 'border-gray-300',
           ].join(' ')}
         >
           {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
@@ -62,7 +62,7 @@ export default function CandidateCard({
         <div className="flex-1 space-y-0.5">
           <div className="flex items-center gap-1.5 flex-wrap">
             <span
-              className={`text-[15px] font-bold leading-5 ${isSelected ? 'text-violet-600' : 'text-gray-900'}`}
+              className={`text-[15px] font-bold leading-5 ${isSelected ? 'text-brand-primary' : 'text-gray-900'}`}
             >
               {candidate.name}
             </span>
@@ -117,7 +117,7 @@ export default function CandidateCard({
                 track('click', { element: 'value_comparison', candidateId: candidate.id });
                 onCompare();
               }}
-              className="text-xs font-semibold text-blue-500 mt-2 hover:underline"
+              className="text-xs font-semibold text-brand-primary mt-2 hover:underline"
             >
               See value comparison &rsaquo;
             </button>

@@ -38,13 +38,13 @@ export default function Button({
   };
 
   const baseClasses =
-    'w-full py-3.5 px-6 rounded-xl text-base font-semibold min-h-[52px] flex items-center justify-center transition-colors duration-150 cursor-pointer';
+    'w-full py-3.5 px-6 rounded-xl text-base font-bold min-h-[52px] flex items-center justify-center transition-colors duration-150 cursor-pointer';
 
   const variantClasses = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700',
+    primary: 'bg-brand-primary text-white hover:bg-brand-primary/90 active:bg-brand-primary/80',
     outline:
-      'bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-50 active:bg-blue-100',
-    ghost: 'bg-transparent text-blue-500 hover:bg-blue-50 active:bg-blue-100',
+      'bg-transparent border-2 border-brand-primary text-brand-primary hover:bg-brand-primary-light active:bg-brand-primary-light/80',
+    ghost: 'bg-transparent text-brand-primary hover:bg-brand-primary-light active:bg-brand-primary-light/80',
   };
 
   const disabledClasses = 'bg-gray-200 text-gray-400 border-gray-200 cursor-not-allowed hover:bg-gray-200';

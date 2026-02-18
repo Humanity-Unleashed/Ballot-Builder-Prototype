@@ -147,8 +147,8 @@ export default function BlueprintSummaryView({
 
         {/* ── Values context card ── */}
         {metaDimensions && valueSummary && (
-          <div className="mb-4 rounded-[14px] border border-[#e0d4fc] bg-[#f3f0ff] px-4 py-3.5">
-            <div className="mb-1.5 text-[10px] font-bold uppercase tracking-[1.2px] text-violet-600">
+          <div className="mb-4 rounded-[14px] border border-border-default bg-brand-primary-light px-4 py-3.5">
+            <div className="mb-1.5 text-[10px] font-bold uppercase tracking-[1.2px] text-brand-primary">
               What drives your positions
             </div>
             <div className="text-[13px] leading-5 text-gray-600">
@@ -188,7 +188,7 @@ export default function BlueprintSummaryView({
                   </div>
                   <button
                     onClick={() => { track('click', { element: 'fine_tune', domainId: specDomain.id }); handleFineTune(specDomain.id); }}
-                    className="flex items-center gap-0.5 text-[11px] font-semibold text-violet-500 transition-colors hover:text-violet-700"
+                    className="flex items-center gap-0.5 text-[11px] font-semibold text-brand-primary transition-colors hover:text-brand-primary/80"
                   >
                     {hasFT ? 'Fine-tuned' : 'Fine-tune'}
                     <ChevronRight className="h-3 w-3" />
@@ -237,7 +237,7 @@ export default function BlueprintSummaryView({
               aria-label={`Go to ${DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}`}
               onClick={() => scrollToCard(i)}
               className={`h-2 w-2 rounded-full transition-colors ${
-                i === activeCardIndex ? 'bg-violet-600' : 'bg-gray-300'
+                i === activeCardIndex ? 'bg-brand-primary' : 'bg-gray-300'
               }`}
             />
           ))}
@@ -253,12 +253,12 @@ export default function BlueprintSummaryView({
 
           {/* Diagram: Blueprint + Profile → Ballot */}
           <div className="mb-3.5 flex items-center gap-2.5">
-            <div className="flex-1 rounded-[10px] border border-violet-200 bg-violet-50 px-3 py-2.5 text-center">
+            <div className="flex-1 rounded-[10px] border border-border-default bg-brand-primary-light px-3 py-2.5 text-center">
               <span className="mb-1 block text-lg">📋</span>
               <span className="text-[11px] font-bold text-gray-700">Your blueprint</span>
             </div>
             <span className="text-base font-extrabold text-gray-300">+</span>
-            <div className="flex-1 rounded-[10px] border border-blue-200 bg-blue-50 px-3 py-2.5 text-center">
+            <div className="flex-1 rounded-[10px] border border-brand-primary-light bg-brand-primary-surface px-3 py-2.5 text-center">
               <span className="mb-1 block text-lg">👤</span>
               <span className="text-[11px] font-bold text-gray-700">Your profile</span>
             </div>
@@ -288,7 +288,7 @@ export default function BlueprintSummaryView({
         {/* ── CTA button ── */}
         <button
           onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
-          className="mb-3 w-full rounded-[14px] bg-violet-600 py-4 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
+          className="mb-3 w-full rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
         >
           Build my ballot &rarr;
         </button>

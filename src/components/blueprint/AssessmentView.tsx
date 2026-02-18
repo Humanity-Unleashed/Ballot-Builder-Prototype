@@ -43,7 +43,7 @@ export default function AssessmentView({
   if (showTransition) {
     return (
       <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center bg-gray-50 p-6">
-        <Lightbulb className="h-16 w-16 text-violet-600" />
+        <Lightbulb className="h-16 w-16 text-brand-primary" />
         <p className="mt-4 text-center text-lg font-semibold text-gray-700">
           {transitionMessage}
         </p>
@@ -92,7 +92,7 @@ export default function AssessmentView({
           style={{ opacity: fadeVisible ? 1 : 0 }}
         >
           {currentAxisIndex === 0 && (
-            <div className="mb-4 rounded-lg bg-violet-50 px-4 py-3 text-[13px] leading-5 text-gray-600">
+            <div className="mb-4 rounded-lg bg-brand-primary-light px-4 py-3 text-[13px] leading-5 text-gray-600">
               <span className="font-semibold text-gray-700">Here&apos;s how it works: </span>
               Use the <span className="font-semibold">slider</span> to choose the policy position
               closest to your view — each notch represents a different stance. Then tell us{' '}
@@ -104,7 +104,7 @@ export default function AssessmentView({
           <p className="mb-5 text-sm leading-5 text-gray-600">{currentAxisConfig.question}</p>
 
           {/* Position display */}
-          <div className="mb-5 rounded-xl border-2 border-violet-200 bg-violet-50/40 p-4">
+          <div className="mb-5 rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
             <p className="text-[15px] font-semibold text-gray-900">{currentPosition.title}</p>
             <p className="mt-1 text-[13px] leading-[19px] text-gray-600">
               {currentPosition.description}
@@ -146,7 +146,7 @@ export default function AssessmentView({
           </button>
           <button
             onClick={() => { track('click', { element: currentAxisIndex >= axisQueue.length - 1 ? 'assessment_finish' : 'assessment_next', questionIndex: currentAxisIndex }); onNext(); }}
-            className="flex-1 rounded-xl bg-violet-600 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+            className="flex-1 rounded-xl bg-brand-primary py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
           >
             {currentAxisIndex >= axisQueue.length - 1 ? 'Finish' : 'Next \u2192'}
           </button>

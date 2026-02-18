@@ -63,9 +63,9 @@ export default function BallotSummary({
 
   const getVoteColor = (vote: UserVote, item: BallotItem) => {
     if (item.type === 'proposition') {
-      return vote.choice === 'yes' ? 'text-green-500' : 'text-red-500';
+      return vote.choice === 'yes' ? 'text-success' : 'text-negative';
     }
-    return 'text-violet-600';
+    return 'text-brand-primary';
   };
 
   // Group items by category
@@ -144,9 +144,9 @@ export default function BallotSummary({
                       {/* Edit button */}
                       <button
                         onClick={() => onEditItem(index)}
-                        className="ml-3 w-10 h-10 rounded-full bg-violet-600/10 flex items-center justify-center hover:bg-violet-600/20 transition-colors"
+                        className="ml-3 w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
                       >
-                        <Pencil className="h-[18px] w-[18px] text-violet-600" />
+                        <Pencil className="h-[18px] w-[18px] text-brand-primary" />
                       </button>
                     </div>
                   );
@@ -160,7 +160,7 @@ export default function BallotSummary({
         <div className="space-y-3 mt-2">
           <button
             onClick={() => { track('click', { element: 'print_ballot', votedCount, skippedCount }); onPrint(); }}
-            className="w-full flex items-center justify-center gap-2.5 py-4 rounded-[14px] bg-violet-600 hover:bg-violet-700 transition-colors"
+            className="w-full flex items-center justify-center gap-2.5 py-4 rounded-[14px] bg-brand-primary hover:bg-brand-primary/90 transition-colors"
           >
             <Printer className="h-[22px] w-[22px] text-white" />
             <span className="text-[17px] font-bold text-white">Print Ballot</span>

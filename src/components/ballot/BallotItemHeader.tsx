@@ -12,7 +12,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
   return (
     <div className="flex flex-col gap-2.5">
       {/* Item title */}
-      <span className="text-xs font-bold text-violet-600 uppercase tracking-wide">
+      <span className="text-xs font-bold text-brand-primary uppercase tracking-wide">
         {item.title}
       </span>
 
