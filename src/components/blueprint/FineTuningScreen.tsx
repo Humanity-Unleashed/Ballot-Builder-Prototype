@@ -164,13 +164,13 @@ export default function FineTuningScreen({
           <h3 className="mb-2 text-base font-bold leading-6 text-gray-900">
             {currentSubDimension.name}
           </h3>
-          <p className="mb-5 text-sm leading-[22px] text-gray-600">
+          <p className="mb-5 text-base font-semibold leading-relaxed text-gray-800">
             {currentSubDimension.question}
           </p>
 
           {/* Position card */}
           <div className="mb-5 min-h-[100px] rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
-            <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-900">
+            <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-700">
               {currentPosition.title}
             </p>
             <p className="mt-2 text-center text-[13px] leading-5 text-gray-600">

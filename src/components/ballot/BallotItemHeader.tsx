@@ -21,7 +21,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
         <span className="block text-[10px] font-bold text-gray-400 tracking-wide">
           FROM YOUR BALLOT
         </span>
-        <p className="text-[15px] font-bold text-gray-700 leading-[22px]">
+        <p className="text-lg font-bold text-gray-900 leading-snug">
           {item.questionText}
         </p>
       </div>

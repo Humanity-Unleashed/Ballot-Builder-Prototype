@@ -90,6 +90,17 @@ export default function BlueprintSummaryView({
     return metaDimensions ? generateValueSummary(metaDimensions) : null;
   }, [metaDimensions]);
 
+  // ── Sort domains by average axis importance (highest first) ──
+  const sortedDomains = useMemo(() => {
+    return [...spec.domains].sort((a, b) => {
+      const aDomain = profile.domains.find((d) => d.domain_id === a.id);
+      const bDomain = profile.domains.find((d) => d.domain_id === b.id);
+      const avgImportance = (dp: typeof aDomain) =>
+        dp ? dp.axes.reduce((sum, ax) => sum + (ax.importance ?? 5), 0) / dp.axes.length : 5;
+      return avgImportance(bDomain) - avgImportance(aDomain);
+    });
+  }, [spec.domains, profile.domains]);
+
   // ── Carousel state ──
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -169,7 +180,7 @@ export default function BlueprintSummaryView({
           className="hide-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {spec.domains.map((specDomain) => {
+          {sortedDomains.map((specDomain) => {
             const profileDomain = profile.domains.find((d) => d.domain_id === specDomain.id);
             const emoji = getDomainEmoji(specDomain.id);
             const displayName = DOMAIN_DISPLAY_NAMES[specDomain.id] ?? specDomain.name;
@@ -231,7 +242,7 @@ export default function BlueprintSummaryView({
 
         {/* ── Carousel dot indicators ── */}
         <div className="mb-2.5 mt-3 flex justify-center gap-1.5">
-          {spec.domains.map((d, i) => (
+          {sortedDomains.map((d, i) => (
             <button
               key={d.id}
               aria-label={`Go to ${DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}`}

@@ -101,11 +101,11 @@ export default function AssessmentView({
             </div>
           )}
 
-          <p className="mb-5 text-sm leading-5 text-gray-600">{currentAxisConfig.question}</p>
+          <p className="mb-5 text-base font-semibold leading-relaxed text-gray-800">{currentAxisConfig.question}</p>
 
           {/* Position display */}
           <div className="mb-5 rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
-            <p className="text-[15px] font-semibold text-gray-900">{currentPosition.title}</p>
+            <p className="text-[15px] font-semibold text-gray-700">{currentPosition.title}</p>
             <p className="mt-1 text-[13px] leading-[19px] text-gray-600">
               {currentPosition.description}
             </p>
