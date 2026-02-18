@@ -65,7 +65,7 @@ export default function CandidateVoteButtons({
             className={[
               'w-full flex items-start gap-2.5 p-3 rounded-xl border-2 text-left',
               isWriteIn
-                ? 'border-violet-600 bg-violet-600/[0.03]'
+                ? 'border-brand-primary bg-brand-primary/[0.03]'
                 : 'border-gray-200 bg-white',
             ].join(' ')}
           >
@@ -73,7 +73,7 @@ export default function CandidateVoteButtons({
             <div
               className={[
                 'w-5 h-5 rounded-full border-2 flex items-center justify-center mt-0.5 shrink-0',
-                isWriteIn ? 'border-violet-600 bg-violet-600' : 'border-gray-300',
+                isWriteIn ? 'border-brand-primary bg-brand-primary' : 'border-gray-300',
               ].join(' ')}
             >
               {isWriteIn && <div className="w-2 h-2 rounded-full bg-white" />}
@@ -81,14 +81,14 @@ export default function CandidateVoteButtons({
 
             <div className="flex-1 space-y-0.5">
               <span
-                className={`text-[15px] font-bold leading-5 ${isWriteIn ? 'text-violet-600' : 'text-gray-900'}`}
+                className={`text-[15px] font-bold leading-5 ${isWriteIn ? 'text-brand-primary' : 'text-gray-900'}`}
               >
                 Write-in candidate
               </span>
               {isWriteIn && (
                 <input
                   type="text"
-                  className="mt-2 w-full p-3 rounded-[10px] border border-gray-300 bg-white text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                  className="mt-2 w-full p-3 rounded-[10px] border border-gray-300 bg-white text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary"
                   placeholder="Enter candidate name..."
                   value={writeInName}
                   onChange={(e) => onWriteInChange(e.target.value)}

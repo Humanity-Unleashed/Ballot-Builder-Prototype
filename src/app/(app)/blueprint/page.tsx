@@ -278,7 +278,7 @@ export default function BlueprintPage() {
   if (isLoading || !spec) {
     return (
       <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center bg-gray-50">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-violet-600" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-brand-primary" />
         <p className="mt-3 text-gray-500">Loading...</p>
       </div>
     );
@@ -349,7 +349,7 @@ export default function BlueprintPage() {
       <AlertCircle className="h-12 w-12 text-red-500" />
       <p className="mt-3 text-gray-600">Something went wrong. Please refresh.</p>
       <button
-        className="mt-4 rounded-lg bg-violet-600 px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90"
+        className="mt-4 rounded-lg bg-brand-primary px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90"
         onClick={handleRetake}
       >
         Start Over

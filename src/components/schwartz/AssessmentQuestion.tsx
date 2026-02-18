@@ -54,7 +54,7 @@ export default function AssessmentQuestion({
       <div className="sticky top-0 z-10 bg-white shadow-sm">
         <div className="h-1 w-full bg-gray-200">
           <div
-            className="h-full bg-violet-600 transition-all duration-300"
+            className="h-full bg-brand-primary transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -105,7 +105,7 @@ export default function AssessmentQuestion({
             disabled={currentValue === null}
             className={`flex items-center gap-1 rounded-lg px-6 py-3 font-medium transition-all ${
               currentValue !== null
-                ? 'bg-violet-600 text-white hover:bg-violet-700'
+                ? 'bg-brand-primary text-white hover:bg-brand-primary/90'
                 : 'cursor-not-allowed bg-gray-200 text-gray-400'
             }`}
           >

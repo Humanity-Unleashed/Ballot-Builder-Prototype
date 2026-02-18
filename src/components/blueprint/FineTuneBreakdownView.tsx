@@ -30,7 +30,7 @@ export default function FineTuneBreakdownView({ axisId, responses }: FineTuneBre
       {breakdown.map((item) => (
         <div
           key={item.subDimensionId}
-          className="rounded-lg bg-violet-50 p-2.5"
+          className="rounded-lg bg-brand-primary-light p-2.5"
           style={{ borderLeft: `4px solid ${getAccentColor(item.score)}` }}
         >
           <p className="mb-0.5 text-xs font-semibold text-gray-500">{item.name}</p>

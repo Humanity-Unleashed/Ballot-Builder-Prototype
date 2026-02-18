@@ -240,7 +240,7 @@ export default function ValuesResults({
     const parts = text.split(/\*\*([^*]+)\*\*/g);
     return parts.map((part, i) =>
       i % 2 === 1 ? (
-        <strong key={i} className="text-violet-700 font-semibold">
+        <strong key={i} className="text-brand-primary font-semibold">
           {part}
         </strong>
       ) : (
@@ -252,9 +252,9 @@ export default function ValuesResults({
   return (
     <div className="min-h-[calc(100vh-56px)] bg-gray-50 pb-8">
       {/* Header */}
-      <div className="bg-gradient-to-b from-violet-600 to-violet-700 px-6 py-8 text-white">
+      <div className="bg-gradient-to-b from-brand-primary to-brand-primary/85 px-6 py-8 text-white">
         <h1 className="text-center text-2xl font-bold">Your Civic Blueprint</h1>
-        <p className="mt-2 text-center text-violet-100">
+        <p className="mt-2 text-center text-white/70">
           Here&apos;s what matters most to you
         </p>
       </div>
@@ -285,8 +285,8 @@ export default function ValuesResults({
         )}
 
         {/* Civic Perspective Summary Card */}
-        <div className={`${!activeBooster && pendingBoosters.length === 0 ? '-mt-4' : ''} rounded-xl bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200 p-5 shadow-sm mb-4`}>
-          <p className="text-xs font-bold text-violet-600 uppercase tracking-wide mb-2">
+        <div className={`${!activeBooster && pendingBoosters.length === 0 ? '-mt-4' : ''} rounded-xl bg-gradient-to-br from-brand-primary-light to-brand-primary-surface border border-border-default p-5 shadow-sm mb-4`}>
+          <p className="text-xs font-bold text-brand-primary uppercase tracking-wide mb-2">
             Your Civic Perspective
           </p>
           <p className="text-[15px] text-gray-700 leading-relaxed">
@@ -299,7 +299,7 @@ export default function ValuesResults({
               {perspective.chips.map((chip) => (
                 <span
                   key={chip}
-                  className="px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-xs font-semibold"
+                  className="px-3 py-1 rounded-full bg-brand-primary-light text-brand-primary text-xs font-semibold"
                 >
                   {chip}
                 </span>
@@ -309,10 +309,10 @@ export default function ValuesResults({
 
           {/* Top value insights */}
           {perspective.topValueInsights.length > 0 && (
-            <div className="mt-4 pt-3 border-t border-violet-200/50 space-y-2">
+            <div className="mt-4 pt-3 border-t border-border-default/50 space-y-2">
               {perspective.topValueInsights.map((insight, i) => (
                 <p key={i} className="text-[13px] text-gray-600 leading-relaxed flex items-start gap-2">
-                  <span className="text-violet-400 mt-0.5">•</span>
+                  <span className="text-brand-primary/50 mt-0.5">•</span>
                   {insight}
                 </p>
               ))}
@@ -322,7 +322,7 @@ export default function ValuesResults({
           {/* CTA to ballot */}
           <button
             onClick={() => { track('click', { element: 'view_ballot' }); router.push('/ballot'); }}
-            className="mt-4 w-full flex items-center justify-center gap-2 bg-violet-600 text-white font-semibold py-3 rounded-xl hover:bg-violet-700 transition-colors"
+            className="mt-4 w-full flex items-center justify-center gap-2 bg-brand-primary text-white font-semibold py-3 rounded-xl hover:bg-brand-primary/90 transition-colors"
           >
             <span>See how this affects your ballot</span>
             <ArrowRight className="h-4 w-4" />
@@ -355,7 +355,7 @@ export default function ValuesResults({
                   className="rounded-xl bg-white p-4 shadow-sm"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 text-sm font-bold text-violet-600">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary-light text-sm font-bold text-brand-primary">
                       {index + 1}
                     </div>
                     <div className="flex-1">
@@ -368,7 +368,7 @@ export default function ValuesResults({
                       <div className="mt-3">
                         <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
                           <div
-                            className="h-full rounded-full bg-violet-500 transition-all"
+                            className="h-full rounded-full bg-brand-primary transition-all"
                             style={{ width: `${percent}%` }}
                           />
                         </div>
@@ -440,7 +440,7 @@ export default function ValuesResults({
                     </div>
                     <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-gray-100">
                       <div
-                        className="h-full rounded-full bg-violet-400 transition-all"
+                        className="h-full rounded-full bg-brand-primary/70 transition-all"
                         style={{ width: `${percent}%` }}
                       />
                     </div>

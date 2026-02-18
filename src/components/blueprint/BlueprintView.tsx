@@ -145,7 +145,7 @@ export default function BlueprintView({
                   className={[
                     'flex shrink-0 items-center gap-1 rounded-2xl px-2.5 py-1.5 text-xs font-semibold transition-colors',
                     isActive
-                      ? 'bg-violet-600 text-white'
+                      ? 'bg-brand-primary text-white'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
                   ].join(' ')}
                 >

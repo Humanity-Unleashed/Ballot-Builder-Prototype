@@ -71,7 +71,7 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
             },
           ].map((step) => (
             <div key={step.num} className="mb-3.5 flex items-start gap-3">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-violet-600">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary">
                 <span className="text-[13px] font-bold text-white">{step.num}</span>
               </div>
               <div className="flex-1">
@@ -87,7 +87,7 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
         {/* CTA button */}
         <button
           onClick={onStart}
-          className="mb-3 flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 py-4 transition-opacity hover:opacity-90 active:opacity-80"
+          className="mb-3 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-4 transition-opacity hover:opacity-90 active:opacity-80"
         >
           <span className="text-base font-bold text-white">Start Drafting</span>
           <ArrowRight className="h-5 w-5 text-white" />
@@ -100,30 +100,30 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
         </div>
 
         {/* What You'll Get card */}
-        <div className="rounded-2xl border border-violet-200 bg-violet-50 p-4">
-          <span className="mb-3 block text-[11px] font-bold uppercase tracking-wide text-violet-600">
+        <div className="rounded-2xl border border-border-default bg-brand-primary-light p-4">
+          <span className="mb-3 block text-[11px] font-bold uppercase tracking-wide text-brand-primary">
             WHAT YOU&apos;LL GET
           </span>
 
           {[
             {
-              icon: <BarChart3 className="h-[18px] w-[18px] text-violet-600" />,
+              icon: <BarChart3 className="h-[18px] w-[18px] text-brand-primary" />,
               title: 'Civic Blueprint',
               desc: 'A personalized profile mapping your stance across key policy areas',
             },
             {
-              icon: <FileText className="h-[18px] w-[18px] text-violet-600" />,
+              icon: <FileText className="h-[18px] w-[18px] text-brand-primary" />,
               title: 'Policy Positions',
               desc: 'Know exactly where you stand before you step into the voting booth',
             },
             {
-              icon: <CheckCheck className="h-[18px] w-[18px] text-violet-600" />,
+              icon: <CheckCheck className="h-[18px] w-[18px] text-brand-primary" />,
               title: 'Candidate Matches',
               desc: 'Percentage match scores for every race on your ballot',
             },
           ].map((item) => (
             <div key={item.title} className="mb-3 flex items-start gap-2.5">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-violet-100">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-primary-light">
                 {item.icon}
               </div>
               <div className="flex-1">

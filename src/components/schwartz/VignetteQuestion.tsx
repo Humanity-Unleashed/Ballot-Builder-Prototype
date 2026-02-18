@@ -51,7 +51,7 @@ export default function VignetteQuestion({
       <div className="sticky top-0 z-10 bg-white shadow-sm">
         <div className="h-1 w-full bg-gray-200">
           <div
-            className="h-full bg-violet-600 transition-all duration-300"
+            className="h-full bg-brand-primary transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -86,7 +86,7 @@ export default function VignetteQuestion({
                   onClick={() => { track('click', { element: 'vignette_option', vignetteId: vignette.id, optionId: option.id, questionIndex: currentIndex }); onSelect(option.id); }}
                   className={`w-full rounded-xl border-2 px-5 py-4 text-left text-[15px] leading-snug transition-all ${
                     isSelected
-                      ? 'border-violet-600 bg-violet-50 text-violet-900'
+                      ? 'border-brand-primary bg-brand-primary-light text-brand-primary'
                       : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function VignetteQuestion({
             disabled={selectedOptionId === null}
             className={`flex items-center gap-1 rounded-lg px-6 py-3 font-medium transition-all ${
               selectedOptionId !== null
-                ? 'bg-violet-600 text-white hover:bg-violet-700'
+                ? 'bg-brand-primary text-white hover:bg-brand-primary/90'
                 : 'cursor-not-allowed bg-gray-200 text-gray-400'
             }`}
           >

@@ -32,7 +32,7 @@ export default function NavigationButtons({
         className={[
           'w-full flex items-center justify-center gap-1.5 py-3 rounded-xl text-[15px] font-bold text-white transition-colors',
           hasSelection
-            ? 'bg-violet-600 hover:bg-violet-700'
+            ? 'bg-brand-primary hover:bg-brand-primary/90'
             : 'bg-gray-300 cursor-not-allowed',
         ].join(' ')}
       >

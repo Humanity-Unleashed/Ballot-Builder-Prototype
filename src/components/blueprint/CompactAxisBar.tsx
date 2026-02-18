@@ -43,14 +43,14 @@ export default function CompactAxisBar({
       {/* Header row */}
       <div className="flex items-start justify-between gap-2">
         <span className="flex-1 text-sm font-bold leading-[18px] text-gray-800">{name}</span>
-        <span className="shrink-0 rounded-[10px] border border-violet-600 bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-600">
+        <span className="shrink-0 rounded-[10px] border border-brand-primary bg-brand-primary-light px-2 py-0.5 text-[11px] font-semibold text-brand-primary">
           {getImportanceLabel(importance ?? DEFAULT_STRENGTH_VALUE)}
         </span>
       </div>
 
       {/* Stance box */}
       <div
-        className="rounded-lg bg-violet-50 p-3"
+        className="rounded-lg bg-brand-primary-light p-3"
         style={{ borderLeft: `4px solid ${getAccentColor()}` }}
       >
         <span className="text-sm font-semibold leading-5 text-gray-900">

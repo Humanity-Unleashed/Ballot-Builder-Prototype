@@ -134,7 +134,7 @@ export default function FineTuningScreen({
             <X className="h-6 w-6" />
           </button>
           <div className="flex-1 text-center">
-            <span className="block text-xs font-semibold uppercase tracking-wide text-violet-600">
+            <span className="block text-xs font-semibold uppercase tracking-wide text-brand-primary">
               Fine-tuning
             </span>
             <span className="mt-0.5 block text-base font-bold text-gray-900">{axis.name}</span>
@@ -164,13 +164,13 @@ export default function FineTuningScreen({
           <h3 className="mb-2 text-base font-bold leading-6 text-gray-900">
             {currentSubDimension.name}
           </h3>
-          <p className="mb-5 text-sm leading-[22px] text-gray-600">
+          <p className="mb-5 text-base font-semibold leading-relaxed text-gray-800">
             {currentSubDimension.question}
           </p>
 
           {/* Position card */}
-          <div className="mb-5 min-h-[100px] rounded-xl border-2 border-violet-200 bg-violet-50/40 p-4">
-            <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-900">
+          <div className="mb-5 min-h-[100px] rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
+            <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-700">
               {currentPosition.title}
             </p>
             <p className="mt-2 text-center text-[13px] leading-5 text-gray-600">
@@ -215,7 +215,7 @@ export default function FineTuningScreen({
           </button>
           <button
             onClick={handleNext}
-            className="flex-1 rounded-xl bg-violet-600 py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+            className="flex-1 rounded-xl bg-brand-primary py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
           >
             {currentIndex >= totalQuestions - 1 ? 'Finish' : 'Next \u2192'}
           </button>

@@ -61,16 +61,16 @@ export default function DomainLeanMeter({
   const centerNotch = compact ? 'h-2 w-px bg-gray-300' : 'h-2.5 w-px bg-gray-300';
   const sideNotch = compact ? 'h-1 w-px bg-gray-200' : 'h-1.5 w-px bg-gray-200';
   const dotSize = compact
-    ? 'h-2.5 w-2.5 rounded-full bg-violet-600 shadow-[0_1px_3px_rgba(0,0,0,0.18)]'
-    : 'h-3.5 w-3.5 rounded-full bg-violet-600 shadow-[0_1px_4px_rgba(0,0,0,0.2)]';
+    ? 'h-2.5 w-2.5 rounded-full bg-brand-primary shadow-[0_1px_3px_rgba(0,0,0,0.18)]'
+    : 'h-3.5 w-3.5 rounded-full bg-brand-primary shadow-[0_1px_4px_rgba(0,0,0,0.2)]';
 
   const leftLabelClass = compact
-    ? `w-[80px] shrink-0 text-right text-[10px] font-semibold leading-snug ${value < 50 ? 'text-violet-600' : 'text-gray-400'}`
-    : `w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value < 50 ? 'text-violet-600' : 'text-gray-400'}`;
+    ? `w-[80px] shrink-0 text-right text-[10px] font-semibold leading-snug ${value < 50 ? 'text-brand-primary' : 'text-gray-400'}`
+    : `w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value < 50 ? 'text-brand-primary' : 'text-gray-400'}`;
 
   const rightLabelClass = compact
-    ? `w-[80px] shrink-0 text-left text-[10px] font-semibold leading-snug ${value > 50 ? 'text-violet-600' : 'text-gray-400'}`
-    : `w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value > 50 ? 'text-violet-600' : 'text-gray-400'}`;
+    ? `w-[80px] shrink-0 text-left text-[10px] font-semibold leading-snug ${value > 50 ? 'text-brand-primary' : 'text-gray-400'}`
+    : `w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value > 50 ? 'text-brand-primary' : 'text-gray-400'}`;
 
   return (
     <div className="flex items-center gap-1.5">

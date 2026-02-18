@@ -93,7 +93,7 @@ export default function LoginPage() {
         />
 
         {submitError && (
-          <div className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-600">
+          <div className="mb-4 rounded-lg bg-error-light p-3 text-sm text-error">
             {submitError}
           </div>
         )}
@@ -113,7 +113,7 @@ export default function LoginPage() {
         <span className="text-sm text-gray-500">Don&apos;t have an account?&nbsp;</span>
         <Link
           href="/register"
-          className="text-sm font-semibold text-blue-500 hover:text-blue-600"
+          className="text-sm font-semibold text-brand-primary hover:text-brand-primary/80"
         >
           Sign Up
         </Link>

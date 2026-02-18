@@ -50,9 +50,9 @@ export default function Input({
   const inputContainerClasses = [
     'flex items-center rounded-xl border px-4 transition-colors duration-150',
     error
-      ? 'border-red-500 bg-red-50'
+      ? 'border-error bg-error-light'
       : isFocused
-        ? 'border-blue-500 bg-white'
+        ? 'border-brand-primary bg-white'
         : 'border-gray-200 bg-gray-50',
   ].join(' ');
 
@@ -98,7 +98,7 @@ export default function Input({
       </div>
 
       {error ? (
-        <p className="mt-1.5 text-xs text-red-500">{error}</p>
+        <p className="mt-1.5 text-xs text-error">{error}</p>
       ) : hint ? (
         <p className="mt-1.5 text-xs text-gray-500">{hint}</p>
       ) : null}
