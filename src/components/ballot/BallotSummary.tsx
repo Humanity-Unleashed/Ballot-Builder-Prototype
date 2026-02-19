@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   CheckCircle2,
   XCircle,
@@ -12,9 +12,16 @@ import {
   Info,
   FileText,
   Users,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 import type { BallotItem, Category, UserVote } from '@/lib/ballotHelpers';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
+import Confetti from './Confetti';
+import CelebrationHeader from './CelebrationHeader';
+import NextStepsCard from './NextStepsCard';
+import SquadInviteCard from './SquadInviteCard';
+import ShareSection from './ShareSection';
 
 interface BallotSummaryProps {
   votes: UserVote[];
@@ -40,6 +47,7 @@ export default function BallotSummary({
   onPrint,
 }: BallotSummaryProps) {
   const { track } = useAnalyticsContext();
+  const [reviewOpen, setReviewOpen] = useState(false);
   const votedCount = votes.length;
   const skippedCount = ballotItems.length - votedCount;
 
@@ -80,103 +88,135 @@ export default function BallotSummary({
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="flex flex-col items-center py-6 px-4 bg-white border-b border-gray-200 gap-2">
-        <CheckCircle2 className="h-12 w-12 text-green-500" />
-        <h1 className="text-[22px] font-extrabold text-gray-900 text-center leading-7">
-          Your Ballot is Ready!
-        </h1>
-        <p className="text-[15px] text-gray-500 text-center leading-[21px]">
-          {votedCount} items voted
-          {skippedCount > 0 ? ` \u00b7 ${skippedCount} skipped` : ' \u00b7 All items completed'}
-        </p>
-      </div>
+      <Confetti />
+
+      {/* Celebration header with stats */}
+      <CelebrationHeader ballotItems={ballotItems} />
 
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-5">
-        {groupedItems.map(({ category, items }) => {
-          const CategoryIcon = iconMap[category.icon] || FileText;
+      <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
+        {/* Next steps */}
+        <NextStepsCard />
 
-          return (
-            <div key={category.id}>
-              {/* Category badge */}
-              <div
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full mb-3"
-                style={{ backgroundColor: category.color + '20' }}
-              >
-                <CategoryIcon className="h-4 w-4" style={{ color: category.color }} />
-                <span className="text-sm font-semibold" style={{ color: category.color }}>
-                  {category.name}
-                </span>
-              </div>
+        {/* Voting Squad CTA */}
+        <SquadInviteCard />
 
-              <div className="space-y-2">
-                {items.map(({ item, index }) => {
-                  const vote = votes.find((v) => v.itemId === item.id);
-                  const isSkipped = !vote;
+        {/* Share */}
+        <ShareSection />
 
-                  return (
+        {/* Collapsible vote review */}
+        <div className="px-4">
+          <button
+            onClick={() => {
+              setReviewOpen((prev) => !prev);
+              track('click', { element: 'toggle_review', open: !reviewOpen });
+            }}
+            className="w-full flex items-center justify-between py-3 text-sm font-semibold text-text-secondary"
+          >
+            <span>
+              Review your selections ({votedCount} voted{skippedCount > 0 ? `, ${skippedCount} skipped` : ''})
+            </span>
+            {reviewOpen ? (
+              <ChevronUp className="h-4 w-4 text-text-muted" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-text-muted" />
+            )}
+          </button>
+
+          {reviewOpen && (
+            <div className="space-y-5 animate-fade-in-up">
+              {groupedItems.map(({ category, items }) => {
+                const CategoryIcon = iconMap[category.icon] || FileText;
+
+                return (
+                  <div key={category.id}>
+                    {/* Category badge */}
                     <div
-                      key={item.id}
-                      className="flex items-center bg-white rounded-xl p-3.5 border border-gray-200"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full mb-3"
+                      style={{ backgroundColor: category.color + '20' }}
                     >
-                      <div className="flex-1 space-y-1.5">
-                        <p className="text-[15px] font-semibold text-gray-900 leading-5">
-                          {item.title}
-                        </p>
-                        {isSkipped ? (
-                          <div className="flex items-center gap-1.5">
-                            <MinusCircle className="h-4 w-4 text-gray-400" />
-                            <span className="text-sm text-gray-400 italic">Skipped</span>
-                          </div>
-                        ) : (
-                          <div className="flex items-center gap-1.5">
-                            {React.createElement(getVoteIcon(vote, item), {
-                              className: `h-[18px] w-[18px] ${getVoteColor(vote, item)}`,
-                            })}
-                            <span className={`text-sm font-bold ${getVoteColor(vote, item)}`}>
-                              {getVoteDisplay(vote, item)}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Edit button */}
-                      <button
-                        onClick={() => onEditItem(index)}
-                        className="ml-3 w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
-                      >
-                        <Pencil className="h-[18px] w-[18px] text-brand-primary" />
-                      </button>
+                      <CategoryIcon className="h-4 w-4" style={{ color: category.color }} />
+                      <span className="text-sm font-semibold" style={{ color: category.color }}>
+                        {category.name}
+                      </span>
                     </div>
-                  );
-                })}
+
+                    <div className="space-y-2">
+                      {items.map(({ item, index }) => {
+                        const vote = votes.find((v) => v.itemId === item.id);
+                        const isSkipped = !vote;
+
+                        return (
+                          <div
+                            key={item.id}
+                            className="flex items-center bg-white rounded-xl p-3.5 border border-gray-200"
+                          >
+                            <div className="flex-1 space-y-1.5">
+                              <p className="text-[15px] font-semibold text-gray-900 leading-5">
+                                {item.title}
+                              </p>
+                              {isSkipped ? (
+                                <div className="flex items-center gap-1.5">
+                                  <MinusCircle className="h-4 w-4 text-gray-400" />
+                                  <span className="text-sm text-gray-400 italic">Skipped</span>
+                                </div>
+                              ) : (
+                                <div className="flex items-center gap-1.5">
+                                  {React.createElement(getVoteIcon(vote, item), {
+                                    className: `h-[18px] w-[18px] ${getVoteColor(vote, item)}`,
+                                  })}
+                                  <span className={`text-sm font-bold ${getVoteColor(vote, item)}`}>
+                                    {getVoteDisplay(vote, item)}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Edit button */}
+                            <button
+                              onClick={() => onEditItem(index)}
+                              className="ml-3 w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
+                            >
+                              <Pencil className="h-[18px] w-[18px] text-brand-primary" />
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* Demoted action links */}
+              <div className="flex items-center justify-center gap-4 pt-2 pb-1">
+                <button
+                  onClick={() => {
+                    track('click', { element: 'print_ballot', votedCount, skippedCount });
+                    onPrint();
+                  }}
+                  className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-brand-primary transition-colors"
+                >
+                  <Printer className="h-4 w-4" />
+                  Print Ballot
+                </button>
+                <span className="text-text-muted">|</span>
+                <button
+                  onClick={() => {
+                    track('click', { element: 'start_over' });
+                    onStartOver();
+                  }}
+                  className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-brand-primary transition-colors"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                  Start Over
+                </button>
               </div>
             </div>
-          );
-        })}
-
-        {/* Action buttons */}
-        <div className="space-y-3 mt-2">
-          <button
-            onClick={() => { track('click', { element: 'print_ballot', votedCount, skippedCount }); onPrint(); }}
-            className="w-full flex items-center justify-center gap-2.5 py-4 rounded-[14px] bg-brand-primary hover:bg-brand-primary/90 transition-colors"
-          >
-            <Printer className="h-[22px] w-[22px] text-white" />
-            <span className="text-[17px] font-bold text-white">Print Ballot</span>
-          </button>
-
-          <button
-            onClick={() => { track('click', { element: 'start_over' }); onStartOver(); }}
-            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border border-gray-300 bg-white hover:bg-gray-50 transition-colors"
-          >
-            <RefreshCw className="h-[18px] w-[18px] text-gray-600" />
-            <span className="text-[15px] font-semibold text-gray-600">Start Over</span>
-          </button>
+          )}
         </div>
 
         {/* Disclaimer */}
-        <div className="flex items-start gap-2.5 bg-gray-100 p-3.5 rounded-xl mb-10">
+        <div className="mx-4 flex items-start gap-2.5 bg-gray-100 p-3.5 rounded-xl mb-10">
           <Info className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
           <p className="flex-1 text-[13px] text-gray-500 leading-[19px]">
             This is a preview of your selections. Take this to your polling place or use it as a
