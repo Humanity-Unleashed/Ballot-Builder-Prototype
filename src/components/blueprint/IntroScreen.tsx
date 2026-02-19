@@ -1,141 +1,139 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight, Clock, BarChart3, FileText, CheckCheck, MessageSquarePlus } from 'lucide-react';
-import type { Spec } from '@/types/civicAssessment';
+import React, { useState, useCallback } from 'react';
+import { ArrowRight, ClipboardCheck, Compass, MessageSquarePlus, Users, X } from 'lucide-react';
 
 interface IntroScreenProps {
-  spec: Spec;
-  onStart: () => void;
+  onClose: () => void;
 }
 
-export default function IntroScreen({ onStart }: IntroScreenProps) {
+const slides = [
+  {
+    icon: MessageSquarePlus,
+    title: null,
+    description:
+      'Ballot Builder fills out your ballot, analyzing how candidates and measures align with your demographics and political preferences, regardless of party affiliation.\n\nPlease consider leaving feedback so we can make Ballot Builder unbiased, accurate, and useful.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Know Your Ballot',
+    description:
+      'Every election has races and measures you\u2019ve never heard of. Ballot Builder walks you through your actual ballot so you can vote with confidence \u2014 not confusion.',
+  },
+  {
+    icon: Compass,
+    title: 'Vote Your Values',
+    description:
+      'Take a 5-minute assessment. We\u2019ll map your priorities to real candidates and ballot measures \u2014 no party labels, no spin. Just your values matched to your choices.',
+  },
+  {
+    icon: Users,
+    title: 'Prep Together',
+    description:
+      'Invite a few friends or family to your Voting Squad. See who\u2019s registered, who\u2019s prepped, and who\u2019s voted \u2014 without sharing what anyone chose. Election prep is easier together.',
+  },
+];
+
+export default function IntroScreen({ onClose }: IntroScreenProps) {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState<'left' | 'right'>('left');
+
+  const isLast = current === slides.length - 1;
+
+  const goTo = useCallback(
+    (index: number) => {
+      setDirection(index > current ? 'left' : 'right');
+      setCurrent(index);
+    },
+    [current],
+  );
+
+  const handleNext = () => {
+    if (isLast) {
+      onClose();
+    } else {
+      goTo(current + 1);
+    }
+  };
+
+  const slide = slides[current];
+  const Icon = slide.icon;
+
   return (
-    <div className="min-h-[calc(100vh-56px)] bg-gray-50">
-      <div className="p-5 pb-10">
-        {/* Prototype Welcome Banner */}
-        <div className="mb-5 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-          <p className="mb-1.5 text-sm font-bold text-amber-900">
-            Welcome to the Ballot Builder prototype!
-          </p>
-          <p className="mb-3 text-[13px] leading-[19px] text-amber-800">
-            Ballot Builder helps you vote in a way that aligns with your values.
-            Take a short assessment, get a personalized civic blueprint, then
-            browse your ballot with guidance tailored to you.
-          </p>
-          <p className="mb-1.5 text-[13px] leading-[19px] text-amber-800">
-            This is an early prototype and we&apos;d love your feedback &mdash; what
-            feels useful, what&apos;s confusing, what you&apos;d change.
-          </p>
-          <div className="flex items-center gap-2 text-[13px] text-amber-700">
-            <MessageSquarePlus className="h-4 w-4 shrink-0" />
-            <span>
-              Tap the <span className="font-semibold">feedback button</span> in the bottom-right corner anytime.
-            </span>
-          </div>
-        </div>
+    <div className="fixed inset-0 z-50 flex flex-col bg-white">
+      {/* Skip (hidden on last slide) */}
+      <div className="flex justify-end px-5 pt-4">
+        {!isLast ? (
+          <button
+            onClick={onClose}
+            className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+          >
+            Skip
+          </button>
+        ) : (
+          <div className="h-5" />
+        )}
+      </div>
 
-        {/* Hero */}
-        <div className="mb-6">
-          <h1 className="mb-2.5 text-xl font-extrabold leading-[26px] text-gray-900">
-            Draft Your{'\n'}Civic Blueprint
-          </h1>
-          <p className="text-[15px] leading-[22px] text-gray-500">
-            Answer a few quick questions about your values. We&apos;ll map your positions and
-            match you to candidates who share them.
-          </p>
-        </div>
-
-        {/* How It Works card */}
-        <div className="mb-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-          <span className="mb-3.5 block text-[11px] font-bold uppercase tracking-wide text-gray-400">
-            HOW IT WORKS
-          </span>
-
-          {/* Steps */}
-          {[
-            {
-              num: 1,
-              title: 'Share your values',
-              desc: 'Slide through questions on economy, healthcare, justice, and more',
-            },
-            {
-              num: 2,
-              title: 'See your blueprint',
-              desc: 'Get a personalized civic profile with your positions mapped',
-            },
-            {
-              num: 3,
-              title: 'Build your ballot',
-              desc: 'Match your values to real candidates and ballot measures',
-            },
-          ].map((step) => (
-            <div key={step.num} className="mb-3.5 flex items-start gap-3">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary">
-                <span className="text-[13px] font-bold text-white">{step.num}</span>
-              </div>
-              <div className="flex-1">
-                <span className="block text-sm font-bold text-gray-900">{step.title}</span>
-                <span className="block text-[13px] leading-[18px] text-gray-500">
-                  {step.desc}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA button */}
-        <button
-          onClick={onStart}
-          className="mb-3 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-4 transition-opacity hover:opacity-90 active:opacity-80"
+      {/* Slide content */}
+      <div className="flex flex-1 flex-col items-center justify-center px-8 pb-40 text-center">
+        <div
+          key={current}
+          className={direction === 'left' ? 'animate-slide-in-left' : 'animate-slide-in-right'}
         >
-          <span className="text-base font-bold text-white">Start Drafting</span>
-          <ArrowRight className="h-5 w-5 text-white" />
-        </button>
+          {/* Icon */}
+          <div className="mx-auto mb-8 flex h-28 w-28 items-center justify-center rounded-full bg-brand-primary-light">
+            <Icon className="h-14 w-14 text-brand-primary" strokeWidth={1.5} />
+          </div>
 
-        {/* Time hint */}
-        <div className="mb-6 flex items-center justify-center gap-1.5">
-          <Clock className="h-4 w-4 text-gray-400" />
-          <span className="text-[13px] text-gray-400">Takes about 3-5 minutes</span>
-        </div>
+          {/* Title */}
+          {slide.title && (
+            <h1 className="mb-4 text-2xl font-bold text-text-primary">{slide.title}</h1>
+          )}
 
-        {/* What You'll Get card */}
-        <div className="rounded-2xl border border-border-default bg-brand-primary-light p-4">
-          <span className="mb-3 block text-[11px] font-bold uppercase tracking-wide text-brand-primary">
-            WHAT YOU&apos;LL GET
-          </span>
-
-          {[
-            {
-              icon: <BarChart3 className="h-[18px] w-[18px] text-brand-primary" />,
-              title: 'Civic Blueprint',
-              desc: 'A personalized profile mapping your stance across key policy areas',
-            },
-            {
-              icon: <FileText className="h-[18px] w-[18px] text-brand-primary" />,
-              title: 'Policy Positions',
-              desc: 'Know exactly where you stand before you step into the voting booth',
-            },
-            {
-              icon: <CheckCheck className="h-[18px] w-[18px] text-brand-primary" />,
-              title: 'Candidate Matches',
-              desc: 'Percentage match scores for every race on your ballot',
-            },
-          ].map((item) => (
-            <div key={item.title} className="mb-3 flex items-start gap-2.5">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-primary-light">
-                {item.icon}
-              </div>
-              <div className="flex-1">
-                <span className="block text-sm font-bold text-gray-900">{item.title}</span>
-                <span className="block text-[13px] leading-[18px] text-gray-500">
-                  {item.desc}
-                </span>
-              </div>
-            </div>
-          ))}
+          {/* Description */}
+          <p className="mx-auto max-w-sm whitespace-pre-line leading-relaxed text-text-secondary">
+            {slide.description}
+          </p>
         </div>
       </div>
+
+      {/* Bottom nav (fixed to bottom of modal) */}
+      <div className="absolute inset-x-0 bottom-0 bg-white px-6 pb-8 pt-4">
+        <div className="mx-auto max-w-md">
+          {/* Dot indicators */}
+          <div className="mb-6 flex items-center justify-center gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                  i === current ? 'bg-brand-primary' : 'bg-border-default'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Action button */}
+          <button
+            onClick={handleNext}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-4 font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80"
+          >
+            {isLast ? 'Get Started' : 'Next'}
+            {isLast && <ArrowRight className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* X close button — bottom-right corner */}
+      <button
+        onClick={onClose}
+        className="absolute bottom-28 right-6 flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-gray-100 hover:text-text-primary"
+        aria-label="Close onboarding"
+      >
+        <X className="h-5 w-5" />
+      </button>
     </div>
   );
 }

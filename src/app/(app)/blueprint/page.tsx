@@ -3,7 +3,8 @@
 /**
  * Blueprint Page - Slider-Based Civic Blueprint Assessment
  *
- * State machine: intro → [demographics] → assessment → [fine_tuning] → results
+ * State machine: [intro/demographics] → assessment → [fine_tuning] → results
+ * Onboarding modal overlays on first visit (persisted to localStorage)
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -21,6 +22,8 @@ import IntroScreen from '@/components/blueprint/IntroScreen';
 import AssessmentView from '@/components/blueprint/AssessmentView';
 import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
 import FineTuningScreen from '@/components/blueprint/FineTuningScreen';
+
+const ONBOARDING_KEY = 'bb_onboarding_viewed';
 
 type PageState = 'intro' | 'demographics' | 'assessment' | 'fine_tuning' | 'results';
 
@@ -42,13 +45,28 @@ export default function BlueprintPage() {
   const { setScreenLabel } = useFeedbackScreen();
   const { hasCompletedDemographics, reset: resetDemographics } = useDemographicStore();
 
+  // ── Onboarding modal (first visit only) ──
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem(ONBOARDING_KEY)) {
+      setShowOnboarding(true);
+    }
+  }, []);
+
+  const handleCloseOnboarding = () => {
+    localStorage.setItem(ONBOARDING_KEY, 'true');
+    setShowOnboarding(false);
+  };
+
   // ── Page state machine ──
   const hasRealScores = profile?.domains.some((d) =>
     d.axes.some((a) => a.source !== 'default'),
   ) ?? false;
   const [pageState, setPageState] = useState<PageState>(() => {
     if (assessmentProgress) return 'assessment';
-    return hasRealScores ? 'results' : 'intro';
+    if (hasRealScores) return 'results';
+    return 'intro';
   });
   const isRetaking = useRef(false);
 
@@ -144,14 +162,6 @@ export default function BlueprintPage() {
     setPageState('assessment');
   };
 
-  const handleStart = () => {
-    if (hasCompletedDemographics) {
-      startAssessment();
-    } else {
-      setPageState('demographics');
-    }
-  };
-
   const handleDemographicsComplete = () => {
     startAssessment();
   };
@@ -239,7 +249,7 @@ export default function BlueprintPage() {
     clearAssessmentProgress();
     resetDemographics();
     resetBlueprint();
-    setPageState('intro');
+    setPageState('demographics');
   };
 
   const handleFineTune = (axisId: string) => {
@@ -284,9 +294,14 @@ export default function BlueprintPage() {
     );
   }
 
-  // ── Intro ──
+  // ── Intro (acts as entry point — immediately routes to demographics or assessment) ──
   if (pageState === 'intro') {
-    return <IntroScreen spec={spec} onStart={handleStart} />;
+    return (
+      <>
+        {showOnboarding && <IntroScreen onClose={handleCloseOnboarding} />}
+        <DemographicScreen onComplete={handleDemographicsComplete} />
+      </>
+    );
   }
 
   // ── Demographics ──
