@@ -218,15 +218,19 @@ export function transformMeasure(measure: BallotMeasure): BallotItem {
 }
 
 export function transformBallot(ballot: ApiBallot): { categories: Category[]; items: BallotItem[] } {
-  const items: BallotItem[] = [];
+  const contests: BallotItem[] = [];
+  const measures: BallotItem[] = [];
 
   ballot.items.forEach((item) => {
     if (item.type === 'candidate') {
-      items.push(transformContest(item as BallotContest));
+      contests.push(transformContest(item as BallotContest));
     } else if (item.type === 'measure') {
-      items.push(transformMeasure(item as BallotMeasure));
+      measures.push(transformMeasure(item as BallotMeasure));
     }
   });
+
+  // Candidate races first, then ballot measures
+  const items: BallotItem[] = [...contests, ...measures];
 
   const hasMeasures = items.some((item) => item.type === 'proposition');
   const hasContests = items.some((item) => item.type === 'candidate_race');
