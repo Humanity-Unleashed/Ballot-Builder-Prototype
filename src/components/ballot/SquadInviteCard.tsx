@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Users } from 'lucide-react';
-import Modal from '@/components/ui/Modal';
+import SquadDemoModal from '@/components/ballot/SquadDemoModal';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import { getNextElectionDay, daysUntil } from '@/lib/electionDate';
 
@@ -61,17 +61,7 @@ export default function SquadInviteCard() {
         </div>
       </div>
 
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Coming Soon">
-        <p className="text-sm text-text-secondary mb-5">
-          Voting Squads are coming soon! We&apos;ll let you know when this feature is ready.
-        </p>
-        <button
-          onClick={() => setModalOpen(false)}
-          className="w-full py-3 rounded-xl bg-brand-primary text-white font-semibold text-sm hover:bg-brand-primary/90 transition-colors"
-        >
-          Got it
-        </button>
-      </Modal>
+      <SquadDemoModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }
