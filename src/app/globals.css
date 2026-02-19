@@ -14,9 +14,9 @@
   /* Border */
   --color-border-default: #E0DAF0;
 
-  /* Semantic: negative (neutral, not red) */
-  --color-negative: #64648C;
-  --color-negative-light: #F0EFF5;
+  /* Semantic: negative (muted amber — distinct from gray "incomplete") */
+  --color-negative: #8C7A4A;
+  --color-negative-light: #F5F0E5;
 
   /* Semantic: error (real errors — stays red) */
   --color-error: #D93B3B;

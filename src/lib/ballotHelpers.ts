@@ -232,11 +232,11 @@ export function transformBallot(ballot: ApiBallot): { categories: Category[]; it
   const hasContests = items.some((item) => item.type === 'candidate_race');
 
   const categories: Category[] = [];
-  if (hasMeasures) {
-    categories.push(DEFAULT_CATEGORIES.find((c) => c.id === 'measures')!);
-  }
   if (hasContests) {
     categories.push(DEFAULT_CATEGORIES.find((c) => c.id === 'contests')!);
+  }
+  if (hasMeasures) {
+    categories.push(DEFAULT_CATEGORIES.find((c) => c.id === 'measures')!);
   }
 
   return { categories, items };
