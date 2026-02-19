@@ -43,16 +43,12 @@ export default function BlueprintPage() {
   } = useBlueprint();
 
   const { setScreenLabel } = useFeedbackScreen();
-  const { hasCompletedDemographics, reset: resetDemographics } = useDemographicStore();
+  const { reset: resetDemographics } = useDemographicStore();
 
   // ── Onboarding modal (first visit only) ──
-  const [showOnboarding, setShowOnboarding] = useState(false);
-
-  useEffect(() => {
-    if (!localStorage.getItem(ONBOARDING_KEY)) {
-      setShowOnboarding(true);
-    }
-  }, []);
+  const [showOnboarding, setShowOnboarding] = useState(
+    () => typeof window !== 'undefined' && !localStorage.getItem(ONBOARDING_KEY),
+  );
 
   const handleCloseOnboarding = () => {
     localStorage.setItem(ONBOARDING_KEY, 'true');
