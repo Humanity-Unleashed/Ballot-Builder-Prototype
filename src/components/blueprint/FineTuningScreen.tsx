@@ -6,8 +6,7 @@ import { getFineTuningConfig } from '@/data/fineTuningPositions';
 import type { Spec } from '@/types/civicAssessment';
 import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
-import DomainLeanMeter from './DomainLeanMeter';
-import StrengthChips from './StrengthChips';
+import ImportanceSlider from './ImportanceSlider';
 
 interface FineTuningScreenProps {
   axisId: string;
@@ -60,9 +59,6 @@ export default function FineTuningScreen({
   const currentSubDimension = subDimensions[currentIndex];
   const totalQuestions = subDimensions.length;
   const progressPercentage = (currentIndex / totalQuestions) * 100;
-
-  const currentPosition = currentSubDimension.positions[sliderPosition];
-  const totalPositions = currentSubDimension.positions.length;
 
   const handleNext = () => {
     const isLast = currentIndex >= totalQuestions - 1;
@@ -156,50 +152,59 @@ export default function FineTuningScreen({
       </div>
 
       {/* Main content */}
-      <div className="flex-1 p-5">
+      <div className="flex-1 overflow-y-auto p-5 pb-10">
         <div
-          className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-opacity duration-200"
+          className="transition-opacity duration-200"
           style={{ opacity: fadeVisible ? 1 : 0 }}
         >
           <h3 className="mb-2 text-base font-bold leading-6 text-gray-900">
             {currentSubDimension.name}
           </h3>
-          <p className="mb-5 text-base font-semibold leading-relaxed text-gray-800">
+          <p className="mb-4 text-base font-semibold leading-relaxed text-gray-800">
             {currentSubDimension.question}
           </p>
 
-          {/* Position card */}
-          <div className="mb-5 min-h-[100px] rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
-            <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-700">
-              {currentPosition.title}
-            </p>
-            <p className="mt-2 text-center text-[13px] leading-5 text-gray-600">
-              {currentPosition.description}
-            </p>
-            {currentPosition.isCurrentPolicy && (
-              <div className="mt-3 flex justify-center">
-                <span className="rounded-xl bg-emerald-100 px-2.5 py-1 text-[11px] font-semibold text-emerald-600">
-                  Current US Policy
-                </span>
-              </div>
-            )}
+          {/* All position options as tappable cards */}
+          <div className="flex flex-col gap-2.5">
+            {currentSubDimension.positions.map((position, index) => {
+              const isSelected = index === sliderPosition;
+              return (
+                <button
+                  key={index}
+                  onClick={() => setSliderPosition(index)}
+                  className={[
+                    'w-full rounded-xl border-2 px-4 py-3 text-left transition-colors',
+                    isSelected
+                      ? 'border-brand-primary bg-brand-primary-light'
+                      : 'border-gray-200 bg-white hover:border-gray-300',
+                  ].join(' ')}
+                >
+                  <p className={[
+                    'text-[14px] font-semibold',
+                    isSelected ? 'text-brand-primary' : 'text-gray-700',
+                  ].join(' ')}>
+                    {position.title}
+                  </p>
+                  <p className="mt-0.5 text-[13px] leading-[19px] text-gray-500">
+                    {position.description}
+                  </p>
+                  {position.isCurrentPolicy && (
+                    <span className="mt-1.5 inline-block rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-600">
+                      Current US Policy
+                    </span>
+                  )}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Slider */}
-          <DomainLeanMeter
-            value={(sliderPosition / (totalPositions - 1)) * 100}
-            leftLabel={currentSubDimension.poleALabel.replace(/\n/g, ' ')}
-            rightLabel={currentSubDimension.poleBLabel.replace(/\n/g, ' ')}
-            onChange={(v) => setSliderPosition(Math.round((v / 100) * (totalPositions - 1)))}
-          />
-
-          {/* Strength chips */}
-          <StrengthChips selectedValue={currentStrength} onSelect={setCurrentStrength} />
+          {/* Importance slider */}
+          <ImportanceSlider value={currentStrength} onChange={setCurrentStrength} />
         </div>
       </div>
 
-      {/* Navigation footer */}
-      <div className="border-t border-gray-200 bg-white p-5">
+      {/* Navigation footer (sticky) */}
+      <div className="sticky bottom-0 border-t border-gray-200 bg-white p-5">
         <div className="flex gap-3">
           <button
             onClick={handleBack}

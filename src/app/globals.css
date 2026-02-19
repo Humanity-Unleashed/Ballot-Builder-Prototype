@@ -14,9 +14,9 @@
   /* Border */
   --color-border-default: #E0DAF0;
 
-  /* Semantic: negative (neutral, not red) */
-  --color-negative: #64648C;
-  --color-negative-light: #F0EFF5;
+  /* Semantic: negative (muted amber — distinct from gray "incomplete") */
+  --color-negative: #8C7A4A;
+  --color-negative-light: #F5F0E5;
 
   /* Semantic: error (real errors — stays red) */
   --color-error: #D93B3B;
@@ -84,6 +84,28 @@ body {
 
 .animate-slide-in-right {
   animation: slide-in-right 0.3s ease-out;
+}
+
+/* Importance slider thumb styling */
+.importance-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.importance-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Hide scrollbar for carousel containers */
