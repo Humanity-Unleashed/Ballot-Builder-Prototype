@@ -74,7 +74,7 @@ export function getPositionLabel(axisId: string, value: number): string {
     return 'Strongly lean right';
   }
   const positionIndex = valueToPositionIndex(value, config.positions.length);
-  return config.positions[positionIndex]?.title || 'Mixed';
+  return config.positions[positionIndex]?.description || 'Mixed';
 }
 
 // ────────────────────────────────────────────

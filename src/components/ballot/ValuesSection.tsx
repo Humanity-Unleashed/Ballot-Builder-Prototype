@@ -69,8 +69,7 @@ export default function ValuesSection({
                 />
                 {pos && (
                   <div className="text-center">
-                    <p className="text-xs font-semibold text-gray-600">{pos.title}</p>
-                    <p className="text-[11px] text-gray-400 italic">{pos.description}</p>
+                    <p className="text-xs font-semibold text-gray-600">{pos.description}</p>
                   </div>
                 )}
               </div>

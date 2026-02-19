@@ -53,8 +53,8 @@ export default function CompactAxisBar({
         className="rounded-lg bg-brand-primary-light p-3"
         style={{ borderLeft: `4px solid ${getAccentColor()}` }}
       >
-        <span className="text-sm font-semibold leading-5 text-gray-900">
-          {currentPosition?.title || positionLabel}
+        <span className="text-sm font-medium leading-5 text-gray-900">
+          {currentPosition?.description || positionLabel}
         </span>
       </div>
 

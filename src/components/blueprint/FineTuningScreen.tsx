@@ -170,10 +170,7 @@ export default function FineTuningScreen({
 
           {/* Position card */}
           <div className="mb-5 min-h-[100px] rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
-            <p className="text-center text-[15px] font-semibold leading-[22px] text-gray-700">
-              {currentPosition.title}
-            </p>
-            <p className="mt-2 text-center text-[13px] leading-5 text-gray-600">
+            <p className="text-center text-[15px] font-medium leading-[22px] text-gray-700">
               {currentPosition.description}
             </p>
             {currentPosition.isCurrentPolicy && (

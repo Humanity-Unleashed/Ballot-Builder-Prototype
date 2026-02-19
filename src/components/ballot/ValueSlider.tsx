@@ -112,7 +112,7 @@ function ConfiguredSlider({
           style={{ borderLeftColor: accentColor }}
         >
           <p className="text-[13px] font-semibold text-gray-700 leading-[18px]">
-            {currentPosition.title}
+            {currentPosition.description}
           </p>
           {currentPosition.isCurrentPolicy && (
             <span className="inline-block bg-gray-200 px-1.5 py-0.5 rounded text-[10px] font-bold text-gray-500 tracking-wide">
@@ -125,7 +125,7 @@ function ConfiguredSlider({
       {/* Slider row: poleA | track | poleB */}
       <div className="flex items-center gap-2">
         <span className={`text-[10px] font-semibold uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent < 50 ? 'text-brand-primary' : 'text-gray-400'}`}>
-          {config.poleALabel}
+          {axis.poleA}
         </span>
 
         <div className="flex-1">
@@ -180,7 +180,7 @@ function ConfiguredSlider({
         </div>
 
         <span className={`text-[10px] font-semibold uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent > 50 ? 'text-brand-primary' : 'text-gray-400'}`}>
-          {config.poleBLabel}
+          {axis.poleB}
         </span>
       </div>
     </div>

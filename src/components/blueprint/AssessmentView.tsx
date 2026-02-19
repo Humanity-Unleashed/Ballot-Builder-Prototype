@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import { Lightbulb } from 'lucide-react';
+import { Lightbulb, Check } from 'lucide-react';
 import { getSliderConfig } from '@/data/sliderPositions';
 import type { Spec } from '@/types/civicAssessment';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
-import DomainLeanMeter from './DomainLeanMeter';
 import StrengthChips from './StrengthChips';
 
 interface AssessmentViewProps {
@@ -65,8 +64,6 @@ export default function AssessmentView({
 
   const totalAxes = axisQueue.length;
   const progressPercentage = totalAxes > 0 ? (currentAxisIndex / totalAxes) * 100 : 0;
-  const currentPosition = currentAxisConfig.positions[sliderPosition];
-  const totalPositions = currentAxisConfig.positions.length;
 
   return (
     <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gray-50">
@@ -94,35 +91,58 @@ export default function AssessmentView({
           {currentAxisIndex === 0 && (
             <div className="mb-4 rounded-lg bg-brand-primary-light px-4 py-3 text-[13px] leading-5 text-gray-600">
               <span className="font-semibold text-gray-700">Here&apos;s how it works: </span>
-              Use the <span className="font-semibold">slider</span> to choose the policy position
-              closest to your view — each notch represents a different stance. Then tell us{' '}
+              Tap the policy position closest to your view. Then tell us{' '}
               <span className="font-semibold">how important</span> this issue is to you by picking
               one of the buttons below. There are no right or wrong answers.
             </div>
           )}
 
-          <p className="mb-5 text-base font-semibold leading-relaxed text-gray-800">{currentAxisConfig.question}</p>
+          <p className="mb-4 text-base font-semibold leading-relaxed text-gray-800">{currentAxisConfig.question}</p>
 
-          {/* Position display */}
-          <div className="mb-5 rounded-xl border-2 border-border-default bg-brand-primary-light/40 p-4">
-            <p className="text-[15px] font-semibold text-gray-700">{currentPosition.title}</p>
-            <p className="mt-1 text-[13px] leading-[19px] text-gray-600">
-              {currentPosition.description}
-            </p>
-            {currentPosition.isCurrentPolicy && (
-              <span className="mt-2 inline-block rounded-lg bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-600">
-                Current US Policy
-              </span>
-            )}
+          {/* All positions as tappable options */}
+          <div className="mb-5 space-y-2">
+            {currentAxisConfig.positions.map((position, index) => {
+              const isSelected = sliderPosition === index;
+              return (
+                <button
+                  key={index}
+                  onClick={() => onSliderChange(index)}
+                  className={[
+                    'w-full rounded-xl border-2 p-3 text-left transition-all',
+                    isSelected
+                      ? 'border-brand-primary bg-brand-primary-light/60'
+                      : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50',
+                  ].join(' ')}
+                >
+                  <div className="flex items-start gap-2">
+                    <div
+                      className={[
+                        'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors',
+                        isSelected
+                          ? 'border-brand-primary bg-brand-primary'
+                          : 'border-gray-300 bg-white',
+                      ].join(' ')}
+                    >
+                      {isSelected && <Check className="h-3 w-3 text-white" />}
+                    </div>
+                    <div className="flex-1">
+                      <p className={[
+                        'text-[14px] leading-tight',
+                        isSelected ? 'text-gray-800' : 'text-gray-700',
+                      ].join(' ')}>
+                        {position.description}
+                      </p>
+                      {position.isCurrentPolicy && (
+                        <span className="mt-1.5 inline-block rounded-md bg-emerald-100 px-1.5 py-0.5 text-[9px] font-semibold text-emerald-600">
+                          Current US Policy
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
           </div>
-
-          {/* Slider */}
-          <DomainLeanMeter
-            value={(sliderPosition / (totalPositions - 1)) * 100}
-            leftLabel={currentAxisConfig.poleALabel.replace(/\n/g, ' ')}
-            rightLabel={currentAxisConfig.poleBLabel.replace(/\n/g, ' ')}
-            onChange={(v) => onSliderChange(Math.round((v / 100) * (totalPositions - 1)))}
-          />
 
           {/* Strength chips */}
           <StrengthChips selectedValue={currentStrength} onSelect={onStrengthChange} />

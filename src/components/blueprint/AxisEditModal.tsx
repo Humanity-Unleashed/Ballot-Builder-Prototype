@@ -109,14 +109,9 @@ export default function AxisEditModal({
           {/* Position display */}
           {config && (
             <div className="rounded-xl border-2 border-brand-primary/20 bg-brand-primary/[0.04] p-4">
-              <p className="text-center text-[15px] font-semibold text-gray-900">
-                {config.positions[localPosition]?.title || 'Mixed'}
+              <p className="text-center text-[15px] font-medium text-gray-900">
+                {config.positions[localPosition]?.description || 'Mixed'}
               </p>
-              {config.positions[localPosition]?.description && (
-                <p className="mt-1 text-center text-[13px] leading-[19px] text-gray-600">
-                  {config.positions[localPosition].description}
-                </p>
-              )}
             </div>
           )}
 
@@ -127,8 +122,8 @@ export default function AxisEditModal({
             </span>
             <DomainLeanMeter
               value={(localPosition / (totalPositions - 1)) * 100}
-              leftLabel={(config?.poleALabel || axisDef.poleA.label).replace(/\n/g, ' ')}
-              rightLabel={(config?.poleBLabel || axisDef.poleB.label).replace(/\n/g, ' ')}
+              leftLabel={axisDef.poleA.label.replace(/\n/g, ' ')}
+              rightLabel={axisDef.poleB.label.replace(/\n/g, ' ')}
               onChange={(v) => setLocalPosition(Math.round((v / 100) * (totalPositions - 1)))}
             />
           </div>
