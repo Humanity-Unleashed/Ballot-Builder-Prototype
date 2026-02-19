@@ -14,7 +14,7 @@ import { useBlueprint } from '@/context/BlueprintContext';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { deriveMetaDimensions } from '@/lib/archetypes';
-import { checkForAxisTransition, DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
+import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
 import { useDemographicStore } from '@/stores/demographicStore';
 
 import DemographicScreen from '@/components/demographics/DemographicScreen';
@@ -86,8 +86,6 @@ export default function BlueprintPage() {
 
   // ── Animation state ──
   const [fadeVisible, setFadeVisible] = useState(true);
-  const [showTransition, setShowTransition] = useState(false);
-  const [transitionMessage, setTransitionMessage] = useState('');
 
   // ── Fine-tuning state ──
   const [fineTuningResponses, setFineTuningResponses] = useState<
@@ -157,7 +155,6 @@ export default function BlueprintPage() {
     setSliderPositions({});
     setStrengthValues({});
     setFadeVisible(true);
-    setShowTransition(false);
     saveProgress(queue, 0, {}, {});
     setPageState('assessment');
   };
@@ -209,24 +206,10 @@ export default function BlueprintPage() {
 
     const nextIndex = currentAxisIndex + 1;
 
-    // Check for domain transition message
-    const message = checkForAxisTransition(nextIndex, axisQueue.length);
-    if (message) {
-      setTransitionMessage(message);
-      setShowTransition(true);
-      setTimeout(() => {
-        setShowTransition(false);
-        animateTransition(() => {
-          setCurrentAxisIndex(nextIndex);
-          saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
-        });
-      }, 1500);
-    } else {
-      animateTransition(() => {
-        setCurrentAxisIndex(nextIndex);
-        saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
-      });
-    }
+    animateTransition(() => {
+      setCurrentAxisIndex(nextIndex);
+      saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
+    });
   };
 
   const handleBack = () => {
@@ -319,8 +302,6 @@ export default function BlueprintPage() {
         sliderPosition={currentSliderPos}
         currentStrength={currentStrength}
         fadeVisible={fadeVisible}
-        showTransition={showTransition}
-        transitionMessage={transitionMessage}
         onSliderChange={handleSliderChange}
         onStrengthChange={handleStrengthChange}
         onNext={handleNext}

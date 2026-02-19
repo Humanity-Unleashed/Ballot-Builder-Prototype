@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Lightbulb } from 'lucide-react';
 import { getSliderConfig } from '@/data/sliderPositions';
 import type { Spec } from '@/types/civicAssessment';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
@@ -15,8 +14,6 @@ interface AssessmentViewProps {
   sliderPosition: number;
   currentStrength: number;
   fadeVisible: boolean;
-  showTransition: boolean;
-  transitionMessage: string;
   onSliderChange: (pos: number) => void;
   onStrengthChange: (val: number) => void;
   onNext: () => void;
@@ -30,26 +27,12 @@ export default function AssessmentView({
   sliderPosition,
   currentStrength,
   fadeVisible,
-  showTransition,
-  transitionMessage,
   onSliderChange,
   onStrengthChange,
   onNext,
   onBack,
 }: AssessmentViewProps) {
   const { track } = useAnalyticsContext();
-
-  // Transition interstitial
-  if (showTransition) {
-    return (
-      <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center bg-gray-50 p-6">
-        <Lightbulb className="h-16 w-16 text-brand-primary" />
-        <p className="mt-4 text-center text-lg font-semibold text-gray-700">
-          {transitionMessage}
-        </p>
-      </div>
-    );
-  }
 
   const currentAxisId = axisQueue[currentAxisIndex];
   const currentAxisConfig = currentAxisId ? getSliderConfig(currentAxisId) : null;
