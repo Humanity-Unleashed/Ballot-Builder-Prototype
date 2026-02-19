@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useRef, useState, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import { getNextElectionDay, daysUntil } from '@/lib/electionDate';
 import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
@@ -101,23 +101,6 @@ export default function BlueprintSummaryView({
     });
   }, [spec.domains, profile.domains]);
 
-  // ── Carousel state ──
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-
-  const handleCarouselScroll = useCallback(() => {
-    const el = carouselRef.current;
-    if (!el || el.clientWidth === 0) return;
-    const index = Math.round(el.scrollLeft / el.clientWidth);
-    setActiveCardIndex(index);
-  }, []);
-
-  const scrollToCard = useCallback((index: number) => {
-    const el = carouselRef.current;
-    if (!el) return;
-    el.scrollTo({ left: index * el.clientWidth, behavior: 'smooth' });
-  }, []);
-
   // ── Handlers ──
 
   /** Fine-tune: pass first axis of the domain */
@@ -173,13 +156,8 @@ export default function BlueprintSummaryView({
           Your policy leanings
         </div>
 
-        {/* ── Domain cards carousel ── */}
-        <div
-          ref={carouselRef}
-          onScroll={handleCarouselScroll}
-          className="hide-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+        {/* ── Domain cards (vertical stack, sorted by importance) ── */}
+        <div className="flex flex-col gap-3">
           {sortedDomains.map((specDomain) => {
             const profileDomain = profile.domains.find((d) => d.domain_id === specDomain.id);
             const emoji = getDomainEmoji(specDomain.id);
@@ -189,7 +167,7 @@ export default function BlueprintSummaryView({
             return (
               <div
                 key={specDomain.id}
-                className="min-w-full snap-start rounded-[14px] border border-gray-200 bg-white px-4 py-3.5 shadow-sm"
+                className="rounded-[14px] border border-gray-200 bg-white px-4 py-3.5 shadow-sm"
               >
                 {/* Header: icon + domain name + fine-tune */}
                 <div className="mb-3 flex items-center justify-between">
@@ -240,20 +218,6 @@ export default function BlueprintSummaryView({
           })}
         </div>
 
-        {/* ── Carousel dot indicators ── */}
-        <div className="mb-2.5 mt-3 flex justify-center gap-1.5">
-          {sortedDomains.map((d, i) => (
-            <button
-              key={d.id}
-              aria-label={`Go to ${DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}`}
-              onClick={() => scrollToCard(i)}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                i === activeCardIndex ? 'bg-brand-primary' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
-
         {/* ── Underlying values footer — hidden for now (data still computed for scoring) ── */}
 
         {/* ── Bridge card ── */}
@@ -296,14 +260,17 @@ export default function BlueprintSummaryView({
           )}
         </div>
 
-        {/* ── CTA button ── */}
-        <button
-          onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
-          className="mb-3 w-full rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
-        >
-          Build my ballot &rarr;
-        </button>
+        {/* Spacer for floating CTA */}
+        <div className="h-20" />
       </div>
+
+      {/* ── Floating CTA button ── */}
+      <button
+        onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
+        className="fixed bottom-6 left-4 right-4 z-40 rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+      >
+        Build my ballot &rarr;
+      </button>
     </div>
   );
 }
