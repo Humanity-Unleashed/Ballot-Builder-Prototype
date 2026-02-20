@@ -40,6 +40,7 @@ interface FeedbackRow {
   screenName: string;
   type: string | null;
   message: string;
+  email: string | null;
   createdAt: string;
 }
 
@@ -56,6 +57,7 @@ export async function appendFeedbackRow(row: FeedbackRow): Promise<void> {
       'Screen Name': row.screenName,
       Type: row.type ?? '',
       Message: row.message,
+      Email: row.email ?? '',
       'Created At': row.createdAt,
     });
     logger.info('Feedback row appended to Google Sheet', { id: row.id });

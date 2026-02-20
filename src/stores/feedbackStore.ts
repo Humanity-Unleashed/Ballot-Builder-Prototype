@@ -8,6 +8,7 @@ export interface FeedbackEntry {
   screenName: string;
   type: string | null;
   message: string;
+  email?: string;
 }
 
 interface FeedbackState {

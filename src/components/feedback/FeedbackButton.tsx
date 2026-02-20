@@ -19,6 +19,7 @@ export default function FeedbackButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [feedbackType, setFeedbackType] = useState<string | null>(null);
   const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('');
   const [showThanks, setShowThanks] = useState(false);
   const pathname = usePathname();
   const { screenLabel } = useFeedbackScreen();
@@ -28,6 +29,7 @@ export default function FeedbackButton() {
     setIsOpen(false);
     setFeedbackType(null);
     setMessage('');
+    setEmail('');
   }, []);
 
   const handleEscape = useCallback(
@@ -56,6 +58,7 @@ export default function FeedbackButton() {
       screenName,
       type: feedbackType,
       message: message.trim(),
+      ...(email.trim() && { email: email.trim() }),
     };
 
     addFeedback(entry);
@@ -69,6 +72,7 @@ export default function FeedbackButton() {
         screenName: entry.screenName,
         type: entry.type,
         message: entry.message,
+        email: entry.email ?? null,
       }),
     }).catch(() => {
       // Silently fail — localStorage is the source of truth for now
@@ -161,6 +165,15 @@ export default function FeedbackButton() {
               placeholder="What's on your mind?"
               rows={3}
               className="mb-3 w-full resize-none rounded-xl border border-gray-200 p-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
+            />
+
+            {/* Email (optional) */}
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email (optional — for updates)"
+              className="mb-3 w-full rounded-xl border border-gray-200 p-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
             />
 
             {/* Submit */}
