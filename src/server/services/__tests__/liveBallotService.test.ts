@@ -42,13 +42,13 @@ import {
   lookupBallotByZipcode,
 } from '../liveBallotService';
 import {
-  getRepresentatives,
+  getDivisionsByAddress,
   geocodeAddress,
   getBallotByPoint,
   getVotingRules,
 } from '../externalApis';
 
-const mockedGetReps = vi.mocked(getRepresentatives);
+const mockedGetDivisions = vi.mocked(getDivisionsByAddress);
 const mockedGeocode = vi.mocked(geocodeAddress);
 const mockedGetBallot = vi.mocked(getBallotByPoint);
 const mockedGetRules = vi.mocked(getVotingRules);
@@ -119,16 +119,14 @@ describe('liveBallotService', () => {
 
   describe('resolveDistrict', () => {
     it('extracts state, county, city from OCD division IDs', async () => {
-      mockedGetReps.mockResolvedValueOnce({
-        kind: 'civicinfo#representativeInfoResponse',
+      mockedGetDivisions.mockResolvedValueOnce({
+        kind: 'civicinfo#divisionsByAddressResponse',
         divisions: {
           'ocd-division/country:us': { name: 'United States' },
           'ocd-division/country:us/state:mi': { name: 'Michigan' },
           'ocd-division/country:us/state:mi/county:wayne': { name: 'Wayne County' },
           'ocd-division/country:us/state:mi/place:detroit': { name: 'Detroit' },
         },
-        offices: [],
-        officials: [],
       });
 
       const result = await resolveDistrict('48226');
@@ -198,7 +196,7 @@ describe('liveBallotService', () => {
       expect(result.voterInfo?.stateRules?.registration_deadline_online).toBe('2026-10-19');
 
       // No external APIs should have been called
-      expect(mockedGetReps).not.toHaveBeenCalled();
+      expect(mockedGetDivisions).not.toHaveBeenCalled();
       expect(mockedGeocode).not.toHaveBeenCalled();
       expect(mockedGetBallot).not.toHaveBeenCalled();
       expect(mockedGetRules).not.toHaveBeenCalled();
@@ -208,11 +206,9 @@ describe('liveBallotService', () => {
       process.env.GOOGLE_CIVIC_API_KEY = 'key1';
       process.env.BALLOTPEDIA_API_KEY = 'key2';
 
-      mockedGetReps.mockResolvedValueOnce({
-        kind: 'civicinfo#representativeInfoResponse',
+      mockedGetDivisions.mockResolvedValueOnce({
+        kind: 'civicinfo#divisionsByAddressResponse',
         divisions: { 'ocd-division/country:us/state:mi': { name: 'Michigan' } },
-        offices: [],
-        officials: [],
       });
       mockedGeocode.mockResolvedValueOnce({ lat: 42.33, lng: -83.04 });
 
@@ -249,11 +245,9 @@ describe('liveBallotService', () => {
       process.env.GOOGLE_CIVIC_API_KEY = 'key1';
       process.env.BALLOTPEDIA_API_KEY = 'key2';
 
-      mockedGetReps.mockResolvedValueOnce({
-        kind: 'civicinfo#representativeInfoResponse',
+      mockedGetDivisions.mockResolvedValueOnce({
+        kind: 'civicinfo#divisionsByAddressResponse',
         divisions: { 'ocd-division/country:us/state:mi': { name: 'Michigan' } },
-        offices: [],
-        officials: [],
       });
       mockedGeocode.mockResolvedValueOnce({ lat: 42.33, lng: -83.04 });
 
@@ -296,7 +290,7 @@ describe('liveBallotService', () => {
       process.env.GOOGLE_CIVIC_API_KEY = 'key1';
       process.env.BALLOTPEDIA_API_KEY = 'key2';
 
-      mockedGetReps.mockRejectedValueOnce(new Error('Network error'));
+      mockedGetDivisions.mockRejectedValueOnce(new Error('Network error'));
 
       const result = await lookupBallotByZipcode('48226');
       expect(result.source).toBe('static_fallback');
@@ -307,11 +301,9 @@ describe('liveBallotService', () => {
       process.env.GOOGLE_CIVIC_API_KEY = 'key1';
       process.env.BALLOTPEDIA_API_KEY = 'key2';
 
-      mockedGetReps.mockResolvedValueOnce({
-        kind: 'civicinfo#representativeInfoResponse',
+      mockedGetDivisions.mockResolvedValueOnce({
+        kind: 'civicinfo#divisionsByAddressResponse',
         divisions: { 'ocd-division/country:us/state:mi': { name: 'Michigan' } },
-        offices: [],
-        officials: [],
       });
       mockedGeocode.mockResolvedValueOnce({ lat: 42.33, lng: -83.04 });
 
@@ -343,11 +335,9 @@ describe('liveBallotService', () => {
         fetchedAt: staleDate,
       });
 
-      mockedGetReps.mockResolvedValueOnce({
-        kind: 'civicinfo#representativeInfoResponse',
+      mockedGetDivisions.mockResolvedValueOnce({
+        kind: 'civicinfo#divisionsByAddressResponse',
         divisions: { 'ocd-division/country:us/state:mi': { name: 'Michigan' } },
-        offices: [],
-        officials: [],
       });
       mockedGeocode.mockResolvedValueOnce({ lat: 42.33, lng: -83.04 });
 
@@ -371,7 +361,7 @@ describe('liveBallotService', () => {
 
       const result = await lookupBallotByZipcode('48226');
       expect(result.source).toBe('live');
-      expect(mockedGetReps).toHaveBeenCalled();
+      expect(mockedGetDivisions).toHaveBeenCalled();
     });
   });
 });

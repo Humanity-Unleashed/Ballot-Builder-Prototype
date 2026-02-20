@@ -8,7 +8,7 @@
 import axios from 'axios';
 import type {
   GoogleCivicVoterInfoResponse,
-  GoogleCivicRepresentativesResponse,
+  GoogleCivicDivisionsByAddressResponse,
   BallotpediaElectionByPointResponse,
   VoteAmericaStateRules,
 } from '../types/externalApis';
@@ -66,17 +66,18 @@ export async function getVoterInfo(address: string): Promise<GoogleCivicVoterInf
 }
 
 /**
- * Google Civic Information API — Representatives
- * Returns divisions, offices, and officials for a given address.
- * Used to resolve district information (OCD division IDs).
+ * Google Civic Information API — Divisions by Address
+ * Returns OCD division IDs for a given address/zipcode.
+ * Replacement for the retired Representatives API (turned down April 2025).
+ * See: https://developers.google.com/civic-information/docs/v2/divisions/divisionsByAddress
  */
-export async function getRepresentatives(address: string): Promise<GoogleCivicRepresentativesResponse> {
+export async function getDivisionsByAddress(address: string): Promise<GoogleCivicDivisionsByAddressResponse> {
   const apiKey = getGoogleCivicApiKey();
 
-  console.log(`[externalApis] getRepresentatives for address: ${truncateAddress(address)}`);
+  console.log(`[externalApis] getDivisionsByAddress for address: ${truncateAddress(address)}`);
 
-  const response = await axios.get<GoogleCivicRepresentativesResponse>(
-    `${GOOGLE_CIVIC_BASE}/representatives`,
+  const response = await axios.get<GoogleCivicDivisionsByAddressResponse>(
+    `${GOOGLE_CIVIC_BASE}/divisionsByAddress`,
     {
       params: {
         key: apiKey,

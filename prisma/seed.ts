@@ -11,6 +11,9 @@
  * Run: npm run db:seed
  */
 
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+
 import { PrismaClient } from '../src/generated/prisma/client';
 import type { Prisma } from '../src/generated/prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';

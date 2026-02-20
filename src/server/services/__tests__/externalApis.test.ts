@@ -11,7 +11,7 @@ const mockedGet = vi.mocked(axios.get);
 // Import after mock
 import {
   getVoterInfo,
-  getRepresentatives,
+  getDivisionsByAddress,
   getBallotByPoint,
   getVotingRules,
   geocodeAddress,
@@ -67,26 +67,24 @@ describe('externalApis', () => {
     });
   });
 
-  describe('getRepresentatives', () => {
-    it('calls Google Civic representatives endpoint', async () => {
+  describe('getDivisionsByAddress', () => {
+    it('calls Google Civic divisionsByAddress endpoint', async () => {
       const mockResponse = {
         data: {
-          kind: 'civicinfo#representativeInfoResponse',
+          kind: 'civicinfo#divisionsByAddressResponse',
           divisions: { 'ocd-division/country:us/state:mi': { name: 'Michigan' } },
-          offices: [],
-          officials: [],
         },
       };
       mockedGet.mockResolvedValueOnce(mockResponse);
 
-      const result = await getRepresentatives('123 Main St, Detroit, MI');
+      const result = await getDivisionsByAddress('48226');
 
       expect(mockedGet).toHaveBeenCalledWith(
-        'https://www.googleapis.com/civicinfo/v2/representatives',
+        'https://www.googleapis.com/civicinfo/v2/divisionsByAddress',
         expect.objectContaining({
           params: expect.objectContaining({
             key: 'test-google-key',
-            address: '123 Main St, Detroit, MI',
+            address: '48226',
           }),
         }),
       );
@@ -96,7 +94,7 @@ describe('externalApis', () => {
     it('throws when GOOGLE_CIVIC_API_KEY is not set', async () => {
       delete process.env.GOOGLE_CIVIC_API_KEY;
 
-      await expect(getRepresentatives('123 Main St')).rejects.toThrow(
+      await expect(getDivisionsByAddress('48226')).rejects.toThrow(
         'GOOGLE_CIVIC_API_KEY is not configured',
       );
     });

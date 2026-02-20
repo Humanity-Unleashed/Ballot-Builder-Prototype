@@ -54,7 +54,29 @@
       "Bash(taskkill:*)",
       "Bash(git remote set-url:*)",
       "Bash(npx eslint:*)",
-      "Bash(npx next build:*)"
+      "Bash(npx next build:*)",
+      "Bash(git branch:*)",
+      "Bash(git pull:*)",
+      "Bash(npm run test:run:*)",
+      "Bash(npm ci:*)",
+      "Bash(npx jest)",
+      "Bash(npx vitest:*)",
+      "Bash(npx prisma generate:*)",
+      "WebFetch(domain:api.civicengine.com)",
+      "WebFetch(domain:docs.voteamerica.org)",
+      "WebFetch(domain:developers.civicengine.com)",
+      "WebFetch(domain:developers.google.com)",
+      "WebFetch(domain:data.democracy.works)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(node -e:*)",
+      "WebFetch(domain:ssg.vote.gov)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:mvic.sos.state.mi.us)",
+      "WebFetch(domain:www.michigan.gov)",
+      "WebFetch(domain:www.prisma.io)",
+      "Bash(git cherry-pick:*)"
     ]
   }
 }

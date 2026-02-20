@@ -76,33 +76,18 @@ export interface GoogleCivicVoterInfoResponse {
   }>;
 }
 
-export interface GoogleCivicOffice {
-  name: string;
-  divisionId: string;
-  levels?: string[];
-  roles?: string[];
-  officialIndices?: number[];
-}
-
-export interface GoogleCivicOfficial {
-  name: string;
-  address?: GoogleCivicAddress[];
-  party?: string;
-  phones?: string[];
-  urls?: string[];
-  emails?: string[];
-  channels?: Array<{ type: string; id: string }>;
-}
-
-export interface GoogleCivicRepresentativesResponse {
+/**
+ * Google Civic Information API — Divisions by Address
+ * Replacement for the retired Representatives API (turned down April 2025).
+ * Returns OCD division IDs for a given address.
+ */
+export interface GoogleCivicDivisionsByAddressResponse {
   normalizedInput?: GoogleCivicAddress;
   kind: string;
   divisions: Record<string, {
     name: string;
-    officeIndices?: number[];
+    alsoKnownAs?: string[];
   }>;
-  offices: GoogleCivicOffice[];
-  officials: GoogleCivicOfficial[];
 }
 
 // ============================================

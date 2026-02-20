@@ -13,7 +13,7 @@
 import { prisma } from '@/lib/prisma';
 import type { Prisma } from '@/generated/prisma/client';
 import {
-  getRepresentatives,
+  getDivisionsByAddress,
   geocodeAddress,
   getBallotByPoint,
   getVotingRules,
@@ -264,13 +264,14 @@ async function fetchVoterInfo(stateCode: string): Promise<{
 // ============================================
 
 /**
- * Resolve a zipcode to district information using Google Civic representatives API.
+ * Resolve a zipcode to district information using Google Civic divisionsByAddress API.
+ * Replacement for the retired Representatives API (turned down April 2025).
  * The API accepts a zipcode as the "address" parameter.
  */
 export async function resolveDistrict(zipcode: string): Promise<DistrictInfo> {
-  const reps = await getRepresentatives(zipcode);
+  const divisions = await getDivisionsByAddress(zipcode);
 
-  const ocdDivisionIds = Object.keys(reps.divisions);
+  const ocdDivisionIds = Object.keys(divisions.divisions);
 
   let state = '';
   let county = '';
@@ -287,9 +288,9 @@ export async function resolveDistrict(zipcode: string): Promise<DistrictInfo> {
     if (placeMatch && !city) city = decodeURIComponent(placeMatch[1]).replace(/_/g, ' ');
   }
 
-  if (reps.normalizedInput) {
-    if (!state && reps.normalizedInput.state) state = reps.normalizedInput.state;
-    if (!city && reps.normalizedInput.city) city = reps.normalizedInput.city;
+  if (divisions.normalizedInput) {
+    if (!state && divisions.normalizedInput.state) state = divisions.normalizedInput.state;
+    if (!city && divisions.normalizedInput.city) city = divisions.normalizedInput.city;
   }
 
   return { state, county, city, ocdDivisionIds };
