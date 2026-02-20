@@ -1,12 +1,17 @@
-import { defineConfig } from 'prisma/config';
+import { defineConfig, env } from 'prisma/config';
+import dotenv from 'dotenv';
+
+// Load .env.local (Next.js convention) so Prisma commands
+// pick up DATABASE_URL without a dotenv-cli prefix.
+dotenv.config({ path: '.env.local' });
 
 export default defineConfig({
   schema: 'prisma/schema.prisma',
   migrations: {
     path: 'prisma/migrations',
+    seed: `tsx prisma/seed.ts`
   },
   datasource: {
-    // Use DIRECT_URL for migrations (non-pooled), fall back to DATABASE_URL
-    url: process.env.DIRECT_URL ?? process.env.DATABASE_URL,
+    url: env('DATABASE_URL'),
   },
 });
