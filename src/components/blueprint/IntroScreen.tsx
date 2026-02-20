@@ -30,7 +30,7 @@ const slides = [
     icon: Users,
     title: 'Prep Together',
     description:
-      'Invite a few friends or family to your Voting Squad. See who\u2019s registered, who\u2019s prepped, and who\u2019s voted \u2014 without sharing what anyone chose. Election prep is easier together.',
+      'Invite a few friends or family to your Voting Squad. See who\u2019s registered, who\u2019s prepped, and who\u2019s voted \u2014 without sharing what anyone chose. Election prep is easier together.\n\nThis is a demo. All ballot data, candidates, and recommendations shown are fictional and not reflective of your actual location or demographics.',
   },
 ];
 
@@ -120,7 +120,7 @@ export default function IntroScreen({ onClose }: IntroScreenProps) {
             onClick={handleNext}
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-4 font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80"
           >
-            {isLast ? 'Get Started' : 'Next'}
+            {isLast ? 'Accept and continue' : 'Next'}
             {isLast && <ArrowRight className="h-5 w-5" />}
           </button>
         </div>
