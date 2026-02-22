@@ -49,12 +49,12 @@ export default function RecommendationBanner({
       <div
         className={[
           'flex items-center gap-2 px-3.5 py-2.5',
-          isYes ? 'bg-green-50' : 'bg-red-50',
+          isYes ? 'bg-success-light' : 'bg-negative-light',
         ].join(' ')}
       >
-        <Sparkles className={`h-4 w-4 shrink-0 ${isYes ? 'text-green-600' : 'text-red-600'}`} />
+        <Sparkles className={`h-4 w-4 shrink-0 ${isYes ? 'text-success' : 'text-negative'}`} />
         <span
-          className={`text-[13px] font-semibold flex-1 leading-[18px] ${isYes ? 'text-green-600' : 'text-red-600'}`}
+          className={`text-[13px] font-semibold flex-1 leading-[18px] ${isYes ? 'text-success' : 'text-negative'}`}
         >
           Aligns with your values -- Vote {isYes ? 'YES' : 'NO'}
         </span>
@@ -93,7 +93,7 @@ export default function RecommendationBanner({
         {recommendation.breakdown.length > 0 && (
           <button
             onClick={() => setShowSheet(true)}
-            className="text-xs font-semibold text-blue-500 mt-1 hover:underline"
+            className="text-xs font-semibold text-brand-primary mt-1 hover:underline"
           >
             See full breakdown &rsaquo;
           </button>

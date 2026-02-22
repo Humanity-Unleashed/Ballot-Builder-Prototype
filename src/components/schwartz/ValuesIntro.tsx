@@ -12,11 +12,11 @@ export default function ValuesIntro({ onStart }: ValuesIntroProps) {
   const { track } = useAnalyticsContext();
 
   return (
-    <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gradient-to-b from-violet-50 to-white">
+    <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gradient-to-b from-brand-primary-light to-white">
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
         {/* Icon */}
-        <div className="mb-8 rounded-full bg-violet-100 p-6">
-          <Compass className="h-16 w-16 text-violet-600" />
+        <div className="mb-8 rounded-full bg-brand-primary-light p-6">
+          <Compass className="h-16 w-16 text-brand-primary" />
         </div>
 
         {/* Title */}
@@ -53,7 +53,7 @@ export default function ValuesIntro({ onStart }: ValuesIntroProps) {
           <h2 className="mb-4 font-semibold text-gray-900">What to expect</h2>
           <ul className="space-y-3 text-sm text-gray-600">
             <li className="flex items-start gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-100 text-xs font-semibold text-violet-600">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary-light text-xs font-semibold text-brand-primary">
                 1
               </span>
               <span>
@@ -61,7 +61,7 @@ export default function ValuesIntro({ onStart }: ValuesIntroProps) {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-100 text-xs font-semibold text-violet-600">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary-light text-xs font-semibold text-brand-primary">
                 2
               </span>
               <span>
@@ -69,7 +69,7 @@ export default function ValuesIntro({ onStart }: ValuesIntroProps) {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-100 text-xs font-semibold text-violet-600">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary-light text-xs font-semibold text-brand-primary">
                 3
               </span>
               <span>
@@ -82,7 +82,7 @@ export default function ValuesIntro({ onStart }: ValuesIntroProps) {
         {/* Start button */}
         <button
           onClick={() => { track('click', { element: 'start_assessment' }); onStart(); }}
-          className="flex items-center gap-2 rounded-xl bg-violet-600 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-violet-700 hover:shadow-xl active:scale-95"
+          className="flex items-center gap-2 rounded-xl bg-brand-primary px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-brand-primary/90 hover:shadow-xl active:scale-95"
         >
           <span>Get Started</span>
           <ArrowRight className="h-5 w-5" />

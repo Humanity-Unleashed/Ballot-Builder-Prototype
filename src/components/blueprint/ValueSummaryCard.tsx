@@ -53,7 +53,7 @@ export default function ValueSummaryCard({
       <p className="text-[15px] leading-[22px] text-gray-700">
         {parts.map((part, i) =>
           labels.includes(part) ? (
-            <strong key={i} className="font-bold text-violet-800">
+            <strong key={i} className="font-bold text-brand-primary">
               {part}
             </strong>
           ) : (
@@ -65,8 +65,8 @@ export default function ValueSummaryCard({
   };
 
   return (
-    <div className="mb-3 rounded-2xl border border-violet-200 bg-violet-50 p-4">
-      <span className="mb-2 block text-[11px] font-bold uppercase tracking-wide text-violet-600">
+    <div className="mb-3 rounded-2xl border border-border-default bg-brand-primary-light p-4">
+      <span className="mb-2 block text-[11px] font-bold uppercase tracking-wide text-brand-primary">
         YOUR CIVIC PERSPECTIVE
       </span>
       {renderSummaryText()}

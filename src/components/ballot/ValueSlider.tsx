@@ -124,7 +124,7 @@ function ConfiguredSlider({
 
       {/* Slider row: poleA | track | poleB */}
       <div className="flex items-center gap-2">
-        <span className={`text-[10px] font-semibold uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent < 50 ? 'text-violet-600' : 'text-gray-400'}`}>
+        <span className={`text-[10px] font-semibold uppercase tracking-wide max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent < 50 ? 'text-brand-primary' : 'text-gray-400'}`}>
           {config.poleALabel}
         </span>
 
@@ -171,7 +171,7 @@ function ConfiguredSlider({
                 <div
                   className={[
                     'w-0.5 rounded-sm',
-                    idx === positionIndex ? 'h-3 bg-violet-600' : 'h-2 bg-gray-300',
+                    idx === positionIndex ? 'h-3 bg-brand-primary' : 'h-2 bg-gray-300',
                   ].join(' ')}
                 />
               </button>
@@ -179,7 +179,7 @@ function ConfiguredSlider({
           </div>
         </div>
 
-        <span className={`text-[10px] font-semibold uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent > 50 ? 'text-violet-600' : 'text-gray-400'}`}>
+        <span className={`text-[10px] font-semibold uppercase tracking-wide text-right max-w-[18%] leading-[14px] shrink-0 whitespace-pre-line ${thumbPercent > 50 ? 'text-brand-primary' : 'text-gray-400'}`}>
           {config.poleBLabel}
         </span>
       </div>

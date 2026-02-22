@@ -5,13 +5,14 @@ import { AppError } from '@/server/utils/errors';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { screen, screenName, type, message } = body;
+    const { screen, screenName, type, message, email } = body;
 
     const entry = await feedbackService.createFeedback({
       screen,
       screenName,
       type: type ?? null,
       message,
+      email: email ?? null,
     });
 
     return NextResponse.json({ success: true, id: entry.id });

@@ -30,7 +30,7 @@ export default function LikertScale({ value, onChange, disabled = false }: Liker
               w-full rounded-lg px-4 py-3 text-sm font-medium transition-all
               ${
                 value === option.value
-                  ? 'bg-violet-600 text-white shadow-md'
+                  ? 'bg-brand-primary text-white shadow-md'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }
               ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}
@@ -53,7 +53,7 @@ export default function LikertScale({ value, onChange, disabled = false }: Liker
                 flex-1 rounded-lg px-2 py-3 text-xs font-medium transition-all
                 ${
                   value === option.value
-                    ? 'bg-violet-600 text-white shadow-md scale-105'
+                    ? 'bg-brand-primary text-white shadow-md scale-105'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }
                 ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}

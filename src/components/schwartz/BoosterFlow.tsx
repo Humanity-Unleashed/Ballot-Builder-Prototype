@@ -61,10 +61,10 @@ export default function BoosterFlow({
   }, [currentIndex, onCancel]);
 
   return (
-    <div className="rounded-xl border border-violet-200 bg-white overflow-hidden">
+    <div className="rounded-xl border border-border-default bg-white overflow-hidden">
       {/* Header */}
-      <div className="bg-violet-50 px-4 py-3 border-b border-violet-100">
-        <p className="text-xs font-semibold text-violet-600 uppercase tracking-wide">
+      <div className="bg-brand-primary-light px-4 py-3 border-b border-border-default">
+        <p className="text-xs font-semibold text-brand-primary uppercase tracking-wide">
           {title}
         </p>
       </div>

@@ -26,7 +26,7 @@ export default function StrengthChips({ selectedValue, onSelect }: StrengthChips
               className={[
                 'rounded-full border-2 px-4 py-2 text-sm font-semibold transition-colors',
                 isSelected
-                  ? 'border-violet-600 bg-violet-50 text-violet-600'
+                  ? 'border-brand-primary bg-brand-primary-light text-brand-primary'
                   : 'border-gray-300 bg-white text-gray-400 hover:border-gray-400',
               ].join(' ')}
             >

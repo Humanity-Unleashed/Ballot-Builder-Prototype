@@ -3,7 +3,8 @@
 /**
  * Blueprint Page - Slider-Based Civic Blueprint Assessment
  *
- * State machine: intro → [demographics] → assessment → [fine_tuning] → results
+ * State machine: [intro/demographics] → assessment → [fine_tuning] → results
+ * Onboarding modal overlays on first visit (persisted to localStorage)
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -13,7 +14,7 @@ import { useBlueprint } from '@/context/BlueprintContext';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { deriveMetaDimensions } from '@/lib/archetypes';
-import { checkForAxisTransition, DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
+import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
 import { useDemographicStore } from '@/stores/demographicStore';
 
 import DemographicScreen from '@/components/demographics/DemographicScreen';
@@ -21,6 +22,8 @@ import IntroScreen from '@/components/blueprint/IntroScreen';
 import AssessmentView from '@/components/blueprint/AssessmentView';
 import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
 import FineTuningScreen from '@/components/blueprint/FineTuningScreen';
+
+const ONBOARDING_KEY = 'bb_onboarding_viewed';
 
 type PageState = 'intro' | 'demographics' | 'assessment' | 'fine_tuning' | 'results';
 
@@ -40,7 +43,17 @@ export default function BlueprintPage() {
   } = useBlueprint();
 
   const { setScreenLabel } = useFeedbackScreen();
-  const { hasCompletedDemographics, reset: resetDemographics } = useDemographicStore();
+  const { reset: resetDemographics } = useDemographicStore();
+
+  // ── Onboarding modal (first visit only) ──
+  const [showOnboarding, setShowOnboarding] = useState(
+    () => typeof window !== 'undefined' && !localStorage.getItem(ONBOARDING_KEY),
+  );
+
+  const handleCloseOnboarding = () => {
+    localStorage.setItem(ONBOARDING_KEY, 'true');
+    setShowOnboarding(false);
+  };
 
   // ── Page state machine ──
   const hasRealScores = profile?.domains.some((d) =>
@@ -48,7 +61,8 @@ export default function BlueprintPage() {
   ) ?? false;
   const [pageState, setPageState] = useState<PageState>(() => {
     if (assessmentProgress) return 'assessment';
-    return hasRealScores ? 'results' : 'intro';
+    if (hasRealScores) return 'results';
+    return 'intro';
   });
   const isRetaking = useRef(false);
 
@@ -68,8 +82,6 @@ export default function BlueprintPage() {
 
   // ── Animation state ──
   const [fadeVisible, setFadeVisible] = useState(true);
-  const [showTransition, setShowTransition] = useState(false);
-  const [transitionMessage, setTransitionMessage] = useState('');
 
   // ── Fine-tuning state ──
   const [fineTuningResponses, setFineTuningResponses] = useState<
@@ -139,17 +151,8 @@ export default function BlueprintPage() {
     setSliderPositions({});
     setStrengthValues({});
     setFadeVisible(true);
-    setShowTransition(false);
     saveProgress(queue, 0, {}, {});
     setPageState('assessment');
-  };
-
-  const handleStart = () => {
-    if (hasCompletedDemographics) {
-      startAssessment();
-    } else {
-      setPageState('demographics');
-    }
   };
 
   const handleDemographicsComplete = () => {
@@ -199,24 +202,10 @@ export default function BlueprintPage() {
 
     const nextIndex = currentAxisIndex + 1;
 
-    // Check for domain transition message
-    const message = checkForAxisTransition(nextIndex, axisQueue.length);
-    if (message) {
-      setTransitionMessage(message);
-      setShowTransition(true);
-      setTimeout(() => {
-        setShowTransition(false);
-        animateTransition(() => {
-          setCurrentAxisIndex(nextIndex);
-          saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
-        });
-      }, 1500);
-    } else {
-      animateTransition(() => {
-        setCurrentAxisIndex(nextIndex);
-        saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
-      });
-    }
+    animateTransition(() => {
+      setCurrentAxisIndex(nextIndex);
+      saveProgress(axisQueue, nextIndex, updatedPositions, updatedStrengths);
+    });
   };
 
   const handleBack = () => {
@@ -239,7 +228,7 @@ export default function BlueprintPage() {
     clearAssessmentProgress();
     resetDemographics();
     resetBlueprint();
-    setPageState('intro');
+    setPageState('demographics');
   };
 
   const handleFineTune = (axisId: string) => {
@@ -278,15 +267,20 @@ export default function BlueprintPage() {
   if (isLoading || !spec) {
     return (
       <div className="flex min-h-[calc(100vh-56px)] flex-col items-center justify-center bg-gray-50">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-violet-600" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-brand-primary" />
         <p className="mt-3 text-gray-500">Loading...</p>
       </div>
     );
   }
 
-  // ── Intro ──
+  // ── Intro (acts as entry point — immediately routes to demographics or assessment) ──
   if (pageState === 'intro') {
-    return <IntroScreen spec={spec} onStart={handleStart} />;
+    return (
+      <>
+        {showOnboarding && <IntroScreen onClose={handleCloseOnboarding} />}
+        <DemographicScreen onComplete={handleDemographicsComplete} />
+      </>
+    );
   }
 
   // ── Demographics ──
@@ -304,8 +298,6 @@ export default function BlueprintPage() {
         sliderPosition={currentSliderPos}
         currentStrength={currentStrength}
         fadeVisible={fadeVisible}
-        showTransition={showTransition}
-        transitionMessage={transitionMessage}
         onSliderChange={handleSliderChange}
         onStrengthChange={handleStrengthChange}
         onNext={handleNext}
@@ -349,7 +341,7 @@ export default function BlueprintPage() {
       <AlertCircle className="h-12 w-12 text-red-500" />
       <p className="mt-3 text-gray-600">Something went wrong. Please refresh.</p>
       <button
-        className="mt-4 rounded-lg bg-violet-600 px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90"
+        className="mt-4 rounded-lg bg-brand-primary px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90"
         onClick={handleRetake}
       >
         Start Over

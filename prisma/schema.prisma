@@ -13,6 +13,7 @@ model FeedbackEntry {
   screenName String   @map("screen_name")
   type       String?
   message    String
+  email      String?
   createdAt  DateTime @default(now()) @map("created_at")
 
   @@map("feedback_entries")

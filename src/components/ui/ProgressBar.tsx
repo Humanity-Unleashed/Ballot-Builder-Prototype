@@ -3,14 +3,14 @@ interface ProgressBarProps {
   progress: number;
   /** Additional CSS classes for the outer container */
   className?: string;
-  /** Custom color class for the progress fill (default: bg-blue-500) */
+  /** Custom color class for the progress fill (default: bg-brand-primary) */
   color?: string;
 }
 
 export default function ProgressBar({
   progress,
   className = '',
-  color = 'bg-blue-500',
+  color = 'bg-brand-primary',
 }: ProgressBarProps) {
   const clampedProgress = Math.min(100, Math.max(0, progress));
 

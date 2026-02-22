@@ -130,13 +130,13 @@ export default function PropositionBreakdownSheet({
               <p className="text-sm text-gray-700 leading-relaxed">
                 {recommendation.vote === 'yes' ? (
                   <>
-                    <strong className="text-green-600">Overall:</strong> Voting YES aligns with{' '}
+                    <strong className="text-success">Overall:</strong> Voting YES aligns with{' '}
                     {resonanceItems.length} of your values
                     {tensionItems.length > 0 && `, though it may create tension with ${tensionItems.length}`}.
                   </>
                 ) : recommendation.vote === 'no' ? (
                   <>
-                    <strong className="text-red-600">Overall:</strong> Voting NO better matches your values.
+                    <strong className="text-negative">Overall:</strong> Voting NO better matches your values.
                     {resonanceItems.length > 0 &&
                       ` YES would align with ${resonanceItems.length} value(s), but conflicts with ${tensionItems.length}.`}
                   </>

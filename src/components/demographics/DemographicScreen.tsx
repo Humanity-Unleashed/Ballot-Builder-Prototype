@@ -45,7 +45,7 @@ export function OptionButtonGroup<T extends string>({
             onClick={() => onChange(selected ? null : opt.value)}
             className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
               selected
-                ? 'border-violet-600 bg-violet-50 text-violet-700'
+                ? 'border-brand-primary bg-brand-primary-light text-brand-primary'
                 : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
             }`}
           >
@@ -176,9 +176,9 @@ export default function DemographicScreen({ onComplete }: DemographicScreenProps
     <div className="min-h-[calc(100vh-56px)] bg-gray-50 pb-32">
       <div className="mx-auto max-w-lg px-4 pt-6">
         {/* Explanatory blurb */}
-        <div className="mb-6 flex gap-3 rounded-xl bg-blue-50 p-4">
-          <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600" />
-          <p className="text-sm leading-relaxed text-blue-800">
+        <div className="mb-6 flex gap-3 rounded-xl bg-brand-primary-light p-4">
+          <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-primary" />
+          <p className="text-sm leading-relaxed text-brand-primary">
             Policies affect people differently based on their circumstances.
             Sharing a bit about your situation helps Ballot Builder show how
             candidates&apos; proposals could impact your life — from taxes to
@@ -271,7 +271,7 @@ export default function DemographicScreen({ onComplete }: DemographicScreenProps
                 setField('zipCode', val);
               }}
               placeholder="e.g. 90210"
-              className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
+              className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
             />
           </QuestionSection>
 
@@ -300,7 +300,7 @@ export default function DemographicScreen({ onComplete }: DemographicScreenProps
           <button
             type="button"
             onClick={handleContinue}
-            className="flex-1 rounded-xl bg-violet-600 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            className="flex-1 rounded-xl bg-brand-primary py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             Continue
           </button>

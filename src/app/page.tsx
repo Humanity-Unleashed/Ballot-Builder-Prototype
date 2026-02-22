@@ -50,7 +50,7 @@ export default function WelcomePage() {
       <div className="mx-auto flex w-full max-w-md flex-1 flex-col justify-between p-6">
         {/* Logo Section */}
         <div className="flex flex-col items-center pt-10">
-          <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-500">
+          <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-brand-primary">
             <span className="text-3xl font-bold text-white">BB</span>
           </div>
           <h1 className="text-3xl font-bold text-gray-900">Ballot Builder</h1>

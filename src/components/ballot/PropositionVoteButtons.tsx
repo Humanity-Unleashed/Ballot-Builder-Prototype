@@ -52,12 +52,12 @@ export default function PropositionVoteButtons({
           className={[
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'no'
-              ? 'bg-red-500 border-red-500 text-white'
-              : 'bg-white border-gray-300 text-gray-700 hover:border-red-400',
+              ? 'bg-negative border-negative text-white'
+              : 'bg-white border-gray-300 text-gray-700 hover:border-negative',
           ].join(' ')}
         >
           {isNoRecommended && selected !== 'no' && (
-            <span className="absolute -top-2 right-2 bg-red-100 text-red-600 text-[10px] font-bold px-1.5 py-0.5 rounded-md">
+            <span className="absolute -top-2 right-2 bg-negative-light text-negative text-[10px] font-bold px-1.5 py-0.5 rounded-md">
               Recommended
             </span>
           )}

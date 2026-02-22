@@ -12,7 +12,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
   return (
     <div className="flex flex-col gap-2.5">
       {/* Item title */}
-      <span className="text-xs font-bold text-violet-600 uppercase tracking-wide">
+      <span className="text-xs font-bold text-brand-primary uppercase tracking-wide">
         {item.title}
       </span>
 
@@ -21,7 +21,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
         <span className="block text-[10px] font-bold text-gray-400 tracking-wide">
           FROM YOUR BALLOT
         </span>
-        <p className="text-[15px] font-bold text-gray-700 leading-[22px]">
+        <p className="text-lg font-bold text-gray-900 leading-snug">
           {item.questionText}
         </p>
       </div>

@@ -8,6 +8,7 @@ interface CreateFeedbackInput {
   screenName: string;
   type: string | null;
   message: string;
+  email?: string | null;
 }
 
 interface FeedbackEntryResponse {
@@ -16,11 +17,12 @@ interface FeedbackEntryResponse {
   screenName: string;
   type: string | null;
   message: string;
+  email: string | null;
   createdAt: string;
 }
 
 export async function createFeedback(input: CreateFeedbackInput): Promise<FeedbackEntryResponse> {
-  const { screen, screenName, type, message } = input;
+  const { screen, screenName, type, message, email } = input;
 
   if (!screen || typeof screen !== 'string') {
     throw new BadRequestError('screen is required');
@@ -42,6 +44,7 @@ export async function createFeedback(input: CreateFeedbackInput): Promise<Feedba
         screenName,
         type: type ?? null,
         message,
+        email: email ?? null,
       },
     });
 
@@ -53,6 +56,7 @@ export async function createFeedback(input: CreateFeedbackInput): Promise<Feedba
       screenName: entry.screenName,
       type: entry.type,
       message: entry.message,
+      email: entry.email,
       createdAt: entry.createdAt.toISOString(),
     };
 
@@ -79,6 +83,7 @@ export async function listFeedback(): Promise<FeedbackEntryResponse[]> {
       screenName: entry.screenName,
       type: entry.type,
       message: entry.message,
+      email: entry.email,
       createdAt: entry.createdAt.toISOString(),
     }));
   } catch (error) {
