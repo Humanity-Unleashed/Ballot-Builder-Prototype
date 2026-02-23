@@ -111,6 +111,7 @@ export default function BallotPage() {
   const [isBallotLoading, setIsBallotLoading] = useState(true);
   const [ballotError, setBallotError] = useState<string | null>(null);
   const [ballotSource, setBallotSource] = useState<string | null>(null);
+  const [location, setLocation] = useState<{ state: string; stateName: string; city?: string } | null>(null);
   const [voterInfo, setVoterInfo] = useState<{
     registrationUrl?: string;
     absenteeBallotUrl?: string;
@@ -160,12 +161,14 @@ export default function BallotPage() {
           const result = await ballotApi.getByZipcode(zipCode);
           ballot = result.ballot;
           setBallotSource(result.source);
+          setLocation(result.location ?? null);
           setVoterInfo(result.voterInfo ?? null);
           console.log(`[BallotPage] Ballot source: ${result.source}, items: ${result.ballot.items?.length ?? 0}`);
         } else {
           console.log(`[BallotPage] No valid zipcode (got: "${zipCode}"), using getDefault`);
           ballot = await ballotApi.getDefault();
           setBallotSource('static_fallback');
+          setLocation(null);
           setVoterInfo(null);
         }
 
@@ -420,6 +423,7 @@ export default function BallotPage() {
             daysUntilElection={daysRemaining}
             electionLabel={electionLabel}
             voterInfo={voterInfo}
+            location={location}
           />
         </div>
         <BallotSummary
@@ -430,6 +434,7 @@ export default function BallotPage() {
           onStartOver={handleStartOver}
           onPrint={handlePrint}
           voterInfo={voterInfo}
+          location={location}
         />
       </div>
     );
@@ -521,6 +526,7 @@ export default function BallotPage() {
           daysUntilElection={daysRemaining}
           electionLabel={electionLabel}
           voterInfo={voterInfo}
+          location={location}
         />
         <BallotItemHeader item={currentItem} />
 

@@ -167,6 +167,37 @@ export interface VoteAmericaStateRules {
 }
 
 // ============================================
+// 5 Calls Representatives API
+// ============================================
+
+export interface FiveCallsFieldOffice {
+  phone: string;
+  city: string;
+}
+
+export interface FiveCallsRepresentative {
+  id: string;
+  name: string;
+  phone: string;
+  photoURL?: string;
+  party: string;
+  state: string;
+  district?: string;
+  reason: string;
+  area: string;
+  url?: string;
+  field_offices?: FiveCallsFieldOffice[];
+}
+
+export interface FiveCallsResponse {
+  location: string;
+  lowAccuracy: boolean;
+  state: string;
+  district: string;
+  representatives: FiveCallsRepresentative[];
+}
+
+// ============================================
 // Pipeline Internal Types
 // ============================================
 
@@ -183,10 +214,12 @@ export interface BallotLookupResult {
   ballot: import('../types').Ballot;
   source: 'cache' | 'live' | 'static_fallback';
   fetchedAt?: string;
+  location?: { state: string; stateName: string; city?: string };
   voterInfo?: {
     registrationUrl?: string;
     absenteeBallotUrl?: string;
     pollingPlaceUrl?: string;
     stateRules?: VoteAmericaStateRules;
   } | null;
+  representatives?: FiveCallsRepresentative[] | null;
 }

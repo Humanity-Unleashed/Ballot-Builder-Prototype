@@ -18,22 +18,36 @@ interface VoterInfo {
   stateRules?: VoteAmericaStateRules;
 }
 
+interface LocationInfo {
+  state: string;
+  stateName: string;
+  city?: string;
+}
+
 interface ElectionBannerProps {
   daysUntilElection: number;
   electionLabel: string;
   voterInfo?: VoterInfo | null;
+  location?: LocationInfo | null;
 }
 
 const DEFAULT_REGISTRATION_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
 const DEFAULT_ABSENTEE_URL = 'https://mvic.sos.state.mi.us/AVApplication/Index';
 const DEFAULT_POLLING_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
 
+const DEFAULT_LOCATION = 'Detroit, Michigan';
+
 export default function ElectionBanner({
   daysUntilElection,
   electionLabel,
   voterInfo,
+  location,
 }: ElectionBannerProps) {
   const [expanded, setExpanded] = useState(false);
+
+  const locationLabel = location
+    ? (location.city ? `${location.city}, ${location.stateName}` : location.stateName)
+    : DEFAULT_LOCATION;
 
   const registrationUrl = voterInfo?.registrationUrl ?? voterInfo?.stateRules?.voter_registration_url ?? DEFAULT_REGISTRATION_URL;
   const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? DEFAULT_ABSENTEE_URL;
@@ -63,12 +77,18 @@ export default function ElectionBanner({
   return (
     <div className="mb-4 overflow-hidden rounded-[14px] bg-gradient-to-r from-brand-primary to-brand-primary/85">
       {/* Header */}
-      <div className="flex items-center gap-2 px-3.5 py-3 text-white">
-        <Calendar className="h-4 w-4 flex-shrink-0" />
-        <span className="flex-1 text-[13px] font-bold">{electionLabel}</span>
-        <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-bold">
-          {daysUntilElection} days
-        </span>
+      <div className="px-3.5 py-3 text-white">
+        <div className="flex items-center gap-2">
+          <Calendar className="h-4 w-4 flex-shrink-0" />
+          <span className="flex-1 text-[13px] font-bold">{electionLabel}</span>
+          <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-bold">
+            {daysUntilElection} days
+          </span>
+        </div>
+        <div className="flex items-center gap-1 mt-1 ml-6">
+          <MapPin className="h-3 w-3 text-white/70" />
+          <span className="text-[11px] text-white/80">{locationLabel}</span>
+        </div>
       </div>
 
       {/* Body */}

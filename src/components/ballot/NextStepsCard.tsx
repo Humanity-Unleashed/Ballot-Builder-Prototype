@@ -11,8 +11,15 @@ interface VoterInfo {
   stateRules?: VoteAmericaStateRules;
 }
 
+interface LocationInfo {
+  state: string;
+  stateName: string;
+  city?: string;
+}
+
 interface NextStepsCardProps {
   voterInfo?: VoterInfo | null;
+  location?: LocationInfo | null;
 }
 
 const SAMPLE_LOCATIONS = [
@@ -25,8 +32,14 @@ const SAMPLE_LOCATIONS = [
 const DEFAULT_POLLING_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
 const DEFAULT_ABSENTEE_URL = 'https://mvic.sos.state.mi.us/AVApplication/Index';
 
-export default function NextStepsCard({ voterInfo }: NextStepsCardProps) {
+const DEFAULT_LOCATION = 'Detroit, Michigan';
+
+export default function NextStepsCard({ voterInfo, location }: NextStepsCardProps) {
   const { track } = useAnalyticsContext();
+
+  const locationLabel = location
+    ? (location.city ? `${location.city}, ${location.stateName}` : location.stateName)
+    : DEFAULT_LOCATION;
 
   const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? DEFAULT_POLLING_URL;
   const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? DEFAULT_ABSENTEE_URL;
@@ -80,9 +93,13 @@ export default function NextStepsCard({ voterInfo }: NextStepsCardProps) {
 
       {/* Take Action links */}
       <div>
-        <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide mb-3">
+        <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
           Take Action
         </h2>
+        <p className="text-xs text-text-muted mb-3 flex items-center gap-1">
+          <MapPin className="h-3 w-3" />
+          Showing info for {locationLabel}
+        </p>
         <div className="space-y-3">
           {actionLinks.map((step) => {
             const Icon = step.icon;

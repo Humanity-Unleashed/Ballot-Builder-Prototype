@@ -30,6 +30,12 @@ interface VoterInfo {
   stateRules?: Record<string, string | boolean | undefined>;
 }
 
+interface LocationInfo {
+  state: string;
+  stateName: string;
+  city?: string;
+}
+
 interface BallotSummaryProps {
   votes: UserVote[];
   ballotItems: BallotItem[];
@@ -38,6 +44,7 @@ interface BallotSummaryProps {
   onStartOver: () => void;
   onPrint: () => void;
   voterInfo?: VoterInfo | null;
+  location?: LocationInfo | null;
 }
 
 // Map category icon strings to lucide components
@@ -54,6 +61,7 @@ export default function BallotSummary({
   onStartOver,
   onPrint,
   voterInfo,
+  location,
 }: BallotSummaryProps) {
   const { track } = useAnalyticsContext();
   const [reviewOpen, setReviewOpen] = useState(false);
@@ -105,7 +113,7 @@ export default function BallotSummary({
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
         {/* Next steps */}
-        <NextStepsCard voterInfo={voterInfo} />
+        <NextStepsCard voterInfo={voterInfo} location={location} />
 
         {/* Voting Squad CTA */}
         <SquadInviteCard />

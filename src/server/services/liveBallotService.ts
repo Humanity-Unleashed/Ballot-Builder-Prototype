@@ -23,6 +23,7 @@ import {
   computeDistrictHash,
   transformBallotpediaElection,
 } from './ballotTransformer';
+import { STATE_CODE_TO_NAME } from '../data/stateConstants';
 import { getDefaultBallotData } from './ballotService';
 import type {
   DistrictInfo,
@@ -373,6 +374,17 @@ function getNextElectionDate(): string {
 }
 
 // ============================================
+// Location Helper
+// ============================================
+
+function buildLocation(state: string, city?: string): { state: string; stateName: string; city?: string } | undefined {
+  if (!state) return undefined;
+  const stateName = STATE_CODE_TO_NAME[state.toUpperCase()];
+  if (!stateName) return undefined;
+  return { state: state.toUpperCase(), stateName, city: city || undefined };
+}
+
+// ============================================
 // Main Pipeline
 // ============================================
 
@@ -406,6 +418,7 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
           ballot: cachedBallot.ballot,
           source: 'cache',
           fetchedAt: cachedBallot.fetchedAt.toISOString(),
+          location: buildLocation(cachedZip.state, cachedZip.city),
           voterInfo,
           representatives,
         };
@@ -468,6 +481,7 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
         ballot: cachedBallot.ballot,
         source: 'cache',
         fetchedAt: cachedBallot.fetchedAt.toISOString(),
+        location: buildLocation(districtInfo.state, districtInfo.city),
         voterInfo,
         representatives,
       };
@@ -479,6 +493,7 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
       return {
         ballot: getDefaultBallotData(),
         source: 'static_fallback',
+        location: buildLocation(districtInfo.state, districtInfo.city),
         voterInfo,
         representatives,
       };
@@ -500,6 +515,7 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
       return {
         ballot: getDefaultBallotData(),
         source: 'static_fallback',
+        location: buildLocation(districtInfo.state, districtInfo.city),
         voterInfo,
         representatives,
       };
@@ -512,6 +528,7 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
       ballot,
       source: 'live',
       fetchedAt: new Date().toISOString(),
+      location: buildLocation(districtInfo.state, districtInfo.city),
       voterInfo,
       representatives,
     };

@@ -506,10 +506,24 @@ export interface BallotSummary {
   totalItems: number;
 }
 
+export interface Representative {
+  id: string;
+  name: string;
+  phone: string;
+  photoURL?: string;
+  party: string;
+  state: string;
+  district?: string;
+  reason: string;
+  area: string;
+  url?: string;
+}
+
 export interface BallotLookupResponse {
   ballot: Ballot;
   source: string;
   fetchedAt?: string;
+  location?: { state: string; stateName: string; city?: string };
   voterInfo?: {
     registrationUrl?: string;
     absenteeBallotUrl?: string;
@@ -529,6 +543,7 @@ export interface BallotLookupResponse {
       polling_place_url?: string;
     };
   } | null;
+  representatives?: Representative[] | null;
 }
 
 export const ballotApi = {
