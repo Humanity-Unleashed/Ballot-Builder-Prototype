@@ -39,7 +39,7 @@ const STATE_RULES: Record<string, VoteAmericaStateRules> = {
     polling_place_url: 'https://mvic.sos.state.mi.us/Voter/Index',
   },
 };
-
+  
 /**
  * Look up voting rules for a US state by its 2-letter code.
  * Throws if the state is not in the curated dataset.
@@ -54,6 +54,13 @@ export function getStateVotingRules(stateCode: string): VoteAmericaStateRules {
     );
   }
   return rules;
+}
+
+/**
+ * Look up voting rules for a US state, returning null for unsupported states.
+ */
+export function getStateVotingRulesOrNull(stateCode: string): VoteAmericaStateRules | null {
+  return STATE_RULES[stateCode.toUpperCase()] ?? null;
 }
 
 /**

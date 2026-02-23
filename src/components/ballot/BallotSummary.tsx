@@ -23,6 +23,13 @@ import NextStepsCard from './NextStepsCard';
 import SquadInviteCard from './SquadInviteCard';
 import ShareSection from './ShareSection';
 
+interface VoterInfo {
+  registrationUrl?: string;
+  absenteeBallotUrl?: string;
+  pollingPlaceUrl?: string;
+  stateRules?: Record<string, string | boolean | undefined>;
+}
+
 interface BallotSummaryProps {
   votes: UserVote[];
   ballotItems: BallotItem[];
@@ -30,6 +37,7 @@ interface BallotSummaryProps {
   onEditItem: (index: number) => void;
   onStartOver: () => void;
   onPrint: () => void;
+  voterInfo?: VoterInfo | null;
 }
 
 // Map category icon strings to lucide components
@@ -45,6 +53,7 @@ export default function BallotSummary({
   onEditItem,
   onStartOver,
   onPrint,
+  voterInfo,
 }: BallotSummaryProps) {
   const { track } = useAnalyticsContext();
   const [reviewOpen, setReviewOpen] = useState(false);
@@ -96,7 +105,7 @@ export default function BallotSummary({
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
         {/* Next steps */}
-        <NextStepsCard />
+        <NextStepsCard voterInfo={voterInfo} />
 
         {/* Voting Squad CTA */}
         <SquadInviteCard />

@@ -46,12 +46,14 @@ import {
   geocodeAddress,
   getBallotByPoint,
   getVotingRules,
+  getRepresentativesByZipcode,
 } from '../externalApis';
 
 const mockedGetDivisions = vi.mocked(getDivisionsByAddress);
 const mockedGeocode = vi.mocked(geocodeAddress);
 const mockedGetBallot = vi.mocked(getBallotByPoint);
 const mockedGetRules = vi.mocked(getVotingRules);
+const mockedGetReps = vi.mocked(getRepresentativesByZipcode);
 
 describe('liveBallotService', () => {
   const originalEnv = process.env;
@@ -180,12 +182,21 @@ describe('liveBallotService', () => {
 
       mockVoterInfoCache.findUnique.mockResolvedValueOnce({
         stateCode: 'MI',
-        rules: {
-          state_code: 'MI',
-          state_name: 'Michigan',
-          voter_registration_url: 'https://mvic.sos.state.mi.us/RegisterVoter',
-          registration_deadline_online: '2026-10-19',
-        },
+        stateName: 'Michigan',
+        voterRegistrationUrl: 'https://mvic.sos.state.mi.us/RegisterVoter',
+        registrationDeadlineOnline: '2026-10-19',
+        registrationDeadlineInPerson: null,
+        registrationDeadlineByMail: null,
+        idRequirementsToVote: null,
+        idRequirementsToRegister: null,
+        absenteeBallotRules: null,
+        earlyVotingStarts: null,
+        earlyVotingEnds: null,
+        electionDayRegistration: null,
+        automaticVoterRegistration: null,
+        absenteeBallotUrl: null,
+        electionInformationUrl: null,
+        pollingPlaceUrl: null,
         fetchedAt: new Date(),
       });
 
@@ -227,11 +238,21 @@ describe('liveBallotService', () => {
 
       mockVoterInfoCache.findUnique.mockResolvedValueOnce({
         stateCode: 'MI',
-        rules: {
-          state_code: 'MI',
-          state_name: 'Michigan',
-          voter_registration_url: 'https://vote.mi.gov',
-        },
+        stateName: 'Michigan',
+        voterRegistrationUrl: 'https://vote.mi.gov',
+        registrationDeadlineInPerson: null,
+        registrationDeadlineByMail: null,
+        registrationDeadlineOnline: null,
+        idRequirementsToVote: null,
+        idRequirementsToRegister: null,
+        absenteeBallotRules: null,
+        earlyVotingStarts: null,
+        earlyVotingEnds: null,
+        electionDayRegistration: null,
+        automaticVoterRegistration: null,
+        absenteeBallotUrl: null,
+        electionInformationUrl: null,
+        pollingPlaceUrl: null,
         fetchedAt: new Date(),
       });
 
@@ -269,7 +290,7 @@ describe('liveBallotService', () => {
         },
       });
 
-      mockedGetRules.mockReturnValueOnce({
+      mockedGetRules.mockResolvedValueOnce({
         state_code: 'MI',
         state_name: 'Michigan',
         voter_registration_url: 'https://vote.mi.gov',
@@ -312,7 +333,7 @@ describe('liveBallotService', () => {
         data: { elections: [] },
       });
 
-      mockedGetRules.mockReturnValueOnce({
+      mockedGetRules.mockResolvedValueOnce({
         state_code: 'MI',
         state_name: 'Michigan',
       } as never);
@@ -354,7 +375,7 @@ describe('liveBallotService', () => {
         },
       });
 
-      mockedGetRules.mockReturnValueOnce({
+      mockedGetRules.mockResolvedValueOnce({
         state_code: 'MI',
         state_name: 'Michigan',
       } as never);

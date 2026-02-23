@@ -17,6 +17,7 @@ import {
   geocodeAddress,
   getBallotByPoint,
   getVotingRules,
+  getRepresentativesByZipcode,
 } from './externalApis';
 import {
   computeDistrictHash,
@@ -27,6 +28,7 @@ import type {
   DistrictInfo,
   BallotLookupResult,
   VoteAmericaStateRules,
+  FiveCallsRepresentative,
 } from '../types/externalApis';
 import type { Ballot } from '../types';
 
@@ -35,10 +37,18 @@ const VOTER_INFO_CACHE_STALE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 const ZIPCODE_CACHE_STALE_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 /**
- * Check whether the live ballot pipeline is available (API keys present).
+ * Check whether the full live ballot pipeline is available (all API keys present).
  */
 export function isLiveBallotEnabled(): boolean {
   return !!(process.env.GOOGLE_CIVIC_API_KEY && process.env.BALLOTPEDIA_API_KEY);
+}
+
+/**
+ * Check whether district resolution is available (Google Civic key present).
+ * This enables zipcode → district caching + voter info even without Ballotpedia.
+ */
+function isDistrictResolutionEnabled(): boolean {
+  return !!process.env.GOOGLE_CIVIC_API_KEY;
 }
 
 /**
@@ -198,7 +208,24 @@ async function getCachedVoterInfo(stateCode: string): Promise<{
     const age = Date.now() - cached.fetchedAt.getTime();
     if (age > VOTER_INFO_CACHE_STALE_MS) return null;
 
-    const rules = cached.rules as unknown as VoteAmericaStateRules;
+    const rules: VoteAmericaStateRules = {
+      state_code: cached.stateCode,
+      state_name: cached.stateName,
+      registration_deadline_in_person: cached.registrationDeadlineInPerson ?? undefined,
+      registration_deadline_by_mail: cached.registrationDeadlineByMail ?? undefined,
+      registration_deadline_online: cached.registrationDeadlineOnline ?? undefined,
+      id_requirements_to_vote: cached.idRequirementsToVote ?? undefined,
+      id_requirements_to_register: cached.idRequirementsToRegister ?? undefined,
+      absentee_ballot_rules: cached.absenteeBallotRules ?? undefined,
+      early_voting_starts: cached.earlyVotingStarts ?? undefined,
+      early_voting_ends: cached.earlyVotingEnds ?? undefined,
+      election_day_registration: cached.electionDayRegistration ?? undefined,
+      automatic_voter_registration: cached.automaticVoterRegistration ?? undefined,
+      voter_registration_url: cached.voterRegistrationUrl ?? undefined,
+      absentee_ballot_url: cached.absenteeBallotUrl ?? undefined,
+      election_information_url: cached.electionInformationUrl ?? undefined,
+      polling_place_url: cached.pollingPlaceUrl ?? undefined,
+    };
     return {
       registrationUrl: rules.voter_registration_url,
       absenteeBallotUrl: rules.absentee_ballot_url,
@@ -213,16 +240,28 @@ async function getCachedVoterInfo(stateCode: string): Promise<{
 
 async function cacheVoterInfo(stateCode: string, rules: VoteAmericaStateRules): Promise<void> {
   try {
+    const data = {
+      stateName: rules.state_name,
+      registrationDeadlineInPerson: rules.registration_deadline_in_person ?? null,
+      registrationDeadlineByMail: rules.registration_deadline_by_mail ?? null,
+      registrationDeadlineOnline: rules.registration_deadline_online ?? null,
+      idRequirementsToVote: rules.id_requirements_to_vote ?? null,
+      idRequirementsToRegister: rules.id_requirements_to_register ?? null,
+      absenteeBallotRules: rules.absentee_ballot_rules ?? null,
+      earlyVotingStarts: rules.early_voting_starts ?? null,
+      earlyVotingEnds: rules.early_voting_ends ?? null,
+      electionDayRegistration: rules.election_day_registration ?? null,
+      automaticVoterRegistration: rules.automatic_voter_registration ?? null,
+      voterRegistrationUrl: rules.voter_registration_url ?? null,
+      absenteeBallotUrl: rules.absentee_ballot_url ?? null,
+      electionInformationUrl: rules.election_information_url ?? null,
+      pollingPlaceUrl: rules.polling_place_url ?? null,
+      fetchedAt: new Date(),
+    };
     await prisma.voterInfoCache.upsert({
       where: { stateCode: stateCode.toUpperCase() },
-      update: {
-        rules: JSON.parse(JSON.stringify(rules)) as Prisma.InputJsonValue,
-        fetchedAt: new Date(),
-      },
-      create: {
-        stateCode: stateCode.toUpperCase(),
-        rules: JSON.parse(JSON.stringify(rules)) as Prisma.InputJsonValue,
-      },
+      update: data,
+      create: { stateCode: stateCode.toUpperCase(), ...data },
     });
   } catch (error) {
     console.warn('[liveBallotService] Voter info cache write failed:', error);
@@ -244,7 +283,7 @@ async function fetchVoterInfo(stateCode: string): Promise<{
 
   // 2. Cache miss — get from curated data and persist to DB
   try {
-    const rules = getVotingRules(stateCode);
+    const rules = await getVotingRules(stateCode);
     await cacheVoterInfo(stateCode, rules);
     console.log(`[liveBallotService] Voter info cached for ${stateCode}`);
     return {
@@ -255,6 +294,21 @@ async function fetchVoterInfo(stateCode: string): Promise<{
     };
   } catch (error) {
     console.warn('[liveBallotService] Voter info fetch failed:', error);
+    return null;
+  }
+}
+
+// ============================================
+// Representatives (5 Calls)
+// ============================================
+
+async function fetchRepresentatives(zipcode: string): Promise<FiveCallsRepresentative[] | null> {
+  if (!process.env['5_CALLS_API_KEY']) return null;
+  try {
+    const response = await getRepresentativesByZipcode(zipcode);
+    return response.representatives;
+  } catch (error) {
+    console.warn('[liveBallotService] 5 Calls representatives fetch failed:', error);
     return null;
   }
 }
@@ -344,14 +398,16 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
       const cachedBallot = await getCachedBallot(cachedZip.districtHash, electionDate);
       if (cachedBallot) {
         console.log('[liveBallotService] Full cache hit (zipcode + ballot)');
-        const voterInfo = cachedZip.state
-          ? await fetchVoterInfo(cachedZip.state)
-          : null;
+        const [voterInfo, representatives] = await Promise.all([
+          cachedZip.state ? fetchVoterInfo(cachedZip.state) : null,
+          fetchRepresentatives(normalized),
+        ]);
         return {
           ballot: cachedBallot.ballot,
           source: 'cache',
           fetchedAt: cachedBallot.fetchedAt.toISOString(),
           voterInfo,
+          representatives,
         };
       }
     }
@@ -360,45 +416,74 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
   }
 
   // ── Slow path: call external APIs ──
-  if (!isLiveBallotEnabled()) {
-    console.log('[liveBallotService] Live ballot not enabled, returning static data');
+  // Even without Ballotpedia, we can resolve the district and cache voter info
+  if (!isDistrictResolutionEnabled()) {
+    console.log('[liveBallotService] No API keys configured, returning static data');
+    const representatives = await fetchRepresentatives(normalized);
     return {
       ballot: getDefaultBallotData(),
       source: 'static_fallback',
       voterInfo: null,
+      representatives,
     };
   }
 
   try {
-    // Step 1: Resolve zipcode → district info
+    // Step 1: Resolve zipcode → district info (Google Civic)
+    console.log(`[liveBallotService] Resolving district for zipcode: ${normalized}`);
     const districtInfo = await resolveDistrict(normalized);
     const electionDate = getNextElectionDate();
     const districtHash = computeDistrictHash(districtInfo);
+    console.log(`[liveBallotService] District resolved: state=${districtInfo.state}, hash=${districtHash.slice(0, 8)}...`);
 
-    // Step 2: Geocode the zipcode for Ballotpedia lat/lng
-    const { lat, lng } = await geocodeAddress(normalized);
-    districtInfo.lat = lat;
-    districtInfo.lng = lng;
+    // Step 2: Geocode the zipcode for lat/lng (needed for Ballotpedia, optional otherwise)
+    let lat: number | undefined;
+    let lng: number | undefined;
+    try {
+      const geo = await geocodeAddress(normalized);
+      lat = geo.lat;
+      lng = geo.lng;
+      districtInfo.lat = lat;
+      districtInfo.lng = lng;
+      console.log(`[liveBallotService] Geocoded: (${lat.toFixed(4)}, ${lng.toFixed(4)})`);
+    } catch (geoError) {
+      console.warn('[liveBallotService] Geocoding failed (non-fatal):', geoError);
+    }
 
     // Cache the zipcode lookup for next time
     await cacheZipcode(normalized, districtInfo, districtHash);
+    console.log(`[liveBallotService] Zipcode cached: ${normalized}`);
 
-    // Step 3: Check ballot cache
+    // Step 3: Fetch voter info + representatives in parallel (works without Ballotpedia)
+    const [voterInfo, representatives] = await Promise.all([
+      districtInfo.state ? fetchVoterInfo(districtInfo.state) : null,
+      fetchRepresentatives(normalized),
+    ]);
+
+    // Step 4: Check ballot cache
     const cachedBallot = await getCachedBallot(districtHash, electionDate);
     if (cachedBallot) {
       console.log('[liveBallotService] Ballot cache hit (after zipcode resolution)');
-      const voterInfo = districtInfo.state
-        ? await fetchVoterInfo(districtInfo.state)
-        : null;
       return {
         ballot: cachedBallot.ballot,
         source: 'cache',
         fetchedAt: cachedBallot.fetchedAt.toISOString(),
         voterInfo,
+        representatives,
       };
     }
 
-    // Step 4: Fetch ballot from Ballotpedia
+    // Step 5: Fetch ballot from Ballotpedia (needs key + lat/lng from geocoding)
+    if (!process.env.BALLOTPEDIA_API_KEY || lat === undefined || lng === undefined) {
+      console.log('[liveBallotService] No Ballotpedia key or geocoding unavailable, returning static ballot with live voter info');
+      return {
+        ballot: getDefaultBallotData(),
+        source: 'static_fallback',
+        voterInfo,
+        representatives,
+      };
+    }
+
     const ballotpediaResponse = await getBallotByPoint(lat, lng, electionDate);
 
     let ballot: Ballot;
@@ -415,25 +500,20 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
       return {
         ballot: getDefaultBallotData(),
         source: 'static_fallback',
-        voterInfo: districtInfo.state
-          ? await fetchVoterInfo(districtInfo.state)
-          : null,
+        voterInfo,
+        representatives,
       };
     }
 
-    // Step 5: Cache ballot
+    // Step 6: Cache ballot
     await cacheBallot(districtHash, electionDate, ballot);
-
-    // Step 6: Fetch voter info (also cached)
-    const voterInfo = districtInfo.state
-      ? await fetchVoterInfo(districtInfo.state)
-      : null;
 
     return {
       ballot,
       source: 'live',
       fetchedAt: new Date().toISOString(),
       voterInfo,
+      representatives,
     };
   } catch (error) {
     console.error('[liveBallotService] Pipeline failed, returning static data:', error);
@@ -441,6 +521,7 @@ export async function lookupBallotByZipcode(zipcode: string): Promise<BallotLook
       ballot: getDefaultBallotData(),
       source: 'static_fallback',
       voterInfo: null,
+      representatives: null,
     };
   }
 }

@@ -11,11 +11,15 @@ import type {
   GoogleCivicDivisionsByAddressResponse,
   BallotpediaElectionByPointResponse,
   VoteAmericaStateRules,
+  FiveCallsResponse,
 } from '../types/externalApis';
-import { getStateVotingRules } from '../data/stateVotingRules';
+import { getStateVotingRulesOrNull } from '../data/stateVotingRules';
+import { STATE_CODE_TO_NAME, getGenericVotingUrls } from '../data/stateConstants';
+import { fetchFvapDeadlines } from './fvapClient';
 
 const GOOGLE_CIVIC_BASE = 'https://www.googleapis.com/civicinfo/v2';
 const BALLOTPEDIA_BASE = 'https://api4.ballotpedia.org/data';
+const FIVE_CALLS_BASE = 'https://api.5calls.org/v1';
 
 const DEFAULT_TIMEOUT = 12000; // 12s
 
@@ -153,15 +157,70 @@ export async function getBallotByPoint(
 }
 
 /**
+ * 5 Calls API — Representatives by zipcode
+ * Returns federal and state representatives for a given location.
+ */
+export async function getRepresentativesByZipcode(zipcode: string): Promise<FiveCallsResponse> {
+  const apiKey = process.env['5_CALLS_API_KEY'];
+  if (!apiKey) {
+    throw new Error('5_CALLS_API_KEY is not configured');
+  }
+
+  console.log(`[externalApis] getRepresentativesByZipcode for: ${zipcode}`);
+
+  const response = await axios.get<FiveCallsResponse>(
+    `${FIVE_CALLS_BASE}/representatives`,
+    {
+      params: { location: zipcode },
+      headers: { 'X-5Calls-Token': apiKey },
+      timeout: DEFAULT_TIMEOUT,
+    },
+  );
+
+  return response.data;
+}
+
+/**
  * State voting rules — registration deadlines, ID requirements, absentee rules, etc.
  *
- * Data is curated from official state election office websites (e.g. Michigan SOS).
- * Persisted in VoterInfoCache DB on first access; subsequent calls hit the DB cache.
- *
- * Can be swapped for VoteAmerica Civic Data API when a paid key is available:
- *   https://api.voteamerica.org/v2/election/data/state/{state}/
+ * 3-tier data sourcing (never throws):
+ *   1. Curated data (e.g. Michigan SOS) — instant, highest quality
+ *   2. FVAP eVAG XML API — free, all 50 states + DC, registration deadlines
+ *   3. Generic fallback — state name + vote.gov URLs only
  */
-export function getVotingRules(stateCode: string): VoteAmericaStateRules {
-  console.log(`[externalApis] getVotingRules for state: ${stateCode}`);
-  return getStateVotingRules(stateCode);
+export async function getVotingRules(stateCode: string): Promise<VoteAmericaStateRules> {
+  const code = stateCode.toUpperCase();
+  console.log(`[externalApis] getVotingRules for state: ${code}`);
+
+  // Tier 1: Curated data (MI, etc.)
+  const curated = getStateVotingRulesOrNull(code);
+  if (curated) {
+    console.log(`[externalApis] Tier 1 hit (curated) for ${code}`);
+    return curated;
+  }
+
+  const stateName = STATE_CODE_TO_NAME[code] ?? code;
+  const genericUrls = getGenericVotingUrls(code);
+
+  // Tier 2: FVAP API
+  try {
+    const deadlines = await fetchFvapDeadlines(code);
+    console.log(`[externalApis] Tier 2 hit (FVAP) for ${code}`);
+    return {
+      state_code: code,
+      state_name: stateName,
+      ...deadlines,
+      ...genericUrls,
+    };
+  } catch (error) {
+    console.warn(`[externalApis] FVAP fetch failed for ${code}, falling back to generic:`, error);
+  }
+
+  // Tier 3: Generic fallback
+  console.log(`[externalApis] Tier 3 (generic) for ${code}`);
+  return {
+    state_code: code,
+    state_name: stateName,
+    ...genericUrls,
+  };
 }

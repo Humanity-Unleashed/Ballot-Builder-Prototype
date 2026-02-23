@@ -33,7 +33,9 @@ import {
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
 
+import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
+import ElectionBanner from '@/components/blueprint/ElectionBanner';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
 import PersonalImpactSection from '@/components/ballot/PersonalImpactSection';
@@ -100,11 +102,39 @@ export default function BallotPage() {
   const clearBallot = useBallotStore((s) => s.clearBallot);
   const getVoteForItem = useBallotStore((s) => s.getVoteForItem);
 
+  // Zipcode from demographic survey
+  const zipCode = useDemographicStore((s) => s.profile.zipCode);
+
   // Ballot data from API
   const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isBallotLoading, setIsBallotLoading] = useState(true);
   const [ballotError, setBallotError] = useState<string | null>(null);
+  const [ballotSource, setBallotSource] = useState<string | null>(null);
+  const [voterInfo, setVoterInfo] = useState<{
+    registrationUrl?: string;
+    absenteeBallotUrl?: string;
+    pollingPlaceUrl?: string;
+    stateRules?: {
+      state_code: string;
+      state_name: string;
+      registration_deadline_online?: string;
+      early_voting_starts?: string;
+      voter_registration_url?: string;
+      absentee_ballot_url?: string;
+      polling_place_url?: string;
+      [key: string]: string | boolean | undefined;
+    };
+  } | null>(null);
+
+  // Election date computations for ElectionBanner
+  const { daysRemaining, electionLabel } = useMemo(() => {
+    const electionDay = getNextElectionDay();
+    return {
+      daysRemaining: daysUntil(electionDay),
+      electionLabel: `Election Day — ${formatElectionDate(electionDay)}`,
+    };
+  }, []);
 
   // Ephemeral UI state (current selection before saving)
   const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
@@ -123,7 +153,22 @@ export default function BallotPage() {
       try {
         setIsBallotLoading(true);
         setBallotError(null);
-        const ballot = await ballotApi.getDefault();
+
+        let ballot;
+        if (zipCode && zipCode.length === 5) {
+          console.log(`[BallotPage] Using getByZipcode with zipcode: ${zipCode}`);
+          const result = await ballotApi.getByZipcode(zipCode);
+          ballot = result.ballot;
+          setBallotSource(result.source);
+          setVoterInfo(result.voterInfo ?? null);
+          console.log(`[BallotPage] Ballot source: ${result.source}, items: ${result.ballot.items?.length ?? 0}`);
+        } else {
+          console.log(`[BallotPage] No valid zipcode (got: "${zipCode}"), using getDefault`);
+          ballot = await ballotApi.getDefault();
+          setBallotSource('static_fallback');
+          setVoterInfo(null);
+        }
+
         const { categories: fetchedCategories, items } = transformBallot(ballot);
         setBallotItems(items);
         setCategories(fetchedCategories);
@@ -135,7 +180,7 @@ export default function BallotPage() {
       }
     }
     fetchBallot();
-  }, []);
+  }, [zipCode]);
 
   // Restore current vote from persisted store after ballot loads
   useEffect(() => {
@@ -369,14 +414,24 @@ export default function BallotPage() {
   // --------------------------------------------------
   if (showSummary) {
     return (
-      <BallotSummary
-        votes={savedVotes}
-        ballotItems={ballotItems}
-        categories={categories}
-        onEditItem={handleEditItem}
-        onStartOver={handleStartOver}
-        onPrint={handlePrint}
-      />
+      <div>
+        <div className="px-4 pt-4">
+          <ElectionBanner
+            daysUntilElection={daysRemaining}
+            electionLabel={electionLabel}
+            voterInfo={voterInfo}
+          />
+        </div>
+        <BallotSummary
+          votes={savedVotes}
+          ballotItems={ballotItems}
+          categories={categories}
+          onEditItem={handleEditItem}
+          onStartOver={handleStartOver}
+          onPrint={handlePrint}
+          voterInfo={voterInfo}
+        />
+      </div>
     );
   }
 
@@ -462,6 +517,11 @@ export default function BallotPage() {
 
       {/* Scrollable ballot content */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-4">
+        <ElectionBanner
+          daysUntilElection={daysRemaining}
+          electionLabel={electionLabel}
+          voterInfo={voterInfo}
+        />
         <BallotItemHeader item={currentItem} />
 
         {/* Recommendation section (propositions only) */}

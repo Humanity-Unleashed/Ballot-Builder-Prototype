@@ -8,6 +8,11 @@ vi.mock('axios', () => ({
 }));
 const mockedGet = vi.mocked(axios.get);
 
+// Mock FVAP client — defaults to rejecting (so Tier 3 kicks in for non-curated states)
+vi.mock('../fvapClient', () => ({
+  fetchFvapDeadlines: vi.fn(() => Promise.reject(new Error('FVAP mocked out'))),
+}));
+
 // Import after mock
 import {
   getVoterInfo,
@@ -15,6 +20,7 @@ import {
   getBallotByPoint,
   getVotingRules,
   geocodeAddress,
+  getRepresentativesByZipcode,
 } from '../externalApis';
 
 describe('externalApis', () => {
@@ -154,9 +160,49 @@ describe('externalApis', () => {
     });
   });
 
+  describe('getRepresentativesByZipcode', () => {
+    it('calls 5 Calls representatives endpoint with correct params', async () => {
+      process.env['5_CALLS_API_KEY'] = 'test-5calls-key';
+
+      const mockResponse = {
+        data: {
+          location: '48226',
+          lowAccuracy: false,
+          state: 'MI',
+          district: '13',
+          representatives: [
+            { id: 'rep1', name: 'Test Rep', phone: '202-555-0001', party: 'Democratic', state: 'MI', reason: 'rep', area: 'US House' },
+          ],
+        },
+      };
+      mockedGet.mockResolvedValueOnce(mockResponse);
+
+      const result = await getRepresentativesByZipcode('48226');
+
+      expect(mockedGet).toHaveBeenCalledWith(
+        'https://api.5calls.org/v1/representatives',
+        expect.objectContaining({
+          params: { location: '48226' },
+          headers: { 'X-5Calls-Token': 'test-5calls-key' },
+          timeout: 12000,
+        }),
+      );
+      expect(result.representatives).toHaveLength(1);
+      expect(result.representatives[0].name).toBe('Test Rep');
+    });
+
+    it('throws when 5_CALLS_API_KEY is not set', async () => {
+      delete process.env['5_CALLS_API_KEY'];
+
+      await expect(getRepresentativesByZipcode('48226')).rejects.toThrow(
+        '5_CALLS_API_KEY is not configured',
+      );
+    });
+  });
+
   describe('getVotingRules', () => {
-    it('returns curated data for supported states', () => {
-      const result = getVotingRules('MI');
+    it('Tier 1: returns curated data for supported states', async () => {
+      const result = await getVotingRules('MI');
 
       expect(result.state_code).toBe('MI');
       expect(result.state_name).toBe('Michigan');
@@ -166,18 +212,26 @@ describe('externalApis', () => {
       expect(result.election_day_registration).toBe(true);
     });
 
-    it('works without API keys (no external API needed)', () => {
+    it('Tier 1: works without API keys (no external API needed)', async () => {
       delete process.env.GOOGLE_CIVIC_API_KEY;
       delete process.env.BALLOTPEDIA_API_KEY;
 
-      const result = getVotingRules('mi');
+      const result = await getVotingRules('mi');
       expect(result.state_code).toBe('MI');
-      // No axios call should have been made
       expect(mockedGet).not.toHaveBeenCalled();
     });
 
-    it('throws for unsupported states', () => {
-      expect(() => getVotingRules('ZZ')).toThrow('Voting rules not available for state: ZZ');
+    it('Tier 3: returns generic fallback for unknown state codes', async () => {
+      const result = await getVotingRules('ZZ');
+      expect(result.state_code).toBe('ZZ');
+      expect(result.voter_registration_url).toContain('vote.gov');
+    });
+
+    it('never throws — always returns a result', async () => {
+      const result = await getVotingRules('CA');
+      expect(result.state_code).toBe('CA');
+      expect(result.state_name).toBe('California');
+      expect(result.voter_registration_url).toContain('vote.gov');
     });
   });
 });
