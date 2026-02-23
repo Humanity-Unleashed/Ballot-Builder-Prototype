@@ -16,12 +16,26 @@ import {
   ChevronUp,
 } from 'lucide-react';
 import type { BallotItem, Category, UserVote } from '@/lib/ballotHelpers';
+import type { VoteAmericaStateRules } from '@/server/types/externalApis';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import Confetti from './Confetti';
 import CelebrationHeader from './CelebrationHeader';
 import NextStepsCard from './NextStepsCard';
 import SquadInviteCard from './SquadInviteCard';
 import ShareSection from './ShareSection';
+
+interface VoterInfo {
+  registrationUrl?: string;
+  absenteeBallotUrl?: string;
+  pollingPlaceUrl?: string;
+  stateRules?: VoteAmericaStateRules;
+}
+
+interface LocationInfo {
+  state: string;
+  stateName: string;
+  city?: string;
+}
 
 interface BallotSummaryProps {
   votes: UserVote[];
@@ -30,6 +44,8 @@ interface BallotSummaryProps {
   onEditItem: (index: number) => void;
   onStartOver: () => void;
   onPrint: () => void;
+  voterInfo?: VoterInfo | null;
+  location?: LocationInfo | null;
 }
 
 // Map category icon strings to lucide components
@@ -45,6 +61,8 @@ export default function BallotSummary({
   onEditItem,
   onStartOver,
   onPrint,
+  voterInfo,
+  location,
 }: BallotSummaryProps) {
   const { track } = useAnalyticsContext();
   const [reviewOpen, setReviewOpen] = useState(false);
@@ -96,7 +114,7 @@ export default function BallotSummary({
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
         {/* Next steps */}
-        <NextStepsCard />
+        <NextStepsCard voterInfo={voterInfo} location={location} />
 
         {/* Voting Squad CTA */}
         <SquadInviteCard />

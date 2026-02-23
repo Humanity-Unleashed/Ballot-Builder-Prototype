@@ -2,6 +2,25 @@
 
 import { MapPin, Mail, ExternalLink } from 'lucide-react';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
+import type { VoteAmericaStateRules } from '@/server/types/externalApis';
+
+interface VoterInfo {
+  registrationUrl?: string;
+  absenteeBallotUrl?: string;
+  pollingPlaceUrl?: string;
+  stateRules?: VoteAmericaStateRules;
+}
+
+interface LocationInfo {
+  state: string;
+  stateName: string;
+  city?: string;
+}
+
+interface NextStepsCardProps {
+  voterInfo?: VoterInfo | null;
+  location?: LocationInfo | null;
+}
 
 const SAMPLE_LOCATIONS = [
   { name: 'Riverside Community Center', address: '425 Elm Street' },
@@ -9,25 +28,38 @@ const SAMPLE_LOCATIONS = [
   { name: 'Maplewood Public Library', address: '88 Birch Lane' },
 ];
 
-const ACTION_LINKS = [
-  {
-    id: 'polling_place',
-    icon: MapPin,
-    label: 'Find your polling place',
-    subtitle: 'Look up by your address',
-    href: 'https://mvic.sos.state.mi.us/Voter/Index',
-  },
-  {
-    id: 'mail_in_ballot',
-    icon: Mail,
-    label: 'Request a mail-in ballot',
-    subtitle: 'Apply for an absentee ballot',
-    href: 'https://mvic.sos.state.mi.us/AVApplication/Index',
-  },
-] as const;
+// Default to Michigan MVIC URLs when no zipcode is entered
+const DEFAULT_POLLING_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
+const DEFAULT_ABSENTEE_URL = 'https://mvic.sos.state.mi.us/AVApplication/Index';
 
-export default function NextStepsCard() {
+const DEFAULT_LOCATION = 'Detroit, Michigan';
+
+export default function NextStepsCard({ voterInfo, location }: NextStepsCardProps) {
   const { track } = useAnalyticsContext();
+
+  const locationLabel = location
+    ? (location.city ? `${location.city}, ${location.stateName}` : location.stateName)
+    : DEFAULT_LOCATION;
+
+  const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? DEFAULT_POLLING_URL;
+  const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? DEFAULT_ABSENTEE_URL;
+
+  const actionLinks = [
+    {
+      id: 'polling_place',
+      icon: MapPin,
+      label: 'Find your polling place',
+      subtitle: 'Look up by your address',
+      href: pollingUrl,
+    },
+    {
+      id: 'mail_in_ballot',
+      icon: Mail,
+      label: 'Request a mail-in ballot',
+      subtitle: 'Apply for an absentee ballot',
+      href: absenteeUrl,
+    },
+  ];
 
   return (
     <div className="px-4 animate-fade-in-up space-y-6">
@@ -61,11 +93,15 @@ export default function NextStepsCard() {
 
       {/* Take Action links */}
       <div>
-        <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide mb-3">
+        <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
           Take Action
         </h2>
+        <p className="text-xs text-text-muted mb-3 flex items-center gap-1">
+          <MapPin className="h-3 w-3" />
+          Showing info for {locationLabel}
+        </p>
         <div className="space-y-3">
-          {ACTION_LINKS.map((step) => {
+          {actionLinks.map((step) => {
             const Icon = step.icon;
             return (
               <a

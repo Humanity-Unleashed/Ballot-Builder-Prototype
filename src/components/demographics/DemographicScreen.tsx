@@ -169,6 +169,16 @@ export default function DemographicScreen({ onComplete }: DemographicScreenProps
     ).length;
     track('click', { element: 'submit_demographics', filledCount });
     submitProfile();
+
+    // Prefetch ballot data if zipcode was provided (fires in background, doesn't block)
+    if (profile.zipCode && profile.zipCode.length === 5) {
+      console.log(`[DemographicScreen] Prefetching ballot for zipcode: ${profile.zipCode}`);
+      fetch(`/api/ballot/by-zipcode?zipcode=${profile.zipCode}`)
+        .then((res) => res.json())
+        .then((data) => console.log(`[DemographicScreen] Prefetch complete, source: ${data.source}`))
+        .catch((err) => console.warn('[DemographicScreen] Prefetch failed:', err));
+    }
+
     onComplete();
   };
 

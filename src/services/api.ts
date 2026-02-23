@@ -506,7 +506,54 @@ export interface BallotSummary {
   totalItems: number;
 }
 
+export interface Representative {
+  id: string;
+  name: string;
+  phone: string;
+  photoURL?: string;
+  party: string;
+  state: string;
+  district?: string;
+  reason: string;
+  area: string;
+  url?: string;
+}
+
+export interface BallotLookupResponse {
+  ballot: Ballot;
+  source: string;
+  fetchedAt?: string;
+  location?: { state: string; stateName: string; city?: string };
+  voterInfo?: {
+    registrationUrl?: string;
+    absenteeBallotUrl?: string;
+    pollingPlaceUrl?: string;
+    stateRules?: {
+      state_code: string;
+      state_name: string;
+      registration_deadline_in_person?: string;
+      registration_deadline_by_mail?: string;
+      registration_deadline_online?: string;
+      id_requirements_to_vote?: string;
+      absentee_ballot_rules?: string;
+      early_voting_starts?: string;
+      early_voting_ends?: string;
+      voter_registration_url?: string;
+      absentee_ballot_url?: string;
+      polling_place_url?: string;
+    };
+  } | null;
+  representatives?: Representative[] | null;
+}
+
 export const ballotApi = {
+  async getByZipcode(zipcode: string): Promise<BallotLookupResponse> {
+    const response = await api.get<BallotLookupResponse>('/ballot/by-zipcode', {
+      params: { zipcode },
+    });
+    return response.data;
+  },
+
   async getDefault(): Promise<Ballot> {
     const response = await api.get<Ballot>('/ballot');
     return response.data;
