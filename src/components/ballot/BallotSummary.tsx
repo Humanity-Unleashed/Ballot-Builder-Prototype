@@ -16,6 +16,7 @@ import {
   ChevronUp,
 } from 'lucide-react';
 import type { BallotItem, Category, UserVote } from '@/lib/ballotHelpers';
+import type { VoteAmericaStateRules } from '@/server/types/externalApis';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import Confetti from './Confetti';
 import CelebrationHeader from './CelebrationHeader';
@@ -27,7 +28,7 @@ interface VoterInfo {
   registrationUrl?: string;
   absenteeBallotUrl?: string;
   pollingPlaceUrl?: string;
-  stateRules?: Record<string, string | boolean | undefined>;
+  stateRules?: VoteAmericaStateRules;
 }
 
 interface LocationInfo {

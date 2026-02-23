@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useEffect } from 'react';
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
-import { ballotApi } from '@/services/api';
+import { ballotApi, type BallotLookupResponse } from '@/services/api';
 import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
 import { RefreshCw, ChevronRight } from 'lucide-react';
@@ -87,13 +87,8 @@ export default function BlueprintSummaryView({
 
   // ── Voter info (fetched via zipcode for real URLs + deadlines) ──
   const zipCode = demographicProfile.zipCode;
-  const [voterInfo, setVoterInfo] = useState<{
-    registrationUrl?: string;
-    absenteeBallotUrl?: string;
-    pollingPlaceUrl?: string;
-    stateRules?: Record<string, string | boolean | undefined>;
-  } | null>(null);
-  const [location, setLocation] = useState<{ state: string; stateName: string; city?: string } | null>(null);
+  const [voterInfo, setVoterInfo] = useState<BallotLookupResponse['voterInfo'] | null>(null);
+  const [location, setLocation] = useState<BallotLookupResponse['location'] | null>(null);
 
   useEffect(() => {
     if (!zipCode || zipCode.length !== 5) return;

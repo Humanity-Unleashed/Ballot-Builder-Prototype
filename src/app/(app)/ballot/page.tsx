@@ -32,6 +32,7 @@ import {
 } from '@/lib/ballotHelpers';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
+import type { BallotLookupResponse } from '@/services/api';
 
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
@@ -111,22 +112,8 @@ export default function BallotPage() {
   const [isBallotLoading, setIsBallotLoading] = useState(true);
   const [ballotError, setBallotError] = useState<string | null>(null);
   const [ballotSource, setBallotSource] = useState<string | null>(null);
-  const [location, setLocation] = useState<{ state: string; stateName: string; city?: string } | null>(null);
-  const [voterInfo, setVoterInfo] = useState<{
-    registrationUrl?: string;
-    absenteeBallotUrl?: string;
-    pollingPlaceUrl?: string;
-    stateRules?: {
-      state_code: string;
-      state_name: string;
-      registration_deadline_online?: string;
-      early_voting_starts?: string;
-      voter_registration_url?: string;
-      absentee_ballot_url?: string;
-      polling_place_url?: string;
-      [key: string]: string | boolean | undefined;
-    };
-  } | null>(null);
+  const [location, setLocation] = useState<BallotLookupResponse['location'] | null>(null);
+  const [voterInfo, setVoterInfo] = useState<BallotLookupResponse['voterInfo'] | null>(null);
 
   // Election date computations for ElectionBanner
   const { daysRemaining, electionLabel } = useMemo(() => {

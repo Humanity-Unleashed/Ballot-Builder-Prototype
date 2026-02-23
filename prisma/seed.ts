@@ -260,16 +260,28 @@ async function main() {
   console.log('Seeding Michigan example data...\n');
 
   // 1. Seed VoterInfoCache
+  const voterInfoData = {
+    stateName: MI_VOTER_RULES.state_name,
+    registrationDeadlineInPerson: MI_VOTER_RULES.registration_deadline_in_person ?? null,
+    registrationDeadlineByMail: MI_VOTER_RULES.registration_deadline_by_mail ?? null,
+    registrationDeadlineOnline: MI_VOTER_RULES.registration_deadline_online ?? null,
+    idRequirementsToVote: MI_VOTER_RULES.id_requirements_to_vote ?? null,
+    idRequirementsToRegister: MI_VOTER_RULES.id_requirements_to_register ?? null,
+    absenteeBallotRules: MI_VOTER_RULES.absentee_ballot_rules ?? null,
+    earlyVotingStarts: MI_VOTER_RULES.early_voting_starts ?? null,
+    earlyVotingEnds: MI_VOTER_RULES.early_voting_ends ?? null,
+    electionDayRegistration: MI_VOTER_RULES.election_day_registration ?? null,
+    automaticVoterRegistration: MI_VOTER_RULES.automatic_voter_registration ?? null,
+    voterRegistrationUrl: MI_VOTER_RULES.voter_registration_url ?? null,
+    absenteeBallotUrl: MI_VOTER_RULES.absentee_ballot_url ?? null,
+    electionInformationUrl: MI_VOTER_RULES.election_information_url ?? null,
+    pollingPlaceUrl: MI_VOTER_RULES.polling_place_url ?? null,
+    fetchedAt: new Date(),
+  };
   const voterInfo = await prisma.voterInfoCache.upsert({
     where: { stateCode: 'MI' },
-    update: {
-      rules: JSON.parse(JSON.stringify(MI_VOTER_RULES)) as Prisma.InputJsonValue,
-      fetchedAt: new Date(),
-    },
-    create: {
-      stateCode: 'MI',
-      rules: JSON.parse(JSON.stringify(MI_VOTER_RULES)) as Prisma.InputJsonValue,
-    },
+    update: voterInfoData,
+    create: { stateCode: 'MI', ...voterInfoData },
   });
   console.log(`  ✓ VoterInfoCache: MI (${voterInfo.id})`);
 
