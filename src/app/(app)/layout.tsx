@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import TopNav from '@/components/layout/TopNav';
@@ -12,14 +12,23 @@ export default function AppLayout({
 }) {
   const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
+  const [authUnavailable, setAuthUnavailable] = useState(false);
+
+  // If auth stays in loading state too long, assume auth backend is unavailable
+  useEffect(() => {
+    if (isLoading) {
+      const timeout = setTimeout(() => setAuthUnavailable(true), 3000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isLoading]);
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
+    if (!isLoading && !isAuthenticated && !authUnavailable) {
       router.replace('/');
     }
-  }, [isAuthenticated, isLoading, router]);
+  }, [isAuthenticated, isLoading, authUnavailable, router]);
 
-  if (isLoading) {
+  if (isLoading && !authUnavailable) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <p className="text-gray-500">Loading...</p>
@@ -27,7 +36,7 @@ export default function AppLayout({
     );
   }
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !authUnavailable) {
     return null;
   }
 
