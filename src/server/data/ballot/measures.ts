@@ -202,10 +202,80 @@ export const measures: Measure[] = [
   },
 ];
 
+// === MICHIGAN 2026 REAL-WORLD MEASURES ===
+// Scored from public sources (Feb 2026)
+
+export const michiganMeasures: Measure[] = [
+  {
+    id: MEASURE_IDS.MI_PROP1_CONCON,
+    type: 'measure',
+    title: 'Proposal 1: Constitutional Convention Question',
+    shortTitle: 'Con-Con Question',
+    description:
+      'Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution for presentation to the state\'s voters for their approval or rejection?',
+    vector: [0, 0, 0, 0, 0],
+    relevantAxes: [],
+    yesAxisEffects: {},
+    yesValueEffects: {
+      tradition: -0.8,
+      conformity: -0.5,
+      security: -0.4,
+      stimulation: 0.7,
+      self_direction: 0.3,
+      power: 0.1,
+      universalism: 0.1,
+    },
+    outcomes: {
+      yes: 'Triggers an election within 6 months to choose 148 delegates (one per House district, one per Senate district). Delegates convene October 2027 to revise or rewrite the Michigan Constitution. Any resulting changes must be ratified by voters in a separate election.',
+      no: 'The current 1963 Michigan Constitution remains in effect. The constitutional convention question will not appear on the ballot again until 2042.',
+    },
+    explanation:
+      'An automatic ballot referral required by Michigan\'s constitution every 16 years. A YES vote does not commit Michigan to any specific policy direction — it only empowers elected delegates to propose changes. The convention\'s outcomes are unpredictable and would depend on who is elected as delegates. Voters have rejected this question in 1978, 1994, and 2010. Republican legislative leaders support YES, hoping to revise voter-approved amendments. A bipartisan opposition group warns of a "runaway convention" in a polarized political environment.',
+    supporters: ['House Speaker Matt Hall (R)', 'Senate Minority Leader Aric Nesbitt (R)'],
+    opponents: ['Protect MI Constitution from Special Interests', 'Lincoln Project (Jeff Timmer)', 'Former Democratic House Leader Dianne Byrum', 'Michigan Democratic Party'],
+  },
+  {
+    id: MEASURE_IDS.MI_INVEST_IN_KIDS,
+    type: 'measure',
+    title: 'Invest in MI Kids: Graduated Income Tax for Schools',
+    shortTitle: 'Invest in MI Kids',
+    description:
+      'A proposed constitutional amendment that would add a 5% income tax surcharge on income exceeding $500,000 for single filers (or $1,000,000 for joint filers), with revenue constitutionally directed to the School Aid Fund for classroom support, teacher retention, and career and technical education.',
+    vector: [0, 0, 0, 0, 0],
+    relevantAxes: ['econ_investment', 'econ_safetynet', 'econ_school_choice'],
+    yesAxisEffects: {
+      econ_investment: -0.7,
+      econ_safetynet: -0.3,
+      econ_school_choice: -0.4,
+    },
+    yesValueEffects: {
+      universalism: 0.7,
+      benevolence: 0.6,
+      security: 0.3,
+      stimulation: 0.2,
+      conformity: 0.1,
+      self_direction: -0.3,
+      achievement: -0.2,
+      power: -0.4,
+      tradition: -0.3,
+    },
+    outcomes: {
+      yes: 'Constitutional amendment adds 5% surcharge on income over $500K (single) / $1M (joint). Revenue flows to Michigan\'s School Aid Fund. Michigan would have the highest top income tax rate in the Midwest and 7th highest nationally. Many small and mid-sized businesses filing as pass-through entities would be affected above the thresholds.',
+      no: 'Michigan\'s flat 4.25% income tax remains unchanged. School Aid Fund continues at current levels. No structural change to the state\'s tax system.',
+    },
+    explanation:
+      'This proposed constitutional amendment would create Michigan\'s first graduated income tax by adding a 5-point surcharge on the highest earners. Supporters say it would fund smaller class sizes, better teacher pay, and improved school facilities. Critics, including the Michigan Chamber of Commerce and NFIB, argue it would harm small businesses whose income is taxed at individual rates and make Michigan less competitive. The measure is pending ballot certification as of February 2026, with proponents claiming well over the required signatures.',
+    supporters: ['Invest in MI Kids coalition', 'Teachers\' unions', 'Tides Foundation', 'BOOM (progressive advocacy)'],
+    opponents: ['Michigan Chamber of Commerce', 'Small Business Association of Michigan', 'NFIB', 'Michigan Manufacturers Association'],
+  },
+];
+
+export const allMeasures: Measure[] = [...measures, ...michiganMeasures];
+
 export function getMeasureById(measureId: string): Measure | null {
-  return measures.find((m) => m.id === measureId) || null;
+  return allMeasures.find((m) => m.id === measureId) || null;
 }
 
 export function getAllMeasures(): Measure[] {
-  return measures;
+  return allMeasures;
 }

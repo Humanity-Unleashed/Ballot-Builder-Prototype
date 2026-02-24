@@ -7,7 +7,7 @@
 import type { Ballot, BallotItem, Contest, Measure } from '../../types';
 import { BALLOT_IDS } from './ids';
 import { contests } from './contests';
-import { measures } from './measures';
+import { measures, michiganMeasures } from './measures';
 
 // ============================================
 // All Ballot Items (in ballot order)
@@ -44,7 +44,31 @@ export const sampleBallot: Ballot = {
   items: allBallotItems,
 };
 
-export const ballots: Ballot[] = [sampleBallot];
+// ============================================
+// Michigan UP Ballot (Real-World Data)
+// MI State Senate District 38 + statewide measures
+// ============================================
+
+const michiganBallotItems: BallotItem[] = [
+  // Federal Race
+  contests[2],         // U.S. Senate
+  // State Senate Race
+  contests[3],         // State Senate District 38
+  // Statewide Measures
+  michiganMeasures[0], // Proposal 1: Constitutional Convention
+  michiganMeasures[1], // Invest in MI Kids: Graduated Income Tax
+];
+
+export const michiganBallot: Ballot = {
+  id: BALLOT_IDS.MI_UP_2026,
+  electionDate: '2026-11-03T00:00:00.000Z',
+  electionType: 'General Election',
+  state: 'Michigan',
+  county: 'Marquette',
+  items: michiganBallotItems,
+};
+
+export const ballots: Ballot[] = [sampleBallot, michiganBallot];
 
 // ============================================
 // Ballot Access Functions
@@ -59,7 +83,7 @@ export function getBallotByCounty(county: string): Ballot | null {
 }
 
 export function getDefaultBallot(): Ballot {
-  return sampleBallot;
+  return michiganBallot;
 }
 
 export function getBallotItemById(ballotId: string, itemId: string): BallotItem | null {

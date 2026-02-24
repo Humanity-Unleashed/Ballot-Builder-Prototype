@@ -32,7 +32,7 @@ export default function CandidateComparisonSheet({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg bg-white rounded-t-3xl max-h-[75vh] pb-8 animate-slide-up"
+        className="w-full max-w-lg bg-white rounded-t-3xl max-h-[85vh] flex flex-col pb-8 animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Handle bar */}
@@ -57,7 +57,7 @@ export default function CandidateComparisonSheet({
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto p-5 space-y-4">
+        <div className="overflow-y-auto flex-1 min-h-0 p-5 space-y-4">
           {/* Where you align */}
           {alignedDetails.length > 0 && (
             <div className="space-y-2.5">
