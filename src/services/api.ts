@@ -1,4 +1,4 @@
-import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import type {
   Spec,
   Domain,
@@ -7,183 +7,13 @@ import type {
   SwipeResponse,
 } from '../types/civicAssessment';
 
-const API_URL = '/api';
-
-const ACCESS_TOKEN_KEY = 'accessToken';
-const REFRESH_TOKEN_KEY = 'refreshToken';
-
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: '/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
-
-export async function getAccessToken(): Promise<string | null> {
-  try {
-    return localStorage.getItem(ACCESS_TOKEN_KEY);
-  } catch {
-    return null;
-  }
-}
-
-export async function getRefreshToken(): Promise<string | null> {
-  try {
-    return localStorage.getItem(REFRESH_TOKEN_KEY);
-  } catch {
-    return null;
-  }
-}
-
-export async function setTokens(
-  accessToken: string,
-  refreshToken: string,
-): Promise<void> {
-  localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
-  localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken);
-}
-
-export async function clearTokens(): Promise<void> {
-  localStorage.removeItem(ACCESS_TOKEN_KEY);
-  localStorage.removeItem(REFRESH_TOKEN_KEY);
-}
-
-api.interceptors.request.use(
-  async (config: InternalAxiosRequestConfig) => {
-    const token = await getAccessToken();
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  },
-);
-
-let isRefreshing = false;
-let failedQueue: Array<{
-  resolve: (token: string) => void;
-  reject: (error: Error) => void;
-}> = [];
-
-const processQueue = (error: Error | null, token: string | null = null) => {
-  failedQueue.forEach((promise) => {
-    if (error) {
-      promise.reject(error);
-    } else if (token) {
-      promise.resolve(token);
-    }
-  });
-  failedQueue = [];
-};
-
-api.interceptors.response.use(
-  (response) => response,
-  async (error: AxiosError) => {
-    const originalRequest = error.config as InternalAxiosRequestConfig & {
-      _retry?: boolean;
-    };
-
-    if (error.response?.status === 401 && !originalRequest._retry) {
-      if (isRefreshing) {
-        return new Promise((resolve, reject) => {
-          failedQueue.push({
-            resolve: (token: string) => {
-              originalRequest.headers.Authorization = `Bearer ${token}`;
-              resolve(api(originalRequest));
-            },
-            reject: (err: Error) => {
-              reject(err);
-            },
-          });
-        });
-      }
-
-      originalRequest._retry = true;
-      isRefreshing = true;
-
-      try {
-        const refreshToken = await getRefreshToken();
-        if (!refreshToken) {
-          throw new Error('No refresh token');
-        }
-
-        const response = await axios.post(`${API_URL}/auth/refresh`, {
-          refreshToken,
-        });
-
-        const { accessToken, refreshToken: newRefreshToken } = response.data;
-        await setTokens(accessToken, newRefreshToken);
-
-        processQueue(null, accessToken);
-        originalRequest.headers.Authorization = `Bearer ${accessToken}`;
-        return api(originalRequest);
-      } catch (refreshError) {
-        processQueue(refreshError as Error, null);
-        await clearTokens();
-        return Promise.reject(refreshError);
-      } finally {
-        isRefreshing = false;
-      }
-    }
-
-    return Promise.reject(error);
-  },
-);
-
-export interface User {
-  id: string;
-  email: string;
-  createdAt: string;
-  profile?: {
-    ageRange?: string;
-    location?: string;
-  };
-}
-
-export interface AuthResponse {
-  user: User;
-  accessToken: string;
-  refreshToken: string;
-}
-
-export const authApi = {
-  async register(email: string, password: string): Promise<AuthResponse> {
-    const response = await api.post<AuthResponse>('/auth/register', {
-      email,
-      password,
-    });
-    await setTokens(response.data.accessToken, response.data.refreshToken);
-    return response.data;
-  },
-
-  async login(email: string, password: string): Promise<AuthResponse> {
-    const response = await api.post<AuthResponse>('/auth/login', {
-      email,
-      password,
-    });
-    await setTokens(response.data.accessToken, response.data.refreshToken);
-    return response.data;
-  },
-
-  async logout(): Promise<void> {
-    try {
-      const refreshToken = await getRefreshToken();
-      if (refreshToken) {
-        await api.post('/auth/logout', { refreshToken });
-      }
-    } finally {
-      await clearTokens();
-    }
-  },
-
-  async getCurrentUser(): Promise<User> {
-    const response = await api.get<{ user: User }>('/users/me');
-    return response.data.user;
-  },
-};
 
 export interface PolicyStatement {
   id: string;
@@ -506,7 +336,54 @@ export interface BallotSummary {
   totalItems: number;
 }
 
+export interface Representative {
+  id: string;
+  name: string;
+  phone: string;
+  photoURL?: string;
+  party: string;
+  state: string;
+  district?: string;
+  reason: string;
+  area: string;
+  url?: string;
+}
+
+export interface BallotLookupResponse {
+  ballot: Ballot;
+  source: string;
+  fetchedAt?: string;
+  location?: { state: string; stateName: string; city?: string };
+  voterInfo?: {
+    registrationUrl?: string;
+    absenteeBallotUrl?: string;
+    pollingPlaceUrl?: string;
+    stateRules?: {
+      state_code: string;
+      state_name: string;
+      registration_deadline_in_person?: string;
+      registration_deadline_by_mail?: string;
+      registration_deadline_online?: string;
+      id_requirements_to_vote?: string;
+      absentee_ballot_rules?: string;
+      early_voting_starts?: string;
+      early_voting_ends?: string;
+      voter_registration_url?: string;
+      absentee_ballot_url?: string;
+      polling_place_url?: string;
+    };
+  } | null;
+  representatives?: Representative[] | null;
+}
+
 export const ballotApi = {
+  async getByZipcode(zipcode: string): Promise<BallotLookupResponse> {
+    const response = await api.get<BallotLookupResponse>('/ballot/by-zipcode', {
+      params: { zipcode },
+    });
+    return response.data;
+  },
+
   async getDefault(): Promise<Ballot> {
     const response = await api.get<Ballot>('/ballot');
     return response.data;

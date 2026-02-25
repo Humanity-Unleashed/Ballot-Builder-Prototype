@@ -9,6 +9,18 @@ export const mockPrisma = {
     create: vi.fn(),
     findMany: vi.fn(),
   },
+  ballotCache: {
+    findUnique: vi.fn(),
+    upsert: vi.fn(),
+  },
+  voterInfoCache: {
+    findUnique: vi.fn(),
+    upsert: vi.fn(),
+  },
+  zipcodeLookup: {
+    findUnique: vi.fn(),
+    upsert: vi.fn(),
+  },
 };
 
 vi.mock('@/lib/prisma', () => ({

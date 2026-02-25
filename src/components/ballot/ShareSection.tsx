@@ -5,9 +5,9 @@ import { MessageCircle, Copy, Check } from 'lucide-react';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 const SHARE_MESSAGE =
-  'I just finished my sample ballot on Ballot Builder. It walks you through every race and measure on your actual ballot. Try it: ballotbuilder.app';
+  'I just finished my sample ballot on Ballot Builder. It walks you through every race and measure on your actual ballot. Try it: ballotbuilder.org';
 
-const SHARE_URL = 'https://ballotbuilder.app';
+const SHARE_URL = 'https://ballotbuilder.org';
 
 export default function ShareSection() {
   const [copied, setCopied] = useState(false);

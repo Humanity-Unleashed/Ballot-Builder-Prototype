@@ -12,7 +12,7 @@ const slides = [
     icon: MessageSquarePlus,
     title: null,
     description:
-      'Ballot Builder fills out your ballot, analyzing how candidates and measures align with your demographics and political preferences, regardless of party affiliation.\n\nPlease consider leaving feedback so we can make Ballot Builder unbiased, accurate, and useful.',
+      'Ballot Builder helps you fill out your ballot by showing how candidates and measures align with your values and priorities, regardless of party affiliation.\n\nPlease consider leaving feedback so we can make Ballot Builder unbiased, accurate, and useful.',
   },
   {
     icon: ClipboardCheck,

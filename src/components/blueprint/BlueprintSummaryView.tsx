@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useMemo } from 'react';
-import { getNextElectionDay, daysUntil } from '@/lib/electionDate';
+import React, { useMemo, useState, useEffect } from 'react';
+import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
+import { ballotApi, type BallotLookupResponse } from '@/services/api';
 import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
 import { RefreshCw, ChevronRight } from 'lucide-react';
@@ -78,12 +79,28 @@ export default function BlueprintSummaryView({
   // ── Election date ──
   const { electionLabel, daysRemaining } = useMemo(() => {
     const electionDay = getNextElectionDay();
-    const year = electionDay.getFullYear();
     return {
-      electionLabel: `${year} General Election`,
+      electionLabel: `Election Day — ${formatElectionDate(electionDay)}`,
       daysRemaining: daysUntil(electionDay),
     };
   }, []);
+
+  // ── Voter info (fetched via zipcode for real URLs + deadlines) ──
+  const zipCode = demographicProfile.zipCode;
+  const [voterInfo, setVoterInfo] = useState<BallotLookupResponse['voterInfo'] | null>(null);
+  const [location, setLocation] = useState<BallotLookupResponse['location'] | null>(null);
+
+  useEffect(() => {
+    if (!zipCode || zipCode.length !== 5) return;
+    let cancelled = false;
+    ballotApi.getByZipcode(zipCode).then((result) => {
+      if (!cancelled) {
+        setVoterInfo(result.voterInfo ?? null);
+        setLocation(result.location ?? null);
+      }
+    }).catch(() => { /* voter info is optional */ });
+    return () => { cancelled = true; };
+  }, [zipCode]);
 
   // ── Derived data ──
   const valueSummary = useMemo(() => {
@@ -137,7 +154,7 @@ export default function BlueprintSummaryView({
         </p>
 
         {/* ── Election banner ── */}
-        <ElectionBanner daysUntilElection={daysRemaining} electionLabel={electionLabel} />
+        <ElectionBanner daysUntilElection={daysRemaining} electionLabel={electionLabel} voterInfo={voterInfo} location={location} />
 
         {/* ── Values context card ── */}
         {metaDimensions && valueSummary && (
@@ -265,12 +282,14 @@ export default function BlueprintSummaryView({
       </div>
 
       {/* ── Floating CTA button ── */}
-      <button
-        onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
-        className="fixed bottom-6 left-4 right-4 z-40 rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white shadow-lg transition-opacity hover:opacity-90"
-      >
-        Build my ballot &rarr;
-      </button>
+      <div className="fixed bottom-6 left-0 right-0 z-40 mx-auto max-w-lg px-4">
+        <button
+          onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
+          className="w-full rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+        >
+          Build my ballot &rarr;
+        </button>
+      </div>
     </div>
   );
 }

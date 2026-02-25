@@ -181,7 +181,7 @@ export interface ApiError extends Error {
 // Ballot & Election Types
 // ============================================
 
-export type County = 'Fulton' | 'Dekalb' | 'Cobb' | 'Gwinnett' | 'Clayton';
+export type County = string;
 
 export type Jurisdiction = 'federal' | 'state' | 'county' | 'city' | 'special_district';
 
