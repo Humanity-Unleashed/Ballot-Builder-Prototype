@@ -92,3 +92,5 @@ temp/
 *.tmp
 *.bak
 .env*.local
+
+.claude/settings.local.json
