@@ -222,6 +222,61 @@ export const allFineTuningConfigs: Record<string, AxisFineTuning> = {
     ],
   },
 
+  econ_tax_structure: {
+    axisId: 'econ_tax_structure',
+    axisName: 'Tax Structure',
+    subDimensions: [
+      {
+        id: 'econ_tax_structure_rates',
+        parentAxisId: 'econ_tax_structure',
+        name: 'Top Tax Rates',
+        question: 'What should the top income tax rate be?',
+        poleALabel: 'Higher Top\nRates',
+        poleBLabel: 'Lower Top\nRates',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'Above 50% on highest incomes', description: 'Similar to 1950s-1970s era rates' },
+          { title: '40-50% on highest incomes', description: 'Modestly higher than current top rate' },
+          { title: 'Current rates (~37% top bracket)', description: 'Maintain existing bracket structure', isCurrentPolicy: true },
+          { title: '20-25% flat rate', description: 'Single low rate for all income levels' },
+          { title: 'Eliminate income tax', description: 'No federal or state income tax' },
+        ],
+      },
+      {
+        id: 'econ_tax_structure_corporate',
+        parentAxisId: 'econ_tax_structure',
+        name: 'Corporate Tax',
+        question: 'How should corporations be taxed?',
+        poleALabel: 'Higher Corporate\nTax',
+        poleBLabel: 'Lower Corporate\nTax',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'Significantly raise corporate tax', description: 'Return to pre-2017 rates (35%) or higher' },
+          { title: 'Modestly increase corporate tax', description: 'Raise to 25-28% with closed loopholes' },
+          { title: 'Current corporate tax rate', description: '21% with existing deductions', isCurrentPolicy: true },
+          { title: 'Lower corporate tax rate', description: 'Reduce to 15% to attract investment' },
+          { title: 'Minimal or no corporate tax', description: 'Tax only at individual level when profits distributed' },
+        ],
+      },
+      {
+        id: 'econ_tax_structure_consumption',
+        parentAxisId: 'econ_tax_structure',
+        name: 'Sales & Consumption Tax',
+        question: 'Should sales or consumption taxes play a larger role?',
+        poleALabel: 'Limit\nSales Tax',
+        poleBLabel: 'Expand\nSales Tax',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'Reduce sales taxes', description: 'Exempt essentials, lower rates on remaining goods' },
+          { title: 'Exempt food and necessities', description: 'Keep sales tax but protect basic spending' },
+          { title: 'Current mixed system', description: 'States set their own sales tax rates', isCurrentPolicy: true },
+          { title: 'National sales tax supplement', description: 'Add federal consumption tax alongside income tax' },
+          { title: 'Replace income tax with consumption tax', description: 'FairTax-style shift to sales-based revenue' },
+        ],
+      },
+    ],
+  },
+
   // ============================================
   // HEALTH DOMAIN
   // ============================================
@@ -928,7 +983,7 @@ export function getFineTuningConfig(axisId: string): AxisFineTuning | undefined 
 export function getFineTuningForDomain(domainId: string): AxisFineTuning[] {
   // Legacy axis IDs matching backend spec
   const domainAxes: Record<string, string[]> = {
-    econ: ['econ_safetynet', 'econ_investment', 'econ_school_choice'],
+    econ: ['econ_safetynet', 'econ_investment', 'econ_school_choice', 'econ_tax_structure'],
     health: ['health_coverage_model', 'health_cost_control', 'health_public_health'],
     housing: ['housing_supply_zoning', 'housing_affordability_tools', 'housing_transport_priority'],
     justice: ['justice_policing_accountability', 'justice_sentencing_goals', 'justice_firearms'],

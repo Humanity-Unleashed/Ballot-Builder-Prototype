@@ -41,7 +41,7 @@ export const civicAxesSpec: CivicAxesSpec = {
       id: 'econ',
       name: 'Economic Opportunity & Taxes',
       why: 'Predicts voting on budgets, taxes, school funding, and the size/conditions of economic support programs across local, state, and national ballots.',
-      axes: ['econ_safetynet', 'econ_investment', 'econ_school_choice'],
+      axes: ['econ_safetynet', 'econ_investment', 'econ_school_choice', 'econ_tax_structure'],
       ballot_mapping_examples: {
         local: ['school levies/bonds', 'city budget increases or cuts', 'property tax cap measures'],
         state: ['EITC/child tax credits', 'minimum wage rules', 'charter/voucher expansion', 'unemployment eligibility'],
@@ -136,6 +136,21 @@ export const civicAxesSpec: CivicAxesSpec = {
       poleB: {
         label: 'Expand school choice',
         interpretation: 'Prioritizes family choice and competitive pressure across school options.',
+      },
+      recommended_cards_per_session: 6,
+    },
+    {
+      id: 'econ_tax_structure',
+      domain_id: 'econ',
+      name: 'Tax Structure',
+      description: 'Should taxes fall more heavily on higher earners through progressive rates, or should everyone pay the same rate through flat or consumption-based taxes?',
+      poleA: {
+        label: 'Progressive taxation',
+        interpretation: 'Supports graduated income taxes where higher earners pay higher rates to fund public services.',
+      },
+      poleB: {
+        label: 'Flat or consumption-based taxes',
+        interpretation: 'Prefers flat tax rates or shifting to sales/consumption taxes; may support reducing or eliminating income tax.',
       },
       recommended_cards_per_session: 6,
     },
@@ -339,6 +354,12 @@ export const civicAxesSpec: CivicAxesSpec = {
     { id: 'econ_school_choice_04', text: 'Public dollars should stay in public schools, not pay for private tuition.', axis_keys: { econ_school_choice: 1 }, level: 'state', tags: ['education', 'public_system'], tradeoff: null },
     { id: 'econ_school_choice_05', text: 'School performance data should be easy for parents to compare across schools.', axis_keys: { econ_school_choice: -1 }, level: 'state', tags: ['education', 'accountability'], tradeoff: null },
     { id: 'econ_school_choice_06', text: 'Neighborhood public schools should be protected from closures.', axis_keys: { econ_school_choice: 1 }, level: 'local', tags: ['education', 'stability'], tradeoff: null },
+    { id: 'econ_tax_structure_01', text: 'High-income earners should pay a significantly higher tax rate than middle-income earners.', axis_keys: { econ_tax_structure: 1 }, level: 'national', tags: ['tax', 'progressive'], tradeoff: 'May reduce investment incentives' },
+    { id: 'econ_tax_structure_02', text: 'A flat tax where everyone pays the same rate would be fairer than our current system.', axis_keys: { econ_tax_structure: -1 }, level: 'national', tags: ['tax', 'flat'], tradeoff: 'Shifts burden toward lower earners' },
+    { id: 'econ_tax_structure_03', text: 'States should fund government through sales taxes rather than income taxes.', axis_keys: { econ_tax_structure: -1 }, level: 'state', tags: ['tax', 'consumption'], tradeoff: 'Sales taxes are regressive' },
+    { id: 'econ_tax_structure_04', text: 'Wealthy individuals should pay taxes on investment gains at the same rate as wages.', axis_keys: { econ_tax_structure: 1 }, level: 'national', tags: ['tax', 'capital_gains'], tradeoff: 'May reduce investment activity' },
+    { id: 'econ_tax_structure_05', text: 'Eliminating the state income tax would help attract businesses and residents.', axis_keys: { econ_tax_structure: -1 }, level: 'state', tags: ['tax', 'elimination'], tradeoff: 'Requires replacement revenue or service cuts' },
+    { id: 'econ_tax_structure_06', text: 'A wealth tax on extremely large fortunes is a good idea.', axis_keys: { econ_tax_structure: 1 }, level: 'national', tags: ['tax', 'wealth'], tradeoff: 'Enforcement challenges; capital flight risk' },
     { id: 'health_coverage_model_01', text: 'Everyone should have access to a public health insurance option.', axis_keys: { health_coverage_model: 1 }, level: 'national', tags: ['coverage'], tradeoff: null },
     { id: 'health_coverage_model_02', text: 'Insurance should mainly come from private plans; government should help only those in need.', axis_keys: { health_coverage_model: -1 }, level: 'general', tags: ['coverage'], tradeoff: null },
     { id: 'health_coverage_model_03', text: 'States should expand Medicaid if it increases coverage.', axis_keys: { health_coverage_model: 1 }, level: 'state', tags: ['medicaid'], tradeoff: 'Higher state spending' },
