@@ -19,6 +19,7 @@ export const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
   responsibility_orientation: [
     'econ_safetynet',            // broader safety net ↔ conditional/limited
     'econ_investment',           // public investment ↔ lower taxes
+    'econ_tax_structure',        // progressive tax = community, flat/consumption = individual
     'health_coverage_model',     // government insurance ↔ private insurance
     'health_public_health',      // prevention & treatment ↔ personal choice
     'housing_affordability_tools' // rent limits & public housing ↔ fewer rules
