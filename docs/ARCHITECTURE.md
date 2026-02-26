@@ -74,29 +74,45 @@ Client-side state management with localStorage persistence:
 - User responses to value items
 - Ipsatized scores and dimension scores
 
-Both stores implement hydration handling to prevent flash of default content.
+**ballotStore.ts**
+- User's vote selections per ballot item
+- Persistent across sessions
+
+**demographicStore.ts**
+- User demographic information
+
+**feedbackStore.ts**
+- Feedback draft state
+
+All stores implement hydration handling to prevent flash of default content.
 
 #### Context Providers (`src/context/`)
 
-**AuthContext** - Authentication state (prototype mode returns mock user)
+**AuthContext** - Re-exports `useAuth()` from `src/lib/auth-client.ts` (better-auth with Google OAuth + anonymous sessions)
 **BlueprintContext** - Blueprint assessment workflow coordination
+**FeedbackScreenContext** - Tracks which screen the user is on for contextual feedback collection
 
 ### API Layer (`src/app/api/`)
 
 Next.js API routes organized by domain:
 
-| Route Group | Purpose |
-|-------------|---------|
-| `/api/assessment/*` | Assessment session management |
-| `/api/ballot/*` | Ballot data (ballots, contests, measures) |
-| `/api/blueprint/*` | Blueprint statements and areas |
-| `/api/candidates/*` | Candidate information and context |
-| `/api/civic-axes/*` | Civic axes spec, items, scoring |
-| `/api/contests/*` | Contest details |
-| `/api/fine-tuning/*` | Fine-tuning session management |
-| `/api/measures/*` | Ballot measure details |
-| `/api/personas/*` | Test personas (dev tool) |
-| `/api/schwartz-values/*` | Schwartz values spec and scoring |
+| Route Group | Endpoints | Purpose |
+|-------------|-----------|---------|
+| `/api/analytics/*` | 1 | Event tracking and logging |
+| `/api/assessment/*` | 5 | Assessment session management |
+| `/api/auth/*` | 1 | better-auth catch-all handler (Google OAuth, anonymous) |
+| `/api/ballot/*` | 7 | Ballot data (ballots, contests, measures, zipcode lookup) |
+| `/api/blueprint/*` | 5 | Blueprint statements and areas |
+| `/api/candidates/*` | 4 | Candidate information and context |
+| `/api/civic-axes/*` | 11 | Civic axes spec, items, scoring |
+| `/api/contests/*` | 3 | Contest details |
+| `/api/feedback/*` | 1 | User feedback collection (mirrored to Google Sheets) |
+| `/api/fine-tuning/*` | 4 | Fine-tuning session management |
+| `/api/measures/*` | 2 | Ballot measure details |
+| `/api/personas/*` | 3 | Test personas (dev tool) |
+| `/api/schwartz-values/*` | 4 | Schwartz values spec, scoring, and boosters |
+
+**Total: 53 API route handlers across 13 domains.**
 
 ### Services Layer (`src/server/services/`)
 
@@ -104,12 +120,18 @@ Business logic separated from route handlers:
 
 | Service | Responsibility |
 |---------|----------------|
+| `analyticsService` | Analytics event logging to Postgres |
 | `assessmentService` | Session management, progress tracking |
 | `ballotService` | Ballot data retrieval, filtering |
+| `ballotTransformer` | Ballot data transformation between formats |
 | `blueprintService` | Statement generation, area management |
-| `civicAxesService` | Axis scoring algorithm, item selection |
+| `civicAxesService` | Axis scoring algorithm (shrinkage estimation) |
+| `externalApis` | External API clients (Google Civic, Ballotpedia, VoteAmerica) |
+| `feedbackService` | User feedback handling + Google Sheets sync |
 | `fineTuningService` | Fine-tuning session state |
-| `schwartzService` | Schwartz values scoring |
+| `fvapClient` | Federal Voting Assistance Program client |
+| `liveBallotService` | Live ballot retrieval via external APIs |
+| `schwartzService` | Schwartz values scoring (ipsatization) |
 
 ### Data Layer (`src/server/data/`)
 
@@ -136,6 +158,40 @@ data/
 ├── statements.ts         # Policy statements
 └── policyTopics.ts       # Policy topic definitions
 ```
+
+## Authentication
+
+Authentication is handled by [better-auth](https://www.better-auth.com/) with the following configuration:
+
+- **Server config**: `src/lib/auth.ts` — Prisma adapter, Google OAuth provider, anonymous plugin
+- **Client hook**: `src/lib/auth-client.ts` — exports `useAuth()` with `signInWithGoogle()`, `signInAnonymously()`, `logout()`
+- **API route**: `src/app/api/auth/[...all]/route.ts` — catch-all handler for better-auth
+- **Database models**: `User`, `Account`, `Session`, `Verification` (managed by better-auth)
+
+Users can take the assessment without signing up (anonymous mode). Auth is required for persisting profiles to the database.
+
+## Database Schema (Prisma)
+
+The project uses [Neon Postgres](https://neon.tech) via Prisma ORM. Connection uses PgBouncer for pooling.
+
+### Application Models
+
+| Model | Purpose |
+|-------|---------|
+| `AnalyticsEvent` | Custom event tracking (sessionId, eventType, screen, properties JSON) |
+| `FeedbackEntry` | User feedback submissions (screen, message, optional email) |
+| `BallotCache` | Cached ballot data from external APIs (districtHash + electionDate) |
+| `VoterInfoCache` | Cached voter registration/deadline info by state |
+| `ZipcodeLookup` | Cached zipcode-to-district mappings with lat/lng |
+
+### Auth Models (managed by better-auth)
+
+| Model | Purpose |
+|-------|---------|
+| `User` | User identity (email, image, isAnonymous) |
+| `Account` | OAuth provider details |
+| `Session` | Active sessions with tokens |
+| `Verification` | Email verification records |
 
 ## Data Models
 
@@ -218,3 +274,11 @@ Static data stored as TypeScript for type safety and IDE support. Can be migrate
 
 ### Hydration Handling
 Stores track `_hasHydrated` flag to prevent flash of default content before localStorage loads.
+
+### Analytics
+
+Event tracking uses a dual approach:
+- **Vercel Web Analytics** (`@vercel/analytics`) — automatic page view and visitor tracking
+- **Custom analytics** — `AnalyticsEvent` records in Postgres for detailed behavioral tracking (screen views, assessment progress, feature usage)
+
+The analytics provider is mounted in the root layout (`src/app/layout.tsx`), and the custom hook (`src/hooks/useAnalytics.ts`) provides `trackEvent()` for components.

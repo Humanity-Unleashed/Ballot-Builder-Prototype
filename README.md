@@ -4,6 +4,7 @@ A Next.js application that helps users make informed voting decisions through pe
 
 ## Features
 
+- **Authentication**: Google OAuth and anonymous guest mode via better-auth
 - **Civic Blueprint Assessment**: Slider-based questionnaire across 15 policy axes grouped into 5 domains (Economic, Healthcare, Housing, Justice, Climate)
 - **Schwartz Values Assessment**: Personal values assessment based on the Schwartz theory of basic human values, with booster vignettes for deeper profiling
 - **Ballot Explorer**: Browse ballot items with personalized recommendations based on your civic profile
@@ -11,16 +12,20 @@ A Next.js application that helps users make informed voting decisions through pe
 - **Demographic Impact**: See how ballot measures affect different demographic groups
 - **Fine-Tuning**: Adjust your blueprint axes after completing the assessment
 - **Archetype Classification**: Get classified into one of 8 civic archetypes based on your profile
-- **Analytics & Feedback**: Built-in event tracking and user feedback collection backed by a Neon Postgres database
+- **Blueprint Insights**: Personalized insights generated from your civic profile
+- **Analytics & Feedback**: Vercel Web Analytics + custom event tracking and user feedback collection backed by a Neon Postgres database, with feedback mirrored to Google Sheets
 
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript 5
+- **Language**: TypeScript 5.9
 - **UI**: React 19, Tailwind CSS v4, Framer Motion
+- **Auth**: better-auth (Google OAuth + anonymous sessions)
 - **State Management**: Zustand with localStorage persistence
-- **Database**: Neon Postgres (via Prisma ORM)
+- **Database**: Neon Postgres (via Prisma 7 ORM)
+- **Analytics**: Vercel Web Analytics
 - **Testing**: Vitest (unit/integration) + Playwright (E2E)
+- **CI/CD**: GitHub Actions (build, lint, security audit)
 - **Icons**: Lucide React
 - **Deployment**: Vercel
 
@@ -132,9 +137,10 @@ src/
 │   ├── (auth)/                 # Authentication routes
 │   │   ├── login/
 │   │   └── register/
-│   ├── api/                    # API routes (48+ endpoints)
+│   ├── api/                    # API routes (53 endpoints)
 │   │   ├── analytics/          # Analytics event tracking
 │   │   ├── assessment/         # Assessment session management
+│   │   ├── auth/               # better-auth catch-all handler
 │   │   ├── ballot/             # Ballot data endpoints
 │   │   ├── blueprint/          # Blueprint endpoints
 │   │   ├── candidates/         # Candidate information
@@ -160,16 +166,20 @@ src/
 ├── context/                    # React Context providers
 ├── data/                       # Static data files
 ├── hooks/                      # Custom hooks (analytics, etc.)
-├── lib/                        # Client-side utilities
+├── lib/                        # Client-side utilities & auth config
 ├── server/                     # Server-side code
 │   ├── data/                   # Data sources (ballot, civic axes, etc.)
-│   └── services/               # Business logic & DB services
+│   ├── services/               # Business logic & DB services
+│   ├── types/                  # Server-side type definitions
+│   └── utils/                  # Server utilities
 ├── services/                   # API client (Axios)
 ├── stores/                     # Zustand stores (user, schwartz, ballot, etc.)
 └── types/                      # TypeScript type definitions
 prisma/
-└── schema.prisma               # Database schema (AnalyticsEvent, FeedbackEntry)
+├── schema.prisma               # Database schema
+└── migrations/                 # Database migrations
 e2e/                            # Playwright E2E tests
+docs/                           # Project documentation
 ```
 
 ## Key Concepts
@@ -201,10 +211,12 @@ Users are classified into one of 8 archetypes based on three meta-dimensions der
 
 See the [docs](./docs) folder for detailed documentation:
 
-- [Architecture Overview](./docs/ARCHITECTURE.md)
-- [Assessment Pipeline](./docs/ASSESSMENT_PIPELINE.md)
-- [API Routes Reference](./docs/API_ROUTES.md)
-- [Getting Started Guide](./docs/GETTING_STARTED.md)
+- [Architecture Overview](./docs/ARCHITECTURE.md) - System design and layer descriptions
+- [Assessment Pipeline](./docs/ASSESSMENT_PIPELINE.md) - Scoring algorithms and archetype classification
+- [API Routes Reference](./docs/API_ROUTES.md) - All 53 API endpoints
+- [Getting Started Guide](./docs/GETTING_STARTED.md) - Setup and development workflow
+- [Production Roadmap](./docs/CLAUDE.md) - Implementation brief for production features
+- [Team Access & Credentials](./docs/TEAM_ACCESS.md) - External services, consoles, and onboarding
 
 ## License
 

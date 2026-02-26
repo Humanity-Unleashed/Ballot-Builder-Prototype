@@ -12,7 +12,7 @@
 
 Before doing anything, familiarize yourself with the project structure:
 
-1. Read `PROJECT_CONTEXT.md` in the repo root (or `docs/`) for the full system overview.
+1. Read the docs in `docs/` — especially `ARCHITECTURE.md` for the full system overview.
 2. Scan the key directories:
    - `src/server/data/` — Static TypeScript data that will eventually be replaced by live API calls
    - `src/server/services/` — Business logic (scoring, ballot retrieval)
@@ -22,8 +22,8 @@ Before doing anything, familiarize yourself with the project structure:
    - `src/lib/archetypes.ts` — Archetype classification
    - `src/components/blueprint/ElectionBanner.tsx` — Currently shows "Coming Soon" modals
    - `src/components/ui/PrototypeModal.tsx` — The placeholder modal to eventually remove
-   - `src/app/api/` — ~50 API route handlers
-   - `prisma/` — Current schema (FeedbackEntry, AnalyticsEvent only)
+   - `src/app/api/` — 53 API route handlers across 13 domains
+   - `prisma/` — Current schema (AnalyticsEvent, FeedbackEntry, BallotCache, VoterInfoCache, ZipcodeLookup + better-auth models)
 3. Run `npx tsc --noEmit` to confirm the project type-checks cleanly before making changes.
 4. Run `npm test` to see current test coverage.
 
@@ -32,27 +32,13 @@ Before doing anything, familiarize yourself with the project structure:
 ## Phase 1: Database Schema Expansion
 
 ### Context
-The app currently uses Neon PostgreSQL via Prisma, but only for analytics and feedback. All user data lives in localStorage via Zustand stores (`userStore.ts`, `schwartzStore.ts`, `ballotStore.ts`, `demographicStore.ts`). We need to expand the DB to be the system of record while keeping localStorage as a fast local cache.
+The app uses Neon PostgreSQL via Prisma for analytics, feedback, ballot caching, voter info caching, and zipcode lookups. Auth models (User, Account, Session, Verification) are managed by better-auth. All user *profile* data still lives in localStorage via Zustand stores (`userStore.ts`, `schwartzStore.ts`, `ballotStore.ts`, `demographicStore.ts`). We need to expand the DB to be the system of record for user profiles while keeping localStorage as a fast local cache.
 
 ### Task 1.1: Expand Prisma Schema
 
-Add these models to `prisma/schema.prisma`:
+Add these new models to `prisma/schema.prisma` (the existing models — `AnalyticsEvent`, `FeedbackEntry`, `BallotCache`, `VoterInfoCache`, `ZipcodeLookup`, and better-auth models — should remain untouched):
 
 ```prisma
-model User {
-  id              String          @id @default(cuid())
-  email           String          @unique
-  authProviderId  String          @unique @map("auth_provider_id")
-  createdAt       DateTime        @default(now()) @map("created_at")
-  updatedAt       DateTime        @updatedAt @map("updated_at")
-
-  profile         UserProfile?
-  savedBallots    SavedBallot[]
-  feedback        FeedbackEntry[]
-
-  @@map("users")
-}
-
 model UserProfile {
   id                String   @id @default(cuid())
   userId            String   @unique @map("user_id")
@@ -61,21 +47,9 @@ model UserProfile {
   demographics      Json?    @map("demographics")          // Age, location, etc.
   updatedAt         DateTime @updatedAt @map("updated_at")
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("user_profiles")
-}
-
-model BallotCache {
-  id            String   @id @default(cuid())
-  districtHash  String   @map("district_hash")   // Hash of address/district combo
-  electionDate  String   @map("election_date")   // YYYY-MM-DD
-  rawBallot     Json     @map("raw_ballot")       // Full API response
-  fetchedAt     DateTime @default(now()) @map("fetched_at")
-
-  @@unique([districtHash, electionDate])
-  @@index([districtHash])
-  @@map("ballot_cache")
 }
 
 model CandidateScore {
@@ -103,14 +77,14 @@ model SavedBallot {
   savedAt     DateTime @default(now()) @map("saved_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, electionId])
   @@map("saved_ballots")
 }
 ```
 
-**Important:** Do NOT remove the existing `FeedbackEntry` and `AnalyticsEvent` models. Add to them.
+**Note:** The `user` model is managed by better-auth. Add the `UserProfile` and `SavedBallot` relations to it.
 
 After updating the schema, run:
 ```bash
@@ -134,36 +108,23 @@ Look at how the existing stores in `src/stores/` handle the `_hasHydrated` patte
 
 ---
 
-## Phase 2: Authentication
+## Phase 2: Authentication — DONE
 
-### Context
-Auth is currently mocked in `src/app/(auth)/` and `src/context/`. We're using Clerk for the MVP.
+### Current State (Completed)
 
-### Task 2.1: Install and Configure Clerk
+Authentication is implemented using **better-auth** (not Clerk as originally planned):
 
-```bash
-npm install @clerk/nextjs
-```
+- **Server config**: `src/lib/auth.ts` — Prisma adapter, Google OAuth, anonymous plugin
+- **Client hook**: `src/lib/auth-client.ts` — `useAuth()` with `signInWithGoogle()`, `signInAnonymously()`, `logout()`
+- **API route**: `src/app/api/auth/[...all]/route.ts` — catch-all handler
+- **Auth pages**: `src/app/(auth)/login/` and `register/` redirect to root (auth handled via better-auth flows)
+- **Context**: `src/context/AuthContext.tsx` re-exports `useAuth()` from auth-client
 
-Clerk requires these environment variables in `.env.local`:
-```
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
-CLERK_SECRET_KEY=sk_test_...
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/blueprint
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/blueprint
-```
+Users can take the assessment without signing up (anonymous mode). The `user` model is managed by better-auth with `User`, `Account`, `Session`, and `Verification` tables.
 
-### Task 2.2: Replace Mocked Auth
+### Remaining Task 2.1: Profile Persistence on Auth
 
-1. Wrap the root layout (`src/app/layout.tsx`) with `<ClerkProvider>`.
-2. Replace the mocked `(auth)` route group with Clerk's `<SignIn />` and `<SignUp />` components.
-3. Protect the `(app)` route group using Clerk's `middleware.ts` — see Clerk's Next.js App Router docs.
-4. Replace the mocked `AuthContext` in `src/context/` with Clerk's `useUser()` and `useAuth()` hooks.
-5. On first sign-in, create a `User` record in the DB (use Clerk webhooks or a post-auth check).
-
-**Do NOT break the unauthenticated flow.** Users should still be able to take the Blueprint Assessment without signing up. Auth should only be required to *save* results and access the Ballot Explorer.
+When a user signs in (from anonymous or OAuth), their localStorage profile should sync to the database. This ties into Phase 1's sync layer (Task 1.2).
 
 ---
 
@@ -180,9 +141,9 @@ The app currently loads ballot data from static TS files in `src/server/data/bal
 | **Ballotpedia API** | Full ballot: candidates, measures, elections by geography | API key (paid, single-state MI) | `https://api4.ballotpedia.org/` |
 | **VoteAmerica Civic Data API** | Voter registration rules, deadlines, ID requirements by state | None (free, nonprofit) | `https://api.voteamerica.org/` |
 
-### Task 3.1: Create API Client Module
+### Task 3.1: Expand API Client Module
 
-Create **`src/server/services/externalApis.ts`** with typed client functions:
+The file **`src/server/services/externalApis.ts`** already exists with initial client functions. Expand it with:
 
 ```typescript
 // Google Civic: address → voter info
@@ -204,9 +165,9 @@ GOOGLE_CIVIC_API_KEY=...
 BALLOTPEDIA_API_KEY=...
 ```
 
-### Task 3.2: Create Ballot Retrieval Service
+### Task 3.2: Expand Ballot Retrieval Service
 
-Create **`src/server/services/liveBallotService.ts`** to replace the static `ballotService.ts`:
+The file **`src/server/services/liveBallotService.ts`** already exists with initial scaffolding. Expand it to fully replace the static `ballotService.ts`:
 
 1. Accept a user address string.
 2. Call Google Civic to resolve to lat/long and district IDs.
@@ -357,15 +318,26 @@ Before going live, verify:
 
 ## Environment Variables Needed
 
+See `.env.example` for the full list. Variables marked with (existing) are already configured in Vercel.
+
 ```env
 # Database (existing)
-DATABASE_URL=postgresql://...
+DATABASE_URL=postgresql://...?pgbouncer=true&sslmode=require
+DIRECT_URL=postgresql://...?sslmode=require
 
-# Auth (new)
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_...
-CLERK_SECRET_KEY=sk_...
+# Auth (existing — better-auth)
+BETTER_AUTH_SECRET=...
+BETTER_AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
 
-# External APIs (new)
+# Google Sheets — feedback mirroring (existing)
+GOOGLE_SHEETS_CLIENT_EMAIL=...
+GOOGLE_SHEETS_PRIVATE_KEY=...
+GOOGLE_SHEETS_SPREADSHEET_ID=...
+
+# External APIs (needed for Phase 3+)
 GOOGLE_CIVIC_API_KEY=...
 BALLOTPEDIA_API_KEY=...
 VOTE_SMART_API_KEY=...

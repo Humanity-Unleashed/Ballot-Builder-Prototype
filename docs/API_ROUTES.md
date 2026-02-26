@@ -1,10 +1,30 @@
 # API Routes Reference
 
-All API routes are implemented as Next.js App Router API routes in `src/app/api/`.
+All API routes are implemented as Next.js App Router API routes in `src/app/api/`. There are **53 route handlers** across 13 domains.
 
 ## Base URL
 
 Development: `http://localhost:3000/api`
+
+---
+
+## Auth
+
+Authentication endpoints handled by better-auth catch-all route.
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| ALL | `/auth/[...all]` | better-auth catch-all (Google OAuth, anonymous sessions, sign-out) |
+
+---
+
+## Analytics
+
+Custom event tracking endpoints.
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/analytics` | Log analytics event (sessionId, eventType, screen, properties) |
 
 ---
 
@@ -69,6 +89,7 @@ Ballot data retrieval.
 |--------|----------|-------------|
 | GET | `/ballot` | Get default ballot |
 | GET | `/ballot/all` | List all available ballots |
+| GET | `/ballot/by-zipcode` | Look up ballot by zipcode |
 | GET | `/ballot/summary` | Overall data summary |
 | GET | `/ballot/:ballotId` | Get specific ballot |
 | GET | `/ballot/:ballotId/summary` | Ballot summary stats |
@@ -162,6 +183,7 @@ Schwartz values assessment endpoints.
 |--------|----------|-------------|
 | GET | `/schwartz-values/spec` | Full specification |
 | GET | `/schwartz-values/items` | List all items |
+| GET | `/schwartz-values/boosters` | Get booster vignettes |
 | POST | `/schwartz-values/score` | Score responses |
 
 ### POST /schwartz-values/score
@@ -192,6 +214,16 @@ Schwartz values assessment endpoints.
   "individual_mean": 3.8
 }
 ```
+
+---
+
+## Feedback
+
+User feedback collection. Entries are stored in Postgres and mirrored to Google Sheets.
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/feedback` | Submit feedback (screen, message, optional email) |
 
 ---
 

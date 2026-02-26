@@ -7,14 +7,19 @@ A guide to understanding and working with the Ballot Builder codebase.
 - Node.js 20+
 - npm
 - Code editor (VS Code recommended)
+- Access to the Vercel project (for environment variables)
 
 ## Quick Start
 
 ```bash
 # Clone and install
-git clone <repo-url>
+git clone git@github.com:Humanity-Unleashed/Ballot-Builder-Prototype.git
 cd Ballot-Builder-Prototype
 npm install
+
+# Pull environment variables from Vercel
+vercel link          # Select Humanity-Unleashed team → ballot-builder-prototype
+vercel env pull .env.local
 
 # Start development server
 npm run dev
@@ -23,27 +28,38 @@ npm run dev
 open http://localhost:3000
 ```
 
+> **Note:** If you don't have the Vercel CLI, install it with `npm i -g vercel`. See the [README](../README.md#environment-variables) for full environment setup details.
+
 ## Project Overview
 
 Ballot Builder helps users make informed voting decisions through:
 
-1. **Civic Blueprint Assessment** - A questionnaire that maps user preferences across 15 policy axes
-2. **Schwartz Values Assessment** - Personal values assessment based on psychology research
-3. **Ballot Explorer** - Browse candidates and measures with personalized recommendations
+1. **Authentication** - Google OAuth and anonymous guest mode via better-auth
+2. **Civic Blueprint Assessment** - A questionnaire that maps user preferences across 15 policy axes
+3. **Schwartz Values Assessment** - Personal values assessment based on psychology research
+4. **Ballot Explorer** - Browse candidates and measures with personalized recommendations
+5. **Analytics & Feedback** - Vercel Web Analytics + custom event tracking, feedback collection
 
 ## Directory Structure
 
 ```
 src/
-├── app/           # Next.js pages and API routes
-├── components/    # React components
-├── context/       # React Context providers
-├── data/          # Static client-side data
-├── lib/           # Client utilities
-├── server/        # Server-side code (data, services)
-├── services/      # API client
-├── stores/        # Zustand state management
+├── app/           # Next.js pages and API routes (53 endpoints)
+├── components/    # React components (ballot, blueprint, schwartz, feedback, etc.)
+├── context/       # React Context providers (Auth, Blueprint, FeedbackScreen)
+├── data/          # Static client-side data (slider positions, civic axes, etc.)
+├── hooks/         # Custom hooks (analytics)
+├── lib/           # Client utilities & auth config
+├── server/        # Server-side code
+│   ├── data/      # Data sources (ballot, civic axes, personas, schwartz)
+│   ├── services/  # Business logic (12 services)
+│   ├── types/     # Server-side type definitions
+│   └── utils/     # Server utilities
+├── services/      # API client (Axios)
+├── stores/        # Zustand stores (user, schwartz, ballot, demographic, feedback)
 └── types/         # TypeScript definitions
+prisma/            # Database schema and migrations
+e2e/               # Playwright E2E tests
 ```
 
 ## Key Concepts
@@ -221,12 +237,41 @@ console.table(arrayOfObjects);
 ### Zustand DevTools
 Zustand state can be inspected via Redux DevTools extension.
 
+## Environment Variables
+
+The project uses Vercel-managed environment variables. See `.env.example` for a reference of all available variables.
+
+Key categories:
+- **Auth**: `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`
+- **Database**: `DATABASE_URL` (pooled via PgBouncer), `DIRECT_URL` (direct, for migrations)
+- **Google Sheets** (optional): `GOOGLE_SHEETS_CLIENT_EMAIL`, `GOOGLE_SHEETS_PRIVATE_KEY`, `GOOGLE_SHEETS_SPREADSHEET_ID`
+
+Pull them with `vercel env pull .env.local`. Never commit `.env.local` to git.
+
+## Database
+
+The project uses [Neon Postgres](https://neon.tech) via Prisma ORM.
+
+```bash
+npm run db:generate       # Regenerate Prisma client
+npm run db:push           # Push schema changes to DB
+npm run db:migrate:dev    # Create and apply a new migration
+npm run db:migrate:deploy # Apply pending migrations (production)
+npm run db:studio         # Open Prisma Studio (visual DB browser)
+npm run db:seed           # Run database seed script
+```
+
 ## Testing
 
 ```bash
-npm test              # Run tests
-npm test -- --watch   # Watch mode
+npm run test             # Run unit tests in watch mode
+npm run test:run         # Run unit tests once (CI mode)
+npm run test:coverage    # Run tests with coverage report
+npm run test:e2e         # Run Playwright E2E tests (starts dev server)
+npm run test:e2e:ui      # Run E2E tests with interactive UI
 ```
+
+Unit tests use Vitest with jsdom. E2E tests use Playwright (Chromium).
 
 ## Deployment
 
@@ -237,12 +282,21 @@ npm run build   # Verify build works
 # Push to GitHub, connect to Vercel
 ```
 
+## CI/CD
+
+GitHub Actions runs on every push/PR to `main` and `develop`:
+1. **Build & Lint** — `npm ci` → lint → `npm run build`
+2. **Security Scan** — `npm audit --audit-level=high` (non-blocking)
+
+Deployment is handled automatically by Vercel on merge to `main`.
+
 ## Getting Help
 
 1. Check existing code for patterns
 2. Read the [Architecture](./ARCHITECTURE.md) doc
 3. Check [API Routes](./API_ROUTES.md) for endpoint details
 4. Review [Assessment Pipeline](./ASSESSMENT_PIPELINE.md) for scoring logic
+5. See the [Production Roadmap](./CLAUDE.md) for planned features
 
 ## Common Gotchas
 
