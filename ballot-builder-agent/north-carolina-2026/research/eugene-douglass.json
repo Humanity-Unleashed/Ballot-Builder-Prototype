@@ -1,0 +1,293 @@
+{
+  "slug": "eugene-douglass",
+  "name": "Eugene F. Douglass",
+  "party": "Republican",
+  "office": "U.S. House, North Carolina 2nd Congressional District, 2026",
+  "contestId": "NC-02-US-HOUSE-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-01T00:00:00Z",
+
+  "biography": {
+    "currentRole": "Self-employed consultant (chemistry and science education); retired professor",
+    "priorRoles": [
+      "Chemistry professor, University of North Carolina at Pemberton (UNCP), 2005–c.2020 (30+ years total college teaching across multiple institutions)",
+      "Chemistry instructor, American University of Iraq – Sulaimani, 2016–2017",
+      "Science teacher, New Hampshire high school (pre-2003)",
+      "Republican Senate candidate, Hawaii, 1998 (11% of vote, 3rd of 9) and 2000 (13% of vote, 2nd of 4)",
+      "Republican House candidate, New Hampshire 2nd District, 2002 (lost primary to incumbent Rep. Charlie Bass)",
+      "Republican Senate candidate, Pennsylvania, 2003 (filed; unclear if he completed primary run)",
+      "Republican House candidate, NC-02, 2024 (22.5% of vote, 2nd of 3 in GOP primary; lost to Alan Swain)"
+    ],
+    "education": [
+      "B.A., Chemistry and Mathematics, The King's College (Briarcliff Manor, NY), 1979",
+      "M.S., Polymer Science / Organic Chemistry, University of Connecticut, 1982",
+      "M.Div., Bethel Theological Seminary (San Diego), date unknown",
+      "Ph.D., Fiber/Polymer Science Chemistry, NC State University (College of Textiles), 2010"
+    ],
+    "background": "Serial Republican candidate across multiple states since 1998. Long career as a college chemistry teacher. Evangelical Christian background; attended The King's College (conservative Christian institution). Grew up in Swarthmore, PA. Lives in Raleigh, NC since 2005. Self-describes as 'a Christian, happily retired college Chemistry teacher, father and grandfather.' No previous elected office. No major-party or interest-group endorsements identified. Operates primarily through Substack and LinkedIn; no dedicated campaign website. Has held consistent conservative positions across 25+ years of candidacies."
+  },
+
+  "campaignWebsite": {
+    "url": "https://efdouglass.substack.com/s/gene-douglass-for-congress-north",
+    "type": "Substack newsletter (no standalone campaign website found)",
+    "fetchedAt": "2026-03-01T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "school_choice / education federalism",
+        "quote": "Get the Federal Government out of Local Education, disband the Department of Education and all it's regulations, to return to state and local authorities.",
+        "sourceUrl": "https://ballotpedia.org/Eugene_Douglass",
+        "date": "2023",
+        "confidence": "high",
+        "notes": "Core campaign pillar repeated consistently across all candidate surveys since 2023. Explicit commitment to abolish Dept. of Education."
+      },
+      {
+        "topic": "public_investment / federal spending",
+        "quote": "Small Federal Government, less regulation and lower taxes. Bring responsibility back to the 50 states.",
+        "sourceUrl": "https://ballotpedia.org/Eugene_Douglass",
+        "date": "2023",
+        "confidence": "high",
+        "notes": "One of his three stated campaign pillars. Explicitly opposes 'funding a huge bureaucracy in Washington that's micromanaging funds spent at the state, city and local levels.'"
+      },
+      {
+        "topic": "public_health / reproductive rights",
+        "quote": "Protect Innocent Human Life, from Conception until Natural Death. End Abortion for birth control purposes, and regulate it to spare as many lives as possible, end the castration and mutilation of children to fit a depraved eugenics ideology.",
+        "sourceUrl": "https://ballotpedia.org/Eugene_Douglass",
+        "date": "2023",
+        "confidence": "high",
+        "notes": "Third stated campaign pillar. Explicitly opposes elective abortion and gender-affirming care for minors. Position held consistently since at least 2003."
+      },
+      {
+        "topic": "immigration",
+        "quote": "Any people here illegally should be forbidden to work here, forbidden to receive any public benefits and immediately deported, to get in line with those trying to immigrate here legally.",
+        "sourceUrl": "https://www.aol.com/candidate-us-house-district-2-010829234.html",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "From News & Observer questionnaire (Feb 2024). Detailed enforcement platform: physical/technology wall, Remain in Mexico, end sanctuary city funding, catch-and-deport, more CBP agents and immigration judges."
+      },
+      {
+        "topic": "econ_tax_structure / fiscal",
+        "quote": "Huge tax decreases to end overspending by the federal government. Balanced budget amendment.",
+        "sourceUrl": "https://www.opencampaign.com/politicians-in-united-states/192927/eugene-douglass",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Stated support for balanced budget amendment. Favors broad tax cuts, consistent with stated small-government philosophy. No specific tax mechanism (flat tax, fair tax) explicitly named in available sources."
+      },
+      {
+        "topic": "safety_net_breadth",
+        "quote": "Monies should remain with the taxpayers in the states to manage locally.",
+        "sourceUrl": "https://ballotpedia.org/Eugene_Douglass",
+        "date": "2023",
+        "confidence": "medium",
+        "notes": "Opposes federal bureaucratic management of social programs. Implies devolution to states rather than direct expansion or elimination, but no specific safety-net program (Medicare, Social Security, Medicaid) positions found in available sources."
+      },
+      {
+        "topic": "abortion / public_health mandate",
+        "quote": "No, because abortion is the murder of an unborn child. If someone insists on killing their child, they should bear full responsibility to pay for the procedure, and taxpayers who disagree with elective abortions should not be burdened with paying for procedures they believe are abhorrent.",
+        "sourceUrl": "https://efdouglass.substack.com/p/nc-second-congressional-district-be7",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "From his Substack post reproducing his News & Observer / Wake County Voter Education Coalition questionnaire responses. Direct answer to 'Do you support an individual's right to access abortion regardless of ability to pay?' Opposes public funding of abortion. Consistent with 'conception until natural death' framing."
+      },
+      {
+        "topic": "compromise / governing philosophy",
+        "quote": "Yes, to come to a consensus on legal issues, that follow our constitution, but no compromise on moral values, which use as a foundation the Judaeo-Christian ethic of our country as described in the Declaration of Independence and our US Constitution.",
+        "sourceUrl": "https://www.aol.com/candidate-us-house-district-2-010829234.html",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "From News & Observer questionnaire. Signals rigid moral conservatism on social issues; open to legal/constitutional compromise only."
+      },
+      {
+        "topic": "Republican platform alignment",
+        "quote": "I am in full support of the Republican platform of 2016, which has been reaffirmed each presidential election year.",
+        "sourceUrl": "https://www.aol.com/candidate-us-house-district-2-010829234.html",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Explicitly endorses full 2016 GOP platform (and subsequent reaffirmations). The 2016 GOP platform opposes ACA, supports Second Amendment, opposes same-sex marriage, supports school choice, and calls for border enforcement. This is a broad ideological signal covering many axes not directly addressed in his individual statements."
+      }
+    ]
+  },
+
+  "votingRecord": {
+    "available": false,
+    "sources": [],
+    "notes": "No legislative record. Douglass has never held elected office. Long-time candidate (since 1998) but has never won a race. No floor votes, committee work, or sponsored legislation to evaluate.",
+    "keyVotes": []
+  },
+
+  "scorecards": [
+    {
+      "organization": "Grass Roots North Carolina (GRNC-PVF)",
+      "score": "96%",
+      "grade": "Four stars (****) — highest recommendation level",
+      "url": "https://www.grnc.org/grnc-pvf/grnc-pvf-alertsupdates/1429-grnc-pvf-2022-general-election-candidate-recommendations",
+      "fetchedAt": "2026-03-01T00:00:00Z",
+      "cycle": "2024 Republican primary",
+      "notes": "GRNC-PVF recommended Eugene F. Douglass in the 2024 District 2 GOP primary. Only Republican in the district to return the GRNC survey. Score of 96% and four-star rating indicate strong alignment with pro-gun, anti-regulation firearms positions. GRNC is NC's primary gun-rights advocacy organization, affiliated with NRA philosophy."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found in available sources for this candidate. GRNC score of 96% serves as a strong proxy signal — GRNC is NRA-aligned and evaluates candidates on similar criteria (constitutional carry, oppose red flag laws, oppose background check expansions). High likelihood Douglass would receive A or A+ from NRA if evaluated."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score available. Douglass has never held office, so no voting record to score. No climate-specific positions found in any public statement. Small-government, anti-regulation ideology implies opposition to federal climate regulation."
+    },
+    {
+      "organization": "AFL-CIO / organized labor",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No labor endorsements found. Anti-regulation, small-government platform is inconsistent with AFL-CIO priorities."
+    },
+    {
+      "organization": "Planned Parenthood / NARAL",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement — Douglass's 'conception until natural death' position and explicit opposition to abortion funding places him at the far end of anti-choice advocacy."
+    }
+  ],
+
+  "endorsements": [],
+
+  "interviews": [
+    {
+      "outlet": "Raleigh News & Observer (via AOL / Yahoo News / Ground News)",
+      "date": "2024-02-13",
+      "url": "https://www.aol.com/candidate-us-house-district-2-010829234.html",
+      "keyExchanges": [
+        {
+          "topic": "Main issue / motivation",
+          "quote": "The current congresswoman does NOT fully represent this district. She only represents those who agree with her political positions.",
+          "notes": "Framed as representation failure and constitutional violations by incumbent Deborah Ross."
+        },
+        {
+          "topic": "Federal spending / education",
+          "quote": "Funding a huge bureaucracy in Washington that's micromanaging funds spent at the state, city and local levels.",
+          "notes": "Criticizes duplicate federal bureaucracy; wants education funds to remain with states."
+        },
+        {
+          "topic": "Party platform",
+          "quote": "I am in full support of the Republican platform of 2016, which has been reaffirmed each presidential election year.",
+          "notes": "Full endorsement of GOP platform across all issue areas."
+        },
+        {
+          "topic": "Compromise",
+          "quote": "Yes, to come to a consensus on legal issues, that follow our constitution, but no compromise on moral values, which use as a foundation the Judaeo-Christian ethic of our country as described in the Declaration of Independence and our US Constitution.",
+          "notes": "Signals inflexible social conservatism; limited bipartisan potential."
+        },
+        {
+          "topic": "Immigration",
+          "quote": "Any people here illegally should be forbidden to work here, forbidden to receive any public benefits and immediately deported, to get in line with those trying to immigrate here legally.",
+          "notes": "Strict enforcement position. Also calls for physical/technology wall, Remain in Mexico, end sanctuary cities, catch-and-deport, more CBP agents."
+        }
+      ]
+    },
+    {
+      "outlet": "Ballotpedia Candidate Connection Survey",
+      "date": "2023",
+      "url": "https://news.ballotpedia.org/2024/02/23/all-candidates-for-u-s-house-north-carolina-district-2-republican-primary-complete-ballotpedias-candidate-connection-survey/",
+      "keyExchanges": [
+        {
+          "topic": "Campaign platform (3 pillars)",
+          "quote": "Small Federal Government, less regulation and lower taxes. Bring responsibility back to the 50 states. Get the Federal Government out of Local Education, disband the Department of Education and all it's regulations, to return to state and local authorities. Protect Innocent Human Life, from Conception until Natural Death. End Abortion for birth control purposes, and regulate it to spare as many lives as possible, end the castration and mutilation of children to fit a depraved eugenics ideology.",
+          "notes": "Most comprehensive self-authored policy statement available."
+        }
+      ]
+    },
+    {
+      "outlet": "Substack — NC Second Congressional District Candidate Survey (News & Observer / Wake County Voter Education Coalition)",
+      "date": "2024",
+      "url": "https://efdouglass.substack.com/p/nc-second-congressional-district-be7",
+      "keyExchanges": [
+        {
+          "topic": "Abortion / public funding",
+          "quote": "No, because abortion is the murder of an unborn child. If someone insists on killing their child, they should bear full responsibility to pay for the procedure, and taxpayers who disagree with elective abortions should not be burdened with paying for procedures they believe are abhorrent.",
+          "notes": "Explicit answer to question on abortion access regardless of ability to pay. Opposes public funding."
+        },
+        {
+          "topic": "Partial-birth abortion",
+          "quote": "Partial birth abortion is a totally unnecessary gruesome medical procedure that needlessly ends the life of an almost-born baby boy or girl.",
+          "notes": "Strong moral opposition to late-term abortion."
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "OnTheIssues.org data",
+      "conflict": "OnTheIssues.org has a page for 'Eugene Douglass' (ontheissues.org/Senate/Eugene_Douglass.htm) with voting records from late 1990s–early 2000s. CONFIRMED: This is the same person. He ran for Senate in Hawaii (1998, 2000), House in New Hampshire (2002), and Senate in Pennsylvania (2003) before settling in NC. These reflect older positions but are consistent with his current ideology — he supported school prayer, education savings accounts, school vouchers, balanced budget, and tax cuts in that era. They should be used as background/corroboration only, not as primary evidence of 2026 positions.",
+      "sources": [
+        "https://www.ontheissues.org/Senate/Eugene_Douglass.htm",
+        "https://www.mcall.com/2003/07/01/newcomer-hopes-to-play-spoiler-in-toomey-bid-for-senate-eugene-f-douglass-plans-to-enter-the-primary-battle-but-wants-specter-to-win/"
+      ]
+    }
+  ],
+
+  "historicalRecordNotes": {
+    "consistency": "Positions are highly consistent across 25+ years of candidacies. Small government, anti-abortion, anti-regulation, Judeo-Christian values framing unchanged from 1998 Hawaii races through 2026 NC race.",
+    "onTheIssuesVotesFromPriorCandidacies": [
+      {
+        "topic": "education",
+        "note": "Voted YES on school prayer, education savings accounts, school vouchers (DC), more flexibility in federal school rules (1990s–2000s era survey — consistent with current Dept of Education abolition stance)"
+      },
+      {
+        "topic": "taxes",
+        "note": "Voted YES on FY99 GOP budget, balanced budget constitutional amendment, $792B tax cuts (1990s–2000s era — consistent with current low-tax platform)"
+      },
+      {
+        "topic": "firearms",
+        "note": "Voted YES on more penalties for gun and drug violations (1990s–2000s era — consistent with 'enforce existing laws' framing, though GRNC 96% score suggests pro-gun-rights position)"
+      },
+      {
+        "topic": "healthcare",
+        "note": "Voted YES on Medicare means-testing; NO on limiting self-employment health deduction (1990s–2000s era — suggests market-oriented healthcare approach)"
+      }
+    ]
+  },
+
+  "positionGaps": {
+    "topics_with_no_direct_evidence": [
+      "climate_ambition — No specific statement on climate change, carbon policy, or EPA regulations found. General anti-regulation stance implies opposition to federal climate mandates.",
+      "energy_portfolio — No specific statement on renewable energy, fossil fuels, or energy mix found.",
+      "permitting_speed — No statement found.",
+      "housing_zoning_supply — No statement found. Small-government philosophy implies preference for local/private control over federal housing mandates.",
+      "affordability_tools — No statement found. Anti-federal-spending stance suggests opposition to federal housing subsidies.",
+      "transit_priority — No statement found.",
+      "police_accountability — No statement found. Full GOP platform endorsement and Judeo-Christian law-and-order framing implies support for law enforcement.",
+      "sentencing_goals — No statement found.",
+      "coverage_model — No specific ACA/Medicaid/Medicare statement found. Full GOP platform endorsement (2016) implies ACA repeal position; historical Medicare means-testing vote suggests market-oriented approach.",
+      "cost_control — No specific healthcare cost statement found.",
+      "public_investment / safety_net — General anti-federal-spending stance identified; no specific Social Security, Medicaid, or safety net program positions articulated in 2024–2026 cycle."
+    ]
+  },
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "school_choice (explicit: abolish Dept. of Education, return to states — high confidence)",
+      "public_investment (explicit: small government, less spending, lower taxes — high confidence)",
+      "public_health / reproductive rights (explicit: conception-to-natural-death, no public abortion funding — high confidence)",
+      "firearms_policy (GRNC 96% score, four stars — high confidence for pro-gun-rights position)",
+      "immigration enforcement (explicit: immediate deportation, wall, end sanctuary cities — high confidence)"
+    ],
+    "weakestAxes": [
+      "climate_ambition (no direct statement — low confidence, inferred from anti-regulation ideology)",
+      "energy_portfolio (no direct statement — low confidence)",
+      "permitting_speed (no direct statement — low confidence)",
+      "housing (no direct statement — low confidence)",
+      "transit_priority (no direct statement — low confidence)",
+      "police_accountability (no direct statement — low confidence)",
+      "sentencing_goals (no direct statement — low confidence)",
+      "coverage_model (no direct ACA statement — medium-low confidence; 2016 GOP platform endorsement and historical Medicare means-testing vote as proxy)"
+    ],
+    "overallConfidence": "medium",
+    "notes": "Strong evidence base for his 3–4 flagship issues (education, abortion, small government, guns). He is a first-time-to-office candidate with no legislative voting record. His positions on climate, housing, healthcare specifics, and criminal justice are not directly documented — they must be inferred from ideological consistency with the 2016 GOP platform, his 'no compromise on moral values' governing philosophy, and his 25-year pattern of consistent conservatism. He is a heavy underdog in NC-02 (D+15 district; Deborah Ross held this seat comfortably in 2024) with no notable endorsements or fundraising. He has no campaign website, relying on Substack and LinkedIn."
+  }
+}

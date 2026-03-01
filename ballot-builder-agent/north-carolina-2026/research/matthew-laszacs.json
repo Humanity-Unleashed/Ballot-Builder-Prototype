@@ -1,0 +1,352 @@
+{
+  "slug": "matthew-laszacs",
+  "name": "Matthew F. Laszacs",
+  "party": "Libertarian",
+  "office": "U.S. House, North Carolina 2nd Congressional District (NC-02), 2026",
+  "contestId": "NC-02-US-HOUSE-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-01T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Director / Vice President of Federal Solutions, Conference Technologies (IT industry)",
+    "priorRoles": [
+      "Director of Technical Operations, Diversified",
+      "General Manager, Avidex",
+      "Director of Maintenance and Services, Unicom Global"
+    ],
+    "education": "B.S. Business Administration (cum laude), North Carolina Wesleyan College (2005-2009)",
+    "certifications": ["CTS (Certified Technology Specialist)", "ITIL"],
+    "background": "Born in Philadelphia, raised in Millington, Tennessee (son of military parents). Moved to North Carolina in 2001. 20+ years in audio-visual and IT professional services industry. Manages approximately a $70 million book of business. Father of two. Self-describes as a 'classical liberal' who became a Libertarian through lived experience as a young father on limited means. Cary, NC resident.",
+    "priorCandidacies": [
+      {
+        "year": 2022,
+        "office": "North Carolina State Senate, District 14",
+        "result": "Lost general election to incumbent Dan Blue Jr. (D); advanced unopposed from Libertarian primary",
+        "notes": "Minimal public record from this race"
+      },
+      {
+        "year": 2024,
+        "office": "North Carolina State House of Representatives, District 41",
+        "result": "Lost general election to incumbent Maria Cervania (D) 77%-23%",
+        "notes": "Most documented prior campaign; ran an active campaign website and completed multiple voter guides"
+      }
+    ]
+  },
+  "campaignWebsite": {
+    "url": null,
+    "notes": "No campaign website exists for the 2026 congressional race as of March 2026. The prior 2024 House District 41 campaign website (https://matt4nc.us) is still live and provides the most substantive record of his positions."
+  },
+  "priorCampaignWebsite": {
+    "url": "https://matt4nc.us",
+    "cycle": "2024 NC House District 41",
+    "statedPositions": [
+      {
+        "topic": "education / school_choice",
+        "quote": "Giving students, families and teachers greater choice is the best path to building successful lives, developing better learning environments, strengthening communities, and preparing North Carolina for the challenges of the 21st century.",
+        "detail": "Supports educational savings accounts (ESAs), vouchers, and scholarships for all NC families. Wants to 'completely empower parents to select the best educational options for their individual children, including covering ancillary educational items such as tutoring, study materials, field learning, counseling, or any mix of educational tools.' Calls for 'dismantling the outmoded, racist, and classist system of school assignment.'",
+        "sourceUrl": "https://matt4nc.us/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Explicit, detailed commitment. Most thoroughly documented position in his record."
+      },
+      {
+        "topic": "healthcare / cost_control",
+        "quote": "Dismantle the monopolistic Certificate of Need regime in Raleigh.",
+        "detail": "Advocates eliminating NC's Certificate of Need (CON) law, which restricts entry of new healthcare facilities. Supports granting nurse practitioners and pharmacists full practice authority. Frames as deregulation to increase supply and lower costs.",
+        "sourceUrl": "https://matt4nc.us/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Specific, named policy target (CON law). Consistent with Libertarian deregulation framework."
+      },
+      {
+        "topic": "healthcare / coverage_model",
+        "quote": "Transitioning the Medicaid direct payment model to a state-funded health savings account.",
+        "detail": "Wants to convert Medicaid from a direct payment/managed care model to individual health savings accounts (HSAs), preserving some state role but shifting control to individuals. Not full abolition of Medicaid, but structural market transformation.",
+        "sourceUrl": "https://matt4nc.us/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "State-level framing; the equivalent federal position would involve Medicare/Medicaid structural reform toward individual accounts rather than universal coverage."
+      },
+      {
+        "topic": "economic / public_investment",
+        "quote": "Keeping taxes low, deregulating health care at the local level, and lowering costs and regulations for new businesses.",
+        "detail": "Core economic message is tax reduction and deregulation. No stated support for increased public investment programs.",
+        "sourceUrl": "https://matt4nc.us/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Consistent across all sources."
+      },
+      {
+        "topic": "housing / zoning_supply",
+        "quote": "Reducing occupational licensing rules and zoning laws to create an economic environment enabling entrepreneurs and individual freedom.",
+        "detail": "Explicitly calls for reducing zoning laws. This is the clearest personal statement on housing — aligns with market-oriented supply-side liberalization (less restrictive zoning), not government subsidy.",
+        "sourceUrl": "https://matt4nc.us/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Notable — this is a specific personal policy commitment, not just party platform default."
+      },
+      {
+        "topic": "overall philosophy",
+        "quote": "Peace and prosperity occur only when individuals are free to make rational choices for themselves, their families, and their communities, unimpeded by excessive government regulation.",
+        "sourceUrl": "https://matt4nc.us/meet-matt-laszacs/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Core framing statement. Self-describes as a 'classical liberal' advancing Libertarian ideas 'iteratively as the public will accept them.'"
+      }
+    ]
+  },
+  "voterGuideResponses": [
+    {
+      "source": "NORML / MPP 2024 NC House Candidate Survey",
+      "grade": "A-",
+      "topic": "public_health / drug policy",
+      "response": "Supports full legalization of cannabis for use by any adult, without any limitations on quantity or restrictions on use. On the question of reducing possession penalties to a civil fine, he responded: 'There should be no penalties at all, criminal or civil.'",
+      "sourceUrl": "https://vote.norml.org/politicians/207126",
+      "date": "2024",
+      "confidence": "high",
+      "notes": "Direct survey response. Supports full adult-use legalization — more permissive than decriminalization."
+    },
+    {
+      "source": "NC Family Voter Guide 2024",
+      "topic": "multiple",
+      "notes": "Completed the NC Family Voter survey. Specific responses not extractable from search results alone; the survey covered school choice, gambling, abortion restrictions after fetal heartbeat detection, tax breaks, medical marijuana legalization, and LGBTQ+ nondiscrimination laws. Responses consistent with Libertarian personal-liberty positions expected but individual answers not confirmed from available sources.",
+      "sourceUrl": "https://www.ncfamilyvoter.com/candidate/laszacs-matthew/",
+      "date": "2024",
+      "confidence": "low",
+      "flags": "Survey completed but individual responses not confirmed from available search results — researcher was unable to access the full survey page."
+    },
+    {
+      "source": "Freedom Voter Guide 2024",
+      "topic": "multiple",
+      "notes": "Profile exists on Freedom Voter Guide. Specific responses not confirmed from available search results.",
+      "sourceUrl": "https://freedomvoterguide.com/candidates/matthew-laszacs/",
+      "date": "2024",
+      "confidence": "low"
+    },
+    {
+      "source": "Ballotpedia Candidate Connection",
+      "notes": "Did NOT complete Ballotpedia's Candidate Connection survey. Confirmed by Ballotpedia as of research date.",
+      "sourceUrl": "https://ballotpedia.org/Matthew_Laszacs",
+      "date": "2022-2026",
+      "confidence": "high"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Yahoo News / AOL News (sourced from a NC outlet)",
+      "headline": "Libertarian Matthew Laszacs, candidate for NC House District 41, answers our questions",
+      "date": "2024 (September approximate)",
+      "url": "https://www.yahoo.com/news/libertarian-matthew-laszacs-candidate-nc-175746762.html",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / cost_control",
+          "summary": "Advocates for increasing supply of healthcare services so rural families can access primary and preventative care. Supports granting nurse practitioners and pharmacists full practice authority. Dismantling Certificate of Need regime.",
+          "confidence": "high"
+        },
+        {
+          "topic": "justice / sentencing_goals",
+          "summary": "Believes the criminal justice system has been 'manipulated into outlawing harmless voluntary acts.' States a crime only occurs when someone uses force or fraud to harm another — no victim means no crime. Consistent with decriminalization of victimless offenses.",
+          "confidence": "high"
+        },
+        {
+          "topic": "economic / safety_net",
+          "summary": "Keeping taxes low, deregulating healthcare, lowering costs and regulations for new businesses. No discussion of safety net expansion.",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "outlet": "Indy Week",
+      "headline": "The Battle for Ballot Access: Third Party Candidates Strive for Change, And Votes, In North Carolina",
+      "date": "2024",
+      "url": "https://indyweek.com/news/northcarolina/the-battle-for-ballot-access-third-party-candidates-strive-for-change-and-votes-in-north-carolina/",
+      "keyExchanges": [
+        {
+          "topic": "general / third party context",
+          "summary": "Featured as part of broader coverage of NC Libertarian candidates. No unique policy statements confirmed.",
+          "confidence": "low"
+        }
+      ]
+    }
+  ],
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "notes": "No NRA rating found. Laszacs has never held office. As a Libertarian, would be expected to oppose all gun regulations per LP national platform, but no specific NRA engagement confirmed."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "notes": "No LCV rating. Never held office; LCV does not typically rate non-incumbents."
+    },
+    {
+      "organization": "NORML",
+      "grade": "A-",
+      "score": null,
+      "url": "https://vote.norml.org/politicians/207126",
+      "cycle": "2024",
+      "notes": "Awarded for support of full cannabis legalization and opposition to any criminal or civil penalties for possession."
+    }
+  ],
+  "endorsements": [],
+  "votingRecord": {
+    "available": false,
+    "notes": "Has never held elected office. No legislative voting record exists at any level."
+  },
+  "positionsByAxis": {
+    "notes": "Evidence for personal positions is largely drawn from his 2024 NC House District 41 campaign. The 2026 congressional race has no campaign website, no press releases, and no confirmed new policy statements. Where personal evidence is absent, Libertarian Party national and LPNC platform defaults are noted and flagged explicitly.",
+    "safety_net_breadth": {
+      "personalEvidence": "Indirect — emphasis on low taxes, deregulation, and individual self-reliance. Proposed converting Medicaid to HSAs (structural reduction in direct benefits model). No stated support for expanding safety net programs.",
+      "partyDefault": "LP national platform calls for elimination of the entire social welfare system including food stamps and subsidized housing, favoring private charity.",
+      "confidence": "medium",
+      "inferredDirection": "pole_B (conditional/limited safety net)",
+      "notes": "Personal evidence is more moderate than LP default (HSA conversion vs. full abolition), but clearly oriented toward market-based individual accounts over government programs."
+    },
+    "public_investment": {
+      "personalEvidence": "Explicit: 'keeping taxes low... lowering costs and regulations for new businesses.' Opposes tax incentives for business ('tax breaks for business incentives' listed as a survey topic — his Libertarian stance implies opposition to selective corporate subsidies as well).",
+      "partyDefault": "LP platform: government's only proper economic role is protecting property rights; opposes redistribution and subsidies.",
+      "confidence": "high",
+      "inferredDirection": "pole_B (less public investment)",
+      "notes": "Strong personal evidence aligns with party platform."
+    },
+    "school_choice": {
+      "personalEvidence": "Explicit, detailed support: ESAs for all NC families, vouchers, scholarships, covering tutoring and ancillary educational items. Calls for dismantling 'racist and classist' district assignment system.",
+      "partyDefault": "LP platform: end the public school system; full market-based education.",
+      "confidence": "high",
+      "inferredDirection": "pole_B (more school choice)",
+      "notes": "Most thoroughly documented position. Personal evidence more moderate than LP default (ESAs within public framework vs. full abolition), but strongly pro-school choice."
+    },
+    "coverage_model": {
+      "personalEvidence": "Explicitly proposes converting Medicaid to state-funded HSAs. Advocates deregulation to increase supply. No support for universal or single-payer coverage.",
+      "partyDefault": "LP platform: disband Medicare and Medicaid; return to free-market healthcare.",
+      "confidence": "high",
+      "inferredDirection": "pole_B (market-based coverage)",
+      "notes": "Personal position (HSA conversion) is more incremental than LP default (full abolition) but clearly market-oriented."
+    },
+    "cost_control": {
+      "personalEvidence": "Supports eliminating Certificate of Need laws (supply-side deregulation). Supports full practice authority for nurse practitioners and pharmacists (increases provider supply/competition). Frames all cost reduction through market competition and deregulation.",
+      "partyDefault": "LP platform: opposes all government price controls; favors market competition.",
+      "confidence": "high",
+      "inferredDirection": "pole_B (market competition over government price controls)",
+      "notes": "Strong personal evidence. CON law elimination is a specific, named policy target."
+    },
+    "public_health": {
+      "personalEvidence": "NORML A- grade; supports full cannabis legalization with no civil or criminal penalties. Criminal justice philosophy: no crime without a victim. Implies opposition to mandates.",
+      "partyDefault": "LP platform: strongly opposes collective mandates; favors individual health decisions.",
+      "confidence": "medium",
+      "inferredDirection": "pole_B (individual choice over collective mandates)",
+      "notes": "Drug legalization position is personal and confirmed. Broader public health mandate stance (vaccines, etc.) inferred from philosophy and party — not directly stated."
+    },
+    "zoning_supply": {
+      "personalEvidence": "Explicit 2024 platform statement calling for 'reducing... zoning laws to create an economic environment enabling entrepreneurs and individual freedom.'",
+      "partyDefault": "LP platform: private property rights; opposes government land use regulations.",
+      "confidence": "high",
+      "inferredDirection": "pole_A (loosen zoning / more supply)",
+      "notes": "Rare case where Libertarian zoning position aligns with pole A (pro-supply liberalization). The mechanism is deregulation rather than government-directed supply programs — methodologically different from progressive upzoning but directionally similar in outcome."
+    },
+    "affordability_tools": {
+      "personalEvidence": "No direct statement on housing subsidies or affordability programs.",
+      "partyDefault": "LP platform: opposes government subsidies and housing assistance programs; favors market solutions.",
+      "confidence": "low",
+      "inferredDirection": "pole_B (market solutions)",
+      "notes": "No personal evidence. Party default applied. Flag as low confidence."
+    },
+    "transit_priority": {
+      "personalEvidence": "No statement on transit or infrastructure found.",
+      "partyDefault": "LP platform: opposes government-funded public transit monopolies; favors private infrastructure and user fees.",
+      "confidence": "low",
+      "inferredDirection": "pole_B (car-centric / market infrastructure)",
+      "notes": "No personal evidence. Party default applied. Flag as low confidence."
+    },
+    "police_accountability": {
+      "personalEvidence": "Criminal justice philosophy: 'A crime only occurs when someone uses force or fraud to harm another... if there is no victim, there is no crime.' Implies support for reducing scope of policing over victimless offenses. No specific statements on police oversight mechanisms, use of force, qualified immunity.",
+      "partyDefault": "LP platform: opposes police militarization, supports ending qualified immunity, favors oversight and accountability mechanisms while also opposing excessive government power.",
+      "confidence": "low",
+      "inferredDirection": "pole_A (more oversight / reform)",
+      "notes": "Philosophy implies reform-leaning orientation (reduce criminalization of victimless acts), but no explicit statements on policing accountability structures. Confidence is low."
+    },
+    "sentencing_goals": {
+      "personalEvidence": "Explicit: supports no penalties (criminal or civil) for cannabis possession. Philosophy: if there is no victim, there is no crime. Implies strong rehabilitation/decriminalization orientation rather than punitive deterrence.",
+      "partyDefault": "LP platform: end mandatory minimums, decriminalize victimless crimes, empty prisons of non-violent offenders.",
+      "confidence": "medium",
+      "inferredDirection": "pole_A (rehabilitation / decriminalization focus)",
+      "notes": "Drug decriminalization position is confirmed personal evidence. Broader sentencing philosophy inferred from stated principles."
+    },
+    "firearms_policy": {
+      "personalEvidence": "No personal statements on firearms found in any available source.",
+      "partyDefault": "LP national platform (Section 1.9): 'We affirm the individual right recognized by the Second Amendment to keep and bear arms, and oppose the prosecution of individuals for exercising their rights of self-defense.' Opposes all laws restricting, registering, or monitoring ownership, manufacture, or transfer of firearms, ammunition, or accessories.",
+      "confidence": "low",
+      "inferredDirection": "pole_B (protect gun rights / oppose regulations)",
+      "notes": "No personal evidence. LP platform default applied — which is among the most permissive firearms positions of any major party. Given consistency of his libertarian philosophy across all other axes, alignment with LP platform is highly probable, but must be flagged as inferred."
+    },
+    "ambition_level": {
+      "personalEvidence": "No personal statements on climate change, carbon emissions, or environmental targets found.",
+      "partyDefault": "LP platform: 'competitive free markets and property rights stimulate the technological innovations and behavioral changes required to protect our environment.' Opposes government climate mandates and carbon pricing. Favors property-rights-based environmental remediation.",
+      "confidence": "low",
+      "inferredDirection": "pole_B (gradual / no government climate policy)",
+      "notes": "No personal evidence. LP platform is explicitly against regulatory climate intervention. Applied as default with low confidence."
+    },
+    "energy_portfolio": {
+      "personalEvidence": "No personal statements on energy mix, renewables, or fossil fuels found.",
+      "partyDefault": "LP platform: opposes all energy subsidies (including renewables subsidies); supports removing government controls over energy pricing and production; favors market competition determining energy mix. LPNC: 'erase the self-aggrandizing and enriching controls over how we explore our power, water, and air; remove all subsidies that support power systems and industries that should fail, while opening competition fully for the best, cleanest, products and services to thrive.'",
+      "confidence": "low",
+      "inferredDirection": "pole_B (all-of-the-above / no government energy picks)",
+      "notes": "No personal evidence. LP platform opposes both fossil fuel subsidies AND renewable energy subsidies. Applied as default with low confidence."
+    },
+    "permitting_speed": {
+      "personalEvidence": "No personal statements on environmental permitting found.",
+      "partyDefault": "LP platform: opposes regulatory barriers; supports streamlined processes based on property rights rather than government review.",
+      "confidence": "low",
+      "inferredDirection": "pole_A (faster permitting / reduce regulatory barriers)",
+      "notes": "Ironically, Libertarian deregulation philosophy would support faster permitting of all energy infrastructure (not exclusively green). Applied as default with low confidence. Scorer should note that LP's anti-regulation position cuts across both green and fossil fuel permitting — different from the progressive 'faster green permitting' framing of pole A."
+    }
+  },
+  "positionConflicts": [
+    {
+      "topic": "school_choice vs. LP default",
+      "conflict": "Personal position (ESAs, vouchers within a public education framework) is more incremental than LP national platform (which calls for ending the public school system entirely). He describes himself as advancing Libertarian ideas 'iteratively as the public will accept them,' suggesting the personal position is a strategic moderation rather than a genuine departure.",
+      "sources": ["matt4nc.us", "LP national platform"]
+    },
+    {
+      "topic": "Medicaid / coverage_model vs. LP default",
+      "conflict": "Personal position (convert Medicaid to HSAs) is more incremental than LP default (disband Medicaid entirely). Same 'incremental' framing applies.",
+      "sources": ["matt4nc.us", "LP national platform"]
+    },
+    {
+      "topic": "zoning / pole direction",
+      "conflict": "Libertarian zoning deregulation (anti-government-restriction) directionally increases housing supply (pole A), but the mechanism is market deregulation rather than government-directed supply programs. Scorer should be careful not to conflate 'pro-supply' with 'pro-government-supply-intervention.'",
+      "sources": ["matt4nc.us"]
+    }
+  ],
+  "gaps": [
+    "immigration — no personal statements found; LP national platform favors open borders with exceptions for violent criminals",
+    "firearms — no personal statements found; LP platform default applied",
+    "climate ambition — no personal statements found; LP platform default applied",
+    "energy portfolio — no personal statements found; LP platform default applied",
+    "transit / infrastructure — no personal statements found",
+    "housing affordability tools — no personal statements found",
+    "policing accountability structures — philosophy implied but no specific policy positions stated",
+    "2026 congressional campaign — no new policy statements, no campaign website, no interviews as of research date"
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "school_choice (explicit, detailed personal commitment in 2024 campaign)",
+      "cost_control / healthcare deregulation (named CON law target, NP/pharmacist full practice authority)",
+      "public_investment / taxes (consistent cross-source emphasis on low taxes and deregulation)",
+      "zoning_supply (explicit zoning reduction statement)",
+      "coverage_model (Medicaid HSA conversion)"
+    ],
+    "weakestAxes": [
+      "firearms (no personal statements — LP default only)",
+      "climate ambition (no personal statements — LP default only)",
+      "energy portfolio (no personal statements — LP default only)",
+      "transit (no personal statements — LP default only)",
+      "housing affordability (no personal statements — LP default only)",
+      "police accountability structures (philosophy implied, no specific policy)"
+    ],
+    "overallConfidence": "low-medium",
+    "notes": "Laszacs has the thinnest public record of the three NC-02 candidates. His most substantive documentation comes from the 2024 NC House District 41 race (campaign website, one confirmed voter guide response, one press interview). No 2026-specific policy statements exist. No voting record. No third-party scorecards beyond NORML A-. For at least six of the fifteen axes, only the Libertarian Party platform default applies. His self-description as an 'incremental' Libertarian is meaningful — his personal positions are consistently more moderate (HSA conversion vs. Medicaid abolition; ESAs vs. school privatization) than LP national platform, suggesting the scorer should calibrate LP defaults toward a somewhat less extreme score where personal evidence is absent. Biographical profile: 45-year-old IT professional, no prior elected office, third Libertarian candidacy, single-issue depth on education and healthcare deregulation."
+  }
+}

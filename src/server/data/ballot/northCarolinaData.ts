@@ -8,8 +8,8 @@
  *   NC-US-SENATE-2026 — U.S. Senate (Toss-up, open seat — Tillis retiring)
  */
 
-import type { Candidate, Contest, Ballot } from '../../types';
-import { BALLOT_IDS, CONTEST_IDS } from './ids';
+import type { Candidate, Contest, Measure, Ballot } from '../../types';
+import { BALLOT_IDS, CONTEST_IDS, MEASURE_IDS } from './ids';
 
 // ============================================
 // Candidates — NC U.S. Senate
@@ -263,6 +263,277 @@ const candidatesNCSenate: Candidate[] = [
 ];
 
 // ============================================
+// Candidates — NC-02 U.S. House
+// ============================================
+
+const candidatesNC02: Candidate[] = [
+  {
+    id: 'deborah-ross',
+    contestId: CONTEST_IDS.NC_HOUSE_02,
+    name: { full: 'Deborah K. Ross', ballotDisplay: 'Deborah K. Ross' },
+    party: 'Democratic',
+    incumbencyStatus: 'incumbent',
+    ballotOrder: 1,
+    profileSummary: 'Three-term progressive congresswoman and former NC-ACLU director with near-perfect environmental and gun safety records; champions public transit investment, prescription drug price reform, and police accountability from a reform-oriented but establishment-aligned posture.',
+    positions: [
+      'LCV 100% (2024), 99% lifetime; authored IRA offshore wind provision',
+      'Supports public option and ACA expansion, explicitly not Medicare for All; authored PBM Reform Act (passed House Jan 2026)',
+      'Voted for assault weapons ban and Bipartisan Safer Communities Act; endorsed by Brady PAC and Everytown',
+      'Co-sponsored George Floyd Justice in Policing Act; former NC-ACLU director',
+      'Voted for ARP, Infrastructure Act, CHIPS Act, and IRA',
+    ],
+    axisStances: {
+      econ_safetynet: 1,
+      econ_investment: 1,
+      econ_tax_structure: 2,
+      econ_school_choice: 2,
+      health_coverage_model: 3,
+      health_cost_control: 1,
+      health_public_health: 3,
+      housing_affordability_tools: 3,
+      housing_transport_priority: 1,
+      justice_policing_accountability: 2,
+      justice_sentencing_goals: 2,
+      justice_firearms: 1,
+      climate_ambition: 1,
+      climate_energy_portfolio: 1,
+      climate_permitting: 3,
+    },
+    valueStances: {
+      universalism: 0.8,
+      benevolence: 0.7,
+      tradition: -0.4,
+      conformity: -0.3,
+      security: 0.1,
+      power: -0.2,
+      achievement: 0.3,
+      hedonism: 0.0,
+      stimulation: 0.2,
+      self_direction: 0.4,
+    },
+  },
+  {
+    id: 'eugene-douglass',
+    contestId: CONTEST_IDS.NC_HOUSE_02,
+    name: { full: 'Eugene F. Douglass', ballotDisplay: 'Eugene F. Douglass' },
+    party: 'Republican',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 2,
+    profileSummary: 'Serial Republican candidate (since 1998, never elected) and retired chemistry professor running on three explicit pillars: abolish the Department of Education, protect life from conception, and shrink the federal government.',
+    positions: [
+      'Abolish the Department of Education and return all education authority to states',
+      'Protect life from conception to natural death; opposes all public funding for abortion',
+      'Small federal government, lower taxes, balanced budget amendment, less regulation',
+      'GRNC-PVF 96% rating and four-star recommendation on firearms',
+      'Strict immigration enforcement: immediate deportation, border wall, end sanctuary cities',
+    ],
+    axisStances: {
+      econ_safetynet: 8,
+      econ_investment: 9,
+      econ_tax_structure: 8,
+      econ_school_choice: 9,
+      health_coverage_model: 8,
+      health_public_health: 9,
+      justice_firearms: 9,
+      climate_ambition: 8,
+      climate_energy_portfolio: 8,
+    },
+    valueStances: {
+      universalism: -0.5,
+      benevolence: 0.2,
+      tradition: 0.9,
+      conformity: 0.6,
+      security: 0.7,
+      power: -0.3,
+      achievement: 0.2,
+      hedonism: -0.2,
+      stimulation: -0.3,
+      self_direction: 0.3,
+    },
+  },
+  {
+    id: 'matthew-laszacs',
+    contestId: CONTEST_IDS.NC_HOUSE_02,
+    name: { full: 'Matthew F. Laszacs', ballotDisplay: 'Matthew F. Laszacs' },
+    party: 'Libertarian',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 3,
+    profileSummary: 'IT executive and three-time Libertarian candidate; strongest documented positions are universal school choice (ESAs/vouchers), healthcare deregulation (CON law elimination, Medicaid-to-HSA conversion), and full cannabis legalization.',
+    positions: [
+      'Universal ESAs and vouchers for all NC families; calls for dismantling district-based school assignment',
+      'Convert Medicaid to state-funded health savings accounts; eliminate Certificate of Need laws',
+      'Full cannabis legalization with no criminal or civil penalties (NORML A-)',
+      'Core philosophy: low taxes, deregulation, individual freedom over government programs',
+      'No-victim-no-crime criminal justice philosophy; decriminalization of victimless offenses',
+    ],
+    axisStances: {
+      econ_safetynet: 8,
+      econ_investment: 9,
+      econ_tax_structure: 8,
+      econ_school_choice: 9,
+      health_coverage_model: 8,
+      health_cost_control: 8,
+      health_public_health: 7,
+      housing_supply_zoning: 3,
+      housing_affordability_tools: 9,
+      justice_sentencing_goals: 2,
+      justice_firearms: 9,
+    },
+    valueStances: {
+      universalism: -0.2,
+      benevolence: 0.2,
+      tradition: -0.4,
+      conformity: -0.6,
+      security: -0.3,
+      power: -0.2,
+      achievement: 0.5,
+      hedonism: 0.0,
+      stimulation: 0.3,
+      self_direction: 0.8,
+    },
+  },
+];
+
+// ============================================
+// Candidates — NC State Senate District 8
+// ============================================
+
+const candidatesNCSenateD8: Candidate[] = [
+  {
+    id: 'william-rabon',
+    contestId: CONTEST_IDS.NC_SENATE_D8,
+    name: { full: 'William (Bill) Rabon', ballotDisplay: 'Bill Rabon' },
+    party: 'Republican',
+    incumbencyStatus: 'incumbent',
+    ballotOrder: 1,
+    profileSummary: 'Fourteen-year NC Senate veteran and Rules Committee chairman; anchored by a 99.3 NCFREE free-enterprise score, aggressive tax-cut agenda, and strong pro-gun record, with a distinctive personal break from party orthodoxy on medical marijuana.',
+    positions: [
+      'Co-sponsored SB266 rolling back NC\'s 2030 carbon-reduction target; voted to override governor\'s veto',
+      'Sponsored SB651 to cut personal income tax below 2.5%; led multi-year tax-rate glide path',
+      'Voted YES on SB50 (permitless carry) on passage and veto override',
+      'Led party-line expansion of Opportunity Scholarships (school vouchers) to $463.5M',
+      'Primary sponsor of SB3 (medical cannabis) motivated by personal cancer experience; NORML B+',
+    ],
+    axisStances: {
+      econ_safetynet: 8,
+      econ_investment: 9,
+      econ_tax_structure: 9,
+      econ_school_choice: 9,
+      health_coverage_model: 7,
+      health_cost_control: 8,
+      health_public_health: 7,
+      housing_supply_zoning: 3,
+      housing_affordability_tools: 8,
+      justice_firearms: 9,
+      climate_ambition: 8,
+      climate_energy_portfolio: 8,
+    },
+    valueStances: {
+      universalism: -0.5,
+      benevolence: 0.1,
+      tradition: 0.4,
+      conformity: 0.3,
+      security: 0.5,
+      power: 0.8,
+      achievement: 0.5,
+      hedonism: 0.2,
+      stimulation: 0.0,
+      self_direction: 0.3,
+    },
+  },
+  {
+    id: 'richard-combes',
+    contestId: CONTEST_IDS.NC_SENATE_D8,
+    name: { full: 'Richard Combes', ballotDisplay: 'Rick Combes' },
+    party: 'Democratic',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 2,
+    profileSummary: 'First-time Democratic challenger with no public policy record, no campaign website, and no stated positions on any issue. Appears to be a placeholder candidacy in a heavily Republican district.',
+    positions: [],
+    axisStances: {},
+    valueStances: {},
+  },
+  {
+    id: 'tim-white-nc-s8',
+    contestId: CONTEST_IDS.NC_SENATE_D8,
+    name: { full: 'Tim White', ballotDisplay: 'Tim White' },
+    party: 'Libertarian',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 3,
+    profileSummary: 'First-time Libertarian candidate with no public campaign presence or documented issue positions. All scoring inferred from LPNC party platform.',
+    positions: [
+      'LPNC platform: opposes government welfare programs, healthcare regulation, and public school monopoly',
+      'LPNC platform: opposes all firearms regulation including background checks and licensing',
+      'LPNC platform: supports repealing all zoning ordinances based on property rights',
+      'LPNC platform: opposes government-led climate policy and energy subsidies',
+    ],
+    axisStances: {
+      econ_safetynet: 9,
+      econ_investment: 9,
+      econ_tax_structure: 9,
+      econ_school_choice: 9,
+      health_coverage_model: 10,
+      health_cost_control: 9,
+      health_public_health: 10,
+      housing_supply_zoning: 1,
+      housing_affordability_tools: 10,
+      housing_transport_priority: 9,
+      justice_policing_accountability: 3,
+      justice_firearms: 10,
+      climate_ambition: 8,
+      climate_energy_portfolio: 8,
+    },
+    valueStances: {
+      universalism: -0.2,
+      benevolence: -0.1,
+      tradition: -0.3,
+      conformity: -0.6,
+      security: -0.4,
+      power: -0.5,
+      achievement: -0.1,
+      hedonism: 0.1,
+      stimulation: 0.2,
+      self_direction: 0.8,
+    },
+  },
+];
+
+// ============================================
+// Measures — NC Voter ID Amendment
+// ============================================
+
+const ncMeasures: Measure[] = [
+  {
+    id: MEASURE_IDS.NC_VOTER_ID,
+    type: 'measure',
+    title: 'NC Require Voter Identification Amendment (SB 921)',
+    shortTitle: 'Voter ID for All Voting',
+    description: 'Amends the NC Constitution to require photo identification for all voting methods, including absentee/mail-in ballots. Extends the current in-person photo ID mandate to cover all voters.',
+    yesAxisEffects: {
+      justice_policing_accountability: 0.4,
+    },
+    yesValueEffects: {
+      security: 0.7,
+      conformity: 0.6,
+      tradition: 0.4,
+      power: 0.3,
+      universalism: -0.7,
+      self_direction: -0.5,
+      benevolence: -0.4,
+      stimulation: -0.1,
+    },
+    relevantAxes: ['justice_policing_accountability'],
+    outcomes: {
+      yes: 'Photo ID required for all voting methods including absentee/mail-in ballots via constitutional amendment.',
+      no: 'Current rules maintained — photo ID required only for in-person voting; absentee voters may use driver\'s license number or last-4 SSN.',
+    },
+    explanation: 'This legislatively referred constitutional amendment was passed on a strictly partisan vote in a December 2024 lame-duck session. Courts have found prior NC voter ID laws targeted Black voters "with almost surgical precision." Black voters are approximately 39% less likely to have qualifying photo ID. If passed, the requirement can only be removed by another constitutional amendment.',
+    supporters: ['NC Republican legislative caucus', 'Sen. Warren Daniel (sponsor)'],
+    opponents: ['Democracy NC', 'NAACP', 'ACLU of NC', 'NC Democratic Party'],
+  },
+];
+
+// ============================================
 // Contests
 // ============================================
 
@@ -276,6 +547,24 @@ const ncContests: Contest[] = [
     votingFor: 1,
     candidates: candidatesNCSenate,
   },
+  {
+    id: CONTEST_IDS.NC_HOUSE_02,
+    type: 'candidate',
+    office: 'U.S. House — NC-02',
+    jurisdiction: 'federal',
+    termInfo: 'Solid Democratic district (D+17). Incumbent Deborah Ross (D) is favored. All primaries were canceled — only one candidate filed per party. District covers most of Wake County including Raleigh.',
+    votingFor: 1,
+    candidates: candidatesNC02,
+  },
+  {
+    id: CONTEST_IDS.NC_SENATE_D8,
+    type: 'candidate',
+    office: 'NC State Senate — District 8',
+    jurisdiction: 'state',
+    termInfo: 'Safe Republican seat. Incumbent Bill Rabon (R) has held the seat since 2011 and chairs the powerful Rules Committee. District covers Brunswick County, Columbus County, and part of New Hanover County.',
+    votingFor: 1,
+    candidates: candidatesNCSenateD8,
+  },
 ];
 
 // ============================================
@@ -288,5 +577,5 @@ export const northCarolinaBallot: Ballot = {
   electionType: 'General Election',
   state: 'North Carolina',
   county: 'Wake',
-  items: [...ncContests],
+  items: [...ncContests, ...ncMeasures],
 };

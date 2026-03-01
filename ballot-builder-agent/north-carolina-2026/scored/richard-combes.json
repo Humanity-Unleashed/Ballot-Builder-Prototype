@@ -1,0 +1,45 @@
+{
+  "slug": "richard-combes",
+  "name": "Richard (Rick) Combes",
+  "party": "Democratic",
+  "office": "North Carolina State Senate, District 8, 2026",
+  "scoredAt": "2026-03-01T00:00:00Z",
+  "profileSummary": "First-time Democratic challenger in a heavily Republican NC Senate district with no public policy record, no campaign website, no social media presence, and no stated positions on any issue.",
+  "keyPositions": [],
+  "axisStances": {},
+  "valueStances": {},
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 0,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_investment",
+      "econ_tax_structure",
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "Zero policy evidence exists for this candidate. No campaign website, no voting record (first-time candidate with no prior office), no interviews, no voter guide responses, no social media policy content, no scorecard data, and no campaign finance filings were found. The candidate's party affiliation (Democratic) is known but the scoring methodology prohibits inferring individual positions from party platform alone. Scoring any axis would be fabrication.",
+    "overallConfidence": "none",
+    "researchGaps": [
+      "No occupation or professional background identified",
+      "No education background identified",
+      "No campaign website or social media accounts found",
+      "No policy positions stated on any topic",
+      "No campaign finance committee registered or filings found",
+      "No interviews, voter guide responses, or press coverage with policy content",
+      "Candidate appears to be a placeholder or minimal-effort filing to ensure Democratic ballot presence in a safe Republican district"
+    ],
+    "notes": "This candidate has the lowest possible evidence profile: the only confirmed facts are his name, address, party affiliation, and filing date. The Brunswick County Democratic Party acknowledged his candidacy at a January 2026 event but noted he was unable to attend. The district (NC Senate 8) is strongly Republican by design — the Princeton Gerrymandering Project graded the 2023 maps F for partisan bias. The app UI should display an explicit 'Insufficient data to score' state for this candidate rather than any inferred positions."
+  }
+}
