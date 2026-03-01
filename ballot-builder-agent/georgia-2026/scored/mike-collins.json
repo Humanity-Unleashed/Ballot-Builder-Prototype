@@ -1,0 +1,241 @@
+{
+  "slug": "mike-collins",
+  "name": "Mike Collins",
+  "party": "Republican",
+  "office": "U.S. Senate, Georgia, 2026",
+  "scoredAt": "2026-02-25T00:00:00.000Z",
+  "profileSummary": "Two-term hard-right congressman and trucking company owner running on a MAGA/America First platform; Heritage Action 98%, LCV 1%, sponsor of the Laken Riley Act, and one of the most conservative members of the House delegation.",
+  "keyPositions": [
+    "Sponsored the Laken Riley Act (signed into law Jan 2025) and supports immigration moratorium including reduced legal immigration",
+    "Advocates abolishing the ATF, repealing the NFA, and national constitutional carry (GGO 100%, NRA ~92%)",
+    "LCV 1% lifetime; calls green energy policies 'ridiculous' and champions 'drill here, drill now'",
+    "Voted for One Big Beautiful Bill ($800B Medicaid cuts); told retirees to 'get off Social Security, get back in the workforce'",
+    "Cosponsored personhood bill recognizing life at conception; opposes all Planned Parenthood funding"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "XTRA 106.3 radio interview June 2025 ('get off Social Security')",
+        "One Big Beautiful Bill vote (Tier 1) -- $800B Medicaid cuts",
+        "Student debt relief overrule vote (Tier 1)",
+        "Heritage Action 98% (Tier 1)",
+        "iVoterGuide 2022 ('between C and D' on taxpayer-funded healthcare)"
+      ],
+      "notes": "Explicitly told retirees to 'get off of Social Security, get off of Medicaid, get back in the workforce' on radio in June 2025. Goes beyond standard Republican rhetoric into active advocacy for reducing core safety net programs. iVoterGuide response suggests keeping Medicare/Medicaid in some minimal form (not a full 10), but OBBBA vote and rhetoric point to dramatic reductions."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Heritage Action 98% (Tier 1)",
+        "Balanced budget amendment pledge (Tier 2, VoteSmart)",
+        "Voted No on Fiscal Responsibility Act of 2023 as insufficiently conservative (Tier 1)",
+        "U.S. Chamber of Commerce 'leader on tax reform' (Tier 1)"
+      ],
+      "notes": "Consistently opposes public investment and government spending. Voted against the bipartisan debt ceiling deal because it did not cut enough. Business background and anti-government framing are central to identity."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "U.S. Chamber of Commerce 'leader on tax reform' (Tier 1)",
+        "Heritage Action 98% (Tier 1)",
+        "One Big Beautiful Bill vote -- includes tax cuts (Tier 1)",
+        "XTRA 106.3 radio: 'lowering taxes' as solution (Tier 2)"
+      ],
+      "notes": "Tax cuts are central to economic worldview. Framed in radio interview as the solution to both economic growth and reducing safety net dependency."
+    },
+    "econ_school_choice": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Heritage Action 98% -- Heritage Foundation is a leading school choice advocate (Tier 1 indirect)"
+      ],
+      "notes": "No direct school choice votes or statements found. Score inferred from near-perfect Heritage Action alignment, which heavily weights school choice in its scorecard. Confidence reduced because evidence is indirect."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "One Big Beautiful Bill vote -- $800B Medicaid cuts, CBO projects 11.8M lose coverage nationally (Tier 1)",
+        "iVoterGuide 2022: 'between C and D' on taxpayer-funded healthcare (Tier 2)",
+        "XTRA 106.3 radio: 'get off Medicaid' (Tier 2)",
+        "Heritage Action 98% (Tier 1)"
+      ],
+      "notes": "iVoterGuide answer places him between 'keep Medicaid and Medicare but no other taxpayer-funded programs' (C) and 'abolish all taxpayer-funded healthcare' (D). OBBBA vote is consistent -- massive public insurance cuts. Georgia Democratic analysis projects 750K Georgians in GA-10 lose coverage or face 345% premium increases (partisan source but directionally supported by CBO projections)."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "Heritage Action 98% -- Heritage opposes drug price controls (Tier 1 indirect)"
+      ],
+      "notes": "No specific drug pricing or cost control votes or statements found. Score inferred from overall ideological positioning and Heritage alignment. Low confidence because evidence is entirely indirect."
+    },
+    "health_public_health": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "TRANQ Act sponsor -- bipartisan fentanyl/xylazine drug testing law (Tier 1)",
+        "Heritage Action 98% -- generally anti-mandate orientation (Tier 1 indirect)"
+      ],
+      "notes": "The TRANQ Act demonstrates willingness to engage in public health legislation when framed as law enforcement adjacent (drug testing). However, overall Heritage alignment suggests opposition to public health mandates. Score of 7 rather than 9 because TRANQ Act is a genuine public health measure that cuts against pure anti-mandate positioning."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "Laken Riley Act -- pro-law-enforcement immigration enforcement (Tier 1 indirect)",
+        "General law-and-order orientation from immigration and overall profile (Tier 3-4)"
+      ],
+      "notes": "No direct policing reform votes or specific law enforcement accountability statements found. Score inferred from strong law-and-order orientation visible in immigration enforcement focus and Laken Riley Act. Low confidence due to absence of direct policing evidence."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "NRA ~92% rating (Tier 1)",
+        "Georgia Gun Owners 100% survey -- abolish ATF, repeal NFA, national constitutional carry (Tier 1)",
+        "Cosponsor of bill to abolish ATF and repeal NFA (Tier 1)",
+        "iVoterGuide 2022: 'No restrictions on lawful use' (Tier 2)",
+        "'The problem is not the gun' after Apalachee High School shooting (Tier 2)",
+        "Campaign ad showing him shooting voting machine with assault-style rifle (Tier 2)"
+      ],
+      "notes": "Maximum pro-gun positioning. Not merely opposing new regulations but actively seeking to abolish the primary federal firearms regulatory agency (ATF) and repeal the foundational firearms law (NFA, 1934). After a mass shooting in his own district that killed 4 people (Apalachee High School, Sept 2024), he maintained 'the problem is not the gun.' This is the most extreme documented firearms position on the scale."
+    },
+    "climate_ambition": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "LCV 1% lifetime score (Tier 1)",
+        "AJC questionnaire: 'stop pushing these ridiculous Green Energy policies' (Tier 2)",
+        "AJC questionnaire: 'Drill here, drill now' (Tier 2)",
+        "Chaired Water Resources and Environment Subcommittee in anti-regulatory direction (Tier 1)"
+      ],
+      "notes": "LCV 1% lifetime is near the floor of the score -- voted against environmental interests on virtually every opportunity. Active dismissal of climate policy as 'ridiculous.' Chaired an environmental subcommittee and used the position to advance anti-regulatory goals. No ambiguity in the evidence."
+    },
+    "climate_energy_portfolio": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "AJC questionnaire: 'Drill here, drill now' (Tier 2)",
+        "AJC questionnaire: 'stop pushing these ridiculous Green Energy policies' (Tier 2)",
+        "LCV 1% lifetime (Tier 1)",
+        "Natural Resources Committee (Energy and Mineral Resources Subcommittee) (Tier 1)"
+      ],
+      "notes": "Fossil fuel maximalism. Explicitly pro-drilling, explicitly anti-green-energy. Served on the Energy and Mineral Resources subcommittee in alignment with this position. Wants to eliminate clean energy subsidies and expand fossil fuel production."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Chaired Water Resources and Environment Subcommittee -- anti-regulatory stance (Tier 1)",
+        "Heritage Action 98% -- generally anti-regulation (Tier 1 indirect)"
+      ],
+      "notes": "No specific permitting reform legislation or statements found. Score inferred from chairing an environmental subcommittee with an anti-regulatory approach and near-perfect Heritage alignment. Medium confidence because the inference is strong but not based on specific permitting votes."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "LCV 1% lifetime -- near-total opposition to environmental protection for nature and future generations. Opposed Ukraine military aid (isolationist, not extending concern to global victims). Advocates immigration moratorium including reducing legal immigration -- narrowing the circle of who deserves inclusion. Antisemitism-adjacent social media incident and refusal to delete post suggests indifference to out-group harm. AI deepfake campaign video demonstrates willingness to deceive. Across environmental, international, and immigration domains, consistently acts against universalist values."
+    },
+    "benevolence": {
+      "score": 0.0,
+      "reasoning": "Mixed signals. TRANQ Act (bipartisan fentanyl law) shows genuine concern for communities affected by drug crisis. Laken Riley Act framed as protecting community from violence. Campaign rhetoric emphasizes 'hardworking men and women.' However, voted for OBBBA projected to strip coverage from up to 750K Georgians in his own district. Radio statement telling retirees to 'get off Social Security' directly undermines senior welfare. The rhetoric of care is contradicted by policy actions that harm constituents. Net neutral."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "'Unapologetically pro God' -- explicit religious values framing. Cosponsored personhood bill (life at conception) -- traditional moral values on abortion. Son of former congressman Mac Collins -- political dynasty. Opposes Planned Parenthood funding on moral grounds. Conservative cultural orientation is central to identity. Does not reach 0.8+ because the MAGA movement itself is disruptive of some political traditions (e.g., fiscal conservatism, democratic norms)."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "Pattern of norm-violating behavior despite high procedural attendance (99% vote participation). Released AI deepfake campaign video depicting opponent -- a serious departure from campaign conduct norms. Approvingly engaged with antisemitic social media account and refused to delete post despite bipartisan rebukes. Under House Ethics Committee investigation for misuse of government funds. Voted against bipartisan debt ceiling deal, defying party leadership. The aggressive, confrontational style ('steamroll the radical left') and willingness to use deceptive tactics place him in anti-conformity territory."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Strong on physical and border security: finish the wall, Remain in Mexico, immigration moratorium, Laken Riley Act, 'strong military peace through strength.' However, actively undermines economic security for vulnerable populations -- 'get off Social Security,' OBBBA Medicaid cuts. The security orientation is selective: strong for national defense and law enforcement, weak for social safety net security. Net positive because physical security emphasis is more prominent in his political identity."
+    },
+    "power": {
+      "score": 0.5,
+      "reasoning": "Aligned with business power structures: Chamber of Commerce praise, Heritage Foundation near-perfect alignment, tax reform leadership favoring corporate interests. Built personal business empire (1 truck to 115). Trump alignment as power strategy. 'I'm That Guy' primary assertion. Accepts traditional donor/PAC support structure. Orientation is toward maintaining and leveraging existing power hierarchies rather than challenging them."
+    },
+    "achievement": {
+      "score": 0.7,
+      "reasoning": "Self-made entrepreneur narrative is central to identity: built trucking company from one semi-truck to 115 trucks and 100+ employees. Led three businesses, chaired chamber of commerce and credit union board. 'Get back in the workforce' framing treats work and self-sufficiency as moral imperatives. Policy positions consistently emphasize individual effort over structural support. Achievement through personal competence is a defining value."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "Social conservatism (pro-life, 'pro God') implicitly restricts personal lifestyle choices. No libertarian personal freedom emphasis. No positions on recreational cannabis or lifestyle liberty issues. Personhood bill and opposition to Planned Parenthood extend government authority into deeply personal domains. Mildly negative because the overall orientation restricts rather than expands personal pleasure and choice."
+    },
+    "stimulation": {
+      "score": 0.1,
+      "reasoning": "Some anti-establishment energy: defied party leadership on Fiscal Responsibility Act, confrontational rhetoric ('steamroll the radical left'), willingness to use novel AI tactics in campaigns. However, the policy vision is fundamentally restorationist -- 'America First' looks backward to a perceived better past, not forward to novel solutions. Not an innovator or structural reformer; a disruptor in style but conservative in substance."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Strong individual liberty emphasis in gun rights (abolish ATF, repeal NFA, constitutional carry) and economic domains (anti-regulation, anti-government intervention). However, personhood bill restricts reproductive autonomy. Immigration moratorium restricts freedom of movement. 'Pro God' governance frame suggests willingness to impose moral values through law. The liberty orientation is domain-selective: maximalist on guns and business, restrictive on reproductive choice and immigration. Net slightly positive because gun and economic liberty are more prominent in his active advocacy."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Social Security and working families",
+      "description": "Campaign rhetoric emphasizes fighting for 'hardworking men and women' of Georgia, but June 2025 radio interview explicitly told retirees to 'get off Social Security, get back in the workforce.' RSC budget proposals he supports would cut Social Security benefits.",
+      "sources": [
+        "GPB campaign kickoff report (Aug 2025)",
+        "XTRA 106.3 radio interview (June 2025)",
+        "Flagpole.com reporting"
+      ],
+      "scoringImpact": "Score reflects the radio statement and OBBBA vote (actions/Tier 1-2) over campaign rhetoric (Tier 3). Scored econ_safetynet at 9."
+    },
+    {
+      "topic": "Healthcare and constituents",
+      "description": "Describes himself as pro-worker and fighting for Georgians, but voted for One Big Beautiful Bill projected to strip coverage from up to 750,000 GA-10 constituents and raise premiums 345%. CBO independently projects 11.8M national coverage losses.",
+      "sources": [
+        "Georgia Democratic Party analysis",
+        "CBO score of OBBBA",
+        "Flagpole.com ('get off Medicaid')"
+      ],
+      "scoringImpact": "Partisan source for GA-10 projection, but CBO provides independent corroboration at national level. Scored health_coverage_model at 9."
+    },
+    {
+      "topic": "Fiscal conservatism vs. MAGA spending",
+      "description": "Voted AGAINST Fiscal Responsibility Act of 2023 as too moderate on spending, signaling deficit-hawk credentials. Then voted FOR One Big Beautiful Bill, which CRFB projects adds trillions to the deficit. Heritage Action 98% score masks this tension.",
+      "sources": [
+        "GovTrack voting record",
+        "Heritage Action scorecard"
+      ],
+      "scoringImpact": "Both votes are Tier 1 evidence. The inconsistency suggests MAGA loyalty trumps fiscal discipline when they conflict. Noted but does not change axis scores since both votes point toward reduced government spending/services."
+    },
+    {
+      "topic": "Ethics investigation",
+      "description": "Under House Ethics Committee investigation (announced Nov 2025) for alleged misuse of government funds to benefit chief of staff Brandon Phillips, who allegedly hired his girlfriend to work in Collins' office. Collins calls it 'baseless.'",
+      "sources": [
+        "Atlanta News First",
+        "Georgia Recorder",
+        "AJC"
+      ],
+      "scoringImpact": "Factored into conformity value score (-0.3). Does not affect policy axis scores."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals"
+    ],
+    "reasonSkipped": "No housing-related positions, votes, or statements found in federal House record. No specific sentencing or criminal justice reform positions found -- general tough-on-crime posture insufficient for scoring. Transportation committee assignment exists but no specific transit vs. highway positions surfaced.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No AFL-CIO numerical score retrieved (page exists but value not surfaced)",
+      "No specific drug pricing or healthcare cost control positions found",
+      "No school choice-specific votes or statements -- scored from Heritage Action inference only",
+      "No specific policing reform positions -- scored from law-and-order inference only",
+      "VoteSmart Political Courage Test declined -- reduces available structured position data"
+    ]
+  }
+}

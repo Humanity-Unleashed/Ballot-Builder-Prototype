@@ -1,0 +1,177 @@
+{
+  "slug": "sonya-halpern",
+  "name": "Sonya Halpern",
+  "party": "Democratic",
+  "office": "U.S. House, Georgia 6th Congressional District, 2026",
+  "scoredAt": "2026-02-26T00:00:00.000Z",
+  "profileSummary": "Georgia State Senator (District 39) and former marketing executive running for the open GA-06 seat; five stated priorities are healthcare, education, economic equality, criminal justice reform, and voting rights. Pragmatic establishment Democrat who broke with her caucus on a transgender care vote while simultaneously sponsoring comprehensive civil rights legislation.",
+  "keyPositions": [
+    "Primary sponsor of SB 320 (Georgia Civil Rights Act of 2025) covering race, sex, sexual orientation, gender identity, disability, and national origin",
+    "Consistent Medicaid expansion advocate; strongly opposes Georgia's abortion ban, framing it as healthcare access",
+    "Advocates universal background checks and safe storage laws; NRA rating of 7%",
+    "Platform includes ending cash bail, banning no-knock warrants, and eliminating mandatory minimums",
+    "Sponsored HBCU innovation districts bill (SB 235, passed 46-7) and Georgia Music Office Act"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Consistent Medicaid expansion advocacy (GPB, January 2024)",
+        "Project 2025 press conference defending Social Security and Medicare (July 2024)",
+        "Tariff opposition framed as economic burden on Georgia families (campaign website)"
+      ],
+      "notes": "No specific federal safety net votes (state legislator, not incumbent). Direction is clearly toward expansion, but evidence is advocacy statements rather than binding votes."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "SB 235 — HBCUs Innovation and Economic Prosperity Planning Districts (passed 46-7)",
+        "SB 182 — Georgia Music Office and Music Ready Communities Act (passed committee unanimously)",
+        "Hyundai EV plant statement emphasizing 8,500 jobs and billions in investment (September 2025)",
+        "SB 55 — Disabilities workforce bill (co-sponsor, passed)"
+      ],
+      "notes": "Legislative record shows consistent support for public investment in education infrastructure, creative economy, and workforce development. Bipartisan passage of SB 235 and SB 182 suggests pragmatic investment framing rather than ideological."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Medicaid expansion advocacy — 'There's never been a year where we are not talking about Medicaid expansion' (GPB, January 2024)",
+        "Health and Human Services Committee member",
+        "Healthcare listed as first of five personal priority areas (campaign website)"
+      ],
+      "notes": "Clear supporter of Medicaid expansion. No evidence of Medicare-for-All advocacy — framing is expansion of existing public programs rather than single-payer transformation. Scored at 2 (public option range) rather than 0 (single-payer) because evidence does not go beyond ACA expansion."
+    },
+    "health_public_health": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Amber Thurman statement opposing Georgia abortion ban using patient-doctor trust framing (September 2024)",
+        "Drowning prevention legislation and YMCA public health partnership (campaign website)",
+        "Co-Chair, General Assembly Working Group on Addiction and Recovery"
+      ],
+      "notes": "Abortion ban opposition is framed through a public health and healthcare access lens ('putting our healthcare providers in direct conflict with the Hippocratic Oath'). Addiction recovery working group co-chair suggests treatment-oriented public health approach."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Platform: end cash bail, ban no-knock warrants, ban excessive use of force, prohibit hiring officers with misconduct histories",
+        "Public Safety Committee member",
+        "Georgia Justice Project legislator database listing",
+        "Criminal justice reform listed as one of five priority areas (campaign website)"
+      ],
+      "notes": "All evidence is stated platform positions and committee membership. No confirmed bill sponsorships or votes on policing accountability found. Positions are reform-oriented (score 2-3 range) rather than defund/abolish (score 0). Confidence is LOW because no voting record or specific bill actions were documented."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Platform: 'eliminating mandatory minimum sentencing' and 'ending cash bail'",
+        "Co-Chair, General Assembly Working Group on Addiction and Recovery",
+        "Criminal justice reform listed as one of five priority areas"
+      ],
+      "notes": "Stated positions on mandatory minimums and cash bail place her clearly in the rehabilitation/decarceration direction. Addiction recovery working group suggests treatment-over-punishment orientation. But no confirmed votes or bill sponsorships on sentencing policy found. Confidence LOW."
+    },
+    "justice_firearms": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "NRA rating: 7% (directional; exact cycle unclear but consistent with record)",
+        "Explicit advocacy for universal background checks and safe storage laws (Rough Draft Atlanta, September 2024)",
+        "Called for 'urgent action to end gun violence in Georgia' after Barrow County school shooting"
+      ],
+      "notes": "Two independent sources agree: very low NRA rating and explicit named policy advocacy (universal background checks, safe storage). Scored at 2 rather than 0 because no evidence of assault weapons ban or licensing advocacy — positions are 'significant regulation' consistent with score 2-3 range."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "SB 320 (comprehensive civil rights protections including gender identity, sexual orientation, disability, national origin) is strong universalism evidence. Medicaid expansion and healthcare access advocacy extend concern beyond narrow in-group. However, SB 185 vote (banning gender-affirming care for transgender inmates) represents a notable limit — even if framed as pragmatism, the effect works against a vulnerable population. Immigration response was economic rather than humanitarian. Not at the highest level of universalism but clearly positive."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Strongest value signal. Community-oriented throughout: YMCA board member, Kennedy Center arts access, HBCUs investment, drowning prevention, healthcare access for constituents, creative economy development. Five stated priorities all center on community welfare (healthcare, education, economic equality, criminal justice reform, voting rights). Long community roots (26 years in district). Arts and culture community leadership is a distinctive benevolence expression."
+    },
+    "tradition": {
+      "score": -0.1,
+      "reasoning": "Mildly works against tradition. SB 320 challenges Georgia's long-standing absence of civil rights protections — explicitly changing the status quo. Reproductive rights advocacy opposes Georgia's recent abortion ban. However, SB 185 vote actually preserved existing practice ('This bill simply makes explicit what is already the practice in Georgia'), showing selective respect for existing norms. On balance, slightly change-oriented but not radically so."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Works within institutional channels consistently: state legislature, formal letters to the Governor, committee work, caucus leadership (Vice Chair). Called for 'transparency and accountability' through proper government processes regarding ICE raid. SB 185 vote arguably represents conformity to existing practice even when it conflicted with her caucus's ideological position. No evidence of norm-breaking or extra-institutional activism."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Progressive security orientation: Medicaid expansion and Social Security defense (economic security), gun safety advocacy (community safety), drowning prevention (public safety), opposition to Project 2025 as threat to stable benefits. Security framing is about protecting people from preventable harm rather than law-and-order or national defense emphasis."
+    },
+    "power": {
+      "score": 0.2,
+      "reasoning": "Establishment-aligned: Democratic Caucus Vice Chair, Kennedy Center presidential appointment (Obama), EMILY's List endorsement, joint press conferences with U.S. Rep. Hank Johnson. Corporate background (Disney, ESPN, Cox). But no evidence of significant corporate PAC alignment or donor-class deference in the GA-06 race. Pragmatic power-awareness rather than active power-seeking."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "MBA from University of Hartford; successful corporate career at major companies (Disney, ESPN, Cox); founded own consultancy; first African-American and first Georgian to chair Kennedy Center advisory committee. Campaign emphasizes 'economic mobility' and opportunity. SB 55 (disabilities workforce) supports employment access. Bipartisan legislative accomplishments (SB 235 passed 46-7). Achievement orientation is personal and professional, not purely rhetorical."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful evidence in either direction. No positions on recreational cannabis, lifestyle liberty, or personal freedom framing distinct from civil rights."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some change orientation: SB 320 would create Georgia's first comprehensive civil rights law (novel institutional change); running for higher office; creative economy legislation (arts/music). But overall approach is incremental and institutional rather than disruptive. Not an anti-establishment candidate — she is establishment-adjacent, working within existing structures."
+    },
+    "selfDirection": {
+      "score": 0.3,
+      "reasoning": "Reproductive rights advocacy supports bodily autonomy. SB 320 protects individual freedom from discrimination. Voting rights as a priority supports political self-determination. However, SB 185 vote limits self-direction for transgender individuals in state custody. Net positive but with a notable exception that prevents a higher score."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "LGBTQ rights: SB 185 vote vs. SB 320 sponsorship",
+      "description": "Voted YES on SB 185 (banning gender-affirming care for transgender prison inmates, March 2025), breaking with majority of Democratic caucus, while simultaneously serving as primary sponsor of SB 320 (Georgia Civil Rights Act including gender identity protections). She framed the SB 185 vote as fiscal pragmatism: 'Not one tax dollar in Georgia has ever been spent on sex change surgeries for inmates. This bill simply makes explicit what is already the practice.' She stated: 'My vote does not change my commitment to the LGBTQ+ community.'",
+      "sources": [
+        "AJC reporting on SB 185 vote, March 2025",
+        "LegiScan SB 320 sponsor information",
+        "Georgia Recorder coverage of SB 185 passage"
+      ],
+      "scoringImpact": "Reduces universalism and self-direction scores. Noted as a pragmatic political calculation rather than an ideological position, but the vote itself has concrete policy effects. Users in the LGBTQ community should be aware of this vote regardless of her stated reasoning."
+    },
+    {
+      "topic": "Immigration enforcement: economic framing vs. civil liberties",
+      "description": "Response to the Hyundai EV plant ICE raid (September 2025) was carefully calibrated — called for transparency and accountability from Gov. Kemp rather than condemning the raid. Acknowledged 'if there were violations of the law, they must be addressed.' This is a more moderate stance than many Democratic progressives would take.",
+      "sources": [
+        "Georgia Senate Press Office letter to Gov. Kemp, September 2025"
+      ],
+      "scoringImpact": "Immigration enforcement axis not scored due to insufficient evidence, but this framing is noted as a signal of pragmatic centrism on immigration."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 7,
+    "axesSkipped": [
+      "econ_tax_structure",
+      "econ_school_choice",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No meaningful evidence found for these axes. Halpern is a state legislator in a Republican-supermajority chamber where most progressive bills fail; her legislative record provides signal primarily on civil rights, healthcare access, firearms, criminal justice, and education/economic investment. Climate, energy, housing, tax structure, and school choice have no documented positions, votes, or advocacy.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No federal voting record (state legislator, not incumbent)",
+      "No climate or energy policy positions documented",
+      "No housing or zoning positions documented",
+      "No school choice position documented despite Education Committee membership",
+      "No tax policy positions documented beyond tariff opposition",
+      "NRA 7% rating date/context unclear — may be from a prior cycle",
+      "Criminal justice reform positions (end cash bail, ban no-knock warrants, eliminate mandatory minimums) are stated platform positions only, not confirmed votes or bill sponsorships",
+      "Campaign website content gathered from search snippets, not full page scrapes"
+    ]
+  }
+}

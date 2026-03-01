@@ -1,0 +1,594 @@
+{
+  "slug": "jasmine-crockett",
+  "name": "Jasmine Crockett",
+  "party": "Democratic",
+  "office": "U.S. Senate, Texas, 2026",
+  "contest": "Texas U.S. Senate 2026 — Democratic Primary, March 3, 2026",
+  "incumbencyStatus": "challenger (current U.S. House member, TX-30)",
+  "researchedAt": "2026-02-27T00:00:00Z",
+
+  "biography": {
+    "birthDate": "1981-03-29",
+    "birthPlace": "St. Louis, Missouri (grew up in Texarkana, Texas)",
+    "currentRole": "U.S. Representative, Texas 30th Congressional District (January 2023–present)",
+    "priorRoles": [
+      "Texas State Representative, House District 100, 87th Legislature (January 2021–January 2023)",
+      "Founder, Crockett Law PLLC — civil rights, criminal defense, personal injury (2010–2022)",
+      "Public Defender, Bowie County, Texas (approx. 2006–2009)"
+    ],
+    "education": "B.A. Business Administration, Rhodes College (2003); J.D., University of Houston Law Center (2006). First African American UH Law Center graduate elected to U.S. House (in school's 75-year history at time of election).",
+    "background": "Civil rights attorney; represented 5,000+ Texans in court; represented BLM protesters pro bono in Dallas; public defender background. Member Congressional Progressive Caucus. House committee assignments: Judiciary (Ranking Member, Subcommittee on Oversight); Agriculture; Oversight and Accountability; Transportation and Infrastructure. Nationally known for combative media presence in House hearings.",
+    "notes": "Crockett publicly distances herself from the 'progressive' label in the 2026 Senate campaign, framing positions as 'common sense.' Campaign is strategically oriented toward Democratic base turnout expansion, not Republican/independent persuasion."
+  },
+
+  "campaignWebsite": {
+    "url": "https://www.jasmineforus.com/",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "structuralNote": "Senate campaign site lacked a consolidated platform page at launch (noted February 2026 by Dallas Express / Townhall). Issue sub-pages exist at /issues, /affordability, /healthcare-you-need-when-you-need-it, /workers-rights, /community-safety, and an energy/climate sub-page. Direct web fetch unavailable; positions reconstructed from search engine snippets of sub-pages and news coverage of site content.",
+    "statedPositions": [
+      {
+        "topic": "health_coverage_model",
+        "quote": "healthcare is a human right",
+        "detail": "Campaign healthcare sub-page: calls for eliminating premiums, deductibles, copays; uncoupling healthcare from employment; covering dental, vision, mental health, reproductive care, prescription drugs. Explicit Medicare for All framing. Also states Medicaid expansion in holdout states (including Texas) is an immediate priority.",
+        "sourceUrl": "https://www.jasmineforus.com/healthcare-you-need-when-you-need-it",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Corroborated by M4A cosponsorship (Tier 1) and multiple debate reaffirmations (Tier 2). Two-track: M4A as long-term goal, Medicaid expansion + ACA subsidies as immediate deliverables."
+      },
+      {
+        "topic": "health_cost_control",
+        "quote": "Americans pay 70% more because of Big Insurance companies with rising premiums and declining coverage",
+        "detail": "Campaign healthcare page. Praised Biden's IRA drug price negotiation as progress. M4A cosponsorship implies government price-setting as the ultimate mechanism. Cited as Ranking Member of Judiciary Subcommittee on Oversight at a joint subcommittee hearing on skyrocketing health care costs.",
+        "sourceUrl": "https://www.jasmineforus.com/healthcare-you-need-when-you-need-it",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Government price-setting is implicit in M4A; also explicitly defends IRA drug price negotiation (which is a targeted negotiation, not full rate-setting)."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "fight for people to have their basic needs met, to ensure one person, one job is enough to live with dignity and retire with security",
+        "detail": "Campaign announcement framing (February 2026). AFL-CIO 100% + SEIU endorsement confirm safety net vote alignment. Supports Medicaid expansion, ACA subsidies, and earned income programs. Anti-tariff framing (roll back tariffs Day 1) is a safety net / affordability signal.",
+        "sourceUrl": "http://stylemagazine.com/news/2026/feb/12/jasmine-crockett-announces-us-senate-run-in-texas-with-focus-on-affordability-and-accountability/",
+        "date": "2026-02-12",
+        "confidence": "high",
+        "notes": "Multiple corroborating sources. AFL-CIO 100% is Tier 1."
+      },
+      {
+        "topic": "econ_investment",
+        "quote": "[Progress has been made] from American Rescue Plan to Inflation Reduction Act",
+        "detail": "Joined 153 House Democrats opposing Trump's pause of IRA and Bipartisan Infrastructure Law funding. Defends public investment in clean energy, infrastructure, and manufacturing. Supports PRO Act (ease union organizing). Opposes Trump tariffs as harmful but frames this as consumer/worker protection, not industrial policy rejection.",
+        "sourceUrl": "https://crockett.house.gov/issues/energy-climate-change",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Strong public investment orientation consistent with progressive Democratic baseline. Co-signed letter defending IRA funding disbursements (Tier 1 legislative action)."
+      },
+      {
+        "topic": "econ_tax_structure",
+        "quote": "we need to go back to the tax rates that were in place when Clinton was in office, and we were able to balance our budget while also being able to have people that have access to food, access to education, and access to healthcare",
+        "detail": "AFL-CIO debate, January 24, 2026. Texas Tribune Q&A (February 4, 2026) adds: 'supports reinstating the previous corporate tax rate for large corporations.' Heritage Action 17% confirms consistent anti-tax-cut voting record.",
+        "sourceUrl": "https://www.kut.org/2026-01-24/texas-primary-debate-jasmine-crockett-james-talarico-senate-race",
+        "date": "2026-01-24",
+        "confidence": "high",
+        "notes": "Clinton-era top rate was 39.6% (vs. current 37%). Corporate tax reversal of TCJA. Consistent with entire voting record. Tier 2 structured interview + Tier 1 Heritage Action corroboration."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "unlocking opportunities starts with a solid public school education... opportunities shouldn't be decided by zip code or tax bracket",
+        "detail": "Campaign issues page and House.gov about page. Emphasizes safe schools, certified teachers, nurses, counselors, support staff. Note: In 118th Congress, she voted against a provision that would have excluded for-profit career schools from Pell Grant eligibility (distinct from K-12 voucher debate). No explicit statement found on Texas ESA vouchers or federal school choice programs.",
+        "sourceUrl": "https://www.jasmineforus.com/issues",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Insufficient direct evidence on K-12 vouchers. General public school orientation suggests Pole A, but cannot score with confidence. Scorer should consider omitting or scoring LOW."
+      },
+      {
+        "topic": "housing_affordability_tools",
+        "quote": "Most renters are paying well over 30% of their monthly income",
+        "detail": "Introduced Combatting the Housing Supply Shortage Act: increases cap on Tax-Exempt Private Activity Bonds for multifamily housing construction in high-demand states (TX, CA). Also introduced Rural Housing Voucher Enhancement Act. Affordability sub-page on Senate website addresses housing, food, childcare.",
+        "sourceUrl": "https://crockett.house.gov/media/press-releases/crockett-introduces-combatting-housing-supply-shortage-act",
+        "date": "2025",
+        "confidence": "medium",
+        "notes": "Bond incentive approach is market-incentivizing (not direct public housing or rent control). More moderate on affordability tools than her other positions. No rent control or housing-as-right language found."
+      },
+      {
+        "topic": "housing_supply_zoning",
+        "quote": "various housing supply must be created so that all residents can lead the life they want to live",
+        "detail": "House.gov economy/jobs/housing page. Supply expansion is an explicit goal. Method is private bond financing incentive. No statement on exclusionary zoning, by-right approval, or federal preemption found.",
+        "sourceUrl": "https://crockett.house.gov/issues/economy-jobs-housing",
+        "date": "2025",
+        "confidence": "low",
+        "notes": "Supply goal is clear; mechanism is market-incentive (bonds). Position on zoning reform itself is unclear. Scorer should likely omit this axis or score LOW with heavy uncertainty."
+      },
+      {
+        "topic": "housing_transport_priority",
+        "quote": "[Crockett] advocated for robust federal investment in public transportation infrastructure",
+        "detail": "Member, House Transportation and Infrastructure Committee. Introduced transit worker safety amendment to FY2024 THUD Appropriations (included). Met with APTA leadership during 2025 Congressional Fly-In to advocate for transit funding. TX-30 district (Dallas) is transit-dependent.",
+        "sourceUrl": "https://crockett.house.gov/media/press-releases/crockett-amendment-protect-transit-worker-safety-included-house-thud",
+        "date": "2024-2025",
+        "confidence": "medium",
+        "notes": "Pro-transit record is consistent but not emphatic — this is the most committee-work-driven signal, not ideological priority-signaling. Dallas district context supports this."
+      },
+      {
+        "topic": "justice_firearms",
+        "quote": "I am a gun owner. I am licensed to carry. And I still believe we should ban assault weapons.",
+        "detail": "AFL-CIO debate (January 24, 2026). Campaign community safety page: ban assault weapons and bump stocks, universal background checks on all gun sales, close loopholes that allow dangerous people to access guns, strengthen safe storage. Cosponsor of Assault Weapons Ban of 2025. Giffords describes her as 'one of the nation's foremost gun safety champions.'",
+        "sourceUrl": "https://www.texastribune.org/2026/01/24/jasmine-crockett-james-talarico-debate-texas-senate-democratic-primary-2026/",
+        "date": "2026-01-24",
+        "confidence": "high",
+        "notes": "Multiple Tier 1 and Tier 2 sources. Gun owner framing is tactical in Texas context — positions remain firmly pro-regulation. Giffords endorsement is Tier 1 organizational scorecard signal."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "ending qualified immunity for police officers... demilitarizing the police by ending the transfer of military weapons to local police departments",
+        "detail": "House.gov criminal justice page. Voted NO on House spending bill with expanded ICE funding. Introduced TRACK ICE Act (transparency in immigration enforcement flights). Civil rights attorney background; represented BLM protesters pro bono. Reacted strongly when DOJ ended police reform agreements (2025). Introduced policing reform legislation in TX House. Supports civilian oversight.",
+        "sourceUrl": "https://crockett.house.gov/issues/criminal-justice",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Clear reform-focused, not defund/abolish. End qualified immunity + demilitarize = significant oversight/accountability position (score ~2-3 on axis). Multiple corroborating sources."
+      },
+      {
+        "topic": "justice_sentencing_goals",
+        "quote": "applauded President Biden for commuting the sentences of 2,500 non-violent drug offenders",
+        "detail": "Led clemency efforts for federal crack cocaine convictions. Introduced Democracy Restoration Act (July 2025) — would restore federal voting rights for all Americans released from incarceration. As TX State Rep (2021): passed legislation wiping in-court fees for recently incarcerated persons. Public defender background emphasizes rehabilitation over punishment.",
+        "sourceUrl": "https://crockett.house.gov/issues/criminal-justice",
+        "date": "2024-2025",
+        "confidence": "high",
+        "notes": "Strong rehabilitation and decarceration orientation across multiple sources and legislative actions. Consistent from state to federal level."
+      },
+      {
+        "topic": "climate_ambition",
+        "quote": "Trump has no plan AT ALL to address the climate crisis. Texas is a leader in many renewable energies and I plan to end our reliance on fossil fuels and expand our clean and sustainable energy production",
+        "detail": "House.gov energy and climate page. LCV 97% lifetime score; LCV endorsed 2022 and 2024; named in LCV 'Champions of Color.' Joined 153 House Democrats opposing Trump's pause of IRA clean energy funding. Co-founded Texas House Energy & Climate Caucus (state level, 2021). Spoke out against LNG export expansion.",
+        "sourceUrl": "https://crockett.house.gov/issues/energy-climate-change",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "LCV 97% lifetime is Tier 1. Multiple Tier 2 sources corroborate. Campaign sub-page target: 100% renewable energy (year target varies by source — 2035 referenced in some reports). Clearly at or near Pole A."
+      },
+      {
+        "topic": "climate_energy_portfolio",
+        "quote": "determined to lead the charge in electrification, and adoption of renewable fuels... plans to end our reliance on fossil fuels",
+        "detail": "Eliminate fossil fuel subsidies; invest in green infrastructure in underserved communities; introduced Farm to Fuselage Act (bipartisan sustainable aviation fuel). Opposed LNG export expansion (spoke out against Biden administration's LNG project approvals that LCV tracked). Defended IRA clean energy provisions.",
+        "sourceUrl": "https://crockett.house.gov/issues/energy-climate-change",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Renewables-first, anti-fossil fuel framing is unambiguous. No all-of-the-above language. LCV 97% lifetime corroborates at Tier 1 level."
+      },
+      {
+        "topic": "climate_permitting",
+        "quote": null,
+        "detail": "No specific statement found on environmental review timelines, permitting reform, or expedited project approval. LCV 97% suggests she would not support weakening environmental review, but no direct evidence of strengthening precautionary review either.",
+        "sourceUrl": null,
+        "date": null,
+        "confidence": "none",
+        "notes": "Omit this axis — no direct evidence. Scorer should not infer from LCV score alone."
+      },
+      {
+        "topic": "immigration / ICE",
+        "quote": "at the end of the day I think we need to clean house from top to bottom... ICE is a rogue organization",
+        "detail": "AFL-CIO debate (January 24, 2026): said she would 'abolish ICE if given the chance.' Also characterized position as 'cleaning house' (overhaul), not strict abolition. NBC News separately reported she called for ICE overhaul. El Paso (Feb 22, 2026): 'border security and immigration are two separate things' — supports improved border technology, not more walls. Campaigned in Laredo (Feb 27, 2026): 'we believe in border security.' Voted NO on House spending bill with ICE funding expansion. Introduced TRACK ICE Act.",
+        "sourceUrl": "https://www.nbcnews.com/politics/2026-election/democrats-call-ice-overhaul-texas-senate-debate-hours-minnesota-shooti-rcna255593",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Notable internal tension: 'abolish if given the chance' vs. 'clean house' vs. pro-border-security framing in border communities. Her House voting record (NO on ICE funding) is the Tier 1 signal. The overhaul framing is the most reliable description of her actual position — not strict abolition, not status quo. Tactical audience-calibration is evident."
+      }
+    ]
+  },
+
+  "votingRecord": {
+    "available": true,
+    "chamberAndPeriod": "U.S. House, TX-30, 118th–119th Congress (January 2023–February 2026)",
+    "sources": ["GovTrack", "Congress.gov", "VoteSmart Key Votes", "AFL-CIO scorecard", "Reproductive Freedom for All scorecard", "Heritage Action scorecard"],
+    "attendanceRate": "95.6% (missed 74 of 1,681 roll call votes, Jan 2023–Feb 2026; median 98.0%)",
+    "ideologyIndicators": {
+      "heritageAction118th": "17% (measuring conservatism; 17% = strongly progressive)",
+      "aflcio2024": "100%",
+      "aflcio2023": "98%",
+      "lcvLifetime": "97%",
+      "reproductiveFreedomForAll2024": "100%",
+      "notes": "Voteview DW-NOMINATE profile exists at voteview.com/person/22312 but specific score not retrieved. All available ideology indicators consistently place her in the progressive/liberal flank of House Democrats."
+    },
+    "keyVotes": [
+      {
+        "bill": "HR 3421 — Medicare for All Act of 2023 (118th Congress)",
+        "vote": "Cosponsor (joined May 17, 2023)",
+        "topic": "health_coverage_model",
+        "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/3421/cosponsors",
+        "notes": "Single-payer universal health insurance. Directly places her at Pole A on health_coverage_model. The bill would eliminate private insurance's primary role."
+      },
+      {
+        "bill": "Assault Weapons Ban of 2025",
+        "vote": "Cosponsor",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://www.jasmineforus.com/community-safety",
+        "notes": "Corroborated by Giffords 'foremost gun safety champion' endorsement. Also co-sponsored background check expansion bills in 118th Congress."
+      },
+      {
+        "bill": "TRACK ICE Act",
+        "vote": "Introduced",
+        "topic": "justice_policing_accountability / immigration",
+        "sourceUrl": "https://crockett.house.gov/about/votes-and-legislation",
+        "notes": "Transparency in immigration enforcement flights. Consistent with ICE overhaul stance."
+      },
+      {
+        "bill": "House spending bill with ICE funding expansion",
+        "vote": "No",
+        "topic": "justice_policing_accountability / immigration",
+        "sourceUrl": "https://www.kut.org/2026-01-24/texas-primary-debate-jasmine-crockett-james-talarico-senate-race",
+        "notes": "Cited by Crockett herself in AFL-CIO debate January 24, 2026 as evidence of her ICE accountability stance."
+      },
+      {
+        "bill": "Democracy Restoration Act (introduced July 2025)",
+        "vote": "Introduced",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://crockett.house.gov/media/press-releases/",
+        "notes": "Would restore federal voting rights nationwide for all individuals released from incarceration. Strong rehabilitation/re-entry signal."
+      },
+      {
+        "bill": "Combatting the Housing Supply Shortage Act",
+        "vote": "Introduced",
+        "topic": "housing_affordability_tools",
+        "sourceUrl": "https://crockett.house.gov/media/press-releases/crockett-introduces-combatting-housing-supply-shortage-act",
+        "notes": "Increases cap on Tax-Exempt Private Activity Bonds for multifamily housing in high-demand states. Market-incentive approach, not direct public housing."
+      },
+      {
+        "bill": "Rural Housing Voucher Enhancement Act",
+        "vote": "Introduced",
+        "topic": "housing_affordability_tools",
+        "sourceUrl": "https://crockett.house.gov/media/press-releases/congresswoman-crockett-introduces-rural-housing-voucher-enhancement-act",
+        "notes": "Improves Rural Housing Service voucher program. Targeted subsidy approach."
+      },
+      {
+        "bill": "Transit worker safety amendment to THUD FY2024 Appropriations",
+        "vote": "Introduced (included in bill)",
+        "topic": "housing_transport_priority",
+        "sourceUrl": "https://crockett.house.gov/media/press-releases/crockett-amendment-protect-transit-worker-safety-included-house-thud",
+        "notes": "FTA enforcement of FAST Act transit worker safety rules. Consistent pro-transit record."
+      },
+      {
+        "bill": "Farm to Fuselage Act",
+        "vote": "Introduced (bipartisan, with Rep. Max Miller)",
+        "topic": "climate_energy_portfolio",
+        "sourceUrl": "https://crockett.house.gov/about/votes-and-legislation",
+        "notes": "Updates Farm Bill to expand domestic production of Sustainable Aviation Fuel. Bipartisan — notable because it represents cross-aisle climate-adjacent legislation."
+      },
+      {
+        "bill": "Israel Security Supplemental Appropriations Act, HR 8034 (April 2024)",
+        "vote": "Yes",
+        "topic": "foreign policy only",
+        "sourceUrl": "https://www.govtrack.us/congress/members/jasmine_crockett/456944",
+        "notes": "Not scored on any civic axis. Contextual: voted No on Nov 2023 standalone $14.3B Israel aid bill ('partisan, fiscally irresponsible, lacking humanitarian relief'). Voted Yes on April 2024 larger omnibus package that included Ukraine, Taiwan, Gaza, and Israel aid. Has drawn progressive criticism."
+      },
+      {
+        "bill": "Texas State House: In-court fee elimination for recently incarcerated persons",
+        "vote": "Co-authored / became law",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://crockett.house.gov/about",
+        "date": "2021-2022",
+        "notes": "State-level legislation. Consistent rehabilitation orientation predating her federal career."
+      },
+      {
+        "bill": "Texas State House: Quorum break to block SB 1 (voter restriction bill)",
+        "vote": "Participated",
+        "topic": "voting rights / democracy",
+        "sourceUrl": "https://www.texastribune.org/2021/06/02/jasmine-crockett-texas-house/",
+        "date": "2021",
+        "notes": "Flew to DC with other TX House Democrats; lobbied for John Lewis VRA and For the People Act. Strong personal commitment to voting rights."
+      }
+    ]
+  },
+
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "97% (2024 annual); 99% lifetime (note: one source says 97% lifetime; likely 97% is the lifetime figure given limited term in office)",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/jasmine-crockett/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "LCV endorsed in 2022 and 2024 House races. Featured in LCV 'Congressional Champions of Color.' Cited specifically for advocacy against LNG export expansion and for defending IRA clean energy funding."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "100% (2024); 98% (2023)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/jasmine-crockett",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Near-perfect two-year labor voting alignment. Supports PRO Act, $15/hour minimum wage indexed to inflation, opposes right-to-work laws. Self-claims '100% pro-labor voting record in both Texas House and U.S. House' — corroborated by AFL-CIO scorecard."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "17% (118th Congress)",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/C001130/118",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Heritage Action measures conservatism. 17% = strongly progressive across economic, social, and governance votes tracked by Heritage. Strong corroboration of consistent left-of-center voting record."
+    },
+    {
+      "organization": "GIFFORDS (gun safety)",
+      "score": null,
+      "grade": "Endorsed (2022, 2024 House races)",
+      "url": "https://giffords.org/candidates/jasmine-crockett-2/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Giffords describes her as 'one of the nation's foremost gun safety champions.' Supported: universal background checks, assault weapons ban, bump stock ban, dangerous-person loopholes, safe storage. Specific A/B/C/D grade not retrieved; endorsement implies A-equivalent rating."
+    },
+    {
+      "organization": "Reproductive Freedom for All (formerly NARAL Pro-Choice America)",
+      "score": "100% (2024)",
+      "grade": null,
+      "url": "https://reproductivefreedomforall.org/lawmaker/jasmine-crockett/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect 2024 scorecard. SBA Pro-Life America confirms from opposite direction: she 'consistently voted to prevent protections for the unborn.' Cross-validation confirms consistent pro-choice record."
+    },
+    {
+      "organization": "EMILY's List",
+      "score": null,
+      "grade": "Endorsed (2026 Senate race)",
+      "url": "https://emilyslist.org/news/emilys-list-announces-texas-statewide-endorsements-endorsing-jasmine-crockett-and-gina-hinojosa/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Nation's largest organization dedicated to electing pro-choice Democratic women. Endorsement is a strong pro-choice + women's issues signal."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. Consistent with gun safety champion record. Texas Gun Rights organization explicitly opposes her. No NRA endorsement or rating retrieved."
+    },
+    {
+      "organization": "US Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "Not retrieved. Given AFL-CIO 100% and Heritage Action 17%, Chamber of Commerce score would be expected to be low. Scorer may infer Pole A on econ_investment but should not treat as Tier 1."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "EMILY's List",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "2026",
+      "notes": "Largest pro-choice Democratic women's PAC. Endorsed for Senate."
+    },
+    {
+      "organization": "SEIU Texas (Service Employees International Union)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "2026-02-04",
+      "notes": "SEIU cited '100% pro-labor voting record in both Texas House and U.S. House.' President Elsa Flores: Crockett 'consistently supported workers' rights and immigrant families.'"
+    },
+    {
+      "organization": "Sen. Angela Alsobrooks (D-MD)",
+      "type": "individual senator endorsement",
+      "cycle": "2026",
+      "notes": "First sitting U.S. Senator to publicly endorse Crockett in Senate race."
+    },
+    {
+      "organization": "Texas Organizing Project (TOP) PAC / Working Families Party PAC",
+      "type": "endorsement + financial support",
+      "cycle": "2026",
+      "notes": "~$93,400 combined from TOP and Working Families Party PACs. TOP focuses on organizing in Black and Latino communities."
+    },
+    {
+      "organization": "LCV Action Fund",
+      "type": "endorsement",
+      "cycle": "2022, 2024 (House races)",
+      "notes": "Repeated LCV endorsee. Expected to endorse for Senate given track record."
+    },
+    {
+      "organization": "GIFFORDS PAC",
+      "type": "endorsement",
+      "cycle": "2022, 2024 (House races)",
+      "notes": "Gun safety champion endorsement for House. No 2026 Senate endorsement confirmed yet in research."
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "type": "NO endorsement — declined (no action taken)",
+      "cycle": "2026",
+      "notes": "Delegates at COPE Convention voted to take no action in the contested Senate primary. This is notable given Crockett's 100% AFL-CIO House scorecard."
+    },
+    {
+      "organization": "Progressive Change Campaign Committee (PCCC)",
+      "type": "NOT endorsed — endorsed opponent Talarico instead",
+      "cycle": "2026",
+      "notes": "PCCC co-founder Adam Green said Crockett 'has never really shown up for any economic fight' — significant signal of progressive-left skepticism despite her high AFL-CIO scores. Source: The American Prospect Q&A, February 24, 2026."
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "Texas AFL-CIO COPE Convention Debate (KUT Radio, Houston Public Media, Texas Tribune coverage)",
+      "date": "2026-01-24",
+      "url": "https://www.kut.org/2026-01-24/texas-primary-debate-jasmine-crockett-james-talarico-senate-race",
+      "format": "Structured debate vs. James Talarico",
+      "keyExchanges": [
+        {
+          "topic": "health_coverage_model",
+          "quote": "If we truly believe that everyone should have access to health care, we can make that a reality with bold leadership",
+          "notes": "Reaffirmed M4A cosponsorship. Also flagged Medicaid expansion as immediate priority."
+        },
+        {
+          "topic": "econ_tax_structure",
+          "quote": "we need to go back to the tax rates that were in place when Clinton was in office",
+          "notes": "Clinton-era top rate: 39.6%. Supports reversing Trump tax cuts."
+        },
+        {
+          "topic": "immigration / ICE",
+          "quote": "at the end of the day I think we need to clean house from top to bottom",
+          "notes": "Context: NBC separately reported she said she would 'abolish ICE if given the chance.' Debate framing was overhaul. Voted NO on ICE funding expansion."
+        },
+        {
+          "topic": "justice_firearms",
+          "quote": "I am a gun owner. I am licensed to carry. And I still believe we should ban assault weapons.",
+          "notes": "Gun owner framing used to inoculate against Republican attacks in Texas general election context."
+        },
+        {
+          "topic": "filibuster",
+          "quote": "Supports carveouts for voting rights and other 'fundamental issues'",
+          "notes": "More moderate than opponent Talarico on filibuster; not calling for wholesale elimination."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune — candidate Q&A",
+      "date": "2026-02-04",
+      "url": "https://www.texastribune.org/2026/02/04/on-the-issues-a-qa-with-the-texas-democrats-running-for-u-s-senate/",
+      "format": "Written candidate questionnaire",
+      "keyExchanges": [
+        {
+          "topic": "health_coverage_model",
+          "quote": "Supports Medicare for All",
+          "notes": "Reaffirmed in writing."
+        },
+        {
+          "topic": "econ_tax_structure",
+          "quote": "Supports reinstating the previous corporate tax rate for large corporations",
+          "notes": "Direct Q&A response. Corporate tax reversal of TCJA."
+        },
+        {
+          "topic": "Supreme Court / democracy",
+          "quote": "Supports expanding the U.S. Supreme Court",
+          "notes": "More forceful than Talarico on this."
+        },
+        {
+          "topic": "filibuster",
+          "quote": "Supports carveouts for voting rights and other fundamental issues",
+          "notes": "Consistent with debate position."
+        }
+      ]
+    },
+    {
+      "outlet": "El Paso Matters",
+      "date": "2026-02-22",
+      "url": "https://elpasomatters.org/2026/02/22/jasmine-crockett-border-security-immigration-el-paso-texas-senate-primary-election/",
+      "format": "In-person campaign event coverage",
+      "keyExchanges": [
+        {
+          "topic": "immigration / border security",
+          "quote": "immigration and border security are two separate things... improved border technology — not more walls — is key to securing the U.S.-Mexico border",
+          "notes": "Calibrated messaging for El Paso border audience. Pro-technology-security, anti-wall."
+        }
+      ]
+    },
+    {
+      "outlet": "KGNS Laredo",
+      "date": "2026-02-27",
+      "url": "https://www.kgns.tv/2026/02/27/democratic-senate-candidate-jasmine-crockett-campaigns-laredo-addresses-immigration-and-border-security/",
+      "format": "Campaign stop coverage",
+      "keyExchanges": [
+        {
+          "topic": "immigration",
+          "quote": "we believe in border security, and then I think that we need to be clear and concise about what border security looks like",
+          "notes": "Border city audience. Pro-border-security framing while maintaining ICE criticism."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Observer",
+      "date": "2025-12",
+      "url": "https://www.texasobserver.org/jasmine-crockett-interview-senate-december/",
+      "format": "Long-form interview",
+      "keyExchanges": [
+        {
+          "topic": "campaign strategy",
+          "quote": "If I really want to effectuate change in this moment, then the opportunity lies in flipping a Senate seat in Texas",
+          "notes": "Turnout-expansion model; believes she can bring out non-voters rather than persuade Republicans/independents."
+        }
+      ]
+    },
+    {
+      "outlet": "CNN",
+      "date": "2026-02-23",
+      "url": "https://www.cnn.com/2026/02/23/politics/jasmine-crockett-texas-senate-primary",
+      "format": "Profile / interview",
+      "keyExchanges": [
+        {
+          "topic": "campaign strategy",
+          "quote": "Crockett is betting that her brand of combative, progressive politics could win over Texas voters in large part by driving Democratic enthusiasm and turnout",
+          "notes": "CNN's characterization consistent with candidate's own framing."
+        }
+      ]
+    }
+  ],
+
+  "campaignFinance": {
+    "totalRaised": "$8.6M (as of late February 2026 per news reports)",
+    "sources": [
+      "https://theintercept.com/2026/02/13/jasmine-crockett-texas-senate-corporate-cash/",
+      "https://www.notus.org/2026-election/jasmine-crockett-campaign-donations-crypto"
+    ],
+    "notes": "Raised $6.5M in first nine months of 2025. Transferred $4.5M from House campaign account. Claims 'no corporate PAC money' in Senate race but Intercept found $26.5K+ in corporate PAC money transferred from House account. Received $315K+ from corporate PACs (crypto, defense, insurance, pharma, banking) during House career. Crypto-linked super PACs spent $2M+ supporting her 2022 House race. Fundraising controversy is relevant background but does not affect axis scoring."
+  },
+
+  "positionConflicts": [
+    {
+      "topic": "Corporate cash / fundraising claims",
+      "conflict": "Claimed 'In this Senate race I have not taken any corporate PAC money.' FEC filings show at least $26.5K in corporate PAC contributions transferred from House campaign. Also received $315K+ from corporate PACs (crypto, defense, insurance, pharma, banking) in House career; 2022 House race had $2M+ from crypto-linked super PACs.",
+      "sources": [
+        "https://theintercept.com/2026/02/13/jasmine-crockett-texas-senate-corporate-cash/",
+        "https://www.notus.org/2026-election/jasmine-crockett-campaign-donations-crypto"
+      ],
+      "scoringNote": "Not a policy position conflict. Does not affect axis scoring."
+    },
+    {
+      "topic": "Israel-Gaza voting record vs. progressive identity",
+      "conflict": "Voted Yes on April 2024 omnibus Israel aid package (though No on November 2023 standalone bill). Voted for several pro-Israel resolutions during Gaza conflict. Drew criticism from progressive/Arab-American constituencies despite overall progressive profile.",
+      "sources": [
+        "https://www.govtrack.us/congress/members/jasmine_crockett/456944",
+        "https://thegrio.com/2026/02/11/jasmine-crockett-israel-gaza-interview/"
+      ],
+      "scoringNote": "Foreign policy — not scored on any of the 16 civic axes. Contextual note only."
+    },
+    {
+      "topic": "Progressive label vs. self-distancing",
+      "conflict": "Member of Congressional Progressive Caucus with near-progressive-maximum voting records (AFL-CIO 100%, LCV 97%, Heritage Action 17%). Yet in 2026 Senate campaign, actively rejects 'progressive' label, describing positions as 'common sense.' PCCC endorsed opponent over her despite her progressive record.",
+      "sources": [
+        "https://ballotpedia.org/Jasmine_Crockett",
+        "https://prospect.org/2026/02/24/talarico-crockett-senate-primary-texas-adam-green-qa/"
+      ],
+      "scoringNote": "Branding/positioning conflict, not a policy conflict. Score on voting record and stated positions, not self-applied labels."
+    },
+    {
+      "topic": "ICE abolish vs. overhaul framing",
+      "conflict": "NBC News reported she said she would 'abolish ICE if given the chance.' In debate on same day, she framed it as 'clean house from top to bottom.' In El Paso and Laredo appearances, emphasized border security support. Voting record (No on ICE funding expansion) and TRACK ICE Act are the Tier 1 signals.",
+      "sources": [
+        "https://www.nbcnews.com/politics/2026-election/democrats-call-ice-overhaul-texas-senate-debate-hours-minnesota-shooti-rcna255593",
+        "https://elpasomatters.org/2026/02/22/jasmine-crockett-border-security-immigration-el-paso-texas-senate-primary-election/"
+      ],
+      "scoringNote": "Score on voting record (No on ICE funding = Tier 1). The 'abolish vs. overhaul' semantic tension reflects strategic audience-calibration, not a genuine policy reversal. No axis directly scores immigration enforcement posture — this is most relevant to justice_policing_accountability as a framing signal."
+    }
+  ],
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "health_coverage_model — M4A cosponsor (Tier 1) + 2026 debate + Q&A reaffirmation. Score: ~0-1 (Pole A). HIGH confidence.",
+      "health_cost_control — M4A implies government price-setting; IRA drug pricing defense; Insurance company profiteering framing. Score: ~1-2. HIGH confidence.",
+      "econ_safetynet — AFL-CIO 100%/98%, SEIU endorsement, Medicaid expansion support, $15 min wage. Score: ~1. HIGH confidence.",
+      "econ_investment — IRA defender, ARP supporter, PRO Act, public infrastructure advocacy. Score: ~1-2. HIGH confidence.",
+      "econ_tax_structure — Clinton-era rates, corporate tax hike, Heritage Action 17%. Score: ~1-2. HIGH confidence.",
+      "climate_ambition — LCV 97% lifetime (Tier 1), fossil fuel phase-out language, IRA defense. Score: ~1-2. HIGH confidence.",
+      "climate_energy_portfolio — Renewables-first, fossil fuel subsidy elimination, LNG opposition. Score: ~1-2. HIGH confidence.",
+      "justice_firearms — Giffords endorsement, AWB cosponsor, universal background checks, bump stock ban. Score: ~1-2. HIGH confidence.",
+      "justice_policing_accountability — End qualified immunity, demilitarize police, No on ICE funding, TRACK ICE Act. Score: ~2-3. HIGH confidence.",
+      "justice_sentencing_goals — Democracy Restoration Act, crack cocaine clemency, TX House fee wipe, public defender background. Score: ~1-2. HIGH confidence."
+    ],
+    "moderateAxes": [
+      "housing_affordability_tools — Bond incentive legislation (market-incentivizing, not direct public housing or rent control). Score: ~3-4. MEDIUM confidence.",
+      "housing_transport_priority — Transportation Committee membership, transit amendment, APTA advocacy. Score: ~2-3. MEDIUM confidence."
+    ],
+    "weakestOrMissingAxes": [
+      "housing_supply_zoning — Vague supply-side language; no specific zoning position. LOW confidence. Scorer should omit.",
+      "econ_school_choice — No explicit K-12 voucher/charter position found. LOW confidence. Scorer should omit.",
+      "health_public_health — No vaccine mandate or public health authority position found. Omit.",
+      "climate_permitting — No permitting-specific position found. Omit."
+    ],
+    "overallConfidence": "HIGH for 10 of 16 axes based on Tier 1 voting records and scorecards. MEDIUM for 2 axes (housing). No evidence for 4 axes (school choice, public health, permitting, zoning).",
+    "keyObservations": [
+      "Crockett holds one of the most consistently progressive voting records in the House Democratic caucus as measured by multiple independent third-party scorecards. Her positions on healthcare, climate, labor, firearms, criminal justice, and tax policy are all near Pole A.",
+      "Her housing approach is notably more moderate than her other positions. The Tax-Exempt Bond legislation is a market-incentivizing tool, not direct public investment or rent control — this is consistent with Texas political context but represents a genuine moderate lean on housing tools.",
+      "The ICE 'abolish vs. overhaul' framing shows strategic audience-calibration. The Tier 1 signal (No on ICE funding, TRACK ICE Act) points to accountability/overhaul orientation.",
+      "The PCCC-over-Crockett endorsement of Talarico (despite Crockett's higher AFL-CIO scores) reflects a tension between legislative performance and economic policy leadership/positioning that the scorer should note but not over-weight.",
+      "No evidence of departure from progressive consensus on any scored axis across the full House record. The Heritage Action 17% + AFL-CIO 100% combination places her firmly in the top-quintile of progressive House members."
+    ],
+    "scorerGuidance": "Score axes with HIGH and MEDIUM confidence; omit axes explicitly flagged as missing. Do not interpolate housing_supply_zoning from housing_affordability_tools — these are distinct positions and the evidence only supports the latter. The econ_school_choice omission is intentional — progressive default is inferable from background but should not be scored without direct evidence per methodology."
+  }
+}

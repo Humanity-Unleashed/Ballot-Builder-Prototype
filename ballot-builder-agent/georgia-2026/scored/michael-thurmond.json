@@ -1,0 +1,186 @@
+{
+  "slug": "michael-thurmond",
+  "name": "Michael Thurmond",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00Z",
+  "profileSummary": "Veteran Georgia Democrat with nearly four decades of executive governance experience -- Labor Commissioner, DeKalb County CEO, interim school superintendent -- running on fiscal pragmatism, Medicaid expansion, public school investment, and bipartisan bridge-building. Deliberately avoids climate, guns, criminal justice, and social issues in his campaign framing.",
+  "keyPositions": [
+    "Full Medicaid expansion in first year; frames healthcare as a right with focus on maternal mortality and rural access",
+    "Fully fund public schools, modernize QBE funding formula, raise teacher pay, expand pre-K for 3- and 4-year-olds",
+    "AI workforce initiative through technical colleges and two-year institutions to create 'most AI proficient workforce in America'",
+    "Opposes income tax elimination; cites regressivity of sales tax replacement on low-income Georgians",
+    "Day-one executive order declaring housing affordability a statewide crisis; partnership model with local governments and private developers"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Labor Commissioner record: raised unemployment benefits while cutting employer taxes (1999-2011)",
+        "DeKalb CEO record: COVID rental assistance, food insecurity programs (2020-2021)",
+        "GA House record: authored $250M tax relief for seniors and working families (1987-1992)",
+        "Campaign framing: 'fight for working families' (GPB Aug 2025)"
+      ],
+      "notes": "Consistent pro-safety-net orientation across 35+ years of public service. Executive actions (raising unemployment benefits, deploying COVID relief) are higher-tier evidence than campaign statements and all point the same direction."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "DeKalb CEO: water/sewer infrastructure investment, $150M rainy-day fund built through fiscal discipline (2017-2025)",
+        "$20M school construction at Roosevelt Warm Springs for children with disabilities (Labor Commissioner tenure)",
+        "Converted unemployment offices to career services centers statewide (Labor Commissioner)",
+        "Campaign: AI workforce training via technical colleges (11Alive Aug 2025)",
+        "Community bank rebuilding initiative (Bipartisan Forum Feb 2026)",
+        "Employee retention bonuses for 6,000 county workers four consecutive years"
+      ],
+      "notes": "Strong public investment orientation paired with fiscal discipline. Built $150M rainy-day fund while investing in infrastructure and workforce -- not austerity-driven. Investment philosophy is pragmatic rather than ideological."
+    },
+    "econ_tax_structure": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": [
+        "11Alive interview Aug 2025: explicitly opposed income tax elimination, citing regressivity of sales tax replacement",
+        "Labor Commissioner record: $1.2B employer tax cut (largest in GA history)",
+        "GA House record: $250M tax relief for seniors and working families"
+      ],
+      "notes": "Mixed signals. Opposes regressive tax shifts (progressive signal) but delivered largest employer tax cut in Georgia history (business-friendly signal). Has not proposed wealth taxes or progressive rate increases -- his posture is protecting the existing structure from regressive changes rather than pushing it leftward. Net center-left."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: 'fully funding our public schools and modernizing our school funding formula' (referenced by GPB, 11Alive, The Current GA)",
+        "Campaign: teacher pay increases and pre-K expansion for 3- and 4-year-olds",
+        "Executive record: reversed DeKalb schools accreditation crisis as interim superintendent (2013-2015)",
+        "Chamblee forum Feb 2026: agreed QBE formula is failing students"
+      ],
+      "notes": "Firmly and exclusively pro-public school. Executive record includes rescuing a failing public school district. Campaign platform centers public school funding, teacher pay, and early childhood education. Zero mention of vouchers, charter schools, or school choice in any source reviewed. Absence of choice language is itself a signal given the national debate."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Atlanta News First Aug 2025: 'I'm going to protect it and expand it' (re: Medicaid)",
+        "11Alive Aug 2025: 'healthcare is a right that every Georgian should have access to'",
+        "11Alive Aug 2025: maternal mortality and rural hospital access framing",
+        "Savannah forum Jan 2026: committed to Medicaid expansion in first year",
+        "Chamblee forum Feb 2026: reiterated Medicaid expansion first year",
+        "AJC Aug 2025: pledged to fight Medicaid and public health cuts"
+      ],
+      "notes": "Explicit, consistent, repeated commitment to full Medicaid expansion -- Georgia is one of the few remaining non-expansion states. Healthcare-as-right framing. Scored at 3 rather than 2 because he is advocating Medicaid expansion (strong public option territory) but NOT Medicare for All or single-payer. His framing is access-based, not system-transformation."
+    },
+    "housing_affordability_tools": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Red and Black interview 2026: 'declare housing affordability as a statewide issue, a crisis' via Day 1 executive order",
+        "Red and Black 2026: 'partner with cities, counties, and private developers to create more affordable multi-family and single-family units'",
+        "DeKalb CEO record: COVID-era rental assistance programs"
+      ],
+      "notes": "Government-active but partnership-oriented approach. Day-one executive order declaring crisis signals urgency. Includes private developers as partners, so not purely public-housing model. Limited detail on specific mechanisms (rent control, inclusionary zoning, subsidies not mentioned). Executive record includes direct rental assistance."
+    },
+    "housing_supply_zoning": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Red and Black interview 2026: partnership with local governments and developers for 'more affordable multi-family and single-family units'"
+      ],
+      "notes": "Single source. Mentions multi-family housing (implies some density support) but framed as partnership with local governments rather than preemption of local zoning. No evidence of strong position on zoning reform or local control. Scored slightly left of center based on multi-family mention and government-active posture, but low confidence due to thin evidence."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.3,
+      "reasoning": "Healthcare-as-right framing extends beyond community to 'every Georgian.' Housing crisis declaration is universal in scope. Water infrastructure investment addresses environmental health. However, 'hire local labor rather than foreigners' statement at Savannah forum is anti-universalist. No climate or environmental policy -- a core universalism signal -- found anywhere. Moderate positive with meaningful countervailing signals."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "Defining characteristic. Community investment across every role held over 35+ years: raised unemployment benefits, rescued failing schools, deployed COVID food and rental assistance, paid retention bonuses to public employees, expanded career services. Campaign thesis is 'fight for working families.' Teacher pay, pre-K, Medicaid expansion -- all community-care oriented. Consistent and central to identity."
+    },
+    "tradition": {
+      "score": 0.3,
+      "reasoning": "Author of multiple books on Georgia history -- deep respect for heritage and cultural legacy. First Black statewide official since Reconstruction -- making history while respecting democratic traditions. Supports election board independence against federal/state override. Works within established institutional frameworks. But also modernizing (AI workforce, school formula reform) -- not a status quo defender. Moderate positive."
+    },
+    "conformity": {
+      "score": 0.6,
+      "reasoning": "Strong institutional-process orientation throughout career. Eight consecutive balanced budgets. Built $150M rainy-day fund by working within fiscal constraints. Reversed accreditation crisis by meeting AdvancED standards. Supports election board independence and institutional norms. Governance style is deliberate, rule-following, and process-respecting. Bridge-builder framing is inherently conformist -- working within the system, not disrupting it."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Fiscal stability as county executive ($24.7M deficit to $150M reserve). Food security and rental assistance during pandemic. Healthcare access framed as life-or-death security for mothers and babies. 'A job for every Georgian' as economic security. Water and sewer infrastructure maintenance addresses basic service security. Overall pattern: stability-oriented governance that treats economic and health insecurity as the threats to address."
+    },
+    "power": {
+      "score": 0.1,
+      "reasoning": "Has held significant institutional power (three-term statewide official, two-term county CEO) but does not orient politics around concentrating or serving concentrated power. No major corporate PAC alignment documented. $1.2B employer tax cut is a pro-business signal but was paired with worker benefits. Community bank initiative is decentralizing. No endorsements from major power centers as of research date. Neutral to very slightly positive."
+    },
+    "achievement": {
+      "score": 0.6,
+      "reasoning": "Personal story of a sharecropper's son rising to become first Black statewide official in Georgia since Reconstruction -- achievement narrative is central to biography. 'A job for every Georgian and a Georgian for every job' as campaign motto. AI workforce training and technical college expansion emphasize individual skill-building. Meritocratic orientation through education and workforce development rather than structural critique."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal liberty or lifestyle freedom framing in any source reviewed. No positions on cannabis, personal choice issues, or libertarian themes. This value is simply absent from his political identity."
+    },
+    "stimulation": {
+      "score": 0.1,
+      "reasoning": "AI workforce initiative shows moderate innovation/tech interest. However, overall identity is pragmatic, steady, institutional -- the opposite of disruptive. Bridge-builder framing is anti-disruption. At 73, not running a 'new generation' campaign. Governance record emphasizes stability and fiscal discipline over transformation. Very weak positive from AI initiative only."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Election board independence stance is a civil liberties signal. Healthcare-as-right framing could be read as enabling individual autonomy through access. But no documented positions on reproductive rights, LGBTQ+ rights, surveillance, gun rights, or other core self-direction domains. The absence of social issue positions across 6+ months of campaign coverage means this value cannot be strongly scored."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Employer tax cut vs. worker-oriented framing",
+      "description": "As Labor Commissioner, delivered the $1.2 billion largest employer tax cut in Georgia history. Currently campaigns as a champion of working families and opposes income tax elimination on regressivity grounds. The tax cut is pro-business; the current framing is pro-worker.",
+      "sources": ["Axios Atlanta Aug 2025", "11Alive Aug 2025 interview"],
+      "scoringImpact": "Scored econ_tax_structure at 4 (center-left) rather than further left, reflecting this mixed record. The employer tax cut was paired with raising unemployment benefits, suggesting pragmatic 'both/and' orientation rather than contradiction."
+    },
+    {
+      "topic": "Local-hire populism vs. Democratic internationalism",
+      "description": "At the Savannah forum (Jan 2026), Thurmond stated tax-break recipients should 'hire local labor rather than foreigners' -- a populist/economic-nationalist position that diverges from mainstream Democratic free-trade consensus and could be read as xenophobic.",
+      "sources": ["Georgia Recorder Savannah forum Jan 2026"],
+      "scoringImpact": "Depressed universalism score from potential 0.5 to 0.3. This is a single-source Tier 3 statement but notable for its departure from party norms."
+    },
+    {
+      "topic": "Bipartisan bridge-building vs. Democratic primary electorate",
+      "description": "Deliberately avoids anti-Trump framing and climate/guns/criminal justice positions to appeal to independents and disaffected Republicans. UGA political scientist Audrey Haynes flagged this as risky with a Democratic primary electorate that may want a fighter posture. He is competing against more progressive candidates (Esteves, Romman).",
+      "sources": ["Atlanta Magazine Aug 2025", "GPB Politically Georgia podcast Aug 2025"],
+      "scoringImpact": "Not a scoring conflict per se, but contextualizes why many axes are unscored: the absence of positions on climate, guns, criminal justice, and reproductive rights appears strategic rather than accidental."
+    },
+    {
+      "topic": "DeKalb schools accreditation claim",
+      "description": "PolitiFact (Oct 2013) found Thurmond overstated outcomes of DeKalb's accreditation review mid-tenure. AJC reported controversial hiring decisions. However, district was ultimately removed from probation (2014) under his watch.",
+      "sources": ["PolitiFact Oct 2013", "AJC reporting", "Wikipedia biography"],
+      "scoringImpact": "Minor impact on overall confidence. Education executive record still strong but with noted asterisk on claims precision."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 7,
+    "axesSkipped": [
+      "health_cost_control",
+      "health_public_health",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "Nine axes skipped due to no meaningful evidence. Thurmond's campaign deliberately focuses on healthcare access, education, workforce, and cost of living while avoiding climate, guns, criminal justice, policing, and public health authority. This appears to be a strategic choice for bipartisan positioning in a general election, but it creates genuine scoring gaps. His 35-year career was spent in executive roles (Labor Commissioner, county CEO) that produce budget and administrative evidence, not legislative votes on these topics.",
+    "overallConfidence": "medium-high",
+    "researchGaps": [
+      "No climate or environmental policy position found in any source -- a major gap for a gubernatorial candidate",
+      "No firearms policy position documented; no NRA engagement or gun safety record",
+      "No criminal justice or policing position despite multiple forum opportunities to address it",
+      "No reproductive rights or abortion position documented -- notable absence in post-Dobbs Georgia",
+      "No interest group scorecards available (LCV, NRA, AFL-CIO, Chamber) -- executive roles are not scored by most groups",
+      "No formal endorsements documented as of February 2026 -- primary still ten weeks out",
+      "Legislative record from 1987-1992 GA House tenure has limited bill-level documentation available"
+    ]
+  }
+}

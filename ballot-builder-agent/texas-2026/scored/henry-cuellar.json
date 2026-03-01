@@ -1,0 +1,239 @@
+{
+  "slug": "henry-cuellar",
+  "name": "Henry Cuellar",
+  "party": "Democratic",
+  "office": "U.S. House, Texas 28th Congressional District, 2026",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Eleven-term Blue Dog Democrat representing a heavily Hispanic border district; widely described as the most conservative House Democrat, with a 20-year record of breaking from his party on abortion, energy, labor, and immigration enforcement. Pardoned by Trump in December 2025 on federal bribery charges; House Ethics investigation ongoing.",
+  "keyPositions": [
+    "Self-identifies as pro-life; last anti-abortion Democrat in the House; voted against Women's Health Protection Act",
+    "Explicit all-of-the-above energy advocate; represents a top oil/gas-producing district; one of four Democrats to vote for GOP Lower Energy Costs Act (2023)",
+    "Strong border enforcement advocate; launched Democratic border security caucus; one of seven Democrats to vote for Republican DHS/ICE funding bill (Jan 2026)",
+    "Chamber of Commerce 92-93% rating; voted against PRO Act; stated $7.25 federal minimum wage 'might be too much'",
+    "Voted for ACA, Bipartisan Infrastructure Law, Inflation Reduction Act (reluctantly), and George Floyd Justice in Policing Act"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 6,
+      "confidence": "high",
+      "sources": [
+        "Chamber of Commerce 92-93% scorecard (2016-2017)",
+        "AFL-CIO 64% (2024) scorecard",
+        "PRO Act No vote (2021)",
+        "Worker Flexibility and Choice Act (2022)",
+        "Minimum wage statement (2022)",
+        "ACA Yes vote (2010)"
+      ],
+      "notes": "Leans toward conditional/limited safety net for a Democrat. Chamber-aligned on business regulations and labor protections. Voted against PRO Act, co-authored gig worker flexibility bill that weakened wage protections, stated $7.25 minimum wage may be too high. However, voted for ACA and COVID relief, preventing a more extreme score. Blue Dog Coalition membership is a consistent fiscal-conservative signal."
+    },
+    "econ_investment": {
+      "score": 5,
+      "confidence": "medium",
+      "sources": [
+        "Bipartisan Infrastructure Law Yes vote (2021)",
+        "Build Back Better Yes vote (2021)",
+        "Inflation Reduction Act Yes vote (2022)",
+        "Chamber of Commerce 92-93% scorecard",
+        "Blue Dog Coalition membership"
+      ],
+      "notes": "Genuinely mixed. Voted for all three major Biden-era investment bills (Infrastructure, BBB, IRA), but nearly blocked the Infrastructure bill by demanding decoupling from BBB. Chamber alignment and Blue Dog membership indicate fiscal hawkishness. Votes for investment when it passes, but drags feet and negotiates down."
+    },
+    "econ_tax_structure": {
+      "score": 6,
+      "confidence": "low",
+      "sources": [
+        "Chamber of Commerce 92-93% scorecard",
+        "Blue Dog Coalition membership",
+        "IRA vote (contains some progressive tax provisions)"
+      ],
+      "notes": "No direct statements on tax structure found. Chamber alignment and Blue Dog membership suggest preference for business-friendly tax policy. Scored conservatively with low confidence due to lack of specific tax policy evidence."
+    },
+    "econ_school_choice": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Congressional website education page",
+        "TEXAS Grant program authorship",
+        "D.C. school choice program Yes vote (2015)"
+      ],
+      "notes": "Primarily focuses on public school funding and college affordability for underrepresented students. Created the TEXAS Grant program. However, voted for the D.C. school choice program in 2015, which is a pro-voucher signal. Thin evidence overall; scored as leaning slightly toward public schools but open to some choice mechanisms."
+    },
+    "health_coverage_model": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": [
+        "ACA Yes vote (2010)",
+        "Congressional website healthcare page",
+        "H.R.3 Lower Drug Costs Act Yes vote (2019)"
+      ],
+      "notes": "Supported ACA passage and works to expand Medicare and lower drug costs. Does not advocate single-payer or public option. Position is best described as 'improve and expand existing system' -- ACA-supportive with Medicare drug negotiation, but not pushing for structural reform toward universal coverage."
+    },
+    "health_cost_control": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "H.R.3 Elijah E. Cummings Lower Drug Costs Now Act Yes vote (2019)",
+        "Congressional website: 'fights to lower prescription drug costs'",
+        "IRA drug pricing provisions (2022)"
+      ],
+      "notes": "Supports Medicare drug price negotiation -- a clear government price control mechanism. Voted for H.R.3 and the IRA's drug pricing provisions. This is one area where Cuellar aligns with most Democrats."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "George Floyd Justice in Policing Act Yes vote",
+        "Cuellar statement: 'a comprehensive approach to hold police accountable, end racial profiling'"
+      ],
+      "notes": "Voted for and publicly endorsed the George Floyd Justice in Policing Act, which included ending qualified immunity, banning chokeholds, and creating national standards. This is a strong reform signal. However, only one major vote in the research file on this topic; no additional policing-specific record found."
+    },
+    "justice_firearms": {
+      "score": 4,
+      "confidence": "high",
+      "sources": [
+        "NRA grade C (downgraded from A)",
+        "Bipartisan Safer Communities Act Yes vote (2022)",
+        "NRA formerly A-rated; historically gun-friendly for a Democrat"
+      ],
+      "notes": "NRA downgraded him from A to C after he supported background check expansion and the Bipartisan Safer Communities Act (2022). Historically one of the most gun-friendly Democrats; shifted moderately after Uvalde (which is in neighboring TX-23). Current position supports targeted reforms (background checks, red flag laws) but is not a comprehensive gun regulation advocate. Score of 4 reflects the shift from historically gun-permissive (would have been 5-6) to moderate support for targeted reforms."
+    },
+    "climate_ambition": {
+      "score": 7,
+      "confidence": "high",
+      "sources": [
+        "LCV 42% (2025 annual scorecard)",
+        "LCV 51% lifetime scorecard",
+        "H.R.1 Lower Energy Costs Act Yes vote (2023, one of four Democrats)",
+        "IRA Yes vote (2022, reluctant; lobbied to weaken climate provisions)",
+        "Lobbied Senate to drop methane fee from BBB"
+      ],
+      "notes": "LCV scores are dramatically below the Democratic average. While he voted for the IRA (the largest US climate investment), he simultaneously lobbied the Senate to strip its methane fee and withheld support until the last moment. Then in 2023, he was one of only four Democrats to vote for the Republican energy bill (H.R.1) that explicitly rolled back IRA climate provisions. Voting record > stated position rule applied: the H.R.1 vote and lobbying to weaken climate provisions outweigh the IRA Yes vote. Pattern is clear: low climate ambition, prioritizes energy affordability and fossil fuel interests."
+    },
+    "climate_energy_portfolio": {
+      "score": 7,
+      "confidence": "high",
+      "sources": [
+        "Congressional website: 'all forms of domestic energy production, including oil, natural gas, wind, solar'",
+        "H.R.1 Lower Energy Costs Act Yes vote (loosens fossil fuel restrictions)",
+        "Fourth-largest oil/gas campaign contribution recipient in House (2022)",
+        "District is 6th largest oil-producing and 4th largest gas-producing in Texas",
+        "Lobbied Senate to drop methane fee from BBB"
+      ],
+      "notes": "Explicit all-of-the-above position that consistently tilts fossil. His district context (top oil/gas producer), donor base ($100K+ from oil/gas in one cycle), and specific legislative actions (H.R.1 vote, methane fee opposition) indicate active fossil fuel protection, not merely energy neutrality. Score of 7 rather than 8 because he does include renewables in his rhetoric and voted for IRA which contained major clean energy investments."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "H.R.1 Lower Energy Costs Act Yes vote (includes permitting reform for fossil fuels)",
+        "All-of-the-above energy stance implying faster approvals",
+        "District energy production context"
+      ],
+      "notes": "H.R.1 included significant permitting reform provisions to speed fossil fuel project approvals and reduce environmental review requirements. Cuellar's vote for this bill, combined with his overall energy posture, indicates strong preference for faster approvals. Medium confidence because permitting-specific statements are limited; the signal comes primarily from the H.R.1 vote and overall energy stance."
+    }
+  },
+  "valueStances": {
+    "security": {
+      "score": 0.6,
+      "reasoning": "Border security is a defining issue: launched the Democratic border security caucus, supports ICE funding, voted for DHS/ICE funding bill (one of seven Democrats). Represents a border district where security is a daily concern. Supports law enforcement funding broadly. Security orientation is consistent and central to his political identity."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Blue Dog Coalition member committed to institutional norms and bipartisan process. Ranked 6th most bipartisan House member (Lugar Center). Works within established legislative channels. Respects institutional hierarchy -- restored to ranking committee position through normal processes. However, breaks with party on multiple issues, which could be read as anti-conformity (but he conforms to district expectations instead)."
+    },
+    "tradition": {
+      "score": 0.5,
+      "reasoning": "Pro-life stance rooted in Catholic faith; traditional family and community values in a heavily Hispanic border district. Conservative on social issues for a Democrat. Son of migrant farm workers with deep roots in Laredo. Tradition orientation is genuine but not the primary organizing principle of his politics."
+    },
+    "power": {
+      "score": 0.5,
+      "reasoning": "Indicted on 14 counts of bribery and foreign influence (allegedly accepted ~$600K from Azerbaijani state oil company and Mexican bank). Received presidential pardon from Trump. Immediately restored to Homeland Security Appropriations ranking position. Strong corporate/Chamber backing. Oil and gas donor reliance. Pattern suggests comfort with transactional power relationships. Score reflects the evidence without treating the pardon as a conviction."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Extraordinary educational achievement: five degrees including a Ph.D. in Government and a J.D. Rose from migrant farm worker family to 11-term congressman. Bipartisan effectiveness ranking suggests he values getting results. TEXAS Grant program creation shows policy achievement orientation."
+    },
+    "self-direction": {
+      "score": 0.3,
+      "reasoning": "Regularly breaks with party on major issues (abortion, energy, labor, immigration), demonstrating independent judgment. However, these breaks consistently align with district interests and donor preferences, suggesting pragmatic calculation rather than pure independent thinking. The independence is real but instrumentally motivated."
+    },
+    "universalism": {
+      "score": -0.1,
+      "reasoning": "Some universalist signals: voted for ACA (expanding healthcare access), George Floyd Act (racial justice), education funding for underrepresented students. But anti-abortion stance restricts reproductive autonomy, fossil fuel advocacy works against environmental universalism, alleged corruption (accepting bribes from foreign entities) undermines the social justice dimension. Net signal is weakly negative -- universalism is not a motivating value."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "Created TEXAS Grant program for underrepresented students. Represents working-class Hispanic community. But voted against PRO Act (harming workers' organizing rights), suggested $7.25 minimum wage is too high, and co-authored legislation weakening gig worker protections. The community investment signals are offset by actions that work against the economic welfare of working people in his district."
+    },
+    "stimulation": {
+      "score": 0.0,
+      "reasoning": "No meaningful evidence of novelty-seeking or change-oriented motivation. Blue Dog establishment approach; incremental rather than transformative. Prefers stability and bipartisan process over bold new directions."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful evidence either way."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Climate and energy: IRA vote vs. H.R.1 vote",
+      "description": "Voted Yes on the Inflation Reduction Act (2022), the largest US climate investment, but also voted Yes on H.R.1 Lower Energy Costs Act (2023), which explicitly rolled back IRA climate provisions. Was one of only four Democrats to support the GOP energy bill. Also lobbied the Senate to strip the methane fee from Build Back Better.",
+      "sources": [
+        "Texas Tribune (2023-03-29)",
+        "Cuellar official press release on IRA",
+        "LCV scorecard"
+      ],
+      "scoringImpact": "Voting record rule applied: H.R.1 vote and methane fee lobbying weighted more heavily than the reluctant IRA Yes vote. Climate axes scored at 7 (low ambition, fossil-leaning portfolio)."
+    },
+    {
+      "topic": "Labor: AFL-CIO score variance",
+      "description": "AFL-CIO scores range from 55% to 98% across different years, an unusually high variance. Scored 98% in 2023 but only 64% in 2024. Voted against PRO Act (major labor priority) and co-authored legislation weakening gig worker protections, yet some years scores near-perfect on AFL-CIO's card.",
+      "sources": [
+        "AFL-CIO scorecard (multiple years)",
+        "PRO Act vote record",
+        "Worker Flexibility and Choice Act (2022)"
+      ],
+      "scoringImpact": "Specific anti-labor votes (PRO Act No, minimum wage statement, Worker Flexibility Act) weighted over high-variance scorecard years. Safety net axis scored at 6."
+    },
+    {
+      "topic": "Abortion: Democrat who opposes abortion rights",
+      "description": "Only anti-abortion Democrat in the House. Self-identifies as pro-life citing Catholic faith. Voted against Women's Health Protection Act (only Democrat to do so) and voted for NDAA amendment banning military abortion travel reimbursement. Planned Parenthood and NARAL actively campaign against him.",
+      "sources": [
+        "NPR (2022-07-10)",
+        "Women's Health Protection Act vote",
+        "NDAA amendment vote",
+        "Planned Parenthood opposition campaign"
+      ],
+      "scoringImpact": "No dedicated reproductive rights axis in the framework. Noted in profile summary, key positions, and tradition/universalism value scores. This is a significant position that the current 16-axis framework does not directly capture."
+    },
+    {
+      "topic": "Federal indictment and Trump pardon",
+      "description": "Indicted May 2024 on 14 counts (bribery, money laundering, foreign influence). Pardoned by Trump December 2025. House Ethics investigation still ongoing. Restored to ranking committee position within days of pardon.",
+      "sources": [
+        "DOJ indictment press release",
+        "Texas Tribune (2025-12-03)",
+        "KGNS (2025-12-30)"
+      ],
+      "scoringImpact": "Captured in power value score (+0.5). Does not directly affect axis scores, which measure policy positions rather than ethics/corruption. Noted in profile summary."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": [
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals"
+    ],
+    "reasonSkipped": "No meaningful housing record found for this federal representative. Health public health evidence too thin (only general COVID relief votes). No specific sentencing or criminal justice reform record beyond the George Floyd Act vote (which maps to policing accountability).",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific tax policy positions documented beyond Chamber alignment inference",
+      "Reproductive rights is a major differentiator but has no dedicated axis in the 16-axis framework",
+      "Immigration enforcement is a defining issue but has no dedicated axis; captured only in profile summary and value scores",
+      "No specific education voting record beyond TEXAS Grant and D.C. school choice vote from 2015",
+      "House Ethics Committee investigation status and potential findings not yet available"
+    ]
+  }
+}

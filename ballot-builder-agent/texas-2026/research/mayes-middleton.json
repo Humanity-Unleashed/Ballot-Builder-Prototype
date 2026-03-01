@@ -1,0 +1,616 @@
+{
+  "slug": "mayes-middleton",
+  "name": "Mayes Middleton",
+  "party": "Republican",
+  "office": "Texas Attorney General, 2026 Republican Primary (March 3, 2026)",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-27T00:00:00Z",
+  "biography": {
+    "fullName": "David Mayes Middleton II",
+    "born": "September 18, 1981, Wallisville, Texas (Chambers County)",
+    "currentRole": "Texas State Senator, Senate District 11 (Galveston/Brazoria/Harris area), January 2023–present",
+    "priorRoles": [
+      "Texas House of Representatives, District 23, January 2019–January 2023 (two terms)",
+      "Chairman, Texas House Freedom Caucus (final House term)",
+      "President, Middleton Oil Company (independent oil & gas, 60+ wells in South Texas and Gulf Coast)",
+      "Ranching, cattle, and farming operations across five Texas counties",
+      "Board of Directors, First Liberty National Bank"
+    ],
+    "education": [
+      "B.S. Finance (Plan II Honors), University of Texas at Austin",
+      "J.D., University of Texas School of Law"
+    ],
+    "background": "Third-generation oil and gas executive from Chambers County. Self-described Christian nationalist/MAGA conservative. Ranked among the most conservative members of the Texas Legislature in every session. Declines state salary and state health/pension benefits, donating his salary to local charities. Chaired the Texas House Freedom Caucus and has been the primary legislative engine for most significant Texas culture-war bills (transgender bathroom ban, vaccine mandate ban, school prayer, anti-ESG, women's sports ban) since 2019."
+  },
+  "campaignWebsite": {
+    "url": "https://mayesmiddleton.com/",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "Website confirmed live. Direct fetch not available; content sourced from search result snippets and secondary reporting.",
+    "statedPositions": [
+      {
+        "topic": "immigration / border",
+        "quote": "We have to deport all illegal immigrants. Not some. All.",
+        "sourceUrl": "https://www.kltv.com/2026/02/02/republican-candidate-attorney-general-pledges-sanctuary-city-crackdowns-transgender-sports-ban/",
+        "date": "2026-01-30",
+        "confidence": "high",
+        "notes": "Direct quote from KLTV forum. Also pledged to sue local officials for civil and criminal penalties if they obstruct federal immigration operations."
+      },
+      {
+        "topic": "border / sanctuary cities",
+        "quote": "As Attorney General, I will always ensure that Texas borders are defended and our communities are kept safe, whether certain corrupted local officials or Democrats in the courts or in Washington want it.",
+        "sourceUrl": "https://mayesmiddleton.com/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign website, reproduced in multiple news sources."
+      },
+      {
+        "topic": "election integrity",
+        "quote": "ensure strict election integrity ... ensuring only legally qualified U.S. citizen voters vote in our Texas elections",
+        "sourceUrl": "https://mayesmiddleton.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Campaign platform planks. Also proposed a stand-alone election crimes task force with broad law enforcement powers."
+      },
+      {
+        "topic": "fiscal / government size",
+        "quote": "root out waste, fraud, and abuse from our government",
+        "sourceUrl": "https://mayesmiddleton.com/",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Standard campaign boilerplate."
+      },
+      {
+        "topic": "children / social conservatism",
+        "quote": "protect Texas kids, ensure fairness in girls' and women's sports, protect Texas taxpayers and consumers",
+        "sourceUrl": "https://mayesmiddleton.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Core campaign messaging; consistent with legislative record."
+      },
+      {
+        "topic": "healthcare — Medicaid/Medicare",
+        "quote": "Medicaid and Medicare should remain available, but no other taxpayer-funded programs are necessary.",
+        "sourceUrl": "https://ivoterguide.com/candidate/39321/race/23525/election/1343",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "iVoterGuide survey response. Note: conflicting signal — another iVoterGuide answer reportedly said Medicaid and Medicare should be defunded. The first quote appears to be the more recent/considered response."
+      },
+      {
+        "topic": "church-state",
+        "quote": "there's no such thing as separation of church and state ... there is absolutely no separation of God and government",
+        "sourceUrl": "https://www.kltv.com/2026/02/02/republican-candidate-attorney-general-says-separation-of-church-and-state-does-not-exist/",
+        "date": "2026-02-02",
+        "confidence": "high",
+        "notes": "Said at Tyler, TX candidate forum. Also stated founders 'never intended separation of God from government or schools.' Consistent with authoring SB 11 (school prayer bill)."
+      },
+      {
+        "topic": "MAGA / Trump alignment",
+        "quote": "MAGA Mayes",
+        "sourceUrl": "https://www.texastribune.org/2026/02/13/mayes-middleton-gop-primary-texas-attorney-general-2026/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign brand. Quotes Trump 2021 endorsement calling him a 'MAGA champion' with conservative record 'second to none.' No Trump endorsement in 2026 AG race; aligns with Trump admin positions across the board."
+      },
+      {
+        "topic": "abortion — taxpayer funding",
+        "quote": "Tax dollars should never go to any abortion-related provider.",
+        "sourceUrl": "https://ivoterguide.com/candidate/39321/race/23525/election/1343",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "iVoterGuide survey."
+      },
+      {
+        "topic": "abortion — exceptions",
+        "quote": "Under no circumstances should elective abortions be allowed.",
+        "sourceUrl": "https://ivoterguide.com/candidate/39321/race/23525/election/1343",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "iVoterGuide survey. Signed all eight commitments on Texas Right to Life Pro-Life Pledge."
+      },
+      {
+        "topic": "child protection / online safety",
+        "quote": "As a father of four, [protecting children from sexual exploitation online] is one of government's most important roles.",
+        "sourceUrl": "https://ivoterguide.com/candidate/39321/race/23525/election/1343",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "iVoterGuide survey. Authored AI child pornography criminal penalties bill and obscene-material-to-minors prosecution bill."
+      },
+      {
+        "topic": "Islam / Sharia law",
+        "quote": "Sharia law is incompatible with [America's] Christian founding and laws ... I will treat Sharia law as organized crime.",
+        "sourceUrl": "https://ivoterguide.com/candidate/39321/race/23525/election/1343",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "iVoterGuide survey. Also referenced working to stop 'no-go zones' in North Texas 'where attempts were made to create a Muslim-only, Sharia law governed community.' Debate also referenced opposition to 'Islamification' of Texas."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "chamber": "Texas State Senate, SD-11",
+    "sessionsCovered": ["88th Legislature (2023)", "89th Legislature (2025)"],
+    "sources": [
+      "Texas Legislature Online (capitol.texas.gov)",
+      "LegiScan",
+      "BillTrack50",
+      "Texas Tribune reporting",
+      "Young Conservatives of Texas scorecard",
+      "Texas Taxpayers Fiscal Responsibility Index",
+      "Texas Alliance for Life scorecard",
+      "Texas Values Action scorecard",
+      "Texas Choice Tracker"
+    ],
+    "keyVotes": [
+      {
+        "bill": "SB 7 (88th Leg.) — COVID vaccine mandate ban for private employers including healthcare facilities",
+        "vote": "Yes (authored)",
+        "topic": "health_public_health",
+        "sourceUrl": "https://www.texastribune.org/2023/10/31/texas-legislature-covid-vaccine-mandates-ban-bill/",
+        "date": "2023",
+        "notes": "Middleton's bill. Applied to all private employers including hospitals and clinics; no healthcare worker exception. Final vote 17-11 in Senate. He stated: 'This is about protecting the individual's ability [to stay employed] and making sure that they have the right to choose whether or not to get the shot.' Described by campaign as 'strongest ban on COVID vaccine mandates in the country.'"
+      },
+      {
+        "bill": "SB 8 (89th Leg.) — Women's Privacy Act (transgender bathroom ban in schools, government buildings)",
+        "vote": "Yes (authored)",
+        "topic": "justice_policing_accountability / social conservatism",
+        "sourceUrl": "https://thehill.com/homenews/lgbtq/5487156-texas-transgender-bathroom-ban/",
+        "date": "2025",
+        "notes": "Middleton primary sponsor. Called it 'the strongest Women's Privacy Act in America.' Bars transgender individuals from bathrooms/changing rooms matching gender identity in schools and government-owned buildings."
+      },
+      {
+        "bill": "SB 406 (89th Leg.) — Birth certificates must list biological sex; minors prohibited from changing sex marker",
+        "vote": "Yes (authored)",
+        "topic": "social conservatism / LGBTQ",
+        "sourceUrl": "https://www.newsweek.com/texas-senate-bill-definition-woman-trans-2077779",
+        "date": "2025",
+        "notes": "Passed 20-11 on party-line Senate vote."
+      },
+      {
+        "bill": "HB 229 (89th Leg.) — Women's Bill of Rights (state records must reflect biological sex at birth)",
+        "vote": "Yes (carried in Senate)",
+        "topic": "social conservatism / LGBTQ",
+        "sourceUrl": "https://thedailytexan.com/2025/06/30/lgbtq-community-advocates-speak-out-against-bill-that-defines-gender-in-texas/",
+        "date": "2025",
+        "notes": "Authored by Rep. Ellen Troxclair; Middleton carried in Senate. Birth certificates and driver's licenses must reflect biological sex."
+      },
+      {
+        "bill": "SB 763 (88th Leg.) — Chaplains in public schools (may replace school counselors)",
+        "vote": "Yes (authored)",
+        "topic": "econ_school_choice / health_public_health (mental health)",
+        "sourceUrl": "https://www.ballotpedia.org/Mayes_Middleton",
+        "date": "2023",
+        "notes": "Allows school districts to employ paid or volunteer chaplains without requiring counseling certification or training. Final passage via conference committee report."
+      },
+      {
+        "bill": "SB 11 (89th Leg.) — School prayer and Bible reading period in public schools",
+        "vote": "Yes (authored)",
+        "topic": "church-state / econ_school_choice",
+        "sourceUrl": "https://www.houstonpublicmedia.org/articles/news/religion/2025/05/22/522105/school-prayer-bible-reading-bill-authored-by-houston-area-senator-passes-texas-house/",
+        "date": "2025",
+        "notes": "Establishes optional prayer and Bible/religious text reading periods in public K-12 and charter schools. Requires parent/employee written consent. Passed House 88-48. Middleton stated 'there's no such thing as separation of church and state' when challenged on constitutionality. Signed by governor; effective September 1, 2025."
+      },
+      {
+        "bill": "SB 176 / SB 8 (88th Leg.) — Universal ESA (Education Savings Account) voucher bill",
+        "vote": "Yes (authored)",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://teachthevote.atpe.org/Our-Blog/Latest-Posts/TTexas-Senate-predictably-passes-its-private-schoo",
+        "date": "2023",
+        "notes": "Middleton filed SB 176 for universal ESA program. Voted YES on the broader ESA bill in 88th and 89th Legislatures. Strong school choice advocate."
+      },
+      {
+        "bill": "ESA bill (89th Leg.) — School voucher program",
+        "vote": "Yes",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://www.texastribune.org/2025/01/28/texas-senate-education-hearing-school-vouchers/",
+        "date": "2025",
+        "notes": "Voted YES on establishing ESA program. Argued private schools would open specifically to serve special education students."
+      },
+      {
+        "bill": "Texas Senate anti-ESG legislation (SB 13 / SB 19 prior sessions, related bills)",
+        "vote": "Yes (supported)",
+        "topic": "climate_energy_portfolio / econ_investment",
+        "sourceUrl": "https://www.texastribune.org/2026/02/04/texas-investment-divest-boycott-fossil-fuels-lawsuit-ruling-esg/",
+        "date": "2023",
+        "notes": "Middleton described as having 'led the charge against radical woke policies like DEI, ESG, Critical Race Theory.' SB 13 banned state business with banks using ESG policies on fossil fuels; SB 19 prohibited business with companies supporting gun safety policies. (Note: SB 13 subsequently ruled unconstitutional by federal court in Feb. 2026 on First Amendment grounds.)"
+      },
+      {
+        "bill": "SB 6 / SB 7 (89th Leg.) — Energy grid reliability; incentivize dispatchable thermal generation",
+        "vote": "Yes (co-supported, not primary author)",
+        "topic": "climate_energy_portfolio / climate_ambition",
+        "sourceUrl": "https://austinjournal.com/middleton-believes-proposed-legislation-will-go-a-long-way-to-provide-reliable-dispatchable-energy-for-texans/",
+        "date": "2025",
+        "notes": "Middleton publicly backed SB 6/7, stating: 'In a distorted market with intermittent, renewable technologies receiving an unfair advantage through heavy tax subsidies, there is a need to incentivize new, reliable, dispatchable generation ... I support any legislation that assists in putting new steel in the ground for dispatchable, reliable generation.' Explicitly frames renewables as 'intermittent' market distortion."
+      },
+      {
+        "bill": "SB 12 (88th Leg.) — Ban on taxpayer-funded lobbying by local governments",
+        "vote": "Yes (authored)",
+        "topic": "econ_investment / fiscal",
+        "sourceUrl": "https://index.texastaxpayers.com/legislators/mayes-middleton/2023-index",
+        "date": "2023",
+        "notes": "Also filed SB 19 (ban taxpayer lobbying by local entities, passed). Recognized as Taxpayer Champion by Texans for Fiscal Responsibility."
+      },
+      {
+        "bill": "Save Women's Sports Act (88th Leg.) — Ban transgender women/girls from collegiate women's sports",
+        "vote": "Yes (authored)",
+        "topic": "social conservatism / LGBTQ",
+        "sourceUrl": "https://www.ballotpedia.org/Mayes_Middleton",
+        "date": "2023",
+        "notes": "Passed. Campaign describes as cornerstone achievement."
+      },
+      {
+        "bill": "Texas omnibus abortion restriction bills — SB 8 (6-week ban), Senate abortion bills",
+        "vote": "Yes (cosponsored multiple)",
+        "topic": "justice_sentencing_goals / reproductive rights",
+        "sourceUrl": "https://choicetracker.org/tx/people/mayes-middleton/78249984",
+        "date": "2023",
+        "notes": "Voted to pass 6-week abortion ban with citizen-enforcement mechanism. Also voted for criminal penalties for providers. Cosponsored abortion drug reporting requirements. Sponsored perinatal palliative care bill banning third-trimester abortions except medical emergency."
+      },
+      {
+        "bill": "Texas Senate abortion ban exception clarification — SB 31 (Life of the Mother Act)",
+        "vote": "Yes",
+        "topic": "reproductive rights",
+        "sourceUrl": "https://www.texasallianceforlife.org/89th-texas-lege-scorecard/",
+        "date": "2025",
+        "notes": "Voted for SB 31 which clarifies that Texas law allows medically necessary care for pregnant women (part of post-Dobbs technical fix). Texas Alliance for Life scored this as pro-life."
+      },
+      {
+        "bill": "Property tax cuts (SB 4 — homestead exemption $100K to $140K; SB 23 — up to $200K)",
+        "vote": "Yes",
+        "topic": "econ_tax_structure",
+        "sourceUrl": "https://index.texastaxpayers.com/legislators/mayes-middleton/2023-index",
+        "date": "2023–2025",
+        "notes": "Supported property tax relief measures. Voted for $336B bipartisan budget that included $32B property tax relief (31-0 Senate vote, 2025)."
+      },
+      {
+        "bill": "Gun/firearms — SB 755 (firearms sales tax holiday) and gun privacy bill (HB 1403 companion)",
+        "vote": "Yes (authored/sponsored)",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://www.nraila.org/articles/20250623/texas-second-amendment-legislation-signed-by-governor",
+        "date": "2023–2025",
+        "notes": "SB 755: annual sales tax holiday for firearms, accessories, ammunition. HB 1403 companion: prohibits child placement/state agencies from requiring foster parents to disclose specific firearms kept in home. Worked with NRA on State Fair of Texas gun ban clarification."
+      },
+      {
+        "bill": "Conference Committee on SB 15 (89th Leg.) — Housing supply reform (townhomes/starter homes by-right in large cities)",
+        "vote": "Yes (conference committee member)",
+        "topic": "housing_supply_zoning",
+        "sourceUrl": "https://www.ltgov.texas.gov/2025/03/19/lt-gov-dan-patrick-statement-on-the-bipartisan-passage-of-senate-bill-15-removing-barriers-to-affordable-housing/",
+        "date": "2025",
+        "notes": "Middleton served on conference committee for SB 15, Lt. Gov. Patrick's priority housing supply bill. Bill allows townhomes and starter homes by-right in cities >150K in counties >300K. Not a primary author; role limited to conference committee. Insufficient evidence to score this axis definitively on its own."
+      },
+      {
+        "bill": "SB 854 — Religious organizations developing multi-family housing on vacant land",
+        "vote": "Yes (authored)",
+        "topic": "housing_supply_zoning",
+        "sourceUrl": "https://www.billtrack50.com/legislatordetail/23783",
+        "date": "2025",
+        "notes": "Would limit cities' authority to restrict religious organizations from developing multi-family housing on vacant land. Narrow supply-side measure."
+      },
+      {
+        "bill": "'Integrity 7' election package — Voter roll integrity and election procedures",
+        "vote": "Yes (joint author)",
+        "topic": "election integrity / voting rights",
+        "sourceUrl": "https://www.ballotpedia.org/Mayes_Middleton",
+        "date": "2023",
+        "notes": "Joint authored package with Senators Creighton, Huffman, Kolkhorst, Paxton, Perry, and Parker. Aimed at voter roll maintenance and election procedures."
+      },
+      {
+        "bill": "SB 476 (89th Leg.) — Increased punishment for intoxication manslaughter with court-ordered interlock device",
+        "vote": "Yes (authored)",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://www.galvnews.com/opinion/editorials/lawmakers-should-support-tighter-dwi-sentencing/",
+        "date": "2025",
+        "notes": "Harsher sentencing bill — if someone violated court-ordered interlock device and caused intoxication manslaughter, increases punishment level. Consistent with punishment/deterrence approach."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "Young Conservatives of Texas (YCT)",
+      "score": "88 / 100 (88th Legislature, Texas Senate)",
+      "grade": null,
+      "url": "https://ratings.yct.org/legislators/mayes-middleton/88th-legislature",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Ranked among the 5 most conservative Texas senators in 88th Legislature. Received perfect 100/100 score as House member in 87th Legislature. 89th Legislature score not yet published at time of research."
+    },
+    {
+      "organization": "Texans for Fiscal Responsibility (Fiscal Responsibility Index)",
+      "score": "90 / 100 (A) — 2023; 2025 score not yet available",
+      "grade": "A",
+      "url": "https://index.texastaxpayers.com/legislators/mayes-middleton/2023-index",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Named Taxpayer Champion in 2023 (one of three Senate members). Authored SB 12 (ban on taxpayer-funded local government lobbying) and SB 175 (statewide lobbying ban). Strong anti-spending/anti-tax record."
+    },
+    {
+      "organization": "Texas Alliance for Life",
+      "score": "100% (2025 Legislative Scorecard)",
+      "grade": null,
+      "url": "https://www.texasallianceforlife.org/89th-texas-lege-scorecard/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect pro-life score from the more institutionally mainstream pro-life organization (vs. Texas Right to Life which is more absolutist)."
+    },
+    {
+      "organization": "Texas Right to Life PAC",
+      "score": "Endorsed (2026 AG race); perfect pro-life scores per legislative session",
+      "grade": null,
+      "url": "https://www.texasrighttolifepac.com/texas-right-to-life-endorses-mayes-middleton-for-texas-attorney-general/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Endorsed February 10, 2026 for AG race. Texas Right to Life is more absolutist than Texas Alliance for Life (opposes medical exception carve-outs). Middleton signed all 8 commitments on their Pro-Life Pledge 'without loopholes or hedging.'"
+    },
+    {
+      "organization": "Texas Values Action",
+      "score": "100% (2025); Faith & Family Champion",
+      "grade": null,
+      "url": "https://txvaluesaction.org/legislator/mayes-middleton/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect score; also endorsed Middleton for 2026 AG race. Organization focuses on anti-LGBTQ legislation, religious freedom, anti-abortion positions."
+    },
+    {
+      "organization": "Texas Choice Tracker (pro-choice tracking)",
+      "score": "Anti-choice (labeled)",
+      "grade": null,
+      "url": "https://choicetracker.org/tx/people/mayes-middleton/78249984",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Nonpartisan tracker documenting Middleton's anti-abortion votes."
+    },
+    {
+      "organization": "Teach the Vote (ATPE — teachers' union)",
+      "score": "Unfavorable (marked with asterisk indicating opposition)",
+      "grade": null,
+      "url": "https://www.teachthevote.org/Candidates/Mayes-Middleton",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Texas teachers' union opposes Middleton primarily over school choice/voucher record and the school chaplain bill. Also opposed SB 11 (school prayer) as violating separation of church and state."
+    },
+    {
+      "organization": "NRA",
+      "score": "No letter grade found in search results",
+      "grade": null,
+      "url": null,
+      "notes": "NRA has collaborated with Middleton on key bills (State Fair gun ban, foster care firearms privacy). He authored firearms sales tax holiday. Consistent strong pro-gun record. Absence of published grade likely means he has not been graded in a contested race requiring NRA endorsement (he ran for Senate 2022 without a competitive general). All legislative actions align with A-rating profile."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Texas Right to Life PAC",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Announced February 10, 2026. Most absolutist mainstream pro-life group in Texas."
+    },
+    {
+      "organization": "Texas Values Action",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Pro-faith, anti-LGBTQ, anti-abortion advocacy arm."
+    },
+    {
+      "organization": "Donald Trump (prior cycle)",
+      "type": "endorsement",
+      "cycle": "2022 (Texas Senate race)",
+      "notes": "Trump endorsed Middleton December 28, 2021 for Texas Senate race. Called him 'a MAGA champion' with conservative record 'second to none.' No Trump endorsement issued in 2026 AG race, though Middleton brands himself 'MAGA Mayes' and quotes the prior endorsement heavily."
+    },
+    {
+      "organization": "Life PAC",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Endorsed for 2022 Texas Senate primary."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "KLTV (Tyler, TX) — Republican AG Candidate Forum",
+      "date": "2026-01-30",
+      "url": "https://www.kltv.com/2026/02/02/republican-candidate-attorney-general-pledges-sanctuary-city-crackdowns-transgender-sports-ban/",
+      "keyExchanges": [
+        {
+          "topic": "immigration enforcement",
+          "quote": "We have to deport all illegal immigrants. Not some. All.",
+          "notes": "Pledged to sue local sanctuary city officials."
+        },
+        {
+          "topic": "church-state separation",
+          "quote": "there is no such thing as separation of church and state",
+          "notes": "Said when discussing Ten Commandments in schools and school prayer."
+        },
+        {
+          "topic": "transgender sports",
+          "quote": "one transgender athlete competing against women is too many",
+          "notes": "On transgender athlete bans in women's sports."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune — Q&A: Republican AG primary candidates",
+      "date": "2026-01-29",
+      "url": "https://www.texastribune.org/2026/01/29/on-the-issues-qa-with-the-republicans-running-for-texas-attorney-general/",
+      "keyExchanges": [
+        {
+          "topic": "participation",
+          "quote": "N/A — Middleton refused to participate",
+          "notes": "Middleton was the only candidate who declined the Texas Tribune Q&A. Tribune used public record and past statements in his place."
+        }
+      ]
+    },
+    {
+      "outlet": "RAGA / Houston Public Media — Republican AG Primary Debate",
+      "date": "2026-02-17",
+      "url": "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/02/18/543751/texas-attorney-general-republican-debate-huffman-middleton-reitz-roy/",
+      "keyExchanges": [
+        {
+          "topic": "MAGA alignment",
+          "quote": "President Trump called me a 'MAGA champion'",
+          "notes": "Opened with this framing."
+        },
+        {
+          "topic": "transgender healthcare for minors",
+          "quote": "there's 'no right' to hurt a child",
+          "notes": "Rejecting Chip Roy's states' rights hesitation on banning gender-affirming care via federal action."
+        },
+        {
+          "topic": "closing statement",
+          "quote": "I'm not retreating from Washington DC because I'm never going to Washington DC. I have always known that the fight is here. We don't have another Texas to move to.",
+          "notes": "Contrast with Chip Roy (incumbent congressman)."
+        },
+        {
+          "topic": "immigration — federal authority",
+          "quote": "candidates echoed calls to wrest immigration enforcement authority from the federal government",
+          "notes": "Reporter summary; all candidates aligned on this."
+        }
+      ]
+    }
+  ],
+  "businessBackground": {
+    "company": "Middleton Oil Company",
+    "role": "President",
+    "description": "Independent oil and gas company operating 60+ wells in South Texas and along the Gulf Coast. Also runs ranching, cattle, and farming operations in Chambers, Jefferson, Kimble, Liberty, and Webb Counties.",
+    "relevance": "Direct financial interest in fossil fuel industry. Explicit legislative advocacy for dispatchable thermal generation and against renewables subsidies. Anti-ESG legislation directly benefits his industry. Self-funded campaign ($11M+ raised, $5M+ cash on hand per user brief) from personal/business wealth.",
+    "conflictNotes": "As AG, would have authority to enforce/oppose environmental regulations affecting oil and gas industry. His energy policy positions are fully aligned with his business interests."
+  },
+  "positionConflicts": [
+    {
+      "topic": "Medicaid/Medicare",
+      "conflict": "iVoterGuide responses appear to contain contradictory answers — one suggesting Medicaid/Medicare should remain available, another suggesting they should be defunded. Most likely reflects different survey formats or question framing. Scored conservatively based on campaign's actual emphasis (no stated expansion; consistent with anti-government-healthcare posture).",
+      "sources": ["iVoterGuide survey 2026"]
+    },
+    {
+      "topic": "Anti-ESG SB 13 ruled unconstitutional",
+      "conflict": "Legislation Middleton championed (anti-ESG fossil fuel boycott ban) was ruled unconstitutional by federal court in Feb. 2026 on First Amendment grounds. No response from Middleton campaign found. Doesn't change the underlying policy position, but relevant context for AG candidacy (he touted championing this law as a feature).",
+      "sources": ["Texas Tribune, Feb. 4, 2026"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "justice_firearms (multiple pro-gun bills; NRA collaboration; strong track record; confidence: HIGH)",
+      "health_public_health (SB 7 COVID vaccine mandate ban — authored and passed; confidence: HIGH)",
+      "econ_school_choice (SB 176 universal ESA; multiple voucher votes; chaplain bill; confidence: HIGH)",
+      "climate_energy_portfolio (Middleton Oil background; explicit statements against renewables subsidies; anti-ESG bills; SB 6/7 support; confidence: HIGH)",
+      "climate_ambition (anti-ESG; pro-fossil fuel; 'dispatchable reliable generation' rhetoric; oil exec; confidence: HIGH)",
+      "reproductive_rights / justice_sentencing (100% Texas Alliance for Life; 100% Texas Right to Life; authored 6-week ban vote, criminal penalty bills; confidence: HIGH)",
+      "econ_tax_structure (90/A Fiscal Responsibility Index; Taxpayer Champion; property tax cuts; confidence: HIGH)",
+      "health_coverage_model (opposes government-funded healthcare beyond existing Medicare/Medicaid; iVoterGuide; confidence: MEDIUM)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning (conference committee member on SB 15 supply bill; authored narrow SB 854; insufficient primary authorship to draw strong conclusions; confidence: LOW)",
+      "housing_transport_priority (no direct evidence found)",
+      "housing_affordability_tools (no direct evidence found)",
+      "justice_policing_accountability (no direct bills or votes found; 'Back the Blue' consistent with overall posture but not explicitly documented)"
+    ],
+    "overallConfidence": "high",
+    "notes": "Middleton has an unusually well-documented legislative record for a state-level candidate: 7 years across House and Senate, dozens of authored bills, multiple scorecards from ideological organizations, and extensive media coverage. The gaps are primarily in housing/transit (not a focus of his work) and policing/criminal justice (limited beyond DWI sentencing and anti-crime rhetoric). His policy positions are internally consistent and extreme-right on virtually every axis covered. The record is more extensive and confirmatory than most state legislative candidates."
+  },
+  "axisSignals": {
+    "notes": "Raw directional signals for scorer. These are researcher observations, not scores.",
+    "signals": [
+      {
+        "axis": "econ_safetynet",
+        "direction": "strongly toward Pole B (10)",
+        "evidence": "Fiscal Responsibility Index 90/A. Taxpayer Champion. Anti-government-spending rhetoric. Authored taxpayer-funded lobbying bans. iVoterGuide: opposes government healthcare expansion. No evidence of safety net support.",
+        "confidence": "medium",
+        "notes": "No explicit votes on federal safety net programs (state legislature). Position inferred from fiscal record and overall ideology."
+      },
+      {
+        "axis": "econ_investment",
+        "direction": "strongly toward Pole B (10)",
+        "evidence": "Anti-ESG legislation; opposition to renewable energy subsidies ('unfair advantage through heavy tax subsidies'); Fiscal 90/A rating; opposes government economic intervention; authored bans on local government lobbying.",
+        "confidence": "high",
+        "notes": "Explicitly stated renewables receive 'unfair' subsidy advantage. Consistent fiscal conservative across all sessions."
+      },
+      {
+        "axis": "econ_tax_structure",
+        "direction": "strongly toward Pole B (8-10)",
+        "evidence": "90/A Fiscal Responsibility Index; named Taxpayer Champion 2023; supports property tax cuts ($140K-$200K homestead exemptions); anti-government spending philosophy; declines own salary.",
+        "confidence": "high",
+        "notes": "State-level record; supports across-the-board tax reduction over progressive structure."
+      },
+      {
+        "axis": "econ_school_choice",
+        "direction": "strongly toward Pole B (9-10)",
+        "evidence": "Filed SB 176 (universal ESA for all families incl. private/home school); voted YES on ESA bills in 88th and 89th Legislatures; authored school chaplain bill (replacing counselors); authored school prayer/Bible bill; vocally opposed teachers' union positions; ATPE marked unfavorable.",
+        "confidence": "high",
+        "notes": "One of the most aggressive school choice advocates in Texas Legislature."
+      },
+      {
+        "axis": "health_coverage_model",
+        "direction": "toward Pole B (7-9)",
+        "evidence": "iVoterGuide indicates skepticism of government health programs; stated Medicaid/Medicare may remain but 'no other taxpayer-funded programs necessary'; overall anti-government philosophy.",
+        "confidence": "medium",
+        "notes": "No direct votes on federal ACA (state legislature). Position inferred from iVoterGuide and ideology. Not a Medicare-for-All/public-option advocate by any measure."
+      },
+      {
+        "axis": "health_cost_control",
+        "direction": "toward Pole B (7-9)",
+        "evidence": "No price control advocacy found; fiscal conservative ideology implies market-based preference; anti-government intervention philosophy.",
+        "confidence": "low",
+        "notes": "No direct bills or statements found specifically on drug pricing or hospital rate setting. Inferred from overall ideology."
+      },
+      {
+        "axis": "health_public_health",
+        "direction": "strongly toward Pole B (9-10)",
+        "evidence": "Authored and passed strongest COVID vaccine mandate ban in Texas (SB 7, 88th Leg.), applying to all private employers including hospitals with no healthcare worker exception. Explicit individual liberty framing: 'right to choose whether or not to get the shot.'",
+        "confidence": "high",
+        "notes": "Strongest single piece of evidence for any axis. Primary authored bill affecting major public health intervention."
+      },
+      {
+        "axis": "housing_supply_zoning",
+        "direction": "ambiguous / slight toward Pole A-middle",
+        "evidence": "Conference committee member on SB 15 (by-right townhomes in large cities — supply-side). Authored SB 854 limiting city restrictions on religious org housing development. But these are narrow measures and not the primary focus of his legislative agenda.",
+        "confidence": "low",
+        "notes": "Insufficient evidence to place confidently. Conference committee membership alone is not an authored position. Omit or score LOW confidence."
+      },
+      {
+        "axis": "housing_affordability_tools",
+        "direction": "inferred Pole B (market solutions) from fiscal philosophy",
+        "evidence": "No direct evidence found. General anti-government philosophy implies opposition to rent control or large public housing subsidies.",
+        "confidence": "low",
+        "notes": "Omit — insufficient direct evidence."
+      },
+      {
+        "axis": "housing_transport_priority",
+        "direction": "inferred toward Pole B (car-centric) given Texas/oil background",
+        "evidence": "No direct evidence found.",
+        "confidence": "low",
+        "notes": "Omit — insufficient direct evidence."
+      },
+      {
+        "axis": "justice_policing_accountability",
+        "direction": "toward Pole B (7-8)",
+        "evidence": "Campaign platform emphasizes making Texas 'safest state' and law enforcement support. Consistent Republican law-and-order rhetoric. No reform bills found. Immigration enforcement maximalism. Overall posture strongly favors law enforcement authority.",
+        "confidence": "medium",
+        "notes": "No specific accountability reform votes found — absence is evidence. Inferred from campaign rhetoric and overall ideology."
+      },
+      {
+        "axis": "justice_sentencing_goals",
+        "direction": "toward Pole B (7-8)",
+        "evidence": "SB 476 (increased DWI manslaughter punishment); supported death penalty expansion bill for child murders; immigration enforcement maximalism ('deport all'); campaign emphasizes punishment/deterrence framing.",
+        "confidence": "medium",
+        "notes": "Authored at least one stricter sentencing bill. Supported death penalty expansion (not primary author). Consistent punishment/deterrence philosophy."
+      },
+      {
+        "axis": "justice_firearms",
+        "direction": "strongly toward Pole B (9-10)",
+        "evidence": "Authored firearms sales tax holiday bill (SB 755); carried foster care firearms privacy bill; worked with NRA on State Fair gun ban; anti-ESG bill (SB 19) blocked business with gun-safety-supporting companies; no gun safety votes found; overall Freedom Caucus/hardline Republican profile.",
+        "confidence": "high",
+        "notes": "Consistent across multiple sessions. No evidence of any gun safety support."
+      },
+      {
+        "axis": "climate_ambition",
+        "direction": "strongly toward Pole B (8-10)",
+        "evidence": "Oil and gas executive (Middleton Oil, 60+ wells); characterized renewables as getting 'unfair advantage through heavy tax subsidies'; anti-ESG legislation; no climate legislation found; explicit pro-fossil-fuel identity.",
+        "confidence": "high",
+        "notes": "Business background plus explicit legislative actions and statements confirm extreme skepticism of aggressive climate policy."
+      },
+      {
+        "axis": "climate_energy_portfolio",
+        "direction": "strongly toward Pole B (8-10)",
+        "evidence": "Supports SB 6/7 incentivizing dispatchable thermal (gas/fossil) generation; opposes renewable energy subsidies; anti-ESG bills targeting fossil fuel divestment restrictions; oil exec background; framed renewables as 'intermittent' and market-distorting.",
+        "confidence": "high",
+        "notes": "Explicit stated preference for thermal/dispatchable over renewables. Directly tied to business interests."
+      },
+      {
+        "axis": "climate_permitting",
+        "direction": "toward Pole B (8)",
+        "evidence": "Anti-regulation philosophy; support for expediting fossil fuel infrastructure; no environmental review advocacy found. Inferred from overall anti-regulatory posture and fossil fuel backing.",
+        "confidence": "medium",
+        "notes": "No bills specifically on permitting found. Strong directional inference from overall record."
+      }
+    ]
+  }
+}

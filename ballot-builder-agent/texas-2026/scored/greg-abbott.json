@@ -1,0 +1,303 @@
+{
+  "slug": "greg-abbott",
+  "name": "Greg Abbott",
+  "party": "Republican",
+  "office": "Governor of Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Three-term conservative Republican governor with an 11-year executive record defined by hardline border security, maximum gun rights, school choice, fossil fuel protection, and opposition to government-run healthcare. One of the most documented and ideologically consistent conservative governors in the country.",
+  "keyPositions": [
+    "Signed nation's largest school voucher program ($1B ESA), primarying 11 GOP opponents to pass it",
+    "NRA A+ grade; signed constitutional carry and 24+ pro-gun bills",
+    "Opposes Medicaid expansion; Texas has nation's highest uninsured rate (16%+)",
+    "Launched Operation Lone Star ($11B+ border enforcement); bused migrants to sanctuary cities",
+    "Signed constitutional ban on state income tax; $28B+ in property tax cuts across two sessions"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Medicaid expansion refusal (2015-present)",
+        "Redirected $210M from HHSC to border ops (2022)",
+        "Ended federal pandemic unemployment early (2021)",
+        "SNAP junk food restriction waiver (2025)",
+        "ACA lawsuits as AG and governor"
+      ],
+      "notes": "Consistent 11-year record of opposing expansion, adding conditions, and redirecting funds away from social programs. Texas has the highest uninsured rate in the nation under his tenure."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "$28B+ property tax cuts reducing revenue for public services",
+        "Constitutional income tax ban",
+        "Anti-ESG executive orders opposing federal climate investment",
+        "Texas Enterprise Fund targeted deal-closing"
+      ],
+      "notes": "Uses targeted business incentives (Texas Enterprise Fund) to attract companies but opposes broad public investment or federal programs. Texas ranks low on per-capita public services spending. Not scored at 9-10 because TEF deals represent some active government role in economic development."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Signed constitutional amendment banning state income tax",
+        "$18B property tax cut (SB 2, 2023)",
+        "$10B property tax relief package (2025)",
+        "2026 campaign: eliminate school district property taxes for homeowners",
+        "Fox Business interview (2026)"
+      ],
+      "notes": "Constitutional opposition to progressive taxation. Texas relies on regressive property and sales taxes. Abbott's 2026 plan to eliminate school property taxes without replacement revenue would further compress public school funding. Five-point property tax reform is his centerpiece 2026 campaign issue."
+    },
+    "econ_school_choice": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "$1B ESA school voucher law signed May 2025 (nation's largest)",
+        "Primaryed 11 Republican opponents of vouchers in 2024",
+        "SB 17 DEI ban at public universities (2023)",
+        "HB 900 school library restrictions (2023)",
+        "SB 12 Parental Bill of Rights banning LGBTQ+ curriculum (2025)",
+        "Campaign website"
+      ],
+      "notes": "Maximum score warranted. School choice is arguably Abbott's signature domestic policy achievement. He spent years and significant political capital, including endorsing primary challengers against his own party members, to pass the largest voucher program in the country."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Consistent Medicaid expansion opposition (2015-present)",
+        "ACA lawsuits as AG (2010+) and governor",
+        "Statement: 'The best way to get health care insurance is through an employer'",
+        "Texas AFL-CIO opposition citing healthcare failures"
+      ],
+      "notes": "One of the most anti-expansion governors in the country. No support for public option, universal coverage, or expansion of any government health program. Texas has 16%+ uninsured rate -- highest in nation."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "ACA opposition (which included drug pricing provisions)",
+        "Free-market orientation across all policy domains",
+        "No evidence of support for pharmaceutical price controls or government cost regulation"
+      ],
+      "notes": "Less direct evidence specifically on healthcare cost control mechanisms compared to coverage model. Score inferred from consistent market-oriented approach across all domains. No record of supporting drug price negotiation, hospital rate setting, or any government cost intervention."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Lifted statewide mask mandate March 2021 (EO GA-34)",
+        "Banned COVID vaccine mandates statewide for public and private employers (EO GA-40, Oct 2021)",
+        "Prohibited local government mask/vaccine mandates",
+        "SB 12/SB 13 Parental Bill of Rights (2025)"
+      ],
+      "notes": "One of the earliest governors to lift COVID restrictions and one of the most aggressive in banning vaccine mandates -- extending the ban to private employers, which most states did not do. Strong individual choice over collective mandates signal."
+    },
+    "housing_supply_zoning": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": [
+        "SB 15: prohibits unreasonably large lot requirements (2025)",
+        "SB 840: allows multifamily/mixed-use in office/retail zones (2025)",
+        "HB 24: reforms petition process to ease zoning changes (2025)"
+      ],
+      "notes": "Unusual axis for Abbott -- his housing reforms actually move toward Pole A (loosening zoning). However, the mechanism is market-oriented supply-side deregulation, not government-directed equity. He limits municipal regulatory power over development rather than imposing density mandates. Scored at 4 rather than lower because the approach is deregulatory rather than interventionist."
+    },
+    "housing_affordability_tools": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Housing reform bills are entirely deregulatory/supply-side",
+        "Property tax cuts as primary affordability tool",
+        "No evidence of support for housing vouchers, inclusionary zoning, or government housing programs"
+      ],
+      "notes": "Abbott's housing affordability approach is exclusively market-based: reduce taxes, deregulate supply. No government subsidies, no rent stabilization, no public housing investment."
+    },
+    "housing_transport_priority": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "$146B-$148B transportation plan emphasizing 'roadways' and 'congestion relief'",
+        "No state-funded urban rail expansion programs under Abbott",
+        "Houston and Dallas highway expansion during tenure"
+      ],
+      "notes": "Transportation plan technically includes transit/rail, but Abbott's stated priority and spending emphasis is on highways. No active championing of public transit expansion. Not scored at 9-10 because the plan does include some transit funding and Texas cities have local transit authorities that Abbott has not undermined."
+    },
+    "justice_policing_accountability": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "HB 1900: froze property taxes for cities defunding police (2021)",
+        "SB 23: voter approval required to reduce law enforcement budgets",
+        "Daniel Perry pardon pledge (2023)",
+        "'Back the Blue' legislation package",
+        "Texas Tribune: 'remained silent on calls for changes to policing tactics or accountability'",
+        "Criminal justice blogger: 'police reform cannot occur while Abbott remains in office'"
+      ],
+      "notes": "One of the most aggressive anti-police-reform records nationally. HB 1900 is unique in its punitive mechanism -- stripping city annexation powers for a decade if police are defunded. The Daniel Perry pardon pledge (for a man convicted of murdering a BLM protester) signals willingness to use executive power against accountability."
+    },
+    "justice_sentencing_goals": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Bail reform restricting cashless bail for violent/repeat offenders (2025)",
+        "Presided over 55+ executions; clemency granted only once (Whitaker, 2018)",
+        "Vetoed bipartisan criminal justice reform bill (2021)",
+        "Increased penalties for stolen goods (2025)",
+        "Daniel Perry pardon pledge"
+      ],
+      "notes": "Consistent punishment/deterrence orientation. 55+ executions with near-zero clemency is among the highest of any sitting governor. Vetoed even bipartisan reform efforts."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "NRA A+ grade (highest attainable)",
+        "HB 1927: constitutional carry signed 2021",
+        "7-bill gun rights package (2021)",
+        "SB 19: anti-boycott protections for gun industry",
+        "24+ pro-gun bills signed across governorship",
+        "NRA CEO attended signing ceremony"
+      ],
+      "notes": "Maximum score warranted. No other governor has signed more pro-gun legislation. Constitutional carry, campus carry, open carry, anti-boycott protections for the firearms industry, and NRA's highest grade. No red flag law, no background check expansion, no gun safety measures of any kind -- including after the Uvalde school shooting in his state."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "No climate policy across three terms",
+        "Executive order directing agencies to fight all federal climate actions",
+        "Repeatedly avoids term 'climate change'",
+        "Anti-ESG law (SB 13) protecting fossil fuel investments",
+        "No greenhouse gas reduction targets or emissions standards beyond federal minimums"
+      ],
+      "notes": "Near-maximum score. Abbott has not implemented any climate policy in 11 years. He has actively fought federal climate action and directed state agencies to oppose it. Not scored at 10 because he does not publicly deny climate science outright -- he simply ignores it and obstructs policy action."
+    },
+    "climate_energy_portfolio": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Excluded renewables from economic incentive programs (2023)",
+        "5 bills penalizing wind/solar and subsidizing natural gas/coal",
+        "$18B natural gas plant construction plan (zero-interest loans)",
+        "Directed PUC to penalize renewable energy companies",
+        "SB 13 anti-ESG law",
+        "Blamed green energy for Winter Storm Uri (disputed by experts)"
+      ],
+      "notes": "Active fossil fuel prioritization despite Texas leading the nation in wind energy production. Abbott's policy framework deliberately disadvantages renewables through exclusion from incentives and punitive regulatory measures. Not scored at 10 because he has not attempted to eliminate existing renewable capacity or repeal all clean energy provisions."
+    },
+    "climate_permitting": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "No green energy permitting streamlining under Abbott",
+        "Directed PUC to impose penalties on renewable projects",
+        "Sued EPA multiple times over clean air regulations as AG",
+        "Anti-ESG law limiting renewable energy investment",
+        "Championed opposition to EPA climate regulations"
+      ],
+      "notes": "Abbott has not streamlined permitting for green energy and has actively created regulatory obstacles for renewable projects. His permitting approach expedites fossil fuel development while adding friction to clean energy. This is the inverse of 'faster green permitting' -- it is deliberate regulatory hostility to green energy."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "Actively works against welfare of all people and nature: opposes climate action, opposes healthcare universality (highest uninsured rate in nation), enforcement-first immigration with busing of migrants, DEI ban, anti-LGBTQ+ legislation, no environmental protection initiatives. The scope of concern is explicitly limited to in-group (Texans, specifically conservative Texans) rather than all people."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Some community investment orientation through property tax cuts (benefiting homeowners), school vouchers (benefiting parents who want alternatives), and law enforcement funding (benefiting public safety). But narrow definition of community welfare -- cuts safety net programs, presides over highest uninsured rate, redirects social services funding to border enforcement. Weakly positive because he does frame his policies as helping Texan families, but the scope and mechanisms are limited."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "Strong defense of traditional institutions and values: anti-abortion as 'protecting innocent unborn,' traditional family framing in education policy (Parental Bill of Rights, anti-LGBTQ+ curriculum), religious values in governance, skepticism of rapid change (climate, healthcare reform), defense of established Texas institutions (no income tax, local control). Constitutional amendment to permanently ban income tax is literally enshrining fiscal tradition into law."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Mixed signals. Strong rule-of-law emphasis in criminal justice (bail reform, tough sentencing, law enforcement support). But also significant executive overreach: 76 vetoes in one session, unilateral border operations beyond state jurisdiction, pledging to pardon a convicted murderer for political reasons, and directing state agencies to obstruct federal law. Works within the system when it serves him but pushes boundaries aggressively. Net weakly positive due to crime/order emphasis."
+    },
+    "security": {
+      "score": 0.8,
+      "reasoning": "One of the strongest security-oriented governors nationally. $11B+ Operation Lone Star for border security, anti-defund-police legislation, tough-on-crime bail reform, 55+ executions, Back the Blue funding. Security is a defining value of his governorship -- both physical security (border, crime) and economic security (property tax cuts framed as protecting homeowners). The scope is domestic/state security rather than social safety net security."
+    },
+    "power": {
+      "score": 0.7,
+      "reasoning": "Strong alignment with concentrated wealth and corporate interests: $105.7M campaign war chest, Texas Civil Justice League (tort reform/business) endorsement, anti-ESG laws protecting fossil fuel industry from investor pressure, anti-union right-to-work defense, banned local paid sick leave ordinances. Strong executive authority use: 76 vetoes, unilateral border operations, executive orders overriding local government authority. Texas AFL-CIO opposition confirms anti-labor orientation."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Consistent meritocracy and individual effort emphasis: employer-based healthcare framing ('best way to get insurance is through an employer'), ended unemployment benefits early citing labor market argument, SNAP restrictions adding behavioral conditions, school choice as empowering individual families. Pro-business tax environment framed as enabling entrepreneurship and economic mobility. Standard conservative achievement orientation."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Net negative on personal lifestyle liberty. Restricts reproductive choice (near-total abortion ban including mail-order pills), anti-LGBTQ+ legislation, school library content restrictions, social conservatism around personal behavior in education. The COVID vaccine mandate ban and constitutional carry show some personal freedom orientation, but these are selectively applied to conservative-valued freedoms. Overall pattern is restricting personal choices that conflict with traditional values."
+    },
+    "stimulation": {
+      "score": -0.4,
+      "reasoning": "Explicit preservation orientation rather than reform or disruption. Defends existing Texas institutions (no income tax, local police authority, fossil fuel industry). Opposes transformative federal programs (climate action, ACA, Medicaid expansion). Constitutional amendment to permanently ban income tax is anti-change by design. School vouchers represent structural change but toward conservative goals, not novelty-seeking. Abbott's identity is defined by defending the existing Texas order, not challenging it."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Selectively applied individual liberty. Strongly supports gun rights (constitutional carry), anti-vaccine-mandate (individual bodily autonomy from government), and parental control over education. But restricts reproductive choice (near-total abortion ban contradicts bodily autonomy), limits LGBTQ+ rights (government control over personal identity expression), and restricts book content (government deciding what people can read). The selective application -- liberty for conservative-valued choices, restriction for progressive-valued choices -- nets to near-neutral."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Renewable energy vs. grid reliability",
+      "description": "Abbott blamed wind and solar for Winter Storm Uri power failures despite expert consensus that natural gas infrastructure failure was the primary cause. He then signed ERCOT weatherization laws applying to all generation types but simultaneously excluded renewables from economic incentives and directed PUC to penalize them. Texas actually leads the nation in wind energy production despite Abbott's anti-renewable policies.",
+      "sources": [
+        "Texas Tribune (multiple articles)",
+        "Rolling Stone",
+        "NPR StateImpact Texas"
+      ],
+      "scoringImpact": "Scored energy_portfolio and climate_ambition based on policy actions (anti-renewable), not the stated narrative (grid reliability). The Winter Storm Uri blame-shifting is noted but does not change the policy reality."
+    },
+    {
+      "topic": "Pro-life vs. death penalty",
+      "description": "Abbott describes himself as pro-life and signed sweeping anti-abortion legislation but has presided over 55+ executions, granting clemency in only one death penalty case in 11 years despite multiple cases with credible innocence concerns.",
+      "sources": [
+        "American Journal News",
+        "Texas Tribune",
+        "Amnesty International"
+      ],
+      "scoringImpact": "Both positions scored independently. The pro-life label does not moderate the sentencing_goals score; the death penalty record does not moderate the reproductive rights signal. Tension noted for user transparency."
+    },
+    {
+      "topic": "Labor union endorsements vs. anti-labor record",
+      "description": "Abbott received endorsements from Teamsters JC 58/80 and several trade unions (plumbers, longshoremen, pipefitters) while the Texas AFL-CIO (250,000+ members) endorsed his opponent, explicitly stating Abbott 'failed workers for 11+ years.' Abbott has signed anti-union right-to-work defense legislation and banned local paid sick leave ordinances.",
+      "sources": [
+        "Texas Tribune (Feb 2026)",
+        "KUT Radio"
+      ],
+      "scoringImpact": "Scored on the legislative record (anti-labor), not selective endorsements. Teamsters endorsement may reflect trade-specific interests (infrastructure spending, fossil fuel jobs) rather than broad labor alignment."
+    },
+    {
+      "topic": "ESG law constitutionality",
+      "description": "SB 13, the anti-ESG law mandating state divestment from firms 'boycotting' fossil fuels, was struck down as unconstitutional by a federal judge in February 2026 on First Amendment grounds. Abbott has not publicly responded to the ruling.",
+      "sources": [
+        "Texas Tribune (Feb 2026)",
+        "Houston Public Media (Feb 2026)"
+      ],
+      "scoringImpact": "Scored based on Abbott's intent and signing of the law, not its current legal status. The unconstitutionality ruling does not change what his policy preference is."
+    },
+    {
+      "topic": "Selective application of individual liberty",
+      "description": "Abbott strongly champions individual liberty on guns (constitutional carry) and vaccines (anti-mandate) but restricts individual choice on reproductive rights (near-total abortion ban), LGBTQ+ expression (curriculum bans), and reading material (library restrictions). Liberty is selectively applied based on conservative value alignment.",
+      "sources": [
+        "Executive record across all domains"
+      ],
+      "scoringImpact": "Captured in self_direction value score (0.1 -- near neutral) and hedonism score (-0.3). The selective pattern is itself informative and should surface to users."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 16,
+    "axesSkipped": [],
+    "reasonSkipped": "All 16 axes scored. Abbott's 11-year gubernatorial record plus 13 years as AG provides evidence across every axis.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "Healthcare cost control scored at medium confidence -- less direct evidence on specific cost mechanisms vs. coverage model",
+      "Housing axes scored at medium confidence -- 2025 housing bills are relatively new and their implementation effects are not yet clear",
+      "Transportation scored at medium confidence -- $146B plan details not fully analyzed for transit vs. highway breakdown"
+    ]
+  }
+}

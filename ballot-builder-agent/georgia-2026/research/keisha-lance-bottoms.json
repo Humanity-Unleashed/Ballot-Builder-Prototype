@@ -1,0 +1,389 @@
+{
+  "slug": "keisha-lance-bottoms",
+  "name": "Keisha Lance Bottoms",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Candidate for Georgia Governor (announced May 2025)",
+    "priorRoles": [
+      "Senior Advisor for Public Engagement, Biden White House (June 2022 – February 2023)",
+      "Member, President's Export Council (appointed July 2023)",
+      "Senior Advisor, Biden 2024 Presidential Campaign (2024)",
+      "60th Mayor of Atlanta, Georgia (January 2018 – January 2022)",
+      "Member, Atlanta City Council, District 11 (2009–2017)",
+      "Municipal Court Judge, City of Atlanta"
+    ],
+    "education": "B.S., Florida A&M University; J.D., Georgia State University College of Law",
+    "background": "Attorney. Fifth-generation Georgian. Daughter of R&B musician Major Lance. First Atlanta mayor to serve in all three branches of city government (judge, council member, mayor). Led Atlanta through COVID-19 pandemic, George Floyd unrest, 2020 election, and a major city cyberattack. If elected, would be the first Black woman governor in U.S. history."
+  },
+  "campaignWebsite": {
+    "url": "https://keishaforgovernor.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch was not available; website content derived from multiple secondary sources quoting campaign materials and launch video.",
+    "statedPositions": [
+      {
+        "topic": "healthcare / Medicaid",
+        "quote": "fight to expand Medicaid so that 300,000 Georgians can get the health care coverage they need and to prevent more hospitals — especially those in rural communities — from shutting their doors",
+        "sourceUrl": "https://19thnews.org/2025/05/keisha-lance-bottoms-georgia-governor-race/",
+        "date": "2025-05",
+        "confidence": "high",
+        "notes": "Stated in launch video; described as her 'top priority'; repeated consistently at every forum and interview"
+      },
+      {
+        "topic": "reproductive rights / abortion",
+        "quote": "The election will be a referendum on Georgia Republicans' policies, including reproductive health care. She will use everything in her power as governor to take the United States back to Roe v. Wade, the law of the land for 50 years that served the country well.",
+        "sourceUrl": "https://19thnews.org/2025/05/keisha-lance-bottoms-georgia-governor-race/",
+        "date": "2025-05",
+        "confidence": "high",
+        "notes": "Explicitly pro-choice; opposes Georgia's 6-week abortion ban. Used Adriana Smith case (brain-dead nurse kept on life support due to abortion ban) as concrete example. EMILYs List endorsement confirms alignment."
+      },
+      {
+        "topic": "housing / affordability",
+        "quote": "Affordable housing is a huge issue... we've got to expand affordable housing in this state. [Includes] grants for first-time homebuyers and stricter oversight of corporate landlords who are buying up entire communities.",
+        "sourceUrl": "https://www.wabe.org/keisha-lance-bottoms/feed",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Multiple consistent statements; corporate landlord crackdown is a campaign pillar"
+      },
+      {
+        "topic": "education / teachers",
+        "quote": "Eliminate state income taxes for teachers; increase education funding; career training and college pathways",
+        "sourceUrl": "https://www.41nbc.com/keisha-lance-bottoms-launches-bid-for-georgia-governor-outlines-vision-and-defends-record/",
+        "date": "2025-05",
+        "confidence": "high",
+        "notes": "Specific commitment — income tax elimination for teachers. General education funding increase stated without specific dollar figure."
+      },
+      {
+        "topic": "economic justice / DEI",
+        "quote": "I'm standing up and I'm fighting back. And for me, fighting back means that I am presenting myself as a candidate for governor [against Trump's DEI ban and ICE raids].",
+        "sourceUrl": "https://atlanta.capitalbnews.org/keisha-lance-bottoms-georgia-governor-trump/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Anti-Trump framing is central to campaign. Specific DEI and immigration enforcement opposition referenced."
+      }
+    ]
+  },
+  "mayoralRecord": {
+    "available": true,
+    "period": "January 2018 – January 2022",
+    "sources": [
+      "City of Atlanta official press releases",
+      "AJC coverage",
+      "11Alive coverage",
+      "GPB coverage",
+      "Wikipedia",
+      "Ballotpedia"
+    ],
+    "keyActions": [
+      {
+        "topic": "police_accountability",
+        "action": "Rayshard Brooks shooting response (June 2020)",
+        "detail": "Described the shooting as 'murder.' Issued Executive Order mandating de-escalation training, duty-to-intervene policy for officers, and use-of-force policy revision. Retained Police Executive Research Forum (PERF) for 'top to bottom review' of APD policy and training. Fired the officer. Said officers should be 'guardians, not warriors.'",
+        "sourceUrl": "https://www.cbsnews.com/news/atlanta-mayor-keisha-bottoms-police-force-policy-rayshard-brooks-shooting/",
+        "direction": "reform / police accountability"
+      },
+      {
+        "topic": "justice / criminal justice reform",
+        "action": "Cash bail elimination (2018)",
+        "detail": "Signed ordinance 18-O-1045 within weeks of taking office, eliminating cash bonds for city ordinance violations. Stated: 'People should not be held in jail because they cannot pay bond.'",
+        "sourceUrl": "https://www.atlantaga.gov/Home/Components/News/News/11448/",
+        "direction": "reform / pro-accountability"
+      },
+      {
+        "topic": "justice / incarceration",
+        "action": "Atlanta City Detention Center closure (2021)",
+        "detail": "Signed legislation authorizing closure of ACDC. Proposed reimagining it as a 'Center for Equity' providing residents with tools for success rather than incarceration.",
+        "sourceUrl": "https://www.atlantaga.gov/Home/Components/News/News/13037/",
+        "direction": "reform / rehabilitation focus"
+      },
+      {
+        "topic": "immigration / ICE",
+        "action": "ICE detainee Executive Orders (2018)",
+        "detail": "Signed two executive orders: first prohibiting ACDC from accepting new ICE detainees; then permanently ending all ICE detainee agreements. Stated holding ICE detainees was 'untenable' and 'complicit in inhumane immigration policies.' Noted state law prevented declaring Atlanta a full sanctuary city.",
+        "sourceUrl": "https://www.atlantaga.gov/Home/Components/News/News/11687/672",
+        "direction": "anti-immigration enforcement / pro-immigrant"
+      },
+      {
+        "topic": "climate / energy",
+        "action": "Clean Energy Atlanta Plan (2019)",
+        "detail": "Unveiled Atlanta's clean energy plan targeting 100% clean energy for municipal operations by 2025 and community-wide by 2035. Testified before the U.S. Senate Democrats' Special Committee on Climate Crisis (July 2019) — only Southern mayor on the panel. Cited 26,000 ER asthma visits/year in Atlanta. Joined Paris Agreement commitments despite federal withdrawal.",
+        "sourceUrl": "https://www.ajc.com/news/local-govt--politics/atlanta-mayor-bottoms-addresses-senate-committee-climate-change/LxTHWM2bdtmWEIxqN4AnpI/",
+        "direction": "aggressive climate action / renewables priority"
+      },
+      {
+        "topic": "housing / zoning",
+        "action": "Housing Affordability Action Plan (2019) + $50M bond (2021)",
+        "detail": "Plan aimed to create or preserve 20,000 affordable homes by 2026, raise $1 billion public-private. Proposed inclusionary zoning, ADU legalization, elimination of minimum parking requirements, second units on single-family lots, redevelopment of vacant public land for affordable housing.",
+        "sourceUrl": "https://www.investatlanta.com/impact-insights/mayor-keisha-lance-bottoms-releases-housing-affordability-action-plan",
+        "direction": "supply expansion / government subsidies / loosen zoning"
+      },
+      {
+        "topic": "transit / MARTA",
+        "action": "More MARTA Atlanta program approval (2019)",
+        "detail": "Partnered with MARTA Board to unanimously approve More MARTA Atlanta program — described as the region's largest transit investment in more than four decades.",
+        "sourceUrl": "https://www.atlantaga.gov/Home/Components/News/News/11737",
+        "direction": "public transit investment"
+      },
+      {
+        "topic": "economic development",
+        "action": "One Atlanta Economic Mobility, Recovery and Resiliency Plan (2020)",
+        "detail": "Plan focused on five objectives: Creation of Good Jobs, Access to Good Jobs, Small Businesses, Neighborhood Investment, and Affordable Housing. Targeted Black and brown communities with high poverty and unemployment.",
+        "sourceUrl": "https://www.investatlanta.com/about-us/news-press/mayor-keisha-lance-bottoms-and-invest-atlanta-board-announce-the-adoption-of-the-one-atlanta-economic-mobility-recovery-and-resiliency-plan",
+        "direction": "public investment / equity focus"
+      },
+      {
+        "topic": "LGBTQ rights",
+        "action": "LGBTQ Affairs Office creation (2018–2020)",
+        "detail": "Created city's first LGBTQ advisory board (2018). Released first LGBTQ Affairs report (February 2020). Appointed city's first director of LGBTQ Affairs (December 2020). City achieved perfect score on HRC Municipal Equality Index every year under Bottoms. First-ever city allocation of funds to combat HIV.",
+        "sourceUrl": "https://www.nbcnews.com/feature/nbc-out/atlanta-mayor-appoints-city-s-first-lgbtq-affairs-director-n1248972",
+        "direction": "strong LGBTQ support"
+      },
+      {
+        "topic": "guns / public safety",
+        "action": "Signed bipartisan mayor gun safety letter (2019); joined Moms Demand Action/Everytown advocacy",
+        "detail": "Signed U.S. Conference of Mayors letter (214 bipartisan mayors) after El Paso/Dayton mass shootings, urging universal background checks and limits on secondary sales. Called on Georgia state leaders to address 'lax gun laws.' Personal loss: nephew Darius killed in gun violence. Participated in Everytown/Moms Demand Action Veepstakes 2020. Simultaneously increased APD staffing and budget during crime surge.",
+        "sourceUrl": "https://www.11alive.com/article/news/local/atlanta-mayor-joins-calls-for-action-on-proposed-gun-safety-laws/85-fca0a841-e512-4e76-94f6-73f69fb2f097",
+        "direction": "pro-gun safety / more regulations"
+      },
+      {
+        "topic": "fiscal / budget",
+        "action": "Four balanced budgets without tax increases (2018–2022)",
+        "detail": "Delivered four consecutive balanced budgets during COVID without property tax increases, layoffs, or furloughs. Left city reserves near historic high of $181M. Gave historic pay raises to police and firefighters.",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Keisha_Lance_Bottoms",
+        "direction": "fiscal discipline / maintained public services"
+      },
+      {
+        "topic": "policing — tensions / context",
+        "action": "Crime surge and decision not to seek reelection (2020–2021)",
+        "detail": "Homicides, rapes, and auto thefts rose during her tenure. APD had 400 unfilled positions. Critics blamed COVID-era morale crisis and Rayshard Brooks fallout for officer departures. Bottoms offered retention bonuses and 13% pay increase for 911 operators. Announced in May 2021 she would not seek reelection — sources attributed partly to political cost of crime wave and reform-vs-safety tensions.",
+        "sourceUrl": "https://www.gpb.org/news/2021/05/12/georgia-today-mayor-bottoms-paying-the-political-cost-for-covid-crime-wave",
+        "direction": "NOTE: Record is mixed — simultaneously reformed and funded APD; faced real public safety degradation"
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "EMILYs List",
+      "type": "endorsement",
+      "cycle": "2026",
+      "url": "https://emilyslist.org/news/emilys-list-endorses-keisha-lance-bottoms-for-governor-of-georgia-2/",
+      "notes": "Endorsed December 2025. EMILYs List exclusively backs Democratic women who support abortion rights — strong signal on reproductive rights axis."
+    },
+    {
+      "organization": "Higher Heights for America PAC",
+      "type": "endorsement",
+      "cycle": "2026",
+      "url": "https://higherheightsforamericapac.org/candidate/keisha-lance-bottoms-for-gov/",
+      "notes": "Supports Black women candidates."
+    },
+    {
+      "organization": "Human Rights Campaign (HRC)",
+      "type": "municipal scorecard",
+      "cycle": "2018–2022 (mayoral)",
+      "url": "https://www.nbcnews.com/feature/nbc-out/atlanta-mayor-appoints-city-s-first-lgbtq-affairs-director-n1248972",
+      "notes": "Atlanta received perfect score on HRC Municipal Equality Index every year under Bottoms — strong LGBTQ rights signal."
+    },
+    {
+      "organization": "Everytown for Gun Safety / Moms Demand Action",
+      "type": "alignment / advocacy participation",
+      "cycle": "2019–2020 (mayoral)",
+      "url": "https://www.everytown.org/have-courage-do-the-right-thing-and-remember-the-legacy-of-john-lewis-six-things-i-learned-from-mayor-keisha-lance-bottoms/",
+      "notes": "Participated in Everytown/Moms Demand veepstakes; featured in Everytown editorial. Signed bipartisan mayors' gun safety letter. Strong gun regulation signal."
+    },
+    {
+      "organization": "NRA",
+      "type": "grade",
+      "cycle": null,
+      "url": null,
+      "notes": "No NRA grade found — consistent with her strong gun safety advocacy record as mayor."
+    },
+    {
+      "organization": "Sierra Club / environmental groups",
+      "type": "alignment",
+      "cycle": "2019 (mayoral)",
+      "url": "https://www.sierraclub.org/sierra/can-atlanta-run-entirely-renewable-energy-2035",
+      "notes": "Sierra Club covered Atlanta's Clean Energy Plan favorably. Bottoms testified before Senate climate committee. No formal 2026 endorsement found yet."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "EMILYs List",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Formal endorsement December 2025. Major pro-choice women's organization."
+    },
+    {
+      "organization": "Higher Heights for America PAC",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Black women candidate support organization."
+    },
+    {
+      "organization": "Jason Esteves (primary opponent) — NOT endorsed",
+      "type": "context",
+      "cycle": "2026",
+      "notes": "Esteves has secured more visible endorsements from labor unions, state legislators, Atlanta City Council members, and Atlanta school board members. Bottoms leads in polling (40%) but has fewer organizational endorsements from labor."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "11Alive (WXIA-TV)",
+      "date": "2026 (current cycle)",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/georgia-governor-2026-candidates-keisha-lance-bottoms/85-1b8aa640-94b8-4fae-8ce6-d6758b22767b",
+      "keyExchanges": [
+        {
+          "topic": "housing / affordability",
+          "quote": "Affordability is a huge issue... it means we've got to expand affordable housing in this state.",
+          "notes": "Housing identified as top constituent concern she's hearing statewide, from Atlanta to Augusta to Albany"
+        }
+      ]
+    },
+    {
+      "outlet": "WABE 90.1 FM (Atlanta Public Radio)",
+      "date": "2025-2026",
+      "url": "https://www.wabe.org/keisha-lance-bottoms/feed",
+      "keyExchanges": [
+        {
+          "topic": "campaign rationale",
+          "quote": "Georgians want and need a fighter.",
+          "notes": "Anti-Trump framing as central organizing theme"
+        }
+      ]
+    },
+    {
+      "outlet": "Capital B News (Atlanta)",
+      "date": "2025-2026",
+      "url": "https://atlanta.capitalbnews.org/keisha-lance-bottoms-georgia-governor-trump/",
+      "keyExchanges": [
+        {
+          "topic": "motivation / Trump response",
+          "quote": "I did hope that this Trump 2.0 term would be different, and in so many ways, it's been worse... I'm standing up and I'm fighting back. And for me, fighting back means that I am presenting myself as a candidate for governor.",
+          "notes": "Frames candidacy explicitly as resistance to Trump administration"
+        },
+        {
+          "topic": "immigration / ICE raids",
+          "quote": "[Plans to take on Trump's DEI ban and ICE raids as governor]",
+          "notes": "Paraphrase — no direct quote on immigration as governor. Consistent with mayoral ICE executive orders."
+        }
+      ]
+    },
+    {
+      "outlet": "The 19th News",
+      "date": "2025-05",
+      "url": "https://19thnews.org/2025/05/keisha-lance-bottoms-georgia-governor-race/",
+      "keyExchanges": [
+        {
+          "topic": "reproductive rights / abortion",
+          "quote": "The election will be a referendum on Georgia Republicans' policies, including reproductive health care... [will use] everything in her power as governor to take the United States back to Roe v. Wade.",
+          "notes": "Strong explicit pro-choice commitment; Georgia context of 6-week ban makes this a salient campaign issue"
+        },
+        {
+          "topic": "economic justice",
+          "quote": "She will emphasize economic and reproductive justice issues in her campaign",
+          "notes": "Paraphrase from reporter; economic justice + reproductive justice framed as twin pillars"
+        }
+      ]
+    },
+    {
+      "outlet": "AJC / Politically Georgia",
+      "date": "2025-11 / 2025-12",
+      "url": "https://www.ajc.com/politics/2025/12/politically-georgia-live-keisha-lance-bottoms-on-fighting-bully-trump/",
+      "keyExchanges": [
+        {
+          "topic": "overall posture",
+          "quote": "[Will make standing up to Trump's policies central to her agenda if she wins Georgia's top office]",
+          "notes": "Paraphrase; video interview exists at AJC but was not fetchable. Anti-Trump framing confirmed from multiple secondary accounts."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB (Georgia Public Broadcasting) — NAACP Forum",
+      "date": "2025-08",
+      "url": "https://www.gpb.org/news/2025/08/21/candidates-for-georgia-governor-attend-naacp-forum-sticking-party-lines",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / Medicaid",
+          "quote": "Would commit Georgia to a full expansion of Medicaid benefits.",
+          "notes": "Note: Bottoms submitted a video message rather than appearing in person at this NAACP forum in Warner Robins."
+        }
+      ]
+    },
+    {
+      "outlet": "U.S. Senate Democrats' Special Committee on Climate Crisis",
+      "date": "2019-07-17",
+      "url": "https://www.ajc.com/news/local-govt--politics/atlanta-mayor-bottoms-addresses-senate-committee-climate-change/LxTHWM2bdtmWEIxqN4AnpI/",
+      "keyExchanges": [
+        {
+          "topic": "climate / public health",
+          "quote": "We see an average of 26,000 emergency room visits for asthma and wheezing in Atlanta every year and climate change will only make it worse.",
+          "notes": "Testified as only Southern city mayor and only female mayor on the panel. Discussed Atlanta's Clean Energy Plan and 100% clean energy goal by 2035."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "police accountability vs. public safety record",
+      "conflict": "Bottoms implemented significant APD reforms (use-of-force, de-escalation, civilian oversight), closed the city jail, and eliminated cash bail — positioning herself as a reformer. At the same time, crime rose significantly during her tenure (homicides, rapes, auto thefts), APD had 400 vacancies, and she simultaneously requested $13M more in police funding and gave officers historic pay raises. She chose not to seek reelection in part due to the political cost of the crime surge. In the 2026 race, she is 'reframing her record' to emphasize stability and executive competence over the reform framing.",
+      "sources": [
+        "https://www.gpb.org/news/2021/05/12/georgia-today-mayor-bottoms-paying-the-political-cost-for-covid-crime-wave",
+        "https://www.ajc.com/politics/2025/11/bottoms-reframes-her-record-as-2026-races-takes-shape/",
+        "https://theappeal.org/atlantas-mayor-wants-13-million-more-for-police-four-officers-fired/"
+      ]
+    },
+    {
+      "topic": "immigration position as governor vs. state law constraints",
+      "conflict": "As mayor, Bottoms explicitly said state law prevented Atlanta from becoming a 'sanctuary city' even while she banned ICE detainees from the city jail. As a gubernatorial candidate, she has not specified what immigration enforcement posture she would take as governor — but her mayoral executive orders and Trump-opposition framing signal continued opposition to aggressive federal immigration enforcement.",
+      "sources": [
+        "https://www.11alive.com/article/news/local/atlanta-terminates-relationship-with-ice-what-does-it-mean-for-the-city/85-591983534",
+        "https://atlanta.capitalbnews.org/keisha-lance-bottoms-georgia-governor-trump/"
+      ]
+    }
+  ],
+  "policyGaps": [
+    {
+      "axis": "school_choice",
+      "notes": "No specific position found on charter schools, school vouchers, or education savings accounts in the 2026 campaign. Teacher income tax elimination and general 'education investment' are stated. She ran Atlanta public schools child savings accounts during her tenure. Cannot infer a firm position."
+    },
+    {
+      "axis": "sentencing / criminal justice at state level",
+      "notes": "Mayoral record shows strong rehabilitation / reform orientation (cash bail elimination, jail closure). No specific 2026 gubernatorial statements found on state-level sentencing policy, mandatory minimums, or prison reform."
+    },
+    {
+      "axis": "energy_portfolio / fossil fuels at state level",
+      "notes": "Mayoral record is clear (100% clean energy plan, Senate climate testimony). No 2026 campaign statement found specifically on natural gas, Georgia Power, or state energy policy as governor."
+    },
+    {
+      "axis": "cost_control / healthcare price regulation",
+      "notes": "Medicaid expansion is stated. No position found on drug price negotiation, hospital price transparency, or insurance regulation beyond Medicaid."
+    },
+    {
+      "axis": "transit_priority at state level",
+      "notes": "Strongly pro-MARTA as mayor (largest transit investment in 40 years). No specific 2026 gubernatorial statement on statewide transit vs. car infrastructure investment."
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "health_coverage_model — explicit Medicaid expansion commitment; top stated priority",
+      "public_health / reproductive rights — explicit pro-Roe, anti-6-week-ban; EMILYs List endorsed",
+      "climate_ambition — Senate testimony, 100% clean energy plan, Green New Deal-aligned urban policy",
+      "firearms_policy — bipartisan mayor gun safety letters, Everytown/Moms Demand participation, personal loss to gun violence, called for stricter Georgia gun laws",
+      "police_accountability — Rayshard Brooks reforms, duty-to-intervene orders, cash bail elimination, jail closure",
+      "housing_affordability_tools — $50M bond, 20,000-home goal, ADU reform, corporate landlord crackdown",
+      "zoning_supply — inclusionary zoning, ADU legalization, parking minimums eliminated, missing middle housing",
+      "transit_priority — More MARTA program (largest regional transit expansion in decades)",
+      "immigration — clear anti-ICE enforcement, anti-family separation; limited by state law as mayor",
+      "LGBTQ rights — perfect HRC score every year, first LGBTQ director, HIV funding"
+    ],
+    "weakestAxes": [
+      "school_choice — no clear position on vouchers or charters in 2026 campaign",
+      "energy_portfolio at state level — mayoral record is clear but no 2026 gubernatorial specifics",
+      "sentencing_goals at state level — mayoral reform record strong but no gubernatorial specifics"
+    ],
+    "overallConfidence": "high",
+    "notes": "Bottoms has one of the most documented mayoral records of any 2026 state-level challenger nationally. Four years of executive decisions on policing, housing, climate, immigration, and criminal justice provide strong evidence across most axes. The 2026 campaign adds explicit commitments on Medicaid, abortion, housing, and education. Main gaps are on state-level specifics where her mayoral record does not directly translate (school choice policy, state energy portfolio, state sentencing). The one significant nuance: her policing record is mixed — she was simultaneously a reformer and a 'fund the police' mayor, and the crime surge contributed to her not seeking reelection. The scorer should flag this and not score her at either extreme of the police_accountability axis without noting the complexity."
+  }
+}

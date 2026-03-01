@@ -1,0 +1,239 @@
+{
+  "slug": "buddy-carter",
+  "name": "Earl LeRoy \"Buddy\" Carter",
+  "party": "Republican",
+  "office": "U.S. Senate, Georgia, 2026",
+  "scoredAt": "2026-02-25T12:00:00.000Z",
+  "profileSummary": "Six-term Georgia congressman, pharmacist, and self-described 'MAGA warrior' running for Senate on border security and Trump alignment. Chairs House Energy & Commerce Health Subcommittee; led nearly $1 trillion in Medicaid cuts in the One Big Beautiful Bill and introduced the FairTax Act to abolish the IRS.",
+  "keyPositions": [
+    "Led $880B+ Medicaid cuts as Health Subcommittee Chair; said he'd 'like to see more'",
+    "Introduced FairTax Act (H.R. 25) to replace income tax with 23% national sales tax and abolish IRS",
+    "NRA A-rated; voted against Bipartisan Safer Communities Act and universal background checks",
+    "LCV 3% (2024), 4% lifetime; voted against Inflation Reduction Act climate provisions",
+    "Champions PBM reform and drug pricing transparency through market competition, not government negotiation"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "One Big Beautiful Bill — led $880B+ Medicaid cuts as Health Subcommittee Chair (2025)",
+        "AJC interview: 'I'd actually like to see more' than $880B in Medicaid cuts",
+        "Supports expanded SNAP work requirements in OBBB",
+        "Called Medicaid 'a lifeline, not a lifestyle'",
+        "GPB Sept 2025: refused to restore Medicaid funding even to avert government shutdown"
+      ],
+      "notes": "One of the most aggressive safety-net-cutters in the House. Framing — 'not kicking anyone off' — conflicts with CBO projection of 10.5M losing coverage by 2034. Scored on legislative record and stated desire for deeper cuts. Not a full 10 because he supports maintaining some safety net (Medicaid itself, Social Security existing) rather than full elimination."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "H.R. 25 FairTax Act of 2025 (introduced — abolish IRS, replace income tax with 23% sales tax)",
+        "Tax Cuts and Jobs Act 2017 — Yes vote; called it 'proudest vote'",
+        "Voted against Inflation Reduction Act public investment provisions",
+        "Heritage Action score rising from 71% to 92% over career",
+        "U.S. Chamber of Commerce Spirit of Enterprise Award recipient"
+      ],
+      "notes": "FairTax is a maximalist anti-tax position — abolishing the IRS and all income taxes. Combined with TCJA support and opposition to IRA spending, this is a strongly anti-public-investment record. Not scored 10 because he does support some targeted federal spending (defense, domestic energy production incentives)."
+    },
+    "econ_school_choice": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Official House issues page: education decisions best made by families, teachers, communities",
+        "Cosponsored National School Choice Week resolution",
+        "Supports eliminating Common Core",
+        "Former Education and the Workforce Committee member"
+      ],
+      "notes": "Clear pro-school-choice direction with support for vouchers and local control over federal standards. Not as prominent in Senate campaign messaging as other issues, which limits confidence. Scored 8 rather than higher because evidence is primarily Tier 2 (campaign positions) rather than specific legislation votes."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Voted to repeal ACA 9 times (2015-2017)",
+        "Led Medicaid cuts in One Big Beautiful Bill as Health Subcommittee Chair",
+        "Voted against ACA tax credit extensions",
+        "OnTheIssues: 'ACA should immediately be dismantled, repealed and replaced'",
+        "Explicit stated preference for 'market-driven solutions'"
+      ],
+      "notes": "Among the most consistently anti-ACA members in the House. Nine repeal votes and leadership role in crafting Medicaid cuts make this one of his strongest-evidenced axes. Not a 10 because he supports Medicaid existing as a 'lifeline' (with strict conditions) rather than full elimination of all public insurance."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Led PBM Reform Act — market transparency over price controls",
+        "Opposed Medicare drug price negotiation in IRA",
+        "Pharmacist background: prefers competition-based approach",
+        "Growing America's Pharmaceutical Supply Act (2026) — domestic production incentives",
+        "Stated: PBMs should 'bring competition to bear'"
+      ],
+      "notes": "Carter has genuine expertise here as a pharmacist and is more active on drug pricing than the typical Republican, but his approach is consistently market-based (PBM transparency, supply chain reform) rather than government price-setting. Scored 8 rather than 9-10 because his PBM reform work does involve some regulatory intervention, just market-oriented rather than price-control-oriented."
+    },
+    "health_public_health": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Opposed ACA individual mandate (multiple repeal votes)",
+        "General state-level determination framing on health policy",
+        "Consistent with Heritage Action 92% alignment on individual liberty issues"
+      ],
+      "notes": "No direct quotes on vaccine mandates or pandemic response found. Score inferred from ACA mandate opposition, general liberty framing, and conservative alignment pattern. Confidence is medium because evidence is indirect — primarily Tier 1 votes on mandates in the ACA context, not specific public health mandate legislation."
+    },
+    "justice_policing_accountability": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Introduced House resolution condemning anti-ICE protests",
+        "Defended ICE after fatal shooting of U.S. citizen during operation (Jan 2026)",
+        "Called for expanded ICE presence in Atlanta (Nov 2025)",
+        "Opposes eliminating mandatory minimums",
+        "Voted against marijuana decriminalization/expungement (MORE Act)"
+      ],
+      "notes": "Strongly pro-law-enforcement across federal context. ICE defense — even after fatal shooting of a citizen — and anti-protest resolution show strong 'back the blue' orientation. Not a 10 because there is no evidence of explicit opposition to all accountability measures (e.g., body cameras) — his record is focused on supporting enforcement authority rather than actively dismantling oversight."
+    },
+    "justice_sentencing_goals": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "Opposed DC criminal code overhaul that would eliminate mandatory minimums",
+        "Voted against MORE Act (marijuana expungement/decriminalization)",
+        "Some bipartisan criminal justice reform rhetoric (First Step Act framing)",
+        "Official website references bipartisan criminal justice reform support"
+      ],
+      "notes": "Voting record tilts punitive (opposing marijuana expungement, defending mandatory minimums), but some bipartisan reform rhetoric exists. The conflict between rhetoric and voting record is resolved in favor of the record per scoring rules. Scored 7 rather than 8-9 because the evidence is more limited — fewer specific votes cataloged — and there is genuine rhetorical support for some reform."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "NRA A-grade and endorsed every cycle since 2014",
+        "Voted No on Bipartisan Safer Communities Act (2022)",
+        "Voted No on Bipartisan Background Checks Act (H.R. 8)",
+        "Supports national right-to-carry reciprocity",
+        "Official House site: 'Efforts to expand gun control... have proven ineffective'"
+      ],
+      "notes": "Near-perfect pro-gun-rights record. Opposed the first major federal gun safety legislation in 30 years. NRA A-grade with consistent endorsement. Scored 9 rather than 10 because there is no evidence of opposing all regulation (e.g., existing background check system for licensed dealers)."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "LCV 3% (2024), 4% lifetime",
+        "Voted against Inflation Reduction Act climate provisions",
+        "Supports offshore drilling (with narrow Georgia coastal carve-out)",
+        "All-of-the-above energy framing primarily means fossil fuel expansion"
+      ],
+      "notes": "LCV 3-4% is near-floor environmental voting record. Consistent opposition to climate legislation across entire House career. Not a 10 because he is not an outright climate change denier and signed letters against 'sledgehammer' IRA repeal (protecting some clean energy credits due to district interests). But the overall record is clearly anti-climate-action."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Official House issues page: 'All-of-the-above energy approach, which begins with increasing domestic production'",
+        "Voted against IRA clean energy incentives",
+        "Supports domestic fossil fuel production expansion",
+        "Touts Hyundai EV plant as economic (not climate) win",
+        "Signed letters against full IRA repeal due to district EV/battery investments"
+      ],
+      "notes": "Legislative pattern strongly favors fossil fuels. The IRA conflict is notable: voted against it but protected some clean energy credits afterward because of $7.6B Hyundai investment in his district. This pragmatic exception prevents a score of 9-10, but his overall legislative orientation clearly prioritizes fossil fuel expansion. He frames renewables as economic benefit, not climate necessity."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Official House issues page: supports cutting 'bureaucratic red tape on American-made fuel and energy'",
+        "Heritage Action 92% score (general deregulatory alignment)",
+        "Energy and Commerce Committee membership"
+      ],
+      "notes": "General deregulatory stance is clear, but no specific permitting legislation votes were found in evidence. Score reflects strong directional signal from stated positions and overall regulatory alignment, but confidence is medium due to lack of specific vote evidence. Scored toward 'faster approvals' (Pole B) because his framing is about reducing regulatory barriers to energy production."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.6,
+      "reasoning": "Consistently works against universalism markers: LCV 4% lifetime (environmental disregard), voted against Respect for Marriage Act (opposing equal rights for LGBTQ+ individuals), strong anti-immigrant enforcement stance, voted to decertify election results. Campaign built on in-group identity ('MAGA warrior') rather than inclusive framing. Voted for foreign military aid (universalism-adjacent) but framed as 'peace through strength' (security) rather than humanitarian concern."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "PBM reform work shows genuine concern for pharmacy communities and drug pricing for constituents. However, leading $880B+ Medicaid cuts (CBO: 10.5M lose coverage) while representing a district with significant Medicaid enrollment, combined with SNAP work requirement expansion, works against community welfare. The tension between his stated framing ('lifeline, not a lifestyle') and the projected human impact nets to near-neutral. Small positive for pharmacy community advocacy."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "Strong traditional values orientation: A+ SBA Pro-Life rating, voted against codifying same-sex marriage (Respect for Marriage Act), opposition to transgender athletes in women's sports as a top campaign priority, defense of existing institutional structures (law enforcement, traditional tax systems — though FairTax is itself a radical departure from tax tradition). Religious and cultural conservatism is central to his identity. Slight deduction because FairTax proposal is actually a radical change to a long-standing system."
+    },
+    "conformity": {
+      "score": -0.2,
+      "reasoning": "Mixed signals. Voted to decertify Pennsylvania's electoral votes after January 6 — a significant norm violation that undermines democratic institutional conformity. Self-identifies as 'MAGA warrior,' embracing a disruptive political movement. However, within the Republican caucus, he is a reliable institutional player (97.3% vote attendance, committee leadership, rising Heritage Action scores). Net slightly negative due to the Electoral College objection, which is a major conformity violation regardless of stated rationale."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Border security is a top campaign priority. Voted for Secure the Border Act. Called for expanded ICE presence. Supports 'peace through strength' military aid ($95B foreign aid package). Strong law enforcement backing. However, leading Medicaid cuts that could strip health security from 10.5M people and proposing to abolish the IRS (FairTax) create significant economic insecurity for vulnerable populations. Security orientation is strong but narrowly defined around physical/border/military security rather than economic security."
+    },
+    "power": {
+      "score": 0.5,
+      "reasoning": "U.S. Chamber of Commerce alignment and Spirit of Enterprise Awards indicate deference to business elite interests. Tax Cuts and Jobs Act support disproportionately benefited wealthy and corporate interests. FairTax (national sales tax replacing income tax) would shift tax burden from high earners to consumers — a pro-concentrated-wealth structural change. NRA and corporate endorsements. Represents established power structures. Not higher because he has shown some willingness to challenge pharmaceutical industry power through PBM reform."
+    },
+    "achievement": {
+      "score": 0.6,
+      "reasoning": "Strong meritocracy and individual-effort orientation. 'Lifeline, not a lifestyle' Medicaid framing explicitly centers personal responsibility. Work requirements for safety net programs. Self-made pharmacist and small business owner identity. School choice as empowering families. Career arc from city planning commission to potential U.S. Senator. Workforce development through personal effort rather than structural change."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Voted against marijuana decriminalization (MORE Act). Opposition to transgender rights and same-sex marriage suggests restriction of personal lifestyle choices. Social conservatism generally restricts personal pleasure/freedom framing. No libertarian personal freedom signals on lifestyle issues despite some economic libertarianism (FairTax)."
+    },
+    "stimulation": {
+      "score": 0.1,
+      "reasoning": "Mostly status-quo-defending orientation: 'back the blue,' traditional values, institutional conservatism. However, the FairTax proposal is genuinely radical and transformative — abolishing the IRS and replacing the entire federal tax system is a major structural disruption. This single signature initiative pulls stimulation slightly positive, but the overall pattern is conservative and stability-oriented."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Mixed. Invokes individual liberty on gun rights (NRA A-grade, oppose all gun regulations), school choice (parental control), and economic freedom (FairTax, deregulation). However, opposes reproductive choice (A+ SBA Pro-Life), voted against same-sex marriage protections, opposes marijuana decriminalization, and supports expanded immigration enforcement. The liberty framing is selectively applied — strong on economic and gun liberty, restrictive on social/personal liberty. Net slightly positive because economic freedom signals are strong and consistent."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Inflation Reduction Act / clean energy",
+      "description": "Voted against IRA in 2022 but then signed three Republican letters opposing a 'sledgehammer' approach to IRA repeal. Also said IRA repeal is 'not a red line' for him. Position driven by $7.6B Hyundai EV/battery plant investment in his coastal Georgia district — economic pragmatism overrides ideological consistency.",
+      "sources": ["Canary Media (2022)", "Inside Climate News (2025)", "E&E News (2025)"],
+      "scoringImpact": "Lowered climate_energy_portfolio from 9 to 8 to reflect pragmatic exception; noted in climate_ambition"
+    },
+    {
+      "topic": "Medicaid cuts framing vs. impact",
+      "description": "Claims 'we're not kicking anyone off Medicaid' while publicly endorsing $880B+ in cuts that CBO projects will strip coverage from 10.5 million people by 2034. Said he'd 'actually like to see more' cuts. Led the committee crafting these provisions as Health Subcommittee Chair.",
+      "sources": ["AJC Politically Georgia", "CBO estimate", "budget.house.gov press release", "GPB (Sept 2025)"],
+      "scoringImpact": "Scored on legislative record and CBO-projected impact (econ_safetynet: 9, health_coverage_model: 9) rather than stated framing. Discrepancy noted in benevolence value score."
+    },
+    {
+      "topic": "Drug pricing approach",
+      "description": "As a pharmacist, champions lowering drug costs through PBM reform and market transparency. But voted against IRA's Medicare drug price negotiation provisions — the first time Medicare was allowed to negotiate drug prices. Favors market mechanisms; opposes government price-setting despite shared goal of lower costs.",
+      "sources": ["buddycarter.house.gov (PBM reform)", "healthreformvotes.org (IRA vote)"],
+      "scoringImpact": "health_cost_control scored at 8 (market competition) rather than higher, acknowledging his genuine engagement on the issue through market-based mechanisms"
+    },
+    {
+      "topic": "Criminal justice reform rhetoric vs. voting record",
+      "description": "Official House website references support for bipartisan criminal justice reform, but voted against marijuana expungement (MORE Act) and opposes eliminating mandatory minimums. 'Bipartisan' reform framing appears narrow and rhetorical.",
+      "sources": ["buddycarter.house.gov/news/documentsingle.aspx?DocumentID=3722", "Wikipedia (MORE Act vote)"],
+      "scoringImpact": "justice_sentencing_goals scored on voting record (7) per voting-record-over-rhetoric rule; rhetoric noted"
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 12,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority"
+    ],
+    "reasonSkipped": "No substantive housing, zoning, or transit policy record found in federal House tenure. Early-career planning commission work in Pooler (1989-1993) is too old and too local to score a Senate race.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No ACLU or AFL-CIO exact numerical scores retrieved (only directional)",
+      "No specific public health mandate votes found (COVID-era votes not documented in evidence)",
+      "No specific permitting reform legislation votes cataloged",
+      "Housing domain entirely unscored due to lack of federal record",
+      "No direct evidence on bail reform or parole positions"
+    ]
+  }
+}

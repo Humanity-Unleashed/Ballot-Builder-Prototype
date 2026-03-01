@@ -1,0 +1,234 @@
+{
+  "slug": "burt-jones",
+  "name": "Burt Jones",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-25T12:00:00.000Z",
+  "profileSummary": "Georgia Lt. Governor and Trump-endorsed gubernatorial candidate with a 10-year state Senate record; defines his platform around eliminating the state income tax, expanding school choice, and tough-on-crime mandatory minimums. Signed false elector certificates after 2020 and faces ongoing conflict-of-interest scrutiny over a family-tied data center project.",
+  "keyPositions": [
+    "Signature promise to completely eliminate Georgia's state income tax by 2032; only candidate to sign ATR Taxpayer Protection Pledge",
+    "Led passage of Georgia Promise Scholarship (school vouchers) and seeks to permanently lock in federal scholarship participation",
+    "Tough-on-crime agenda: mandatory minimums for gang offenses, expanded cash bail, death penalty for fentanyl dealers",
+    "Explicitly opposes all new gun restrictions; proposed $10K/year stipend for teachers who carry firearms",
+    "Supports Georgia's 6-week heartbeat abortion ban; led transgender sports ban (Riley Gaines Act)"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "ATR Taxpayer Protection Pledge (Oct 2025)",
+        "Income tax elimination proposal (campaign centerpiece)",
+        "Senate income tax cut record (2022-2026)",
+        "11Alive interview (2026)"
+      ],
+      "notes": "Eliminating state income tax would drastically reduce revenue available for safety net programs. No evidence of supporting safety net expansion. Framing is entirely around reducing government revenue and returning money to taxpayers. Scored 8 rather than 9-10 because he has not explicitly called for cutting specific safety net programs -- the effect is structural (revenue reduction) rather than targeted program cuts."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Income tax elimination plan (reduces state revenue by billions)",
+        "CON reform (market-oriented, not public investment)",
+        "ATR pledge (no tax increases, constraining public investment capacity)",
+        "STEM scholarship promotion (modest positive)"
+      ],
+      "notes": "Overall posture strongly favors private sector over public investment. CON reform explicitly removes government gatekeeping from hospital construction. Income tax elimination would constrain state capacity for public investment. Minor offset from STEM promotion and teacher pay rhetoric, but these are small compared to the revenue-elimination centerpiece."
+    },
+    "econ_tax_structure": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Campaign platform: eliminate state income tax entirely by 2032",
+        "Senate vote to establish flat income tax rate (~2022)",
+        "ATR Taxpayer Protection Pledge (only candidate to sign)",
+        "Lt. Gov. press release celebrating 'largest income tax cut in state history' (Feb 2026)",
+        "HB 112 one-time $500 tax refund (2025)",
+        "Property tax reform bill (2026)"
+      ],
+      "notes": "Complete income tax elimination is the maximum possible score on this axis. Jones moved from flat tax to total elimination -- beyond what even most supply-side Republicans propose at state level. This is his defining policy commitment."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "SB 233 (2024) -- Georgia Promise Scholarship (voucher program)",
+        "SB 446 (2026) -- permanent federal scholarship participation",
+        "11Alive interview: 'giving parents more options'",
+        "Campaign website issues page"
+      ],
+      "notes": "Led creation of Georgia's first school voucher program and is working to make it permanent and irreversible. Described by supporters as 'most significant school choice victory in state history.' Also mentions teacher pay raises, preventing a score of 10 -- he hasn't called for defunding public schools, just adding voucher alternatives."
+    },
+    "health_coverage_model": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "Long Senate record opposing Medicaid expansion",
+        "CON reform (market-oriented healthcare access)",
+        "NAACP forum (2025): 'every Georgian deserves access to care' via market mechanisms",
+        "AJC report: 'considers Medicaid expansion as 2026 race looms'"
+      ],
+      "notes": "Per voting record > stated position rule: long record opposing Medicaid expansion weighted more than recent rhetorical openness to Arkansas-style (private marketplace) expansion. Even the 'open' position is a conservative version of expansion that routes through private insurance. CON reform is explicitly deregulatory. No support for any public option or government insurance program. Scored 7 rather than 8-9 because his recent signals suggest at least willingness to discuss some form of coverage expansion, even if market-based."
+    },
+    "health_cost_control": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "CON reform -- deregulatory approach to healthcare costs",
+        "General market-oriented governance philosophy"
+      ],
+      "notes": "Limited direct evidence. CON reform is a supply-side, deregulatory approach to cost reduction (more competition, not price controls). No statements found on drug pricing, hospital rate-setting, or other cost control mechanisms. Low confidence -- score is inferred from overall philosophy rather than specific cost-control positions."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "11Alive interview: 'big law and order guy'",
+        "Campaign platform: law enforcement pay raises",
+        "SB 44 (gang mandatory minimums)",
+        "SB 63 (expanded cash bail)",
+        "Campaign promise: strengthen penalties for sex traffickers, gang members, repeat offenders"
+      ],
+      "notes": "Consistently pro-law enforcement with no reform or accountability language found anywhere in record or campaign materials. Pay raises for officers, tougher sentencing, expanded cash bail -- all reinforce police authority. Scored 8 rather than 10 because no evidence of opposing all accountability measures or explicitly seeking to expand police authority beyond current norms."
+    },
+    "justice_sentencing_goals": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "SB 44 (2023) -- 5-year mandatory minimums for gang offenses, 10-year for recruiting minors",
+        "SB 63 (2024) -- expanded cash bail to 30 additional offenses including 18 misdemeanors",
+        "Austin's Law (2024) -- overdose death prosecution tools",
+        "2025 increase in mandatory minimums for fentanyl traffickers",
+        "Campaign promise: death penalty for fentanyl dealers"
+      ],
+      "notes": "Extremely punishment-oriented. Multiple pieces of legislation creating or expanding mandatory minimums. Cash bail expansion to misdemeanors is notably aggressive. Death penalty advocacy for drug offenses. No rehabilitation, diversion, or decarceration language found anywhere. This is one of the strongest Pole B records in the research file."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Explicitly opposed to any new gun restrictions (AJC, 2023-2026)",
+        "HB 1018 (2024) -- Firearms Industry Nondiscrimination Act (gun purchaser privacy)",
+        "Teacher carry stipend proposal ($10K/year, 2023)",
+        "NRA-ILA public praise for Jones",
+        "Campaign platform"
+      ],
+      "notes": "Opposes all new gun regulations. Proposes arming teachers. Passed legislation protecting gun industry from financial discrimination. NRA alignment is clear and consistent. Scored 9 rather than 10 because no evidence of supporting permitless carry or explicitly opposing red flag laws -- though his overall posture suggests he would oppose them."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "No climate legislation or statements found in record",
+        "Trump endorsement and MAGA alignment",
+        "Family background in oil/petroleum (Jones Petroleum Company)",
+        "LCV scorecard: not found"
+      ],
+      "notes": "No climate position is stated anywhere in Jones' campaign materials, interviews, or legislative record. Inference is based on: (1) strong Trump alignment (Trump's climate skepticism is well-documented), (2) family background in petroleum industry, (3) complete absence of any pro-climate action. Scored 8 rather than 9-10 because the evidence is inferential rather than direct -- he hasn't made explicit anti-climate statements. Low confidence reflects this limitation."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "Transgender sports/bathroom restrictions (Riley Gaines Act), immigration enforcement framing, CRT teaching ban, no climate or environmental action, no humanitarian or international cooperation positions. Actions consistently narrow the scope of who benefits from policy to in-group members. NAACP forum attended only by video, not in person. No evidence of concern for welfare of all people or nature."
+    },
+    "benevolence": {
+      "score": 0.4,
+      "reasoning": "Teacher pay raises, law enforcement pay raises, STEM scholarships, 'every Georgian deserves access to care,' property tax relief for homeowners. Genuine care for defined community (Georgia families, workers, law enforcement). But benevolence is bounded -- extends to traditional in-group, not to marginalized communities (transgender students, immigrants, incarcerated people). The data center conflict-of-interest allegations complicate the benevolence framing."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "Biblical studies in schools (co-sponsored). CRT teaching ban (preserving traditional historical narratives). Transgender sports ban (defending traditional gender norms). Heartbeat abortion law support. TPUSA Act (conservative cultural values in education). Sixth-generation Georgian identity emphasis. Deep attachment to traditional social structures and cultural norms across multiple policy domains. Near the ceiling for this value."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "The defining conformity signal is the 2020 false elector episode: Jones signed fraudulent certificates declaring Trump the winner of Georgia despite Biden's victory, was named 'Unindicted Co-Conspirator Individual 8' in Fulton County RICO indictment, and violated the foundational democratic norm of accepting election results. This is a major anti-conformity action regardless of law-and-order rhetoric in other domains. His 'law and order' posture in criminal justice does not offset a direct violation of democratic process norms."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Mandatory minimums for gang offenses, expanded cash bail, death penalty for fentanyl dealers, law enforcement pay raises, immigration enforcement, tough-on-crime platform. Strong emphasis on public safety through punitive measures and enforcement. The security orientation is real and consistent, though it focuses on physical/criminal security rather than economic security (income tax elimination reduces economic safety net). Scored 0.7 rather than higher because the economic security dimension (safety net, healthcare access) is weak."
+    },
+    "power": {
+      "score": 0.6,
+      "reasoning": "Self-funded campaign with $10M personal loan. Oil executive and insurance entrepreneur family background. Data center project on family-owned land (AG accused him of using office to enrich family). ATR pledge aligns with wealthy donor class interests. Income tax elimination disproportionately benefits high earners. Trump endorsement as power alignment. Uses Lt. Gov. position to shape legislative agenda as personal campaign platform. Multiple indicators of comfort with and pursuit of concentrated economic and political power."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "UGA football co-captain (SEC Championship). Founded insurance company. Entrepreneurial/business identity. Income tax elimination framed as unleashing individual economic potential. School choice framed as empowering individual families. STEM scholarships. Meritocratic orientation is genuine and consistent, though not the dominant theme of his campaign (tax cuts and tough-on-crime are more central)."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Social conservatism restricts personal lifestyle choices: 6-week abortion ban support, transgender rights restrictions, CRT curriculum controls. No evidence of libertarian personal freedom framing on lifestyle issues. The gun rights and school choice positions invoke 'freedom' but in a rights/security frame, not a pleasure/lifestyle frame."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Income tax elimination is genuinely radical policy -- transformative and novel for a state that has always had an income tax. TPUSA Act is disruptive of educational norms. Trump-style populist disruption. But the overall orientation is conservative/preserving traditional order on social issues. The fiscal radicalism pulls slightly positive; the social conservatism pulls negative. Net result is weakly positive -- he's a disruptor on taxes but a preserver on culture."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Mixed signals across domains. Pro-self-direction: school choice as parental freedom, gun rights as individual liberty, income tax elimination as economic freedom. Anti-self-direction: transgender rights restrictions, CRT curriculum bans limit what teachers can teach, abortion restrictions limit bodily autonomy, TPUSA Act mandates political expression permissions in schools (government directing school policy on speech). The breadth of social restrictions slightly outweighs the economic liberty signals, but both are present. Net weakly positive because the economic liberty framing is central to his identity."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Medicaid expansion",
+      "description": "In 2024, Jones signaled openness to Arkansas-style Medicaid expansion (private marketplace). This conflicts with his long Senate record of opposing Medicaid expansion. AJC reported he 'considers Medicaid expansion as 2026 race looms,' suggesting strategic positioning for the general election rather than a genuine policy evolution.",
+      "sources": [
+        "AJC (Burt Jones considers Medicaid expansion)",
+        "Long Senate record of opposition",
+        "GPB NAACP forum (market-oriented healthcare framing)"
+      ],
+      "scoringImpact": "health_coverage_model scored at 7 based on long opposition record per voting record > stated position rule; rhetorical openness noted but not weighted equally."
+    },
+    {
+      "topic": "Democratic norms / 2020 election",
+      "description": "Jones signed false elector certificates declaring Trump the winner of Georgia despite Biden winning by ~12,000 votes. Named 'Unindicted Co-Conspirator Individual 8' in Fulton County RICO indictment but not charged. He frames Trump loyalty as an asset; this is a significant violation of democratic norms regardless of legal outcome.",
+      "sources": [
+        "CNN (Sept 2024)",
+        "WABE (special prosecutor announcement)",
+        "Georgia Recorder (case history)"
+      ],
+      "scoringImpact": "Drives conformity value score to -0.3 despite his law-and-order rhetoric in other domains. Does not directly affect axis scores but is essential political context."
+    },
+    {
+      "topic": "Data center conflict of interest",
+      "description": "Jones backed a $10B development in Butts County (his hometown) including a hospital and 11 million sq ft of data centers on land owned by his father. His income tax elimination plan initially proposed eliminating data center tax breaks to fund rate cuts -- creating a potential conflict where his signature tax policy intersects with his family's financial interests. AG Chris Carr accused Jones of using his office to enrich his family.",
+      "sources": [
+        "AJC (Jones plan would eliminate tax breaks)",
+        "Georgia Recorder (Massive Jones-backed project)",
+        "AJC (Data centers added to Jones-backed development)"
+      ],
+      "scoringImpact": "Contributes to power value score of 0.6; raises questions about benevolence motivation but does not override policy-based axis scores."
+    },
+    {
+      "topic": "Abortion -- potential evolution",
+      "description": "In 2023, Jones stated he did not seek restrictions beyond the 2019 heartbeat law. In February 2026, he celebrated Senate passage of 'legislation to protect children' -- the specific bill content is unclear and could represent further abortion restrictions or an unrelated child protection measure.",
+      "sources": [
+        "GPB (Feb 2023 goals statement)",
+        "ltgov.georgia.gov press release (Feb 10, 2026)"
+      ],
+      "scoringImpact": "Not scored as a separate axis (health_reproductive not in current axis set). Noted for monitoring -- if the Feb 2026 bill involves further abortion restrictions, it would strengthen the tradition value score."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 10,
+    "axesSkipped": [
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No meaningful evidence found for housing axes (state executive candidate with no housing policy positions), climate_energy_portfolio and climate_permitting (no explicit energy or permitting positions despite oil background), or health_public_health (no positions on vaccine mandates, public health authority, or related topics).",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No interest group scorecards with numerical ratings found (LCV, ACLU, etc.) -- NRA grade inferred but not confirmed",
+      "VoteSmart evaluations page exists but specific ratings not surfaced in research",
+      "Climate and energy positions entirely absent from campaign materials -- scored only climate_ambition at low confidence via inference",
+      "February 2026 'protect children' legislation specifics unknown",
+      "No positions found on public health mandates, vaccine policy, or FDA/CDC authority",
+      "No housing or transportation policy positions documented"
+    ]
+  }
+}

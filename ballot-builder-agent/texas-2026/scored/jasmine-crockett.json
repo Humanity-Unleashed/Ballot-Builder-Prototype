@@ -1,0 +1,154 @@
+{
+  "slug": "jasmine-crockett",
+  "name": "Jasmine Crockett",
+  "party": "Democratic",
+  "office": "U.S. Senate, Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Two-term congresswoman and former civil rights attorney with a strongly progressive House voting record; campaigns on affordability, healthcare, and climate while distancing herself from the 'progressive' label and framing her positions as 'common sense.'",
+  "keyPositions": [
+    "Cosponsor of Medicare for All Act (HR 3421); also supports Medicaid expansion as interim step",
+    "LCV 97% lifetime; supports 100% renewable energy by 2035 and eliminating fossil fuel subsidies",
+    "Cosponsor of Assault Weapons Ban of 2025; Giffords calls her 'one of the nation's foremost gun safety champions'",
+    "AFL-CIO / SEIU 100% pro-labor voting record; supports reinstating higher corporate tax rates",
+    "Called ICE a 'rogue organization' that should be 'cleaned out and rebuilt'; introduced TRACK ICE Act"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["AFL-CIO 100% scorecard", "SEIU 100% pro-labor rating", "Heritage Action 17%", "Medicaid expansion support", "Anti-$7.25 minimum wage statements"],
+      "notes": "Consistent across all Tier 1 scorecards and Tier 2 campaign statements. Supports expanding Medicaid, LIHEAP, and raising the minimum wage. Heritage Action 17% corroborates strongly progressive economic orientation."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Green New Deal framework cosponsorship", "Clean energy investment advocacy", "Heritage Action 17%"],
+      "notes": "Favors substantial public investment in clean energy and green infrastructure. Anti-tariff position (Day 1 rollback) is a pro-free-trade stance but does not negate public investment orientation. No specific infrastructure bill votes itemized in research."
+    },
+    "econ_tax_structure": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["Texas Tribune Q&A 2026-02-04", "Heritage Action 17%", "Minimum wage rhetoric"],
+      "notes": "Explicitly supports reinstating higher corporate tax rate for large corporations (reversing TCJA cuts). Frames economic inequality as central issue. Heritage Action 17% corroborates."
+    },
+    "health_coverage_model": {
+      "score": 0,
+      "confidence": "high",
+      "sources": ["HR 3421 Medicare for All Act cosponsorship (May 2023)", "AFL-CIO debate January 2026", "Texas Tribune Q&A February 2026"],
+      "notes": "Tier 1 cosponsorship of single-payer bill from earliest available date. Reaffirmed in both 2026 debate and written Q&A. Also supports Medicaid expansion and ACA subsidies as interim measures, but end goal is explicitly Medicare for All."
+    },
+    "health_cost_control": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["Medicare for All cosponsorship (implies government price-setting)"],
+      "notes": "Medicare for All inherently includes government price controls on healthcare providers and drugs. However, no standalone drug pricing, hospital rate-setting, or cost-control votes or statements found beyond the M4A framework. Score is inferred from the M4A position."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["NO vote on House spending bill with ICE expansion", "TRACK ICE Act introduction", "AFL-CIO debate January 2026", "Civil rights attorney background", "TX House criminal justice reform"],
+      "notes": "Called ICE a 'rogue organization' that must be 'cleaned out and rebuilt.' Voted against ICE funding expansion (Tier 1). Introduced transparency legislation (Tier 1). Background as civil rights/criminal defense attorney. Notably did NOT call for abolition -- framed as reform/overhaul, which keeps score at 2 rather than 0-1."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["TX House fee-wiping legislation for recently incarcerated", "Public defender background (3+ years)", "Criminal justice reform record"],
+      "notes": "Strong rehabilitative orientation from career background and TX House legislation. No specific federal sentencing votes found. Scored on state legislative record (Tier 1 TX House bill) and biography (Tier 4). Federal record gap noted."
+    },
+    "justice_firearms": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Assault Weapons Ban of 2025 cosponsorship", "Giffords endorsement ('foremost gun safety champion')", "News Channel 9 interview", "Campaign community safety page"],
+      "notes": "Supports full comprehensive gun regulation package: universal background checks, assault weapons ban, bump stock ban, safe storage laws, red flag laws, closing loopholes. Owns a firearm and has carry license -- politically calibrated for Texas but does not soften policy positions. Score of 1 rather than 0 because she frames from a gun-owner perspective rather than anti-gun identity."
+    },
+    "climate_ambition": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["LCV 97% lifetime scorecard", "100% renewable by 2035 target", "Green New Deal framework cosponsorship", "Founding member TX House Energy & Climate Caucus"],
+      "notes": "Near-perfect LCV record (Tier 1). Explicit aggressive targets: 100% renewable by 2035, eliminate fossil fuel subsidies, green infrastructure in underserved communities. Score of 1 rather than 0 because not quite at emergency/transformation rhetoric level -- frames through cost savings and jobs."
+    },
+    "climate_energy_portfolio": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["LCV 97% lifetime scorecard", "100% renewable by 2035 target", "Eliminate fossil fuel subsidies position", "House.gov energy/climate page"],
+      "notes": "Explicit 100% renewables target with fossil fuel subsidy elimination. LCV 97% corroborates. Among the strongest possible renewable energy positions."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.7,
+      "reasoning": "Strong environmental record (LCV 97%), universal healthcare (M4A), voting rights activism, immigrant pathway to citizenship, and community equity focus all point strongly toward universalism. Pro-Israel votes during Gaza conflict (noted as drawing criticism from progressive/Muslim/Arab American groups) suggest a limitation on extending universalism consistently in foreign policy. High but not maximum."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Represented 5,000+ Texans in court including 400+ pro bono for peaceful protesters. Public defender background. Criminal justice reform reducing burdens on recently incarcerated. AFL-CIO/SEIU 100% labor record -- consistent care for workers and community. Healthcare access, energy assistance (LIHEAP). Very strong in-community care orientation."
+    },
+    "tradition": {
+      "score": -0.4,
+      "reasoning": "Supports expanding the Supreme Court, filibuster carveouts to change Senate norms, challenged voter restriction bill through quorum break. Seeks progressive structural changes to established institutions. Does not invoke traditional cultural or religious values in available record. Actively works against several institutional traditions."
+    },
+    "conformity": {
+      "score": 0.1,
+      "reasoning": "Generally works within legislative process -- files bills, sponsors legislation, participates in committee work, debates. But led the 2021 Texas quorum break, a deliberate norm-breaking tactic (even if legally permissible). Supports court expansion which challenges institutional norms. Mostly conformist process but willing to disrupt when stakes are high."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Frames community safety through gun regulation, healthcare access, worker protections, and economic security (opposing $7.25 minimum wage). Supports Social Security. But opposes ICE expansion, calls for police/ICE reform rather than support. Progressive security framing -- safety through social programs rather than enforcement."
+    },
+    "power": {
+      "score": 0.0,
+      "reasoning": "Mixed signals. Policy record is strongly pro-labor and anti-corporate (AFL-CIO 100%, supports higher corporate taxes, opposes fossil fuel subsidies). But campaign finance record shows $370K+ in corporate PAC money since 2022, $4.5M transferred from corporate PAC-funded House campaign, and $2M+ in crypto mega-PAC support in 2022. Claimed no corporate PAC money in Senate race while transferring funds that included it. Anti-power policy orientation neutralized by pragmatic power-aligned fundraising."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "Filed more bills than any other freshman in TX 87th session. Career trajectory from public defender to Congress to Senate candidacy shows personal drive. First African American UH Law Center graduate to serve in U.S. House. But policy framing emphasizes structural change over individual merit -- meritocracy is not a central theme."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal liberty or lifestyle freedom framing in available research. No cannabis, recreational, or lifestyle policy positions found."
+    },
+    "stimulation": {
+      "score": 0.4,
+      "reasoning": "Supports Court expansion, Green New Deal framework, structural reform of ICE, filibuster carveouts -- all transformative proposals. Quorum break was a high-visibility disruption. But distanced herself from 'progressive' label in 2026 campaign, describing positions as 'common sense' -- dampening the transformative framing. Moderate reformist energy."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on reproductive rights as bodily autonomy (100% Reproductive Freedom for All), voting rights, civil liberties from civil rights attorney background. But supports comprehensive gun regulation (restricting individual liberty on firearms) and strong government role in healthcare. Net positive but cross-cutting across domains."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Corporate PAC money vs. stated position",
+      "description": "Claimed in a Senate race interview that she has 'not taken any corporate PAC money' in the Senate race. The Intercept found she accepted $370,000+ in federal contributions from corporate/business PACs since 2022 and transferred $4.5M from her House campaign (which included corporate PAC money) to the Senate campaign. Crypto-linked super PACs spent $2M+ supporting her 2022 congressional race.",
+      "sources": ["The Intercept (2026-02-13)", "NOTUS (2026)", "Texas Monthly"],
+      "scoringImpact": "Affects power value score (neutralized to 0.0). Does not affect axis scores since policy positions are independently evidenced."
+    },
+    {
+      "topic": "Progressive identity vs. 'common sense' rebranding",
+      "description": "Member of Congressional Progressive Caucus with classic progressive positions (M4A, Green New Deal framework, assault weapons ban, ICE reform). Yet in 2026 Senate campaign actively distanced herself from the 'progressive' label, calling positions 'common sense.' PCCC endorsed opponent Talarico, saying Crockett 'has never really shown up for any economic fight.'",
+      "sources": ["Ballotpedia", "American Prospect Q&A (2026-02-24)", "Dallas Express"],
+      "scoringImpact": "Per the voting record > stated position rule, scored on her actual House record (which is solidly progressive) rather than her rhetorical repositioning. Label choice noted but does not change axis scores."
+    },
+    {
+      "topic": "Israel-Gaza voting record",
+      "description": "Voted for several pro-Israel resolutions and military aid measures during the Gaza conflict, drawing criticism from progressive and Muslim/Arab American groups. Specific votes not fully detailed in available sources.",
+      "sources": ["Wikipedia", "Ballotpedia"],
+      "scoringImpact": "Factored into universalism value score (capped at 0.7 rather than higher). Not a scored civic axis."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 10,
+    "axesSkipped": ["econ_school_choice", "health_public_health", "housing_supply_zoning", "housing_affordability_tools", "housing_transport_priority", "climate_permitting"],
+    "reasonSkipped": "No meaningful positions found on school choice, public health mandates, any housing axis, or permitting reform. Senate campaign deliberately lacks a consolidated issues page. Research found no statements or votes on these topics.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No housing policy positions found despite housing being a major Texas issue",
+      "No school choice or public education funding position beyond general orientation",
+      "No public health mandate positions (vaccines, FDA authority)",
+      "No specific permitting reform stance",
+      "Israel-Gaza voting specifics not fully documented",
+      "DW-NOMINATE ideology score not retrieved",
+      "No US Chamber of Commerce rating retrieved"
+    ]
+  }
+}

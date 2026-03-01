@@ -1,0 +1,634 @@
+{
+  "slug": "lucy-mcbath",
+  "name": "Lucy McBath",
+  "party": "Democratic",
+  "office": "U.S. House, Georgia 6th Congressional District, 2026",
+  "contestId": "GA-06-US-HOUSE-2026",
+  "incumbencyStatus": "incumbent (four terms, 2019-present; represented GA-06 2019-2023, GA-07 2023-2025, GA-06 2025-present following redistricting)",
+  "researchedAt": "2026-02-25T00:00:00Z",
+  "electionContext": {
+    "districtNote": "GA-06 redrawn as D+25 district after redistricting; McBath won 2024 general election with 74.7% of the vote",
+    "statusNote": "McBath filed exploratory committee for Georgia governor race in March 2025 then suspended that bid in March 2025 to focus on husband's cancer recovery. As of February 2026 she remains in the House seat and has not announced a 2026 congressional re-election campaign formally, though she continues serving her current term through January 2027. Filed H.R.7599 in February 2026."
+  },
+  "biography": {
+    "born": "1960, Joliet, Illinois",
+    "currentRole": "U.S. Representative, Georgia 6th Congressional District (2025-present); previously GA-07 (2023-2025) and GA-06 (2019-2023)",
+    "priorRoles": [
+      "National Spokesperson and Faith & Outreach Leader, Everytown for Gun Safety and Moms Demand Action (approx. 2013-2018)",
+      "Flight attendant, Delta Air Lines (30-year career through early 2010s)",
+      "Intern, Virginia State Senate office of Douglas Wilder (early 1980s)"
+    ],
+    "education": "B.A. Political Science, Virginia State University (1982)",
+    "personalBackground": "Mother of Jordan Davis, a 17-year-old killed in the 'Loud Music Shooting' at a gas station in Jacksonville, Florida, on November 23, 2012. Two-time breast cancer survivor. Has experienced three miscarriages. Married to Curtis McBath (who underwent cancer surgery complications in 2025). Her son's murder was the catalyst for her transition from flight attendant to gun violence prevention advocate and ultimately to Congress.",
+    "committees": [
+      "Committee on Education and Workforce (including Subcommittee on Health, Employment, Labor, and Pensions; Subcommittee on Higher Education and Workforce Development)",
+      "Committee on the Judiciary — Ranking Member, Subcommittee on Crime and Federal Government Surveillance (119th Congress, 2025-present)"
+    ],
+    "caucuses": [
+      "Congressional Black Caucus",
+      "New Democrat Coalition (centrist/moderate Democratic caucus)"
+    ]
+  },
+  "campaignWebsite": {
+    "url": "https://lucyforcongress.com",
+    "issuesPageUrl": "https://lucyforcongress.com/issues/",
+    "fetchedAt": "2026-02-25T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "gun_violence_prevention / firearms_policy",
+        "quote": "After her son Jordan Davis was shot and killed in Jacksonville, Florida in 2012, Lucy decided to dedicate the rest of her life to fighting for gun safety and continues to advocate for common sense gun violence prevention.",
+        "sourceUrl": "https://lucyforcongress.com/issues/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "This is her defining issue — co-founder motivation for her entire congressional career. Supports universal background checks, assault weapons ban, extreme risk protection orders."
+      },
+      {
+        "topic": "healthcare / coverage_model",
+        "quote": "As a two-time breast cancer survivor who lives with pre-existing conditions, McBath supports proposals making it easier for more Georgians to get covered and to expand upon the Affordable Care Act.",
+        "sourceUrl": "https://lucyforcongress.com/issues/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicitly supports ACA expansion, not Medicare for All. Supports Medicaid expansion in Georgia and lowering Medicare eligibility age to 55."
+      },
+      {
+        "topic": "education / school_choice",
+        "quote": "McBath has made lowering student debt a priority and supports fully funding K-12 education and making public universities, vocational schools, and community colleges more affordable.",
+        "sourceUrl": "https://lucyforcongress.com/issues/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Emphasis on fully funding public education; no explicit school choice position found on campaign site."
+      },
+      {
+        "topic": "climate / ambition_level",
+        "quote": "McBath believes the science of climate change is conclusive and indisputable: humans are the principal cause of it and the planet is warming at an extremely alarming rate.",
+        "sourceUrl": "https://lucyforcongress.com/issues/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Supports increased investment in sustainable/renewable energy and incentives for solar and other renewables."
+      },
+      {
+        "topic": "campaign_finance",
+        "quote": "Lucy McBath strongly disagrees with the Citizens United decision and will support legislation to increase transparency of the campaign finance system.",
+        "sourceUrl": "https://lucyforcongress.com/issues/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Stated position on campaign site."
+      },
+      {
+        "topic": "lgbtq_rights",
+        "quote": "She fought to pass the Equality Act, which would proscribe discrimination of LGBTQ individuals in several areas including in the workplace, housing, and credit and financial assistance.",
+        "sourceUrl": "https://lucyforcongress.com/issues/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Active advocate for LGBTQ equality."
+      },
+      {
+        "topic": "housing / affordability_tools / zoning_supply",
+        "quote": "cut red tape and update permitting and zoning to build four million homes in the next decade",
+        "sourceUrl": "https://mcbath.house.gov/2026/2/mcbath-new-dems-unveil-affordability-agenda-to-address-the-cost-of-living-crisis",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Part of New Democrat Coalition Affordability Agenda released February 2026. Supports loosening permitting and zoning to increase housing supply — a market-supply approach rather than purely subsidy-based. Also supports increased Low-Income Housing Tax Credit allocations."
+      },
+      {
+        "topic": "cost_of_living / economy",
+        "quote": "Affordability Agenda focusing on lowering five care costs that are too high: health care, housing, energy, family care, and household essentials like groceries.",
+        "sourceUrl": "https://mcbath.house.gov/2026/2/mcbath-new-dems-unveil-affordability-agenda-to-address-the-cost-of-living-crisis",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Unveiled with New Democrat Coalition February 11, 2026. Framed around cost reduction including promoting competition, supporting small businesses, and breaking down regulatory barriers."
+      }
+    ]
+  },
+  "officialHouseWebsite": {
+    "url": "https://mcbath.house.gov",
+    "fetchedAt": "2026-02-25T00:00:00Z",
+    "issuePages": [
+      "https://mcbath.house.gov/gun-violence-prevention",
+      "https://mcbath.house.gov/health-care",
+      "https://mcbath.house.gov/energy-environment",
+      "https://mcbath.house.gov/education",
+      "https://mcbath.house.gov/immigration",
+      "https://mcbath.house.gov/transportation-and-infrastructure"
+    ],
+    "keyPressReleases": [
+      {
+        "title": "Ranking Member McBath Announces Gun Safety Legislation (H.R.7599, Federal Extreme Risk Protection Order Act of 2026)",
+        "date": "2026-02",
+        "url": "https://mcbath.house.gov/2026/2/ranking-member-mcbath-announces-gun-safety-legislation",
+        "topic": "firearms_policy"
+      },
+      {
+        "title": "McBath, New Dems Unveil Affordability Agenda to Address the Cost of Living Crisis",
+        "date": "2026-02",
+        "url": "https://mcbath.house.gov/2026/2/mcbath-new-dems-unveil-affordability-agenda-to-address-the-cost-of-living-crisis",
+        "topic": "economy / housing / healthcare"
+      },
+      {
+        "title": "Rep. Lucy McBath urges Speaker Mike Johnson to negotiate, warns families could lose affordable health care (government shutdown context)",
+        "date": "2025-10",
+        "url": "https://mcbath.house.gov/2025/10/rep-lucy-mcbath-urges-speaker-mike-johnson-to-negotiate-warns-families-could-lose-affordable-health-care",
+        "topic": "healthcare / ACA subsidies"
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "VoteSmart", "Congress.gov", "McBath House website press releases"],
+    "attendanceRate": "98.2% (missed 65 of 3,625 roll call votes, January 2019 – February 2026; on par with median of 2.0% for serving members)",
+    "billsEnacted": "8 bills as primary sponsor enacted into law, including Stop Campus Hazing Act (H.R.5646) and Federal Prison Oversight Act (H.R.3019)",
+    "sponsorshipTopics": "Education (31%), Labor and Employment (24%), Crime and Law Enforcement (17%), Families (7%), Health (7%), Agriculture and Food (7%), Government Operations (7%)",
+    "keyVotes": [
+      {
+        "bill": "Bipartisan Safer Communities Act (S.2938, 2022)",
+        "vote": "Yes",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://mcbath.house.gov/2022/6/mcbath-votes-for-historic-gun-violence-prevention-package",
+        "notes": "First major federal gun safety legislation in nearly 30 years. McBath's Federal Extreme Risk Protection Order Act was incorporated into this package. House passed 234-193 on June 24, 2022; all 220 Democrats voted yes."
+      },
+      {
+        "bill": "Inflation Reduction Act (H.R.5376, 2022)",
+        "vote": "Yes",
+        "topic": "climate / healthcare / cost_control",
+        "sourceUrl": "https://mcbath.house.gov/2022/8/house-votes-to-pass-the-inflation-reduction-act-bill-includes-mcbath-measure-to-lower-the-cost-of-prescription-drugs",
+        "notes": "Includes McBath's measure to cap insulin costs and lower prescription drug prices. Also ~$369B in climate investments. Medicare drug price negotiation provision."
+      },
+      {
+        "bill": "George Floyd Justice in Policing Act (H.R.1280, 2021)",
+        "vote": "Yes (cosponsor)",
+        "topic": "police_accountability / justice",
+        "sourceUrl": "https://www.govtrack.us/congress/members/lucy_mcbath/412769",
+        "notes": "Co-sponsored and voted for bill passed House 220-212 on March 3, 2021. Included ending qualified immunity, national police misconduct registry, banning chokeholds. Failed in Senate."
+      },
+      {
+        "bill": "H.R.8 Bipartisan Background Checks Act (2019)",
+        "vote": "Yes (co-sponsor, first official act as Member)",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://mcbath.house.gov/gun-violence-prevention",
+        "notes": "Co-sponsoring this was her first official act as Member of Congress — universal background checks for all gun sales."
+      },
+      {
+        "bill": "Women's Health Protection Act (2022)",
+        "vote": "Yes",
+        "topic": "reproductive_rights",
+        "sourceUrl": "https://mcbath.house.gov/2022/7/mcbath-votes-to-protect-reproductive-rights",
+        "notes": "Codified abortion access protections federally in response to Dobbs decision."
+      },
+      {
+        "bill": "Respect for Marriage Act (2022)",
+        "vote": "Yes",
+        "topic": "lgbtq_rights / civil_rights",
+        "sourceUrl": "https://mcbath.house.gov/2022/7/mcbath-votes-to-protect-reproductive-and-marriage-rights-as-georgia-abortion-ban-takes-effect",
+        "notes": "Enshrines same-sex and interracial marriage protections into federal law."
+      },
+      {
+        "bill": "Laken Riley Act (H.R.29, 2025)",
+        "vote": "Yes",
+        "topic": "immigration",
+        "sourceUrl": "https://www.govtrack.us/congress/votes/119-2025/h6",
+        "notes": "NOTABLE DEVIATION: McBath was one of 48 Democrats who voted for this Republican-backed immigration enforcement bill (first bill of 119th Congress). She had voted NO on a prior version. Bill requires DHS to detain undocumented immigrants arrested for theft, burglary, assault on law enforcement, or crimes resulting in serious injury. AJC characterized her as one of 4 Georgia Democrats who flipped. Signals moderate positioning on immigration enforcement."
+      },
+      {
+        "bill": "Infrastructure Investment and Jobs Act / Bipartisan Infrastructure Law (2021)",
+        "vote": "Yes (inferred from press releases touting funding secured for Georgia; announced over $73M for Georgia from the law)",
+        "topic": "public_investment / transit / climate",
+        "sourceUrl": "https://mcbath.house.gov/press-releases",
+        "notes": "House passed 228-206 on Nov. 5, 2021. McBath was in the majority. Includes public transit and clean energy infrastructure investments.",
+        "confidence": "medium — specific vote confirmed by context; individual vote page not directly fetched"
+      },
+      {
+        "bill": "Ensuring Women's Right to Reproductive Freedom Act (2022)",
+        "vote": "Yes",
+        "topic": "reproductive_rights",
+        "sourceUrl": "https://mcbath.house.gov/2022/7/mcbath-votes-to-protect-reproductive-and-marriage-rights-as-georgia-abortion-ban-takes-effect",
+        "notes": "Prohibits criminalization of interstate travel to obtain an abortion."
+      },
+      {
+        "bill": "Affordable Insulin Now Act (incorporated in IRA, 2022)",
+        "vote": "Yes",
+        "topic": "healthcare / cost_control / drug_pricing",
+        "sourceUrl": "https://mcbath.house.gov/2023/1/mcbath-law-capping-insulin-costs-at-35-a-month-for-seniors-on-medicare-goes-into-effect",
+        "notes": "McBath was the lead sponsor; the bill capped insulin costs at $35/month for Medicare beneficiaries. Went into effect January 2023. Eli Lilly subsequently announced voluntary price cuts attributed to McBath's bill."
+      }
+    ],
+    "legislationIntroduced": [
+      {
+        "bill": "H.R.7599 — Federal Extreme Risk Protection Order Act of 2026",
+        "date": "2026-02",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://mcbath.house.gov/2026/2/ranking-member-mcbath-announces-gun-safety-legislation",
+        "notes": "Allows family members, household members, and law enforcement to obtain ERPOs from federal courts. Nationwide access to red flag law mechanism. Supported by Everytown, Giffords, Brady United, Newtown Action Alliance."
+      },
+      {
+        "bill": "Assault Weapons Ban of 2025 (H.R.3115)",
+        "date": "2025-04",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://mcbath.house.gov/2025/4/representative-mcbath-senator-schiff-lead-reintroduction-of-assault-weapons-ban",
+        "notes": "Led House reintroduction alongside Sen. Adam Schiff. Over 100 original co-sponsors. Bans semi-automatic assault weapons and magazines holding 10+ rounds."
+      },
+      {
+        "bill": "GOSAFE Act (Gas-Operated Semi-Automatic Firearms Exclusion Act, 2025)",
+        "date": "2025-04",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://mcbath.house.gov/2025/4/gosafe-legislation-protect-communities",
+        "notes": "Reintroduced April 9, 2025. Prohibits manufacture, sale, transfer of certain gas-operated semi-automatic weapons and high-capacity magazines (10+ rounds). Also bans machinegun conversion devices including bump stocks and Glock switches."
+      },
+      {
+        "bill": "Insulin cost cap extension bill (2025)",
+        "date": "2025-11",
+        "topic": "healthcare / cost_control",
+        "sourceUrl": "https://mcbath.house.gov/2025/11/representatives-mcbath-craig-landsman-horsford-schrier-introduce-bill-to-cap-price-of-insulin-at-35-per-month",
+        "notes": "Extends $35/month insulin cap (currently Medicare-only) to all Americans with private insurance."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "94% (2024 annual), 96% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/lucy-mcbath/",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Very high environmental score. Consistent with her votes on IRA, Infrastructure Law. Slight variation from 96% may reflect missed votes or procedural differences."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "99% (most recently reported)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/lucy-mcbath",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Near-perfect labor voting record. Consistent with New Democrat Coalition membership but reflects that coalition's pro-worker voting despite its moderate reputation."
+    },
+    {
+      "organization": "ACLU",
+      "score": "100%",
+      "grade": null,
+      "url": "https://www.aclu.org/scorecard/legislators/ga-lucy-mcbath/",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Perfect score on civil liberties. Consistent with George Floyd Act cosponsorship, reproductive rights votes, Equality Act support."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": "F (de facto — no grade issued; NRA has actively campaigned against her)",
+      "url": null,
+      "notes": "NRA does not publicly grade McBath given she is one of the nation's most prominent gun violence prevention advocates and former Everytown employee. Her 2018 election was characterized as 'a massive defeat for the NRA.' NRA president Carolyn Meadows made controversial comments dismissing her 2019 victory as due to her being a 'minority woman.'"
+    },
+    {
+      "organization": "Brady United Against Gun Violence",
+      "score": "A (implied — highest possible)",
+      "grade": "A",
+      "url": "https://elections.bradyunited.org/candidates/lucy-mcbath",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Considered a top gun violence prevention champion. Her first act as congresswoman was co-sponsoring Brady-backed universal background check legislation."
+    },
+    {
+      "organization": "Giffords Law Center",
+      "score": "A (implied — highest endorsement tier)",
+      "grade": "A",
+      "url": "https://giffords.org/candidates/lucy-mcbath/",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Giffords endorses her and lists her as champion. Her FERPO Act is specifically backed by Giffords."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "0% (116th and 117th Congresses)",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/M001208/117",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Lifetime Heritage Action score is 2%. Near-zero conservative scorecard reflects consistent voting against conservative priorities."
+    },
+    {
+      "organization": "American Conservative Union (ACU)",
+      "score": "3%",
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/178538/lucy-mcbath",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Very low ACU score consistent with progressive voting record."
+    },
+    {
+      "organization": "Americans for Democratic Action (ADA)",
+      "score": "80% (2019)",
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/178538/lucy-mcbath",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Liberal Quotient of 80 in 2019 — strong but not perfect liberal alignment, consistent with her New Democrat Coalition centrist positioning on some issues."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": "71%",
+      "grade": null,
+      "url": "https://www.uschamber.com/congressional-scorecard-and-legislative-leadership-list",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Notably higher than most progressive Democrats (who score 0-30%). This 71% is consistent with her New Democrat Coalition membership. Reflects votes on business-friendly legislation including possibly some trade or regulatory measures. This is a moderate outlier compared to her other scorecards."
+    },
+    {
+      "organization": "Everytown for Gun Safety Victory Fund",
+      "score": null,
+      "grade": "Gun Sense Candidate (endorsed and funded all cycles)",
+      "url": "https://www.everytown.org/press/everytown-georgia-moms-demand-action-declare-victory-as-gun-sense-champion-lucy-mcbath-wins-congressional-race/",
+      "notes": "Everytown and Moms Demand Action have spent over $9 million to elect/re-elect McBath over four cycles. She is a former Everytown employee and Moms Demand Action volunteer leader."
+    },
+    {
+      "organization": "Reproductive Freedom for All (formerly NARAL)",
+      "score": null,
+      "grade": "Champion/Endorsed",
+      "url": "https://reproductivefreedomforall.org/lawmaker/lucy-mcbath/",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Listed as champion on their lawmaker page."
+    },
+    {
+      "organization": "EMILY's List",
+      "score": null,
+      "grade": "Endorsed",
+      "url": "https://emilyslist.org/candidate/lucy-mcbath-22/",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "EMILY's List endorsement confirmed — pro-choice Democratic women's PAC."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Everytown for Gun Safety Action Fund / Victory Fund",
+      "type": "endorsement + financial support (over $9M across four cycles)",
+      "cycle": "2018, 2020, 2022, 2024",
+      "notes": "She is a former employee of Everytown. 'Gun Sense Candidate' designation."
+    },
+    {
+      "organization": "Moms Demand Action for Gun Sense in America",
+      "type": "endorsement",
+      "cycle": "2018, 2020, 2022, 2024",
+      "notes": "She is a former Moms Demand Action volunteer leader."
+    },
+    {
+      "organization": "Brady United Against Gun Violence",
+      "type": "endorsement",
+      "cycle": "2018 through 2024",
+      "notes": "Consistent endorsement across all cycles."
+    },
+    {
+      "organization": "Giffords Law Center",
+      "type": "endorsement",
+      "cycle": "multiple cycles",
+      "notes": "Her FERPO Act in 2026 was supported by Giffords."
+    },
+    {
+      "organization": "EMILY's List",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Endorsement confirmed for at least 2022 cycle."
+    },
+    {
+      "organization": "Congressional Black Caucus PAC",
+      "type": "affiliated / member",
+      "cycle": "ongoing",
+      "notes": "Member of CBC."
+    },
+    {
+      "organization": "New Democrat Coalition",
+      "type": "member / affiliated",
+      "cycle": "ongoing",
+      "notes": "Member of centrist New Democrat Coalition, which has secured changes to Raise the Wage Act and released the 2026 Affordability Agenda."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Atlanta Magazine",
+      "date": "2018 (campaign period)",
+      "url": "https://www.atlantamagazine.com/news-culture-articles/12-questions-for-georgia-6th-congressional-district-candidate-lucy-mcbath/",
+      "keyExchanges": [
+        {
+          "topic": "general / character",
+          "notes": "12-question profile from original 2018 campaign; covers her motivation and personal story."
+        }
+      ]
+    },
+    {
+      "outlet": "Democracy Now!",
+      "date": "2022-05-20",
+      "url": "https://www.democracynow.org/2022/5/20/amy_littlefield_responds_lucy_mcbath_abortion",
+      "keyExchanges": [
+        {
+          "topic": "reproductive_rights",
+          "quote": "After which failed pregnancy should I have been imprisoned?",
+          "notes": "Powerful personal testimony on reproductive rights; she spoke about her three miscarriages and the danger of criminalizing pregnancy loss if abortion is banned."
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive / Atlanta NBC affiliate",
+      "date": "2025-10",
+      "url": "https://www.11alive.com/article/news/politics/rep-lucy-mcbath-government-shutdown-health-care-costs-concerns/85-3013c6ac-dbf8-4183-853d-e112b200e66b",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / ACA subsidies",
+          "quote": "We have never had a situation like this where the Republican Party, under the leadership of this President, has said, we are not willing to negotiate... we are not willing to come to the table and that this is take it or leave it. Even though they know that millions of Americans, people that they actually represent, are going to be drastically hurt by the loss of their health care.",
+          "notes": "During government shutdown over ACA tax credit expiration. McBath strongly insisted subsidies must be included in any deal."
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Public Broadcasting (GPB)",
+      "date": "2025-10",
+      "url": "https://www.gpb.org/news/2025/10/09/us-representatives-defend-their-parties-positions-government-shutdown-continues",
+      "keyExchanges": [
+        {
+          "topic": "healthcare",
+          "notes": "McBath defended Democratic position that ACA subsidies must be extended as part of any government funding deal. Said her constituents understand why Democratic senators are holding the line."
+        }
+      ]
+    },
+    {
+      "outlet": "AJC (Atlanta Journal-Constitution)",
+      "date": "2025",
+      "url": "https://www.ajc.com/politics/lucy-mcbath-takes-first-step-toward-likely-georgia-governor-bid/3ODOY54MSFHIZJPID65E6C7C3A/",
+      "keyExchanges": [
+        {
+          "topic": "gubernatorial intentions / overall political positioning",
+          "quote": "Georgians deserve a Governor who understands what's at stake — because they've lived it. As a mom and breast cancer survivor, I've seen firsthand how regular people are too often left out of the political process.",
+          "notes": "Statement when forming exploratory committee in March 2025. Subsequently suspended the committee in late March 2025 due to husband Curtis McBath's cancer surgery complications. Has not formally ruled out a future governor's race."
+        }
+      ]
+    }
+  ],
+  "positionDetails": {
+    "firearms_policy": {
+      "summary": "McBath is one of the most prominent gun violence prevention advocates in Congress. Gun safety is her defining legislative issue — it brought her to politics after her son Jordan Davis was shot and killed in 2012. She is the Ranking Member of the House Judiciary Subcommittee on Crime and Federal Government Surveillance.",
+      "explicitPositions": [
+        "Universal background checks for all gun sales (H.R.8 co-sponsor, first official act)",
+        "Assault weapons ban (H.R.3115, introduced April 2025)",
+        "Federal Extreme Risk Protection Orders / red flag laws (H.R.7599, introduced Feb 2026; ERPO included in Bipartisan Safer Communities Act 2022)",
+        "GOSAFE Act — banning gas-operated semi-automatic weapons and high-capacity magazines (10+ rounds), introduced April 2025",
+        "Banning machinegun conversion devices including bump stocks and Glock switches",
+        "Voted for Bipartisan Safer Communities Act (2022)",
+        "No NRA rating — NRA considers her one of their top opponents"
+      ],
+      "confidence": "very high — this is her signature issue with a 7-year documented record"
+    },
+    "healthcare": {
+      "summary": "Supports ACA expansion and incremental improvements; explicitly opposed to Medicare for All. Supports Medicaid expansion in Georgia, lowering Medicare eligibility to 55. Lead sponsor of insulin cost cap legislation ($35/month cap, enacted as part of IRA).",
+      "explicitPositions": [
+        "Opposes Medicare for All / single-payer; supports incremental ACA improvements",
+        "Supports Medicaid expansion in Georgia (not yet adopted by state)",
+        "Supports lowering Medicare eligibility age to 55",
+        "Voted for Inflation Reduction Act (2022) which includes Medicare drug price negotiation",
+        "Led Affordable Insulin Now Act — $35/month cap for Medicare beneficiaries enacted 2023",
+        "Advocated for ACA subsidy extension during 2025 government shutdown",
+        "Supports extending $35 insulin cap to all Americans with private insurance (2025 bill)"
+      ],
+      "confidence": "high — consistent with New Democrat Coalition positioning"
+    },
+    "climate": {
+      "summary": "Accepts climate science; supports renewable energy investment; voted for IRA's clean energy provisions; 94% LCV score (2024), 96% lifetime.",
+      "explicitPositions": [
+        "Accepts scientific consensus that humans are causing climate change",
+        "Supports increased investment in sustainable/renewable energy",
+        "Supports incentives for solar and other renewables for homeowners",
+        "Voted for Inflation Reduction Act (~$369B in climate investments)",
+        "Highlights climate infrastructure investments from IIJA"
+      ],
+      "confidence": "high"
+    },
+    "immigration": {
+      "summary": "Generally supports comprehensive immigration reform, DREAMers, and family unity — but voted for Laken Riley Act in January 2025, a notable rightward shift on enforcement.",
+      "explicitPositions": [
+        "Supports comprehensive immigration reform",
+        "Supports extending protections to DREAMers",
+        "Opposes abolishing ICE (explicitly)",
+        "Opposes family separation",
+        "Signed joint statement condemning Georgia immigration enforcement raids (Sept 2025)",
+        "Voted YES on Laken Riley Act (Jan 2025) — requires detention of undocumented immigrants arrested for theft, burglary, assault on law enforcement — a flip from her prior NO vote on predecessor legislation"
+      ],
+      "conflicts": "The Laken Riley Act vote is a meaningful deviation from progressive immigration positions and her prior voting record. Her statement on the AJC noted she was among 4 Georgia Democrats who voted for it.",
+      "confidence": "high — voting record is clear, though the Laken Riley Act signals some pragmatic centrist adjustment"
+    },
+    "reproductive_rights": {
+      "summary": "Consistently votes to protect abortion access. Has been a very public and personal advocate, sharing testimony about her own three miscarriages in House Judiciary Committee hearings. EMILY's List and NARAL/Reproductive Freedom for All endorsed.",
+      "explicitPositions": [
+        "Voted for Women's Health Protection Act (2022)",
+        "Voted for Ensuring Women's Right to Reproductive Freedom Act (2022)",
+        "Voted for Right to Contraception Act",
+        "Voted for Respect for Marriage Act (2022)",
+        "Personally testified about risks of criminalizing miscarriage"
+      ],
+      "confidence": "very high"
+    },
+    "labor_economy": {
+      "summary": "AFL-CIO score of 99% — essentially perfect labor voting record. Member of New Democrat Coalition which has moderate positioning but strong labor vote scores. Supports minimum wage increases (member coalition pushed longer timeline for Raise the Wage Act).",
+      "confidence": "high"
+    },
+    "housing": {
+      "summary": "Released New Democrat Coalition Affordability Agenda (Feb 2026) with explicit support for loosening zoning and permitting to build 4 million homes over 10 years. Also supports increased Low-Income Housing Tax Credit. Market-supply-side framing rather than purely subsidy-based.",
+      "confidence": "medium — clearest recent statement is the Feb 2026 agenda; limited prior detailed housing record"
+    },
+    "police_justice": {
+      "summary": "ACLU score of 100%. Co-sponsored George Floyd Justice in Policing Act. Her personal history gives her a nuanced view — she supports accountability reforms while emphasizing that her advocacy for gun safety is about public safety. Ranking Member on House Crime Subcommittee.",
+      "confidence": "medium-high — ACLU score and George Floyd Act co-sponsorship are strong signals; she has not publicly addressed defunding/abolition"
+    }
+  },
+  "positionConflicts": [
+    {
+      "topic": "immigration / Laken Riley Act",
+      "conflict": "McBath voted YES on the Laken Riley Act (Jan 2025), requiring mandatory detention of undocumented immigrants arrested for theft or burglary, after voting NO on a prior version. This is a significant rightward shift from her stated position of 'comprehensive immigration reform' and 'dignity and respect for all people.' She was among only 48 Democrats to support the first major bill of the Trump 119th Congress.",
+      "sources": ["GovTrack vote record H6/2025", "AJC reporting", "GPB reporting"]
+    },
+    {
+      "topic": "Chamber of Commerce score vs. progressive profile",
+      "conflict": "McBath's 71% Chamber of Commerce score is unusually high for a Democrat with near-perfect AFL-CIO and LCV scores. This likely reflects New Democrat Coalition positioning on some business-friendly regulatory and trade votes. The Chamber score suggests her economic approach is more market-oriented than her labor/environmental record alone would indicate.",
+      "sources": ["VoteSmart interest group ratings aggregation"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "firearms_policy (defining issue — 7 years of consistent, high-profile gun violence prevention work; multiple major bills introduced and passed; Everytown/Brady/Giffords all endorse at highest level)",
+      "reproductive_rights (consistent votes + personal testimony; EMILY's List + NARAL endorsed)",
+      "climate_ambition (LCV 96% lifetime, voted for IRA and IIJA)",
+      "police_accountability (ACLU 100%, George Floyd Act cosponsor, Ranking Member on Crime Subcommittee)",
+      "labor / public_investment (AFL-CIO 99%)"
+    ],
+    "weakestAxes": [
+      "school_choice (no explicit school choice position found; general support for public education funding)",
+      "transit_priority (general support for infrastructure but limited specific transit record beyond IIJA vote)",
+      "sentencing_goals (limited explicit record on sentencing philosophy beyond general oversight role)"
+    ],
+    "overallConfidence": "high — seven-year House record provides strong multi-source evidence across most axes. Gaps are in housing (partially filled by Feb 2026 agenda) and specific school choice / sentencing positions.",
+    "notes": "McBath's defining identity as a legislator is gun violence prevention. She is a moderate Democrat (New Democrat Coalition, not progressive caucus) who votes with labor and environmental groups nearly perfectly but takes more centrist positions on immigration enforcement (Laken Riley Act) and healthcare delivery (incremental ACA vs. Medicare for All). The unusually high Chamber of Commerce score (71%) is worth flagging for the scorer — it may reflect specific trade or regulatory votes. Her February 2026 housing agenda (cutting red tape, zoning reform, building 4M homes) signals a supply-side housing approach that partially overlaps with market-oriented framing."
+  },
+  "sources": [
+    {
+      "type": "campaign_website",
+      "url": "https://lucyforcongress.com/issues/"
+    },
+    {
+      "type": "official_house_website",
+      "url": "https://mcbath.house.gov/"
+    },
+    {
+      "type": "govtrack",
+      "url": "https://www.govtrack.us/congress/members/lucy_mcbath/412769"
+    },
+    {
+      "type": "ballotpedia",
+      "url": "https://ballotpedia.org/Lucy_McBath"
+    },
+    {
+      "type": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lucy_McBath"
+    },
+    {
+      "type": "votesmart",
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/178538/lucy-mcbath"
+    },
+    {
+      "type": "lcv_scorecard",
+      "url": "https://www.lcv.org/moc/lucy-mcbath/"
+    },
+    {
+      "type": "afl_cio_scorecard",
+      "url": "https://aflcio.org/scorecard/legislators/lucy-mcbath"
+    },
+    {
+      "type": "aclu_scorecard",
+      "url": "https://www.aclu.org/scorecard/legislators/ga-lucy-mcbath/"
+    },
+    {
+      "type": "brady_scorecard",
+      "url": "https://elections.bradyunited.org/candidates/lucy-mcbath"
+    },
+    {
+      "type": "giffords",
+      "url": "https://giffords.org/candidates/lucy-mcbath/"
+    },
+    {
+      "type": "heritage_action",
+      "url": "https://heritageaction.com/scorecard/members/M001208/117"
+    },
+    {
+      "type": "everytown",
+      "url": "https://www.everytown.org/press/everytown-georgia-moms-demand-action-declare-victory-as-gun-sense-champion-lucy-mcbath-wins-congressional-race/"
+    },
+    {
+      "type": "reproductive_freedom_for_all",
+      "url": "https://reproductivefreedomforall.org/lawmaker/lucy-mcbath/"
+    },
+    {
+      "type": "ajc",
+      "url": "https://www.ajc.com/politics/lucy-mcbath-takes-first-step-toward-likely-georgia-governor-bid/3ODOY54MSFHIZJPID65E6C7C3A/"
+    },
+    {
+      "type": "gpb",
+      "url": "https://www.gpb.org/news/2025/10/09/us-representatives-defend-their-parties-positions-government-shutdown-continues"
+    },
+    {
+      "type": "new_democrat_coalition_agenda",
+      "url": "https://newdemocratcoalition.house.gov/media-center/press-releases/new-dems-unveil-affordability-agenda-the-coalitions-answer-to-the-cost-of-living-crisis"
+    },
+    {
+      "type": "opensecrets",
+      "url": "https://www.opensecrets.org/members-of-congress/lucy-mcbath/summary?cid=N00042813"
+    },
+    {
+      "type": "fec",
+      "url": "https://www.fec.gov/data/candidate/H8GA06393/"
+    }
+  ]
+}

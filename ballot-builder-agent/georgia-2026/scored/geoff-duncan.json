@@ -1,0 +1,157 @@
+{
+  "slug": "geoff-duncan",
+  "name": "Geoff Duncan",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00.000Z",
+  "profileSummary": "Former Republican Lt. Governor of Georgia (2019-2023) who switched to the Democratic Party in August 2025 after breaking with Trump over election fraud claims. Running on affordability (childcare, healthcare, housing), full Medicaid expansion, and explicit recantations of prior positions on abortion, guns, and Medicaid.",
+  "keyPositions": [
+    "Full Medicaid expansion funded by $1.7B 'jumpstart fund' from Georgia's rainy day reserves",
+    "Day-one executive order protecting doctors treating pregnant women; legislation to repeal Georgia's six-week abortion ban",
+    "Universal background checks, red flag laws, and safe storage requirements — explicit reversal of prior NRA A-rating",
+    "Championed Georgia's Hate Crimes Law (2020) and repeal of citizen's arrest law as Republican Lt. Governor",
+    "LESS Crime Act (2022): tax credit-funded police salary increases and mental health co-responder teams"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["$1.7B jumpstart fund proposal (Sept 2025)", "CAPS and TANF expansion statements (41NBC)", "Savannah forum Jan 2026"],
+      "notes": "Proposes meaningful safety net expansion via childcare subsidies, Medicaid, and housing spending from reserves. Not universal-program territory, but clearly broadening access. No Republican-era safety net voting record to conflict."
+    },
+    "econ_investment": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": ["$1.7B jumpstart fund proposal", "HB 1437 income tax cut (2022, as LG)", "Campaign website"],
+      "notes": "Mixed signals. As LG, presided over Georgia's largest income tax cut (5.75% to 4.99%). As 2026 Democrat, proposes $1.7B in public investment from existing reserves — but no new tax increase proposal. The jumpstart fund is public investment funded conservatively (existing savings, not new revenue). Scored at the moderate center, tilted slightly toward investment by recency of the 2026 platform."
+    },
+    "econ_school_choice": {
+      "score": 6,
+      "confidence": "low",
+      "sources": ["AJC op-ed as Lt. Governor (2019) advocating school choice expansion"],
+      "notes": "As LG, wrote an op-ed calling for expanded school choice to 'close the skills gap.' No 2026 recantation found, but also no prominent 2026 advocacy. Scored on the Republican-era position as only available evidence. This could shift if a 2026 education platform emerges."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": ["11 Alive interview (Sept 2025)", "Savannah forum (Jan 2026)", "Gainesville event (Feb 2026)", "Campaign website", "AJC policy shifts article (Sept 2025)"],
+      "notes": "Strongest-evidenced axis. As LG, actively opposed full Medicaid expansion; Georgia adopted limited Pathways work-requirement program. Now explicitly supports full Medicaid expansion, with specific $1.7B funding mechanism and repeated confirmation across 5+ outlets. Explicit recantation: 'I explored every route possible to improve the state's health care system without expanding Medicaid. The answer is, you can't do it.' Not single-payer — he is proposing Medicaid expansion within the ACA framework, not a universal government insurance model."
+    },
+    "health_public_health": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["Georgia Behavioral Health and Peace Officer Co-Responder Act (SB 403, 2022)"],
+      "notes": "The Co-Responder Act established mental health professional partnerships with law enforcement for behavioral health emergencies — a public health approach to crisis response. No broader public health mandate positions (vaccine policy, FDA/CDC, drug policy) found in 2026 campaign materials. Scored narrowly on the legislative action."
+    },
+    "housing_affordability_tools": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["Campaign website", "Savannah forum (Jan 2026)"],
+      "notes": "Housing affordability is named as one of three campaign pillars, with jumpstart fund partially targeting housing costs. But no specifics on rent control, public housing, inclusionary zoning, or supply-side mechanisms. General spending commitment without policy mechanism detail."
+    },
+    "justice_policing_accountability": {
+      "score": 5,
+      "confidence": "medium",
+      "sources": ["LESS Crime Act (2022)", "Co-Responder Act SB 403 (2022)", "Hate Crimes Law (2020)", "Citizen's Arrest repeal (2021)"],
+      "notes": "Genuinely centrist on policing. LESS Crime Act is a pro-police funding mechanism (tax credits for police foundation contributions, salary increases, hiring). But the Co-Responder Act creates mental health response teams alongside police — reform within a pro-police frame. Hate crimes and citizen's arrest actions are justice reform achievements but not direct policing accountability measures. No defund/oversight rhetoric; no 'thin blue line' absolutism either. Score reflects authentic moderation, not an evidence gap."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["NRA A-rating and endorsement (2018)", "11 Alive interview recantation (Sept 2025)", "ABC/AP profile (Feb 2026)", "Campaign website"],
+      "notes": "Massive documented reversal. 2018: NRA A-rated, NRA-endorsed, 'strong advocate for law-abiding gun owners.' 2026: Explicitly calls NRA 'a fear mongering organization,' supports universal background checks, red flag laws, and safe storage requirements. Scored on current 2026 position per recency rule — three specific policy mechanisms named, repeated across multiple independent outlets. Does NOT advocate assault weapons ban, licensing, or insurance — places him at 'significant regulation' rather than 'comprehensive regulation.' The 2018 NRA rating is noted as context but the explicit, detailed, repeated recantation across 3+ sources in the current cycle takes precedence."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.4,
+      "reasoning": "Hate Crimes Law and citizen's arrest repeal demonstrate concern for justice across racial lines. 'Love thy neighbor' framing is explicitly inclusive: 'Your neighbor doesn't look like you, act like you, love like you, or vote like you.' Medicaid expansion as caring for all Georgians. However, no environmental or climate positions found; scope is Georgia-focused rather than global; no international humanitarian signals. Moderate universalism bounded by geographic focus."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Duncan's strongest value signal. Entire party switch framed as 'love thy neighbor' and faith-driven care for community. Three campaign pillars (childcare, healthcare, housing) are direct community welfare. Rural Hospital Tax Credit (Republican era) showed community health investment even before the switch. CAPS/TANF expansion, Medicaid expansion, jumpstart fund — consistent care-for-community orientation spanning both partisan identities."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Actively departing from his own political tradition by switching parties and recanting multiple long-held positions. Expelled from the Georgia Republican Party. Repealing the citizen's arrest law (overturning a long-standing statute). However, he frames the switch through faith ('love thy neighbor'), invoking religious tradition as the motivating force. Net effect is mildly anti-tradition: using traditional values to justify breaking from traditional political alignment."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Strong rule-of-law and institutional-process orientation. Refused to participate in overturning 2020 election results despite intense pressure — adherence to democratic norms under extreme conditions. Built bipartisan coalitions through the legislative process as LG. Party switch executed through legitimate channels (op-ed, formal registration change, candidacy announcement). Works within the system even when challenging it."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "LESS Crime Act funds police salaries, hiring, training, and equipment — direct community safety investment. Co-Responder Act addresses behavioral health crises through a safety lens. Medicaid expansion framed partly as health security for Georgia families. Pro-police funding orientation. Not a national defense or border security candidate, but community safety and healthcare security are consistent themes."
+    },
+    "power": {
+      "score": 0.1,
+      "reasoning": "Running a major gubernatorial campaign ($1.1M raised). Former constitutional officer (Lt. Governor). Founded and sold a business. But his party switch involved defying powerful institutional actors (GOP, NRA, Trump). No major PAC or organizational endorsements in the Democratic primary. Rural Hospital Tax Credit was a market mechanism aligned with business interests (Republican era). Essentially neutral — neither strongly aligned with concentrated power nor building an identity around challenging it."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Former minor league baseball pitcher reaching AAA level — near-elite athletics. Founded and sold a marketing company. Elected state representative, then Lt. Governor. Author of 'GOP 2.0.' Georgia Tech scholarship athlete. 'Skills gap' framing for school choice. Career trajectory demonstrates personal competence and ambition across multiple domains. Moderate achievement orientation."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No lifestyle liberty, recreational policy, or personal pleasure/freedom framing found in any available sources. Not a feature of his political identity."
+    },
+    "stimulation": {
+      "score": 0.4,
+      "reasoning": "The party switch itself is a dramatic, norm-breaking political act — perhaps the most significant personal political disruption in the 2026 Georgia cycle. 'GOP 2.0' book framing suggests transformation and reinvention. But his policy proposals are pragmatic and moderate (Medicaid expansion, jumpstart fund) rather than structurally radical. He is disrupting his own political identity more than proposing disruptive policy."
+    },
+    "self_direction": {
+      "score": 0.3,
+      "reasoning": "Defied his own party on election certification under intense pressure — independent thinking. Party switch as independent judgment against tribal loyalty. 2026 reproductive rights position framed as women's right to choose (bodily autonomy). However, prior record included restricting reproductive choice (Heartbeat Bill) and conforming to NRA/party pressure on guns. Scored on net pattern weighted toward current cycle, recognizing the prior record moderates the signal."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Abortion: Heartbeat Bill supporter to pro-choice advocate",
+      "description": "As Lt. Governor (2019), stood smiling at signing ceremony of Georgia's six-week abortion ban and called it 'an easy decision for me.' As 2026 Democratic candidate, says 'I got the issue of abortion wrong,' commits to day-one executive order protecting doctors and legislation to repeal the ban. Opponents (notably Keisha Bottoms) cite this as evidence of opportunism.",
+      "sources": ["AJC Heartbeat Bill coverage 2019", "11 Alive interview Sept 2025", "AJC policy shifts article Sept 2025", "ABC/AP Feb 2026"],
+      "scoringImpact": "No standalone reproductive rights axis exists in the civic axes framework. The reversal is noted in self-direction value score and in the conflicts section for user awareness."
+    },
+    {
+      "topic": "Medicaid expansion: opponent to champion",
+      "description": "As Lt. Governor, actively opposed full Medicaid expansion under the ACA; Georgia adopted limited Pathways work-requirement program. Now says 'The answer is, you can't do it' without expanding Medicaid, and commits to full expansion via $1.7B jumpstart fund.",
+      "sources": ["11 Alive interview Sept 2025", "AJC Sept 2025", "Savannah forum Jan 2026", "Gainesville event Feb 2026"],
+      "scoringImpact": "Scored health_coverage_model at 3 based on current position per recency and evolution rules. Prior opposition is documented context. Explicit recantation acknowledged."
+    },
+    {
+      "topic": "Firearms: NRA A-rated to gun safety advocate",
+      "description": "2018: NRA A-rated, NRA-endorsed, touted on social media as 'strong advocate for law-abiding gun owners.' 2026: Calls NRA 'a fear mongering organization that puts pressure on legislators,' supports universal background checks, red flag laws, and safe storage. Says he 'didn't get the gun issue right' and was 'wrong to think the NRA had anybody's best interest in mind.'",
+      "sources": ["NRA-PVF endorsement 2018", "11 Alive interview Sept 2025", "ABC/AP Feb 2026"],
+      "scoringImpact": "Scored justice_firearms at 3 based on current 2026 position. 2018 NRA rating was Tier 1 evidence but is 8 years old and explicitly, repeatedly recanted with specific replacement policies named. Per recency rule, current position prevails; per evolution rule, current position scored with evolution noted."
+    },
+    {
+      "topic": "Fiscal policy: tax cutter to public investor",
+      "description": "As Lt. Governor, presided over Georgia's 'largest income tax cut in state history' (5.75% to 4.99%). As 2026 candidate, proposes $1.7B public investment from rainy day reserves. No explicit recantation of the tax cut was found, and no 2026 tax rate position stated.",
+      "sources": ["HB 1437 record (2022)", "Campaign website", "Savannah forum Jan 2026"],
+      "scoringImpact": "Scored econ_investment at 4 (slightly toward investment), reflecting the tension. Without an explicit recantation of the tax cuts or a new tax position, the prior fiscal conservatism moderates the current spending proposal."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 8,
+    "axesSkipped": [
+      "econ_tax_structure",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_transport_priority",
+      "justice_sentencing_goals",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "econ_tax_structure: No 2026 tax rate position beyond jumpstart fund spending; prior tax cut record is indirect. health_cost_control: No drug pricing, hospital rate-setting, or cost control statements found. housing_supply_zoning: Housing affordability stated but no zoning/supply mechanism specified. housing_transport_priority: No 2026 transit position; prior skepticism is unconfirmed inference. justice_sentencing_goals: No sentencing reform or rehabilitation positions found. climate (all 3): No climate or energy positions found in any 2026 campaign coverage; not a stated priority. No LCV or environmental scorecard available.",
+    "overallConfidence": "high for healthcare and firearms (multiple independent sources, specific policy commitments); medium for economic axes and policing (clear but less detailed evidence); low for housing affordability, public health, and school choice (limited or prior-era evidence only)",
+    "researchGaps": [
+      "No climate/energy/environment positions found — a major policy domain with zero coverage",
+      "No immigration positions found in any available source",
+      "No 2026 tax policy position beyond the jumpstart fund spending commitment",
+      "No 2026 education/school choice update — only Republican-era position available",
+      "No sentencing, criminal justice reform, or drug policy positions found",
+      "No transit/transportation positions found for 2026 campaign"
+    ],
+    "specialNotes": "Duncan's profile is uniquely complex as a party-switcher with a 10-year Republican legislative record (2013-2023) and a 6-month Democratic campaign record (2025-present). On three major issues (abortion, Medicaid, firearms), he has made explicit, repeated, detailed recantations of prior positions. These recantations are scored as credible position changes per the evolution rule, but every one is flagged in the conflicts section. On issues where no recantation has been made (school choice, fiscal policy), the prior Republican position is scored as the best available evidence with low confidence. Democratic primary opponents are actively contesting the sincerity of his reversals."
+  }
+}

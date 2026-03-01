@@ -1,0 +1,720 @@
+{
+  "slug": "gina-hinojosa",
+  "name": "Gina Hinojosa",
+  "party": "Democratic",
+  "office": "Governor of Texas, 2026",
+  "contest": "Texas Governor 2026, Democratic Primary March 3, 2026",
+  "incumbencyStatus": "challenger (state legislator)",
+  "researchedAt": "2026-02-27T00:00:00.000Z",
+  "biography": {
+    "fullName": "Regina Inez Hinojosa",
+    "dateOfBirth": "1973-12-08",
+    "currentRole": "Texas State Representative, House District 49 (Austin), 2017–present",
+    "priorRoles": [
+      "Austin Independent School District Board of Trustees, including Board President (2012–2016)",
+      "Executive Director, Transit Forward (Austin-area pro-transit advocacy organization)",
+      "Civil rights and labor union attorney — represented union members; George Washington University Law School graduate",
+      "Daughter of Gilberto Hinojosa, former chair of the Texas Democratic Party (2012–2025)"
+    ],
+    "education": "B.A. Plan II Honors / Government, University of Texas at Austin (1996); J.D., George Washington University Law School (1999)",
+    "background": "Born in McAllen, Texas; raised in Brownsville; from Rio Grande Valley family. Started career as civil rights and union lawyer. Entered elected politics via Austin ISD school board in response to school closures. Elected to Texas House in 2016. Five-term legislator; known primarily for education policy and anti-corruption work. Announced governor candidacy October 15, 2025. Clear Democratic frontrunner: Andrew White withdrew and endorsed her; leads nearest remaining rival (Chris Bell) by ~40 percentage points as of early 2026. Statistically tied with Abbott in a February 2026 general election poll.",
+    "fundraising": "$1.3M raised as of early 2026 (compared to Abbott's ~$106M war chest)"
+  },
+  "campaignWebsite": {
+    "url": "https://ginafortexas.com",
+    "prioritiesPageUrl": "https://ginafortexas.com/priorities/",
+    "fetchedAt": "2026-02-27T00:00:00.000Z",
+    "notes": "WebFetch tool unavailable; content gathered via WebSearch snippets from site pages",
+    "statedPositions": [
+      {
+        "topic": "education / econ_school_choice",
+        "quote": "Strengthen neighborhood schools by raising teacher pay, stopping the onslaught of standardized tests, and rooting out waste in Abbott's voucher scam.",
+        "sourceUrl": "https://ginafortexas.com/priorities/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Central campaign theme; led House Democrats defeating vouchers for four consecutive sessions. Now explicitly committed to repealing the 2025 ESA voucher program as governor."
+      },
+      {
+        "topic": "healthcare / health_coverage_model",
+        "quote": "Expand Medicaid to ensure every Texan has access to affordable, high-quality care.",
+        "sourceUrl": "https://ginafortexas.com/priorities/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit Medicaid expansion commitment. Does not state single-payer or public option in 2026 campaign; framing is Medicaid expansion within current structure. Note: in 2019 she pledged to carry the Healthy Texas Act (Medicare-for-All style). 2026 is more moderate — Medicaid expansion only."
+      },
+      {
+        "topic": "healthcare / health_cost_control",
+        "quote": "Oppose big insurance and big drug companies that are putting profits over patients; private equity buying up doctors' offices, anesthesia, and X-ray machines to charge more for less care. Rein in out-of-control profiteers who are making healthcare more expensive.",
+        "sourceUrl": "https://ginafortexas.com/priorities/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Supports government/regulatory intervention on healthcare pricing and corporate consolidation in medicine"
+      },
+      {
+        "topic": "econ_investment",
+        "quote": "Steering the state's financial incentives toward the small businesses that drive job growth instead of major corporations that pile up profits.",
+        "sourceUrl": "https://ginafortexas.com/priorities/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Anti-corporate-subsidy framing; redirecting public investment toward small business vs. multinational corporations. Also: 'scrubbing the state budget, with priority on rooting out no-bid contracts and grift to find more money for public education.'"
+      },
+      {
+        "topic": "housing / housing_affordability_tools",
+        "quote": "While multi-national corporations post record profits, Texans are paying more for groceries, housing, utilities, insurance, and so much more. Texas needs leaders who are willing to take on the corporate greed that is making life increasingly unaffordable for working families.",
+        "sourceUrl": "https://ginafortexas.com/priorities/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "General affordability framing; specific housing policy detail limited on campaign site. Separate legislative record (HB 3050 inclusionary zoning) provides more specific signal."
+      },
+      {
+        "topic": "labor / econ_safetynet",
+        "quote": "Ensure every Texan has the freedom to organize on the job and build a better life. I'll stand with working Texans on the picket line, fight for the right to organize and ensure that working families have a real voice in the decisions that shape their lives.",
+        "sourceUrl": "https://ginafortexas.com/priorities/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit pro-labor organizing commitment; Texas is right-to-work state — this signals support for changing that framework. AFL-CIO and SEIU both endorsed. Career began as union lawyer."
+      },
+      {
+        "topic": "immigration / justice_policing_accountability",
+        "quote": "Hinojosa Calls on Abbott to Stop Facilitating Fatal ICE Operations. Another American has been shot and killed in the street by ICE in MN. Abbott has provided Texas land and state resources to support Trump's immigration crackdown, making the state a central hub for what legal advocates are calling an illegal operation. Children are being torn from their homes and sent to taxpayer-funded private prisons in TX run by Abbott's donors.",
+        "sourceUrl": "https://ginafortexas.com/2026/01/hinojosa-calls-on-abbott-to-stop-facilitating-fatal-ice-operations/",
+        "date": "2026-01",
+        "confidence": "high",
+        "notes": "Press release calling for ICE oversight and criticizing Abbott's Operation Lone Star facilitation. Frames enforcement as lawless, child-harmful, and driven by donor corruption."
+      },
+      {
+        "topic": "immigration / justice_policing_accountability",
+        "quote": "Hinojosa Calls for Release of Body Cam Footage After ICE Killing of San Antonio Man Was Hidden for a Year. Filed Public Information Act request demanding transparency and accountability for ICE operations in Texas.",
+        "sourceUrl": "https://ginafortexas.com/2026/02/hinojosa-calls-for-release-of-body-cam-footage-after-ice-killing-of-san-antonio-man-was-hidden-for-a-year/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Transparency and accountability in law enforcement applied to federal ICE operations; used formal legal mechanism (PIA request)"
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "chamber": "Texas House of Representatives, District 49",
+    "tenure": "January 2017 – present (5 terms, 85th through 89th Legislature)",
+    "sources": [
+      "Texas Legislature Online (capitol.texas.gov)",
+      "Ballotpedia",
+      "Wikipedia",
+      "Texas Tribune",
+      "Texas Right to Life scorecard (2019)",
+      "Choice Tracker (choicetracker.org)",
+      "NORML database",
+      "LegiScan",
+      "Austin Monitor (housing)"
+    ],
+    "keyVotes": [
+      {
+        "bill": "HB 3 (86th Legislature, 2019) — Public School Finance Reform",
+        "vote": "Yes / co-led",
+        "topic": "econ_school_choice / econ_investment",
+        "sourceUrl": "https://house.texas.gov/members/3210/biography",
+        "notes": "Led House Democrats' successful effort; directed new public school funding; teacher pay raises. Direct counter to vouchers — one of her signature legislative victories."
+      },
+      {
+        "bill": "SB 1350 (86th Legislature, 2019) — Indigent Healthcare Funding, Travis County",
+        "vote": "Yes / House sponsor",
+        "topic": "health_coverage_model / econ_safetynet",
+        "sourceUrl": "https://house.texas.gov/members/3210/biography",
+        "notes": "House sponsor of Kirk Watson's bill; pulled ~$1B in federal funds for indigent healthcare in Travis County. Demonstrates support for using federal healthcare dollars via Medicaid-adjacent mechanisms."
+      },
+      {
+        "bill": "ESA (Education Savings Account / Voucher) Program — Multiple sessions (87th, 88th, 89th Legislatures)",
+        "vote": "No across all sessions",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://ballotpedia.org/Gina_Hinojosa",
+        "notes": "Voted against ESA/voucher programs across four consecutive legislative sessions. Led 88th session effort to defeat Abbott's voucher bill. Called SB 2 (2025) 'everything that is wrong with politics.'"
+      },
+      {
+        "bill": "Fully Fund Our Future Act (88th Legislature, 2023) — authored",
+        "vote": "Filed / authored (did not pass — Republican majority blocked)",
+        "topic": "econ_school_choice / econ_investment",
+        "sourceUrl": "https://house.texas.gov/members/3210/biography",
+        "notes": "$15K teacher raise, $5.5K support staff raise, per-student funding from $6,160 to $8,947, $2B extra for special ed. $40B total investment in public schools."
+      },
+      {
+        "bill": "SB 7 / Senate Bills restricting voting access (87th Legislature, 2021)",
+        "vote": "Broke quorum / Walkout (organized both May and July 2021 walkouts)",
+        "topic": "democracy / voting rights",
+        "sourceUrl": "https://www.texastribune.org/2021/07/14/texas-democrats-walkout-quorum/",
+        "notes": "Organized the quorum breaks (first in nearly 20 years). In July 2021, flew to Washington DC with colleagues; met with VP Kamala Harris at White House. Democrats temporarily blocked worst provisions; some restrictions still passed."
+      },
+      {
+        "bill": "Abortion restriction bills (SB 8 / heartbeat bill; total abortion ban) — Multiple sessions",
+        "vote": "No on all",
+        "topic": "health_public_health / reproductive rights",
+        "sourceUrl": "https://choicetracker.org/tx/people/gina-hinojosa/82706432",
+        "notes": "Consistent record opposing all abortion restriction bills. Voted against 6-week ban, criminal penalties for providers. Described Dobbs decision as 'unjust.'"
+      },
+      {
+        "bill": "Texas Right to Life — 2019 Scorecard",
+        "vote": "Multiple No votes on anti-abortion measures",
+        "topic": "health_public_health",
+        "sourceUrl": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/277-191112-124952-HinojosaG2019Scorecard.pdf",
+        "notes": "Texas Right to Life gave her a strongly negative scorecard. Voted to weaken pro-life priority bills, against criminal penalties for abortion providers, against tax funding restrictions on abortion-providing hospitals."
+      },
+      {
+        "bill": "HB 73 (87th Legislature, 2021) — Ban on Gay/Trans Panic Defense",
+        "vote": "Filed / sponsored (died in House Committee on Criminal Jurisprudence)",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Gina_Hinojosa",
+        "notes": "Filed bill to prohibit using victim's sexual orientation/gender identity to reduce criminal penalty for assault/murder. Did not pass. Consistent with LGBTQ rights and rehabilitation-over-punishment framing."
+      },
+      {
+        "bill": "HB 351 — Ability-to-Pay at Sentencing",
+        "vote": "Yes / co-authored",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://edinburgpolitics.com/2018/09/07/law-protect-texans-minor-traffic-tickets-fewer-arrest-warrants/",
+        "notes": "Co-authored with Rep. Canales; allows courts to assess ability to pay fines and offer community service as alternative to jail for indigent defendants. Reform-oriented; signed into law."
+      },
+      {
+        "bill": "HB 2107 — Medical Marijuana Legalization (filed/co-authored)",
+        "vote": "Yes / co-authored",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://vote.norml.org/politicians/166708",
+        "notes": "Supported medical marijuana legalization"
+      },
+      {
+        "bill": "HB 81 — Marijuana Decriminalization (filed/co-authored)",
+        "vote": "Yes / co-authored",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://vote.norml.org/politicians/166708",
+        "notes": "Supported decriminalizing marijuana possession"
+      },
+      {
+        "bill": "Texas Climate Plan — 41-bill package (87th Legislature, 2021)",
+        "vote": "Filed / co-authored (most died in Republican-controlled committee; some passed)",
+        "topic": "climate_ambition / climate_energy_portfolio",
+        "sourceUrl": "https://www.austinchronicle.com/news/2021-04-30/young-people-power-texas-climate-plan/",
+        "notes": "Spearheaded creation of Texas Climate Plan with 16 Democratic colleagues; package of 41 bills to reduce carbon emissions and increase regulation of fossil fuel industry. Four categories: clean energy jobs; resource preservation/industry accountability; environmental health; climate adaptation. Also passed clean energy employment transition legislation."
+      },
+      {
+        "bill": "HB 1521 (87th Legislature, 2021) — Eliminate methane flaring on UT PUF lands",
+        "vote": "Filed / co-authored",
+        "topic": "climate_energy_portfolio",
+        "sourceUrl": "https://www.austinchronicle.com/news/2021-04-16/texas-climate-plan-hopes-to-reduce-texas-carbon-emissions/",
+        "notes": "Part of Texas Climate Plan; would require UT to eliminate routine methane flaring on Permanent University Fund lands by 2025."
+      },
+      {
+        "bill": "HB 3488 (85th Legislature, 2017) — Public Benefit Corporations",
+        "vote": "Yes / authored — signed into law",
+        "topic": "econ_investment",
+        "sourceUrl": "https://house.texas.gov/members/3210/biography",
+        "notes": "Created new type of corporation allowing businesses to prioritize public good. Corporate accountability / stakeholder capitalism approach."
+      },
+      {
+        "bill": "HB 1307 (86th Legislature, 2019) — Disaster Assistance Applications",
+        "vote": "Yes / authored — signed into law",
+        "topic": "econ_safetynet",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Gina_Hinojosa",
+        "notes": "Established system for individuals impacted by disasters to apply for state assistance. Public safety net expansion."
+      },
+      {
+        "bill": "HB 1205 — Firearm Purchase Reporting",
+        "vote": "Authored",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://www.lonestarleft.com/p/bill-roundup-gun-policy-in-texas-4c4",
+        "notes": "Established mandatory reporting and investigation process for attempted firearm purchases by prohibited persons."
+      },
+      {
+        "bill": "Inclusionary Zoning repeal (HB 3050, multiple sessions)",
+        "vote": "Filed / authored (did not pass)",
+        "topic": "housing_supply_zoning / housing_affordability_tools",
+        "sourceUrl": "https://www.austinmonitor.com/stories/2020/12/hinojosa-tries-again-for-inclusionary-zoning/",
+        "notes": "Multiple attempts to repeal Texas ban on inclusionary zoning; would allow cities to require affordable housing in new developments. Filed repeatedly; has not passed (Republican majority)."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "Texas Right to Life",
+      "score": null,
+      "grade": "Strongly negative / Failed",
+      "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/277-191112-124952-HinojosaG2019Scorecard.pdf",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "2019 scorecard; voted against all pro-life priority measures. Consistent with her pro-choice voting record."
+    },
+    {
+      "organization": "Texans for Fiscal Responsibility (Fiscal Responsibility Index)",
+      "score": "F",
+      "grade": "F",
+      "url": "https://index.texastaxpayers.com/legislators/gina-hinojosa/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Received F rating across all four available session years (2017, 2019, 2021, 2023). Consistent with support for public investment, public school funding, social programs, and opposition to spending cuts. Conservative measure confirms progressive fiscal stance as Tier 1 signal."
+    },
+    {
+      "organization": "Young Conservatives of Texas (YCT)",
+      "score": "Very low (specific number not retrieved)",
+      "grade": null,
+      "url": "https://ratings.yct.org/legislators/gina-hinojosa/86th-legislature",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "YCT rates on conservative/limited government criteria. Her consistent F from Fiscal Responsibility Index and progressive legislative record implies very low YCT score."
+    },
+    {
+      "organization": "Texas Choice Tracker",
+      "score": "Pro-Choice",
+      "grade": "Pro-Choice",
+      "url": "https://choicetracker.org/tx/people/gina-hinojosa/82706432",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Consistently voted against abortion restriction legislation including 6-week ban and criminal penalties for providers."
+    },
+    {
+      "organization": "NORML (National Organization for the Reform of Marijuana Laws)",
+      "score": "Supportive",
+      "grade": null,
+      "url": "https://vote.norml.org/politicians/166708",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Co-authored HB 2107 (medical marijuana legalization) and HB 81 (decriminalization). Reform-oriented on drug sentencing."
+    },
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": null,
+      "grade": "Not found in search results — inferred F or AQ",
+      "url": "https://www.nrapvf.org/grades/texas/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "No NRA grade confirmed. Hinojosa's stated positions (universal background checks, red flag laws, domestic abuser firearm surrender, long gun licensing, HB 1205 purchase reporting) are all opposed by NRA — very strong inference of failing grade."
+    },
+    {
+      "organization": "Teach the Vote (ATPE — Association of Texas Professional Educators)",
+      "score": "Endorsed / Strongly Favorable",
+      "grade": null,
+      "url": "https://teachthevote.org/candidates/GIna-Hinojosa",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Voted YES on public school funding/teacher pay bills; voted NO on ESA/voucher program across all sessions. Strong alignment with educator interests."
+    },
+    {
+      "organization": "Emily's List",
+      "score": "Endorsed (2026)",
+      "grade": null,
+      "url": "https://emilyslist.org/candidate/gina-hinojosa/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Nation's largest resource for electing pro-choice Democratic women. Strong reproductive rights and progressive women's issues signal."
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "score": "Endorsed (January 2026)",
+      "grade": null,
+      "url": "https://ginafortexas.com/2026/01/texas-afl-cio-endorses-gina-hinojosa-for-governor/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "State's largest labor umbrella with 250,000+ affiliated Texas members. Hinojosa stated: 'This election is between working Texans vs. billionaires, and Labor knows I've always been on their side.' Also endorsed by SEIU-Texas and Texas AFT."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Texas AFL-CIO",
+      "type": "endorsement",
+      "cycle": "2026",
+      "url": "https://ginafortexas.com/2026/01/texas-afl-cio-endorses-gina-hinojosa-for-governor/",
+      "notes": "State's largest labor group with 250,000+ members in Texas. Hinojosa stated: 'This election is between working Texans vs. billionaires, and Labor knows I've always been on their side.'"
+    },
+    {
+      "organization": "SEIU-Texas (Service Employees International Union)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Major progressive labor union; healthcare workers, service workers"
+    },
+    {
+      "organization": "American Federation of Teachers (AFT) / Texas AFT",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "National and state teachers union endorsement; consistent with anti-voucher education platform"
+    },
+    {
+      "organization": "EMILY's List",
+      "type": "endorsement",
+      "cycle": "2026",
+      "url": "https://emilyslist.org/candidate/gina-hinojosa/",
+      "notes": "Nation's largest resource for electing pro-choice Democratic women. Strong pro-choice reproductive rights signal."
+    },
+    {
+      "organization": "Planned Parenthood Texas Votes",
+      "type": "endorsement",
+      "cycle": "2024 (House race) — 2026 governor race not yet confirmed in sources",
+      "url": "https://choicetracker.org/tx/people/gina-hinojosa/82706432",
+      "notes": "Endorsed in 2024 general election for House race. Pro-choice record is consistent and documented."
+    },
+    {
+      "organization": "Texas Parent PAC",
+      "type": "endorsement",
+      "cycle": "2016, 2018, 2022 (House races)",
+      "notes": "Pro-public education organization; endorsing her since first election. Consistent anti-voucher, public school funding signal."
+    },
+    {
+      "organization": "ATPE (Association of Texas Professional Educators) — Teach the Vote",
+      "type": "endorsement / favorable rating",
+      "cycle": "2026",
+      "notes": "Educators' association; voted in alignment with their priorities on school funding and against ESA/vouchers"
+    },
+    {
+      "organization": "Andrew White",
+      "type": "endorsement (after withdrawing from primary)",
+      "cycle": "2026",
+      "notes": "Former Democratic gubernatorial candidate withdrew and endorsed Hinojosa; effectively cleared the primary field"
+    },
+    {
+      "organization": "Rep. Greg Casar (D-TX, U.S. House, TX-35)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Progressive U.S. Representative from Austin–San Antonio corridor"
+    },
+    {
+      "organization": "Rep. Jasmine Crockett (D-TX, U.S. House)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Progressive U.S. Representative"
+    },
+    {
+      "organization": "Rep. James Talarico (D-TX, State Rep.)",
+      "type": "endorsement / active campaign surrogate",
+      "cycle": "2026",
+      "notes": "Campaigning with her on 'Take Back Texas Tour' across the state as of February 2026. Called 'Texas Democratic superstar.'"
+    },
+    {
+      "organization": "Former Texas Commissioner of Agriculture Jim Hightower",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Progressive populist icon; anti-corporate signal"
+    },
+    {
+      "organization": "Houston LGBTQ+ Political Caucus",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "44 endorsements announced in January 2026 primary endorsement slate"
+    },
+    {
+      "organization": "Colin Allred (former U.S. Representative, TX-32)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Former Democratic Texas U.S. Senate candidate (2024)"
+    },
+    {
+      "organization": "Austin American-Statesman editorial board",
+      "type": "newspaper endorsement",
+      "cycle": "2026",
+      "url": "https://ginafortexas.com/2026/02/austin-american-statesman-endorses-gina-hinojosa-for-texas-governor/",
+      "notes": "Called her 'the champion Democrats need'"
+    },
+    {
+      "organization": "Dallas Morning News editorial board",
+      "type": "newspaper endorsement",
+      "cycle": "2026",
+      "notes": "One of five major Texas newspaper editorial board endorsements per campaign site"
+    },
+    {
+      "organization": "Houston Chronicle editorial board",
+      "type": "newspaper endorsement",
+      "cycle": "2026",
+      "notes": ""
+    },
+    {
+      "organization": "San Antonio Express-News editorial board",
+      "type": "newspaper endorsement",
+      "cycle": "2026",
+      "notes": "Specifically cited Medicaid expansion as important issue where she is right"
+    },
+    {
+      "organization": "Austin Chronicle",
+      "type": "newspaper endorsement",
+      "cycle": "2026",
+      "url": "https://www.austinchronicle.com/news/march-2026-primary-election-endorsements/",
+      "notes": "Stated 'all-in, rock solid, 100% behind Gina Hinojosa.' Praised her leadership on school voucher fight and 'fearlessness,' 'empathy,' and 'sharp tactical mind.'"
+    },
+    {
+      "organization": "Teamsters (some locals — note: union is divided)",
+      "type": "partial / contested endorsement",
+      "cycle": "2026",
+      "url": "https://www.texastribune.org/2026/02/11/texas-labor-unions-abbott-endorsement-teamsters-gina-hinojosa/",
+      "notes": "Texas Tribune reported February 2026: Texas labor unions are increasingly divided — some Teamster locals endorsed Abbott. Context: Teamsters nationally split between Trump and Harris in 2024. The ~400 local unions affiliated with TX AFL-CIO back Hinojosa; some Teamster and building trades locals broke to Abbott."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Observer",
+      "date": "2025-10-17",
+      "url": "https://www.texasobserver.org/gina-hinojosa-campaign-for-texas-governor/",
+      "title": "'Failures and Grift': Gina Hinojosa Wants to Stop Greg Abbott from Making History",
+      "keyExchanges": [
+        {
+          "topic": "Why she is running / econ_investment / anti-corruption",
+          "quote": "I know too much. The current governor works for the billionaire class rather than the people of Texas. I'm running to be a governor for Texans, for working families, for working Texans, for the school children of Texas.",
+          "notes": "Anti-corruption, pro-working families framing as core motivation; Abbott cronyism as central critique"
+        },
+        {
+          "topic": "econ_school_choice",
+          "quote": "Strong advocate for public schools, fierce opponent of school vouchers, and an outspoken critic of Abbott's pay-to-play politics.",
+          "notes": "Reporter characterization; consistent with entire legislative record"
+        }
+      ]
+    },
+    {
+      "outlet": "KUT Radio (Austin NPR affiliate)",
+      "date": "2025-10-15",
+      "url": "https://www.kut.org/politics/2025-10-15/gina-hinojosa-governor-greg-abbott-texas-election",
+      "title": "State Rep. Gina Hinojosa vows to 'fight back,' enters 2026 governor's race",
+      "keyExchanges": [
+        {
+          "topic": "Campaign announcement / core message",
+          "quote": "Our fight right now is against the billionaires and the corporations who are driving up prices, closing our neighborhood schools, and cheating Texans out of basic healthcare.",
+          "notes": "Anti-corporate framing; education + healthcare dual emphasis. Launched campaign in Brownsville (her hometown)."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune Festival",
+      "date": "2025-11-13",
+      "url": "https://www.texastribune.org/2025/11/13/texas-tribune-festival-democratic-candidates-governor/",
+      "title": "Texas Democrats share how they want to beat Gov. Greg Abbott",
+      "keyExchanges": [
+        {
+          "topic": "Anti-corruption / Abbott critique",
+          "quote": "It's really Abbott who's the problem.",
+          "notes": "Framing the race as anti-corruption; positioned self as accountability candidate"
+        },
+        {
+          "topic": "econ_school_choice",
+          "quote": "Vowed to eliminate the state's school vouchers program.",
+          "notes": "Explicit commitment to repeal ESA/voucher program if elected governor"
+        },
+        {
+          "topic": "econ_safetynet / labor rights",
+          "quote": "I'll stand with working Texans on the picket line, fight for the right to organize and ensure that working families have a real voice in the decisions that shape their lives.",
+          "notes": "Explicit pro-organizing, pro-union commitment; meaningful in right-to-work Texas"
+        }
+      ]
+    },
+    {
+      "outlet": "Tyler Morning Telegraph / KLTV ('Take Back Texas Tour')",
+      "date": "2026-02-25",
+      "url": "https://tylerpaper.com/2026/02/25/during-tyler-stop-james-talarico-and-gina-hinojosa-discuss-values-as-part-of-take-back-texas-tour/",
+      "title": "During Tyler stop, James Talarico and Gina Hinojosa discuss values as part of Take Back Texas Tour",
+      "keyExchanges": [
+        {
+          "topic": "Campaign outreach / values",
+          "notes": "Campaigning in deep-red Tyler (East Texas) with Talarico. Issues discussed included school vouchers and ICE. Specific detailed quotes not captured in available search snippets."
+        }
+      ]
+    },
+    {
+      "outlet": "Austin Community College ACCENT (student publication)",
+      "date": "undated — prior to 2025",
+      "url": "https://sites.austincc.edu/accent/q-a-with-state-representative-gina-hinojosa/",
+      "keyExchanges": [
+        {
+          "topic": "climate_ambition / climate_energy_portfolio",
+          "quote": "Texas can continue to be a leader in energy if we take advantage of new technologies. We must now, with urgency, respond to, and be prepared for, a warming planet so that Texans can literally continue to live and thrive.",
+          "notes": "Frames climate action as pro-Texas energy economy, not anti-fossil fuel; emphasizes clean technology transition and urgency"
+        },
+        {
+          "topic": "justice_sentencing_goals",
+          "quote": "Favors decriminalizing small amounts of marijuana, youth jobs programs, universal all-day pre-K. To reverse Texas incarceration rate, focus on youth initiatives.",
+          "notes": "Rehabilitation/prevention framing; reduce incarceration through youth employment and early education"
+        }
+      ]
+    },
+    {
+      "outlet": "TribTalk (Texas Tribune opinion platform)",
+      "date": "2017-11-08",
+      "url": "https://www.tribtalk.org/2017/11/08/we-can-prevent-gun-violence-in-texas-now/",
+      "title": "We can prevent gun violence in Texas — now",
+      "keyExchanges": [
+        {
+          "topic": "justice_firearms",
+          "quote": "Gun violence [is] a public safety and public health issue. Universal background checks. Require surrender of firearms by convicted domestic abusers. Require reporting of stolen guns. Lethal violence protective orders [red flag laws]. Require a 'License to Carry' for long guns. Direct DPS and DSHS to conduct public education on safe gun storage and suicide prevention.",
+          "notes": "2017 op-ed with specific named proposals. Written post-Sutherland Springs; she has not retreated from any of these positions."
+        }
+      ]
+    },
+    {
+      "outlet": "TribTalk (Texas Tribune opinion platform)",
+      "date": "2019-08-19",
+      "url": "https://www.tribtalk.org/2019/08/19/the-false-narrative-of-texas-gun-culture/",
+      "title": "The false narrative of Texas gun culture",
+      "keyExchanges": [
+        {
+          "topic": "justice_firearms",
+          "quote": "Invoking a presumed 'Texas gun culture' as a reason to resist reasonable gun law reforms rings hollow, especially in the wake of increasing carnage on Texas soil.",
+          "notes": "Directly challenges Texas gun mythology to defend gun regulations. Written post-El Paso/Odessa shootings. Consistent with 2017 op-ed."
+        }
+      ]
+    }
+  ],
+  "policyPositionsSummary": {
+    "econ_safetynet": {
+      "position": "Expand safety net; Medicaid expansion; disaster assistance; affordable healthcare as right; pro-worker organizing",
+      "confidence": "high",
+      "sources": ["Campaign website (Medicaid expansion explicit)", "Legislative record (HB 1307, SB 1350 sponsorship)", "Fiscal Responsibility Index F rating (all 4 sessions)", "AFL-CIO/SEIU endorsement"],
+      "axisSignal": "strongly toward Pole A (0)"
+    },
+    "econ_investment": {
+      "position": "Pro-public investment in schools, healthcare, small business; anti-corporate subsidy for multinationals; authored Public Benefit Corporation bill; redirect no-bid contract/grift money to public schools",
+      "confidence": "high",
+      "sources": ["Campaign website", "Legislative record (Fully Fund Our Future Act, HB 3, HB 3488)", "Fiscal Responsibility Index F rating (all 4 sessions)", "Texas Observer interview"],
+      "axisSignal": "toward Pole A (0–2)"
+    },
+    "econ_tax_structure": {
+      "position": "Supports progressive taxation in general; calls out corporate tax avoidance and corruption that benefits wealthy donors. No specific state income tax proposal (Texas has no income tax). Anti-corporate-windfall rhetoric consistent with progressive tax values.",
+      "confidence": "low",
+      "sources": ["General campaign rhetoric about corporations vs. working families", "Fiscal Responsibility Index F"],
+      "axisSignal": "inferred toward Pole A; but Texas context limits direct evidence",
+      "notes": "Texas has no state income tax; governor has limited direct tax authority. Her rhetoric strongly suggests preference for progressive tax structures but no specific legislative record on state taxes."
+    },
+    "econ_school_choice": {
+      "position": "Strongly opposes vouchers; supports universal public school system; authored major public school funding bills; voted against ESA programs four consecutive sessions; committed to repeal as governor",
+      "confidence": "high",
+      "sources": ["Voting record (ESA votes, multiple sessions)", "Campaign website and launch speech", "Texas Tribune / Texas Observer reporting", "ATPE / Texas Parent PAC endorsements"],
+      "axisSignal": "firmly Pole A (0)"
+    },
+    "health_coverage_model": {
+      "position": "Explicit Medicaid expansion commitment; no stated single-payer or public option in 2026 campaign. Legislative history includes sponsoring indigent healthcare federal funding bill (SB 1350) and in 2019 pledging to carry a Medicare-for-All style bill (Healthy Texas Act). 2026 framing is more pragmatic — Medicaid expansion.",
+      "confidence": "high",
+      "sources": ["Campaign website (explicit Medicaid expansion)", "Legislative record (SB 1350 sponsorship)", "2019 Healthy Texas Act organizing event"],
+      "axisSignal": "toward Pole A; scored approximately 2–3 (Medicaid expansion / strong government-led access, but not full single-payer in current cycle)",
+      "notes": "Pragmatic move from earlier single-payer advocacy — current position is Medicaid expansion, not elimination of private insurance role."
+    },
+    "health_cost_control": {
+      "position": "Explicitly opposes corporate consolidation of healthcare; wants government regulation of private equity in healthcare, big insurance, and drug company pricing; frames it as accountability/profiteering issue",
+      "confidence": "high",
+      "sources": ["Campaign website (corporate greed in healthcare, specific industries named)"],
+      "axisSignal": "toward Pole A (1–2)"
+    },
+    "health_public_health": {
+      "position": "Strongly pro-choice on abortion; opposed all Texas abortion restriction legislation; called Dobbs decision 'unjust'; endorsed by EMILY's List and Planned Parenthood. On vaccine/mandates: no specific statements found.",
+      "confidence": "high (on reproductive rights); low/omit (on vaccine mandates)",
+      "sources": ["Voting record (all abortion restriction votes No)", "Texas Right to Life scorecard", "Choice Tracker", "EMILY's List endorsement"],
+      "axisSignal": "strongly toward Pole A on reproductive rights (0); vaccine/public health mandate position not documented"
+    },
+    "housing_supply_zoning": {
+      "position": "Supports repealing Texas ban on inclusionary zoning; multiple bills filed (HB 3050 and predecessors) to allow cities to require affordable housing from developers. No explicit upzoning/by-right/density mandate position found.",
+      "confidence": "medium",
+      "sources": ["Austin Monitor (inclusionary zoning bill)", "Legislative record (HB 3050, multiple sessions)"],
+      "axisSignal": "toward Pole A (2–3); pro-inclusionary zoning focused on city-level tools rather than state mandates"
+    },
+    "housing_affordability_tools": {
+      "position": "Supports inclusionary zoning (government-required affordable housing in new developments); frames housing costs as corporate greed problem requiring government action; anti-private equity in housing",
+      "confidence": "medium",
+      "sources": ["Multiple HB 3050 filings", "Campaign website (affordability framing)"],
+      "axisSignal": "toward Pole A (1–3)"
+    },
+    "housing_transport_priority": {
+      "position": "Biographical record: served as Executive Director of Transit Forward (Austin-based pro-transit advocacy organization). No specific gubernatorial campaign transportation policy platform found.",
+      "confidence": "low",
+      "sources": ["LinkedIn / biographical reference to Transit Forward executive director role"],
+      "axisSignal": "inferred toward Pole A (transit-investment preference from career background); insufficient direct evidence for confidently scored axis"
+    },
+    "justice_policing_accountability": {
+      "position": "Supports accountability and transparency; opposed Operation Lone Star as wasteful and harmful; called for ICE accountability and release of body camera footage; supports redirecting law enforcement resources to community policing; filed Public Information Act requests on ICE. No defund/abolish positions found.",
+      "confidence": "medium",
+      "sources": ["Campaign press releases (ICE accountability, PIA request)", "Immigration statements (Operation Lone Star)", "Criminal justice reform record (HB 351)"],
+      "axisSignal": "toward Pole A reform side (2–3); accountability / community policing framing, not defund"
+    },
+    "justice_sentencing_goals": {
+      "position": "Rehabilitation and reform oriented; co-authored ability-to-pay sentencing reform (HB 351 — signed into law); supports marijuana decriminalization (HB 81) and medical marijuana (HB 2107); youth jobs / early education to reduce incarceration; filed trans panic defense ban (HB 73); called Texas incarceration rate a problem to reverse.",
+      "confidence": "high",
+      "sources": ["Legislative record (HB 351, HB 81, HB 2107, HB 73)", "ACC student publication interview (decriminalization, youth initiatives)", "NORML database", "PolitiFact (incarceration rate claim 2016)"],
+      "axisSignal": "toward Pole A (1–2)"
+    },
+    "justice_firearms": {
+      "position": "Explicit support for: universal background checks, domestic abuser firearm surrender, reporting stolen guns, lethal violence protective orders (red flag laws), License to Carry for long guns, safe storage public education (HB 1205). Frames gun violence as public health issue. Written multiple op-eds opposing resistance to reform.",
+      "confidence": "high",
+      "sources": ["TribTalk op-eds (2017, 2019) with specific named proposals", "League of Women Voters answer on gun laws", "HB 1205 authorship"],
+      "axisSignal": "toward Pole A (1–2); significant regulations supported including red flag laws and background check expansion"
+    },
+    "climate_ambition": {
+      "position": "Led Texas Climate Plan (41-bill package) to reduce carbon emissions and regulate fossil fuels; passed clean energy employment transition legislation; describes climate change as requiring 'urgency'; explicitly supports clean energy economy for Texas",
+      "confidence": "high",
+      "sources": ["Austin Chronicle (Texas Climate Plan 2021)", "Texas Climate Plan former House website", "Legislative record (clean energy employment bill)", "ACC interview (urgency framing)"],
+      "axisSignal": "toward Pole A (1–2); aggressive climate action, not moderate"
+    },
+    "climate_energy_portfolio": {
+      "position": "Explicitly supports clean energy transition; authored climate package to regulate fossil fuel industry; passed clean energy employment transition bill; advocates for leveraging Texas wind/solar lead. Does not call for immediate ban on fossil fuels — frames Texas as both 'the problem and the solution' on energy.",
+      "confidence": "high",
+      "sources": ["Austin Chronicle (41-bill climate package with methane flaring tax, gas capture plans)", "ACC interview (wind/solar leadership)", "87th Legislature clean energy legislation"],
+      "axisSignal": "toward Pole A (2–3); strong clean energy push, fossil fuel regulation, but pragmatic — not rapid fossil fuel elimination; renewables priority with industry accountability"
+    },
+    "climate_permitting": {
+      "position": "No specific permitting position found. Climate Plan included regulation of fossil fuel industry, implying support for stronger environmental review. No opposition to standard permitting processes found.",
+      "confidence": "low",
+      "sources": ["Inferred from climate legislative record"],
+      "axisSignal": "likely toward Pole A (stronger environmental review) but insufficient direct evidence to score with confidence"
+    }
+  },
+  "positionConflicts": [
+    {
+      "topic": "Labor / Teamsters",
+      "conflict": "While Texas AFL-CIO and SEIU endorsed Hinojosa, some Teamster locals endorsed Abbott. Texas labor movement is not monolithic on this race. Teamsters nationally split between Trump and Harris in 2024.",
+      "sources": ["Texas Tribune, February 11, 2026"]
+    },
+    {
+      "topic": "Healthcare model specificity",
+      "conflict": "Campaign emphasizes 'expand Medicaid' and 'affordable healthcare' but does not commit to single-payer or public option. In 2019, she attended a 'Healthy Texas Act' organizing event pledging to carry universal coverage legislation. 2026 campaign rhetoric is more moderate. Scored on explicit 2026 campaign commitment (Medicaid expansion).",
+      "sources": ["2026 campaign website", "2019 Healthy Texas Act organizing (Austin Chronicle, Dec 2018)"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_school_choice: Definitional issue for her campaign; 5+ years legislative record opposing vouchers, filing major public school funding bills, explicit repeal commitment (HIGH confidence — Tier 1)",
+      "justice_firearms: Multiple specific op-eds with named proposals (universal background checks, red flag, domestic abuser surrender, long gun licensing); authored HB 1205; consistent across 2017–2026 (HIGH confidence — Tier 1+2)",
+      "health_public_health (reproductive rights): Complete voting record opposing all abortion restrictions; EMILY's List, Planned Parenthood endorsements; Texas Right to Life failing scorecard (HIGH confidence — Tier 1)",
+      "climate_ambition: Led 41-bill Texas Climate Plan; passed clean energy legislation; urgency framing (HIGH confidence — Tier 1+2)",
+      "labor / econ_safetynet: AFL-CIO endorsement; career as union lawyer; explicit pro-organizing platform; Fiscal Responsibility Index F across all 4 sessions (HIGH confidence — Tier 1+2)",
+      "justice_sentencing_goals: HB 351 (ability-to-pay, signed into law), HB 81+2107 (marijuana decrim/medical), HB 73 (panic defense ban), youth-focus statements (HIGH confidence — Tier 1+2)"
+    ],
+    "weakestAxes": [
+      "housing_transport_priority: Transit Forward background is useful biographical signal but no 2026 campaign transportation platform found (LOW confidence — Tier 4)",
+      "econ_tax_structure: Texas has no income tax; limited direct tax policy record; inferred from rhetoric only (LOW confidence — omit or Tier 3 inference)",
+      "climate_permitting: No specific position found (LOW confidence — omit)",
+      "health_public_health (vaccines / mandates): No position found (OMIT)"
+    ],
+    "overallConfidence": "high for core axes (education, labor, guns, climate, reproductive rights, sentencing); medium for healthcare model nuance and housing; low/omit for permitting and vaccine mandates",
+    "notes": "Gina Hinojosa has a rich 9-year elected record (Austin ISD board 2012–2016, Texas House 2017–present) providing strong Tier 1 and Tier 2 evidence on most axes. Her governor campaign is largely an extension of her legislative identity with relatively little new policy detail beyond Medicaid expansion and ICE/immigration accountability. First-time candidate for statewide office; no statewide voting record. Primary gap areas: detailed housing supply/zoning policy beyond inclusionary zoning repeal, transportation infrastructure, and state tax structure specifics (partially irrelevant given Texas has no income tax). The labor union division (some Teamsters going to Abbott) is noteworthy context but does not change her policy positions. The Medicaid expansion vs. 2019 Medicare-for-All evolution should be flagged but scored on current position."
+  },
+  "sources": [
+    {"title": "Gina Hinojosa for Texas Governor — Official Site", "url": "https://ginafortexas.com/"},
+    {"title": "Priorities | Gina Hinojosa for Texas Governor", "url": "https://ginafortexas.com/priorities/"},
+    {"title": "Meet Gina | Gina Hinojosa for Texas Governor", "url": "https://ginafortexas.com/about/"},
+    {"title": "Endorsements | Gina Hinojosa for Texas Governor", "url": "https://ginafortexas.com/endorsements/"},
+    {"title": "Gina Hinojosa — Wikipedia", "url": "https://en.wikipedia.org/wiki/Gina_Hinojosa"},
+    {"title": "Gina Hinojosa — Ballotpedia", "url": "https://ballotpedia.org/Gina_Hinojosa"},
+    {"title": "Rep. Gina Hinojosa joins Democratic race for Texas governor — Texas Tribune", "url": "https://www.texastribune.org/2025/10/15/gina-hinojosa-texas-governor-campaign-launch-2026-greg-abbott/"},
+    {"title": "Top candidates in the 2026 Texas governor's race primary — Texas Tribune", "url": "https://www.texastribune.org/2026/01/21/2026-texas-governor-primary-guide/"},
+    {"title": "Texas labor unions divided on who to support for governor — Texas Tribune", "url": "https://www.texastribune.org/2026/02/11/texas-labor-unions-abbott-endorsement-teamsters-gina-hinojosa/"},
+    {"title": "'Failures and Grift': Gina Hinojosa Wants to Stop Greg Abbott from Making History — Texas Observer", "url": "https://www.texasobserver.org/gina-hinojosa-campaign-for-texas-governor/"},
+    {"title": "State Rep. Gina Hinojosa vows to 'fight back,' enters 2026 governor's race — KUT Radio", "url": "https://www.kut.org/politics/2025-10-15/gina-hinojosa-governor-greg-abbott-texas-election"},
+    {"title": "Democratic state Rep. Gina Hinojosa faces steep financial challenge — Houston Public Media", "url": "https://www.houstonpublicmedia.org/articles/news/politics/elections/2026/01/07/540095/texas-governor-election-2026-gina-hinojosa-greg-abbott/"},
+    {"title": "Texas Democrats share how they want to beat Gov. Greg Abbott — Texas Tribune", "url": "https://www.texastribune.org/2025/11/13/texas-tribune-festival-democratic-candidates-governor/"},
+    {"title": "Gina Hinojosa is Pro-Choice — Texas Choice Tracker", "url": "https://choicetracker.org/tx/people/gina-hinojosa/82706432"},
+    {"title": "Texas Right to Life 2019 Scorecard — Gina Hinojosa", "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/277-191112-124952-HinojosaG2019Scorecard.pdf"},
+    {"title": "Gina Hinojosa — VoteSmart biography", "url": "https://justfacts.votesmart.org/candidate/biography/166708/gina-hinojosa"},
+    {"title": "Gina Hinojosa — NORML database", "url": "https://vote.norml.org/politicians/166708"},
+    {"title": "Gina Hinojosa — Fiscal Index (Texans for Fiscal Responsibility)", "url": "https://index.texastaxpayers.com/legislators/gina-hinojosa/"},
+    {"title": "Gina Hinojosa — 2025 Fiscal Index", "url": "https://index.texastaxpayers.com/legislators/gina-hinojosa/2025-index"},
+    {"title": "Gina Hinojosa — Young Conservatives of Texas (86th Legislature)", "url": "https://ratings.yct.org/legislators/gina-hinojosa/86th-legislature"},
+    {"title": "Rep. Gina Hinojosa — Texas House of Representatives biography", "url": "https://house.texas.gov/members/3210/biography"},
+    {"title": "EMILYs List endorses Gina Hinojosa", "url": "https://emilyslist.org/candidate/gina-hinojosa/"},
+    {"title": "Texas AFL-CIO Endorses Gina Hinojosa for Governor", "url": "https://ginafortexas.com/2026/01/texas-afl-cio-endorses-gina-hinojosa-for-governor/"},
+    {"title": "Texas AFT COPE Endorses Hinojosa for Governor", "url": "https://www.texasaft.org/policy/funding/texas-aft-cope-endorses-hinojosa-for-governor-garibay-to-replace-her-in-texas-house/"},
+    {"title": "Austin American-Statesman Endorses Gina Hinojosa", "url": "https://ginafortexas.com/2026/02/austin-american-statesman-endorses-gina-hinojosa-for-texas-governor/"},
+    {"title": "March 2026 Primary Election Endorsements — Austin Chronicle", "url": "https://www.austinchronicle.com/news/march-2026-primary-election-endorsements/"},
+    {"title": "Hinojosa calls on Abbott to stop facilitating fatal ICE operations", "url": "https://ginafortexas.com/2026/01/hinojosa-calls-on-abbott-to-stop-facilitating-fatal-ice-operations/"},
+    {"title": "Hinojosa calls for release of body cam footage after ICE killing", "url": "https://ginafortexas.com/2026/02/hinojosa-calls-for-release-of-body-cam-footage-after-ice-killing-of-san-antonio-man-was-hidden-for-a-year/"},
+    {"title": "Hinojosa tries again for inclusionary zoning — Austin Monitor", "url": "https://www.austinmonitor.com/stories/2020/12/hinojosa-tries-again-for-inclusionary-zoning/"},
+    {"title": "Young People Power Texas Climate Plan — Austin Chronicle", "url": "https://www.austinchronicle.com/news/2021-04-30/young-people-power-texas-climate-plan/"},
+    {"title": "Texas Climate Plan Hopes to Reduce Texas' Carbon Emissions — Austin Chronicle", "url": "https://www.austinchronicle.com/news/2021-04-16/texas-climate-plan-hopes-to-reduce-texas-carbon-emissions/"},
+    {"title": "We can prevent gun violence in Texas — TribTalk 2017", "url": "https://www.tribtalk.org/2017/11/08/we-can-prevent-gun-violence-in-texas-now/"},
+    {"title": "The false narrative of Texas gun culture — TribTalk 2019", "url": "https://www.tribtalk.org/2019/08/19/the-false-narrative-of-texas-gun-culture/"},
+    {"title": "Texas Climate Plan — Gina Hinojosa former campaign site", "url": "https://www.ginaforaustin.com/texas-climate-plan-1"},
+    {"title": "Dems Call for Health Care for All Texans (Healthy Texas Act 2019) — Austin Chronicle", "url": "https://www.austinchronicle.com/news/2018-12-07/dems-call-for-health-care-for-all-texans/"},
+    {"title": "In historic first, Texas House approves private school voucher program — Texas Tribune", "url": "https://www.texastribune.org/2025/04/17/texas-house-school-vouchers-public-education-funding/"},
+    {"title": "Q&A with State Representative Gina Hinojosa — Austin CC ACCENT", "url": "https://sites.austincc.edu/accent/q-a-with-state-representative-gina-hinojosa/"},
+    {"title": "Gina Hinojosa — LegiScan bills", "url": "https://legiscan.com/TX/people/gina-hinojosa/id/18674"},
+    {"title": "Reps. Talarico, Hinojosa campaign in Tyler — KLTV", "url": "https://www.kltv.com/2026/02/25/reps-james-talarico-gina-hinojosa-campaign-tyler/"},
+    {"title": "Houston LGBTQ+ Political Caucus 2026 endorsements — OutSmart Magazine", "url": "https://www.outsmartmagazine.com/2026/01/lgbtq-caucus-2026-primary-endorsements/"},
+    {"title": "Gina Hinojosa — Texas Scorecard (89th Legislature)", "url": "https://directory.texasscorecard.com/gina-hinojosa"},
+    {"title": "Bill roundup: Gun policy in Texas Part Two — Lone Star Left", "url": "https://www.lonestarleft.com/p/bill-roundup-gun-policy-in-texas-4c4"},
+    {"title": "Gina Hinojosa is Pro-Choice — LWV Gun Laws Q&A", "url": "https://informed.vote/answer/gina-hinojosa-lwv-gun-laws/"}
+  ]
+}

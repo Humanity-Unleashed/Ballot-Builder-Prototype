@@ -1,0 +1,460 @@
+{
+  "slug": "jason-esteves",
+  "name": "Jason Esteves",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Former Georgia State Senator, District 35 (Jan 2023–Sep 2025, resigned to run for governor); currently running for Governor of Georgia",
+    "priorRoles": [
+      "Georgia State Senator, District 35 (2023–2025)",
+      "Chair, Atlanta Public Schools Board of Education (2018–2021); at-large member (2013–2021)",
+      "Vice President of Legal, Equifax (2019–~2022)",
+      "Assistant General Counsel, Equifax (2014–2019)",
+      "Associate Attorney, McKenna Long & Aldridge, Atlanta (2010–2014)",
+      "Teach For America corps member / middle school social studies teacher, Houston TX (post-college)"
+    ],
+    "education": "B.A., University of Miami; J.D., Emory University School of Law",
+    "background": "Born July 19, 1983 in Columbus, Georgia. Of Afro-Puerto Rican descent; first-generation college graduate; son of immigrants (father Fernando Esteves). Grew up partly in Orlando, FL. Attorney and businessman. Three family businesses. Public school parent.",
+    "residency": "Atlanta (parts of Cobb and Fulton County, Senate District 35)"
+  },
+  "campaignWebsite": {
+    "url": "https://www.jasonesteves.com",
+    "prioritiesUrl": "https://www.jasonesteves.com/priorities/",
+    "meetJasonUrl": "https://www.jasonesteves.com/meet-jason/",
+    "endorsementsUrl": "https://www.jasonesteves.com/endorsements/",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "statedPositions": [
+      {
+        "topic": "healthcare — Medicaid expansion",
+        "quote": "fight to lower the cost of insurance premiums by expanding Medicaid and getting more Georgians insured, lower the cost of prescription drugs, expand our rural hospitals and clinics, and secure much-needed resources for senior care across the state",
+        "sourceUrl": "https://www.jasonesteves.com/priorities/",
+        "date": "2025–2026",
+        "confidence": "high",
+        "notes": "Explicit Medicaid expansion commitment. Georgia is one of the few remaining non-expansion states."
+      },
+      {
+        "topic": "reproductive rights — abortion ban repeal",
+        "quote": "running for governor to overturn Georgia's restrictive abortion ban once and for all and restore a woman's right to make her own healthcare decisions with her doctor and her family, not politicians",
+        "sourceUrl": "https://www.jasonesteves.com/priorities/",
+        "date": "2025–2026",
+        "confidence": "high",
+        "notes": "Explicit and central campaign commitment. Endorsed by Shanette Williams, mother of Amber Thurman, who died after being denied an emergency fetal removal procedure under Georgia's heartbeat law."
+      },
+      {
+        "topic": "education — public schools, anti-voucher",
+        "quote": "fully funding our public schools and modernizing our school funding formula, increasing pay for Georgia's teachers, and expanding early learning programs... stood up against voucher schemes that siphon resources away from our public schools",
+        "sourceUrl": "https://www.jasonesteves.com/priorities/",
+        "date": "2025–2026",
+        "confidence": "high",
+        "notes": "Anti-voucher position consistent throughout legislative and board of education service."
+      },
+      {
+        "topic": "education — universal childcare / early learning",
+        "quote": "Expanding access to safe and affordable universal childcare to support working families and providers... would guarantee access for all 3- and 4-year-olds with a mixed delivery system through both public and private providers using Georgia Lottery reserves that totaled roughly $2.4 billion in the last fiscal year",
+        "sourceUrl": "https://www.11alive.com/article/news/local/democrat-jason-esteves-unveils-new-education-plan-in-bid-for-georgia-governor/85-a7e83fca-b0af-40a5-be9f-ee4a199c7693",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Specific funding mechanism identified (Georgia Lottery reserves). Mixed public-private delivery model."
+      },
+      {
+        "topic": "housing — anti-private equity / supply increase / renter protections",
+        "quote": "increase the housing supply, strengthen renter protections and continue standing up to the out-of-state corporations that squeeze Georgia families out of the housing market",
+        "sourceUrl": "https://www.jasonesteves.com/priorities/",
+        "date": "2025–2026",
+        "confidence": "high",
+        "notes": "Three distinct components: (1) ban/limit private equity home purchases, (2) increase supply, (3) renter protections."
+      },
+      {
+        "topic": "small business / economic development",
+        "quote": "prioritize local small businesses, making it easier for Georgians to access capital and build wealth for generations to come",
+        "sourceUrl": "https://www.jasonesteves.com/priorities/",
+        "date": "2025–2026",
+        "confidence": "medium",
+        "notes": "General value statement on website; more specific $1B fund proposal elsewhere."
+      },
+      {
+        "topic": "environment / clean energy",
+        "quote": "advocate for renewable energy sources, expanding public transportation, and fight to address environmental concerns that exist across the state",
+        "sourceUrl": "https://www.jasonesteves.com/priorities/",
+        "date": "2025–2026",
+        "confidence": "low",
+        "notes": "General values statement; not detailed with specific policies. Prior 2021 op-ed supported zero-emission electric school buses. No specific climate legislation found in Senate record."
+      }
+    ]
+  },
+  "legislativeRecord": {
+    "available": true,
+    "chamber": "Georgia State Senate",
+    "district": "District 35 (parts of Cobb and Fulton Counties)",
+    "term": "January 9, 2023 – September 10, 2025 (resigned to run for governor)",
+    "reelected": "November 5, 2024 (won general election for second term before resigning)",
+    "caucusRole": "Vice Chair of Finance, Georgia Senate Democratic Caucus (elected 2024)",
+    "committees": [
+      "Children and Families",
+      "Agriculture and Consumer Affairs",
+      "Finance",
+      "State and Local Governmental Operations",
+      "Ethics"
+    ],
+    "sources": [
+      "Georgia Senate official site (senate.ga.gov)",
+      "BillTrack50",
+      "Georgia Senate Press Office (senatepress.net)",
+      "TrackBill"
+    ],
+    "keyBillsSponsored": [
+      {
+        "bill": "Heartbeat bill repeal (introduced 2023)",
+        "description": "Sponsored legislation to repeal Georgia HB 481 (2019), the so-called 'heartbeat' bill that outlaws most abortions after detection of fetal heartbeat",
+        "topic": "reproductive rights",
+        "outcome": "Did not pass — Republicans held Senate majority",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jason_Esteves",
+        "notes": "Highly symbolic; signal of firm pro-abortion-rights position even as minority party member"
+      },
+      {
+        "bill": "SB 199 — Health Savings Accounts for State Employees",
+        "description": "Made health savings accounts available as a pre-tax deduction for Georgia state employees, including teachers. Signed into law.",
+        "topic": "healthcare / labor",
+        "outcome": "Passed",
+        "sourceUrl": "https://senatepress.net/sen-jason-esteves-fights-for-georgia-families-achieves-bipartisan-victories-in-first-legislative-session.html",
+        "notes": "Bipartisan bill; his first passed legislation. Market-adjacent approach to healthcare benefits."
+      },
+      {
+        "bill": "Private equity home purchase restriction (introduced 2025)",
+        "description": "Proposed legislation that would stop private equity firms from being allowed to purchase single-family homes in Georgia",
+        "topic": "housing",
+        "outcome": "Introduced; outcome unclear (likely died in Republican-controlled committee)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jason_Esteves",
+        "notes": "Central to his housing platform; became a core 2026 campaign promise"
+      },
+      {
+        "bill": "SB 25 — Parole Board Transparency (2025)",
+        "description": "Requires Parole Board to provide written explanation when keeping someone incarcerated beyond their tentative parole date. Co-sponsored.",
+        "topic": "criminal justice / parole reform",
+        "outcome": "Died in committee in 2025; returned for consideration in 2026 session (Esteves resigned before vote)",
+        "sourceUrl": "https://gps.press/georgias-2026-candidates-on-prison-and-parole-reform/",
+        "notes": "Modest reform bill focused on transparency, not abolition or wholesale restructuring. Bipartisan framing."
+      },
+      {
+        "bill": "Early learning expansion for 3-year-olds (introduced 2023)",
+        "description": "Sponsored legislation to expand early learning programs for 3-year-olds in Georgia",
+        "topic": "education",
+        "outcome": "Did not pass",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jason_Esteves",
+        "notes": "Precursor to 2026 universal childcare platform"
+      },
+      {
+        "bill": "Senior property tax relief (Atlanta)",
+        "description": "Legislation to bring down property taxes for seniors in Atlanta",
+        "topic": "housing / taxes",
+        "outcome": "Passed (bipartisan)",
+        "sourceUrl": "https://senatepress.net/sen-jason-esteves-fights-for-georgia-families-achieves-bipartisan-victories-in-first-legislative-session.html",
+        "notes": "Local relief bill"
+      },
+      {
+        "bill": "Personal information redaction for public officials (2023)",
+        "description": "Required governmental agencies to redact personal identifying information from public records about public officials",
+        "topic": "privacy / public safety",
+        "outcome": "Passed (his first bill through Georgia Senate — bipartisan)",
+        "sourceUrl": "https://senatepress.net/sen-jason-esteves-passes-first-bill-through-georgia-senate.html",
+        "notes": "Bipartisan public safety measure"
+      },
+      {
+        "bill": "Buckhead cityhood opposition (SB 114)",
+        "description": "Led opposition to Buckhead cityhood legislation; successfully defeated it with bipartisan support",
+        "topic": "local governance",
+        "outcome": "Defeated SB 114",
+        "sourceUrl": "https://senatepress.net/sen-jason-esteves-fights-for-georgia-families-achieves-bipartisan-victories-in-first-legislative-session.html",
+        "notes": "Signals opposition to fragmentation of urban services; relevant to public school funding debates"
+      },
+      {
+        "bill": "Free-range parenting bill (2025)",
+        "description": "Co-sponsored bipartisan bill declaring children being unsupervised is not child neglect; parenting decisions left to parent",
+        "topic": "family / individual liberty",
+        "outcome": "Passed",
+        "sourceUrl": "https://senatepress.net/",
+        "notes": "Bipartisan; signals willingness to cross partisan lines on individual liberty issues"
+      }
+    ],
+    "votingPositionsSummary": {
+      "guns2022": {
+        "position": "Opposed permitless carry (concealed carry without a license) in 2022 state senate race",
+        "topic": "firearms",
+        "source": "Search results referencing 2022 election positions",
+        "confidence": "medium",
+        "notes": "Stated during 2022 campaign; no specific floor vote record found given Republican Senate majority controlled which bills reached the floor"
+      },
+      "turningPointActionScore": {
+        "score": "14/100 (2025 session), 24/100 (prior period)",
+        "classification": "Rated 'Becoming Tyrannical' by Turning Point Action (conservative scorecard)",
+        "sourceUrl": "https://www.tpaction.com/scorecard/legislators/jasonesteves",
+        "notes": "Turning Point Action is a right-leaning organization. Low score on their rubric signals consistent progressive voting. Inverse of this scorecard serves as evidence of progressive alignment."
+      }
+    }
+  },
+  "scorecards": [
+    {
+      "organization": "Turning Point Action (conservative scorecard)",
+      "score": "14/100 (2025 LIVE session), 24/100 (prior ranking period)",
+      "grade": "Rated 'Becoming Tyrannical'",
+      "url": "https://www.tpaction.com/scorecard/legislators/jasonesteves",
+      "notes": "Inverse signal: low score on right-wing scorecard confirms consistently progressive voting record. No progressive scorecards (LCV, AFL-CIO, ACLU) found with specific scores for Georgia state legislators — these organizations do not comprehensively score state legislative chambers."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "LCV scorecards focus on federal legislators. No Georgia state legislature scorecard found. Esteves' stated positions on renewables and prior electric bus op-ed signal pro-environment alignment, but no numerical score available."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. Consistent with opposition to permitless carry (2022) and criticism of Geoff Duncan for blocking gun safety measures."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Jason Carter (former Georgia Democratic gubernatorial nominee 2014; grandson of President Jimmy Carter)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "October 2025",
+      "sourceUrl": "https://www.fox5atlanta.com/news/jason-esteves-endorsed-jason-carter-georgia-governor",
+      "notes": "High-profile endorsement; Carter is a prominent Georgia Democratic figure who chose not to run himself"
+    },
+    {
+      "organization": "Sally Yates (former Deputy Attorney General, fired by Trump in 2017)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "January 2026",
+      "sourceUrl": "https://thehill.com/homenews/campaign/5691393-esteves-wins-yates-endorsement/",
+      "notes": "Notable because Yates rarely endorses. Statement: 'this moment calls for strong leadership and a strong governor who will fight against Donald Trump's destructive agenda'"
+    },
+    {
+      "organization": "GALEO Impact Fund (Georgia Association of Latino Elected Officials)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "sourceUrl": "https://galeoimpactfund.org/endorsements/",
+      "notes": "Latino advocacy organization. Board chair called Esteves 'the future of competent leadership in Georgia'"
+    },
+    {
+      "organization": "Shanette Williams (mother of Amber Thurman, who died after being denied emergency fetal removal under Georgia abortion ban)",
+      "type": "personal endorsement",
+      "cycle": "2026",
+      "notes": "High-profile symbolic endorsement connecting Esteves to the human cost of Georgia's abortion restrictions"
+    },
+    {
+      "organization": "Labor groups (unspecified)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Campaign reported 'key endorsements from labor groups and reproductive rights advocates' — specific unions not identified in available sources"
+    },
+    {
+      "organization": "Reproductive rights advocates (unspecified)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Campaign referenced these; specific organizations (Planned Parenthood Action Fund, NARAL Georgia) not confirmed in sources reviewed"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "11Alive (WXIA-TV, Atlanta)",
+      "title": "Jason Esteves lays out priorities, answers big questions after announcing his 2026 campaign for governor",
+      "date": "April 2025",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/jason-esteves-2026-governor-campaign-full-interview/85-c328e0c7-5586-40c6-86e0-4ab9b915e14c",
+      "keyExchanges": [
+        {
+          "topic": "cost of living / campaign framing",
+          "quote": "When you think about the fact that Georgians are working harder than they have ever before yet they, for so many, are still struggling, they deserve a governor that can tackle a lot of the issues that they're facing around housing, around healthcare, around education and investing in our children.",
+          "notes": "Core economic message; working-class framing"
+        },
+        {
+          "topic": "federal chaos / Trump",
+          "quote": "I see my candidacy as a campaign for Georgia. I am focused on Georgians and the issues that they are facing. One of those issues that they're facing is the chaos coming out of Washington, D.C. and the distractions that Donald Trump and Elon Musk are throwing our way. And Georgia needs a governor that can break through that noise.",
+          "notes": "Anti-Trump positioning but framed as Georgia-focused, not purely Washington-obsessed"
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive (WXIA-TV, Atlanta)",
+      "title": "1-on-1 with Georgia's candidates for governor: Jason Esteves",
+      "date": "2026",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/1-on-1-georgia-governor-2026-candidate-jason-esteves/85-dd2aec53-02de-430c-91a5-f747dfcc0a57",
+      "keyExchanges": [
+        {
+          "topic": "guns / opponent criticism",
+          "quote": "Criticized Geoff Duncan for having 'prevented sensible gun ownership laws from being passed'",
+          "notes": "Paraphrase from search results; signals pro-gun-regulation position"
+        }
+      ]
+    },
+    {
+      "outlet": "AJC Politically Georgia Forum",
+      "title": "Politically Georgia Live: Jason Esteves charts out post-Trump future",
+      "date": "December 2025",
+      "url": "https://www.ajc.com/politics/2025/12/politically-georgia-live-jason-esteves-charts-out-post-trump-future/",
+      "keyExchanges": [
+        {
+          "topic": "coalition building / party strategy",
+          "quote": "That's not how we coalition build.",
+          "notes": "Said in context of arguing Democratic Party must move beyond Trump-driven politics to win midterms"
+        },
+        {
+          "topic": "federal shutdown response",
+          "description": "Said he would mobilize National Guard to help food banks distribute food and release emergency grant dollars to those organizations if federal programs were cut",
+          "notes": "Signals willingness to use state executive power as counter to federal cuts; strong public safety net position"
+        }
+      ]
+    },
+    {
+      "outlet": "GPB / Georgia Public Broadcasting",
+      "title": "Candidates for Georgia governor attend NAACP forum, sticking to party lines",
+      "date": "August 21, 2025",
+      "url": "https://www.gpb.org/news/2025/08/21/candidates-for-georgia-governor-attend-naacp-forum-sticking-party-lines",
+      "keyExchanges": [
+        {
+          "topic": "education / literacy",
+          "quote": "70% of our children are not reading on grade level by the time they reach fourth grade",
+          "notes": "Framing around urgency of public school investment"
+        },
+        {
+          "topic": "maternal mortality",
+          "quote": "Georgia has 'the number one worst rate of maternal mortality, especially for black women, in the entire country, where rural hospitals are closing'",
+          "notes": "Links abortion ban, healthcare gaps, and racial inequity in single statement"
+        },
+        {
+          "topic": "small business",
+          "description": "Unveiled plan to create a $1 billion fund for small businesses",
+          "notes": "First public mention of $1B fund"
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Recorder",
+      "title": "Georgia Democrats align on key issues at Savannah forum",
+      "date": "January 8, 2026",
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "keyExchanges": [
+        {
+          "topic": "housing / private equity",
+          "quote": "I'm going to stop private equity funds from buying up all of our single-family homes",
+          "notes": "Direct commitment at Democratic primary forum; all seven candidates pledged Medicaid expansion at this event"
+        },
+        {
+          "topic": "economic development / Kemp critique",
+          "description": "Chastised Governor Brian Kemp for focusing on large economic development projects (Hyundai, Rivian) at the expense of farmers, public health, and jobs",
+          "notes": "Small business vs. mega-corporation contrast framing"
+        },
+        {
+          "topic": "healthcare — Medicaid",
+          "description": "Pledged to expand Medicaid if elected — consistent with all seven Democratic candidates at the forum",
+          "notes": "Democratic litmus test; all 7 candidates passed"
+        }
+      ]
+    },
+    {
+      "outlet": "GPB / Georgia Public Broadcasting",
+      "title": "They want to be Georgia's next governor. Candidates make pitches in forum a year ahead of election",
+      "date": "November 6, 2025",
+      "url": "https://www.gpb.org/news/2025/11/06/they-want-be-georgias-next-governor-candidates-make-pitches-in-forum-year-ahead-of",
+      "keyExchanges": [
+        {
+          "topic": "general campaign platform",
+          "description": "Esteves, Thurmond, and Duncan qualified for the forum. Esteves pitched his combined education/housing/healthcare platform.",
+          "notes": "Multi-candidate forum; no specific new Esteves quotes extracted from this event in available sources"
+        }
+      ]
+    }
+  ],
+  "economicProposals": {
+    "smallBusinessFund": {
+      "amount": "$1 billion",
+      "mechanism": "Low-interest small business loan fund",
+      "projectedImpact": "Up to 50,000 jobs per year",
+      "rationale": "Mirror state's large-company investment strategy for small businesses; state supports Hyundai/Rivian with similar incentives",
+      "sourceUrl": "https://www.ajc.com/politics/2025/08/jason-esteves-floats-1-billion-fund-to-help-small-businesses/",
+      "date": "August 2025"
+    },
+    "childcareFunding": {
+      "mechanism": "Georgia Lottery reserves (~$2.4 billion annual surplus)",
+      "deliveryModel": "Mixed public and private provider system",
+      "targetPopulation": "All 3- and 4-year-olds in Georgia",
+      "sourceUrl": "https://www.11alive.com/article/news/local/democrat-jason-esteves-unveils-new-education-plan-in-bid-for-georgia-governor/85-a7e83fca-b0af-40a5-be9f-ee4a199c7693",
+      "date": "2026"
+    }
+  },
+  "positionConflicts": [
+    {
+      "topic": "school choice — HSA bill vs. anti-voucher stance",
+      "conflict": "Esteves authored SB 199 establishing health savings accounts for state employees (market-based benefit design) while simultaneously opposing education vouchers. His 2026 universal childcare plan also uses a mixed public-private delivery model. This suggests pragmatic market-mechanism acceptance rather than pure public-sector purism on economic policy.",
+      "sources": [
+        "Georgia Senate Press Office (SB 199)",
+        "Campaign website priorities page (anti-voucher)"
+      ],
+      "notes": "Not a direct conflict on education vouchers specifically, but worth flagging for scorer"
+    }
+  ],
+  "gaps": [
+    {
+      "topic": "immigration / ICE enforcement",
+      "notes": "No specific stated position found on immigration enforcement, sanctuary policies, or ICE. Endorsed by GALEO (Latino advocacy), which implies favorable immigration views, but no direct quote or policy commitment found."
+    },
+    {
+      "topic": "climate / clean energy — detailed policy",
+      "notes": "Campaign website mentions renewable energy and public transit in general terms. No specific targets (e.g., 100% clean energy by year X, carbon pricing, emissions caps). Only concrete prior action: 2021 op-ed supporting zero-emission electric school buses."
+    },
+    {
+      "topic": "transit / transportation infrastructure",
+      "notes": "Mentions expanding public transportation in platform but no specific projects or funding levels identified."
+    },
+    {
+      "topic": "criminal justice — policing reform",
+      "notes": "SB 25 (parole transparency) is the only justice-adjacent bill found. No specific positions on police accountability, use of force standards, or sentencing reform beyond this narrow bill."
+    },
+    {
+      "topic": "tax policy",
+      "notes": "Proposal to create $1B small business fund implies spending but no specific tax policy (income tax rates, corporate tax) positions found."
+    },
+    {
+      "topic": "specific labor union endorsements",
+      "notes": "Campaign claims 'labor group endorsements' but specific unions (AFL-CIO Georgia, UAW, AFSCME, etc.) not confirmed in sources reviewed."
+    }
+  ],
+  "primaryRaceContext": {
+    "electionDate": "May 19, 2026 (Democratic primary)",
+    "generalElectionDate": "November 3, 2026",
+    "primaryOpponents": [
+      "Keisha Lance Bottoms (former Atlanta Mayor, former Biden White House liaison)",
+      "Geoff Duncan (former Republican Lt. Governor, now running as Democrat/independent-adjacent)",
+      "Michael Thurmond (former DeKalb County CEO)"
+    ],
+    "pollingPosition": "One of four leading candidates in polls and fundraising; trails Bottoms in most polls as of late 2025",
+    "fundraising": "Reported $1.2 million raised (early figure, date unclear); 95% small-dollar donations claimed",
+    "incumbentRepublican": "Brian Kemp is term-limited; Republican primary field includes Lt. Gov. Burt Jones",
+    "historicalContext": "Georgia Democrats have not won a governor's race in 27 years"
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "health_coverage_model — Explicit Medicaid expansion commitment; multiple forum pledges",
+      "public_health — Abortion ban repeal as central campaign theme; HB 481 repeal bill as state senator",
+      "school_choice — Anti-voucher position documented across Board of Education service and legislative record",
+      "affordability_tools (housing) — Private equity home purchase ban; renter protections; supply increase; all specific commitments",
+      "safety_net_breadth — $1B small business fund; universal childcare via lottery revenue; anti-corporate rhetoric"
+    ],
+    "weakestAxes": [
+      "climate_ambition_level — Only general mentions of renewables; no specific targets or legislation",
+      "energy_portfolio — No detailed energy policy found",
+      "permitting_speed — No positions found",
+      "police_accountability — Only SB 25 (parole transparency) as adjacent signal; no direct police reform positions",
+      "sentencing_goals — SB 25 is the only relevant signal; insufficient for confident scoring",
+      "firearms_policy — 2022 opposition to permitless carry + criticism of Duncan, but no specific legislation sponsored or broad platform statement"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Short legislative record (2 years in state Senate, minority party) limits voting-record evidence. However, the 2026 campaign has been extensively covered and his platform is clearly articulated on healthcare, housing, education, and reproductive rights. Main gaps are in climate (depth), criminal justice (breadth), and immigration. His background in education governance and corporate law creates an interesting blend — anti-corporate on housing/private equity but used market mechanisms (HSAs, mixed childcare delivery) on other issues."
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "slug": "derek-dooley",
+  "name": "Derek Dooley",
+  "party": "Republican",
+  "office": "U.S. Senate, Georgia, 2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00Z",
+  "biography": {
+    "currentRole": "Political newcomer; no prior elective office",
+    "priorRoles": [
+      "Offensive coordinator / wide receivers coach, Dallas Cowboys (2013–2023 various stints)",
+      "Head Football Coach, University of Tennessee (2010–2012); fired after 15-21 record",
+      "Head Football Coach, Louisiana Tech University (2007–2009)",
+      "Attorney (practiced law prior to entering coaching)"
+    ],
+    "education": "J.D., University of Georgia School of Law; B.A., University of Georgia",
+    "background": "Son of legendary UGA head coach Vince Dooley (1964–1988). Athens-Clarke County native. Wife Dr. Allison Dooley is an OB/GYN practicing in rural Rabun County, GA. Lifelong Georgia sports figure with no prior political or government service. Voted in 2024 and 2022 but did not vote for approximately two decades prior — including in 2016 and 2020 presidential elections, which became a campaign controversy.",
+    "familyConnection": "Father Vince Dooley is a legend in Georgia sports culture; this name recognition is a core campaign asset"
+  },
+  "campaignWebsite": {
+    "url": "https://www.dooleyforgeorgia.com",
+    "fetchedAt": "2026-02-25T00:00:00Z",
+    "notes": "No dedicated issues or platform page found via site search or indexing. Dooley has not completed Ballotpedia's 2026 Candidate Connection survey. Policy content exists only on homepage and through media appearances.",
+    "statedPositions": [
+      {
+        "topic": "general / campaign theme",
+        "quote": "Georgia needs new leadership in the U.S. Senate. Someone who is going to actually represent the people of our state, not themselves. Someone who is going to put you first—put Georgia First—not another politician looking for their next promotion in Washington or wanting to be a celebrity on TV and social media.",
+        "sourceUrl": "https://www.dooleyforgeorgia.com/",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "Core campaign message. Outsider positioning against career politicians."
+      },
+      {
+        "topic": "immigration / border security",
+        "quote": "Georgians know... that opening our border makes us less safe.",
+        "sourceUrl": "https://www.dooleyforgeorgia.com/",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "Direct quote from campaign launch video/announcement. Supports border enforcement."
+      },
+      {
+        "topic": "fiscal / taxes",
+        "quote": "Georgians know... hardworking people should keep more of their money and government should spend less of it.",
+        "sourceUrl": "https://www.dooleyforgeorgia.com/",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "Core fiscal message. Signals lower taxes and reduced government spending. Consistent with mainstream GOP fiscal platform but no specific dollar amounts or programs named."
+      },
+      {
+        "topic": "transgender athletes / gender policy",
+        "quote": "Georgians know biological men shouldn't be playing in women's sports.",
+        "sourceUrl": "https://www.dooleyforgeorgia.com/",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "Explicit opposition to transgender women competing in women's sports. Campaign announcement video."
+      },
+      {
+        "topic": "Trump alignment",
+        "quote": "Unlike Ossoff, I'll work with President Trump to implement his agenda, support his Administration, and move our country forward.",
+        "sourceUrl": "https://www.foxnews.com/politics/republican-dooley-jumps-georgias-senate-race-while-touting-support-trump-taking-aim-ossoff",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "Stated in campaign launch. Signals alignment with Trump executive agenda."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "sources": [],
+    "notes": "No prior elective office. No legislative voting record exists. Personal voting history: voted in 2022 and 2024; did not vote 2004–2020 approximately (confirmed by 11Alive interview and ABC News reporting).",
+    "keyVotes": []
+  },
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. First-time candidate with no legislative record. No public statements found specifically on Second Amendment or gun legislation."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score. No prior office. No climate or environment positions found in any searched source."
+    },
+    {
+      "organization": "AFL-CIO / organized labor",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No labor scorecard. No specific positions on union rights, right-to-work, or labor legislation found."
+    },
+    {
+      "organization": "Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No scorecard. Campaign messaging on less regulation and lower taxes is broadly aligned with Chamber priorities."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Governor Brian Kemp (Georgia)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Kemp's most significant political endorsement. Kemp reportedly told other candidates in the GOP field he would back Dooley. Prominent Kemp political staffers joined Dooley's campaign. This endorsement drove John King to exit the race. Kemp himself declined to run for Senate despite national recruitment. The Kemp endorsement positions Dooley as the establishment/anti-Trump faction candidate within the Georgia GOP, which is a vulnerability in the primary given the MAGA-aligned competitors (Collins, Carter).",
+      "sourceUrl": "https://www.11alive.com/article/news/politics/gov-brian-kemp-endorses-derek-dooley-for-us-senate-seat/85-7988e80f-fb5b-44bb-a90c-c60b2d5ecf44"
+    },
+    {
+      "organization": "DSCC (Democratic Senatorial Campaign Committee)",
+      "type": "opposition",
+      "cycle": "2026",
+      "notes": "DSCC released statement attacking Dooley as 'a failed football coach who has only ever spoken out to cheerlead Medicaid cuts that hurt Georgians.' This is partisan opposition framing, not neutral evidence — but the Medicaid characterization implies Dooley has made public statements favorable to Medicaid cuts/reform, though the specific original statement was not found.",
+      "sourceUrl": "https://www.dscc.org/article/dscc-statement-on-derek-dooley-senate-campaign-launch/"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Atlanta Journal-Constitution (AJC)",
+      "date": "2025-08",
+      "url": "https://www.ajc.com/politics/2025/08/derek-dooley-casts-himself-as-the-senate-outsider-who-can-win/",
+      "keyExchanges": [
+        {
+          "topic": "outsider positioning",
+          "quote": "All I asked for him [Trump] was an opportunity to earn his support, and so that's what I'm setting out to do.",
+          "notes": "Discussed meeting with Trump; not seeking endorsement yet. Positioned himself as outsider despite Kemp establishment backing."
+        },
+        {
+          "topic": "abortion / Georgia Heartbeat Bill",
+          "quote": "States should be in charge of it and as a senator I need to stay out of it and not have an opinion because the federal government needs to not weigh in... [federal involvement for] 40 years created [significant division] in the country.",
+          "notes": "Explicitly declined to say whether he supports Georgia's 6-week heartbeat abortion law. Stated this is a state issue and senators should not have opinions on state abortion laws. Criticized by conservative commentators (PJ Media) and anti-abortion advocates (Cole Muzio of Frontline Policy Action) for giving a 'non-answer.' His wife is an OB/GYN which may complicate the political calculus on this issue. This is a significant dodge on a salient Georgia Republican primary issue.",
+          "sourceUrl": "https://pjmedia.com/chris-queen/2025/08/25/instead-of-a-touchdown-answer-dooley-runs-out-of-bounds-on-georgias-heartbeat-bill-n4943015"
+        }
+      ]
+    },
+    {
+      "outlet": "AJC / Politically Georgia podcast (Greg Bluestein)",
+      "date": "2025-08",
+      "url": "https://pjmedia.com/chris-queen/2025/08/25/instead-of-a-touchdown-answer-dooley-runs-out-of-bounds-on-georgias-heartbeat-bill-n4943015",
+      "keyExchanges": [
+        {
+          "topic": "abortion / state vs. federal role",
+          "quote": "States should be in charge of it... as a senator I need to stay out of it.",
+          "notes": "Confirmed: declined to endorse or oppose Georgia's existing heartbeat law. Conservative critics labeled this evasive. Dooley's framing is that the Dobbs decision correctly returned abortion to states and federal senators should not express opinions on state-level abortion laws."
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive / The Georgia Vote",
+      "date": "2026-02",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/full-interview-us-senate-candidate-derek-dooley/85-35a29c7f-707c-4e69-b8ea-43dce37a3150",
+      "keyExchanges": [
+        {
+          "topic": "voting history / outsider credibility",
+          "quote": "There was a time, and those were part of that time, in my career, where I was overly-focused on my job and my family, and I didn't vote. I was moving from state to state. It's not an excuse. It was what it was. I was overly focused. But I did vote in 2024 and 2022.",
+          "notes": "Acknowledged not voting in 2016 or 2020 presidential elections. Said he did vote in 2022 and 2024 (including for Trump in 2024). Described it as being 'overly focused on work.' Critics note he was settled in Georgia during much of this period."
+        },
+        {
+          "topic": "2020 election",
+          "notes": "In a separate public interview (February 5, 2026), Dooley avoided directly saying whether the 2020 election was free and fair when pressed by a reporter."
+        }
+      ]
+    },
+    {
+      "outlet": "Washington Examiner (audio obtained)",
+      "date": "2026-02",
+      "url": "https://www.washingtonexaminer.com/news/campaigns/4462405/derek-dooley-trump-lost-georgia-2020/",
+      "keyExchanges": [
+        {
+          "topic": "2020 election / election integrity",
+          "quote": "If you guys remember, this was a time where it was a tough time in Georgia politics back in 2020, 2022, the president lost Georgia.",
+          "notes": "Private remarks acknowledging Trump lost Georgia in 2020. Campaign spokesperson did not dispute the recording but pivoted to 'irregularities' language: 'the 2020 election was rife with irregularities that understandably undermined trust among Georgians about the validity of our elections.' This put Dooley at odds with MAGA primary competitors who maintain the 2020 election was stolen."
+        }
+      ]
+    },
+    {
+      "outlet": "Red and Black (University of Georgia student newspaper)",
+      "date": "2025-2026",
+      "url": "https://www.redandblack.com/athensnews/athens-on-the-ballot-q-a-with-derek-dooley-candidate-for-u-s-senate/article_0323c71f-107f-44ae-b996-ef6801d81076.html",
+      "keyExchanges": [
+        {
+          "topic": "outsider status",
+          "quote": "Oh, I absolutely do [see outsider status as an advantage]. In fact, you know, one of the reasons I'm running is because of a lot of frustration I have with a lot of these career D.C. [politicians].",
+          "notes": "Framing against career politicians. Core campaign message."
+        },
+        {
+          "topic": "government reform / trust in Congress",
+          "quote": "We got to make some changes in how our politics [are] going, if we're going to build back some trust and belief in our people that 'Congress is working for me.'",
+          "notes": "Anti-establishment, accountability-focused messaging. Not specific about what changes."
+        },
+        {
+          "topic": "rural healthcare",
+          "quote": "We do need to incentivize doctors to come to these areas.",
+          "notes": "Supports market-oriented incentives for rural physician recruitment. Does not mention Medicaid expansion or government-funded healthcare programs."
+        }
+      ]
+    },
+    {
+      "outlet": "AJC",
+      "date": "2026-02",
+      "url": "https://www.ajc.com/politics/2026/02/derek-dooley-urges-congress-to-give-ncaa-the-power-to-enforce-its-rules/",
+      "keyExchanges": [
+        {
+          "topic": "NCAA / college sports governance",
+          "quote": "College athletics are in chaos... [if elected] I will educate everybody about the issue.",
+          "notes": "Favors federal legislation giving NCAA enforcement powers over Name-Image-Likeness (NIL) and transfer portal. This is a signature issue tied to his coaching background. Signals willingness to use federal legislative power for sports governance (cuts against pure limited-government stance)."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta News First",
+      "date": "2025-08-26",
+      "url": "https://www.atlantanewsfirst.com/2025/08/26/gridiron-ballot-derek-dooley-talks-georgia-us-senate-race/",
+      "keyExchanges": [
+        {
+          "topic": "general / leadership framing",
+          "notes": "Dooley drew parallels between team leadership in football and national leadership. No specific additional policy positions found in available excerpts."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB / Georgia Public Broadcasting",
+      "date": "2025-08-14",
+      "url": "https://www.gpb.org/news/2025/08/14/taxpayer-dollars-at-work-dooley-enters-senate-race-entertainment-industries-rural",
+      "keyExchanges": [
+        {
+          "topic": "government spending / rural funding",
+          "notes": "Context: GPB story on taxpayer dollars in the context of his Senate entry, entertainment industries, and rural funding. Dooley appeared to discuss rural Georgia priorities. Specific excerpts not fully indexed."
+        }
+      ]
+    }
+  ],
+  "newsPositions": [
+    {
+      "topic": "immigration / housing",
+      "description": "Dooley blamed immigrants for reducing the number of available homes for U.S. citizens.",
+      "sourceUrl": "https://nationaltoday.com/us/ga/atlanta/news/2026/02/16/former-football-coach-derek-dooley-seeks-georgia-senate-seat-despite-lack-of-voting-history/",
+      "date": "2026-02",
+      "confidence": "medium",
+      "notes": "Paraphrase from news coverage, not a direct quote. Signals anti-immigration economic framing connecting immigration to housing affordability."
+    },
+    {
+      "topic": "housing / deregulation",
+      "description": "Dooley said he would focus on workforce training and reducing home prices by cutting back government regulation.",
+      "sourceUrl": "https://abcnews.com/Politics/wireStory/derek-dooley-vote-years-now-georgia-voters-send-130185352",
+      "date": "2026-02",
+      "confidence": "medium",
+      "notes": "Reported by multiple outlets including ABC News. Market-oriented housing solution via deregulation, not public investment or subsidies."
+    },
+    {
+      "topic": "rural healthcare",
+      "description": "Dooley named rural hospitals as a top priority. His wife Dr. Allison Dooley is an OB/GYN in rural Rabun County. He stated: 'The two most important people in health care are patients and doctors, and those are the two people that are suffering the most.'",
+      "sourceUrl": "https://www.statesboroherald.com/local/derek-dooley-draws-parallels-between-leadership-for-teams-and-nation-in-campaign-for-us-senate/",
+      "date": "2025-2026",
+      "confidence": "medium",
+      "notes": "Positions rural health as personal priority. Proposes incentivizing doctors to relocate — market-based approach, not Medicaid expansion. DSCC characterized his past statements as 'cheerleading Medicaid cuts' but specific Medicaid cut endorsements not found in primary sources."
+    },
+    {
+      "topic": "Trump agenda alignment",
+      "description": "Campaign framing presents Dooley as someone who will support Trump's agenda in the Senate, contrasted against Ossoff.",
+      "sourceUrl": "https://www.foxnews.com/politics/republican-dooley-jumps-georgias-senate-race-while-touting-support-trump-taking-aim-ossoff",
+      "date": "2025-08",
+      "confidence": "high",
+      "notes": "Repeated consistently across all campaign materials and interviews."
+    },
+    {
+      "topic": "government spending / fiscal",
+      "description": "Described opposing 'lawlessness... inflation everywhere' and cited 'government should spend less' as a core value.",
+      "sourceUrl": "https://www.gpb.org/news/2025/08/04/former-tennessee-coach-derek-dooley-announces-2026-senate-bid-in-georgia",
+      "date": "2025-08",
+      "confidence": "medium",
+      "notes": "Anti-inflation, pro-spending-restraint messaging. No specific budget proposals."
+    },
+    {
+      "topic": "campaign finance reform",
+      "description": "Dooley has stated he would work to prevent lawmakers from using taxpayer money for campaign materials.",
+      "sourceUrl": "https://nationaltoday.com/us/ga/atlanta/news/2026/02/16/former-football-coach-derek-dooley-seeks-georgia-senate-seat-despite-lack-of-voting-history/",
+      "date": "2026-02",
+      "confidence": "low",
+      "notes": "Paraphrase from news coverage. Limited detail."
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "abortion / conservative credentials",
+      "conflict": "Dooley refused to say whether he supports Georgia's existing 6-week heartbeat law, calling it a state issue on which a senator should not have opinions. This was criticized by anti-abortion conservatives within the GOP primary as insufficient. His position is nominally Dobbs-aligned (return to states) but refuses to affirmatively endorse Georgia's law.",
+      "sources": [
+        "AJC / Politically Georgia podcast (Aug 2025)",
+        "PJ Media commentary (Aug 2025)",
+        "Frontline Policy Action response"
+      ]
+    },
+    {
+      "topic": "Trump loyalty / 2020 election",
+      "conflict": "Dooley privately acknowledged Trump lost Georgia in 2020 (Washington Examiner audio), but his campaign spokesperson then cited 'irregularities' to hedge. In a Feb 2026 public interview he refused to say directly whether 2020 was free and fair. This creates tension with his campaign pledge to 'work with President Trump' while not fully embracing election denial.",
+      "sources": [
+        "Washington Examiner audio report (Feb 2026)",
+        "11Alive / The Georgia Vote interview"
+      ]
+    },
+    {
+      "topic": "outsider vs. establishment",
+      "conflict": "Dooley markets himself as a political outsider while being the chosen candidate of Georgia's Republican establishment (Gov. Kemp). Primary competitors Mike Collins and Buddy Carter (incumbent House members with MAGA credentials) attack him as an 'ultimate insider.'",
+      "sources": [
+        "AJC (Feb 2026) — Dooley struggles even with Kemp at his side",
+        "Georgia Recorder (Aug 2025)"
+      ]
+    }
+  ],
+  "campaignContext": {
+    "primaryDate": "2026-05-19",
+    "generalElectionDate": "2026-11-03",
+    "primaryOpponents": [
+      "Mike Collins (U.S. Rep., GA-10, Trump-aligned MAGA candidate)",
+      "Buddy Carter (U.S. Rep., GA-1, Trump-aligned MAGA candidate)"
+    ],
+    "generalElectionOpponent": "Jon Ossoff (D, incumbent U.S. Senator)",
+    "polling": "Approximately 9% in Feb 2026 primary polling. Third-place position behind Collins and Carter despite Kemp endorsement and $2.1M cash on hand.",
+    "fundraising": {
+      "cashOnHand": "$2.1M+ (end of 2025)",
+      "Q4_2025_raised": "$1.1M",
+      "Q3_2025_raised": "approximately $1.85M"
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "border_security (multiple explicit statements: 'opening our border makes us less safe')",
+      "fiscal_taxes (explicit: 'hardworking people should keep more of their money and government should spend less')",
+      "transgender_athletes (explicit: 'biological men shouldn't be playing in women's sports')",
+      "housing_deregulation (stated: cut regulations to reduce home prices)"
+    ],
+    "weakestAxes": [
+      "firearms_policy (no statements found at all)",
+      "climate_energy (no statements found at all)",
+      "criminal_justice (no statements found)",
+      "labor_unions (no statements found)",
+      "education_schoolchoice (no statements found)",
+      "healthcare_coverage_model (only rural doctor incentive mentioned; avoids Medicaid expansion/cuts explicitly)"
+    ],
+    "overallConfidence": "low-to-medium",
+    "notes": "As a first-time candidate with no voting record, evidence is limited almost entirely to campaign messaging and a handful of interviews. The campaign launched in August 2025 but had not developed a detailed policy platform page as of February 2026 research date. Key omissions: no positions found on guns, climate, energy, criminal justice, labor, school choice, or specific healthcare coverage models. The abortion non-answer is the most notable evasion. Scoring axes will be thinly supported for most policy domains — scores should only be generated where evidence exists. Do not fill gaps. The one domain with multiple evidence points is fiscal/economic (less spending, lower taxes, deregulation, market-based housing) — this is the most scoreable cluster."
+  }
+}

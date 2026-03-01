@@ -1,0 +1,256 @@
+{
+  "slug": "chip-roy",
+  "name": "Chip Roy",
+  "party": "Republican",
+  "office": "Texas Attorney General, 2026 Republican Primary",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Three-term Freedom Caucus firebrand with a near-perfect conservative voting record leaving Congress to run for Texas AG; a fiscal hawk who has blocked his own party's spending bills and whose libertarian-leaning federalism occasionally produces surprising cross-partisan positions on overcriminalization and federal overreach.",
+  "keyPositions": [
+    "Heritage Action 100%, CPAC 98%, LCV 2% lifetime -- among the most conservative members of Congress by every major scorecard",
+    "Introduced the Energy Freedom Act to repeal all Inflation Reduction Act clean energy subsidies",
+    "Introduced the SCHOOL Act for universal school choice with federal funds following the student",
+    "Voted Yes on One Big Beautiful Bill only after demanding deeper Medicaid/SNAP cuts and accelerated work requirements",
+    "NRA 'A' grade; opposes red flag laws, background check expansions, and all major gun regulations",
+    "Would pursue overturning Plyler v. Doe and Obergefell v. Hodges as Texas AG"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "One Big Beautiful Bill vote (initially No in committee demanding deeper cuts, Yes on floor after Medicaid work requirements accelerated)",
+        "HR 3321 to end Medicaid expansion differential match rates",
+        "No votes on continuing resolutions citing food stamp spending without reform",
+        "Heritage Action 100% (118th Congress)"
+      ],
+      "notes": "Voted Yes on OBBB only because cuts were made deeper -- his initial No was because the bill didn't cut enough. Introduced legislation that would effectively end ACA Medicaid expansion. Consistent across entire 7-year House tenure."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "No vote on Infrastructure Investment and Jobs Act (called it a '$1.2T monstrosity')",
+        "No vote on Inflation Reduction Act",
+        "No on CHIPS Act (inferred from pattern; not confirmed directly)",
+        "Heritage Action 100%",
+        "Calls for balanced budget amendment before any spending"
+      ],
+      "notes": "Opposes virtually all industrial policy and public investment. CHIPS Act vote is inferred (marked as such) but consistent with documented anti-spending pattern. The Infrastructure Act opposition was framed entirely around deficit impact."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Campaign platform: simplified tax code, postcard-sized filing",
+        "CPAC 98% lifetime score",
+        "Heritage Action 100%",
+        "Insists tax cuts be paired with equal or greater spending cuts"
+      ],
+      "notes": "Consistent fiscal conservative. Supports flatter, simpler tax structure with lower rates. Not a pure flat-tax advocate (would score 10), but strongly in that direction."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "SCHOOL Act (federal funds follow the student to public, private, or homeschool)",
+        "CRT Act to defund schools teaching critical race theory",
+        "Public criticism of Texas state GOP for failing to pass universal school choice",
+        "Multiple terms of education legislation"
+      ],
+      "notes": "One of the most active school-choice advocates in Congress. Legislation spans multiple terms and includes both voucher-style funding portability and curriculum restrictions."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Personalized Care Act / Healthcare Freedom Act (HSAs, direct primary care, market competition)",
+        "HR 3321 to effectively end Medicaid expansion",
+        "No vote on Inflation Reduction Act (included ACA subsidy extensions)",
+        "Daily Signal interview Jan 2025: 'overhaul federal health programs top to bottom'",
+        "One Big Beautiful Bill vote (accelerated Medicaid work requirements)"
+      ],
+      "notes": "Wants to replace current system with market-based alternatives. Not calling for zero public insurance (not a 10), but wants dramatic reduction in public programs. Framing is 'break up Big Insurance, Big Hospital, Big Pharma' through competition, not regulation."
+    },
+    "health_cost_control": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "No vote on Inflation Reduction Act (included Medicare drug price negotiation)",
+        "Healthcare Freedom vision: market competition as cost control mechanism",
+        "HSA expansion and direct primary care as alternatives to price regulation"
+      ],
+      "notes": "Opposes government price-setting. Believes market competition, transparency, and HSAs will control costs. Voted against the first Medicare drug price negotiation authority."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Led House opposition to COVID vaccine mandates for 2+ years",
+        "Introduced No Taxation Without Congressional Consent Act (block mandate enforcement)",
+        "Led 38+ colleagues to defund vaccine mandate enforcement",
+        "Introduced legislation to repeal final federal COVID vaccine mandate",
+        "Filed amicus brief with Ted Cruz against federal workforce vaccine mandate"
+      ],
+      "notes": "Called vaccine mandates 'unconstitutional and flat-out tyrannical.' Among the most vocal anti-mandate members of Congress. Individual liberty framing is central, not anti-vaccine per se -- but the practical effect is strong opposition to public health authority."
+    },
+    "housing_transport_priority": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "No vote on Infrastructure Investment and Jobs Act (included major public transit funding)",
+        "General anti-spending philosophy"
+      ],
+      "notes": "The Infrastructure Act No vote is the primary evidence. Roy's opposition was framed around deficit and spending concerns rather than specific anti-transit ideology. No pro-transit positions found. Scored medium confidence because the vote was about the whole bill, not transit specifically."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "No vote on George Floyd Justice in Policing Act (HR 1280)",
+        "Explicit defense of qualified immunity in floor statement",
+        "Law enforcement family identity (Texas Ranger great-great-grandson, Police Chief grandson)",
+        "Former federal prosecutor",
+        "'Soros-funded DAs and liberal judges' campaign framing"
+      ],
+      "notes": "Strongly supports current law enforcement structure and opposes accountability reforms. Scored 8 rather than 9-10 because he hasn't called for expanding police authority beyond current levels -- his position is defending the status quo against reform efforts."
+    },
+    "justice_sentencing_goals": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "Bipartisan Federal Criminal Code Reform with Reps. McBath, Biggs, Cohen (reduce nonviolent overcriminalization)",
+        "Demanded DOJ explain lenient sentence for violent offender",
+        "No vote on VAWA reauthorization (only San Antonio delegation member to do so)",
+        "Former federal prosecutor focused on violent crime"
+      ],
+      "notes": "Genuinely mixed record. The bipartisan criminal code reform effort is substantive and rooted in libertarian overcriminalization concerns -- not a moderate position but a principled libertarian one. On violent crime, clearly punitive. Net effect pulls him from what would otherwise be 8-9 to a 7. This is one of his most ideologically interesting axes."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "NRA 'A' grade and endorsement",
+        "No vote on Bipartisan Background Checks Act",
+        "Introduced No Backdoor Gun Control Act (limit ATF authority)",
+        "Explicit opposition to red flag laws ('taking guns first, due process later')",
+        "Present (not No) vote on Bipartisan Safer Communities Act after Uvalde"
+      ],
+      "notes": "Voted Present rather than No on the Bipartisan Safer Communities Act after the Uvalde shooting in his home state -- a politically calculated move, not a policy softening. His full record, stated positions, NRA grade, and legislation are maximally pro-gun-rights. The Present vote is the sole anomaly and does not indicate moderation."
+    },
+    "climate_ambition": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "LCV 0% (2024 annual scorecard)",
+        "LCV 2% lifetime scorecard",
+        "No vote on Inflation Reduction Act",
+        "Introduced Energy Freedom Act to repeal all IRA clean energy subsidies",
+        "Criticized EPA 'Clean Air' programs as 'climate hysteria'",
+        "Climate of Denial tracker listing"
+      ],
+      "notes": "One of the lowest possible LCV scores in Congress across a 7-year career. Actively works to dismantle climate policy. Uses 'climate hysteria' language. This is a rare justified score of 10 -- there is no evidence of any climate action support whatsoever."
+    },
+    "climate_energy_portfolio": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Energy Freedom Act: repeal ALL clean energy tax subsidies ('not just solar and wind, but all of them')",
+        "Joined Protecting American Energy Jobs Act petition",
+        "Introduced legislation to repeal Biden fossil fuel production limits",
+        "Advocates coal development on public lands",
+        "Requested offshore wind excluded from permitting reform benefits"
+      ],
+      "notes": "Would eliminate all clean energy subsidies while expanding fossil fuel production. Only possible exception is nuclear energy due to regulatory burden concerns, not environmental ones. Another rare justified 10."
+    },
+    "climate_permitting": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "Opposed SPEED Act permitting reform because it could accelerate clean energy projects",
+        "Requested offshore wind projects be excluded from permitting reform benefits",
+        "Supports reducing regulatory review for fossil fuel projects"
+      ],
+      "notes": "Unusual asymmetric position: wants faster permitting for fossil fuels but SLOWER or unchanged permitting for clean energy. Opposed a permitting reform bill because it was technology-neutral. This makes a simple score on the permitting axis difficult. He's not a pure deregulator -- he's a selective one. Scored 7 rather than 9-10 because his opposition to streamlined permitting for renewables works against the 'faster permitting for everything' pole."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "LCV 2% lifetime (actively works against environmental protection for all). Would overturn Plyler v. Doe (deny public education to undocumented children). Would overturn Obergefell (restrict marriage rights). 'Islamification of Texas' rhetoric targeting religious minorities. Opposed NATO expansion (non-interventionist). Record consistently prioritizes in-group over universal welfare."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "Claims to defend Texas families and communities, but concrete legislative actions cut safety net programs (Medicaid, SNAP) that serve vulnerable community members. The bipartisan criminal code reform shows genuine care for nonviolent offenders caught in overcriminalization. Overall, ideology consistently overrides community welfare concerns when they conflict."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "Defense of traditional marriage (overturn Obergefell). Pro-life 100% (National Right to Life). 'Preserve the Lone Star State's legacy of freedom.' Law enforcement family heritage invoked regularly. Texas Ranger ancestry as identity anchor. Traditional family values framing throughout platform. Not a full +1 because his libertarian streak occasionally challenges established institutional norms (blocking party leadership bills, opposing established government programs)."
+    },
+    "conformity": {
+      "score": 0.2,
+      "reasoning": "Works within legislative systems (introduces bills, serves on committees, follows procedural rules). But the Freedom Caucus is fundamentally an insurgent faction that disrupts institutional norms. Roy has blocked his own party's legislation, defied leadership, and voted against CRs to force confrontation. He conforms to constitutional rules while deliberately disrupting institutional norms when they conflict with ideology."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Border security is the central campaign theme. Law enforcement identity (former federal prosecutor, family heritage). National defense framing. Running for AG to 'secure communities.' However, opposes safety-net programs that provide economic security, and opposed NATO expansion. Security is narrowly defined as physical/border/law enforcement rather than economic or collective security."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Running for state AG is a power-seeking move. Aligned with business interests on deregulation and tax policy. Heritage Action and CPAC alignment represents establishment conservative power structures. However, he has defied party leadership, blocked GOP spending bills, and prioritizes ideology over power accumulation. Not primarily motivated by power -- he has sacrificed political capital to maintain ideological purity."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Meritocracy is embedded in policy positions: work requirements for Medicaid, personal responsibility framing for healthcare (HSAs, direct primary care), school choice as empowering individual achievement. 'Pull yourself up' orientation. Professional trajectory (investment banking, law, federal prosecution, Congress, AG) reflects personal achievement orientation."
+    },
+    "hedonism": {
+      "score": -0.1,
+      "reasoning": "Would restrict personal lifestyle freedoms on social issues (overturn same-sex marriage, pro-life position restricting reproductive choice). Social conservatism limits personal pleasure/freedom framing. Partially offset by anti-mandate position (government should not control personal health choices) and gun rights as personal liberty. Net slightly negative because restrictions on social behavior outweigh libertarian personal-freedom positions."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Freedom Caucus insurgent who disrupts institutional norms and challenges status quo within his own party. Willing to blow up deals, force government shutdown confrontations, and create chaos to advance goals. Anti-establishment orientation within the GOP. But running for AG to defend existing state institutions, not create new ones. A disruptive conservative -- high stimulation in tactics, but conservative in desired end-state."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on gun rights as individual liberty, anti-vaccine-mandate as personal freedom, school choice as parental autonomy. Consistent 'government out of my life' framing on economic and health issues. However, would restrict reproductive rights, overturn same-sex marriage, and limit immigration -- areas where self-direction for others is constrained. The liberty framing is genuine but selectively applied to conservative-coded freedoms. Net moderate positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Bipartisan Safer Communities Act -- Uvalde political calculation",
+      "description": "Voted 'Present' (not 'No') on the first major federal gun safety bill in decades, passed in direct response to the Uvalde school shooting in his home state of Texas. His entire record, NRA A grade, and explicit statements oppose all gun regulations. The Present vote appears to be a political calculation rather than a policy position.",
+      "sources": ["GovTrack vote record S. 2938", "Roy's stated positions on red flag laws and background checks", "NRA A grade"],
+      "scoringImpact": "Scored on full record at 9 (strongly pro-gun-rights). The Present vote is noted but does not moderate the score given overwhelming contrary evidence."
+    },
+    {
+      "topic": "Federal trans care ban -- federalism vs. social conservatism",
+      "description": "Opposed a federal ban on hormone therapy for trans minors -- not because he supports gender-affirming care, but because he opposed federal preemption of state authority. He simultaneously stated he would work to overturn Obergefell as Texas AG. His states-rights federalism is consistent even when it conflicts with conservative culture-war priorities.",
+      "sources": ["Texas Tribune Feb 2026", "KXAN debate coverage Feb 2026", "KSAT debate coverage Feb 2026"],
+      "scoringImpact": "This nuance is reflected in the conformity and self-direction value scores. Does not affect axis scores directly as there is no health_reproductive axis."
+    },
+    {
+      "topic": "One Big Beautiful Bill -- voted No then Yes",
+      "description": "Initially voted No in Budget Committee (May 2025), then switched to Present, then voted Yes on floor. His No was because the bill didn't cut safety net programs DEEPLY ENOUGH. Final Yes came only after leadership agreed to accelerate Medicaid work requirements. His stated reason: 'promise of deep entitlement cuts' won his vote.",
+      "sources": ["The Hill", "Roy's press release on House passage"],
+      "scoringImpact": "The No-to-Yes trajectory actually reinforces the extreme safety-net score (9) rather than moderating it -- he pushed the bill further toward Pole B as a condition of support."
+    },
+    {
+      "topic": "Permitting reform -- selective deregulation",
+      "description": "Opposed the SPEED Act permitting reform because it would benefit clean energy projects alongside fossil fuels. Requested that offshore wind be explicitly excluded from permitting reform benefits. This asymmetric position (deregulate fossil fuels, maintain or increase regulation for renewables) is unusual and makes the climate_permitting axis harder to score on a single dimension.",
+      "sources": ["Congressional record on SPEED Act opposition", "Offshore wind exclusion request"],
+      "scoringImpact": "climate_permitting scored at 7 with medium confidence, reflecting that he is not a pure deregulator but a selective one."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["housing_supply_zoning", "housing_affordability_tools"],
+    "reasonSkipped": "No direct housing policy evidence found in congressional record or campaign platform. Research file explicitly notes these are inference-only from general philosophy. Per evidence floor rule, omitted rather than scored on inference alone.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "Housing policy positions entirely absent -- no zoning, affordability, or housing-specific legislation found",
+      "AFL-CIO exact score not confirmed numerically (expected near 0% based on record but not retrieved)",
+      "CHIPS Act vote is inferred from pattern, not confirmed from direct vote record",
+      "No specific drug sentencing positions found beyond the general overcriminalization reform effort"
+    ]
+  }
+}

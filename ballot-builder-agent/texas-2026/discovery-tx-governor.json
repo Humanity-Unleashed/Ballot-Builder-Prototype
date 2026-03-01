@@ -1,0 +1,179 @@
+{
+  "generatedAt": "2026-02-27T00:00:00Z",
+  "state": "Texas",
+  "contests": [
+    {
+      "id": "TX-GOVERNOR-2026",
+      "office": "Governor",
+      "state": "TX",
+      "district": null,
+      "primaryDate": "2026-03-03",
+      "primaryRunoffDate": "2026-05-26",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Greg Abbott",
+      "raceRating": "Solid Republican",
+      "raceRatingSource": "Cook Political Report",
+      "screeningNotes": "11 Republican filers and 9 Democratic filers as of filing deadline. Manifest includes only viable candidates per screening rule: Abbott (clear R frontrunner), Hinojosa (clear D frontrunner at 37% in primary poll), and Brooks (only named R challenger with an active campaign, elected office credentials, and a differentiated policy rationale). All other filers omitted due to lack of credible news coverage, fundraising, or polling presence.",
+      "candidates": [
+        {
+          "slug": "greg-abbott",
+          "name": {
+            "full": "Greg Abbott",
+            "ballotDisplay": "Greg Abbott"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "incumbent",
+          "campaignWebsite": "https://www.gregabbott.com",
+          "fundraisingOnHand": 105700000,
+          "fundraisingNotes": "$105.7M on hand as of Dec 2025; raised $22.7M in H2 2025 from 48,000+ contributors across all 254 Texas counties",
+          "pollingNotes": "86% favorable among Republican primary voters (UH Hobby School, Jan 2026). Leads general election matchup vs. Hinojosa 49%-42%.",
+          "evidenceTier": "high",
+          "notes": "Three-term incumbent seeking unprecedented fourth term. Announced re-election bid Nov 2025, launched campaign officially in Houston. Dominant fundraising advantage. Key agenda: property tax reform, border security. Faces criticism from conservative challengers over school voucher expansion and property tax relief pace."
+        },
+        {
+          "slug": "evelyn-brooks",
+          "name": {
+            "full": "Evelyn Brooks",
+            "ballotDisplay": "Evelyn Brooks"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://brooksfortexasgovernor.com",
+          "fundraisingOnHand": null,
+          "fundraisingNotes": "No public fundraising totals found in available sources. Significantly outspent by Abbott.",
+          "pollingNotes": "No standalone primary polling found for Brooks. Abbott holds overwhelming favorability (86%) among R primary voters.",
+          "evidenceTier": "medium",
+          "notes": "Texas State Board of Education member (District 14, since Jan 2023), Vice Chair of Committee on Instruction. Former elementary teacher with 26+ years education experience; founded Frisco homeschool program. Was once an Abbott ally; turned against him over school vouchers (SB 1 education savings accounts). Campaign focuses on: strengthening traditional public schools, property tax relief, border security. Credentialed candidate with active website, press releases, and editorial coverage in San Antonio Report, Texas Tribune, and ATPE. Included per screening rule as the one named R challenger with meaningful public presence. Unlikely to force a runoff given Abbott's dominance."
+        },
+        {
+          "slug": "gina-hinojosa",
+          "name": {
+            "full": "Gina Hinojosa",
+            "ballotDisplay": "Gina Hinojosa"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://ginafortexas.com",
+          "fundraisingOnHand": null,
+          "fundraisingNotes": "Raised $1.3M in first 10 weeks of campaign (Oct-Dec 2025), including $300K self-loan. Average donation under $50; no corporate PAC money. Largest single donation: $25K from philanthropist Suzanne Booth. Texas AFL-CIO endorsed.",
+          "pollingNotes": "Leads Democratic primary 37%, with Chris Bell at 7%, Bobby Cole at 6%, Patricia Abrego at 5% (UH Hobby School, Jan 2026). Trails Abbott 42%-49% in general matchup per same poll; campaign claims internal poll shows statistical tie.",
+          "evidenceTier": "high",
+          "notes": "Texas House Representative, District 49 (Austin). Attorney; born and raised in Brownsville, product of RGV public schools. UT undergraduate, George Washington University law. Announced candidacy Oct 15, 2025. Top-funded Democratic candidate after Andrew White dropped out Jan 5, 2026 and endorsed her. Endorsed by Texas AFL-CIO and Austin American-Statesman. Campaign priorities: affordable healthcare, neighborhood public schools (anti-voucher), housing affordability, government accountability. Clear Democratic primary frontrunner by polling and fundraising margins."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [
+    {
+      "slug": "tx-2026-r-primary-prop-10-party-ballot-measures",
+      "state": "TX",
+      "officialTitle": "Texas Republican Primary Ballot Propositions (10 non-binding measures)",
+      "shortName": "Republican Primary Advisory Propositions",
+      "electionDate": "2026-03-03",
+      "certificationStatus": "confirmed",
+      "yesVoteMeans": "Endorses the listed policy position as a Republican Party priority for the 2027 legislative session. Topics include: voter approval for local property tax increases, prohibiting denial of healthcare based on vaccination status, teaching that life begins at fertilization, banning gender clinics in K-12 schools, term limits on elected officials, banning large-scale water export, reducing public services for undocumented immigrants, and prohibiting Sharia Law.",
+      "noVoteMeans": "Does not endorse the position as a party priority. Votes are non-binding on any officeholder.",
+      "evidenceTier": "high",
+      "notes": "10 non-binding advisory propositions on the Republican primary ballot. These guide party platform and legislative priorities but have no direct legal effect. Reported by Fox 7 Austin, The Texan, and Houston Public Media."
+    },
+    {
+      "slug": "tx-2026-d-primary-prop-13-party-ballot-measures",
+      "state": "TX",
+      "officialTitle": "Texas Democratic Primary Ballot Propositions (13 non-binding measures)",
+      "shortName": "Democratic Primary Advisory Propositions",
+      "electionDate": "2026-03-03",
+      "certificationStatus": "confirmed",
+      "yesVoteMeans": "Endorses the listed policy position as a Democratic Party priority. Topics include: banning racially motivated redistricting, banning mid-decade congressional redistricting, federal tax relief for working-class individuals, accessible public transportation expansion, and red flag laws to prevent domestic abusers from purchasing firearms.",
+      "noVoteMeans": "Does not endorse the position as a party priority. Votes are non-binding on any officeholder.",
+      "evidenceTier": "high",
+      "notes": "13 non-binding advisory propositions on the Democratic primary ballot. Full list reported by The Baylor Lariat and Houston Public Media. These guide platform and do not carry legal force."
+    }
+  ],
+  "dataGaps": [
+    "No confirmed fundraising totals for Evelyn Brooks — Texas campaign finance reports would need to be checked at the Texas Ethics Commission (ethics.state.tx.us) for Q4 2025 and Q1 2026 filings.",
+    "Republican primary poll numbers showing only Abbott's overall favorability (86%); no head-to-head primary poll found showing Abbott vs. Brooks vs. other challengers with specific percentages.",
+    "November 2026 general election statewide ballot propositions have not been certified as of Feb 27, 2026. No constitutional amendments or citizen initiatives confirmed for the November ballot at this time.",
+    "Primary election results will be available after March 3, 2026. If Brooks or any challenger forces a runoff (requires Abbott to fall below 50%), manifest should be updated with runoff candidates."
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Texas_gubernatorial_election,_2026",
+      "description": "Ballotpedia Texas Governor 2026 race overview — full candidate list and race context",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas_gubernatorial_election,_2026_(March_3_Republican_primary)",
+      "description": "Ballotpedia Republican primary page — all 11 R filers",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas_gubernatorial_election,_2026_(March_3_Democratic_primary)",
+      "description": "Ballotpedia Democratic primary page — all 9 D filers including Hinojosa",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/01/21/2026-texas-governor-primary-guide/",
+      "description": "Texas Tribune primary guide — candidate backgrounds, fundraising, context",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/01/15/texas-governors-race-greg-abbott-gina-hinojosa-2026-election/",
+      "description": "Texas Tribune — Abbott $106M war chest announcement, Hinojosa fundraising",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.uh.edu/hobby/primary2026/",
+      "description": "UH Hobby School of Public Affairs — Jan 2026 statewide primary poll (governor race results: D primary Hinojosa 37%, general Abbott 49% vs. Hinojosa 42%)",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/10/15/gina-hinojosa-texas-governor-campaign-launch-2026-greg-abbott/",
+      "description": "Texas Tribune — Hinojosa campaign launch announcement, Oct 15, 2025",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.houstonpublicmedia.org/articles/news/politics/elections/2026/01/07/540095/texas-governor-election-2026-gina-hinojosa-greg-abbott/",
+      "description": "Houston Public Media — Hinojosa fundraising detail ($1.3M, donor breakdown)",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://sanantonioreport.org/profile/evelyn-brooks-2026-candidate-for-texas-governor/",
+      "description": "San Antonio Report — Evelyn Brooks candidate profile",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://brooksfortexasgovernor.com/",
+      "description": "Evelyn Brooks official campaign website — confirmed active",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.gregabbott.com",
+      "description": "Greg Abbott official campaign website — confirmed active",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://ginafortexas.com/",
+      "description": "Gina Hinojosa official campaign website — confirmed active",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.cookpolitical.com/ratings/governor-race-ratings",
+      "description": "Cook Political Report 2026 Governor race ratings — Texas rated Solid Republican",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/02/24/544238/what-propositions-are-on-the-texas-primary-ballots/",
+      "description": "Houston Public Media — Texas 2026 primary ballot propositions (R and D)",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_Texas_gubernatorial_election",
+      "description": "Wikipedia — 2026 Texas gubernatorial election overview",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    }
+  ]
+}

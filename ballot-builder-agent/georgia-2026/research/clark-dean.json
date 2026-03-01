@@ -1,0 +1,285 @@
+{
+  "slug": "clark-dean",
+  "name": "Clark Dean",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Executive Managing Director, Partner, and Board Member at Transwestern (Houston-based commercial real estate firm); Founder of Transwestern's Transaction Sciences Group",
+    "priorRoles": [
+      "Board of Councilors Chair, The Carter Center (appointed February 2024)",
+      "President, Rotary Club of Atlanta (past president)",
+      "Involvement with Georgia-Pacific on 51-story headquarters tower conversion project"
+    ],
+    "education": "B.S. Biomedical Engineering, Harvard University (also played varsity football and served as class officer)",
+    "background": "Alabama-born. Career spans biomedical engineering, management consulting, and financial structuring. Built nationally recognized Transaction Sciences Group practice helping companies, nonprofits, and communities with real estate decisions. Active in Atlanta civic organizations: Shepherd Center (chair-elect), YMCA of Metro Atlanta (chair), Metro Atlanta Chamber, The Atlanta Opera, Café Momentum Atlanta.",
+    "noPriorElectedOffice": true
+  },
+  "campaignWebsite": {
+    "url": "https://clarkdeanforga.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch unavailable; content reconstructed from search snippets referencing site pages directly.",
+    "statedPositions": [
+      {
+        "topic": "affordability / housing",
+        "quote": "committed to building an affordable Georgia where every family has the opportunity to own a home and provide for their family's future",
+        "sourceUrl": "https://www.clarkdeanforga.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Homepage language; no specific housing policy mechanism stated (zoning reform, subsidies, etc.)"
+      },
+      {
+        "topic": "healthcare access",
+        "quote": "strengthen Georgia's healthcare system by expanding access to quality care, improving outcomes in both rural and urban communities, and tackling the challenges that hold families back from living healthy lives",
+        "sourceUrl": "https://www.clarkdeanforga.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "General access framing; no mention of Medicaid expansion, ACA, or insurance mechanisms"
+      },
+      {
+        "topic": "maternal mortality / women's health",
+        "quote": "Let's not just be defensive about getting away from 37th in maternal mortality. Let's be number one in women's health",
+        "sourceUrl": "https://www.41nbc.com/clark-dean-makes-case-for-outsider-leadership-in-georgia-governors-race/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Specific aspirational goal. Does not specify policy mechanism. Notably frames as women's health outcome goal, not abortion-rights framing."
+      },
+      {
+        "topic": "education",
+        "quote": "The key to a prosperous future begins in the classroom, and Clark will focus on improving Georgia's education system so Georgians can dream big and achieve bigger",
+        "sourceUrl": "https://www.clarkdeanforga.com/",
+        "date": "2025-2026",
+        "confidence": "low",
+        "notes": "Values statement only; no specific curriculum, funding, or school-choice positions stated"
+      },
+      {
+        "topic": "early childhood education",
+        "quote": "plans to focus on early childhood education, workforce development, and healthcare",
+        "sourceUrl": "https://www.wsbtv.com/news/local/atlanta/georgia-businessman-clark-dean-enters-an-already-full-governors-race/NRKQ7DVAJJE73GJWEH773LQ2IA/",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "Repeated across multiple sources as a stated priority; no funding mechanism specified"
+      },
+      {
+        "topic": "economic development",
+        "quote": "believe prosperity should be shared across every corner of the state and will champion innovation, workforce development, and public-private partnerships to grow Georgia's economy, attract new investment, and prepare the next generation for success",
+        "sourceUrl": "https://www.clarkdeanforga.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Public-private partnerships language suggests market-oriented but not pure privatization approach"
+      },
+      {
+        "topic": "government efficiency",
+        "quote": "questioning whether state government is operating as efficiently as possible",
+        "sourceUrl": "https://www.wsbtv.com/news/local/atlanta/georgia-businessman-clark-dean-enters-an-already-full-governors-race/NRKQ7DVAJJE73GJWEH773LQ2IA/",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "Consistent with outsider/businessman framing; no specific agency consolidation or spending targets named"
+      }
+    ],
+    "platformFramework": {
+      "name": "ASAP Framework",
+      "pillars": [
+        "Affordability — making housing, healthcare, and cost of living accessible",
+        "Strength — safety, security, and efficient government",
+        "Accessibility — particularly in education and healthcare",
+        "Prosperity — economic mobility and wealth building"
+      ],
+      "sourceUrl": "https://www.clarkdeanforga.com/",
+      "notes": "The ASAP acronym organizes his platform; specific policy mechanisms are sparse on the website"
+    }
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No prior elected office. No legislative voting record exists. First-time candidate."
+  },
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA rating found — consistent with no prior elected office. No public statement on gun policy found."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV rating found — consistent with no prior elected office. No public statement on climate/environment found."
+    },
+    {
+      "organization": "Georgia Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No scorecard found; Dean serves on Metro Atlanta Chamber board, suggesting pro-business alignment"
+    },
+    {
+      "organization": "Planned Parenthood / NARAL",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement or opposition found. Maternal health focus is his only reproductive health adjacent statement."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "None confirmed",
+      "type": "none found",
+      "cycle": "2026",
+      "notes": "As of February 2026, no major endorsements have been reported. Polling at 1% in AJC GOP primary poll."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "WSB-TV Channel 2 (Atlanta)",
+      "date": "2025-09",
+      "url": "https://www.wsbtv.com/news/local/atlanta/georgia-businessman-clark-dean-enters-an-already-full-governors-race/NRKQ7DVAJJE73GJWEH773LQ2IA/",
+      "interviewer": "Richard Elliot",
+      "keyExchanges": [
+        {
+          "topic": "outsider appeal",
+          "quote": "I think a lot of folks believe that an outsider businessperson that has a deep care and concern for the community that really believes in the promise of the American dream and can inspire people to get after it",
+          "notes": "Outsider identity and business experience as primary differentiators"
+        },
+        {
+          "topic": "Kemp legacy",
+          "quote": "build on what he considers the successes of Gov. Brian Kemp's administration, particularly in economic development, while also questioning whether state government is operating as efficiently as possible",
+          "notes": "Explicit continuity with Kemp agenda on economy; mild efficiency critique"
+        }
+      ]
+    },
+    {
+      "outlet": "41NBC",
+      "date": "2026",
+      "url": "https://www.41nbc.com/clark-dean-makes-case-for-outsider-leadership-in-georgia-governors-race/",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / maternal mortality",
+          "quote": "Let's not just be defensive about getting away from 37th in maternal mortality. Let's be number one in women's health",
+          "notes": "Aspirational goal; no mechanism specified. Georgia ranks near bottom nationally for maternal mortality."
+        },
+        {
+          "topic": "affordability",
+          "quote": "rising costs for housing, healthcare and everyday necessities as major challenges facing Georgians",
+          "notes": "Frames affordability as central issue; no tax or subsidy proposals stated"
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Journal-Constitution",
+      "date": "2025-09",
+      "url": "https://www.ajc.com/politics/2025/09/clark-dean-enters-georgia-governors-race-as-gop-outsider/",
+      "keyExchanges": [
+        {
+          "topic": "campaign identity",
+          "quote": "outsider with business experience who can carry on Gov. Brian Kemp's legacy",
+          "notes": "AJC characterized his positioning; explicitly aligned with Kemp legacy"
+        }
+      ]
+    },
+    {
+      "outlet": "Hive Research Speaker Series",
+      "date": "2025",
+      "url": "https://www.hiveresearch.com/post/from-biomedical-engineering-to-publicservice-clark-dean-on-building-georgia-sfuture",
+      "keyExchanges": [
+        {
+          "topic": "personal philosophy",
+          "quote": "everything starts with how we think — thoughts become actions, actions become habits, and habits form character",
+          "notes": "Leadership/character framing from ninth-grade football coach; not a policy statement"
+        }
+      ]
+    },
+    {
+      "outlet": "Bisnow Atlanta",
+      "date": "2025-09",
+      "url": "https://www.bisnow.com/atlanta/news/commercial-real-estate/transwestern-exec-throwing-hat-in-ring-for-georgia-governor-130967",
+      "keyExchanges": [
+        {
+          "topic": "real estate background",
+          "notes": "Coverage focused on his CRE background; helped Georgia-Pacific plan conversion of 51-story Atlanta HQ tower at 133 Peachtree St. into 400 apartments and 125K SF retail. Relevant background for housing/development policy credibility."
+        }
+      ]
+    }
+  ],
+  "campaignAnnouncement": {
+    "date": "2025-09-16",
+    "source": "EZ Newswire",
+    "url": "https://www.eznewswire.com/newsroom/clark-dean-announces-candidacy-georgia-governor",
+    "selfDescription": "Atlanta Businessman, Community Servant and Principled Conservative",
+    "keyLanguage": [
+      "stand firm in our shared conservative American principles",
+      "put Georgia families first and deliver real results",
+      "businessman and outsider who wants to prioritize solutions over politics",
+      "carrying on Gov. Brian Kemp's legacy"
+    ],
+    "trumpComparison": "Campaign website explicitly compared Dean to Donald Trump as 'a businessman and outsider who wants to prioritize solutions over politics'"
+  },
+  "positionGaps": [
+    {
+      "topic": "abortion / reproductive rights",
+      "notes": "No stated position found. Georgia's heartbeat law (HB 481, 2019) is in effect. Dean has not commented publicly on whether he would maintain, expand, or roll back existing restrictions. His maternal mortality focus is the only adjacent statement."
+    },
+    {
+      "topic": "firearms policy",
+      "notes": "No stated position found on gun regulations, background checks, or Second Amendment policy."
+    },
+    {
+      "topic": "immigration",
+      "notes": "No stated position found on state-level immigration enforcement, E-Verify, or sanctuary city policy."
+    },
+    {
+      "topic": "climate / environment",
+      "notes": "No stated position found on carbon policy, Georgia Power / coal plant transitions, or environmental regulation."
+    },
+    {
+      "topic": "Medicaid expansion",
+      "notes": "Georgia is one of 10 states that has not fully expanded Medicaid. Dean has not stated a position on full Medicaid expansion. His healthcare access framing is consistent with either rural access subsidies or full expansion, but no specificity."
+    },
+    {
+      "topic": "taxes",
+      "notes": "No stated position on income tax, corporate tax, or property tax. Aligns with Kemp legacy which included tax cuts and rebates, but no explicit commitment."
+    },
+    {
+      "topic": "school choice / vouchers",
+      "notes": "Education mentioned only in general terms ('improving Georgia's education system'). No position on charter schools, vouchers, or private school choice programs."
+    },
+    {
+      "topic": "criminal justice / policing",
+      "notes": "No stated position found. 'Strength' pillar in ASAP framework implies public safety priority but no specifics."
+    }
+  ],
+  "positionConflicts": [],
+  "raceContext": {
+    "primaryDate": "2026-05-19",
+    "runoffDate": "2026-06-16",
+    "generalDate": "2026-11-03",
+    "pollingNote": "Clark Dean polling at 1% in AJC GOP primary poll as of research date. Eight candidates in Republican primary.",
+    "keyCompetitors": [
+      "Brian Jack (Republican, U.S. Representative)",
+      "Mike Collins (Republican, U.S. Representative)",
+      "Ruwa Romman (Democratic, State Representative)"
+    ],
+    "openSeatNote": "Gov. Brian Kemp is term-limited and not running."
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "healthcare_access — explicit, repeated focus on rural access and maternal mortality outcomes",
+      "public_investment / economic_development — public-private partnerships, workforce development, Kemp continuity",
+      "government_efficiency — explicit skepticism of government efficiency, outsider framing"
+    ],
+    "weakestAxes": [
+      "firearms_policy — no evidence",
+      "climate / energy — no evidence",
+      "immigration — no evidence",
+      "abortion / reproductive rights — no explicit position despite Georgia's active heartbeat law context",
+      "school_choice — mentioned education only generically",
+      "zoning / housing supply — mentions affordability but no specific housing production mechanism"
+    ],
+    "overallConfidence": "low-medium",
+    "notes": "First-time candidate with no voting record. Platform is broad and aspirational with limited policy specificity. The ASAP framework provides structural pillars but few concrete positions. Healthcare/maternal mortality and affordability are the only areas with repeated, substantive statements. Significant gaps exist on social issues (abortion, guns), climate, and immigration — standard Republican primary topics — which may reflect deliberate strategic ambiguity or simply undeveloped platform. Polling at 1% in GOP primary field of eight candidates. Carter Center board chair role suggests cross-partisan civic credibility but is not a policy signal."
+  }
+}

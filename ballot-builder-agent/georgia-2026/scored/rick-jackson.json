@@ -1,0 +1,137 @@
+{
+  "slug": "rick-jackson",
+  "name": "Rick Jackson",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-25T12:00:00Z",
+  "profileSummary": "Healthcare billionaire and first-time candidate running as a self-funded MAGA outsider; platform centers on income tax elimination, Medicaid expansion opposition, DEI bans, and immigration enforcement.",
+  "keyPositions": [
+    "Pledges to cut Georgia's state income tax in half within 4 years and eliminate it within 8, with a freeze on property taxes",
+    "Opposes Medicaid expansion despite being a healthcare industry billionaire",
+    "Would ban DEI in state government, public universities, and schools and 'criminalize reverse discrimination'",
+    "Supports Georgia's 6-week abortion ban (LIFE Act) and says he would not change it",
+    "Pledges to make Georgia 'number one state for deporting criminal illegal immigrants'"
+  ],
+  "axisStances": {
+    "econ_investment": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Campaign action plan — AI/tech to eliminate waste", "General anti-spending framing"],
+      "notes": "No public investment proposals found. Platform is entirely structured around tax cuts and spending reduction. 'Use technology and AI to eliminate wasteful spending' is the only specific mechanism. Low confidence because evidence is a campaign website generality without specifics on what programs would be cut."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Campaign action plan", "WABE Feb 2026 interview", "AJC launch coverage", "11alive coverage"],
+      "notes": "Explicit pledge to eliminate state income tax entirely within 8 years — among the most aggressive tax-cut proposals in any 2026 gubernatorial race. Paired with property tax freeze. Accountability pledge: 'If we can't cut the state income tax in half and freeze property taxes, I won't run again.' Multiple independent sources confirm. Scored 9 rather than 10 because the property tax freeze preserves an existing tax rather than eliminating it."
+    },
+    "econ_school_choice": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Campaign action plan — 'parental authority in Georgia classrooms'", "Georgia Recorder — 'purge schools of woke ideology'"],
+      "notes": "Anti-DEI and parental authority framing clearly signals sympathy with school choice movement, but no explicit voucher, charter, or school choice mechanism was proposed. Scored 7 (moderate Pole B lean) rather than higher because the evidence is about curriculum control, not school funding structure. If explicit school choice policy emerges, this should be re-scored."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["AJC interview — opposes Medicaid expansion", "Georgia Democratic Party press release (position verified independently)", "DGA announcement"],
+      "notes": "Explicitly opposes Medicaid expansion, which would cover hundreds of thousands of uninsured Georgians and potentially prevent further rural hospital closures. Notable tension: Jackson built a $3B healthcare staffing empire but opposes the primary mechanism for expanding healthcare access in Georgia. No alternative coverage proposal was found. Scored 8 (strong market orientation) rather than 10 because he has not called for repealing existing programs — his position is to maintain status quo and oppose expansion."
+    },
+    "justice_policing_accountability": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Campaign about page — pro-law-enforcement values statement"],
+      "notes": "General pro-law-enforcement statement rooted in personal biography ('I grew up in places where law enforcement was the difference between safety and chaos'). No specific policy proposals on qualified immunity, oversight bodies, or funding levels. Scored 7 (support law enforcement / oppose major reforms) based on values framing. Low confidence — a values statement without policy specifics."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "Active signals against universalism: ban DEI programs, 'criminalize reverse discrimination,' aggressive immigration enforcement, opposition to Medicaid expansion that would cover vulnerable populations. No universalist policy proposals found — no environmental, international, or broad social welfare positions. The foster care work shows care for a specific vulnerable group but does not extend to universal welfare orientation."
+    },
+    "benevolence": {
+      "score": 0.4,
+      "reasoning": "Genuine philanthropic record on foster care — championed and passed legislation providing free college tuition for former foster youth. Supports FaithBridge Foster Care. Tuition freeze for public college students shows community investment impulse. However, benevolence is bounded: opposes Medicaid expansion that would help his state's most vulnerable, and his community care focus is selective rather than broad."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "Strong traditional values orientation: faith-based philanthropy (Giving Films produces faith-based movies), 'entirely pro life,' supports existing 6-week abortion law, anti-DEI as defense of traditional norms, 'restore common sense and parental authority in classrooms,' 'schools should educate rather than indoctrinate.' Cultural conservatism is central to campaign identity."
+    },
+    "conformity": {
+      "score": -0.1,
+      "reasoning": "Mixed signals. On one hand: rule-of-law immigration enforcement, pro-law-enforcement framing. On the other: explicitly runs as political outsider with 'nothing to lose,' sued sitting Lt. Governor over campaign finance law, avoided press questions at launch, entered race as a disruptive force. Couldn't name a single Trump policy he disagrees with — suggests conformity to a leader rather than to institutional norms. Net signal is slightly anti-conformity because his campaign identity is built around disrupting the existing political order."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Strong security signals: pro-law-enforcement from personal experience, immigration enforcement focus ('number one state for deporting criminal illegal immigrants'), personal narrative rooted in escaping unsafe environments. Property tax freeze framed as protecting families from being 'priced out of their homes' — economic security language. No national defense positions found (state-level race), but domestic security orientation is clear."
+    },
+    "power": {
+      "score": 0.7,
+      "reasoning": "Billionaire self-funding a $50M campaign; CEO of $3B company; 'million dollar Trump donor'; seeking the highest state office with zero prior political experience; running ads in DC and Palm Beach to get Trump's personal attention; aligning with elite donor class. Power pursuit is central to campaign structure — using personal wealth to bypass traditional political gatekeepers and buy visibility. Corporate PAC-level self-funding rather than grassroots model."
+    },
+    "achievement": {
+      "score": 0.7,
+      "reasoning": "Rags-to-riches narrative is the foundation of his candidacy: grew up in public housing, 5 foster homes, 13 schools, didn't finish college — built a $3B company. Self-made meritocracy story is explicitly used as qualification for office. Tuition freeze and foster youth education support channel achievement values. The implicit argument: 'I succeeded through personal effort, I can make Georgia succeed.'"
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No signals in either direction. No lifestyle liberty positions, no personal freedom framing, no recreational policy positions. Faith-based orientation suggests modest social conservatism on personal behavior, but no explicit restrictive positions beyond abortion were found."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Some disruption signals: 'political outsider with nothing to lose,' $50M entry that reshuffled the entire primary, suing the frontrunner, 'AI to eliminate waste' as modernization framing. But campaign substance is culturally conservative (anti-DEI, pro-life, anti-immigration), which seeks to restore rather than transform. Net: modest stimulation from outsider posture, constrained by traditionalist policy substance."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Conflicting signals across domains. Pro-self-direction: income tax elimination (economic liberty), parental authority over education, personal responsibility narrative. Anti-self-direction: 'criminalize reverse discrimination' (government policing thought/speech), pro-life position (restricting reproductive autonomy), DEI ban (restricting institutional speech). Net is near-neutral — economic liberty claims are offset by social restriction proposals."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Healthcare industry background vs. Medicaid expansion opposition",
+      "description": "Jackson built a $3B healthcare staffing empire serving 5M+ patients in 1,300+ facilities, yet opposes Medicaid expansion that would extend coverage to hundreds of thousands of uninsured Georgians and potentially prevent further rural hospital closures (9 rural Georgia hospitals have closed since 2010). No alternative coverage proposal was offered.",
+      "sources": ["AJC interview", "Georgia Democratic Party (verified independently)", "DGA announcement", "Jackson Healthcare corporate site"],
+      "scoringImpact": "Scored health_coverage_model at 8 based on explicit opposition. Noted in benevolence value score as limiting factor."
+    },
+    {
+      "topic": "Blanket Trump alignment despite policy costs to Georgians",
+      "description": "Jackson told AJC he couldn't name a single White House policy he disagrees with, even as Trump tariffs are reported to cost Georgia families $1,200+ annually and ACA-related changes are raising premiums by $860+/month. His healthcare industry background makes blanket support of policies harming healthcare affordability particularly notable.",
+      "sources": ["AJC — 'Why Rick Jackson says he'll be Trump's favorite governor'"],
+      "scoringImpact": "Noted in conformity value score. Contributes to low confidence on several axes — blanket alignment suggests positions may be strategic rather than deeply held."
+    },
+    {
+      "topic": "Outsider identity vs. elite financial power",
+      "description": "Jackson presents as a 'straight-shooting outsider with nothing to lose' but is deploying $50M of personal wealth — one of the largest self-funded gubernatorial launches in Georgia history — and running ads in DC and Palm Beach media markets specifically to attract Trump's attention. The outsider framing contrasts with the elite-access strategy.",
+      "sources": ["AJC launch coverage", "Washington Examiner", "11alive"],
+      "scoringImpact": "Reflected in power value score (0.7) and conformity score (-0.1). Outsider identity is more about political inexperience than anti-establishment substance."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 5,
+    "axesSkipped": [
+      "econ_safetynet",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate with no voting record, no interest group scorecards, and limited policy specifics. Campaign launched in early February 2026 with a focus on taxes, immigration, DEI, and abortion. No positions on climate, energy, housing, guns, sentencing, healthcare cost control, or public health mandates were found in any source. Press access was limited at launch (Jackson walked away from reporters at launch event).",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No climate or energy positions — zero evidence on any environmental axis",
+      "No firearms policy positions — cannot score despite likely pro-gun orientation",
+      "No housing or transportation positions",
+      "No criminal justice positions beyond general pro-police values statement",
+      "No healthcare cost control positions despite healthcare industry background",
+      "No specific government spending cut targets despite efficiency pledge",
+      "Limited press access — Jackson avoided Q&A at launch, reducing interview-depth evidence",
+      "Abortion position maps to reproductive rights but no standalone reproductive axis exists in the framework — captured in notes and values only"
+    ]
+  }
+}

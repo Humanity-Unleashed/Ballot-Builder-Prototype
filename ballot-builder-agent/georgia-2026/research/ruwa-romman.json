@@ -1,0 +1,439 @@
+{
+  "slug": "ruwa-romman",
+  "name": "Ruwa Romman",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Georgia State Representative, District 97 (Duluth/Gwinnett County, January 2023–present)",
+    "priorRoles": [
+      "Senior Consultant, Deloitte",
+      "Communications Director, CAIR Georgia",
+      "Field Organizer, Georgia Muslim Voter Project",
+      "Co-founder, Georgia Volunteer Hub (2020) — trained thousands of volunteers for Georgia Senate runoff"
+    ],
+    "education": "B.A., Oglethorpe University; M.P.P., Georgetown University McCourt School of Public Policy (2019)",
+    "background": "Born June 14, 1993 in Jordan to a Palestinian family; immigrated to the US at age 7. First Palestinian-American and first Muslim woman elected to the Georgia House of Representatives. Deep community-organizing background; active in Georgia civic engagement since 2014. Won District 97 (Duluth-area, Gwinnett County) in 2022 and re-elected 2024."
+  },
+  "campaignWebsite": {
+    "url": "https://ruwaforgeorgia.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch unavailable; positions reconstructed from news coverage, interviews, and public statements.",
+    "statedPositions": [
+      {
+        "topic": "minimum_wage / labor",
+        "quote": "I want to be governor of Georgia so that we can raise the minimum wage, feed hungry kids, reopen hospitals, invest in small businesses, and take homes back from corporations.",
+        "sourceUrl": "https://theatlantavoice.com/ruwa-romman-campaign-georgia/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Central, repeated campaign commitment. Georgia minimum wage has not been raised since 1997 (still at federal $7.25 floor). Romman explicitly noted she was seven years old the last time it was raised."
+      },
+      {
+        "topic": "healthcare / Medicaid expansion",
+        "quote": "Expanding Medicaid coverage to spur the reopening of rural hospitals",
+        "sourceUrl": "https://www.salon.com/2025/11/24/ruwa-rommans-case-for-economic-populism-in-georgia/",
+        "date": "2025-11",
+        "confidence": "high",
+        "notes": "Medicaid expansion is a top-three stated priority. Also phrased as 'subsid[izing] access to health care to make Georgia's relatively young workforce even more attractive to employers' (Decaturish/Chamblee forum, Feb 2026). Georgia is one of the remaining non-expansion states."
+      },
+      {
+        "topic": "housing / corporate landlords",
+        "quote": "Limiting corporate home buying to make rent and homeownership more affordable; take homes back from corporations",
+        "sourceUrl": "https://atlanta.capitalbnews.org/ruwa-romman-talks-run-for-georgia-governor/",
+        "date": "2025-10",
+        "confidence": "high",
+        "notes": "Specific policy: force corporations to divest single-family homes they have purchased. Framed as anti-corporate-landlord populism. Also introduced Georgia House legislation on this topic."
+      },
+      {
+        "topic": "reproductive_rights / abortion",
+        "quote": "Restoring access to abortions and life-saving care",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/ruwa-romman-to-run-for-georgia-governor-on-progressive-platform/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Explicit commitment to restore abortion access; has stated she would veto any bill restricting reproductive healthcare. 2022 endorsement by NARAL confirms prior record. Georgia's 6-week abortion ban (LIFE Act, 2022) creates urgency for this commitment."
+      },
+      {
+        "topic": "LGBTQ_rights / transgender",
+        "quote": "I would absolutely veto every bill that comes to my desk that targets minority groups of people. I would not support any bill that targets the rights of trans adults or kids.",
+        "sourceUrl": "https://www.advocate.com/politics/ruwa-romann-georgia-governor-candidate",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Direct quote from The Advocate interview. Drew explicit parallels between anti-Muslim scapegoating post-9/11 and current anti-transgender legislation."
+      },
+      {
+        "topic": "immigration / ICE",
+        "quote": "I would start with working to repeal House Bill 1105. Immigration is a federal issue, but there are state issues we can pursue.",
+        "sourceUrl": "https://atlanta.capitalbnews.org/ruwa-romman-talks-run-for-georgia-governor/",
+        "date": "2025-10",
+        "confidence": "high",
+        "notes": "HB 1105 is the Georgia Criminal Alien Track and Report Act (2024), which requires local agencies to enforce immigration law and bans sanctuary policies. Romman explicitly opposed and wants to repeal it. Also criticized ICE detention as 'financially lucrative for billionaire benefactors' rather than actual deportation."
+      },
+      {
+        "topic": "small_business / economic_investment",
+        "quote": "Protecting workers, increasing apprenticeship programs, empowering small businesses to thrive, and providing childcare support",
+        "sourceUrl": "https://theatlantavoice.com/ruwa-romman-georgia-campaign-tour/",
+        "date": "2025",
+        "confidence": "medium",
+        "notes": "Small business investment paired with anti-corporate populism — contrast with large corporate landlords and big tech (data centers). Policy details remain general."
+      },
+      {
+        "topic": "data_centers / technology regulation",
+        "quote": "Before we permanently alter the landscape of our state, we have an obligation to properly regulate and assess both the benefits and impacts of these data centers on our communities.",
+        "sourceUrl": "https://georgiarecorder.com/2026/01/20/outrage-over-surge-of-data-centers-in-georgia-inspires-wave-of-bipartisan-bills/",
+        "date": "2026-01",
+        "confidence": "high",
+        "notes": "Direct legislative action: introduced HB 1012 (Georgia 2025-26 session), a bipartisan bill placing a moratorium on new data center construction until March 1, 2027. Republican Rep. Jordan Ridley co-signed. Bill in House Committee on Government Affairs as of Feb 2026."
+      },
+      {
+        "topic": "education",
+        "quote": "Republicans have controlled the state for over 20 years, and in that time, schools have been ranked lower in education and hospitals have shut down.",
+        "sourceUrl": "https://theatlantavoice.com/ruwa-romman-campaign-georgia/",
+        "date": "2025",
+        "confidence": "medium",
+        "notes": "Frame is critique of Republican governance on education outcomes; no specific school funding formula or school choice position stated explicitly in available sources. General support for public schools implied."
+      },
+      {
+        "topic": "DEI / diversity policy",
+        "quote": "If you want to make things actually equal, then you need to be able to make sure that everyone is on the same playing field.",
+        "sourceUrl": "https://www.wrdw.com/2025/09/29/ruwa-romman-makes-historic-bid-georgia-governor/",
+        "date": "2025",
+        "confidence": "medium",
+        "notes": "Statement made in response to Georgia Republican legislation stripping state funding from schools with diversity programs. Supports DEI; no specific policy framework articulated."
+      },
+      {
+        "topic": "economic_framing",
+        "quote": "I think when you look at the campaigns that have been run in the state, [Democrats] have actually tried to run them more to the center and to the right. And right now what people are looking for is not left versus right, they're looking for top versus bottom.",
+        "sourceUrl": "https://www.salon.com/2025/11/24/ruwa-rommans-case-for-economic-populism-in-georgia/",
+        "date": "2025-11",
+        "confidence": "high",
+        "notes": "Core strategic positioning: economic populism, class-based framing. Cites Moody's Analytics (Mark Zandi) data that Georgia is already in recession. Explicit rejection of centrist Democratic triangulation."
+      },
+      {
+        "topic": "food_security / child_hunger",
+        "quote": "Feed hungry kids",
+        "sourceUrl": "https://georgiarecorder.com/2025/09/29/history-making-georgia-democratic-lawmaker-launches-campaign-for-governor/",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "Recurring campaign slogan element but policy detail (school meals? SNAP? WIC?) not yet specified in available sources."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["Georgia General Assembly official records", "TrackBill", "BillTrack50", "FastDemocracy", "Legiscan"],
+    "chamber": "Georgia House of Representatives",
+    "termsCovered": ["2023-2024 session", "2025-2026 session (ongoing)"],
+    "attendanceRate": "Not found in available sources",
+    "committeeAssignments": [
+      "Energy, Utilities and Telecommunications Committee",
+      "Information and Audits Committee",
+      "Interstate Cooperation Committee"
+    ],
+    "legislativeSummary": {
+      "billsSponsored": "4 sponsored bills in 2023-2024 session",
+      "billsCosponsored": "45 cosponsored bills in 2023-2024 session"
+    },
+    "keyBills": [
+      {
+        "bill": "HB 1012 (2025-26 session) — Data Center Moratorium",
+        "action": "Sponsored (primary sponsor)",
+        "topic": "technology regulation / environment / energy",
+        "status": "In House Committee on Government Affairs as of Feb 2026",
+        "sourceUrl": "https://trackbill.com/bill/georgia-house-bill-1012-local-government-construction-or-development-of-new-data-centers-for-a-specified-time-prohibit/2778746/",
+        "notes": "Would prohibit local governments from issuing permits for new data centers through March 1, 2027. Bipartisan bill (Republican co-signer: Rep. Jordan Ridley of Woodstock). Romman criticized competing HB 1063 as lacking consumer protections."
+      },
+      {
+        "bill": "EMS Essential Service Designation Bill (reintroduced 2025-26 session)",
+        "action": "Sponsored",
+        "topic": "healthcare / public safety / safety_net_breadth",
+        "status": "Reintroduced after failing in prior session due to time",
+        "sourceUrl": "https://livinginpeachtreecorners.com/2025/politics/local-state-legislators-outline-priorities-for-this-general-assembly-session/",
+        "notes": "Would designate Emergency Medical Services as an essential service in Georgia, enabling EMS providers to access grants. Bipartisan (Republican Rep. Gary Richardson co-working). 14 other states already have this designation."
+      },
+      {
+        "bill": "Corporate Home Buying / Anti-Corporate Landlord Bill",
+        "action": "Sponsored (introduced)",
+        "topic": "housing / affordability_tools",
+        "status": "Introduced in prior session; details of current-session status unclear",
+        "sourceUrl": "https://pluralpolicy.com/app/person/18112",
+        "notes": "Legislation to force corporations to divest single-family homes. Specifically targets institutional investors buying up residential housing stock."
+      },
+      {
+        "bill": "Consumer Protection Office Restoration",
+        "action": "Sponsored (introduced)",
+        "topic": "economic regulation",
+        "status": "Introduced",
+        "sourceUrl": "https://pluralpolicy.com/app/person/18112",
+        "notes": "Bring back the office responsible for protecting consumers (office had been eliminated or defunded). Details limited in available public records."
+      },
+      {
+        "bill": "HB 1105 — Georgia Criminal Alien Track and Report Act (2024)",
+        "action": "Opposed (vote against — minority party position)",
+        "topic": "immigration",
+        "status": "Passed; signed by Gov. Kemp May 1, 2024",
+        "sourceUrl": "https://georgiarecorder.com/2024/05/01/kemp-signs-bill-into-law-forcing-sheriffs-to-enforce-federal-immigration-law/",
+        "notes": "Romman explicitly stated she would work to repeal this law as governor. Bill requires local agencies to enforce federal immigration law, expands ban on sanctuary policies, criminalizes officials who fail to comply. Romman opposed as anti-immigrant overreach."
+      }
+    ],
+    "notes": "As a minority-party state legislator in a Republican-dominated Georgia House, Romman's voting record is largely defined by opposition votes and sponsored minority bills that rarely pass. Evidence of her positions comes more reliably from her sponsored legislation, committee work, and public statements than from consequential floor votes. Georgia does not appear to publish individual roll-call vote data in an easily searchable online format for this researcher layer."
+  },
+  "scorecards": [
+    {
+      "organization": "NARAL Pro-Choice America (now Reproductive Freedom for All)",
+      "score": null,
+      "grade": null,
+      "endorsement": "Endorsed in 2022 campaign",
+      "url": "https://bluevoterguide.org/endorser-org/National_Abortion_Rights_Action_League_(NARAL)_Pro-Choice_America/GA/591",
+      "notes": "Endorsement signals strong pro-choice alignment. No numerical scorecard available for state legislators in Georgia from this org."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found for Romman. Consistent with her profile as a progressive Democrat. No evidence she has sought or received NRA support."
+    },
+    {
+      "organization": "Georgia Working Families Party",
+      "score": null,
+      "grade": null,
+      "endorsement": "Endorsed in 2022 campaign",
+      "url": null,
+      "notes": "Endorsement signals labor-left alignment."
+    },
+    {
+      "organization": "Fair Fight (Stacey Abrams voting rights org)",
+      "score": null,
+      "grade": null,
+      "endorsement": "Endorsed in 2022 campaign",
+      "url": null,
+      "notes": "Voting rights alignment; signals pro-democracy/anti-voter-suppression stance."
+    },
+    {
+      "organization": "Asian American Advocacy Fund",
+      "score": null,
+      "grade": null,
+      "endorsement": "Endorsed in 2022 campaign",
+      "url": "https://asianamericanadvocacyfund.org/endorsement-archive/ruwa-romman-2024",
+      "notes": "Also endorsed in 2024 re-election. Signals AAPI community support and immigration-inclusive stance."
+    },
+    {
+      "organization": "VoteSmart",
+      "score": null,
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/biography/203461/ruwa-romman",
+      "notes": "Biographical page available but no interest group ratings found for Georgia state legislators in available search results. VoteSmart coverage of Georgia House is limited."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "NARAL Pro-Choice America (now Reproductive Freedom for All)",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "2022 state House race endorsement; no 2026 gubernatorial endorsement announced yet as of research date"
+    },
+    {
+      "organization": "Fair Fight Action",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Voting rights organization founded by Stacey Abrams"
+    },
+    {
+      "organization": "Georgia Working Families Party",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Labor-progressive endorsement"
+    },
+    {
+      "organization": "Asian American Advocacy Fund",
+      "type": "endorsement",
+      "cycle": "2022 and 2024",
+      "notes": "Re-endorsed for 2024 re-election; AAPI advocacy and voting rights focused"
+    },
+    {
+      "organization": "Uncommitted Movement (informal)",
+      "type": "association",
+      "cycle": "2024",
+      "notes": "Selected by the Uncommitted Movement to deliver a pro-Palestine speech at the 2024 DNC; the DNC refused to allow her to speak on stage. She delivered the speech outside the venue. This is not a formal organizational endorsement but signals strong progressive/Palestinian-American activist community backing."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Salon",
+      "date": "2025-11-24",
+      "url": "https://www.salon.com/2025/11/24/ruwa-rommans-case-for-economic-populism-in-georgia/",
+      "keyExchanges": [
+        {
+          "topic": "campaign strategy / economic framing",
+          "quote": "I think when you look at the campaigns that have been run in the state, [Democrats] have actually tried to run them more to the center and to the right. And right now what people are looking for is not left versus right, they're looking for top versus bottom.",
+          "notes": "Core strategic positioning: populist class framing, explicit rejection of Democratic centrism"
+        },
+        {
+          "topic": "economic conditions",
+          "quote": "Citing reporting from Moody's Analytics' Mark Zandi that 22 states, Georgia among them, are already in a recession.",
+          "notes": "Uses economic recession framing to justify progressive agenda as urgent rather than optional"
+        },
+        {
+          "topic": "Medicaid / healthcare",
+          "summary": "Explicitly committed to Medicaid expansion; framed as economic development tool for Georgia workforce",
+          "notes": "Consistent with all other source statements"
+        }
+      ]
+    },
+    {
+      "outlet": "Capital B News Atlanta",
+      "date": "2025-10",
+      "url": "https://atlanta.capitalbnews.org/ruwa-romman-talks-run-for-georgia-governor/",
+      "keyExchanges": [
+        {
+          "topic": "minimum wage / housing / healthcare / DEI / immigration / data centers",
+          "summary": "Comprehensive interview covering core platform: minimum wage, Medicaid expansion, corporate landlord legislation, ICE/HB1105 repeal. Specifically centered the campaign on issues important to Black voters.",
+          "notes": "More detailed than most announcement-cycle coverage; includes her DEI and immigration positions explicitly"
+        },
+        {
+          "topic": "immigration / ICE / HB1105",
+          "quote": "I would start with working to repeal House Bill 1105. Immigration is a federal issue, but there are state issues we can pursue. We're actually not seeing a lot of deportations out of the country. We're seeing a lot of detention happening of immigrants because it is very financially lucrative for their billionaire benefactors, and that, to me, is unacceptable.",
+          "notes": "Most detailed statement on immigration available; opposes HB1105, opposes ICE detention-for-profit, but frames within limits of state authority"
+        }
+      ]
+    },
+    {
+      "outlet": "The Atlanta Voice",
+      "date": "2025",
+      "url": "https://theatlantavoice.com/ruwa-romman-campaign-georgia/",
+      "keyExchanges": [
+        {
+          "topic": "moral leadership / campaign philosophy",
+          "quote": "Our job is to be moral leaders",
+          "notes": "Framing of gubernatorial role as values-based leadership; consistent with her identity as first Muslim woman elected to Georgia legislature"
+        }
+      ]
+    },
+    {
+      "outlet": "The Advocate",
+      "date": "2025",
+      "url": "https://www.advocate.com/politics/ruwa-romann-georgia-governor-candidate",
+      "keyExchanges": [
+        {
+          "topic": "LGBTQ / transgender rights",
+          "quote": "I would absolutely veto every bill that comes to my desk that targets minority groups of people. I would not support any bill that targets the rights of trans adults or kids.",
+          "notes": "Direct, unequivocal commitment. Drew parallel between anti-transgender and anti-Muslim scapegoating"
+        }
+      ]
+    },
+    {
+      "outlet": "Savannah Forum (Georgia Recorder / Capitol Beat coverage)",
+      "date": "2026-01-08",
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "keyExchanges": [
+        {
+          "topic": "housing / corporations",
+          "summary": "Romman and Jason Esteves sounded a defiant anti-corporate tone on housing affordability; both blamed corporations for the housing crisis.",
+          "notes": "Distinguished herself as more confrontational than some other candidates on corporate accountability"
+        },
+        {
+          "topic": "Medicaid",
+          "summary": "All seven Democratic candidates committed to Medicaid expansion; unanimous position in this primary field.",
+          "notes": "Not a differentiating position within the Democratic primary"
+        }
+      ]
+    },
+    {
+      "outlet": "Chamblee/DeKalb Forum (Decaturish coverage)",
+      "date": "2026-02-19",
+      "url": "https://www.decaturish.com/voter_guide/gubernatorial-candidates-talk-healthcare-elections/article_69446cbd-d4b9-4d98-bfa9-1714df911e41.html",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / workforce development",
+          "quote": "Georgia should invest the money in people instead. If she were governor, she would subsidize access to health care to make Georgia's relatively young workforce even more attractive to employers.",
+          "notes": "Medicaid expansion framed as both moral and economic development argument"
+        }
+      ]
+    },
+    {
+      "outlet": "19th News / Q&A post-DNC",
+      "date": "2024-10",
+      "url": "https://19thnews.org/2024/10/ruwa-romman-georgia-gaza-election/",
+      "keyExchanges": [
+        {
+          "topic": "Gaza / foreign policy / Democratic Party",
+          "summary": "Discussed her DNC experience, Gaza ceasefire advocacy, and relationship with the Democratic Party after being denied a speaking slot.",
+          "notes": "Informative for foreign policy stance and intra-party positioning but less directly relevant to Georgia governor races which are state-policy focused"
+        }
+      ]
+    },
+    {
+      "outlet": "Jacobin",
+      "date": "2024-09",
+      "url": "https://jacobin.com/2024/09/ruwa-romman-dnc-speech-palestine",
+      "keyExchanges": [
+        {
+          "topic": "Gaza / ceasefire / Harris",
+          "summary": "Romman explains being denied DNC speaking slot; speech would have called for ceasefire and endorsed Harris. She would not have called for an arms embargo. She did endorse Harris.",
+          "notes": "Nuance: Not calling for arms embargo despite being strongly pro-ceasefire and affiliated with Uncommitted movement. Shows she was navigating within Democratic party norms."
+        }
+      ]
+    }
+  ],
+  "foreignPolicyNote": {
+    "topic": "Israel/Gaza — Palestinian advocacy",
+    "summary": "Romman is Palestinian-American and has been the most prominent elected Palestinian American voice on the Gaza conflict. She was selected by the Uncommitted Movement to deliver a speech at the 2024 DNC; the DNC refused to allow her on stage. She delivered the speech outside, calling for a ceasefire and endorsing Kamala Harris. Her proposed speech would NOT have called for an arms embargo — a notable moderation from the Uncommitted platform. She endorsed Harris.",
+    "dnc_quote": "Let's commit to each other, to electing Vice President Harris and defeating Donald Trump who uses my identity as a Palestinian as a slur.",
+    "relevanceNote": "Foreign policy is not a governor's domain, but Romman's Palestinian-American identity and Gaza advocacy are major factors in her national profile and primary electability calculus. Some Democratic primary voters may see this as a liability; progressive Arab/Muslim voters see it as a key credential.",
+    "sources": [
+      "https://jacobin.com/2024/09/ruwa-romman-dnc-speech-palestine",
+      "https://www.rollingstone.com/politics/politics-news/dnc-palestine-uncommitted-speech-ruwa-romman-1235085916/",
+      "https://19thnews.org/2024/10/ruwa-romman-georgia-gaza-election/"
+    ]
+  },
+  "primaryRaceContext": {
+    "primaryDate": "2026-05-19",
+    "runoffDate": "2026-06-16",
+    "generalElectionDate": "2026-11-03",
+    "opponents": [
+      "Keisha Lance Bottoms (former Atlanta Mayor) — polling leader",
+      "Michael Thurmond (former DeKalb County CEO)",
+      "Geoff Duncan (former Republican Lt. Gov., crossover candidate)",
+      "Jason Esteves (state Senator)",
+      "Derrick Jackson (state Rep.)",
+      "Olu Brown (retired faith leader)"
+    ],
+    "pollingPosition": "Not registering significant poll numbers in available polling (Bottoms at 40%, Thurmond 11%, Duncan 5%, Esteves 3% in AJC poll — others not listed). Romman is a lower-tier candidate by fundraising and polling metrics.",
+    "campaignDistinction": "Running explicitly to the left of the field; Project 159 grassroots organizing strategy (volunteers in all 159 Georgia counties); economic populist framing contrasted with 'centrist' Democratic strategy failures",
+    "incumbentRepublican": "Brian Kemp (term-limited — not running)"
+  },
+  "positionConflicts": [
+    {
+      "topic": "Gaza / DNC / Uncommitted",
+      "conflict": "Romman is closely identified with the pro-Palestine Uncommitted movement, but her DNC speech would not have called for an arms embargo — a key Uncommitted demand. She also ultimately endorsed Harris. This creates a tension between her identity as a Palestinian-American advocate and her practical choices within Democratic party politics.",
+      "sources": [
+        "https://jacobin.com/2024/09/ruwa-romman-dnc-speech-palestine",
+        "https://19thnews.org/2024/10/ruwa-romman-georgia-gaza-election/"
+      ]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "healthcare_coverage_model — Medicaid expansion is a top-three stated priority; fully explicit",
+      "safety_net_breadth — minimum wage, food security, EMS essential service all point poleA (broader safety net)",
+      "affordability_tools (housing) — explicit corporate landlord legislation, government-intervention approach",
+      "firearms/justice — NARAL endorsement, progressive identity, no NRA involvement (all directional toward reform, though no specific gun legislation found)",
+      "police_accountability / justice — immigration enforcement opposition (HB1105 repeal), ICE detention criticism; LGBTQ veto commitments signal reformist justice stance",
+      "school_choice — public-school defender framing, critique of Republican education record; supports public investment over choice"
+    ],
+    "weakestAxes": [
+      "climate_ambition — No specific climate legislation or statement found; data center moratorium is adjacent but motivated by community impact/energy use rather than explicit climate framing",
+      "energy_portfolio — No explicit renewable energy or fossil fuel position in available sources",
+      "permitting_speed — No statement found",
+      "sentencing_goals — No specific criminal justice sentencing position found",
+      "zoning_supply (housing) — Anti-corporate-landlord is affordability focus; no clear position on zoning deregulation vs. preservation",
+      "transit_priority — No statement found",
+      "cost_control (healthcare) — Medicaid expansion stated but no position on price controls vs. market competition beyond that",
+      "public_health (individual vs. collective mandates) — No statement found"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Three-year state House record (minority party) provides legislative direction but limited consequential votes. Campaign platform is explicit on 5-6 axes; several axes have no available evidence. As a state-office race, some federal-level axes (firearms federal legislation, federal immigration) are less directly applicable but state-level analogs exist. Her Palestinian identity and Uncommitted movement association are the dominant narrative frame in most news coverage, which has somewhat crowded out detailed policy reporting on other domestic axes. Primary polling suggests she is not a frontrunner, which may limit detailed platform development in available public sources."
+  }
+}

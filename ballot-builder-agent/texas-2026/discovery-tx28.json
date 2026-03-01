@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-02-27T00:00:00.000Z",
+  "state": "Texas",
+  "contests": [
+    {
+      "id": "TX-28-US-HOUSE-2026",
+      "office": "U.S. House of Representatives",
+      "state": "TX",
+      "district": "28",
+      "districtNotes": "Webb County-centric (Laredo). Redistricted for 2026: lost northern Bexar/Guadalupe county slices, gained part of Hidalgo County (McAllen area) and several smaller Rio Grande Valley counties. Net shift: Trump margin ~R+7 (old map) → ~R+10 (new map).",
+      "primaryDate": "2026-03-03",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Henry Cuellar",
+      "incumbentParty": "Democratic",
+      "raceRating": "Lean Democratic",
+      "raceRatingSource": "Sabato's Crystal Ball",
+      "raceRatingAlternate": [
+        {
+          "rating": "Lean Democratic",
+          "source": "Cook Political Report"
+        },
+        {
+          "rating": "Tilt Democratic",
+          "source": "Inside Elections"
+        }
+      ],
+      "raceRatingNotes": "Previously rated Toss-up. Moved to Lean/Tilt Democratic after Trump pardoned Cuellar in December 2025 and redistricting shifted the district slightly bluer on partisan lean. NRCC still treating the seat as competitive; Trump endorsed Tijerina on January 6, 2026.",
+      "candidates": [
+        {
+          "slug": "henry-cuellar",
+          "name": {
+            "full": "Henry Roberto Cuellar",
+            "ballotDisplay": "Henry Cuellar"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "incumbent",
+          "campaignWebsite": "https://henrycuellar.com",
+          "evidenceTier": "high",
+          "notes": "11-term incumbent (elected 2004). Pardoned by President Trump on December 3, 2025 on all 12 federal counts (bribery, money laundering, conspiracy involving Azerbaijan and a Mexican bank). Filed for reelection as a Democrat the same day — Trump publicly criticized the decision. One of the most conservative House Democrats; National Right to Life endorsee; historically moderate on immigration. Most-degreed member of Congress (5 degrees). Top NRCC target despite pardon."
+        },
+        {
+          "slug": "andrew-vantine",
+          "name": {
+            "full": "Andrew Vantine",
+            "ballotDisplay": "Andrew Vantine"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Businessman. Campaign focuses on high-speed rail investment for the district and small business support. No verified campaign website found. Minimal news coverage. Considered a minor filer — include for completeness but low research priority."
+        },
+        {
+          "slug": "ricardo-villarreal",
+          "name": {
+            "full": "Ricardo Villarreal",
+            "ballotDisplay": "Ricardo Villarreal"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Physician. U.S. Army veteran (2008–2016). Previously ran in TX-21 Democratic primary in 2022. Holds M.D. from Universidad Autónoma de Guadalajara and graduate degrees from Our Lady of the Lake University and UC Berkeley Goldman School of Public Policy. Minimal TX-28-specific campaign activity found. Consider minor filer."
+        },
+        {
+          "slug": "tano-tijerina",
+          "name": {
+            "full": "Gustavo 'Tano' Tijerina Jr.",
+            "ballotDisplay": "Tano Tijerina"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://www.tanoforcongress.com",
+          "evidenceTier": "high",
+          "notes": "Webb County Judge (elected 2014 as Democrat, re-elected 2018 and 2022; switched to Republican on December 10, 2024). Former minor league baseball player. Top NRCC recruit for 2026 cycle. Announced congressional run December 2, 2025. Trump endorsed Tijerina on January 6, 2026 via Truth Social, calling Cuellar 'weak and incompetent.' Faces FEC complaint over possible Texas resign-to-run law applicability — Tijerina disputes this. Strongest GOP recruit in the race."
+        },
+        {
+          "slug": "eileen-day",
+          "name": {
+            "full": "Eileen Day",
+            "ballotDisplay": "Eileen Day"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Political newcomer. Campaign priorities reportedly include stray animal population, border security, public health, and poverty. Has not completed Ballotpedia's Candidate Connection survey. No verified campaign website found. Considered a minor filer given Tijerina's dominant GOP establishment support and Trump endorsement."
+        }
+      ],
+      "generalElectionNotes": "General election candidates not yet finalized (primary is March 3, 2026). Tijerina is the overwhelming GOP favorite to advance given Trump endorsement + NRCC backing. Cuellar is expected to win the Democratic primary easily. One independent/third-party candidate (Adriel Ventura Lopez) has filed for the general election.",
+      "screeningDecision": "VIABLE candidates for deep research: henry-cuellar (D incumbent) and tano-tijerina (R top recruit). andrew-vantine, ricardo-villarreal, and eileen-day are low-evidence minor filers — include in manifest for completeness but skip full researcher/scorer pipeline unless requested."
+    }
+  ],
+  "ballotMeasures": [],
+  "districtContext": {
+    "geographicCore": "Webb County (Laredo) — approximately 250,000 residents, ~96% Hispanic",
+    "newCountiesAdded2026": ["Parts of Hidalgo County (McAllen area)", "Several smaller Rio Grande Valley counties"],
+    "countiesRemoved2026": ["Northern Bexar County slices", "Parts of Guadalupe County"],
+    "presidentialBaseline2024": "Trump +10 under new map (was Trump +7 under prior map)",
+    "incumbentOverperformance": "Cuellar ran ~25 pts ahead of Allred and ~28 pts ahead of Harris in Webb County in 2024, demonstrating strong personal vote",
+    "keyDynamics": [
+      "Cuellar pardon removed biggest electoral liability (active federal trial)",
+      "Trump-endorsed Tijerina is strongest GOP challenger since district drawn",
+      "Party-switch narrative central to GOP messaging — Tijerina can argue bilingual, bicultural identity",
+      "Redistricting added RGV territory where Democratic strength is more variable",
+      "NRCC targeting despite pardon; national R money expected to flow in"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Texas'_28th_Congressional_District_election,_2026",
+      "description": "Ballotpedia TX-28 2026 main race page",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas'_28th_Congressional_District_election,_2026_(March_3_Democratic_primary)",
+      "description": "Ballotpedia TX-28 Democratic primary page",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas'_28th_Congressional_District_election,_2026_(March_3_Republican_primary)",
+      "description": "Ballotpedia TX-28 Republican primary page",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Henry_Cuellar",
+      "description": "Ballotpedia candidate profile — Henry Cuellar",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Tano_Tijerina",
+      "description": "Ballotpedia candidate profile — Tano Tijerina",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://centerforpolitics.org/crystalball/after-trump-pardons-cuellar-tx-28-moves-to-leans-democratic/",
+      "description": "Sabato's Crystal Ball: TX-28 rating change to Leans Democratic after Cuellar pardon",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cookpolitical.com/house/race/485356",
+      "description": "Cook Political Report TX-28 2026 race page",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/12/03/henry-cuellar-28th-congressional-district-2026-primary-gop-target/",
+      "description": "Texas Tribune: Cuellar pardon and 2026 race overview (Dec 2025)",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/",
+      "description": "Texas Tribune: Tijerina announces congressional run (Dec 2025)",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.nbcnews.com/politics/2026-election/trump-endorses-tano-tijerina-running-against-democrat-henry-cuellar-rcna252686",
+      "description": "NBC News: Trump endorses Tijerina (Jan 2026)",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.tanoforcongress.com/",
+      "description": "Tano Tijerina official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://henrycuellar.com/",
+      "description": "Henry Cuellar official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.insideelections.com/news/article/a-detailed-analysis-of-texas-new-congressional-map",
+      "description": "Inside Elections: Texas new congressional map analysis with TX-28 rating",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/11/24/tano-tijerina-resign-to-run-law-fec-complaint-henry-cuellar-congress/",
+      "description": "Texas Tribune: Tijerina FEC complaint / resign-to-run dispute",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    }
+  ]
+}

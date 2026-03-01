@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Info } from 'lucide-react';
 
 import { useDemographicStore } from '@/stores/demographicStore';
 import type { DemographicProfile } from '@/stores/demographicStore';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
+import DistrictSelector from '@/components/demographics/DistrictSelector';
 
 // ── OptionButtonGroup ──
 
@@ -155,27 +156,43 @@ interface DemographicScreenProps {
 export default function DemographicScreen({ onComplete }: DemographicScreenProps) {
   const { profile, setField, submitProfile, skipProfile } = useDemographicStore();
   const { track } = useAnalyticsContext();
+  const [showStateError, setShowStateError] = useState(false);
 
   const handleSkip = () => {
+    if (!profile.selectedBallotId) {
+      setShowStateError(true);
+      return;
+    }
     track('click', { element: 'skip_demographics' });
     skipProfile();
+
+    // Prefetch the selected ballot
+    if (profile.selectedBallotId) {
+      fetch(`/api/ballot/${profile.selectedBallotId}`)
+        .catch((err) => console.warn('[DemographicScreen] Prefetch failed:', err));
+    }
+
     onComplete();
   };
 
   const handleContinue = () => {
+    if (!profile.selectedBallotId) {
+      setShowStateError(true);
+      return;
+    }
+
     // Count how many fields were filled out
     const filledCount = Object.entries(profile).filter(
-      ([key, val]) => key !== 'zipCode' ? val !== null : val !== '',
+      ([key, val]) => key !== 'zipCode' && key !== 'selectedState' && key !== 'selectedBallotId'
+        ? val !== null
+        : val !== '' && val !== null,
     ).length;
     track('click', { element: 'submit_demographics', filledCount });
     submitProfile();
 
-    // Prefetch ballot data if zipcode was provided (fires in background, doesn't block)
-    if (profile.zipCode && profile.zipCode.length === 5) {
-      console.log(`[DemographicScreen] Prefetching ballot for zipcode: ${profile.zipCode}`);
-      fetch(`/api/ballot/by-zipcode?zipcode=${profile.zipCode}`)
-        .then((res) => res.json())
-        .then((data) => console.log(`[DemographicScreen] Prefetch complete, source: ${data.source}`))
+    // Prefetch the selected ballot
+    if (profile.selectedBallotId) {
+      fetch(`/api/ballot/${profile.selectedBallotId}`)
         .catch((err) => console.warn('[DemographicScreen] Prefetch failed:', err));
     }
 
@@ -199,6 +216,9 @@ export default function DemographicScreen({ onComplete }: DemographicScreenProps
 
         {/* Questions */}
         <div className="space-y-6">
+          {/* 0. State / district selector (required) */}
+          <DistrictSelector showError={showStateError} />
+
           {/* 1. Household income */}
           <QuestionSection label="Household income">
             <OptionButtonGroup
@@ -269,23 +289,7 @@ export default function DemographicScreen({ onComplete }: DemographicScreenProps
             />
           </QuestionSection>
 
-          {/* 8. ZIP code */}
-          <QuestionSection label="ZIP code">
-            <input
-              type="text"
-              inputMode="numeric"
-              maxLength={5}
-              value={profile.zipCode}
-              onChange={(e) => {
-                const val = e.target.value.replace(/\D/g, '');
-                setField('zipCode', val);
-              }}
-              placeholder="e.g. 90210"
-              className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none transition-colors focus:border-brand-primary focus:ring-1 focus:ring-brand-primary"
-            />
-          </QuestionSection>
-
-          {/* 9. Veteran status */}
+          {/* 8. Veteran status */}
           <QuestionSection label="Veteran status">
             <OptionButtonGroup
               options={veteranOptions}

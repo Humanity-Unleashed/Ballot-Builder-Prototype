@@ -1,0 +1,313 @@
+{
+  "generatedAt": "2026-02-26T00:00:00Z",
+  "contest": "North Carolina U.S. Senate 2026",
+  "type": "general",
+  "state": "NC",
+  "office": "U.S. Senate",
+  "primaryDate": "2026-03-03",
+  "primaryRunoffDate": "2026-05-12",
+  "generalDate": "2026-11-03",
+  "isOpenSeat": true,
+  "incumbentName": "Thom Tillis",
+  "incumbentStatus": "retiring",
+  "raceRating": "Toss-up",
+  "raceRatingSource": "Cook Political Report / Sabato's Crystal Ball / Inside Elections (all three, as of Feb 10 2026)",
+  "primaryNote": "The March 3 primary has early voting underway as of this manifest date (Feb 26). Results will not be available until March 3 election night. A runoff is triggered if no candidate clears 30% of the vote.",
+  "candidates": [
+    {
+      "slug": "roy-cooper",
+      "name": {
+        "full": "Roy Cooper",
+        "ballotDisplay": "Roy Cooper"
+      },
+      "party": "Democratic",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Former Governor of North Carolina (2017-2025); former NC Attorney General (2001-2017). Two-term governor, six-time statewide winner. Announced Senate bid July 28, 2025 after Tillis retirement. Overwhelming favorite in Democratic primary. Cooper leads in head-to-head polling against Whatley (Emerson, Jan 2026: +6).",
+      "campaignWebsite": "https://roycooper.com",
+      "evidenceTier": "high",
+      "notes": "Dominant Democratic primary favorite; former rival Wiley Nickel suspended his campaign and endorsed Cooper after Cooper entered the race (July 2025). No credible challenger emerged. Expected to be the Democratic nominee barring extraordinary circumstances."
+    },
+    {
+      "slug": "michael-whatley",
+      "name": {
+        "full": "Michael Whatley",
+        "ballotDisplay": "Michael Whatley"
+      },
+      "party": "Republican",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Former Chair of the Republican National Committee (2024-2025); former Chair of the North Carolina Republican Party (2019-2024). Has no prior elected office; comes from party infrastructure and political organizing. Raised $6.27 million as of Feb 11, 2026; $2.5M+ cash on hand.",
+      "campaignWebsite": null,
+      "evidenceTier": "high",
+      "notes": "Endorsed by President Donald Trump before officially entering the race; appeared with Trump at rallies in Rocky Mount and Fort Bragg. Holds ~38% support in Feb 2026 GOP primary polling with ~50% undecided. Endorsed by Lara Trump (former RNC co-chair). NRSC-backed. Clear front-runner for the Republican nomination."
+    },
+    {
+      "slug": "don-brown",
+      "name": {
+        "full": "Don Brown",
+        "ballotDisplay": "Don Brown"
+      },
+      "party": "Republican",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Retired U.S. Navy JAG (Judge Advocate General) officer; defense attorney who represented defendants charged in connection with the January 6, 2021 Capitol riot. From Waxhaw, NC. Raised $187,237 as of Feb 11, 2026; ~$24,000 cash on hand.",
+      "campaignWebsite": null,
+      "evidenceTier": "medium",
+      "notes": "Endorsed by former Lt. Governor Mark Robinson, Sidney Powell, and Michael Flynn. Second in GOP primary polling at ~7.5% (Feb 2026 Carolina Journal poll). Trails Cooper 48%-38% in hypothetical general election matchup."
+    },
+    {
+      "slug": "michele-morrow",
+      "name": {
+        "full": "Michele Morrow",
+        "ballotDisplay": "Michele Morrow"
+      },
+      "party": "Republican",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "2024 Republican nominee for North Carolina Superintendent of Public Instruction (lost general election). Conservative activist. Raised only $10,720 as of Feb 11, 2026; ~$5,248 cash on hand.",
+      "campaignWebsite": null,
+      "evidenceTier": "medium",
+      "notes": "Originally entered race as grassroots alternative to Tillis; remained as challenge to Whatley. Platform includes school choice, FEMA overhaul, mail-in voting restrictions. Polling at ~1.6% in Feb 2026 GOP primary."
+    },
+    {
+      "slug": "richard-dansie",
+      "name": {
+        "full": "Richard Dansie",
+        "ballotDisplay": "Richard Dansie"
+      },
+      "party": "Republican",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "IT security engineer and Durham entrepreneur.",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "Polling at ~0.4% in Feb 2026 Republican primary. Separately listed as Libertarian candidate for the general election by some sources — this may reflect a dual filing or a party change; confirm before general election cycle. Low public profile."
+    },
+    {
+      "slug": "thomas-johnson",
+      "name": {
+        "full": "Thomas Johnson",
+        "ballotDisplay": "Thomas Johnson"
+      },
+      "party": "Republican",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Businessman, Garner entrepreneur, and business consultant.",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "Polling at ~1% in Feb 2026 Republican primary. Very limited public profile beyond filing."
+    },
+    {
+      "slug": "elizabeth-temple",
+      "name": {
+        "full": "Elizabeth Temple",
+        "ballotDisplay": "Elizabeth Temple"
+      },
+      "party": "Republican",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Teacher from Smithfield, NC. Ran for North Carolina State House District 28 in 2024.",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "Polling at ~0.6% in Feb 2026 Republican primary. Very limited public profile beyond filing."
+    },
+    {
+      "slug": "robert-colon",
+      "name": {
+        "full": "Robert Colon",
+        "ballotDisplay": "Robert Colon"
+      },
+      "party": "Democratic",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Family caregiver; described as a perennial candidate in NC Democratic primaries.",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "No meaningful polling support. Long-shot Democratic primary candidate."
+    },
+    {
+      "slug": "justin-dues",
+      "name": {
+        "full": "Justin Dues",
+        "ballotDisplay": "Justin Dues"
+      },
+      "party": "Democratic",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Tech consultant; 2024 Democratic nominee for North Carolina's 8th Congressional District (lost general election).",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "Has some prior campaign infrastructure from 2024 congressional race. Long-shot against Cooper in Democratic primary."
+    },
+    {
+      "slug": "daryl-farrow",
+      "name": {
+        "full": "Daryl Farrow",
+        "ballotDisplay": "Daryl Farrow"
+      },
+      "party": "Democratic",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Businessman; 2020 Democratic nominee for North Carolina's 3rd Congressional District (lost general election).",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "Has some prior campaign experience. Long-shot Democratic primary candidate."
+    },
+    {
+      "slug": "alyssia-hammond",
+      "name": {
+        "full": "Alyssia Hammond",
+        "ballotDisplay": "Alyssia Hammond"
+      },
+      "party": "Democratic",
+      "primaryOrGeneral": "primary",
+      "status": "primary_candidate",
+      "incumbencyStatus": "challenger",
+      "background": "Previously ran in 2022 Democratic primary for U.S. Senate in North Carolina.",
+      "campaignWebsite": null,
+      "evidenceTier": "low",
+      "notes": "Perennial Democratic primary candidate. No meaningful polling support."
+    },
+    {
+      "slug": "shannon-bray",
+      "name": {
+        "full": "Shannon Bray",
+        "ballotDisplay": "Shannon Bray"
+      },
+      "party": "Libertarian",
+      "primaryOrGeneral": "general",
+      "status": "declared",
+      "incumbencyStatus": "challenger",
+      "background": "Cybersecurity specialist and systems architect. U.S. Navy veteran (1991-1997). Has worked for Visa, Microsoft, and federal government agencies. Master's degree in cybersecurity from University of Delaware. Based in Apex, NC.",
+      "campaignWebsite": "https://www.shannonbray.us",
+      "evidenceTier": "medium",
+      "notes": "Running as Libertarian; platform focused on privacy, government modernization, and accountable governance. Appears directly on general election ballot without a primary; Libertarian Party does not hold a primary in NC."
+    },
+    {
+      "slug": "brian-mcginnis",
+      "name": {
+        "full": "Brian McGinnis",
+        "ballotDisplay": "Brian McGinnis"
+      },
+      "party": "Green",
+      "primaryOrGeneral": "general",
+      "status": "declared",
+      "incumbencyStatus": "challenger",
+      "background": "Iraq War veteran; U.S. Marine Corps (2000-2004). Firefighter. From Illinois originally; associate degree from John Wood Community College.",
+      "campaignWebsite": "https://www.gp.org/brian_mcginnis_4_us_senate",
+      "evidenceTier": "medium",
+      "notes": "Green Party candidate for general election. Platform is anti-war and pro-social services; pledges to accept no corporate donations. Green Party does not hold a NC primary — goes directly to general ballot."
+    },
+    {
+      "slug": "shaunesi-deberry",
+      "name": {
+        "full": "Shaunesi DeBerry",
+        "ballotDisplay": "Shaunesi DeBerry"
+      },
+      "party": "Unaffiliated",
+      "primaryOrGeneral": "general",
+      "status": "declared",
+      "incumbencyStatus": "challenger",
+      "background": "Consultant and social media personality. Born and raised in Durham, NC. Bachelor of Science in Management from University of Phoenix (2024). 15+ years in telecommunications, wireless services, nonprofit management. Previous 2024 candidate in Maryland.",
+      "campaignWebsite": "https://deberryforsenate.com",
+      "evidenceTier": "low",
+      "notes": "Running as unaffiliated independent in the general election. Limited campaign infrastructure and fundraising. Goes directly to general ballot as unaffiliated candidate without a primary."
+    }
+  ],
+  "withdrew": [
+    {
+      "name": "Wiley Nickel",
+      "party": "Democratic",
+      "slug": "wiley-nickel",
+      "background": "Former U.S. Representative, NC-13 (2023-2025); lost 2024 re-election. Former NC State Senator. Was the first Democrat to announce a Senate campaign (April 9, 2025).",
+      "withdrawalDate": "2026-07-29",
+      "reason": "Suspended Senate campaign after Roy Cooper entered the race (July 28, 2025). Endorsed Cooper and announced candidacy for Wake County District Attorney instead."
+    },
+    {
+      "name": "Margot Dupre",
+      "party": "Republican",
+      "slug": "margot-dupre",
+      "background": "Business owner.",
+      "withdrawalDate": null,
+      "reason": "Disqualified by North Carolina State Board of Elections following a residency challenge; failed to prove NC residency. Ballot printed before disqualification — name appears on primary ballot but vote does not count."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/United_States_Senate_election_in_North_Carolina,_2026",
+      "description": "Ballotpedia race page — full candidate list, primary and general details",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_North_Carolina",
+      "description": "Wikipedia race article — candidate backgrounds and race overview",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://www.wunc.org/elections/2026-02-24/in-north-carolinas-u-s-senate-gop-primary-contenders-try-to-topple-trump-endorsed-candidate",
+      "description": "WUNC News — Feb 24 2026 GOP primary overview with candidate fundraising and polling",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://ncnewsline.com/2026/02/11/voting-in-the-republican-u-s-senate-primary-begins-thursday-meet-the-top-candidates/",
+      "description": "NC Newsline — Meet the top Republican Senate primary candidates (Feb 11 2026)",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://www.carolinajournal.com/polls/february-2026-whatley-holds-30-point-lead-50-unsure-in-gop-senate-primary/",
+      "description": "Carolina Journal — Feb 2026 GOP primary poll (600 likely GOP voters, Feb 22-23 2026)",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://emersoncollegepolling.com/north-carolina-2026-poll-cooper-starts-us-senate-race-with-six-point-lead-and-clear-name-recognition-advantage-over-whatley/",
+      "description": "Emerson College Polling — Cooper +6 over Whatley in general election matchup",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://www.wral.com/story/nickel-suspends-campaign-backs-cooper-in-north-carolina-s-u-s-senate-race/22100904/",
+      "description": "WRAL — Wiley Nickel suspends campaign and endorses Cooper",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Shaunesi_Deberry",
+      "description": "Ballotpedia — Shaunesi DeBerry candidate profile",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Shannon_Bray",
+      "description": "Ballotpedia — Shannon Bray (Libertarian) candidate profile",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Brian_McGinnis_(North_Carolina)",
+      "description": "Ballotpedia — Brian McGinnis (Green) candidate profile",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://roycooper.com/",
+      "description": "Roy Cooper official campaign website",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://www.shannonbray.us/",
+      "description": "Shannon Bray official campaign website",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    },
+    {
+      "url": "https://www.cookpolitical.com/senate/race/488626",
+      "description": "Cook Political Report — NC Senate 2026 race rating page",
+      "fetchedAt": "2026-02-26T00:00:00Z"
+    }
+  ]
+}

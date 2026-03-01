@@ -1,0 +1,727 @@
+{
+  "slug": "greg-abbott",
+  "name": "Greg Abbott",
+  "party": "Republican",
+  "office": "Governor of Texas, 2026",
+  "incumbencyStatus": "incumbent (third term; seeking fourth term)",
+  "researchedAt": "2026-02-27T00:00:00Z",
+  "biography": {
+    "currentRole": "Governor of Texas (January 2015 - present); seeking fourth term in 2026",
+    "priorRoles": [
+      "Texas Attorney General (2002-2015)",
+      "Justice, Texas Supreme Court (1995-2001)",
+      "Judge, 129th District Court, Harris County (1992-1995)"
+    ],
+    "education": "B.B.A. Finance, University of Texas at Austin; J.D., Vanderbilt University Law School",
+    "background": "Conservative Republican. Became paraplegic after a tree fell on him during a jog in 1984. Known for aggressive use of state lawsuit power as AG (sued Obama administration 31 times). Three-term incumbent governor with an extensive executive record. Has signed approximately 24+ pro-gun bills, the nation's largest school voucher program ($1B ESA), total abortion ban, and constitutional ban on state income tax. Presides over $105.7M+ 2026 campaign war chest — a new Texas gubernatorial fundraising record. If he completes a fourth term, he would become Texas's longest-serving governor ever."
+  },
+  "campaignWebsite": {
+    "url": "https://www.gregabbott.com",
+    "issuesUrl": "https://www.gregabbott.com/issues/",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "Website confirmed live. Campaign issues page verified via web search. Direct fetch unavailable; positions extracted from campaign website coverage and campaign launch reporting.",
+    "statedPositions": [
+      {
+        "topic": "econ_tax_structure",
+        "quote": "No income tax in Texas. The Texas House just passed a resolution to constitutionally ban an income tax in Texas.",
+        "sourceUrl": "https://www.gregabbott.com/petition-poll/no-state-income-tax/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Constitutional amendment banning state income tax. 2026 centerpiece: eliminate school district property taxes for homeowners via constitutional amendment."
+      },
+      {
+        "topic": "property_tax / econ_tax_structure",
+        "quote": "It's time to drive a stake through the heart of local property tax hikes for good.",
+        "sourceUrl": "https://www.foxbusiness.com/politics/abbott-unveils-5-point-plan-overhaul-texas-property-taxes-targeting-relief-homeowners",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Five-point property tax reform plan: cap local government spending growth at population+inflation or 3.5%; require 2/3 voter approval for all local tax hikes; cap appraisal growth at 3%; appraise all properties once every 5 years; ultimately eliminate school district property taxes for homeowners. School funding shifted to state-level sales/surplus revenues."
+      },
+      {
+        "topic": "border_security / immigration",
+        "quote": "Governor Abbott has taken unprecedented steps to secure our southern border, including busing migrants to sanctuary cities like Washington D.C., building the Texas border wall, declaring Mexican drug cartels as terrorist organizations, and seizing enough lethal doses of fentanyl through Operation Lone Star.",
+        "sourceUrl": "https://www.gregabbott.com/issues/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign website issues page. Explicit enforcement-first immigration approach. Texas has spent $11B+ on border operations."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "School choice equals competition, and competition will make all schools better — schools, charter schools and home schools.",
+        "sourceUrl": "https://www.fox26houston.com/news/texas-gov-greg-abbott-launches-2026-re-election-campaign",
+        "date": "2025-11",
+        "confidence": "high",
+        "notes": "Reaffirmed at 2026 campaign launch. Already signed $1B ESA (voucher) law in May 2025."
+      },
+      {
+        "topic": "reproductive_rights",
+        "quote": "As long as I am governor of the great state of Texas, Texas will always protect the unborn.",
+        "sourceUrl": "https://ontheissues.org/Governor/Greg_Abbott_Abortion.htm",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Reaffirmed at 2026 Texas Rally for Life. Texas has total abortion ban with no exceptions for rape/incest. Abbott signed SB8, trigger law, and 2025 mail-order pill ban."
+      },
+      {
+        "topic": "firearms_policy",
+        "quote": "Abbott has signed nearly two dozen pro-gun bills into law, including House Bill 1927 which made Texas the 21st constitutional carry state in the nation.",
+        "sourceUrl": "https://www.nrapvf.org/articles/20220216/nra-endorses-texas-governor-greg-abbott",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "NRA endorsement language. A+ NRA grade confirmed through 2026 cycle."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Governor Abbott highlights banning DEI, reforming bail system, prohibiting cities from defunding police.",
+        "sourceUrl": "https://www.gregabbott.com/governor-abbott-announces-bid-for-re-election-in-houston/",
+        "date": "2025-11",
+        "confidence": "high",
+        "notes": "Explicit anti-reform, pro-law-enforcement-funding stance."
+      }
+    ]
+  },
+  "executiveRecord": {
+    "available": true,
+    "sources": [
+      "Texas Tribune legislative coverage",
+      "Office of the Texas Governor press releases (gov.texas.gov)",
+      "Texas Legislative Reference Library veto records",
+      "Wikipedia (Greg Abbott article)",
+      "Ballotpedia (Greg Abbott article)",
+      "NRA PVF endorsement pages"
+    ],
+    "keyActions": [
+      {
+        "action": "Signed HB 1927 — Constitutional/Permitless Carry",
+        "date": "2021-06-17",
+        "topic": "justice_firearms",
+        "direction": "poleB (protect gun rights)",
+        "sourceUrl": "https://www.texastribune.org/2021/06/16/texas-constitutional-carry-greg-abbott/",
+        "notes": "Made Texas the 21st constitutional carry state. Removed license and training requirements for handgun carry. NRA CEO Wayne LaPierre attended signing ceremony at the Alamo."
+      },
+      {
+        "action": "Signed 7-bill gun rights package",
+        "date": "2021-06-17",
+        "topic": "justice_firearms",
+        "direction": "poleB (protect gun rights)",
+        "sourceUrl": "https://www.nbcdfw.com/news/local/texas-news/gov-abbott-to-sign-second-amendment-gun-legislation/2659615/",
+        "notes": "Package included: SB 19 (bans government contracting with firms boycotting gun industry), SB 20 (hotel firearm storage rights), SB 550 (holster requirement removal), HB 957, HB 1500, HB 2622. Comprehensive expansion of gun rights with no new safety measures."
+      },
+      {
+        "action": "Signed SB 8 — Texas Heartbeat Act (6-week abortion ban)",
+        "date": "2021-05-19",
+        "topic": "reproductive_rights (health_public_health adjacent)",
+        "direction": "anti-abortion",
+        "sourceUrl": "https://publichealth.jhu.edu/2023/measuring-impacts-of-sb8-in-texas",
+        "notes": "Private enforcement mechanism allowed any person to sue providers. No exceptions for rape or incest. Abbott defended the absence of exceptions by stating Texas would 'eliminate all rapists from the streets' — claim later fact-checked as misleading."
+      },
+      {
+        "action": "Signed HB 1280 — Abortion Trigger Ban",
+        "date": "2021",
+        "topic": "reproductive_rights",
+        "direction": "anti-abortion",
+        "sourceUrl": "https://guides.sll.texas.gov/abortion-laws",
+        "notes": "Activated August 25, 2022 after Dobbs decision. Near-total ban; criminal penalties for providers. No rape/incest exceptions."
+      },
+      {
+        "action": "Signed Life of the Mother Act (SB 31 and SB 33)",
+        "date": "2025",
+        "topic": "reproductive_rights",
+        "direction": "anti-abortion with narrow carve-out",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-life-of-the-mother-act-in-austin",
+        "notes": "Clarified medical exceptions to give doctors more legal clarity for emergency procedures (e.g., premature rupture of membranes, ectopic pregnancies). Does NOT add rape/incest exceptions. Bipartisan support, championed by a Houston Democratic lawmaker."
+      },
+      {
+        "action": "Signed HB 7 — Mail-order abortion pill ban",
+        "date": "2025-09",
+        "topic": "reproductive_rights",
+        "direction": "anti-abortion",
+        "sourceUrl": "https://www.texasallianceforlife.org/texas-bold-stand-against-mail-order-abortion-pills/",
+        "notes": "Effective December 4, 2025. Bans mailing of abortion pills into Texas. Allows citizens to sue anyone who distributes them."
+      },
+      {
+        "action": "Launched Operation Lone Star — $11B+ state border enforcement program",
+        "date": "2021-03",
+        "topic": "immigration/border",
+        "direction": "enforcement-first / far right on immigration",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Operation_Lone_Star",
+        "notes": "Joint DPS/National Guard operation. Claimed 527,600+ apprehensions, 49,000+ criminal arrests, 573M+ lethal doses of fentanyl seized. Bused 119,200 migrants to Democratic cities (NYC, Chicago, DC, Denver). Built border wall segments. ACLU found ~70% of arrests were misdemeanor charges. Courts invalidated many early arrests as discriminatory. Abbott requested $11.1B federal reimbursement."
+      },
+      {
+        "action": "Signed ESA (school voucher) bill — $1 billion Education Savings Accounts",
+        "date": "2025-05-02",
+        "topic": "econ_school_choice",
+        "direction": "poleB (maximum school choice)",
+        "sourceUrl": "https://www.kut.org/politics/2025-05-02/abbott-billion-dollar-school-voucher-esa-law",
+        "notes": "Nation's largest school voucher program. $10K/student, $30K for special needs students, $2K for homeschoolers. Abbott ousted 11 Republican legislators who voted against school vouchers in 2024 primaries before finally passing. Starts issuing funds 2026-27 school year."
+      },
+      {
+        "action": "Signed SB 17 — DEI Ban at public universities",
+        "date": "2023-06-14",
+        "topic": "econ_school_choice / justice_policing_accountability",
+        "direction": "anti-DEI",
+        "sourceUrl": "https://www.cnn.com/2023/06/15/politics/greg-abbott-texas-dei-office-ban-colleges/index.html",
+        "notes": "Second state in the country to ban DEI offices at public universities. Effective January 1, 2024."
+      },
+      {
+        "action": "Signed SB 12 and SB 13 — Parental Bill of Rights (2025)",
+        "date": "2025",
+        "topic": "econ_school_choice / health_public_health",
+        "direction": "parental control / anti-LGBTQ curriculum",
+        "sourceUrl": "https://txvalues.org/victory-important-parental-rights-priority-bills-signed-by-governor-abbott-into-law/",
+        "notes": "Banned instruction on LGBTQ+ 'harmful sexual orientation and gender identity concepts' in public schools. Framed as parental rights."
+      },
+      {
+        "action": "Signed HB 900 — School library book restriction",
+        "date": "2023",
+        "topic": "econ_school_choice / health_public_health",
+        "direction": "parental control",
+        "sourceUrl": "https://kvue.com/article/news/politics/texas-legislature/greg-abbott-bill-signing-parent-empowerment/269-9aea2723-935c-40cd-9730-d643b5a87415",
+        "notes": "Bans sexually explicit materials from school libraries. Vendors must rate books for sexual content."
+      },
+      {
+        "action": "Signed HB 1900 and SB 23 — Anti-defunding-police legislation",
+        "date": "2021",
+        "topic": "justice_policing_accountability",
+        "direction": "poleB (back the blue / status quo)",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-back-the-blue-legislation",
+        "notes": "HB 1900 froze property tax revenues for cities over 250K population that defund police; cities also lose annexation powers for 10 years. SB 23 requires voter approval to reduce law enforcement budgets in counties 1M+. Most punitive anti-defund law in the country."
+      },
+      {
+        "action": "Pledged and executed pardon of Daniel Perry (convicted of murdering BLM protester)",
+        "date": "2023-04 (pledge) / 2024-05-16 (pardon)",
+        "topic": "justice_policing_accountability / justice_sentencing_goals",
+        "direction": "poleB",
+        "sourceUrl": "https://www.texastribune.org/2024/05/16/daniel-perry-greg-abbott/",
+        "notes": "Abbott pledged pardon one day after Perry was convicted of murder for shooting Garrett Foster at a 2020 BLM protest. Executed pardon May 2024 after board recommendation. Perry had made racist text messages before the shooting. Travis County DA attempted to overturn the pardon. Heavily criticized as politically injecting into the criminal justice system."
+      },
+      {
+        "action": "Executive Order GA-34 — Lifted statewide mask mandate, opened Texas 100%",
+        "date": "2021-03-02",
+        "topic": "health_public_health",
+        "direction": "poleB (individual choice over collective mandates)",
+        "sourceUrl": "https://gov.texas.gov/coronavirus-executive-orders",
+        "notes": "'Going forward, in Texas, there will not be any government-imposed shutdowns or mask mandates.' One of the earliest states to fully open. Abbott's rationale: individual liberty."
+      },
+      {
+        "action": "Executive Orders GA-39 and GA-40 — Banned COVID-19 vaccine mandates statewide",
+        "date": "2021-10",
+        "topic": "health_public_health",
+        "direction": "poleB (individual choice paramount)",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-issues-executive-order-39-prohibiting-vaccine-mandates-in-texas",
+        "notes": "Banned any entity in Texas — including private employers — from requiring COVID-19 vaccination. Prohibited vaccine passport requirements. Called Biden administration vaccine policy 'federal government overreach.' Later codified by Texas legislature."
+      },
+      {
+        "action": "Opposed Medicaid expansion — held firm throughout three terms",
+        "date": "2015-present",
+        "topic": "health_coverage_model",
+        "direction": "poleB (market-based coverage)",
+        "sourceUrl": "https://www.texastribune.org/2022/11/07/texas-medicaid-expansion-republicans/",
+        "notes": "Called Medicaid expansion 'a tax increase waiting to happen' and Medicaid 'broken and bloated.' Texas has the nation's highest uninsured rate (~16%). Has led multiple lawsuits to strike down the ACA — first as AG (2010) and again as governor."
+      },
+      {
+        "action": "Signed Texas Pharmaceutical Initiative (SB 2402) and drug price transparency law",
+        "date": "2023",
+        "topic": "health_cost_control",
+        "direction": "moderate — transparency/market mechanism, not price controls",
+        "sourceUrl": "https://www.lexology.com/library/detail.aspx?g=59a82065-86ae-4518-9454-c9c48e2ffbdc",
+        "notes": "Creates statewide PBM focused on price transparency and savings. Develops manufacturing partnerships for generic/specialty drugs. Requires manufacturers, PBMs, and health plans to report aggregate price data. Framed as market-based tool, not government price controls. More moderate than typical Republican posture on healthcare costs."
+      },
+      {
+        "action": "Vowed to exclude renewables from Chapter 313 replacement economic incentive program",
+        "date": "2023-03",
+        "topic": "climate_energy_portfolio",
+        "direction": "poleB (fossil fuel priority)",
+        "sourceUrl": "https://www.texastribune.org/2023/03/01/chapter-313-texas-renewables-economic-development/",
+        "notes": "Stated explicitly: 'I support [the program] not providing economic incentives for renewables.' Focus on 'dispatchable power' (natural gas/coal). Introduced 5 bills penalizing wind/solar and subsidizing natural gas."
+      },
+      {
+        "action": "Signed SB 13 — Anti-ESG fossil fuel investment mandate",
+        "date": "2021",
+        "topic": "climate_energy_portfolio / climate_ambition",
+        "direction": "poleB",
+        "sourceUrl": "https://comptroller.texas.gov/economy/fiscal-notes/archive/2023/may/fossil-fuels/",
+        "notes": "Required state pension funds to divest from firms 'boycotting' fossil fuels. Struck down as unconstitutional by a federal judge in February 2026 (First Amendment grounds). Abbott has not publicly responded to the ruling."
+      },
+      {
+        "action": "Executive order to protect Texas energy industry from federal ESG/climate overreach",
+        "date": "2021-01",
+        "topic": "climate_ambition / climate_energy_portfolio",
+        "direction": "poleB",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-issues-executive-order-relating-to-protection-of-texass-energy-industry-from-federal-overreach",
+        "notes": "Directed all state agencies to use all lawful powers to challenge any federal climate action threatening Texas energy sector. Consistent with AG-era EPA lawsuit record."
+      },
+      {
+        "action": "Vetoed energy efficiency bill",
+        "date": "2021",
+        "topic": "climate_ambition",
+        "direction": "poleB",
+        "sourceUrl": "https://environmentamerica.org/texas/media-center/gov-abbott-vetoes-energy-efficiency-bill/",
+        "notes": "Vetoed legislation that would have required energy efficiency standards."
+      },
+      {
+        "action": "Post-ERCOT Winter Storm Uri response: signed SB 2 and SB 3 grid reform",
+        "date": "2021-06-08",
+        "topic": "climate_energy_portfolio / infrastructure",
+        "direction": "fossil-fuel-centric grid reliability push",
+        "sourceUrl": "https://comptroller.texas.gov/economy/fiscal-notes/archive/2021/oct/winter-storm-reform.php",
+        "notes": "Required weatherization of all generation types but Abbott's policy response was fossil-fuel-focused: $18B for 10 new gas plants (zero-interest loans at taxpayer expense). Abbott initially blamed wind/solar for the crisis — this was disputed by experts (gas infrastructure failed more). FERC final report confirmed unwinterized fossil fuel plants caused most blackouts."
+      },
+      {
+        "action": "Signed housing supply reform bills — SB 840, SB 15, HB 24",
+        "date": "2025-08",
+        "topic": "housing_supply_zoning",
+        "direction": "poleA lean (loosen zoning / more supply) via market deregulation",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-laws-to-combat-statewide-housing-crisis-in-austin",
+        "notes": "SB 840: allows multifamily housing on any commercially-zoned land without rezoning; prohibits density/parking restrictions; minimum 36 units/acre. SB 15: prohibits unreasonably large lot requirements on 5-acre+ tracts. HB 24: reforms valid petition process so small groups cannot block pro-housing zoning changes. Abbott statement: 'This session, Texas did more than any state in America to make housing more affordable.' Bipartisan support. Pew Charitable Trusts applauded. Market-supply-side approach, not government subsidies."
+      },
+      {
+        "action": "Signed $18B property tax relief package — SB 2 and SB 3 (2023)",
+        "date": "2023",
+        "topic": "econ_tax_structure",
+        "direction": "tax reduction",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-largest-property-tax-cut-in-texas-history",
+        "notes": "Allocated $18B in budget surplus toward lowering school district property tax rates, increasing homestead exemptions, and increasing Franchise Tax exemptions for small businesses. Signed as 'largest property tax cut in Texas history' at the time."
+      },
+      {
+        "action": "Signed $10B+ property tax relief package — 2025",
+        "date": "2025-06",
+        "topic": "econ_tax_structure",
+        "direction": "tax reduction",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-largest-property-tax-cut-in-texas-history",
+        "notes": "Raised homestead exemption to $140K ($200K for seniors/disabled). Increased business personal property exemption from $2,500 to $125,000. Permanently reduced business franchise tax by 25% (HB 32)."
+      },
+      {
+        "action": "Signed strongest bail reform in Texas history — SB 9, SB 40, HB 75 (2025)",
+        "date": "2025",
+        "topic": "justice_sentencing_goals",
+        "direction": "poleB (punishment / deterrence)",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-signs-strongest-bail-reform-package-in-texas-history",
+        "notes": "Restricts cashless bail for violent/repeat offenders. ACLU says it allows judges to deny bail based on vague standards."
+      },
+      {
+        "action": "Released 5-Year Economic Development Strategic Plan; created Texas JETI program",
+        "date": "2025-03",
+        "topic": "econ_investment",
+        "direction": "poleB lean (private sector-first; targeted tax incentive deals rather than broad public investment)",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-releases-5-year-economic-development-strategic-plan",
+        "notes": "JETI provides property tax cuts to companies moving to Texas in exchange for job creation. Emphasis on semiconductor production, aerospace, workforce development at community colleges. Market-driven with targeted incentives — not government-led industrial policy. Texas Enterprise Fund is deal-closing mechanism, not broad public investment program."
+      },
+      {
+        "action": "Announced record $148 billion transportation investment — TxDOT 10-year plan",
+        "date": "2024",
+        "topic": "housing_transport_priority",
+        "direction": "poleB (car-centric infrastructure)",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-txdot-announce-record-148-billion-transportation-investment",
+        "notes": "89% of TxDOT budget dedicated to state highway development and maintenance. Public transit and rail receive approximately 2% combined. Abbott quote focused on 'roadways' and 'congestion relief for Texas drivers.'"
+      },
+      {
+        "action": "Redirected $210M from HHSC (SNAP/Medicaid administrator) to border security",
+        "date": "2022",
+        "topic": "econ_safetynet",
+        "direction": "poleB (conditional/limited safety net — deprioritized social spending)",
+        "sourceUrl": "https://doggett.house.gov/media/press-releases/abbott-administration-failures-risk-losing-federal-snap-and-medicaid-funds",
+        "notes": "Redirected hundreds of millions from health and human services to border operations. This created a SNAP/Medicaid application backlog that drew CMS warning letters. Some families waited 6+ months for food assistance."
+      },
+      {
+        "action": "Ended federal pandemic unemployment benefits early",
+        "date": "2021",
+        "topic": "econ_safetynet",
+        "direction": "poleB (conditional safety net — work-first approach)",
+        "sourceUrl": "https://gov.texas.gov/news/post/governor-abbott-announces-end-to-federal-pandemic-related-unemployment-benefits",
+        "notes": "Opted out of extended federal unemployment programs, citing labor shortage arguments."
+      },
+      {
+        "action": "Requested and received SNAP food restrictions waiver",
+        "date": "2025-05",
+        "topic": "econ_safetynet",
+        "direction": "poleB (behavioral conditions on safety net benefits)",
+        "sourceUrl": "https://www.texastribune.org/2025/05/15/snap-benefits-texas-snap-restrictions/",
+        "notes": "Starting April 1, 2026, SNAP recipients in Texas cannot purchase candy, artificial sweeteners, or high-sugar drinks. Adds behavioral conditions to benefit eligibility."
+      }
+    ],
+    "agRecord": {
+      "available": true,
+      "yearsInOffice": "2002-2015",
+      "keyActions": [
+        {
+          "action": "Filed ACA lawsuit",
+          "date": "2010",
+          "topic": "health_coverage_model",
+          "description": "Was the first state AG to file suit against the ACA when it passed. Called it unconstitutional federal overreach.",
+          "notes": "Consistent with ongoing gubernatorial record."
+        },
+        {
+          "action": "Sued Obama EPA multiple times over environmental regulations",
+          "date": "2009-2015",
+          "topic": "climate_ambition / climate_energy_portfolio",
+          "description": "Filed multiple suits against EPA climate and clean air regulations. Part of pattern opposing federal environmental oversight.",
+          "notes": "Consistent with gubernatorial executive order pattern."
+        },
+        {
+          "action": "Texas Supreme Court case on Ten Commandments",
+          "date": "2005",
+          "topic": "misc / civil rights",
+          "description": "Successfully advocated for Texas Capitol's Ten Commandments display in Van Orden v. Perry.",
+          "notes": "Background context only."
+        }
+      ]
+    }
+  },
+  "scorecards": [
+    {
+      "organization": "National Rifle Association Political Victory Fund",
+      "score": null,
+      "grade": "A+",
+      "url": "https://www.nrapvf.org/articles/20220216/nra-endorses-texas-governor-greg-abbott",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Highest attainable NRA grade. NRA endorsed Abbott in 2014, 2018, 2022, and 2026 cycles. NRA CEO Wayne LaPierre attended the constitutional carry bill signing ceremony at the Alamo in June 2021. Abbott has signed approximately 24+ pro-gun bills."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "LCV does not publish scorecard grades for state-level governors in its standard format. Based on the executive record — no climate policy, excluding renewables from incentives, anti-ESG executive orders, multiple EPA lawsuits, vetoing energy efficiency bill — an equivalent score would be near 0%."
+    },
+    {
+      "organization": "Texas Alliance for Life",
+      "score": null,
+      "grade": "Endorsed (2026)",
+      "url": "https://www.texasallianceforlife.org/2026-primary-election-endorsements/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Texas anti-abortion advocacy group endorsed Abbott for 2026. Consistent with SB8, trigger ban, mail-order pill ban record."
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "score": null,
+      "grade": "Opposed — endorsed Democratic challenger Gina Hinojosa (2026)",
+      "url": "https://www.texastribune.org/2026/02/11/texas-labor-unions-abbott-endorsement-teamsters-gina-hinojosa/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "250,000+ member umbrella labor organization. AFL-CIO president stated Abbott 'failed workers for 11+ years.' Abbott signed multiple anti-labor measures: defended right-to-work, preempted local paid sick leave ordinances."
+    },
+    {
+      "organization": "Teamsters Joint Council 58 and 80",
+      "score": null,
+      "grade": "Endorsed (2026)",
+      "url": "https://www.texastribune.org/2026/02/11/texas-labor-unions-abbott-endorsement-teamsters-gina-hinojosa/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Approximately 40,000 workers. Unusual Republican gubernatorial labor endorsement. Alongside Plumbers Local Union 68, Longshoremen, and Pipefitters Local 211. Likely related to port/pipeline infrastructure investments in Abbott's record."
+    },
+    {
+      "organization": "Texas Civil Justice League",
+      "score": null,
+      "grade": "Endorsed (2026-02-25)",
+      "url": "https://www.gregabbott.com/texas-civil-justice-league-endorses-governor-greg-abbott-for-reelection/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Tort reform / business liability group."
+    },
+    {
+      "organization": "Turning Point Action",
+      "score": null,
+      "grade": "Endorsed (2026-02-19)",
+      "url": "https://www.gregabbott.com/turning-point-action-endorses-governor-abbott-for-reelection/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Conservative youth activism group."
+    },
+    {
+      "organization": "VoteSmart / SIGPAC ratings",
+      "score": null,
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/50168/greg-abbott",
+      "notes": "VoteSmart page confirmed to exist but specific numerical interest group scores not retrievable via web search. Page should show ACU, Heritage Action, and other conservative group ratings. OnTheIssues.org classifies Abbott as 'Hard-Core Conservative' based on aggregated positions."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Houston Public Media / multiple outlets — 2026 campaign launch",
+      "date": "2025-11-09",
+      "url": "https://www.houstonpublicmedia.org/articles/news/texas/2025/11/09/535561/greg-abbott-announces-reelection-campaign-for-record-fourth-term-as-texas-governor/",
+      "keyExchanges": [
+        {
+          "topic": "overall framing",
+          "quote": "Texas as a bastion of common sense in a country reeling from far-left, progressive insanity.",
+          "notes": "Campaign launch framing. 'Let's Roll' campaign slogan. Emphasis on continuing the 'Texas model' of low taxes, job growth, conservative social policies."
+        },
+        {
+          "topic": "econ_school_choice",
+          "quote": "School choice equals competition, and competition will make all schools better.",
+          "notes": "Reaffirmed at launch event."
+        },
+        {
+          "topic": "border security",
+          "quote": "Texas will continue to provide the border security blueprint for the nation.",
+          "notes": "Continuation of Operation Lone Star posture."
+        }
+      ]
+    },
+    {
+      "outlet": "Houston Public Media — election federalism",
+      "date": "2026-02-10",
+      "url": "https://www.houstonpublicmedia.org/articles/news/politics/elections/2026/02/10/543049/trump-abbott-elections-texas-harris-county/",
+      "keyExchanges": [
+        {
+          "topic": "federalism / elections",
+          "quote": "Abbott pushed back against Trump's call for federal oversight of elections.",
+          "notes": "Rare public disagreement with Trump — Abbott asserts state sovereignty over election administration. Context: Abbott has simultaneously supported increased state oversight of Harris County elections."
+        }
+      ]
+    },
+    {
+      "outlet": "NPR — abortion law defense",
+      "date": "2021-09-08",
+      "url": "https://www.npr.org/2021/09/08/1035089278/texas-governor-defends-abortion-law-saying-state-will-eliminate-all-rapists",
+      "keyExchanges": [
+        {
+          "topic": "reproductive rights — no rape/incest exceptions in SB 8",
+          "quote": "Texas will eliminate all rapists from the streets of Texas by aggressively going out and arresting them.",
+          "notes": "Defense of SB 8 having no rape or incest exception. Fact-checked as misleading by multiple outlets — Texas has a large backlog of rape kits and low prosecution rates."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Renewable energy vs. Texas as renewable energy leader",
+      "conflict": "Abbott frequently touts Texas as the #1 state for wind and utility-scale solar while simultaneously excluding renewables from economic incentives, blaming green energy for the 2021 ERCOT crisis (disputed by experts), backing $18B in natural gas plant subsidies, and directing PUC to penalize renewable projects. Texas leads the US in wind energy output as a market outcome despite Abbott's policy actively disfavoring renewables.",
+      "resolution": "Score on policy record, not market output statistics. His policy actions clearly favor fossil fuels.",
+      "sources": ["Texas Tribune March 2023", "Texas Monthly 'War on Renewable Energy'", "Texas Tribune May 2023", "NPR StateImpact Texas"]
+    },
+    {
+      "topic": "Anti-ESG fossil fuel law struck down (February 2026)",
+      "conflict": "Abbott signed SB 13 mandating state pension fund divestment from firms 'boycotting' fossil fuels, but a federal judge struck down the law as unconstitutional on First Amendment grounds in February 2026. Abbott has not publicly addressed the ruling.",
+      "sources": ["Texas Tribune February 2026", "Houston Public Media February 2026"]
+    },
+    {
+      "topic": "Labor endorsements: split between Teamsters and AFL-CIO",
+      "conflict": "Abbott received endorsements from Teamsters Joint Council 58 and 80 and several trade unions (plumbers, longshoremen, pipefitters) while the Texas AFL-CIO endorsed his Democratic opponent and called Abbott a failure for workers. Texas remains one of the worst states for labor rights under Abbott: right-to-work enforced, local paid sick leave ordinances preempted, no minimum wage increases.",
+      "resolution": "Teamster endorsements likely driven by pipeline/port infrastructure spending, not general labor policy. Score on legislative record and AFL-CIO opposition.",
+      "sources": ["Texas Tribune February 2026"]
+    },
+    {
+      "topic": "Housing supply zoning reform vs. general anti-government-mandate posture",
+      "conflict": "Abbott signed aggressive pro-density zoning bills in 2025 that override local zoning ordinances — an unusual position for a governor who otherwise champions local government control and opposes government mandates. This is a pragmatic exception apparently driven by housing cost politics.",
+      "resolution": "Score the actual policy effect: the bills genuinely loosen zoning. Flag as market-oriented deregulation (supply-side), not government-directed affordability.",
+      "sources": ["Gov. Texas signing ceremony August 2025", "Pew Charitable Trusts analysis"]
+    },
+    {
+      "topic": "Pro-life vs. death penalty",
+      "conflict": "Abbott describes himself as pro-life and has signed sweeping anti-abortion legislation, but has presided over 55+ executions as governor, granting clemency in only one death penalty case (Thomas Whitaker, 2018) in 11 years despite multiple high-profile cases where credible innocence concerns were raised (Rodney Reed, Melissa Lucio, Robert Roberson).",
+      "sources": ["Texas Tribune", "EJI (Equal Justice Initiative)", "Amnesty International USA"]
+    }
+  ],
+  "positionsByAxis": {
+    "econ_safetynet": {
+      "evidenceDirection": "poleB (conditional/limited safety net)",
+      "confidence": "high",
+      "evidence": [
+        "Opposes Medicaid expansion since 2015 despite Texas having nation's highest uninsured rate (~16%); called it 'a tax increase waiting to happen'",
+        "Redirected $210M from HHSC (SNAP/Medicaid administrator) to fund border operations (2022), causing application backlogs",
+        "Ended federal pandemic unemployment benefits early (2021)",
+        "Requested and received SNAP food restriction waiver adding behavioral conditions to benefits (2025)",
+        "Multiple ACA lawsuits as AG and governor to eliminate federal healthcare entitlement"
+      ],
+      "notes": "Consistent record across 11 years: oppose expansion, add behavioral conditions, redirect funding away from social programs."
+    },
+    "econ_investment": {
+      "evidenceDirection": "poleB lean (private sector-first; opposed to broad public investment)",
+      "confidence": "high",
+      "evidence": [
+        "Opposes federal climate/clean energy investment programs; directed agencies to fight Biden clean energy policies",
+        "Signed anti-ESG law requiring divestment from firms that boycott fossil fuels (SB 13)",
+        "No state income tax; constitutional amendment to permanently ban income tax",
+        "JETI/Enterprise Fund programs are targeted deal-closing incentives (tax cuts), not broad public investment",
+        "Signed $28B+ in property tax cuts (2023+2025) reducing public revenue"
+      ],
+      "notes": "Uses targeted tax incentives to attract business (TEF, JETI) but opposed to government-directed industrial policy or broad public investment. Supports semiconductor investments as targeted deal-making."
+    },
+    "econ_tax_structure": {
+      "evidenceDirection": "poleB (flat/regressive structure; opposes progressive taxation)",
+      "confidence": "very high",
+      "evidence": [
+        "Signed constitutional amendment permanently banning state income tax",
+        "Campaign website petition: 'No State Income Tax in Texas'",
+        "Texas relies heavily on regressive property and sales taxes with no progressive income tax",
+        "2026 flagship proposal: eliminate school district property taxes entirely for homeowners via constitutional amendment",
+        "Signed $18B property tax cut (2023) and $10B+ property tax relief (2025)",
+        "Permanently reduced business franchise tax by 25%"
+      ],
+      "notes": "Constitutional opposition to progressive taxation. The 2026 proposal to eliminate school property taxes (replacing with state-level sales/surplus revenues) would further shift the tax burden regressive."
+    },
+    "econ_school_choice": {
+      "evidenceDirection": "poleB (maximum school choice)",
+      "confidence": "very high",
+      "evidence": [
+        "Signed $1B ESA school voucher law May 2025 — nation's largest program ($10K/student, $30K special needs, $2K homeschool)",
+        "Spent years and significant political capital to pass school choice, holding 4 special sessions in 2023",
+        "Ousted 11 Republican legislators who voted against school vouchers in 2024 primaries",
+        "Signed SB 17: DEI ban at public universities (2023)",
+        "Signed school library book restriction bills (HB 900, 2023)",
+        "Signed Parental Bill of Rights (SB 12, 2025) — banned LGBTQ+ curriculum in schools",
+        "Campaign website and 2026 launch reaffirm school choice as priority"
+      ],
+      "notes": "Extremely strong signal. Abbott spent more political capital on school vouchers than any other domestic policy priority in his third term."
+    },
+    "health_coverage_model": {
+      "evidenceDirection": "poleB (market-based coverage; maximum opposition to government insurance expansion)",
+      "confidence": "very high",
+      "evidence": [
+        "Consistently opposed Medicaid expansion since 2015 despite Texas having nation's highest uninsured rate",
+        "Filed ACA lawsuit as AG (2010) — was the first AG in the country to do so",
+        "Led another ACA repeal lawsuit as governor",
+        "Called Medicaid 'broken and bloated'; Medicaid expansion 'a tax increase waiting to happen'",
+        "No support for public option, universal coverage, or government health program expansion"
+      ],
+      "notes": "No ambiguity. One of the most anti-expansion governors in the country across the entire period studied."
+    },
+    "health_cost_control": {
+      "evidenceDirection": "poleB lean (market competition; opposes price controls, but enacted some transparency measures)",
+      "confidence": "medium",
+      "evidence": [
+        "Signed Texas Pharmaceutical Initiative (SB 2402, 2023): state PBM, drug manufacturing partnerships, price transparency requirements",
+        "General market orientation: opposes ACA cost control mechanisms, opposes government drug pricing mandates",
+        "No evidence of support for Medicare-style drug price negotiation or hospital rate setting"
+      ],
+      "notes": "The Pharmaceutical Initiative is notable — more moderate than a pure Pole B stance. It creates a state purchasing mechanism for drugs. But it is framed as market transparency and procurement efficiency, not government price controls. Overall market orientation is clear."
+    },
+    "health_public_health": {
+      "evidenceDirection": "poleB (individual choice paramount; oppose collective health mandates)",
+      "confidence": "very high",
+      "evidence": [
+        "Lifted statewide mask mandate March 2021 — one of the first governors to do so, opened TX 100%",
+        "Banned COVID vaccine mandates statewide by ANY entity including private employers (EO GA-40, Oct 2021)",
+        "Prohibited vaccine passport requirements",
+        "Signed SB 12 and SB 13 (2025) banning LGBTQ+ instruction in schools",
+        "Consistently framed public health interventions as government overreach"
+      ],
+      "notes": "Extremely strong individual-liberty-over-collective-mandates signal. One of the most aggressive anti-mandate governors in the country."
+    },
+    "housing_supply_zoning": {
+      "evidenceDirection": "poleA lean (loosen zoning / more supply) — achieved via market deregulation, not government mandate",
+      "confidence": "medium",
+      "evidence": [
+        "Signed SB 15 (2025): prohibits unreasonably large lot requirements",
+        "Signed SB 840 (2025): allows multifamily/mixed-use in office/retail zones, prohibits density restrictions, minimum 36 units/acre",
+        "Signed HB 24 (2025): reforms valid petition process to make pro-housing zoning changes easier",
+        "Abbott statement: 'This session, Texas did more than any state in America to make housing more affordable'"
+      ],
+      "notes": "Genuinely supply-liberalizing zoning reform — unusual for a conservative governor. Driven by housing cost politics. Approach is market-supply-side deregulation overriding local zoning restrictions. Not government-subsidized affordable housing."
+    },
+    "housing_affordability_tools": {
+      "evidenceDirection": "poleB (market solutions, not government affordability subsidies)",
+      "confidence": "medium",
+      "evidence": [
+        "Housing reform bills are entirely deregulatory/supply-side — no government housing subsidies in Texas under Abbott",
+        "Property tax cuts are his housing affordability tool, not direct housing assistance programs",
+        "No evidence of support for housing vouchers, inclusionary zoning mandates, or government housing construction programs"
+      ],
+      "notes": "Supply-side deregulation is his entire affordability approach. No government subsidy mechanism."
+    },
+    "housing_transport_priority": {
+      "evidenceDirection": "poleB (car-centric infrastructure priority)",
+      "confidence": "medium",
+      "evidence": [
+        "$146B-$148B TxDOT 10-year transportation plan with stated emphasis on 'roadways' and 'congestion relief'",
+        "Abbott quote: 'this more than $146 billion investment in our roadways will help Texas meet the critical needs of our growing state'",
+        "89% of TxDOT budget dedicated to highway development and maintenance; public transit receives ~2%",
+        "Texas has no state-funded urban rail expansion program under Abbott"
+      ],
+      "notes": "Plan technically includes transit/rail as a small portion of portfolio, but Abbott's stated priority is highway expansion. No championing of public transit."
+    },
+    "justice_policing_accountability": {
+      "evidenceDirection": "poleB (back the blue / status quo; maximum opposition to oversight/reform)",
+      "confidence": "very high",
+      "evidence": [
+        "Signed HB 1900: froze property tax revenues for cities that defund police (250K+ pop); stripped 10-year annexation powers",
+        "Signed SB 23: requires voter approval to reduce law enforcement budgets in counties 1M+ population",
+        "Pledged and executed pardon of Daniel Perry (convicted of murder for shooting BLM protester) one day after conviction",
+        "Signed Back the Blue legislation package",
+        "'Remained silent on calls for myriad changes to policing tactics or accountability' — Texas Tribune, 2021",
+        "Per criminal justice advocate Scott Henson: 'police reform of even the smallest sort cannot occur in Texas while Greg Abbott and Dan Patrick remain in office'"
+      ],
+      "notes": "Uniformly anti-accountability-reform record. Signed some modest training reforms (Botham Jean Act) but these are minimal relative to anti-defund legislative posture."
+    },
+    "justice_sentencing_goals": {
+      "evidenceDirection": "poleB (punishment / deterrence)",
+      "confidence": "high",
+      "evidence": [
+        "Signed 'strongest bail reform in Texas history' (2025): restricts cashless bail for violent/repeat offenders",
+        "Presided over 55+ executions as governor; denied clemency in nearly all cases despite innocence claims (Rodney Reed, Melissa Lucio, Robert Roberson cases)",
+        "One clemency grant in 11 years (Whitaker, 2018) for a unique fact pattern",
+        "Campaigned in every cycle on 'tough-on-crime' messaging",
+        "Vetoed bipartisan criminal justice reform bill in 2021",
+        "Pledged and delivered pardon for Daniel Perry (vigilante killing)"
+      ],
+      "notes": "Consistent punishment/deterrence orientation throughout career as AG and governor."
+    },
+    "justice_firearms": {
+      "evidenceDirection": "poleB (protect gun rights — near maximum)",
+      "confidence": "very high",
+      "evidence": [
+        "NRA A+ grade (highest attainable) — consistent across every election cycle since 2014",
+        "Signed constitutional/permitless carry (HB 1927, 2021) — Texas became 21st constitutional carry state",
+        "Signed 7-bill gun rights package (2021) including campus carry, hotel storage, anti-gun-industry-boycott law",
+        "24+ pro-gun bills signed during governorship",
+        "No red flag law, no background check expansion, no assault weapons restrictions",
+        "NRA CEO attended Alamo signing ceremony"
+      ],
+      "notes": "Unambiguously near maximum score on this axis. No gun safety votes or actions of any kind."
+    },
+    "climate_ambition": {
+      "evidenceDirection": "poleB (climate denial / no climate policy — near maximum)",
+      "confidence": "very high",
+      "evidence": [
+        "Zero administration climate change policy across three terms",
+        "Repeatedly refused to use the term 'climate change' in public — deflected with 'different climatic challenges'",
+        "Signed executive order to fight all federal climate actions threatening Texas energy sector",
+        "Vowed to fight Biden climate agenda on day one of Biden administration",
+        "Signed SB 13: mandated state divestment from firms 'boycotting' fossil fuels",
+        "Vetoed energy efficiency legislation",
+        "Texas has no greenhouse gas reduction targets, no emissions standards beyond federal minimums"
+      ],
+      "notes": "One of the least climate-engaged governors in the country. Climate denial and policy indifference is a defining characteristic of his administration."
+    },
+    "climate_energy_portfolio": {
+      "evidenceDirection": "poleB (fossil fuel priority — actively hostile to renewables in policy despite Texas market leading in wind/solar)",
+      "confidence": "very high",
+      "evidence": [
+        "Vowed to exclude renewables from Chapter 313 replacement economic incentive program (March 2023)",
+        "Introduced 5 bills penalizing wind/solar and subsidizing natural gas",
+        "Backed $18B natural gas plant construction program (zero-interest loans at taxpayer expense)",
+        "Directed PUC to penalize renewable energy companies for non-delivery",
+        "Signed SB 13: anti-ESG law protecting fossil fuel industry from investment pressure",
+        "Signed executive order protecting Texas energy industry from federal ESG/climate action",
+        "Blamed green energy for Winter Storm Uri (disputed by experts)"
+      ],
+      "notes": "Texas leads the US in wind energy capacity as a market outcome, but Abbott's policy deliberately disfavors renewables. Score on policy record, not market statistics."
+    },
+    "climate_permitting": {
+      "evidenceDirection": "poleB (no green permitting acceleration; hostile to renewable project environment)",
+      "confidence": "high",
+      "evidence": [
+        "No green energy permitting streamlining policies",
+        "Directed PUC to impose performance penalties specifically on renewable projects",
+        "Signed SB 13 limiting renewable energy investment",
+        "As AG, sued EPA multiple times over clean air regulations"
+      ],
+      "notes": "Opposite of green permitting acceleration. Regulatory environment under Abbott makes renewable projects harder, not easier."
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "justice_firearms (NRA A+ lifetime; constitutional carry signed; 24+ bills; NRA CEO at signing)",
+      "econ_school_choice (signed nation's largest voucher program; ousted 11 GOP opponents in primaries)",
+      "health_coverage_model (consistent Medicaid expansion opposition for 11 years; multiple ACA lawsuits)",
+      "justice_policing_accountability (signed punitive anti-defund laws; executed Perry pardon; Back the Blue legislation)",
+      "climate_ambition and climate_energy_portfolio (no climate policy; excluded renewables from incentives; fossil fuel protection orders)",
+      "health_public_health (banned vaccine mandates by all entities including private employers; lifted mask mandate early)",
+      "econ_tax_structure (constitutional income tax ban; $28B+ in property tax cuts; 2026 proposal to abolish school property taxes)",
+      "justice_sentencing_goals (55+ executions; denied clemency; bail reform; tough-on-crime AG history)"
+    ],
+    "weakestAxes": [
+      "health_cost_control (Texas Pharmaceutical Initiative creates some state purchasing mechanism — slightly more moderate than pure poleB; limited direct record otherwise)",
+      "housing_transport_priority (direction is clear but the detailed split of transit vs. highway spending requires assumption from general budget proportions)"
+    ],
+    "overallConfidence": "very high",
+    "notes": "Greg Abbott has an 11-year gubernatorial record plus 13 years as AG — one of the most documented executive records available for any state official. Evidence for all 16 axes is available from primary Tier 1 sources (signed legislation, executive orders, official press releases). No significant evidence gaps. His positions are unusually explicit and consistent — very little ambiguity across any axis. Key 2026 campaign priorities: property tax reform (centerpiece — abolish school property taxes), border security continuation, and defense of school choice. Strongest policy evidence: firearms, school choice, healthcare non-expansion, climate inaction, anti-police-reform. Notable nuance: housing supply zoning reform in 2025 is genuinely supply-liberalizing and is an exception to his otherwise maximum-conservatism posture across most axes."
+  }
+}

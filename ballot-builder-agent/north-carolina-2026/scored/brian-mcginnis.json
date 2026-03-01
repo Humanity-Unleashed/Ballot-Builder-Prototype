@@ -1,0 +1,195 @@
+{
+  "slug": "brian-mcginnis",
+  "name": "Brian McGinnis",
+  "party": "Green",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "scoredAt": "2026-02-26T12:00:00Z",
+  "profileSummary": "First-time Green Party candidate; Iraq War veteran and active firefighter running on an anti-war, pro-social-services platform with no prior elected office or legislative record.",
+  "keyPositions": [
+    "Anti-war foreign policy: opposes 'wars based on greed,' calls for military restraint to imminent national security threats only",
+    "Increased public education funding; opposes federal cuts to schools",
+    "Solar energy investment in rural NC communities; supports manufacturing revival",
+    "Expanded and better-staffed VA for veterans",
+    "No corporate donations; supports term limits; pledges to serve only one term"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Campaign page: 'anti war, pro social services perspective'",
+        "Campaign page: VA staffing and access expansion",
+        "Green Party platform: expand all safety net programs, UBI, universal childcare"
+      ],
+      "notes": "Personal statements ('pro social services,' VA expansion) are directionally clear but lack specifics on safety net programs like unemployment, housing assistance, or income support. Green Party platform fills the gap but is Tier 3-4 evidence. Scored at 2 rather than 0-1 because personal statements are vague on scope."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Campaign page: 'ramping up manufacturing and energy in NC with furniture and other factories, as well as solar farms'",
+        "Campaign page: education system 'in dire need of increased funding instead of federal cuts'",
+        "Campaign page: VA 'needs to be better staffed'",
+        "Green Party platform: Green New Deal, WWII-scale public mobilization"
+      ],
+      "notes": "Multiple personal statements all point toward more public investment — education funding, manufacturing revival, VA staffing, solar farms. Consistent direction but no specifics on funding mechanisms or dollar amounts. Platform corroborates. Confidence remains low because no specifics on fiscal trade-offs."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": [
+        "Campaign page: education system 'is in dire need of increased funding instead of federal cuts'",
+        "Green Party platform: 'Fully fund public schools; oppose vouchers; oppose privatization and for-profit charter schools'"
+      ],
+      "notes": "Personal statement explicitly calls for increased public school funding, framed against federal cuts. Green Party platform opposes vouchers and privatization. The personal statement partially corroborates the platform position — both point strongly toward Pole A. Scored at 1 (strong public school support) rather than 0 because no personal statement explicitly opposes vouchers or charters."
+    },
+    "econ_tax_structure": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Campaign page: no corporate donations pledge (signals anti-corporate orientation)",
+        "Green Party platform: 'Highly progressive taxation; shift tax burden to corporations; tax wealth and speculation'"
+      ],
+      "notes": "No personal statement on tax policy. The no-corporate-donations pledge and 'pro social services' framing are consistent with progressive taxation but are not direct evidence. Relying primarily on Green Party platform attribution. Scored at 2 rather than 0-1 to reflect the weak personal corroboration."
+    },
+    "health_coverage_model": {
+      "score": 1,
+      "confidence": "low",
+      "sources": [
+        "Campaign page: 'pro social services'",
+        "Green Party platform: 'Medicare for All / single-payer universal healthcare; eliminate private insurance role'"
+      ],
+      "notes": "No personal statement on healthcare model. 'Pro social services' is consistent but not specific. Green Party platform advocates full single-payer. Scored at 1 (strong government insurance) based on platform attribution with the caveat that McGinnis has not personally articulated this position."
+    },
+    "health_cost_control": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Green Party platform: single-payer system implies government price setting",
+        "Campaign page: 'pro social services' (weak indirect signal)"
+      ],
+      "notes": "Entirely inferred from the Green Party platform position on single-payer healthcare, which implies government price controls. No personal statement on drug pricing, hospital rate setting, or cost control mechanisms. Very low evidence quality."
+    },
+    "climate_ambition": {
+      "score": 1,
+      "confidence": "low",
+      "sources": [
+        "Campaign page: solar farms in rural NC",
+        "Green Party platform: 'Green New Deal — WWII-scale mobilization; 100% clean renewable energy by 2030; end new fossil fuel development'"
+      ],
+      "notes": "Personal advocacy for solar farms signals climate ambition but is modest in scope compared to the Green New Deal platform. The platform calls for emergency-level action. Scored at 1 reflecting the platform's aggressive stance, but personal evidence only weakly corroborates the full ambition level."
+    },
+    "climate_energy_portfolio": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": [
+        "Campaign page: 'solar farms in rural areas with low economies'",
+        "Green Party platform: '100% clean renewable energy by 2030; end new fossil fuel development'"
+      ],
+      "notes": "Personal statement specifically advocates for solar energy investment. Green Party platform calls for 100% renewables and ending fossil fuel development. The personal solar advocacy is a direct corroboration of the platform's renewables-first direction. Medium confidence because the personal statement names a specific energy source and investment approach."
+    },
+    "housing_affordability_tools": {
+      "score": 1,
+      "confidence": "low",
+      "sources": [
+        "Green Party platform: 'Housing as a human right; rent control with vacancy control; public housing investment'"
+      ],
+      "notes": "Entirely platform-derived. No personal statement on housing affordability, rent control, or public housing. The platform is very strong on Pole A (government subsidies, rent control, housing as a right). Scored at 1 but with low confidence due to complete reliance on party platform."
+    },
+    "housing_transport_priority": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Green Party platform: 'Mass transit expansion; reduce car dependence'"
+      ],
+      "notes": "Entirely platform-derived. No personal statement on transit vs. car infrastructure. McGinnis's emphasis on rural NC economies may actually complicate the transit-first platform position, since rural areas are inherently more car-dependent. Scored at 2 rather than 0-1 to acknowledge this tension."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Green Party platform: 'Demilitarize police; independent civilian review boards'"
+      ],
+      "notes": "Entirely platform-derived. No personal statement on policing. McGinnis's firefighter and military background could plausibly cut either direction on policing issues — first responder solidarity vs. anti-war/anti-authority orientation. Insufficient personal evidence to resolve. Scored on platform only."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Green Party platform: 'end war on drugs; oppose mandatory minimums; end mass incarceration'"
+      ],
+      "notes": "Entirely platform-derived. No personal statement on sentencing, incarceration, or criminal justice reform. Platform is strongly rehabilitation-focused."
+    },
+    "justice_firearms": {
+      "score": 1,
+      "confidence": "low",
+      "sources": [
+        "Green Party platform: 'ban on assault weapons; universal background checks; firearms safety course requirement'"
+      ],
+      "notes": "Entirely platform-derived. No personal statement on firearms policy. Notable gap: as a Marine veteran and firefighter, McGinnis may have personal views on firearms that diverge from the party platform, but no evidence exists either way. Scored on platform only, which is strongly pro-regulation."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Anti-war stance rooted in opposition to exploitation ('wars based on greed'); pro-Palestine advocacy with firsthand West Bank witness account; calls for solar energy in economically disadvantaged rural areas; 'pro social services' framing. Multiple signals of concern for welfare beyond in-group. Not scored higher because universalism in his rhetoric focuses on specific groups (veterans, Palestinians, rural NC) rather than abstract universal principles."
+    },
+    "benevolence": {
+      "score": 0.6,
+      "reasoning": "Strongest value signal. Active firefighter — a career defined by caring for community members in crisis. VA advocacy rooted in personal veteran experience and care for fellow service members. Education funding framed as addressing community need. The in-group care orientation (fellow veterans, fellow firefighters, fellow community members) is textbook benevolence."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Running as a third-party candidate against the two-party system is itself an expression of independent thought and action. Rejection of corporate donations signals resistance to institutional influence. One-term pledge suggests desire to act freely rather than optimize for re-election. Moderate positive signal."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Weak positive signal. Willingness to challenge the political status quo through a Green Party run suggests some openness to novelty. However, his rhetoric is more about returning to fundamentals (better-staffed VA, more school funding) than about bold new experiments. Iraq War service and West Bank visit show engagement with challenging experiences."
+    },
+    "security": {
+      "score": 0.1,
+      "reasoning": "Mixed signals that net to weak positive. Military service and firefighting career suggest comfort with security-oriented institutions and roles. However, his anti-war stance and critique of military overuse work against traditional security framing. VA advocacy is security-adjacent (caring for those who served in security roles). Near-neutral."
+    },
+    "tradition": {
+      "score": -0.2,
+      "reasoning": "Running as a Green Party candidate against the two-party system, advocating for structural changes to energy and education, and opposing conventional foreign policy all work mildly against tradition. However, his respect for military service, firefighter identity, and rural community values show some traditional orientation. Net mildly negative."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "Third-party candidacy is inherently non-conformist. Rejection of corporate donations rejects accepted political norms. One-term pledge rejects career politician norms. Anti-war stance dissents from bipartisan foreign policy consensus. The Green Party itself is a challenge to the conformist two-party structure."
+    },
+    "power": {
+      "score": -0.4,
+      "reasoning": "Explicit rejection of corporate power and influence in politics. Anti-war stance frames military action as serving elite interests ('wars based on greed'). One-term pledge and no-corporate-donations pledge actively renounce the standard power-accumulation strategies of political candidates. Platform redistributes from powerful to less powerful."
+    },
+    "achievement": {
+      "score": 0.0,
+      "reasoning": "No meaningful signal in either direction. His rhetoric is not framed around personal accomplishment or competitive success, but neither does he actively oppose meritocratic values. Marine service and firefighting career show personal competence but are not rhetorically framed as achievements."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence in either direction. Campaign rhetoric is entirely about service, policy, and justice — not about pleasure, enjoyment, or quality-of-life in the hedonic sense."
+    }
+  },
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": [
+      "health_public_health",
+      "housing_supply_zoning",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "health_public_health: No personal statement on vaccine mandates, public health authority, or drug policy; platform signal exists but is too vague to score meaningfully. housing_supply_zoning: No personal or platform statement specific enough on zoning density. climate_permitting: No personal or platform statement on permitting speed vs. environmental review trade-offs.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No voting record — first-time candidate with no legislative history",
+      "No third-party scorecards (LCV, NRA, AFL-CIO, etc.) — no record to rate",
+      "No editorial board interview or structured policy Q&A found",
+      "No position on firearms despite military background — significant gap",
+      "No healthcare specifics beyond 'pro social services' — relies on Green Party platform for M4A attribution",
+      "No housing or zoning positions — federal Senate race may not surface these, but NC housing is a live issue",
+      "No criminal justice positions — platform-only attribution carries significant uncertainty",
+      "Campaign presence is minimal: gp.org page, one podcast appearance, Instagram posts"
+    ]
+  }
+}

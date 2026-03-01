@@ -1,0 +1,396 @@
+{
+  "slug": "chris-carr",
+  "name": "Chris Carr",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger (currently Georgia Attorney General)",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+
+  "biography": {
+    "currentRole": "Attorney General of Georgia (2016–present); 48th Attorney General of Georgia",
+    "priorRoles": [
+      "Commissioner, Georgia Department of Economic Development (2013–2016)",
+      "Chief of Staff to U.S. Senator Johnny Isakson (R-GA) (2007–2013)",
+      "Deputy Chief of Staff to Senator Isakson",
+      "Campaign Manager, Isakson Senate Campaign (2003–2004)",
+      "Vice President and General Counsel, Georgia Public Policy Foundation (free market think tank)",
+      "Private practice attorney, Alston & Bird, Atlanta"
+    ],
+    "education": "B.B.A., University of Georgia Terry College of Business, 1995; J.D., University of Georgia School of Law, 1999",
+    "background": "Born in Michigan; longtime Georgia Republican establishment figure; Kemp-aligned; close ties to business community; economic development focus; appointed AG by Gov. Nathan Deal in 2016 to fill vacancy left by Sam Olens. Won AG elections in 2018 and 2022. During his tenure at GDEcD, facilitated 1,069 projects representing ~$14.4 billion in investment and 84,000+ jobs. First announced gubernatorial candidacy November 21, 2024 — first major candidate to enter the 2026 GA governor's race."
+  },
+
+  "campaignWebsite": {
+    "url": "https://carrforgeorgia.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "Direct fetch not available; content reconstructed from campaign press releases, news coverage, and search snippet of homepage.",
+    "statedPositions": [
+      {
+        "topic": "economy / taxes",
+        "quote": "When I'm governor, Georgia is going to have the lowest tax burden of any state in the southeastern United States, but you have to focus on income, sales, property fees and all the taxes and regulations that are burdening business.",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/full-interview-gop-gubernatorial-candidate-chris-carr/85-37b6c79e-96f3-4554-9ff3-423a585ba8c5",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Stated directly in 11Alive interview. Campaign theme is affordability and lowest SE tax burden."
+      },
+      {
+        "topic": "public safety / criminal justice",
+        "quote": "Strong, conservative record of prosecuting violent criminals, keeping the economy open, upholding election integrity, supporting law enforcement, protecting Georgians' liberties.",
+        "sourceUrl": "https://carrforgeorgia.com/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign homepage language. Created Human Trafficking Prosecution Unit (2019), statewide Gang Prosecution Unit (2022), Organized Retail Theft unit. 115+ gang convictions. Rescued 200+ trafficking victims."
+      },
+      {
+        "topic": "healthcare / Medicaid expansion",
+        "quote": "I'm not for the largest tax increase in state history, which is what it would be if we were to expand Medicaid.",
+        "sourceUrl": "https://thegeorgiasun.com/government/your-vote/what-will-the-candidates-for-georgia-governor-do-about-health-care/",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Explicitly opposes full Medicaid expansion. Supports Georgia Pathways program (work-requirement Medicaid). Sued Biden administration in 2022 to uphold Georgia Pathways when CMS tried to revoke it."
+      },
+      {
+        "topic": "housing / property taxes",
+        "quote": "What we've seen across the state is assessments have risen just beyond anything that's reasonable. I think property taxes should be capped, limited and transparent.",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/1-on-1-georgia-governor-2026-candidate-chris-carr/85-7f6a85aa-35df-44cf-87f0-a6574ed9dfde",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Supports property tax caps. Frames housing affordability as a kitchen-table issue. No specific supply-side zoning reform positions found."
+      },
+      {
+        "topic": "corruption / ethics",
+        "quote": "Chris Carr Rolls Out Toughest Public Corruption Reforms in the Country",
+        "sourceUrl": "https://carrforgeorgia.com/chris-carr-rolls-out-toughest-public-corruption-reforms-in-the-country/",
+        "date": "2026-01",
+        "confidence": "high",
+        "notes": "Proposed 8-part anti-corruption plan: felony personal self-enrichment; ban self-dealing; criminalize misuse of confidential government information; dedicated Public Corruption Unit in AG's office. Campaign differentiator against Burt Jones ethics questions."
+      },
+      {
+        "topic": "education",
+        "quote": "As governor, I will work every day to ensure Georgia families have safe neighborhoods, world-class schools, good jobs and a government that's accountable to the people.",
+        "sourceUrl": "https://www.gpb.org/news/2025/11/06/they-want-be-georgias-next-governor-candidates-make-pitches-in-forum-year-ahead-of",
+        "date": "2025-11",
+        "confidence": "low",
+        "notes": "General values statement only. No specific position found on school choice, charter expansion, curriculum standards, or teacher pay. Campaign language focuses on public safety and affordability, not education specifics."
+      }
+    ]
+  },
+
+  "agRecord": {
+    "available": true,
+    "tenureStart": "2016-11-01",
+    "sources": ["Georgia AG Office press releases", "AJC", "Ballotpedia", "Wikipedia"],
+    "summary": "As AG for nearly a decade, Carr built a clear conservative ideological record through coalition lawsuits against Democratic administrations and AG-initiated enforcement actions. His lawsuit portfolio is the strongest indicator of his policy positions across multiple axes.",
+    "keyActions": [
+      {
+        "action": "Joined multi-state lawsuit to invalidate the ACA (2019)",
+        "topic": "healthcare / coverage_model",
+        "position": "Against ACA / market-based",
+        "sourceUrl": "https://www.ajc.com/politics/georgia-attorney-general-chris-carr-launches-gop-campaign-for-governor/UUBZXWHT25GHPNBUVO6RBEKPSA/",
+        "notes": "Joined 17 Republican AGs; stated 'the ACA is unconstitutional'"
+      },
+      {
+        "action": "Defended Georgia 6-week abortion ban in court",
+        "topic": "reproductive rights",
+        "position": "Anti-abortion",
+        "sourceUrl": "https://www.gpb.org/news/2022/10/14/abortion-fight-highlights-georgia-attorney-general-election",
+        "notes": "Carr's personal stated belief: abortion should be prohibited except when life of mother at risk. Defended HB 481 (Heartbeat Bill) through litigation."
+      },
+      {
+        "action": "Pushed back against Biden rule protecting out-of-state abortion access",
+        "topic": "reproductive rights",
+        "position": "Anti-abortion",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/chris-carr-biden-abortion-trans-health/85-6a25a148-9c13-4aeb-8198-c3e6eb2a9ae0",
+        "notes": "Signed letter with 17 other Republican AGs opposing Biden HHS rule on abortion travel"
+      },
+      {
+        "action": "Filed suit against Biden immigration policy (April 2022)",
+        "topic": "immigration",
+        "position": "Enforcement / anti-open-border",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2022-04-04/carr-files-suit-against-biden-administrations-dangerous-and-unlawful-immigration-policy",
+        "notes": "Characterized Biden policy as encouraging illegal border crossings and endangering Georgians"
+      },
+      {
+        "action": "Joined 15 AGs opposing Biden cancellation of Operation Talon (ICE sex offender removal, Feb 2021)",
+        "topic": "immigration",
+        "position": "Pro-enforcement / pro-ICE",
+        "sourceUrl": "https://law.georgia.gov/biography-attorney-general",
+        "notes": "Urged Biden to reinstate ICE operation targeting convicted sex offenders in country illegally"
+      },
+      {
+        "action": "Challenged Biden's social cost of carbon executive order (2021)",
+        "topic": "climate / ambition_level",
+        "position": "Against climate regulation",
+        "sourceUrl": "https://tennesseestar.com/2021/04/26/georgia-ag-chris-carr-joins-lawsuit-over-social-cost-of-joe-bidens-executive-order-on-carbon/",
+        "notes": "Called it 'nothing but a license for gross federal overreach'"
+      },
+      {
+        "action": "Led 10-state challenge of SEC climate disclosure rule for businesses (March 2024)",
+        "topic": "climate / energy_portfolio / ESG",
+        "position": "Against climate disclosure mandates",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2024-03-14/carr-leads-10-state-challenge-secs-unlawful-climate-disclosure-rule",
+        "notes": "Argued rule requiring companies to disclose GHG emissions and climate risks was unlawful"
+      },
+      {
+        "action": "Challenged EPA emissions rule for oil and gas producers (March 2024)",
+        "topic": "climate / energy_portfolio",
+        "position": "Against emissions regulation; pro fossil fuel industry",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2024-03-20/carr-challenges-epas-burdensome-emissions-rule-oil-and-gas-producers",
+        "notes": "Filed in D.C. Circuit with 23 other Republican AGs"
+      },
+      {
+        "action": "Challenged federal power plant emissions rule (Biden EPA)",
+        "topic": "climate / energy_portfolio",
+        "position": "Against emissions regulation",
+        "sourceUrl": "https://www.northwestgeorgianews.com/state/carr-joins-lawsuit-challenging-federal-clampdown-on-power-plant-emissions/article_0b963b07-6006-5252-8fe6-e5078fd29b9a.html",
+        "notes": "Joined 24-state coalition challenging Biden coal/gas power plant emissions rule"
+      },
+      {
+        "action": "Led 24-state coalition against WOTUS rule (Waters of the United States); won (2023)",
+        "topic": "environment / water regulation",
+        "position": "Against federal environmental authority; state authority",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2026-01-12/carr-urges-federal-agencies-restore-state-authority-over-water-regulation",
+        "notes": "Court ruled in Carr's coalition's favor; blocked rule from taking effect"
+      },
+      {
+        "action": "Joined multi-state coalition supporting NRA lawsuit against NY AG (Dec 2020)",
+        "topic": "firearms / firearms_policy",
+        "position": "Pro-gun rights",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2020-12-22/carr-joins-multi-state-coalition-supporting-nra",
+        "notes": "Filed amicus brief in NRA v. James (NY AG)"
+      },
+      {
+        "action": "Filed amicus brief opposing Savannah gun ordinance (Aug 2025)",
+        "topic": "firearms / firearms_policy",
+        "position": "Pro-gun rights / preemption",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2025-08-04/carr-takes-action-block-city-savannahs-illegal-restrictions-law-abiding",
+        "notes": "Argued Savannah's ordinance (guns in unlocked vehicles) violates state preemption law. Note: Georgia Gun Owners criticized him for not acting sooner — filed the brief only after running for governor."
+      },
+      {
+        "action": "Urged end to federal funding for child gender-affirming procedures (2026)",
+        "topic": "transgender rights",
+        "position": "Anti-gender-affirming care funding",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2026-02-20/carr-pushes-permanent-halt-medicare-and-medicaid-funding-child-sex-change",
+        "notes": "Led coalition letter to HHS; willing to take case to Supreme Court on inmate transgender surgery ban"
+      },
+      {
+        "action": "Sued Biden over guidance on transgender students (2021)",
+        "topic": "transgender rights / education",
+        "position": "Anti-transgender student protections",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2021-08-31/carr-sues-biden-administration-stop-enforcement-guidance-threatens-womens",
+        "notes": "Filed suit against Biden guidance banning discrimination against transgender students and staff"
+      },
+      {
+        "action": "Joined lawsuit challenging 'gender dysphoria' ADA disability protections",
+        "topic": "transgender rights",
+        "position": "Anti-transgender protections",
+        "sourceUrl": "https://www.ajc.com/politics/georgia-ag-faces-criticism-from-parents-about-involvement-in-multistate-lawsuit/4LWEBYHFJJDZNL6IFQLDABGLUA/",
+        "notes": "Challenged a federal rule that added gender dysphoria to disability discrimination protections; drew criticism from parents of disabled children"
+      },
+      {
+        "action": "Declined to pursue 2020 election fraud case despite Trump pressure",
+        "topic": "election integrity / rule of law",
+        "position": "Upheld election results; resisted Trump pressure",
+        "sourceUrl": "https://www.ajc.com/politics/georgia-attorney-general-chris-carr-didnt-pursue-2020-election-case/J3QP45EYQND5VNRGP6F66FFHME/",
+        "notes": "Repeatedly stated no widespread voter fraud in Georgia. Trump called him on Dec 8, 2020 to pressure him. Carr held firm. Later won 2022 primary despite Trump opposition. Has since sought rapprochement with Trump."
+      },
+      {
+        "action": "Defended Georgia Election Integrity Act (SB 202) in court",
+        "topic": "voting rights / election law",
+        "position": "Pro-SB 202 / restrictive voting measures",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2026-01-27/carr-secures-another-victory-defense-georgias-election-integrity-act",
+        "notes": "Secured January 2026 court victory defending SB 202"
+      },
+      {
+        "action": "Opioid litigation — secured $1B+ in settlements",
+        "topic": "public health / opioids",
+        "position": "Enforcement against pharma; recovery-focused (though framed as accountability, not treatment)",
+        "sourceUrl": "https://law.georgia.gov/key-issues/opioid-abuse/opioid-investigation-and-litigation",
+        "notes": "Settlements with Purdue Pharma ($636M national), Kroger ($55M GA), JUUL ($19M GA), Acadia Healthcare ($1M+). Created Statewide Opioid Task Force 2017."
+      },
+      {
+        "action": "Joined lawsuit challenging Savannah immigration policy / Biden family detention policy",
+        "topic": "immigration",
+        "position": "Pro-enforcement",
+        "sourceUrl": "https://law.georgia.gov/press-releases/2022-04-04/carr-files-suit-against-biden-administrations-dangerous-and-unlawful-immigration-policy",
+        "notes": "Part of consistent pattern of joining Republican AG coalitions on immigration enforcement"
+      },
+      {
+        "action": "AJC analysis: lawsuits signal political priorities (August 2025)",
+        "topic": "overall ideological profile",
+        "position": "Consistent conservative Republican record",
+        "sourceUrl": "https://www.ajc.com/politics/2025/08/lawsuits-backed-by-chris-carr-signal-his-political-priorities/",
+        "notes": "AJC documented his lawsuit portfolio as spanning: vaccine/mask mandates (Head Start), college debt relief, migrant worker union organizing, transgender protections, environmental regulations, immigration policy — all opposed."
+      }
+    ]
+  },
+
+  "scorecards": [
+    {
+      "organization": "NRA / NRA-PVF",
+      "score": null,
+      "grade": null,
+      "url": "https://www.nrapvf.org/grades/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "No specific NRA grade found for Carr as AG (not a legislative position, so no standard NRA scorecard applies). However, his actions — joining NRA lawsuit against NY AG, filing against Savannah gun ordinance, joining pro-gun amicus briefs — indicate strong pro-gun-rights orientation. Georgia Gun Owners (far-right gun group) has criticized him for not acting fast enough on Savannah, suggesting he is seen as insufficiently pro-gun by the hard right, but mainstream NRA-aligned based on actions."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score available — Carr has not held legislative office. His AG record shows consistent opposition to federal climate and environmental regulations (WOTUS, EPA power plant rules, oil/gas emissions rules, SEC climate disclosure). LCV would not score him favorably based on this record."
+    },
+    {
+      "organization": "AFL-CIO / Labor",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No labor endorsement or scorecard found. Joined lawsuit challenging Biden rule allowing temporary migrant workers to form unions (cited in AJC AGs lawsuit analysis). Background includes Georgia Public Policy Foundation (free market think tank). Unlikely to have labor endorsements."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "160+ Georgia Sheriffs",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Per GPS prison reform analysis, Carr (along with Jones and Raffensperger) received endorsements from over 160 sheriffs collectively. No specific number attributed to Carr alone."
+    },
+    {
+      "organization": "Brian Kemp (implicitly aligned)",
+      "type": "alignment / not formal endorsement",
+      "cycle": "2026",
+      "notes": "Kemp has not formally endorsed anyone but Carr is widely seen as the Kemp-wing candidate. Carr has explicitly aligned with Kemp's governing approach and electoral strategy."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "not endorsed — endorsed opponent",
+      "cycle": "2026",
+      "notes": "Trump gave 'complete and total' endorsement to Lt. Gov. Burt Jones (August 2025). Carr campaign responded: 'Chris Carr is the only conservative Republican who can win the primary and the general election.' Carr had strained relationship with Trump after declining to support 2020 election overturn efforts, though he endorsed Trump in 2024 and donated to his campaign."
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "11Alive (The Georgia Vote — full interview)",
+      "date": "2026",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/full-interview-gop-gubernatorial-candidate-chris-carr/85-37b6c79e-96f3-4554-9ff3-423a585ba8c5",
+      "keyExchanges": [
+        {
+          "topic": "taxes / economy",
+          "quote": "When I'm governor, Georgia is going to have the lowest tax burden of any state in the southeastern United States",
+          "notes": "Covers income, sales, property taxes, and business regulations as components"
+        },
+        {
+          "topic": "Trump relationship",
+          "quote": "I want to win this race legally, ethically, and honestly. I believe I am the only one who can win both the primary and general election while keeping a Republican governor in Georgia.",
+          "notes": "Did not seek Trump endorsement explicitly; framed himself as the only viable candidate for both stages"
+        },
+        {
+          "topic": "ethics / corruption",
+          "quote": "I think it's critically important that we stand and face the questions.",
+          "notes": "Said in context of Burt Jones skipping a forum; Carr has used ethics/corruption contrast as a primary differentiator"
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive (1-on-1 candidates for governor)",
+      "date": "2026",
+      "url": "https://www.11alive.com/article/news/politics/1-on-1-georgia-governor-2026-candidate-chris-carr/85-7f6a85aa-35df-44cf-87f0-a6574ed9dfde",
+      "keyExchanges": [
+        {
+          "topic": "housing / property taxes",
+          "quote": "What we've seen across the state is assessments have risen just beyond anything that's reasonable. I think property taxes should be capped, limited and transparent.",
+          "notes": "Supports property tax caps"
+        },
+        {
+          "topic": "affordability",
+          "quote": "Voters want somebody that understands kitchen table issues like lower taxes, affordability particularly as it comes to housing and healthcare, and safe streets.",
+          "notes": "Framing of affordability as central campaign theme"
+        }
+      ]
+    },
+    {
+      "outlet": "AJC (Politically Georgia candidate forum — full interview)",
+      "date": "2025-12",
+      "url": "https://www.ajc.com/video/news/2025/12/chris-carr-politically-georgia-candidate-forum-full-interview/",
+      "keyExchanges": [
+        {
+          "topic": "overall campaign vision",
+          "quote": "We've made and kept Georgia the No. 1 state to do business and we've worked to keep our communities safe",
+          "notes": "Pre-recorded message to GPB/NAACP forum. Business-first framing."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta News First",
+      "date": "2025-10-05",
+      "url": "https://www.atlantanewsfirst.com/2025/10/05/chris-carr-israel-hamas-war-an-historic-governors-bid-record-with-anf/",
+      "keyExchanges": [
+        {
+          "topic": "Israel/Hamas",
+          "notes": "Interview discussed Israel-Hamas war, indicating Carr has taken positions on this. Content not fully available — headline suggests supportive of Israel."
+        }
+      ]
+    },
+    {
+      "outlet": "The Current GA",
+      "date": "2026-02-02",
+      "url": "https://thecurrentga.org/2026/02/02/carr-tries-to-break-through-in-georgia-governors-race/",
+      "keyExchanges": [
+        {
+          "topic": "primary strategy",
+          "quote": "Two putt — be in the runoff and win the runoff.",
+          "notes": "St. Simons Island campaign event. Acknowledged recognition challenge vs Jones; touted crime-fighting. Said one opponent (Jones) can't win the general, other (Raffensperger) can't win the primary."
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "firearms",
+      "conflict": "Georgia Gun Owners (far-right gun group) criticizes Carr for not acting on Savannah gun ordinance until after announcing his governor's race, and for fighting to keep 18-20 year-olds disarmed in a carry ban challenge. His NRA coalition support and amicus brief suggest mainstream gun-rights alignment, but he is not seen as pro-gun enough by the far right.",
+      "sources": ["Georgia Gun Owners website", "Georgia AG press releases", "WABE"]
+    },
+    {
+      "topic": "Trump relationship / 2020 election",
+      "conflict": "Carr upheld 2020 Georgia election results under direct Trump pressure, earning a Trump-backed primary challenger in 2022 (which Carr won). He has since tried to repair the relationship, endorsed Trump in 2024, and donated to his campaign — but Trump still endorsed Burt Jones in 2026. Carr is positioned as the Kemp-aligned 'electable' Republican, not the MAGA candidate.",
+      "sources": ["AJC", "Democracy Docket", "Rough Draft Atlanta", "Multiple news outlets"]
+    },
+    {
+      "topic": "healthcare",
+      "conflict": "Carr joined suit to invalidate the ACA in 2019, yet simultaneously sued Biden in 2022 to preserve the Georgia Pathways work-requirement Medicaid program. This is not a direct contradiction — both are consistent with conservative market-based healthcare preferences — but shows he supports a limited form of state-directed Medicaid access while opposing broader federal healthcare programs.",
+      "sources": ["AJC", "Gov.georgia.gov press releases"]
+    }
+  ],
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition (strong opposition to federal climate regulation — SEC disclosure, EPA rules, carbon EO, WOTUS)",
+      "energy_portfolio (challenged oil/gas and coal power plant emissions rules — all-of-the-above/fossil orientation)",
+      "health_coverage_model (explicitly opposes ACA and full Medicaid expansion; supports market/work-requirement model)",
+      "firearms_policy (pro-gun-rights coalition actions, NRA amicus briefs, Savannah ordinance challenge — though criticized by far right as insufficient)",
+      "reproductive_rights (personal belief: abortion banned except to save mother's life; defended 6-week ban in court)",
+      "justice_police_accountability (law enforcement endorsements; anti-reform framing; specialized prosecution units)"
+    ],
+    "weakestAxes": [
+      "school_choice (no specific position found — general 'world-class schools' language only)",
+      "zoning_supply (no housing supply/zoning position found — only property tax caps)",
+      "transit_priority (no position found)",
+      "sentencing_goals (no rehabilitation vs. punishment position found explicitly — focus is on prosecution and public safety units)",
+      "public_investment (inferred market-preference from background/think-tank ties, but no explicit spending position as governor)"
+    ],
+    "overallConfidence": "high — nearly 10-year AG record provides strong evidence across most axes. Primary gaps are state-level policy areas (housing supply, transit, school choice, sentencing policy) where an AG has little direct action.",
+    "keyNotes": [
+      "Carr is firmly in the Kemp-wing of Georgia Republican politics: conservative on policy, institutionally minded, willing to hold rule of law positions against MAGA pressure (2020 election), but not a reformer.",
+      "His lawsuit portfolio is the best evidence of his ideological positions — it is extensive and consistent.",
+      "He lacks a legislative voting record but his AG actions are nearly as strong as evidence.",
+      "His primary challenge: Burt Jones has Trump's endorsement. Carr's argument is electability in the general.",
+      "Property tax caps and corruption reform are his two most specific gubernatorial policy commitments as of Feb 2026.",
+      "No position found on public transit, mass transit investment, or urban infrastructure."
+    ]
+  }
+}
