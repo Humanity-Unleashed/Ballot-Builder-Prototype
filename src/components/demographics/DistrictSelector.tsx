@@ -33,7 +33,7 @@ const STATE_CONFIGS: StateBallotConfig[] = [
     state: 'NC',
     label: 'North Carolina',
     ballotId: BALLOT_IDS.NC_2026,
-    races: ['U.S. Senate (6 candidates)'],
+    races: ['U.S. Senate', 'U.S. House NC-02', 'State Senate D8', '1 ballot measure'],
   },
   {
     state: 'TX',

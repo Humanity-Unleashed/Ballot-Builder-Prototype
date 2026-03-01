@@ -1,0 +1,187 @@
+{
+  "slug": "eugene-douglass",
+  "name": "Eugene F. Douglass",
+  "party": "Republican",
+  "office": "U.S. House, North Carolina 2nd Congressional District, 2026",
+  "scoredAt": "2026-03-01T12:00:00Z",
+  "profileSummary": "Serial Republican candidate (since 1998, never elected) and retired chemistry professor running on three explicit pillars: abolish the Department of Education, protect life from conception, and shrink the federal government. No legislative record; positions are highly consistent across 25+ years of candidacies.",
+  "keyPositions": [
+    "Abolish the Department of Education and return all education authority to states and localities",
+    "Protect life from conception to natural death; opposes all public funding for abortion",
+    "Small federal government, lower taxes, balanced budget amendment, less regulation",
+    "GRNC-PVF 96% rating and four-star recommendation on firearms",
+    "Strict immigration enforcement: immediate deportation, border wall, end sanctuary cities"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Ballotpedia Candidate Connection Survey 2023",
+        "News & Observer questionnaire 2024",
+        "Full endorsement of 2016 GOP platform"
+      ],
+      "notes": "Explicitly states 'Monies should remain with the taxpayers in the states to manage locally' and opposes federal bureaucratic management. No specific statements on Social Security, Medicare, or Medicaid found, which prevents scoring at the extreme. His general philosophy clearly favors a conditional/limited safety net, but the absence of explicit positions on core entitlement programs keeps this at 8 rather than 9-10."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Ballotpedia Candidate Connection Survey 2023 ('Small Federal Government, less regulation and lower taxes')",
+        "News & Observer questionnaire 2024 ('Funding a huge bureaucracy in Washington')",
+        "Stated support for balanced budget amendment",
+        "Full endorsement of 2016 GOP platform"
+      ],
+      "notes": "One of his three explicit campaign pillars. Consistent across all available sources over 25+ years. Opposes federal spending broadly and wants balanced budget constitutional amendment. Scored at 9 because the evidence is strong and explicit: he wants to dramatically cut federal spending, lower taxes, and eliminate entire departments."
+    },
+    "econ_tax_structure": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "OpenCampaign profile 2024 ('Huge tax decreases to end overspending')",
+        "Balanced budget amendment support",
+        "Historical OnTheIssues record: voted YES on FY99 GOP budget, $792B tax cuts"
+      ],
+      "notes": "Clearly favors broad tax cuts and opposes current spending levels. Supports balanced budget amendment. No specific mechanism named (flat tax, fair tax, etc.), so scored at 8 rather than 9-10. Historical record from 1990s-2000s candidacies corroborates consistent anti-tax stance."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Ballotpedia Candidate Connection Survey 2023 ('disband the Department of Education')",
+        "News & Observer questionnaire 2024",
+        "Historical OnTheIssues: voted YES on school vouchers (DC), education savings accounts, school prayer",
+        "Full endorsement of 2016 GOP platform (which supports school choice)"
+      ],
+      "notes": "Abolishing the Department of Education is one of his three explicit campaign pillars. Historical record shows consistent support for vouchers, education savings accounts, and school choice mechanisms since the late 1990s. Wants to return all education authority to states. This is among his strongest and most documented positions."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "Full endorsement of 2016 GOP platform (which called for ACA repeal)",
+        "Historical OnTheIssues: voted YES on Medicare means-testing",
+        "General anti-regulation, small-government philosophy"
+      ],
+      "notes": "No direct 2024-2026 statement on ACA, Medicaid, or healthcare coverage model found. Score is inferred from: (1) explicit endorsement of 2016 GOP platform which called for ACA repeal and replacement with market-based alternatives, (2) historical support for Medicare means-testing in prior candidacy surveys, and (3) consistent small-government philosophy. Scored at 8 (not higher) due to reliance on inference rather than explicit current statements."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Ballotpedia Candidate Connection Survey 2023 ('Protect Innocent Human Life, from Conception until Natural Death')",
+        "Substack questionnaire 2024 ('abortion is the murder of an unborn child')",
+        "Opposition to gender-affirming care for minors ('end the castration and mutilation of children')",
+        "News & Observer questionnaire 2024 ('no compromise on moral values')"
+      ],
+      "notes": "This axis captures individual choice vs. collective mandates in public health. Douglass's positions are strongly in the 'individual/moral choice' direction: opposes all public funding for abortion, frames reproductive decisions in moral/religious terms, opposes gender-affirming care for minors. His Judeo-Christian ethical framework and 'no compromise on moral values' stance indicate strong opposition to government health mandates that conflict with religious values. Multiple consistent Tier 2 sources across years."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "GRNC-PVF 96% score and four-star recommendation (2024 primary)",
+        "Full endorsement of 2016 GOP platform (strong Second Amendment language)",
+        "Historical OnTheIssues record corroborates pro-gun stance"
+      ],
+      "notes": "GRNC-PVF is North Carolina's primary gun-rights advocacy organization, aligned with NRA philosophy. A 96% score with four-star (highest) recommendation is a strong Tier 1 signal. He was the only Republican in the district to return the GRNC survey. The 2016 GOP platform he endorses includes strong Second Amendment protections. Scored at 9 rather than 10 because historical record also shows support for 'more penalties for gun and drug violations' — suggesting some law-and-order overlay on his gun rights position, not pure constitutional absolutism."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "General anti-regulation, small-government philosophy",
+        "Full endorsement of 2016 GOP platform",
+        "No direct climate statement found"
+      ],
+      "notes": "No direct statement on climate change, carbon policy, or EPA regulation found in any source. Score is inferred from: (1) consistent anti-regulation ideology ('less regulation' is a core pillar), (2) endorsement of 2016 GOP platform which opposed the Clean Power Plan and Paris Agreement, and (3) opposition to federal spending broadly. Scored at 8 rather than higher because this is entirely inference — he may hold nuanced views on climate not captured by available evidence. Low confidence due to absence of direct statements."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "General anti-regulation, small-government philosophy",
+        "Full endorsement of 2016 GOP platform"
+      ],
+      "notes": "No direct statement on energy policy, renewables, or fossil fuels found. Inferred from anti-regulation stance and 2016 GOP platform endorsement (which supported 'all-of-the-above' energy with fossil fuel emphasis). Low confidence — this is background inference only."
+    }
+  },
+  "valueStances": {
+    "tradition": {
+      "score": 0.9,
+      "reasoning": "Tradition is the most defining value in Douglass's public identity. He explicitly grounds his positions in 'the Judaeo-Christian ethic of our country as described in the Declaration of Independence and our US Constitution.' He states 'no compromise on moral values.' His education at The King's College (conservative Christian institution) and Bethel Theological Seminary, his 'conception until natural death' framing, and his 25-year consistency across candidacies all point to tradition as the central organizing value. He attended a seminary and self-describes as 'a Christian' before any other identity."
+    },
+    "conformity": {
+      "score": 0.6,
+      "reasoning": "Strong respect for established rules and norms, especially constitutional and religious ones. His insistence on following 'our constitution' and explicit endorsement of established party platforms (2016 GOP platform 'reaffirmed each presidential election year') reflects conformity to accepted standards. His immigration position emphasizes legal process ('get in line with those trying to immigrate here legally'). However, his serial candidacy against party-favored candidates and willingness to run as an underdog shows some independent streak that moderates this score."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Strong emphasis on national security through immigration enforcement (wall, deportation, more CBP agents), 'protect innocent human life,' and law-and-order orientation. His strict immigration platform is framed around safety and order. The 2016 GOP platform endorsement includes strong national defense and border security. His firearms position (GRNC 96%) frames gun ownership partly through self-defense. Security is a consistent secondary theme after tradition."
+    },
+    "self_direction": {
+      "score": 0.3,
+      "reasoning": "Some positive signal: his emphasis on individual liberty over government mandates ('monies should remain with taxpayers'), opposition to federal bureaucracy, and support for families choosing their own schools. However, this is limited by his willingness to impose moral values through law (abortion restrictions, opposition to gender-affirming care). His self-direction is economic and educational, not social. The 'no compromise on moral values' stance directly limits self-direction for others on social issues."
+    },
+    "power": {
+      "score": -0.3,
+      "reasoning": "Douglass shows no pursuit of social status, prestige, or dominance over resources. He is a perennial underdog candidate with no notable endorsements, no fundraising apparatus, no campaign website, and no institutional backing. He lost his 2024 primary with 22.5% of the vote. He operates through Substack and LinkedIn. His self-description emphasizes 'happily retired college Chemistry teacher, father and grandfather' — the opposite of a power-oriented identity. His anti-establishment positioning and decades of futile candidacies suggest power is not a motivating value."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "His academic credentials (Ph.D., multiple graduate degrees, 30+ years teaching) and persistent candidacy show some drive for personal accomplishment. However, his public identity does not emphasize personal success or competence as motivating values. His campaign framing is moral and ideological, not achievement-oriented. Weak positive signal from career accomplishments only."
+    },
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "Douglass's positions actively work against universalism in several ways: opposition to safety net programs that serve all people, strict immigration enforcement that excludes undocumented immigrants from any public benefits, opposition to reproductive autonomy, and opposition to gender-affirming care framed as 'depraved eugenics ideology.' His moral framework is explicitly particularist (Judeo-Christian) rather than universal. His 'no compromise on moral values' stance prioritizes one moral tradition over pluralistic tolerance. The only universalist element is his 'protect innocent human life' framing, which extends concern to the unborn — but this is applied selectively and paired with punitive enforcement."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Weak positive signal. His 'protect innocent human life' pillar shows concern for in-group welfare (the unborn, children). His teaching career spanning 30+ years demonstrates sustained commitment to helping others develop. Self-describes as 'father and grandfather.' However, his benevolence is narrowly scoped — it does not extend to immigrants ('immediately deported'), people seeking abortion ('murder of an unborn child'), or transgender youth ('castration and mutilation'). The in-group boundary is tightly drawn around those who share his moral framework."
+    },
+    "stimulation": {
+      "score": -0.3,
+      "reasoning": "Douglass actively resists novelty and change. His positions have been identical for 25+ years. He explicitly opposes social changes (gender-affirming care, expanded abortion access). His 'no compromise on moral values' and constitutional originalism resist new interpretations. His endorsement of the 2016 platform 'reaffirmed each election year' emphasizes continuity over change. His teaching career at one institution for 15+ years and his consistent ideological framework suggest low openness to new experiences."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "No evidence of pleasure-seeking or sensuous gratification as a motivating value. His evangelical Christian background and seminary education, combined with his moral absolutism on social issues, suggest restraint rather than hedonism. His self-description emphasizes duty (teaching, family, faith) over enjoyment. Mild negative signal — not actively anti-hedonist in policy terms, but personally oriented away from this value."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Firearms nuance",
+      "description": "GRNC-PVF 96% score signals strong pro-gun-rights position, but historical OnTheIssues record shows he voted YES on 'more penalties for gun and drug violations' in late 1990s/early 2000s surveys, suggesting some law-and-order overlay rather than pure libertarian Second Amendment absolutism.",
+      "sources": ["GRNC-PVF 2024 recommendation", "OnTheIssues.org historical record"],
+      "scoringImpact": "Scored justice_firearms at 9 rather than 10 to reflect this nuance"
+    },
+    {
+      "topic": "Multi-state candidacy pattern",
+      "description": "Douglass has run for office in Hawaii (1998, 2000), New Hampshire (2002), Pennsylvania (2003), and North Carolina (2024, 2026). This serial candidacy across states over 25+ years is unusual and may raise questions about depth of local engagement, though his positions have remained consistent throughout.",
+      "sources": ["Ballotpedia biography", "OnTheIssues.org", "Morning Call 2003 article"],
+      "scoringImpact": "Noted in power value score and profile summary; does not affect axis scores since positions are consistent regardless of location"
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 9,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "health_cost_control",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No direct statements or evidence found on housing, policing, sentencing, healthcare costs, or permitting reform. While general small-government philosophy could be used to infer positions, the evidence floor rule requires actual evidence. These axes would all likely score in the 7-9 range given his ideology, but scoring them on inference alone would violate methodology.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No legislative voting record exists (never held office)",
+      "No campaign website — operates through Substack newsletter only",
+      "No interest group scorecards beyond GRNC-PVF (most groups do not evaluate candidates who have never held office)",
+      "No direct climate, energy, housing, policing, sentencing, or healthcare cost-control statements found",
+      "No endorsements from any major organization identified",
+      "No FEC fundraising data or donor analysis available"
+    ]
+  }
+}

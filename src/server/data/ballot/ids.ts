@@ -23,6 +23,8 @@ export const CONTEST_IDS = {
   GA_US_SENATE: 'GA-US-SENATE-2026',
   GA_GOVERNOR: 'GA-GOVERNOR-2026',
   NC_US_SENATE: 'NC-US-SENATE-2026',
+  NC_HOUSE_02: 'NC-02-US-HOUSE-2026',
+  NC_SENATE_D8: 'NC-STATE-SENATE-D8-2026',
   TX_US_SENATE: 'TX-US-SENATE-2026',
   TX_HOUSE_34: 'TX-US-HOUSE-34-2026',
   TX_GOVERNOR: 'TX-GOVERNOR-2026',
@@ -40,4 +42,5 @@ export const MEASURE_IDS = {
   MI_PROP1_CONCON: 'mi-2026-prop1-concon',
   MI_INVEST_IN_KIDS: 'mi-2026-invest-in-mi-kids',
   GA_CONSERVATION_USE: 'ga-2026-conservation-use-acreage',
+  NC_VOTER_ID: 'nc-2026-voter-id-amendment',
 } as const;

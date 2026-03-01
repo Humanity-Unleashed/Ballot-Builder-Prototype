@@ -1,0 +1,159 @@
+{
+  "slug": "tim-white-nc-s8",
+  "name": "Tim White",
+  "party": "Libertarian",
+  "office": "North Carolina State Senate, District 8, 2026",
+  "scoredAt": "2026-03-01T12:00:00.000Z",
+  "profileSummary": "First-time Libertarian candidate from Bolivia, NC with no public campaign presence, voting record, or documented issue positions. All scoring is inferred from the LPNC party platform.",
+  "keyPositions": [
+    "No candidate-specific issue positions are publicly documented",
+    "LPNC platform: opposes government welfare programs, healthcare regulation, and public school monopoly",
+    "LPNC platform: opposes all firearms regulation including background checks and licensing",
+    "LPNC platform: supports repealing all zoning ordinances based on property rights",
+    "LPNC platform: opposes government-led climate policy and energy subsidies for any source"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC explicitly calls for 'ending government welfare programs as quickly as possible' and phasing out Social Security. Score of 9 rather than 10 because even the LP platform acknowledges a transition period. No Tim White-specific statement exists."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC opposes all government economic subsidies and public investment beyond minimal state functions; calls for rejecting federal grants. Score of 9 rather than 10 because some minimal government functions acknowledged."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)", "LP national platform (lp.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. Not explicitly researched as a standalone axis, but LPNC's comprehensive opposition to taxation and government spending, combined with the national LP's historical advocacy for elimination of income tax entirely, strongly implies a far-poleB position. Scored at 9 reflecting the LP's desire to drastically reduce or eliminate most taxation."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)", "LPNC educational opportunity issue paper (lpnc.org/educational_opportunity)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC is explicit: 'supports the separation of school and state,' favors vouchers so 'each student's share should be determined by that student's family,' and has dedicated issue papers on this. Score of 9 rather than 10 because the platform still envisions some taxpayer-funded education (with family-directed allocation) rather than fully privatized education."
+    },
+    "health_coverage_model": {
+      "score": 10,
+      "confidence": "low",
+      "sources": ["LPNC healthcare position (lpnc.org/healthcare)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC 'calls on government to get out of the healthcare industry entirely' and advocates eliminating Medicare, Medicaid, and all public health services in favor of private charitable care. This is the most extreme poleB position on the scale -- pure free market with no public insurance."
+    },
+    "health_cost_control": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LPNC healthcare position (lpnc.org/healthcare)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC argues government subsidies cause artificially higher demand and prices; believes free market choice will control costs. Opposes all price controls. Score of 9 rather than 10 because the platform focuses more on eliminating government distortions than on active free-market mechanisms."
+    },
+    "health_public_health": {
+      "score": 10,
+      "confidence": "low",
+      "sources": ["LPNC healthcare position (lpnc.org/healthcare)", "LP national platform (lp.org/platform-page/)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC calls for eliminating regulations that 'coerce or limit people's choices in pursuing their own healthcare.' National LP emphasizes individual sovereignty over all body and medical decisions. Strongly opposes vaccine mandates, government health authority, and compulsory health measures. Represents the maximum individual-liberty-over-collective-health position."
+    },
+    "housing_supply_zoning": {
+      "score": 1,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC explicitly 'calls for the repeal of all zoning ordinances' and upholds property owners' right to develop as they see fit. This strongly aligns with Pole A (loosen zoning / more supply), though from a property-rights rationale rather than an affordable-housing or urbanist rationale. Score of 1 rather than 0 because the LPNC position is about eliminating government authority over land use, not mandating density -- it would remove barriers but not actively require new housing production."
+    },
+    "housing_affordability_tools": {
+      "score": 10,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC advocates a 'free and unregulated housing market,' opposes all government housing subsidies, and calls for eliminating regulations that increase housing costs. Pure market-only position with private charity as the only non-market mechanism."
+    },
+    "housing_transport_priority": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC calls for privatization of roads and public transportation; opposes government-run transit. Score of 9 rather than 10 because while the LP opposes government transit, the privatization framing is not identical to 'car-centric investment' -- it would simply remove government from transportation entirely. Additionally, District 8 is rural/coastal so transit is likely not a salient local issue."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC 'decries the increasing militarization of police,' calls for ending no-knock raids, opposes warrantless searches, and calls for rejecting military hardware acquisition by local police. This aligns with the reform end of the scale, though the motivation is anti-government-overreach rather than racial justice. Score of 3 reflects genuine reform orientation without reaching the 'defund/abolish' extreme."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "low",
+      "sources": ["LPNC 2nd Amendment position (lpnc.org/gun-control)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LPNC 'acknowledges every individual's inalienable right to choose to own and carry firearms without government licensing, registration, monitoring, or interference of any kind' and 'opposes all gun registration or instant-background-check schemes.' This is the most extreme pro-gun-rights position on the scale -- opposes even background checks and all licensing."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["LPNC platform (lpnc.org)", "LP national platform (lp.org)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LP opposes all government-led climate policy, emissions targets, and regulatory approaches. However, the platform is not climate-denialist -- it acknowledges pollution as a property-rights violation and supports market-based innovation. Score of 8 rather than 9-10 reflects that the LP does not deny climate science or push for maximum fossil fuel development, but it does reject all government climate action."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["LP national platform: Environment/Energy Resources (lp.org/environment-energy-resources/)"],
+      "notes": "PARTY PLATFORM INFERENCE ONLY. LP opposes subsidies for all energy sources including both renewables and fossil fuels. In practice, removing IRA clean energy credits while also removing fossil fuel subsidies would disadvantage renewables more, since renewables still depend more heavily on government incentives. Score of 8 rather than 10 because the LP position is principled neutrality (no subsidies for anyone), not active fossil fuel promotion."
+    }
+  },
+  "valueStances": {
+    "self_direction": {
+      "score": 0.8,
+      "reasoning": "The Libertarian platform is fundamentally organized around individual autonomy, freedom of choice, and independence from government authority in all domains: healthcare, education, firearms, drug use, property use. Self-direction is the core animating value of the LP. Scored at 0.8 rather than 1.0 because this is inferred from party platform, not from Tim White's personal statements or actions."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Weak positive signal. Running as a third-party candidate against an entrenched two-party system shows some appetite for novelty and challenge of the status quo. But no personal evidence of excitement-seeking or variety-seeking beyond the filing itself."
+    },
+    "universalism": {
+      "score": -0.2,
+      "reasoning": "Weak negative signal. The LP platform's emphasis on eliminating safety nets, public health programs, and collective welfare systems works against the universalism value of caring for all people equally. However, the LP's anti-militarization-of-police stance and drug legalization advocacy show some concern for equal treatment. The overall orientation prioritizes individual liberty over collective welfare, which modestly conflicts with universalism's emphasis on social justice and protection for all."
+    },
+    "benevolence": {
+      "score": -0.1,
+      "reasoning": "Very weak negative signal. The LP platform favors private charity over government programs for caring for others, which is a different mechanism for benevolence rather than its absence. However, opposing all public welfare systems and public healthcare does reduce the institutional expression of care for vulnerable populations. Near-neutral because the LP genuinely advocates private charitable care as a replacement."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Moderate negative signal. The LP platform challenges many established institutional norms: it would dismantle the existing welfare state, eliminate zoning laws, legalize all drugs, privatize roads and schools. Running as a Libertarian in a conservative district also signals willingness to break from established political traditions. However, the strong 2nd Amendment stance and the anti-government ethos have some resonance with American founding traditions."
+    },
+    "conformity": {
+      "score": -0.6,
+      "reasoning": "Strong negative signal. The entire Libertarian philosophy is organized against conformity to social norms imposed by government. The LP opposes mandates, licensing requirements, regulations, zoning laws, drug laws, and virtually all government-imposed behavioral standards. Running as a third-party candidate in a two-party system is itself a non-conforming act."
+    },
+    "security": {
+      "score": -0.4,
+      "reasoning": "Moderate negative signal. The LP platform would eliminate many institutions that provide collective security: Social Security, public health infrastructure, environmental regulation, gun regulations. The anti-police-militarization stance and drug legalization advocacy could increase perceived insecurity for some. The strong pro-gun-rights stance represents a different security model (individual self-defense vs. collective protection) rather than caring about security as such."
+    },
+    "power": {
+      "score": -0.5,
+      "reasoning": "Moderate-to-strong negative signal. The LP platform is fundamentally anti-power: it seeks to dismantle concentrations of government authority, opposes institutional power structures, and advocates for decentralization. The candidate himself shows no evidence of seeking social status or dominance -- he has no campaign infrastructure, no fundraising, no public profile. This appears to be a placeholder candidacy rather than a power-seeking one."
+    },
+    "achievement": {
+      "score": -0.1,
+      "reasoning": "Very weak negative signal. No evidence of personal ambition or achievement-orientation in this candidacy. No campaign effort visible. The LP platform does not particularly emphasize personal achievement or competence as a political value. Near-neutral."
+    },
+    "hedonism": {
+      "score": 0.1,
+      "reasoning": "Very weak positive signal. The LP's advocacy for drug legalization and personal freedom over one's own body implies some alignment with the value of personal pleasure and enjoyment free from restriction. But this is a party-platform inference, and the LP frames it as a rights issue rather than a pleasure issue."
+    }
+  },
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["justice_sentencing_goals", "climate_permitting"],
+    "reasonSkipped": "justice_sentencing_goals: The Libertarian restitution model does not map cleanly onto the rehabilitation vs. punishment binary axis. The LP's drug legalization and victimless-crime pardon positions push toward Pole A, but the victim-restitution framework is philosophically distinct from either pole. Omitted rather than forced into a poor-fit score. climate_permitting: No direct LPNC or LP statement on permitting speed for energy projects. The general deregulatory stance could imply faster permitting, but the property-rights framework could also justify environmental review to protect neighbors. Too speculative to score even at LOW confidence.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No campaign website or social media presence exists to research",
+      "No voter guide responses from any organization",
+      "No media interviews or press coverage beyond filing confirmations",
+      "No prior elected office or voting record",
+      "No interest group scorecards or endorsements",
+      "Candidate's personal policy views are entirely unknown -- all scores reflect LPNC party platform only"
+    ],
+    "specialNote": "ALL SCORES FOR THIS CANDIDATE ARE INFERRED FROM THE LIBERTARIAN PARTY OF NORTH CAROLINA PLATFORM, NOT FROM ANY PERSONAL STATEMENT OR ACTION BY TIM WHITE. First-time candidates frequently diverge from their party platform. These scores should be presented to users with a prominent disclaimer that no candidate-specific policy evidence was found. The 803 (South Carolina) area code on his filing suggests possible recent relocation to the district, which may further complicate assumptions about local issue engagement."
+  }
+}

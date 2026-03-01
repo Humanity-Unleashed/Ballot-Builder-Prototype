@@ -1,0 +1,236 @@
+{
+  "generatedAt": "2026-03-01T00:00:00.000Z",
+  "state": "North Carolina",
+  "contests": [
+    {
+      "id": "NC-02-US-HOUSE-2026",
+      "office": "U.S. House of Representatives",
+      "state": "NC",
+      "district": "2",
+      "primaryDate": "2026-03-03",
+      "primaryCanceled": true,
+      "primaryCanceledReason": "All three party primaries canceled — only one candidate filed per party, so no ballot appearance was needed.",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Deborah Ross",
+      "incumbentParty": "Democratic",
+      "cookPVI": "D+17",
+      "raceRating": "Solid Democratic",
+      "raceRatingSource": "Cook Political Report",
+      "raceRatingAlternate": [
+        {
+          "rating": "Solid Democratic",
+          "source": "Inside Elections"
+        },
+        {
+          "rating": "Safe Democratic",
+          "source": "Sabato's Crystal Ball"
+        }
+      ],
+      "districtNotes": "Covers most of Wake County, including Raleigh. Cook PVI of D+17 makes this the 77th most Democratic district nationally. Ross has won her past three elections with 60%+ of the vote.",
+      "filingDeadline": "2025-12-19",
+      "candidates": [
+        {
+          "slug": "deborah-ross",
+          "name": {
+            "full": "Deborah K. Ross",
+            "ballotDisplay": "Deborah Ross"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "incumbent",
+          "termsServed": 3,
+          "seekingTermNumber": 4,
+          "background": "Attorney and three-term U.S. Representative for NC-02 since January 2021. Prior to Congress, served 10 years in the North Carolina House of Representatives (District 34, 2003–2013). Earlier career as civil rights attorney and state director for the ACLU of North Carolina (1994–). Education: B.A. International Relations, Brown University (1985); J.D., UNC Chapel Hill School of Law (1990). Born 1963 in Philadelphia, PA.",
+          "committees": [
+            "House Judiciary Committee (including Courts/IP/AI and Immigration subcommittees)",
+            "House Ethics Committee",
+            "House Science, Space, and Technology Committee (Energy and Environment subcommittees)"
+          ],
+          "campaignWebsite": "https://deborahross.com",
+          "officialHouseWebsite": "https://ross.house.gov",
+          "filingDate": "2025-12-06",
+          "campaignFinance": {
+            "receipts": 1177950,
+            "disbursements": 734362,
+            "cashOnHand": 1181098,
+            "asOf": "2026-02-11",
+            "source": "FEC via Ballotpedia"
+          },
+          "fecCandidateId": "H0NC02125",
+          "evidenceTier": "high",
+          "notes": "Incumbent with three full terms of voting record available. Extensive committee assignments and press coverage. Well-funded with over $1.1M cash on hand. Filed for re-election December 6, 2025."
+        },
+        {
+          "slug": "eugene-douglass",
+          "name": {
+            "full": "Eugene F. Douglass",
+            "ballotDisplay": "Eugene Douglass",
+            "commonName": "Gene Douglass"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "background": "Retired chemistry professor and education consultant based in Raleigh, NC. Over 30 years of teaching experience in chemistry. Education: B.S., The King's College (1979); M.S., University of Connecticut (1982); Ph.D. Chemistry, North Carolina State University (2010). Affiliated with the American Chemistry Society. Baptist Christian. Previously ran for U.S. House NC-02 in 2024, placing second in the Republican primary with 22.5% of the vote (9,751 votes) behind Alan Swain.",
+          "statedPositions": [
+            "Smaller federal government, less regulation, lower taxes",
+            "Elimination of the Department of Education",
+            "Strict opposition to abortion from conception",
+            "Opposition to gender-affirming care for minors",
+            "Stricter immigration enforcement"
+          ],
+          "campaignWebsite": null,
+          "campaignContactEmail": "campaign@gdouglass.us",
+          "campaignSubstack": "https://efdouglass.substack.com/s/gene-douglass-for-congress-north",
+          "socialMedia": {
+            "x": "@efdouglass",
+            "linkedin": "https://www.linkedin.com/in/efdouglass/"
+          },
+          "campaignFinance": {
+            "receipts": null,
+            "disbursements": null,
+            "cashOnHand": null,
+            "asOf": null,
+            "notes": "No FEC campaign finance data available as of manifest generation date"
+          },
+          "evidenceTier": "medium",
+          "notes": "Repeat candidate — ran in 2024 GOP primary. No dedicated campaign website confirmed; primary online presence is Substack and LinkedIn. Low campaign finance activity. District's D+17 PVI makes a Republican victory highly unlikely."
+        },
+        {
+          "slug": "matthew-laszacs",
+          "name": {
+            "full": "Matthew F. Laszacs",
+            "ballotDisplay": "Matthew Laszacs"
+          },
+          "party": "Libertarian",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "background": "Cary, NC resident. Technology professional with CTS (Certified Technology Specialist) and ITIL certifications. Prior electoral history: 2022 Libertarian nominee for NC State Senate District 14 (lost general election, 2.9% of vote); 2024 Libertarian nominee for NC House District 41 (lost general election with 23.4% of vote). No prior congressional electoral experience.",
+          "statedPositions": [
+            "Expanding school choice through education savings accounts",
+            "Transitioning Medicaid to a state-funded health savings account model"
+          ],
+          "campaignWebsite": null,
+          "socialMedia": {
+            "linkedin": "https://www.linkedin.com/in/matthew-laszacs-cts-itil-67bb244a/"
+          },
+          "campaignFinance": {
+            "receipts": null,
+            "disbursements": null,
+            "cashOnHand": null,
+            "asOf": null,
+            "notes": "No FEC campaign finance data available as of manifest generation date"
+          },
+          "evidenceTier": "low",
+          "notes": "Has not completed Ballotpedia's 2026 Candidate Connection survey. No campaign website confirmed. Minimal public presence for this race specifically. Prior state-level runs establish Libertarian credibility but congressional race profile is thin."
+        }
+      ],
+      "withdrawnCandidates": [
+        {
+          "slug": "robert-bennett-nc02-d-2026",
+          "name": {
+            "full": "Robert Bennett",
+            "ballotDisplay": "Robert Bennett"
+          },
+          "party": "Democratic",
+          "withdrawalStatus": "withdrew",
+          "withdrawalStage": "before primary — Democratic primary subsequently canceled",
+          "background": "Limited public profile. Social media presence on Facebook, Instagram, YouTube, and TikTok. Campaign raised only $529 total before withdrawal.",
+          "campaignWebsite": "https://www.robertfornc.com",
+          "campaignFinance": {
+            "receipts": 529,
+            "disbursements": null,
+            "source": "Ballotpedia"
+          },
+          "evidenceTier": "low",
+          "notes": "Filed for Democratic primary then withdrew before the March 3, 2026 filing-based cutoff. His withdrawal left Ross as the only Democrat filed, causing the primary cancellation. Reason for withdrawal not publicly stated."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [
+    {
+      "slug": "nc-2026-voter-id-amendment",
+      "state": "NC",
+      "officialTitle": "Require Voter Identification Amendment (Senate Bill 921)",
+      "shortName": "Voter ID Constitutional Amendment",
+      "type": "Legislatively Referred Constitutional Amendment",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "confirmed",
+      "certifiedDate": "2026-02-28",
+      "originatingBody": "North Carolina State Legislature (passed with required 60% supermajority in each chamber, December 2024)",
+      "yesVoteMeans": "Amends the North Carolina Constitution to require photographic identification for all voters regardless of voting method (in-person, absentee, etc.)",
+      "noVoteMeans": "Maintains current voting identification procedures; existing photo ID requirements would remain without constitutional mandate extension to all voting methods",
+      "policyContext": "North Carolina has had an in-person voter ID law since 2019. This amendment would extend a constitutional photo ID requirement to absentee and all other voting methods, closing a gap that currently exists in the constitutional mandate.",
+      "evidenceTier": "high",
+      "notes": "Only statewide ballot measure certified for North Carolina's 2026 general election as of the manifest generation date. Citizens in North Carolina cannot initiate statewide ballot measures — all measures must be referred by the legislature."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/North_Carolina's_2nd_Congressional_District_election,_2026",
+      "description": "Ballotpedia main race page — NC-02 2026 general election",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/North_Carolina's_2nd_Congressional_District_election,_2026_(March_3_Democratic_primary)",
+      "description": "Ballotpedia NC-02 2026 Democratic primary page — confirmed Robert Bennett withdrawal",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Deborah_Ross",
+      "description": "Ballotpedia candidate profile — Deborah Ross",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Eugene_Douglass",
+      "description": "Ballotpedia candidate profile — Eugene Douglass",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Matthew_Laszacs",
+      "description": "Ballotpedia candidate profile — Matthew Laszacs",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Robert_Bennett_(North_Carolina)",
+      "description": "Ballotpedia candidate profile — Robert Bennett (withdrawn Democratic candidate)",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/North_Carolina_2026_ballot_measures",
+      "description": "Ballotpedia NC 2026 ballot measures — confirmed single certified statewide measure",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.fec.gov/data/elections/house/NC/02/2026/",
+      "description": "FEC — NC-02 2026 campaign finance data",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://deborahross.com",
+      "description": "Deborah Ross official campaign website — confirmed active",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://efdouglass.substack.com/s/gene-douglass-for-congress-north",
+      "description": "Eugene Douglass campaign Substack — primary online campaign presence",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cbs17.com/news/local-news/wake-county-news/deborah-ross-files-for-re-election-to-north-carolinas-2nd-congressional-district/",
+      "description": "CBS17 — Deborah Ross files for fourth term, December 2025",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ncsbe.gov/results-data/candidate-lists",
+      "description": "NC State Board of Elections — official 2026 candidate filing list",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cookpolitical.com/house/race/483711",
+      "description": "Cook Political Report — NC-02 2026 race rating page (Solid Democratic)",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    }
+  ]
+}

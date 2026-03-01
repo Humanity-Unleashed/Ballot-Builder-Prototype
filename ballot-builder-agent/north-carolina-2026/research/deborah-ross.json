@@ -1,0 +1,527 @@
+{
+  "slug": "deborah-ross",
+  "name": "Deborah K. Ross",
+  "party": "Democratic",
+  "office": "U.S. House, North Carolina 2nd Congressional District, 2026",
+  "contestId": "NC-02-US-HOUSE-2026",
+  "incumbencyStatus": "incumbent (three-term, first elected 2020)",
+  "researchedAt": "2026-03-01T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Representative, North Carolina 2nd Congressional District (2021–present); Chief Deputy Whip; member of House Judiciary, Science/Space/Technology, and Ethics Committees",
+    "priorRoles": [
+      "NC ACLU State Director (1994–2002)",
+      "NC State House of Representatives, District 38 and 34 (2003–2013)",
+      "Democratic nominee, NC U.S. Senate (2016, lost to Richard Burr)",
+      "Municipal bond attorney / attorney for regional transit agency"
+    ],
+    "education": "B.A., Brown University (1985); J.D., University of North Carolina at Chapel Hill School of Law (1990)",
+    "background": "Civil rights attorney; First Amendment and juvenile justice advocate; worked with Gov. Jim Hunt and Sen. Roy Cooper to overhaul NC youth offender system; practice included municipal bond law for infrastructure financing. Born Philadelphia, PA; grew up in Connecticut. Represents Raleigh/Wake County, NC."
+  },
+  "electionStatus": {
+    "filing": "Filed for re-election, fourth term",
+    "primaryStatus": "Democratic primary for March 3, 2026 canceled — uncontested",
+    "generalOpponents": ["Eugene Douglass", "Matthew Laszacs"],
+    "generalDate": "2026-11-03"
+  },
+  "campaignWebsite": {
+    "url": "https://deborahross.com",
+    "prioritiesUrl": "https://deborahross.com/priorities/",
+    "fetchedAt": "2026-03-01T00:00:00.000Z",
+    "statedPositions": [
+      {
+        "topic": "healthcare_coverage_model",
+        "quote": "supports creating a comprehensive public option for health insurance, expanding Medicaid in North Carolina, taking steps to reduce the high cost of prescription drugs, and implementing other reforms to ensure affordable and equitable access to care for every American",
+        "sourceUrl": "https://www.wakedems.org/election-central-2024/candidate-info-deborah-ross/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Explicitly public option, not Medicare for All; supports lowering Medicare eligibility age from 65 to 60; opposes turning Medicare into a voucher program"
+      },
+      {
+        "topic": "healthcare_cost_control",
+        "quote": "PBMs have acted as unregulated middlemen, driving up the prices of life-saving medications for patients — her bipartisan PBM Reform Act will rein in abusive PBM practices and take real steps to lower prescription drug prices",
+        "sourceUrl": "https://ross.house.gov/2026/1/house-passes-congresswoman-ross-bill-to-combat-harmful-pbm-practices-lower-prescription-drug-prices",
+        "date": "2026-01",
+        "confidence": "high",
+        "notes": "Authored PBM Reform Act; passed House Jan 2026; also voted for IRA Medicare drug negotiation provisions"
+      },
+      {
+        "topic": "climate_ambition",
+        "quote": "Climate change is an existential threat. Deborah supports clean energy alternatives, opposes fracking, and fights to preserve North Carolina's environmental heritage.",
+        "sourceUrl": "https://deborahross.com/priorities/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign website characterizes climate as existential threat; consistent with LCV 99% lifetime score"
+      },
+      {
+        "topic": "climate_energy_portfolio",
+        "quote": "Offshore wind energy is one of the best resources in our toolbox to combat climate change and unleash the power of American clean energy. We must unlink harmful oil and gas leasing requirements from landmark clean energy provisions.",
+        "sourceUrl": "https://ross.house.gov/2023/7/reps-ross-ocasio-cortez-kamlager-dove-introduce-clean-energy-now-acts",
+        "date": "2023-07",
+        "confidence": "high",
+        "notes": "Co-introduced CLEAN Energy NOW Acts with AOC; authored offshore wind moratorium repeal provision in IRA; consistently supports renewables over fossil fuels"
+      },
+      {
+        "topic": "climate_permitting",
+        "quote": "Offshore wind energy is one the best resources in our toolbox to combat climate change... my provision to overturn the previous administration's 10-year moratorium on offshore wind leasing in North Carolina and other states in the Southeast was included in the historic Inflation Reduction Act, but it simply was not enough.",
+        "sourceUrl": "https://ross.house.gov/2023/7/reps-ross-ocasio-cortez-kamlager-dove-introduce-clean-energy-now-acts",
+        "date": "2023-07",
+        "confidence": "high",
+        "notes": "Actively pushing to streamline green permitting by decoupling offshore wind from fossil fuel lease requirements; introduced Nonrestrictive Offshore Wind (NOW) Act"
+      },
+      {
+        "topic": "transit_priority",
+        "quote": "Wake County needs modern, efficient transportation options to match its continuing growth",
+        "sourceUrl": "https://ross.house.gov/transportation-and-infrastructure",
+        "date": "2023",
+        "confidence": "high",
+        "notes": "Announced $19.3M in transit funding for Raleigh from Infrastructure Act; led NC Democratic delegation calling for robust transit/rail funding; secured $176M+ for NC transit overall"
+      },
+      {
+        "topic": "housing_affordability",
+        "quote": "Federal housing policy should prioritize the housing needs of everyday Americans, not speculative profits",
+        "sourceUrl": "https://foushee.house.gov/media/press-releases/foushee-ross-call-for-greater-accountability-in-housing-amid-concerns-over-wall-street-influence",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Focuses on institutional investor accountability and government-side affordability tools; no specific zoning reform position found"
+      },
+      {
+        "topic": "firearms_policy",
+        "quote": "It simply prevents future sales of assault rifles — weapons not designed for recreation, they're designed for combat.",
+        "sourceUrl": "https://georgiarecorder.com/2022/07/29/u-s-house-passes-ban-on-assault-weapons-after-spate-of-gun-violence/",
+        "date": "2022-07",
+        "confidence": "high",
+        "notes": "Voted for assault weapons ban; voted for Bipartisan Safer Communities Act (2022); endorsed by Brady PAC and Everytown; former state representative who opposed concealed carry expansion"
+      },
+      {
+        "topic": "justice_police_accountability",
+        "quote": "Ross co-sponsored the George Floyd Justice in Policing Act, which addresses policing practices and law enforcement accountability by lowering the criminal intent standard to convict law enforcement officers for misconduct in federal prosecution, limiting qualified immunity as a defense",
+        "sourceUrl": "https://ross.house.gov/equality-and-justice",
+        "date": "2021",
+        "confidence": "high",
+        "notes": "Former NC-ACLU director who successfully pushed state police to collect race-based traffic stop statistics in response to racial profiling; co-sponsor of Justice in Policing Act"
+      },
+      {
+        "topic": "justice_sentencing",
+        "quote": "As NC ACLU director, she worked to overhaul North Carolina's system for dealing with youth offenders",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Deborah_Ross_(politician)",
+        "date": "1994-2002 (historical)",
+        "confidence": "medium",
+        "notes": "Long-standing rehabilitation orientation from ACLU work; introduced End Prison Gerrymandering Act (Feb 2026); South's first anti-racial profiling bill as state legislator"
+      },
+      {
+        "topic": "econ_safety_net",
+        "quote": "voted against House Republicans' budget resolution that would authorize steep cuts in funding for Medicaid, the Supplemental Nutrition Assistance Program (SNAP), Head Start, school lunch programs, and more to pay for $4.5 trillion in tax cuts for ultra wealthy Americans",
+        "sourceUrl": "https://ross.house.gov/2025/2/congresswoman-ross-votes-against-house-budget-resolution-that-would-cut-billions-in-funding-for-medicaid-snap-and-other-critical-services",
+        "date": "2025-02",
+        "confidence": "high",
+        "notes": "Consistently voted to defend and expand Medicaid, SNAP, Social Security; supported ARP child tax credit expansion; wants to expand and strengthen Social Security"
+      },
+      {
+        "topic": "econ_public_investment",
+        "quote": "driving investment in transportation and infrastructure projects and increase renewable energy options in pursuit of a cleaner, greener future for our children",
+        "sourceUrl": "https://deborahross.com/priorities/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Voted for ARP, Infrastructure Investment and Jobs Act, CHIPS and Science Act, IRA — all major public investment vehicles"
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "Deborah supports public education for all, reducing class sizes, raising teacher pay, investing in early childhood education, alleviating student loan debt",
+        "sourceUrl": "https://deborahross.com/priorities/education-and-opportunity/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Consistent public school champion; no explicit anti-voucher statement found but posture is clearly pro-public schools; aligned with NEA positions; no stated support for school choice/vouchers"
+      },
+      {
+        "topic": "reproductive_rights",
+        "quote": "I will not stop until Roe v. Wade is codified into federal law and every woman has full access to reproductive care",
+        "sourceUrl": "https://deborahross.com/abortion-rights/",
+        "date": "2022-2026",
+        "confidence": "high",
+        "notes": "Endorsed by Planned Parenthood Action Fund and NARAL/Reproductive Freedom for All; sponsors reproductive health privacy legislation; three-decade track record"
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "Congress.gov", "VoteSmart", "Wikipedia", "ross.house.gov press releases"],
+    "attendanceRate": "99.2% (missed 22 of 2,679 roll call votes, Jan 2021–Feb 2026, better than 2.0% median)",
+    "keyVotes": [
+      {
+        "bill": "American Rescue Plan Act (2021)",
+        "vote": "Yes",
+        "topic": "econ_safety_net / econ_public_investment",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Deborah_Ross_(politician)",
+        "notes": "Expanded Child Tax Credit to $3,000–$3,600/child; major pandemic relief and social spending package"
+      },
+      {
+        "bill": "Infrastructure Investment and Jobs Act (2021)",
+        "vote": "Yes",
+        "topic": "econ_public_investment / transit_priority",
+        "sourceUrl": "https://ross.house.gov/2021/11/congresswoman-ross-applauds-passage-bipartisan-infrastructure-package",
+        "notes": "$8B for highways/transit in NC; $176M+ for NC transit; secured $19.3M specifically for Raleigh BRT"
+      },
+      {
+        "bill": "Build Back Better Act (2021)",
+        "vote": "Yes (inferred — all but one House Democrat voted yes; Ross was advocating for passage in Jan 2022)",
+        "topic": "econ_safety_net / healthcare_coverage_model / climate_ambition",
+        "sourceUrl": "https://rollcall.com/2021/11/19/house-vote-reconciliation-build-back-better-bill/",
+        "notes": "Passed House 220-213 party-line; Senate version became IRA in 2022"
+      },
+      {
+        "bill": "George Floyd Justice in Policing Act (2021)",
+        "vote": "Yes (cosponsor)",
+        "topic": "justice_police_accountability",
+        "sourceUrl": "https://www.congress.gov/bill/117th-congress/house-bill/1280/cosponsors",
+        "notes": "Co-sponsored; passed House 220-212; stalled in Senate; limits qualified immunity, lowers misconduct conviction standard"
+      },
+      {
+        "bill": "CHIPS and Science Act (2022)",
+        "vote": "Yes",
+        "topic": "econ_public_investment",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Deborah_Ross_(politician)",
+        "notes": "$280B bipartisan semiconductor/R&D investment; passed House 243-187"
+      },
+      {
+        "bill": "Bipartisan Safer Communities Act (2022)",
+        "vote": "Yes",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://ross.house.gov/2022/6/congresswoman-ross-votes-historic-bipartisan-gun-violence-prevention-package",
+        "notes": "First major federal gun safety law in decades; passed 234-193 with 14 Republican votes; enhanced background checks, red flag law funding, closes boyfriend loophole"
+      },
+      {
+        "bill": "Assault Weapons Ban (2022 House vote)",
+        "vote": "Yes",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://georgiarecorder.com/2022/07/29/u-s-house-passes-ban-on-assault-weapons-after-spate-of-gun-violence/",
+        "notes": "Voted yes; stated 'It simply prevents future sales of assault rifles — weapons not designed for recreation, they're designed for combat.' Passed House, stalled in Senate."
+      },
+      {
+        "bill": "Inflation Reduction Act (2022)",
+        "vote": "Yes",
+        "topic": "climate_ambition / climate_energy_portfolio / healthcare_cost_control",
+        "sourceUrl": "https://ross.house.gov/2022/8/congresswoman-ross-secures-historic-support-north-carolinas-clean-energy",
+        "notes": "Voted yes; included her own provision overturning 10-year offshore wind moratorium off SE Atlantic coast; also included Medicare drug price negotiation"
+      },
+      {
+        "bill": "Social Security Fairness Act (2024)",
+        "vote": "Yes (cosponsor with 330+ cosponsors)",
+        "topic": "econ_safety_net",
+        "sourceUrl": "https://ross.house.gov/2024/11/congresswoman-ross-votes-to-protect-social-security-benefits-passes-the-social-security-fairness-act",
+        "notes": "Protects SS benefits for retired NC teachers, first responders, other state/local public servants"
+      },
+      {
+        "bill": "House Republican Budget Resolution 2025 (FY2026 reconciliation instruction)",
+        "vote": "No",
+        "topic": "econ_safety_net",
+        "sourceUrl": "https://ross.house.gov/2025/2/congresswoman-ross-votes-against-house-budget-resolution-that-would-cut-billions-in-funding-for-medicaid-snap-and-other-critical-services",
+        "notes": "Voted against authorizing cuts to Medicaid, SNAP, Head Start, school lunch to fund $4.5T tax cuts for wealthy"
+      },
+      {
+        "bill": "End Prison Gerrymandering Act (H.R. 7375, introduced Feb 2026)",
+        "vote": "Sponsor",
+        "topic": "justice_sentencing",
+        "sourceUrl": "https://www.billtrack50.com/legislatordetail/2351",
+        "notes": "Introduced 119th Congress Feb 4, 2026; referred to Committees on Oversight and Judiciary; addresses prison population counting for redistricting"
+      }
+    ],
+    "legislationAuthored": [
+      {
+        "bill": "Offshore Wind Moratorium Repeal (provision in IRA, 2022)",
+        "topic": "climate_energy_portfolio / climate_permitting",
+        "notes": "Her provision repealing 10-year SE Atlantic offshore wind moratorium was included in the Inflation Reduction Act"
+      },
+      {
+        "bill": "Nonrestrictive Offshore Wind (NOW) Act (introduced 2023, with AOC)",
+        "topic": "climate_permitting",
+        "notes": "Decouples offshore wind permitting from IRA oil/gas lease sale requirements"
+      },
+      {
+        "bill": "Defend Our Coast Act (introduced 2025)",
+        "topic": "climate_energy_portfolio",
+        "notes": "Prohibits DOI from issuing oil/gas leases in mid-Atlantic including off NC coast"
+      },
+      {
+        "bill": "PBM Reform Act (passed House Jan 2026)",
+        "topic": "healthcare_cost_control",
+        "notes": "Bipartisan bill; bans spread pricing in Medicaid; delinks PBM compensation from drug costs in Medicare Part D; passed House as part of appropriations package"
+      },
+      {
+        "bill": "Raise the Wage Act (cosponsor)",
+        "topic": "econ_safety_net",
+        "notes": "Would raise federal minimum wage to $15, then index to median wage growth"
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "100% (2024 annual); 99% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/deborah-ross/",
+      "fetchedAt": "2026-03-01T00:00:00.000Z",
+      "notes": "Top-tier environmental record; also earned 94% lifetime from NC LCV as state legislator"
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "11% (118th Congress); 0% (117th Congress); ~6% lifetime",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/r000305",
+      "fetchedAt": "2026-03-01T00:00:00.000Z",
+      "notes": "Very low conservative scorecard score; consistent with strong progressive voting record"
+    },
+    {
+      "organization": "Brady Campaign (gun safety)",
+      "score": null,
+      "grade": "endorsed / backed",
+      "url": "https://elections.bradyunited.org/press/brady-campaign-endorses-deborah-ross-for-u-s-house-of-representatives",
+      "fetchedAt": "2026-03-01T00:00:00.000Z",
+      "notes": "Brady PAC endorsement; she highlights it as a featured endorsement on campaign site"
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. NRA removed grades from site. Consistent with her gun safety voting record: opposed concealed carry expansion as state legislator, voted for Bipartisan Safer Communities Act and assault weapons ban in Congress, endorsed by Brady PAC. NRA-opposed profile."
+    },
+    {
+      "organization": "AFL-CIO (North Carolina State)",
+      "score": null,
+      "grade": "endorsed",
+      "url": "https://aflcionc.org/news/endorsements-november-5-2024-general-elections",
+      "notes": "NC AFL-CIO endorsed Ross for U.S. House 2024 general election; also endorsed her for Senate in 2016"
+    },
+    {
+      "organization": "ACLU",
+      "score": "scorecard page exists — specific % not retrieved",
+      "grade": null,
+      "url": "https://www.aclu.org/scorecard/legislators/nc-deborah-ross/",
+      "notes": "ACLU scorecard exists; Ross is former NC-ACLU State Director (1994–2002); expected to score very high on ACLU metrics"
+    },
+    {
+      "organization": "Planned Parenthood Action Fund",
+      "score": null,
+      "grade": "endorsed",
+      "url": "https://www.plannedparenthoodaction.org/pressroom/planned-parenthood-action-fund-endorses-cal-cunningham-and-deborah-ross-to-fight-for-north-carolinians-in-congress",
+      "notes": "Endorsed for Congress"
+    },
+    {
+      "organization": "NARAL Pro-Choice America / Reproductive Freedom for All",
+      "score": null,
+      "grade": "endorsed",
+      "url": "https://reproductivefreedomforall.org/news/naral-celebrates-deborah-ross-victory-nc/",
+      "notes": "NARAL-endorsed; celebrated her 2020 victory specifically"
+    },
+    {
+      "organization": "US Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No Chamber of Commerce scorecard found in searches; Heritage Action 11% score suggests low business-conservative alignment"
+    },
+    {
+      "organization": "NFIB",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NFIB scorecard data retrieved"
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "North Carolina AFL-CIO",
+      "type": "endorsement",
+      "cycle": "2024",
+      "notes": "Endorsed for House 2024 general election; consistent with prior NC AFL-CIO endorsement for Senate 2016"
+    },
+    {
+      "organization": "Brady PAC",
+      "type": "endorsement",
+      "cycle": "2024",
+      "notes": "Featured prominently on campaign site; Ross bills herself as gun safety champion"
+    },
+    {
+      "organization": "League of Conservation Voters Action Fund",
+      "type": "endorsement",
+      "cycle": "2024",
+      "notes": "LCV Action Fund endorsement; 99% lifetime LCV score"
+    },
+    {
+      "organization": "Planned Parenthood Action Fund",
+      "type": "endorsement",
+      "cycle": "2020 (and sustained through current cycle)",
+      "notes": "Endorsed for Congress"
+    },
+    {
+      "organization": "NARAL Pro-Choice America",
+      "type": "endorsement",
+      "cycle": "2020 (and sustained)",
+      "notes": "Endorsed; NARAL celebrated 2020 victory"
+    },
+    {
+      "organization": "Alliance for Retired Americans",
+      "type": "endorsement",
+      "cycle": "current",
+      "notes": "Listed on campaign site; consistent with Social Security/Medicare protection record"
+    },
+    {
+      "organization": "Everytown for Gun Safety Action Fund",
+      "type": "endorsement",
+      "cycle": "2024",
+      "notes": "Gun safety endorsement alongside Brady PAC"
+    },
+    {
+      "organization": "INDY Week (alt-weekly, Raleigh)",
+      "type": "editorial endorsement",
+      "cycle": "2024",
+      "notes": "Endorsed by Raleigh's INDY Week; featured on campaign site"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "INDY Week candidate questionnaire",
+      "date": "2024 cycle",
+      "url": "https://indyweek.com/news/elections/candidate-questionnaire-deborah-ross-u-s-house-2/",
+      "keyExchanges": [
+        {
+          "topic": "climate / energy",
+          "quote": "North Carolina needs someone in Congress to say 'No' to drilling off their shores, noting that this would risk their coastal region, including tourism and fishing industries",
+          "notes": "Strong anti-drilling stance; also promotes modernizing electric grid for renewables and battery storage incentives"
+        },
+        {
+          "topic": "labor / wages",
+          "quote": "co-sponsor of the Raise the Wage Act, which would gradually increase the federal minimum wage to $15 over five years, and thereafter the federal minimum wage would be indexed to median wage growth",
+          "notes": "Also supports equalizing tipped minimum wage with full minimum wage"
+        },
+        {
+          "topic": "broadband / rural infrastructure",
+          "quote": "broadband access is a critical priority for millions of people in rural and underserved communities",
+          "notes": "Consistent with Infrastructure Act vote; framed as public investment priority"
+        }
+      ]
+    },
+    {
+      "outlet": "Official house.gov press releases",
+      "date": "2021–2026",
+      "url": "https://ross.house.gov/media",
+      "keyExchanges": [
+        {
+          "topic": "healthcare_cost_control",
+          "quote": "PBMs have acted as unregulated middlemen, driving up the prices of life-saving medications for patients",
+          "notes": "Jan 2026; authored PBM Reform Act that passed House; bipartisan approach to drug pricing"
+        },
+        {
+          "topic": "transit",
+          "quote": "led NC Democratic delegation in calling for robust funding of transit and rail projects in NC",
+          "notes": "Nov 2023; proactive champion of public transit funding"
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "healthcare_coverage_model",
+      "conflict": "NC Medicare for All Coalition has urged her to cosponsor the Medicare for All Act of 2021 and subsequent cycles — no evidence she has done so. She supports a public option and ACA expansion, not single-payer.",
+      "sources": ["NC Medicare for All Coalition letter", "Wake County Dems candidate info 2024"],
+      "notes": "Not a true conflict — she is to the center-left on coverage model. She supports public option, not M4A. This is a known gap between progressive base expectations and her actual position."
+    }
+  ],
+  "axisEvidenceSummary": {
+    "econ_safety_net": {
+      "direction": "broader safety net",
+      "confidence": "high",
+      "evidence": "Voted for ARP, opposed SNAP/Medicaid cuts in 2025 budget, cosponsored Social Security Fairness Act, supports expanding Social Security and Medicare, cosponsors Raise the Wage Act"
+    },
+    "econ_public_investment": {
+      "direction": "more public investment",
+      "confidence": "high",
+      "evidence": "Voted for ARP ($1.9T), Infrastructure Investment and Jobs Act, CHIPS and Science Act ($280B), IRA; consistent record of supporting federal spending on infrastructure, R&D, clean energy"
+    },
+    "econ_school_choice": {
+      "direction": "traditional public schools",
+      "confidence": "medium",
+      "evidence": "Campaign platform explicitly supports public education, reducing class sizes, teacher pay, free pre-K; no support for vouchers or charter expansion found; aligned with NEA/AFL-CIO endorsers who strongly oppose school choice. No direct anti-voucher vote retrieved — inferred from overall posture."
+    },
+    "healthcare_coverage_model": {
+      "direction": "toward universal coverage / public option",
+      "confidence": "high",
+      "evidence": "Explicitly stated: supports comprehensive public option, expanding Medicaid, lowering Medicare eligibility age to 60; opposes Medicare voucher privatization; does NOT support Medicare for All"
+    },
+    "healthcare_cost_control": {
+      "direction": "government price controls / regulation",
+      "confidence": "high",
+      "evidence": "Authored PBM Reform Act (passed House 2026); voted for IRA Medicare drug price negotiation; explicitly calls out PBMs as 'unregulated middlemen driving up prices'"
+    },
+    "healthcare_public_health": {
+      "direction": "collective / government mandate side",
+      "confidence": "medium",
+      "evidence": "Supports ACA individual mandate structure, Medicaid expansion, public health interventions. No specific vaccine mandate or public health measure vote retrieved; inferred from overall posture and party alignment."
+    },
+    "housing_zoning_supply": {
+      "direction": "unclear / limited record",
+      "confidence": "low",
+      "evidence": "No federal zoning legislation votes found — zoning is primarily local/state. Secured federal affordable housing appropriations for Wake County. No stated position on zoning reform (YIMBY/NIMBY)."
+    },
+    "housing_affordability_tools": {
+      "direction": "government subsidies / intervention",
+      "confidence": "medium",
+      "evidence": "Secured federal affordable housing funding; wrote letter urging FHFA/CFPB to investigate institutional investor impact on housing; stated 'Federal housing policy should prioritize the housing needs of everyday Americans, not speculative profits'"
+    },
+    "housing_transit_priority": {
+      "direction": "public transit investment",
+      "confidence": "high",
+      "evidence": "Voted for Infrastructure Act; secured $19.3M for Raleigh transit and $176M+ for NC transit overall; led delegation calling for robust transit/rail funding; campaign site lists sustainable public transportation as explicit priority; has transit agency legal background"
+    },
+    "justice_police_accountability": {
+      "direction": "more oversight / reform",
+      "confidence": "high",
+      "evidence": "Co-sponsored George Floyd Justice in Policing Act (limits qualified immunity, lowers misconduct conviction standard); former NC-ACLU director who pushed police to collect race-based traffic stop data; consistently pro-reform posture; ACLU scorecard expected to confirm"
+    },
+    "justice_sentencing_goals": {
+      "direction": "rehabilitation focus",
+      "confidence": "medium-high",
+      "evidence": "Overhauled NC youth offender system as ACLU director; passed South's first anti-racial profiling bill as state legislator; introduced End Prison Gerrymandering Act (Feb 2026); no punitive/mandatory minimum votes found. Rehabilitation orientation is consistent career-long theme."
+    },
+    "justice_firearms_policy": {
+      "direction": "more gun regulations",
+      "confidence": "high",
+      "evidence": "Voted for Bipartisan Safer Communities Act (2022) and assault weapons ban (2022 House vote); as state legislator opposed concealed carry expansion into restaurants/parks; Brady PAC endorsed; Everytown endorsed; stated 'assault rifles designed for combat not recreation'; no NRA grade (consistent with anti-NRA voting record)"
+    },
+    "climate_ambition": {
+      "direction": "aggressive climate action",
+      "confidence": "high",
+      "evidence": "LCV 100% (2024 annual), 99% lifetime score; called climate change 'existential threat'; voted for IRA ($369B+ climate spending); introduced legislation to expand offshore wind; opposes fracking; Heritage Action 0-11% score confirms left-of-center economic/climate posture"
+    },
+    "climate_energy_portfolio": {
+      "direction": "renewables priority",
+      "confidence": "high",
+      "evidence": "Authored offshore wind moratorium repeal (IRA provision); introduced NOW Act and Defend Our Coast Act; opposes offshore drilling (introduced multiple bills to ban Atlantic drilling); co-introduced CLEAN Energy NOW Acts with AOC; actively opposed fossil fuel expansion throughout career"
+    },
+    "climate_permitting_speed": {
+      "direction": "faster green permitting",
+      "confidence": "high",
+      "evidence": "Introduced NOW Act specifically to decouple green energy permitting from oil/gas lease requirements, explicitly to accelerate offshore wind development; stated the IRA provision 'was not enough' and more must be done to streamline clean energy"
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition (LCV 99% lifetime + 100% 2024, authored IRA offshore wind provision, opposes all fossil fuel expansion)",
+      "climate_energy_portfolio (consistent renewables champion; multiple offshore wind bills; opposes drilling)",
+      "climate_permitting_speed (NOW Act explicitly targets green permitting acceleration)",
+      "justice_firearms_policy (Brady/Everytown endorsed; voted for Bipartisan Safer Communities Act and assault weapons ban)",
+      "justice_police_accountability (former ACLU director; cosponsor George Floyd Act)",
+      "econ_safety_net (voted for ARP; opposed SNAP/Medicaid cuts; cosponsor Raise the Wage Act)",
+      "econ_public_investment (voted for ARP, Infrastructure Act, CHIPS, IRA)",
+      "housing_transit_priority (secured $176M+ NC transit; led delegation calls for transit funding)",
+      "healthcare_coverage_model (explicit public option supporter; opposes Medicare vouchers)"
+    ],
+    "weakestAxes": [
+      "housing_zoning_supply (federal legislator — limited direct record; no zoning reform position found)",
+      "econ_school_choice (inferred from public education platform + labor endorsers; no explicit voucher vote retrieved)",
+      "healthcare_public_health (posture clear but no specific vote on pandemic mandates etc. retrieved)"
+    ],
+    "overallConfidence": "high",
+    "notes": "Five-year House record (2021-present) plus 10-year state legislature record (2003-2013) plus ACLU directorship (1994-2002) provides exceptionally deep, consistent evidentiary base. Attendance rate 99.2% over 2,679 votes means nearly every position has a vote attached. Primary gap is housing/zoning (a local/state issue where federal records are thin). The only position nuance: she is public option, NOT Medicare for All — a meaningful distinction from the progressive left flank. Campaign platform for 2026 repeats 2024 positions with no new commitments found."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "slug": "nc-voter-id-amendment-2026",
+  "officialTitle": "North Carolina Require Voter Identification Amendment (2026)",
+  "shortName": "NC Photo ID for All Voting Methods",
+  "electionDate": "2026-11-03",
+  "certificationStatus": "Certified for 2026 general election ballot",
+  "scoredAt": "2026-03-01T12:00:00Z",
+
+  "yesVoteSummary": "Amends the NC Constitution to require photo identification for all voting methods, including absentee/mail-in ballots. Extends the current in-person photo ID mandate to cover all voters regardless of how they cast their ballot.",
+  "noVoteSummary": "Maintains current constitutional language requiring photo ID only for in-person voters. The existing statutory framework allowing absentee voters to use alternative identifiers (driver's license number or last 4 SSN digits via an ID Exception Form) remains in force.",
+
+  "axisEffectsOfYes": {
+    "justice_policing_accountability": {
+      "score": 7,
+      "confidence": "medium",
+      "notes": "This is not a policing measure, but the axis captures the closest civic tension: formal institutional rule enforcement (Pole B) versus protecting access for populations facing systemic barriers (Pole A). A YES vote extends a compliance mandate to all voting methods, prioritizing uniform procedural enforcement over concerns about disparate impact on marginalized voters. The measure was passed on a party-line vote in a lame-duck session, reflecting a law-and-order institutional approach to election administration. Scored as moderate Pole B (7) rather than extreme because the measure extends an existing requirement rather than creating a wholly new restriction, and implementing statutes could include mitigations. The axis fit is analogical, not direct -- this is about election administration, not policing -- which limits confidence to medium."
+    }
+  },
+
+  "valueEffectsOfYes": {
+    "security": {
+      "score": 0.7,
+      "reasoning": "The core framing of a YES vote is election security -- protecting the integrity of the ballot, preventing fraud, ensuring stability and trustworthiness of democratic institutions. 'Protecting against fraud needs to evolve as voting evolves' (Sen. Daniel). Security as safety, harmony, and stability of society is the primary motivational orientation of YES voters. High intensity: this is the explicit, central argument."
+    },
+    "conformity": {
+      "score": 0.6,
+      "reasoning": "A YES vote expresses the value that all voters should follow the same formal rules regardless of personal circumstance. Extending photo ID to all voting methods eliminates an exception for absentee voters, insisting on uniform compliance. Conformity -- restraint of actions that violate social expectations/norms -- is a strong secondary value. The requirement imposes a standardized process on everyone."
+    },
+    "tradition": {
+      "score": 0.4,
+      "reasoning": "Moderate positive signal. Supporters invoke the traditional norm that presenting identification is a basic civic duty and a serious act. The measure reinforces conventional/established institutional practices. However, absentee voting ID expansion is itself somewhat novel (NC has never required photo ID for mail voting before), which tempers the tradition score. The lame-duck passage also works against tradition as process-respect."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Weak positive signal. The amendment was passed by the Republican supermajority in a lame-duck session specifically to lock in policy before losing that supermajority. It constitutionalizes a restriction that would otherwise be changeable by statute, concentrating rule-setting power. The measure extends state authority over individual voters. However, the explicit framing is not about power but security, so this is a secondary/structural signal."
+    },
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "Strong negative signal. Documented empirical evidence shows the measure would disproportionately burden Black voters (39% less likely to have qualifying photo ID; 34% of those without ID while 23% of registered voters), elderly, disabled, student, and low-income voters. Courts have found prior NC voter ID laws were enacted 'with almost surgical precision' to target Black voters (4th Circuit, 2016), and the 2021 panel found discriminatory purpose. A YES vote works against universalism's core concerns: equal protection, tolerance, and welfare of all people regardless of group membership. The racial disparate impact is empirically documented across multiple independent sources, not speculative."
+    },
+    "benevolence": {
+      "score": -0.4,
+      "reasoning": "Moderate negative signal. The measure creates barriers for vulnerable populations who have difficulty obtaining photo ID -- the elderly without current driver's licenses, people with disabilities, those with limited transportation. These are populations that benevolence-oriented voters would seek to protect. However, benevolence focuses on in-group welfare, and some YES voters may genuinely believe they are protecting their community's election integrity, which tempers the negative score."
+    },
+    "self_direction": {
+      "score": -0.5,
+      "reasoning": "Moderate-to-strong negative signal. The measure restricts autonomous civic participation by adding a compliance requirement to voting -- a fundamental act of self-directed engagement. Voters who previously exercised self-direction by choosing to vote absentee using alternative identifiers would lose that option. Self-direction values independent thought and action, choosing and exploring; imposing additional state-mandated requirements to exercise a fundamental right works against this value."
+    },
+    "stimulation": {
+      "score": -0.1,
+      "reasoning": "Negligible negative signal. Constitutional amendments that lock in procedural restrictions reduce flexibility and openness to new voting methods, but this is a very weak and indirect connection to stimulation (excitement, novelty, challenge). Scored near zero."
+    },
+    "achievement": {
+      "score": 0.0,
+      "reasoning": "No meaningful connection. The measure does not engage achievement values (personal success through demonstrated competence) in either direction."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful connection. The measure does not engage hedonism values (pleasure, sensuous gratification) in either direction."
+    }
+  },
+
+  "keyConsiderations": [
+    "Extends existing in-person photo ID requirement to all voting methods including absentee/mail-in ballots via constitutional amendment",
+    "Passed on a strictly partisan vote in a December 2024 lame-duck session, one month before Republicans lost their supermajority -- critics call this an anti-democratic power grab",
+    "Courts have found prior NC voter ID laws targeted Black voters 'with almost surgical precision' (4th Circuit 2016) and were enacted 'in part for a discriminatory purpose' (2021 panel); a federal case (NAACP v. Hirsch) challenging the existing voter ID statute is pending",
+    "Black voters are approximately 39% less likely than white voters to have qualifying photo ID in NC; in 2024, Black voters were 30% of rejected ballots while ~20% of the electorate",
+    "Constitutional entrenchment: if passed, the requirement can only be removed by another constitutional amendment, not by ordinary legislation",
+    "Implementing legislation not yet drafted -- the practical burden depends on whether the legislature preserves, narrows, or eliminates the current ID Exception Form alternative"
+  ],
+
+  "conflicts": [
+    {
+      "topic": "Fraud prevention vs. documented evidence",
+      "description": "Supporters frame the measure as necessary to prevent absentee voting fraud, but the NC State Board of Elections has found no evidence of systematic absentee fraud. The 2024 election saw 1,670 ballots rejected for ID noncompliance (~1 in 3,400 voters) but 23,000 additional provisional ballots cast due to ID confusion. The claimed problem (widespread fraud) is not empirically documented; the created problem (voter deterrence and rejection) is.",
+      "sources": ["NC State Board of Elections", "Democracy NC", "NPR December 2024"],
+      "scoringImpact": "Contributes to universalism negative score and security positive score -- the values tension is real even though the empirical basis for the security claim is weak"
+    },
+    {
+      "topic": "Popular support vs. disparate impact",
+      "description": "National polling shows 79-81% support for voter ID broadly (Gallup 2022, Pew 2024), including 69% of Democrats. But polling on absentee-specific photo ID requirements is less documented, and documented racial disparities in ID ownership mean the popular measure has unequal real-world effects.",
+      "sources": ["Gallup", "Pew Research", "Brennan Center", "NAACP v. Hirsch trial testimony"],
+      "scoringImpact": "Does not affect axis scores but contextualizes the values tension -- a measure can be popular and still work against universalism"
+    }
+  ],
+
+  "evidenceSummary": {
+    "axesScored": 1,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_investment",
+      "econ_school_choice",
+      "econ_tax_structure",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "This is a voting access/election administration measure. It has no direct bearing on economic policy, healthcare, housing, climate, firearms, or sentencing. Only one justice axis (policing_accountability) captures an analogous institutional-enforcement-vs-access tension, and even that mapping is indirect. The Schwartz value scores are the primary informational output for this type of measure.",
+    "overallConfidence": "high",
+    "notes": "Evidence quality is strong: legislative text and vote counts are confirmed, historical legal record is well-documented through federal and state court decisions, racial impact data comes from multiple independent academic, judicial, and journalistic sources. The main uncertainty is the implementing legislation (not yet drafted), which will determine the practical severity of the burden on absentee voters. The civic axis score has medium confidence due to imperfect axis fit; the Schwartz value scores have high confidence because the values tension (security/conformity vs. universalism/self-direction) is clearly documented and well-evidenced.",
+    "researchGaps": [
+      "No NC-specific polling on this particular measure found",
+      "No organized campaign committees registered for or against as of research date",
+      "Implementing legislation not yet drafted -- the practical burden is unknown",
+      "NAACP v. Hirsch federal case decision pending -- could reshape the legal context"
+    ]
+  }
+}
