@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-02-25T00:00:00.000Z",
+  "state": "Georgia",
+  "notes": "Filing deadline is March 2-6, 2026 (qualifying period). Open seat — Brian Kemp is term-limited. Race rating: Toss-up (Cook), Lean R (Sabato), Tilt R (Inside Elections).",
+  "contests": [
+    {
+      "id": "GA-GOVERNOR-2026",
+      "office": "Governor",
+      "state": "GA",
+      "district": null,
+      "primaryDate": "2026-05-19",
+      "primaryRunoffDate": "2026-06-16",
+      "generalDate": "2026-11-03",
+      "generalRunoffDate": "2026-12-01",
+      "filingDeadline": "2026-03-06",
+      "isOpenSeat": true,
+      "incumbentName": "Brian Kemp",
+      "incumbentParty": "Republican",
+      "raceRating": "Toss-up",
+      "raceRatingSource": "Cook Political Report",
+      "raceContext": "Open seat — Kemp is term-limited. Large fields in both primaries. Republican primary features Lt. Gov. Burt Jones (Trump-endorsed), AG Chris Carr, SoS Brad Raffensperger, and healthcare billionaire Rick Jackson ($50M self-funded). Democratic primary led by former Atlanta Mayor Keisha Lance Bottoms (~40% polling). Georgia uses majority-required runoff system.",
+      "candidates": [
+        {
+          "slug": "burt-jones",
+          "name": {
+            "full": "Burt Jones",
+            "ballotDisplay": "Burt Jones"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://burtjonesforga.com",
+          "evidenceTier": "high",
+          "notes": "Incumbent Lt. Governor. Trump-endorsed. Former state senator."
+        },
+        {
+          "slug": "chris-carr",
+          "name": {
+            "full": "Chris Carr",
+            "ballotDisplay": "Chris Carr"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://carrforgeorgia.com",
+          "evidenceTier": "high",
+          "notes": "Incumbent Attorney General."
+        },
+        {
+          "slug": "brad-raffensperger",
+          "name": {
+            "full": "Brad Raffensperger",
+            "ballotDisplay": "Brad Raffensperger"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://bradforgeorgia.com",
+          "evidenceTier": "high",
+          "notes": "Incumbent Secretary of State. Gained national attention for defying Trump in 2020 election."
+        },
+        {
+          "slug": "rick-jackson",
+          "name": {
+            "full": "Rick Jackson",
+            "ballotDisplay": "Rick Jackson"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://rickjackson.com",
+          "evidenceTier": "high",
+          "notes": "Healthcare billionaire. Late Feb 2026 entrant. $50M self-funded. Political outsider."
+        },
+        {
+          "slug": "clark-dean",
+          "name": {
+            "full": "Clark Dean",
+            "ballotDisplay": "Clark Dean"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://clarkdeanforga.com",
+          "evidenceTier": "medium",
+          "notes": "Transwestern exec, Harvard-trained biomedical engineer."
+        },
+        {
+          "slug": "gregg-kirkpatrick",
+          "name": {
+            "full": "Gregg Kirkpatrick",
+            "ballotDisplay": "Gregg Kirkpatrick"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Entrepreneur, Woodstock. Ran for state house in 2024."
+        },
+        {
+          "slug": "leland-olinger-ii",
+          "name": {
+            "full": "Leland Olinger II",
+            "ballotDisplay": "Leland Olinger II"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Activist, nonprofit founder. Prior state senate runs."
+        },
+        {
+          "slug": "kenneth-yasger",
+          "name": {
+            "full": "Kenneth Yasger",
+            "ballotDisplay": "Kenneth Yasger"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Army Ranger vet, Savannah bartender, openly gay Republican."
+        },
+        {
+          "slug": "keisha-lance-bottoms",
+          "name": {
+            "full": "Keisha Lance Bottoms",
+            "ballotDisplay": "Keisha Lance Bottoms"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://keishaforgovernor.com",
+          "evidenceTier": "high",
+          "notes": "Former Atlanta Mayor (2018-2022). Biden White House official. Frontrunner ~40% in Dem polling."
+        },
+        {
+          "slug": "geoff-duncan",
+          "name": {
+            "full": "Geoff Duncan",
+            "ballotDisplay": "Geoff Duncan"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://duncanforgeorgia.com",
+          "evidenceTier": "high",
+          "notes": "Former Republican Lt. Governor. Switched to Democratic Party August 2025. Known for opposing Trump's election fraud claims."
+        },
+        {
+          "slug": "jason-esteves",
+          "name": {
+            "full": "Jason Esteves",
+            "ballotDisplay": "Jason Esteves"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://jasonesteves.com",
+          "evidenceTier": "high",
+          "notes": "Former State Senator. Resigned seat to run for governor."
+        },
+        {
+          "slug": "michael-thurmond",
+          "name": {
+            "full": "Michael Thurmond",
+            "ballotDisplay": "Michael Thurmond"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://mikethurmond.com",
+          "evidenceTier": "high",
+          "notes": "Former DeKalb CEO, Labor Commissioner, State Rep. Long record in Georgia politics."
+        },
+        {
+          "slug": "derrick-jackson",
+          "name": {
+            "full": "Derrick Jackson",
+            "ballotDisplay": "Derrick Jackson"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://votederrickjackson.org",
+          "evidenceTier": "medium",
+          "notes": "5-term State Rep. 22-year Navy vet."
+        },
+        {
+          "slug": "olu-brown",
+          "name": {
+            "full": "Olu Brown",
+            "ballotDisplay": "Olu Brown"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://oluforga.com",
+          "evidenceTier": "medium",
+          "notes": "Former megachurch pastor, small business owner. No prior elected office."
+        },
+        {
+          "slug": "ruwa-romman",
+          "name": {
+            "full": "Ruwa Romman",
+            "ballotDisplay": "Ruwa Romman"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://ruwaforgeorgia.com",
+          "evidenceTier": "medium",
+          "notes": "State Rep. First Palestinian/Muslim woman elected to GA House."
+        },
+        {
+          "slug": "chase-oliver",
+          "name": {
+            "full": "Chase Oliver",
+            "ballotDisplay": "Chase Oliver"
+          },
+          "party": "Libertarian",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Libertarian nominee. PENDING ballot access — must collect 72,083 signatures by July 14, 2026."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Georgia_gubernatorial_election,_2026",
+      "description": "Ballotpedia main race page",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election",
+      "description": "Wikipedia race article",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    }
+  ]
+}

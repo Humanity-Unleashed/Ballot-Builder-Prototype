@@ -1,0 +1,474 @@
+{
+  "slug": "sonya-halpern",
+  "name": "Sonya Halpern",
+  "party": "Democratic",
+  "office": "U.S. House, Georgia 6th Congressional District, 2026",
+  "contestId": "GA-06-US-HOUSE-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Georgia State Senator, District 39 (January 11, 2021–present); Democratic Caucus Vice Chair (2023–present)",
+    "priorRoles": [
+      "Founder, Whiskey in a Teacup (WIAT) Consulting — global arts and culture consultancy (2018–present)",
+      "Advertising sales executive: The Walt Disney Company, ESPN, Cox Enterprises (c. 2000s–2010s)",
+      "Chair, President's Advisory Committee on the Arts, Kennedy Center (appointed 2014 by President Obama; first African-American and first Georgian to serve as Chair)",
+      "Member, President's Advisory Committee on the Arts, Kennedy Center (appointed 2011 by President Obama)",
+      "Board member, Atlanta YMCA",
+      "Community roles: National Center for Civil and Human Rights, Andrew J. Young Foundation, National Black Arts Festival, Public Broadcasting Atlanta, South Arts"
+    ],
+    "education": "B.A. Mass Communication, University of Massachusetts Amherst; M.B.A., University of Hartford",
+    "background": "Born October 11, 1967; raised upstate New York; moved to Atlanta 1998. Former marketing/media executive turned state legislator. Husband Daniel; three children. Has lived in GA-39 district approximately 26 years.",
+    "notes": "Not a prior federal officeholder. No voting record in Congress — scoring must rely on state legislative record and stated positions."
+  },
+  "raceContext": {
+    "district": "Georgia's 6th Congressional District",
+    "cookPVI": "D+25 (30th most Democratic district nationally)",
+    "incumbent": "Lucy McBath (D) — vacating seat to run for Georgia Governor",
+    "primaryDate": "2026-05-19",
+    "generalDate": "2026-11-03",
+    "democraticPrimaryOpponents": ["Chris Capparell (D)"],
+    "republicanPrimaryOpponents": ["Justin Pinker (R)"],
+    "conditionalFiling": "Halpern originally filed 'if and only if' McBath ran for governor. McBath paused her gubernatorial exploratory committee in late 2025 but McBath has not re-entered the GA-06 race. Halpern filed formal paperwork March 26, 2025."
+  },
+  "campaignWebsite": {
+    "url": "https://www.sonya4ga.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch unavailable; positions gathered via search engine snippets extracting website content. Pages noted: /, /meet-sonya, /district-39, /contact",
+    "statedPositions": [
+      {
+        "topic": "economy / tariffs",
+        "quote": "an uncertain tariff is a tax on Georgians",
+        "sourceUrl": "https://www.sonya4ga.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Opposes Trump tariff policy framing it as burden on Georgia families and businesses"
+      },
+      {
+        "topic": "economy / small business",
+        "quote": "economic mobility grows when access and opportunity are within reach",
+        "sourceUrl": "https://www.sonya4ga.com/meet-sonya",
+        "date": "2025-2026",
+        "confidence": "low",
+        "notes": "General values statement; referenced small-business empowerment events"
+      },
+      {
+        "topic": "government accountability",
+        "quote": "accountability is leadership… Georgians deserve transparency, thoughtful debate, and responsible stewardship of every dollar they earn",
+        "sourceUrl": "https://www.sonya4ga.com/",
+        "date": "2025-2026",
+        "confidence": "low",
+        "notes": "Framing statement, not a specific policy commitment"
+      },
+      {
+        "topic": "civil rights / anti-discrimination",
+        "quote": "Georgia remains one of only three states — alongside Alabama and Mississippi — without a comprehensive civil rights law that protects people from discrimination",
+        "sourceUrl": "https://www.sonya4ga.com/",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Co-sponsor of SB 320, Georgia Civil Rights Act of 2025; leads Senate Civil Rights Protections Study Committee"
+      },
+      {
+        "topic": "drowning prevention / public health",
+        "quote": "As an Atlanta YMCA board member and sponsor of drowning prevention legislation, she has seen how policy, funding, and community partnerships save lives",
+        "sourceUrl": "https://www.sonya4ga.com/meet-sonya",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "References specific legislation; signals public investment in community public health"
+      },
+      {
+        "topic": "five priority issue areas",
+        "quote": "personally passionate about five key areas of public policy — health care, education, economic equality, criminal justice reform, and voting rights",
+        "sourceUrl": "https://www.sonya4ga.com/meet-sonya",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Explicit self-identification of priorities"
+      }
+    ]
+  },
+  "stateLegislativeRecord": {
+    "available": true,
+    "sources": ["Georgia Senate Press Office (senatepress.net)", "TrackBill/PolicyEngage", "BillTrack50", "FastDemocracy", "LegisStorm", "Georgia Recorder", "AJC", "Rough Draft Atlanta"],
+    "sessionsCovered": ["2021-2022", "2023-2024", "2025-2026"],
+    "committees": [
+      "Appropriations",
+      "Banking and Financial Institutions",
+      "Education and Youth",
+      "Health and Human Services",
+      "Public Safety",
+      "Urban Affairs (Vice Chair)",
+      "Senate Study Committee on HBCUs (Chair)",
+      "General Assembly Working Group on Addiction and Recovery (Co-Chair)",
+      "Senate Civil Rights Protections Study Committee (Chair)"
+    ],
+    "caucusMemberships": [
+      "Georgia Legislative Black Caucus",
+      "Women's Legislative Caucus",
+      "Working Families Caucus",
+      "Georgia-Israel Legislative Caucus",
+      "Senate Democratic Caucus (Vice Chair)"
+    ],
+    "keyBillsAndActions": [
+      {
+        "bill": "SB 320 — Georgia Civil Rights Act of 2025",
+        "action": "Primary sponsor",
+        "topic": "civil rights / anti-discrimination",
+        "description": "Would enact comprehensive state civil rights protections covering housing, public accommodations, and employment; prohibits discrimination on basis of race, color, religion, sex, sexual orientation, gender identity, age, disability, familial status, or national origin; also bans racial profiling and requires data collection on traffic stops",
+        "status": "2025-2026 session; not yet enacted",
+        "sourceUrl": "https://legiscan.com/GA/bill/SB320/2025",
+        "notes": "Georgia currently one of only three states without comprehensive civil rights law"
+      },
+      {
+        "bill": "SB 235 — HBCUs Innovation and Economic Prosperity Planning Districts Commission",
+        "action": "Sponsor",
+        "topic": "education / HBCUs",
+        "description": "Creates HBCUs Innovation and Economic Prosperity Planning Districts Commission under the University System of Georgia",
+        "status": "Passed Georgia Senate 46-7, February 26 (session year not confirmed in search results, likely 2025)",
+        "sourceUrl": "https://clutchpoints.com/hbcu/new-bill-introduced-to-increase-funding-development-for-georgia-hbcus",
+        "notes": "Bipartisan passage; signals public investment in higher education, specifically HBCUs"
+      },
+      {
+        "bill": "SB 182 — Georgia Music Office and Music Ready Communities Act",
+        "action": "Sponsor",
+        "topic": "economic development / arts",
+        "description": "Creates Georgia Music Office and Music Ready Communities program",
+        "status": "Passed unanimously out of Senate Committee on Economic Development and Tourism, February 27, 2025",
+        "sourceUrl": "https://senatepress.net/",
+        "notes": "Signals attention to creative economy; bipartisan committee support"
+      },
+      {
+        "bill": "SB 55 — Disabilities workforce / federal minimum wage compliance",
+        "action": "Co-sponsor",
+        "topic": "labor / disability rights",
+        "description": "Aids those with disabilities in the workforce; brings Georgia into compliance with federal minimum wage laws for workers with disabilities",
+        "status": "Passed (session year not confirmed in search results)",
+        "sourceUrl": "https://www.billtrack50.com/legislatordetail/25948",
+        "notes": "Bipartisan bill; sponsors included both Democratic and Republican senators"
+      },
+      {
+        "bill": "SB 185 — Ban on gender-affirming care for transgender prison inmates",
+        "action": "Yes vote (broke with majority of Democratic caucus)",
+        "topic": "LGBTQ rights / criminal justice",
+        "description": "Bans all gender-affirming medical care for transgender people in state prisons",
+        "vote": "Yes",
+        "finalVote": "37-15 (four Democrats joined 33 Republicans)",
+        "status": "Passed Georgia Senate March 2025; signed by Governor Kemp",
+        "sourceUrl": "https://www.ajc.com/politics/democratic-leaders-break-with-party-on-bill-banning-gender-affirming-care-to-transgender-inmates/GOLDUIB7O5HXVDFAQFSVPYTCDA/",
+        "halpernQuote": "Not one tax dollar in Georgia has ever been spent on sex change surgeries for inmates. This bill simply makes explicit what is already the practice in Georgia, and yet here we are debating this as if it were some looming crisis.",
+        "halpernFollowUp": "My vote does not change my commitment to the LGBTQ+ community. I will fight for protections that ensure transgender people in Georgia can live their life safely and freely and will fight back against real attacks on LGBTQ+ rights.",
+        "notes": "SIGNIFICANT CONFLICT: This vote conflicts with her sponsorship of SB 320 which includes gender identity anti-discrimination protections. She framed her vote as a fiscal/policy pragmatism argument, not ideological opposition to trans rights. Flag for scorer."
+      },
+      {
+        "bill": "Gun safety legislation (universal background checks, safe storage)",
+        "action": "Advocacy / bill sponsorship (specific bill numbers not confirmed)",
+        "topic": "firearms",
+        "description": "Pushed for universal background checks and safe storage laws in Georgia; called for urgent action following school shooting",
+        "vote": "N/A — minority party in Georgia Senate; these bills did not pass",
+        "sourceUrl": "https://roughdraftatlanta.com/2024/09/05/sonya-halpern-georgia-state-senator-gun-safety/",
+        "halpernQuote": "urgent action is needed to end gun violence in Georgia… common-sense measures like universal background checks and safe storage laws can save lives",
+        "notes": "September 2024; in context of Barrow County school shooting. NRA gave her 7% rating (as of March 2016 — this may be a dated reference from a prior role, not the Georgia Senate)"
+      },
+      {
+        "bill": "Drowning prevention legislation",
+        "action": "Sponsor",
+        "topic": "public health",
+        "description": "Specific bill details not confirmed; referenced in campaign materials in context of YMCA partnership",
+        "sourceUrl": "https://www.sonya4ga.com/meet-sonya",
+        "notes": "Low evidential weight; no bill number confirmed"
+      },
+      {
+        "bill": "Medicaid expansion advocacy",
+        "action": "Ongoing caucus advocacy; no successful bill (Republican majority blocked expansion)",
+        "topic": "healthcare / Medicaid",
+        "halpernQuote": "There's never been a year where we are not talking about Medicaid expansion",
+        "sourceUrl": "https://www.gpb.org/news/2024/01/12/what-georgia-lawmakers-are-saying-about-medicaid-expansion-so-far",
+        "notes": "Consistent Medicaid expansion supporter. Georgia did not expand under ACA; Halpern and Democratic caucus have advocated for full expansion annually."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "NRA (National Rifle Association)",
+      "score": null,
+      "grade": "7% (reported as NRA rating; likely from prior period — may not be Georgia Senate-specific)",
+      "url": "https://www.nrapvf.org/grades/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "7% NRA rating found in search results; source context unclear (possibly pre-Georgia-Senate, as NRA typically grades federal or state candidates during election cycles). Consistent with her pro-gun-regulation advocacy and statements. Treat as directional signal: very low NRA support."
+    },
+    {
+      "organization": "Georgia Conservation Voters (GCV)",
+      "score": null,
+      "grade": null,
+      "url": "https://gcvoters.org/endorsements/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "No confirmed GCV score or endorsement found for Halpern in available search results. GCV did endorse candidates in 2023 and 2026 cycles; Halpern's specific status not confirmed."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": "https://scorecard.lcv.org/state/georgia",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "LCV scorecard covers federal legislators; Halpern is a state legislator transitioning to a federal race. No LCV congressional score available. Georgia Conservation Voters is the state affiliate; no specific score found."
+    },
+    {
+      "organization": "Georgia Justice Project",
+      "score": null,
+      "grade": null,
+      "url": "https://www.congressweb.com/GJP/legislators/info/mbr_id/2093",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Halpern is listed in the Georgia Justice Project's legislator database, suggesting engagement with their criminal justice reform agenda. No formal letter grade or score confirmed."
+    },
+    {
+      "organization": "EMILY's List",
+      "type": "endorsement",
+      "cycle": "2020 (Georgia State Senate District 39)",
+      "url": "https://emilyslist.org/news/emilys-list-endorses-sonya-halpern-in-georgias-39th-state-senate-district/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Endorsed for 2020 State Senate race. No confirmed 2026 congressional endorsement from EMILY's List found in search results as of research date."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "EMILY's List",
+      "type": "prior endorsement (2020, State Senate)",
+      "cycle": "2020",
+      "notes": "Endorsed for Georgia State Senate District 39. 2026 congressional endorsement status unconfirmed."
+    },
+    {
+      "organization": "Georgia WIN List",
+      "type": "listed candidate",
+      "cycle": "prior cycles",
+      "url": "https://gawinlist.com/sonya-halpern/",
+      "notes": "Listed on Georgia WIN List website; WIN List supports Democratic women candidates in Georgia. Specific 2026 endorsement for congressional race not confirmed."
+    },
+    {
+      "organization": "Rep. Hank Johnson",
+      "type": "political alliance / co-advocacy",
+      "cycle": "2024",
+      "notes": "Held joint press conference with Rep. Hank Johnson (GA-04) and State Rep. Derrick Jackson in July 2024 to condemn Project 2025 during the RNC. Signals alignment with established Georgia Democratic House delegation."
+    }
+  ],
+  "pressReleasesAndStatements": [
+    {
+      "topic": "abortion / reproductive rights",
+      "date": "2024-09-17",
+      "outlet": "Georgia Senate Press Office",
+      "url": "https://senatepress.net/sen-sonya-halpern-statement-on-death-of-amber-thurman.html",
+      "quote": "I am heartbroken to learn about the tragic and entirely preventable death of Amber Thurman, who lost her life due to delayed emergency medical care under Georgia's abortion ban.",
+      "additionalQuote": "A stark reminder of how dangerous this law is — putting our healthcare providers in direct conflict with the Hippocratic Oath they swore to uphold, all while they fear the risk of prosecution. The trust that people have in their doctors erodes, and the access to essential care becomes dangerously limited.",
+      "additionalQuote2": "I am angry when I consider that in a state like Georgia — a place with so much to offer and a history of setting powerful examples for the rest of the country — this is what we are becoming known for. Amber Thurman didn't have to die. But the system made it easier for her to do so — and that is simply unacceptable.",
+      "confidence": "high",
+      "notes": "Explicit, strong opposition to Georgia's abortion ban. Amber Thurman died in 2022 after being denied emergency medical care (dilation and curettage) due to Georgia's abortion ban; death confirmed preventable by Georgia Maternal Mortality Review Committee."
+    },
+    {
+      "topic": "immigration / ICE / economic development",
+      "date": "2025-09-10",
+      "outlet": "Georgia Senate Press Office",
+      "url": "https://senatepress.net/sen-sonya-halpern-calls-on-governor-kemp-for-transparency-on-hyundai-ev-battery-plant-raid-and-georgias-economic-future.html",
+      "quote": "The Hyundai-LG battery facility represents the largest industrial project in our state's history, with 8,500 promised jobs and billions of dollars in investment.",
+      "additionalQuote": "Partnership also requires accountability. If there were violations of the law, they must be addressed in a way that protects both Georgia's integrity and our economic future.",
+      "stance": "Called for transparency from Gov. Kemp on ICE detention of ~475 workers; requested status of detained workers, support for international companies navigating visa/immigration processes, and reassurances to investors",
+      "confidence": "high",
+      "notes": "Framing is economic concern + accountability rather than explicit opposition to all immigration enforcement. Notably more cautious than an outright anti-ICE statement. Context: 2025 Hyundai Ellabell EV plant ICE raid."
+    },
+    {
+      "topic": "gun safety",
+      "date": "2024-09",
+      "outlet": "Rough Draft Atlanta",
+      "url": "https://roughdraftatlanta.com/2024/09/05/sonya-halpern-georgia-state-senator-gun-safety/",
+      "quote": "urgent action is needed to end gun violence in Georgia… common-sense measures like universal background checks and safe storage laws can save lives",
+      "confidence": "high",
+      "notes": "Published in context of Barrow County school shooting, September 2024"
+    },
+    {
+      "topic": "Project 2025 / civil liberties",
+      "date": "2024-07",
+      "outlet": "GPB / Georgia Recorder / Hank Johnson for Congress",
+      "url": "https://www.gpb.org/news/2024/07/18/georgia-dems-try-redirect-focus-conservative-project-2025-agenda-biden-campaign",
+      "stance": "Condemned Project 2025 as dangerous to reproductive rights, Social Security, Medicare, and democracy",
+      "confidence": "medium",
+      "notes": "Joint press conference framing; not a solo interview. Signals alignment with national Democratic Party messaging."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "AJC (Atlanta Journal-Constitution)",
+      "date": "2025-03-20",
+      "url": "https://www.ajc.com/politics/town-halls-tort-reform-and-state-sen-halperns-next-move/K5TBGJCYSBAUFAMN262NM2N5QM/",
+      "title": "Town halls, tort reform and state Sen. Halpern's next move",
+      "keyExchanges": [
+        {
+          "topic": "congressional candidacy",
+          "notes": "Article covers Halpern's considerations around her congressional run; tort reform context refers to Georgia's 2025 legal overhaul (SB 68). Halpern's specific position on tort/lawsuit reform not extracted from available search snippets."
+        }
+      ],
+      "notes": "Article exists behind AJC paywall; full content not accessible via search snippets alone."
+    },
+    {
+      "outlet": "AJC",
+      "date": "2025-03-26",
+      "url": "https://www.ajc.com/politics/georgia-state-sen-sonya-halpern-prepares-to-run-for-mcbaths-us-house-seat/NZHUQDSB5RF3BONQ6DWN2AXT7M/",
+      "title": "Georgia state Sen. Sonya Halpern prepares to run for McBath's U.S. House seat",
+      "keyExchanges": [
+        {
+          "topic": "candidacy announcement",
+          "notes": "Filed paperwork March 26, 2025; first prominent candidate to enter the GA-06 race. Policy-specific quotes not extracted from available search snippet."
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive",
+      "date": "2025 (early)",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/georgia-sen-sonya-halpern-possible-congressional-run-if-lucy-mcbath-runs-for-governor/85-827d6176-d673-40ab-9315-50e5984c32c0",
+      "title": "Georgia Sen. Sonya Halpern could run for Congress if Lucy McBath runs for governor",
+      "keyExchanges": [
+        {
+          "topic": "conditional candidacy",
+          "quote": "I am excited to take initial steps to run for Congress if and only if Congresswoman Lucy McBath decides to run for Governor of Georgia.",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "LGBTQ rights / transgender policy",
+      "conflict": "Voted YES on SB 185 (ban on gender-affirming care for transgender prison inmates, March 2025) while simultaneously co-sponsoring SB 320 (Georgia Civil Rights Act of 2025, which includes gender identity protections). She framed her SB 185 vote as fiscal pragmatism ('not one tax dollar in Georgia has ever been spent on this') rather than ideological opposition, and said it did not change her commitment to the LGBTQ+ community.",
+      "sources": [
+        "AJC reporting on SB 185 vote, March 2025",
+        "legiscan.com SB 320 sponsor information"
+      ],
+      "scorerNote": "Scorer should assess whether this represents a genuine ideological position or a pragmatic political vote. Her stated reasoning was cost-based (no new policy change, just codifying existing practice), but she broke with the majority of her Democratic caucus."
+    },
+    {
+      "topic": "immigration enforcement",
+      "conflict": "Her response to the Hyundai ICE raid was carefully calibrated — she called for transparency and accountability rather than condemning the raid outright. She acknowledged 'if there were violations of the law, they must be addressed.' This is notably more moderate than a blanket anti-enforcement stance.",
+      "sources": [
+        "Georgia Senate Press Office letter to Gov. Kemp, September 2025"
+      ],
+      "scorerNote": "Insufficient evidence to place her strongly on immigration enforcement axis. Her concern was primarily economic/transparency-focused, not a civil liberties argument."
+    }
+  ],
+  "evidenceGaps": [
+    {
+      "axis": "climate / energy",
+      "notes": "No specific climate or energy legislation found in state record. Participated in Reagan Institute Summit on Education 2023 (bipartisan event). No LCV score available. No statements found on clean energy, fossil fuels, or climate legislation. Georgia Conservation Voters endorsement status unconfirmed."
+    },
+    {
+      "axis": "housing / zoning / transit",
+      "notes": "Affordable housing identified as a district priority in biographical materials, but no specific bill sponsorships or votes on zoning, supply, or transit investment found."
+    },
+    {
+      "axis": "school choice / vouchers",
+      "notes": "Serves on Education and Youth Committee. Chairs HBCU Senate Study Committee. Attended Reagan Institute bipartisan education summit (2023) — this is a pro-school-choice-leaning convening, but her specific school choice position is not documented. Sponsored SB 235 (HBCUs), which is a targeted public institution investment, not a choice mechanism."
+    },
+    {
+      "axis": "economic / tax policy",
+      "notes": "No specific state tax votes found. Tariff opposition noted. General economic mobility framing. Business background could signal market-friendly instincts, but no direct evidence."
+    },
+    {
+      "axis": "sentencing / incarceration",
+      "notes": "Platform includes 'eliminating mandatory minimum sentencing' and 'ending cash bail,' but these are stated platform positions from biographical materials, not confirmed bill votes or sponsorships."
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "firearms_policy (NRA 7% rating; explicit universal background check / safe storage advocacy)",
+      "coverage_model (explicit Medicaid expansion advocacy; opposition to Georgia abortion ban framed as healthcare access issue)",
+      "public_health (opposition to Georgia abortion ban using patient-doctor relationship and healthcare access framing)",
+      "police_accountability (platform: end cash bail, ban no-knock warrants, ban excessive use of force, prohibit hiring officers with misconduct histories)",
+      "civil rights / anti-discrimination (SB 320 primary sponsor; strongest legislative evidence)"
+    ],
+    "weakestAxes": [
+      "climate_ambition (no evidence found)",
+      "energy_portfolio (no evidence found)",
+      "zoning_supply (no evidence found)",
+      "school_choice (ambiguous — attended pro-school-choice summit; HBCU investment bill signals public ed commitment; no voucher vote found)"
+    ],
+    "overallConfidence": "medium",
+    "confidenceNotes": "4+ years of Georgia State Senate record provides moderate evidence base. Key limitation: she has never held federal office, so no congressional voting record exists. Many of her minority-party bills failed to pass (Republican supermajority in Georgia Senate), limiting signal from voting outcomes vs. bill sponsorship. Most evidence comes from advocacy statements, bill sponsorships, and press releases — these are strong directional signals but lower confidence than actual vote outcomes. The transgender prisoners vote is the most notable deviation from standard progressive positioning and must be surfaced for the scorer.",
+    "biasAlert": "Halpern is running in a D+25 district vacated by a progressive incumbent (Lucy McBath). The competitive primary is against Chris Capparell (D). Her stated positions are broadly aligned with national Democratic mainstream, but she has demonstrated willingness to break with her caucus on at least one LGBTQ issue. Her background as a marketing executive and community arts leader differs from a typical progressive activist profile."
+  },
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Sonya_Halpern",
+      "description": "Ballotpedia candidate profile — electoral history, biography, committee assignments"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sonya_Halpern",
+      "description": "Wikipedia — comprehensive biography including career, committees, legislative record, SB 185 vote"
+    },
+    {
+      "url": "https://www.sonya4ga.com/",
+      "description": "Campaign website — stated positions, platform, biography"
+    },
+    {
+      "url": "https://senatepress.net/category/senate-press/sonya-halpern",
+      "description": "Georgia Senate Press Office — press releases and official statements"
+    },
+    {
+      "url": "https://senatepress.net/sen-sonya-halpern-statement-on-death-of-amber-thurman.html",
+      "description": "Official statement on Amber Thurman death and Georgia abortion ban, September 2024"
+    },
+    {
+      "url": "https://senatepress.net/sen-sonya-halpern-calls-on-governor-kemp-for-transparency-on-hyundai-ev-battery-plant-raid-and-georgias-economic-future.html",
+      "description": "Letter to Gov. Kemp on Hyundai ICE raid, September 2025"
+    },
+    {
+      "url": "https://www.ajc.com/politics/democratic-leaders-break-with-party-on-bill-banning-gender-affirming-care-to-transgender-inmates/GOLDUIB7O5HXVDFAQFSVPYTCDA/",
+      "description": "AJC — Halpern SB 185 vote; quotes and context, March 2025"
+    },
+    {
+      "url": "https://www.ajc.com/politics/town-halls-tort-reform-and-state-sen-halperns-next-move/K5TBGJCYSBAUFAMN262NM2N5QM/",
+      "description": "AJC — profile/interview: town halls, tort reform, congressional bid, March 2025"
+    },
+    {
+      "url": "https://www.ajc.com/politics/georgia-state-sen-sonya-halpern-prepares-to-run-for-mcbaths-us-house-seat/NZHUQDSB5RF3BONQ6DWN2AXT7M/",
+      "description": "AJC — candidacy filing announcement, March 2025"
+    },
+    {
+      "url": "https://roughdraftatlanta.com/2024/09/05/sonya-halpern-georgia-state-senator-gun-safety/",
+      "description": "Rough Draft Atlanta — gun safety advocacy, September 2024"
+    },
+    {
+      "url": "https://www.gpb.org/news/2024/07/18/georgia-dems-try-redirect-focus-conservative-project-2025-agenda-biden-campaign",
+      "description": "GPB — Project 2025 press conference, July 2024"
+    },
+    {
+      "url": "https://georgiarecorder.com/2025/03/04/georgia-senate-oks-bill-to-outlaw-gender-affirming-care-for-inmates-in-state-custody/",
+      "description": "Georgia Recorder — SB 185 passage and Democratic votes, March 2025"
+    },
+    {
+      "url": "https://legiscan.com/GA/bill/SB320/2025",
+      "description": "LegisStorm/LegiScan — SB 320 Georgia Civil Rights Act of 2025 text and sponsors"
+    },
+    {
+      "url": "https://hoodline.com/2024/09/georgia-senator-sonya-halpern-criticizes-state-abortion-laws-in-wake-of-amber-thurman-s-tragic-death/",
+      "description": "Hoodline — Amber Thurman statement coverage, September 2024"
+    },
+    {
+      "url": "https://www.gpb.org/news/2024/01/12/what-georgia-lawmakers-are-saying-about-medicaid-expansion-so-far",
+      "description": "GPB — Medicaid expansion quotes, January 2024"
+    },
+    {
+      "url": "https://emilyslist.org/news/emilys-list-endorses-sonya-halpern-in-georgias-39th-state-senate-district/",
+      "description": "EMILY's List — endorsement for 2020 State Senate race"
+    },
+    {
+      "url": "https://gawinlist.com/sonya-halpern/",
+      "description": "Georgia WIN List — candidate listing"
+    },
+    {
+      "url": "https://www.reaganfoundation.org/reagan-institute/programs/reagan-institute-summit-on-education/rise-participants/2023-participants/hon-sonya-halpern/",
+      "description": "Reagan Institute Summit on Education 2023 — participant profile"
+    },
+    {
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/georgia-sen-sonya-halpern-possible-congressional-run-if-lucy-mcbath-runs-for-governor/85-827d6176-d673-40ab-9315-50e5984c32c0",
+      "description": "11Alive — conditional candidacy statement"
+    },
+    {
+      "url": "https://ballotpedia.org/Georgia's_6th_Congressional_District_election,_2026",
+      "description": "Ballotpedia — 2026 GA-06 race overview, candidates, Cook PVI"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "slug": "ruwa-romman",
+  "name": "Ruwa Romman",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00.000Z",
+  "profileSummary": "First-term state legislator and community organizer running on an explicitly populist, class-based economic platform. First Palestinian-American and first Muslim woman elected to the Georgia House; national profile elevated by DNC/Uncommitted episode in 2024.",
+  "keyPositions": [
+    "Full Medicaid expansion to reopen rural hospitals and strengthen Georgia's workforce",
+    "Raise the minimum wage from the federal $7.25 floor, which Georgia has not touched since 1997",
+    "Force corporations to divest single-family homes they purchased; anti-corporate-landlord legislation",
+    "Restore reproductive rights access and veto any bill targeting LGBTQ or transgender Georgians",
+    "Repeal HB 1105 (Georgia Criminal Alien Track and Report Act); opposes ICE detention-for-profit"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Minimum wage as central campaign commitment (Atlanta Voice, Salon, Capital B News)",
+        "EMS Essential Service Designation Bill (sponsored, bipartisan)",
+        "'Feed hungry kids' recurring campaign pledge",
+        "Medicaid expansion as top-three priority"
+      ],
+      "notes": "Every available policy statement points toward a substantially expanded safety net. Minimum wage, food security, Medicaid, and EMS access are core platform planks, not peripheral. Scored at 1 rather than 0 because she has not proposed UBI or similarly maximal programs."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Small business investment and apprenticeship programs (Atlanta Voice)",
+        "Childcare support as public investment",
+        "Medicaid expansion framed as workforce development (Chamblee forum, Feb 2026)",
+        "Consumer protection office restoration (sponsored legislation)"
+      ],
+      "notes": "Consistent pro-public-investment orientation: healthcare, workforce, childcare, consumer protection. Data center moratorium is regulatory rather than anti-investment, but signals willingness to constrain private capital when community impact is negative. Specifics on industrial policy or infrastructure scale remain general."
+    },
+    "econ_tax_structure": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "'Top versus bottom' class framing (Salon interview, Nov 2025)",
+        "Anti-corporate populism throughout platform",
+        "No specific tax proposal found in available sources"
+      ],
+      "notes": "No explicit tax policy stated, but the entire economic framing is redistributive and anti-corporate. Scored at 2 (progressive) rather than omitted because the directional signal from the broader platform is strong and consistent, even without a named bill. Low confidence reflects the absence of a specific proposal."
+    },
+    "econ_school_choice": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Critique of Republican education outcomes (Atlanta Voice)",
+        "DEI defense against Republican defunding of diversity programs (WRDW interview)",
+        "General pro-public-school framing"
+      ],
+      "notes": "No explicit statement on vouchers or charter schools found. Score inferred from consistent public-school-defender framing and opposition to Republican education policies. Low confidence; a direct statement on school choice would clarify."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Medicaid expansion stated in Salon interview (Nov 2025)",
+        "Capital B News interview (Oct 2025)",
+        "Chamblee/DeKalb forum (Feb 2026)",
+        "Savannah forum (Jan 2026) -- all seven Democratic candidates committed to expansion",
+        "Georgia Recorder campaign announcement (Sep 2025)"
+      ],
+      "notes": "Medicaid expansion is explicitly and repeatedly her healthcare position, framed as both moral and economic. She has not advocated for single-payer or Medicare for All. Score of 3 reflects public option territory -- strong government expansion of coverage within the existing system, not a replacement of private insurance."
+    },
+    "housing_affordability_tools": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Corporate home-buying legislation (sponsored in Georgia House)",
+        "'Take homes back from corporations' (Capital B News, Oct 2025; campaign announcement)",
+        "Force corporations to divest single-family homes (Savannah forum, Jan 2026)",
+        "Anti-corporate-landlord tone distinguished from other primary candidates at forums"
+      ],
+      "notes": "Sponsored legislation forcing corporate divestiture of single-family homes is a strong government intervention in housing markets. This goes beyond typical affordable housing subsidies into direct regulation of ownership. Scored at 2 (strong government tools) rather than 0 because no public housing investment or rent control proposals were found."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "HB 1105 opposition and repeal pledge (immigration enforcement, not policing per se)",
+        "ICE detention criticism as 'financially lucrative for billionaire benefactors'",
+        "LGBTQ/trans rights veto commitment (signals civil liberties orientation)",
+        "Fair Fight endorsement (2022)"
+      ],
+      "notes": "No direct policing reform or accountability statements found. Score inferred from immigration enforcement opposition, civil liberties orientation, and progressive endorsement profile. HB 1105 repeal is adjacent to policing (it requires local agencies to enforce immigration law) but is primarily an immigration issue. Low confidence; a direct statement on police reform, qualified immunity, or oversight would clarify."
+    },
+    "climate_permitting": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "HB 1012 -- Data Center Moratorium (primary sponsor, bipartisan)",
+        "Statement: 'Before we permanently alter the landscape of our state, we have an obligation to properly regulate and assess both the benefits and impacts' (Georgia Recorder, Jan 2026)"
+      ],
+      "notes": "The data center moratorium is explicitly a precautionary-principle action: halt permitting until impacts are assessed. However, this is a narrow, project-specific bill rather than a general permitting philosophy. Score reflects the precautionary direction; low confidence reflects the narrow evidence base."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.7,
+      "reasoning": "Strong universalist signals across multiple domains: LGBTQ/trans rights veto commitment with explicit parallels to anti-Muslim scapegoating; reproductive rights as universal access; immigration protection (HB 1105 repeal, ICE detention criticism); DEI defense; Palestinian advocacy and DNC speech calling for ceasefire. Drew explicit connection between anti-Muslim discrimination post-9/11 and current anti-trans legislation, demonstrating cross-group solidarity. Slightly below maximum because no explicit environmental/nature protection framing was found despite the data center moratorium."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "Community welfare is the central animating force of her career and campaign. Co-founded Georgia Volunteer Hub to train thousands of volunteers; field organizer for Georgia Muslim Voter Project; CAIR communications director. As legislator: EMS essential service bill, consumer protection restoration, corporate landlord legislation -- all directly benefit constituents. Campaign platform built around minimum wage, feeding hungry kids, reopening hospitals, childcare support. 'Our job is to be moral leaders' (Atlanta Voice). This is her defining trait."
+    },
+    "tradition": {
+      "score": -0.4,
+      "reasoning": "Actively challenges established political and cultural norms: first Muslim woman and first Palestinian American in GA House; campaigns explicitly against 20+ years of Republican governance tradition in Georgia; supports reproductive rights against traditional religious conservatism; LGBTQ rights; rejects centrist Democratic strategic tradition. However, 'moral leaders' framing does invoke traditional moral authority, and her endorsement of Harris despite disagreements shows some deference to party norms. Not maximally anti-tradition."
+    },
+    "conformity": {
+      "score": 0.2,
+      "reasoning": "Mixed signals. Working within the system: serves as state legislator, introduces bipartisan bills (HB 1012 with Republican co-sponsor, EMS bill with Republican co-sponsor), endorsed Harris despite DNC snub, did not call for arms embargo (stayed within party-acceptable bounds). But also: rejects Democratic centrist playbook, explicitly challenges party strategy, populist outsider framing. Net slightly positive -- she operates within institutional channels even while pushing boundaries."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Focuses on social and economic security: food security for children, healthcare access as security, EMS as essential service (literally a safety/emergency designation), Medicaid expansion for stable workforce. However, opposes immigration enforcement (HB 1105 repeal) and ICE detention, which challenges security framing from the law-enforcement perspective. Net positive because her security emphasis is on basic needs and community safety infrastructure, though not through the policing/border lens."
+    },
+    "power": {
+      "score": -0.7,
+      "reasoning": "Explicitly and consistently anti-power-concentration. 'Top versus bottom' class framing is the core campaign thesis. Force corporations to divest homes. ICE detention criticized as 'financially lucrative for billionaire benefactors.' Data center moratorium challenges tech industry's development pattern. Consumer protection office restoration. Georgia Working Families Party endorsement. No corporate PAC alignment evident. One of the clearest anti-power orientations in the field."
+    },
+    "achievement": {
+      "score": 0.1,
+      "reasoning": "Some positive signals: apprenticeship programs, small business empowerment, workforce development framing. Personal biography shows achievement orientation (Georgetown MPP, Deloitte career). But campaign framing emphasizes structural barriers ('make things actually equal' -- the playing field metaphor) over individual effort. Achievement is present but subordinate to structural analysis."
+    },
+    "hedonism": {
+      "score": 0.1,
+      "reasoning": "Minimal signal. Reproductive rights and LGBTQ rights could be coded as personal freedom/pleasure, but Romman frames them as minority rights protection and anti-discrimination rather than as lifestyle liberty. No cannabis, recreational, or personal-freedom-framed policy found."
+    },
+    "stimulation": {
+      "score": 0.6,
+      "reasoning": "Strong challenger and disruptor signals: historic candidacy (first Palestinian/Muslim woman in GA House, now running for governor); Project 159 grassroots strategy attempting to organize all 159 Georgia counties; explicit rejection of centrist Democratic playbook as failed strategy; 'top versus bottom' as a reframing of political discourse; data center moratorium as a challenge to tech industry's assumed right to expand. DNC episode -- delivering speech outside venue after being denied the stage -- captures the norm-challenging orientation. Not quite maximal because she does work within legislative channels and endorsed Harris."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on personal civil liberties: reproductive rights as bodily autonomy, LGBTQ/trans rights, anti-surveillance (ICE detention opposition), DEI as equal opportunity for self-determination. But also supports significant government regulation of markets (corporate landlord divestiture, data center moratorium, consumer protection). Net moderately positive -- the civil liberties emphasis outweighs the regulatory orientation, but she is not a libertarian on economic matters."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Gaza/Uncommitted Movement vs. Democratic Party loyalty",
+      "description": "Romman is closely identified with the pro-Palestine Uncommitted movement and was their selected DNC speaker, but her proposed speech would NOT have called for an arms embargo (a key Uncommitted demand), and she ultimately endorsed Harris. This creates a tension between her identity as a Palestinian-American advocate and her practical choices within Democratic party politics.",
+      "sources": [
+        "https://jacobin.com/2024/09/ruwa-romman-dnc-speech-palestine",
+        "https://19thnews.org/2024/10/ruwa-romman-georgia-gaza-election/"
+      ],
+      "scoringImpact": "Reflected in conformity value score (+0.2) -- she works within party norms even when her base pushes for more. Does not affect axis scores as foreign policy is outside gubernatorial domain."
+    },
+    {
+      "topic": "Populist outsider framing vs. legislative insider behavior",
+      "description": "Campaign positions her as an anti-establishment economic populist rejecting Democratic centrism, but legislative record shows bipartisan bill co-sponsorship and institutional engagement. Both are true -- she is an outsider by identity and framing but an insider by method.",
+      "sources": [
+        "https://www.salon.com/2025/11/24/ruwa-rommans-case-for-economic-populism-in-georgia/",
+        "HB 1012 bipartisan co-sponsorship with Republican Rep. Jordan Ridley"
+      ],
+      "scoringImpact": "Captured in conformity (+0.2) and stimulation (+0.6) value scores, which reflect this duality."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 8,
+    "axesSkipped": [
+      "justice_firearms",
+      "justice_sentencing_goals",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "housing_supply_zoning",
+      "housing_transport_priority",
+      "health_cost_control",
+      "health_public_health"
+    ],
+    "reasonSkipped": "No meaningful evidence found for these axes in the research file. Romman's campaign coverage is dominated by economic populism, healthcare (Medicaid expansion), housing (anti-corporate), and identity/civil rights topics. Climate, energy, firearms, sentencing, zoning, transit, healthcare cost mechanisms, and public health mandates are not addressed in available sources. As a minority-party state legislator, her voting record is limited to opposition votes and minority bills, and Georgia does not make individual roll-call votes easily searchable.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No interest group numerical scorecards available for Georgia state legislators (LCV, NRA, AFL-CIO, etc.)",
+      "Georgia roll-call vote data not accessible in standard online databases -- limits Tier 1 evidence",
+      "No specific firearms policy position found despite this being a gubernatorial race in a gun-relevant state",
+      "No climate or energy policy statements found -- significant gap for a 2026 gubernatorial candidate",
+      "No criminal justice sentencing position found",
+      "Campaign is in early primary phase; detailed policy platforms may not yet be public"
+    ]
+  }
+}

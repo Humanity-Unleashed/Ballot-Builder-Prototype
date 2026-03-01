@@ -1,0 +1,166 @@
+{
+  "slug": "michael-whatley",
+  "name": "Michael Whatley",
+  "party": "Republican",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "scoredAt": "2026-02-26T12:00:00Z",
+  "profileSummary": "Former RNC Chair and fossil fuel industry lobbyist with no prior elected office; Trump-endorsed frontrunner for the NC GOP Senate nomination running on energy deregulation, immigration enforcement, and DOGE-style spending cuts.",
+  "keyPositions": [
+    "All-of-the-above energy including carbon; decade of fossil fuel industry advocacy at Consumer Energy Alliance opposing emission rules and fracking regulations",
+    "Supports DOGE-style federal spending cuts, Medicaid work requirements, and deficit reduction as top priority",
+    "Back the blue; eliminate sanctuary cities; full ICE cooperation and mass deportation support",
+    "Celebrated Dobbs; supported NC 12-week abortion ban; backed GOP platform with no-exceptions ban language",
+    "No-tax-on-tips, no-tax-on-overtime, no-tax-on-Social Security; aligns with Trump tax cut agenda"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Newsmax DOGE interview Jan 2026", "Campaign website", "Washington Examiner campaign platform"],
+      "notes": "Supports Medicaid work requirements, purging undocumented immigrants from Medicaid, DOGE-style spending cuts. 'National deficit is one of the biggest threats America faces.' No legislative record to confirm follow-through, but messaging is consistent and specific. Not scored at 9-10 because he has not called for eliminating programs outright -- framing is around 'waste, fraud' reduction and conditional access rather than abolition."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Newsmax DOGE interview Jan 2026", "Campaign website", "Career record at CEA (deregulation advocacy 2008-2019)"],
+      "notes": "Strong DOGE support, deregulatory career background, opposition to 'woke' government spending. Entire professional career was in fossil fuel industry deregulation advocacy. Not scored at 9-10 because he has not explicitly opposed all public investment -- his framing targets waste and overregulation rather than opposing infrastructure investment per se."
+    },
+    "econ_tax_structure": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": ["Washington Examiner campaign platform", "Campaign website"],
+      "notes": "Supports no-tax-on-tips, no-tax-on-overtime, no-tax-on-Social Security, middle-class tax cuts -- aligning with Trump's tax agenda. These are populist tax cuts that reduce revenue without progressive redistribution. Has not explicitly called for flat tax or wealth tax elimination, so scored at 7 rather than higher on the Pole B scale."
+    },
+    "health_coverage_model": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Newsmax DOGE interview (Medicaid work requirements)", "Campaign website"],
+      "notes": "Supports Medicaid work requirements and removing undocumented immigrants from Medicaid. No explicit ACA repeal call found, but DOGE framing and deficit-reduction focus suggest market-oriented direction. Scored at 7 rather than 8+ because he has not articulated a specific healthcare coverage model -- inference is from spending-cut posture and Medicaid conditions. Low confidence due to limited direct healthcare policy statements."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["WRAL pastor summit interview 2026", "Campaign website (anti-transgender mandates)"],
+      "notes": "Explicit statement: 'We don't need separation of faith and politics. We don't need separation of church and state.' Anti-transgender mandates. Strong individual liberty framing on public health. This is among the strongest Pole B signals in the research -- active opposition to collective public health authority in favor of religious liberty and individual choice. Two independent sources (pastor summit + campaign anti-mandate positions) corroborate."
+    },
+    "health_reproductive": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["The Assembly NC profile", "NC GOP platform"],
+      "notes": "Celebrated the Dobbs decision. Called NC 12-week ban 'responsible, reasonable, and mainstream.' Supported NC GOP platform language with no-exceptions abortion ban. Scored at 9 because the platform language goes beyond what he publicly calls 'mainstream' -- the no-exceptions language is near-maximum restriction. No legislative voting record exists to confirm, but campaign statements are specific and consistent."
+    },
+    "justice_policing_accountability": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Fox News ICE/immigration interview 2026", "Campaign website", "Washington Examiner"],
+      "notes": "'Back the blue every day.' Supports eliminating sanctuary cities. Attacks Cooper as soft on crime. Full ICE cooperation. Central campaign message is law enforcement support with no accountability reform language found anywhere in campaign materials. Scored at 9 (near-maximum police authority support) rather than 10 because he has not explicitly opposed all accountability measures -- the absence of reform language is different from explicitly opposing reforms."
+    },
+    "justice_sentencing_goals": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Fox News interview (soft on crime framing)", "Campaign website"],
+      "notes": "Attacks Cooper as 'soft on crime' and frames sanctuary city opposition as public safety. 'Safe communities' is a central campaign pillar alongside 'strong economy' and 'respected America.' No specific sentencing policy positions found, but the 'soft on crime' framing and absence of any rehabilitation language strongly implies punishment/deterrence orientation. Low confidence because this is inferred from framing rather than specific policy statements."
+    },
+    "justice_firearms": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Trump endorsement (inference)", "Absence of any gun safety statements in campaign materials"],
+      "notes": "No NRA grade exists (no legislative record). No explicit firearms policy statements found in campaign materials. However, Trump endorsement, 'back the blue' orientation, and complete absence of any gun regulation language in a state where gun policy is salient strongly imply pro-2A positioning. Scored at 8 rather than 9-10 because this is inference from alignment and absence rather than stated position. Low confidence."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Consumer Energy Alliance career 2008-2019 (opposed emission rules, fracking regulations, low-carbon fuel standards)", "Campaign website (all-of-the-above including carbon)", "E&E News reporting on oil ties", "SourceWatch profile"],
+      "notes": "Eleven years as EVP and co-founder of Consumer Energy Alliance, funded by BP, Chevron, ExxonMobil, Marathon, Shell, and Statoil. Opposed low-carbon fuel standards, fracking regulations, and power plant emission rules. 2026 campaign uses 'all-of-the-above including carbon' with no climate action commitments. This is the axis with the strongest evidence -- career record and campaign statements are fully consistent. Scored at 9 rather than 10 because he has not explicitly denied climate science or called for eliminating EPA climate authority; his framing is pro-fossil-fuel rather than anti-science."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": ["Consumer Energy Alliance career record", "Campaign website", "CEA offshore drilling advocacy (2010)", "E&E News reporting"],
+      "notes": "Career advocating for offshore Atlantic drilling including off NC coast, opposing renewable energy mandates and emission regulations. 2026 campaign: 'all-of-the-above including carbon.' The 'all-of-the-above' language places this at 5 on paper, but when combined with a career of exclusively fossil-fuel advocacy and zero renewable energy support, the real position is significantly toward Pole B. Scored at 8 (fossil fuel expansion with nominal all-of-the-above framing) rather than 5 (true all-of-the-above balance) because career record reveals the rhetorical framing masks a strong fossil fuel preference."
+    },
+    "climate_permitting": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Consumer Energy Alliance career record (lobbied for expedited energy permitting)", "Campaign website (deregulation framing)"],
+      "notes": "Decade of advocacy at CEA focused substantially on reducing permitting barriers for fossil fuel projects -- offshore drilling, pipelines, fracking. DOGE-style deregulation framing in 2026 campaign extends this orientation. No specific 2026 permitting policy statements found, but the career record is the strongest evidence of any candidate on this axis. Scored at 9 (dramatically cut permitting timelines) based primarily on documented professional advocacy."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.6,
+      "reasoning": "Active opposition to environmental protection through decade of fossil fuel industry advocacy. Immigration enforcement and mass deportation focus excludes outsiders. 'All-of-the-above including carbon' energy policy prioritizes extraction over environmental welfare. No evidence of international humanitarian concern, refugee protection, or global cooperation emphasis. The CEA career -- opposing emission rules that protect collective environmental welfare -- is an active and sustained working-against-universalism signal."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Weak positive signal. 'Safe communities' messaging shows some community welfare orientation, but it is narrowly defined around law enforcement rather than social services. No evidence of healthcare access, public school funding, or social service investment as priorities. WNC roots and community identity provide a small positive signal, but policy positions do not strongly evidence care for community welfare through public mechanisms."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "Very strong tradition signal. Explicit rejection of separation of church and state at pastor summit. Celebrated Dobbs as restoring traditional moral authority on abortion. Anti-transgender mandates. NC GOP platform alignment with traditional family values. Religious values in governance is a central and consistent theme -- not merely rhetorical but evidenced by specific statements and policy positions. One of the defining features of his candidacy."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "As RNC Chair, parroted Trump's 2020 election fraud claims per CNN KFile reporting -- undermining democratic norms around election certification. The election fraud claims are a meaningful norm-violation signal. However, he generally works within institutional Republican structures and defers to party hierarchy, which is a pro-conformity signal. Net slightly negative because the election integrity issue is a significant norm violation on a fundamental democratic process."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Strong security orientation across multiple domains. 'Safe communities' as campaign pillar. Back the blue / law enforcement support. Eliminate sanctuary cities for public safety. ICE cooperation and immigration enforcement framed as community security. Border security emphasis. This is a defining campaign theme. Does not extend to economic security (safety net programs) or health security (public health infrastructure), but the physical safety / law enforcement / border dimensions are consistently high-priority."
+    },
+    "power": {
+      "score": 0.6,
+      "reasoning": "Career alignment with concentrated fossil fuel industry wealth (BP, Chevron, ExxonMobil, Shell as CEA funders). Operated at highest levels of Republican Party establishment as state and national chair. Trump endorsement and NRSC backing. $6.27M raised. Deference to business elite interests in energy policy. Strong executive authority alignment through Trump orbit. This is a candidate who has consistently operated within and deferred to power structures throughout his career."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Moderate achievement signal. Work requirements for Medicaid imply meritocratic orientation (benefits conditional on effort). Career trajectory from congressional staffer to industry EVP to national party chair to Senate candidate shows personal achievement orientation. 'Strong economy' messaging emphasizes economic success. However, achievement is not a defining rhetorical theme -- it is secondary to security and tradition."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Rejection of church-state separation and anti-transgender mandates suggest restriction of personal lifestyle liberty rather than expansion. Social conservatism around personal behavior. No libertarian personal freedom framing found. The tradition and religious values orientation actively works against hedonism's emphasis on personal pleasure and lifestyle freedom."
+    },
+    "stimulation": {
+      "score": -0.2,
+      "reasoning": "Defending existing institutional order and traditional values rather than pursuing novelty or disruption. While Trump-aligned populism has a disruptive element, Whatley's personal orientation is establishment -- he rose through party ranks, chaired the RNC, and represents institutional Republican power. His policy proposals are conservative restoration rather than novel transformation. DOGE framing has a stimulation element (disrupting bureaucracy) but it is in service of restoration, not innovation."
+    },
+    "self_direction": {
+      "score": -0.1,
+      "reasoning": "Mixed signals that net slightly negative. Pro-individual-liberty framing on public health (opposing mandates) and gun rights (implied) push positive. But rejection of church-state separation, anti-transgender mandates, and immigration enforcement restrict personal freedom for others. Reproductive rights restriction (celebrating Dobbs, supporting no-exceptions ban) is a significant anti-self-direction signal. The net effect is slightly negative because the restrictions on personal autonomy (reproductive, identity, movement) outweigh the liberty claims in other domains."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Energy framing vs. career record",
+      "description": "2026 campaign uses 'all-of-the-above including carbon' framing that sounds balanced, but 11-year career at Consumer Energy Alliance was exclusively fossil fuel advocacy funded by BP, Chevron, ExxonMobil, Shell, Marathon, and Statoil. No evidence of any renewable energy support in career or campaign.",
+      "sources": ["Campaign website", "E&E News", "SourceWatch", "CEA offshore drilling advocacy"],
+      "scoringImpact": "Climate axes scored based on career record weight over rhetorical framing per voting-record-over-stated-position rule (career record treated as behavioral evidence). climate_energy_portfolio scored at 8 rather than the 5 that 'all-of-the-above' alone would warrant."
+    },
+    {
+      "topic": "Election integrity claims",
+      "description": "As RNC Chair, promoted false 2020 election fraud claims per CNN KFile. Now runs on 'election integrity' platform framed around voter ID and election security.",
+      "sources": ["CNN KFile 2024", "Campaign materials 2026"],
+      "scoringImpact": "Affects conformity value score (negative signal for undermining democratic norms). Not directly mapped to a civic axis but noted for transparency."
+    },
+    {
+      "topic": "Abortion: 'mainstream' framing vs. platform language",
+      "description": "Publicly calls NC 12-week ban 'responsible, reasonable, and mainstream' while supporting NC GOP platform with no-exceptions abortion ban language, which is significantly more restrictive than 12 weeks.",
+      "sources": ["The Assembly NC profile", "NC GOP platform"],
+      "scoringImpact": "health_reproductive scored at 9 (closer to the platform language) rather than 7-8 (which the 'mainstream' 12-week framing alone would suggest). The platform support is treated as a stronger signal of actual position than the softened rhetoric."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 12,
+    "axesSkipped": ["econ_school_choice", "housing_supply_zoning", "housing_affordability_tools", "housing_transport_priority", "health_cost_control"],
+    "reasonSkipped": "No direct evidence on school choice (Trump alignment suggests pro-choice direction but inference alone is insufficient). No housing or transportation positions found. No healthcare cost control positions found beyond general spending-cut framing.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No legislative voting record exists -- all scores based on stated positions and career record",
+      "No third-party scorecards available (no NRA grade, no LCV score, no Chamber rating)",
+      "No specific healthcare policy beyond Medicaid work requirements",
+      "No school choice, housing, or transportation positions found",
+      "No specific sentencing or criminal justice policy beyond 'soft on crime' framing",
+      "Firearms position inferred from alignment rather than stated"
+    ],
+    "notes": "Whatley is a first-time candidate with no legislative record, which normally would limit all scores to LOW confidence. However, his 11-year career at Consumer Energy Alliance provides documented behavioral evidence on climate and energy axes that exceeds typical first-time candidate evidence quality. Climate axes are scored with HIGH confidence based on this career record. Other axes rely on campaign statements and interviews at MEDIUM confidence, and some (firearms, sentencing) rely on inference at LOW confidence. The five skipped axes reflect genuine evidence gaps that should not be filled with assumptions."
+  }
+}

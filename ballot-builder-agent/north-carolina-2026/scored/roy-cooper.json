@@ -1,0 +1,226 @@
+{
+  "slug": "roy-cooper",
+  "name": "Roy Cooper",
+  "party": "Democratic",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "scoredAt": "2026-02-26T00:00:00Z",
+  "profileSummary": "Former two-term North Carolina Governor (2017-2025) and six-time statewide winner with 38+ years in public office; a center-left pragmatist who expanded Medicaid, signed landmark clean energy legislation, and used the veto pen extensively against a Republican supermajority on guns, vouchers, and abortion.",
+  "keyPositions": [
+    "Signed Medicaid expansion covering 600,000+ North Carolinians; defends ACA subsidies and Medicare",
+    "Signed HB 951 mandating 70% carbon reduction by 2030 and carbon neutrality by 2050 -- first purple-state governor to sign emissions mandate into law",
+    "Vetoed multiple gun bills including pistol permit repeal and permit-to-purchase repeal; created statewide Office of Violence Prevention",
+    "Vetoed $6B+ school voucher expansion; strong pro-public school position",
+    "Commuted 15 death row sentences (largest clemency action in NC history) while maintaining death penalty is 'appropriate in certain heinous cases'"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Medicaid expansion signing (2023)",
+        "Teacher pay raises and $15/hr state employee minimum wage",
+        "WFDD affordability interview Feb 2026",
+        "NC AFL-CIO endorsement"
+      ],
+      "notes": "Consistently expanded safety net programs across eight years as governor. 2026 campaign rhetoric explicitly opposes 'cutting help for the poor.' Not a UBI or structural overhaul candidate -- works within existing program frameworks."
+    },
+    "econ_investment": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Teacher pay and education investment record",
+        "Medicaid expansion ($$ investment)",
+        "$160M affordable housing proposal (2019)",
+        "Clean energy jobs investment (NC #9 nationally)"
+      ],
+      "notes": "Consistent public investment orientation but with fiscal pragmatism -- signed compromise budgets with Republican legislature. Not a 'Green New Deal'-scale spender."
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Multiple budget vetoes over broad corporate/income tax cuts",
+        "Called for freezing high-income tax cuts for education revenue",
+        "Assembly NC legacy assessment"
+      ],
+      "notes": "Progressive direction with notable pragmatic compromises: eventually signed 2021 budget beginning corporate income tax phaseout; offered $930M+ in targeted corporate incentives to 22 corporations. Not a wealth-tax or structural overhaul candidate -- more of a 'don't cut taxes for the wealthy while schools are underfunded' position."
+    },
+    "econ_school_choice": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Vetoed HB 10 ($6B+ voucher expansion, 2024) -- overridden",
+        "Governor's press release: 'Sending taxpayer dollars to private schools with no accountability'",
+        "General pro-public school record"
+      ],
+      "notes": "Clear and consistent pro-public school position. Personal conflict noted: sent his own children to private school. Policy position is unambiguously anti-voucher regardless of personal choice."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Signed Medicaid expansion into law (2023, covering 600,000+)",
+        "2026 campaign: defends ACA subsidies, Medicaid, Medicare",
+        "The Hill Medicaid analysis"
+      ],
+      "notes": "ACA-protect-and-expand position. No explicit endorsement of Medicare for All or public option found in research. Scored at 3 (public option zone) rather than 0 (single-payer) because his position is expand-existing-programs, not structural replacement of private insurance."
+    },
+    "housing_affordability_tools": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Proposed $160M affordable housing investment (2019)"
+      ],
+      "notes": "Single data point. The $160M proposal signals government-subsidy orientation over market-only approach, but evidence is thin. No record on rent control, inclusionary zoning, or public housing specifically."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Created TREC (Task Force for Racial Equity in Criminal Justice, 2020)",
+        "Signed SB 300 reform package: duty to intervene, early intervention systems, diversity recruitment",
+        "Governor's press release on criminal justice reform bills"
+      ],
+      "notes": "Reform-focused, not defund/abolish. Established task force and signed concrete reform bills into law. Moderate Pole A position that supports law enforcement while adding oversight and accountability mechanisms."
+    },
+    "justice_sentencing_goals": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Commuted 15 death row sentences (largest in NC history, Dec 2024)",
+        "Signed First Step Act-related reforms",
+        "As AG: supervised 27 executions; said death penalty 'appropriate in certain heinous cases'",
+        "Assembly NC death penalty analysis"
+      ],
+      "notes": "Clear evolution over career arc: from enforcement as AG (2001-2017) to clemency as Governor (2017-2025). Weighted toward current/recent position per recency rule. Not abolitionist -- maintains death penalty may be appropriate in heinous cases. Reform-oriented, not decarceral."
+    },
+    "justice_firearms": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Vetoed SB 41 (permit-to-purchase repeal, 2023) -- overridden by legislature",
+        "Vetoed HB 398 (pistol permit repeal, 2021) -- sustained",
+        "Created statewide Office of Violence Prevention (2023)",
+        "NRA consistent opposition"
+      ],
+      "notes": "Multiple Tier 1 executive vetoes on gun legislation. Created proactive violence prevention infrastructure. NRA opposition confirms pattern. Strong gun safety position but within permit/background-check framework -- no evidence of assault weapons ban or magazine limit advocacy."
+    },
+    "climate_ambition": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Executive Order 80 (2018): 40% GHG reduction by 2025",
+        "Signed HB 951 (2021): 70% carbon reduction by 2030, carbon neutral by 2050",
+        "Executive Order 246 (2022): strengthened to 50% reduction by 2030",
+        "NCLCV grade A (2018, 2019)",
+        "LCV Action Fund endorsement for 2026 Senate"
+      ],
+      "notes": "First purple-state governor to sign emissions mandate into law. Escalated ambition over tenure (40% -> 50% by 2030). Not emergency-level / economic transformation (which would be 0-1), but aggressive by any mainstream standard. Bipartisan approach with HB 951."
+    },
+    "climate_energy_portfolio": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "HB 951: clean energy targets working with Duke Energy",
+        "NC became #9 nationally in clean energy jobs",
+        "All4Inc HB 951 analysis"
+      ],
+      "notes": "Clean energy transition but not a fossil fuel ban position. HB 951 was bipartisan and set targets while allowing utilities to plan the transition. Does not call for ending fossil fuels -- sets targets and requires utility planning. Moderate Pole A, not radical."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.6,
+      "reasoning": "Strong environmental record (EO 80, HB 951, EO 246) demonstrates care for nature and future generations. Medicaid expansion extends healthcare to 600K vulnerable people. DACA support letter, HB2 compromise repeal, and abortion veto show concern for marginalized groups. Tempered by pragmatic compromises (HB2 repeal criticized as insufficient by LGBTQ+ advocates) and no evidence of strong international humanitarian orientation."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Strongest value signal. Medicaid expansion for 600K constituents, teacher pay investment, $15/hr state employee minimum wage, Office of Violence Prevention, criminal justice reform with TREC -- consistently oriented toward tangible community welfare improvements across multiple domains. Rhetoric centers on protecting 'the poor' and 'working families.'"
+    },
+    "tradition": {
+      "score": -0.2,
+      "reasoning": "Challenged established structures on multiple fronts: commuted death row sentences against NC tradition, repealed HB2 (challenging social conservatism), vetoed 12-week abortion ban. But not aggressively anti-tradition -- worked within institutional frameworks, signed compromise legislation, respected legislative process even under supermajority opposition. Mild net anti-tradition."
+    },
+    "conformity": {
+      "score": 0.6,
+      "reasoning": "Strong 'work within the system' orientation across 38+ years of public service. Used constitutional veto power (not executive overreach) as primary tool against Republican supermajority. Signed compromise bills even when imperfect (HB2 repeal, 2021 budget). Institutional process adherence throughout career. Did not pursue extra-legal strategies even when outgunned legislatively."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Economic security through Medicaid expansion and safety net programs. Community safety through Office of Violence Prevention and policing reform (not defund). Stability-oriented governance -- maintaining and expanding benefits rather than dismantling systems. No strong national defense/border security emphasis found, limiting the score."
+    },
+    "power": {
+      "score": 0.1,
+      "reasoning": "Establishment Democrat with DSCC backing and institutional support network. But not aligned with concentrated wealth -- vetoed corporate tax cuts, opposed voucher privatization. The $930M+ in targeted corporate incentives and institutional power positioning prevent a negative score. Near neutral: pragmatic relationship with power structures rather than challenge or embrace."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Workforce development through clean energy jobs (NC #9 nationally), teacher pay and training investment, economic development focus. Personal achievement is evident (six-time statewide winner, 38+ year career), but his policy rhetoric emphasizes collective outcomes over individual meritocracy. Modest positive signal."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal freedom/lifestyle liberty framing in available research. Pro-choice position is framed as rights/equity rather than personal pleasure. Not applicable as a distinguishing value for this candidate."
+    },
+    "stimulation": {
+      "score": -0.1,
+      "reasoning": "Establishment figure with 38+ years in NC politics. Governance style is steady, institutional, and pragmatic rather than transformative or disruptive. Not a 'new generation' or structural reform candidate -- works within existing systems to achieve incremental gains. Mild negative stimulation signal."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Pro-choice (reproductive autonomy via SB 20 veto), LGBTQ+ rights (HB2 repeal), DACA support (immigrant self-determination). But also supports gun regulations (limiting firearms self-direction) and used government mandates for emissions targets. Net positive due to reproductive rights and civil liberties emphasis, but not a libertarian self-direction candidate."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Tax policy pragmatism",
+      "description": "Vetoed broad corporate/income tax cuts but eventually signed 2021 budget beginning corporate income tax phaseout. Also offered $930M+ in targeted corporate incentives to 22 corporations while opposing across-the-board cuts.",
+      "sources": ["Assembly NC legacy assessment", "Governor budget vetoes"],
+      "scoringImpact": "econ_tax_structure scored at 3 (progressive direction) rather than 1-2; pragmatic compromises temper the score. Noted in power value as well."
+    },
+    {
+      "topic": "School choice vs. personal choice",
+      "description": "Vetoed $6B+ voucher expansion and publicly opposed public dollars going to private schools, while sending his own children to private school.",
+      "sources": ["HB 10 veto (2024)", "Governor's press release"],
+      "scoringImpact": "Scored on policy position (anti-voucher), not personal choice. econ_school_choice scored at 2."
+    },
+    {
+      "topic": "Death penalty evolution",
+      "description": "As Attorney General (2001-2017), supervised 27 executions and said death penalty is 'appropriate in certain heinous cases.' As Governor (2024), commuted 15 death row sentences -- the largest capital clemency action in NC history.",
+      "sources": ["Assembly NC death penalty analysis", "Governor clemency press release"],
+      "scoringImpact": "Scored on more recent position per recency rule. justice_sentencing_goals scored at 3 (reform-oriented, not abolitionist). Evolution noted."
+    },
+    {
+      "topic": "HB2 compromise",
+      "description": "Signed compromise repeal of HB2 (bathroom bill) in 2017, which LGBTQ+ advocates criticized as insufficient -- it included a moratorium on local nondiscrimination ordinances.",
+      "sources": ["WUNC HB2 compromise coverage"],
+      "scoringImpact": "Reflects pragmatic compromise under Republican supermajority. Tempers universalism score and contributes to conformity score."
+    },
+    {
+      "topic": "Immigration nuance",
+      "description": "Vetoed 3+ ICE cooperation bills and signed DACA support letter, but also signed one bill that FLOC-AFL-CIO called 'anti-immigrant, anti-worker.'",
+      "sources": ["WLOS ICE bill veto", "DACA support letter"],
+      "scoringImpact": "Immigration is not a scored civic axis. Evidence noted for value scoring (universalism, self-direction)."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": [
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_transport_priority",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No meaningful evidence found in research file for healthcare cost control, public health mandates, zoning reform, transportation priorities, or permitting reform. Cooper's record is primarily executive (governor) rather than legislative on these topics, and the research did not surface specific positions.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No drug pricing or cost control positions documented",
+      "No public health mandate positions (e.g., vaccine requirements) documented",
+      "No zoning or density reform record found",
+      "No transportation/transit investment positions found",
+      "No permitting reform positions found",
+      "Immigration positions have some nuance not fully resolved",
+      "No specific trade/tariff policy positions beyond one WRAL statement"
+    ]
+  }
+}

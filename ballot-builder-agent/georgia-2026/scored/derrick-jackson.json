@@ -1,0 +1,180 @@
+{
+  "slug": "derrick-jackson",
+  "name": "Derrick Jackson",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00Z",
+  "profileSummary": "Five-term Georgia state representative and 22-year Navy veteran running as a progressive anti-establishment Democrat; anchored by Medicaid expansion, aggressive minimum wage increases, comprehensive gun regulation, and repeal of Georgia's six-week abortion ban.",
+  "keyPositions": [
+    "Full Medicaid expansion to protect rural hospitals and expand access statewide",
+    "Raise Georgia minimum wage to $27/hour by 2028 via phased increases (sponsored legislation)",
+    "Repeal Georgia's six-week abortion ban (HB 481); voted NO on the bill in 2019",
+    "Sponsored HB 601, described as 'the biggest gun control bill in Georgia history' by gun-rights critics",
+    "Eliminate state income tax for nurses, teachers, veterans, and seniors over 65"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Medicaid expansion platform (Atlanta Voice, GPB, DeKalb debate, Savannah forum)",
+        "Sponsored minimum wage bill ($27/hr phased increase)",
+        "Budget surplus for social investment (Atlanta News First)",
+        "Tax exemptions for nurses, teachers, vets, seniors"
+      ],
+      "notes": "Consistent across every forum and interview: Medicaid expansion, minimum wage, and targeted tax relief for working and retired Georgians. Sponsored minimum wage legislation provides Tier 1 evidence. One of the most progressive safety net positions in the GA-GOV Democratic primary field."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Budget surplus spending plan (Atlanta News First June 2025)",
+        "Rural broadband and telemedicine investment (Atlanta Voice)",
+        "Small business grants and Black farmer capital access (Capital B News)",
+        "Pre-K through technical college education investment (DeKalb debate)"
+      ],
+      "notes": "Proposes using Georgia's $14.8B budget surplus for public investment rather than tax cuts. Investment priorities span healthcare infrastructure, broadband, education, and small business capital. No votes on investment bills found, but multiple stated positions all point the same direction."
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Income tax elimination for nurses, teachers, vets, seniors (Atlanta News First June 2025)"
+      ],
+      "notes": "Only one specific tax proposal found: targeted income tax exemptions for four groups. Progressive in direction (benefits working/middle class) but uses exemptions rather than rate increases on high earners. No evidence of wealth tax, corporate tax, or broader progressive taxation proposals. Reparations discussion and surplus-spending orientation suggest progressive fiscal philosophy, but insufficient hard evidence to score with higher confidence."
+    },
+    "econ_school_choice": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "QBE formula reform advocacy (DeKalb debate, Atlanta Voice)",
+        "Pre-K through technical college public investment (multiple forums)",
+        "Teacher pay via income tax exemption (campaign platform)"
+      ],
+      "notes": "Consistent emphasis on strengthening public schools: updating the Quality Basic Education funding formula, expanding trades and apprenticeships, increasing teacher pay. No explicit anti-voucher or anti-charter statement found, but the entire education framing is public-school-centric. No private school or choice language appears anywhere in the evidence."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Atlanta Voice interview June 2025",
+        "GPB announcement coverage June 2025",
+        "DeKalb Democrats debate (fall 2025)",
+        "Savannah forum January 2026",
+        "NAACP Warner Robins forum August 2025"
+      ],
+      "notes": "Full Medicaid expansion is his primary healthcare commitment, stated consistently at every documented appearance. Framed around rural hospital survival and provider access. Not single-payer or Medicare for All -- specifically Medicaid expansion within the ACA framework. Scored at 2 rather than 0 because this is government insurance expansion, not system replacement."
+    },
+    "health_cost_control": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Rural hospital protection commitment (Atlanta Voice)",
+        "Medicaid expansion as indirect cost control mechanism"
+      ],
+      "notes": "No specific drug pricing, hospital rate-setting, or price control positions found. Score inferred from Medicaid expansion commitment (government insurance as cost leverage) and rural hospital protection (keeping providers solvent through public funds rather than market). Insufficient evidence for higher confidence."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: 'reimagine community safety from an intersectional perspective'",
+        "Campaign website: 'address school-to-prison pipeline; heal police violence'",
+        "Anti-ICE cooperation rhetoric (campaign website, multiple outlets)"
+      ],
+      "notes": "Reform-oriented language on policing and criminal justice, but no specific policy proposals (no mention of body cameras, qualified immunity, civilian oversight, or funding levels). Declined to answer GPS questionnaire on prison/parole issues. Anti-ICE rhetoric is strong but concerns federal immigration enforcement, not local policing per se. Military background may moderate reform orientation, but no evidence of 'back the blue' positioning. Scored at 3 (reform-focused) rather than lower because specifics are absent."
+    },
+    "justice_firearms": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Sponsored HB 601 -- Georgia Gun Safe Act of 2025 (Bearing Arms, FastDemocracy)",
+        "Sponsored companion bill HB 711",
+        "Gun-rights critics described HB 601 as 'biggest gun control bill in Georgia history' and 'patterned from other [restrictive] states'"
+      ],
+      "notes": "Tier 1 evidence: direct bill sponsorship. HB 601 is described by gun-rights media as comprehensive gun safety legislation modeled after the most restrictive state laws nationally. Filing two gun control bills in a GOP-controlled House signals deep commitment to this position. No NRA grade published, but the legislation itself is the strongest possible evidence. Scored at 1 (near-comprehensive regulation) because the bill is described as a maximal gun control package."
+    },
+    "climate_ambition": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Campaign website quoted in Capital B News: 'invest in renewable energy and sustainable practices'",
+        "Environmental equity framing: clean air, safe water, hold polluters accountable, no income/race/zip disparities"
+      ],
+      "notes": "Clearly pro-environment in general orientation, but no specific emissions targets, climate emergency framing, fossil fuel restrictions, or carbon pricing mentioned. Environmental justice framing (equity across race and income) is present but lacks policy specifics. Score reflects progressive direction with low confidence due to absence of concrete climate policy."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Environmental justice framing (clean air and water for all regardless of income, race, or zip code); immigrant rights defense against ICE enforcement; reparations as racial equity conversation; reproductive rights as gender equity. However, most policy framing is Georgia-focused and community-specific rather than truly global. No international or humanitarian policy positions found. Scores solidly positive but not at the top range because the universalism is domestic and equity-focused rather than globally expansive."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "Nearly every policy position is framed as community care: Medicaid expansion for rural Georgians, minimum wage for workers, teacher pay, veteran support, rural broadband access. Personal framing -- 'this is personal; every day I will come to your city' -- reinforces constituent-care orientation. Father of seven, grandfather, married to fellow former state representative. Community welfare is the central organizing principle of his candidacy. One of the highest-scoring values for this candidate."
+    },
+    "tradition": {
+      "score": -0.2,
+      "reasoning": "Seeks to repeal HB 481 (challenges a law conservatives defend as traditional values); proposes $27/hr minimum wage that would upend Georgia's long-standing low-wage economic model; sponsors comprehensive gun regulation in a traditionally gun-friendly state; raises reparations in a Southern state. Military service (22 years) and long legislative tenure show respect for institutional forms, preventing a more negative score. Net slightly negative because the policy agenda challenges multiple established Georgia norms."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Five-term state legislator who works within the legislative process: 314 bills sponsored, 38 passed (claims bipartisan record), serves on committees, sponsors formal legislation even in a hostile GOP majority. This is a system-worker, not a system-breaker. However, anti-establishment rhetoric ('bucking the establishment'), confrontational ICE language ('if I catch ICE in District 68, they are in trouble'), and self-positioning against the Democratic establishment moderate the conformity signal. Net modestly positive."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "22-year Navy career is the strongest security signal in the evidence; sits on Defense and Veterans Affairs committee; rural hospital protection frames healthcare as community stability; minimum wage and Medicaid expansion framed as economic security for families. However, 'reimagine community safety' language and anti-ICE enforcement rhetoric work against traditional security framing. Military identity provides a strong baseline, but the reform orientation prevents a higher score."
+    },
+    "power": {
+      "score": -0.4,
+      "reasoning": "Explicitly anti-establishment positioning in the Democratic primary ('bucking the establishment'); no major institutional endorsements confirmed; no corporate PAC support found; labor-centered economic policy challenges corporate wage-setting power; small business and Black farmer focus rather than corporate alignment; challenges ICE (federal enforcement power). The absence of institutional backing, combined with the anti-establishment identity, places him clearly on the power-challenging side of this value."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Heavily emphasizes personal qualifications: '42 years of experience' across military, corporate (GE), and legislative careers. PhD candidate. Military officer. Points to 314 bills and 38 laws passed as legislative productivity. The campaign launch interview centers on resume and experience as differentiators. However, policy framing emphasizes structural barriers (racial equity, labor exploitation) rather than pure individual meritocracy, which moderates the score."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal liberty, recreational policy, or lifestyle freedom framing. Reproductive rights are framed as equity and bodily autonomy rather than personal freedom or pleasure. No cannabis, alcohol, or personal choice policy positions found."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Multiple proposals represent significant departures from Georgia's policy status quo: $27/hr minimum wage (would be the highest state minimum in the US), HB 601 as 'biggest gun control bill in GA history,' reparations discussion at the gubernatorial level, anti-establishment candidacy. Willingness to propose bold, unlikely-to-pass legislation signals change orientation. But operates through institutional channels (bill sponsorship, traditional campaigning), which tempers the disruption signal."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Reproductive rights framed as bodily autonomy ('my daughters should have bodily autonomy just like my sons') is a clear self-direction signal. Immigration defense protects individuals from government raids. However, comprehensive gun regulation (HB 601) restricts individual firearms freedom, and the overall policy agenda emphasizes collective action over individual liberty. The gun control position is significant enough to substantially offset the reproductive autonomy signal. Net weakly positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Minimum wage figure",
+      "description": "Campaign launch in June 2025 stated $20/hour minimum wage. Separately sponsored legislation proposing phased increases to $27/hour by 2028. The two figures appear in different contexts and it is unclear whether $20 was a floor figure or has been superseded by the $27 bill.",
+      "sources": ["AJC announcement June 2025", "Capital B News / NAACP forum", "FastDemocracy/TrackBill bill records"],
+      "scoringImpact": "Both figures are strongly progressive on the safety net axis. The discrepancy does not affect the direction or magnitude of the score. Flagged for transparency."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 9,
+    "axesSkipped": [
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No meaningful evidence found for these axes in the research file. Housing positions are limited to a single general affordability statement with no policy specifics. Sentencing/parole positions were explicitly declined by the candidate (GPS questionnaire). Energy portfolio and permitting have no evidence beyond general renewable energy language. Public health (mandates, vaccines) has no evidence at all.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No interest group scorecards available (no GA state-level LCV, NRA grade unpublished, no AFL-CIO endorsement)",
+      "Housing policy almost entirely absent -- only general affordability rhetoric",
+      "Criminal justice sentencing specifics unknown -- candidate declined GPS questionnaire",
+      "Energy portfolio specifics (fossil fuel policy, renewable targets) not stated",
+      "Public health positions (vaccines, mandates, FDA/CDC authority) not documented",
+      "Drug policy and cannabis legalization positions not found",
+      "Campaign website was not directly accessible -- positions sourced from news coverage quoting the site"
+    ]
+  }
+}

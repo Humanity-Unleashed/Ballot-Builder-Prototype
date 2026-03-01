@@ -1,0 +1,223 @@
+{
+  "slug": "james-talarico",
+  "name": "James Talarico",
+  "party": "Democratic",
+  "office": "U.S. Senate, Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Four-term Texas state representative, former public school teacher, and progressive populist running on healthcare access, public education, and corporate accountability with the strongest grassroots fundraising in Texas Democratic history.",
+  "keyPositions": [
+    "Advocates 'Medicare for Y'all' public option; says he would vote for Medicare for All if it reached the Senate floor",
+    "Authored Texas insulin cap law (HB 82, $25/month) and drug importation bill; healthcare cost control driven by personal experience as Type 1 diabetic",
+    "Voted NO on Texas school voucher bill (SB 2); co-authored 2019 school finance reform; opposes vouchers as a former teacher",
+    "Calls for raising taxes on billionaires and corporations to fund middle-class tax cuts",
+    "Supports universal background checks and raising age for semi-auto rifle purchases; does not call for assault weapons ban"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Campaign platform (labor, childcare, school meals)",
+        "AFL-CIO debate Jan 2026",
+        "Fortune interview Dec 2025",
+        "PCCC endorsement framing"
+      ],
+      "notes": "Supports $15 minimum wage, PRO Act, universal childcare, expanded school meals, Social Security protection. Expressed interest in UBI pilot programs but stopped short of commitment. No federal voting record on safety net bills. Scored on consistent Tier 2 platform evidence."
+    },
+    "econ_investment": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Campaign energy/environment platform",
+        "Campaign labor/business platform",
+        "2019 school finance reform co-authorship",
+        "PCCC endorsement framing"
+      ],
+      "notes": "Supports workforce development, clean energy investment, and education infrastructure. No explicit Green New Deal or large-scale industrial policy proposal found. Implicitly pro-public-investment through education and energy platforms."
+    },
+    "econ_tax_structure": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Fortune interview Dec 2025",
+        "AFL-CIO debate Jan 2026",
+        "Super Bowl ad Feb 2026",
+        "Texas Tribune debate coverage"
+      ],
+      "notes": "Consistently advocates raising taxes on billionaires and corporations across multiple independent sources. Calls for higher income and capital gains taxes on the richest Americans. Describes tax-avoiding corporations as 'the biggest welfare queens in this country.' Pledges middle-class tax cuts funded by progressive taxation."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Voted NO on SB 2 (Texas school voucher bill, April 2025)",
+        "Authored referendum amendment (Record Vote #244, failed 86-62)",
+        "Co-authored 2019 school finance reform",
+        "ATPE TeachTheVote endorsement/ally designation",
+        "Texas Tribune Sep 2025 — 'Remember this day next time a school closes'"
+      ],
+      "notes": "Strongest-evidence axis. Tier 1 voting record, Tier 1 scorecard, and Tier 2 campaign platform all completely aligned. Former public school teacher identity is central to candidacy. Anti-voucher position is one of his most consistent and defining stances across all 4 terms."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Campaign website ('Medicare for Y'all')",
+        "AFL-CIO debate Jan 2026 ('universal coverage should be a nonnegotiable')",
+        "Campaign issues page describing Medicare buy-in for all ages"
+      ],
+      "notes": "Branded proposal is 'Medicare for Y'all' — a public option allowing all Americans to join Medicare. Explicitly stated he would vote for Medicare for All. Scored at 2 rather than 0 because his primary campaign proposal is a strong public option (buy-in), not single-payer elimination of private insurance. The willingness to vote for M4A pulls slightly below the 3 anchor for public option."
+    },
+    "health_cost_control": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "HB 82 — insulin cap $25/month (authored, passed into law 2021)",
+        "HB 25 — Canadian drug importation (authored 2023)",
+        "Campaign healthcare platform (price transparency, negotiating power, PBM regulation, out-of-pocket caps)"
+      ],
+      "notes": "One of the strongest axes with Tier 1 enacted legislation. Personal stake as Type 1 diabetic. Passed insulin price cap into law and authored drug importation bill. Campaign platform adds government negotiating power, generic drug incentives, and PBM regulation. All evidence points consistently toward aggressive government price controls."
+    },
+    "housing_affordability_tools": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "HB 3792 — surplus state property to affordable housing (authored, failed to advance 2025)",
+        "Campaign website general affordability framing"
+      ],
+      "notes": "Filed bill to convert surplus state property into affordable housing, but it did not advance past committee. General campaign emphasis on lowering housing costs. No specific federal housing platform found — no positions on rent control, public housing investment, or federal subsidies. Scored with low confidence due to limited evidence."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Javier Ambler's Law (authored, passed into law 2021) — banned reality TV policing",
+        "Campaign platform: 'strong investments in police training, oversight, and accountability'",
+        "ICE repeal-and-replace position (AFL-CIO debate, El Paso Matters interview)"
+      ],
+      "notes": "Reform-oriented with enacted legislation. Passed Javier Ambler's Law banning law enforcement reality TV contracts after a police killing. Campaign platform emphasizes training, oversight, and addressing root causes of crime. Explicitly not 'defund the police.' ICE replacement advocacy shows willingness to fundamentally restructure enforcement agencies but through rebuild, not abolition."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "HB 30 — juvenile diploma program (authored, passed into law 2023)",
+        "Campaign platform: marijuana legalization and record expungement",
+        "Campaign platform: reentry programs, root cause investment"
+      ],
+      "notes": "Tier 1 enacted legislation on juvenile rehabilitation (HB 30). Supports marijuana legalization with expungement of records and reentry programs. Increased TJJD transparency and accountability. Campaign emphasizes 'addressing root causes of crime through well-funded schools, youth programs, mental health care, and substance abuse treatment.' Rehabilitation-focused."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Campaign platform (universal background checks, age limits, secure storage, firearms trafficking prosecution)",
+        "Texas Gun Rights opposition ('two peas in the same anti-gun pod')",
+        "Floor speech after Texas gun bill"
+      ],
+      "notes": "Supports significant but not comprehensive gun regulation: universal background checks, raising age for semi-auto rifle purchases, secure storage requirements around children, and prioritizing prosecution of firearms traffickers. Notably does NOT call for an assault weapons ban, magazine capacity limits, licensing, or insurance. Scored at the 3 anchor for 'significant regulation' rather than 0 for 'comprehensive regulation.' No NRA grade found."
+    },
+    "climate_ambition": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": [
+        "Campaign energy/environment page",
+        "Position conflict analysis in research file"
+      ],
+      "notes": "Acknowledges climate disasters as a serious threat and supports climate preparedness. But notably does NOT call for fossil fuel phase-out, specific emissions targets, or emergency-level climate action. This is his most moderate axis relative to his progressive positioning elsewhere. All-of-the-above energy framing with Texas-centric pragmatism. No LCV score available (state legislator). Scored between the 3 ('strong climate policy') and 5 ('moderate climate action') anchors, leaning moderate."
+    },
+    "climate_energy_portfolio": {
+      "score": 5,
+      "confidence": "medium",
+      "sources": [
+        "Campaign energy/environment page"
+      ],
+      "notes": "Explicitly praises Texas jobs across oil, gas, wind, solar, battery, geothermal, and hydrogen. Wants to ADD clean energy without removing fossil fuels. Frames Texas as 'the energy leader of the world' and wants to maintain leadership across all sources. This is genuinely all-of-the-above with a clean energy tilt, matching the 5 anchor almost exactly. Significantly more moderate than his positioning on healthcare, education, and economic axes."
+    },
+    "climate_permitting": {
+      "score": 5,
+      "confidence": "low",
+      "sources": [
+        "Campaign energy/environment page"
+      ],
+      "notes": "Single statement: 'streamline permitting processes without compromising environmental protection.' Genuinely ambiguous — could mean faster green energy permitting or broader permitting reform. Scored at balance point with low confidence. Insufficient evidence to determine direction."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.6,
+      "reasoning": "Universal healthcare advocacy ('universal coverage should be a nonnegotiable'), climate acknowledgment, pathway to citizenship for undocumented immigrants, pro-LGBTQ+ and reproductive rights. Teaching career with undocumented and at-risk students demonstrates practical universalism. Moderated by pragmatic energy stance (not prioritizing environment over Texas jobs) and ICE replacement rather than abolition framing."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "Central to identity and career: former teacher of low-income students, 16 bills passed focused on community welfare (insulin cap, school finance, juvenile rehabilitation), education access and healthcare access as primary motivators. PCCC endorsement explicitly cites 'material improvements to people's lives.' One of his defining characteristics across biography, legislative record, and campaign."
+    },
+    "tradition": {
+      "score": 0.0,
+      "reasoning": "Genuinely mixed. Personal: Presbyterian seminarian and 'eighth-generation Texan,' suggesting personal respect for religious and cultural heritage. Policy: uses Biblical reasoning for progressive positions (abortion access), opposed Ten Commandments in schools, Texas Values Action 0%, challenges established norms on education, healthcare, and taxation. Personal religious identity applied in non-traditional policy directions roughly cancels out."
+    },
+    "conformity": {
+      "score": 0.4,
+      "reasoning": "Works effectively within legislative institutions: 16 bills passed into law, bipartisan cooperation on some bills (HB 6), files amendments and points of order through proper procedure. Even ICE 'tear down' statement is paired with 'replace' — rebuild through legitimate process. However, running as challenger against establishment-backed opponent and rejecting corporate PAC money shows willingness to defy party norms."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Security-oriented through progressive mechanisms: social safety net as economic security, healthcare access as personal security (Type 1 diabetic), police training and accountability investment, border security through 'lock on the door' metaphor, climate preparedness. Supports restructuring enforcement agencies rather than dismantling them. Does not frame security primarily through military or law enforcement maximalism."
+    },
+    "power": {
+      "score": -0.6,
+      "reasoning": "Actively and consistently works against concentrated wealth and corporate power. No corporate PAC money throughout legislative career (98% of donations $100 or less). Calls tax-avoiding corporations 'the biggest welfare queens in this country.' Raises taxes on billionaires as central platform. PCCC endorsement based on 'corporate accountability.' $20.7M grassroots fundraising record as deliberate rejection of donor-class politics. Anti-power orientation is one of his defining characteristics."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Personal biography demonstrates achievement (Teach For America, Harvard M.Ed., seminary student, state legislator at young age, record fundraising). But ideological frame emphasizes structural barriers over individual merit — school funding inequality, healthcare costs, worker exploitation. Uses personal success story to advocate for systemic solutions rather than meritocracy."
+    },
+    "hedonism": {
+      "score": 0.1,
+      "reasoning": "Minimal signal. Supports marijuana legalization (personal liberty connection) but frames it through criminal justice reform rather than personal freedom. No other hedonism-relevant positions identified."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Clear challenger/reformer identity: state representative making ambitious Senate leap, 'rising star' framing, 'big tent revival' campaign narrative, record grassroots fundraising as disruption of traditional political fundraising. Policy innovation (insulin cap, drug importation). PCCC endorsement and new-generation appeal. Moderated by effective institutional work within the Texas House rather than pure outsider disruption."
+    },
+    "self_direction": {
+      "score": 0.3,
+      "reasoning": "Strong on social liberties: pro-choice (bodily autonomy, authored constitutional amendment), pro-LGBTQ+ rights (Texas Values Action 0%), church-state separation. But favors significant government intervention on economic matters (price controls, tax increases, gun regulations), which limits individual economic and firearms liberty. Net modest positive driven by social freedom positions."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "ICE / immigration enforcement rhetoric vs. policy",
+      "description": "At the AFL-CIO debate (Jan 24, 2026), hours after an ICE shooting in Minneapolis, Talarico said 'It's time to tear down this secret police force.' His campaign website and El Paso Matters interview use more moderate language: 'replace' ICE with a focused enforcement agency, not abolish all border enforcement.",
+      "sources": ["KUT debate transcript Jan 2026", "El Paso Matters interview Feb 2026", "Campaign website immigration page"],
+      "scoringImpact": "Scored the consistent repeal-and-replace position rather than the one-off debate rhetoric. The debate quote reflects a charged moment, not a policy commitment to abolition."
+    },
+    {
+      "topic": "Climate/energy moderation relative to other axes",
+      "description": "Talarico is notably more moderate on energy portfolio than on his other progressive axes. He explicitly praises Texas oil and gas jobs and does not call for fossil fuel phase-out, unlike many candidates with his progressive profile on healthcare, taxes, and education.",
+      "sources": ["Campaign energy/environment page"],
+      "scoringImpact": "Scored climate_energy_portfolio at 5 (all-of-the-above) and climate_ambition at 4, significantly more centrist than his 1-3 scores on economic and healthcare axes. This is a genuine cross-cutting position, not an error."
+    },
+    {
+      "topic": "UBI interest without commitment",
+      "description": "Talarico expressed being 'very encouraged by some pilot programs of universal basic income' but stopped short of committing to sponsor UBI legislation.",
+      "sources": ["KUT debate / campaign trail"],
+      "scoringImpact": "Not scored on safety net axis for UBI. Safety net score based on other positions (minimum wage, PRO Act, childcare, school meals)."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["housing_supply_zoning", "housing_transport_priority", "health_public_health"],
+    "reasonSkipped": "No meaningful zoning or density reform position found. No transit or transportation position found. No specific public health mandate position (vaccines, FDA authority) found — tangential evidence from reproductive rights and mental health insufficient for this axis.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No federal voting record — all legislative evidence is from Texas House",
+      "No LCV or equivalent environmental scorecard available for state legislators",
+      "No NRA grade found",
+      "No specific position on public health mandates (vaccines, FDA authority)",
+      "No transit or transportation policy position",
+      "No zoning or density reform position",
+      "Housing policy is underdeveloped beyond general affordability framing"
+    ]
+  }
+}

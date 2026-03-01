@@ -1,0 +1,398 @@
+{
+  "slug": "brad-raffensperger",
+  "name": "Brad Raffensperger",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger (currently Georgia Secretary of State; term-limited from that office)",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Georgia Secretary of State (2019–present)",
+    "priorRoles": [
+      "Georgia House of Representatives, District 50 (2015–2019)",
+      "Founder/CEO, Tendon Systems (post-tensioning contractor; grew to ~150 employees across 40+ states)",
+      "Founder, Trillium Structures (structural design consulting)",
+      "Co-founder, childcare center (Johns Creek; 133–174 children)"
+    ],
+    "education": "B.S. Civil Engineering, Western University; M.B.A., Georgia State University",
+    "background": "Licensed Professional Engineer and Structural Engineer; licensed General Contractor in Georgia and other states. Small business background. Rose to national prominence after refusing Trump's January 2, 2021 call to 'find' 11,780 votes to overturn Georgia's 2020 presidential election results. Survived Trump-backed primary challenger Jody Hice to win re-election as Secretary of State in 2022. Georgia Republican Party convention voted in 2024 to ban him from running under the party banner, though the party chairman indicated this resolution likely lacked legal force."
+  },
+  "campaignWebsite": {
+    "url": "https://bradforgeorgia.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch unavailable; positions drawn from news coverage of website content and campaign statements",
+    "statedPositions": [
+      {
+        "topic": "taxes_income",
+        "quote": "Eliminate the state income tax",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/after-defying-trump-raffensperger-touts-his-policies-in-governors-race/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Explicitly stated campaign pledge; repeated across multiple sources"
+      },
+      {
+        "topic": "taxes_property",
+        "quote": "Cap property taxes for seniors; beginning at age 65, seniors will be exempt from all property taxes except those directly funding local schools and public safety",
+        "sourceUrl": "https://www.thegeorgiavirtue.com/2026-elections/raffensperger-releases-property-tax-relief-package-to-make-georgia-more-affordable/",
+        "date": "2025-11",
+        "confidence": "high",
+        "notes": "Detailed 'Property Tax Relief Package' released Nov 2025; caps annual increases to rate of inflation statewide; uniform standard across all 159 Georgia counties"
+      },
+      {
+        "topic": "taxes_retirement",
+        "quote": "Eliminate state taxes on all retirement benefits; a retiree withdrawing $100,000 annually would save roughly $5,000 per year",
+        "sourceUrl": "https://thecitizen.com/2026/02/25/raffensperger-announces-plan-to-eliminate-state-tax-on-all-retirement-benefits/",
+        "date": "2026-02-25",
+        "confidence": "high",
+        "notes": "Announced Feb 25, 2026. Current GA exclusion is $35K (ages 62–64) and $65K (age 65+); this plan would eliminate the remaining tax entirely."
+      },
+      {
+        "topic": "taxes_homebuying",
+        "quote": "Repeal taxes and fees on closing costs for homebuyers",
+        "sourceUrl": "https://www.cbsnews.com/atlanta/news/brad-raffensperger-georgia-2026-governor-election-campaign/",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "Mentioned in CBS Atlanta campaign launch coverage"
+      },
+      {
+        "topic": "education_school_choice",
+        "quote": "Expanding tax credits for parental school choice; purging 'woke curriculums' from schools",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/after-defying-trump-raffensperger-touts-his-policies-in-governors-race/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "AJC report on campaign launch; school choice via tax credits (not vouchers specifically)"
+      },
+      {
+        "topic": "education_school_safety",
+        "quote": "Double school security grants from $50,000 a year to $100,000",
+        "sourceUrl": "https://www.thegeorgiavirtue.com/2026-elections/raffensperger-goes-beyond-election-controversy-in-gubernatorial-campaign/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Specific dollar figure; appeared in The Georgia Virtue and Center Square February 2026 coverage"
+      },
+      {
+        "topic": "healthcare",
+        "quote": "America has the best hospital coverage in the world. It's the affordability issue.",
+        "sourceUrl": "https://www.thegeorgiavirtue.com/2026-elections/raffensperger-goes-beyond-election-controversy-in-gubernatorial-campaign/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Framed as market-based/affordability problem rather than coverage gap problem. Campaign stated a specific healthcare proposal would be released before the May 19 primary; as of research date (Feb 25, 2026) that detailed proposal had not yet been published."
+      },
+      {
+        "topic": "healthcare_gender_affirming",
+        "quote": "Ban drugs that block puberty from gender-affirming care; ban transgender surgeries for minors; ban biological men in women's sports",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/after-defying-trump-raffensperger-touts-his-policies-in-governors-race/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Multiple sources confirm these as explicit campaign pledges. AJC described platform as blending 'bread-and-butter promises with culture-war priorities'."
+      },
+      {
+        "topic": "immigration",
+        "quote": "Support the Trump administration's efforts to deport criminal aliens from Georgia by empowering and funding state law enforcement to partner with local police and Sheriff's Departments",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/after-defying-trump-raffensperger-touts-his-policies-in-governors-race/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Direct quote from campaign launch. Framed as targeting criminals specifically, not blanket deportation."
+      },
+      {
+        "topic": "public_safety",
+        "quote": "Restore law and order",
+        "sourceUrl": "https://www.gpb.org/news/2025/09/17/secretary-of-state-brad-raffensperger-joins-the-republican-race-for-governor",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "Standard Republican law-and-order framing; no specific policing reform details found"
+      },
+      {
+        "topic": "elections_voter_id",
+        "quote": "If you have to have REAL ID to get on an airplane, REAL ID to get into a federal office building, why wouldn't you have REAL ID for elections?",
+        "sourceUrl": "https://www.thegeorgiavirtue.com/2026-elections/raffensperger-goes-beyond-election-controversy-in-gubernatorial-campaign/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Calling on Georgia legislature to require REAL ID for voting; this is a stricter standard than SB 202's photo ID provision"
+      },
+      {
+        "topic": "economy_jobs",
+        "quote": "The best way really I feel of addressing affordability, No. 1, is creating great-paying jobs. Great-paying jobs solves a lot of issues.",
+        "sourceUrl": "https://live.ajc.com/PGcandidateforum2025",
+        "date": "2025-11-05",
+        "confidence": "high",
+        "notes": "Direct quote from AJC Politically Georgia candidate forum, Nov 5 2025. Also supports reshoring manufacturing and 'fair trade, balanced trade'."
+      },
+      {
+        "topic": "economy_tax_free_zones",
+        "quote": "Creating 'tax-free zones' for struggling communities",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/after-defying-trump-raffensperger-touts-his-policies-in-governors-race/",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "Mentioned in AJC campaign launch article; no further details on eligibility or scope found"
+      },
+      {
+        "topic": "childcare",
+        "quote": "Offering incentives for childcare",
+        "sourceUrl": "https://www.thegeorgiavirtue.com/2026-elections/raffensperger-goes-beyond-election-controversy-in-gubernatorial-campaign/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Campaign references his personal experience co-founding a childcare center; specific childcare incentive policy not detailed in available sources"
+      },
+      {
+        "topic": "innovation_research",
+        "quote": "I think innovation will open doors to revitalizing American industry. Voices his support for research being conducted by Georgia Tech and UGA.",
+        "sourceUrl": "https://www.thegeorgiavirtue.com/2026-elections/raffensperger-goes-beyond-election-controversy-in-gubernatorial-campaign/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Paraphrase from The Georgia Virtue; no specific R&D funding commitment identified"
+      }
+    ]
+  },
+  "legislativeRecord": {
+    "available": true,
+    "sources": [
+      "Wikipedia (Brad Raffensperger article)",
+      "Georgia House of Representatives official biography",
+      "VoteSmart (justfacts.votesmart.org/candidate/142732/brad-raffensperger)",
+      "therealraffensperger.com (opposition research site — treat with caution, flag items for independent verification)"
+    ],
+    "georgiaHouseService": {
+      "district": "50 (Johns Creek area)",
+      "years": "2015–2018 (two terms)",
+      "committees": [
+        "Energy, Utilities and Telecommunications",
+        "Intragovernmental Coordination",
+        "Juvenile Justice"
+      ]
+    },
+    "keyBillsSponsored": [
+      {
+        "bill": "Anti-profiteering tax lien legislation",
+        "topic": "local government accountability",
+        "action": "Sponsored",
+        "outcome": "Passed; barred county officials from personally profiting from tax liens",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Brad_Raffensperger",
+        "notes": "Targeted Fulton County tax commissioner self-enrichment practice"
+      },
+      {
+        "bill": "Milton County creation amendment",
+        "topic": "local government / property rights",
+        "action": "Sponsored",
+        "outcome": "Constitutional amendment measure; allowed northern Fulton County to potentially split off",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Brad_Raffensperger",
+        "notes": "Reflects suburban/exurban constituent interests"
+      },
+      {
+        "bill": "1-mill property tax cut",
+        "topic": "taxes",
+        "action": "Sponsored",
+        "outcome": "Not specified",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Brad_Raffensperger",
+        "notes": "Consistent with anti-tax general philosophy"
+      },
+      {
+        "bill": "Human trafficking / illicit massage establishment legislation",
+        "topic": "law enforcement / public safety",
+        "action": "Sponsored",
+        "outcome": "Not specified",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Brad_Raffensperger",
+        "notes": ""
+      },
+      {
+        "bill": "Personhood bill / constitutional amendment recognizing 'paramount right to life of all human beings as persons at any stage of development'",
+        "topic": "reproductive rights",
+        "action": "Sponsored",
+        "outcome": "Did not pass",
+        "sourceUrl": "https://therealraffensperger.com/",
+        "notes": "Source is opposition research site — independently corroborated by search results referencing 2016 Georgia Life Alliance questionnaire where Raffensperger checked 'all abortions should be illegal, with no exceptions.' Personhood bills typically have the effect of banning hormonal contraception. Flag for independent verification via Georgia General Assembly records."
+      },
+      {
+        "bill": "Religious freedom / RFRA-style bill (2016)",
+        "topic": "LGBTQ rights / religious liberty",
+        "action": "Voted Yes (alleged)",
+        "outcome": "Vetoed by Republican Gov. Nathan Deal",
+        "sourceUrl": "https://therealraffensperger.com/",
+        "notes": "Multiple sources indicate Raffensperger voted for 'discriminatory anti-LGBTQ legislation' that was vetoed by Deal. Source is opposition research — flag for independent verification. The 2016 Georgia RFRA bill was widely criticized by LGBTQ advocates and business groups (Delta, Coca-Cola, etc. threatened to leave Georgia)."
+      }
+    ]
+  },
+  "secretaryOfStateRecord": {
+    "years": "2019–present",
+    "keyActions": [
+      {
+        "action": "Championed and implemented SB 202 (Election Integrity Act of 2021)",
+        "topic": "elections / voting access",
+        "notes": "SB 202 added photo ID requirement for absentee ballots, limited absentee ballot drop boxes, shortened runoff election windows, and transferred certain election certification powers from the SoS to the State Election Board. Raffensperger worked with legislature to pass it; he defended it in federal court. Critics (ACLU, voting rights groups) called provisions voter suppression; Raffensperger called it common-sense security."
+      },
+      {
+        "action": "Refused Trump's January 2, 2021 request to 'find' 11,780 votes",
+        "topic": "elections / rule of law",
+        "notes": "Became national symbol of institutional resistance to election subversion. Said Trump's data was wrong. Raffensperger was subsequently indicted alongside Trump in Fulton County's 2020 election case; as SoS he later received immunity in exchange for testimony."
+      },
+      {
+        "action": "Deployed auditable paper ballot system statewide (largest such rollout in U.S. history)",
+        "topic": "elections / election administration",
+        "notes": "Replaced direct-recording electronic (DRE) machines with hand-marked paper ballots and ballot-marking devices"
+      },
+      {
+        "action": "Conducted multiple citizenship audits of voter rolls",
+        "topic": "elections / voter rolls",
+        "notes": "Two audits completed; third underway as of 2026 campaign. Goal: confirm only U.S. citizens on voter rolls."
+      },
+      {
+        "action": "Cancelled 2024 Georgia Public Service Commission elections",
+        "topic": "energy / elections",
+        "notes": "Georgia Conservation Voters criticized this action as 'an attack on our democracy and our clean energy future.' Disputed whether the action was appropriate."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "LCV scorecard covers congressional members only; no LCV score available for state-level official. Georgia Conservation Voters (state affiliate) criticized Raffensperger's 2024 cancellation of PSC elections. No overall environmental scorecard found."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": "https://www.nrapvf.org/grades/georgia",
+      "notes": "NRA-PVF Georgia page exists but specific grade for Raffensperger not returned in search results. He is not a federal legislator, so NRA congressional grade not applicable. No NRA grade for state executive/SoS found. His 2026 campaign platform does not mention firearms; he served on Energy, Utilities and Telecommunications committee in state House (not Judiciary), limiting available vote record on guns."
+    },
+    {
+      "organization": "Georgia Life Alliance",
+      "score": "Checked 'all abortions should be illegal, with no exceptions' (2016 questionnaire)",
+      "grade": null,
+      "url": null,
+      "notes": "Opposition research source; independently corroborated by personhood bill sponsorship. Raffensperger later said his abortion position is 'not relevant' to the SoS job."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Georgia Republican Party (state convention)",
+      "type": "opposition / attempted disqualification",
+      "cycle": "2024",
+      "notes": "GOP convention voted to not 'take any action to allow Brad Raffensperger to qualify as a Republican' for future elections. Party chairman Josh McKoon indicated this resolution likely lacked legal force. As of Sep 2025, Raffensperger qualified and entered the Republican primary."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "opposition / backed primary challenger in 2022",
+      "cycle": "2022/2026",
+      "notes": "Trump backed Jody Hice against Raffensperger in 2022 primary; Raffensperger won easily. Lt. Gov. Burt Jones has Trump's endorsement for the 2026 governor's race; Jones calls Raffensperger a 'Never Trumper.' Raffensperger's own campaign nonetheless pledges to 'work alongside President Donald Trump.'"
+    },
+    {
+      "organization": "No notable positive endorsements found",
+      "type": "note",
+      "cycle": "2026",
+      "notes": "As of research date, no major endorsements from Republican officials, business groups, or advocacy organizations were identified in available sources. Ballotpedia noted they were still gathering endorsement information."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "11Alive (WXIA-TV) — The Georgia Vote",
+      "date": "2025-09 (campaign launch interview)",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/full-interview-brad-raffensperger-2026-campaign-for-georgia-governor/85-ca2880c3-5afb-4627-b42e-252e31b52f39",
+      "keyExchanges": [
+        {
+          "topic": "integrity/character pitch",
+          "quote": "I honor the Constitution, that I'm honest, that I have integrity. And if people are looking for someone that will tell them the truth always, no matter how hard it is to hear, they're looking at the right person.",
+          "notes": "Core campaign identity argument; contrasting with Trump-aligned opponents"
+        },
+        {
+          "topic": "affordability",
+          "quote": "I want to be governor to make Georgia affordable and safe. Simple as that.",
+          "notes": "Campaign tagline, repeated across all sources"
+        }
+      ]
+    },
+    {
+      "outlet": "AJC Politically Georgia candidate forum",
+      "date": "2025-11-05",
+      "url": "https://live.ajc.com/PGcandidateforum2025",
+      "keyExchanges": [
+        {
+          "topic": "affordability / jobs",
+          "quote": "The best way really I feel of addressing affordability, No. 1, is creating great-paying jobs. Great-paying jobs solves a lot of issues.",
+          "notes": "Raffensperger came in second in AJC poll at this forum, with 15% of respondents as top choice"
+        }
+      ]
+    },
+    {
+      "outlet": "AJC Politically Georgia Live",
+      "date": "2025-12",
+      "url": "https://www.ajc.com/politics/2025/12/politically-georgia-live-brad-raffensperger-on-passing-the-2020-test/",
+      "keyExchanges": [
+        {
+          "topic": "2020 election / character",
+          "quote": "Passing the 2020 test",
+          "notes": "Full interview available; focused on his 2020 decision and its significance for his gubernatorial bid"
+        }
+      ]
+    },
+    {
+      "outlet": "The Center Square",
+      "date": "2026-02",
+      "url": "https://www.thecentersquare.com/georgia/article_501d3680-397d-4463-992b-eb326fffaf00.html",
+      "keyExchanges": [
+        {
+          "topic": "campaign framing",
+          "quote": "Actually, what I'm really hearing about, people are concerned about their pocketbook issues. That's why when I run for governor, I am focused on what they are focused on and I am the best person to solve that.",
+          "notes": "Emphasizes economic messaging over 2020 election narrative"
+        },
+        {
+          "topic": "healthcare",
+          "quote": "I feel that actually America has the best hospital coverage in the world. It's the affordability issue.",
+          "notes": "Market-framing of healthcare; detailed proposal promised before May 19 primary"
+        },
+        {
+          "topic": "voter ID",
+          "quote": "If you have to have REAL ID to get on an airplane, REAL ID to get into a federal office building, why wouldn't you have REAL ID for elections?",
+          "notes": "Push for REAL ID specifically (stricter than standard photo ID)"
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Trump alignment",
+      "conflict": "Raffensperger is nationally known for defying Trump in 2020 and is labeled a 'Never Trumper' by primary opponents, yet his 2026 campaign explicitly pledges to 'work alongside President Donald Trump' and mirrors many MAGA policy priorities (deportation, transgender bans, school choice, income tax elimination). His campaign attempts to square this by emphasizing integrity while adopting Trump's policy agenda.",
+      "sources": [
+        "AJC Sept 2025 campaign launch",
+        "NBC News campaign profile",
+        "Washington Times 'labors to turn clash with Trump' piece"
+      ]
+    },
+    {
+      "topic": "abortion",
+      "conflict": "In his 2026 governor campaign, Raffensperger does not feature abortion prominently and has said his personal abortion views 'are not relevant' to his SoS role. However, as a state legislator he sponsored a personhood bill (no exceptions, would ban contraception) and checked 'all abortions should be illegal' on a 2016 questionnaire — arguably the most restrictive position available. His 2026 campaign is silent on the state's current six-week ban (HB 481), leaving his current executive-level position unclear.",
+      "sources": [
+        "therealraffensperger.com (opposition; needs independent verification)",
+        "isidewith.com candidate profile",
+        "AJC September 2025"
+      ]
+    },
+    {
+      "topic": "Georgia PSC elections cancellation",
+      "conflict": "Raffensperger cancelled the 2024 Georgia Public Service Commission elections, which Georgia Conservation Voters called 'an attack on our democracy and our clean energy future.' This conflicts with his stated identity as a defender of democratic norms and elections.",
+      "sources": [
+        "Georgia Conservation Voters press release (gcvoters.org, March 2024)"
+      ]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "public_investment: Multiple explicit anti-tax pledges (eliminate income tax, cap property taxes, repeal closing cost taxes, eliminate retirement tax) — strong poleB signal",
+      "school_choice: Explicit tax credit expansion for parental school choice — strong poleB signal",
+      "coverage_model: Market-framing of healthcare ('best hospital coverage in the world — it's affordability') — poleB direction",
+      "sentencing_goals / police_accountability: 'Restore law and order,' fund local-state-federal law enforcement partnerships for deportation — poleB signal",
+      "public_health (gender): Explicit bans on puberty blockers and gender-affirming surgery for minors — individual-choice framing (poleB direction per axis)"
+    ],
+    "weakestAxes": [
+      "firearms_policy: No NRA grade found; no firearms legislation from House record identified; 2026 platform does not address guns",
+      "ambition_level / energy_portfolio: No climate or energy position statements found; House Energy committee service did not yield specific vote record",
+      "zoning_supply / affordability_tools / transit_priority: No housing or transit positions found",
+      "cost_control: Healthcare position is vague (market/affordability) pending a detailed proposal",
+      "permitting_speed: No position found"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Raffensperger's economic and social-conservative positions are well-documented across multiple independent sources (AJC, GPB, CBS Atlanta, 11Alive, Center Square, The Georgia Virtue). His state legislative record is partially documented but gap-filled — the most controversial allegations (personhood bill, anti-LGBTQ vote) come primarily from an opposition research site (therealraffensperger.com) and iSideWith; these are corroborated only indirectly by news coverage and should be flagged as needing primary-source verification from Georgia General Assembly records. His firearms, climate, housing, and detailed policing positions are absent from 2026 campaign materials found. A detailed healthcare plan was promised before May 19, 2026 primary but had not been released as of research date."
+  }
+}

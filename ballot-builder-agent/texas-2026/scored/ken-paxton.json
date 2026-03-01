@@ -1,0 +1,269 @@
+{
+  "slug": "ken-paxton",
+  "name": "Ken Paxton",
+  "party": "Republican",
+  "office": "U.S. Senate, Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Ten-year Texas Attorney General and former state legislator running as the MAGA-aligned challenger to Sen. John Cornyn; defined by an aggressive litigation record against federal agencies on climate, healthcare, immigration, and firearms, and by personal legal controversies including impeachment and a securities fraud settlement.",
+  "keyPositions": [
+    "Led 20-state coalition to repeal the entire Affordable Care Act; explicitly sought full repeal without replacement",
+    "Filed 15+ lawsuits against EPA regulations on ozone, methane, emissions, and waterways; called climate change 'a matter of opinion'",
+    "NRA A-grade with three endorsements plus NAGR endorsement; sued ATF over pistol braces, suppressors, background checks, and State Fair gun ban",
+    "Signed first TX immigration enforcement agreement with Trump administration; led DACA termination litigation; called for deporting 'every illegal'",
+    "Issued legal opinions clearing public funds for religious school choice (ESAs); vowed to defend TX school choice law"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": [
+        "Campaign platform: 'stop the wasteful spending'",
+        "Sued Biden $1.7T spending package (2023)",
+        "95% YCT career rating",
+        "100% Texans for Fiscal Responsibility"
+      ],
+      "notes": "Strong anti-spending posture across all evidence. Scored medium confidence because no specific statements on Social Security, Medicare, Medicaid, or other named safety net programs were found in the research. The overall fiscal profile is unambiguously Pole B, but the specific safety net axis lacks direct evidence on entitlement programs."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Sued Biden $1.7T spending package as 'unlawfully passed' (2023)",
+        "Campaign platform: 'cut taxes and stop wasteful spending'",
+        "95% YCT career rating (anti-regulation, anti-spending)",
+        "100% Texans for Fiscal Responsibility",
+        "Opposed EPA vehicle emissions and green energy regulations"
+      ],
+      "notes": "Consistent anti-public investment posture across legislative scorecard record and AG litigation. Scored 9 rather than 10 because his pro-fossil fuel stance does involve government action (defending industry subsidies and access), though this is permissive rather than affirmative investment."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "100% Texans for Fiscal Responsibility (81st Legislature)",
+        "Campaign platform: 'fight to cut taxes'",
+        "Investigated ~1,000 TX cities for excess property tax increases (2025-2026)",
+        "95% YCT career rating"
+      ],
+      "notes": "Every piece of evidence points in the same direction: lower taxes, less progressive taxation, fiscal conservatism. The property tax investigation is particularly notable — he used AG power to enforce tax ceilings on municipalities."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Issued legal opinion that ESAs are legal in Texas (2023)",
+        "Ruled Blaine Amendments unconstitutional, clearing path for religious school funding",
+        "Vowed to defend TX ESA law from legal challenges (2026)",
+        "Campaign alignment with school choice movement"
+      ],
+      "notes": "Strong and explicit school choice advocacy, including the religiously-motivated dimension of directing public funds to religious schools. Scored 9 rather than 10 because he has not explicitly called for defunding public schools — his framing is additive (more choice) rather than eliminationist."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Led 20-state ACA repeal lawsuit, Texas v. United States (2018)",
+        "Applauded district court ruling declaring ACA unconstitutional (2018)",
+        "Sued over Biden pharmacy mandate (2023)",
+        "Quote: 'Our lawsuit seeks to effectively repeal Obamacare'",
+        "Texas Tribune: no 2026 statement found on ACA tax credits"
+      ],
+      "notes": "The ACA repeal lawsuit is the single strongest signal — Paxton did not seek to modify or reform the ACA, he sought full repeal. His own quote frames this as giving Trump/Congress 'the opportunity to replace' with more market-based coverage. Scored 9 rather than 10 because he at least acknowledged a replacement plan should exist, even if he never specified one."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "ACA repeal litigation would have eliminated marketplace price regulations",
+        "Overall anti-regulation, anti-federal mandate posture",
+        "100% fiscal conservative ratings"
+      ],
+      "notes": "No direct statements on drug price negotiation, hospital rate-setting, or specific cost control mechanisms. Score is inferred from his comprehensive anti-ACA and anti-regulation posture. The ACA repeal would have eliminated existing cost controls (marketplace subsidies, essential benefits, no-surprise billing framework). Medium confidence due to lack of direct evidence on this specific axis."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Sued to block Biden pharmacy mandate on abortion pills (2023)",
+        "Filed first TX lawsuit under SB 14 against gender-affirming care for minors (2024-2026)",
+        "Sued Children's Health hospital and multiple doctors over gender-affirming care",
+        "Sued Aid Access over abortion pills shipped to TX (2026)",
+        "Sought out-of-state health records of abortion patients (2024)",
+        "Gave AG employees paid day off to celebrate Roe v. Wade reversal (2022)"
+      ],
+      "notes": "Paxton's record on public health mandates is defined by aggressive opposition to reproductive health access and gender-affirming care. His posture is consistently individual-liberty framing against collective health mandates, but notably the 'individual liberty' he defends is the state's liberty to restrict individual medical choices — a tension the Schwartz value scoring captures more precisely."
+    },
+    "justice_policing_accountability": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Sued City of Dallas for underfunding police (Feb 2026)",
+        "Quote: 'fully fund the brave men and women in law enforcement'",
+        "Described police reform efforts as 'attacks from the radical Left'",
+        "Pro-law enforcement positioning central to campaign"
+      ],
+      "notes": "Unambiguously pro-police, anti-reform. His Dallas lawsuit enforced voter-approved funding minimums for police — he used state power to prevent a city from redirecting police funds. No evidence of any support for accountability measures, body cameras, or oversight reforms."
+    },
+    "justice_sentencing_goals": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "Co-led bipartisan 38-AG coalition supporting First Step Act (2018)",
+        "Enforcement-first AG record: election fraud prosecutions, opioid prosecutions",
+        "Texas closed 8 prisons during his tenure (though this began under prior administrations)",
+        "Research notes: 'not purely punitive — supports evidence-based reform when framed as reducing recidivism and saving money'"
+      ],
+      "notes": "This is the most nuanced axis for Paxton. His First Step Act support is genuine and documented — it was a bipartisan criminal justice reform bill that reduced mandatory minimums for some nonviolent offenses. Texas's broader prison reform success (closing prisons, saving $100M/year) provides context. However, his overall enforcement posture as AG is punitive. Scored 7 rather than 8-9 to reflect the First Step Act nuance — he is not a sentencing maximalist when reform is framed through a fiscal conservative/public safety lens."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "NRA A-grade, three consecutive AG endorsements (2014, 2018, 2022)",
+        "NAGR endorsement for 2026 Senate (more extreme than NRA)",
+        "Sued ATF over pistol brace ban, universal registration rule, TX suppressor regulation, expanded background checks on private sales",
+        "Sued City of Dallas over State Fair gun ban",
+        "Quote: 'The more we talk about gun regulation, the more people are gonna die' (2014)",
+        "Partnered with Gun Owners of America on multiple lawsuits"
+      ],
+      "notes": "This is the clearest 10 in the entire scoring. Every piece of evidence — scorecard ratings, endorsements (including from groups to the right of the NRA), litigation record, and public statements — points to the absolute maximum pro-gun rights position. He has actively litigated against background check expansions, gun bans in public spaces, and ATF regulatory authority. No evidence of any support for any gun regulation of any kind."
+    },
+    "climate_ambition": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "15+ multistate lawsuits against EPA environmental regulations (2015-2024)",
+        "Called climate change 'a matter of opinion' (2019)",
+        "Railed against 'radical climate change movement'",
+        "Sierra Club TX: Paxton 'fights against measures that would reduce deaths and climate extremes'",
+        "Sued EPA over ozone rules, methane regulations, particulate matter standards, coal mining rules, vehicle emissions",
+        "Stopped EPA's Waters of the United States (WOTUS) rule"
+      ],
+      "notes": "Paxton is at the absolute extreme of climate skepticism and anti-climate policy. He has not merely opposed specific climate policies — he has questioned the underlying science ('a matter of opinion') and systematically litigated against every major federal environmental protection. The Sierra Club explicitly identifies his record as fighting measures that would reduce deaths."
+    },
+    "climate_energy_portfolio": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Defended ExxonMobil against state AG climate fraud investigations (2017)",
+        "Led 14-state coalition challenging Biden EPA vehicle emissions regulations (2024)",
+        "Quote: 'Biden chooses to go to war against fossil fuels'",
+        "Sued EPA over methane emission regulations from oil and gas operations (2016, 2024)",
+        "Campaign framing: energy policy as protecting Texas oil and gas industry"
+      ],
+      "notes": "Fossil fuel maximalism. Paxton has not merely favored fossil fuels — he has actively defended the fossil fuel industry from accountability (ExxonMobil climate fraud investigation), opposed every regulation on oil and gas emissions, and framed renewable energy regulation as an attack on Texas. No evidence of any support for renewable energy investment or transition."
+    },
+    "climate_permitting": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Stopped WOTUS rule that would have regulated waterways on private property",
+        "Opposed EPA ozone, methane, and particulate matter standards",
+        "Led challenge to Biden EPA vehicle emissions rules",
+        "Overall pattern: systematically reducing federal environmental review authority"
+      ],
+      "notes": "Paxton's litigation record consistently reduces environmental permitting and review requirements. Scored 9 rather than 10 because his actions are specifically about reducing environmental review for fossil fuel projects — there is no evidence he has advocated for faster permitting of clean energy projects, which would push toward 10 on this axis."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.8,
+      "reasoning": "Paxton's record is defined by in-group prioritization and active opposition to universalist goals. He has fought every major environmental protection (opposing welfare of nature), sought to strip healthcare access from millions via ACA repeal, pursued aggressive anti-immigrant enforcement including calling for mass deportation, and used state power to restrict reproductive and transgender healthcare access. His framing consistently prioritizes state sovereignty and in-group identity over universal human welfare."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "Paxton frames his work as protecting Texans — suing to fund police, investigating cities over property taxes, defending school choice for Texas families. However, the scope of who counts as 'community' is narrow, and many of his actions (ACA repeal, opposing safety net spending) would directly harm Texas constituents who depend on those programs. The First Step Act support shows some genuine community welfare concern. Net: very weak positive — claims of community care exist but are undermined by the breadth of his anti-social spending record."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "Strongly traditional across multiple dimensions: defense of traditional family structures (anti-abortion, anti-transgender healthcare), religious values in governance (ESA opinions explicitly clearing religious school funding, celebrating Roe reversal), cultural conservatism (anti-immigration framing around preserving 'the fabric of our country'), and deference to established institutions (law enforcement, fossil fuel industry as Texas heritage). His school choice opinions explicitly invoke religious freedom. One of the strongest tradition signals in the dataset."
+    },
+    "conformity": {
+      "score": -0.4,
+      "reasoning": "Despite being a law enforcement advocate, Paxton's personal record shows significant norm violation: impeached by his own party's TX House 121-23, securities fraud indictment pending 9 years, FBI bribery investigation, filed legally unprecedented SCOTUS election challenge (Texas v. Pennsylvania). His campaign explicitly frames itself as anti-establishment, running against the sitting Republican Senate incumbent. He refused to participate in the Texas Tribune structured Q&A. The pattern is of someone who selectively invokes rule-of-law when it serves his goals but violates institutional norms when they constrain him."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Strong security orientation across border security (first immigration enforcement agreement with Trump, DACA litigation, mass deportation advocacy), law enforcement funding (sued Dallas over police funding), and national defense framing ('defend the American homeland'). However, his version of security is narrowly defined — he actively undermines health security (ACA repeal), environmental security (opposing pollution controls), and institutional security (election challenge, impeachment). Scored for the intensity of his security rhetoric and border/policing actions while noting the selective application."
+    },
+    "power": {
+      "score": 0.7,
+      "reasoning": "Paxton has consistently used the AG office to build personal political power and advance toward higher office. He aligned with the fossil fuel industry (defending ExxonMobil), accepted establishment Republican support while positioning as anti-establishment, and wielded AG authority aggressively against political opponents (suing cities, counties, and the federal government). His relationship with donor Nate Paul (FBI investigation) and the impeachment context suggest comfort with transactional power. Running against an incumbent senator is itself a power-seeking move. The NAGR and NRA alignments also represent powerful institutional backing."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Moderate achievement orientation. Career progression from state house to state senate to AG to Senate candidate shows personal ambition. Emphasis on individual responsibility (anti-safety net, pro-school choice, meritocratic framing). However, achievement is not a central rhetorical theme — his campaign is more about fighting enemies than building opportunity. The school choice advocacy ('every Texas child deserves the opportunity') is the clearest achievement signal."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Paxton's record is broadly anti-hedonism in the political sense. He has restricted reproductive freedom, opposed gender-affirming care, and his social conservatism extends to personal behavior regulation. His extramarital affair is personal rather than policy-relevant. No evidence of libertarian personal freedom advocacy on lifestyle issues (cannabis, personal choice). The gun rights position could be framed as personal freedom, but Paxton frames it as constitutional originalism rather than lifestyle liberty."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Mixed. His campaign is explicitly anti-establishment and disruptive — challenging a sitting Republican senator, refusing to participate in traditional media formats, and his AG tenure was defined by aggressive norm-challenging litigation. Texas v. Pennsylvania was historically unprecedented. However, his policy goals are restorationist rather than novel — he wants to return to pre-ACA, pre-EPA regulation, traditional social structures. He is a disruptive tactician pursuing conservative restoration, which creates a moderate net stimulation score."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Deeply conflicted. Paxton strongly invokes self-direction for gun rights (individual liberty to bear arms), school choice (parental freedom), and anti-regulation (individual/state freedom from federal mandates). But he actively restricts self-direction on reproductive rights (suing abortion pill providers, seeking health records of patients), gender identity (suing doctors providing gender-affirming care), and immigration (restricting individual movement and legal defense). The net effect is near-zero: strong self-direction on some issues, strong anti-self-direction on others, with the pattern driven by cultural conservatism rather than principled libertarianism."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Criminal justice: punitive record vs. First Step Act support",
+      "description": "Paxton's overall AG record is enforcement-first and punitive (election fraud prosecutions, opioid prosecutions, anti-marijuana decriminalization), yet he co-led a bipartisan coalition of 38 state AGs supporting the First Step Act in 2018, a genuine criminal justice reform bill that reduced mandatory minimums for nonviolent offenses.",
+      "sources": [
+        "Texas AG press release on First Step Act coalition",
+        "Texas Observer reporting on prosecution record"
+      ],
+      "scoringImpact": "justice_sentencing_goals scored at 7 rather than 8-9 to reflect this genuine bipartisan reform support. The First Step Act was framed as reducing recidivism and saving money — consistent with Texas's broader conservative case for prison reform."
+    },
+    {
+      "topic": "Self-direction: gun rights liberty vs. reproductive/gender rights restriction",
+      "description": "Paxton invokes individual liberty and freedom from government overreach for gun rights and economic regulation, but uses state power aggressively to restrict individual medical decisions on abortion and gender-affirming care. The same AG who sued the ATF for regulating pistol braces also sued doctors for providing gender-affirming care and sought health records of out-of-state abortion patients.",
+      "sources": [
+        "ATF lawsuits (AmmoLand, NRA-ILA)",
+        "SB 14 gender-affirming care lawsuit (Washington Post)",
+        "Aid Access abortion pill lawsuit (Texas Politics)",
+        "Out-of-state health records pursuit (Ms. Magazine)"
+      ],
+      "scoringImpact": "Self-direction Schwartz value scored near zero (+0.1) to reflect the opposing signals. This is not hypocrisy per se — it reflects a coherent worldview where liberty applies to constitutionally enumerated rights but not to judicially-created or progressive-claimed rights. But it does produce a near-null net self-direction score."
+    },
+    {
+      "topic": "Rule of law advocate with personal legal controversies",
+      "description": "Paxton positions himself as a law enforcement champion and rule-of-law advocate, yet his personal record includes a securities fraud indictment (9 years pending, settled with payment), impeachment by his own party's legislature (121-23), an FBI bribery investigation, and an extramarital affair with a lobbyist. He was acquitted in the Senate trial and settled the fraud case without admitting wrongdoing.",
+      "sources": [
+        "Texas Tribune scandals timeline",
+        "CNN profile Feb 2026",
+        "Wikipedia — Ken Paxton"
+      ],
+      "scoringImpact": "Conformity Schwartz value scored at -0.4 to reflect the gap between his rule-of-law rhetoric and institutional norm violations. This also influenced the power value score (+0.7) as evidence of transactional power orientation."
+    },
+    {
+      "topic": "School choice with explicitly religious motivation",
+      "description": "Paxton's school choice advocacy includes ruling that Blaine Amendments (which prevent public funds from going to religious schools) violate the First Amendment Free Exercise Clause. This combines school choice with religious establishment — relevant for voters who support school choice for secular reasons.",
+      "sources": [
+        "Texas AG press release on ESA legal opinion",
+        "Texas AG press release on school choice defense"
+      ],
+      "scoringImpact": "Noted in econ_school_choice axis notes. The tradition value score (+0.8) reflects this religious governance dimension."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority"
+    ],
+    "reasonSkipped": "No evidence found on any housing or transportation axis. Paxton's AG role and state legislative tenure did not produce documented positions on zoning, housing subsidies, or transit policy. His campaign website does not address housing.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific positions on Social Security, Medicare, or Medicaid (econ_safetynet scored on general fiscal posture only)",
+      "No positions on drug price negotiation or specific healthcare cost mechanisms (health_cost_control scored on overall anti-regulation posture)",
+      "No positions on AI policy, tech regulation, or digital privacy",
+      "Paxton refused to participate in Texas Tribune structured Q&A — limits available 2026 campaign-specific position data",
+      "No Trump endorsement as of research date — campaign positioning as MAGA-aligned may or may not be validated"
+    ],
+    "evidenceQuality": "Exceptionally strong documentary record from 10 years as AG. AG litigation positions function as Tier 1 evidence — they are official state legal actions he chose to pursue. State legislative scorecards (YCT 95%, TFR 100%) provide corroborating Tier 1 data for economic axes. Campaign website provides Tier 2 confirmation. Key limitation: Paxton's media avoidance in the 2026 cycle means few structured interviews or detailed policy statements exist beyond the AG record and campaign website."
+  }
+}

@@ -1,0 +1,489 @@
+{
+  "slug": "mike-collins",
+  "name": "Mike Collins",
+  "party": "Republican",
+  "office": "U.S. Senate, Georgia, 2026",
+  "contestId": "GA-US-SENATE-2026",
+  "incumbencyStatus": "challenger — currently U.S. Representative, Georgia 10th District (2023–present)",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Representative, Georgia's 10th Congressional District (Jan 2023–present)",
+    "priorRoles": [
+      "Co-founder and owner, trucking company (early 1990s–present; grew from 1 semi-truck to 115-truck fleet employing 100+ Georgians)",
+      "Chairman of the Board, Associated Credit Union (one of Georgia's largest)",
+      "Chairman, Georgia Motor Trucking Association",
+      "President, Butts County Chamber of Commerce"
+    ],
+    "education": "B.A. Business Administration, Georgia State University, 1990",
+    "background": "Small business owner and entrepreneur. Son of former U.S. Rep. Mac Collins (GA-8, 1993–2005). Born July 2, 1967, Jackson, Georgia. Strong MAGA alignment; known for aggressive social media presence. Won GA-10 seat in 2022 after Jody Hice declined to seek reelection; won runoff over Vernon Jones. Re-elected 2024 (64.5% to 35.5%). Announced Senate candidacy July 28, 2025.",
+    "family": "Married to Leigh Ann Collins; three children (Dakota, Dylan, Summer); six grandchildren"
+  },
+  "campaignWebsite": {
+    "url": "https://mikecollinsga.com",
+    "issuesUrl": "https://mikecollinsga.com/issues/",
+    "aboutUrl": "https://mikecollinsga.com/about/",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch was unavailable; content reconstructed from search snippets referencing the live site",
+    "statedPositions": [
+      {
+        "topic": "general_platform",
+        "quote": "It's time to send a trucker to the U.S. Senate to steamroll the radical left, deliver on President Trump's America First agenda, and put the people of Georgia back in the driver's seat.",
+        "sourceUrl": "https://georgiarecorder.com/2025/07/28/georgia-congressman-mike-collins-enters-u-s-senate-race-with-pro-trump-message/",
+        "date": "2025-07-28",
+        "confidence": "high",
+        "notes": "Launch video quote, confirmed across multiple outlets"
+      },
+      {
+        "topic": "general_platform",
+        "quote": "I'm unapologetically pro God, pro Trump, pro Second Amendment. I am for a strong military peace through strength works. I am 100% America first through and through. If it's not good for Georgia and if it's not good for our country, then count me out.",
+        "sourceUrl": "https://georgiarecorder.com/2025/07/28/georgia-congressman-mike-collins-enters-u-s-senate-race-with-pro-trump-message/",
+        "date": "2025-07-28",
+        "confidence": "high",
+        "notes": "Campaign rally in Jackson, GA; crowd of 400+"
+      },
+      {
+        "topic": "biography_business",
+        "quote": "Mike started his first trucking business at age 25, starting out with one semi-truck and growing to employ over one hundred drivers today. Mike has led three successful businesses that have grown Georgia's economy.",
+        "sourceUrl": "https://mikecollinsga.com/about/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "From campaign 'Meet Mike' page"
+      },
+      {
+        "topic": "immigration",
+        "quote": "We should finish the wall, bring back remain in Mexico, and stop letting anyone who says they're seeking asylum into our country. If the Senate would take up H.R. 2 passed nearly a year ago, we could fix this problem.",
+        "sourceUrl": "https://branch.vote/questionnaire-response/662be706b1d2b9200c690f22",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "AJC/ACC Voter Guide 2024 congressional questionnaire direct quote"
+      },
+      {
+        "topic": "climate_energy",
+        "quote": "The federal government needs to stop pushing these ridiculous 'Green Energy' policies on America.",
+        "sourceUrl": "https://branch.vote/questionnaire-response/662be706b1d2b9200c690f22",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "AJC/ACC Voter Guide 2024, response to climate change question"
+      },
+      {
+        "topic": "economic_general",
+        "quote": "Drill here, drill now. Bidenflation continues to hurt our economy and hard working Americans. We've passed bills in the House to bring our country back to energy independence, secure our border, and invest in America.",
+        "sourceUrl": "https://branch.vote/questionnaire-response/662be706b1d2b9200c690f22",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "AJC/ACC Voter Guide 2024, response to cost of living question"
+      },
+      {
+        "topic": "healthcare_taxpayer_funded",
+        "quote": "Somewhere between C and D",
+        "sourceUrl": "https://ivoterguide.com/candidate/19604/race/18182/election/939",
+        "date": "2022",
+        "confidence": "medium",
+        "notes": "iVoterGuide scale: C = keep Medicaid and Medicare but no other taxpayer-funded programs; D = abolish all taxpayer-funded healthcare. Response from 2022 but no 2024 survey completed."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Abortion providers, including Planned Parenthood, should not receive funds from federal, state, or local governments (including Title X grants).",
+        "sourceUrl": "https://ivoterguide.com/candidate/19604/race/18182/election/939",
+        "date": "2022",
+        "confidence": "medium",
+        "notes": "iVoterGuide 2022 survey; consistent with 2025 personhood bill cosponsor action"
+      },
+      {
+        "topic": "firearms",
+        "quote": "No restrictions on lawful use",
+        "sourceUrl": "https://ivoterguide.com/candidate/19604/race/18182/election/939",
+        "date": "2022",
+        "confidence": "medium",
+        "notes": "iVoterGuide 2022 survey; consistent with GGO 100% survey and NRA ~92% rating"
+      },
+      {
+        "topic": "immigration_moratorium",
+        "quote": "We need to stop all illegal immigration and consider a moratorium on immigration until we can reform the immigration laws. We need to look at reducing the legal immigration as well.",
+        "sourceUrl": "https://ivoterguide.com/candidate/19604/race/18182/election/939",
+        "date": "2022",
+        "confidence": "medium",
+        "notes": "iVoterGuide 2022; strong position on reducing both illegal AND legal immigration"
+      },
+      {
+        "topic": "economy_budget",
+        "quote": "Americans are already seeing the effects of inflation and a stagnant economy, and something must be done. In Congress, I will work to enact a balanced budget amendment, cut federal spending, reduce the national debt and limit the size and scope of government.",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/151225/mike-collins",
+        "date": "2022",
+        "confidence": "medium",
+        "notes": "VoteSmart; consistent with House votes opposing fiscal legislation he deemed too expensive"
+      },
+      {
+        "topic": "safety_net_social_security",
+        "quote": "You can set it up to increase your revenue, and you can do that by lowering taxes and making it more advantageous for people to work, and to get off of Medicaid, get off of Social Security, get back in the workforce.",
+        "sourceUrl": "https://flagpole.com/news/city-dope/2025/06/11/rep-mike-collins-wants-retirees-off-social-security-and-back-at-work/",
+        "date": "2025-06-05",
+        "confidence": "high",
+        "notes": "Said on XTRA 106.3 right-wing talk radio, June 5 2025, defending reconciliation bill. Generated significant backlash."
+      },
+      {
+        "topic": "firearms_atf",
+        "quote": "Abolish the ATF. Repeal the NFA. Support national constitutional carry.",
+        "sourceUrl": "https://www.georgiagunowners.org/uncategorized/mike-collins-signs-the-ggo-survey/",
+        "date": "2025-12-09",
+        "confidence": "high",
+        "notes": "Signed Georgia Gun Owners 100% pro-gun survey Dec 9, 2025. Cosponsored bill to abolish ATF and repeal NFA."
+      },
+      {
+        "topic": "firearms_school_shooting",
+        "quote": "The problem is not the gun.",
+        "sourceUrl": "https://theurbandaily.com/3677332/rep-mike-collins-says-hes-praying-for-georgia-school-shooting-victims-x-responds-by-resurfacing-his-gun-ads/",
+        "date": "2024-09-04",
+        "confidence": "high",
+        "notes": "Statement after Apalachee High School shooting in his district (4 killed). Faced backlash; prior campaign ads showed him shooting a voting machine with an assault-style rifle."
+      },
+      {
+        "topic": "senate_campaign_message",
+        "quote": "With President Trump in the White House and me in the U.S. Senate, the hardworking men and women of this country will not be forgotten anymore.",
+        "sourceUrl": "https://www.gpb.org/news/2025/08/20/mike-collins-kicks-off-us-senate-campaign",
+        "date": "2025-08-19",
+        "confidence": "high",
+        "notes": "Senate campaign kickoff rally, Jackson GA, 400+ attendees, reported by GPB"
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "Wikipedia", "Ballotpedia", "Clerk of the House"],
+    "attendanceRate": "99.0% — missed 17 of 1,673 roll call votes, Jan 2023–Feb 2026 (better than 2.0% median)",
+    "keyVotes": [
+      {
+        "bill": "Fiscal Responsibility Act of 2023",
+        "vote": "No",
+        "topic": "fiscal / budget",
+        "sourceUrl": "https://www.govtrack.us/congress/members/mike_collins/456895",
+        "notes": "Voted against debt ceiling deal; one of 71 Republicans to oppose final passage. Position: opposed as insufficiently conservative, wanted deeper cuts."
+      },
+      {
+        "bill": "Formalize Impeachment Inquiry into President Biden (Dec 2023)",
+        "vote": "Yes",
+        "topic": "oversight / political",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Voted to formalize the Biden impeachment inquiry, Dec 13 2023."
+      },
+      {
+        "bill": "Israel aid (following Oct 7 Hamas attack, 2023)",
+        "vote": "Yes",
+        "topic": "foreign policy / Israel",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Supported U.S. aid to Israel following Oct 7 attacks."
+      },
+      {
+        "bill": "Ukraine military aid",
+        "vote": "No",
+        "topic": "foreign policy / Ukraine",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Opposed providing military aid to Ukraine during Russian invasion; isolationist/America First position."
+      },
+      {
+        "bill": "H.Con.Res. 21 — Remove U.S. troops from Syria within 180 days",
+        "vote": "Yes",
+        "topic": "foreign policy / military",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Voted to withdraw troops from Syria, consistent with America First non-interventionism."
+      },
+      {
+        "bill": "Student loan debt relief overrule (2023)",
+        "vote": "Yes (to overrule Biden relief)",
+        "topic": "education / fiscal",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Voted in favor of overturning President Biden's student debt relief plan."
+      },
+      {
+        "bill": "TRANQ Act (Testing, Rapid Analysis, and Narcotic Quality Act)",
+        "vote": "Sponsored / Passed",
+        "topic": "public health / drugs",
+        "sourceUrl": "https://mikecollinsga.com/about/",
+        "notes": "Introduced by Collins; passed both House and Senate, signed into law Dec 2023. Bipartisan fentanyl/xylazine drug testing legislation."
+      },
+      {
+        "bill": "Laken Riley Act (H.R. 535)",
+        "vote": "Sponsored / Passed",
+        "topic": "immigration / law enforcement",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Collins' signature legislation. Requires ICE to detain undocumented immigrants charged with theft. Passed House in 118th Congress; passed both chambers Jan 2025 and signed by Trump. Named for murdered Georgia nursing student."
+      },
+      {
+        "bill": "One Big Beautiful Bill Act (H.R. 1, 119th Congress — reconciliation)",
+        "vote": "Yes (supported)",
+        "topic": "fiscal / healthcare / taxes",
+        "sourceUrl": "https://flagpole.com/news/city-dope/2025/06/11/rep-mike-collins-wants-retirees-off-social-security-and-back-at-work/",
+        "notes": "House passed 215-214 (May 2025), then final 218-214 (July 3 2025). Collins publicly defended bill. Bill includes $800B Medicaid cuts, ACA subsidy reductions, tax cuts. CBO: 11.8 million people would lose health coverage by 2034. Collins called for people to 'get off Medicaid' in defense of the bill."
+      },
+      {
+        "bill": "Personhood bill — life beginning at conception (Eric Burlison bill)",
+        "vote": "Cosponsor",
+        "topic": "abortion / reproductive rights",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Collins_(politician)",
+        "notes": "Cosponsored legislation recognizing personhood starting at conception, Jan 2025. Consistent with prior iVoterGuide positions opposing Planned Parenthood funding."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "1% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/mike-collins/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "1% lifetime LCV score. Extremely low — consistent with 'stop pushing Green Energy' rhetoric and committee positions. Served on Natural Resources Committee (Energy and Mineral Resources subcommittee) and Transportation and Infrastructure (Water Resources and Environment subcommittee as Chair) — led these in ways hostile to environmental priorities."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "98% (118th Congress, 2023–2024)",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/C001129/118",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "98% in 118th Congress — near-perfect alignment with Heritage Foundation's conservative scorecard. 119th Congress score still being tabulated but listed at URL heritageaction.com/scorecard/members/C001129."
+    },
+    {
+      "organization": "Turning Point Action",
+      "score": "89.68% (119th Congress live session score as of Feb 2026)",
+      "grade": null,
+      "url": "https://www.tpaction.com/scorecard/legislators/mikecollins",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "MAGA-aligned Turning Point Action scorecard. 89.68% live session score for 119th Congress."
+    },
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": "~92% (noted as likely to rise post-Apalachee; grade likely A or A+)",
+      "grade": "A (inferred from ~92% score and 100% GGO survey completion)",
+      "url": "https://www.nrapvf.org/grades/georgia",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "92% NRA rating cited in third-party source; formal grade page not directly accessible. Also completed Georgia Gun Owners survey at 100% (Dec 2025). After Apalachee shooting in his district said 'the problem is not the gun'; prior campaign ad showed him shooting voting machine with assault-style rifle."
+    },
+    {
+      "organization": "Georgia Gun Owners (GGO)",
+      "score": "100% (signed survey)",
+      "grade": "100%",
+      "url": "https://www.georgiagunowners.org/uncategorized/mike-collins-signs-the-ggo-survey/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Signed Dec 9, 2025. Positions: abolish ATF, repeal NFA, national constitutional carry, end Biden gun control executive orders."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "Low (exact number not retrieved — page exists at aflcio.org/scorecard/legislators/mike-collins)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/mike-collins",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Score page exists but numerical value not surfaced in search results. Given 98% Heritage Action score and strong anti-regulation stance, AFL-CIO score is expected to be very low (likely 0–10%). No union endorsements found."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": "Not retrieved precisely — recognized as 'Leader on Tax Reform'",
+      "grade": null,
+      "url": "https://www.uschamber.com/taxes/u-s-chamber-rep-mike-collins-a-leader-on-tax-reform-fighting-for-local-businesses",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "U.S. Chamber publicly praised Collins as 'a leader and fighting for small businesses' on tax reform. Historically high Chamber alignment expected for 98% Heritage Action score."
+    },
+    {
+      "organization": "VoteSmart Political Courage Test",
+      "score": "Did not complete",
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/political-courage-test/151225/mike-collins",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Collins declined to complete the VoteSmart 2024 Political Courage Test despite repeated requests."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Georgia Gun Owners (GGO)",
+      "type": "survey completion / de-facto endorsement",
+      "cycle": "2025–2026",
+      "notes": "Signed 100% pro-gun survey Dec 9, 2025. GGO announced: 'Mike Collins Is Running for U.S. Senate.'"
+    },
+    {
+      "organization": "Newt Gingrich (former Speaker)",
+      "type": "individual endorsement",
+      "cycle": "2022 (House race)",
+      "notes": "Endorsed Collins for GA-10 in 2022. Not confirmed renewed for 2026 Senate race."
+    },
+    {
+      "organization": "Nathan Deal (former Georgia Governor)",
+      "type": "individual endorsement",
+      "cycle": "2022 (House race)",
+      "notes": "Endorsed Collins for GA-10 in 2022."
+    },
+    {
+      "organization": "Trump (informal alignment — no formal endorsement as of Feb 2026)",
+      "type": "informal association",
+      "cycle": "2026",
+      "notes": "Collins' launch video included clip of Trump saying 'Congressman Mike Collins, he loves this state.' Collins and rival Buddy Carter both vying for formal Trump endorsement. Trump has not yet formally endorsed in the GA Senate primary."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "XTRA 106.3 (right-wing talk radio)",
+      "date": "2025-06-05",
+      "url": "https://flagpole.com/news/city-dope/2025/06/11/rep-mike-collins-wants-retirees-off-social-security-and-back-at-work/",
+      "keyExchanges": [
+        {
+          "topic": "safety_net / Social Security",
+          "quote": "You can set it up to increase your revenue, and you can do that by lowering taxes and making it more advantageous for people to work, and to get off of Medicaid, get off of Social Security, get back in the workforce.",
+          "notes": "Context: defending the One Big Beautiful Bill reconciliation act. Generated major backlash. Georgia Democrats said this shows he wants to end Social Security for retirees."
+        }
+      ]
+    },
+    {
+      "outlet": "AJC / Atlanta Civic Circle Voter Guide Questionnaire (written)",
+      "date": "2024",
+      "url": "https://branch.vote/questionnaire-response/662be706b1d2b9200c690f22",
+      "keyExchanges": [
+        {
+          "topic": "immigration / border",
+          "quote": "We should finish the wall, bring back remain in Mexico, and stop letting anyone who says they're seeking asylum into our country.",
+          "notes": "Explicit commitment to wall, Remain in Mexico, end asylum entry."
+        },
+        {
+          "topic": "climate / energy",
+          "quote": "The federal government needs to stop pushing these ridiculous 'Green Energy' policies on America.",
+          "notes": "Direct opposition to federal green energy policy."
+        },
+        {
+          "topic": "cost of living / energy",
+          "quote": "Drill here, drill now. Bidenflation continues to hurt our economy.",
+          "notes": "Pro-fossil fuel, anti-inflation framing."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB (Georgia Public Broadcasting) — campaign kickoff report",
+      "date": "2025-08-20",
+      "url": "https://www.gpb.org/news/2025/08/20/mike-collins-kicks-off-us-senate-campaign",
+      "keyExchanges": [
+        {
+          "topic": "senate_campaign_framing",
+          "quote": "With President Trump in the White House and me in the U.S. Senate, the hardworking men and women of this country will not be forgotten anymore.",
+          "notes": "Kickoff rally in Butts County, GA. Over 400 attendees."
+        }
+      ]
+    },
+    {
+      "outlet": "X / Social Media posts (ongoing)",
+      "date": "2024-09-04",
+      "url": "https://theurbandaily.com/3677332/rep-mike-collins-says-hes-praying-for-georgia-school-shooting-victims-x-responds-by-resurfacing-his-gun-ads/",
+      "keyExchanges": [
+        {
+          "topic": "firearms / Apalachee shooting",
+          "quote": "The problem is not the gun.",
+          "notes": "Posted after Apalachee High School shooting in his district (4 killed, 9 wounded). Faced intense social media backlash. Earlier campaign ad had shown him firing assault-style rifle at a voting machine."
+        }
+      ]
+    },
+    {
+      "outlet": "The American Tribune / campaign statement post-polling (Feb 2026)",
+      "date": "2026-02",
+      "url": "https://theamericantribune.com/im-that-guy-mike-collins-issues-stern-message-to-primary-foes-after-taking-huge-lead/",
+      "keyExchanges": [
+        {
+          "topic": "senate_primary_status",
+          "quote": "I'm That Guy",
+          "notes": "After Feb 2026 poll showing 36% lead in Republican primary, Collins issued 'stern message to primary foes.' Rasmussen also showed 34% vs. Carter 19%, Dooley 11%."
+        }
+      ]
+    }
+  ],
+  "controversies": [
+    {
+      "topic": "House Ethics Committee investigation",
+      "description": "In November 2025, the House Ethics Committee announced an investigation into Collins and his chief of staff Brandon Phillips. The Office of Congressional Conduct had transmitted the matter on Oct 7, 2025. Allegation: Collins used government funds to benefit his chief of staff, who allegedly hired his girlfriend to work for Collins' office.",
+      "sources": [
+        "https://www.atlantanewsfirst.com/2025/11/21/us-rep-mike-collins-under-house-ethics-committee-investigation/",
+        "https://georgiarecorder.com/briefs/more-details-released-about-ethics-investigation-into-congressman-mike-collins-and-former-top-aide/",
+        "https://www.ajc.com/politics/2025/11/us-rep-mike-collins-chief-of-staff-facing-house-ethics-investigation/"
+      ],
+      "collinsResponse": "Called it 'nothing but a desperate and baseless attack'; said they 'look forward to the Ethics Committee completing its work and this frivolous complaint being dismissed.'"
+    },
+    {
+      "topic": "AI deepfake campaign video",
+      "description": "In November 2025, the Collins campaign released an AI-generated video depicting Sen. Jon Ossoff defending his vote on the 2025 federal government shutdown. The video was fabricated.",
+      "sources": ["https://en.wikipedia.org/wiki/Mike_Collins_(politician)"],
+      "notes": "Campaign also released a separate AI-generated video featuring Collins as a shirtless jeans model, referencing an American Eagle/Sydney Sweeney ad."
+    },
+    {
+      "topic": "Antisemitism adjacency on social media",
+      "description": "In March 2024, Collins replied approvingly to an X post from an account ('Garbage Human') with a history of racist and antisemitic content, implicitly disparaging a Washington Post journalist for being Jewish. Collins refused to delete the post, drawing bipartisan rebukes.",
+      "sources": [
+        "https://www.ajc.com/politics/politics-blog/mike-collins-draws-rebukes-after-agreeing-with-antisemitic-social-media-account/ULK4IT7XYFGTLG7OXDNQLPU4TY/"
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Social Security / safety net",
+      "conflict": "Campaign emphasizes fighting for 'hardworking men and women' and Georgians, but June 2025 radio statement explicitly told retirees to 'get off Social Security, get back in the workforce.' Republicans Study Committee (which includes Collins) also proposed a budget cutting Social Security.",
+      "sources": [
+        "https://flagpole.com/news/city-dope/2025/06/11/rep-mike-collins-wants-retirees-off-social-security-and-back-at-work/",
+        "https://www.classiccitynews.com/post/mike-collins-is-wrong-on-social-security"
+      ]
+    },
+    {
+      "topic": "Healthcare coverage",
+      "conflict": "Georgia Democratic Party analysis: Collins voted for One Big Beautiful Bill which would raise health care premiums an average 345% for GA-10 constituents, and strip coverage from up to 750,000 Georgians. Collins describes himself as pro-business and pro-worker.",
+      "sources": [
+        "https://georgiademocrat.org/new-analysis-ga-10-constituents-to-see-an-average-345-increase-in-health-care-premiums-thanks-to-rep-mike-collins/"
+      ],
+      "notes": "Partisan source; CBO independently projects 11.8M national coverage losses from the bill."
+    },
+    {
+      "topic": "Fiscal conservatism vs. MAGA loyalty",
+      "conflict": "Voted AGAINST Fiscal Responsibility Act of 2023 (too liberal on spending for him), yet voted FOR One Big Beautiful Bill that adds trillions to deficit according to CRFB. Heritage Action 98% score suggests ideological purity, but OBBBA does not fit traditional deficit-hawk conservatism.",
+      "sources": [
+        "https://www.govtrack.us/congress/members/mike_collins/456895",
+        "https://heritageaction.com/scorecard/members/C001129/118"
+      ]
+    }
+  ],
+  "legislativeHighlights": {
+    "billsSponsored": {
+      "note": "GovTrack 2024 report shows Collins sponsored bills primarily in: Environmental Protection (28%), Science/Technology/Communications (22%), Crime and Law Enforcement (22%), Immigration (17%), Taxation (11%). Introduced fewer bills than typical Georgia delegation members.",
+      "source": "https://www.govtrack.us/congress/members/mike_collins/456895/report-card/2024"
+    },
+    "legislationPassed": [
+      {
+        "name": "TRANQ Act",
+        "description": "Testing, Rapid Analysis, and Narcotic Quality Act — bipartisan fentanyl/xylazine drug testing legislation",
+        "signedIntoLaw": "December 2023",
+        "significance": "One of Collins' two bills signed into law in two terms"
+      },
+      {
+        "name": "Laken Riley Act",
+        "description": "Requires ICE to detain undocumented immigrants charged with theft (expanded in Senate to include broader crimes)",
+        "signedIntoLaw": "January 2025",
+        "significance": "Collins' signature accomplishment; first bill signed by Trump in second term. Named for murdered Georgia nursing student Laken Riley."
+      }
+    ],
+    "committeeAssignments": {
+      "118thCongress": [
+        "Natural Resources Committee (Energy and Mineral Resources Subcommittee)",
+        "Transportation and Infrastructure Committee (Highways and Transit Subcommittee; Chair, Water Resources and Environment Subcommittee)",
+        "Science, Space, and Technology Committee (Space and Aeronautics Subcommittee)"
+      ],
+      "notes": "Named Chairman of Water Resources and Environment Subcommittee — a significant position for environmental policy. Used role consistent with anti-regulatory stance."
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "firearms_policy — extremely strong evidence: NRA ~92%, GGO 100%, 'the problem is not the gun' statement, anti-ATF/NFA cosponsor, campaign ads with assault rifle",
+      "ambition_level (climate) — LCV 1% lifetime, AJC quote opposing 'ridiculous Green Energy policies', drill here/drill now",
+      "immigration — Laken Riley Act sponsor, wall/Remain in Mexico/end asylum quotes, moratorium on immigration statement",
+      "coverage_model / healthcare — iVoterGuide C-D (between Medicaid/Medicare only and full abolition), voted for OBBBA Medicaid cuts, 'get off Medicaid' radio quote",
+      "safety_net_breadth — 'get off Social Security' radio statement, RSC budget member, opposed student debt relief",
+      "school_choice — Heritage Action 98%, consistent with Republican Study Committee pro-school-choice platform",
+      "public_investment — Heritage Action 98%, balanced budget amendment pledge, opposed Fiscal Responsibility Act as too liberal"
+    ],
+    "weakestAxes": [
+      "housing / zoning — no specific statements or votes found",
+      "transit_priority — committee work on Transportation (Highways and Transit) but no specific pro/anti-transit positions surfaced",
+      "police_accountability — no specific policing reform votes found; general law-and-order stance inferred from immigration/sentencing context",
+      "sentencing_goals — no specific criminal justice reform positions found"
+    ],
+    "overallConfidence": "high for economic, climate, firearms, immigration, healthcare, and abortion axes; low for housing, transit, and criminal justice axes",
+    "notes": "Two-year House record (2023–2025) provides moderate evidence base. Heritage Action 98% and LCV 1% are the two most reliable composite signals — they paint a consistent picture of a hard-right legislator with near-zero environmental interest and near-total conservative economic alignment. Primary gaps: housing/zoning (no record), criminal justice (limited record). The Social Security radio statement (June 2025) is a particularly significant piece of evidence — it goes beyond standard Republican fiscal rhetoric into explicit advocacy for safety net reduction."
+  }
+}

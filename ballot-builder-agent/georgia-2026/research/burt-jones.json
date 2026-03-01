@@ -1,0 +1,463 @@
+{
+  "slug": "burt-jones",
+  "name": "Burt Jones",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger (currently Lt. Governor of Georgia)",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "13th Lieutenant Governor of Georgia (January 2023–present)",
+    "priorRoles": [
+      "Georgia State Senate, District 25 (January 2013–January 2023)",
+      "Chairman, Senate Insurance and Labor Committee",
+      "Chairman, Senate Banking & Financial Institutions Committee",
+      "Member, Senate Appropriations and Transportation Committees",
+      "Founder, JP Capital & Insurance, Inc. (2004–present)",
+      "Oil executive, Jones Petroleum Company (family business)"
+    ],
+    "education": "B.A. History, University of Georgia (2002); graduate Woodward Academy (1998)",
+    "background": "Sixth-generation Georgian from Jackson, Butts County, GA. Former co-captain, 2002 SEC Championship-winning UGA Bulldogs football team. Oil executive and insurance entrepreneur. Early Trump backer (2016). One of 16 Georgia Republicans who signed certificates declaring Trump winner of 2020 presidential election; named 'Unindicted Co-Conspirator Individual 8' in Fulton County RICO indictment but not charged; special prosecutor ultimately declined to bring charges (September 2024).",
+    "financialNote": "Lent his own campaign $10 million at launch (July 2025). Family has business interests in Butts County including a proposed $10B hospital and data center development backed by Jones."
+  },
+  "campaignWebsite": {
+    "url": "https://burtjonesforga.com",
+    "issuesUrl": "https://burtjonesforga.com/issues/",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "note": "WebFetch unavailable; positions extracted from search snippet for issues page and corroborated by news coverage and Lt. Gov. press releases.",
+    "statedPositions": [
+      {
+        "topic": "taxes / fiscal",
+        "quote": "completely eliminate the state income tax",
+        "sourceUrl": "https://www.41nbc.com/burt-jones-georgia-governor-campaign-2026-2/",
+        "date": "2025-07",
+        "confidence": "high",
+        "notes": "Signature campaign promise. Announced at campaign launch. Corroborated by Senate special committee plan he chairs (eliminate personal income tax by 2032, making first $50K for single filers and $100K for joint filers tax-free immediately). Jones also signed Americans for Tax Reform Taxpayer Protection Pledge (Oct 2025) — only gubernatorial candidate to do so."
+      },
+      {
+        "topic": "school_choice",
+        "quote": "giving parents more options for their children",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/burt-jones-interview-on-2026-governors-race-priorities/85-57327c97-cd07-4fee-a458-fc3fdb293357",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign website and interview both identify school choice as priority. Led passage of SB 233 (2024) creating the Georgia Promise Scholarship (voucher program). Introduced SB 446 (2026) to make Georgia's participation in federal tax-credit scholarship program permanent, preventing future governors from reversing it."
+      },
+      {
+        "topic": "education / teacher pay",
+        "quote": "improving education systems, giving teacher pay raises",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/burt-jones-interview-on-2026-governors-race-priorities/85-57327c97-cd07-4fee-a458-fc3fdb293357",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "General values statement; specifics on pay raise amounts not found in search results."
+      },
+      {
+        "topic": "law enforcement / criminal justice",
+        "quote": "I'm a big law and order guy who has been tough on crime as well as promoting pay raises for men and women in law enforcement",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/burt-jones-interview-on-2026-governors-race-priorities/85-57327c97-cd07-4fee-a458-fc3fdb293357",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicitly pro-law enforcement; campaign pledges to strengthen penalties for sex traffickers, gang members and repeat offenders."
+      },
+      {
+        "topic": "firearms / gun rights",
+        "quote": "he made clear he wouldn't support new limits on firearms",
+        "sourceUrl": "https://www.ajc.com/politics/burt-jones-backs-paying-teachers-to-carry-guns-as-he-preps-for-2024-and-beyond/LUJ7KYIXKBFNJECCCECLHGOGOI/",
+        "date": "2023-2026",
+        "confidence": "high",
+        "notes": "Explicitly opposed to new gun restrictions. Proposed $10,000/year stipend for teachers who complete voluntary firearms training and carry guns at school. Endorsed by NRA for his 2A measures."
+      },
+      {
+        "topic": "reproductive rights / abortion",
+        "quote": "stands by the abortion regulations outlined in the 'heartbeat law'... no further restrictions on abortion following the 2019 law",
+        "sourceUrl": "https://www.gpb.org/news/2023/02/02/new-lieutenant-governor-outlines-goals",
+        "date": "2023",
+        "confidence": "medium",
+        "notes": "Supports Georgia's 6-week abortion ban (LIFE Act, 2019). Stated at 2023 legislative agenda announcement that he does not seek additional restrictions beyond the 2019 law. However, in Feb 2026 celebrated Senate passage of 'legislation to protect children' (details in voting record below). Position warrants monitoring for any evolution."
+      },
+      {
+        "topic": "immigration",
+        "quote": "cracked down on illegal immigration",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/burt-jones-interview-on-2026-governors-race-priorities/85-57327c97-cd07-4fee-a458-fc3fdb293357",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Touts immigration enforcement as accomplishment. Campaign platform listed as fighting Trump's agenda and combating illegal immigration. No specific state-level legislative details found."
+      },
+      {
+        "topic": "healthcare / coverage",
+        "quote": "I also believe every Georgian deserves access to the right care at the right time and in their backyard",
+        "sourceUrl": "https://www.gpb.org/news/2025/08/21/candidates-for-georgia-governor-attend-naacp-forum-sticking-party-lines",
+        "date": "2025-08",
+        "confidence": "medium",
+        "notes": "General access framing, not single-payer or government coverage. Approach is market-oriented: reform Certificate of Need laws to allow more rural hospital and healthcare facility construction without regulatory approval. Signaled openness to Arkansas-style Medicaid expansion (private marketplace purchasing) but has long record opposing full Medicaid expansion."
+      },
+      {
+        "topic": "housing / property tax",
+        "quote": "Lt. Governor Burt Jones Prioritizes Property Tax Reform",
+        "sourceUrl": "https://ltgov.georgia.gov/press-releases/2026-01-13/lt-governor-burt-jones-prioritizes-property-tax-reform",
+        "date": "2026-01",
+        "confidence": "medium",
+        "notes": "Supports property tax reform/reduction. Applauded Senate passage of property tax reform bill Feb 2026. No specific zoning or transit supply-side housing positions found."
+      },
+      {
+        "topic": "STEM / workforce",
+        "quote": "I encourage Georgia's schools to apply and join past awardees in Georgia, who have benefited from this Scholarship Program, which supports STEM-related activities in schools",
+        "sourceUrl": "https://domepolitics.com/2026/02/burt-jones-calls-on-schools-to-apply-for-stem-scholarship-program/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Promoted STEM scholarship application for Georgia schools."
+      },
+      {
+        "topic": "First Amendment / education content",
+        "quote": "TPUSA Act will implement reforms to ensure and enhance the First Amendment rights of students, requiring that school students in Georgia be permitted to engage in political activities and expression before, during, and after the school day",
+        "sourceUrl": "https://domepolitics.com/2026/02/burt-jones-announces-the-tpusa-act-as-new-2026-priority/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Named after Turning Point USA. Framed as First Amendment student rights. Critics note this is associated with right-wing student organizing."
+      },
+      {
+        "topic": "transgender sports / social policy",
+        "quote": "maintaining Georgia's ban on transgender girls in girls' sports",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/burt-jones-interview-on-2026-governors-race-priorities/85-57327c97-cd07-4fee-a458-fc3fdb293357",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Led Senate Bill 1 (the Riley Gaines Act) in 2025 banning transgender student-athletes from women's sports and requiring separate restrooms/locker rooms based on birth sex. Georgia joined 26 other states with this restriction."
+      },
+      {
+        "topic": "data centers / economic development",
+        "quote": "Massive Burt Jones-backed project among wave of data centers proposed for Georgia",
+        "sourceUrl": "https://georgiarecorder.com/2025/12/01/massive-burt-jones-backed-project-among-wave-of-data-centers-proposed-for-georgia/",
+        "date": "2025-12",
+        "confidence": "medium",
+        "notes": "Jones backed a $10B development in Butts County (his hometown) that includes a hospital and 11 million sq ft of data centers on land owned by his father. AG Chris Carr accused Jones of using his office to enrich family. Jones' income tax elimination plan initially included eliminating data center tax breaks to fund the rate cuts — potential conflict of interest flagged by AJC."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": [
+      "Georgia State Senate records",
+      "BillTrack50 (legislatordetail/18650)",
+      "VoteSmart (candidate/140261/burt-jones)",
+      "Lt. Governor press releases (ltgov.georgia.gov)",
+      "News coverage (AJC, Georgia Recorder, GPB)"
+    ],
+    "note": "State legislative record is as a senator (2013-2023). Since 2023, Jones presides over the Senate as Lt. Governor and shapes the agenda but does not cast votes on legislation. Lt. Gov. press releases track his positions on bills he champions.",
+    "keyVotes": [
+      {
+        "bill": "Flat Income Tax Rate (establishment vote, ~2022)",
+        "vote": "Yes",
+        "topic": "fiscal / taxes",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Burt_Jones",
+        "notes": "Voted to establish flat income tax rate during Senate tenure. Now wants to eliminate the income tax entirely."
+      },
+      {
+        "bill": "Prohibition on teaching systemic racism in schools (CRT-adjacent legislation)",
+        "vote": "Yes",
+        "topic": "education / curriculum",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Burt_Jones",
+        "notes": "Voted to prohibit teaching about systemic racism in Georgia schools during Senate tenure."
+      },
+      {
+        "bill": "Biblical studies in high schools (co-sponsor)",
+        "vote": "Yes / co-sponsored",
+        "topic": "education / religion",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Burt_Jones",
+        "notes": "Co-sponsored legislation allowing biblical classes to be taught in high school curriculum."
+      },
+      {
+        "bill": "SB 44 (2023) — gang offense mandatory minimums",
+        "vote": "Led passage as Lt. Gov.",
+        "topic": "criminal justice / sentencing",
+        "sourceUrl": "https://gps.press/georgias-2026-candidates-on-prison-and-parole-reform/",
+        "notes": "Created 5-year mandatory minimums for gang offenses and 10-year minimums for recruiting minors into gangs. Pro-punishment, anti-rehabilitation policy."
+      },
+      {
+        "bill": "SB 63 (2024) — expanded cash bail requirements",
+        "vote": "Led passage as Lt. Gov.",
+        "topic": "criminal justice / pretrial",
+        "sourceUrl": "https://gps.press/georgias-2026-candidates-on-prison-and-parole-reform/",
+        "notes": "Expanded cash bail requirements to 30 additional offenses including 18 misdemeanors. More punitive/less reform-oriented approach."
+      },
+      {
+        "bill": "Austin's Law (2024) — overdose death prosecution tool",
+        "vote": "Backed as Lt. Gov.",
+        "topic": "criminal justice / drug policy",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Burt_Jones",
+        "notes": "Gave prosecutors tools to address overdose deaths. Followed in 2025 by increasing mandatory minimums for fentanyl traffickers. Campaign promises death penalty for fentanyl dealers."
+      },
+      {
+        "bill": "SB 233 (2024) — Georgia Promise Scholarship (school vouchers)",
+        "vote": "Led passage as Lt. Gov.",
+        "topic": "education / school choice",
+        "sourceUrl": "https://domepolitics.com/2026/02/burt-jones-renews-commitment-to-school-choice-in-georgia/",
+        "notes": "Created Georgia's school voucher program — described as 'most significant school choice victory in state history.' Strong poleB (school choice) signal."
+      },
+      {
+        "bill": "Senate Bill 1 / Riley Gaines Act (2025)",
+        "vote": "Led passage as Lt. Gov.",
+        "topic": "social policy / transgender",
+        "sourceUrl": "https://ltgov.georgia.gov/burt-jones",
+        "notes": "Banned transgender student-athletes from women's sports; mandated separate restrooms/locker rooms by birth sex."
+      },
+      {
+        "bill": "HB 1018 / Georgia Firearms Industry Nondiscrimination Act (2024)",
+        "vote": "Supported as Lt. Gov.",
+        "topic": "firearms / gun rights",
+        "sourceUrl": "https://ltgov.georgia.gov/press-releases/2024-03-26/lt-governor-burt-jones-supports-strong-2a-measure",
+        "notes": "Prohibited financial institutions from categorizing firearms retailers with special merchant codes; protects gun purchaser privacy. NRA praised Jones for this support."
+      },
+      {
+        "bill": "Teacher carry stipend proposal (2023)",
+        "vote": "Proposed / advocated",
+        "topic": "firearms / school safety",
+        "sourceUrl": "https://www.ajc.com/politics/burt-jones-backs-paying-teachers-to-carry-guns-as-he-preps-for-2024-and-beyond/LUJ7KYIXKBFNJECCCECLHGOGOI/",
+        "notes": "Proposed $10,000/year for teachers who voluntarily take firearms training and carry guns at school. Explicitly opposed to new gun restrictions alongside this proposal."
+      },
+      {
+        "bill": "Certificate of Need reform (rural hospitals, 2023)",
+        "vote": "Led as Lt. Gov.",
+        "topic": "healthcare / market access",
+        "sourceUrl": "https://kffhealthnews.org/news/article/butts-county-georgia-certificate-of-need-laws-rural-hospitals/",
+        "notes": "Loosened CON rules so counties under 50K residents can build hospitals without state certification. Market-oriented approach to healthcare access."
+      },
+      {
+        "bill": "HB 112 / One-time $500 tax refund (2025)",
+        "vote": "Backed as Lt. Gov.",
+        "topic": "fiscal / taxes",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Burt_Jones",
+        "notes": "Authorized up to $500 one-time refunds per household. Rate cut to 5.19%."
+      },
+      {
+        "bill": "Senate property tax reform bill (2026)",
+        "vote": "Applauded passage as Lt. Gov.",
+        "topic": "fiscal / property tax",
+        "sourceUrl": "https://ltgov.georgia.gov/press-releases/2026-02-03/lt-governor-burt-jones-applauds-senate-passage-of-property-tax-reform",
+        "notes": "Supported property tax reform legislation during 2026 session."
+      },
+      {
+        "bill": "Senate income tax elimination package (Feb 2026)",
+        "vote": "Led / celebrated as Lt. Gov.",
+        "topic": "fiscal / taxes",
+        "sourceUrl": "https://ltgov.georgia.gov/press-releases/2026-02-12/lt-governor-burt-jones-celebrates-senate-passage-largest-income-tax-cut",
+        "notes": "Celebrated Senate passage of two income tax proposals described as 'largest income tax cut in state history.' Personal income tax elimination roadmap to 2032."
+      },
+      {
+        "bill": "SB 446 (2026) — permanent federal scholarship program participation",
+        "vote": "Introduced / championed",
+        "topic": "education / school choice",
+        "sourceUrl": "https://ltgov.georgia.gov/press-releases/2026-02-02/lt-governor-burt-jones-reaffirms-commitment-parents-and-students",
+        "notes": "Would permanently lock Georgia into federal tax-credit scholarship program, preventing future governor from withdrawing."
+      },
+      {
+        "bill": "Legislation to 'protect children' (Feb 2026)",
+        "vote": "Celebrated passage as Lt. Gov.",
+        "topic": "social policy (unclear — possibly reproductive or transgender-related)",
+        "sourceUrl": "https://ltgov.georgia.gov/press-releases/2026-02-10/lt-governor-burt-jones-celebrates-senate-passage-legislation-protect",
+        "notes": "Press release from Feb 10, 2026 without specific bill details in search results. Title suggests child protection legislation. Could be related to child trafficking, gender procedures, or abortion — requires further verification."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "Americans for Tax Reform (Grover Norquist)",
+      "score": null,
+      "grade": "Signed Taxpayer Protection Pledge",
+      "url": "https://domepolitics.com/2025/10/burt-jones-becomes-only-gubernatorial-candidate-to-sign-taxpayer-protection-pledge/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Only 2026 Georgia gubernatorial candidate to sign the pledge. Commits to opposing all tax increases."
+    },
+    {
+      "organization": "NRA / NRA-PVF",
+      "score": null,
+      "grade": "Not found in search results — likely A or A+",
+      "url": "https://www.nrapvf.org/grades/georgia",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "NRA-ILA explicitly praised and thanked Jones for HB 1018 gun owner privacy bill. Jones proposed arming teachers with $10K stipend. Explicitly opposed to new gun regulations. NRA PVF grade not confirmed in accessible search results but substantive record is strongly pro-gun-rights (PoleB / firearms_policy)."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": "Not found",
+      "url": null,
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "State-level LCV scoring less common. No LCV scorecard for Jones found. Climate/environment positions not prominently stated in campaign materials — consistent with Trump-aligned platform that does not prioritize climate action. No evidence of Jones supporting climate legislation."
+    },
+    {
+      "organization": "VoteSmart (ratings/evaluations page)",
+      "score": null,
+      "grade": "Page exists at justfacts.votesmart.org/candidate/evaluations/140261/burt-jones — specific ratings not surfaced in search results",
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/140261/burt-jones",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "VoteSmart Political Courage Test page exists (2020 version). Key votes page available. Specific rating group scores not surfaced in search snippets."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "President Donald Trump",
+      "type": "endorsement",
+      "cycle": "2026",
+      "quote": "Burt Jones for Governor has my Complete and Total Endorsement — HE WILL NEVER LET YOU DOWN!",
+      "url": "https://www.11alive.com/article/news/politics/trump-endorsement-burt-jones-georgia/85-59562f9f-5816-41cc-9e82-43dcf56635d4",
+      "notes": "Announced August 12, 2025. Jones was early Trump backer in 2016 and 2020; signed false elector certificate after 2020. Endorsement is major asset in Republican primary."
+    },
+    {
+      "organization": "Americans for Tax Reform (Grover Norquist)",
+      "type": "pledge / implicit endorsement",
+      "cycle": "2025-2026",
+      "url": "https://domepolitics.com/2025/10/burt-jones-becomes-only-gubernatorial-candidate-to-sign-taxpayer-protection-pledge/",
+      "notes": "Only gubernatorial candidate to sign ATR's Taxpayer Protection Pledge as of Oct 2025."
+    },
+    {
+      "organization": "NRA / NRA-ILA",
+      "type": "implicit — praised Jones publicly on gun bills",
+      "cycle": "2024",
+      "url": "https://www.nraila.org/articles/20240326/georgia-gun-owner-credit-card-data-privacy-bill-passes-senate",
+      "notes": "NRA-ILA publicly praised Jones for HB 1018. Formal PVF endorsement for governor race not confirmed yet."
+    },
+    {
+      "organization": "Steve Gooch (former Georgia Senate Majority Leader)",
+      "type": "political endorsement",
+      "cycle": "2026",
+      "url": "https://georgiarecorder.com/briefs/trump-endorses-early-in-georgias-2026-race-for-georgia-governor-backing-an-early-supporter/",
+      "notes": "Running for Lt. Governor with implicit alignment with Jones."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "11Alive (WXIA-TV Atlanta)",
+      "date": "2026",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/burt-jones-interview-on-2026-governors-race-priorities/85-57327c97-cd07-4fee-a458-fc3fdb293357",
+      "title": "Burt Jones lists his priorities for 2026 Georgia governor's race — Full interview",
+      "keyExchanges": [
+        {
+          "topic": "fiscal / taxes",
+          "quote": "I have lowered state income tax three years in a row and I want to continue to do that as governor... completely eliminate the state income tax",
+          "notes": "Primary policy commitment. Cites $15B state surplus as making it feasible."
+        },
+        {
+          "topic": "education / school choice",
+          "quote": "giving parents more options for their children",
+          "notes": "Framed as parental empowerment; ties to passage of Georgia Promise Scholarship."
+        },
+        {
+          "topic": "law enforcement",
+          "quote": "I'm a big law and order guy who has been tough on crime as well as promoting pay raises for men and women in law enforcement",
+          "notes": "Standard law-and-order framing; specific proposals include death penalty for fentanyl dealers."
+        },
+        {
+          "topic": "immigration",
+          "quote": "cracked down on illegal immigration",
+          "notes": "Listed as accomplishment; no specific state legislation detailed in interview."
+        },
+        {
+          "topic": "social policy / transgender sports",
+          "quote": "touted his support for maintaining Georgia's ban on transgender girls in girls' sports",
+          "notes": "Led SB 1 / Riley Gaines Act through Senate in 2025."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB — Exclusive interview with Lt. Governor Burt Jones",
+      "date": "Unknown (during Lt. Gov. tenure)",
+      "url": "https://www.gpb.org/television/show/lawmakers/special/exclusive-interview-lt-governor-burt-jones",
+      "keyExchanges": [
+        {
+          "topic": "general priorities",
+          "notes": "Focused on lowering taxes, school choice, public safety. Specific exchanges not available from search results."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB — NAACP Governor Forum (video message, Jones did not attend in person)",
+      "date": "2025-08-21",
+      "url": "https://www.gpb.org/news/2025/08/21/candidates-for-georgia-governor-attend-naacp-forum-sticking-party-lines",
+      "keyExchanges": [
+        {
+          "topic": "healthcare access",
+          "quote": "I also believe every Georgian deserves access to the right care at the right time and in their backyard",
+          "notes": "General access framing. Specific mechanism: reform Certificate of Need laws, not expand Medicaid."
+        },
+        {
+          "topic": "identity / biography",
+          "quote": "I was born in middle Georgia, sixth-generation Georgian",
+          "notes": "Identity-based appeal to Georgia roots."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB — Gubernatorial candidate forum",
+      "date": "2025-11-06",
+      "url": "https://www.gpb.org/news/2025/11/06/they-want-be-georgias-next-governor-candidates-make-pitches-in-forum-year-ahead-of",
+      "keyExchanges": [
+        {
+          "topic": "participation",
+          "notes": "Jones SKIPPED this forum citing a scheduling conflict. AG Chris Carr criticized his absence. Jones was top-polling Republican at 22% in polls around that time."
+        }
+      ]
+    },
+    {
+      "outlet": "AJC — Jones tries to straddle Trump loyalty and broad appeal",
+      "date": "2025-08",
+      "url": "https://www.ajc.com/politics/2025/08/jones-tries-to-straddle-trump-loyalty-and-broad-appeal-in-georgia-governors-launch/",
+      "keyExchanges": [
+        {
+          "topic": "Trump alignment / general election viability",
+          "notes": "AJC framing: Jones positioning himself as Trump MAGA candidate for primary but needs to broaden appeal for general. His campaign launch was described as '2020 rebels' revenge' referencing his fake elector role."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Medicaid expansion",
+      "conflict": "In 2024, Jones signaled openness to Arkansas-style Medicaid expansion (private marketplace). But Democrats and healthcare advocates cite his long Senate record of opposing full Medicaid expansion. AJC reported he 'considers Medicaid expansion as 2026 race looms' — suggesting strategic positioning more than genuine conversion.",
+      "sources": [
+        "AJC (Burt Jones considers Medicaid expansion as 2026 race for governor looms)",
+        "Wikipedia biography",
+        "Georgia Recorder healthcare coverage"
+      ]
+    },
+    {
+      "topic": "Abortion",
+      "conflict": "In 2023 he said 'no further restrictions on abortion following the 2019 law.' In February 2026 he celebrated Senate passage of 'legislation to protect children' — the exact legislation is unclear from search results and could signal further restriction or an unrelated child protection measure. Warrants monitoring.",
+      "sources": [
+        "GPB (Feb 2023 goals statement)",
+        "ltgov.georgia.gov press release (Feb 10, 2026)"
+      ]
+    },
+    {
+      "topic": "Data centers / conflict of interest",
+      "conflict": "Jones' income tax elimination plan initially proposed eliminating data center tax breaks to fund rate cuts — while simultaneously backing a massive data center development on his father's land in Butts County. AG Chris Carr accused him of using his office to enrich his family. The final Senate income tax plan may have differed from initial proposal.",
+      "sources": [
+        "AJC (Jones plan would eliminate tax breaks to cut Georgia income tax)",
+        "Georgia Recorder (Massive Burt Jones-backed project)",
+        "AJC (Data centers added to Burt Jones-backed hospital development)"
+      ]
+    },
+    {
+      "topic": "2020 election / fake electors",
+      "conflict": "Jones signed false certificates declaring Trump Georgia's winner despite Biden winning by ~12,000 votes. Named unindicted co-conspirator in Fulton County RICO case but not charged (special prosecutor declined September 2024). He frames his Trump loyalty as an asset; Democrats and some Republicans frame it as disqualifying or a liability in a general election.",
+      "sources": [
+        "CNN (Sept 2024)",
+        "WABE (special prosecutor announcement)",
+        "Georgia Recorder (case history)"
+      ]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "fiscal / public_investment (anti-government spending, income tax elimination — very strong evidence)",
+      "school_choice (led Georgia Promise Scholarship, SB 233, SB 446 — strong PoleB evidence)",
+      "firearms_policy (opposed all new gun regulations, teacher carry proposal, NRA support — strong PoleB evidence)",
+      "police_accountability / sentencing_goals (pro-law enforcement, mandatory minimums, cash bail expansion — strong PoleB evidence)"
+    ],
+    "weakestAxes": [
+      "climate_ambition (no stated position found; consistent with Trump alignment suggesting low ambition, but no explicit votes or statements)",
+      "energy_portfolio (no explicit position found)",
+      "zoning_supply / transit_priority (no positions found; property tax reform is adjacent but not directly about housing supply or transit)",
+      "permitting_speed (no explicit positions found)"
+    ],
+    "overallConfidence": "high for economic, education, gun, and criminal justice axes; low for climate/environment/energy axes",
+    "notes": "Jones has a 10-year Georgia Senate record (2013-2023) plus 3 years as Lt. Governor (2023-present). The Senate record is voting-based; the Lt. Gov. record is agenda/championing-based (he presides but does not cast votes). Combined, this provides substantial evidence for most axes. Primary gaps are climate/environment where he has not staked out public positions (likely consistent with Trump-aligned skepticism but not documented). The fake elector controversy and ongoing data center conflict-of-interest allegations are relevant political context but do not directly affect axis scoring. Medicaid expansion positioning appears opportunistic — weight the long Senate record of opposition over recent rhetorical openness."
+  }
+}

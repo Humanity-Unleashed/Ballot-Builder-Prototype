@@ -1,0 +1,340 @@
+{
+  "slug": "derrick-jackson",
+  "name": "Derrick Jackson",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00Z",
+  "biography": {
+    "born": "January 11, 1966",
+    "currentRole": "Georgia House of Representatives, District 68 (Tyrone/Fayette County area), 2023–present",
+    "priorRoles": [
+      "Georgia House of Representatives, District 64 (Fayette County), 2017–2022",
+      "Candidate, Georgia Lieutenant Governor Democratic Primary, 2022 (finished 6th)",
+      "Senior Marketing Manager, General Electric (GE), ~7 years — managed global strategic partnerships",
+      "Adjunct Professor (concurrent with legislative service)",
+      "U.S. Navy officer, 1983–2005 (22 years)"
+    ],
+    "education": "B.A. Business Management and Marketing, Virginia Wesleyan College, 1998–2000; M.S. Management, Troy University, 2003–2005; Ph.D. (candidate) Public Policy and Administration, Walden University, 2014–present",
+    "background": "22-year Navy veteran; corporate marketing executive (GE); 5-term Georgia state legislator across two separate tenures (Dist. 64 and Dist. 68); self-described progressive anti-establishment candidate; married to CaMia Jackson (herself a former Georgia House representative, District 153); father of seven; grandfather",
+    "awards": ["2019 Civil Servant of the Year Rice Award", "2019 Georgia House Democratic Caucus Chairman's Award", "2019 Atlanta Business Journal Top 25 Extraordinary Atlantans"],
+    "notes": "Jackson left the House in 2022 to run for Lieutenant Governor (did not win primary); returned via special election to District 68 in June 2023; re-elected November 2024. Total legislative tenure: ~5 terms across two districts and roughly 8 years of House service."
+  },
+  "campaignWebsite": {
+    "url": "https://votederrickjackson.org",
+    "fetchedAt": "2026-02-25T00:00:00Z",
+    "notes": "Direct fetch was unavailable; positions below are sourced from news coverage that quotes website content directly and from candidate interviews that reference website language.",
+    "statedPositions": [
+      {
+        "topic": "reproductive_rights",
+        "quote": "I believe my four daughters should have bodily autonomy just like my three sons have.",
+        "position": "Repeal Georgia's six-week abortion ban (HB 481 'heartbeat bill')",
+        "sourceUrl": "https://www.fox5atlanta.com/news/derrick-jackson-launches-bid-governor-focus-georgia-families",
+        "date": "2025-06",
+        "confidence": "high",
+        "notes": "Stated as a primary campaign commitment. Also confirmed by Georgia Choice Tracker as consistently pro-choice with a recorded NO vote on HB 481 in 2019."
+      },
+      {
+        "topic": "healthcare",
+        "quote": "Hospitals will stay open, we will be able to bring greater access to health care across all of Georgia, especially rural Georgia. Medicaid expansion would increase jobs, keep hospitals open, and will put us on a true pathway to open up more accessible clinics across all of Georgia.",
+        "position": "Full Medicaid expansion; protect rural hospitals from closure; increase nurses, OB/GYNs, and pediatricians in underserved communities",
+        "sourceUrl": "https://theatlantavoice.com/derrick-jackson-runs-for-georgia-governor/",
+        "date": "2025-06",
+        "confidence": "high",
+        "notes": "Has been consistent on Medicaid expansion across multiple forums and interviews."
+      },
+      {
+        "topic": "minimum_wage_labor",
+        "quote": "To empower labor, I'm the only one talking about it.",
+        "position": "Raise Georgia minimum wage to $20/hour (campaign launch figure); separately sponsored HB in Georgia House to raise to $27/hour by 2028 via phased increases ($15 → $18 → $21 → $27)",
+        "sourceUrl": "https://atlanta.capitalbnews.org/derrick-jackson-georgia-governor-race/",
+        "date": "2025-06 through 2025-08",
+        "confidence": "high",
+        "notes": "Two figures appear in different sources: $20/hour stated at campaign launch; $27/hour in sponsored House legislation. The $27 figure is more recent and confirmed via Capital B and NAACP forum coverage. Note discrepancy — scorer should flag."
+      },
+      {
+        "topic": "tax_policy",
+        "position": "Eliminate state income taxes for nurses, public school teachers, military veterans, and seniors over age 65",
+        "sourceUrl": "https://www.atlantanewsfirst.com/2025/06/03/derrick-jackson-announcing-2026-georgia-governor-run-this-week/",
+        "date": "2025-06",
+        "confidence": "high",
+        "notes": "Stated as explicit campaign promise."
+      },
+      {
+        "topic": "environment_climate",
+        "quote": "Every Georgian deserves to breathe clean air, drink safe water and enjoy our state's natural beauty without fear of pollution. My administration will hold polluters accountable, protect vulnerable communities and invest in renewable energy and sustainable practices.",
+        "position": "Environmental equity; invest in renewable energy; hold polluters accountable; ensure no income/race/zip code disparities in environmental exposure",
+        "sourceUrl": "https://atlanta.capitalbnews.org/derrick-jackson-georgia-governor-race/",
+        "date": "2025-06",
+        "confidence": "medium",
+        "notes": "Website language quoted in Capital B News. General values framing; no specific emissions targets or renewable portfolio standards cited."
+      },
+      {
+        "topic": "criminal_justice",
+        "position": "Reimagine community safety from an intersectional perspective; address school-to-prison pipeline; heal police violence; address flaws in criminal justice system; safeguard basic human rights regardless of race, sex, class, and background",
+        "sourceUrl": "https://votederrickjackson.org",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Campaign website language as referenced by multiple news outlets. Reform-oriented framing. Declined to answer specific GPS questionnaire on parole and sentencing."
+      },
+      {
+        "topic": "immigration",
+        "quote": "If I ever catch ICE in District 68, they are in trouble.",
+        "position": "Defend immigrant rights; oppose use of Georgia National Guard in ICE operations; address community fear caused by ICE raids",
+        "sourceUrl": "https://www.votederrickjackson.org",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Strong rhetoric against ICE enforcement cooperation. Stated Guard deployment for ICE 'goes against my core values and principles' and that troops 'did not take an oath to use force against our citizens in the United States.' No specific sanctuary/non-cooperation policy spelled out."
+      },
+      {
+        "topic": "housing_affordability",
+        "quote": "No Georgian should have to choose between paying rent and putting food on the table.",
+        "position": "Make housing (alongside groceries, gas, childcare) more affordable; champion policies for everyday affordability",
+        "sourceUrl": "https://votederrickjackson.org",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "General values statement only. No specific zoning, subsidy, or supply-side policies stated. Mentioned housing affordability at the January 2026 Savannah forum."
+      },
+      {
+        "topic": "education",
+        "position": "Invest deeply in public education Pre-K through technical colleges; expand access to trades and apprenticeships; update Quality Basic Education formula; increase teacher pay (via income tax exemption); rural broadband/telemedicine access for rural school parity",
+        "sourceUrl": "https://theatlantavoice.com/candidates-education-healthcare-georgia/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Stated at multiple forums. Supports public school investment and opposes the school-choice/voucher direction. No explicit anti-charter school statement found, but his emphasis on QBE reform and public school investment signals traditional public school alignment."
+      },
+      {
+        "topic": "reparations",
+        "quote": "Will there be some things specifically for Black people? Yes, because you've got a lot of things specifically for white people.",
+        "position": "Continue conversations about a Georgia reparations program for descendants of the enslaved; committed to being a voice for Black voters seeking aggressive Democratic leadership",
+        "sourceUrl": "https://atlanta.capitalbnews.org/derrick-jackson-georgia-governor-race/",
+        "date": "2025-06",
+        "confidence": "medium",
+        "notes": "Notable for being a declared gubernatorial candidate raising reparations explicitly. Framed as 'continuing conversations' rather than a specific funded program."
+      },
+      {
+        "topic": "economic_rural_development",
+        "position": "Use part of Georgia's $14.8 billion budget surplus for Medicaid expansion and small business grants; cut red tape for businesses; increase capital access for small businesses, nonprofits, and Black farmers; invest in rural broadband and telemedicine",
+        "sourceUrl": "https://www.atlantanewsfirst.com/2025/06/03/derrick-jackson-announcing-2026-georgia-governor-run-this-week/",
+        "date": "2025-06",
+        "confidence": "medium",
+        "notes": "Specific to Georgia's surplus. Framed as investment, not tax cut."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "jurisdiction": "Georgia House of Representatives",
+    "sources": ["Georgia Choice Tracker (choicetracker.org)", "13wmaz Warner Robins forum reference", "Search summaries of FastDemocracy and TrackBill"],
+    "legislativeSummary": {
+      "totalBillsSponsored": "314 sponsored or co-sponsored across full tenure",
+      "billsPassedIntoLaw": "38 of 314 (cited by candidate as bipartisan record)",
+      "currentSessionActivity": "19 sponsored bills, 47 cosponsored bills in 2025-2026 session",
+      "committeeAssignments": ["Defense and Veterans Affairs", "Regulated Industries", "Budget and Fiscal Affairs Oversight"]
+    },
+    "keyVotes": [
+      {
+        "bill": "Georgia HB 481 — 'Heartbeat Bill' (six-week abortion ban)",
+        "vote": "No",
+        "topic": "reproductive_rights",
+        "year": 2019,
+        "sourceUrl": "https://choicetracker.org/ga/people/derrick-jackson/134348800",
+        "notes": "Bill passed 92-78 on March 29, 2019. Jackson voted with the 78-member minority opposing the ban. Signed by Gov. Kemp May 7, 2019; took effect 2022. Consistent with his 2026 campaign commitment to repeal it."
+      }
+    ],
+    "keyBillsSponsored": [
+      {
+        "bill": "Georgia HB (minimum wage) — phased increase to $27/hour by 2028",
+        "status": "Failed to advance out of committee",
+        "topic": "labor_wages",
+        "sessionYear": "2025-2026",
+        "sourceUrl": "https://atlanta.capitalbnews.org/derrick-jackson-georgia-governor-race/",
+        "notes": "Would have raised GA minimum wage from $5.15/hr to $15 (2025), $18 (2026), $21 (2027), $27 (2028). Died in committee, consistent with GOP-controlled House."
+      },
+      {
+        "bill": "Georgia HB 601 — Georgia Gun Safe Act of 2025",
+        "status": "Not yet assigned to committee as of early 2026",
+        "topic": "firearms_gun_control",
+        "sessionYear": "2025-2026",
+        "sourceUrl": "https://bearingarms.com/kerry-slone/2026/02/02/601-and-the-cost-of-republican-inaction-in-georgia-n1231407",
+        "notes": "Described by gun-rights critics as 'the biggest gun control bill in Georgia history' and 'patterned from other [restrictive] states.' Includes provisions described as a comprehensive gun safety wish list by national gun control groups. Companion bill HB 711 also filed. Neither has advanced in GOP-controlled House."
+      }
+    ],
+    "notes": "Jackson's prior tenure (District 64, 2017-2022) included votes during the sessions when HB 481 was passed. His return via special election in 2023 to District 68 means his current-session record is also available. The GOP majority has blocked all of his progressive legislation."
+  },
+  "scorecards": [
+    {
+      "organization": "Georgia Choice Tracker",
+      "score": "Pro-Choice",
+      "grade": "Pro-Choice",
+      "url": "https://choicetracker.org/ga/people/derrick-jackson/134348800",
+      "fetchedAt": "2026-02-25T00:00:00Z",
+      "notes": "Confirmed NO vote on HB 481. Notes: 'This legislator has consistently shown that they will protect abortion rights.'"
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score found for Georgia state legislators. LCV primarily tracks federal candidates. No Georgia-specific equivalent found in search."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. Consistent with having sponsored HB 601 (described as expansive gun control legislation). NRA would almost certainly grade him F based on legislative record, but no confirmed published grade found."
+    },
+    {
+      "organization": "VoteSmart",
+      "score": null,
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/168268/derrick-jackson",
+      "notes": "VoteSmart profile exists (ID 168268) but search snippets did not reveal specific interest group ratings. Profile confirmed to exist and contain biographical detail."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "No major endorsements confirmed in research as of 2026-02-25",
+      "type": "none confirmed",
+      "cycle": "2026",
+      "notes": "Jackson has explicitly positioned himself as the anti-establishment, progressive candidate in the Democratic primary. His Capital B News profile frames him as 'bucking the establishment.' No AFL-CIO, Planned Parenthood, Georgia AFL-CIO, MEA, or major union endorsements were found in search results. The primary field is crowded (Bottoms, Romman, Esteves, Brown, and others) with most establishment attention going to higher-profile candidates."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Atlanta Journal-Constitution",
+      "date": "2025-06",
+      "url": "https://www.ajc.com/politics/2025/06/state-rep-derrick-jackson-is-latest-democrat-to-launch-bid-for-governor/",
+      "keyExchanges": [
+        {
+          "topic": "qualifications",
+          "quote": "Twenty-two years in the military, military officer, 10 years in corporate America and serving in my fifth term under the Gold Dome. When you collectively look at 42 years of experience, we don't have both Democratic and Republican (candidates) with that kind of resume.",
+          "notes": "Campaign launch interview. Policy detail limited."
+        },
+        {
+          "topic": "minimum_wage",
+          "quote": "I would raise the minimum wage to $20.",
+          "notes": "Announcement figure; later elevated to $27 by 2028 in formal bill sponsorship."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Voice",
+      "date": "2025-06",
+      "url": "https://theatlantavoice.com/derrick-jackson-runs-for-georgia-governor/",
+      "keyExchanges": [
+        {
+          "topic": "healthcare",
+          "quote": "Hospitals will stay open, we will be able to bring greater access to health care across all of Georgia, especially rural Georgia.",
+          "notes": "Medicaid expansion as central commitment."
+        }
+      ]
+    },
+    {
+      "outlet": "Capital B News Atlanta",
+      "date": "2025-06",
+      "url": "https://atlanta.capitalbnews.org/derrick-jackson-georgia-governor-race/",
+      "keyExchanges": [
+        {
+          "topic": "identity_progressive",
+          "quote": "Will there be some things specifically for Black people? Yes, because you've got a lot of things specifically for white people.",
+          "notes": "Framing himself as explicitly Black-voter-centered progressive candidate."
+        },
+        {
+          "topic": "reparations",
+          "position": "Continuing conversations about a Georgia reparations program.",
+          "notes": "Launched campaign with reparations discussion."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB / Georgia Public Broadcasting",
+      "date": "2025-06-04",
+      "url": "https://www.gpb.org/news/2025/06/04/georgia-state-rep-derrick-jackson-join-3-other-democrats-in-run-for-governor",
+      "keyExchanges": [
+        {
+          "topic": "campaign_launch",
+          "notes": "Announcement coverage. Positions on Medicaid expansion, abortion repeal, minimum wage confirmed."
+        }
+      ]
+    },
+    {
+      "outlet": "NAACP Warner Robins Forum",
+      "date": "2025-08-20",
+      "url": "https://www.gpb.org/news/2025/08/21/candidates-for-georgia-governor-attend-naacp-forum-sticking-party-lines",
+      "keyExchanges": [
+        {
+          "topic": "Trump_opposition",
+          "quote": "Right now, his agenda is to make us sick, dumb, poor, and powerless.",
+          "notes": "Anti-Trump framing at NAACP forum."
+        },
+        {
+          "topic": "labor",
+          "quote": "To empower labor, I'm the only one talking about it.",
+          "notes": "Distinguishes himself from other Dem candidates on labor as a campaign pillar."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Voice — DeKalb Democrats Debate (Chamblee High School)",
+      "date": "2025 (fall, exact date not found)",
+      "url": "https://theatlantavoice.com/candidates-education-healthcare-georgia/",
+      "keyExchanges": [
+        {
+          "topic": "education",
+          "position": "Georgia's Quality Basic Education (QBE) formula is failing students; needs update. Invest Pre-K through technical colleges. Expand trades and apprenticeships.",
+          "notes": "All Dem candidates agreed on QBE reform. No dissenting position from Jackson."
+        },
+        {
+          "topic": "healthcare",
+          "position": "Expand Medicaid; 'the time is now' — 15 years of fighting for expansion.",
+          "quote": "We've been fighting for Medicaid expansion the last 15 years.",
+          "notes": "Slightly more urgent framing than other candidates at this debate."
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Recorder / Savannah Forum (First Democratic Debate of 2026)",
+      "date": "2026-01-08",
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "keyExchanges": [
+        {
+          "topic": "wages",
+          "position": "Low wages are a core issue. Would work to raise pay.",
+          "notes": "Savannah Chamber-organized forum. Jackson cited personal connection to constituents across Georgia."
+        },
+        {
+          "topic": "constituent_engagement",
+          "quote": "This is personal. Every day when I wake up, I will come to your city. You won't have to come to Atlanta.",
+          "notes": "Accessibility and rural engagement pledge."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "minimum_wage",
+      "conflict": "Campaign announcement in June 2025 stated $20/hour minimum wage. Separately sponsored legislation (HB) proposing phased increase to $27/hour by 2028. The two figures appear in different campaign contexts. It is unclear whether $20 was a floor figure or has been superseded by the $27 bill.",
+      "sources": ["AJC announcement June 2025", "Capital B News / NAACP forum", "FastDemocracy/TrackBill bill records"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "reproductive_rights — Explicit campaign commitment to repeal HB 481 + confirmed 2019 NO vote; high confidence",
+      "healthcare_coverage_model — Full Medicaid expansion as primary platform plank; stated across multiple venues; high confidence",
+      "firearms_policy — Sponsored HB 601 (described as most comprehensive gun control bill in recent GA history) + pro-gun-regulation rhetoric; high confidence",
+      "labor_wages — Sponsored minimum wage legislation; called labor 'the only one talking about it'; high confidence",
+      "immigration — Strong anti-ICE cooperation rhetoric; defend immigrant rights; medium-high confidence"
+    ],
+    "weakestAxes": [
+      "housing_zoning_supply — Only general affordability language; no specific supply-side, zoning, or subsidy policies stated; low confidence",
+      "sentencing_goals — Declined to respond to GPS prison/parole questionnaire; website uses reform language but no specifics; low confidence",
+      "energy_portfolio — Environmental equity language but no specific utility regulation or fossil fuel policy stated; medium-low confidence",
+      "school_choice — Supports public schools and QBE reform but no explicit anti-voucher/charter statement found; medium confidence inferred"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Jackson has a 5-term state legislative record providing direct vote evidence on at least one major axis (HB 481 / abortion). His bill sponsorships (HB 601, minimum wage bill) provide additional hard evidence on firearms and labor. Campaign positions on healthcare/Medicaid and immigration are explicitly and repeatedly stated. Housing and criminal justice sentencing specifics are notably absent. His positioning as an explicitly progressive anti-establishment candidate provides useful direction inference where direct evidence is thin, but the scorer should not score axes on inference alone. The $20 vs $27 minimum wage discrepancy should be flagged but does not affect the direction of the score. No major interest group scorecards were available (no GA state-level LCV equivalent; NRA grade not published; no AFL-CIO endorsement confirmed). Primary vote is May 19, 2026."
+  }
+}

@@ -1,0 +1,528 @@
+{
+  "slug": "geoff-duncan",
+  "name": "Geoff Duncan",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+
+  "biography": {
+    "currentRole": "Private citizen; public speaker; author ('GOP 2.0')",
+    "priorRoles": [
+      "Lt. Governor of Georgia (2019-2023, Republican)",
+      "Georgia House of Representatives, District 26 (2013-2017, Republican)",
+      "Marketing/consulting company owner (founded with wife Brooke, sold ~2007)",
+      "Minor league baseball pitcher, Florida Marlins organization (1997-2001, reached AAA)"
+    ],
+    "education": "Georgia Tech (scholarship baseball pitcher, degree not specified in available sources)",
+    "background": "Born April 1, 1975, in Cumming (Forsyth County), Georgia. Former Republican who publicly rejected Trump's 2020 election fraud claims. Spoke at 2024 Democratic National Convention as a Republican, urging 'Dump Trump.' Formally left the Republican Party and joined the Democratic Party on August 5, 2025. Expelled by Georgia Republican Party executive committee unanimously on January 6, 2025. Announced Democratic gubernatorial candidacy September 16, 2025.",
+    "partySwitchTimeline": [
+      "2020: Openly rejected Trump's election fraud claims as sitting Republican Lt. Governor",
+      "January 6, 2025: Expelled from Georgia Republican Party by unanimous executive committee vote",
+      "August 5, 2025: Published AJC op-ed announcing formal switch to Democratic Party, citing faith ('love thy neighbor') as motivating principle",
+      "August 21, 2024: Spoke at Democratic National Convention in Chicago, still identified as Republican, said 'dump Trump'",
+      "September 16, 2025: Announced 2026 Democratic gubernatorial candidacy"
+    ]
+  },
+
+  "campaignWebsite": {
+    "url": "https://duncanforgeorgia.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "fetchMethod": "web search (direct fetch unavailable)",
+    "statedPositions": [
+      {
+        "topic": "overall campaign framing",
+        "quote": "As governor, Geoff will fight for Georgia families in all 159 counties — bringing down the cost of childcare, healthcare, and housing while ensuring our state rejects extremism and embraces the values of fairness, opportunity, and love thy neighbor.",
+        "sourceUrl": "https://www.duncanforgeorgia.com/",
+        "date": "2025-09-16",
+        "confidence": "high",
+        "notes": "Homepage tagline. Three explicit pillars: affordability crisis, healthcare crisis, Donald Trump crisis."
+      },
+      {
+        "topic": "healthcare / Medicaid expansion",
+        "quote": "Would expand Medicaid; proposes $1.7 billion 'jumpstart fund' using 10% of Georgia's $17B rainy day reserves to cover Medicaid expansion and childcare/housing affordability",
+        "sourceUrl": "https://www.duncanforgeorgia.com/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Specific dollar figure and mechanism stated publicly. Also confirmed at Savannah forum (Jan 2026) and multiple interviews."
+      },
+      {
+        "topic": "childcare affordability",
+        "quote": "Would use jumpstart fund to help single parents afford childcare; better funding of CAPS (Childcare and Parent Services) and TANF programs",
+        "sourceUrl": "https://www.41nbc.com/former-georgia-lt-gov-geoff-duncan-outlines-vision-for-families-in-democratic-governor-run/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Specific programs named: CAPS, TANF."
+      },
+      {
+        "topic": "housing affordability",
+        "quote": "Lowering housing costs is one of three affordability pillars; jumpstart fund would also target housing",
+        "sourceUrl": "https://www.duncanforgeorgia.com/",
+        "date": "2025-09",
+        "confidence": "medium",
+        "notes": "General commitment; no specific zoning or supply-side mechanism stated in available sources."
+      },
+      {
+        "topic": "abortion / reproductive rights",
+        "quote": "On day one as governor, he would sign an executive order clarifying doctors can practice medicine with pregnant women without fear of prosecution and introduce legislation repealing Georgia's six-week ban.",
+        "sourceUrl": "https://www.ajc.com/politics/2025/09/i-got-it-wrong-duncans-policy-shifts-shape-his-dem-race-for-governor/",
+        "date": "2025-09",
+        "confidence": "high",
+        "notes": "Explicit day-one executive order commitment. Full legislative repeal also stated."
+      },
+      {
+        "topic": "firearms",
+        "quote": "Supports universal background checks, red flag laws, and safe firearm storage requirements",
+        "sourceUrl": "https://www.abcnews.go.com/Politics/wireStory/geoff-duncan-broke-trump-former-republican-democrats-make-129788546",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Three specific policy mechanisms named. Stated these were changed from prior positions driven by political pressure."
+      }
+    ]
+  },
+
+  "republicanRecord": {
+    "note": "Duncan held office exclusively as a Republican from 2013-2023. His record in this period represents his PRIOR positions. He has publicly recanted multiple stances — see positionConflicts section.",
+
+    "georgiaHouseRecord": {
+      "term": "2013-2017, District 26 (Forsyth County)",
+      "keyBills": [
+        {
+          "bill": "HB 152 — Michael's Law",
+          "role": "Author",
+          "topic": "public safety / labor",
+          "summary": "Forbids individuals under age 21 from working as bar bouncers",
+          "date": "2013-2014 session",
+          "notes": "Named after Michael Bremer who died outside a bar"
+        },
+        {
+          "bill": "HB 749 — Cargo Theft Act",
+          "role": "Author",
+          "topic": "criminal justice",
+          "summary": "Established graduated penalties for cargo theft based on value stolen (misdemeanor under $500 to felony over $25,000)",
+          "date": "2016",
+          "notes": "Enacted into law"
+        },
+        {
+          "bill": "HB 919 / SB 258 — Rural Hospital Tax Credit",
+          "role": "Original House sponsor (HB 919); provisions incorporated into Senate version SB 258",
+          "topic": "healthcare / tax policy",
+          "summary": "70% state income tax credit for contributions to approved rural hospital organizations; cap $2,500 individual / $5,000 joint. Brought $250M+ to Georgia's rural hospitals.",
+          "date": "2016",
+          "sourceUrl": "https://www.agg.com/news-insights/publications/georgias-rural-hospital-tax-credit-bill-passes-awaits-governors-signature-04-04-2016/",
+          "notes": "Market-based (tax credit) approach to rural healthcare funding, consistent with Republican framework. Not Medicaid expansion."
+        }
+      ],
+      "committees": ["Ways & Means", "Information & Audits", "Banks & Banking", "Science and Technology", "Interstate Cooperation"]
+    },
+
+    "ltGovernorRecord": {
+      "term": "2019-2023",
+      "role": "President of Georgia State Senate; constitutional officer",
+      "keyLegislativeActions": [
+        {
+          "bill": "Georgia Hate Crimes Law",
+          "role": "Coalition builder; champion",
+          "topic": "justice / civil rights",
+          "outcome": "Passed June 2020 — restored a hate crimes law to Georgia for first time in 16 years",
+          "sourceUrl": "https://www.ajc.com/news/state--regional-govt--politics/georgia-duncan-unveil-meaningful-hate-crimes-law/UlFlr0TPzXhD0rnhiZlkKJ/",
+          "notes": "Built bipartisan coalition. Credited as instrumental. Duncan unveiled his version in June 2020 after Ahmaud Arbery killing."
+        },
+        {
+          "bill": "Repeal of Citizen's Arrest Law",
+          "role": "Champion",
+          "topic": "justice / civil rights",
+          "outcome": "Passed; repealed Georgia's archaic citizen's arrest law",
+          "notes": "Bipartisan achievement in Republican-controlled legislature"
+        },
+        {
+          "bill": "LESS Crime Act (Law Enforcement Strategic Support)",
+          "role": "Author / champion",
+          "topic": "justice / policing / tax policy",
+          "outcome": "Passed House 153-5 (March 2022); signed by Governor Kemp (May 2022)",
+          "sourceUrl": "https://ltgov.georgia.gov/press-releases/2022-02-10/unanimous-senate-passage-lt-governor-duncans-less-crime-act-receives",
+          "summary": "Dollar-for-dollar state tax credit for contributions to local police/sheriff foundations. Funds can be used for officer salary increases, hiring, training, equipment, and co-responder mental health programs.",
+          "notes": "Pro-police funding mechanism using tax credits. Consistent with Republican 'back the blue' framing, though includes mental health co-responder component."
+        },
+        {
+          "bill": "Georgia Behavioral Health and Peace Officer Co-Responder Act (SB 403)",
+          "role": "Champion",
+          "topic": "justice / mental health / policing",
+          "outcome": "Passed 2022",
+          "summary": "Framework for law enforcement partnerships with mental health professionals; co-response teams dispatched to behavioral health emergencies. Officers can consider mental health professional input in divert-to-treatment decisions.",
+          "notes": "Reform-oriented within Republican frame: not defunding, but acknowledges mental health dimension of policing."
+        },
+        {
+          "bill": "Georgia Heartbeat Bill (HB 481)",
+          "role": "Supporter; present at signing ceremony",
+          "topic": "reproductive rights / abortion",
+          "outcome": "Signed by Governor Kemp 2019; bans most abortions after approximately 6 weeks",
+          "sourceUrl": "https://www.ajc.com/news/state--regional-govt--politics/georgia-governor-backs-heartbeat-bill-restricting-abortions/DWJjCBBYaqlQOvZM98VJxL/",
+          "notes": "Duncan was photographed smiling broadly at signing ceremony. Quote (pre-election 2018): 'I, of course, will support legislation that protects unborn children with heartbeats — an easy decision for me.' NOW RECANTED — see positionConflicts."
+        },
+        {
+          "bill": "HB 1437 — Income Tax Cut",
+          "role": "Presided over Senate passage as Lt. Gov.",
+          "topic": "fiscal / tax policy",
+          "outcome": "Passed April 2022; gradually reduces Georgia individual income tax rate from 5.75% to 4.99% over 7 years — described as 'largest income tax cut in state history'",
+          "notes": "Duncan touted this as pro-business. Republican supply-side fiscal approach."
+        },
+        {
+          "bill": "Medicaid expansion (Georgia) — OPPOSED",
+          "role": "Opponent while Lt. Governor",
+          "topic": "healthcare / Medicaid",
+          "outcome": "Georgia did not expand full Medicaid under ACA during Duncan's tenure. Georgia adopted limited 'Pathways' work-requirement Medicaid expansion instead.",
+          "notes": "Duncan has stated he 'explored every route possible to improve the state's health care system without expanding Medicaid' and concludes 'The answer is, you can't do it.' NOW RECANTED — see positionConflicts."
+        },
+        {
+          "topic": "school choice",
+          "role": "Advocate",
+          "summary": "As Lt. Governor, called for Georgia to expand school choice to 'close the skills gap.' Wrote AJC op-ed supporting school choice expansion.",
+          "sourceUrl": "https://www.ajc.com/blog/get-schooled/our-new-lieutenant-governor-expand-school-choice-close-skills-gap/DjjTCBxFvnu9cO8JBg33O/",
+          "date": "2019",
+          "notes": "Republican-era position. No explicit 2026 recantation found, but no prominent 2026 advocacy either."
+        },
+        {
+          "topic": "gun policy",
+          "role": "NRA A-rated; NRA-endorsed for Lt. Governor 2018",
+          "summary": "NRA endorsement 2018; Facebook post touting 'A rating from the NRA.' NRA-PVF called him 'a strong advocate for law-abiding gun owners' with 'unwavering support of Second Amendment freedoms.'",
+          "sourceUrl": "https://www.nrapvf.org/articles/20180924/nra-endorses-duncan-for-georgia-lieutenant-governor",
+          "date": "2018",
+          "notes": "NOW RECANTED — see positionConflicts."
+        }
+      ]
+    }
+  },
+
+  "scorecards": [
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": null,
+      "grade": "A (self-reported 2018; consistent with NRA endorsement)",
+      "url": "https://www.nrapvf.org/articles/20180924/nra-endorses-duncan-for-georgia-lieutenant-governor",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "period": "2018 election cycle",
+      "notes": "This was his Republican-era rating. He now explicitly opposes the NRA and supports universal background checks and red flag laws. No current 2026 NRA grade found — he is running as a Democrat."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "LCV scores federal and state legislators. Duncan served at state level in Georgia. No LCV scorecard found for Georgia state legislative office. No available score for his Lt. Governor tenure. Climate positions not prominent in 2026 campaign materials found."
+    },
+    {
+      "organization": "Georgia Republican Party",
+      "score": null,
+      "grade": "Expelled",
+      "notes": "Georgia Republican Party State Executive Committee voted unanimously on January 6, 2025 to expel Duncan from the party and prohibit future participation. Directly tied to his support for Kamala Harris in 2024 elections.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Geoff_Duncan"
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "No major Democratic organizational endorsements found as of February 2026",
+      "type": "none confirmed",
+      "cycle": "2026",
+      "notes": "Duncan is competing in a 7-candidate Democratic primary. He is framing electability as his core argument. No DSCC, Emily's List, labor union, or national Democratic endorsements surfaced in research."
+    },
+    {
+      "organization": "Broad Democratic voter skepticism",
+      "type": "opposition signals from Democratic competitors",
+      "cycle": "2026",
+      "notes": "Opponent Keisha Bottoms criticized Duncan: 'Georgians want a Governor who has fought to expand Medicaid instead of eliminate it, who protects reproductive rights rather than stands 100 percent against them.' This signals his prior record is an active liability with the Democratic base."
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "Atlanta Journal-Constitution (AJC) — 'Politically Georgia' podcast / candidate forum",
+      "date": "2025-12",
+      "url": "https://www.ajc.com/video/news/2025/12/geoff-duncan-politically-georgia-candidate-forum-full-interview/",
+      "keyExchanges": [
+        {
+          "topic": "electability / party switch rationale",
+          "quote": "I'm the only Democrat in this race that can beat a Republican because I've got Democrats, independents and disgusted Republicans that will show up and vote for me.",
+          "sourceUrl": "https://www.axios.com/local/atlanta/2025/09/16/geoff-duncan-georgia-governor-2026-election-president-trump",
+          "notes": "Core electability argument. Repeated across multiple outlets."
+        },
+        {
+          "topic": "faith and party switch",
+          "quote": "Some folks will say 'Geoff, have you lost your mind?' My answer is: No, I found my heart.",
+          "sourceUrl": "https://www.mdjonline.com/elections/q-a-geoff-duncan-talks-gubernatorial-campaign-heart-change-and-policy-priorities/article_bfc09902-9e77-4c20-94fc-593e2f5ee1a9.html",
+          "notes": "Marietta Daily Journal Q&A. Describes switch as 'faith journey' — could not 'square up' faith with Republican politics."
+        }
+      ]
+    },
+    {
+      "outlet": "11 Alive (Atlanta NBC affiliate) — Full interview",
+      "date": "2025-09",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/full-interview-geoff-duncan-former-gop-lieutenant-governor-now-running-for-governor-as-a-democrat/85-0c83d4d6-7d6a-4cd3-b499-62c9d9f80dca",
+      "keyExchanges": [
+        {
+          "topic": "abortion",
+          "quote": "I got the issue of abortion wrong... I was wrong to think a room full of legislators knew better than millions of women. After taking the time to listen to the heartfelt stories, the difficult medical situations, the personal situations, I believe women deserve the right to choose.",
+          "notes": "Direct recantation of prior support for Heartbeat Bill."
+        },
+        {
+          "topic": "Medicaid",
+          "quote": "As a former Republican I explored every route possible to improve the state's health care system without expanding Medicaid. The answer is, you can't do it.",
+          "notes": "Explicit recantation of prior anti-expansion position."
+        },
+        {
+          "topic": "guns",
+          "quote": "I didn't get the gun issue right... if we just would have been with ninety percent of Americans and believed in universal background checks and red flag laws, we'd be in a better position. I was wrong to think the NRA had anybody's best interest in mind — they simply have their own and are a fear mongering organization that puts pressure on legislators.",
+          "notes": "Explicit NRA criticism. Specific support for universal background checks and red flag laws."
+        }
+      ]
+    },
+    {
+      "outlet": "Washington Post / AP (carried by ABC News, Washington Times, et al.)",
+      "date": "2026-02-02",
+      "url": "https://abcnews.go.com/Politics/wireStory/geoff-duncan-broke-trump-former-republican-democrats-make-129788546",
+      "keyExchanges": [
+        {
+          "topic": "abortion / public apology",
+          "quote": "I would argue that no two people in Georgia have the exact same personal opinion on abortion, but none of us wake up with the right to force those opinions on others.",
+          "notes": "Statement at American Legion hall near Atlanta, in front of Democratic activists. Apologized for all things done as a Republican."
+        }
+      ]
+    },
+    {
+      "outlet": "Savannah Democratic Gubernatorial Forum (GPB / Georgia Recorder)",
+      "date": "2026-01-08",
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "keyExchanges": [
+        {
+          "topic": "Medicaid expansion",
+          "quote": "Confirmed he would expand Medicaid as governor",
+          "notes": "All 7 Democratic candidates committed to this. Duncan among them."
+        },
+        {
+          "topic": "Trump opposition",
+          "quote": "Would fight back against President Donald Trump",
+          "notes": "Unanimous across all 7 Democratic candidates at forum."
+        },
+        {
+          "topic": "childcare / jumpstart fund",
+          "quote": "Proposed using 10% of Georgia's $17 billion rainy day fund, about $1.7 billion, to create a 'jumpstart fund' to help families with childcare and housing costs and to expand Medicaid",
+          "notes": "Signature economic proposal. Specific dollar figure."
+        }
+      ]
+    },
+    {
+      "outlet": "Gainesville Civic Center event (Indivisible Hall)",
+      "date": "2026-02-17",
+      "url": "https://www.gainesvilletimes.com/news/politics/six-takeaways-from-gubernatorial-candidate-geoff-duncans-visit-to-gainesville/",
+      "keyExchanges": [
+        {
+          "topic": "faith / Medicaid / party switch",
+          "quote": "Not wanting to expand Medicaid doesn't match his faith anymore. 'Most people wake up with the charge of loving your neighbor. The problem is Republicans have asterisk marks next to that. Your neighbor doesn't look like you, act like you, love like you, or vote like you — you're not really allowed to love your neighbor.'",
+          "notes": "Religious framing of Medicaid expansion position change."
+        }
+      ]
+    },
+    {
+      "outlet": "Deseret News",
+      "date": "2025-08-07",
+      "url": "https://www.deseret.com/politics/2025/08/07/former-lt-governor-geoff-duncan-leaves-republican-party/",
+      "keyExchanges": [
+        {
+          "topic": "party switch rationale",
+          "quote": "Party switch was rooted in his desire to better 'love thy neighbor' through 'public policy'",
+          "notes": "August 5 AJC editorial announcing party switch."
+        }
+      ]
+    },
+    {
+      "outlet": "PBS NewsHour — DNC 2024 speech (as Republican)",
+      "date": "2024-08-21",
+      "url": "https://www.pbs.org/newshour/politics/watch-dump-trump-says-georgia-republican-geoff-duncan-at-2024-democratic-national-convention",
+      "keyExchanges": [
+        {
+          "topic": "Trump / democracy",
+          "quote": "I am a Republican, but tonight I stand here as an American... If Republicans are being intellectually honest with ourselves, our party is not civil or conservative. It's chaotic and crazy, and the only thing left to do is dump Trump.",
+          "notes": "Spoke at DNC while still formally a Republican. Urged Republicans and independents to vote for Harris-Walz."
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "abortion",
+      "conflict": "As Lt. Governor (2019), Duncan stood smiling at the signing ceremony of Georgia's Heartbeat Bill banning abortions at approximately 6 weeks, and prior to election said it was 'an easy decision for me.' As 2026 Democratic gubernatorial candidate, he calls this position 'wrong,' says he believes women deserve the right to choose, and has committed to signing a day-one executive order protecting doctors and introducing legislation to repeal the six-week ban.",
+      "priorPosition": "100% against abortion; supported Heartbeat Bill at signing",
+      "currentPosition": "Pro-choice; repeal six-week ban; protect doctors from prosecution",
+      "sources": ["AJC Heartbeat Bill coverage 2019", "11 Alive full interview 2025", "AJC policy shifts article Sept 2025"],
+      "credibilityNote": "Shift is unambiguous and repeatedly stated. Opponents (notably Keisha Bottoms) have specifically called out this flip as evidence of opportunism."
+    },
+    {
+      "topic": "Medicaid expansion",
+      "conflict": "As Lt. Governor, actively opposed full Medicaid expansion under the ACA. Georgia instead adopted a limited 'Pathways' work-requirement Medicaid program. As 2026 Democratic candidate, he says full expansion is the only viable path and commits to expanding it from day one, funded via the $1.7B jumpstart fund.",
+      "priorPosition": "Opposed full Medicaid expansion; backed limited work-requirement Medicaid",
+      "currentPosition": "Expand full Medicaid; fund via rainy day reserves",
+      "sources": ["11 Alive interview 2025", "AJC Sept 2025 policy shifts"],
+      "credibilityNote": "Explicitly acknowledges prior position was wrong."
+    },
+    {
+      "topic": "firearms / NRA",
+      "conflict": "In 2018, touted NRA 'A rating' on Facebook and received NRA endorsement for Lt. Governor. NRA-PVF called him 'a strong advocate for law-abiding gun owners' with 'unwavering support of Second Amendment freedoms.' As 2026 Democratic candidate, calls the NRA 'a fear mongering organization,' says he 'didn't get the gun issue right,' and supports universal background checks, red flag laws, and safe storage requirements.",
+      "priorPosition": "NRA A-rated; endorsed by NRA; strong Second Amendment advocacy",
+      "currentPosition": "Universal background checks; red flag laws; safe storage; opposes NRA",
+      "sources": ["NRA-PVF endorsement 2018", "11 Alive interview 2025", "ABC/AP story Feb 2026"],
+      "credibilityNote": "180-degree reversal. Acknowledged directly as prior error driven by 'political pressure.'"
+    },
+    {
+      "topic": "income tax / fiscal policy",
+      "conflict": "As Lt. Governor, presided over passage of Georgia's 'largest income tax cut in state history' (HB 1437, 2022) — reducing top individual rate from 5.75% to 4.99%. As 2026 Democratic candidate, proposes spending $1.7B from rainy day fund on social programs. Fiscal philosophy appears to have shifted but no explicit recantation of the tax cut was found.",
+      "priorPosition": "Championed large income tax cut; supply-side fiscal conservatism",
+      "currentPosition": "Proposes jumpstart fund ($1.7B public investment for social services); no explicit tax position stated for 2026",
+      "sources": ["Grokipedia / Wikipedia LG record", "Campaign website / forum coverage"],
+      "credibilityNote": "No explicit recantation of tax cuts found. Gap in 2026 platform on tax policy."
+    },
+    {
+      "topic": "school choice",
+      "conflict": "As Lt. Governor (2019-2020), wrote AJC op-ed advocating expansion of school choice to 'close skills gap.' As 2026 Democratic candidate, school choice has not been promoted or recanted in available sources.",
+      "priorPosition": "Supported school choice expansion as Republican Lt. Governor",
+      "currentPosition": "No 2026 statement found on school choice — neither endorsement nor recantation",
+      "sources": ["AJC Lt. Governor op-ed 2019", "2026 campaign coverage"],
+      "credibilityNote": "This is a gap — not a clear conflict yet. Could surface during primary."
+    }
+  ],
+
+  "racialAndCivilRightsRecord": {
+    "note": "Despite Republican identity, Duncan has a notable civil rights legislative record:",
+    "items": [
+      {
+        "action": "Hate Crimes Law (2020)",
+        "description": "Led bipartisan coalition to pass Georgia's first hate crimes law in 16 years following Ahmaud Arbery killing. Bipartisan passage in Republican-controlled legislature.",
+        "significance": "Significant departure from many Southern Republican positions on hate crimes protections"
+      },
+      {
+        "action": "Citizen's Arrest Law Repeal (2021)",
+        "description": "Championed repeal of Georgia's archaic citizen's arrest law, also connected to Arbery killing",
+        "significance": "Second civil rights achievement in consecutive sessions"
+      }
+    ]
+  },
+
+  "pollingAndRaceContext": {
+    "democraticPrimary": {
+      "date": "2026-05-19",
+      "field": [
+        "Keisha Lance Bottoms (former Atlanta Mayor)",
+        "Geoff Duncan (former Republican Lt. Governor)",
+        "Jason Esteves (former state Sen.; runs three family businesses)",
+        "Michael Thurmond (former state Labor Commissioner; DeKalb County CEO)",
+        "Derrick Jackson (state Rep.; U.S. Navy veteran; former GE official)",
+        "Olu Brown (businessman; retired pastor)",
+        "additional candidates"
+      ],
+      "status": "Duncan is one of four frontrunners alongside Bottoms, Esteves, and Thurmond",
+      "fundraising": "Raised $1.1M+ by January 31, 2026 deadline",
+      "electabilityArgument": "Claims crossover appeal to independents and disaffected Republicans; stresses only he can carry those voters into the general election"
+    },
+    "generalElection": {
+      "republicanField": "State AG Chris Carr, Lt. Gov. Burt Jones (Trump-endorsed), Brad Raffensperger (also a Trump critic)",
+      "context": "Georgia is a battleground state; Democrats have not won gubernatorial election in nearly 30 years; Duncan argues his cross-party appeal is essential to end that streak"
+    }
+  },
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "public_health / coverage_model — Medicaid expansion: explicit commitment with dollar figure; repeated across multiple sources; prior opposition explicitly recanted",
+      "firearms_policy — prior NRA A-rating now explicitly reversed; three specific policies named (universal background check, red flag, safe storage)",
+      "public_health framing (abortion) — day-one executive order commitment; explicit repeal legislation pledged; prior Heartbeat Bill support explicitly recanted"
+    ],
+    "notableGaps": [
+      "climate/energy — no climate positions found in 2026 campaign coverage; not a stated priority",
+      "housing supply/zoning — housing affordability stated but mechanism is spending, not zoning reform; no specific zoning position",
+      "transit — prior (2018) Republican-era skepticism of MARTA-style transit expansion; no 2026 update",
+      "immigration — no positions found in available sources",
+      "sentencing / criminal justice beyond policing reform — LESS Crime Act was pro-police funding, not sentencing reform",
+      "school choice 2026 — prior advocacy as Republican not explicitly recanted in 2026 campaign",
+      "tax policy 2026 — no explicit 2026 tax rate position found beyond jumpstart fund spending proposal"
+    ],
+    "keyResearchNote": "Duncan's profile is uniquely complex because he has both a Republican legislative record (2013-2023) AND a Democratic campaign platform (2025-present). The scorer must treat stated 2026 positions as the primary signal where they exist, flag the prior Republican record as context, and treat the explicit recantations as credible reversals — noting they are being contested by Democratic primary opponents. Do not assume positions that have not been explicitly updated.",
+    "overallConfidence": "high for healthcare, firearms, abortion; medium for economic/fiscal; low to none for climate, immigration, transit, housing mechanics",
+    "sourceQuality": "Strong. Multiple independent outlets (AJC, 11 Alive, GPB, Georgia Recorder, ABC/AP newswire) cover the same positions consistently. Primary sources include direct quotes from formal campaign launch, multiple Q&A events, and a statewide candidate forum."
+  },
+
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Geoff_Duncan",
+      "description": "Wikipedia biography — comprehensive background, timeline, legislative record"
+    },
+    {
+      "url": "https://ballotpedia.org/Geoff_Duncan",
+      "description": "Ballotpedia candidate profile"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2025/09/i-got-it-wrong-duncans-policy-shifts-shape-his-dem-race-for-governor/",
+      "description": "AJC: 'I got it wrong' — Duncan's policy shifts, September 2025"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2025/09/former-republican-geoff-duncan-enters-georgia-governors-race-as-democrat/",
+      "description": "AJC: Announcement of Democratic gubernatorial candidacy, September 2025"
+    },
+    {
+      "url": "https://abcnews.go.com/Politics/wireStory/geoff-duncan-broke-trump-former-republican-democrats-make-129788546",
+      "description": "AP/ABC News: February 2026 profile with policy apology details"
+    },
+    {
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/geoff-duncan-reflects-past-republican-stances-gears-for-georgia-governors-race-democrat/85-36ddc919-b111-4bc6-8eb9-b05d00b8b6b6",
+      "description": "11 Alive: 'I was wrong' — Duncan reflects on past Republican stances"
+    },
+    {
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "description": "Georgia Recorder: Savannah Democratic gubernatorial forum, January 8, 2026"
+    },
+    {
+      "url": "https://www.gainesvilletimes.com/news/politics/six-takeaways-from-gubernatorial-candidate-geoff-duncans-visit-to-gainesville/",
+      "description": "Gainesville Times: Six takeaways from Gainesville event, February 2026"
+    },
+    {
+      "url": "https://www.nrapvf.org/articles/20180924/nra-endorses-duncan-for-georgia-lieutenant-governor",
+      "description": "NRA-PVF: 2018 endorsement of Duncan for Lt. Governor"
+    },
+    {
+      "url": "https://ltgov.georgia.gov/press-releases/2022-02-10/unanimous-senate-passage-lt-governor-duncans-less-crime-act-receives",
+      "description": "Official Lt. Governor's office: LESS Crime Act passage, February 2022"
+    },
+    {
+      "url": "https://ltgov.georgia.gov/press-releases/2022-05-09/lt-governor-duncans-legislative-priorities-signed-governor-kemp",
+      "description": "Official Lt. Governor's office: 2022 legislative priorities signed by Kemp"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/politics/watch-dump-trump-says-georgia-republican-geoff-duncan-at-2024-democratic-national-convention",
+      "description": "PBS NewsHour: Duncan's 'Dump Trump' DNC speech, August 2024"
+    },
+    {
+      "url": "https://www.deseret.com/politics/2025/08/07/former-lt-governor-geoff-duncan-leaves-republican-party/",
+      "description": "Deseret News: Party switch announcement details, August 2025"
+    },
+    {
+      "url": "https://www.mdjonline.com/elections/q-a-geoff-duncan-talks-gubernatorial-campaign-heart-change-and-policy-priorities/article_bfc09902-9e77-4c20-94fc-593e2f5ee1a9.html",
+      "description": "Marietta Daily Journal: Full Q&A interview on 'heart change' and policy priorities"
+    },
+    {
+      "url": "https://www.41nbc.com/former-georgia-lt-gov-geoff-duncan-outlines-vision-for-families-in-democratic-governor-run/",
+      "description": "41NBC: Duncan outlines vision for families, childcare, housing, healthcare"
+    },
+    {
+      "url": "https://www.wsav.com/news/geoff-duncan-outlines-2026-gubernatorial-priorities-during-savannah-visit/",
+      "description": "WSAV Savannah: Gubernatorial priorities during Savannah visit"
+    },
+    {
+      "url": "https://www.agg.com/news-insights/publications/georgias-rural-hospital-tax-credit-bill-passes-awaits-governors-signature-04-04-2016/",
+      "description": "Arnall Golden Gregory: Rural Hospital Tax Credit bill (SB 258/HB 919), 2016"
+    },
+    {
+      "url": "https://ballotpedia.org/Georgia_gubernatorial_election,_2026",
+      "description": "Ballotpedia: 2026 Georgia gubernatorial election overview"
+    }
+  ]
+}

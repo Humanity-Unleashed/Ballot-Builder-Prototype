@@ -1,0 +1,99 @@
+{
+  "slug": "justin-pinker",
+  "name": "Justin Pinker",
+  "party": "Republican",
+  "office": "U.S. House, Georgia 6th Congressional District, 2026",
+  "scoredAt": "2026-02-26T00:00:00Z",
+  "profileSummary": "First-time Republican challenger in a D+25 district; businessman and community activist whose campaign is built entirely on 'freedom' rhetoric covering border security, public safety, education content, and anti-surveillance themes, with no specific policy commitments on any issue.",
+  "keyPositions": [
+    "Supports border security ('Freedom is knowing our borders are secure') with no specific policy mechanism stated",
+    "Emphasizes public safety and anti-drug-gang messaging as critique of incumbent",
+    "Opposes 'deviant subjects' in schools, aligning with parental rights / curriculum restriction movement",
+    "Anti-government surveillance and free speech emphasis ('your keystrokes can land you on a government watchlist')"
+  ],
+  "axisStances": {
+    "justice_policing_accountability": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Campaign website public safety statement"],
+      "notes": "Public safety messaging frames crime and drug gangs as the primary problem; critique of incumbent implies she has made streets more dangerous. Directionally pro-law-enforcement but no specific policy stated (e.g., no position on qualified immunity, body cameras, or police funding). Scored as modest pro-enforcement lean based on rhetorical direction only."
+    }
+  },
+  "valueStances": {
+    "self_direction": {
+      "score": 0.5,
+      "reasoning": "Entire campaign branded around 'Fighting for Freedom.' Anti-surveillance, free speech, and individual liberty are explicit and repeated themes across multiple website statements. However, the education position ('deviant subjects') works against self-direction for LGBTQ+ individuals and educators, creating internal tension. Scored positively because the dominant framing is liberty-oriented, but capped at 0.5 due to the selective application of freedom."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Border security and public safety are two of the five stated themes. The playground/drug-gang imagery and 'borders are secure' language signal safety-and-stability orientation as a core motivator. No national defense statements found, so this is domestic security only."
+    },
+    "tradition": {
+      "score": 0.3,
+      "reasoning": "'Deviant subjects' language in education framing signals cultural conservatism and alignment with traditional norms regarding childhood, family, and social morality. Not the dominant campaign theme but clearly present."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Generic community welfare rhetoric (jobs, wages, homeownership, family, playground safety) suggests baseline concern for constituents' wellbeing. No specific community investment proposals or social service positions found. Standard campaign-level benevolence claim."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "Prosperity-through-work framing ('a job and a wage that allows you to prosper') and businessman background suggest modest achievement orientation. No meritocracy or entrepreneurship policy specifics."
+    },
+    "conformity": {
+      "score": 0.1,
+      "reasoning": "Public safety messaging and law-enforcement lean suggest some social order orientation. However, the anti-government-watchlist rhetoric and challenger positioning introduce mild anti-establishment signals. Net slightly positive."
+    },
+    "stimulation": {
+      "score": 0.1,
+      "reasoning": "Running as a first-time candidate against a four-term incumbent in a D+25 district suggests some appetite for challenge and disruption. But the substance is largely status-quo-conservative rather than transformative. Minimal signal."
+    },
+    "universalism": {
+      "score": -0.2,
+      "reasoning": "Border security rhetoric frames outsiders as a threat. 'Deviant subjects' language signals limits on tolerance and inclusion regarding gender and sexuality. No environmental, humanitarian, or global welfare positions found. The overall pattern is in-group-focused rather than universalist."
+    },
+    "power": {
+      "score": 0.0,
+      "reasoning": "No evidence of alignment with concentrated wealth, corporate donors, or establishment power structures. No PAC money signals. Small-business background. Insufficient evidence to score in either direction."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence. Freedom framing is political liberty, not personal lifestyle/pleasure oriented."
+    }
+  },
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 1,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_investment",
+      "econ_tax_structure",
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate with no legislative record and no third-party scorecards. Campaign website uses slogan-style 'freedom' framing across five themes but provides no specific policy commitments. Only the public safety theme contained enough directional signal to score one axis (justice_policing_accountability) at low confidence. All other axes had either no stated position or statements too vague to determine policy direction.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No position on firearms/Second Amendment despite Republican candidacy",
+      "No position on abortion/reproductive rights",
+      "No position on climate, energy, or environment",
+      "No position on healthcare model or cost control",
+      "No position on housing or transportation",
+      "No position on taxation, safety net, or public investment",
+      "No press interviews or in-depth news coverage found",
+      "No endorsements from any organization",
+      "Campaign website provides slogans only, not issue pages with policy specifics",
+      "Professional background (Teenovel / digital marketing) unverified as same individual"
+    ]
+  }
+}

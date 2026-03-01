@@ -1,0 +1,588 @@
+{
+  "slug": "buddy-carter",
+  "name": "Earl LeRoy \"Buddy\" Carter",
+  "party": "Republican",
+  "office": "U.S. Senate, Georgia, 2026",
+  "contestId": "GA-US-SENATE-2026",
+  "incumbencyStatus": "challenger (currently U.S. Representative GA-01, 2015-present; sixth term; not seeking re-election to House)",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Representative, Georgia's 1st Congressional District (2015-present); serves on House Budget Committee and Energy and Commerce Committee (chairs Health Subcommittee)",
+    "priorRoles": [
+      "Georgia State Senator (2009-2014)",
+      "Georgia State Representative (2005-2009)",
+      "Mayor of Pooler, Georgia (1996-2004)",
+      "Pooler City Council (1994-1995)",
+      "Pooler Planning and Zoning Commission (1989-1993)",
+      "Owner and operator, Carter's Pharmacy Inc., southeast Georgia (30+ years)"
+    ],
+    "education": "Associate degree, Young Harris College (1977); B.S. Pharmacy, University of Georgia (1980)",
+    "background": "Licensed pharmacist and small business owner. Self-describes as 'MAGA warrior.' Born 1957, Port Wentworth, Georgia. Coastal Georgia district based in Savannah."
+  },
+  "campaignWebsite": {
+    "url": "https://buddycarter.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "Campaign website exists at buddycarter.com; direct fetch not available. Content sourced from buddycarter.house.gov/issues/ (official House site) and news coverage of campaign announcements.",
+    "statedPositions": [
+      {
+        "topic": "immigration / border",
+        "quote": "Georgians deserve someone who will support the president and his America first policies, secure borders",
+        "sourceUrl": "https://georgiarecorder.com/2025/05/09/georgia-gop-u-s-rep-buddy-carter-enters-2026-senate-race-that-shapes-up-as-referendum-on-trump-policies/",
+        "date": "2025-05-09",
+        "confidence": "high",
+        "notes": "Campaign launch statement; also called for expanded ICE presence in Atlanta (Nov 2025). Voted for Secure the Border Act (2023)."
+      },
+      {
+        "topic": "transgender athletes / gender policy",
+        "quote": "We don't have men participating in girls' sports",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/georgia-2026-senate-election-buddy-carter-announcement/85-e8f597d6-115a-49e4-b1dc-08b9185102be",
+        "date": "2025-05-08",
+        "confidence": "high",
+        "notes": "Repeatedly cited as a top campaign priority in multiple interviews; primary campaign theme alongside border security."
+      },
+      {
+        "topic": "economy / Trump agenda",
+        "quote": "Donald Trump delivered one of the greatest economies in his first term that we've ever seen",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/the-georgia-vote/georgia-2026-senate-election-buddy-carter-announcement/85-e8f597d6-115a-49e4-b1dc-08b9185102be",
+        "date": "2025-05-08",
+        "confidence": "high",
+        "notes": "General alignment with Trump economic agenda; campaigning as full MAGA endorser."
+      },
+      {
+        "topic": "energy",
+        "quote": "All-of-the-above energy approach, which begins with increasing domestic production of all forms of American energy",
+        "sourceUrl": "https://buddycarter.house.gov/issues/issue/?IssueID=14898",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "From official House issues page. Supports fossil fuels, domestic production, and some renewables (has touted Hyundai EV plant in district)."
+      },
+      {
+        "topic": "healthcare / market-based",
+        "quote": "ACA should immediately be dismantled, repealed and replaced... market-driven solutions to our health care system",
+        "sourceUrl": "https://www.ontheissues.org/GA/Buddy_Carter_Health_Care.htm",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Consistent across entire House career; voted against ACA 9 times. Prefers market competition over government price controls."
+      },
+      {
+        "topic": "education / school choice",
+        "quote": "Education decisions are best made by those closest to the student: families, teachers, and communities in states",
+        "sourceUrl": "https://buddycarter.house.gov/issues/issue/?IssueID=14890",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Supports local control, school choice legislation, and eliminating Common Core. Cosponsored National School Choice Week resolution."
+      },
+      {
+        "topic": "Second Amendment / firearms",
+        "quote": "Efforts to expand gun control and restrict access to legal gun use have proven ineffective in reducing crime",
+        "sourceUrl": "https://buddycarter.house.gov/issues/issue/?IssueID=14888",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Strong gun rights supporter; NRA A-rated. Voted against Bipartisan Background Checks Act and Bipartisan Safer Communities Act (2022)."
+      },
+      {
+        "topic": "taxes / FairTax",
+        "quote": "The Fair Tax scraps the tax code, abolishes the IRS and eliminates all personal and corporate income taxes",
+        "sourceUrl": "https://fairtax.org/active-legislation/h-r-25-the-fairtax-act-of-2025",
+        "date": "2025-01",
+        "confidence": "high",
+        "notes": "Introduced H.R. 25 FairTax Act of 2025 — signature legislative priority. Would replace all income taxes with 23% national sales tax."
+      },
+      {
+        "topic": "Medicaid / safety net",
+        "quote": "Medicaid is there to be a lifeline, not a lifestyle. Nearly $1 trillion in cuts will help stabilize Medicaid for future generations",
+        "sourceUrl": "https://budget.house.gov/press-release/rep-buddy-carterheres-how-the-one-big-beautiful-bill-repairs-americas-health-care-safety-net",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Led Medicaid cuts in One Big Beautiful Bill as Health Subcommittee Chair. Publicly said he would 'actually like to see more' than $880B in cuts."
+      },
+      {
+        "topic": "abortion / reproductive rights",
+        "quote": "Supported the U.S. Supreme Court's decision in Dobbs v. Jackson Women's Health Organization; believes abortion laws should be made by individual states",
+        "sourceUrl": "https://buddycarter.house.gov/news/documentsingle.aspx?DocumentID=485",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "A+ rating from SBA Pro-Life America. Voted to defund Planned Parenthood. Supports state-level determination rather than federal ban."
+      },
+      {
+        "topic": "prescription drug pricing / PBM reform",
+        "quote": "PBMs would be able to bring competition to bear and really get the cost down for all of us",
+        "sourceUrl": "https://buddycarter.house.gov/news/documentsingle.aspx?DocumentID=16283",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "As a pharmacist, favors market competition through PBM regulation over Medicare government price negotiation. Led PBM Reform Act provisions in 2026 spending bill."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "VoteSmart", "HealthReformVotes.org", "buddycarter.house.gov/voterecord/"],
+    "attendanceRate": "97.3% (missed 164 of 6,160 roll call votes, Jan 2015-Feb 2026; on par with median 2.0%)",
+    "keyVotes": [
+      {
+        "bill": "Affordable Care Act (various repeal votes, 2015-2017)",
+        "vote": "Yes (repeal) x9",
+        "topic": "healthcare / coverage model",
+        "sourceUrl": "https://www.healthreformvotes.org/congress/412622",
+        "notes": "Voted to fully or partially repeal ACA nine times. Called himself 'leader in crafting' Republican replacement plan. Consistent position since entering office."
+      },
+      {
+        "bill": "Tax Cuts and Jobs Act (2017)",
+        "vote": "Yes",
+        "topic": "economic / fiscal policy",
+        "sourceUrl": "https://www.govtrack.us/congress/votes/115-2017/h637",
+        "notes": "Called it 'one of the proudest votes he took as a member of Congress.' Lowered corporate and individual tax rates."
+      },
+      {
+        "bill": "Bipartisan Background Checks Act (H.R. 8)",
+        "vote": "No",
+        "topic": "firearms policy",
+        "sourceUrl": "https://www.ontheissues.org/ga/Buddy_Carter_Gun_Control.htm",
+        "notes": "Voted against universal background check requirement for all firearm sales."
+      },
+      {
+        "bill": "Bipartisan Safer Communities Act (2022)",
+        "vote": "No",
+        "topic": "firearms policy",
+        "sourceUrl": "https://news.yahoo.com/u-rep-buddy-carter-voting-093015785.html",
+        "notes": "Was among the 179 House Republicans who voted No. First major federal gun safety legislation in 30 years."
+      },
+      {
+        "bill": "Inflation Reduction Act (2022)",
+        "vote": "No",
+        "topic": "climate / healthcare",
+        "sourceUrl": "https://www.canarymedia.com/articles/politics/buddy-carter-georgia-reconcilation-bill-solar-evs",
+        "notes": "Voted against despite clean energy investments in his district (Hyundai EV plant). Later signed letters against 'sledgehammer' approach to IRA repeal, but said IRA repeal is 'not a red line' for him."
+      },
+      {
+        "bill": "Secure the Border Act (2023)",
+        "vote": "Yes",
+        "topic": "immigration",
+        "sourceUrl": "https://buddycarter.house.gov/news/documentsingle.aspx?DocumentID=11183",
+        "notes": "Carter described it as 'the strongest border security bill in House history.'"
+      },
+      {
+        "bill": "21st Century Peace through Strength Act / Foreign Aid (Israel, Ukraine, Taiwan) (2024)",
+        "vote": "Yes",
+        "topic": "foreign policy / defense",
+        "sourceUrl": "https://www.c-span.org/program/washington-journal/rep-buddy-carter-on-government-funding-and-us-aid-to-israel-ukraine/634860",
+        "notes": "Supported $95B package for military aid. 'Peace through strength' framing. Broke from isolationist wing of party."
+      },
+      {
+        "bill": "Marijuana Opportunity Reinvestment and Expungement Act (2022)",
+        "vote": "No",
+        "topic": "criminal justice",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Buddy_Carter",
+        "notes": "Voted against federal marijuana decriminalization and expungement."
+      },
+      {
+        "bill": "Electoral College certification (Jan 6, 2021) — Pennsylvania objection",
+        "vote": "Yes (objection)",
+        "topic": "democratic norms / election integrity",
+        "sourceUrl": "https://thecurrentga.org/2022/05/09/qa-u-s-rep-earl-l-buddy-carter-candidate-for-u-s-house-district-1/",
+        "notes": "Voted to decertify Pennsylvania's electoral votes. Maintained objection even after Capitol riot. Framed as constitutional concern over state election law changes, not outcome dispute."
+      },
+      {
+        "bill": "One Big Beautiful Bill Act (2025)",
+        "vote": "Yes",
+        "topic": "fiscal / healthcare / immigration",
+        "sourceUrl": "https://buddycarter.house.gov/news/documentsingle.aspx?DocumentID=15760",
+        "notes": "Passed 218-214 on July 3, 2025. Carter was lead architect of Medicaid provisions as Health Subcommittee Chair. Bill included ~$1T in Medicaid cuts (CBO estimated 10.5M+ lose coverage by 2034), SNAP work requirements, and large tax cuts. Signed into law July 4, 2025."
+      },
+      {
+        "bill": "H.R. 25 FairTax Act of 2025",
+        "vote": "Introduced (not yet voted)",
+        "topic": "fiscal / tax policy",
+        "sourceUrl": "https://fairtax.org/active-legislation/h-r-25-the-fairtax-act-of-2025",
+        "notes": "Would abolish IRS and replace income/payroll/estate taxes with 23% national sales tax. Carter's flagship legislative priority."
+      },
+      {
+        "bill": "Respect for Marriage Act (2022)",
+        "vote": "No",
+        "topic": "civil rights / same-sex marriage",
+        "sourceUrl": "https://georgiademocrat.org/what-ga-01-is-seeing-buddy-carter-under-fire-for-voting-against-protecting-marriage-equality/",
+        "notes": "Voted against codifying same-sex and interracial marriage protections."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "3% (2024 annual); 4% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/buddy-carter/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Near-zero environmental voting record. Strongly opposed to major climate legislation. Voted against offshore drilling bans. Supports all-of-the-above fossil fuel approach."
+    },
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": null,
+      "grade": "A",
+      "url": "https://www.nrapvf.org/articles/20140619/nra-pvf-endorses-buddy-carter-for-us-house-in-georgia-1st-cd-primary-runoff",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Endorsed by NRA since initial 2014 House campaign. Voted against Bipartisan Safer Communities Act (2022) and Bipartisan Background Checks Act. Supports national right-to-carry reciprocity. A-grade indicates consistent pro-gun-rights voting record."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "71% (114th Congress), 77% (115th), 87% (116th), 92% (117th); 119th Congress in progress",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/C001103/117",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Trend toward higher conservative alignment scores over his House career. One of the more reliable conservative votes on fiscal and social issues."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "Low (specific 2024 percentage not retrieved; consistent with near-zero labor voting record for House Republicans)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/buddy-carter",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Carter has opposed minimum wage increases and union-favoring legislation. Voted for anti-worker provisions in One Big Beautiful Bill. Exact score not confirmed in search results."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": "Recurring Spirit of Enterprise Award recipient",
+      "grade": null,
+      "url": "https://www.uschamber.com/improving-government/elections/u-s-chamber-endorses-rep-buddy-carter-for-georgias-1st-congressional-district",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Multiple endorsements and Spirit of Enterprise Awards. Exact numerical score for 2023-2024 not confirmed in search results. Consistent pro-business voting record; however FairTax proposal and PBM reforms show some deviations from pure Chamber orthodoxy."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "score": "A+",
+      "grade": "A+",
+      "url": "https://sbaprolife.org/representative/buddy-carter",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Highest pro-life rating. Voted to defund Planned Parenthood. Supports Dobbs; backs state-level determination of abortion law."
+    },
+    {
+      "organization": "ACLU",
+      "score": "Low (specific percentage not retrieved in search; consistent with voting record against civil liberties positions)",
+      "grade": null,
+      "url": "https://www.aclu.org/scorecard/legislators/ga-earl-carter/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Voted against Respect for Marriage Act, marijuana decriminalization, and other civil liberties bills. Exact score not confirmed."
+    },
+    {
+      "organization": "Common Ground Scorecard",
+      "score": "Top 25% for Official Performance (2023 data); noted bipartisan engagement on cancer research with Sen. Chris Van Hollen",
+      "grade": null,
+      "url": "https://commongroundscorecard.org/buddy-carter/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "Somewhat higher bipartisan score than pure partisan record suggests; driven by PBM reform and pharma legislation cross-aisle work."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "NRA Political Victory Fund",
+      "type": "endorsement",
+      "cycle": "2014, 2016, 2018, 2020, 2022, 2024 (House); 2026 Senate expected",
+      "notes": "Consistent NRA endorsee across all House races."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "type": "endorsement + Spirit of Enterprise Award",
+      "cycle": "Multiple House cycles",
+      "notes": "Recurring Chamber endorsee. Notes: some tension with Chamber on FairTax (which Chamber opposes) and drug pricing reform positions."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "type": "A+ scorecard rating",
+      "cycle": "Ongoing",
+      "notes": "Consistent pro-life voting record throughout House career."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "no endorsement yet (as of Feb 2026)",
+      "cycle": "2026",
+      "notes": "Carter has sought Trump's endorsement and met with him at White House. Trump has not endorsed any candidate in Georgia Senate primary, reportedly to avoid intraparty conflict with also-running Rep. Mike Collins. Carter calls himself 'MAGA warrior' and has aligned vote with Trump agenda."
+    },
+    {
+      "organization": "National Community Pharmacists Association (NCPA)",
+      "type": "strong ally",
+      "cycle": "Ongoing",
+      "notes": "Major ally on PBM reform legislation. Carter speaks at NCPA events and champions pharmacist community interests."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "11Alive (WXIA-TV Atlanta)",
+      "date": "2025-05-08",
+      "url": "https://www.11alive.com/article/news/politics/the-georgia-vote/georgia-2026-senate-election-buddy-carter-announcement/85-e8f597d6-115a-49e4-b1dc-08b9185102be",
+      "keyExchanges": [
+        {
+          "topic": "campaign identity",
+          "quote": "I'm a MAGA warrior",
+          "notes": "Self-applied label; positioned as Trump loyalist. Used in campaign ad and in multiple interview settings."
+        },
+        {
+          "topic": "transgender athletes",
+          "quote": "We don't have men participating in girls' sports",
+          "notes": "Emphasized this as top priority; returned to it repeatedly when asked about other issues."
+        },
+        {
+          "topic": "Trump endorsement",
+          "quote": "I've received [Trump's] endorsement in the past and hope to have it in the future",
+          "notes": "Acknowledges no endorsement yet; expressed confidence he'll secure it."
+        }
+      ]
+    },
+    {
+      "outlet": "AJC Politically Georgia podcast",
+      "date": "2025 (multiple appearances)",
+      "url": "https://www.ajc.com/politics/politically-georgia/buddy-carters-us-senate-campaign-is-the-first-of-many-gop-bids-to-come/72DYVNXXC5G5FLXKFZ32JIUUFI/",
+      "keyExchanges": [
+        {
+          "topic": "Medicaid cuts",
+          "quote": "I'd actually like to see more [than $880 billion in Medicaid cuts]",
+          "notes": "Said this despite serving district where Medicaid covers major portion of population. Consistent with role as Health Subcommittee Chair driving OBBB Medicaid provisions."
+        },
+        {
+          "topic": "Medicaid framing",
+          "quote": "We're not kicking anyone off Medicaid... We can cut out waste, fraud and abuse. We can make sure that we have work requirements in that program.",
+          "notes": "Disputes CBO estimate that 10.5M+ lose coverage; frames cuts as targeting fraud and 'able-bodied people' who 'shouldn't have been on the rolls at all.'"
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Public Broadcasting / The Current GA",
+      "date": "2025-05-08",
+      "url": "https://www.gpb.org/news/2025/05/08/georgia-congressman-buddy-carter-launches-maga-warrior-gop-bid-for-2026-senate-race",
+      "keyExchanges": [
+        {
+          "topic": "campaign focus",
+          "quote": "Georgians deserve someone who will support the president and his America first policies, secure borders, ensure a strong economy and energy dominance, and prevent men from participating in girls' sports",
+          "notes": "Core campaign message stated at launch."
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Public Broadcasting",
+      "date": "2025-09-30",
+      "url": "https://www.gpb.org/news/2025/09/30/gas-buddy-carter-says-he-wont-consider-restoring-medicaid-money-to-avert-shutdown",
+      "keyExchanges": [
+        {
+          "topic": "Medicaid / government shutdown",
+          "quote": "Won't consider restoring Medicaid money to avert shutdown",
+          "notes": "Refused to use Medicaid restoration as a fiscal bargaining chip even to avoid government shutdown — hardline fiscal stance."
+        }
+      ]
+    },
+    {
+      "outlet": "Canary Media",
+      "date": "2022",
+      "url": "https://www.canarymedia.com/articles/politics/buddy-carter-georgia-reconcilation-bill-solar-evs",
+      "keyExchanges": [
+        {
+          "topic": "Inflation Reduction Act / IRA",
+          "quote": "Not a red line... I think there may be parts of it that can help us secure our supply chain. There may be parts of it that help us with domestic manufacturing. And if there are, then we should look at keeping it.",
+          "notes": "Despite voting against IRA, signed letters against full repeal. Nuanced position driven by $7.6B Hyundai plant in his district. Won't risk party priorities to protect clean energy credits."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Inflation Reduction Act / clean energy",
+      "conflict": "Voted against IRA in 2022, but then signed three Republican letters opposing a 'sledgehammer' approach to IRA repeal. Also said IRA repeal is 'not a red line' for him. Position driven by $7.6B Hyundai EV/battery plant investment in his coastal Georgia district.",
+      "sources": ["Canary Media (2022)", "Inside Climate News (2025)", "E&E News (2025)"]
+    },
+    {
+      "topic": "Medicaid / safety net",
+      "conflict": "Claims 'we're not kicking anyone off Medicaid' while publicly endorsing $880B+ in cuts that CBO projects will strip coverage from 10.5 million people by 2034. Led the committee crafting the cuts as Health Subcommittee Chair.",
+      "sources": ["AJC Politically Georgia", "CBO estimate", "budget.house.gov press release", "GPB (Sept 2025)"]
+    },
+    {
+      "topic": "Drug pricing",
+      "conflict": "As a pharmacist and champion of PBM reform, Carter has fought to lower drug costs through market competition. Yet voted against the Inflation Reduction Act's Medicare drug price negotiation provisions. Favors market mechanisms; opposes government price-setting.",
+      "sources": ["buddycarter.house.gov (PBM reform)", "healthreformvotes.org (IRA vote)"]
+    },
+    {
+      "topic": "Bipartisan criminal justice reform",
+      "conflict": "His House website has a press release supporting bipartisan criminal justice reform, but he voted against marijuana expungement (MORE Act) and opposes eliminating mandatory minimums. 'Bipartisan' reform framing appears narrow.",
+      "sources": ["buddycarter.house.gov/news/documentsingle.aspx?DocumentID=3722", "Wikipedia (MORE Act vote)"]
+    }
+  ],
+  "policyDetailByAxis": {
+    "economic_safety_net": {
+      "position": "Strongly conditional / restrictive safety net",
+      "evidence": [
+        "Led $1T Medicaid cuts in One Big Beautiful Bill (2025); said he'd 'like to see more' cuts",
+        "Supports SNAP work requirements expanded in OBBB",
+        "Called for Social Security, Medicare, Medicaid reform as condition of debt ceiling increase",
+        "FairTax proposal would eliminate payroll tax (which funds Social Security/Medicare)"
+      ],
+      "confidence": "high"
+    },
+    "economic_public_investment": {
+      "position": "Strongly market-oriented; low public investment",
+      "evidence": [
+        "FairTax Act of 2025 — abolish IRS, replace income tax with sales tax",
+        "Tax Cuts and Jobs Act (2017) — Yes vote",
+        "Multiple ACA repeal votes",
+        "Opposed Inflation Reduction Act spending",
+        "US Chamber of Commerce Spirit of Enterprise Award recipient"
+      ],
+      "confidence": "high"
+    },
+    "economic_school_choice": {
+      "position": "Supports school choice / local control",
+      "evidence": [
+        "Supports school choice legislation; cosponsored National School Choice Week resolution",
+        "Supports eliminating Common Core",
+        "Voted to return education to local control",
+        "Former Education and the Workforce Committee member"
+      ],
+      "confidence": "medium",
+      "notes": "Clear pro-school-choice direction but less prominent in Senate campaign messaging."
+    },
+    "healthcare_coverage_model": {
+      "position": "Market-based; opposed to government coverage expansion",
+      "evidence": [
+        "Voted to repeal ACA 9 times",
+        "Voted against ACA tax credit extensions",
+        "Led Medicaid cuts as Health Subcommittee Chair",
+        "PBM reform via market competition, not government price negotiation",
+        "Opposed Medicare drug price negotiation in IRA"
+      ],
+      "confidence": "high"
+    },
+    "healthcare_cost_control": {
+      "position": "Market competition / PBM reform; opposed to government price controls",
+      "evidence": [
+        "Led PBM Reform Act — market-based approach to drug cost transparency",
+        "Pharmacist background informs nuanced position: supports supply chain / compounding pharmacy reforms",
+        "Explicitly stated preference for market competition over Medicare negotiation",
+        "Growing America's Pharmaceutical Supply Act (2026) — domestic production incentives"
+      ],
+      "confidence": "high",
+      "notes": "Carter has a genuine specialty-area expertise here that makes him more active on drug pricing than typical Republican, though still market-oriented."
+    },
+    "healthcare_public_health": {
+      "position": "Individual choice over collective mandates",
+      "evidence": [
+        "Opposed ACA individual mandate",
+        "Supports state-level determination of health policy",
+        "Opposed government vaccine/mask mandates (consistent with party pattern)"
+      ],
+      "confidence": "medium",
+      "notes": "No direct quotes on mandates found; inferred from ACA repeal votes and general liberty framing."
+    },
+    "justice_firearms": {
+      "position": "Strong gun rights / oppose gun regulations",
+      "evidence": [
+        "NRA A-grade",
+        "Voted No on Bipartisan Safer Communities Act (2022)",
+        "Voted No on Bipartisan Background Checks Act",
+        "Supports national right-to-carry reciprocity",
+        "Opposes EPA lead ammunition ban"
+      ],
+      "confidence": "high"
+    },
+    "justice_police_accountability": {
+      "position": "Back the Blue / status quo",
+      "evidence": [
+        "Introduced House resolution condemning anti-ICE protests",
+        "Defended ICE after it shot and killed a U.S. citizen during operation (Jan 2026)",
+        "Called for expanded ICE presence in Atlanta",
+        "Opposes eliminating mandatory minimums",
+        "Voted against marijuana decriminalization / expungement"
+      ],
+      "confidence": "high"
+    },
+    "justice_sentencing": {
+      "position": "Punishment / deterrence-leaning",
+      "evidence": [
+        "Opposed DC criminal code overhaul that would eliminate mandatory minimums",
+        "Voted against MORE Act (marijuana expungement)",
+        "Has some bipartisan criminal justice reform support (e.g., First Step Act framing) but net position favors tough sentencing"
+      ],
+      "confidence": "medium",
+      "notes": "Supported First Step Act-adjacent bipartisan reform rhetoric but voting record tilts punitive."
+    },
+    "climate_ambition": {
+      "position": "Gradual to no climate action; fossil fuel expansion",
+      "evidence": [
+        "LCV score 3% (2024), 4% lifetime",
+        "Voted against IRA climate provisions",
+        "Supports offshore drilling (with narrow geographic carve-out for immediate Georgia coast)",
+        "All-of-the-above energy framing primarily means more fossil fuel production"
+      ],
+      "confidence": "high"
+    },
+    "climate_energy_portfolio": {
+      "position": "All-of-the-above tilting fossil; conditional renewables support",
+      "evidence": [
+        "Voted against IRA clean energy incentives but then opposed full repeal given district investments",
+        "Enthusiastically touts $7.6B Hyundai EV/battery plant in district as economic win (but frames as jobs, not climate)",
+        "Supports domestic energy production broadly including fossil fuels"
+      ],
+      "confidence": "high",
+      "notes": "IRA conflict reflects district economic interests. His actual legislative pattern strongly favors fossil fuels."
+    },
+    "climate_permitting": {
+      "position": "Faster permitting / deregulation",
+      "evidence": [
+        "Supports cutting 'bureaucratic red tape on American-made fuel and energy'",
+        "General deregulatory stance consistent with Heritage Action 92% score"
+      ],
+      "confidence": "medium",
+      "notes": "No specific permitting legislation cited; inferred from general regulatory stance."
+    },
+    "housing_zoning_supply": {
+      "position": "Insufficient evidence",
+      "evidence": [],
+      "confidence": "low",
+      "notes": "No substantive housing or zoning positions found in federal record. Local background includes planning commission work in Pooler 1989-1993 at city level."
+    },
+    "housing_affordability_tools": {
+      "position": "Insufficient evidence",
+      "evidence": [],
+      "confidence": "low",
+      "notes": "No federal housing policy record found."
+    },
+    "housing_transit": {
+      "position": "Insufficient evidence",
+      "evidence": [],
+      "confidence": "low",
+      "notes": "No transit policy record found."
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition (LCV 3-4%; consistent anti-climate vote record)",
+      "justice_firearms (NRA A-grade; voted against all major gun safety bills)",
+      "healthcare_coverage_model (9 ACA repeal votes; led Medicaid cuts in OBBB)",
+      "economic_safety_net (led $1T Medicaid cuts; supports SNAP work requirements; called for Social Security reform)",
+      "economic_public_investment (FairTax sponsor; Tax Cuts and Jobs Act Yes; Heritage Action 92%)",
+      "justice_police_accountability (ICE expansion advocate; anti-protest resolution; Back the Blue)"
+    ],
+    "weakestAxes": [
+      "housing_zoning_supply (no federal record)",
+      "housing_affordability_tools (no federal record)",
+      "housing_transit (no federal record)",
+      "healthcare_public_health (inferred, not directly evidenced)",
+      "justice_sentencing (mixed; rhetoric moderate, votes lean punitive)"
+    ],
+    "overallConfidence": "high",
+    "notes": "11-year House voting record (2015-present) provides extensive evidence. Carter's record is consistently conservative across most axes with high signal from LCV (4% lifetime), NRA (A-grade), Heritage Action (77-92% range), SBA Pro-Life (A+), and US Chamber (recurring Spirit of Enterprise). Genuine specialty expertise in pharmaceutical/PBM policy creates some nuance in healthcare cost control axis. The IRA position conflict is notable: voted against it but opposed full repeal due to district economic interests. FairTax advocacy is a signature differentiator. Housing is the major evidence gap. Self-styled 'MAGA warrior' identity is central to 2026 Senate campaign. As of Feb 2026, Carter trails in primary polling (11%) without Trump endorsement."
+  },
+  "primaryRaceContext": {
+    "primaryDate": "2026-05-19",
+    "opponents": [
+      {
+        "name": "Mike Collins",
+        "party": "Republican",
+        "role": "U.S. Representative GA-10",
+        "notes": "Also running without Trump endorsement; Collins polling around 18% in Carter's internal poll"
+      },
+      {
+        "name": "Derek Dooley",
+        "party": "Republican",
+        "role": "Former football coach",
+        "notes": "Has support from Gov. Brian Kemp"
+      }
+    ],
+    "generalElectionOpponent": "Sen. Jon Ossoff (D, incumbent)",
+    "pollingContext": "Feb 2026: Carter internal poll shows him at 27%, Collins 18%, 43% undecided. No candidate near 50% needed to avoid runoff. Race rated 'Leans Democratic' by nonpartisan analysts."
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "generatedAt": "2026-02-27T00:00:00Z",
+  "state": "Texas",
+  "contests": [
+    {
+      "id": "TX-US-SENATE-2026",
+      "office": "U.S. Senate",
+      "state": "TX",
+      "district": null,
+      "primaryDate": "2026-03-03",
+      "primaryRunoffDate": "2026-05-26",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "John Cornyn",
+      "incumbentParty": "Republican",
+      "seatContext": "Cornyn seeking 5th term (first elected 2002). Texas has not elected a Democrat to U.S. Senate since 1992. Facing the most expensive Senate primary in history — over $110M in total ad spend as of Feb 25, 2026, driven heavily by $57M+ in outside spending backing Cornyn. Runoff very likely on Republican side given three-way race with no candidate polling near 50%.",
+      "raceRating": "Likely Republican",
+      "raceRatingSource": "Cook Political Report / Inside Elections / Sabato's Crystal Ball (all three in agreement)",
+      "candidates": [
+        {
+          "slug": "john-cornyn",
+          "name": {
+            "full": "John Cornyn",
+            "ballotDisplay": "John Cornyn"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "incumbent",
+          "currentOffice": "U.S. Senator, Texas (since 2002)",
+          "priorOffice": "Texas Attorney General (1999-2002); Texas Supreme Court Justice (1991-1997)",
+          "campaignWebsite": "https://www.johncornyn.com",
+          "fundraisingTotal": 11200000,
+          "fundraisingAsOf": "2026-02-11",
+          "outsideSpendingOnBehalf": 57000000,
+          "latestPolling": {
+            "pollster": "UT/Texas Politics Project",
+            "date": "2026-02-16",
+            "result": "34%",
+            "field": "Republican primary likely voters"
+          },
+          "keyEndorsements": [
+            "Senate Majority Leader John Thune",
+            "National Border Patrol Council"
+          ],
+          "evidenceTier": "high",
+          "notes": "Vulnerable incumbent — underwater in favorability at -8 among Republican primary voters. Attacked by Paxton and Hunt as insufficiently conservative, particularly over his 2022 bipartisan gun safety bill. Campaign message centers on '99.2% voting record with President Trump.' Massive cash-on-hand advantage ($11.2M raised; allied super PACs have spent ~$57M). Runoff widely expected if he cannot clear 50% on March 3."
+        },
+        {
+          "slug": "ken-paxton",
+          "name": {
+            "full": "Ken Paxton",
+            "ballotDisplay": "Ken Paxton"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas Attorney General (since 2015)",
+          "priorOffice": "Texas State Representative (2003-2012); Texas State Senator (2013-2015)",
+          "campaignWebsite": "https://www.kenpaxton.com",
+          "fundraisingTotal": 5900000,
+          "fundraisingAsOf": "2026-02-11",
+          "fundraisingTrend": "Declining each quarter — $2.9M Q2 2025, $1.3M Q3 2025, $1.1M Q4 2025",
+          "latestPolling": {
+            "pollster": "UT/Texas Politics Project",
+            "date": "2026-02-16",
+            "result": "36%",
+            "field": "Republican primary likely voters"
+          },
+          "alternatePolling": {
+            "pollster": "KSAT/CBS News/YouGov (earlier poll)",
+            "result": "38%",
+            "note": "Led in this poll with Cornyn at 31%, Hunt at 17%"
+          },
+          "keyEndorsements": [
+            "Rep. Lance Gooden",
+            "Rep. Troy Nehls"
+          ],
+          "evidenceTier": "high",
+          "notes": "Running as the hard-right challenger to Cornyn. Survived 2023 impeachment acquittal by Texas Senate. Favorability underwater at -10 among Republican primary voters. Fundraising has weakened significantly each quarter but holds ~$3.7M cash on hand. Positions himself as 'battle-tested' conservative who will 'take a sledgehammer to the D.C. establishment.' Widely expected to be in the runoff. Announced candidacy April 8, 2025."
+        },
+        {
+          "slug": "wesley-hunt",
+          "name": {
+            "full": "Wesley Hunt",
+            "ballotDisplay": "Wesley Hunt"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "U.S. Representative, TX-38 (since 2023)",
+          "priorOffice": "U.S. Army (Apache helicopter pilot, West Point graduate)",
+          "campaignWebsite": "https://wesleyfortexas.com",
+          "fundraisingTotal": 2000000,
+          "fundraisingAsOf": "2026-02-11",
+          "latestPolling": {
+            "pollster": "UT/Texas Politics Project",
+            "date": "2026-02-16",
+            "result": "26%",
+            "field": "Republican primary likely voters"
+          },
+          "keyEndorsements": [
+            "Rep. Eli Crane"
+          ],
+          "evidenceTier": "high",
+          "notes": "Entered race October 6, 2025, as the youngest of the three front-runners. Narrows positive favorability among Republican primary voters — the only top-tier candidate not underwater. Running on 'next generation' and 'America First' messaging. Has faced scrutiny for missed House votes during the Senate campaign. Seen as the potential spoiler or runoff wild card. Gave up TX-38 seat to run."
+        },
+        {
+          "slug": "jasmine-crockett",
+          "name": {
+            "full": "Jasmine Crockett",
+            "ballotDisplay": "Jasmine Crockett"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "U.S. Representative, TX-30 (since 2023)",
+          "priorOffice": "Texas State Representative (2021-2023); public defender; civil rights attorney",
+          "campaignWebsite": "https://www.jasmineforus.com",
+          "fundraisingTotal": 8600000,
+          "fundraisingAsOf": "2026-02-11",
+          "fundraisingNote": "Majority transferred from House campaign account after late entry (December 8, 2025)",
+          "latestPolling": {
+            "pollster": "UT/Texas Politics Project",
+            "date": "2026-02-16",
+            "result": "56%",
+            "field": "Democratic primary likely voters"
+          },
+          "alternatePolling": {
+            "pollster": "Emerson College",
+            "date": "2026-01-10",
+            "result": "38%",
+            "note": "Trailed Talarico 47-38 in this earlier poll"
+          },
+          "keyEndorsements": [
+            "EMILY's List",
+            "Congressional Black Caucus",
+            "SEIU Texas",
+            "San Antonio Express-News (editorial board)",
+            "Colin Allred (2024 Democratic nominee)"
+          ],
+          "evidenceTier": "high",
+          "notes": "National profile as vocal progressive House member; frequent cable news presence. Entered race December 8, 2025, three months after Talarico. Late entry initially allowed Talarico to lead in early polls, but most recent UT poll shows Crockett ahead by double digits (56-44). Endorsed by EMILY's List. Gave up TX-30 seat to run. Campaign message focuses on affordability."
+        },
+        {
+          "slug": "james-talarico",
+          "name": {
+            "full": "James Talarico",
+            "ballotDisplay": "James Talarico"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas State Representative, HD-50 (since 2018)",
+          "priorOffice": "Middle school teacher; Presbyterian seminary student",
+          "campaignWebsite": "https://jamestalarico.com",
+          "fundraisingTotal": 20700000,
+          "fundraisingAsOf": "2026-02-11",
+          "fundraisingNote": "Leads entire Texas Senate field in fundraising on Democratic side — $20.7M raised. Does not accept corporate PAC money.",
+          "latestPolling": {
+            "pollster": "UT/Texas Politics Project",
+            "date": "2026-02-16",
+            "result": "44%",
+            "field": "Democratic primary likely voters"
+          },
+          "alternatePolling": {
+            "pollster": "Emerson College",
+            "date": "2026-01-10",
+            "result": "47%",
+            "note": "Led Crockett 47-38 in this earlier poll"
+          },
+          "keyEndorsements": [
+            "Houston Chronicle (editorial board)",
+            "Austin American-Statesman (editorial board)",
+            "Dallas Morning News (editorial board)",
+            "Fort Worth Star-Telegram (editorial board)",
+            "U.S. Sen. Martin Heinrich"
+          ],
+          "evidenceTier": "high",
+          "notes": "Announced September 9, 2025 — three months before Crockett. Massive fundraising advantage over the entire Democratic field at $20.7M raised. Runs explicitly anti-corporate-PAC campaign; 'top vs. bottom' economic framing. Sweeps major Texas newspaper endorsements. Strong early polling lead has narrowed as Crockett entered and gained momentum. Progressive state legislator running a grassroots-style campaign."
+        },
+        {
+          "slug": "ahmad-hassan",
+          "name": {
+            "full": "Ahmad Hassan",
+            "ballotDisplay": "Ahmad Hassan"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": null,
+          "campaignWebsite": null,
+          "fundraisingTotal": null,
+          "latestPolling": {
+            "pollster": "Emerson College",
+            "date": "2026-01-10",
+            "result": "1%",
+            "field": "Democratic primary likely voters"
+          },
+          "evidenceTier": "low",
+          "notes": "Third Democratic primary candidate. No FEC filings found, minimal public profile, 1% in polling. Included on ballot but does not meet viability threshold. No campaign website confirmed."
+        },
+        {
+          "slug": "jade-simmons",
+          "name": {
+            "full": "Jade Simmons",
+            "ballotDisplay": "Jade Simmons"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": "2020 independent presidential candidate (qualified in 40+ states)",
+          "campaignWebsite": "https://www.jadesimmonsforsenate.com",
+          "fundraisingTotal": null,
+          "evidenceTier": "medium",
+          "notes": "Concert pianist, author, speaker, entrepreneur. Northwestern University and Rice University graduate. Ran as independent presidential candidate in 2020 during COVID — significant organizational experience for an independent. Filed Texas independent declaration for general election. No polling data available. Credible biography and prior electoral experience distinguish her from other minor independents."
+        },
+        {
+          "slug": "joshua-cain",
+          "name": {
+            "full": "Joshua Cain",
+            "ballotDisplay": "Joshua Cain"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": null,
+          "campaignWebsite": null,
+          "fundraisingTotal": null,
+          "evidenceTier": "low",
+          "notes": "Independent general election filer. Minimal public profile. No campaign website confirmed."
+        },
+        {
+          "slug": "camencia-ford",
+          "name": {
+            "full": "Camencia Ford",
+            "ballotDisplay": "Camencia Ford"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": null,
+          "campaignWebsite": null,
+          "fundraisingTotal": null,
+          "evidenceTier": "low",
+          "notes": "Independent general election filer. Minimal public profile. No campaign website confirmed."
+        },
+        {
+          "slug": "hans-truelson",
+          "name": {
+            "full": "Hans Truelson",
+            "ballotDisplay": "Hans Truelson"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": null,
+          "campaignWebsite": null,
+          "fundraisingTotal": null,
+          "evidenceTier": "low",
+          "notes": "Independent general election filer. Minimal public profile. No campaign website confirmed."
+        }
+      ]
+    }
+  ],
+  "libertarianNomination": {
+    "note": "Libertarian Party will nominate their candidate at a convention on April 12, 2026. Two candidates seeking the nomination: Ted Brown and Daniel Mark Sims. Neither has a meaningful public profile at this time. Will need to be updated post-convention.",
+    "conventionDate": "2026-04-12",
+    "potentialCandidates": [
+      {
+        "slug": "ted-brown-l",
+        "name": "Ted Brown",
+        "party": "Libertarian",
+        "evidenceTier": "low"
+      },
+      {
+        "slug": "daniel-mark-sims-l",
+        "name": "Daniel Mark Sims",
+        "party": "Libertarian",
+        "evidenceTier": "low"
+      }
+    ]
+  },
+  "ballotMeasures": [
+    {
+      "slug": "tx-2026-rep-primary-props",
+      "state": "TX",
+      "officialTitle": "Texas Republican Primary Advisory Propositions (10 questions)",
+      "shortName": "Republican Primary Non-Binding Propositions",
+      "electionDate": "2026-03-03",
+      "certificationStatus": "confirmed",
+      "type": "non-binding advisory",
+      "yesVoteMeans": "Voter endorses the stated party platform position (non-binding — results have no legal effect)",
+      "noVoteMeans": "Voter does not endorse the stated party platform position",
+      "summary": "Texas Republicans will vote on 10 non-binding advisory questions including: property tax phase-out via purchase-price assessment, requiring voter approval for local tax increases, banning healthcare denial based on vaccination status, requiring schools to teach life begins at fertilization, banning gender/sexuality clinics in K-12 schools, term limits on elected officials, prohibiting large-scale groundwater export, ending public services for undocumented immigrants, barring Democrats from legislative leadership roles, and prohibiting Sharia law.",
+      "evidenceTier": "high"
+    },
+    {
+      "slug": "tx-2026-dem-primary-props",
+      "state": "TX",
+      "officialTitle": "Texas Democratic Primary Advisory Propositions (13 questions)",
+      "shortName": "Democratic Primary Non-Binding Propositions",
+      "electionDate": "2026-03-03",
+      "certificationStatus": "confirmed",
+      "type": "non-binding advisory",
+      "yesVoteMeans": "Voter endorses the stated party platform position (non-binding — results have no legal effect)",
+      "noVoteMeans": "Voter does not endorse the stated party platform position",
+      "summary": "Texas Democrats will vote on 13 non-binding advisory questions emphasizing healthcare expansion (Medicaid), reproductive healthcare access, education funding, immigration reform, voting rights access, and anti-gerrymandering/redistricting reform including creation of a nonpartisan redistricting board.",
+      "evidenceTier": "high"
+    },
+    {
+      "slug": "tx-2026-nov-ballot-measures",
+      "state": "TX",
+      "officialTitle": "Texas November 2026 Constitutional Amendments (TBD)",
+      "shortName": "November 2026 Statewide Propositions",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "pending",
+      "type": "constitutional amendment",
+      "yesVoteMeans": "TBD — Texas Legislature has not yet passed amendments for the November 2026 ballot",
+      "noVoteMeans": "TBD",
+      "summary": "Texas voters approved all 17 constitutional amendments on the November 2025 ballot. The 90th Texas Legislature regular session began January 2025. Any constitutional amendments for November 2026 would need to be passed by the legislature; specific measures have not yet been certified as of February 2026. This entry should be updated once the legislative session concludes.",
+      "evidenceTier": "low"
+    }
+  ],
+  "viabilityScreeningNotes": {
+    "republicanPrimary": {
+      "viable": ["john-cornyn", "ken-paxton", "wesley-hunt"],
+      "excluded": [
+        {
+          "name": "John Adefope",
+          "reason": "No polling data, no significant fundraising, no prior office"
+        },
+        {
+          "name": "Anna Bender",
+          "reason": "No polling data, no significant fundraising, no prior office"
+        },
+        {
+          "name": "Virgil Bierschwale",
+          "reason": "Software developer and Navy veteran — some public presence (Candidate Connection) but no polling and no significant fundraising"
+        },
+        {
+          "name": "Sara Canady",
+          "reason": "No polling data, no significant fundraising, no prior office"
+        },
+        {
+          "name": "Gulrez Khan",
+          "reason": "Healthcare entrepreneur — Candidate Connection profile only, no polling, no significant fundraising"
+        }
+      ]
+    },
+    "democraticPrimary": {
+      "viable": ["jasmine-crockett", "james-talarico"],
+      "borderline": ["ahmad-hassan"],
+      "notes": "Ahmad Hassan is included in manifest at evidenceTier low per filing record, but has 1% polling and no confirmed fundraising. He does not meet the viability screening rule and should be treated as a placeholder."
+    },
+    "general": {
+      "notableIndependent": "jade-simmons",
+      "lowEvidenceIndependents": ["joshua-cain", "camencia-ford", "hans-truelson"],
+      "libertarianNote": "Libertarian nominee TBD — convention April 12, 2026. Update manifest post-convention."
+    }
+  },
+  "raceContext": {
+    "totalPrimaryAdSpend": "$110M+ (record for a Senate primary as of Feb 25, 2026)",
+    "outsideSpendingBreakdown": "$75M+ from outside groups; ~$57M on Cornyn's behalf alone",
+    "runoffLikelihood": "Very high on Republican side — three-way race with no candidate near 50%",
+    "historicalContext": "Texas last elected a Democrat to U.S. Senate in 1992. Trump won Texas 56-42 in 2024.",
+    "democraticMomentum": "Early voting data shows Democratic primary turnout surging — highest for a March primary in recent memory"
+  },
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026",
+      "description": "Ballotpedia main race page — candidate list, fundraising, race ratings",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026_(March_3_Republican_primary)",
+      "description": "Ballotpedia Republican primary page — endorsements, polling, candidate detail",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026_(March_3_Democratic_primary)",
+      "description": "Ballotpedia Democratic primary page — candidate detail, fundraising, polling, endorsements",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/02/25/texas-senate-poll-crockett-talarico-university-of-texas-paxton-cornyn-hunt-2026/",
+      "description": "Texas Tribune — UT/Texas Politics Project final pre-primary poll (Feb 2-16, 2026)",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/01/31/texas-senate-gop-primary-fundraising-q4-cornyn-paxton-hunt-2026/",
+      "description": "Texas Tribune — Q4 2025 fundraising breakdown: Cornyn, Paxton, Hunt",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://emersoncollegepolling.com/texas-2026-poll/",
+      "description": "Emerson College Poll — Democratic primary Jan 10-12, 2026 (Talarico 47, Crockett 38)",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.ksat.com/news/local/2026/02/19/gop-senate-candidates-in-heated-primary-battle-to-represent-texas-as-trump-declines-endorsement/",
+      "description": "KSAT — GOP primary dynamics, Trump declines to endorse, satellite spending breakdown",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.kwtx.com/2026/02/25/hotly-contested-texas-senate-race-is-setting-spending-records-ahead-tuesdays-primary/",
+      "description": "KWTX/AP — $110M+ in total ad spend, record for a Senate primary",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.sos.state.tx.us/elections/laws/advisory2025-17-mar-3-2026-primary-elec-law-cal-and-may-26-2026-primary-runoff-elec-law-cal.shtml",
+      "description": "Texas Secretary of State — Official election law calendar confirming March 3 primary and May 26 runoff",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://news.ballotpedia.org/2026/02/23/texas-voters-to-decide-on-a-combined-23-non-binding-advisory-questions-in-the-march-3-primaries/",
+      "description": "Ballotpedia News — 23 non-binding primary advisory questions (10 Republican, 13 Democratic)",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.jadesimmonsforsenate.com/meet-jade-simmons",
+      "description": "Jade Simmons official campaign website — independent general election candidate background",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    },
+    {
+      "url": "https://www.fec.gov/data/elections/senate/TX/2026/",
+      "description": "FEC — Official Texas U.S. Senate 2026 candidate financial disclosures",
+      "fetchedAt": "2026-02-27T00:00:00Z"
+    }
+  ]
+}

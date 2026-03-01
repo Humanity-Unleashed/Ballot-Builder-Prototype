@@ -1,0 +1,514 @@
+{
+  "slug": "jon-ossoff",
+  "name": "Jon Ossoff",
+  "party": "Democratic",
+  "office": "U.S. Senate, Georgia, 2026",
+  "contestId": "GA-US-SENATE-2026",
+  "incumbencyStatus": "incumbent — first term, sworn in January 20, 2021",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Senator for Georgia (January 2021 – present); serves on Senate Permanent Subcommittee on Investigations (PSI, former chair)",
+    "priorRoles": [
+      "CEO, Insight TWI — investigative documentary media company covering corruption and war crimes (2013–2020)",
+      "National security aide, office of U.S. Rep. Hank Johnson (D-GA4) (2007–2012)",
+      "Volunteer/intern, office of U.S. Rep. John Lewis (D-GA5) — beginning age 16"
+    ],
+    "education": "B.S. Foreign Service, Georgetown University (2009); M.Sc., London School of Economics (2013)",
+    "background": "Born February 16, 1987, Atlanta, GA. Youngest Democratic senator elected since Joe Biden (1972). Georgia's first Jewish senator. Defeated incumbent Republican Sen. David Perdue in January 5, 2021 runoff, 50.6% to 49.4% (~55,000 vote margin). Characterized as a centrist Democrat by New York Magazine, Washington Post, National Review, and New York Times.",
+    "keyBiographicNotes": "Inspired by John Lewis biography at age 16; maintained a relationship with Lewis as a formative mentor. Attorney background and documentary filmmaker — investigative journalism orientation evident in Senate oversight work. Only Senate Democrat on the 2026 ballot in a Trump-won state."
+  },
+  "campaignWebsite": {
+    "url": "https://electjon.com",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "Direct fetch blocked; content reconstructed from search snippets and press releases mirrored on electjon.com",
+    "statedPositions": [
+      {
+        "topic": "healthcare",
+        "quote": "Health care guaranteed at an affordable price",
+        "sourceUrl": "https://electjon.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Homepage slogan-level language. 2026 campaign is heavily centering ACA premium subsidies — Ossoff states over 1.4 million Georgians could see premiums double if subsidies expire."
+      },
+      {
+        "topic": "healthcare — public option",
+        "quote": "More choice increases competition in the health insurance marketplace and lowers costs… forcing private insurers to compete with the public plan on quality and price",
+        "sourceUrl": "https://electjon.com/wp-content/uploads/2020/08/2020.08.24-Ossoff-Health-Care-Plan.pdf",
+        "date": "2020 (2020 campaign plan — not yet updated for 2026 campaign)",
+        "confidence": "medium",
+        "notes": "2020 health care plan document. Publicly stated he does NOT support Medicare for All, but DOES support a public option added to ACA exchange while preserving private insurance. AJC confirmed 'public option' framing in 2020 coverage. No 2026 campaign document explicitly retracts this; his 2026 messaging focuses on ACA subsidies and drug pricing rather than the public option specifically."
+      },
+      {
+        "topic": "healthcare — drug pricing",
+        "quote": "Will vote to let Medicare negotiate lower drug prices and to allow Georgians to buy safe and more affordable prescription drugs from Canada",
+        "sourceUrl": "https://states.aarp.org/georgia/election-senate-ossoff-perdue",
+        "date": "2020",
+        "confidence": "high",
+        "notes": "AARP questionnaire response. Consistent with his 2022 vote for the Inflation Reduction Act, which includes Medicare drug price negotiation."
+      },
+      {
+        "topic": "economic — taxes and jobs",
+        "quote": "Lower taxes for all but the wealthiest Americans, debt-free public college, and free vocational training",
+        "sourceUrl": "https://electjon.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Reconstructed from search snippet of electjon.com platform language."
+      },
+      {
+        "topic": "climate — clean energy",
+        "quote": "Massive federal investment in clean energy, grid infrastructure, and research & development",
+        "sourceUrl": "https://electjon.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Reconstructed from platform language. Consistent with his Senate legislative record (Solar Manufacturing Act, Clean Energy for All Homes Act, IRA vote)."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "VoteSmart", "Wikipedia", "Congressional Record"],
+    "attendanceRate": "High — GovTrack reports Ossoff among most active freshman senators; missed minimal votes 2021–2025",
+    "partyAlignmentScore": "97% alignment with Biden's position on votes (117th Congress, FiveThirtyEight)",
+    "bipartisanshipRanking": "Top third of Senate (ranked #33 by Lugar Center bipartisanship index, 2023)",
+    "keyVotes": [
+      {
+        "bill": "American Rescue Plan Act (2021)",
+        "vote": "Yes",
+        "topic": "economic / safety net / healthcare",
+        "date": "2021-03",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jon_Ossoff",
+        "notes": "$1.9T COVID relief including expanded ACA subsidies, child tax credit, direct payments"
+      },
+      {
+        "bill": "For the People Act / Freedom to Vote Act (2021)",
+        "vote": "Yes — sponsored and championed",
+        "topic": "voting rights / democracy",
+        "date": "2021",
+        "sourceUrl": "https://www.ossoff.senate.gov/press-releases/sen-ossoffs-voting-rights-bills-included-in-new-freedom-to-vote-act/",
+        "notes": "Ossoff introduced the Right to Vote Act (statutory federal voting right) and the Voters' Access to Water Act, both folded into the Freedom to Vote Act. Bill passed Senate committee but failed to overcome Republican filibuster."
+      },
+      {
+        "bill": "John R. Lewis Voting Rights Advancement Act of 2021",
+        "vote": "Yes — co-sponsor",
+        "topic": "voting rights",
+        "date": "2021",
+        "sourceUrl": "https://www.ossoff.senate.gov/press-releases/sen-ossoff-colleagues-introduce-historic-john-r-lewis-voting-rights-advancement-act-of-2021/",
+        "notes": "Would restore and modernize provisions of the original VRA weakened by Shelby County v. Holder (2013)"
+      },
+      {
+        "bill": "Bipartisan Infrastructure Law (2021)",
+        "vote": "Yes",
+        "topic": "public investment / climate / broadband",
+        "date": "2021-11",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jon_Ossoff",
+        "notes": "$1.2T for roads, bridges, broadband, water infrastructure, coastal resilience. Ossoff specifically secured Georgia port and airport upgrades and broadband expansion."
+      },
+      {
+        "bill": "Inflation Reduction Act (2022)",
+        "vote": "Yes",
+        "topic": "climate / healthcare / economic",
+        "date": "2022-08",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jon_Ossoff",
+        "notes": "Includes Medicare drug price negotiation, $35 insulin cap for seniors, largest US climate investment in history (~$369B for clean energy), and extension of ACA subsidies"
+      },
+      {
+        "bill": "CHIPS and Science Act (2022)",
+        "vote": "Yes",
+        "topic": "economic / public investment / manufacturing",
+        "date": "2022-07",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jon_Ossoff",
+        "notes": "Domestic semiconductor manufacturing investment; Ossoff negotiated provisions for Georgia manufacturers"
+      },
+      {
+        "bill": "Bipartisan Safer Communities Act (2022)",
+        "vote": "Yes",
+        "topic": "firearms",
+        "date": "2022-06",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Jon_Ossoff",
+        "notes": "First major federal gun safety legislation in decades. Enhanced background checks for under-21 buyers, red flag law funding, domestic violence purchasing restrictions."
+      },
+      {
+        "bill": "Federal Prison Oversight Act (signed into law 2024)",
+        "vote": "Yes — primary sponsor",
+        "topic": "justice / prison reform",
+        "date": "2024-07",
+        "sourceUrl": "https://www.ossoff.senate.gov/press-releases/signed-into-law-sens-ossoff-braun-durbin-reps-mcbath-armstrongs-bipartisan-federal-prison-oversight-act/",
+        "notes": "Bipartisan bill (co-sponsored with Braun R-IN, Durbin D-IL). Mandates DOJ Inspector General routine inspections of all 122 federal prison facilities; creates new Ombudsman for incarcerated people's rights and safety. Signed into law by President Biden. Followed Ossoff's 10-month bipartisan PSI investigation into corruption and abuse in federal prisons."
+      },
+      {
+        "bill": "Laken Riley Act (2025)",
+        "vote": "Yes",
+        "topic": "immigration",
+        "date": "2025-01",
+        "sourceUrl": "https://www.ajc.com/politics/ossoff-lays-the-groundwork-for-2026-reelection-campaign/UCWPQDWKZFATVPVY6TYW5RGPQU/",
+        "notes": "One of only a handful of Senate Democrats to vote for this immigration enforcement bill. NRSC criticized him for it anyway. Significant political positioning as the only Senate Democrat in a Trump-won state. Represents a centrist stance on immigration enforcement."
+      },
+      {
+        "bill": "Joint Resolution of Disapproval — Block rifle sales to Israel (November 2024)",
+        "vote": "Yes",
+        "topic": "foreign policy / Israel",
+        "date": "2024-11",
+        "sourceUrl": "https://georgiarecorder.com/2025/02/20/bookman-ossoff-chose-principle-over-politics-voting-against-some-weapons-for-israel/",
+        "notes": "Voted to block sale of rifles to Israel (tied to Ben-Gvir's police forces and civilian casualty concerns in Gaza). Voted AGAINST blocking air-to-ground munitions in same batch of resolutions. Nuanced — not blanket opposition to Israel arms."
+      },
+      {
+        "bill": "Joint Resolution of Disapproval — Block $8.8B arms sales to Israel (May 2025)",
+        "vote": "No (voted AGAINST blocking)",
+        "topic": "foreign policy / Israel",
+        "date": "2025-05",
+        "sourceUrl": "https://www.ajc.com/politics/ossoff-warnock-change-course-reject-latest-bid-to-block-israel-arms-sales/A3XZASWXA5CXLNAVTX6N6FDUTI/",
+        "notes": "Reversed course from Nov 2024 position. Said the resolutions 'would have been damaging' to hostage negotiations. AJC noted this as a reversal alongside Warnock."
+      },
+      {
+        "bill": "Joint Resolution of Disapproval — Block assault rifle sales to Israel (July 2025)",
+        "vote": "Yes",
+        "topic": "foreign policy / Israel",
+        "date": "2025-07",
+        "sourceUrl": "https://www.ajc.com/politics/2025/07/ossoff-warnock-vote-to-curb-us-arms-sales-to-israel-amid-hunger-crisis-in-gaza/",
+        "notes": "Voted to limit automatic assault rifle sales to Israel; voted AGAINST blocking $675M heavy bombs package. Continuing selective/conditional approach."
+      },
+      {
+        "bill": "DHS Appropriations — Refused to support (January 2026)",
+        "vote": "No — pledged to vote against DHS funding",
+        "topic": "immigration / civil liberties",
+        "date": "2026-01",
+        "sourceUrl": "https://georgiarecorder.com/2026/01/26/ossoff-warnock-say-they-will-not-support-dhs-funding-in-wake-of-second-fatal-shooting-in-minnesota/",
+        "notes": "Joined other Democrats in refusing to support DHS appropriations without civil liberties protections for ICE detainees, following fatal ICE shooting in Minneapolis and publication of his own report documenting 1,000+ abuse incidents in detention."
+      }
+    ]
+  },
+  "legislativeInitiatives": [
+    {
+      "bill": "Solar Energy Manufacturing for America Act",
+      "status": "Enacted — included in 2021 budget reconciliation",
+      "topic": "climate / energy portfolio",
+      "notes": "Supercharged domestic solar manufacturing; created tens of thousands of clean energy jobs in Georgia and nationwide"
+    },
+    {
+      "bill": "Clean Energy for All Homes Act",
+      "status": "Passed U.S. House",
+      "topic": "climate / energy / affordability",
+      "notes": "Would help middle-class and lower-income families afford solar roof and renewable energy installations"
+    },
+    {
+      "bill": "HOPE for HOMES Act / Zero-Emission Homes Act",
+      "status": "Urged for budget reconciliation inclusion",
+      "topic": "climate / housing / energy",
+      "notes": "Would make electric and energy-efficient home appliances more affordable; accelerate transition to clean energy"
+    },
+    {
+      "bill": "Right to Vote Act",
+      "status": "Introduced; folded into Freedom to Vote Act",
+      "topic": "voting rights",
+      "notes": "First-ever statutory federal right to vote; enforceable in federal court"
+    },
+    {
+      "bill": "Federal Prison Oversight Act",
+      "status": "Signed into law July 2024",
+      "topic": "justice / prison oversight",
+      "notes": "Bipartisan. Landmark reform requiring DOJ IG inspections of all 122 federal prison facilities and establishing inmate rights ombudsman"
+    },
+    {
+      "bill": "STOCK Act expansion — Ban Congressional stock trading",
+      "status": "Introduced January 2022",
+      "topic": "anti-corruption / ethics",
+      "notes": "Would ban members of Congress and their spouses from trading individual stocks"
+    },
+    {
+      "bill": "Civil Rights Cold Case Investigations Support Act",
+      "status": "Signed into law",
+      "topic": "civil rights / justice",
+      "notes": "Provides support for investigations into unsolved civil rights-era lynchings and murders"
+    }
+  ],
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "97% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/jon-ossoff/",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "LCV Action Fund endorsed Ossoff for U.S. Senate. 97% lifetime score is extremely high — indicates near-perfect alignment with pro-environment votes. Consistent with IRA vote (largest US climate bill), Bipartisan Infrastructure Law vote, and solar manufacturing legislation."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "High — specific percentage not retrieved but AFL-CIO scorecard page exists",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/jon-ossoff",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "AFL-CIO maintains a full scorecard page for Ossoff. He voted Yes on PRO Act (Protecting the Right to Organize), American Rescue Plan (expanded labor protections), and Bipartisan Infrastructure Law. Consistent pattern of pro-labor votes. Specific annual percentage not confirmed from search snippets."
+    },
+    {
+      "organization": "Heritage Action",
+      "score": "6% (117th Congress) / ongoing 119th Congress scorecard listed",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/O000174/117",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "6% means Ossoff votes with the conservative Heritage Action position almost never. Expected for a Democrat. Confirms strong liberal voting pattern on economic and social issues Heritage Action tracks."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "score": "0% (inferred)",
+      "grade": "F",
+      "url": "https://sbaprolife.org/senator/jon-ossoff",
+      "fetchedAt": "2026-02-25T00:00:00.000Z",
+      "notes": "SBA scorecard states Ossoff has 'consistently voted to prevent protections for the unborn and for children born alive after failed abortions.' He is explicitly pro-choice and has called for federal codification of abortion rights post-Dobbs."
+    },
+    {
+      "organization": "End Citizens United",
+      "score": null,
+      "grade": "A+",
+      "url": null,
+      "notes": "Received A+ anti-corruption rating from End Citizens United. Consistent with his stock trading ban legislation and anti-corruption focus."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found in search results — consistent with his gun safety voting record (Bipartisan Safer Communities Act, universal background check support, red flag law support). VoteSmart has a guns issue page for Ossoff but specific NRA letter grade not retrieved."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": "https://www.uschamber.com/how-they-voted",
+      "notes": "Chamber scorecard page exists but specific Ossoff percentage not retrieved. Given 97% Biden alignment, Heritage Action 6%, and votes for IRA and labor legislation, Chamber score is likely low (under 30%). Not confirmed."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "DSCC (Democratic Senatorial Campaign Committee)",
+      "type": "institutional support",
+      "cycle": "2026",
+      "notes": "Ossoff is the DSCC's top defensive priority for 2026"
+    },
+    {
+      "organization": "LCV Action Fund",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Explicit endorsement from LCV Action Fund for his Senate reelection"
+    },
+    {
+      "organization": "Lugar Center — Bipartisanship Index",
+      "type": "ranking",
+      "cycle": "2023",
+      "notes": "Ranked #33 in the Senate for bipartisanship in 2023 — top third — relevant signal for his positioning as a cross-aisle dealmaker"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Atlanta Journal-Constitution (AJC)",
+      "date": "2025-05",
+      "url": "https://www.ajc.com/news/nation-world/balancing-trump-criticism-and-bipartisanship-democrat-jon-ossoff-walks-a-fine-line-in-georgia/RJKSH7EPENDMBMAFS3OZKSZTUY/",
+      "keyExchanges": [
+        {
+          "topic": "bipartisanship / campaign strategy",
+          "quote": "Actively seeking opportunities to find common ground with President-elect Donald Trump and other Republicans to advance the interests of Georgia",
+          "notes": "Emphasis on targeted bipartisanship — working with GOP on specific legislation while attacking Trump broadly. Analysts cite this as strategic targeting of swing voters (Warnock 2022 / Kemp voters)."
+        },
+        {
+          "topic": "bipartisanship — example",
+          "quote": "Promoting his partnership with Republican Sen. Cindy Hyde-Smith of Mississippi on legislation to cut income taxes for qualifying small businesses",
+          "notes": "Concrete example of cross-aisle economic legislation"
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Journal-Constitution (AJC)",
+      "date": "2025-08",
+      "url": "https://www.ajc.com/politics/2025/08/jon-ossoffs-2026-playbook-is-to-work-with-gop-bash-trump-repeat/",
+      "keyExchanges": [
+        {
+          "topic": "overall 2026 strategy",
+          "quote": "Work with GOP, bash Trump, repeat",
+          "notes": "AJC characterization of his strategic posture. He has built strong bipartisan relationships while also leading sharp criticism of Trump's governance."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Journal-Constitution (AJC)",
+      "date": "2025-12",
+      "url": "https://www.ajc.com/politics/2025/12/ossoff-finds-firmer-footing-as-2026-race-takes-shape/",
+      "keyExchanges": [
+        {
+          "topic": "political standing",
+          "quote": "Georgia Democrats increasingly are confident of the first-term lawmaker's midterm chances, and Republicans are the ones sounding pessimistic",
+          "notes": "Shift from being considered the most likely Democratic Senate loss to a potential hold. $25M cash on hand as of early 2026 — most of any competitive incumbent."
+        }
+      ]
+    },
+    {
+      "outlet": "GPB (Georgia Public Broadcasting) — Atlanta campaign rally",
+      "date": "2026-02-09",
+      "url": "https://www.gpb.org/news/2026/02/09/us-sen-jon-ossoff-holds-campaign-rally-in-atlanta",
+      "keyExchanges": [
+        {
+          "topic": "democracy / voting rights / FBI raid on Fulton County ballots",
+          "quote": "They came to Fulton County, Ga. They came to the political and spiritual heart of the civil rights movement",
+          "notes": "Ossoff framed the Trump-ordered FBI seizure of 2020 election ballots as an attack on voting rights and the civil rights legacy"
+        },
+        {
+          "topic": "DOJ independence",
+          "quote": "The administration is fast corrupting the Justice Department and even our intelligence agencies. And yes, they are laying the groundwork for mischief in the upcoming elections.",
+          "notes": "Strong language about democratic backsliding — frames Trump's DOJ as existential threat to elections"
+        },
+        {
+          "topic": "healthcare / economic populism",
+          "quote": "Trump was supposed to fight for the working class. Instead, he's literally closing rural clinics and hospitals to cut taxes for George Soros and Elon Musk.",
+          "notes": "Campaign messaging pivot: connecting rural healthcare cuts to tax cuts for the wealthy. Specific to Georgia's rural hospital crisis."
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Recorder",
+      "date": "2025-03-22",
+      "url": "https://georgiarecorder.com/2025/03/22/ossoff-rallies-democrats-with-anti-trump-message-as-he-looks-to-2026-reelection-bid/",
+      "keyExchanges": [
+        {
+          "topic": "Trump / 2026 campaign framing",
+          "quote": "I have built strong and effective bipartisan relationships [to] fully fund the Centers for Disease Control and Prevention and build new enlisted housing on Georgia military bases",
+          "notes": "Highlights CDC funding and military infrastructure as bipartisan accomplishments — significant given CDC is headquartered in Atlanta, Georgia"
+        }
+      ]
+    },
+    {
+      "outlet": "WABE (Atlanta NPR affiliate)",
+      "date": "2026",
+      "url": "https://www.wabe.org/ahead-of-2026-campaign-ossoff-says-georgia-will-bow-to-no-king/",
+      "keyExchanges": [
+        {
+          "topic": "executive power / anti-authoritarian",
+          "quote": "Georgia will bow to no king",
+          "notes": "Central campaign rhetorical framing against Trump's executive overreach"
+        }
+      ]
+    },
+    {
+      "outlet": "Jon Ossoff — statement on Israel arms votes (press release)",
+      "date": "2024-11",
+      "url": "https://www.ossoff.senate.gov/press-releases/sen-ossoff-statement-on-jrd-votes/",
+      "keyExchanges": [
+        {
+          "topic": "Israel / Gaza / arms sales",
+          "quote": "I do not believe the United States Senate should acquiesce without objection to the extreme mass deprivation of civilians in Gaza, including the intolerable starvation of children, that have resulted from the policies of Prime Minister Benjamin Netanyahu's government",
+          "notes": "Direct quote explaining November 2024 vote to block rifle sales to Israel. Distinguished rifles (tied to Ben-Gvir's police) from offensive munitions. Nuanced position — not blanket opposition to arms."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Israel / arms sales",
+      "conflict": "November 2024: Voted to block rifle sales to Israel over civilian harm concerns. May 2025: Reversed course and voted AGAINST blocking $8.8B arms package, citing hostage negotiations. July 2025: Resumed selective blocking (assault rifles yes, heavy bombs no). Demonstrates an evolving, situational position rather than a fixed stance.",
+      "sources": [
+        "ossoff.senate.gov statement Nov 2024",
+        "AJC — Ossoff, Warnock reject latest bid to block Israel arms sales (May 2025)",
+        "AJC — Ossoff, Warnock vote to curb US arms sales to Israel (July 2025)"
+      ]
+    },
+    {
+      "topic": "immigration — enforcement vs. civil liberties",
+      "conflict": "January 2025: Voted YES on the Laken Riley Act (immigration enforcement, one of few Senate Democrats to do so). January 2026: Refused to support DHS appropriations without civil liberties protections for ICE detainees. He has simultaneously taken a harder enforcement stance on criminal aliens than most Democrats while also leading investigations into ICE abuse and documenting 1,000+ detention rights violations.",
+      "sources": [
+        "AJC — NRSC slammed him after Laken Riley Act vote",
+        "Georgia Recorder — Ossoff, Warnock will not support DHS funding (Jan 2026)",
+        "Ossoff Senate report — U.S. Immigration Detention Oversight (Jan 2026)"
+      ]
+    }
+  ],
+  "issuePositions": {
+    "healthcare": {
+      "summary": "Supports expanding ACA coverage and subsidies; supports a public option competing alongside private insurance; supports Medicare drug price negotiation (voted for IRA 2022); opposes Medicare for All / single-payer; opposes Medicaid/Medicare cuts. 2026 campaign centers heavily on protecting ACA premium subsidies.",
+      "confidence": "high",
+      "sources": ["2020 health care plan PDF", "AARP questionnaire", "IRA vote 2022", "2026 campaign messaging"]
+    },
+    "climate_energy": {
+      "summary": "Strong pro-climate record (LCV 97% lifetime). Voted for IRA (largest US climate bill). Sponsored Solar Manufacturing Act, Clean Energy for All Homes Act. Supports aggressive clean energy investment. No evidence of fossil-fuel-friendly positions.",
+      "confidence": "high",
+      "sources": ["LCV score", "IRA vote", "Solar Manufacturing Act", "Clean Energy for All Homes Act", "electjon.com platform"]
+    },
+    "firearms": {
+      "summary": "Supports universal background checks, red flag laws, and common-sense gun safety measures. Voted for Bipartisan Safer Communities Act (2022). No NRA grade found — consistent with opposition to NRA priorities.",
+      "confidence": "high",
+      "sources": ["Bipartisan Safer Communities Act vote", "Wikipedia", "VoteSmart guns page"]
+    },
+    "immigration": {
+      "summary": "Complex centrist position. Voted for Laken Riley Act (enforcement) as one of few Senate Democrats. Led major investigation into ICE detention abuses (1,000+ credible reports). Refused to support DHS funding without civil liberties protections in January 2026. Opposes blanket deportation crackdown; wants reform with accountability.",
+      "confidence": "high",
+      "sources": ["Laken Riley Act vote", "Ossoff detention abuse report Jan 2026", "Georgia Recorder DHS funding Jan 2026"]
+    },
+    "abortion_reproductive": {
+      "summary": "Pro-choice; opposes restrictions on abortion access; called for federal legislation to protect abortion rights post-Dobbs; SBA Pro-Life America gives him worst grade possible.",
+      "confidence": "high",
+      "sources": ["Wikipedia", "SBA scorecard", "Jewish Democratic Council on the Issues"]
+    },
+    "voting_rights_democracy": {
+      "summary": "Strong voting rights advocate. Sponsored Right to Vote Act (first-ever statutory federal voting right), co-sponsored Freedom to Vote Act, John Lewis Voting Rights Advancement Act. Framed 2026 campaign partly around democracy / opposition to Trump election interference.",
+      "confidence": "high",
+      "sources": ["ossoff.senate.gov press releases", "Georgia Recorder", "GPB rally Feb 2026"]
+    },
+    "justice_prison_reform": {
+      "summary": "Strong prison oversight / accountability record. Led bipartisan 10-month PSI investigation into federal prison abuse; primary sponsor of Federal Prison Oversight Act (signed into law 2024). Also sponsored Civil Rights Cold Case Investigations Support Act. Framing is accountability and oversight — rehabilitation vs. punishment balance unclear but prison conditions focus suggests reformist orientation.",
+      "confidence": "high",
+      "sources": ["ossoff.senate.gov Federal Prison Oversight Act", "GPB coverage Aug 2024", "FAMM statement"]
+    },
+    "economic": {
+      "summary": "Center-left economic profile. Supports lower taxes except for wealthiest Americans; supported ARP, BIL, IRA (all major public investment). Advocates debt-free public college and free vocational training. Bipartisan on business-friendly measures (small business tax legislation with Hyde-Smith). Introduced Congressional stock trading ban.",
+      "confidence": "high",
+      "sources": ["electjon.com platform", "Wikipedia", "AJC interviews"]
+    },
+    "housing": {
+      "summary": "No specific zoning or housing supply positions found. Sponsored legislation for HOPE for HOMES Act (energy-efficient home appliances/renovations) but this is energy policy, not housing supply. Housing affordability not a prominent campaign issue based on available evidence.",
+      "confidence": "low",
+      "sources": ["ossoff.senate.gov clean energy press releases"]
+    },
+    "policing_accountability": {
+      "summary": "Prison oversight work suggests accountability orientation. No specific floor votes on defund/reform policing found. His prison reform record (documenting abuse, establishing oversight) and civil rights legacy framing suggest support for police accountability, but no direct scored votes on policing reform bills found.",
+      "confidence": "low",
+      "sources": ["Federal Prison Oversight Act", "campaign rally statements"]
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition (LCV 97% lifetime; IRA vote; Solar Manufacturing Act — very strong)",
+      "energy_portfolio (IRA, Solar Manufacturing Act, Clean Energy for All Homes Act — strongly renewables-oriented)",
+      "coverage_model (public option explicit; opposes M4A; supports ACA expansion — clearly center-left, not single-payer)",
+      "cost_control (Medicare drug price negotiation via IRA; drug import from Canada support)",
+      "firearms_policy (Bipartisan Safer Communities Act; universal background checks; red flag law support — pro-regulation)",
+      "public_investment (ARP, BIL, IRA, CHIPS votes — consistent pattern of YES on public investment)",
+      "safety_net_breadth (ARP, ACA subsidies defense, insulin cap — expansionary pattern)"
+    ],
+    "weakestAxes": [
+      "housing / zoning_supply (no position found)",
+      "transit_priority (no specific votes found)",
+      "sentencing_goals / rehabilitation vs. punishment (prison conditions work is about oversight, not sentencing philosophy — insufficient evidence)",
+      "police_accountability (no specific floor votes on police reform bills found)"
+    ],
+    "notableConflicts": [
+      "Israel arms sales: evolving and situational — voted to block in Nov 2024, reversed in May 2025, then partially resumed in July 2025",
+      "Immigration: voted for Laken Riley Act (enforcement) while simultaneously leading ICE abuse investigations — genuine centrist tension, not inconsistency"
+    ],
+    "overallConfidence": "high — 5-year Senate record plus extensive 2026 campaign coverage provides strong evidence across most axes",
+    "notes": "Ossoff is unusually well-documented for a first-term senator — his PSI investigations generated significant press, and his status as the lone Democratic Senate incumbent in a Trump-won state has produced extensive AJC and GPB coverage. Main gaps are housing/zoning (never addressed) and policing (relevant votes never came to the floor). His 97% Biden alignment and 6% Heritage Action score confirm a reliably progressive-to-centrist voting pattern; the Laken Riley Act vote and Israel nuances are the most significant deviations from Democratic base positions."
+  },
+  "fundraising": {
+    "cashOnHand": "$25 million as of early 2026 — most of any incumbent senator in a competitive race",
+    "q4_2025_raised": "~$10 million",
+    "totalRaisedSince2021": "Most of any member of Congress on the 2026 ballot (five-year total)",
+    "source": "Georgia Recorder Feb 3, 2026; The Hill Jan 2026",
+    "sourceUrl": "https://georgiarecorder.com/2026/02/03/ossoffs-dominance-in-the-u-s-senate-money-race-continues/"
+  },
+  "raceContext": {
+    "generalElectionDate": "2026-11-03",
+    "primaryDate": "2026-05-19",
+    "status": "Declared candidate for Democratic primary",
+    "keyRepublicanOpponents": [
+      "Rep. Buddy Carter (R-GA1)",
+      "Rep. Mike Collins (R-GA10)",
+      "Derek Dooley (former University of Tennessee football coach)"
+    ],
+    "electionRating": "Shifted from 'Toss-up' to 'Leans Democratic' (nonpartisan handicapper, per The Hill, 2026)",
+    "strategicContext": "Only Senate Democrat on the 2026 ballot in a Trump-won state. Georgia voted for Trump in 2024. Ossoff's entire strategic posture — targeted bipartisanship + anti-Trump messaging — reflects this cross-pressure."
+  }
+}

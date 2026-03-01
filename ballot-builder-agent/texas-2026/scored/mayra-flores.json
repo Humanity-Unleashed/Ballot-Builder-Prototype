@@ -1,0 +1,211 @@
+{
+  "slug": "mayra-flores",
+  "name": "Mayra Flores",
+  "party": "Republican",
+  "office": "U.S. House, Texas 34th Congressional District, 2026",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Former one-term congresswoman (TX-34, 2022) running again; strong conservative record across all tracked issues with Heritage Action 92% and LCV 0%. First Mexican-born woman elected to U.S. House; emphasizes border security, school choice, pro-life stance, and pro-energy policies.",
+  "keyPositions": [
+    "Unapologetically pro-life; co-sponsored 20-week national abortion ban; 0% Reproductive Freedom score",
+    "Voted NO on Bipartisan Safer Communities Act; NRA endorsed; strong gun rights position",
+    "0% LCV score; voted NO on Inflation Reduction Act clean energy provisions; supports all-of-the-above energy with fossil fuel emphasis",
+    "Explicit school choice advocate; endorsed by Texas Home School Coalition; 'parents should have the freedom to choose'",
+    "Hardline border security; first bill was border security-focused; frames legal vs. illegal immigration through personal immigration story"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Heritage Action 92% scorecard (117th Congress)",
+        "iVoterGuide questionnaire: 'no other taxpayer-funded programs beyond Medicare/Medicaid'",
+        "NO vote on IRA (which included ACA subsidy extensions)"
+      ],
+      "notes": "Stated she will 'always protect Social Security and Medicare' but explicitly said no additional taxpayer-funded programs are necessary. Heritage Action 92% confirms strong fiscal conservatism. Not scored at 10 because she actively defends existing entitlements (Medicare/SS) rather than calling for their reduction."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Campaign platform: 'job creators should not be hindered by burdensome taxes and regulations'",
+        "Heritage Action 92%",
+        "FreedomWorks endorsement",
+        "NO vote on Inflation Reduction Act"
+      ],
+      "notes": "Anti-regulation, anti-government-spending framing across all economic statements. No direct infrastructure or industrial policy votes found, but all available signals point strongly toward minimizing government economic intervention. Not scored at 10 because she hasn't explicitly opposed all public investment — focus is on reducing regulation and taxes."
+    },
+    "econ_tax_structure": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Campaign platform: 'not hindered by burdensome taxes'",
+        "NO vote on IRA (which included tax increases on corporations)",
+        "Heritage Action 92%",
+        "FreedomWorks endorsement"
+      ],
+      "notes": "Strong anti-tax framing; opposed IRA's corporate minimum tax. No specific flat tax or rate proposals found, but all signals point toward lower taxes and fewer regulations. Heritage Action's fiscal conservatism alignment confirms. Scored 8 rather than 9-10 because she hasn't proposed specific rate structures or wealth tax opposition — the evidence is directional but not granular."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: 'families should have the freedom to choose the education that fits their children best'",
+        "Instagram posts: 'School choice is about empowering parents'",
+        "Texas Home School Coalition endorsement (2026)",
+        "Supported Parents Bill of Rights",
+        "Heritage Action 92%"
+      ],
+      "notes": "One of her most explicitly stated positions. THSC endorsement is a strong signal — the organization specifically advocates for homeschool freedom and school choice. Multiple Tier 2 sources plus endorsement all consistent. Scored 9 (strong school choice) rather than 10 because she hasn't explicitly called for defunding public schools or universal vouchers."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "iVoterGuide: 'no other taxpayer-funded programs beyond Medicare/Medicaid'",
+        "NO vote on Inflation Reduction Act (ACA subsidy extension)",
+        "Heritage Action 92%",
+        "Campaign website: protect Medicare/Medicaid but lower prices through market"
+      ],
+      "notes": "Conflict flagged: says she will 'always protect Medicare and Medicaid' but voted against the IRA which extended ACA subsidies and enabled Medicare drug negotiation. Per scoring rules, voting record beats stated position. Her floor is preserving existing entitlements, but she opposes expansion. Scored 8 (market-oriented) — she wants to keep Medicare/SS but opposes ACA expansion, public option, or any new programs."
+    },
+    "health_cost_control": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "NO vote on IRA (which included Medicare drug price negotiation)",
+        "Campaign website: 'lower prices for care and prescriptions'",
+        "Heritage Action 92%"
+      ],
+      "notes": "Mixed signals: voted against Medicare drug price negotiation (the most significant cost-control vote during her tenure) but states she supports 'lower prices.' Per evidence hierarchy, voting record wins. However, the stated desire for lower prices may reflect market-competition framing rather than government price controls. Scored 7 — leans market but evidence is thin. Low confidence because only one relevant vote and one general statement."
+    },
+    "health_public_health": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "Heritage Action 92% (Heritage Action opposes most public health mandates)",
+        "iVoterGuide: religious liberty emphasis; individual liberty framing",
+        "General Republican primary positioning"
+      ],
+      "notes": "No direct votes on vaccine mandates or public health authority found. Heritage Action 92% strongly implies opposition to collective mandates, and her religious liberty/individual liberty framing is consistent with individual choice over collective mandates. Scored 8 but LOW confidence — this is inference from scorecard alignment and ideology, not direct evidence."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "NO vote on Bipartisan Safer Communities Act (2022)",
+        "NRA-PVF endorsement (2026 primary)",
+        "Stated the gun bill 'did not provide enough money for school safety and the process was too rushed'",
+        "Heritage Action 92%"
+      ],
+      "notes": "Among the strongest-evidenced axes. Voting record (NO on first major gun safety bill in decades) plus NRA endorsement plus consistent rhetoric. Scored 9 (strongly protect gun rights) rather than 10 because she framed her NO vote partly on process grounds rather than pure 2A absolutism."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "LCV 0% (2022 annual and lifetime)",
+        "NO vote on Inflation Reduction Act (largest climate legislation in U.S. history)",
+        "Campaign website: no mention of climate change or clean energy transition",
+        "House press release attacking IRA as inflationary"
+      ],
+      "notes": "0% LCV is as clear a signal as exists. Voted against the single largest climate investment in U.S. history. Campaign website discusses energy without any climate or clean energy framing. Scored 9 rather than 10 because she hasn't explicitly denied climate science or called for eliminating EPA — she simply ignores climate as an issue entirely."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: 'Fight for every source of reliable energy'",
+        "2022 statement: 'proud to support legislation that empowered energy producers and stopped overburdensome regulations'",
+        "NO vote on IRA clean energy incentives",
+        "LCV 0%"
+      ],
+      "notes": "All-of-the-above framing that emphasizes fossil fuel production and deregulation. 'Every source of reliable energy' is coded language for fossil fuels (renewables are often framed as unreliable by fossil-fuel advocates). Voted against clean energy investment. Scored 8 (fossil-fuel-friendly all-of-the-above) rather than 9-10 because she doesn't explicitly oppose renewables or call for eliminating clean energy subsidies — she just doesn't prioritize them."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: 'stop overburdensome regulations' for energy producers",
+        "Heritage Action 92%",
+        "FreedomWorks endorsement"
+      ],
+      "notes": "No direct permitting votes found. Anti-regulation framing for energy sector implies support for faster permitting and reduced environmental review. Heritage Action and FreedomWorks consistently advocate for streamlined permitting. Low confidence because this is inference from general deregulatory orientation, not specific permitting positions."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "0% LCV score shows no environmental protection priority. Hardline immigration enforcement framing explicitly separates 'legal' from 'illegal' immigrants with hostile language toward the latter. Voted against Respect for Marriage Act (opposing equal rights for same-sex couples). No international humanitarian or global cooperation signals. Her policy orientation consistently favors in-group (legal citizens, traditional families) over broader universalist concern."
+    },
+    "benevolence": {
+      "score": 0.3,
+      "reasoning": "Defends Medicare and Social Security for current beneficiaries. Background as respiratory care practitioner suggests genuine care orientation. Frames her candidacy partly through community service ('fighting for South Texas families'). However, benevolence is limited in scope — explicitly opposes expanding programs to new beneficiaries, and her policy positions often prioritize ideological consistency over pragmatic community welfare (e.g., opposing ACA subsidies that help her constituents)."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "One of her defining values. Explicitly pro-life framing tied to religious conviction ('Overturning Roe was a dream come true'). Voted against Respect for Marriage Act and contraception access. Religious liberty as a core stated value. Traditional family values orientation. Endorsed by Texas Right to Life and multiple faith-aligned organizations. Cultural conservatism is central to her identity and legislative record."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Supports rule of law, especially around immigration (legal vs. illegal framing). Perfect attendance record (0% missed votes) suggests conscientiousness about institutional duties. However, she's positioned as an outsider/challenger even within her own party — running without Trump's endorsement, described as 'more conservative, less establishment.' Not a norm-breaker, but not a pure institutionalist either."
+    },
+    "security": {
+      "score": 0.8,
+      "reasoning": "Border security is her signature issue — first bill introduced was border security legislation. Frames immigration as a safety issue (human trafficking, drugs). NRA endorsement and gun rights position framed partly through personal/family safety. Introduced Enhancing DHS Drug Seizures Act. Defends Social Security and Medicare as stability-of-benefits security. Pro-law-enforcement orientation. Security is one of her defining motivational values."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Heritage Action 92% and FreedomWorks endorsement suggest alignment with business/corporate interests. Pro-deregulation, anti-tax platform favors concentrated economic power. However, she lacks the institutional establishment backing that would signal true power alignment — notably, Trump endorsed her opponent. She's more of a grassroots conservative than a donor-class candidate. $1.37M fundraising is moderate, not elite-level."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Her personal narrative is built on achievement: immigrated legally, naturalized at 14, worked in cotton fields, became a respiratory care practitioner, then first Mexican-born woman elected to Congress. 'Pro-growth' economic framing emphasizes entrepreneurship and individual economic advancement. School choice framed as empowering individual families to achieve. Meritocratic individual-effort orientation is consistent across her messaging."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Socially conservative across personal freedom issues: anti-abortion without exception, voted against same-sex marriage protections, voted against contraception access. Religious liberty framing suggests personal behavior should be guided by faith, not individual pleasure. No libertarian personal-freedom signals found."
+    },
+    "stimulation": {
+      "score": -0.2,
+      "reasoning": "Preservationist rather than transformative orientation. Defends traditional institutions and values. Does not advocate for structural reform or radical policy change. Her candidacy has a 'restoration' quality (returning to Congress to continue her prior work) rather than a change-agent quality. Slight negative rather than zero because she actively resists change on social issues."
+    },
+    "self-direction": {
+      "score": 0.2,
+      "reasoning": "Mixed signals across issue domains. Invokes self-direction strongly for gun rights (individual liberty to bear arms), school choice (parental freedom), and economic deregulation (freedom from government). But actively restricts self-direction on reproductive rights (anti-abortion, anti-contraception access), marriage equality (voted against Respect for Marriage Act), and personal lifestyle choices. The net effect is modestly positive because her rhetoric emphasizes 'freedom' and 'choice' in economic and educational domains, but significantly constrained by her social conservatism."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Healthcare: Medicare protection vs. IRA vote",
+      "description": "States she will 'always protect Medicare and Medicaid' and supports 'lower prices for prescriptions,' but voted NO on Inflation Reduction Act which included Medicare drug price negotiation and ACA subsidy extensions that directly benefited her constituents.",
+      "sources": ["iVoterGuide questionnaire (2022)", "VoteSmart IRA vote record", "House press release on IRA"],
+      "scoringImpact": "Scored health_coverage_model and health_cost_control based on voting record per evidence hierarchy rules. Noted in axis notes."
+    },
+    {
+      "topic": "Trump alignment vs. Trump endorsement",
+      "description": "Positions herself as a MAGA Republican and Trump ally, but Trump endorsed her primary opponent Eric Flores in December 2025. She continues to campaign on her Trump-aligned record despite lacking his endorsement.",
+      "sources": ["Texas Tribune 2026-02-26", "Texas Politics 2025-08-27"],
+      "scoringImpact": "Does not affect policy axis scores. Noted as context for power and conformity value scores — she lacks establishment backing despite ideological alignment."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals"
+    ],
+    "reasonSkipped": "No evidence found in research file for housing axes (no housing positions, votes, or endorsements). Policing accountability and sentencing goals have no direct votes, statements, or scorecard data — only weak inference from general conservative profile, which does not meet the evidence floor.",
+    "overallConfidence": "medium-high",
+    "researchGaps": [
+      "No housing policy positions or votes found",
+      "No specific policing accountability statements or votes found",
+      "No specific sentencing or criminal justice reform positions found",
+      "AFL-CIO exact score not confirmed (page exists but number not retrieved)",
+      "Short congressional tenure (6 months) limits voting record depth",
+      "No public health mandate-specific votes found — health_public_health scored at low confidence from inference"
+    ]
+  }
+}

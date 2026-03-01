@@ -1,0 +1,337 @@
+{
+  "slug": "eric-flores",
+  "name": "Eric Flores",
+  "party": "Republican",
+  "office": "U.S. House, Texas 34th Congressional District, 2026",
+  "contest": "Texas CD-34 Republican Primary, March 3, 2026 (general election November 3, 2026)",
+  "incumbencyStatus": "challenger (first-time candidate)",
+  "researchedAt": "2026-02-27T00:00:00Z",
+  "biography": {
+    "currentRole": "Attorney, private practice (joined O'Hanlon, Demerath & Castillo law firm after leaving DOJ)",
+    "priorRoles": [
+      "Assistant U.S. Attorney, Southern District of Texas, McAllen Criminal Division (career prosecutor, not political appointee — served approximately 2021 to early 2025 across both Trump and Biden administrations)",
+      "Texas Army National Guard, Infantry Captain; commanded soldiers during Operation Guardian Support along U.S.-Mexico border",
+      "City Attorney, City of Palmview (Texas)",
+      "Municipal Judge, City of Alton (Texas)",
+      "Attorney representing La Joya Independent School District and other municipal clients"
+    ],
+    "education": "B.A., University of Texas at Austin; J.D., Texas Southern University Thurgood Marshall School of Law",
+    "age": 33,
+    "hometown": "Mission, Texas (Hidalgo County)",
+    "family": "Father Ismael 'Kino' Flores was a Democratic Texas state legislator (convicted on financial disclosure felonies in 2010). Paternal grandfather was first mayor of Sullivan City; maternal grandfather was mayor of Palmview for nearly 20 years. Married with two children. Christian faith.",
+    "background": "Rio Grande Valley native; Spanish-speaking; prosecuted cartel-connected operations, human smuggling, and white-collar crime as AUSA; border security experience via National Guard deployment. Recently switched party registration from Democrat to Republican. Has described his values as rooted in 'faith, family, and country' and said 'that's not the Democratic Party today.'"
+  },
+  "campaignWebsite": {
+    "url": "https://www.ericflores.com/",
+    "prioritiesPageUrl": "https://www.ericflores.com/priorities",
+    "aboutPageUrl": "https://www.ericflores.com/abouteric",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "Website is live but direct fetch blocked by tool permissions; content inferred from search snippets and multiple news sources citing the website directly.",
+    "statedPositions": [
+      {
+        "topic": "border_security_immigration",
+        "quote": "bolstering border security",
+        "sourceUrl": "https://www.ericflores.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Listed as first of four headline campaign priorities on website homepage. Consistent across all coverage. Also see legal immigration nuance in interviews below."
+      },
+      {
+        "topic": "law_enforcement_veterans",
+        "quote": "championing law enforcement and veteran issues",
+        "sourceUrl": "https://www.ericflores.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Listed as second of four headline campaign priorities. National Border Patrol Council endorsement reinforces law enforcement axis."
+      },
+      {
+        "topic": "economy",
+        "quote": "revitalizing our local economy",
+        "sourceUrl": "https://www.ericflores.com/",
+        "date": "2025-2026",
+        "confidence": "low",
+        "notes": "Listed as third priority. No specific policy mechanisms stated on website. Trump endorsement text he accepted explicitly includes 'cut taxes and regulations, promote made-in-the-USA products, advance American energy dominance.' A supporting op-ed (Rio Grande Guardian) also summarized his local economic focus as reducing red tape and taxes on small businesses."
+      },
+      {
+        "topic": "seniors_benefits",
+        "quote": "safeguarding seniors' benefits",
+        "sourceUrl": "https://www.ericflores.com/",
+        "date": "2025-2026",
+        "confidence": "low",
+        "notes": "Listed as fourth of four headline priorities. Implies protecting Social Security and Medicare from cuts but no specific mechanism stated. Notably does not use reform or modernize language. Strategically important given the district's large elderly Hispanic population."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "First-time candidate with no legislative voting record. Career was as a federal prosecutor in the executive branch and as a Guard officer — not an elected officeholder. AUSA role is non-partisan by statute."
+  },
+  "scorecards": [
+    {
+      "organization": "Texas Alliance for Life",
+      "score": null,
+      "grade": null,
+      "endorsement": true,
+      "url": "https://www.texasallianceforlife.org/2026-primary-election-endorsements/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Texas Alliance for Life endorsed Eric D. Flores (R) for U.S. Representative District 34 in the 2026 primary. This organization endorses only candidates who oppose abortion and support pro-life legislation. This is the single highest-signal data point for the reproductive rights axis. Tier 3 (endorsement), but Texas Alliance for Life is a single-issue organization — endorsement is functionally equivalent to a pro-life scorecard grade."
+    },
+    {
+      "organization": "National Border Patrol Council",
+      "score": null,
+      "grade": null,
+      "endorsement": true,
+      "url": "https://bpunion.org/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "NBPC endorsed Eric Flores; Flores cited this endorsement publicly at the Coastal Candidate Rumble forum. NBPC is known for hardline immigration enforcement positions and endorsed Trump in 2016 and 2020. Signals strong border enforcement position."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "endorsement": null,
+      "notes": "No NRA grade found — expected for a first-time candidate with no prior elected office. Cannot score firearms axis from absence, but Trump endorsement and faith/family/country framing are indirect signals."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "endorsement": null,
+      "notes": "No LCV score — first-time candidate with no environmental voting record."
+    },
+    {
+      "organization": "Ballotpedia Candidate Connection Survey",
+      "score": null,
+      "grade": null,
+      "url": "https://ballotpedia.org/Eric_Flores",
+      "notes": "As of research date, Eric Flores had not completed the Ballotpedia 2026 Candidate Connection survey. No structured policy responses available through that channel."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "President Donald Trump",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "2025-12-19",
+      "sourceUrl": "https://www.nrcc.org/2025/12/19/%F0%9F%9A%A8-president-trump-endorses-eric-flores-for-congress/",
+      "notes": "Trump called Flores an 'America First Patriot' who 'knows the Wisdom and Courage it takes to Ensure LAW AND ORDER.' Trump endorsement text (via trumpstruth.org): 'in Congress, Eric will fight to grow the economy, cut taxes and regulations, promote made-in-the-USA products, advance American energy dominance, keep the border secure, and stop migrant crime.' Flores accepted enthusiastically on X: 'I look forward to working with you to keep our border secure, to stand up for law enforcement, and to put South Texas and America First!' Following the endorsement, at least three rival Republican candidates (Jay Nagy, Fred Hinojosa, Scott Mandel) dropped out and endorsed Flores. NRCC spokesman: 'Flores will help Republicans deliver secure borders, energy dominance, and a strong economy for South Texans.'"
+    },
+    {
+      "organization": "Texas Alliance for Life",
+      "type": "endorsement",
+      "cycle": "2026",
+      "sourceUrl": "https://www.texasallianceforlife.org/2026-primary-election-endorsements/",
+      "notes": "Major Texas anti-abortion single-issue organization. Endorsement is a strong signal of pro-life position on reproductive rights axis."
+    },
+    {
+      "organization": "National Border Patrol Council (NBPC)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "sourceUrl": "https://www.thetexasvoice.com/flores-faceoff-cd-34-candidates-rumble-at-forum/",
+      "notes": "Union representing approximately 16,000 Border Patrol agents. Known for hardline enforcement-first immigration positioning. Flores cited this endorsement prominently at public forums."
+    },
+    {
+      "organization": "National Republican Congressional Committee (NRCC)",
+      "type": "institutional support / target seat designation",
+      "cycle": "2026",
+      "sourceUrl": "https://www.nrcc.org/2025/12/19/%F0%9F%9A%A8-president-trump-endorses-eric-flores-for-congress/",
+      "notes": "TX-34 is one of 26 NRCC target seats for 2026 midterms. NRCC actively promoting Flores as their preferred nominee."
+    },
+    {
+      "organization": "Governor Greg Abbott (Texas)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "sourceUrl": "https://www.texastribune.org/2026/02/26/south-texas-34th-congressional-district-eric-mayra-flores-vicente-gonzalez/",
+      "notes": "Texas Governor backing adds to institutional Republican support."
+    },
+    {
+      "organization": "Speaker Mike Johnson",
+      "type": "endorsement",
+      "cycle": "2026",
+      "sourceUrl": "https://www.texastribune.org/2026/02/26/south-texas-34th-congressional-district-eric-mayra-flores-vicente-gonzalez/",
+      "notes": "House Speaker endorsement. Rep. Tom Emmer also backed Flores on X: 'He will be a strong, reliable voice in our conference and an effective partner in advancing President Trump's agenda. #TX34'"
+    },
+    {
+      "organization": "Scott Mandel (primary dropout)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Entrepreneur who had raised over $1 million dropped out following Trump endorsement and backed Flores. Field largely consolidated around Flores post-December 2025."
+    }
+  ],
+  "fundraising": {
+    "totalRaisedThrough": "early 2026",
+    "amountRaised": "approximately $1,290,000",
+    "notes": "Approximately $1.29M raised; approximately $872K+ reported through December 2025 per FEC filings. Led the field before and after Trump endorsement caused consolidation.",
+    "fecUrl": "https://www.fec.gov/data/candidate/H6TX34080/"
+  },
+  "interviews": [
+    {
+      "outlet": "Fox News Digital",
+      "date": "2025-07",
+      "url": "https://www.foxnews.com/politics/scoop-republican-launches-house-bid-key-swing-district-gop-aims-flip-2026-midterms",
+      "keyExchanges": [
+        {
+          "topic": "general_alignment_trump",
+          "quote": "We need fewer politicians and more fighters who will put our communities first. In Congress, I'll stand with President Trump, fight and deliver for South Texas every single day.",
+          "notes": "Direct quote. Explicit broad Trump alignment. No issue-specific detail."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune",
+      "date": "2025-07-21",
+      "url": "https://www.texastribune.org/2025/07/21/texas-congress-eric-flores-vicente-gonzalez-34th-district/",
+      "keyExchanges": [
+        {
+          "topic": "party_switch_values",
+          "quote": "My values are rooted in faith. They're rooted in family. And they're rooted in country. That's not the Democratic Party today. And that's why I'm running as a Republican.",
+          "notes": "Confirms recent party switch. Faith, family, country framing consistent with social conservatism."
+        },
+        {
+          "topic": "immigration_legal_pathways",
+          "quote": "I want to push for immigration policy that makes sense for a region that has struggled with labor shortages — ensuring farmers, boat manufacturers, and steel mills that we have down here — that they have the workers that they need, having an efficient legal process for that.",
+          "notes": "Direct quote. Notable nuance: supports streamlined legal immigration pathways for regional labor needs. Not hardline restrictionist. This is one of the most specific policy statements Flores has made in the entire research record."
+        }
+      ]
+    },
+    {
+      "outlet": "KRGV Channel 5 (Rio Grande Valley local news)",
+      "date": "2025-07",
+      "url": "https://www.krgv.com/news/former-assistant-u-s-attorney-eric-flores-launches-congressional-bid/",
+      "keyExchanges": [
+        {
+          "topic": "border_prosecution_identity",
+          "quote": "I'm going to take that same tenacity that I served in uniform on the border, the same tenacity fighting the cartels and the human smugglers in the federal courtroom — that's what I want to take to D.C.",
+          "notes": "Direct quote. Frames border security primarily through enforcement and criminal justice lens."
+        },
+        {
+          "topic": "campaign_priorities",
+          "quote": "services for veterans, safeguarding benefits for seniors and securing the border",
+          "notes": "Three campaign priorities listed in launch coverage."
+        }
+      ]
+    },
+    {
+      "outlet": "KVEO-TV / ValleyCentral",
+      "date": "2025-07",
+      "url": "https://www.valleycentral.com/news/local-news/former-prosecutor-challenges-rep-vicente-gonzalez-for-district-34/",
+      "keyExchanges": [
+        {
+          "topic": "biographical_political_identity",
+          "quote": "My values are rooted in faith. They're rooted in family. And they're rooted in country.",
+          "notes": "Repeated framing from campaign announcement."
+        }
+      ]
+    },
+    {
+      "outlet": "The Texas Voice (Coastal Candidate Rumble forum, South Padre Island)",
+      "date": "2026-02",
+      "url": "https://www.thetexasvoice.com/flores-faceoff-cd-34-candidates-rumble-at-forum/",
+      "keyExchanges": [
+        {
+          "topic": "career_prosecutor_defense",
+          "quote": "I was never what they call a political appointee, right? I served alongside millions of Americans, whether that is under the Obama administration, the Bush administration, the Trump administration, we were there to do our jobs. I'm what you call a career prosecutor. We locked up Texas' Top 10 Most Wanted child predator and dismantled the largest human smuggling organization here.",
+          "notes": "Defending against Mayra Flores attack tying him to Biden DOJ."
+        },
+        {
+          "topic": "immigration_legal_personal",
+          "quote": "A lot of people tell me, my friend, you're from the Valley, how can you support legal immigration? Well, because I want every child that came here to the United States to have the same experience that I did.",
+          "notes": "Personal framing supporting legal immigration pathways. More pragmatic than hardline MAGA positioning on this specific dimension."
+        },
+        {
+          "topic": "candidate_identity_military",
+          "quote": "We don't need punchline candidates. We don't need career candidates. We need service members.",
+          "notes": "Anti-establishment framing consistent with Trump movement."
+        },
+        {
+          "topic": "campaign_finance_reform",
+          "quote": "proposed amending campaign finance laws to prohibit candidates from accepting payments from their own campaign and pledged to donate his Congressional salary if elected",
+          "notes": "Reporter paraphrase. Anti-corruption populist angle. Limited policy depth."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune",
+      "date": "2026-02-26",
+      "url": "https://www.texastribune.org/2026/02/26/south-texas-34th-congressional-district-eric-mayra-flores-vicente-gonzalez/",
+      "keyExchanges": [
+        {
+          "topic": "intra_primary_issues_absence",
+          "quote": "With little daylight between the candidates on issues, they have debated most intensely who is best positioned to flip the district and show the way forward for Hispanic Republicans in the Trump era.",
+          "notes": "Texas Tribune reporter characterization as of Feb 26, 2026. Confirms all GOP primary candidates share roughly the same policy profile. Differentiation is on biography and electability, not policy."
+        }
+      ]
+    },
+    {
+      "outlet": "Rio Grande Guardian (opinion piece by Rudy Ramirez, lifelong Democrat supporting Flores)",
+      "date": "2026",
+      "url": "https://riograndeguardian.com/stories/ramrez-a-lifelong-democrats-case-for-eric-flores,28417",
+      "keyExchanges": [
+        {
+          "topic": "local_economic_priorities",
+          "quote": "Infrastructure in colonia communities, resources for border patrol and local law enforcement, and reducing red tape and taxes on small businesses in the Rio Grande Valley",
+          "notes": "Tier 3 source (op-ed summarizing Flores' appeals). Adds specifics: colonia infrastructure investment, small business tax relief. Consistent with Trump-agenda alignment but adds local Valley-specific flavor."
+        }
+      ]
+    }
+  ],
+  "controversies": [
+    {
+      "topic": "Party switch and Biden DOJ service",
+      "description": "Flores recently switched from Democrat to Republican registration. Served as AUSA through early 2025 spanning both the Biden and Trump DOJ eras. Opponents, particularly Mayra Flores, attacked him as a 'former Democrat, Biden DOJ attorney.' Texas Politics (October 2025) ran a piece suggesting prior social media posts praising Biden and Harris could hurt him. Flores maintains he was a career prosecutor serving across administrations, not a Biden political appointee. On inauguration day claim: Mayra Flores alleged he attended Biden's inauguration; Flores' campaign denied it, stating he was on Guard duty in Victoria that day.",
+      "sourceUrls": [
+        "https://texaspolitics.com/2025/09/21/pro-trump-maga-republican-mayra-flores-and-former-democrat-biden-doj-attorney-eric-flores-face-off-in-texas-house-race/",
+        "https://texaspolitics.com/2025/10/01/eric-flores-praise-for-joe-biden-and-kamala-harris-could-hurt-him-in-2026/",
+        "https://www.texastribune.org/2026/02/26/south-texas-34th-congressional-district-eric-mayra-flores-vicente-gonzalez/"
+      ],
+      "significanceForScoring": "Low direct relevance to civic axis scoring. Does not change his stated policy positions. Signals he may not be a lifelong movement conservative — recent convert. Does not contradict any axis scoring."
+    },
+    {
+      "topic": "Edinburg CISD coach lawsuit defense",
+      "description": "Raw Story reported Flores was lead defense counsel for Edinburg Consolidated Independent School District employees in a civil lawsuit accusing them of trauma and abuse of a student (coach alleged to have made a child exercise without clothes). Flores filed a plea to the jurisdiction arguing governmental immunity barred the claims. He subsequently withdrew from the case.",
+      "sourceUrl": "https://www.rawstory.com/raw-investigates/eric-flores/",
+      "significanceForScoring": "Legal representation controversy, not a personal policy position. Does not affect any civic axis score."
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Immigration — enforcement messaging vs. labor market pragmatism",
+      "conflict": "Campaign emphasizes strict border enforcement and stopping migrant crime per Trump endorsement language and NBPC backing. However, multiple interview quotes show Flores explicitly calling for efficient legal immigration pathways to address Rio Grande Valley labor shortages. These are logically reconcilable (enforce the border, streamline legal pathways) but create tension between primary-base messaging and stated nuance. Scorer should note: his immigration position is better characterized as enforcement-plus-legal-pathways rather than pure restrictionism.",
+      "sources": [
+        "Texas Tribune 2025-07-21 (legal pathways direct quote)",
+        "Texas Voice forum Feb 2026 (legal immigration personal framing)",
+        "Fox News campaign launch (Trump alignment framing)",
+        "Trump endorsement text December 2025"
+      ]
+    }
+  ],
+  "contextualNotes": {
+    "districtCharacter": "TX-34 is a heavily Hispanic district (90%+) along the Gulf Coast from Corpus Christi to Brownsville. Post-redistricting, it now leans Republican by approximately 10 points in presidential performance (Trump won old lines by 5 in 2024; would have won new lines by approximately 10). District has significant agriculture, maritime manufacturing, and steel industries — hence Flores' labor-immigration nuance.",
+    "primaryDynamics": "Flores vs. Mayra Flores primary is a proxy fight between Trump/establishment GOP infrastructure and local RGV Republican base. Eric Flores has national establishment support; Mayra Flores ran twice before and has local RGV Republican name recognition. Eric Flores won the South Padre Island forum straw poll 46-27. Primary is March 3, 2026.",
+    "generalElectionContext": "Winner faces incumbent Democrat Vicente Gonzalez in November 2026. District is now GOP-leaning but not safe. A University of Texas poll (Feb 2026) found Democrats leading the generic congressional ballot among Texas Hispanic voters 50-31%, suggesting potential headwinds for any Republican nominee."
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "reproductive_rights — Texas Alliance for Life endorsement (pro-life single-issue organization) is highest-signal data point; confirms anti-abortion position",
+      "justice_policing_accountability — consistent law enforcement champion framing across all sources; NBPC endorsement; AUSA background",
+      "climate_energy_portfolio — Trump endorsement text explicitly includes American energy dominance as his agenda item, accepted by Flores; no counter-evidence of clean energy support",
+      "econ_tax_structure — Trump endorsement explicitly lists cut taxes and regulations; small business tax relief referenced in op-ed; no counter-evidence",
+      "border_security — highest-emphasis campaign issue; AUSA border prosecution career; NBPC endorsement; explicit priority on all campaign materials"
+    ],
+    "weakestAxes": [
+      "econ_safetynet — safeguarding seniors benefits is the only signal; ambiguous on broader safety net programs like Medicaid",
+      "econ_school_choice — no stated position found",
+      "health_coverage_model — no explicit position; safeguarding seniors benefits may imply protecting Medicare but no specifics",
+      "health_cost_control — no stated position",
+      "health_public_health — no stated position on mandates or public health authority",
+      "housing_supply_zoning — no position found",
+      "housing_affordability_tools — no position found; colonia infrastructure mention in op-ed is weak signal only",
+      "housing_transport_priority — no position found",
+      "justice_sentencing_goals — prosecutorial background implies tough-on-crime, but no explicit sentencing policy statements",
+      "climate_permitting — energy dominance language implies expedited permitting, but no explicit statement",
+      "justice_firearms — no explicit gun position found despite targeted searches; faith/family/country and Trump alignment are indirect signals only"
+    ],
+    "overallConfidence": "low-to-medium",
+    "notes": "Flores is a first-time candidate with no legislative voting record. The two highest-signal data points are: (1) Texas Alliance for Life endorsement confirms pro-life position; (2) Trump endorsement text he explicitly accepted names his policy agenda across economic, energy, and border axes. Beyond those anchors, most axis evidence is inferred from endorsement patterns, party alignment, and general rhetorical framing. The main substantive nuance is his explicitly pragmatic (not purely restrictionist) stance on legal immigration — he is on record in multiple venues supporting efficient legal pathways for Valley labor needs. Has not completed Ballotpedia's 2026 Candidate Connection survey. Texas Tribune reporting (Feb 26, 2026) confirms there is 'little daylight between candidates on issues' in this primary — all GOP candidates share a standard Trump-era Republican profile. Scorer should score only axes with genuine evidence and omit housing, health cost control, and health public health entirely."
+  }
+}

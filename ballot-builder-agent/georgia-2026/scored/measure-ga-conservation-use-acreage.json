@@ -1,0 +1,91 @@
+{
+  "slug": "ga-conservation-use-acreage",
+  "officialTitle": "Georgia Increase Maximum Acreage of Bona Fide Conservation Use Property Amendment (2026)",
+  "shortName": "Conservation Use Acreage Increase",
+  "electionDate": "2026-11-03",
+  "certificationStatus": "confirmed",
+  "scoredAt": "2026-02-25T00:00:00.000Z",
+  "yesVoteSummary": "Doubles the CUVA acreage cap from 2,000 to 4,000 acres per owner, expanding a preferential property tax assessment for large agricultural, timber, and conservation-use landowners",
+  "noVoteSummary": "Keeps the 2,000-acre cap unchanged; the CUVA program continues as it has since 1990",
+  "axisEffectsOfYes": {
+    "econ_tax_structure": {
+      "score": 7,
+      "confidence": "medium",
+      "notes": "Expands a preferential tax assessment that specifically benefits the largest landowners -- those with 2,000+ acres. The CUVA program can reduce property tax bills by 50%+ compared to fair-market-value assessment. This is a tax reduction for a narrow, asset-rich class of property owners, which shifts some local property tax burden to other taxpayers (residential, commercial). However, the scope is narrow (only those hitting the existing cap) and the mechanism is property tax, not income tax. Score reflects a modest move toward less progressive local taxation, not a sweeping tax restructuring."
+    },
+    "housing_supply_zoning": {
+      "score": 6,
+      "confidence": "low",
+      "notes": "Indirect effect only. CUVA incentivizes keeping land in agricultural/conservation use rather than selling for development. Expanding the cap strengthens this incentive for the largest landowners, modestly reducing development pressure on rural and exurban land. This is not a zoning measure, but the economic incentive works in the same direction as preserving existing land use patterns. Low confidence because the effect is indirect and the magnitude depends on how many owners would newly enroll additional acreage."
+    }
+  },
+  "valueEffectsOfYes": {
+    "tradition": {
+      "score": 0.5,
+      "reasoning": "The measure is explicitly framed as 'protecting family farmland' and preserving Georgia's agricultural heritage. It expands a 35-year-old program (CUVA, est. 1990) rather than creating something new. The legislative study committee was specifically named 'Preservation of Georgia's Farmlands.' The entire orientation is toward maintaining traditional rural land use against the pressure of modernization and development."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Promotes stability of rural land use patterns and protects against disruption from development. Keeps agricultural land in production rather than allowing conversion. Georgia lost 2.6 million acres of farmland from 1974-2016; this measure aims to slow that loss. The 10-year covenant requirement provides long-term stability guarantees. Also contributes modestly to food security by keeping farmland in production."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "The measure followed proper institutional channels: a Senate study committee with hearings across five Georgia cities, a formal recommendation, legislative drafting, and near-unanimous passage (168-5 House, 50-1 Senate) before going to voters. It is an incremental expansion of an existing program, not a disruptive innovation. The constitutional amendment process itself is conformist -- changing the law through legitimate democratic means."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "The primary beneficiaries are landowners with 2,000+ acres of agricultural, timber, or conservation land -- a relatively wealthy and asset-rich class. The ballot language frames this as 'family farmland,' but the legal mechanism does not restrict benefits to family farms; large timber companies, agribusiness operations, and wealthy investors with qualifying acreage also benefit. Tax savings for large landowners are subsidized by other property taxpayers in the same county. Georgia Farm Bureau (representing agricultural landowner interests) implicitly supports the measure."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "The legislative framing emphasizes community welfare -- preserving rural communities, keeping agricultural heritage alive, supporting farm families. Senator Watson's floor statement invoked the changing economics of family farms. However, the actual mechanism benefits specifically the largest landowners (those with 2,000+ acres), who are not typical family-scale farmers. The benevolence signal is present in the rhetoric but diluted by the narrow beneficiary class."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "Supports the economic viability of large-scale agricultural operations by reducing their tax burden. Implicitly rewards successful farming at scale -- you need 2,000+ acres to benefit from this change. The study committee framed the issue as farms needing to grow larger to remain 'economically viable,' which is an achievement-oriented framing."
+    },
+    "universalism": {
+      "score": 0.1,
+      "reasoning": "The CUVA conservation covenant does protect land and natural resources from development, which has environmental benefits. However, the primary motivation is economic (tax relief for landowners), not environmental protection. The 'conservation use' label somewhat overstates the environmental dimension -- the program also covers purely agricultural and timber-production land that may not have strong conservation value. Very weak positive signal."
+    },
+    "stimulation": {
+      "score": -0.2,
+      "reasoning": "This measure is the opposite of novel or disruptive. It expands an existing 35-year-old program by adjusting a numerical cap. It preserves the status quo of rural land use against change. The near-unanimous bipartisan passage (with no organized opposition) underscores that this is a consensus maintenance-of-existing-order measure, not a transformative policy."
+    }
+  },
+  "keyConsiderations": [
+    "The ballot question frames this as protecting 'family farmland,' but the legal mechanism benefits any landowner with 2,000+ qualifying acres -- including timber companies, agribusiness corporations, and wealthy investors",
+    "No official fiscal note has been published; the measure will reduce local property tax revenue by an unknown amount, with the burden shifting to other taxpayers in rural counties",
+    "The 2,000-acre cap has been unchanged since 1990; modern agricultural economics have increased average farm size, giving the expansion a practical economic rationale",
+    "Near-unanimous bipartisan passage (168-5 House, 50-1 Senate) with no organized opposition as of February 2026",
+    "Companion legislation (HB 90) only takes effect if voters ratify this constitutional amendment"
+  ],
+  "evidenceSummary": {
+    "overallConfidence": "medium",
+    "axesScored": 2,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_investment",
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "This is a narrow property tax classification amendment affecting agricultural/timber/conservation landowners. It has no meaningful connection to healthcare, justice, climate policy, most housing axes, most economic axes, or firearms. Only tax structure and land use (zoning/supply) axes are affected, and the zoning effect is indirect.",
+    "researchGaps": [
+      "No official fiscal note available -- the magnitude of local property tax revenue loss is unknown",
+      "No data on how many landowners currently exceed the 2,000-acre CUVA cap -- the number of direct beneficiaries is unknown",
+      "No organized opposition has emerged as of February 2026 -- counter-arguments are speculative",
+      "Total current statewide CUVA enrollment acreage is not publicly aggregated in accessible form"
+    ],
+    "notes": "This is a low-salience, technically narrow measure with near-unanimous legislative support. The scoring reflects its limited policy footprint -- only two axes are materially affected. The most meaningful dimension is the value framework, where the measure clearly expresses tradition, security, and modest power alignment. The gap between the 'family farmland' framing and the actual beneficiary class (2,000+ acre landowners) is the most important nuance for voter information."
+  }
+}

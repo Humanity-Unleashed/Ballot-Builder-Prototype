@@ -1,0 +1,220 @@
+{
+  "slug": "jason-esteves",
+  "name": "Jason Esteves",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00.000Z",
+  "profileSummary": "Former Georgia State Senator (District 35, 2023-2025) and eight-year Atlanta Public Schools Board member who resigned to run for governor. Corporate attorney turned progressive campaigner centering education, Medicaid expansion, reproductive rights, and anti-corporate housing policy.",
+  "keyPositions": [
+    "Full Medicaid expansion for Georgia; lower prescription drug costs; expand rural hospitals and senior care",
+    "Repeal Georgia's six-week abortion ban (sponsored heartbeat bill repeal as state senator)",
+    "Fully fund public schools and oppose education vouchers; universal childcare for 3- and 4-year-olds funded by Georgia Lottery reserves",
+    "Ban private equity firms from purchasing single-family homes; strengthen renter protections; increase housing supply",
+    "$1 billion low-interest loan fund for small businesses; opposes Kemp's mega-corporation incentive model"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "$1B small business loan fund (NAACP forum, Aug 2025)",
+        "Universal childcare plan via Georgia Lottery reserves (11Alive, 2026)",
+        "AJC forum: mobilize National Guard for food banks if federal programs cut (Dec 2025)",
+        "Medicaid expansion pledge (multiple forums)"
+      ],
+      "notes": "Strong safety-net expansion across multiple domains (childcare, healthcare, small business support). Would use state resources to buffer federal program cuts. Not UBI-level but actively expansionist."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "$1B small business fund proposal (AJC, Aug 2025)",
+        "Universal childcare via lottery reserves (11Alive, 2026)",
+        "Education funding increase platform (campaign website)",
+        "Criticism of Kemp for mega-corporation focus over small business (Georgia Recorder forum, Jan 2026)"
+      ],
+      "notes": "Proposes aggressive public investment across education, childcare, and small business. Uses public funding but accepts mixed delivery models (public-private childcare). Frames as investing in people vs. corporations."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: 'stood up against voucher schemes that siphon resources away from our public schools'",
+        "8 years as Atlanta Public Schools Board Chair/member (2013-2021)",
+        "Sponsored early learning expansion for 3-year-olds (GA Senate, 2023)",
+        "2026 education plan: full public school funding and modernized funding formula"
+      ],
+      "notes": "One of the most clearly documented axes. Anti-voucher stance is consistent across board service, legislative record, and campaign platform. Mixed public-private childcare delivery model is for pre-K, not K-12 vouchers -- not a conflict."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Medicaid expansion pledge (campaign website, Georgia Recorder forum Jan 2026, GPB NAACP forum Aug 2025)",
+        "SB 199 - HSA bill for state employees (passed, bipartisan, 2023)",
+        "Campaign: lower premiums, expand rural hospitals and clinics, senior care"
+      ],
+      "notes": "Firmly supports Medicaid expansion (Georgia is a non-expansion state). Not single-payer -- uses market tools where practical (HSAs for state employees). Positions him at the public-option-plus tier: government as major coverage expander alongside private market."
+    },
+    "health_cost_control": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: 'lower the cost of insurance premiums' and 'lower the cost of prescription drugs'",
+        "SB 199 - HSA bill (market mechanism for employee benefits)"
+      ],
+      "notes": "Wants to lower costs but no specific mechanism documented (price negotiation, price caps, transparency, or competition). HSA bill suggests comfort with market tools. Cannot place more precisely without knowing his preferred cost-control mechanism."
+    },
+    "health_public_health": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Heartbeat bill repeal (GA Senate, 2023 -- Tier 1 legislative)",
+        "Central campaign theme: repeal abortion ban, restore reproductive decisions to women and doctors",
+        "Endorsed by Shanette Williams (Amber Thurman's mother)",
+        "NAACP forum: maternal mortality crisis 'especially for black women'; rural hospitals closing",
+        "Free-range parenting bill co-sponsored (2025 -- bipartisan, individual liberty signal)"
+      ],
+      "notes": "Strong public health infrastructure orientation (maternal mortality, rural hospitals, reproductive health access). But free-range parenting bill shows he is not reflexively pro-mandate on all issues. Broader public health positions (vaccines, environmental health mandates) not documented."
+    },
+    "housing_affordability_tools": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Private equity home purchase restriction bill (GA Senate, introduced 2025 -- Tier 1 legislative)",
+        "Campaign website: 'increase housing supply, strengthen renter protections, stand up to out-of-state corporations'",
+        "Georgia Recorder forum: 'stop private equity funds from buying up single-family homes'",
+        "Senior property tax relief bill (passed, bipartisan -- Tier 1 legislative)"
+      ],
+      "notes": "Active government intervention in housing markets: corporate purchase bans, renter protections, supply increase, and tax relief for seniors. Multiple specific mechanisms across legislative record and campaign platform. One of the strongest-evidenced axes."
+    },
+    "housing_supply_zoning": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: 'increase the housing supply'",
+        "Defeated Buckhead cityhood bill SB 114 (opposes urban fragmentation -- indirect signal)"
+      ],
+      "notes": "General supply-increase orientation but no specific zoning reform positions. Buckhead cityhood opposition signals preference for unified urban governance (which can enable density) but is not a direct zoning position. Insufficient evidence for confident placement."
+    },
+    "housing_transport_priority": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: 'expanding public transportation'"
+      ],
+      "notes": "Single general mention. No specific transit projects, funding amounts, or transit-vs-roads priorities documented. Scored slightly below center based on stated pro-transit orientation, but confidence is low."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Opposed permitless carry during 2022 Senate campaign",
+        "11Alive interview: criticized Geoff Duncan for 'preventing sensible gun ownership laws from being passed'"
+      ],
+      "notes": "Consistently pro-gun-regulation across two Tier 2/3 sources. 'Sensible gun ownership laws' framing suggests moderate regulation (background checks, permit requirements) rather than comprehensive gun control. No specific legislation sponsored and no NRA grade available."
+    },
+    "justice_sentencing_goals": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "SB 25 - Parole Board Transparency (co-sponsored, 2025): requires written explanation when keeping someone incarcerated beyond tentative parole date"
+      ],
+      "notes": "SB 25 is a mild rehabilitation/due-process signal -- transparency in parole decisions, not decarceration or sentencing reform. Single narrow bill; insufficient for confident placement on the broader sentencing axis. Research explicitly flags criminal justice as a gap area."
+    },
+    "climate_ambition": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: 'advocate for renewable energy sources' and 'fight to address environmental concerns'",
+        "2021 op-ed supporting zero-emission electric school buses",
+        "Turning Point Action 14/100 score (inverse signal: generally progressive, not climate-specific)"
+      ],
+      "notes": "Pro-environment orientation without detailed climate policy. No specific emissions targets, no climate legislation sponsored, no LCV score available for GA state legislators. Research file explicitly flags this as a gap. Cannot place below 4 without specific policy commitments or legislative record."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Consistent domestic universalism: Medicaid expansion for all Georgians, universal childcare, maternal mortality with explicit racial equity framing ('especially for black women'), housing protections for all families against corporate buyers. Son of immigrants with Afro-Puerto Rican heritage -- lived experience of inclusion. However, no documented positions on international affairs, refugees, or global governance limit the score. Universalism appears domestic in scope."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Community welfare is the central throughline of his career and campaign. Eight years of unpaid school board service including as Chair. Teach For America corps member. Teacher pay increases, rural hospital expansion, senior property tax relief, small business fund, childcare for working families, National Guard food bank plan. Every major policy proposal is oriented toward immediate community benefit. The strongest Schwartz value signal in his profile."
+    },
+    "tradition": {
+      "score": -0.1,
+      "reasoning": "Mixed signals. Defends some institutional traditions: public school system (anti-voucher), unified city governance (anti-Buckhead cityhood). But his central campaign issue is repealing Georgia's abortion ban -- challenging a recently established legal framework. Free-range parenting bill challenges government intervention norms. Net effect is mildly change-oriented. Not a strong tradition signal in either direction."
+    },
+    "conformity": {
+      "score": 0.4,
+      "reasoning": "Works within institutional channels consistently. Bipartisan legislative record: SB 199, senior tax relief, free-range parenting bill, personal information redaction all passed with Republican support. Vice Chair of Finance in Democratic Caucus (institutional role). Corporate law career at Equifax signals comfort with institutional structures. Resigned Senate seat properly to run for governor. Not a norm-breaker -- pursues change through legitimate process."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Multiple policies oriented toward family and community stability: National Guard mobilization for food banks if federal programs cut, rural hospital expansion, housing affordability as family stability, senior property tax relief, personal information redaction for public officials. Security framing is economic and health-oriented (not military/border), but the underlying motivation -- protecting people from instability -- is clearly present."
+    },
+    "power": {
+      "score": -0.2,
+      "reasoning": "Anti-corporate positioning on housing (PE ban) and economic development (small business over mega-corporations). Claims 95% small-dollar fundraising. No AIPAC or major PAC money documented. However, corporate law career as VP of Legal at Equifax and establishment endorsement network (Jason Carter, Sally Yates) signal comfort with institutional power structures. Not a full anti-power crusader but leans against concentrated corporate power."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Strong personal achievement narrative: first-generation college graduate, son of immigrants, University of Miami to Emory Law, VP at Equifax, three family businesses, APS Board Chair, State Senator. Campaign emphasizes biography as a self-made story. $1B small business fund and entrepreneurship support align with achievement orientation. Education focus is partly about enabling achievement for the next generation."
+    },
+    "hedonism": {
+      "score": 0.1,
+      "reasoning": "Very mild signal. Free-range parenting bill touches personal liberty. Reproductive rights framed as personal healthcare decisions. No evidence on recreational cannabis, lifestyle liberty, or other hedonism-adjacent issues. Not a defining value."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some novelty: resigned safe Senate seat to challenge for governor. Creative policy proposals (lottery-reserve-funded childcare, $1B small business fund, PE home purchase ban). But overall platform is standard progressive -- Medicaid expansion, public school funding, abortion rights. Not a disruptive reformer. 'New generation' implicit framing but not as explicit as some candidates."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Clear reproductive autonomy framing: 'a woman's right to make her own healthcare decisions with her doctor and her family, not politicians.' Free-range parenting bill supports parental freedom. However, anti-voucher position works against self-direction in education choice context. Gun regulation positions limit individual liberty in firearms context. Net positive from reproductive rights and parenting freedom, moderated by other positions."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Market mechanisms vs. anti-corporate rhetoric",
+      "description": "Esteves authored SB 199 establishing health savings accounts for state employees (a market-based benefit mechanism) and proposes mixed public-private childcare delivery, while simultaneously running an anti-corporate campaign (PE home ban, criticizing Kemp's corporate incentives). His approach is pragmatically pro-market-tool but anti-concentrated-corporate-power, not ideologically purist.",
+      "sources": [
+        "GA Senate Press Office (SB 199)",
+        "Campaign website priorities page",
+        "11Alive education plan story (2026)"
+      ],
+      "scoringImpact": "Reflected in health_coverage_model score of 3 rather than 1-2. Does not create an axis conflict so much as nuance -- he uses market tools within a progressive framework."
+    },
+    {
+      "topic": "Small-dollar fundraising claim vs. establishment backing",
+      "description": "Claims 95% of donations are small-dollar, but has secured high-profile establishment endorsements (Jason Carter, Sally Yates, GALEO). Establishment backing does not necessarily mean large-dollar fundraising, but the specific 95% claim could not be independently verified from available sources.",
+      "sources": [
+        "Campaign press reports (95% claim)",
+        "Fox5 Atlanta (Carter endorsement)",
+        "The Hill (Yates endorsement)"
+      ],
+      "scoringImpact": "Moderated the power value score. Without FEC-equivalent verification, treated as plausible but unconfirmed."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": [
+      "climate_energy_portfolio",
+      "climate_permitting",
+      "econ_tax_structure",
+      "justice_policing_accountability"
+    ],
+    "reasonSkipped": "No meaningful evidence: energy_portfolio has only one general campaign statement with no specific policy; permitting has zero evidence; tax_structure has no specific tax rate or structure positions; policing_accountability has only a tangentially related parole transparency bill (SB 25) which is insufficient for the policing-specific axis.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No specific climate/energy policy beyond general renewable energy advocacy",
+      "No immigration or ICE enforcement positions documented",
+      "No policing reform or use-of-force positions found",
+      "No tax policy (income, corporate, or property tax rates beyond senior relief) documented",
+      "Specific labor union endorsements unconfirmed despite campaign claims",
+      "Short legislative record (2 years in minority party) limits Tier 1 voting record evidence"
+    ],
+    "notesOnEvidenceQuality": "Esteves has a short state Senate record (Jan 2023 - Sep 2025) as a minority-party member, meaning most of his sponsored bills did not pass and floor votes on contested issues were limited. The strongest evidence comes from his bipartisan bills that passed (SB 199, senior tax relief, free-range parenting, personal info redaction) and the bills he introduced that did not pass (heartbeat repeal, PE home ban, early learning expansion). Campaign website and multiple forum appearances provide consistent Tier 2 evidence. The Turning Point Action 14/100 score provides an inverse Tier 1 signal confirming generally progressive alignment but is not axis-specific."
+  }
+}

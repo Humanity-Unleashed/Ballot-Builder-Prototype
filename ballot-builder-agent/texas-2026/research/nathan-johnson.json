@@ -1,0 +1,939 @@
+{
+  "slug": "nathan-johnson",
+  "name": "Nathan Johnson",
+  "party": "Democratic",
+  "office": "Texas Attorney General, 2026",
+  "contest": "Texas Attorney General — Democratic Primary, March 3, 2026",
+  "incumbencyStatus": "challenger (current state senator, SD-16, Dallas; not incumbent AG)",
+  "researchedAt": "2026-02-27T00:00:00Z",
+
+  "biography": {
+    "dateOfBirth": "1968-02-12",
+    "currentRole": "Texas State Senator, SD-16 (Dallas), 2019–present",
+    "priorRoles": [
+      "Litigator and mediator, Thompson Coburn LLP (Dallas) — trial litigation and dispute resolution",
+      "Co-founded law firm specializing in business disputes",
+      "Pro-bono work: Human Rights Initiative of North Texas (immigrant legal representation)",
+      "Composer: Dragon Ball Z anime musical scores; classical works"
+    ],
+    "education": "B.S. Physics, University of Arizona; J.D., University of Texas at Austin School of Law",
+    "background": "Born February 12, 1968. Upset incumbent Republican Don Huffines by 8 points in 2018 to become the first Democrat to represent SD-16 in over three decades. Re-elected 2020, 2022, 2024. Won a contested 2024 Democratic primary against State Rep. Victoria Neave Criado (who accused him of being too moderate on immigration) with ~60% of the vote. Political scientists describe his voting record as 'nearly indistinguishable from most other Democrats in the Texas Senate.' Represents ~1 million constituents in rapidly growing and diversifying Dallas County. Has authored ~433 bills and passed 134–135 into law across healthcare, electric grid, government transparency, criminal justice, housing, and environmental protection.",
+    "fundraising": "$750,000 cash on hand (reported); leading Democratic primary polls at ~25%"
+  },
+
+  "campaignWebsite": {
+    "url": "https://nathanfortexas.com",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "WebFetch unavailable; positions reconstructed from web searches returning summaries and quotes from nathanfortexas.com/priorities, /meet-nathan, /endorsements, /public-health, plus syndicated coverage of the same pages.",
+    "statedPositions": [
+      {
+        "topic": "office_accountability",
+        "quote": "The Attorney General is the chief law enforcement officer of Texas, and the office should be protecting consumers, cracking down on fraud, and partnering with law enforcement — not defending illegal power grabs or serving corrupt politicians.",
+        "sourceUrl": "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+        "date": "2026-01",
+        "confidence": "high",
+        "notes": "Primary campaign framing; repeated across all campaign materials and interviews."
+      },
+      {
+        "topic": "consumer_protection",
+        "quote": "Texas has laws to protect consumers and promote competition among businesses, and as Attorney General, I will enforce them against businesses who engage in price gouging, consumer scams, and unfair competition.",
+        "sourceUrl": "https://nathanfortexas.com/priorities",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Signals active enforcement of existing consumer protection and antitrust laws, including Medicaid fraud investigation."
+      },
+      {
+        "topic": "enforcement_discretion",
+        "quote": "I have great discretion in enforcement powers. The attorney general actually isn't the front-line enforcer on many things, but I do have discretion as to how to use the resources. There are priorities and there are lesser priorities.",
+        "sourceUrl": "https://thetexan.news/elections/2026/democrats-running-for-texas-attorney-general-vow-to-reform-office-post-paxton/article_9646b8e4-1999-4d30-8408-f0296bf67978.html",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicitly said he would NOT enforce SB 8 (2025 transgender bathroom/spaces bill), citing enforcement discretion."
+      },
+      {
+        "topic": "constitutional_defense",
+        "quote": "I'm not going to defend unconstitutional laws. I've sworn an oath to the Constitution over and over again since I was 18 years old, and that continues today. The dividing line isn't my personal ideology — it's whether a law is constitutional.",
+        "sourceUrl": "https://thetexan.news/elections/2026/democrats-running-for-texas-attorney-general-vow-to-reform-office-post-paxton/article_9646b8e4-1999-4d30-8408-f0296bf67978.html",
+        "date": "2026",
+        "confidence": "high"
+      },
+      {
+        "topic": "immigration_border",
+        "quote": "The Texas border is 1,254 miles long, and it needs to be secure and safe from drug smuggling, human trafficking, and all forms of cross-border criminal enterprise. [But] Americans should reject 'shock and awe' border policy and tactics that violate the U.S. Constitution... The Attorney General has a role to play: assisting with federal enforcement as appropriate, and blocking federal actions when they go too far.",
+        "sourceUrl": "https://nathanfortexas.com/priorities",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Moderate framing: supports border security but opposes constitutional violations; would both assist AND check federal enforcement."
+      },
+      {
+        "topic": "federal_executive_independence",
+        "quote": "I'm not going to use the office to do what either the Biden or Trump administrations say, but rather to ensure that everybody knows the rules and that everybody follows the rules, and then if you don't follow the rules, there's consequences.",
+        "sourceUrl": "https://www.cbsnews.com/texas/video/democratic-candidate-for-texas-attorney-general-nathan-johnson-on-their-campaign/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "CBS Texas interview. States independence from both parties' executive pressure."
+      },
+      {
+        "topic": "individual_rights_restoration",
+        "quote": "I will use the power of the Office to defend — and where possible restore — the individual rights and freedoms we have worked so hard to establish, and to uphold the rule of law and honor the Constitution.",
+        "sourceUrl": "https://nathanfortexas.com/priorities",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Context includes reproductive rights, LGBTQ rights rolled back in TX."
+      }
+    ]
+  },
+
+  "votingRecord": {
+    "available": true,
+    "sources": [
+      "Texas Legislature Online (capitol.texas.gov)",
+      "VoteSmart (justfacts.votesmart.org/candidate/177585)",
+      "Ballotpedia",
+      "ATPE Teach the Vote (teachthevote.atpe.org/Candidates/Nathan-Johnson)",
+      "Texas Choice Tracker (choicetracker.org)",
+      "Texas Right to Life 2019 scorecard PDF",
+      "NBC DFW, Texas Tribune, and KHOU vote reporting"
+    ],
+    "legislativeSummary": "Authored ~433 bills since 2019; passed 134–135 into law across healthcare, electric grid, government transparency, criminal justice, housing, environmental protection, and AI/data privacy.",
+    "committeeAssignments": [
+      "Business and Commerce",
+      "Economic Development",
+      "Jurisprudence (Vice Chair)",
+      "Transportation",
+      "Water, Agriculture and Rural Affairs"
+    ],
+    "keyVotes": [
+      {
+        "bill": "HB 1927 — Permitless Carry (87th Legislature, 2021)",
+        "vote": "No (inferred: all 13 No votes were Democrats; Johnson explicitly opposed and criticized passage)",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://www.texastribune.org/2021/04/16/texas-guns-permit-constitutional-carry-law/",
+        "notes": "Johnson stated he 'would never have dreamed it would come out of the House.' In his 87th Legislature blog: 'How did it make sense for the Legislature to pass legislation that was opposed by a supermajority of the voting population?' Senate passed 18-13 along party lines. NRA grade: F. Vote No confirmed by party-line count and multiple statements."
+      },
+      {
+        "bill": "SB 8 (88th Legislature) — Education savings account (ESA) voucher program",
+        "vote": "No",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+        "notes": "Voted against ESA/voucher bill in the regular session."
+      },
+      {
+        "bill": "HB 100 (as amended with ESA provision) — ESA voucher",
+        "vote": "No",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+        "notes": "Voted against ESA voucher program in second attempt."
+      },
+      {
+        "bill": "SB 1 (88th Legislature, 3rd Called Special Session, Oct 2023) — ESA voucher program",
+        "vote": "No",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+        "notes": "Third attempt at vouchers — Johnson voted No each time. Explicit quote: 'No. I will continue to work hard to stop the turnover of public education to the private sector.' Bill passed Senate but died in the House."
+      },
+      {
+        "bill": "Teacher pay amendment ($10,000 raise) (88th Legislature)",
+        "vote": "Yes",
+        "topic": "econ_school_choice / econ_investment",
+        "sourceUrl": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+        "notes": "Supported teacher pay raise; ATPE-backed vote."
+      },
+      {
+        "bill": "SB 321 (2021) — Defined-contribution plan for new state employees",
+        "vote": "No",
+        "topic": "econ_safetynet / labor",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/key-votes/177585/nathan-johnson",
+        "notes": "Opposed converting state employee retirement from defined-benefit to defined-contribution pension. Protects public employee benefits."
+      },
+      {
+        "bill": "Critical race theory / social studies curriculum restriction (2nd Special Session 2021)",
+        "vote": "No",
+        "topic": "econ_school_choice / civil_rights",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/key-votes/177585/nathan-johnson",
+        "notes": "Voted against restricting social studies curriculum and banning CRT-associated concepts in schools."
+      },
+      {
+        "bill": "SB 4 (88th Legislature, 3rd Special Session 2023) — Human smuggling penalties / immigration enforcement",
+        "vote": "Yes",
+        "topic": "justice_sentencing_goals / immigration",
+        "sourceUrl": "https://www.nbcdfw.com/news/politics/lone-star-politics/human-smuggling-vote-in-focus-for-dallas-state-senate-race/3439876/",
+        "notes": "CONTESTED VOTE. Voted yes on bill increasing mandatory minimum for human smuggling to 10 years. Passed 29-2 (only 2 Democrats voted No). 2024 primary challenger Neave Criado attacked this vote as too moderate on immigration; Johnson defended it as anti-trafficking. Conflicts with his general rehabilitation/reform sentencing direction."
+      },
+      {
+        "bill": "SB 1296 (2021) — Texas insurance / Medicaid access expansion",
+        "vote": "Yes (authored)",
+        "topic": "health_coverage_model",
+        "sourceUrl": "https://www.dmagazine.com/healthcare-business/2020/10/how-texas-could-expand-medicaid-and-not-break-the-bank/",
+        "notes": "Amended Texas insurance law to provide private health coverage to ~350,000 previously uninsured low-income Texans. Johnson's landmark healthcare bill; Medicaid expansion workaround via private insurance mechanism."
+      },
+      {
+        "bill": "SB 195 — Live Well Texas Program (1115 Waiver Medicaid expansion)",
+        "vote": "Yes (authored; repeatedly filed)",
+        "topic": "health_coverage_model",
+        "sourceUrl": "https://www.dmagazine.com/healthcare-business/2020/10/how-texas-could-expand-medicaid-and-not-break-the-bank/",
+        "notes": "Full Medicaid expansion by 1115 waiver under ACA (90-10 federal-state match); would cover ~1 million Texans. Repeatedly filed by Johnson; blocked by Republican-controlled Senate. D Magazine describes him as 'the state's leading voice on Medicaid expansion.'"
+      },
+      {
+        "bill": "Fentanyl testing strip decriminalization (SB 623 and companion, 88th Legislature)",
+        "vote": "Yes (authored)",
+        "topic": "justice_sentencing_goals / health_public_health",
+        "sourceUrl": "https://senate.texas.gov/member.php?d=16",
+        "notes": "Bipartisan bill with Republican Sen. Bob Hall. Passed. Harm-reduction approach: decriminalizes test strips that prevent overdose deaths."
+      },
+      {
+        "bill": "Teen mental health services market creation (87th Legislature, 2021)",
+        "vote": "Yes (authored, passed bipartisan)",
+        "topic": "health_coverage_model / econ_investment",
+        "sourceUrl": "https://senatornathanjohnson.com/the-best-and-worst-of-the-87th-legislature-from-a-democrat/",
+        "notes": "Created new market for teen mental-health services. Cited as notable bipartisan success in his own 87th Legislature recap."
+      },
+      {
+        "bill": "Palliative care definition expansion (passed)",
+        "vote": "Yes (authored)",
+        "topic": "health_coverage_model",
+        "sourceUrl": "https://senate.texas.gov/member.php?d=16",
+        "notes": "Expanded palliative care access in state law."
+      },
+      {
+        "bill": "SB 53 — Hemp-derived THC regulatory framework (89th Legislature Special Session, July 2025)",
+        "vote": "Yes (authored)",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://texaspolitics.com/2025/07/30/senator-nathan-johnson-unveils-cannabis-reform-bills-in-texas-special-session/",
+        "notes": "Establishes regulatory rather than criminal framework for hemp-derived THC products. Filed July 2025 in special session."
+      },
+      {
+        "bill": "SB 54 — Marijuana decriminalization and expungement (89th Legislature Special Session, July 2025)",
+        "vote": "Yes (authored)",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://texaspolitics.com/2025/07/30/senator-nathan-johnson-unveils-cannabis-reform-bills-in-texas-special-session/",
+        "notes": "Decriminalize possession of up to 2 oz, allow limited home cultivation, create expungement path for past low-level convictions. Filed after his AG announcement; legislative outcome pending."
+      },
+      {
+        "bill": "SB 2835 — Single-staircase apartment buildings (89th Legislature, 2025)",
+        "vote": "Yes (authored, passed, effective September 1, 2025)",
+        "topic": "housing_supply_zoning",
+        "sourceUrl": "https://citizenportal.ai/articles/3111993/Texas/Senate-Bill-2835-promotes-flexible-single-staircase-apartment-buildings-in-Texas",
+        "notes": "Allows municipalities to authorize single-stairway apartment buildings up to 6 stories ('gentle density'). Grants municipalities discretion — not a state preemption of local zoning. Part of first-day 89th Legislature housing package."
+      },
+      {
+        "bill": "Housing construction regulatory barrier removal (89th Legislature first-day filing)",
+        "vote": "Yes (authored)",
+        "topic": "housing_supply_zoning",
+        "sourceUrl": "https://senate.texas.gov/members/d16/press/en/p20241112a.pdf",
+        "notes": "First-day legislation filing (November 12, 2024) to remove regulatory blocks on construction of promising new housing forms. Framed by Johnson as 'physical infrastructure.'"
+      },
+      {
+        "bill": "Texas Power Promise / Winter Storm Uri grid reform (87th Legislature, 2021)",
+        "vote": "Yes (authored, passed)",
+        "topic": "climate_energy_portfolio / econ_investment",
+        "sourceUrl": "https://senatornathanjohnson.com/priorities-powering-the-future-improving-the-environment/",
+        "notes": "Required PUC to develop $1.8B program for backup power at critical community facilities. Secured nearly $2B total for backup power statewide. Explicitly preserved renewable energy resources within grid reforms against Republican proposals to disadvantage renewables."
+      },
+      {
+        "bill": "Texas Virtual Power Plant pilot (2023)",
+        "vote": "Yes (authored)",
+        "topic": "climate_energy_portfolio",
+        "sourceUrl": "https://senate.texas.gov/member.php?d=16",
+        "notes": "Authored bill kickstarting Texas virtual power plant pilot as part of ERCOT grid reliability work."
+      },
+      {
+        "bill": "ERCOT board governance — opposed politicizing ERCOT",
+        "vote": "Opposed / raised concerns",
+        "topic": "climate_energy_portfolio / governance",
+        "sourceUrl": "https://senatornathanjohnson.com/",
+        "notes": "Johnson raised concerns about replacing independent ERCOT experts with political appointees: 'We represent to the public that ERCOT is an independent agency, and yet under the various options... we're appointing members politically.'"
+      },
+      {
+        "bill": "Polluter penalty increases (multiple sessions)",
+        "vote": "Yes (authored, passed)",
+        "topic": "climate_ambition",
+        "sourceUrl": "https://senatornathanjohnson.com/priorities-powering-the-future-improving-the-environment/",
+        "notes": "Passed legislation increasing penalties on polluters. Stated goal: 'continue the trend of lowering carbon pollution.'"
+      },
+      {
+        "bill": "Corporate tax abatement reform",
+        "vote": "Yes (authored, passed)",
+        "topic": "econ_investment / econ_tax_structure",
+        "sourceUrl": "https://nathanfortexas.com/meet-nathan",
+        "notes": "Rewrote standards to prevent waste and abuse of business tax abatements; made it harder for businesses to exploit tax incentives. Anti-corporate-welfare angle."
+      },
+      {
+        "bill": "AI scam / data privacy consumer protection (passed)",
+        "vote": "Yes (authored)",
+        "topic": "consumer_protection / econ_investment",
+        "sourceUrl": "https://senate.texas.gov/member.php?d=16",
+        "notes": "Passed legislation protecting consumers from AI scams and invasions of data privacy."
+      },
+      {
+        "bill": "SB 45 — Abortion travel ban prohibition",
+        "vote": "Yes (authored)",
+        "topic": "health_public_health / reproductive_rights",
+        "sourceUrl": "https://senatornathanjohnson.com/posts/nathan-johnson-has-always-protected-the-right-to-choose-and-he-always-will-b77zs",
+        "notes": "Filed SB 45 to prohibit abortion travel bans in Texas."
+      },
+      {
+        "bill": "SB 78 — Medication abortion legalization",
+        "vote": "Yes (authored)",
+        "topic": "health_public_health / reproductive_rights",
+        "sourceUrl": "https://senatornathanjohnson.com/posts/nathan-johnson-has-always-protected-the-right-to-choose-and-he-always-will-b77zs",
+        "notes": "Only legislator in Texas to introduce medication abortion legalization bill after Texas abortion ban. Did not pass Republican-controlled Senate."
+      },
+      {
+        "bill": "SB 79 — Nullify 1925 pre-Roe abortion prosecution statute",
+        "vote": "Yes (authored)",
+        "topic": "health_public_health / reproductive_rights",
+        "sourceUrl": "https://senatornathanjohnson.com/posts/nathan-johnson-has-always-protected-the-right-to-choose-and-he-always-will-b77zs",
+        "notes": "Filed to nullify 1925 law allowing prosecution of women who obtain abortions."
+      },
+      {
+        "bill": "SB 291 — Out-of-state abortion travel protection",
+        "vote": "Yes (authored)",
+        "topic": "health_public_health / reproductive_rights",
+        "sourceUrl": "https://senatornathanjohnson.com/posts/nathan-johnson-has-always-protected-the-right-to-choose-and-he-always-will-b77zs",
+        "notes": "Filed to protect from prosecution anyone who helps a woman travel out of state to obtain an abortion."
+      },
+      {
+        "bill": "Anti-abortion bills — multiple (86th–88th Legislatures)",
+        "vote": "No on all",
+        "topic": "health_public_health / reproductive_rights",
+        "sourceUrl": "https://choicetracker.org/tx/people/nathan-johnson/78577664",
+        "notes": "Documented No votes: medication abortion ban (7 weeks), criminal penalties for providers, 6-week abortion ban, charter school restriction on abortion providers. 100% Reproductive Freedom for All (NARAL) lifetime score."
+      },
+      {
+        "bill": "Property tax relief package (88th Legislature, 2023)",
+        "vote": "Yes",
+        "topic": "econ_tax_structure",
+        "sourceUrl": "https://www.texastribune.org/2023/03/22/texas-senate-property-taxes/",
+        "notes": "Supported bipartisan $16.5B property tax cut. Stated: 'We're doing something that's popular, we're doing something that provides genuine tax relief for people' but noted it 'could require us to make some difficult decisions in the future.' No Democrats voted against it. Constituent-service vote, not ideological low-tax position."
+      },
+      {
+        "bill": "SBOE veto power amendment (preserving elected State Board of Education oversight)",
+        "vote": "Yes",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+        "notes": "Voted to preserve elected State Board of Education's veto power over rules adopted by appointed State Board for Educator Certification. ATPE-supported."
+      }
+    ]
+  },
+
+  "scorecards": [
+    {
+      "organization": "Reproductive Freedom for All (formerly NARAL Pro-Choice America)",
+      "score": "100%",
+      "grade": null,
+      "url": "https://choicetracker.org/tx/people/nathan-johnson/78577664",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect score on abortion rights across documented session votes. Consistent with authored pro-choice bills and No votes on all anti-abortion legislation."
+    },
+    {
+      "organization": "Planned Parenthood Texas Votes",
+      "score": null,
+      "grade": "Endorsed (2024 General Election)",
+      "url": "https://choicetracker.org/tx/people/nathan-johnson/78577664",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Endorsed in 2024 state senate general election."
+    },
+    {
+      "organization": "Texas Right to Life",
+      "score": "Near-zero (2019 scorecard)",
+      "grade": null,
+      "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/324-191112-024345-JohnsonN2019Scorecard2.pdf",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "2019 PDF scorecard: voted against SB 2089, SB 1033, infant survivor protections, SB 22. Worst tier on their scoring. Consistent with 100% NARAL rating. Corroborates Tier 1 from both sides."
+    },
+    {
+      "organization": "NRA-PVF (National Rifle Association Political Victory Fund)",
+      "score": null,
+      "grade": "F",
+      "url": "https://www.nrapvf.org/grades/texas/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Johnson's own statement: 'I was elected to represent the people, and the people overwhelmingly support meaningful gun safety laws. I'm good with Fs on the NRA report card.' Consistent with No vote on permitless carry (2021) and no pro-gun-rights votes found."
+    },
+    {
+      "organization": "Young Conservatives of Texas (YCT)",
+      "score": "30/100 (86th Legislature); 22/100 (88th Legislature)",
+      "grade": null,
+      "url": "https://ratings.yct.org/legislators/nathan-johnson/86th-legislature",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Low YCT score confirms consistently liberal voting record across economic, social, and governance issues. Among 5 least conservative senators in 88th Legislature."
+    },
+    {
+      "organization": "ATPE (Association of Texas Professional Educators) — Teach the Vote",
+      "score": "Largely supported",
+      "grade": "Endorsed (2018)",
+      "url": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Endorsed 2018. Supported: SBOE veto power amendment, $10K teacher pay raise, increased school funding, voucher opposition. ATPE-opposed exception: removing counselor experience requirement. Voted against teacher pay bill only after it was amended to include ESA vouchers."
+    },
+    {
+      "organization": "Texas Parent PAC",
+      "score": null,
+      "grade": "Endorsed (2022 General Election)",
+      "url": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Pro-public-education PAC endorsement; consistent with anti-voucher, pro-public-school record."
+    },
+    {
+      "organization": "Texas AFL-CIO COPE",
+      "score": null,
+      "grade": "Endorsed (2026 AG race)",
+      "url": "https://texasaflcio.org/news/lone-star-labor-our-slate-statewide-endorsements",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Endorsed at January 25, 2026 COPE Convention in Georgetown, TX. Represents 250,000+ union members. Signals pro-labor record in state senate."
+    },
+    {
+      "organization": "Texas AFT (American Federation of Teachers)",
+      "score": null,
+      "grade": "Endorsed (2026)",
+      "url": "https://www.texasaft.org/government/elections/texas-afl-cio-kicks-off-2026-political-work-at-cope-convention/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Teacher union endorsed Johnson for AG."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV) — National",
+      "score": "N/A — state legislator not tracked by LCV national scorecard",
+      "grade": null,
+      "url": null,
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "LCV tracks federal legislators only. Environmental record assessed through authored bills: polluter penalties, ERCOT reform preserving renewables, virtual power plants, clean energy support."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "Texas AFL-CIO COPE",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Announced January 25, 2026. Represents 250,000+ union members."
+    },
+    {
+      "organization": "Texas AFT (American Federation of Teachers)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Teacher union endorsement."
+    },
+    {
+      "organization": "Houston LGBTQ+ Political Caucus",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Endorsed January 17, 2026. South's oldest LGBTQ civil rights organization."
+    },
+    {
+      "organization": "Stonewall Democrats of Dallas",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "LGBTQ Democratic organization."
+    },
+    {
+      "organization": "Asian Texans for Justice",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Civil rights organization."
+    },
+    {
+      "organization": "Texas Gulf Coast Area Labor Federation",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Regional AFL-CIO affiliate."
+    },
+    {
+      "organization": "Dallas Morning News",
+      "type": "editorial endorsement",
+      "cycle": "2026",
+      "notes": "Major Texas newspaper endorsed for Democratic AG primary."
+    },
+    {
+      "organization": "Houston Chronicle",
+      "type": "editorial endorsement",
+      "cycle": "2026",
+      "notes": "Major Texas newspaper endorsement."
+    },
+    {
+      "organization": "Austin Chronicle",
+      "type": "editorial endorsement",
+      "cycle": "2026",
+      "notes": "Austin alt-weekly endorsement."
+    },
+    {
+      "organization": "Fort Worth Star-Telegram",
+      "type": "editorial endorsement",
+      "cycle": "2026",
+      "notes": "Major Texas newspaper endorsement."
+    },
+    {
+      "organization": "U.S. Rep. Julie Johnson (TX-32)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "U.S. Congresswoman, Dallas-area."
+    },
+    {
+      "organization": "U.S. Rep. Marc Veasey (TX-33)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "U.S. Congressman, Fort Worth."
+    },
+    {
+      "organization": "State Sen. Royce West (D-Dallas)",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Sen. Sarah Eckhardt (D-Austin)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Despite voting opposite Johnson on SB 4 immigration bill — Eckhardt was one of 2 who voted No."
+    },
+    {
+      "organization": "State Sen. César Blanco (D-El Paso)",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Sen. José Menéndez (D-San Antonio)",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Dallas District Attorney John Creuzot",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Known for progressive criminal justice reform in Dallas County; reduced prosecutions for low-level offenses."
+    },
+    {
+      "organization": "Harris County Commissioner Rodney Ellis",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Known for criminal justice reform advocacy at county level."
+    },
+    {
+      "organization": "Amanda Zurawski (reproductive rights advocate)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "High-profile activist who nearly died under Texas abortion ban; signals abortion rights enforcement priority for AG office."
+    },
+    {
+      "organization": "Planned Parenthood Texas Votes",
+      "type": "endorsement",
+      "cycle": "2024 (state senate)",
+      "notes": "Endorsed in 2024 general election."
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "Texas Tribune — Q&A Voter Guide",
+      "date": "2026-01-28",
+      "url": "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+      "keyExchanges": [
+        {
+          "topic": "AG office priorities",
+          "quote": "Restoring integrity and accountability to an office that has been turned into a laughingstock... The Attorney General is the chief law enforcement officer of Texas.",
+          "notes": "Most structured interview: direct Q&A with all three Democratic AG primary candidates."
+        },
+        {
+          "topic": "Medicaid fraud and consumer protection",
+          "quote": "He would focus on restoring some of the agency's less prominent obligations, like investigating Medicaid fraud and enforcing consumer protection laws.",
+          "notes": "Signals continued Medicaid investment as policy value via enforcement focus."
+        }
+      ]
+    },
+    {
+      "outlet": "WFAA — Inside Texas Politics (full interview)",
+      "date": "2026",
+      "url": "https://www.wfaa.com/video/news/politics/inside-politics/texas-politics/inside-texas-politics-interview-nathan-johnson/287-7329cb82-eb73-4a97-9edc-ab88e28c6953",
+      "keyExchanges": [
+        {
+          "topic": "bipartisan_record",
+          "quote": "We need somebody as the chief legal officer of this state who understands state government, who, yes, can work with Republicans — that's how I managed to pass 135 bills — who, yes, can stand up to authority.",
+          "notes": "Emphasizes pragmatic bipartisan approach; 135 bills passed with Republican cooperation in a GOP-supermajority legislature."
+        }
+      ]
+    },
+    {
+      "outlet": "CBS Texas",
+      "date": "2026",
+      "url": "https://www.cbsnews.com/texas/video/democratic-candidate-for-texas-attorney-general-nathan-johnson-on-their-campaign/",
+      "keyExchanges": [
+        {
+          "topic": "rule_of_law / independence",
+          "quote": "I'm not going to use the office to do what either the Biden or Trump administrations say, but rather to ensure that everybody knows the rules and that everybody follows the rules, and then if you don't follow the rules, there's consequences.",
+          "notes": "Positions himself as independent of both federal political pressures."
+        },
+        {
+          "topic": "constitutional_defense",
+          "quote": "The legislature does not have the right to enforce unconstitutional laws, and I would not enforce unconstitutional laws.",
+          "notes": "Distinguishes between laws he must defend (constitutional) vs. those he won't (unconstitutional)."
+        }
+      ]
+    },
+    {
+      "outlet": "The Texan",
+      "date": "2026",
+      "url": "https://thetexan.news/elections/2026/democrats-running-for-texas-attorney-general-vow-to-reform-office-post-paxton/article_9646b8e4-1999-4d30-8408-f0296bf67978.html",
+      "keyExchanges": [
+        {
+          "topic": "SB 8 enforcement / transgender spaces bill",
+          "quote": "Johnson cited last year's Senate Bill (SB) 8, prohibiting biological males from women's private spaces, as legislation he would not seek to enforce.",
+          "notes": "Explicit example of enforcement discretion — would decline to enforce the 2025 transgender bathroom bill on resource/priority grounds."
+        },
+        {
+          "topic": "enforcement_priorities",
+          "quote": "I have great discretion in enforcement powers. The attorney general actually isn't the front-line enforcer on many things, but I do have discretion as to how to use the resources. There are priorities and there are lesser priorities.",
+          "notes": "Key framing of how he would use prosecutorial discretion as AG."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune — announcement interview",
+      "date": "2025-07-15",
+      "url": "https://www.texastribune.org/2025/07/15/nathan-johnson-texas-attorney-general-democrat-2026-midterms/",
+      "keyExchanges": [
+        {
+          "topic": "AG role and constitutional check",
+          "quote": "The framers of the Texas Constitution wanted the attorney general to be part of the executive branch, independently elected by the voters to act as a check to the concentration of power and the abuse of power, wherever it is in government, in the marketplace and on the streets.",
+          "notes": "Philosophical framing of AG as independent check on power."
+        },
+        {
+          "topic": "Paxton failure to challenge Trump on education funding",
+          "quote": "Why didn't we join that suit [against Trump's education funding freeze]? Because [Paxton] doesn't want to challenge the Trump administration.",
+          "notes": "Signals willingness to sue the Trump administration where Texas education funding interests are at stake."
+        }
+      ]
+    },
+    {
+      "outlet": "KLTV",
+      "date": "2026-01-28",
+      "url": "https://www.kltv.com/2026/01/28/democratic-candidate-attorney-general-emphasizes-constitution-over-partisanship/",
+      "keyExchanges": [
+        {
+          "topic": "partisanship framing",
+          "quote": "I hate to be too partisan about this stuff, and I have a record for working well across the aisle. But at the moment, there's such a pull from the attorney general's office to run it as a political machine for the far right.",
+          "notes": "Bipartisan rhetorical framing for AG race. Note: contrast with YCT 22/100 and NRA F — this is campaign positioning, not a moderate Senate voting record."
+        }
+      ]
+    },
+    {
+      "outlet": "KERA News",
+      "date": "2026-02-16",
+      "url": "https://www.keranews.org/news/2026-02-16/republicans-and-democrats-vie-to-take-mantle-of-attorney-generals-office-in-open-race",
+      "keyExchanges": [
+        {
+          "topic": "AG mission vs. Paxton",
+          "quote": "It has 'become such an ideological play pen for Ken Paxton' and if elected, the focus would shift from Republican talking points to basic functions of the Attorney General's Office, such as consumer protection and child support.",
+          "notes": "Consumer protection and family services enforcement framed as proper core AG function."
+        }
+      ]
+    },
+    {
+      "outlet": "Senator's own blog (senatornathanjohnson.com)",
+      "date": "2021-06-14",
+      "url": "https://senatornathanjohnson.com/the-best-and-worst-of-the-87th-legislature-from-a-democrat/",
+      "keyExchanges": [
+        {
+          "topic": "permitless carry criticism",
+          "quote": "How did it make sense for the Legislature to pass legislation that was opposed by a supermajority of the voting population? [regarding permitless gun carry]",
+          "notes": "Opposed permitless carry on democratic responsiveness grounds. Confirms No vote by statement and party-line split."
+        },
+        {
+          "topic": "bipartisan legislative values",
+          "summary": "Praised bipartisan work on teen mental health and COVID liability; criticized partisan overreach on guns, SB 1, and other 87th session bills.",
+          "notes": "Tier 2 self-authored source; useful for governing philosophy."
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "immigration / human smuggling mandatory minimum",
+      "conflict": "Voted YES on SB 4 (2023 special session) increasing mandatory minimums for human smuggling to 10 years. This conflicts with his general rehabilitation/reform sentencing direction. His 2024 primary challenger Neave Criado attacked this as out of step with Democratic immigration values. Johnson defended the vote as anti-trafficking/anti-drug-smuggling. The bill passed 29-2 with most Democrats voting yes.",
+      "sources": [
+        "NBC DFW human smuggling vote article",
+        "Texas Tribune — 2024 SD-16 primary coverage",
+        "VoteSmart key votes"
+      ],
+      "scorerNote": "Score justice_sentencing_goals with this vote noted as a significant exception to otherwise reform-oriented record. The vote is Tier 1 evidence that moves him toward Pole B on sentencing for this specific crime."
+    },
+    {
+      "topic": "bipartisan framing vs. progressive voting record",
+      "conflict": "Johnson consistently frames himself as institutionalist and cross-aisle collaborator in 2026 AG campaign messaging. However, YCT 22–30/100 and NRA F document a strongly left-of-center Senate record. The 'I hate to be too partisan' language is rhetorical positioning for a statewide AG race.",
+      "sources": [
+        "KLTV interview 2026",
+        "YCT scorecard 88th Legislature (22/100)",
+        "NRA grade F",
+        "100% Reproductive Freedom for All"
+      ],
+      "scorerNote": "Score from the voting record, not the campaign rhetoric."
+    },
+    {
+      "topic": "property tax cuts",
+      "conflict": "Voted Yes on bipartisan $16.5B property tax relief (2023) while also authoring legislation to throttle corporate tax break schemes. The property tax Yes vote is a constituent-service vote — all Texas Democrats voted for it. Not a signal of broad anti-tax ideology.",
+      "sources": [
+        "Texas Tribune on 2023 property tax bill",
+        "Campaign bio references to fighting corporate tax abuse"
+      ],
+      "scorerNote": "Do not interpret property tax Yes as a rightward signal on econ_tax_structure. Weight the corporate tax abuse legislation more heavily."
+    }
+  ],
+
+  "axisEvidenceSummary": {
+    "notes": "Johnson is running for Attorney General, a law enforcement/enforcement office. Many AG-specific positions are about enforcement priorities rather than direct policy-making. His TX Senate record (2019–2025) provides the strongest policy signal for scoring. Score from the record, not from institutionalist AG campaign framing.",
+    "econ_safetynet": {
+      "direction": "strongly toward Pole A (expand safety net)",
+      "keyEvidence": [
+        "Lead voice on Medicaid expansion — 'Live Well Texas' plan, repeatedly filed SB 195",
+        "Authored and passed SB 1296 extending coverage to 350K uninsured low-income Texans",
+        "Medicaid postpartum coverage extension advocacy",
+        "Teen mental health services market creation (passed bipartisan)",
+        "Fentanyl testing strip decriminalization (harm reduction / public health approach)",
+        "Voted No on converting state employee pensions to defined-contribution (SB 321)",
+        "AFL-CIO and AFT endorsements"
+      ],
+      "confidence": "HIGH — multiple Tier 1 authored/passed bills plus Tier 1 labor scorecards"
+    },
+    "econ_investment": {
+      "direction": "toward Pole A (more public investment)",
+      "keyEvidence": [
+        "Secured nearly $2B in public investment for grid backup power systems post-Uri (Texas Power Promise)",
+        "Authored virtual power plant pilot (public infrastructure investment)",
+        "Created microgrid fund for critical facilities",
+        "Filed first-day housing construction legislation (89th session)",
+        "Corporate tax abatement reform (anti-waste-of-public-funds framing)"
+      ],
+      "confidence": "HIGH — Tier 1 passed legislation plus Tier 2 stated priorities"
+    },
+    "econ_tax_structure": {
+      "direction": "toward Pole A (close corporate loopholes / anti-abuse) — with contextual note",
+      "keyEvidence": [
+        "Authored corporate tax abatement reform preventing businesses from exploiting tax incentives",
+        "Voted Yes on bipartisan property tax cut — constituent-service, not ideological (all Democrats voted yes)",
+        "No evidence of support for flat tax or broad rate cuts",
+        "Texas has no income tax — limits applicability of federal income tax axes"
+      ],
+      "confidence": "MEDIUM — anti-corporate-tax-abuse is clear; no explicit income tax structure position"
+    },
+    "econ_school_choice": {
+      "direction": "strongly toward Pole A (universal public schools, oppose vouchers)",
+      "keyEvidence": [
+        "Voted No on ESA vouchers three separate times (SB 8, HB 100 amended, SB 1 3rd Special Session 2023)",
+        "Explicit statement: 'No. I will continue to work hard to stop the turnover of public education to the private sector.'",
+        "Voted against CRT curriculum restriction bill",
+        "Voted No on defined-contribution state pensions (protects public employee defined benefits)",
+        "Supported $10K teacher pay raise",
+        "ATPE and Texas Parent PAC endorsements",
+        "Campaign: 'protecting our public schools from efforts to strip them of our public dollars'"
+      ],
+      "confidence": "HIGH — Tier 1 votes (three separate No voucher votes) plus explicit Tier 2 statement; multiple corroborating sources"
+    },
+    "health_coverage_model": {
+      "direction": "toward Pole A — government-backed expansion; likely 2–3 range (ACA expansion+ / Medicaid, not single-payer)",
+      "keyEvidence": [
+        "'Live Well Texas' = Medicaid expansion under ACA (government-financed, not single-payer)",
+        "Passed SB 1296 extending private insurance access for 350K low-income Texans",
+        "No evidence of Medicare for All support or eliminating private insurance",
+        "AG platform: Medicaid fraud enforcement signals continued Medicaid investment commitment"
+      ],
+      "confidence": "HIGH for direction; MEDIUM for exact position — clearly left of ACA-only status quo, not at single-payer"
+    },
+    "health_cost_control": {
+      "direction": "toward Pole A (government enforcement / price accountability)",
+      "keyEvidence": [
+        "AG campaign: enforce consumer protection laws against price gouging",
+        "AG platform: challenge anti-competitive market behavior",
+        "Medicaid expansion rationale includes 'lowers employer insurance premiums'"
+      ],
+      "confidence": "MEDIUM — AG enforcement framing; limited direct state-level healthcare price control record"
+    },
+    "health_public_health": {
+      "direction": "strongly toward Pole A (collective public health; reproductive rights)",
+      "keyEvidence": [
+        "100% Reproductive Freedom for All (NARAL) lifetime score",
+        "Authored SB 78 legalizing medication abortion — only TX legislator to do so",
+        "Filed SB 79, SB 291, SB 45 protecting abortion access and travel rights",
+        "No votes on all anti-abortion bills across 86th–88th Legislatures (documented via Choice Tracker)",
+        "Texas Right to Life near-zero scorecard 2019 (corroborates from opposite direction)",
+        "Planned Parenthood Texas Votes endorsement 2024",
+        "Fentanyl testing strip decriminalization (harm reduction public health approach)"
+      ],
+      "confidence": "HIGH — Tier 1 votes and authored bills; Tier 1 scorecards from both pro-choice and pro-life organizations corroborate"
+    },
+    "housing_supply_zoning": {
+      "direction": "toward Pole A (loosen zoning / more supply) — incremental, not sweeping",
+      "keyEvidence": [
+        "SB 2835 (passed, effective Sept 1, 2025): municipalities may allow single-staircase apartments up to 6 stories ('gentle density')",
+        "First-day 89th Legislature legislation to remove regulatory blocks on new housing construction forms",
+        "Campaign: 'removing the regulatory block on construction of promising new forms of housing'",
+        "Stated property tax relief is 'probably the least effective thing we can do with respect to making housing affordable' — the problem is supply",
+        "Key limit: SB 2835 grants municipal discretion, not state preemption of local zoning"
+      ],
+      "confidence": "MEDIUM — one significant Tier 1 bill plus Tier 2 statements; supports supply-side reform incrementally, not sweeping"
+    },
+    "housing_affordability_tools": {
+      "direction": "mixed — supply-side focus with unclear subsidy/control stance",
+      "keyEvidence": [
+        "Framed housing affordability as primarily a supply problem",
+        "No explicit rent control or housing subsidy position found",
+        "D Magazine 2025: Johnson involved in affordable housing session discussion"
+      ],
+      "confidence": "LOW — insufficient direct evidence; scorer should omit or note as low-confidence"
+    },
+    "housing_transport_priority": {
+      "direction": "unknown",
+      "keyEvidence": [
+        "Committee assignment: Transportation (no specific bills or votes found)",
+        "Represents urban Dallas County — transit-relevant district"
+      ],
+      "confidence": "LOW — omit from scoring"
+    },
+    "justice_policing_accountability": {
+      "direction": "toward Pole A (reform-focused / constitutional accountability) — moderate reform, not abolition",
+      "keyEvidence": [
+        "AG campaign: oppose law enforcement tactics that 'violate the U.S. Constitution and damage communities'",
+        "AG platform: ensure everyone follows constitutional rules with consequences",
+        "Endorsed by Dallas DA John Creuzot (known for progressive CJ reform)",
+        "Endorsed by Harris County Commissioner Rodney Ellis (criminal justice reform advocate)",
+        "Pro bono work for Human Rights Initiative (immigrant rights) signals civil rights orientation",
+        "No defund/abolish positions found; institutionalist framing throughout",
+        "YCT 22/100 consistent with reform-aligned voting across all issues"
+      ],
+      "confidence": "MEDIUM — indirect evidence from AG platform and reform endorsements; no specific policing bill votes retrieved"
+    },
+    "justice_sentencing_goals": {
+      "direction": "leans toward Pole A (rehabilitation/decarceration) with one notable exception",
+      "keyEvidence": [
+        "Fentanyl testing strip decriminalization (harm reduction over criminalization) — passed bipartisan",
+        "SB 54: marijuana decriminalization + expungement path for past low-level convictions (July 2025)",
+        "SB 53: regulatory rather than criminal framework for hemp-derived THC",
+        "Dallas DA Creuzot endorsement (reduced prosecutions for low-level offenses)",
+        "EXCEPTION: Voted YES on SB 4 (2023) increasing mandatory minimum for human smuggling to 10 years — significant departure from reform direction; confirmed Tier 1 vote"
+      ],
+      "confidence": "MEDIUM — two reform bills plus endorsements; SB 4 Yes vote is a meaningful conflicting signal on mandatory minimums"
+    },
+    "justice_firearms": {
+      "direction": "strongly toward Pole A (more gun regulation)",
+      "keyEvidence": [
+        "NRA grade: F — self-described as 'good with Fs on the NRA report card'",
+        "Opposed HB 1927 permitless carry (2021) — among 13 No votes in party-line 18-13 Senate split",
+        "Stated: 'The vast majority of Texans want to see a whole set of simple, sensible gun-safety laws'",
+        "Criticized permitless carry as contradicting supermajority public opinion (own blog, 2021)"
+      ],
+      "confidence": "HIGH — Tier 1 NRA F scorecard + documented No vote on permitless carry + explicit statements"
+    },
+    "climate_ambition": {
+      "direction": "toward Pole A (action on climate) — pragmatic, not emergency-level",
+      "keyEvidence": [
+        "Post-Uri grid reform: explicitly 'preserved vital renewable energy resources' within grid reform package",
+        "Authored and passed polluter penalty increases",
+        "Stated goal: 'continue the trend of lowering carbon pollution'",
+        "Framing: clean, reliable, affordable energy — practical rather than aggressive/emergency climate framing",
+        "YCT 22/100 consistent with pro-environment voting across all issues"
+      ],
+      "confidence": "MEDIUM — Tier 1 bills passed (polluter penalties, grid reform preserving renewables); Tier 2 stated positions"
+    },
+    "climate_energy_portfolio": {
+      "direction": "toward Pole A (clean energy push) with all-of-the-above reliability framing",
+      "keyEvidence": [
+        "Post-Uri grid reform explicitly preserved renewable energy against Republican proposals to disadvantage renewables",
+        "Authored Texas virtual power plant pilot",
+        "Created microgrid fund for critical facilities",
+        "Statement: Texas needs to 'balance renewable energy sources with more traditional forms of energy to ensure grid reliability'",
+        "No fossil fuel expansion advocacy; no opposition to renewable standards",
+        "Texas political context: pragmatic grid reliability framing rather than rapid fossil fuel phase-out"
+      ],
+      "confidence": "MEDIUM — Tier 1 grid reform; Tier 2 stated positions; all-of-the-above with clean energy emphasis"
+    },
+    "climate_permitting": {
+      "direction": "unknown — no evidence found",
+      "keyEvidence": [],
+      "confidence": "LOW — omit from scoring"
+    }
+  },
+
+  "positionsNotScoredOnAxes": [
+    {
+      "topic": "AG institutional independence and enforcement priorities",
+      "summary": "Core campaign message: run AG office as independent check on power, enforce consumer protection, Medicaid fraud, child support as primary functions. Would decline to enforce SB 8 (transgender bathroom bill) via prosecutorial discretion. Would not defend laws he considers unconstitutional. Does not map to civic axes directly but defines his approach to the office.",
+      "sources": [
+        "Texas Tribune Q&A 2026", "KLTV interview 2026", "The Texan interview 2026",
+        "CBS Texas interview 2026", "KERA News 2026"
+      ]
+    },
+    {
+      "topic": "Pro bono immigrant legal work",
+      "summary": "Legal representation of immigrants through Human Rights Initiative of North Texas. Signals civil rights orientation without an explicit immigration policy axis position.",
+      "sources": ["Wikipedia", "Thompson Coburn bio"]
+    },
+    {
+      "topic": "Challenge Trump on Texas education funding",
+      "summary": "Explicitly said he would join or file suit to recover ~$7B in education funding frozen by Trump administration — unlike Paxton who declined. Would challenge federal administration in court where Texas interests are at stake.",
+      "sources": ["Texas Tribune July 2025 AG announcement"]
+    }
+  ],
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_school_choice — Pole A: three separate Tier 1 No votes on vouchers plus explicit anti-voucher statement; HIGH confidence",
+      "justice_firearms — Pole A: NRA F grade (Tier 1) plus documented No vote on permitless carry plus explicit statements; HIGH confidence",
+      "health_public_health — Pole A: 100% NARAL score (Tier 1) plus authored four pro-choice bills plus multiple No votes on anti-abortion legislation plus TX Right to Life near-zero (Tier 1 from opposite); HIGH confidence",
+      "health_coverage_model — Pole A: Medicaid expansion champion, SB 1296 passed, AFL-CIO/ATPE/PP endorsements; HIGH confidence for direction",
+      "econ_safetynet — Pole A: multiple Tier 1 authored/passed Medicaid and mental health bills; defined-benefit pension defense; HIGH confidence"
+    ],
+    "weakestAxes": [
+      "housing_transport_priority — no direct evidence; omit from scoring",
+      "climate_permitting — no direct evidence; omit from scoring",
+      "housing_affordability_tools — only indirect supply-framing signals; LOW confidence; scorer should omit",
+      "econ_tax_structure — anti-corporate-abuse signals but no income tax record (Texas has none); MEDIUM confidence"
+    ],
+    "overallConfidence": "HIGH for social issues (firearms, abortion, healthcare, education); MEDIUM for economic/climate/housing supply; LOW/omit for housing transport and permitting",
+    "characterProfile": "Pragmatic progressive in the Texas Democratic mold — strongly liberal on healthcare access, education, gun safety, reproductive rights, and environment, but with a track record of working across the aisle (134–135 bills passed in a GOP-supermajority legislature). His 2024 primary challenger attacked him as too moderate on immigration, and his Yes vote on SB 4 (human smuggling mandatory minimums) is the most significant rightward deviation from standard Democratic sentencing positions. His 2026 AG campaign emphasizes institutional restoration, rule of law, and enforcement discretion — appropriate to the office — rather than sweeping policy change.",
+    "scoringNotes": [
+      "Johnson has a 7-year Texas Senate record providing strong Tier 1 evidence on the highest-salience axes. Score from the record, not from the institutionalist AG campaign framing.",
+      "The 'I hate to be too partisan' rhetoric is for a statewide general election audience. The voting record (YCT 22-30/100, NRA F, 100% NARAL, three voucher No votes) is the reliable signal.",
+      "Texas context: no state income tax limits econ_tax_structure applicability. Energy policy must account for ERCOT grid reliability context — Johnson's 'balance renewables with traditional energy' is a Texas grid reality statement, not ideological moderation on climate.",
+      "SB 4 (human smuggling mandatory minimums) is a meaningful exception on justice_sentencing_goals. Do not smooth it away. Score that axis with the exception noted.",
+      "Do not score housing_transport_priority or climate_permitting — no evidence exists. Do not manufacture neutral 5s."
+    ]
+  },
+
+  "sources": [
+    { "url": "https://nathanfortexas.com/", "description": "Campaign website homepage" },
+    { "url": "https://nathanfortexas.com/priorities", "description": "Campaign priorities / why I'm running page" },
+    { "url": "https://nathanfortexas.com/meet-nathan", "description": "Campaign biography page" },
+    { "url": "https://nathanfortexas.com/endorsements", "description": "Campaign endorsements page" },
+    { "url": "https://nathanfortexas.com/public-health", "description": "Campaign public health priorities page" },
+    { "url": "https://ballotpedia.org/Nathan_Johnson_(Texas)", "description": "Ballotpedia candidate profile" },
+    { "url": "https://en.wikipedia.org/wiki/Nathan_M._Johnson", "description": "Wikipedia biography" },
+    { "url": "https://senate.texas.gov/member.php?d=16", "description": "Official Texas Senate member page, SD-16" },
+    { "url": "https://senatornathanjohnson.com/", "description": "State Senate official website" },
+    { "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=88&Chamber=S&Code=A1265", "description": "TX Legislature Online — 88th Legislature bills" },
+    { "url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=S&Code=A1265", "description": "TX Legislature Online — 89th Legislature bills" },
+    { "url": "https://justfacts.votesmart.org/candidate/177585/nathan-johnson", "description": "VoteSmart political summary" },
+    { "url": "https://justfacts.votesmart.org/candidate/evaluations/177585/nathan-johnson", "description": "VoteSmart ratings and endorsements" },
+    { "url": "https://justfacts.votesmart.org/candidate/key-votes/177585/nathan-johnson", "description": "VoteSmart key votes" },
+    { "url": "https://choicetracker.org/tx/people/nathan-johnson/78577664", "description": "Texas Choice Tracker — reproductive rights votes; NARAL 100% score documented" },
+    { "url": "https://senatornathanjohnson.com/posts/nathan-johnson-has-always-protected-the-right-to-choose-and-he-always-will-b77zs", "description": "Senator's website: reproductive rights record statement" },
+    { "url": "https://senatornathanjohnson.com/the-best-and-worst-of-the-87th-legislature-from-a-democrat/", "description": "Senator's 2021 blog: 87th Legislature recap" },
+    { "url": "https://senatornathanjohnson.com/priorities-powering-the-future-improving-the-environment/", "description": "Senator's priorities: energy and environment" },
+    { "url": "https://ratings.yct.org/legislators/nathan-johnson/86th-legislature", "description": "Young Conservatives of Texas scorecard — 30/100 (86th), 22/100 (88th Legislature)" },
+    { "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/324-191112-024345-JohnsonN2019Scorecard2.pdf", "description": "Texas Right to Life 2019 scorecard PDF — near-zero score" },
+    { "url": "https://teachthevote.atpe.org/Candidates/Nathan-Johnson", "description": "ATPE Teach the Vote candidate profile" },
+    { "url": "https://texasaflcio.org/news/lone-star-labor-our-slate-statewide-endorsements", "description": "Texas AFL-CIO 2026 statewide endorsements" },
+    { "url": "https://www.texasaft.org/government/elections/texas-afl-cio-kicks-off-2026-political-work-at-cope-convention/", "description": "Texas AFT endorsement coverage" },
+    { "url": "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/", "description": "Texas Tribune Q&A: 2026 Democratic AG candidates, Jan 28, 2026" },
+    { "url": "https://www.texastribune.org/2025/07/15/nathan-johnson-texas-attorney-general-democrat-2026-midterms/", "description": "Texas Tribune: Nathan Johnson announces AG bid, Jul 15, 2025" },
+    { "url": "https://www.kltv.com/2026/01/28/democratic-candidate-attorney-general-emphasizes-constitution-over-partisanship/", "description": "KLTV interview: constitution over partisanship, Jan 28, 2026" },
+    { "url": "https://www.keranews.org/news/2026-02-16/republicans-and-democrats-vie-to-take-mantle-of-attorney-generals-office-in-open-race", "description": "KERA News: AG race overview, Feb 16, 2026" },
+    { "url": "https://www.wfaa.com/article/news/politics/elections/democrats-2026-texas-attorney-general-race-could-be-different-but-first-must-win-primary-voters/287-e1798944-c7d3-489a-bfcd-8b9982992357", "description": "WFAA: Democrats say 2026 TX AG race could be different" },
+    { "url": "https://www.wfaa.com/video/news/politics/inside-politics/texas-politics/inside-texas-politics-interview-nathan-johnson/287-7329cb82-eb73-4a97-9edc-ab88e28c6953", "description": "WFAA Inside Texas Politics: full interview Nathan Johnson" },
+    { "url": "https://www.cbsnews.com/texas/video/democratic-candidate-for-texas-attorney-general-nathan-johnson-on-their-campaign/", "description": "CBS Texas: Nathan Johnson AG campaign interview" },
+    { "url": "https://thetexan.news/elections/2026/democrats-running-for-texas-attorney-general-vow-to-reform-office-post-paxton/article_9646b8e4-1999-4d30-8408-f0296bf67978.html", "description": "The Texan: Democrats vow to reform AG office post-Paxton" },
+    { "url": "https://www.dmagazine.com/healthcare-business/2020/10/how-texas-could-expand-medicaid-and-not-break-the-bank/", "description": "D Magazine: 'Live Well Texas' Medicaid expansion plan, Oct 2020" },
+    { "url": "https://citizenportal.ai/articles/3111993/Texas/Senate-Bill-2835-promotes-flexible-single-staircase-apartment-buildings-in-Texas", "description": "SB 2835 single-staircase apartment buildings — passed, eff. Sept 2025" },
+    { "url": "https://texaspolitics.com/2025/07/30/senator-nathan-johnson-unveils-cannabis-reform-bills-in-texas-special-session/", "description": "Texas Politics: cannabis reform bills SB 53 and SB 54, Jul 2025" },
+    { "url": "https://www.outsmartmagazine.com/2026/01/lgbtq-caucus-2026-primary-endorsements/", "description": "OutSmart Magazine: Houston LGBTQ+ Political Caucus 2026 endorsements" },
+    { "url": "https://www.texastribune.org/2023/03/22/texas-senate-property-taxes/", "description": "Texas Tribune: TX Senate approves $16.5B property tax cuts, 2023" },
+    { "url": "https://www.nbcdfw.com/news/politics/lone-star-politics/human-smuggling-vote-in-focus-for-dallas-state-senate-race/3439876/", "description": "NBC DFW: SB 4 human smuggling vote — Johnson Yes vote coverage" },
+    { "url": "https://www.texastribune.org/2024/03/05/nathan-johnson-victoria-neave-criado-texas-senate/", "description": "Texas Tribune: 2024 SD-16 primary — Johnson retains Senate seat over immigration-moderate challenge" }
+  ]
+}

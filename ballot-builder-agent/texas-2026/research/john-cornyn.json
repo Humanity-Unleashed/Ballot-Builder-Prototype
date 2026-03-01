@@ -1,0 +1,496 @@
+{
+  "slug": "john-cornyn",
+  "name": "John Cornyn",
+  "party": "Republican",
+  "office": "U.S. Senate, Texas, 2026",
+  "contest": "Texas U.S. Senate 2026 — Republican Primary March 3, 2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-02-27T00:00:00Z",
+  "biography": {
+    "currentRole": "U.S. Senator, Texas (2002–present); Senate Majority Whip (2013–2019); ran for Senate Majority Leader (lost to Thune, Nov 2024); Chair, Senate Subcommittee on Border Security and Immigration (119th Congress)",
+    "priorRoles": [
+      "Texas Attorney General (1999–2002)",
+      "Associate Justice, Texas Supreme Court (1991–1997)",
+      "Judge, 37th District Court, Bexar County (1985–1991)",
+      "Chair, National Republican Senatorial Committee (2009–2013)"
+    ],
+    "education": "B.A. Trinity University; J.D., St. Mary's University School of Law; LL.M., University of Virginia School of Law",
+    "background": "Four-term Texas Republican senator; born Houston 1952, raised San Antonio. Career spans state judiciary, Texas AG, and 24 years in U.S. Senate. Known for occasional bipartisan dealmaking (BSCA gun bill 2022, CHIPS Act 2022, First Step Act 2018) while holding a strongly conservative overall record. Campaigns on 99.2% Trump voting alignment. Faces primary challenges from Ken Paxton and Wesley Hunt. Polls as of late February 2026 show Paxton leading by 2–6 points with runoff likely. Trump declined to endorse despite Republican leadership pressure, saying he supports 'all three.' The bipartisan gun bill (BSCA) is Cornyn's central primary liability — the Texas GOP formally rebuked him for it; Paxton runs against it explicitly."
+  },
+  "campaignWebsite": {
+    "url": "https://www.johncornyn.com",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "Website content retrieved via search snippets; direct page content not directly accessible. Key messaging: '99.2% voting record with President Trump — higher than Ted Cruz.' Campaign centers on Trump alignment, Texas border security achievements, and delivering tax cuts.",
+    "statedPositions": [
+      {
+        "topic": "Trump alignment / general",
+        "quote": "more than 99.2% voting record with President Trump — higher than Ted Cruz",
+        "sourceUrl": "https://www.johncornyn.com/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign's central pitch to MAGA base. Claims to stand with Trump on border, taxes, judges, defense."
+      },
+      {
+        "topic": "border / immigration",
+        "quote": "Securing the southern border must be a top priority in dealing with national security and the broken immigration system",
+        "sourceUrl": "https://www.cornyn.senate.gov/key-issues/immigration-border-security/",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Consistent official and campaign position. Also stated: 'Changes in immigration laws should wait until the border is completely secure' (January 2026 border visit). Led effort to reimburse Texas $12B for Operation Lone Star border security costs."
+      },
+      {
+        "topic": "econ_tax_structure",
+        "quote": "Republicans' solution to affordability is through tax cuts for working families",
+        "sourceUrl": "https://www.cornyn.senate.gov/news/cornyn-op-ed-republicans-solution-to-affordability-is-through-tax-cuts-for-working-families/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Consistent with 2017 TCJA vote (served on conference committee as Whip) and 2025 reconciliation vote making TCJA rates permanent."
+      },
+      {
+        "topic": "econ_safetynet — work requirements",
+        "quote": "Pushed work requirements for Medicaid and SNAP for able-bodied adults without dependents to reduce government spending",
+        "sourceUrl": "https://www.cornyn.senate.gov/news/cornyn-pushes-work-requirements-to-reduce-government-spending/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Official Senate press release; also stated SNAP/Medicaid cuts would 'encourage people to work' (January 2026)."
+      },
+      {
+        "topic": "energy / fossil fuels",
+        "quote": "Biden's LNG freeze threatens Louisiana, Texas jobs and European security",
+        "sourceUrl": "https://www.cassidy.senate.gov/newsroom/press-releases/cassidy-cornyn-op-ed-bidens-lng-freeze-threatens-louisiana-text-jobs-and-european-security/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Co-authored op-ed with Sen. Cassidy opposing Biden LNG export pause; cosponsored LNG Permitting Certainty and Transparency Act. Characterized renewable energy as 'a cult' in remarks to oil executives (CSIS event)."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "Introduced resolution for National School Choice Week; cosponsored Educational Choice for Children Act; Working Families Tax Cuts Act expanded Education Savings Accounts and created a school choice tax credit",
+        "sourceUrl": "https://www.cornyn.senate.gov/key-issues/education/",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Consistent school choice advocate. 27% NEA rating confirms opposition to traditional public school union priorities."
+      },
+      {
+        "topic": "health_coverage_model",
+        "quote": "Will back policies that allow individual choice: portability of coverage, incentives to insurers for keeping individuals healthy, and giving power to individuals to choose the type of coverage they need",
+        "sourceUrl": "https://www.ontheissues.org/Social/John_Cornyn_Health_Care.htm",
+        "date": "multiple cycles",
+        "confidence": "medium",
+        "notes": "Consistent market-based framing across cycles. Voted 20+ times to repeal ACA; voted against 2025 ACA subsidy extensions."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": [
+      "GovTrack: https://www.govtrack.us/congress/members/john_cornyn/300027",
+      "VoteSmart: https://justfacts.votesmart.org/candidate/key-votes/15375/john-cornyn",
+      "Ballotpedia: https://ballotpedia.org/John_Cornyn/Key_votes",
+      "Official Senate record: https://www.cornyn.senate.gov/voting-record/"
+    ],
+    "attendanceRate": "97.8% (missed 179 of 7,965 roll call votes, Jan 2003–Feb 2026; on par with median 97.1%)",
+    "keyVotes": [
+      {
+        "bill": "Tax Cuts and Jobs Act (H.R. 1, December 2017)",
+        "vote": "Yes — served on conference committee as Senate Republican Whip",
+        "topic": "econ_tax_structure",
+        "sourceUrl": "https://www.govtrack.us/congress/votes/115-2017/s303",
+        "notes": "Major Republican tax overhaul: cut corporate rate 35% to 21%, cut individual rates across brackets, doubled standard deduction, eliminated personal exemption, doubled child tax credit, reduced estate tax. Added ~$1.7T to deficit per CBO. Cornyn was a principal architect and whipped votes. Championed extension and permanence of these cuts in 2025. Clear Pole B signal (lower, less progressive tax structure)."
+      },
+      {
+        "bill": "American Rescue Plan Act of 2021 (COVID relief, $1.9T)",
+        "vote": "No",
+        "topic": "econ_safetynet / econ_investment",
+        "sourceUrl": "https://www.govtrack.us/congress/members/john_cornyn/300027",
+        "notes": "Opposed large Democratic spending package (direct payments, extended unemployment, ACA subsidy expansion, state/local aid). Party-line 50-49 Senate vote. Consistent with opposition to deficit spending and expanded safety net."
+      },
+      {
+        "bill": "Infrastructure Investment and Jobs Act / Bipartisan Infrastructure Law (August 2021)",
+        "vote": "No",
+        "topic": "econ_investment / housing_transport_priority",
+        "sourceUrl": "https://www.texastribune.org/2021/08/10/ted-cruz-john-cornyn-infrastructure-bill/",
+        "notes": "Bill passed 69-30 with 19 Republican yes votes. Texas would have received $30B+. Cornyn voted no, citing deficit concerns and insufficient Senate debate time. Broke with some Republican colleagues. Bill included roads, bridges, broadband, rail, transit, water. Signals fiscal conservatism over public infrastructure investment."
+      },
+      {
+        "bill": "CHIPS and Science Act (2022)",
+        "vote": "Yes — co-authored with Sen. Mark Warner (D-VA)",
+        "topic": "econ_investment",
+        "sourceUrl": "https://www.texastribune.org/2022/07/28/texas-chips-vote-semiconductors/",
+        "notes": "Bipartisan $280B bill for domestic semiconductor manufacturing and R&D. Cornyn introduced original CHIPS for America Act in 2020. Passed Senate 64-33. Cornyn's signature bipartisan legislative achievement; touted Texas semiconductor benefits. National security / industrial policy framing separates this from his Infrastructure No vote. Shows selective public investment support when framed as national security."
+      },
+      {
+        "bill": "Bipartisan Safer Communities Act (S.2938, June 2022)",
+        "vote": "Yes — primary Republican lead author alongside Chris Murphy (D-CT)",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://www.cornyn.senate.gov/bipartisan-safer-communities-act/",
+        "notes": "Most important vote for justice_firearms scoring. Passed 65-33. First major federal gun safety legislation in ~30 years. Key provisions: extended background check review period to 10 days for buyers under 21 (with juvenile records included); closed 'boyfriend loophole' on domestic violence gun prohibitions; created first explicit federal straw purchasing and trafficking offenses; $750M in federal grants for state crisis intervention programs including red flag law implementation; $300M for school safety. Cornyn was tasked by McConnell to negotiate after Uvalde shooting. Texas GOP formally rebuked him after passage. Paxton and Hunt attack him on this vote in 2026 primary. NRA opposed final bill but did not explicitly downgrade him mid-cycle; prior NRA grade was A+. Cornyn defends bill as consistent with 2nd Amendment and enhanced enforcement of existing law — bill did NOT create national red flag mandate, did NOT ban assault weapons, did NOT require universal background checks."
+      },
+      {
+        "bill": "Inflation Reduction Act (H.R. 5376, August 2022)",
+        "vote": "No",
+        "topic": "climate_ambition / climate_energy_portfolio / health_cost_control",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Inflation_Reduction_Act",
+        "notes": "All 50 Senate Republicans voted no. Bill included: $369B in clean energy/climate investment, Medicare drug price negotiation (10 initial drugs), ACA subsidy extension through 2025, 15% corporate minimum tax. Cornyn said it 'won't have a single impact on inflation.' Note: Cornyn later preserved IRA clean energy tax credits in 2025 reconciliation as condition of his yes vote — framed as Texas jobs argument, not climate conversion."
+      },
+      {
+        "bill": "First Step Act (December 2018)",
+        "vote": "Yes — primary Senate champion and lead sponsor",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://www.texastribune.org/2018/12/18/John-Cornyn-First-Step-Act-US-federal-prison-reform-Senate-Texas/",
+        "notes": "Landmark criminal justice reform: reduced mandatory minimums for some nonviolent drug offenses, expanded good-time and earned-time credits, improved federal prison conditions, required proximity-to-home placement, funded vocational/rehabilitative programs. Passed 87-12. Cornyn had been pushing similar reforms since 2014. Framed as 'smart on crime.' Also co-authored Sentencing Reform and Corrections Act with Sen. Grassley. Represents meaningful bipartisan moderation on sentencing relative to typical GOP hard-line — though targeted only to federal system and limited in scope."
+      },
+      {
+        "bill": "ACA repeal votes (multiple, 2010-2017)",
+        "vote": "Yes on repeal / defund — 20+ times",
+        "topic": "health_coverage_model",
+        "sourceUrl": "https://www.dscc.org/news/cornyn-caught-touting-health-care-law-he-voted-at-least-20-times-to-repeal-or-defund/",
+        "notes": "Voted against ACA on passage in 2009; led Senate Whip efforts for full repeal in 2017 (failed due to Collins, Murkowski, McCain no votes). DSCC documented 20+ repeal/defund votes. During COVID (2020), told constituents who lost jobs they could sign up for ACA — DSCC highlighted as contradictory."
+      },
+      {
+        "bill": "ACA enhanced subsidy extensions (2025)",
+        "vote": "No — voted against extending ACA cost-lowering tax credits (multiple votes in 2025)",
+        "topic": "health_coverage_model",
+        "sourceUrl": "https://www.healthreformvotes.org/congress/300027",
+        "notes": "Voted against extending the ACA's enhanced premium subsidies that were set to expire. Consistent with long-term ACA opposition. Signals clear Pole B on health_coverage_model."
+      },
+      {
+        "bill": "One Big Beautiful Bill / Budget Reconciliation (H.R. 1, 119th Congress, July 2025)",
+        "vote": "Yes",
+        "topic": "econ_safetynet / health_coverage_model / econ_tax_structure / climate_energy_portfolio",
+        "sourceUrl": "https://www.texastribune.org/2025/07/01/senate-reconciliation-bill-texas-cornyn-cruz-border-reimbursement/",
+        "notes": "Passed Senate after marathon session, signed July 4, 2025. Includes: permanent extension of 2017 TCJA individual rates; Medicaid work requirements (CBO: ~12M people projected to lose coverage); SNAP work requirements expanded through age 64; defunded Planned Parenthood; $13.5B reimbursement for Texas Operation Lone Star border costs (Cornyn's stated primary win); preserved IRA clean energy tax credits (Cornyn's stated condition for yes vote); reduced NFA tax on firearms/suppressors to $0. Cornyn: 'The only reason I voted for the House bill in the end was that we got those significant wins on the Inflation Reduction Act.'"
+      },
+      {
+        "bill": "2024 Bipartisan Border Security Bill (Lankford-Murphy-Sinema deal)",
+        "vote": "No",
+        "topic": "immigration (not a scored axis)",
+        "sourceUrl": "https://www.houstonpublicmedia.org/articles/news/border/2024/02/06/476628/cruz-a-hard-no-on-border-bill-while-cornyn-is-uncommitted-but-skeptical/",
+        "notes": "Cornyn was initially 'uncommitted but skeptical.' Ultimately voted no. Specific objections: bill did not sufficiently limit parole authority, did not end catch-and-release, Biden wouldn't enforce new law anyway. Pattern consistent with 2013 (Gang of Eight): expresses bipartisan immigration interest, adds border enforcement demands, votes no when demands not met."
+      },
+      {
+        "bill": "COVID Vaccine Mandate opposition votes (2021-2022)",
+        "vote": "Yes (opposed mandates)",
+        "topic": "health_public_health",
+        "sourceUrl": "https://www.cornyn.senate.gov/news/cornyn-votes-against-biden-vaccine-mandate-for-health-care-workers/",
+        "notes": "Voted against Biden's COVID vaccine mandate for healthcare workers. Pushed to overturn OSHA employer vaccine mandate. Constitutional objection: 'nothing in the Constitution empowers the President to order private employers to do anything.' Supported repealing COVID vaccine mandate for military servicemembers (NDAA FY2023). Personally got vaccinated and encouraged others to do so, but opposed government mandates. Strong individual liberty framing."
+      },
+      {
+        "bill": "Barring EPA from regulating greenhouse gases",
+        "vote": "Yes",
+        "topic": "climate_ambition",
+        "sourceUrl": "https://www.ontheissues.org/domestic/John_Cornyn_Environment.htm",
+        "notes": "Voted to strip EPA authority over greenhouse gas emissions. Consistent with near-zero LCV scores across career."
+      },
+      {
+        "bill": "Federal minimum wage increases (multiple votes)",
+        "vote": "No (consistent)",
+        "topic": "econ_safetynet",
+        "sourceUrl": "https://aflcio.org/scorecard/legislators/john-cornyn",
+        "notes": "Consistent opposition to federal minimum wage increases (e.g., voted against $10.10/hr increase). AFL-CIO scores of 25-29% reflect near-complete opposition to labor priorities."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "0% (2024 annual); 7% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/john-cornyn/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Scored 0% in most recent annual cycle (2024). Lifetime 7% reflects near-perfect opposition to environmental legislation across 24-year Senate career. Texas Climate News (2020): his approach is 'more research, no new regulation.' Voted to strip EPA greenhouse gas authority; cosponsored LNG export expansion. Strongest single scorecard signal for climate axes."
+    },
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": null,
+      "grade": "A+ (career through 2021 election cycle); grade after BSCA co-authorship not confirmed — NRA opposed BSCA but did not formally endorse primary challengers; Cornyn characterized NRA as 'restrained in criticism'",
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/15375/john-cornyn/37/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Held A+ from NRA through entire Senate career until BSCA (2022). After BSCA, NRA did not formally endorse primary challengers but distanced. 2026 primary rivals attack him as 'anti-gun.' His record outside BSCA remains strongly pro-gun: introduced Constitutional Concealed Carry Reciprocity Act, opposed assault weapons bans, opposed universal background checks, opposed national red flag mandates. BSCA is a genuine deviation from A+ orthodoxy but does not represent a fundamental shift in firearms philosophy. Net: strongly Pole B with one meaningful moderate datapoint."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "29% (2024); 25% (2023)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/john-cornyn",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Consistently low scores (mid-20s to low 30s) reflecting opposition to minimum wage increases, union protections, labor organizing rights. Texas is a right-to-work state; Cornyn has never been a labor ally. Maps to econ_safetynet and econ_investment Pole B."
+    },
+    {
+      "organization": "Club for Growth",
+      "score": "62% (2024); 59% (2023); 69% (2022)",
+      "grade": null,
+      "url": "https://www.clubforgrowth.org/scorecards/legislator/C001056/John-Cornyn/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Moderate-low for a Republican senator. Dragged down by BSCA, CHIPS Act, and other bipartisan votes. Club for Growth focuses on fiscal conservatism and free-market economics. Cornyn placed among 'lowest-ranking Republicans' on 2024 scorecard. Still clearly on pro-market side overall."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "35% (118th Congress, 2023-2025); 66% (117th, 2021-23); 74% (116th, 2019-21); 67% (115th, 2017-19); 47% (114th, 2015-17); 84% (112th, 2011-13); 64% lifetime",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/C001056/117",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "The 35% in 118th Congress (the session when BSCA passed and CHIPS passed) is the most relevant data point for the 2026 primary. It represents a dramatic drop from 84% in the 112th. The Heritage Action trajectory is itself the story of the 2026 primary: conservative base sees Cornyn as having drifted too far toward bipartisanship. His overall record remains solidly conservative (64% lifetime) but the 118th Congress figure drives the primary narrative."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": "Numerical score not retrieved; Chamber endorsed Cornyn for 2026 reelection citing 'pro-growth fiscal and tax policy'",
+      "grade": null,
+      "url": "https://www.uschamber.com/improving-government/u-s-chamber-endorses-senator-john-cornyn-for-u-s-senate-in-texas",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Chamber endorsement signals high alignment on economic/business axes. Historically high Chamber scores expected given consistent support for lower taxes, deregulation, trade positions. Maps to econ_investment and econ_tax_structure Pole B."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "score": "A+ / 100%",
+      "grade": "A+",
+      "url": "https://sbaprolife.org/senator/john-cornyn",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect pro-life voting record. Voted for Born-Alive Abortion Survivors Protection Act, Hyde Amendment permanence, Planned Parenthood defunding. Helped confirm Gorsuch, Kavanaugh, and Barrett — justices who later overturned Roe. Not a directly scored civic axis but relevant context for judicial nominees."
+    },
+    {
+      "organization": "NARAL Pro-Choice America / Reproductive Freedom for All",
+      "score": "0%",
+      "grade": null,
+      "url": "https://reproductivefreedomforall.org/resources/congressional-records/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "0% on Congressional Record on Choice. Mirror image of 100% SBA / NRLC scores."
+    },
+    {
+      "organization": "National Right to Life Committee",
+      "score": "100% lifetime",
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/15375/john-cornyn",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "100% lifetime rating from NRLC."
+    },
+    {
+      "organization": "National Education Association (NEA)",
+      "score": "27%",
+      "grade": null,
+      "url": "https://www.ontheissues.org/social/John_Cornyn_Education.htm",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Low NEA score reflects opposition to public school union priorities. Cornyn explicitly supports school choice: Educational Choice for Children Act, National School Choice Week, Education Savings Account expansion in 2025 reconciliation, school choice tax credit. Maps to econ_school_choice Pole B."
+    },
+    {
+      "organization": "Texas Alliance for Life",
+      "score": null,
+      "grade": null,
+      "url": "https://www.texasallianceforlife.org/news/endorsement-john-cornyn-2026-senate-race/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Endorsed Cornyn for 2026 Senate re-election; cited pro-life record and role in confirming Gorsuch, Kavanaugh, and Barrett."
+    },
+    {
+      "organization": "Lugar Center Bipartisan Index",
+      "score": "5th most bipartisan senator in 2023",
+      "grade": null,
+      "url": null,
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Context indicator: despite conservative voting record, Cornyn ranks highly on bipartisanship due to BSCA, CHIPS, and First Step Act. Confirms his deal-making reputation within a conservative overall record."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Senate Majority Leader John Thune",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Republican Senate leadership backing the incumbent."
+    },
+    {
+      "organization": "National Republican Senatorial Committee (NRSC)",
+      "type": "endorsement + financial support",
+      "cycle": "2026",
+      "notes": "NRSC traditionally backs incumbents; actively lobbied Trump to endorse Cornyn without success."
+    },
+    {
+      "organization": "Senate Leadership Fund (McConnell-aligned super PAC)",
+      "type": "financial support",
+      "cycle": "2026",
+      "notes": "Republican establishment super PAC backing."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Business community endorsement; praised pro-growth tax and fiscal policy."
+    },
+    {
+      "organization": "Texas Alliance for Life",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Pro-life group endorsement for 2026 primary."
+    },
+    {
+      "organization": "Former Texas Gov. Rick Perry",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "High-profile Texas Republican endorsement."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "NO endorsement — declined to endorse",
+      "cycle": "2026",
+      "notes": "Despite Republican leadership pushing for Trump to back Cornyn and Cornyn's claim of 99.2% Trump voting alignment, Trump declined to endorse. Said he supports 'all three' candidates. Absence of Trump endorsement is key vulnerability in a MAGA-driven primary. Paxton is positioning himself as the natural Trump candidate."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune — multiple reports (2025-2026 campaign)",
+      "date": "2025-2026",
+      "url": "https://www.texastribune.org/2025/05/07/texas-john-cornyn-senate-2026-campaign-leadership-ken-paxton-trump/",
+      "keyExchanges": [
+        {
+          "topic": "campaign framing",
+          "quote": "so President Trump and I can pick-up where we left off",
+          "notes": "Trump alignment is the core 2026 campaign message; framing his incumbency as enabling Trump's agenda."
+        },
+        {
+          "topic": "primary dynamics",
+          "quote": "Republicans would suffer an 'Election Day massacre' if Paxton is the nominee",
+          "notes": "Electability argument against Paxton — citing Paxton's impeachment baggage."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune — 2025 reconciliation vote coverage",
+      "date": "2025-07-01",
+      "url": "https://www.texastribune.org/2025/07/01/senate-reconciliation-bill-texas-cornyn-cruz-border-reimbursement/",
+      "keyExchanges": [
+        {
+          "topic": "IRA clean energy credits / reconciliation rationale",
+          "quote": "The only reason I voted for the House bill in the end was that we got those significant wins on the Inflation Reduction Act",
+          "notes": "Cornyn preserved IRA clean energy tax credits as his condition for yes vote — framed in economic/jobs terms for Texas wind and solar industry, not as climate conversion. Also secured $13.5B Texas border reimbursement."
+        }
+      ]
+    },
+    {
+      "outlet": "Houston Public Media",
+      "date": "2024-02",
+      "url": "https://www.houstonpublicmedia.org/articles/news/border/2024/02/06/476628/cruz-a-hard-no-on-border-bill-while-cornyn-is-uncommitted-but-skeptical/",
+      "keyExchanges": [
+        {
+          "topic": "immigration / border / bipartisan bill",
+          "quote": "Part of the problem is that President Biden hasn't enforced current law, which leads me to be very deeply skeptical that he's going to actually enforce this new law.",
+          "notes": "Used to justify voting against bipartisan border bill. Enforcement-first reasoning."
+        }
+      ]
+    },
+    {
+      "outlet": "CSIS — U.S. Energy Resources in the Global Landscape",
+      "date": "2024-2025",
+      "url": "https://www.csis.org/analysis/us-energy-resources-global-landscape-conversation-senator-john-cornyn",
+      "keyExchanges": [
+        {
+          "topic": "energy / climate / renewable energy",
+          "quote": "(described renewable energy as) 'part of the cult, or religion, of renewable energy' (remarks to oil industry executives)",
+          "notes": "Strong fossil fuel orientation; characterized climate-driven energy policy as ideological rather than practical."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Climate News — climate/energy debate coverage",
+      "date": "2020-10",
+      "url": "https://texasclimatenews.org/2020/10/19/cornyn-and-hegar-treat-climate-and-energy-issues-as-a-balancing-act/",
+      "keyExchanges": [
+        {
+          "topic": "climate change acknowledgment vs. action",
+          "quote": "the days of ignoring climate change are over — but ruled out any support for new taxes or regulation to combat it, and instead supported more research",
+          "notes": "Older (2020) but still representative of his approach: acknowledges climate change as a phenomenon while opposing regulatory or market-price responses. Consistent with LCV 0% / 7% lifetime record."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune Republican Senate Primary Voter Guide Q&A",
+      "date": "2026-02-05",
+      "url": "https://www.texastribune.org/2026/02/05/texas-us-senate-republicans-2026-primary-q-and-a-voter-guide-cornyn-hunt-paxton/",
+      "keyExchanges": [
+        {
+          "topic": "participation",
+          "quote": "Cornyn declined to participate in the Texas Tribune's structured Q&A voter guide",
+          "notes": "All three major GOP candidates declined. Tribune filled in based on public record. Limits direct on-the-record 2026 policy statements."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "justice_firearms — BSCA co-authorship vs. career NRA A+ record",
+      "conflict": "Cornyn co-authored the Bipartisan Safer Communities Act (2022), the most significant federal gun safety legislation in 30 years — enhanced background checks for under-21 buyers, $750M for state red flag programs, closed boyfriend loophole, created federal straw purchasing offenses. NRA had given him A+ for entire prior career; NRA opposed BSCA. 2026 primary rivals (Paxton, Hunt) run explicitly against this vote. Cornyn defends BSCA as consistent with 2nd Amendment and as enhanced enforcement without sweeping new restrictions. His career record outside of BSCA remains strongly pro-gun: Constitutional Concealed Carry Reciprocity Act, opposed universal background checks, opposed assault weapons bans, opposed national red flag mandates, 2025 reconciliation eliminated NFA tax on suppressors.",
+      "sources": [
+        "https://www.krgv.com/news/how-john-cornyn-s-historic-gun-safety-bill-has-become-a-reelection-liability",
+        "https://www.texastribune.org/2022/06/27/john-cornyn-texas-gun-bill/",
+        "https://kfdm.com/news/local/john-cornyn-with-a-rating-from-nra-is-key-to-whether-gun-safety-deal-advance"
+      ],
+      "scorerNote": "Score the vote. BSCA is a genuine gun safety expansion — it was the lead Republican's signature legislation, not a reluctant yes. However, the bill is targeted and does not represent a fundamental shift: no assault weapons ban, no universal background check mandate, no national red flag law. Suggested score: 7 on justice_firearms (meaningfully below Pole B floor of 10, but still on the pro-gun-rights side of center). Confidence: medium-high."
+    },
+    {
+      "topic": "econ_investment — Infrastructure No vs. CHIPS Act Yes",
+      "conflict": "Voted against $1.2T Bipartisan Infrastructure Law (2021) citing deficit concerns. Co-authored $280B CHIPS Act (2022) — an explicit government industrial policy intervention. Also took credit for Tesla Gigafactory benefits from IRA he voted against. Pattern suggests Cornyn supports targeted national-security-framed public investment (CHIPS) while opposing broader public investment (infrastructure, IRA).",
+      "sources": [
+        "https://www.texastribune.org/2021/08/10/ted-cruz-john-cornyn-infrastructure-bill/",
+        "https://www.texastribune.org/2022/07/28/texas-chips-vote-semiconductors/"
+      ],
+      "scorerNote": "CHIPS Act is a significant public investment vote — $280B in federal semiconductor subsidies is meaningful industrial policy. However, his overall pattern (No on infrastructure, No on IRA, No on American Rescue Plan, No on minimum wage) still points clearly to Pole B on econ_investment. CHIPS moderates the score slightly. Suggested score: 8 on econ_investment."
+    },
+    {
+      "topic": "climate_energy_portfolio — IRA credit preservation vs. IRA No vote",
+      "conflict": "Voted against IRA in 2022. In 2025, conditioned his reconciliation yes vote on preserving IRA clean energy tax credits. Could be read as climate evolution. Context: Texas is the nation's largest wind energy producer and has massive solar growth; preserving tax credits serves Texas energy industry economic interests. Cornyn framed it in Texas jobs terms, not environmental terms. He characterized renewable energy as 'a cult' in separate remarks.",
+      "sources": [
+        "https://www.texastribune.org/2025/07/01/senate-reconciliation-bill-texas-cornyn-cruz-border-reimbursement/",
+        "https://texasclimatenews.org/2020/10/19/cornyn-and-hegar-treat-climate-and-energy-issues-as-a-balancing-act/"
+      ],
+      "scorerNote": "Not a climate conversion. LCV 0%/7% lifetime is definitive. The IRA credit preservation is an economic/constituent-service move for the Texas energy industry, not an endorsement of climate policy. Score climate_ambition at 9, climate_energy_portfolio at 8."
+    },
+    {
+      "topic": "econ_safetynet — work requirements advocacy vs. SNAP protection",
+      "conflict": "Cornyn pushed Medicaid and SNAP work requirements and characterized safety net cuts as encouraging work. But he co-sponsored the Keep SNAP Funded Act of 2025 to protect benefits during a government shutdown, citing 3.5M Texas constituents including 1.7M children. Also introduced DUALS Act to improve Medicare/Medicaid coordination for dual-eligible seniors, and bipartisan drug pricing transparency bills.",
+      "sources": [
+        "https://www.cornyn.senate.gov/news/cornyn-pushes-work-requirements-to-reduce-government-spending/",
+        "https://www.cornyn.senate.gov/news/cornyn-sounds-alarm-on-snap-funding-cliff-as-3-5-million-texans-stand-to-lose-benefits-because-of-schumer-shutdown/"
+      ],
+      "scorerNote": "Position is clearly Pole B (conditional safety net, work requirements, Medicaid reform direction) but not at extreme floor 10 — he supports programs as a constrained infrastructure, not elimination. The SNAP protection move is constituent-service realpolitik, not a philosophical shift. Score 7-8 on econ_safetynet."
+    }
+  ],
+  "campaignContext": {
+    "fundraising": "$11.2M raised as of late February 2026",
+    "primaryPolling": "Late February 2026: Paxton leading 30-36%, Cornyn 28-34%, Hunt 17-26%. Runoff (May 26) expected if no candidate reaches 50% on March 3.",
+    "keyVulnerabilities": [
+      "Bipartisan Safer Communities Act (2022 gun bill) — primary liability with MAGA base; Texas GOP formally rebuked him",
+      "Heritage Action score dropped to 35% in 118th Congress — lowest of his career",
+      "Trump declined to endorse despite Republican leadership pressure",
+      "Club for Growth scores 59-62% signal insufficient conservative purity for some voters",
+      "Voted for $95B Ukraine/Israel/Taiwan aid package — Paxton attacks as 'America Last RINO'"
+    ],
+    "keyStrengths": [
+      "Incumbent with $11.2M fundraising advantage",
+      "NRSC, Senate Leadership Fund, Chamber of Commerce backing",
+      "99.2% Trump voting record claim (higher than Cruz)",
+      "CHIPS Act and First Step Act as bipartisan legislative accomplishments",
+      "Secured $12-13.5B Texas border reimbursement in 2025 reconciliation",
+      "Lugar Center top-5 bipartisan senator ranking (electability argument)"
+    ]
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition — LCV 0% annual / 7% lifetime; voted to strip EPA greenhouse gas authority; opposed IRA; characterized renewables as 'a cult.' Very high confidence Pole B. Suggested score: 9.",
+      "climate_energy_portfolio — Fossil fuel champion; LNG export expansion cosponsor; opposed IRA clean energy spending (though preserved TX industry credits in 2025 for economic reasons). High confidence Pole B. Suggested score: 8.",
+      "econ_tax_structure — TCJA 2017 architect/Whip; championed 2025 permanence; opposed wealth taxes, progressive rate increases. Very high confidence Pole B. Suggested score: 9.",
+      "health_coverage_model — 20+ ACA repeal votes; opposed 2025 ACA subsidy extensions; favors HSA/market-based individual choice; no public option support. Very high confidence Pole B. Suggested score: 8.",
+      "econ_school_choice — 27% NEA; cosponsored Educational Choice for Children Act; National School Choice Week resolution; ESA expansion and school choice tax credit in 2025 reconciliation. High confidence Pole B. Suggested score: 8.",
+      "health_public_health — Opposed all COVID vaccine mandates on constitutional/liberty grounds; voted against healthcare worker mandate; pushed military mandate repeal; individual liberty framing throughout. High confidence Pole B. Suggested score: 8.",
+      "health_cost_control — Opposed Medicare drug price negotiation (voted No on IRA); favors transparency and market competition over price controls; introduced bipartisan alternatives focused on transparency/out-of-pocket caps, not price setting. High confidence Pole B. Suggested score: 8.",
+      "econ_safetynet — Work requirements for Medicaid/SNAP; Medicaid reform push; voted yes on 2025 reconciliation cutting Medicaid; opposed minimum wage increases; AFL-CIO 25-29%. High confidence Pole B with minor moderation. Suggested score: 8."
+    ],
+    "weakestAxes": [
+      "justice_firearms — BSCA co-authorship is a genuine outlier producing a nuanced score. Career NRA A+ (strong Pole B) but BSCA enhanced background checks, funded red flag programs, closed boyfriend loophole, created new federal trafficking offenses. MEDIUM confidence with real complexity. Suggested score: 7.",
+      "justice_sentencing_goals — First Step Act co-sponsorship and Sentencing Reform and Corrections Act co-authorship are genuine bipartisan moderation signals. But he confirmed three conservative justices and has no decarceration record beyond federal prison reform. MEDIUM confidence, genuinely mixed relative to pure Pole B. Suggested score: 6.",
+      "econ_investment — No on bipartisan infrastructure; No on IRA; No on American Rescue Plan. But Yes on CHIPS Act ($280B industrial policy). Selective industrial policy support when framed as national security. High confidence overall Pole B with CHIPS exception. Suggested score: 8.",
+      "justice_policing_accountability — Opposed qualified immunity reform in 2021 negotiations; helped write Republican JUSTICE Act (kept qualified immunity); argued existing accountability mechanisms work. Limited specific record on other reforms. MEDIUM confidence Pole B. Suggested score: 7-8.",
+      "housing_supply_zoning — Limited direct record. Introduced More Homes on the Market Act (capital gains tax incentive to increase supply — market-based not regulatory). HUD Transparency Act. LOW confidence; suggests market-oriented approach. Suggested score: omit or 8 if scored.",
+      "housing_affordability_tools — Supported Opportunity Zones (market-based); HUD Transparency Act; capital gains incentives. No rent control, no large public housing investment. LOW confidence. Suggested score: omit or 8 if scored.",
+      "housing_transport_priority — Voted No on bipartisan infrastructure (included transit/rail). Some targeted transportation measures supported. LIMITED direct transit-specific record. MEDIUM confidence Pole B. Suggested score: 7-8.",
+      "climate_permitting — Cosponsored LNG Permitting Certainty and Transparency Act; generally pro-streamlining permitting for energy projects. MEDIUM confidence Pole B. Suggested score: 8."
+    ],
+    "overallConfidence": "high",
+    "notes": "24-year Senate record provides one of the strongest evidence bases possible. The primary scoring complexity is justice_firearms — BSCA co-authorship is a genuine outlier in an otherwise strongly Pole B record; score as 7, not 9-10. First Step Act is a genuine moderate signal on sentencing (score as 6, not 8-9). On climate, taxes, healthcare model, public health, safety net, and school choice, the evidence is overwhelming and consistent across voting record, scorecards, and stated positions — all clearly Pole B. The 2026 primary challenge from Paxton is itself meta-evidence: conservative voters see Cornyn as having moved too far toward bipartisan dealmaking. Heritage Action 35% in 118th Congress is the most diagnostic conservative scorecard data point for calibrating his overall position. Housing axes have the thinnest evidence base and should be omitted or scored with LOW confidence."
+  }
+}

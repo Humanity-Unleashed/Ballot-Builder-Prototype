@@ -1,0 +1,238 @@
+{
+  "slug": "michele-morrow",
+  "name": "Michele Morrow",
+  "party": "Republican",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "incumbencyStatus": "first-time Senate candidate (2024 NC Superintendent of Public Instruction nominee, lost general)",
+  "researchedAt": "2026-02-26T00:00:00Z",
+  "biography": {
+    "currentRole": "Conservative activist, homeschool educator",
+    "priorRoles": [
+      "Registered nurse (former)",
+      "2024 Republican nominee for NC Superintendent of Public Instruction (lost general election to Mo Green by ~4 points)",
+      "Homeschool parent and advocate"
+    ],
+    "education": "Nursing degree (details not specified)",
+    "background": "Former registered nurse turned conservative activist and homeschool educator. Won the 2024 Republican primary for NC Superintendent of Public Instruction over incumbent Catherine Truitt, then lost the general election. Currently polling at 1.6-4% against Trump-endorsed Michael Whatley in the March 3, 2026 NC GOP Senate primary. Raised only $10,720 as of Feb 11, 2026 with ~$5,248 cash on hand."
+  },
+  "campaignWebsite": {
+    "url": "https://www.morrow4nc.com",
+    "fetchedAt": "2026-02-26T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "econ_school_choice",
+        "quote": "Supports private vouchers and school competition model",
+        "sourceUrl": "https://www.ednc.org/09-12-2024-nc-school-superintendent-candidates-mo-green-michele-morrow-first-debate/",
+        "date": "2024-2026",
+        "confidence": "high",
+        "notes": "Core issue from Superintendent campaign. Supports school vouchers, parental choice, opposes public school 'monopoly.' Launched lobbying group for school choice after 2024 loss."
+      },
+      {
+        "topic": "health_coverage_model",
+        "quote": "Replace ACA with market-based solutions and health savings accounts",
+        "sourceUrl": "https://www.morrow4nc.com",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Market-based healthcare framing. HSAs as primary mechanism."
+      },
+      {
+        "topic": "health_public_health",
+        "quote": "Medical freedom activist. Anti-vaccine mandate. Referred to COVID vaccine as 'population control'",
+        "sourceUrl": "https://www.npr.org/2024/10/21/nx-s1-5154035/north-carolina-schools-candidate-michele-morrow-obama",
+        "date": "2024-2026",
+        "confidence": "high",
+        "notes": "Extensive social media record of anti-vaccine positions. Called COVID vaccine 'population control.' Central to her activist identity."
+      },
+      {
+        "topic": "justice_firearms",
+        "quote": "Broad 2A support, armed teachers, no stated support for any regulation",
+        "sourceUrl": "https://ivoterguide.com/candidate/71701/race/9793/election/1206",
+        "date": "2024-2026",
+        "confidence": "medium",
+        "notes": "Supports arming teachers. No gun safety or regulation positions found."
+      },
+      {
+        "topic": "immigration",
+        "quote": "Mass deportation, self-deportation programs, hardline border enforcement",
+        "sourceUrl": "https://www.morrow4nc.com",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Hardline immigration enforcement is a central campaign issue."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Anti-spending, eliminate waste framing",
+        "sourceUrl": "https://www.morrow4nc.com",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Government waste reduction messaging. No support for expanding safety net programs."
+      },
+      {
+        "topic": "election_integrity",
+        "quote": "End mail-in voting, require voter ID, paper ballots only",
+        "sourceUrl": "https://www.morrow4nc.com",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Central campaign platform issue."
+      },
+      {
+        "topic": "fema_disaster",
+        "quote": "FEMA overhaul — reform or replace federal disaster response",
+        "sourceUrl": "https://www.morrow4nc.com",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Platform includes FEMA reform, likely related to Hurricane Helene response in western NC."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Strongly anti-abortion. Supports ban more restrictive than NC's 12-week law",
+        "sourceUrl": "https://ncvalues.org/vote-for-pro-values-michele-morrow/",
+        "date": "2024-2026",
+        "confidence": "high",
+        "notes": "NC Values Coalition endorsed. Consistent pro-life messaging."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No prior elected office. No legislative voting record exists."
+  },
+  "scorecards": [
+    {
+      "organization": "NC Values Coalition",
+      "score": null,
+      "grade": "Endorsed",
+      "url": "https://ncvalues.org/vote-for-pro-values-michele-morrow/",
+      "notes": "Conservative social values endorsement (2024 Superintendent race)."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "NC Values Coalition",
+      "type": "institutional endorsement",
+      "cycle": "2024",
+      "notes": "Endorsed for Superintendent of Public Instruction."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "WFAE",
+      "date": "2026-02-20",
+      "url": "https://www.wfae.org/politics/2026-02-20/gop-senate-candidate-morrow-is-banking-on-attention-she-received-in-last-election",
+      "keyExchanges": [
+        {
+          "topic": "campaign strategy",
+          "quote": "Banking on attention she received in last election",
+          "notes": "Discusses transition from Superintendent to Senate campaign."
+        }
+      ]
+    },
+    {
+      "outlet": "EdNC",
+      "date": "2024-09",
+      "url": "https://www.ednc.org/09-12-2024-nc-school-superintendent-candidates-mo-green-michele-morrow-first-debate/",
+      "keyExchanges": [
+        {
+          "topic": "education policy",
+          "quote": "School choice and competition model debate",
+          "notes": "Superintendent debate with Mo Green. Detailed education policy positions."
+        }
+      ]
+    },
+    {
+      "outlet": "CNN K-File",
+      "date": "2024-03",
+      "url": "https://www.cnn.com/2024/03/14/politics/kfile-gop-nominee-north-carolina-public-schools-michele-morrow-executing-democrats/index.html",
+      "keyExchanges": [
+        {
+          "topic": "controversial statements",
+          "quote": "Called for Obama's public execution on pay-per-view",
+          "notes": "2020 social media posts investigated by CNN."
+        }
+      ]
+    },
+    {
+      "outlet": "CNN K-File",
+      "date": "2024-08",
+      "url": "https://www.cnn.com/2024/08/09/politics/kfile-michele-morrow-january-6-comments/index.html",
+      "keyExchanges": [
+        {
+          "topic": "January 6 / Insurrection Act",
+          "quote": "Filmed video urging Trump to 'put the Constitution to the side' and invoke the Insurrection Act",
+          "notes": "Attended January 6 rally and filmed video."
+        }
+      ]
+    }
+  ],
+  "controversies": [
+    {
+      "issue": "Called for Obama's public execution on pay-per-view (2020 social media)",
+      "source": "CNN K-File, March 2024",
+      "url": "https://www.cnn.com/2024/03/14/politics/kfile-gop-nominee-north-carolina-public-schools-michele-morrow-executing-democrats/index.html"
+    },
+    {
+      "issue": "Promoted QAnon conspiracy theory (#WWG1WGA hashtag used 7+ times)",
+      "source": "Media Matters",
+      "url": "https://www.mediamatters.org/qanon-conspiracy-theory/michele-morrow-gop-nominee-head-north-carolinas-schools-qanon-conspiracy"
+    },
+    {
+      "issue": "Used #DeathtoTraitors hashtag 12 times on social media",
+      "source": "CNN K-File / NPR",
+      "url": "https://www.npr.org/2024/10/21/nx-s1-5154035/north-carolina-schools-candidate-michele-morrow-obama"
+    },
+    {
+      "issue": "Attended January 6 rally; filmed video urging Trump to invoke Insurrection Act and 'put the Constitution to the side'",
+      "source": "CNN K-File, August 2024",
+      "url": "https://www.cnn.com/2024/08/09/politics/kfile-michele-morrow-january-6-comments/index.html"
+    },
+    {
+      "issue": "Called COVID vaccine 'population control'",
+      "source": "NPR, October 2024",
+      "url": "https://www.npr.org/2024/10/14/nx-s1-5144236/a-nominee-for-north-carolinas-schools-chief-has-a-track-record-of-conspiracy-theories"
+    },
+    {
+      "issue": "Called public school teachers 'groomers'",
+      "source": "NPR, October 2024",
+      "url": "https://www.npr.org/2024/10/21/nx-s1-5154035/north-carolina-schools-candidate-michele-morrow-obama"
+    }
+  ],
+  "positionConflicts": [],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_school_choice — Pole B, HIGH confidence (core issue, Superintendent campaign, launched lobbying group)",
+      "health_public_health — Pole B, HIGH confidence (anti-vaccine mandate activist, 'population control' claims)",
+      "justice_firearms — Pole B, MEDIUM confidence (broad 2A support, armed teachers)",
+      "health_coverage_model — Pole B, MEDIUM-HIGH confidence (replace ACA with market/HSA)",
+      "econ_safetynet — Pole B, MEDIUM confidence (anti-spending, eliminate waste)"
+    ],
+    "weakestAxes": [
+      "climate_ambition — NO EVIDENCE",
+      "climate_energy_portfolio — NO EVIDENCE",
+      "climate_permitting — NO EVIDENCE",
+      "housing_supply_zoning — NO EVIDENCE",
+      "housing_affordability_tools — NO EVIDENCE",
+      "housing_transport_priority — NO EVIDENCE",
+      "justice_sentencing_goals — NO EVIDENCE",
+      "econ_tax_structure — NO EVIDENCE",
+      "econ_investment — NO EVIDENCE (beyond general anti-government framing)",
+      "health_cost_control — NO EVIDENCE"
+    ],
+    "overallConfidence": "medium",
+    "notes": "Michele Morrow has a focused set of positions centered on education, healthcare freedom, firearms, and immigration. Her 2024 Superintendent campaign provides good evidence on education and public health axes. Many axes (climate, housing, economic structure) have no evidence at all. The scorer should omit axes without evidence. Notable for extensive controversy record that may be relevant to Schwartz value scoring."
+  },
+  "sources": [
+    {"url": "https://ballotpedia.org/Michele_Morrow", "description": "Ballotpedia profile"},
+    {"url": "https://www.morrow4nc.com", "description": "Campaign website"},
+    {"url": "https://www.wfae.org/politics/2026-02-20/gop-senate-candidate-morrow-is-banking-on-attention-she-received-in-last-election", "description": "WFAE campaign profile"},
+    {"url": "https://www.theassemblync.com/news/politics/michele-morrow-whatley-brown-us-senate-cooper/", "description": "Assembly NC primary overview"},
+    {"url": "https://www.cnn.com/2024/03/14/politics/kfile-gop-nominee-north-carolina-public-schools-michele-morrow-executing-democrats/index.html", "description": "CNN K-File violence statements"},
+    {"url": "https://www.cnn.com/2024/08/09/politics/kfile-michele-morrow-january-6-comments/index.html", "description": "CNN K-File J6 comments"},
+    {"url": "https://www.npr.org/2024/10/21/nx-s1-5154035/north-carolina-schools-candidate-michele-morrow-obama", "description": "NPR conspiracy theories"},
+    {"url": "https://www.ednc.org/09-12-2024-nc-school-superintendent-candidates-mo-green-michele-morrow-first-debate/", "description": "EdNC Superintendent debate"},
+    {"url": "https://wcti12.com/news/local/meet-michele-morrow-candidate-for-us-senate", "description": "WCTI12 candidate profile"},
+    {"url": "https://ivoterguide.com/candidate/71701/race/9793/election/1206", "description": "iVoterGuide profile"},
+    {"url": "https://ncnewsline.com/2026/02/11/voting-in-the-republican-u-s-senate-primary-begins-thursday-meet-the-top-candidates/", "description": "NC Newsline primary candidates"},
+    {"url": "https://ncvalues.org/vote-for-pro-values-michele-morrow/", "description": "NC Values Coalition endorsement"},
+    {"url": "https://www.mediamatters.org/qanon-conspiracy-theory/michele-morrow-gop-nominee-head-north-carolinas-schools-qanon-conspiracy", "description": "Media Matters QAnon investigation"}
+  ]
+}

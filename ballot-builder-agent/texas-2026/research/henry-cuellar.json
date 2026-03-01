@@ -1,0 +1,386 @@
+{
+  "slug": "henry-cuellar",
+  "name": "Henry Cuellar",
+  "party": "Democratic",
+  "office": "U.S. House, Texas 28th Congressional District, 2026",
+  "contestId": "tx28-general",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-02-27T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Representative, Texas 28th Congressional District (2005–present); Ranking Member, House Appropriations Subcommittee on Homeland Security (restored December 2025)",
+    "priorRoles": [
+      "Texas House of Representatives (1987–2001)",
+      "Texas Secretary of State (2001)",
+      "Attorney, private practice"
+    ],
+    "education": "A.A., Laredo Community College (1976); B.S. Foreign Service, Georgetown University (1978); J.D., University of Texas (1981); M.A. International Trade, Texas A&M International University (1982); Ph.D. Government, University of Texas (1998)",
+    "background": "Born in Laredo, Webb County, Texas, September 19, 1955. One of eight children of migrant farm workers. Represents a heavily Hispanic, border district encompassing Laredo, Rio Grande City, and parts of San Antonio. His district is both the 6th largest oil-producing and 4th largest natural gas-producing congressional district in Texas. Member of the Blue Dog Coalition (fiscally conservative Democrats). Described by multiple sources as the most conservative House Democrat."
+  },
+  "campaignWebsite": {
+    "url": "https://henrycuellar.com/",
+    "officialCongressionalUrl": "https://cuellar.house.gov/",
+    "fetchedAt": "2026-02-27T00:00:00.000Z",
+    "notes": "Campaign website (henrycuellar.com) is active for 2026 cycle. WebFetch was unavailable; positions below compiled from search snippets, official congressional website issue pages, and third-party reporting.",
+    "statedPositions": [
+      {
+        "topic": "border_security_immigration",
+        "quote": "It's important for Democrats to talk about strong border security and still be respectful of immigrants' rights.",
+        "sourceUrl": "https://www.washingtonpost.com/nation/2024/03/08/border-democrat-wants-seize-back-debate-immigration/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Cuellar launched a border security caucus for House Democrats in March 2024. Strong enforcement advocate while claiming to support immigrant rights. In January 2026 he stated explicitly: 'I don't support the defunding of ICE. I don't think that's the right approach.'"
+      },
+      {
+        "topic": "energy",
+        "quote": "Congress must continue making investments in all forms of domestic energy production, including oil, natural gas, wind, solar and other alternative energy fuels.",
+        "sourceUrl": "https://cuellar.house.gov/issues/issue/?IssueID=3998",
+        "date": "ongoing",
+        "confidence": "high",
+        "notes": "Explicit all-of-the-above energy position. Represents major oil and gas district; fourth-biggest recipient of oil and gas campaign contributions in the House in 2022 cycle ($100,200)."
+      },
+      {
+        "topic": "abortion",
+        "quote": "I've always been pro-life. There must be exceptions in the case of rape, incest and danger to the life of the mother.",
+        "sourceUrl": "https://www.npr.org/2022/07/10/1110723295/texas-rep-henry-cuellar-is-one-democrat-who-opposes-abortion-rights",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Self-identifies as pro-life, citing Catholic faith. Described in multiple sources as the last anti-abortion Democrat in the House as of 2022–2024."
+      },
+      {
+        "topic": "healthcare",
+        "quote": "Cuellar fights to lower prescription drug costs and expand Medicare.",
+        "sourceUrl": "https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=404924",
+        "date": "2021",
+        "confidence": "medium",
+        "notes": "Official press release language. Supported ACA in 2010 vote. Supported H.R.3 (Elijah E. Cummings Lower Drug Costs Now Act) in 2019. Does not explicitly advocate single-payer or public option; focus is on drug pricing and Medicare expansion."
+      },
+      {
+        "topic": "education",
+        "quote": "Committed to investing in schools, teachers, and students today for the future of America. Continues to ensure ample funding for underrepresented public schools, protecting low-income and at-risk students.",
+        "sourceUrl": "https://cuellar.house.gov/issues/issue/?IssueID=45897",
+        "date": "ongoing",
+        "confidence": "medium",
+        "notes": "Focus on public school funding and college affordability. Authored the TEXAS Grant program (largest state college grant program in Texas history). Voted for Washington D.C. school choice program in 2015 — ambiguous signal on charter/voucher support."
+      },
+      {
+        "topic": "labor",
+        "quote": "I think [$7.25/hour] might be too much for some areas of the country.",
+        "sourceUrl": "https://www.commondreams.org/news/2022/07/28/propelled-victory-dem-leaders-cuellar-says-725-too-much-millions-workers",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Stated in 2022 that even the existing $7.25 federal minimum wage may be too high for some areas. Introduced bipartisan Worker Flexibility and Choice Act (2022) with Republicans Stefanik and Steel to create employer flexibility around gig worker classification, allowing employers to avoid minimum wage and overtime obligations."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": [
+      "GovTrack (https://www.govtrack.us/congress/members/henry_cuellar/400657)",
+      "VoteSmart (https://justfacts.votesmart.org/candidate/key-votes/5486/henry-cuellar)",
+      "Congress.gov (https://www.congress.gov/member/henry-cuellar/C001063)",
+      "Wikipedia (https://en.wikipedia.org/wiki/Henry_Cuellar)"
+    ],
+    "tenure": "January 3, 2005 – present (11 terms, 12th term in progress)",
+    "ideologyScore": "DW-NOMINATE available at voteview.com/person/20533/henry-cuellar; widely described as the most conservative House Democrat",
+    "bipartisanRank": "Ranked 6th most bipartisan House member (1st session, 117th Congress) — Lugar Center/McCourt School",
+    "partyVoteAlignment": "Voted with Democratic majority 87.9% of the time during Trump's first term; 96% alignment with Biden's stated positions as of August 2023",
+    "keyVotes": [
+      {
+        "bill": "Affordable Care Act (ACA) — H.R.3590 (2010)",
+        "vote": "Yes",
+        "topic": "healthcare",
+        "sourceUrl": "https://www.healthreformvotes.org/congress/400657",
+        "notes": "Voted in favor of ACA passage; issued a statement committing to vote Yes on health care reform."
+      },
+      {
+        "bill": "Women's Health Protection Act (2021)",
+        "vote": "No",
+        "topic": "reproductive_rights",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/key-votes/5486/henry-cuellar/2/abortion",
+        "notes": "Was the ONLY House Democrat to vote against this bill, which would have codified the right to abortion nationwide. Landmark divergence from party."
+      },
+      {
+        "bill": "Bipartisan Infrastructure Law (Infrastructure Investment and Jobs Act) — H.R.3684 (2021)",
+        "vote": "Yes",
+        "topic": "public_investment",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Henry_Cuellar",
+        "notes": "Was one of nine Democrats who threatened to delay the bill unless a standalone vote was held (decoupling from Build Back Better). Eventually voted Yes after leadership agreed to prioritize the infrastructure bill."
+      },
+      {
+        "bill": "Build Back Better Act (2021)",
+        "vote": "Yes",
+        "topic": "public_investment / climate",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Henry_Cuellar",
+        "notes": "Voted Yes when it passed the House. However, simultaneously lobbied the Senate to drop the methane fee. Continued to push against climate provisions even after vote."
+      },
+      {
+        "bill": "Inflation Reduction Act (2022)",
+        "vote": "Yes",
+        "topic": "climate / healthcare",
+        "sourceUrl": "https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=407352",
+        "notes": "Voted Yes but withheld public support until just before the vote. Expressed misgivings throughout; represents a major oil and gas district. Issued a formal statement noting his concerns."
+      },
+      {
+        "bill": "H.R.1 — Lower Energy Costs Act (2023, Republican-sponsored)",
+        "vote": "Yes",
+        "topic": "climate / energy",
+        "sourceUrl": "https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/",
+        "notes": "One of only FOUR Democrats to vote for this Republican energy bill, which would loosen restrictions on fossil fuel production and roll back provisions of the IRA. Passed 225–204. Major climate-counter signal."
+      },
+      {
+        "bill": "Bipartisan Safer Communities Act (2022)",
+        "vote": "Yes",
+        "topic": "firearms",
+        "sourceUrl": "https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=407217",
+        "notes": "Voted Yes; Cuellar issued a statement supporting the bill. This vote contributed to NRA downgrading his rating from A to C."
+      },
+      {
+        "bill": "NDAA amendment — ban service member abortion travel reimbursement (2023)",
+        "vote": "Yes",
+        "topic": "reproductive_rights",
+        "sourceUrl": "https://www.ontheissues.org/TX/Henry_Cuellar_Health_Care.htm",
+        "notes": "One of four Democrats to vote for this amendment restricting abortion access for military members. Consistent with his anti-abortion stance."
+      },
+      {
+        "bill": "PRO Act — Protecting the Right to Organize Act (2021)",
+        "vote": "No",
+        "topic": "labor",
+        "sourceUrl": "https://jacobin.com/2022/07/antiabortion-democrat-henry-cuellar-worker-flexibility-choice-act",
+        "notes": "Voted against making it easier for workers to organize unions. Consistent with his Chamber of Commerce alignment."
+      },
+      {
+        "bill": "George Floyd Justice in Policing Act",
+        "vote": "Yes",
+        "topic": "police_accountability",
+        "sourceUrl": "https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=405467",
+        "notes": "Voted for and issued a statement supporting the bill; 'a comprehensive approach to hold police accountable, end racial profiling.' Passed the House but stalled in Senate."
+      },
+      {
+        "bill": "H.R.3 — Elijah E. Cummings Lower Drug Costs Now Act (2019)",
+        "vote": "Yes",
+        "topic": "healthcare",
+        "sourceUrl": "https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=404924",
+        "notes": "Supported Medicare drug price negotiation."
+      },
+      {
+        "bill": "FY2026 DHS Funding Bill (January 2026)",
+        "vote": "Yes",
+        "topic": "immigration",
+        "sourceUrl": "https://www.tpr.org/government-politics/2026-01-28/rep-henry-cuellar-still-supports-funding-ice",
+        "notes": "One of seven Democrats to vote Yes on the Republican-led DHS funding bill including ~$10 billion for ICE. Bill passed 220–207. Cuellar was Ranking Member on the Homeland Security Appropriations subcommittee and helped negotiate the bill."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "42% (2025 annual); 51% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/henry-cuellar/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Significantly below Democratic average. An older 2011 LCV score of 51% cited in Progress Texas. 2025 annual score of 42% reflects his energy-permitting votes and cross-aisle energy bill votes. Worst among Texas Democrats."
+    },
+    {
+      "organization": "NRA (National Rifle Association)",
+      "score": null,
+      "grade": "C (current); formerly A",
+      "url": "https://justfacts.votesmart.org/candidate/evaluations/5486/henry-cuellar/37",
+      "notes": "Held an A rating historically; downgraded to C after backing background check expansion. NRA has not donated to him since the 2018 cycle. Mixed firearms record — historically more gun-friendly than most Democrats, shifted moderately after 2022."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "64% (2024); 98% (2023); 73% (2022)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/henry-cuellar",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Highly variable scores reflect inconsistent labor votes. The 2024 score of 64% is far below most House Democrats. AFL-CIO did NOT endorse Cuellar in his 2022 primary; Texas AFL-CIO endorsed his challenger Jessica Cisneros in 2020. Dropped from 75% to 55% in 2017 over Chamber-aligned votes."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": "92–93% (2016–2017)",
+      "grade": null,
+      "url": "https://www.uschamber.com/improving-government/release-us-chamber-endorsed-candidate-henry-cuellar-wins-democratic-primary-tx-28",
+      "notes": "Chamber formally endorsed Cuellar in 2020 and 2022 primaries — the first significant Democratic endorsement in years. Historical ratings of 92–93% are unusually high for a Democrat, comparable to many Republicans."
+    },
+    {
+      "organization": "SBA Pro-Life (Susan B. Anthony Pro-Life America)",
+      "score": "positive / tracked as pro-life ally",
+      "grade": null,
+      "url": "https://sbaprolife.org/representative/henry-cuellar",
+      "notes": "SBA scorecard notes he 'voted against some extreme pro-abortion amendments' in Appropriations while also flagging ambiguities. He is the last self-identified anti-abortion House Democrat as of 2024."
+    },
+    {
+      "organization": "Reproductive Freedom for All (formerly NARAL)",
+      "score": "64% (2024)",
+      "grade": null,
+      "url": "https://reproductivefreedomforall.org/lawmaker/henry-cuellar/",
+      "notes": "64% in 2024 is anomalously higher than his prior record suggests; reflects some supportive reproductive health votes in that cycle. NARAL/Planned Parenthood have actively campaigned against him in primaries, calling him the 'last anti-abortion Democrat in the House.' This score likely reflects narrow healthcare votes, not abortion-specific votes."
+    },
+    {
+      "organization": "Planned Parenthood Action Fund",
+      "score": null,
+      "grade": "opposition",
+      "url": "https://www.plannedparenthoodaction.org/pressroom/planned-parenthood-action-fund-and-naral-pro-choice-america-remind-voters-of-henry-cuellar-rsquo-s-anti-abortion-record",
+      "notes": "Planned Parenthood and NARAL ran ads against Cuellar in 2022 primary, explicitly branding him the last anti-abortion Democrat."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Formally endorsed in Democratic primary — rare for a Democrat. Also spent significantly in 2020 on his behalf."
+    },
+    {
+      "organization": "House Democratic Leadership (Pelosi, Hoyer, Clyburn)",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Top House Democratic leaders backed Cuellar in his contested 2022 primary against Jessica Cisneros, drawing criticism from progressive members."
+    },
+    {
+      "organization": "DCCC (Democratic Congressional Campaign Committee)",
+      "type": "support",
+      "cycle": "2024, 2022",
+      "notes": "DCCC backed Cuellar in contested primaries, treating TX-28 as a must-hold seat."
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "type": "opposition_endorsement",
+      "cycle": "2022, 2020",
+      "notes": "Texas AFL-CIO endorsed his primary challenger Jessica Cisneros in 2020 and 2022, not Cuellar. National AFL-CIO did not endorse in the primary."
+    },
+    {
+      "organization": "AOC / Squad / Progressive Caucus",
+      "type": "opposition_endorsement",
+      "cycle": "2022",
+      "notes": "Alexandria Ocasio-Cortez and progressive members backed Cisneros against Cuellar, citing his anti-abortion, anti-labor, and oil-friendly record."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "TPR (Texas Public Radio)",
+      "date": "2026-01-28",
+      "url": "https://www.tpr.org/government-politics/2026-01-28/rep-henry-cuellar-still-supports-funding-ice",
+      "keyExchanges": [
+        {
+          "topic": "ICE / immigration enforcement",
+          "quote": "I don't support the defunding of ICE. I don't think that's the right approach.",
+          "notes": "Explicitly supports ICE funding; defended his January 2026 vote for DHS funding bill. Simultaneously expressed discomfort with specific ICE tactics in his district."
+        }
+      ]
+    },
+    {
+      "outlet": "KSAT / Rio Grande Guardian",
+      "date": "2026-02",
+      "url": "https://riograndeguardian.com/stories/cuellar-i-still-believe-ice-should-be-funded,56186",
+      "keyExchanges": [
+        {
+          "topic": "ICE tactics",
+          "quote": "ICE should think about what they're doing here because they're catching people, some of them, that are already in (immigration) court, trying to follow the right thing. I don't recognize some of these actions or these tactics that ICE is taking right now, and we need to make some changes.",
+          "notes": "Nuanced position: supports funding and general enforcement framework but critical of specific Trump-era enforcement methods in early 2026."
+        }
+      ]
+    },
+    {
+      "outlet": "Washington Post Live",
+      "date": "2024-01-18",
+      "url": "https://www.washingtonpost.com/washington-post-live/2024/01/18/rep-henry-cuellar-record-surge-migrants-border-security-possible-government-shutdown/",
+      "keyExchanges": [
+        {
+          "topic": "border policy",
+          "notes": "Discussed record migrant surge, called for strong border security legislation. Advocated for bipartisan Senate border deal."
+        }
+      ]
+    },
+    {
+      "outlet": "NPR",
+      "date": "2022-07-10",
+      "url": "https://www.npr.org/2022/07/10/1110723295/texas-rep-henry-cuellar-is-one-democrat-who-opposes-abortion-rights",
+      "keyExchanges": [
+        {
+          "topic": "abortion",
+          "quote": "I've always been pro-life.",
+          "notes": "Post-Dobbs interview; reaffirmed opposition to abortion while noting exceptions for rape, incest, life of the mother."
+        }
+      ]
+    }
+  ],
+  "controversies": [
+    {
+      "topic": "Federal indictment and presidential pardon",
+      "description": "In May 2024, Cuellar and his wife Imelda were indicted on 14 counts including bribery, money laundering, and foreign influence violations. The indictment alleged they accepted ~$600,000 in bribes from an Azerbaijani state-owned oil company and a Mexican bank (2014–2021), in exchange for policy influence, pro-Azerbaijan floor speeches, and blocking payday lending regulations benefiting the Mexican bank. A federal judge dismissed 2 of the 14 counts in August 2024. President Trump issued a full and unconditional pardon on December 3, 2025. A federal judge formally dismissed the case December 30, 2025. House Ethics Committee investigation was opened in May 2024 and reauthorized in July 2025 — still ongoing as of February 2026.",
+      "sources": [
+        "https://www.texastribune.org/2025/12/03/henry-cuellar-donald-trump-pardon-bribery/",
+        "https://www.justice.gov/archives/opa/pr/us-congressman-henry-cuellar-and-his-wife-charged-bribery-unlawful-foreign-influence-and",
+        "https://www.kgns.tv/2025/12/30/federal-judge-dismisses-case-against-rep-henry-cuellar-following-presidential-pardon/"
+      ],
+      "policyRelevance": "Indictment alleged he pushed policy to benefit foreign entities (Azerbaijan and Mexican bank). Pardon came from Trump, a political opponent of most Democrats, raising unusual cross-party alignment questions. Restored to Homeland Security Appropriations ranking position days after pardon."
+    },
+    {
+      "topic": "Cross-party alignment with Trump",
+      "description": "Cuellar's pardon from Trump and his multiple votes with Republicans in the 119th Congress (ICE funding, Lower Energy Costs Act) have drawn accusations of de facto alignment with the Republican agenda. However, he filed for reelection as a Democrat and has not indicated plans to switch parties.",
+      "sources": [
+        "https://www.texastribune.org/2025/12/03/henry-cuellar-28th-congressional-district-2026-primary-gop-target/",
+        "https://centerforpolitics.org/crystalball/after-trump-pardons-cuellar-tx-28-moves-to-leans-democratic/"
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Climate / energy",
+      "conflict": "Voted Yes on the Inflation Reduction Act (2022) — the largest US climate investment — but also voted Yes on H.R.1, the Republican Lower Energy Costs Act (2023), which explicitly rolled back IRA climate provisions. One of only four Democrats to support the GOP energy bill. Expresses 'all-of-the-above' energy position while his district is a top oil and gas producer.",
+      "sources": [
+        "https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/",
+        "https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=407352"
+      ]
+    },
+    {
+      "topic": "Abortion",
+      "conflict": "Self-identifies as a Democrat but is the last openly anti-abortion Democrat in the House. Planned Parenthood and NARAL ran active opposition campaigns against him. His NARAL/Reproductive Freedom for All 2024 score of 64% is anomalously higher than his prior years, suggesting he has made some supportive healthcare votes but his core abortion stance (anti-abortion, pro-exceptions) has not changed.",
+      "sources": [
+        "https://www.npr.org/2022/07/10/1110723295/texas-rep-henry-cuellar-is-one-democrat-who-opposes-abortion-rights",
+        "https://reproductivefreedomforall.org/lawmaker/henry-cuellar/"
+      ]
+    },
+    {
+      "topic": "Labor",
+      "conflict": "AFL-CIO scores range from 55% to 98% across different years — extremely high variance. Voted against the PRO Act (2021), co-authored a bill critics call an anti-worker minimum wage workaround (Worker Flexibility and Choice Act, 2022), yet scored 98% by AFL-CIO in 2023. Has stated $7.25/hr federal minimum wage may be too high for some regions.",
+      "sources": [
+        "https://aflcio.org/scorecard/legislators/henry-cuellar",
+        "https://jacobin.com/2022/07/antiabortion-democrat-henry-cuellar-worker-flexibility-choice-act",
+        "https://www.commondreams.org/news/2022/07/28/propelled-victory-dem-leaders-cuellar-says-725-too-much-millions-workers"
+      ]
+    },
+    {
+      "topic": "ICE / immigration enforcement",
+      "conflict": "Voted in January 2026 to fund ICE at $10B (one of only 7 Democrats) while simultaneously publicly criticizing specific ICE tactics in his district and pressing for 'answers' from ICE about operations near San Antonio. Supports the enforcement structure but critiques its current implementation.",
+      "sources": [
+        "https://www.tpr.org/government-politics/2026-01-28/rep-henry-cuellar-still-supports-funding-ice",
+        "https://www.ksat.com/news/local/2026/02/14/us-rep-henry-cuellar-says-he-is-pressing-for-clear-answers-from-ice-regarding-east-side-facility/"
+      ]
+    }
+  ],
+  "districtContext": {
+    "district": "Texas 28th Congressional District",
+    "cities": "Laredo, Rio Grande City, portions of San Antonio (Bexar County)",
+    "demographics": "Heavily Hispanic; border region with Mexico; major agricultural and energy sector",
+    "energyProfile": "6th largest oil-producing and 4th largest natural gas-producing congressional district in Texas",
+    "electionContext2026": "District redrawn ahead of 2026 cycle, eliminating roughly half of Cuellar's prior constituents and adding territory that voted 10 points more Republican in 2024. Sabato's Crystal Ball moved seat to 'Leans Democratic' (from Toss-Up) after Trump pardon. GOP is targeting the seat. Republican primary features a competitive race including Webb County Judge Tano Tijerina. Democratic primary opponents: Andrew Vantine, Ricardo Villarreal — neither considered a serious challenger as of February 2026."
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "reproductive_rights (anti-abortion): explicit, consistent, self-declared — only anti-abortion House Democrat",
+      "climate_ambition (low ambition): LCV 42–51% lifetime; voted for Republican fossil fuel expansion bill in 2023",
+      "energy_portfolio (all-of-the-above / fossil): explicit policy position; district context; oil and gas donor reliance",
+      "immigration_enforcement (enforcement-first): supports ICE funding, launched border security Democrat caucus, voted with GOP on DHS bill",
+      "labor / public_investment (Chamber-aligned): Chamber of Commerce 92–93%; voted against PRO Act; proposed minimum wage workaround bill"
+    ],
+    "weakestAxes": [
+      "housing (no position found)",
+      "sentencing_goals (no specific record found)",
+      "public_health / COVID mandates (limited record — voted for COVID relief packages)"
+    ],
+    "overallConfidence": "high",
+    "notes": "20-year congressional record provides extensive evidence. Cuellar is an unusual case: a Democrat who consistently scores highest among Democrats on measures favoring Republican/conservative positions on climate, labor, abortion, and immigration. Key conflicts: his cross-aisle votes on energy and ICE funding, his anti-abortion stance in a nominally pro-choice party, and the ongoing House Ethics Committee investigation (presidential pardon ended criminal case but Ethics probe continues). The Trump pardon introduces an additional political dynamic with no clear policy equivalent in the scoring rubric."
+  }
+}

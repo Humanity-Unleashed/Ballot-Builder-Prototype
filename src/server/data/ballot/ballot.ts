@@ -8,6 +8,9 @@ import type { Ballot, BallotItem, Contest, Measure } from '../../types';
 import { BALLOT_IDS } from './ids';
 import { contests } from './contests';
 import { measures, michiganMeasures } from './measures';
+import { georgiaBallot } from './georgiaData';
+import { northCarolinaBallot } from './northCarolinaData';
+import { texasBallot } from './texasData';
 
 // ============================================
 // All Ballot Items (in ballot order)
@@ -68,7 +71,13 @@ export const michiganBallot: Ballot = {
   items: michiganBallotItems,
 };
 
-export const ballots: Ballot[] = [sampleBallot, michiganBallot];
+export const ballots: Ballot[] = [
+  sampleBallot,
+  michiganBallot,
+  georgiaBallot,
+  northCarolinaBallot,
+  texasBallot,
+];
 
 // ============================================
 // Ballot Access Functions

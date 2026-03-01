@@ -1,0 +1,171 @@
+{
+  "slug": "nathan-johnson",
+  "name": "Nathan Johnson",
+  "party": "Democratic",
+  "office": "Texas Attorney General, 2026 Democratic Primary",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Seven-year Texas state senator and commercial trial lawyer running for AG on institutional restoration, rule of law, and consumer protection. Pragmatic progressive who passed 135 bills in a GOP-supermajority legislature, with standout records on Medicaid expansion, public education defense, gun safety, and reproductive rights.",
+  "keyPositions": [
+    "Lead voice on Medicaid expansion in Texas; authored SB 1296 extending coverage to ~350K low-income Texans",
+    "Voted NO three times on school voucher bills; endorsed by ATPE and Texas Parent PAC",
+    "Self-reported NRA 'F' grade; explicitly supports meaningful gun safety laws",
+    "Would use AG enforcement discretion to decline enforcing SB 8 (transgender bathroom bill) and unconstitutional laws",
+    "Authored four pro-choice bills including medication abortion legalization and abortion travel protections"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["SB 1296 (2021) authored -- Medicaid expansion workaround for 350K Texans", "SB 195 authored -- full Medicaid expansion via 1115 waiver", "NO vote on SB 321 (defined-contribution pension conversion)", "Texas AFL-CIO 2026 endorsement"],
+      "notes": "Consistent safety net expansion record across healthcare access and retirement security. Authored the landmark Texas Medicaid expansion workaround."
+    },
+    "econ_investment": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Texas Power Promise legislation authored", "Virtual power plant pilot authored", "Microgrid fund for hospitals/police stations authored", "Corporate tax abatement reform authored", "Housing construction regulatory reform filed"],
+      "notes": "Supports targeted public investment in energy infrastructure, grid reliability, and housing supply. Anti-corporate-welfare angle on tax abatements -- not blanket spending but strategic investment."
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Corporate tax abatement reform bill authored", "YCT score 22-30/100"],
+      "notes": "Texas has no income tax, limiting direct evidence. Tax abatement reform and consistently low YCT scores suggest progressive fiscal orientation, but no income/wealth tax positions exist in a Texas context."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["NO vote on SB 8 (88th Leg.) ESA voucher", "NO vote on HB 100 (amended with ESA)", "NO vote on SB 1 (3rd Special Session) ESA voucher", "YES vote on $10K teacher pay raise", "ATPE/Teach the Vote alignment", "Texas Parent PAC 2022 endorsement"],
+      "notes": "Three consecutive NO votes on voucher bills across regular and special sessions. Strong public education defender with teacher pay support. One of the most documented axis scores."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["SB 1296 (2021) authored -- private coverage for 350K uninsured", "SB 195 authored -- full Medicaid expansion via waiver", "Palliative care expansion authored", "D Magazine Medicaid coverage", "Ballotpedia legislative record"],
+      "notes": "Maximum coverage expansion within Texas political constraints. Has pushed both incremental (SB 1296, which passed) and full Medicaid expansion (SB 195, which did not). Not explicitly single-payer but as far toward universal public coverage as any Texas legislator."
+    },
+    "health_cost_control": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["AG campaign: Medicaid fraud investigation emphasis", "Consumer protection enforcement framing", "AI/data privacy consumer protection bill authored"],
+      "notes": "Evidence is limited to AG enforcement framing (investigating fraud, protecting consumers) rather than specific price-control policy positions. Consistent with government oversight role but not enough for higher confidence."
+    },
+    "health_public_health": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Fentanyl testing strip decriminalization bill authored (bipartisan, with Sen. Bob Hall)", "Palliative care expansion authored"],
+      "notes": "Harm reduction approach to drug policy (testing strips over criminalization). Palliative care expansion. No vaccination mandate or specific public health infrastructure positions found."
+    },
+    "housing_supply_zoning": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["89th session first-day bill removing regulatory blocks on new housing forms authored", "D Magazine 2025 housing interview"],
+      "notes": "Explicitly stated property tax relief is 'probably the least effective thing we can do' for housing affordability -- the problem is supply. Filed legislation to remove regulatory barriers to construction. Pro-supply, pro-reform orientation."
+    },
+    "housing_affordability_tools": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["D Magazine 2025 housing article (supply-side framing)"],
+      "notes": "Frames housing affordability as a supply problem rather than a subsidy/rent-control problem. No specific rent control, public housing, or subsidy positions found. Supply-side framing places him closer to center on this axis than on most others."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Criminal justice reform bills filed from Day 1 (2019)", "Dallas DA John Creuzot endorsement (progressive CJ reform advocate)", "Harris County Commissioner Rodney Ellis endorsement (CJ reform advocate)", "YCT score 22-30 consistent with reform voting"],
+      "notes": "Reform-oriented but not defund/abolish. AG framing emphasizes 'partnering with law enforcement' and 'working with district attorneys to keep Texans safe.' Endorsed by two of Texas's most prominent CJ reformers. Score reflects reform focus within an institutional framework."
+    },
+    "justice_sentencing_goals": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Fentanyl testing strip decriminalization (harm reduction)", "CJ reform bills from Day 1", "DA Creuzot endorsement", "YES vote on SB 4 (2023) -- 10-year mandatory minimum for human smuggling"],
+      "notes": "General pattern is rehabilitation/reform-focused, but the SB 4 vote (increasing mandatory minimums for human smuggling to 10 years) is a significant counterpoint. Johnson defended the vote as anti-trafficking rather than anti-immigrant. Score of 3 rather than 2 reflects this mixed signal -- mostly reform but with a willingness to support enhanced sentencing for specific violent/exploitative crimes."
+    },
+    "justice_firearms": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Self-stated NRA 'F' grade", "Quote: 'the people overwhelmingly support meaningful gun safety laws. I'm good with Fs on the NRA report card'", "Consistent Democratic voting on gun issues"],
+      "notes": "Unambiguous pro-gun-safety position. Own statement embracing NRA F grade. No pro-gun-rights votes found anywhere in the record."
+    },
+    "climate_ambition": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Polluter penalty increase authored", "ERCOT reform work", "Virtual power plant pilot authored", "Microgrid fund authored", "Opposed politicizing ERCOT board"],
+      "notes": "Active pro-environment legislator with multiple clean energy and pollution enforcement bills. Pragmatic rather than emergency-level -- focused on grid reliability and incremental clean energy deployment rather than rapid fossil fuel phase-out. No LCV score available for state legislators."
+    },
+    "climate_energy_portfolio": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": ["Texas virtual power plant pilot authored", "Texas Power Promise/microgrid legislation authored", "Statement: 'balance renewable energy sources with more traditional forms of energy to ensure grid reliability'", "texasenergyandpower.com Power Promise interview"],
+      "notes": "Strong clean energy investment but explicit all-of-the-above framing for grid reliability. Not a fossil fuel phase-out position -- accepts the need for traditional energy alongside renewables in Texas's unique grid context (ERCOT). Score of 4 reflects clean energy lean within an all-of-the-above framework."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Environmental protection (polluter penalties, clean energy), healthcare access for uninsured (Medicaid expansion for 350K), LGBTQ rights (Houston LGBT Caucus and Stonewall Democrats endorsements, opposition to anti-trans legislation), civil rights endorsements (Asian Texans for Justice), pro bono work with Human Rights Initiative. Strong but primarily Texas-focused rather than global -- no international policy record given state-level office."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Strongest value signal. Entire legislative record oriented toward constituent welfare: healthcare access, teacher pay, grid reliability for hospitals, consumer protection, criminal justice reform, housing supply. Passed 135 bills focused on practical community benefit. AG framing centers on protecting Texans from fraud and abuse. Community care is the throughline."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Actively challenges established Texas conservative traditions: authored bills to nullify 1925 abortion statute, legalize medication abortion, protect abortion travel. Would decline to enforce SB 8 (transgender bathroom bill). Opposes CRT curriculum restrictions. However, respects institutional processes and constitutional frameworks -- not a radical demolisher of institutions, which moderates the negative score."
+    },
+    "conformity": {
+      "score": 0.7,
+      "reasoning": "Exceptionally strong rule-of-law orientation. Constitutional oath framing: 'I've sworn an oath to the Constitution over and over again since I was 18 years old.' Works within the system -- passed 135 bills with Republican cooperation in a hostile legislature. AG platform centers on 'everybody knows the rules, everybody follows the rules, consequences when you don't.' Even enforcement discretion on SB 8 is framed within legal authority. Institutional restoration, not disruption."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Acknowledges border security needs ('1,254 miles... needs to be secure and safe from drug smuggling'). Grid reliability work (microgrids for hospitals/police stations). Law enforcement partnership framing as AG. Consumer protection from fraud. Voted for enhanced human smuggling penalties. Balanced security orientation -- not security-maximalist but takes public safety seriously."
+    },
+    "power": {
+      "score": -0.3,
+      "reasoning": "Corporate tax abatement reform (anti-corporate welfare), consumer protection against powerful interests, AG framing as 'check to the concentration of power and the abuse of power.' Pro bono human rights work early in career. AFL-CIO endorsed over corporate interests. However, works within the establishment, accepted by party leadership, endorsed by multiple elected officials -- not an anti-establishment insurgent."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Physics degree plus law degree. Successful trial attorney career. Unusual film composition background (Dragon Ball Z, classical works). Passed 135 bills in a hostile legislature -- demonstrating legislative competence. 'Trial lawyer' identity and emphasis on his 14-year litigation experience. Personal competence is part of his brand but not the dominant frame."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence in either direction. No lifestyle liberty rhetoric, recreational drug policy, or personal freedom framing found in any source material."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some reform orientation (criminal justice, ERCOT, housing supply, virtual power plants as innovation). But dominant framing is restoration and good governance rather than disruption or transformation. Pragmatic reformer working within institutions, not a change-agent disruptor. Virtual power plant pilot shows modest innovation orientation."
+    },
+    "self_direction": {
+      "score": 0.5,
+      "reasoning": "Strong reproductive rights advocacy (four authored bills on bodily autonomy), LGBTQ rights support, would decline to enforce SB 8 on transgender spaces, fentanyl testing strip decriminalization (personal choice in harm reduction). Independent from federal executive pressure: 'I'm not going to use the office to do what either the Biden or Trump administrations say.' Constitutional liberty framing. Somewhat offset by support for mandatory minimums on smuggling."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Human smuggling mandatory minimums vs. criminal justice reform identity",
+      "description": "Johnson's general identity is criminal justice reform (CJ reform bills from Day 1, Creuzot endorsement, harm reduction). However, he voted YES on SB 4 (2023 special session) imposing 10-year mandatory minimums for human smuggling. He defended this as anti-trafficking, not anti-immigrant. His 2024 primary challenger Neave Criado attacked this as too moderate on immigration. Most Senate Democrats also voted yes (29-2).",
+      "sources": ["NBC DFW: human-smuggling-vote article", "Texas Tribune: neave-criado-johnson primary coverage", "VoteSmart key votes"],
+      "scoringImpact": "Moved justice_sentencing_goals from 2 to 3. Noted in security value score as positive signal."
+    },
+    {
+      "topic": "Enforcement discretion as AG vs. legislative record",
+      "description": "Johnson's AG campaign positions emphasize enforcement discretion (choosing not to enforce SB 8 transgender bill, declining to defend unconstitutional laws). This is an executive-branch framing that differs from his legislative record. His Senate votes show his policy preferences; his AG platform shows how he would wield prosecutorial power. Both are consistent in direction but operate in different domains.",
+      "sources": ["The Texan AG race article", "CBS Texas interview", "Texas Tribune voter guide Q&A"],
+      "scoringImpact": "No axis score conflict -- both legislative record and AG positions point the same ideological direction. Noted for context: AG race positions are about enforcement priorities, not new legislation."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["housing_transport_priority", "climate_permitting"],
+    "reasonSkipped": "No evidence found for transit vs. road investment priorities or permitting speed positions in any source material",
+    "overallConfidence": "medium-high",
+    "researchGaps": [
+      "No Texas LCV or state-level environmental scorecard found; environmental record assessed through authored bills only",
+      "Texas has no income tax, limiting econ_tax_structure evidence to corporate tax abatement reform",
+      "No specific drug pricing or hospital rate-setting positions found for health_cost_control",
+      "No campaign finance/PAC acceptance or rejection data found",
+      "Transit/transportation policy positions absent from all sources"
+    ],
+    "notes": "Johnson is running for Attorney General, not a legislative seat. Most policy evidence comes from his 7-year TX Senate record (Tier 1 voting record). His AG campaign positions are about enforcement priorities and institutional restoration rather than policy creation. The 16th axis (econ_tax_structure) is scored but at low confidence given Texas's no-income-tax context. Reproductive rights is one of his strongest documented areas but is not a scored civic axis -- it is captured in the self_direction and tradition value scores."
+  }
+}

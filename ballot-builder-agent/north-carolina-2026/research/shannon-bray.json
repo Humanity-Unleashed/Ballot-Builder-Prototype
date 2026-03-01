@@ -1,0 +1,280 @@
+{
+  "slug": "shannon-bray",
+  "name": "Shannon Bray",
+  "party": "Libertarian",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "incumbencyStatus": "perennial Libertarian candidate (4th statewide race since 2020)",
+  "researchedAt": "2026-02-26T00:00:00Z",
+  "biography": {
+    "currentRole": "Cybersecurity specialist and systems architect",
+    "priorRoles": [
+      "U.S. Navy veteran (1991-1997)",
+      "Worked for Visa, Microsoft, and federal government agencies",
+      "Libertarian candidate for U.S. Senate (2020)",
+      "Libertarian candidate for U.S. Senate (2022)",
+      "Libertarian candidate for Governor primary (2024)",
+      "Libertarian candidate for Lieutenant Governor (2024)",
+      "Author of 'Liberty Unleashed'"
+    ],
+    "education": "Master's degree in cybersecurity from University of Delaware",
+    "background": "Based in Apex, NC. Cybersecurity specialist with experience at Visa, Microsoft, and federal agencies. Navy veteran (1991-1997). Has run for statewide office four times since 2020. Author of 'Liberty Unleashed.' Unusually well-documented Libertarian candidate with a detailed campaign website, book, multiple structured interviews, and voter guide questionnaire responses."
+  },
+  "campaignWebsite": {
+    "url": "https://www.shannonbray.us",
+    "fetchedAt": "2026-02-26T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "econ_tax_structure",
+        "quote": "FairTax / abolish IRS",
+        "sourceUrl": "https://www.shannonbray.us/issues",
+        "date": "2020-2026",
+        "confidence": "high",
+        "notes": "Consistent across all four campaign cycles. Detailed in his book 'Liberty Unleashed.' Extreme Pole B position."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Phase out Social Security by 2035",
+        "sourceUrl": "https://www.shannonbray.us/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit plan to phase out Social Security. Extreme Pole B position."
+      },
+      {
+        "topic": "econ_investment",
+        "quote": "Anti-subsidy, anti-industrial-policy",
+        "sourceUrl": "https://www.shannonbray.us/a_government_that_works_in_the_real_world",
+        "date": "2020-2026",
+        "confidence": "high",
+        "notes": "Consistent across all cycles. Opposes government subsidies and industrial policy."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "School choice advocate",
+        "sourceUrl": "https://www.lpnc.org/shannon_bray_my_vision_for_nc",
+        "date": "2024-2026",
+        "confidence": "high",
+        "notes": "Supports school choice, vouchers, and competition. LPNC platform alignment."
+      },
+      {
+        "topic": "health_coverage_model",
+        "quote": "Repeal ACA, HSAs as primary mechanism",
+        "sourceUrl": "https://www.shannonbray.us/healthcare_data",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit ACA repeal position. Health savings accounts and patient data ownership approach."
+      },
+      {
+        "topic": "health_cost_control",
+        "quote": "No price controls; patient data ownership approach",
+        "sourceUrl": "https://www.shannonbray.us/healthcare_data",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "No explicit price control position but opposes government intervention in healthcare markets."
+      },
+      {
+        "topic": "health_public_health",
+        "quote": "Anti-mandate, anti-lockdown",
+        "sourceUrl": "https://www.shannonbray.us/issues",
+        "date": "2020-2026",
+        "confidence": "high",
+        "notes": "Strong individual choice framing on public health mandates."
+      },
+      {
+        "topic": "justice_firearms",
+        "quote": "Repeal gun laws",
+        "sourceUrl": "https://www.shannonbray.us/guns_and_social_media",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Has dedicated policy page on guns. Supports repealing existing gun regulations."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Abolish qualified immunity, end civil asset forfeiture, ban no-knock warrants",
+        "sourceUrl": "https://www.ballotready.org/people/shannon-w-bray",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "BallotReady 2024 questionnaire responses. Strong Pole A police accountability position — notable contrast with economic positions."
+      },
+      {
+        "topic": "justice_sentencing_goals",
+        "quote": "Drug legalization, abolish federal death penalty",
+        "sourceUrl": "https://www.shannonbray.us/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Supports full drug legalization and abolishing the federal death penalty. Strong Pole A rehabilitation/liberty position."
+      },
+      {
+        "topic": "climate_ambition",
+        "quote": "Ban carbon taxes, slash energy regulations",
+        "sourceUrl": "https://www.shannonbray.us/cyber_resilient_energy_utilities",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit opposition to carbon taxes and energy regulation. Pole B position."
+      },
+      {
+        "topic": "climate_energy_portfolio",
+        "quote": "Pro-nuclear, anti-clean-energy-subsidy",
+        "sourceUrl": "https://www.shannonbray.us/cyber_resilient_energy_utilities",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Has dedicated energy/utilities policy page. Supports nuclear power, opposes subsidies for clean energy."
+      },
+      {
+        "topic": "climate_permitting",
+        "quote": "General deregulation stance applies to permitting",
+        "sourceUrl": "https://www.shannonbray.us/issues",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Inferred from consistent deregulation philosophy. No specific permitting statement."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No prior elected office. No legislative voting record exists. However, extensive campaign record across 4 cycles provides consistent policy positions."
+  },
+  "scorecards": [],
+  "endorsements": [
+    {
+      "organization": "Libertarian Party of North Carolina (LPNC)",
+      "type": "party nomination",
+      "cycle": "2026",
+      "notes": "Official LPNC candidate for U.S. Senate."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "The Libertarian Republic",
+      "date": "2020",
+      "url": "https://thelibertarianrepublic.com/an-interview-with-cybersecurity-expert-and-nc-libertarian-senate-candidate-shannon-bray/",
+      "keyExchanges": [
+        {
+          "topic": "platform overview",
+          "quote": "Cybersecurity background and libertarian philosophy",
+          "notes": "In-depth interview covering policy positions from 2020 Senate run."
+        }
+      ]
+    },
+    {
+      "outlet": "Elon News Network",
+      "date": "2022-10",
+      "url": "https://www.elonnewsnetwork.com/article/2022/10/campaigning-for-the-u-s-senate-shannon-bray",
+      "keyExchanges": [
+        {
+          "topic": "Senate campaign 2022",
+          "quote": "Campaign platform and policy positions",
+          "notes": "Interview during 2022 Senate campaign."
+        }
+      ]
+    },
+    {
+      "outlet": "Yahoo News",
+      "date": "2024",
+      "url": "https://www.yahoo.com/news/candidate-nc-governor-libertarian-shannon-163136424.html",
+      "keyExchanges": [
+        {
+          "topic": "Governor questionnaire",
+          "quote": "Detailed policy responses for Governor race",
+          "notes": "Structured questionnaire providing detailed policy positions."
+        }
+      ]
+    },
+    {
+      "outlet": "Spectrum News — Capital Tonight",
+      "date": "2024-02-27",
+      "url": "https://spectrumlocalnews.com/nc/charlotte/capital-tonight/2024/02/27/candidate-conversation-with-shannon-bray",
+      "keyExchanges": [
+        {
+          "topic": "candidate conversation",
+          "quote": "Policy discussion for 2024 race",
+          "notes": "TV interview covering platform."
+        }
+      ]
+    },
+    {
+      "outlet": "WCNC Charlotte",
+      "date": "2022",
+      "url": "https://www.wcnc.com/article/news/politics/elections/libertarian-us-senate-candidate-puts-a-wedge-in-a-race-that-is-too-close-to-call/275-2ce72217-abc0-4c34-8a5b-51365c432874",
+      "keyExchanges": [
+        {
+          "topic": "spoiler effect",
+          "quote": "Libertarian puts wedge in close Senate race",
+          "notes": "Discussion of third-party impact on tight race."
+        }
+      ]
+    }
+  ],
+  "weakAxes": [
+    {
+      "axis": "housing_supply_zoning",
+      "confidence": "low",
+      "notes": "No Bray-specific statement. LP platform supports deregulation of zoning (Pole B direction)."
+    },
+    {
+      "axis": "housing_affordability_tools",
+      "confidence": "low",
+      "notes": "Inferred from anti-subsidy stance. Pole B direction."
+    },
+    {
+      "axis": "housing_transport_priority",
+      "confidence": "low",
+      "notes": "Inferred from LP platform opposing public transit subsidies. Pole B direction."
+    }
+  ],
+  "positionConflicts": [],
+  "crossAxisPattern": {
+    "note": "Shannon Bray presents an unusual cross-axis pattern that is internally consistent for a libertarian but distinctive in the matching system. His economic/tax positions are extreme Pole B (abolish IRS, phase out Social Security, kill the Fed). His justice positions on policing and sentencing are Pole A (abolish qualified immunity, drug legalization, abolish federal death penalty). This libertarian scatter will create unique matching patterns — he won't match cleanly with either typical 'left' or 'right' user profiles.",
+    "economicAxes": "extreme Pole B across all economic axes",
+    "justiceAxes": "Pole A on policing accountability and sentencing; Pole B on firearms",
+    "healthAxes": "Pole B across all health axes (market-based, anti-mandate)",
+    "climateAxes": "Pole B across all climate axes (anti-regulation, pro-nuclear)",
+    "housingAxes": "Pole B (inferred from anti-subsidy, anti-regulation philosophy)"
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_tax_structure — Pole B (extreme, ~9-10), HIGH confidence (FairTax/abolish IRS, consistent 4 cycles)",
+      "econ_safetynet — Pole B (extreme, ~9-10), HIGH confidence (phase out Social Security by 2035)",
+      "econ_investment — Pole B (~8-9), HIGH confidence (anti-subsidy, anti-industrial-policy)",
+      "econ_school_choice — Pole B (~8), HIGH confidence (school choice advocate)",
+      "health_coverage_model — Pole B (~9), HIGH confidence (repeal ACA, HSAs)",
+      "health_public_health — Pole B (~9), HIGH confidence (anti-mandate, anti-lockdown)",
+      "justice_firearms — Pole B (~9-10), HIGH confidence (repeal gun laws)",
+      "justice_policing_accountability — Pole A (~2), HIGH confidence (abolish qualified immunity, end civil forfeiture)",
+      "justice_sentencing_goals — Pole A (~1-2), HIGH confidence (drug legalization, abolish death penalty)",
+      "climate_ambition — Pole B (~9), HIGH confidence (ban carbon taxes)",
+      "climate_energy_portfolio — Pole B (~8), HIGH confidence (pro-nuclear, anti-clean-energy-subsidy)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning — LOW confidence (LP platform inference only)",
+      "housing_affordability_tools — LOW confidence (inferred from anti-subsidy stance)",
+      "housing_transport_priority — LOW confidence (inferred from LP platform)",
+      "climate_permitting — MEDIUM confidence (inferred from deregulation philosophy)",
+      "health_cost_control — MEDIUM confidence (inferred from market philosophy)"
+    ],
+    "overallConfidence": "high",
+    "notes": "Shannon Bray is unusually well-documented for a third-party candidate due to four statewide campaigns, a book, detailed policy pages, and multiple voter guide responses. Most axes can be scored with HIGH confidence. The libertarian cross-axis pattern (extreme Pole B economics + Pole A justice reform) is distinctive and well-supported by evidence."
+  },
+  "sources": [
+    {"url": "https://www.shannonbray.us/", "description": "Campaign website"},
+    {"url": "https://www.shannonbray.us/issues", "description": "Issues page"},
+    {"url": "https://www.shannonbray.us/guns_and_social_media", "description": "Guns policy page"},
+    {"url": "https://www.shannonbray.us/healthcare_data", "description": "Healthcare data policy page"},
+    {"url": "https://www.shannonbray.us/a_government_that_works_in_the_real_world", "description": "Government reform page"},
+    {"url": "https://www.shannonbray.us/cyber_resilient_energy_utilities", "description": "Energy/utilities policy page"},
+    {"url": "https://ballotpedia.org/Shannon_Bray", "description": "Ballotpedia profile"},
+    {"url": "https://justfacts.votesmart.org/candidate/biography/186258/shannon-bray", "description": "VoteSmart profile"},
+    {"url": "https://www.lpnc.org/shannon_bray_my_vision_for_nc", "description": "LPNC platform page"},
+    {"url": "https://thelibertarianrepublic.com/an-interview-with-cybersecurity-expert-and-nc-libertarian-senate-candidate-shannon-bray/", "description": "Libertarian Republic interview"},
+    {"url": "https://www.elonnewsnetwork.com/article/2022/10/campaigning-for-the-u-s-senate-shannon-bray", "description": "Elon News Network 2022 interview"},
+    {"url": "https://www.yahoo.com/news/candidate-nc-governor-libertarian-shannon-163136424.html", "description": "Yahoo News Governor questionnaire"},
+    {"url": "https://www.ballotready.org/people/shannon-w-bray", "description": "BallotReady profile"},
+    {"url": "https://www.branch.vote/questionnaire-response/670843e76e4625bfd6829970", "description": "AssemblyNC voter guide"},
+    {"url": "https://www.isidewith.com/candidates/shannon-bray/policies", "description": "iSideWith policies"},
+    {"url": "https://www.wcnc.com/article/news/politics/elections/libertarian-us-senate-candidate-puts-a-wedge-in-a-race-that-is-too-close-to-call/275-2ce72217-abc0-4c34-8a5b-51365c432874", "description": "WCNC Senate race analysis"},
+    {"url": "https://spectrumlocalnews.com/nc/charlotte/capital-tonight/2024/02/27/candidate-conversation-with-shannon-bray", "description": "Spectrum News interview"},
+    {"url": "https://www.amazon.com/Liberty-Unleashed-Shannon-Prosperous-Carolina-ebook/dp/B0GCPLD6QX", "description": "Liberty Unleashed book"},
+    {"url": "https://www.ncfamilyvoter.com/candidate/bray-shannon-w/", "description": "NC Family Voter profile"},
+    {"url": "https://lp.org/platform-page/", "description": "Libertarian Party national platform"},
+    {"url": "https://www.lpnc.org/our-principles_platform-of-the-libertarian-party-of-north-carolina", "description": "LPNC platform"}
+  ]
+}

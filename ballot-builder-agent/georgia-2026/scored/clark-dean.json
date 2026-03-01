@@ -1,0 +1,103 @@
+{
+  "slug": "clark-dean",
+  "name": "Clark Dean",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-25T12:00:00.000Z",
+  "profileSummary": "First-time candidate and Transwestern CRE executive running as a Kemp-continuity outsider; platform emphasizes affordability, healthcare access, and public-private partnerships but lacks specific policy commitments on most issues.",
+  "keyPositions": [
+    "Frames campaign around ASAP pillars: Affordability, Strength, Accessibility, Prosperity",
+    "Repeatedly highlights maternal mortality and rural/urban healthcare access as priorities",
+    "Champions public-private partnerships and workforce development for economic growth",
+    "Explicitly positions as Kemp legacy successor with government efficiency critique"
+  ],
+  "axisStances": {
+    "econ_investment": {
+      "score": 6,
+      "confidence": "low",
+      "sources": ["Campaign website economic development language", "WSB-TV interview Sept 2025", "Kemp continuity framing"],
+      "notes": "Public-private partnerships and workforce development suggest moderate market-oriented approach rather than large-scale direct public investment. Kemp's economic agenda favored business incentives over government-led industrial policy. No specific spending proposals or budget priorities stated. Score reflects inference from Kemp alignment and PPP language."
+    },
+    "health_coverage_model": {
+      "score": 6,
+      "confidence": "low",
+      "sources": ["Campaign website healthcare page", "41NBC interview 2026", "WSB-TV interview Sept 2025"],
+      "notes": "Calls for expanding healthcare access broadly, with specific focus on rural communities and maternal mortality. Does not mention Medicaid expansion (Georgia is one of 10 non-expansion states), ACA, or any specific insurance mechanism. Kemp pursued a limited Medicaid waiver pathway rather than full expansion. Scored as center-right on coverage model based on Republican framing and Kemp alignment, but no explicit rejection of public coverage either. True position is unknown."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.2,
+      "reasoning": "Carter Center board chair role signals some engagement with humanitarian and global health causes. Maternal mortality focus and 'rural and urban' healthcare language extend concern broadly across Georgia. However, no environmental positions, no international policy statements, and no explicit equity or inclusion framing. Weak positive signal from civic engagement breadth."
+    },
+    "benevolence": {
+      "score": 0.6,
+      "reasoning": "Extensive community service portfolio: Shepherd Center chair-elect, YMCA of Metro Atlanta chair, Rotary Club president, Cafe Momentum Atlanta (at-risk youth restaurant program), The Atlanta Opera. Healthcare access and affordability framing consistently returns to family and community welfare. 'Put Georgia families first' is a core rhetorical commitment. The strongest and most consistent value signal in his profile."
+    },
+    "tradition": {
+      "score": 0.4,
+      "reasoning": "Self-describes as 'principled conservative' committed to 'shared conservative American principles.' Explicit Kemp legacy continuity positioning. No disruptive-change rhetoric. However, tradition is invoked instrumentally rather than as a deep cultural or religious commitment -- no faith references, no social conservatism specifics. Moderate positive."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Career spent working within large institutional frameworks (corporate boards, civic organizations, nonprofit governance). Carter Center board role requires institutional discipline. Not a norm-violator or anti-establishment rebel despite 'outsider' label. The outsider identity refers to non-politician status, not anti-institutional orientation."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "ASAP framework includes 'Strength -- safety, security, and efficient government' as a named pillar. However, no specific public safety, law enforcement, or defense positions articulated. Security is a stated priority category without concrete content. Weak positive signal from stated framework only."
+    },
+    "power": {
+      "score": 0.2,
+      "reasoning": "Senior CRE executive, multiple board-level positions, Metro Atlanta Chamber involvement -- occupies positions of institutional and economic power. However, civic profile is heavily oriented toward community service (YMCA, Shepherd Center, Cafe Momentum) rather than power accumulation. No large-donor network visible yet (polling at 1%). Trump comparison on campaign website suggests some comfort with strong-leader framing. Modest positive reflecting his position in economic power structures."
+    },
+    "achievement": {
+      "score": 0.7,
+      "reasoning": "Strongest value signal alongside benevolence. Harvard biomedical engineering, varsity football, class officer -- high achievement from early career. Built nationally recognized Transaction Sciences Group practice. Campaign rhetoric centers on 'dream big and achieve bigger,' workforce development, economic mobility, and prosperity. The ASAP framework's 'Prosperity' pillar is fundamentally achievement-oriented. Personal narrative is one of individual accomplishment applied to public purpose."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal freedom or lifestyle liberty framing. No recreational policy positions. No libertarian personal-choice rhetoric. Neutral/absent."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some novelty and change rhetoric: outsider candidacy, businessman disrupting politics, biomedical engineering background suggesting innovation orientation. 'Innovation' appears in economic development language. However, this is balanced by explicit Kemp continuity -- he is not proposing transformative change but rather competent management improvement. Net effect is weakly positive."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Independent-thinker framing: 'prioritize solutions over politics,' non-politician identity, entrepreneurial career path. Cross-partisan Carter Center role suggests intellectual independence from party orthodoxy. But no civil liberties positions stated, no personal freedom advocacy, and no evidence of challenging party positions on social issues. Weak positive from career independence only."
+    }
+  },
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 2,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_tax_structure",
+      "econ_school_choice",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate with no voting record, no third-party scorecards, and an aspirational campaign platform that lacks specific policy commitments on most issue axes. The ASAP framework names categories (Affordability, Strength, Accessibility, Prosperity) without detailed positions. Notable silence on abortion/reproductive rights, firearms, immigration, climate, taxes, and school choice -- all major Republican primary topics in Georgia 2026.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No position on Georgia heartbeat law (HB 481) despite active state debate",
+      "No firearms or Second Amendment position",
+      "No immigration or border enforcement position",
+      "No climate, energy, or environmental position",
+      "No tax policy specifics despite Kemp-continuity framing (Kemp cut taxes significantly)",
+      "No school choice or education mechanism specifics despite education being a stated priority",
+      "No criminal justice or policing position despite 'Strength' pillar",
+      "No Medicaid expansion position despite Georgia being a non-expansion state",
+      "Campaign website could not be directly fetched during research; positions reconstructed from search snippets"
+    ]
+  }
+}

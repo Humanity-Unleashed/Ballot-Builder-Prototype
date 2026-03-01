@@ -1,0 +1,497 @@
+{
+  "slug": "ken-paxton",
+  "name": "Ken Paxton",
+  "party": "Republican",
+  "office": "U.S. Senate, Texas, 2026",
+  "contest": "Texas U.S. Senate 2026, Republican Primary March 3, 2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-27T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Texas Attorney General (2015–2026)",
+    "priorRoles": [
+      "Texas State Senate, District 8, Collin and Dallas counties (2013–2015)",
+      "Texas State House of Representatives, District 70 (2003–2013)"
+    ],
+    "education": "B.A. University of Virginia; J.D. University of Virginia School of Law",
+    "background": "Career litigator; rose through Tea Party movement; Federalist Society member. Filed ~150 lawsuits against Obama and Biden administrations combined. Led TX v. Pennsylvania (2020) election challenge to SCOTUS. Impeached by TX House 121-23 in May 2023; acquitted by TX Senate September 2023. Securities fraud indictment filed 2015, settled 2024 (paid $271,000 without admitting wrongdoing). Divorced by wife Angela Paxton (TX state senator) in 2025. Running to unseat four-term incumbent Sen. John Cornyn.",
+    "notableControversies": [
+      "Securities fraud indictment 2015 — pending for 9 years, settled 2024",
+      "Impeachment by TX House 2023 on bribery, abuse of office charges — acquitted by TX Senate",
+      "Extramarital affair with lobbyist — wife Angela Paxton filed for divorce 2025 on 'biblical grounds'",
+      "Texas v. Pennsylvania (2020) — SCOTUS declined to hear election challenge",
+      "FBI bribery investigation into relationship with donor Nate Paul"
+    ]
+  },
+  "campaignWebsite": {
+    "url": "https://www.kenpaxton.com",
+    "issuesPageUrl": "https://www.kenpaxton.com/issues",
+    "fetchedAt": "2026-02-27T00:00:00.000Z",
+    "statedPositions": [
+      {
+        "topic": "immigration",
+        "quote": "Ken Paxton will champion President Trump's legislative priorities, including cutting taxes, securing the border and deporting illegal aliens, ending the weaponization of government, and draining the Swamp.",
+        "sourceUrl": "https://www.kenpaxton.com/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign platform explicitly lists border security and deportation as a top priority."
+      },
+      {
+        "topic": "fiscal / taxes",
+        "quote": "Ken Paxton is a strong fiscal conservative who will fight to cut taxes and stop the wasteful spending that has led to our nation being in over $36 trillion dollars in debt.",
+        "sourceUrl": "https://www.kenpaxton.com/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit campaign platform commitment. Consistent with 95% YCT career rating as legislator."
+      },
+      {
+        "topic": "firearms",
+        "quote": "He will stand with President Trump to protect our gun rights, defend the unborn, and defeat the radical transgender movement.",
+        "sourceUrl": "https://www.kenpaxton.com/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Homepage statement. Consistent with NRA endorsements and legislative/AG record."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Defend the unborn",
+        "sourceUrl": "https://www.kenpaxton.com/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign homepage. Consistent with extensive AG record of anti-abortion enforcement."
+      },
+      {
+        "topic": "government / anti-establishment",
+        "quote": "President Trump and Ken Paxton have been targeted in politically motivated witch hunts because there's nothing that scares the establishment more than courageous conservatives who never back down from standing up for the American people.",
+        "sourceUrl": "https://www.kenpaxton.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Campaign framing; anti-establishment positioning central to his race against Cornyn."
+      }
+    ]
+  },
+  "legislativeRecord": {
+    "available": true,
+    "chamber": "Texas State House (2003–2013) and Texas State Senate (2013–2015)",
+    "notes": "No federal legislative record. AG position is executive/legal, not legislative. Key evidence for axes comes from AG litigation record (Tier 1 equivalent given the official legal commitments involved) and prior TX legislative scorecard ratings.",
+    "scorecardRatings": [
+      {
+        "organization": "Young Conservatives of Texas (YCT)",
+        "score": "95% career rating (highest overall score of any Texas legislator over his tenure); 97% in 2010 session (led the TX House that year)",
+        "cycle": "2003–2013",
+        "sourceUrl": "https://ratings.yct.org/legislators/ken-paxton/82nd-legislature",
+        "notes": "YCT rates on fiscal conservatism, anti-regulation, social conservatism. 95% career = hard-right across economic and social axes."
+      },
+      {
+        "organization": "Texans for Fiscal Responsibility",
+        "score": "100% (shared top House rating)",
+        "cycle": "81st Legislature session",
+        "sourceUrl": "https://ratings.yct.org/",
+        "notes": "Perfect fiscal conservative rating. Anti-spending, anti-tax."
+      }
+    ]
+  },
+  "agLitigationRecord": {
+    "notes": "As AG, Paxton could not cast legislative votes but his litigation positions function as Tier 1 evidence of policy commitments — they are official state legal actions he chose to pursue or lead.",
+    "keyActions": [
+      {
+        "topic": "healthcare / ACA",
+        "action": "Led 20-state coalition lawsuit (Texas v. United States) seeking to strike down the entire Affordable Care Act",
+        "result": "Won at district court level; SCOTUS ultimately upheld ACA in 2021 on standing grounds",
+        "quote": "Our lawsuit seeks to effectively repeal Obamacare, which will give President Trump and Congress the opportunity to replace the failed social experiment with a plan that ensures Texans and all Americans will again have greater choice about what health coverage they need.",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/ag-paxton-and-wisconsin-ag-file-20-state-lawsuit-end-grip-obamacare-texas-and-nation",
+        "date": "2018",
+        "confidence": "high",
+        "axisSignal": "health_coverage_model → extreme Pole B (market/repeal); health_cost_control → Pole B"
+      },
+      {
+        "topic": "healthcare / ACA",
+        "action": "Applauded district court ruling declaring ACA unconstitutional",
+        "quote": "AG Paxton Applauds Court Ruling Declaring Obamacare Unconstitutional",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/ag-paxton-applauds-court-ruling-declaring-obamacare-unconstitutional",
+        "date": "2018",
+        "confidence": "high",
+        "axisSignal": "health_coverage_model → Pole B"
+      },
+      {
+        "topic": "healthcare / ACA / pharmacy mandate",
+        "action": "Sued to stop Biden pharmacy mandate requiring retailers to dispense abortion pills or risk losing Medicare/Medicaid funding",
+        "sourceUrl": "https://www.washingtontimes.com/news/2023/feb/8/ken-paxton-texas-attorney-general-sues-halt-requir/",
+        "date": "2023",
+        "confidence": "high",
+        "axisSignal": "health_coverage_model → Pole B; health_public_health → Pole B"
+      },
+      {
+        "topic": "abortion / reproductive rights",
+        "action": "Gave AG employees paid vacation day to celebrate Roe v. Wade being overturned (June 2022)",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Unambiguous personal celebration of abortion restrictions.",
+        "axisSignal": "health_public_health → Pole B (individual liberty over collective health mandates)"
+      },
+      {
+        "topic": "abortion",
+        "action": "Sued Aid Access and multiple out-of-state abortion pill providers for shipping medication abortion drugs to Texas",
+        "sourceUrl": "https://www.texaspolitics.com/2026/02/26/ken-paxton-sues-aid-access-over-abortion-drugs-shipped-to-texas/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Ongoing enforcement as of Feb 2026, while simultaneously running for Senate."
+      },
+      {
+        "topic": "abortion",
+        "action": "Led effort to defeat Biden administration rule that blocked state investigations into abortion and gender transition cases",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-defeats-biden-administration-rule-blocked-state-investigations-abortion",
+        "date": "2024",
+        "confidence": "high"
+      },
+      {
+        "topic": "abortion",
+        "action": "Sought access to health records of out-of-state residents who traveled to obtain abortions",
+        "sourceUrl": "https://msmagazine.com/2024/10/16/republican-attorney-general-ken-paxton-texas-health-records-out-of-state-abortion-travel-biden/",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Aggressive enforcement posture beyond Texas borders."
+      },
+      {
+        "topic": "transgender / gender-affirming care",
+        "action": "Filed Texas's first lawsuit against a doctor under SB 14 banning gender-affirming care for minors; sued multiple doctors and Children's Health hospital",
+        "sourceUrl": "https://www.washingtonpost.com/nation/2024/10/18/texas-transgender-healthcare-ken-paxton/",
+        "date": "2024–2026",
+        "confidence": "high",
+        "quote": "Texas passed a law to protect children from these dangerous unscientific medical interventions that have irreversible and damaging effects.",
+        "axisSignal": "health_public_health → Pole B"
+      },
+      {
+        "topic": "climate / environment",
+        "action": "Participated in 15 multistate lawsuits against the federal government on environmental matters, including: suing EPA over ozone rules (2015), methane emission regulations (2016), coal mining near waterways rules (2017), particulate matter standards (2024), methane from oil and gas (2024)",
+        "sourceUrl": "https://www.sierraclub.org/texas/blog/2024/03/texas-ag-paxton-fights-against-measures-would-reduce-deaths-and-climate-extremes",
+        "date": "2015–2024",
+        "confidence": "high",
+        "quote": "Biden chooses to go to war against fossil fuels",
+        "axisSignal": "climate_ambition → Pole B; climate_energy_portfolio → Pole B; climate_permitting → Pole B"
+      },
+      {
+        "topic": "climate / environment",
+        "action": "Called climate change 'a matter of opinion'; railed against 'radical climate change movement'",
+        "sourceUrl": "https://www.sierraclub.org/texas/blog/2019/09/ken-paxton-environmental-champion",
+        "date": "2019",
+        "confidence": "high",
+        "axisSignal": "climate_ambition → extreme Pole B"
+      },
+      {
+        "topic": "climate / energy",
+        "action": "Defended ExxonMobil against state AG investigations into whether company lied to shareholders about climate change; filed amicus brief on First Amendment grounds",
+        "sourceUrl": "https://blog.ucs.org/elliott-negin/these-attorneys-general-are-defending-the-fossil-fuel-industry-not-their-states/",
+        "date": "2017",
+        "confidence": "high",
+        "axisSignal": "climate_energy_portfolio → Pole B"
+      },
+      {
+        "topic": "climate / environment",
+        "action": "Pushed back against 'Biden EPA's War Against Texas Oil & Gas'; led 14-state coalition challenging Biden EPA vehicle emissions regulations",
+        "sourceUrl": "https://texasattorneygeneral.gov/news/releases/ag-paxton-pushes-back-against-biden-epas-war-against-texas-oil-gas",
+        "date": "2024",
+        "confidence": "high",
+        "axisSignal": "climate_energy_portfolio → Pole B; climate_permitting → Pole B"
+      },
+      {
+        "topic": "immigration",
+        "action": "Led 26-state coalition stopping Obama's DACA/DAPA executive immigration plan (DAPA blocked; DACA litigation continued)",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/about-office",
+        "date": "2015",
+        "confidence": "high",
+        "axisSignal": "immigration → hardline enforcement"
+      },
+      {
+        "topic": "immigration",
+        "action": "Signed first immigration enforcement agreement with Trump administration to assist federal deportation operations; stated 'Every illegal must be found, detained, and deported'",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-becomes-first-texas-law-enforcement-official-sign-agreement-help-0",
+        "date": "2025",
+        "confidence": "high",
+        "quote": "Every illegal must be found, detained, and deported. We will defend the American homeland by deporting the illegal aliens threatening to alter the fabric of our country."
+      },
+      {
+        "topic": "immigration",
+        "action": "Sued Bexar County and Harris County for using taxpayer funds to provide legal defense to undocumented immigrants facing deportation; called program 'evil and wicked'",
+        "sourceUrl": "https://texaspolitics.com/2026/02/05/ken-paxton-sues-bexar-county-over-alleged-deportation-defense-services/",
+        "date": "2026-02",
+        "confidence": "high"
+      },
+      {
+        "topic": "immigration",
+        "action": "Launched investigation into alleged H-1B visa fraud by Texas businesses",
+        "sourceUrl": "https://texaspolitics.com/2026/01/30/ken-paxton-launches-investigation-into-h-1b-visa-fraud/",
+        "date": "2026-01",
+        "confidence": "medium",
+        "notes": "Targets legal immigration program abuse; stated 'I want legal immigration' on podcast. More enforcement-focused than opposition to legal immigration per se."
+      },
+      {
+        "topic": "immigration / DACA",
+        "action": "Led Texas and six-state coalition lawsuit seeking to end DACA; won in 5th Circuit; multiple rulings",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-defeats-biden-administrations-unlawful-daca-policy-fifth-circuit",
+        "date": "2018–2024",
+        "confidence": "high"
+      },
+      {
+        "topic": "firearms",
+        "action": "Partnered with Gun Owners of America in lawsuits to block ATF pistol brace ban and 'universal registration rule'; sued ATF over Texas-made suppressors; challenged expanded background check rules on private sales",
+        "sourceUrl": "https://www.ammoland.com/2025/08/ken-paxton-emerges-as-grassroots-2a-champion-against-john-cornyn/",
+        "date": "2022–2024",
+        "confidence": "high",
+        "axisSignal": "justice_firearms → extreme Pole B"
+      },
+      {
+        "topic": "firearms",
+        "action": "Sued City of Dallas for banning firearms at the Texas State Fair",
+        "sourceUrl": "https://www.nraila.org/articles/20240830/attorney-general-ken-paxton-sues-the-city-of-dallas-for-unlawfully-prohibiting-firearms-from-the-texas-state-fair",
+        "date": "2024",
+        "confidence": "high"
+      },
+      {
+        "topic": "firearms",
+        "quote": "The more we talk about gun regulation, the more people are gonna die",
+        "sourceUrl": "https://www.texasobserver.org/ken-paxton-the-more-we-talk-about-gun-regulation-the-more-people-are-gonna-die/",
+        "date": "2014",
+        "confidence": "high",
+        "notes": "Pre-AG statement; consistent with career record."
+      },
+      {
+        "topic": "policing / law enforcement",
+        "action": "Sued City of Dallas for insufficiently funding police in violation of voter-approved Prop U (requires 4,000 officers and 50% of new revenue to police/fire pensions)",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-city-dallas-officials-insufficiently-funding-dallas-police",
+        "date": "2026-02",
+        "confidence": "high",
+        "quote": "As members of law enforcement across the country increasingly face attacks from the radical Left, it's crucial that we fully fund the brave men and women in law enforcement defending law and order in our communities.",
+        "axisSignal": "justice_policing_accountability → Pole B"
+      },
+      {
+        "topic": "criminal justice reform",
+        "action": "Co-led bipartisan coalition of 38 state AGs supporting First Step Act (criminal justice reform legislation)",
+        "sourceUrl": "https://texasattorneygeneral.gov/news/releases/ag-paxton-co-leads-bipartisan-coalition-38-attorneys-general-expressing-support-congressional-action",
+        "date": "2018",
+        "confidence": "medium",
+        "notes": "One instance of bipartisan criminal justice reform support. Texas had led nationally in prison reform since 2007 (closing 8 prisons, saving $100M/year). This is a significant nuance — not purely punitive on sentencing."
+      },
+      {
+        "topic": "fiscal / spending",
+        "action": "Sued President Biden over $1.7 trillion federal spending package, arguing it was unlawfully passed",
+        "sourceUrl": "https://www.texastribune.org/2023/02/15/texas-ken-paxton-sues-joe-biden-spending-bill/",
+        "date": "2023",
+        "confidence": "high",
+        "axisSignal": "econ_investment → Pole B; econ_safetynet → Pole B"
+      },
+      {
+        "topic": "property taxes / fiscal",
+        "action": "Launched investigation of ~1,000 Texas cities for alleged violations of SB 1851 barring excess property tax increases; forced cities to comply with financial transparency requirements",
+        "sourceUrl": "https://www.texastribune.org/2025/12/09/attorney-general-ken-paxton-cities-property-tax-investigation/",
+        "date": "2025–2026",
+        "confidence": "high",
+        "quote": "Our cities and municipalities must prioritize transparency and minimizing the tax burden of every citizen across the state.",
+        "axisSignal": "econ_tax_structure → Pole B"
+      },
+      {
+        "topic": "election integrity",
+        "action": "Led Texas v. Pennsylvania, Georgia, Wisconsin, Michigan at SCOTUS seeking to invalidate 62 electoral votes and overturn 2020 presidential election result; SCOTUS declined",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Ken_Paxton",
+        "date": "2020-12",
+        "confidence": "high",
+        "notes": "Single most high-profile action of his tenure. Widely described as legally unprecedented and unsuccessful."
+      },
+      {
+        "topic": "school choice",
+        "action": "Issued legal opinion that school choice (ESAs) is legal in Texas; vowed to defend the ESA law from legal challenges; determined Blaine Amendments excluding religious schools from ESA violate First Amendment Free Exercise Clause",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-celebrates-school-choice-texans-and-vows-defend-new-law",
+        "date": "2023–2026",
+        "confidence": "high",
+        "quote": "Texas parents should have the right to choose the best school for their kids, and every Texas child deserves the opportunity to attend a good, safe school where they can learn and thrive.",
+        "axisSignal": "econ_school_choice → Pole B"
+      },
+      {
+        "topic": "EPA / Waters of the United States",
+        "action": "Stopped EPA's Waters of the United States (WOTUS) rule through litigation, which would have regulated ponds, puddles, and streams on private property",
+        "sourceUrl": "https://www.texasattorneygeneral.gov/about-office",
+        "date": "2015–2023",
+        "confidence": "high",
+        "axisSignal": "climate_ambition → Pole B; climate_permitting → Pole B"
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": null,
+      "grade": "A",
+      "endorsements": [
+        { "cycle": "2014", "office": "Texas AG", "url": "https://www.nrapvf.org/articles/20140918/nra-endorses-ken-paxton-for-attorney-general-in-texas" },
+        { "cycle": "2018", "office": "Texas AG", "url": "https://www.nrapvf.org/articles/20180907/nra-endorses-ken-paxton-for-attorney-general" },
+        { "cycle": "2022", "office": "Texas AG", "url": "https://www.nrapvf.org/articles/20220209/nra-endorses-texas-attorney-general-ken-paxton" }
+      ],
+      "notes": "Consistent NRA endorsements across three AG cycles. Described as 'constantly battling on the frontlines' to protect Second Amendment rights. Also endorsed by National Association for Gun Rights PAC for 2026."
+    },
+    {
+      "organization": "National Association for Gun Rights PAC",
+      "grade": "endorsed",
+      "cycle": "2026",
+      "url": "https://gunrights.org/national-association-for-gun-rights-pac-endorses-ken-paxton/",
+      "notes": "NAGR is more extreme than NRA on gun rights, opposing any background check expansions."
+    },
+    {
+      "organization": "Young Conservatives of Texas (YCT)",
+      "score": "95% career; 97% in 2010 legislative session",
+      "cycle": "2003–2013 (TX legislative tenure)",
+      "url": "https://ratings.yct.org/legislators/ken-paxton/82nd-legislature",
+      "notes": "Highest career rating of any TX legislator over same period. YCT covers fiscal, regulatory, and social conservatism."
+    },
+    {
+      "organization": "Texans for Fiscal Responsibility",
+      "score": "100%",
+      "cycle": "81st Legislature",
+      "notes": "Perfect fiscal conservative rating during legislative tenure."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "N/A — was not a federal legislator; no LCV score available",
+      "notes": "As AG, his environmental record is documented through 15+ multistate anti-EPA lawsuits. Sierra Club Texas has explicitly condemned his environmental record."
+    },
+    {
+      "organization": "Sierra Club Texas",
+      "grade": "Strongly opposed",
+      "url": "https://www.sierraclub.org/texas/blog/2024/03/texas-ag-paxton-fights-against-measures-would-reduce-deaths-and-climate-extremes",
+      "notes": "Sierra Club characterizes Paxton as fighting against every major federal environmental protection initiative during his tenure."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "NRA Political Victory Fund",
+      "type": "endorsement",
+      "cycle": "2022 (most recent AG cycle; no 2026 Senate endorsement confirmed yet)",
+      "notes": "Three consecutive NRA endorsements for AG."
+    },
+    {
+      "organization": "National Association for Gun Rights PAC",
+      "type": "endorsement",
+      "cycle": "2026 Senate",
+      "url": "https://gunrights.org/national-association-for-gun-rights-pac-endorses-ken-paxton/"
+    },
+    {
+      "organization": "Rep. Lance Gooden (R-TX)",
+      "type": "endorsement",
+      "cycle": "2026 Senate",
+      "notes": "Freedom Caucus-aligned member."
+    },
+    {
+      "organization": "Rep. Troy Nehls (R-TX)",
+      "type": "endorsement",
+      "cycle": "2026 Senate",
+      "notes": "Hard-right MAGA Republican."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "NOT endorsed",
+      "cycle": "2026 Senate",
+      "notes": "As of Feb 27, 2026, Trump has not endorsed any candidate in the TX Senate primary. He said he supports 'all three' — Paxton, Cornyn, Hunt. Paxton's campaign has positioned itself as the MAGA/Trump-aligned candidate. A pro-Paxton group ran anti-Cornyn ads courting Trump.",
+      "sourceUrl": "https://rollcall.com/2026/02/23/texas-senate-republican-primary-trump-cornyn/"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune Q&A voter guide",
+      "date": "2026-02-05",
+      "url": "https://www.texastribune.org/2026/02/05/texas-us-senate-republicans-2026-primary-q-and-a-voter-guide-cornyn-hunt-paxton/",
+      "notes": "Paxton REFUSED to participate in this structured Q&A despite repeated outreach. Tribune filled responses from public record. Key findings: (1) On H-1B: appeared on conservative podcast, did not directly answer whether to end H-1B, said 'I want legal immigration.' (2) On ACA tax credits: Tribune could find NO public statement from Paxton. (3) On AI: Tribune could find NO public statements on AI preemption.",
+      "keyExchanges": [
+        {
+          "topic": "H-1B visa / immigration",
+          "quote": "I want legal immigration",
+          "notes": "Appeared on Benny Johnson podcast Nov 2025. Touted his record suing Biden admin over immigration but did not directly address ending H-1B program. His AG office separately launched H-1B fraud investigation Jan 2026."
+        },
+        {
+          "topic": "ACA / healthcare",
+          "notes": "No direct 2026 statement found by Tribune. AG record demonstrates consistent opposition to ACA (Texas v. United States lawsuit, multiple ACA-adjacent lawsuits)."
+        }
+      ]
+    },
+    {
+      "outlet": "Benny Johnson (conservative influencer) podcast",
+      "date": "2025-11",
+      "notes": "One of few documented 2026 campaign-cycle interviews. Said 'I want legal immigration' when asked about H-1B. Consistent with America First immigration framing."
+    }
+  ],
+  "campaignContext": {
+    "polling": "36-38% in GOP primary polls (leading) as of Feb 2026. Cornyn 31%, Hunt 17%. Source: University of Houston Hobby School poll.",
+    "fundraising": "$5.9 million raised as of Feb 11, 2026.",
+    "strategy": "Running as anti-establishment MAGA alternative to incumbent Cornyn, who he characterizes as part of the 'Swamp.' Not participating in debates. Has hired top Trump-aligned consultants.",
+    "primaryDate": "March 3, 2026",
+    "sourceUrl": "https://www.texastribune.org/2026/02/09/texas-senate-race-poll-paxton-crockett-talarico-cornyn-2026-primary/"
+  },
+  "positionConflicts": [
+    {
+      "topic": "criminal justice / sentencing",
+      "conflict": "Paxton's overall record is punitive (election fraud prosecutions, opioid prosecutions, anti-marijuana decriminalization), yet he co-led a bipartisan coalition of 38 AGs supporting the First Step Act (2018), which represented genuine criminal justice reform. Texas under his tenure also benefited from prison closures begun under prior administrations. Net signal: enforcement-first, but not opposed to evidence-based reform when framed as reducing recidivism and saving money.",
+      "sources": [
+        "texasattorneygeneral.gov First Step Act coalition letter",
+        "Texas Observer reporting on prosecution record"
+      ]
+    },
+    {
+      "topic": "school choice vs. religious establishment",
+      "conflict": "Paxton's school choice legal opinions explicitly cleared the path for public funds to flow to religious schools by ruling Blaine Amendments unconstitutional. This is a strong school choice position with an explicitly religious motivation — relevant to voters who support school choice for secular reasons.",
+      "sources": ["texasattorneygeneral.gov ESA legal opinion 2026"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "justice_firearms (NRA A-grade, NAGR endorsement, multiple litigation actions blocking ATF — extreme Pole B)",
+      "climate_ambition (15 environmental lawsuits, climate skepticism on record, fossil fuel industry defense — extreme Pole B)",
+      "climate_energy_portfolio (defended ExxonMobil, opposed all EPA fossil fuel regulations — extreme Pole B)",
+      "health_coverage_model (led ACA repeal lawsuit, explicitly sought to repeal without replacement — extreme Pole B)",
+      "health_public_health (opposed abortion pill access, opposed gender-affirming care mandates, anti-vaccine mandate posture — extreme Pole B)",
+      "econ_school_choice (issued pro-ESA opinion, vowed to defend TX school choice law, included religious schools — strong Pole B)",
+      "econ_tax_structure (100% fiscal conservative rating, anti-property tax increases, campaign anti-spending platform — strong Pole B)",
+      "econ_investment (sued federal spending package, anti-industrial policy, anti-green investment — strong Pole B)",
+      "justice_policing_accountability (sued city for underfunding police, explicit 'fully fund' police rhetoric — strong Pole B)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning (no evidence found — not addressed in campaign or AG record)",
+      "housing_affordability_tools (no evidence found)",
+      "housing_transport_priority (no evidence found — omit)",
+      "econ_safetynet (inferred from overall fiscal conservative profile and anti-ACA record, but no direct statement on Social Security, Medicaid cuts)",
+      "justice_sentencing_goals (mixed — punitive enforcement record but bipartisan First Step Act support; medium confidence)"
+    ],
+    "overallConfidence": "high for climate, guns, healthcare, immigration, fiscal axes. Medium for justice/policing. Low/omit for housing.",
+    "notes": "Paxton's 10-year AG record provides exceptional documentary evidence — his official lawsuits function as Tier 1 evidence of policy commitments on climate, healthcare, immigration, guns, and public health. The AG role does not address housing or transportation. His state legislative record (2003–2015) adds corroborating scorecard data for economic axes. Key gap: no direct statements on Social Security, Medicare cuts, or debt ceiling as of research date. Key nuance: First Step Act support shows he is not purely maximalist on sentencing — he supports evidence-based reform when it's law-and-order framed."
+  },
+  "sources": [
+    { "name": "kenpaxton.com campaign website", "url": "https://www.kenpaxton.com/" },
+    { "name": "kenpaxton.com issues page", "url": "https://www.kenpaxton.com/issues" },
+    { "name": "Texas Tribune Q&A voter guide 2026", "url": "https://www.texastribune.org/2026/02/05/texas-us-senate-republicans-2026-primary-q-and-a-voter-guide-cornyn-hunt-paxton/" },
+    { "name": "CNN profile Feb 2026", "url": "https://www.cnn.com/2026/02/21/politics/ken-paxton-texas-senate-republican-primary" },
+    { "name": "Texas Tribune scandals timeline", "url": "https://www.texastribune.org/2023/05/24/ken-paxton-attorney-general-investigations-lawsuits/" },
+    { "name": "NRA endorsement 2022", "url": "https://www.nrapvf.org/articles/20220209/nra-endorses-texas-attorney-general-ken-paxton" },
+    { "name": "National Association for Gun Rights PAC endorsement 2026", "url": "https://gunrights.org/national-association-for-gun-rights-pac-endorses-ken-paxton/" },
+    { "name": "AmmoLand — Paxton as 2A champion vs Cornyn", "url": "https://www.ammoland.com/2025/08/ken-paxton-emerges-as-grassroots-2a-champion-against-john-cornyn/" },
+    { "name": "Texas Observer — Gun regulation quote", "url": "https://www.texasobserver.org/ken-paxton-the-more-we-talk-about-gun-regulation-the-more-people-are-gonna-die/" },
+    { "name": "NRA-ILA — Paxton sues Dallas over State Fair gun ban", "url": "https://www.nraila.org/articles/20240830/attorney-general-ken-paxton-sues-the-city-of-dallas-for-unlawfully-prohibiting-firearms-from-the-texas-state-fair" },
+    { "name": "Sierra Club TX — Paxton fights climate measures", "url": "https://www.sierraclub.org/texas/blog/2024/03/texas-ag-paxton-fights-against-measures-would-reduce-deaths-and-climate-extremes" },
+    { "name": "Sierra Club TX — Paxton environmental champion (2019 critique)", "url": "https://www.sierraclub.org/texas/blog/2019/09/ken-paxton-environmental-champion" },
+    { "name": "Union of Concerned Scientists — Paxton fossil fuel defense", "url": "https://blog.ucs.org/elliott-negin/these-attorneys-general-are-defending-the-fossil-fuel-industry-not-their-states/" },
+    { "name": "AG press release — Paxton pushes back on Biden EPA oil/gas rules", "url": "https://texasattorneygeneral.gov/news/releases/ag-paxton-pushes-back-against-biden-epas-war-against-texas-oil-gas" },
+    { "name": "AG press release — 20-state ACA repeal lawsuit", "url": "https://www.texasattorneygeneral.gov/news/releases/ag-paxton-and-wisconsin-ag-file-20-state-lawsuit-end-grip-obamacare-texas-and-nation" },
+    { "name": "AG press release — Applauds ACA ruling", "url": "https://www.texasattorneygeneral.gov/news/releases/ag-paxton-applauds-court-ruling-declaring-obamacare-unconstitutional" },
+    { "name": "Washington Post — Paxton sues TX pediatrician over gender-affirming care", "url": "https://www.washingtonpost.com/nation/2024/10/18/texas-transgender-healthcare-ken-paxton/" },
+    { "name": "KERA — Paxton sues Children's Health/Dr. Jarin Feb 2026", "url": "https://www.keranews.org/news/2026-02-18/gender-affirming-care-in-texas-ken-paxton-lawsuit-childrens-health-jason-jarin" },
+    { "name": "Texas Politics — Paxton sues Aid Access Feb 2026", "url": "https://texaspolitics.com/2026/02/26/ken-paxton-sues-aid-access-over-abortion-drugs-shipped-to-texas/" },
+    { "name": "AG press release — First immigration enforcement agreement with Trump", "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-becomes-first-texas-law-enforcement-official-sign-agreement-help-0" },
+    { "name": "AG press release — First Step Act bipartisan coalition", "url": "https://texasattorneygeneral.gov/news/releases/ag-paxton-co-leads-bipartisan-coalition-38-attorneys-general-expressing-support-congressional-action" },
+    { "name": "AG press release — Sues Dallas over police funding", "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-city-dallas-officials-insufficiently-funding-dallas-police" },
+    { "name": "Texas Tribune — Dallas police spending AG lawsuit Feb 2026", "url": "https://www.texastribune.org/2026/02/13/dallas-police-spending-attorney-general-lawsuit/" },
+    { "name": "AG press release — School choice legal opinion", "url": "https://texasattorneygeneral.gov/news/releases/paxton-says-school-choice-legal-texas" },
+    { "name": "AG press release — ESA defense vow", "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-celebrates-school-choice-texans-and-vows-defend-new-law" },
+    { "name": "Texas Tribune — Property tax investigation 2025", "url": "https://www.texastribune.org/2025/12/09/attorney-general-ken-paxton-cities-property-tax-investigation/" },
+    { "name": "Texas Tribune — Paxton sues Biden spending package 2023", "url": "https://www.texastribune.org/2023/02/15/texas-ken-paxton-sues-joe-biden-spending-bill/" },
+    { "name": "YCT legislative ratings — Ken Paxton", "url": "https://ratings.yct.org/legislators/ken-paxton/82nd-legislature" },
+    { "name": "Roll Call — Trump withholds TX Senate endorsement", "url": "https://rollcall.com/2026/02/23/texas-senate-republican-primary-trump-cornyn/" },
+    { "name": "Texas Tribune — Polling Feb 2026", "url": "https://www.texastribune.org/2026/02/09/texas-senate-race-poll-paxton-crockett-talarico-cornyn-2026-primary/" },
+    { "name": "Ballotpedia — Ken Paxton", "url": "https://ballotpedia.org/Ken_Paxton" },
+    { "name": "Wikipedia — Ken Paxton", "url": "https://en.wikipedia.org/wiki/Ken_Paxton" }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "slug": "mayra-flores",
+  "name": "Mayra Flores",
+  "party": "Republican",
+  "office": "U.S. House, Texas 34th Congressional District, 2026",
+  "contest": "TX-34 Republican Primary, March 3, 2026",
+  "incumbencyStatus": "former officeholder (challenger)",
+  "researchedAt": "2026-02-27T00:00:00Z",
+  "biography": {
+    "currentRole": "Private citizen; former U.S. Representative, TX-34 (June 2022 – January 2023, 117th Congress)",
+    "priorRoles": [
+      "U.S. Representative TX-34, 117th Congress (June 21, 2022 – Jan 3, 2023) — won June 2022 special election, lost November 2022 general to Vicente Gonzalez",
+      "Republican candidate TX-34, 2024 — lost to Vicente Gonzalez 49-51%",
+      "Respiratory care practitioner"
+    ],
+    "education": "Not publicly documented in available sources",
+    "background": "Born in Burgos, Tamaulipas, Mexico; family moved to United States when she was six; naturalized U.S. citizen at age 14. First Mexican-born woman elected to U.S. House. Worked in cotton fields. Respiratory care practitioner by profession. Served on House Homeland Security and Agriculture Committees during her brief 2022 term. Three-time candidate for TX-34 (2022 special, 2022 general, 2024); switching back to TX-34 from TX-28 (where she had been running) after Texas Legislature redistricted in August 2025.",
+    "fundraising": "$1.37M raised for 2026 cycle (as of filing date)"
+  },
+  "campaignWebsite": {
+    "url": "https://www.mayrafloresforcongress.com/",
+    "platformPage": "https://www.mayrafloresforcongress.com/real-solutions",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "platformTitle": "Real Solutions",
+    "statedPositions": [
+      {
+        "topic": "immigration / border security",
+        "quote": "Secure our border to keep bad individuals out and to encourage LEGAL immigration. Illegal immigration encourages and funds human/child trafficking.",
+        "sourceUrl": "https://www.mayrafloresforcongress.com/real-solutions",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Strong enforcement framing; she invokes her own legal immigration background as contrast. Consistent with her 2022 legislative priority (first bill was border security)."
+      },
+      {
+        "topic": "economy / taxes / regulation",
+        "quote": "Job creators should feel empowered, not hindered by burdensome taxes and regulations. Through smart, pro-growth policies, create an environment where small businesses can create jobs.",
+        "sourceUrl": "https://www.mayrafloresforcongress.com/real-solutions",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Anti-regulation, pro-growth framing. No specific tax rate positions stated."
+      },
+      {
+        "topic": "energy",
+        "quote": "American energy is the backbone of a strong, resilient economy. Fight for every source of reliable energy in Congress.",
+        "sourceUrl": "https://www.mayrafloresforcongress.com/real-solutions",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "All-of-the-above framing; she also stated in 2022 she 'was proud to support legislation in Congress that empowered energy producers and stopped overburdensome regulations.' No mention of climate change or clean energy transition."
+      },
+      {
+        "topic": "education / parental rights / school choice",
+        "quote": "Parents should always have the right to know what their children are being taught at school... families should have the freedom to choose the education that fits their children best.",
+        "sourceUrl": "https://www.mayrafloresforcongress.com/real-solutions",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Explicit school choice framing; also supported the Republican-led Parents Bill of Rights. Instagram posts show explicit school choice advocacy: 'School choice is about empowering parents.'"
+      },
+      {
+        "topic": "healthcare / social security / Medicare",
+        "quote": "I will always protect Social Security and Medicare, never putting the future of our older Americans in jeopardy. In Congress, I will continue working towards lower prices for care and prescriptions.",
+        "sourceUrl": "https://ivoterguide.com/candidate/58023/race/6592/election/943",
+        "date": "2022 (questionnaire — most recent available)",
+        "confidence": "medium",
+        "notes": "Protects Medicare/Medicaid as programs but indicated 'no other taxpayer-funded programs are necessary.' Voted NO on Inflation Reduction Act (which included ACA subsidy extension and Medicare drug negotiation provisions). Consistent with a market-oriented but not full-abolition healthcare position."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Unapologetically pro-life. Overturning Roe v. Wade was a dream come true for me.",
+        "sourceUrl": "https://ballotpedia.org/Mayra_Flores",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Endorsed by Texas Right to Life with explicit 'abortion ban without exception' framing. SBA Pro-Life America endorsed her. Co-sponsored Protecting Pain-Capable Unborn Children from Late-Term Abortions Act (fall 2022). 0% score from Reproductive Freedom for All (2022). No recorded softening of position."
+      },
+      {
+        "topic": "religious liberty",
+        "quote": "She believes religious liberty is at risk in the United States and deserves the highest level of protection in the law.",
+        "sourceUrl": "https://ivoterguide.com/candidate/58023/race/6592/election/943",
+        "date": "2022",
+        "confidence": "medium",
+        "notes": "Core stated value. Voted against the Respect for Marriage Act and Contraception Access bill."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "notes": "Brief tenure — June 21, 2022 to January 3, 2023 (117th Congress). Missed 0 of 272 roll call votes (0.0% absence rate — better than median 2.0%).",
+    "sources": [
+      "GovTrack: https://www.govtrack.us/congress/members/mayra_flores/456867",
+      "Congress.gov: https://www.congress.gov/member/mayra-flores/F000473",
+      "flores.house.gov/voterecord/ (archived)"
+    ],
+    "keyVotes": [
+      {
+        "bill": "Bipartisan Safer Communities Act (2022)",
+        "vote": "No",
+        "topic": "firearms",
+        "sourceUrl": "https://www.govtrack.us/congress/members/mayra_flores/456867",
+        "notes": "First major federal gun safety legislation in decades. Flores stated the bill 'did not provide enough money for school safety and the process was too rushed.' Consistent with NRA-endorsed position."
+      },
+      {
+        "bill": "Inflation Reduction Act (2022)",
+        "vote": "No",
+        "topic": "climate / healthcare / taxes",
+        "sourceUrl": "https://justfacts.votesmart.org/bill/31958/87785/200995/mayra-flores-voted-nay-concurrence-vote-hr-5376-inflation-reduction-act-of-2022",
+        "notes": "Voted Nay. Flores stated it would 'worsen inflation, increase IRS audits, and result in more expensive healthcare.' Bill included Medicare drug price negotiation, clean energy incentives, ACA subsidy extension."
+      },
+      {
+        "bill": "Respect for Marriage Act (2022)",
+        "vote": "No",
+        "topic": "social / religious liberty",
+        "sourceUrl": "https://www.govtrack.us/congress/members/mayra_flores/456867",
+        "date": "2022-07-19",
+        "notes": "Voted against codifying same-sex marriage."
+      },
+      {
+        "bill": "Contraception Access bill (2022)",
+        "vote": "No",
+        "topic": "social / reproductive rights",
+        "sourceUrl": "https://ballotpedia.org/Mayra_Flores",
+        "notes": "Flores said the birth control bill 'creates a back door to abortion.'"
+      },
+      {
+        "bill": "Protecting Pain-Capable Unborn Children from Late-Term Abortions Act (co-sponsorship, 2022)",
+        "vote": "Co-sponsored",
+        "topic": "abortion",
+        "sourceUrl": "https://reproductivefreedomforall.org/lawmaker/mayra-flores/",
+        "notes": "National abortion ban at 20 weeks. Consistent with 'abortion ban without exception' framing from Texas Right to Life."
+      }
+    ],
+    "billsIntroduced": [
+      {
+        "bill": "H.R. 9050 — Enhancing DHS Drug Seizures Act",
+        "topic": "border / law enforcement",
+        "notes": "Did not pass."
+      },
+      {
+        "bill": "H.R. 9001 — RGV Act of 2022 (referenced in some sources as border-related)",
+        "topic": "border security",
+        "notes": "First bill introduced; did not pass."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "Heritage Action for America",
+      "score": "92%",
+      "grade": null,
+      "cycle": "117th Congress (2022)",
+      "url": "https://heritageaction.com/scorecard/members/F000473/117",
+      "notes": "Very high conservative alignment score. Heritage Action tracks votes on fiscal conservatism, limited government, free markets, and traditional values."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "0% (2022 annual)",
+      "grade": null,
+      "cycle": "2022",
+      "url": "https://www.lcv.org/moc/mayra-flores/",
+      "notes": "Voted against all tracked environmental bills including Inflation Reduction Act (clean energy provisions). Lifetime score same as annual given single-year tenure."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "score": "100% (inferred from endorsement and vote record)",
+      "grade": null,
+      "cycle": "2022",
+      "url": "https://sbaprolife.org/representative/mayra-flores",
+      "notes": "Explicitly endorsed by SBA Pro-Life America as 'unapologetically pro-life.' Co-sponsored pain-capable abortion ban. Opposed all pro-abortion-access legislation."
+    },
+    {
+      "organization": "Reproductive Freedom for All",
+      "score": "0%",
+      "grade": null,
+      "cycle": "2022",
+      "url": "https://reproductivefreedomforall.org/lawmaker/mayra-flores/",
+      "notes": "Voted against all tracked reproductive rights measures. Spoke against Ensuring Women's Right to Reproductive Freedom Act. Spoke at press conference celebrating Dobbs ruling."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "Low (specific number not retrieved — page exists at aflcio.org/scorecard/legislators/mayra-flores)",
+      "grade": null,
+      "cycle": "2022",
+      "url": "https://aflcio.org/scorecard/legislators/mayra-flores",
+      "notes": "As a Heritage Action 92% conservative, her AFL-CIO score is almost certainly very low (under 20%). Consistent with anti-regulation, pro-business campaign platform. Exact number not confirmed in search results."
+    },
+    {
+      "organization": "NRA-PVF",
+      "score": "Endorsed (2026 primary); no grade letter confirmed in search results",
+      "grade": null,
+      "cycle": "2025–2026",
+      "url": "https://www.nrapvf.org/grades/texas/",
+      "notes": "Received NRA-PVF endorsement per multiple sources (Texas Politics, Ballotpedia). Voted No on Bipartisan Safer Communities Act. All signals strongly indicate A or A+ grade. Confirmed endorsement in 2026 primary per initial search results."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "NRA Political Victory Fund",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics / Ballotpedia sources on 2025 campaign launch coverage."
+    },
+    {
+      "organization": "SBA Pro-Life America Candidate Fund",
+      "type": "endorsement",
+      "cycle": "2022 and 2026",
+      "notes": "Endorsed in 2022 special election and again in 2026 cycle."
+    },
+    {
+      "organization": "Texas Right to Life",
+      "type": "endorsement",
+      "cycle": "2022 (and likely 2026 — see 2026 endorsements page)",
+      "notes": "Endorsed Flores with explicit 'abortion ban without exception' language per DCCC press release."
+    },
+    {
+      "organization": "Texas Alliance for Life",
+      "type": "endorsement",
+      "cycle": "2024",
+      "notes": "Endorsed Flores in 2024 election cycle for TX-34."
+    },
+    {
+      "organization": "FreedomWorks for America",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics 2025 announcement coverage."
+    },
+    {
+      "organization": "Texas Home School Coalition (THSC)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics 2025 announcement coverage. Aligns with parental rights / school choice platform."
+    },
+    {
+      "organization": "Gov. Greg Abbott (Texas)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics 2025 announcement. Note: search results slightly ambiguous — Abbott's formal 2026 endorsement list not fully verified but widely reported as supporting Flores."
+    },
+    {
+      "organization": "Sen. Ted Cruz",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics 2025 announcement coverage."
+    },
+    {
+      "organization": "Rep. Elise Stefanik",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics 2025 announcement coverage."
+    },
+    {
+      "organization": "Republican Party of Texas (Chairman Matt Rinaldi)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Confirmed per Texas Politics 2025 announcement coverage."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "NOT endorsed — opponent endorsed",
+      "cycle": "2026",
+      "notes": "CRITICAL: Trump endorsed Eric Flores (rival) in December 2025. This is a significant disadvantage in the primary — Trump's endorsement went to her opponent, a former federal prosecutor. Multiple sources confirm this."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune (profile)",
+      "date": "2022-07-27",
+      "url": "https://www.texastribune.org/2022/07/27/mayra-flores-congress-texas/",
+      "keyExchanges": [
+        {
+          "topic": "ideological positioning",
+          "quote": "Leaning into political fights and eschewing the ideological center.",
+          "notes": "Tribune characterized her as an 'outspoken conservative' who quickly carved out a non-centrist profile despite representing a battleground district."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune (primary race coverage)",
+      "date": "2026-02-26",
+      "url": "https://www.texastribune.org/2026/02/26/south-texas-34th-congressional-district-eric-mayra-flores-vicente-gonzalez/",
+      "keyExchanges": [
+        {
+          "topic": "electability vs. ideology",
+          "notes": "Coverage framed primary as Flores vs. Eric Flores (Trump-backed rival) on who can beat Democrat Vicente Gonzalez. Mayra Flores positioned as more conservative, less establishment."
+        }
+      ]
+    },
+    {
+      "outlet": "Fox News",
+      "date": "2022",
+      "url": "https://www.foxnews.com/politics/support-biden-border-region-crumbling-crisis-benefits-illegals-over-americans-texas-mayra-flores",
+      "keyExchanges": [
+        {
+          "topic": "immigration",
+          "quote": "Support for Biden in border region crumbling as crisis benefits illegals over Americans.",
+          "notes": "Framed immigration crisis as administration policy failures benefiting undocumented immigrants at expense of legal immigrants and citizens."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Insider / official House press release",
+      "date": "2022",
+      "url": "https://flores.house.gov/news/documentsingle.aspx?DocumentID=75",
+      "keyExchanges": [
+        {
+          "topic": "Inflation Reduction Act / healthcare / climate",
+          "quote": "Higher prices and more IRS audits is not an 'Inflation Reduction Act.' Anyone who thinks it's a good idea to inject $745 billion dollars into an economy already suffering from record high inflation should think again.",
+          "notes": "Explicit rejection of IRA's climate and healthcare provisions. Framed as economic populism (IRS audit expansion targeting ordinary people)."
+        }
+      ]
+    },
+    {
+      "outlet": "Crossroads Today / debate coverage",
+      "date": "2024",
+      "url": "https://www.crossroadstoday.com/news/at-debate-mayra-flores-shrugs-off-concern-about-mandating-south-texans-carry-passports/",
+      "keyExchanges": [
+        {
+          "topic": "immigration / citizenship ID requirements",
+          "notes": "At debate with Vicente Gonzalez, Flores 'shrugged off' concern about mandating citizens carry passports, suggesting she'd support citizenship verification requirements that could burden border-region residents."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "healthcare",
+      "conflict": "States she will 'always protect Medicare and Medicaid' but voted No on Inflation Reduction Act (which included Medicare drug price negotiation — a cost-reduction measure that benefitted Medicare beneficiaries). Also opposed ACA subsidy extension embedded in IRA.",
+      "sources": ["campaign website stated position", "VoteSmart IRA vote record"]
+    },
+    {
+      "topic": "Trump alignment",
+      "conflict": "Positions herself as a Trump ally and MAGA Republican, but Trump endorsed her primary opponent (Eric Flores) in December 2025. She continues to campaign on her Trump-aligned record.",
+      "sources": ["Texas Tribune 2026-02-26", "Texas Politics 2025-08-27"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "justice_firearms (NO on Bipartisan Safer Communities + NRA endorsement = clear Pole B)",
+      "health_coverage_model (NO on IRA/ACA subsidies + 'Medicaid/Medicare only, no other programs' = market-oriented)",
+      "climate_ambition (0% LCV, NO on IRA clean energy, 'every source of energy' all-of-above framing = toward Pole B)",
+      "climate_energy_portfolio (explicit 'energy producers' support, NO on IRA = fossil-fuel-friendly)",
+      "econ_school_choice (explicit school choice advocacy, THSC endorsement = Pole B)",
+      "health_public_health (implied — Heritage Action 92%, iVoterGuide signals individual liberty framing)",
+      "econ_safetynet (Heritage Action 92% + 'no taxpayer-funded programs beyond Medicare/Medicaid' = Pole B)",
+      "econ_tax_structure (anti-regulation, anti-tax, pro-growth = Pole B)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning (no evidence found)",
+      "housing_affordability_tools (no evidence found)",
+      "housing_transport_priority (no evidence found)",
+      "justice_policing_accountability (no specific statements found — inferred from pro-law-enforcement Republican profile, but not confirmed with direct votes or statements)",
+      "justice_sentencing_goals (no specific statements found)",
+      "health_cost_control (mixed: voted against IRA drug negotiation, but stated she supports 'lower prices for prescriptions' — ambiguous)",
+      "econ_investment (anti-regulation framing suggests Pole B, but no direct infrastructure/industrial policy votes found)"
+    ],
+    "overallConfidence": "HIGH for social issues, firearms, climate/energy, and broad economic orientation. LOW for housing, policing/sentencing, and granular healthcare cost mechanisms.",
+    "notes": "Flores had only ~6 months in Congress (June–December 2022). Short record means fewer key votes than a multi-term incumbent, but her votes are unambiguous on the ones that exist: conservative across all tracked issues. Heritage Action 92% and LCV 0% are strong structural anchors. Her 2026 platform continues the same ideological direction. Key contextual note for scorer: she is running without Trump's endorsement — his backing went to rival Eric Flores — which may indicate she is more ideologically extreme even within the primary field, or at minimum lacks establishment backing."
+  }
+}

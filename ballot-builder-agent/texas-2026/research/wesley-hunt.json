@@ -1,0 +1,562 @@
+{
+  "slug": "wesley-hunt",
+  "name": "Wesley Hunt",
+  "party": "Republican",
+  "office": "U.S. Senate, Texas, 2026",
+  "contest": "Texas U.S. Senate — Republican Primary, March 3, 2026",
+  "incumbencyStatus": "current U.S. House member (TX-38, 2023–present); challenger in Senate race",
+  "researchedAt": "2026-02-27T00:00:00Z",
+
+  "biography": {
+    "currentRole": "U.S. Representative, Texas 38th Congressional District (2023–present)",
+    "priorRoles": [
+      "U.S. Army Captain, Apache helicopter pilot (2004–2012); one deployment to Iraq (55 combat missions), two deployments to Saudi Arabia as diplomatic liaison officer",
+      "Private sector (2012–2022)",
+      "Candidate for TX-7 (2020 — lost general election to Lizzie Fletcher)"
+    ],
+    "education": "B.S. Leadership and Management with Mechanical Engineering, U.S. Military Academy at West Point (2004)",
+    "background": "Born and raised in Houston, TX. Attended St. John's School (private). Baptist, attends Champion Forest Baptist Church. Commissioned Army 2004. West Point graduate and combat veteran. Self-styled 'Energy Congressman of the World.' Vice Chairman, House Natural Resources Subcommittee on Energy and Mineral Resources (118th Congress). Also served on House Judiciary and Small Business Committees. Announced Senate candidacy October 2025, joining incumbent Cornyn and AG Paxton in primary.",
+    "campaignTheme": "Frames himself as the most Trump-aligned, next-generation MAGA figure. Core pillars: border security, energy dominance, uncompromising 2A stance, fiscal conservatism via DOGE. Attack vector against Cornyn centers on BSCA gun bill and immigration compromises.",
+    "pollStanding": "~26% in latest polling (3rd behind Paxton ~38%, Cornyn ~31% as of Feb 2026); runoff likely if no candidate exceeds 50%",
+    "fundraising": "$2.0M raised as of February 2026 (vs. Cornyn $11.2M, Paxton $5.9M). Third-highest House recipient of oil and gas money in cycle ($415,445 per E&E News). Allied super PAC 'Standing for Texas' spent ~$4.1M on his behalf."
+  },
+
+  "campaignWebsite": {
+    "url": "https://wesleyfortexas.com/",
+    "issuesPageUrl": "https://wesleyfortexas.com/wesley-on-the-issues/",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "Direct page fetch unavailable; content reconstructed from search result snippets, VoteSmart Political Courage Test responses, and multiple interview quotes referencing the page.",
+    "statedPositions": [
+      {
+        "topic": "border / immigration",
+        "quote": "fighting alongside President Trump to deploy our military to the border, label Mexican Drug Cartels as Terrorists, and support Tom Homan in his efforts to deport Biden's illegal immigrants. In favor of construction of a wall and other necessary infrastructure on the border.",
+        "sourceUrl": "https://wesleyfortexas.com/",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Consistent across homepage, issues page, multiple interviews, and introduced legislation (TPS Reform Act, Guaranteeing States Protection Against Invasion Act). Corroborated by Tier 1 vote: YES on HR2 Secure the Border Act 2023."
+      },
+      {
+        "topic": "energy / climate",
+        "quote": "As the Energy Congressman of the World, I fully understand the importance of Oil and Gas in America's future. Our leaders should be focused on energy addition, not energy transition. The United States produces the cleanest and safest oil and gas found anywhere in the world and we should be drilling more of it, not less.",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/political-courage-test/188147/wesley-hunt",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "VoteSmart Political Courage Test response. Repeated verbatim in Hart Energy interview (2022) and campaign stops (2026). Corroborated by LCV 0% lifetime."
+      },
+      {
+        "topic": "firearms",
+        "quote": "No compromise. Absolutely zero compromise. I will not compromise our Second Amendment rights. My first act as senator would be to repeal the Bipartisan Safer Communities Act.",
+        "sourceUrl": "https://wesleyfortexas.com/ and Dallas Express interview",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Introduced H.R.6035 Second Amendment Restoration Act (Nov 2025) to repeal red flag incentives and NICS funding from BSCA. Centerpiece attack on Cornyn."
+      },
+      {
+        "topic": "abortion",
+        "quote": "I am Pro Life and believe each life is a precious gift in the image of God. As your Congressman, I will protect the rights of the unborn. Life begins at conception. Fight to protect the sanctity of life. Stop late-term and taxpayer funded abortion, with exceptions when the life of the mother is at risk or in the cases of rape and incest.",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/political-courage-test/188147/wesley-hunt",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "VoteSmart Political Courage Test. Consistent with voting record: cosponsor Born-Alive Act, 0% Reproductive Freedom for All, 100% NRLC, SBA Pro-Life endorsement."
+      },
+      {
+        "topic": "healthcare",
+        "quote": "Introducing free market reforms into the healthcare system to increase competition to drive the cost of care down, with policy purchase across state lines, increasing transparency in the system and greater flexibility in coverage plans.",
+        "sourceUrl": "https://wesleyfortexas.com/wesley-on-the-issues/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Campaign language is softer than OnTheIssues characterization ('taxpayer-funded health care should be abolished in all forms, and Medicaid and Medicare should be de-funded'). Voting record supports harder position: voted to block ACA subsidies, voted to block health care price control measures (DSCC). Scored on voting record over campaign language."
+      },
+      {
+        "topic": "fiscal / spending / DOGE",
+        "quote": "Supported DOGE from day one and voted to codify the wasteful spending that DOGE uncovered. Fighting alongside President Trump to codify DOGE cuts, secure our border, and fight for economic prosperity for all Texans.",
+        "sourceUrl": "https://wesleyfortexas.com/",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Voted AGAINST Fiscal Responsibility Act of 2023 as insufficiently conservative on spending. Supports Balanced Budget Amendment. Heritage Action 96%. Signals harder-line fiscal conservatism than GOP establishment."
+      },
+      {
+        "topic": "policing",
+        "quote": "Our men and women in blue risk their lives every day to keep our communities safe. I will stand with them against the radical liberals in the Senate seeking to defund them.",
+        "sourceUrl": "https://wesleyfortexas.com/",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Campaign language only. Separately co-led bipartisan Safer Supervision Act (criminal justice reform bill with rehabilitation focus) — see positionConflicts."
+      },
+      {
+        "topic": "education / school choice",
+        "quote": "supports parental and school choice",
+        "sourceUrl": "https://www.isidewith.com/candidates/wesley-hunt",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Paraphrase from aggregator site; no specific bill cited. Consistent with CPAC 97% and opposition to CRT in schools."
+      },
+      {
+        "topic": "public health mandates",
+        "quote": "Opposes COVID-19 vaccine mandates for healthcare workers; opposes mandatory COVID vaccinations generally.",
+        "sourceUrl": "https://wesleyfortexas.com/ (Woke Mind Virus framing)",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Co-sponsored Freedom for Health Care Workers Act (HR 497) to eliminate HHS vaccine mandate on Medicare/Medicaid facilities. Campaign specifically lists 'mandatory COVID vaccinations' as part of 'Woke Mind Virus' problem."
+      },
+      {
+        "topic": "energy — LNG and permitting",
+        "quote": "Weaning the world off of coal and unleashing US LNG will do more to reduce our carbon footprint than any solar or wind project could accomplish.",
+        "sourceUrl": "https://www.hartenergy.com/exclusives/energy-policy-watch-wesley-hunts-bid-energy-district-world-198337/",
+        "date": "2022",
+        "confidence": "high",
+        "notes": "Consistent framing used through 2026. Introduced Protect LNG Act 2025, pushed FERC on Rio Grande LNG permits."
+      }
+    ]
+  },
+
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "Congress.gov", "VoteSmart Key Votes", "hunt.house.gov press releases", "DSCC vote alerts", "Wikipedia"],
+    "attendanceRate": "79.2% overall (missed 350 of 1,681 roll call votes, Jan 2023–Feb 2026; GovTrack median for serving members is 98.0%). From Dec 18, 2025–Feb 25, 2026: missed 69 of 89 votes (78%) due to Senate campaign travel. Drew significant scrutiny from Cornyn camp.",
+    "ideologicalPosition": "Hard-right Republican. CPAC lifetime 97%; Heritage Action 118th Congress 96%; LCV lifetime 0%; AFL-CIO 6-10%.",
+    "keyVotes": [
+      {
+        "bill": "H.R. 2 — Secure the Border Act of 2023",
+        "vote": "Yes",
+        "topic": "immigration",
+        "sourceUrl": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-hunt-votes-favor-hr-2-secure-border-act-2023",
+        "date": "2023",
+        "notes": "Requires 900 miles of border wall, mandatory detention for expedited removal subjects, expands ICE capacity, reopens closed ICE detention facilities. Strongly restrictionist enforcement measure."
+      },
+      {
+        "bill": "H.R. 2494 — POLICE Act of 2023 (Protect Our Law Enforcement with Immigration Control and Enforcement)",
+        "vote": "Yes",
+        "topic": "immigration / policing",
+        "sourceUrl": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-wesley-hunt-votes-favor-hr-2494-protect-our-law",
+        "date": "2023",
+        "notes": "Expanded ICE authority and resources."
+      },
+      {
+        "bill": "H.Con.Res. 21 — Direct Biden to remove U.S. troops from Syria",
+        "vote": "Yes",
+        "topic": "foreign policy",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Wesley_Hunt",
+        "date": "2023",
+        "notes": "Among 47 Republicans voting for this measure. Non-interventionist lean on this specific vote; consistent with broader America First foreign policy framing."
+      },
+      {
+        "bill": "Fiscal Responsibility Act of 2023 (bipartisan debt ceiling deal)",
+        "vote": "No",
+        "topic": "fiscal / spending",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Wesley_Hunt",
+        "date": "2023",
+        "notes": "Among 71 House Republicans opposing — considered deal insufficiently conservative on spending cuts. Signals harder fiscal line than GOP leadership."
+      },
+      {
+        "bill": "H.R. 26 — Born-Alive Abortion Survivors Protection Act (118th Congress)",
+        "vote": "Cosponsor",
+        "topic": "abortion",
+        "sourceUrl": "https://www.congress.gov/bill/118th-congress/house-bill/26/cosponsors",
+        "date": "2023",
+        "notes": "Requires medical care for infants born alive after abortion attempt. Strong pro-life signal beyond standard abortion restrictions."
+      },
+      {
+        "bill": "ACA health insurance subsidy extension (January 2026)",
+        "vote": "Absent",
+        "topic": "healthcare",
+        "sourceUrl": "https://www.dscc.org/article/vote-alert-wesley-hunt-refuses-to-extend-affordable-care-act-tax-credits-pushing-higher-costs-on-texans/",
+        "date": "2026-01-09",
+        "notes": "Absent when House passed 3-year ACA subsidy extension with 17 Republicans joining Democrats. DSCC characterized as 'refusal' to act. Context: Hunt was missing ~78% of votes during this period. Most TX Republicans voted No on the bill itself."
+      },
+      {
+        "bill": "Vote to block bipartisan effort to stop healthcare price spikes (118th Congress)",
+        "vote": "Yes (blocked measure)",
+        "topic": "healthcare / cost control",
+        "sourceUrl": "https://www.dscc.org/article/vote-alert-wesley-hunt-votes-to-block-bipartisan-effort-to-stop-health-care-price-spikes/",
+        "date": "2023-2024",
+        "notes": "Voted against price-control related healthcare measure. Source is partisan (DSCC) but documents a specific vote."
+      },
+      {
+        "bill": "H.R. 497 — Freedom for Health Care Workers Act",
+        "vote": "Cosponsor",
+        "topic": "public health mandates",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/key-votes/188147/wesley-hunt",
+        "date": "2023",
+        "notes": "Would eliminate HHS COVID-19 vaccine mandate on Medicare/Medicaid-certified healthcare facilities."
+      }
+    ],
+    "legislation_introduced": [
+      {
+        "bill": "H.R.6035 — Second Amendment Restoration Act (119th Congress, Nov 2025)",
+        "topic": "firearms",
+        "description": "Would repeal firearm-related provisions of the Bipartisan Safer Communities Act: eliminates federal incentives for states to enact red flag laws, cuts NICS background check expansion funding. Introduced as direct campaign contrast with Cornyn.",
+        "sourceUrl": "https://www.congress.gov/bill/119th-congress/house-bill/6035",
+        "endorsers": ["Gun Owners of America"]
+      },
+      {
+        "bill": "Protect LNG Act of 2025",
+        "topic": "energy / permitting / deregulation",
+        "description": "Reduces legal uncertainty around LNG development by insulating LNG permits from NEPA and Natural Gas Act litigation; establishes 90-day statute of limitations for legal challenges; requires expedited judicial review of LNG-related lawsuits.",
+        "sourceUrl": "https://hunt.house.gov/media/press-releases/immediate-release-rep-wesley-hunt-introduces-protect-lng-act-2025"
+      },
+      {
+        "bill": "Guaranteeing the States Protection Against Invasion Act (2026)",
+        "topic": "immigration",
+        "description": "Codifies Trump's border invasion proclamation; authorizes president to declare invasion at southern border; bars immigration relief for those entering during declared invasion.",
+        "sourceUrl": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-wesley-hunt-introduces-guaranteeing-states"
+      },
+      {
+        "bill": "TPS Reform Act of 2026",
+        "topic": "immigration",
+        "description": "Eliminates Temporary Protected Status designations for certain countries; tightens statutory limits on TPS program.",
+        "sourceUrl": "https://hunt.house.gov/media/videos/tps-reform-act-2026"
+      },
+      {
+        "bill": "Safer Supervision Act (co-led with Rep. Jackson Lee and Sen. Coons; bipartisan)",
+        "topic": "criminal justice / sentencing",
+        "description": "Reforms federal supervised release: allows courts to grant early termination based on good conduct and restitution payment, reallocates supervision resources to highest-risk individuals, promotes rehabilitation and reintegration. Hunt quote: 'pro-rehabilitation legislation better allocates resources for reintegration into society, it helps to remove the permanent scarlet letter of incarceration, and it creates positive incentives that encourage true rehabilitation.' Backed by conservative (AFP, Club for Growth, CPAC, America First Policy Institute) and progressive (Drug Policy Alliance, Sentencing Project, ACLU) groups simultaneously.",
+        "sourceUrl": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-wesley-hunt-introduces-bipartisan-safer-supervision",
+        "notes": "IMPORTANT nuance for scoring justice_sentencing_goals axis: this bill is meaningfully toward rehabilitation end of spectrum, atypical for a 97% CPAC-rated member. However, it is sentencing administration reform, not decriminalization or mandatory minimum repeal."
+      },
+      {
+        "bill": "CORE Act (Comprehensive Offshore Resource Enhancement) — passed House Natural Resources Committee",
+        "topic": "energy / offshore drilling",
+        "description": "Expands offshore energy resource development. Passed favorably out of committee in 118th Congress.",
+        "sourceUrl": "https://hunt.house.gov/accomplishments-0"
+      }
+    ],
+    "legislativeSponsorship": {
+      "primaryTopics": ["Energy (24%)", "Crime and Law Enforcement (24%)", "Immigration (19%)", "Law (14%)", "Government Operations (10%)", "International Affairs (10%)"],
+      "source": "GovTrack bill sponsorship analysis",
+      "notes": "GovTrack did not produce a leadership/ideology score for Hunt due to insufficient bill sponsorships for reliable statistical comparison — his record is shorter (one full term) and attendance-reduced."
+    }
+  },
+
+  "scorecards": [
+    {
+      "organization": "CPAC / American Conservative Union",
+      "score": "97% lifetime; 95% annual (2024)",
+      "grade": null,
+      "url": "https://www.cpac.org/bio/h001095",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Near-perfect ACU/CPAC rating. Covers fiscal, tax, regulatory, environment, 2nd Amendment, election security, life, government integrity. Tier 1 signal for overall conservative positioning."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "96% (118th Congress, 2023–2025)",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/H001095/118",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "96% in 118th Congress. 119th Congress score listed as incomplete/pending on Heritage site — likely reduced due to high vote-absence rate in 2026, not ideological drift."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "0% annual (2024); 0% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/wesley-hunt/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect 0% — voted against every LCV-tracked environmental measure. Tier 1 signal. Mutually corroborating with his explicit 'energy addition not transition' platform and multiple fossil-fuel bills introduced."
+    },
+    {
+      "organization": "NRA Political Victory Fund",
+      "score": null,
+      "grade": "AQ",
+      "url": "https://www.nrapvf.org/grades/texas/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "'AQ' = A-grade based on questionnaire (no gun-specific floor votes to grade yet when first rated). With introduction of Second Amendment Restoration Act and explicit BSCA repeal pledge, full A grade strongly indicated."
+    },
+    {
+      "organization": "Gun Owners of America (GOA)",
+      "score": null,
+      "grade": "A (inferred — endorsed candidate and backs his Second Amendment Restoration Act)",
+      "url": "https://www.gunowners.org/grades/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "GOA endorsed Hunt for 2022 House race and formally backs his BSCA repeal legislation. GOA is more absolutist than NRA — their backing is a strong maximum-2A signal."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "6% (2024 annual); 10% (2023 annual)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/wesley-hunt",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Near-zero labor voting alignment across both years of 118th Congress. Tier 1 signal for anti-union / pro-management economic positioning."
+    },
+    {
+      "organization": "Reproductive Freedom for All (formerly NARAL Pro-Choice America)",
+      "score": "0% (2024)",
+      "grade": null,
+      "url": "https://reproductivefreedomforall.org/lawmaker/wesley-hunt/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Voted against every tracked reproductive freedom measure in 2024. Tier 1 signal for anti-abortion-rights position."
+    },
+    {
+      "organization": "National Right to Life Committee (NRLC)",
+      "score": "100%",
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/interest-group/252/rating/5939",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "100% NRLC rating per VoteSmart. Corroborates 0% Reproductive Freedom for All — two Tier 1 signals pointing same direction."
+    },
+    {
+      "organization": "SBA Pro-Life America (Susan B. Anthony List)",
+      "score": "High — 'voted consistently to defend the lives of the unborn'",
+      "grade": null,
+      "url": "https://sbaprolife.org/representative/wesley-hunt",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Exact percentage not confirmed in search snippets; qualitative description indicates 100% or near-100%. SBA endorsed Hunt for TX-07 (2020) and TX-38 (2022). Cosponsored Born-Alive Act."
+    },
+    {
+      "organization": "Turning Point Action",
+      "score": "59.52% (2026 live session score, 119th Congress)",
+      "grade": null,
+      "url": "https://www.tpaction.com/scorecard/legislators/wesleyhunt",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Significantly lower than 118th Congress scores solely due to 78% vote-absence rate during Senate campaign. Does not indicate ideological moderation — Turning Point Action is among the most conservative scorers."
+    },
+    {
+      "organization": "The New American / Freedom Index",
+      "score": "75% (119th Congress Session 1); 83% (118th Congress)",
+      "grade": null,
+      "url": "https://thenewamerican.com/freedom-index/legislator/h001095/votes/report-scorecard-119-1/pdf/scb/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "JBS-aligned constitutional/limited-government index. 83% in 118th Congress shows strong but not perfect fidelity; gap may reflect some executive power votes. 75% in early 119th again reflects absences."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": "https://www.uschamber.com/improving-government/elections/u-s-chamber-endorses-rep-wesley-hunt-for-texass-38th-congressional-district",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Chamber endorsed Hunt for re-election in 2024, calling him 'a champion in Congress on issues crucial to the economy of Texas and the nation.' Specific scorecard percentage not retrieved. Notable: Hunt voted AGAINST the debt ceiling deal (Fiscal Responsibility Act 2023) which Chamber supported — possible divergence on fiscal pragmatism vs. absolutism."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "Donald Trump",
+      "type": "no endorsement",
+      "cycle": "2026",
+      "notes": "Trump explicitly declined to endorse any of the three major TX Senate candidates (Cornyn, Hunt, Paxton) as of research date Feb 27, 2026. Hunt is 'first in nation to endorse Trump for 2024' by his own account but has not received reciprocal endorsement."
+    },
+    {
+      "organization": "U.S. Chamber of Commerce",
+      "type": "endorsement (2024 House re-election; not yet confirmed for 2026 Senate)",
+      "cycle": "2024",
+      "notes": "Strong pro-business endorsement. Potential divergence: Hunt opposes debt ceiling pragmatism."
+    },
+    {
+      "organization": "Gun Owners of America",
+      "type": "endorsement + legislative backing",
+      "cycle": "2022 (House) and 2026 (backed Second Amendment Restoration Act)",
+      "notes": "GOA is more hardline than NRA; their endorsement signals maximalist 2A positioning."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "type": "endorsement",
+      "cycle": "2020 and 2022 (House races)",
+      "notes": "Consistent endorser. No 2026 Senate endorsement yet confirmed."
+    },
+    {
+      "organization": "Standing for Texas (allied super PAC)",
+      "type": "allied outside spending",
+      "cycle": "2026",
+      "notes": "$4.1M in advertising spending on Hunt's behalf per AdImpact. Not an endorsement but aligned financial support."
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "Hart Energy",
+      "date": "2022-01-19",
+      "url": "https://www.hartenergy.com/exclusives/energy-policy-watch-wesley-hunts-bid-energy-district-world-198337/",
+      "keyExchanges": [
+        {
+          "topic": "energy / climate framing",
+          "quote": "This is not an energy transition, it's an energy addition.",
+          "notes": "Signature framing repeated verbatim in 2024 VoteSmart responses and 2026 campaign materials."
+        },
+        {
+          "topic": "LNG / climate framing",
+          "quote": "Weaning the world off of coal and unleashing US LNG will do more to reduce our carbon footprint than any solar or wind project could accomplish.",
+          "notes": "Uses climate-reduction language to justify fossil fuel expansion. Consistent with Protect LNG Act 2025."
+        }
+      ]
+    },
+    {
+      "outlet": "KLTV East Texas (January 2026)",
+      "date": "2026-01-13",
+      "url": "https://www.kltv.com/2026/01/13/rep-wesley-hunt-talks-immigration-gun-rights-us-senate-campaign/",
+      "keyExchanges": [
+        {
+          "topic": "firearms / red flag laws",
+          "quote": "newer gun laws 'only hurt the law-abiding citizen'; would work to remove red flag laws if elected to Senate",
+          "notes": "Explicit opposition to red flag laws — corroborates Second Amendment Restoration Act."
+        }
+      ]
+    },
+    {
+      "outlet": "KLTV East Texas (follow-up)",
+      "date": "2026-01-27",
+      "url": "https://www.kltv.com/video/2026/01/27/rep-wesley-hunt-says-hed-like-eliminate-red-flag-laws-texas-harden-schools/",
+      "keyExchanges": [
+        {
+          "topic": "school safety / guns",
+          "quote": "We need a presence of some kind of law enforcement officer, or somebody that's willing, a good guy with a gun, to stop a bad guy with a gun — could be placed in every public school",
+          "notes": "Proposed financing by reallocation of Ukraine aid. Consistent 'good guy with a gun' framing."
+        }
+      ]
+    },
+    {
+      "outlet": "Dallas Express",
+      "date": "2026",
+      "url": "https://dallasexpress.com/national/hunt-stakes-out-positions-in-gop-senate-race-tackling-immigration-guns-and-more/",
+      "keyExchanges": [
+        {
+          "topic": "firearms — BSCA repeal",
+          "quote": "First act as senator would be to repeal the Bipartisan Safer Communities Act",
+          "notes": "Most explicit Senate priority statement on guns. Centerpiece of campaign contrast with Cornyn."
+        },
+        {
+          "topic": "immigration — birthright citizenship",
+          "quote": "ending birthright citizenship for the children of illegal immigrants",
+          "notes": "More extreme immigration position than the border wall/deportation standard. Would require constitutional change."
+        },
+        {
+          "topic": "healthcare",
+          "quote": "Introducing free market reforms into the healthcare system to increase competition to drive the cost of care down",
+          "notes": "Standard Republican market-based framing; softer than OnTheIssues characterization."
+        }
+      ]
+    },
+    {
+      "outlet": "CBS News Texas / Denton campaign stop",
+      "date": "2026",
+      "url": "https://www.cbsnews.com/texas/video/hunt-highlights-texas-energy-ambitions-in-denton-as-senate-primary-approaches/",
+      "keyExchanges": [
+        {
+          "topic": "energy — wants to be 'energy senator'",
+          "quote": "wants to strip away regulations against oil and gas companies, drill and safely frack",
+          "notes": "Deregulation as explicit legislative priority."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune / 2026 GOP Senate primary voter guide",
+      "date": "2026-02-05",
+      "url": "https://www.texastribune.org/2026/02/05/texas-us-senate-republicans-2026-primary-q-and-a-voter-guide-cornyn-hunt-paxton/",
+      "keyExchanges": [
+        {
+          "topic": "general",
+          "notes": "Hunt (along with Cornyn and Paxton) declined to respond to Texas Tribune questionnaire despite repeated requests. Tribune reconstructed positions from public record. All three framing themselves as MAGA candidates; primary differentiation is on specific votes and personal style."
+        }
+      ]
+    },
+    {
+      "outlet": "The Hill",
+      "date": "2026-01",
+      "url": "https://thehill.com/homenews/campaign/5758334-wesley-hunt-defends-missed-votes/",
+      "keyExchanges": [
+        {
+          "topic": "missed votes defense",
+          "quote": "Many of his missed votes came in 2024, when he was campaigning for President Donald Trump",
+          "notes": "Points to JD Vance and Rick Scott as precedents. 'Zero bills, resolutions, or GOP priorities have been delayed or stopped because of Rep. Hunt.'"
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "criminal justice / sentencing — Safer Supervision Act vs. law enforcement rhetoric",
+      "conflict": "Campaign website and public statements exclusively emphasize 'back the blue,' opposing defunding. But Hunt co-led the Safer Supervision Act with Democrat Sen. Coons, which uses rehabilitation-focused language ('remove the permanent scarlet letter of incarceration,' 'true rehabilitation') and creates early-release pathways. This is backed by progressive criminal justice groups alongside conservative ones. Not a direct contradiction — bill targets sentencing administration (supervised release), not decriminalization or abolition — but it meaningfully complicates a pure 'punishment-first' characterization on the justice_sentencing_goals axis.",
+      "sources": [
+        "https://hunt.house.gov/media/press-releases/immediate-release-congressman-wesley-hunt-introduces-bipartisan-safer-supervision",
+        "https://www.coons.senate.gov/news/press-releases/senator-coons-representative-hunt-colleagues-urge-the-implementation-of-reforms-aligning-with-their-bipartisan-bicameral-safer-supervision-act"
+      ]
+    },
+    {
+      "topic": "DEI / private school board membership",
+      "conflict": "Hunt calls for 'permanent abolition of DEI' and markets himself as anti-woke. A Dec 2025 opponent ad surfaced records from his time on St. John's School board showing the school implemented DEI curriculum redesigns during his tenure. Hunt's campaign stated he pushed back internally and ultimately resigned rather than 'legitimize woke nonsense.' Controversy used by Cornyn camp in 'Woke Wesley Hunt' ads. For scoring purposes, his stated anti-DEI position and voting record are unambiguous.",
+      "sources": [
+        "https://www.thetexasvoice.com/woke-wesley-hunt-criticized-for-dei-support-in-new-ad/",
+        "https://dailycaller.com/2026/01/24/records-show-anti-dei-republican-helped-install-ideology-at-texas-health-center/"
+      ]
+    },
+    {
+      "topic": "healthcare — campaign softening vs. voting record",
+      "conflict": "Campaign website uses moderate 'free market competition' framing for healthcare. OnTheIssues characterizes stated position as 'taxpayer-funded health care should be abolished in all forms, and Medicaid and Medicare should be de-funded.' Voting record (blocking ACA subsidies, blocking healthcare price controls) aligns with harder position. Per scoring methodology, voting record takes precedence over campaign language.",
+      "sources": [
+        "https://www.ontheissues.org/TX/Wesley_Hunt_Health_Care.htm",
+        "https://www.dscc.org/article/vote-alert-wesley-hunt-votes-to-block-bipartisan-effort-to-stop-health-care-price-spikes/",
+        "https://wesleyfortexas.com/wesley-on-the-issues/"
+      ]
+    }
+  ],
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition — LCV 0% lifetime is definitive Tier 1; explicit 'energy addition not energy transition' platform; multiple fossil fuel bills",
+      "climate_energy_portfolio — Protect LNG Act, CORE Act, Rio Grande LNG advocacy, explicit anti-transition quotes; pure fossil fuel maximalism",
+      "climate_permitting — Protect LNG Act directly accelerates permitting and shields from environmental review; CORE Act for offshore",
+      "justice_firearms — NRA AQ, GOA A, introduced Second Amendment Restoration Act to repeal BSCA provisions; pledged BSCA full repeal as first Senate act; 'no compromise' stated position",
+      "health_coverage_model — voted to block ACA subsidy extension, voted against price control measures; OnTheIssues: 'abolish taxpayer-funded healthcare'; 'free market' campaign framing",
+      "econ_safetynet — Heritage 96%, CPAC 97%; voted against Fiscal Responsibility Act as too moderate; DOGE support; Balanced Budget Amendment support; AFL-CIO 6-10%",
+      "econ_investment — DOGE codification support; anti-spending pattern; opposes industrial policy signals",
+      "econ_tax_structure — CPAC 97%/Heritage 96% pattern strongly implies pro-tax-cut, anti-progressive-taxation; VoteSmart fiscal quotes on spending",
+      "health_public_health — cosponsor vaccine mandate repeal bill; explicit anti-mandate campaign messaging",
+      "health_cost_control — voted to block bipartisan healthcare price measures (DSCC Tier 2-3; supports pattern)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning — no evidence found; omit",
+      "housing_affordability_tools — no evidence found; omit",
+      "housing_transport_priority — only mention is Houston flood infrastructure; no transit policy; omit",
+      "justice_sentencing_goals — Safer Supervision Act complicates; scored as moderate (not pole B) due to rehabilitation language; LOW confidence",
+      "econ_school_choice — stated support for parental/school choice but no specific bill or vote evidence; MEDIUM confidence at best"
+    ],
+    "overallConfidence": "HIGH for climate, firearms, abortion, immigration, and broad fiscal conservatism. HIGH for healthcare model (policy direction is clear even if softened in campaign language). MEDIUM for specific healthcare cost-control. LOW-MEDIUM for justice sentencing (Safer Supervision Act creates genuine nuance). NO EVIDENCE for all three housing axes.",
+    "notes": "Hunt's record is highly consistent across every measured dimension: maximum conservatism on energy/climate (LCV 0%), guns (GOA A, BSCA repeal pledge), immigration (HR2 yes, invasion legislation), fiscal (Heritage 96%, Fiscal Responsibility Act no), and abortion (NRLC 100%, Reproductive Freedom 0%). The AFL-CIO 6-10% and Chamber of Commerce endorsement create the expected economic policy framing. The only substantive complexity is the Safer Supervision Act, which is a genuine bipartisan rehabilitation-leaning criminal justice bill — the scorer should note this rather than placing Hunt at the pure retribution pole of justice_sentencing_goals. The DEI school board controversy does not affect policy axis scoring. High vote-absence rate (78% in 2026) limits the 119th Congress voting record as evidence, but the 118th Congress record is solid and the campaign platform fills the gaps."
+  },
+
+  "rawSources": [
+    {"title": "Wesley Hunt For U.S. Senate — America First Fighter", "url": "https://wesleyfortexas.com/"},
+    {"title": "Wesley Hunt On The Issues (campaign)", "url": "https://wesleyfortexas.com/wesley-on-the-issues/"},
+    {"title": "GovTrack — Rep. Wesley Hunt profile", "url": "https://www.govtrack.us/congress/members/wesley_hunt/456946"},
+    {"title": "GovTrack — 2024 Report Card", "url": "https://www.govtrack.us/congress/members/wesley_hunt/456946/report-card/2024"},
+    {"title": "Wikipedia — Wesley Hunt", "url": "https://en.wikipedia.org/wiki/Wesley_Hunt"},
+    {"title": "Ballotpedia — Wesley Hunt (Texas Congress)", "url": "https://ballotpedia.org/Wesley_Hunt_(Texas_Congress)"},
+    {"title": "Ballotpedia — Texas U.S. Senate 2026", "url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026"},
+    {"title": "VoteSmart — Wesley Hunt profile", "url": "https://justfacts.votesmart.org/candidate/188147/wesley-hunt"},
+    {"title": "VoteSmart — Wesley Hunt key votes", "url": "https://justfacts.votesmart.org/candidate/key-votes/188147/wesley-hunt"},
+    {"title": "CPAC — 97% Lifetime Rating", "url": "https://www.cpac.org/bio/h001095"},
+    {"title": "Heritage Action — Scorecard 118th Congress 96%", "url": "https://heritageaction.com/scorecard/members/H001095/118"},
+    {"title": "Heritage Action — Scorecard 119th Congress (pending)", "url": "https://heritageaction.com/scorecard/members/H001095/"},
+    {"title": "LCV — Wesley Hunt (0% lifetime / annual)", "url": "https://www.lcv.org/moc/wesley-hunt/"},
+    {"title": "NRA-PVF Grades — Texas", "url": "https://www.nrapvf.org/grades/texas/"},
+    {"title": "AFL-CIO Scorecard — Wesley Hunt", "url": "https://aflcio.org/scorecard/legislators/wesley-hunt"},
+    {"title": "SBA Pro-Life America — Wesley Hunt", "url": "https://sbaprolife.org/representative/wesley-hunt"},
+    {"title": "Reproductive Freedom for All — Wesley Hunt (0%)", "url": "https://reproductivefreedomforall.org/lawmaker/wesley-hunt/"},
+    {"title": "Turning Point Action — Wesley Hunt Scorecard", "url": "https://www.tpaction.com/scorecard/legislators/wesleyhunt"},
+    {"title": "The New American Freedom Index — Wesley Hunt 119th", "url": "https://thenewamerican.com/freedom-index/legislator/h001095/votes/report-scorecard-119-1/pdf/scb/"},
+    {"title": "U.S. Chamber of Commerce — Endorses Wesley Hunt (2024 House)", "url": "https://www.uschamber.com/improving-government/elections/u-s-chamber-endorses-rep-wesley-hunt-for-texass-38th-congressional-district"},
+    {"title": "HR2 Secure Border Act — Hunt votes yes (hunt.house.gov)", "url": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-hunt-votes-favor-hr-2-secure-border-act-2023"},
+    {"title": "POLICE Act — Hunt votes yes (hunt.house.gov)", "url": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-wesley-hunt-votes-favor-hr-2494-protect-our-law"},
+    {"title": "H.R.6035 — Second Amendment Restoration Act (Congress.gov)", "url": "https://www.congress.gov/bill/119th-congress/house-bill/6035"},
+    {"title": "Hunt introduces Second Amendment Restoration Act (house.gov)", "url": "https://hunt.house.gov/media/press-releases/congressman-wesley-hunt-introduced-second-amendment-restoration-act"},
+    {"title": "Texas Congressman wants to overhaul post-Uvalde gun laws (Bearing Arms)", "url": "https://bearingarms.com/camedwards/2025/11/12/texas-congressman-wants-to-overhaul-post-uvalde-gun-control-laws-n1230577"},
+    {"title": "Safer Supervision Act — hunt.house.gov", "url": "https://hunt.house.gov/media/press-releases/immediate-release-congressman-wesley-hunt-introduces-bipartisan-safer-supervision"},
+    {"title": "Sen. Coons press release — Safer Supervision Act", "url": "https://www.coons.senate.gov/news/press-releases/senator-coons-representative-hunt-colleagues-urge-the-implementation-of-reforms-aligning-with-their-bipartisan-bicameral-safer-supervision-act"},
+    {"title": "Protect LNG Act 2025 — Rio Grande FERC push (hunt.house.gov)", "url": "https://hunt.house.gov/media/press-releases/immediate-release-rep-wesley-hunt-highlights-ferc-and-encourages-reissued-authorization-rio-grande-lng-project"},
+    {"title": "H.R.26 — Born-Alive Act cosponsor (Congress.gov)", "url": "https://www.congress.gov/bill/118th-congress/house-bill/26/cosponsors"},
+    {"title": "DSCC — Hunt blocks ACA subsidy extension", "url": "https://www.dscc.org/article/vote-alert-wesley-hunt-refuses-to-extend-affordable-care-act-tax-credits-pushing-higher-costs-on-texans/"},
+    {"title": "DSCC — Hunt votes to block healthcare price spikes measure", "url": "https://www.dscc.org/article/vote-alert-wesley-hunt-votes-to-block-bipartisan-effort-to-stop-health-care-price-spikes/"},
+    {"title": "Texas Tribune — Hunt missed votes scrutiny (Jan 2026)", "url": "https://www.texastribune.org/2026/01/23/wesley-hunt-congress-missed-votes-senate-republican-primary/"},
+    {"title": "Texas Tribune — 2026 GOP Senate Q&A voter guide (Feb 2026)", "url": "https://www.texastribune.org/2026/02/05/texas-us-senate-republicans-2026-primary-q-and-a-voter-guide-cornyn-hunt-paxton/"},
+    {"title": "Hart Energy — Energy Policy Watch: Wesley Hunt (2022)", "url": "https://www.hartenergy.com/exclusives/energy-policy-watch-wesley-hunts-bid-energy-district-world-198337/"},
+    {"title": "CBS Texas — Hunt energy ambitions in Denton", "url": "https://www.cbsnews.com/texas/video/hunt-highlights-texas-energy-ambitions-in-denton-as-senate-primary-approaches/"},
+    {"title": "Dallas Express — Hunt stakes out positions", "url": "https://dallasexpress.com/national/hunt-stakes-out-positions-in-gop-senate-race-tackling-immigration-guns-and-more/"},
+    {"title": "OnTheIssues — Wesley Hunt Senate", "url": "https://www.ontheissues.org/Senate/Wesley_Hunt.htm"},
+    {"title": "NBC News — Hunt launches Senate bid", "url": "https://www.nbcnews.com/politics/2026-election/rep-wesley-hunt-launches-republican-bid-senate-texas-rcna235850"},
+    {"title": "Washington Examiner — Hunt 'next generation' Senate", "url": "https://www.washingtonexaminer.com/news/campaigns/congressional/4473476/wesley-hunt-its-time-for-the-next-generation-texas-senate-race-john-cornyn/"},
+    {"title": "E&E News — Top House recipients of oil and gas money", "url": "https://www.eenews.net/articles/meet-the-top-house-recipients-of-oil-and-gas-money/"},
+    {"title": "The Hill — Hunt defends missed votes", "url": "https://thehill.com/homenews/campaign/5758334-wesley-hunt-defends-missed-votes/"},
+    {"title": "KLTV — Hunt immigration guns Senate campaign (Jan 2026)", "url": "https://www.kltv.com/2026/01/13/rep-wesley-hunt-talks-immigration-gun-rights-us-senate-campaign/"},
+    {"title": "KLTV — Hunt red flag laws schools (Jan 27 2026)", "url": "https://www.kltv.com/video/2026/01/27/rep-wesley-hunt-says-hed-like-eliminate-red-flag-laws-texas-harden-schools/"},
+    {"title": "OpenSecrets — Wesley Hunt campaign finance summary", "url": "https://www.opensecrets.org/members-of-congress/wesley-hunt/summary?cid=N00044362&cycle=2024"}
+  ]
+}

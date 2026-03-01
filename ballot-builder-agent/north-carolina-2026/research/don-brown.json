@@ -1,0 +1,228 @@
+{
+  "slug": "don-brown",
+  "name": "Don Brown",
+  "party": "Republican",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "incumbencyStatus": "first-time Senate candidate (ran in 2024 NC-08 Congressional primary, lost)",
+  "researchedAt": "2026-02-26T00:00:00Z",
+  "biography": {
+    "currentRole": "Defense attorney, author, small business owner",
+    "priorRoles": [
+      "Retired U.S. Navy JAG (Judge Advocate General) officer",
+      "Special Assistant U.S. Attorney",
+      "Defense attorney for January 6 defendants",
+      "Author of 16 books"
+    ],
+    "education": "Law degree (details from JAG service)",
+    "background": "Born Plymouth, NC. Retired Navy JAG officer and Special Assistant U.S. Attorney. Defense attorney who represented defendants charged in connection with the January 6, 2021 Capitol riot. Author of 16 books. Ran in 2024 NC-08 Congressional primary and lost. Polling at ~7.5% in Feb 2026 GOP primary behind Trump-endorsed Michael Whatley. Raised $187,237 as of Feb 11, 2026 with ~$24,000 cash on hand."
+  },
+  "campaignWebsite": {
+    "url": "https://www.donbrownfornc.com",
+    "fetchedAt": "2026-02-26T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "justice_firearms",
+        "quote": "Americans should not be arrested for exercising our clear 2nd Amendment Rights to bear arms without restriction",
+        "sourceUrl": "https://www.ballotready.org/people/don-brown-3e66559c-c1c7-441a-ad50-67450812c85c",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Supports National Constitutional Carry. Opposes all gun regulations."
+      },
+      {
+        "topic": "health_public_health",
+        "quote": "Proposed 'Vax and Mask Freedom Act' to ban vaccine and mask mandates federally",
+        "sourceUrl": "https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Backed by personal litigation record — represented Savannah River Site nuclear engineers and other workers against COVID mandates."
+      },
+      {
+        "topic": "econ_tax_structure",
+        "quote": "Eliminate the IRS, eliminate the federal income tax, and go to a Fair Tax system ... supplement the rest of revenue with tariffs",
+        "sourceUrl": "https://www.donbrownfornc.com/policies",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "FairTax = national consumption/sales tax replacing income, payroll, corporate, and estate taxes."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Restoring fiscal sanity and attacking the $38 trillion national debt",
+        "sourceUrl": "https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Core campaign message is reducing federal spending, cutting government bureaucracy. No support for expanding safety net programs."
+      },
+      {
+        "topic": "econ_investment",
+        "quote": "Protecting small businesses from regulatory strangulation",
+        "sourceUrl": "https://www.donbrownfornc.com/policies",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Deregulation as primary economic tool. Proposed routing disaster relief through private charities (Samaritan's Purse) rather than federal agencies."
+      },
+      {
+        "topic": "health_coverage_model",
+        "quote": "Does not see an 'affordability crisis' in healthcare. Supports sending money directly to the people to pay for their healthcare, as President Trump is planning to do",
+        "sourceUrl": "https://www.wsoctv.com/news/local/political-beat-candidate-guide-united-states-senate/AO4BCYOWQRGMDC35FBG3G3QWUI/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "HSA/individual-account framing. No support for ACA, public option, or Medicare expansion."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Called for National Guard on every Charlotte train. Attacked Roy Cooper for releasing pandemic-era inmates as 'soft on crime'",
+        "sourceUrl": "https://www.wunc.org/elections/2026-02-24/in-north-carolinas-u-s-senate-gop-primary-contenders-try-to-topple-trump-endorsed-candidate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Supports aggressive Border Patrol enforcement. Strong law-and-order positioning."
+      },
+      {
+        "topic": "housing_affordability_tools",
+        "quote": "Proposed eliminating property taxes for first-time homebuyers",
+        "sourceUrl": "https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Deregulation to lower housing costs. No subsidies, no rent control."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Unborn babies must be afforded the same constitutional rights to due process as all Americans, from the moment of conception",
+        "sourceUrl": "https://www.ballotready.org/people/don-brown-3e66559c-c1c7-441a-ad50-67450812c85c",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Conception-at-personhood position (total ban framing). Outside scored axes but relevant context."
+      },
+      {
+        "topic": "justice_sentencing_goals",
+        "quote": "Supported federal death penalty for fentanyl traffickers and child sex traffickers",
+        "sourceUrl": "https://www.donbrownfornc.com/policies",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Attacked opponents as soft on crime. No direct statement on mandatory minimums or rehabilitation programs."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "First-time candidate with no legislative voting record."
+  },
+  "scorecards": [
+    {
+      "organization": "GRNC (Grass Roots North Carolina)",
+      "score": null,
+      "grade": null,
+      "url": "https://grnc.org/wp/2026/02/2026-candidate-evaluations-alert/",
+      "notes": "Evaluations published but specific star rating not retrievable from search results."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Mark Robinson (former NC Lt. Governor)",
+      "type": "personal endorsement",
+      "cycle": "2026",
+      "notes": "Far-right; 2024 Republican gubernatorial nominee who lost."
+    },
+    {
+      "organization": "Sidney Powell",
+      "type": "personal endorsement",
+      "cycle": "2026",
+      "notes": "Election-denying attorney who pleaded guilty in Georgia case."
+    },
+    {
+      "organization": "Michael Flynn",
+      "type": "personal endorsement",
+      "cycle": "2026",
+      "notes": "Former Trump NSA, pardoned after FBI guilty plea."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "WCTI12",
+      "date": "2026",
+      "url": "https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate",
+      "keyExchanges": [
+        {
+          "topic": "fiscal policy",
+          "quote": "Restoring fiscal sanity and attacking the $38 trillion national debt",
+          "notes": "Core campaign economic message."
+        },
+        {
+          "topic": "healthcare",
+          "quote": "Proposed Vax and Mask Freedom Act",
+          "notes": "Central to his health platform."
+        }
+      ]
+    },
+    {
+      "outlet": "WSOC Political Beat Guide",
+      "date": "2026",
+      "url": "https://www.wsoctv.com/news/local/political-beat-candidate-guide-united-states-senate/AO4BCYOWQRGMDC35FBG3G3QWUI/",
+      "keyExchanges": [
+        {
+          "topic": "healthcare affordability",
+          "quote": "Does not see an 'affordability crisis' in healthcare",
+          "notes": "HSA/individual-account approach."
+        }
+      ]
+    },
+    {
+      "outlet": "Longleaf Politics",
+      "date": "2026",
+      "url": "https://www.longleafpol.com/p/a-conversation-with-don-brown-republican",
+      "keyExchanges": [
+        {
+          "topic": "campaign strategy",
+          "quote": "Soldiering on in the Senate race",
+          "notes": "In-depth interview on campaign positioning."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "axis": "law_and_order",
+      "conflict": "'Law and order' candidate who simultaneously defended J6 defendants — framed as 'patriot clients' and called their prosecutions 'illegal fedsurrection'",
+      "resolution": "Consistent within his framing: he views J6 defendants as political prisoners, not criminals"
+    },
+    {
+      "axis": "fiscal_policy",
+      "conflict": "Fiscal hawk on national debt who wants dedicated Hurricane Helene trust fund",
+      "resolution": "Resolved via private/faith-based channel (Samaritan's Purse) rather than federal agency"
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "justice_firearms — Pole B, HIGH confidence (National Constitutional Carry, opposes all gun regulations)",
+      "health_public_health — Pole B, HIGH confidence (Vax and Mask Freedom Act, anti-mandate litigation)",
+      "econ_tax_structure — Pole B, MEDIUM confidence (eliminate IRS, FairTax system)",
+      "econ_safetynet — Pole B, MEDIUM confidence (fiscal hawk, reduce federal spending)",
+      "econ_investment — Pole B, MEDIUM confidence (deregulation, reduce government intervention)",
+      "health_coverage_model — Pole B, MEDIUM confidence (HSA-based, no ACA/Medicare expansion)",
+      "justice_policing_accountability — Pole B, MEDIUM confidence (National Guard, aggressive enforcement)",
+      "housing_affordability_tools — Pole B, MEDIUM confidence (tax cuts not subsidies)"
+    ],
+    "weakestAxes": [
+      "climate_ambition — NO EVIDENCE",
+      "climate_energy_portfolio — NO EVIDENCE",
+      "climate_permitting — NO EVIDENCE",
+      "econ_school_choice — NO EVIDENCE",
+      "housing_supply_zoning — NO EVIDENCE",
+      "housing_transport_priority — NO EVIDENCE",
+      "health_cost_control — LOW confidence (inferred from market philosophy only)"
+    ],
+    "overallConfidence": "medium",
+    "notes": "Don Brown has relatively detailed policy positions on his campaign website and in interviews, giving medium-to-high confidence on economic, justice, and health axes. Climate and housing/transport axes have no evidence. His endorsement profile (Robinson, Flynn, Powell) and J6 defense work position him firmly in the MAGA wing of the Republican Party."
+  },
+  "sources": [
+    {"url": "https://ballotpedia.org/Don_Brown_(North_Carolina)", "description": "Ballotpedia profile"},
+    {"url": "https://www.donbrownfornc.com/policies", "description": "Campaign policies page"},
+    {"url": "https://www.donbrownfornc.com/about", "description": "Campaign about page"},
+    {"url": "https://www.ballotready.org/people/don-brown-3e66559c-c1c7-441a-ad50-67450812c85c", "description": "BallotReady profile"},
+    {"url": "https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate", "description": "WCTI12 candidate profile"},
+    {"url": "https://www.wsoctv.com/news/local/political-beat-candidate-guide-united-states-senate/AO4BCYOWQRGMDC35FBG3G3QWUI/", "description": "WSOC Political Beat Guide"},
+    {"url": "https://www.wunc.org/elections/2026-02-24/in-north-carolinas-u-s-senate-gop-primary-contenders-try-to-topple-trump-endorsed-candidate", "description": "WUNC GOP primary overview"},
+    {"url": "https://www.longleafpol.com/p/a-conversation-with-don-brown-republican", "description": "Longleaf Politics interview"},
+    {"url": "https://ncnewsline.com/2026/02/11/voting-in-the-republican-u-s-senate-primary-begins-thursday-meet-the-top-candidates/", "description": "NC Newsline primary candidates"},
+    {"url": "https://grnc.org/wp/2026/02/2026-candidate-evaluations-alert/", "description": "GRNC candidate evaluations"}
+  ]
+}

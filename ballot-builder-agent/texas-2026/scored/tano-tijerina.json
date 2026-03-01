@@ -1,0 +1,144 @@
+{
+  "slug": "tano-tijerina",
+  "name": "Tano Tijerina",
+  "party": "Republican",
+  "office": "U.S. House, Texas 28th Congressional District, 2026",
+  "scoredAt": "2026-02-27T00:00:00.000Z",
+  "profileSummary": "Three-term Webb County Judge who switched from Democrat to Republican in December 2024; first-time congressional candidate running on border security, oil and gas, and 'America First' framing with a Trump endorsement, but whose county-level governing record includes strict COVID mandates and voting-access expansion that conflict with his current partisan positioning.",
+  "keyPositions": [
+    "Explicit, repeated support for the oil and gas industry; cited Democratic 'attacks on oil and gas' as a reason for party switch",
+    "Border security as top priority with a pivot to 'true immigration reform' — more moderate than enforcement-only but vague on specifics",
+    "Low taxes, infrastructure investment, and affordability as core campaign pillars",
+    "Full embrace of Trump endorsement and 'America First' branding",
+    "Faith, family, and conservative cultural values as stated governing principles"
+  ],
+  "axisStances": {
+    "econ_tax_structure": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Ballotpedia candidate profile", "Texas Tribune campaign launch coverage Dec 2025"],
+      "notes": "Repeatedly claims to have 'kept taxes low' as county judge and lists affordability as a top-three priority. No specifics on federal tax policy (TCJA extension, corporate rates, etc.). Score reflects general low-tax orientation inferred from statements and Republican alignment, but lacks federal policy detail."
+    },
+    "econ_investment": {
+      "score": 5,
+      "confidence": "low",
+      "sources": ["Ballotpedia (county infrastructure record)", "Texas Tribune campaign launch Dec 2025"],
+      "notes": "County record includes significant public infrastructure investment (Bridge 4/5, 5th international bridge, fairgrounds renovation). Lists 'improving infrastructure' as a top congressional priority. However, current Republican/Trump alignment and low-tax framing suggest less appetite for federal spending programs. Genuinely ambiguous — scored at center reflecting the tension between his infrastructure record and his fiscal rhetoric."
+    },
+    "health_public_health": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["Border Report (COVID shelter-in-place order, March 2020)", "Washington Examiner (mask mandate defying Abbott, 2020-2021)", "Fox & Friends party-switch interview Dec 2024"],
+      "notes": "SIGNIFICANT CONFLICT: As county judge, Tijerina imposed one of the strictest COVID shelter-in-place orders in South Texas and maintained mask mandates for county offices in defiance of Gov. Abbott's ban. This is Tier 1-equivalent evidence (executive actions taken). His current Republican identity aligns with the anti-mandate wing, and he cited 'woke movements' as a party-switch reason, but he has not made explicit anti-mandate statements. Per the voting-record-over-rhetoric rule, his governing record pulls the score toward collective mandates (lower score), but the recency of his party switch and anti-woke framing partially offset. Score of 4 reflects the unresolved tension — he governed as a mandate supporter but now campaigns with a party that opposes them."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Fox & Friends party-switch interview Dec 2024", "KSAT campaign launch coverage Dec 2025", "NRCC endorsement framing Jan 2026"],
+      "notes": "No direct climate policy statement found. Score inferred from repeated, explicit support for oil and gas industry and opposition to Democratic energy policy. NRCC frames him as supporting 'low energy prices' — a fossil-fuel-friendly framing. Scored at 8 (skeptical of aggressive climate action) rather than 9-10 because he has not made explicit anti-climate statements — the evidence is inference from energy policy, not direct climate positioning."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["KSAT campaign launch Dec 2025", "Fox & Friends party-switch interview Dec 2024", "NRCC endorsement framing Jan 2026", "Campaign website (reconstructed from search snippets)"],
+      "notes": "Strongest-evidenced axis. 'Fighting for supporting our oil and gas industry' stated across multiple independent sources (campaign launch, Fox interview, campaign website, NRCC materials). Explicitly cited Democratic 'attacks on our oil and gas industry' as a party-switch reason. No mention of renewables, clean energy, or energy transition in any source. Score of 8 reflects clear fossil fuel expansion orientation without going to 9-10, as no explicit anti-renewable or anti-subsidy statements were found."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.2,
+      "reasoning": "Mixed signals. Texas Border Coalition chairmanship advocated for recognizing 'economic contributions immigrants make' — a universalist framing. COVID mandates showed collective welfare concern. However, 'America First' explicit branding, nationalist framing, and in-group (South Texas/U.S.) focus outweigh the TBC signals. Net assessment: mildly works against universalism through nationalist orientation, though not aggressively so."
+    },
+    "benevolence": {
+      "score": 0.5,
+      "reasoning": "Genuine community-centered orientation. 'Every lesson I have learned came from the people here.' Infrastructure investment in Webb County (bridges, fairgrounds). COVID shelter-in-place order was a community-welfare action. 'South Texas is in trouble' as core campaign message. Campaign framing is consistently about serving the local community. Score reflects authentic community focus without rising to the level of defining identity."
+    },
+    "tradition": {
+      "score": 0.6,
+      "reasoning": "Explicit and repeated: 'faith, family, hard work, and never giving up.' 'Keeping faith and family at the center of everything we do.' Cited progressive cultural drift ('woke movements,' transgender athletes) as reason for party switch. Cultural conservatism is a central part of his public identity and political messaging. Does not reach +0.8 or higher because tradition is framed as personal/regional values rather than as a governing philosophy with specific policy implications."
+    },
+    "conformity": {
+      "score": 0.1,
+      "reasoning": "Weakly positive at best. He works within institutional channels (county judge, formal campaign launch, party registration). But he defied Gov. Abbott's mask mandate ban (norm violation within his party/state), timed his campaign announcement to exploit a technicality in the resign-to-run law (FEC complaint filed), and executed a dramatic party switch live on cable news. The pattern suggests pragmatic norm-navigation rather than deep respect for institutional constraints."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Border security is his top stated priority. Public safety is in his top three. 'America First' framing is security-coded. COVID lockdown orders were security-motivated (public health security). NRCC framing emphasizes 'secure borders.' Security — physical, economic, and national — is a defining theme across virtually all his public messaging. Strong and consistent signal."
+    },
+    "power": {
+      "score": 0.4,
+      "reasoning": "Trump endorsement actively sought and celebrated. NRCC institutional backing embraced. Pragmatic party switch timed for maximum political advantage (right before Trump endorsement cycle, after cultivating relationship). County judge is chief executive role — accustomed to executive authority. Timed campaign announcement to retain county judgeship (dual power-holding). Pattern suggests comfort with and pursuit of institutional power, though not in the donor-class/corporate alignment sense."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Former professional athlete (minor league baseball, drafted 8th round by Brewers). 'Hard work and never giving up' is an explicit personal motto. Self-made narrative: from Laredo educators' son to professional athlete to county judge to congressional candidate. Campaign framing emphasizes personal journey and local success. Meritocratic, effort-based worldview evident in biography and messaging."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of hedonism-related positioning in any direction. No lifestyle liberty framing, no recreational policy positions, no libertarian personal freedom emphasis."
+    },
+    "stimulation": {
+      "score": 0.1,
+      "reasoning": "The party switch itself was a dramatic, attention-getting move (announced live on Fox & Friends). But the underlying political vision is restorative ('take South Texas back'), not transformative. No policy innovation, structural reform, or disruption-as-identity signals. Campaign is conventional Republican messaging in a shifting district."
+    },
+    "self_direction": {
+      "score": 0.0,
+      "reasoning": "No explicit civil liberties positions found. Faith-and-family framing and cultural conservatism (opposing transgender athletes, 'woke movements') suggest comfort with some social restrictions. COVID mask mandates imposed on others cut against self-direction. No gun rights framing, no reproductive rights framing, no free speech emphasis found. Insufficient evidence to score in either direction."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Public health mandates vs. current party identity",
+      "description": "As Webb County Judge, Tijerina imposed one of the strictest COVID shelter-in-place orders in South Texas (March 2020) and maintained mask mandates for county offices in defiance of Gov. Abbott's statewide ban. He now campaigns as a Republican who left the Democratic Party partly over 'woke policies.' His own governing record directly contradicts the anti-mandate orientation of his adopted party.",
+      "sources": ["Border Report (March 2020 shelter-in-place)", "Washington Examiner (mask mandate defiance)", "Fox & Friends interview (party-switch rationale)"],
+      "scoringImpact": "health_public_health scored at 4 (leaning toward mandates) per voting-record-over-rhetoric rule, with note flagging the unresolved tension"
+    },
+    {
+      "topic": "Voting access expansion vs. Republican voter integrity stance",
+      "description": "Prioritized expanding voting access ahead of 2022 elections while Texas Republicans were tightening voting rules statewide. Defended election officials after a 2024 recount discrepancy. Switched to Republican Party two months later.",
+      "sources": ["Washington Examiner (voting access, election official defense)"],
+      "scoringImpact": "No axis scored for this conflict (no voting rights axis in the framework), but noted as context for conformity value score and overall candidate profile"
+    },
+    {
+      "topic": "Immigration framing: TBC vs. campaign messaging",
+      "description": "As Texas Border Coalition chairman (Dec 2024 - Dec 2025), led an organization advocating for 'fair and effective immigration reform that recognizes the economic contributions immigrants make.' Current campaign emphasizes border security and Trump's enforcement agenda. The TBC framing is more pro-immigrant than current political messaging, though the two are not necessarily incompatible.",
+      "sources": ["Texas Border Coalition website", "Texas Tribune campaign launch", "KRGV primary coverage"],
+      "scoringImpact": "Noted in universalism value score; no immigration-specific civic axis in the framework"
+    },
+    {
+      "topic": "Resign-to-run timing and FEC complaint",
+      "description": "A federal election complaint alleged Tijerina operated an exploratory committee beyond legal limits to avoid triggering Texas's resign-to-run law, allowing him to retain the county judgeship while launching a congressional campaign. Tijerina denied wrongdoing.",
+      "sources": ["Texas Tribune (Nov 2025)", "KGNS (Dec 2025)"],
+      "scoringImpact": "Factored into conformity value score (0.1 — pragmatic norm-navigation rather than deep institutional respect)"
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 5,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time federal candidate with no legislative voting record and no third-party scorecards. Campaign messaging is high-level and focused on border security, oil/gas, and cultural identity. No stated positions found on guns, abortion, healthcare model, school choice, housing, sentencing, policing specifics, or permitting. These axes cannot be scored without manufacturing evidence.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No position on firearms/gun policy found in any source",
+      "No position on abortion/reproductive rights found in any source",
+      "No position on healthcare coverage model or cost control found",
+      "No position on school choice or education policy found",
+      "No position on housing or zoning found",
+      "No position on criminal justice specifics (sentencing, policing reform) found",
+      "No third-party scorecards available (NRA, LCV, AFL-CIO, Chamber all null)",
+      "Campaign website could not be directly fetched; content reconstructed from search snippets only",
+      "County commissioner court votes not tracked by standard databases — county-level record is limited to major executive actions"
+    ]
+  }
+}

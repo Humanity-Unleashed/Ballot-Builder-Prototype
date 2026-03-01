@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-02-25T00:00:00.000Z",
+  "state": "Georgia",
+  "scopeNote": "Statewide ballot measures for Georgia — November 3, 2026 General Election. Georgia does not have citizen initiative; all measures are legislature-referred. 2026 session Crossover Day is March 6, 2026. This manifest was generated February 25, 2026.",
+  "contests": [],
+  "ballotMeasures": [
+    {
+      "slug": "ga-2026-conservation-use-acreage",
+      "state": "GA",
+      "legislativeSource": "HR 32 (2025-2026), Rep. Chuck Efstration (R-104)",
+      "officialTitle": "Georgia Increase Maximum Acreage of Bona Fide Conservation Use Property Amendment (2026)",
+      "shortName": "Conservation Use Property Acreage Increase",
+      "measureType": "constitutional_amendment",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "confirmed",
+      "certificationNote": "Passed House 168-5 on March 6, 2025; passed Senate 50-1 on March 18, 2025. Certified for November 2026 ballot.",
+      "ballotQuestion": "Shall the Constitution of Georgia, for the purpose of protecting family farmland, be amended so as to increase the maximum acreage to qualify for assessment and taxation as a bona fide conservation use property from 2,000 acres to 4,000 acres?",
+      "yesVoteMeans": "Raise the max acreage cap for bona fide conservation use property from 2,000 to 4,000 acres per owner. Takes effect January 1, 2027.",
+      "noVoteMeans": "Current 2,000-acre cap remains unchanged.",
+      "evidenceTier": "high"
+    },
+    {
+      "slug": "ga-2026-pending-timber-tax-exemption",
+      "state": "GA",
+      "legislativeSource": "HR 1000 (2025-2026), Rep. Chuck Efstration (R-104)",
+      "officialTitle": "Georgia Timber Standing Timber Ad Valorem Tax Exemption Amendment",
+      "shortName": "Timber Tax Exemption",
+      "measureType": "constitutional_amendment",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "pending",
+      "certificationNote": "In House Ways and Means Committee as of Feb 25, 2026. Crossover Day March 6.",
+      "yesVoteMeans": "Exempt standing timber on forest land conservation use covenant parcels from ad valorem taxation at harvest or sale.",
+      "noVoteMeans": "Standing timber continues to be subject to ad valorem taxation.",
+      "evidenceTier": "medium"
+    },
+    {
+      "slug": "ga-2026-pending-probate-judge-nonpartisan",
+      "state": "GA",
+      "legislativeSource": "HR 251 (2025-2026), Rep. Kimberly New (R)",
+      "officialTitle": "Georgia Probate Judge Nonpartisan Election Constitutional Amendment",
+      "shortName": "Probate Judge Nonpartisan Elections",
+      "measureType": "constitutional_amendment",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "pending",
+      "certificationNote": "Passed full House Feb 12, 2026. Now in Senate. Backed by Chief Justice. Strong near-term candidate.",
+      "yesVoteMeans": "All probate court judges elected in nonpartisan elections statewide.",
+      "noVoteMeans": "Counties retain option to hold partisan probate judge elections.",
+      "evidenceTier": "medium"
+    },
+    {
+      "slug": "ga-2026-pending-homestead-tax-elimination",
+      "state": "GA",
+      "legislativeSource": "HR 1114 (HOME Act, 2025-2026), House Speaker Jon Burns (R)",
+      "officialTitle": "Georgia Homeownership Opportunity and Market Equalization (HOME) Act Constitutional Amendment",
+      "shortName": "Homestead Property Tax Elimination",
+      "measureType": "constitutional_amendment",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "pending",
+      "certificationNote": "Filed Jan 29, 2026. Needs 2/3 vote (Republicans hold ~100 seats, need ~20 Democrats). $5B/year fiscal impact. Status uncertain.",
+      "yesVoteMeans": "Phase in and eventually eliminate homestead property tax for primary residences by ~2032.",
+      "noVoteMeans": "Georgia homeowners continue paying property taxes under existing law.",
+      "evidenceTier": "medium"
+    },
+    {
+      "slug": "ga-2026-pending-affordable-housing-property-class",
+      "state": "GA",
+      "legislativeSource": "HR 1392 (2025-2026)",
+      "officialTitle": "Georgia Affordable Housing Separate Property Tax Classification Constitutional Amendment",
+      "shortName": "Affordable Housing Tax Classification",
+      "measureType": "constitutional_amendment",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "pending",
+      "certificationNote": "Still in House Ways and Means as of Feb 23, 2026. Low probability of making ballot.",
+      "yesVoteMeans": "Create separate property tax classification for LIHTC-funded affordable housing at lower rate.",
+      "noVoteMeans": "Affordable housing developments taxed under standard property tax rules.",
+      "evidenceTier": "low"
+    }
+  ],
+  "failedMeasures": [
+    {
+      "slug": "ga-2026-failed-sports-betting",
+      "state": "GA",
+      "legislativeSource": "HR 450 (2025-2026)",
+      "officialTitle": "Georgia Sports Betting Constitutional Amendment Referendum",
+      "shortName": "Sports Betting Legalization",
+      "certificationStatus": "failed",
+      "certificationNote": "Died without full House vote at 2025 Crossover Day. Re-introduced Jan 2026 with little momentum. Highly unlikely to reach voters."
+    }
+  ],
+  "manifestMetadata": {
+    "confirmedMeasuresCount": 1,
+    "pendingMeasuresCount": 4,
+    "failedOrStalledCount": 1,
+    "crossoverDay": "2026-03-06",
+    "researchNote": "Re-check after March 6, 2026 to confirm which pending measures cleared both chambers."
+  },
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Georgia_2026_ballot_measures",
+      "description": "Ballotpedia — Georgia 2026 ballot measures",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    },
+    {
+      "url": "https://sos.ga.gov/page/proposed-georgia-constitution-amendments",
+      "description": "Georgia Secretary of State — Proposed Amendments",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    }
+  ]
+}

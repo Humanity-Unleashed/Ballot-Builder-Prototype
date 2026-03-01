@@ -1,0 +1,261 @@
+{
+  "generatedAt": "2026-02-27T00:00:00.000Z",
+  "state": "Texas",
+  "contests": [
+    {
+      "id": "TX-AG-2026",
+      "office": "Attorney General of Texas",
+      "state": "TX",
+      "district": null,
+      "primaryDate": "2026-03-03",
+      "primaryRunoffDate": "2026-05-26",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": true,
+      "incumbentName": "Ken Paxton",
+      "incumbentNote": "Paxton did not seek re-election; he is running for U.S. Senate against incumbent John Cornyn in the 2026 Republican primary.",
+      "raceRating": "Safe Republican",
+      "raceRatingSource": "Historical partisan lean — Texas has voted Republican in every AG race since 1994; no independent forecaster has rated this competitive at the general election level",
+      "primaryNote": "A Roy–Middleton runoff on May 26 is widely anticipated. No candidate is polling with majority support needed to avoid a runoff (50%+1 threshold under Texas law). A two-candidate Pulse Decision Science poll (Feb. 2026) showed Roy 40%, Middleton 38%, underscoring the closeness at the top.",
+      "candidates": [
+        {
+          "slug": "chip-roy",
+          "name": {
+            "full": "Chip Roy",
+            "ballotDisplay": "Chip Roy"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "U.S. Representative, Texas Congressional District 21 (2019–present)",
+          "priorOffice": "First Assistant Attorney General of Texas (under Greg Abbott, 2010–2014)",
+          "campaignWebsite": "https://chiproy.com",
+          "pollingAverage": "33–40% in Republican primary (leading)",
+          "campaignFinance": "Raised ~$4.5M; $4M+ cash on hand (through Dec. 31, 2025)",
+          "keyEndorsements": ["U.S. Sen. Ted Cruz"],
+          "evidenceTier": "high",
+          "notes": "Announced candidacy August 2025. Gave up his congressional seat to run. Former federal prosecutor and First Assistant AG gives him the strongest legal-credential argument. Leading in all polls. Tea Party/Freedom Caucus conservative with extensive legislative voting record in Congress available."
+        },
+        {
+          "slug": "mayes-middleton",
+          "name": {
+            "full": "Mayes Middleton",
+            "ballotDisplay": "Mayes Middleton"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas State Senator, Senate District 11 (2023–present); previously Texas State Representative (2019–2023)",
+          "campaignWebsite": "https://mayesmiddleton.com",
+          "pollingAverage": "23–38% in Republican primary (second place)",
+          "campaignFinance": "Self-funded ~$11–12M (personal loans from oil and gas fortune); $5M+ cash on hand",
+          "keyEndorsements": ["U.S. Rep. Randy Weber"],
+          "evidenceTier": "high",
+          "notes": "Galveston-area oil company president and wealthy self-funder. Runs on conservative/MAGA bona fides rather than legal credentials — critics note he is not a licensed attorney. Poses as the 'true conservative' alternative to Roy. Strong grassroots support in the Republican base."
+        },
+        {
+          "slug": "joan-huffman",
+          "name": {
+            "full": "Joan Huffman",
+            "ballotDisplay": "Joan Huffman"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas State Senator, Senate District 17 (2008–present)",
+          "priorOffice": "Former Harris County prosecutor; former state district judge",
+          "campaignWebsite": "https://joanhuffman.com",
+          "pollingAverage": "13% in Republican primary (third place)",
+          "campaignFinance": "Trails Roy and Middleton; donors include Ross Perot Jr. and Houston establishment figures",
+          "keyEndorsements": [
+            "Houston Police Officers Union",
+            "Texas Department of Public Safety Officers Association",
+            "Harris County Commissioner Tom Ramsey",
+            "State Sen. Robert Nichols",
+            "State Sen. Donna Campbell",
+            "Waller County DA Sean Whittmore"
+          ],
+          "evidenceTier": "high",
+          "notes": "Longest-serving candidate; former judge and prosecutor. Campaign emphasizes law-and-order credentials and rule of law. Polling in third at 13%; unlikely to force or win a runoff unless significant undecided voters break her way. Included because she clears the 5%+ polling threshold and has significant institutional backing."
+        },
+        {
+          "slug": "aaron-reitz",
+          "name": {
+            "full": "Aaron Reitz",
+            "ballotDisplay": "Aaron Reitz"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "priorOffice": "Deputy Attorney General under Ken Paxton; Assistant Attorney General for Office of Legal Policy under AG Pam Bondi (resigned July 2025 to run)",
+          "campaignWebsite": "https://reitzfortexas.com",
+          "pollingAverage": "6–7% in Republican primary (fourth place)",
+          "campaignFinance": "Raised $2.1M+; most cash on hand (through Dec. 31, 2025)",
+          "keyEndorsements": ["Ken Paxton", "National Border Patrol Council", "CPAC"],
+          "evidenceTier": "medium",
+          "notes": "Marine veteran; only candidate with endorsement from Paxton himself. Campaign slogan-level rhetoric ('destroy the left'). Polling at 6–7% with no path to top two without significant undecided collapse toward him. Included because he clears the 5%+ screening threshold and has Paxton's endorsement — a meaningful signal in this primary electorate. NOTE: Ballotpedia listed campaign website as AaronReitz.com but confirmed URL is reitzfortexas.com."
+        },
+        {
+          "slug": "nathan-johnson",
+          "name": {
+            "full": "Nathan Johnson",
+            "ballotDisplay": "Nathan Johnson"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas State Senator, Senate District 16 — Dallas (2019–present)",
+          "campaignWebsite": "https://nathanfortexas.com",
+          "pollingAverage": "25% in Democratic primary (leading)",
+          "campaignFinance": "Raised ~$650K during filing period; $750K cash on hand (through Dec. 31, 2025)",
+          "keyEndorsements": ["Dallas DA John Creuzot (indirect — Creuzot stated respect for Huffman but endorsed Johnson)"],
+          "evidenceTier": "high",
+          "notes": "First Democrat to announce; leads Democratic primary. Physics degree from U of Arizona; law degree from UT Austin. Business litigator at Thompson Coburn in Dallas. Announced July 15, 2025. Has state legislative voting record."
+        },
+        {
+          "slug": "joe-jaworski",
+          "name": {
+            "full": "Joe Jaworski",
+            "ballotDisplay": "Joe Jaworski"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "priorOffice": "Mayor of Galveston (8 years); 2022 Democratic nominee for Texas AG",
+          "campaignWebsite": "https://jaworskifortexas.com",
+          "pollingAverage": "22% in Democratic primary (second place)",
+          "campaignFinance": "Raised ~$220K; $250K cash on hand (through Dec. 31, 2025)",
+          "keyEndorsements": [],
+          "evidenceTier": "high",
+          "notes": "Grandson of Watergate special prosecutor Leon Jaworski. 30+ years practicing law; focus on civil litigation, mediation, and municipal law. Second bid for Texas AG after 2022 Democratic primary. Campaign emphasizes voter registration, affordability, and anti-corruption. Polling within margin of Johnson."
+        },
+        {
+          "slug": "tony-box",
+          "name": {
+            "full": "Tony Box",
+            "ballotDisplay": "Tony Box"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://tonyboxfortexas.com",
+          "pollingAverage": "13% in Democratic primary (third place)",
+          "campaignFinance": "Raised ~$137K; ~$28K cash on hand (through Dec. 31, 2025)",
+          "keyEndorsements": [],
+          "evidenceTier": "medium",
+          "notes": "First-time candidate. Army veteran (tank commander and JAG officer in Iraq); former FBI Special Agent; former federal prosecutor in the Eastern District of Missouri. Dallas civil litigator at Gray Reed. Investigated $30B in wartime contracting waste for Congressional Commission. Campaign focuses on restoring integrity to the office. Polling third at 13% — included per user instruction to include top 3 Democratic primary candidates; clears the evidence floor."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [],
+  "runoffScenarios": {
+    "republicanRunoff": {
+      "anticipated": true,
+      "expectedParticipants": ["chip-roy", "mayes-middleton"],
+      "runoffDate": "2026-05-26",
+      "basis": "No candidate is polling at or above 50%. Two-candidate Pulse Decision Science poll (Feb. 2026) showed Roy 40%, Middleton 38%, confirming a near-tie at the top two. Huffman at 13% and Reitz at 6% are unlikely to overtake either leader."
+    },
+    "democraticRunoff": {
+      "anticipated": "possible",
+      "expectedParticipants": ["nathan-johnson", "joe-jaworski"],
+      "runoffDate": "2026-05-26",
+      "basis": "Johnson leads at 25%, Jaworski at 22%, Box at 13%; with 40% undecided in some polls, a runoff is plausible if no candidate clears 50%."
+    }
+  },
+  "crossCheckNotes": [
+    "Ballotpedia and Wikipedia agree on the full field: 4 Republicans (Roy, Middleton, Huffman, Reitz), 3 Democrats (Johnson, Jaworski, Box).",
+    "John Bash (initially a major entrant tied to Elon Musk) dropped out April 30, 2025 — 21 days after announcing — due to a family health scare. Not on final ballot.",
+    "Aaron Reitz's campaign website confirmed as reitzfortexas.com (not AaronReitz.com as listed on some sources).",
+    "Joe Jaworski's website confirmed as jaworskifortexas.com (note: some sources list JaworskiForTexas.com — same domain, confirmed).",
+    "Primary is March 3, 2026; results not yet available as of manifest generation date (2026-02-27). All polling data is pre-primary.",
+    "No candidate withdrawals in the 30 days preceding manifest generation.",
+    "Texas AG general election not rated by Cook, Sabato, or Inside Elections as competitive — Texas has elected a Republican AG in every cycle since 1994. Race rating assigned as 'Safe Republican' based on structural partisanship."
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Texas_Attorney_General_election,_2026_(March_3_Republican_primary)",
+      "description": "Ballotpedia — Republican primary page with all four candidates, endorsements, and campaign details",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas_Attorney_General_election,_2026_(March_3_Democratic_primary)",
+      "description": "Ballotpedia — Democratic primary page with all three candidates",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas_Attorney_General_election,_2026",
+      "description": "Ballotpedia — General election overview page",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/02/11/texas-march-primary-poll-sid-miller-chip-roy-don-huffines/",
+      "description": "Texas Tribune — Feb. 11, 2026 primary polling: Roy 33%, Middleton 23%, Huffman 13%, Reitz 6%",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://thetexan.news/elections/2026/new-texas-primary-poll-shows-roy-middleton-leading-in-attorney-general-race/article_fee2d023-2210-4658-bcde-7848d7b65db1.html",
+      "description": "The Texan — Pulse Decision Science two-candidate poll: Roy 40%, Middleton 38%",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/01/16/texas-attorney-general-fundraising-campaign-finance-donors-2026/",
+      "description": "Texas Tribune — Campaign finance overview: Roy $4M+ CoH, Middleton $11M+ self-funded, Johnson $750K CoH",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+      "description": "Texas Tribune — Q&A with all three Democratic candidates",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.kxan.com/news/texas-politics/elon-musks-attorney-john-bash-drops-out-of-texas-attorney-general-race/",
+      "description": "KXAN — John Bash withdrawal confirmed (April 30, 2025)",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://reitzfortexas.com",
+      "description": "Aaron Reitz official campaign website (confirmed URL)",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://chiproy.com",
+      "description": "Chip Roy official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://mayesmiddleton.com",
+      "description": "Mayes Middleton official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://joanhuffman.com",
+      "description": "Joan Huffman official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://nathanfortexas.com",
+      "description": "Nathan Johnson official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://jaworskifortexas.com",
+      "description": "Joe Jaworski official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://tonyboxfortexas.com",
+      "description": "Tony Box official campaign website",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cbsnews.com/texas/news/texas-attorney-general-democratic-primary-three-candidates/",
+      "description": "CBS Texas — Democratic primary three-candidate field confirmed",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/02/11/543114/texas-march-primary-poll-sid-miller-chip-roy-don-huffines/",
+      "description": "Houston Public Media — primary polling analysis",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    }
+  ]
+}
