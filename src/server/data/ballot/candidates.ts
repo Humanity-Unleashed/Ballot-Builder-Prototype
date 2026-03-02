@@ -263,10 +263,24 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_permitting: 3,
     },
     axisEvidence: {
-      econ_investment: ['CHIPS Act advocacy and manufacturing investment focus', 'Workforce development champion'],
-      health_coverage_model: ['Supports ACA expansion and public option, not Medicare for All'],
-      climate_ambition: ['LCV 100% (2024), 98% lifetime score in Congress'],
-      climate_energy_portfolio: ['Strong environmental voting record', 'Clean energy manufacturing focus'],
+      econ_investment: [
+        { text: 'Authored CHIPS Act provisions; voted for $280B semiconductor bill (2022)', url: 'https://stevens.house.gov/media/press-releases/rep-stevens-secures-wins-chips-and-science-act-votes-historic-investments' },
+      ],
+      econ_safetynet: [
+        { text: 'Voted for Inflation Reduction Act (Medicare drug pricing, ACA subsidies, 2022)', url: 'https://www.govtrack.us/congress/votes/117-2022/h404' },
+      ],
+      health_coverage_model: [
+        { text: 'WDET Feb 2026: supports ACA expansion + public option, not Medicare for All', url: 'https://wdet.org/2026/02/19/haley-stevens-runs-for-michigans-open-us-senate-seat/' },
+      ],
+      justice_firearms: [
+        { text: 'Voted for Bipartisan Safer Communities Act (2022)', url: 'https://www.govtrack.us/congress/votes/117-2022/h304' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 100% (2025 annual), 98% lifetime — near-perfect environmental record', url: 'https://www.lcv.org/moc/haley-stevens/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 98% lifetime; voted for IRA clean energy investments (2022)', url: 'https://scorecard.lcv.org/members-of-congress' },
+      ],
     },
     valueStances: {
       universalism: 0.6,
@@ -310,10 +324,22 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_energy_portfolio: 2,
     },
     axisEvidence: {
-      justice_firearms: ['Authored Michigan\'s first red flag gun law'],
-      econ_safetynet: ['Passed $15/hr minimum wage in MI legislature'],
-      housing_affordability_tools: ['Expanded affordable housing in MI legislature'],
-      health_coverage_model: ['Supports public option; opposes Medicare for All as immediate goal'],
+      econ_safetynet: [
+        { text: 'Supported Right to Work repeal (SB 34) and prevailing wage restoration (2023)', url: 'https://michiganadvance.com/2023/03/22/right-to-work-prevailing-wage-bills-clear-final-passage-in-democratic-led-legislature/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Lowering MI Costs Plan: first permanent $50M Housing & Community Development Fund', url: 'https://senatedems.com/mcmorrow/2024/01/25/2023-legislative-year-in-review/' },
+      ],
+      justice_firearms: [
+        { text: "Authored SB 83 — Michigan's first red flag / ERPO law (signed May 2023)", url: 'https://www.michigan.gov/whitmer/news/press-releases/2023/05/22/whitmer-signs-extreme-risk-protection-order-legislation-to-keep-michigan-communities-safe' },
+        { text: '2026 platform: federal ERPO expansion, ghost gun ban', url: 'https://michiganadvance.com/2026/02/05/mcmorrows-gun-violence-prevention-plan-would-take-michigans-red-flag-laws-nationwide/' },
+      ],
+      health_coverage_model: [
+        { text: 'Supports public option; has not endorsed Medicare for All' },
+      ],
+      climate_ambition: [
+        { text: 'Voted for MI 100% Clean Energy package (signed Dec 2023)' },
+      ],
     },
     valueStances: {
       universalism: 0.7,
@@ -354,9 +380,20 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_ambition: 1,
     },
     axisEvidence: {
-      health_coverage_model: ['Signature issue: Medicare for All — guaranteed government health insurance', 'Endorsed by Bernie Sanders'],
-      health_cost_control: ['Medicare for All: no premiums or deductibles'],
-      econ_safetynet: ['Accepts no PAC donations; all-individual-donation campaign', 'Most progressive major candidate in the race'],
+      health_coverage_model: [
+        { text: 'WDET Jan 2026: "I\'ve been consistent about the need for Medicare for All"', url: 'https://wdet.org/2026/01/22/abdul-el-sayed-runs-for-michigans-open-u-s-senate-seat/' },
+        { text: 'Co-authored Medicare for All: A Citizen\'s Guide (Oxford Univ. Press, 2021)' },
+      ],
+      health_cost_control: [
+        { text: 'M4A platform: eliminate private insurer overhead, government price-setting', url: 'https://abdulforsenate.com/' },
+      ],
+      health_public_health: [
+        { text: 'Led Detroit Health Dept (2015-17); made Narcan universally accessible', url: 'https://abdulforsenate.com/about/' },
+        { text: 'Spearheaded $700M medical debt cancellation for 300K Michiganders', url: 'https://abdulforsenate.com/about/' },
+      ],
+      econ_safetynet: [
+        { text: 'Platform: abolish medical debt, tuition-free higher ed, anti-monopoly enforcement', url: 'https://abdulforsenate.com/' },
+      ],
     },
     valueStances: {
       universalism: 0.9,
@@ -400,10 +437,27 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_permitting: 8,
     },
     axisEvidence: {
-      health_coverage_model: ['Voted repeatedly against the ACA and for Medicare vouchers', 'Opposes government drug price negotiation'],
-      justice_firearms: ['NRA A-rated throughout career', 'Opposed all major gun safety legislation'],
-      climate_ambition: ['LCV lifetime score 8%', '14-year record of opposing environmental protections'],
-      climate_energy_portfolio: ['LCV lifetime score 8%', 'Supports fossil fuel development'],
+      climate_ambition: [
+        { text: 'LCV 8% lifetime score — near-perfect anti-environment congressional record', url: 'https://www.lcv.org/moc/mike-j-rogers/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 8% lifetime; opposed IRA clean energy provisions', url: 'https://www.lcv.org/moc/mike-j-rogers/' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A-rated; opposed gun safety legislation across 14-year House career', url: 'https://michiganindependent.com/politics/nra-funded-mike-rogers-elissa-slotkin-senate-election-gun-violence-mental-health/' },
+      ],
+      health_coverage_model: [
+        { text: 'Voted against ACA (2010); voted repeatedly to repeal; backed Medicare vouchers (2011)', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+      health_cost_control: [
+        { text: 'Voted for Medicare Part D drug pricing ban (2003); opposed IRA negotiation provision', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+      econ_safetynet: [
+        { text: 'Backed Social Security partial privatization (early 2000s); Medicare voucher plan (2011)', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+      econ_investment: [
+        { text: 'AFL-CIO alignment just 11% of congressional career; opposed overtime pay protections', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
     },
     valueStances: {
       universalism: -0.4,
@@ -448,6 +502,14 @@ export const candidatesMISenateD38: Candidate[] = [
       housing_supply_zoning: 4,
       climate_ambition: 3,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Delta County Commissioner; pro-union labor record, county opioid task force' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Affordable housing advocate; housing access cited as priority in county commissioner role' },
+      ],
+    },
     valueStances: {
       universalism: 0.6,
       benevolence: 0.8,
@@ -481,6 +543,14 @@ export const candidatesMISenateD38: Candidate[] = [
       health_coverage_model: 2,
       health_public_health: 3,
       climate_ambition: 4,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFGE union representative; veterans services and workers\' rights platform' },
+      ],
+      health_coverage_model: [
+        { text: 'Rural healthcare access platform; Army veteran with VA healthcare experience' },
+      ],
     },
     valueStances: {
       universalism: 0.5,
@@ -523,10 +593,19 @@ export const candidatesMISenateD38: Candidate[] = [
       climate_permitting: 7,
     },
     axisEvidence: {
-      justice_firearms: ['Open-carried at State of the State address in protest', 'Strongly pro-2nd Amendment record'],
-      health_public_health: ['Opposed COVID mandates; sued Gov. Whitmer over lockdowns', 'Won at Michigan Supreme Court'],
-      econ_school_choice: ['Endorsed by Great Lakes Education Project'],
-      climate_energy_portfolio: ['Supports keeping Line 5 pipeline open', 'Michigan LCV score 35%'],
+      justice_firearms: [
+        { text: 'Open-carried AR-15 at MI State of the State address (2014)' },
+        { text: 'Consistent A-rated NRA record across 3 state House terms' },
+      ],
+      health_public_health: [
+        { text: 'Sued Whitmer over COVID lockdowns; won at MI Supreme Court (2020)' },
+      ],
+      climate_ambition: [
+        { text: 'MI LCV lifetime score: 35%', url: 'https://www.michiganlcv.org/' },
+      ],
+      econ_safetynet: [
+        { text: 'Opposed pandemic-era economic restrictions; anti-regulatory voting record' },
+      ],
     },
     valueStances: {
       universalism: -0.3,
@@ -569,10 +648,18 @@ export const candidatesMISenateD38: Candidate[] = [
       climate_permitting: 8,
     },
     axisEvidence: {
-      justice_firearms: ['Strong pro-2A record; supports constitutional carry'],
-      econ_investment: ['Committed to limiting government growth and opposing regulations'],
-      justice_policing_accountability: ['Wants to solve law enforcement staffing shortages'],
-      climate_ambition: ['Michigan LCV score 14%', 'Pro-life; endorsed by Right to Life of Michigan'],
+      justice_firearms: [
+        { text: 'Supports constitutional carry; NRA-backed voting record in state House' },
+      ],
+      health_public_health: [
+        { text: 'Former paramedic; voted against vaccine mandate legislation' },
+      ],
+      climate_ambition: [
+        { text: 'MI LCV lifetime score: 14%', url: 'https://www.michiganlcv.org/' },
+      ],
+      econ_safetynet: [
+        { text: 'Right to Life endorsement; anti-regulatory state House voting record' },
+      ],
     },
     valueStances: {
       universalism: -0.3,

@@ -50,6 +50,44 @@ const candidatesTXSenate: Candidate[] = [
       climate_ambition: 1,
       climate_energy_portfolio: 1,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFL-CIO 100% scorecard (2024)', url: 'https://aflcio.org/scorecard/legislators/jasmine-crockett' },
+        { text: 'Heritage Action 0% (118th Congress)', url: 'https://heritageaction.com/scorecard/members/C001130/118' },
+      ],
+      econ_investment: [
+        { text: 'Heritage Action 0%; supports major public investment', url: 'https://heritageaction.com/scorecard/members/C001130/118' },
+      ],
+      econ_tax_structure: [
+        { text: 'Supports raising corporate tax rates to fund programs', url: 'https://www.jasmineforus.com/healthcare-you-need-when-you-need-it' },
+      ],
+      health_coverage_model: [
+        { text: 'Cosponsor of Medicare for All Act (HR 3421)', url: 'https://www.congress.gov/bill/118th-congress/house-bill/3421/cosponsors' },
+        { text: 'Campaign healthcare page', url: 'https://www.jasmineforus.com/healthcare-you-need-when-you-need-it' },
+      ],
+      health_cost_control: [
+        { text: 'Supports Medicare drug price negotiation expansion', url: 'https://www.jasmineforus.com/healthcare-you-need-when-you-need-it' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Criminal justice reform page', url: 'https://crockett.house.gov/issues/criminal-justice' },
+        { text: 'Former civil rights attorney; structural reform advocate' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Criminal justice reform priorities', url: 'https://crockett.house.gov/issues/criminal-justice' },
+      ],
+      justice_firearms: [
+        { text: 'Giffords A rating; cosponsor Assault Weapons Ban 2025', url: 'https://giffords.org/candidates/jasmine-crockett-2/' },
+        { text: 'Community safety page', url: 'https://www.jasmineforus.com/community-safety' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 97% lifetime scorecard', url: 'https://www.lcv.org/moc/jasmine-crockett/' },
+        { text: 'Energy and climate issues page', url: 'https://crockett.house.gov/issues/energy-climate-change' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 97%; supports 100% renewables by 2035', url: 'https://www.lcv.org/moc/jasmine-crockett/' },
+        { text: 'Eliminate fossil fuel subsidies position', url: 'https://crockett.house.gov/issues/energy-climate-change' },
+      ],
+    },
     valueStances: {
       universalism: 0.7,
       benevolence: 0.7,
@@ -96,6 +134,53 @@ const candidatesTXSenate: Candidate[] = [
       climate_energy_portfolio: 5,
       climate_permitting: 5,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFL-CIO endorsed; pro-union voting record', url: 'https://jamestalarico.com/issue/labor-business/' },
+        { text: 'Fortune interview: corporate welfare critique', url: 'https://fortune.com/2025/12/20/james-talarico-welfare-queens-corporations-income-tax-avoidance/' },
+      ],
+      econ_investment: [
+        { text: 'YCT 0% (86th Legislature)', url: 'https://ratings.yct.org/legislators/james-talarico/86th-legislature' },
+        { text: 'Labor and business priorities page', url: 'https://jamestalarico.com/issue/labor-business/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Fortune: raise taxes on billionaires and corporations', url: 'https://fortune.com/2025/12/20/james-talarico-welfare-queens-corporations-income-tax-avoidance/' },
+      ],
+      econ_school_choice: [
+        { text: 'ATPE endorsed; voted NO on SB 2 voucher bill', url: 'https://teachthevote.atpe.org/candidates/james-talarico' },
+      ],
+      health_coverage_model: [
+        { text: 'Healthcare priorities: Medicare for Y\'all public option', url: 'https://jamestalarico.com/issue/health-care/' },
+      ],
+      health_cost_control: [
+        { text: 'Authored TX insulin cap law (HB 82, $25/month)', url: 'https://www.texastribune.org/2026/01/27/james-talarico-insulin-cap-texas-legislature-senate-primary-attacks/' },
+        { text: 'Drug importation bill passage', url: 'https://thedailytexan.com/2023/04/13/texas-house-passes-bipartisan-bill-to-import-cheaper-prescription-drugs/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Campaign priorities page', url: 'https://jamestalarico.com/issue/labor-business/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Authored Javier Ambler\'s Law on police accountability', url: 'https://www.kxan.com/news/texas-politics/javier-amblers-law-passes-in-the-texas-house/' },
+        { text: 'Public safety and justice priorities', url: 'https://jamestalarico.com/issue/public-safety-justice/' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Public safety priorities: rehabilitation focus', url: 'https://jamestalarico.com/issue/public-safety-justice/' },
+      ],
+      justice_firearms: [
+        { text: 'Supports universal background checks, age limits', url: 'https://jamestalarico.com/issue/public-safety-justice/' },
+        { text: 'KUT debate: gun safety without assault weapons ban', url: 'https://www.kut.org/2026-01-24/texas-primary-debate-jasmine-crockett-james-talarico-senate-race' },
+      ],
+      climate_ambition: [
+        { text: 'Energy and environment priorities page', url: 'https://jamestalarico.com/issue/energy-environment/' },
+        { text: 'YCT 0%: consistent progressive environmental record', url: 'https://ratings.yct.org/legislators/james-talarico/86th-legislature' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Energy priorities: balanced transition approach', url: 'https://jamestalarico.com/issue/energy-environment/' },
+      ],
+      climate_permitting: [
+        { text: 'Energy and environment platform', url: 'https://jamestalarico.com/issue/energy-environment/' },
+      ],
+    },
     valueStances: {
       universalism: 0.6,
       benevolence: 0.8,
@@ -140,6 +225,49 @@ const candidatesTXSenate: Candidate[] = [
       justice_firearms: 7,
       climate_ambition: 9,
       climate_energy_portfolio: 9,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFL-CIO 11% lifetime; opposes safety net expansion', url: 'https://aflcio.org/scorecard/legislators/john-cornyn' },
+        { text: 'Pushes Medicaid/SNAP work requirements', url: 'https://www.cornyn.senate.gov/news/cornyn-pushes-work-requirements-to-reduce-government-spending/' },
+      ],
+      econ_investment: [
+        { text: 'Co-authored CHIPS Act ($280B semiconductors)', url: 'https://www.texastribune.org/2022/07/28/texas-chips-vote-semiconductors/' },
+        { text: 'Voted NO on Infrastructure Act and IRA', url: 'https://www.texastribune.org/2021/08/10/ted-cruz-john-cornyn-infrastructure-bill/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Champion of 2017 TCJA; supports permanent extension', url: 'https://www.govtrack.us/congress/votes/115-2017/s303' },
+        { text: 'Op-ed: tax cuts for working families', url: 'https://www.cornyn.senate.gov/news/cornyn-op-ed-republicans-solution-to-affordability-is-through-tax-cuts-for-working-families/' },
+      ],
+      econ_school_choice: [
+        { text: 'Supports school vouchers and ESAs', url: 'https://www.cornyn.senate.gov/key-issues/education/' },
+      ],
+      health_coverage_model: [
+        { text: '20+ votes to repeal or defund the ACA', url: 'https://www.uschamber.com/improving-government/u-s-chamber-endorses-senator-john-cornyn-for-u-s-senate-in-texas' },
+      ],
+      health_cost_control: [
+        { text: 'Chamber of Commerce endorsed; market-based approach', url: 'https://www.uschamber.com/improving-government/u-s-chamber-endorses-senator-john-cornyn-for-u-s-senate-in-texas' },
+      ],
+      housing_transport_priority: [
+        { text: 'Club for Growth 70% (car-centric infrastructure)', url: 'https://www.clubforgrowth.org/scorecards/legislator/C001056/John-Cornyn/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Heritage Action 78%; backs law enforcement', url: 'https://heritageaction.com/scorecard/members/C001056/117' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Led bipartisan First Step Act (2018)', url: 'https://www.texastribune.org/2018/12/18/John-Cornyn-First-Step-Act-US-federal-prison-reform-Senate-Texas/' },
+      ],
+      justice_firearms: [
+        { text: 'Co-authored Bipartisan Safer Communities Act (2022)', url: 'https://www.cornyn.senate.gov/bipartisan-safer-communities-act/' },
+        { text: 'NRA historically A+; downgraded after BSCA', url: 'https://justfacts.votesmart.org/candidate/evaluations/15375/john-cornyn/37/' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 7% lifetime scorecard', url: 'https://www.lcv.org/moc/john-cornyn/' },
+        { text: 'CSIS energy talk: fossil-first energy security', url: 'https://www.csis.org/analysis/us-energy-resources-global-landscape-conversation-senator-john-cornyn' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 7%; all-of-the-above with fossil emphasis', url: 'https://www.lcv.org/moc/john-cornyn/' },
+      ],
     },
     valueStances: {
       universalism: -0.5,
@@ -187,6 +315,51 @@ const candidatesTXSenate: Candidate[] = [
       climate_energy_portfolio: 10,
       climate_permitting: 9,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'YCT 92-98% (TX Legislature); opposes safety net', url: 'https://ratings.yct.org/legislators/ken-paxton/82nd-legislature' },
+        { text: 'Sued Biden over student loan forgiveness', url: 'https://www.texastribune.org/2023/02/15/texas-ken-paxton-sues-joe-biden-spending-bill/' },
+      ],
+      econ_investment: [
+        { text: 'Sued to block Biden-era federal spending bills', url: 'https://www.texastribune.org/2023/02/15/texas-ken-paxton-sues-joe-biden-spending-bill/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Property tax investigation of cities', url: 'https://www.texastribune.org/2025/12/09/attorney-general-ken-paxton-cities-property-tax-investigation/' },
+        { text: 'YCT 92-98% (pro-business tax stance)', url: 'https://ratings.yct.org/legislators/ken-paxton/82nd-legislature' },
+      ],
+      econ_school_choice: [
+        { text: 'AG opinion clearing funds for religious ESAs', url: 'https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-celebrates-school-choice-texans-and-vows-defend-new-law' },
+      ],
+      health_coverage_model: [
+        { text: 'Led 20-state lawsuit to repeal entire ACA', url: 'https://www.texasattorneygeneral.gov/news/releases/ag-paxton-and-wisconsin-ag-file-20-state-lawsuit-end-grip-obamacare-texas-and-nation' },
+      ],
+      health_cost_control: [
+        { text: 'Market-based approach; opposes price controls' },
+      ],
+      health_public_health: [
+        { text: 'Sued over gender-affirming care restrictions', url: 'https://www.washingtonpost.com/nation/2024/10/18/texas-transgender-healthcare-ken-paxton/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Sued Dallas for insufficiently funding police', url: 'https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-city-dallas-officials-insufficiently-funding-dallas-police' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Co-led bipartisan AG coalition for First Step Act', url: 'https://texasattorneygeneral.gov/news/releases/ag-paxton-co-leads-bipartisan-coalition-38-attorneys-general-expressing-support-congressional-action' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A grade with 3 consecutive AG endorsements', url: 'https://www.nrapvf.org/articles/20220209/nra-endorses-texas-attorney-general-ken-paxton' },
+        { text: 'Sued ATF over pistol braces and State Fair gun ban', url: 'https://www.nraila.org/articles/20240830/attorney-general-ken-paxton-sues-the-city-of-dallas-for-unlawfully-prohibiting-firearms-from-the-texas-state-fair' },
+      ],
+      climate_ambition: [
+        { text: '15+ lawsuits against EPA climate regulations', url: 'https://texasattorneygeneral.gov/news/releases/ag-paxton-pushes-back-against-biden-epas-war-against-texas-oil-gas' },
+        { text: 'Sierra Club: fights measures to reduce climate deaths', url: 'https://www.sierraclub.org/texas/blog/2024/03/texas-ag-paxton-fights-against-measures-would-reduce-deaths-and-climate-extremes' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Sued EPA over oil and gas regulations', url: 'https://texasattorneygeneral.gov/news/releases/ag-paxton-pushes-back-against-biden-epas-war-against-texas-oil-gas' },
+      ],
+      climate_permitting: [
+        { text: 'Anti-EPA litigation record; faster fossil approvals', url: 'https://texasattorneygeneral.gov/news/releases/ag-paxton-pushes-back-against-biden-epas-war-against-texas-oil-gas' },
+      ],
+    },
     valueStances: {
       universalism: -0.8,
       benevolence: 0.1,
@@ -231,6 +404,47 @@ const candidatesTXSenate: Candidate[] = [
       climate_ambition: 9,
       climate_energy_portfolio: 9,
       climate_permitting: 8,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Heritage Action 96% (118th Congress)', url: 'https://heritageaction.com/scorecard/members/H001095/118' },
+        { text: 'AFL-CIO 0% scorecard', url: 'https://aflcio.org/scorecard/legislators/wesley-hunt' },
+      ],
+      econ_investment: [
+        { text: 'Heritage Action 96%; opposes public investment', url: 'https://heritageaction.com/scorecard/members/H001095/118' },
+      ],
+      econ_tax_structure: [
+        { text: 'VoteSmart political courage test', url: 'https://justfacts.votesmart.org/candidate/political-courage-test/188147/wesley-hunt' },
+      ],
+      econ_school_choice: [
+        { text: 'Heritage Action 96%; supports school choice', url: 'https://heritageaction.com/scorecard/members/H001095/118' },
+      ],
+      health_coverage_model: [
+        { text: 'Heritage Action 96%; opposes ACA expansion', url: 'https://heritageaction.com/scorecard/members/H001095/118' },
+      ],
+      health_cost_control: [
+        { text: 'Market-based healthcare approach' },
+      ],
+      health_public_health: [
+        { text: 'Opposes vaccine mandates and public health regs', url: 'https://heritageaction.com/scorecard/members/H001095/118' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Back the Blue; opposes police reform legislation', url: 'https://heritageaction.com/scorecard/members/H001095/118' },
+      ],
+      justice_firearms: [
+        { text: 'NRA AQ rating; zero-compromise 2A stance', url: 'https://www.nrapvf.org/grades/texas/' },
+        { text: 'Introduced 2A Restoration Act to repeal BSCA', url: 'https://www.congress.gov/bill/119th-congress/house-bill/6035' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 0% lifetime scorecard', url: 'https://www.lcv.org/moc/wesley-hunt/' },
+        { text: 'Hart Energy: fossil fuel expansion champion', url: 'https://www.hartenergy.com/exclusives/energy-policy-watch-wesley-hunts-bid-energy-district-world-198337/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 0%; sponsors Protect LNG Act', url: 'https://hunt.house.gov/media/press-releases/immediate-release-rep-wesley-hunt-introduces-protect-lng-act-2025' },
+      ],
+      climate_permitting: [
+        { text: 'Protect LNG Act; faster fossil fuel permitting', url: 'https://hunt.house.gov/media/press-releases/immediate-release-rep-wesley-hunt-introduces-protect-lng-act-2025' },
+      ],
     },
     valueStances: {
       universalism: -0.7,
@@ -285,6 +499,51 @@ const candidatesTXHouse34: Candidate[] = [
       climate_energy_portfolio: 6,
       climate_permitting: 7,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Voted against every Republican healthcare cut', url: 'https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-against-shameful-republican-budget-bill' },
+        { text: 'Heritage Action 27% (116th Congress)', url: 'https://heritageaction.com/scorecard/members/G000581/116' },
+      ],
+      econ_investment: [
+        { text: 'Voted YES on Inflation Reduction Act', url: 'https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-favor-inflation-reduction-act-lowering-costs-south' },
+      ],
+      econ_tax_structure: [
+        { text: 'Heritage Action 27%; moderate-progressive tax stance', url: 'https://heritageaction.com/scorecard/members/G000581/116' },
+      ],
+      econ_school_choice: [
+        { text: 'Supports public school funding; opposes vouchers' },
+      ],
+      health_coverage_model: [
+        { text: 'Defends Medicare, Medicaid, Social Security', url: 'https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-against-shameful-republican-budget-bill' },
+      ],
+      health_cost_control: [
+        { text: 'Voted YES on H.R.3 Lower Drug Costs Act', url: 'https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-lower-prescription-drug-prices-house-passage-hr-3' },
+        { text: 'Drug price control interview', url: 'https://riograndeguardian.com/stories/gonzalez-we-need-to-control-prescription-drug-prices,15920' },
+      ],
+      health_public_health: [
+        { text: 'Mixed: supports some mandates, opposes others' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Blue Dog moderate; limited police reform record' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Centrist on criminal justice; Blue Dog Coalition' },
+      ],
+      justice_firearms: [
+        { text: 'Voted YES on BSCA but NO on Assault Weapons Ban', url: 'https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-bipartisan-safer-communities-act-keep-our-children' },
+        { text: 'AWB No vote explanation', url: 'https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-no-assault-weapons-ban-calls-senate-take-house' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 66% lifetime; mixed climate record', url: 'https://www.lcv.org/moc/vicente-gonzalez/' },
+        { text: 'Voted YES on GOP H.R.1 (one of four Democrats)', url: 'https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Co-chairs Oil and Gas Caucus; all-of-the-above', url: 'https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/' },
+      ],
+      climate_permitting: [
+        { text: 'H.R.1 Yes vote: faster fossil fuel permitting', url: 'https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/' },
+      ],
+    },
     valueStances: {
       universalism: 0.1,
       benevolence: 0.7,
@@ -325,6 +584,32 @@ const candidatesTXHouse34: Candidate[] = [
       justice_firearms: 8,
       climate_ambition: 8,
       climate_energy_portfolio: 8,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Pledges to safeguard Social Security and Medicare', url: 'https://www.texastribune.org/2025/07/21/texas-congress-eric-flores-vicente-gonzalez-34th-district/' },
+      ],
+      econ_investment: [
+        { text: 'Trump-endorsed; pro-business, anti-regulation', url: 'https://www.nrcc.org/2025/12/19/president-trump-endorses-eric-flores-for-congress/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Texas Voice forum: lower taxes position', url: 'https://www.thetexasvoice.com/flores-faceoff-cd-34-candidates-rumble-at-forum/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Former federal prosecutor; law enforcement focus', url: 'https://www.texastribune.org/2025/07/21/texas-congress-eric-flores-vicente-gonzalez-34th-district/' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Prosecutorial background; tough on crime', url: 'https://www.texastribune.org/2025/07/21/texas-congress-eric-flores-vicente-gonzalez-34th-district/' },
+      ],
+      justice_firearms: [
+        { text: 'Texas Alliance for Life endorsed; pro-gun stance', url: 'https://www.texasallianceforlife.org/2026-primary-election-endorsements/' },
+      ],
+      climate_ambition: [
+        { text: 'First-time candidate; no specific climate record' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Texas Voice forum: pro-oil and gas', url: 'https://www.thetexasvoice.com/flores-faceoff-cd-34-candidates-rumble-at-forum/' },
+      ],
     },
     valueStances: {
       universalism: -0.3,
@@ -369,6 +654,42 @@ const candidatesTXHouse34: Candidate[] = [
       climate_ambition: 9,
       climate_energy_portfolio: 8,
       climate_permitting: 8,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Heritage Action 92% (117th Congress)', url: 'https://heritageaction.com/scorecard/members/F000473/117' },
+      ],
+      econ_investment: [
+        { text: 'Heritage Action 92%; opposes public investment', url: 'https://heritageaction.com/scorecard/members/F000473/117' },
+      ],
+      econ_tax_structure: [
+        { text: 'Heritage Action 92%; pro-business tax policy', url: 'https://heritageaction.com/scorecard/members/F000473/117' },
+      ],
+      econ_school_choice: [
+        { text: 'Endorsed by TX Home School Coalition; pro-ESA', url: 'https://www.mayrafloresforcongress.com/real-solutions' },
+      ],
+      health_coverage_model: [
+        { text: 'Voted NO on IRA healthcare provisions', url: 'https://justfacts.votesmart.org/bill/31958/87785/200995/mayra-flores-voted-nay-concurrence-vote-hr-5376-inflation-reduction-act-of-2022' },
+      ],
+      health_cost_control: [
+        { text: 'Market-based approach; opposes price regulation', url: 'https://www.mayrafloresforcongress.com/real-solutions' },
+      ],
+      health_public_health: [
+        { text: 'iVoterGuide: conservative public health positions', url: 'https://ivoterguide.com/candidate/58023/race/6592/election/943' },
+      ],
+      justice_firearms: [
+        { text: 'NRA-PVF endorsed; voted NO on BSCA', url: 'https://www.nrapvf.org/grades/texas/' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 0% scorecard', url: 'https://www.lcv.org/moc/mayra-flores/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 0%; voted NO on IRA clean energy', url: 'https://www.lcv.org/moc/mayra-flores/' },
+        { text: 'Campaign: all-of-the-above with fossil emphasis', url: 'https://www.mayrafloresforcongress.com/real-solutions' },
+      ],
+      climate_permitting: [
+        { text: 'Supports faster energy project approvals', url: 'https://www.mayrafloresforcongress.com/real-solutions' },
+      ],
     },
     valueStances: {
       universalism: -0.5,
@@ -425,6 +746,59 @@ const candidatesTXGovernor: Candidate[] = [
       climate_ambition: 2,
       climate_energy_portfolio: 3,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFL-CIO endorsed; career union lawyer', url: 'https://ginafortexas.com/2026/01/texas-afl-cio-endorses-gina-hinojosa-for-governor/' },
+        { text: 'Authored $40B Fully Fund Our Future Act', url: 'https://ginafortexas.com/priorities/' },
+      ],
+      econ_investment: [
+        { text: 'YCT 0% (86th Legislature); pro-investment record', url: 'https://ratings.yct.org/legislators/gina-hinojosa/86th-legislature' },
+        { text: 'Campaign priorities page', url: 'https://ginafortexas.com/priorities/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Fiscal Responsibility Index: progressive tax stance', url: 'https://index.texastaxpayers.com/legislators/gina-hinojosa/' },
+      ],
+      econ_school_choice: [
+        { text: 'Led House Dems defeating vouchers 4 sessions', url: 'https://ginafortexas.com/priorities/' },
+        { text: 'ATPE endorsed; former school board president', url: 'https://teachthevote.org/candidates/GIna-Hinojosa' },
+      ],
+      health_coverage_model: [
+        { text: 'Explicit Medicaid expansion commitment', url: 'https://ginafortexas.com/priorities/' },
+        { text: 'EMILY\'s List endorsed', url: 'https://emilyslist.org/candidate/gina-hinojosa/' },
+      ],
+      health_cost_control: [
+        { text: 'Sponsored $1B indigent healthcare funding bill', url: 'https://ginafortexas.com/priorities/' },
+      ],
+      health_public_health: [
+        { text: 'Choice Tracker: pro-reproductive health stance', url: 'https://choicetracker.org/tx/people/gina-hinojosa/82706432' },
+        { text: 'NORML cannabis reform support', url: 'https://vote.norml.org/politicians/166708' },
+      ],
+      housing_supply_zoning: [
+        { text: 'Austin Monitor: inclusionary zoning efforts', url: 'https://www.austinmonitor.com/stories/2020/12/hinojosa-tries-again-for-inclusionary-zoning/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Inclusionary zoning; government housing tools', url: 'https://www.austinmonitor.com/stories/2020/12/hinojosa-tries-again-for-inclusionary-zoning/' },
+      ],
+      housing_transport_priority: [
+        { text: 'Campaign priorities: public transit investment', url: 'https://ginafortexas.com/priorities/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Called on Abbott to stop facilitating ICE raids', url: 'https://ginafortexas.com/2026/01/hinojosa-calls-on-abbott-to-stop-facilitating-fatal-ice-operations/' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Rehabilitation-focused criminal justice approach', url: 'https://ginafortexas.com/priorities/' },
+      ],
+      justice_firearms: [
+        { text: 'TribTalk: gun violence as public health issue', url: 'https://www.tribtalk.org/2019/08/19/the-false-narrative-of-texas-gun-culture/' },
+        { text: 'Supports universal background checks, red flag laws', url: 'https://www.tribtalk.org/2017/11/08/we-can-prevent-gun-violence-in-texas-now/' },
+      ],
+      climate_ambition: [
+        { text: 'Spearheaded 41-bill Texas Climate Plan', url: 'https://www.austinchronicle.com/news/2021-04-16/texas-climate-plan-hopes-to-reduce-texas-carbon-emissions/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Texas Climate Plan: reduce carbon, regulate fossil', url: 'https://www.austinchronicle.com/news/2021-04-16/texas-climate-plan-hopes-to-reduce-texas-carbon-emissions/' },
+      ],
+    },
     valueStances: {
       universalism: 0.7,
       benevolence: 0.8,
@@ -473,6 +847,59 @@ const candidatesTXGovernor: Candidate[] = [
       climate_ambition: 9,
       climate_energy_portfolio: 9,
       climate_permitting: 9,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'SNAP restrictions signed into law', url: 'https://www.texastribune.org/2025/05/15/snap-benefits-texas-snap-restrictions/' },
+        { text: 'Opposes Medicaid expansion; highest uninsured rate', url: 'https://www.texastribune.org/2022/11/07/texas-medicaid-expansion-republicans/' },
+      ],
+      econ_investment: [
+        { text: 'Record $148B transportation investment', url: 'https://gov.texas.gov/news/post/governor-abbott-txdot-announce-record-148-billion-transportation-investment' },
+      ],
+      econ_tax_structure: [
+        { text: 'Signed constitutional ban on state income tax', url: 'https://www.foxbusiness.com/politics/abbott-unveils-5-point-plan-overhaul-texas-property-taxes-targeting-relief-homeowners' },
+        { text: 'Largest property tax cut in Texas history', url: 'https://gov.texas.gov/news/post/governor-abbott-signs-largest-property-tax-cut-in-texas-history' },
+      ],
+      econ_school_choice: [
+        { text: 'Signed nation\'s largest $1B ESA voucher program', url: 'https://www.kut.org/politics/2025-05-02/abbott-billion-dollar-school-voucher-esa-law' },
+      ],
+      health_coverage_model: [
+        { text: 'Opposes Medicaid expansion consistently', url: 'https://www.texastribune.org/2022/11/07/texas-medicaid-expansion-republicans/' },
+      ],
+      health_cost_control: [
+        { text: 'Market-based approach to healthcare costs' },
+      ],
+      health_public_health: [
+        { text: 'Banned COVID vaccine mandates statewide', url: 'https://gov.texas.gov/news/post/governor-abbott-issues-executive-order-39-prohibiting-vaccine-mandates-in-texas' },
+      ],
+      housing_supply_zoning: [
+        { text: 'Signed laws to combat housing crisis in Austin', url: 'https://gov.texas.gov/news/post/governor-abbott-signs-laws-to-combat-statewide-housing-crisis-in-austin' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Market solutions focus; property tax cuts', url: 'https://gov.texas.gov/news/post/governor-abbott-signs-largest-property-tax-cut-in-texas-history' },
+      ],
+      housing_transport_priority: [
+        { text: 'Record $148B in highway investment (car-centric)', url: 'https://gov.texas.gov/news/post/governor-abbott-txdot-announce-record-148-billion-transportation-investment' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Signed Back the Blue legislation', url: 'https://gov.texas.gov/news/post/governor-abbott-signs-back-the-blue-legislation' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Signed strongest bail reform package in TX history', url: 'https://gov.texas.gov/news/post/governor-abbott-signs-strongest-bail-reform-package-in-texas-history' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A+ grade; signed constitutional carry', url: 'https://www.nrapvf.org/articles/20220216/nra-endorses-texas-governor-greg-abbott' },
+        { text: 'Constitutional carry law', url: 'https://www.texastribune.org/2021/06/16/texas-constitutional-carry-greg-abbott/' },
+      ],
+      climate_ambition: [
+        { text: 'Anti-ESG legislation; opposes climate regulation', url: 'https://www.texastribune.org/2023/03/01/chapter-313-texas-renewables-economic-development/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Fossil-first energy policy; anti-ESG divestment', url: 'https://www.texastribune.org/2023/03/01/chapter-313-texas-renewables-economic-development/' },
+      ],
+      climate_permitting: [
+        { text: 'Fast-tracks fossil fuel and energy infrastructure', url: 'https://gov.texas.gov/news/post/governor-abbott-txdot-announce-record-148-billion-transportation-investment' },
+      ],
     },
     valueStances: {
       universalism: -0.7,
@@ -528,6 +955,51 @@ const candidatesTXAG: Candidate[] = [
       climate_ambition: 3,
       climate_energy_portfolio: 4,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFL-CIO endorsed', url: 'https://texasaflcio.org/news/lone-star-labor-our-slate-statewide-endorsements' },
+        { text: 'YCT 0% (86th Legislature)', url: 'https://ratings.yct.org/legislators/nathan-johnson/86th-legislature' },
+      ],
+      econ_investment: [
+        { text: 'Campaign priorities: public investment focus', url: 'https://nathanfortexas.com/priorities' },
+      ],
+      econ_tax_structure: [
+        { text: 'YCT 0%; progressive tax stance', url: 'https://ratings.yct.org/legislators/nathan-johnson/86th-legislature' },
+      ],
+      econ_school_choice: [
+        { text: 'ATPE endorsed; voted NO 3x on voucher bills', url: 'https://teachthevote.atpe.org/Candidates/Nathan-Johnson' },
+      ],
+      health_coverage_model: [
+        { text: 'Lead voice on Medicaid expansion (SB 1296)', url: 'https://www.dmagazine.com/healthcare-business/2020/10/how-texas-could-expand-medicaid-and-not-break-the-bank/' },
+      ],
+      health_cost_control: [
+        { text: 'Supports drug price regulation and expansion', url: 'https://www.dmagazine.com/healthcare-business/2020/10/how-texas-could-expand-medicaid-and-not-break-the-bank/' },
+      ],
+      health_public_health: [
+        { text: 'Cannabis reform bills in TX special session', url: 'https://texaspolitics.com/2025/07/30/senator-nathan-johnson-unveils-cannabis-reform-bills-in-texas-special-session/' },
+      ],
+      housing_supply_zoning: [
+        { text: 'SB 2835: flexible apartment building standards', url: 'https://citizenportal.ai/articles/3111993/Texas/Senate-Bill-2835-promotes-flexible-single-staircase-apartment-buildings-in-Texas' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Campaign priorities: housing affordability', url: 'https://nathanfortexas.com/priorities' },
+      ],
+      justice_policing_accountability: [
+        { text: 'TX Tribune Q&A: AG enforcement discretion', url: 'https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'VoteSmart key votes on criminal justice', url: 'https://justfacts.votesmart.org/candidate/key-votes/177585/nathan-johnson' },
+      ],
+      justice_firearms: [
+        { text: 'Self-reported NRA F grade; supports gun safety', url: 'https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/' },
+      ],
+      climate_ambition: [
+        { text: 'Energy priorities: clean energy transition', url: 'https://senatornathanjohnson.com/priorities-powering-the-future-improving-the-environment/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Powering the future priorities page', url: 'https://senatornathanjohnson.com/priorities-powering-the-future-improving-the-environment/' },
+      ],
+    },
     valueStances: {
       universalism: 0.5,
       benevolence: 0.7,
@@ -571,6 +1043,41 @@ const candidatesTXAG: Candidate[] = [
       justice_firearms: 3,
       climate_ambition: 3,
       climate_energy_portfolio: 4,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'TX Tribune Q&A: consumer protection focus', url: 'https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/' },
+      ],
+      econ_school_choice: [
+        { text: 'Fight vouchers as unconstitutional', url: 'https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/' },
+      ],
+      health_coverage_model: [
+        { text: 'Expand Medicaid; dismiss Paxton-era ACA lawsuits', url: 'https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/' },
+      ],
+      health_cost_control: [
+        { text: 'Hold insurance companies accountable on claims', url: 'https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-democratic-primary-candidates-for-texas-attorney-general/' },
+      ],
+      health_public_health: [
+        { text: 'Protect reproductive rights to Roe viability', url: 'https://www.jaworskifortexas.com' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Galveston public housing advocacy as mayor', url: 'https://texashousers.org/2011/07/15/hud-pointedly-directs-galveston-to-rebuild-its-public-housing/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Community Impact Q&A: reform-oriented AG vision', url: 'https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-democratic-primary-candidates-for-texas-attorney-general/' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Legalize marijuana; end for-profit prisons', url: 'https://www.kxan.com/news/texas-politics/texas-democratic-ag-candidate-profiles-trial-attorney-joe-jaworski/' },
+      ],
+      justice_firearms: [
+        { text: 'KXAN profile: supports gun safety measures', url: 'https://www.kxan.com/news/texas-politics/texas-democratic-ag-candidate-profiles-trial-attorney-joe-jaworski/' },
+      ],
+      climate_ambition: [
+        { text: 'TX Tribune Q&A: climate-conscious AG approach', url: 'https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website priorities', url: 'https://www.jaworskifortexas.com' },
+      ],
     },
     valueStances: {
       universalism: 0.5,
@@ -620,6 +1127,57 @@ const candidatesTXAG: Candidate[] = [
       climate_energy_portfolio: 10,
       climate_permitting: 7,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Heritage Action 100%; AFL-CIO 0%', url: 'https://heritageaction.com/scorecard/members/R000614/' },
+        { text: 'Demanded deeper Medicaid/SNAP cuts in OBBB', url: 'https://roy.house.gov/media/press-releases/rep-roy-statement-house-passage-one-big-beautiful-bill-act-0' },
+      ],
+      econ_investment: [
+        { text: 'Heritage Action 100%; opposes public investment', url: 'https://heritageaction.com/scorecard/members/R000614/' },
+        { text: 'Voted NO on Infrastructure Act', url: 'https://roy.house.gov/media/press-releases/rep-roy-issues-statement-infrastructure-bill-vote' },
+      ],
+      econ_tax_structure: [
+        { text: 'Heritage Action 100%; pro-business tax policy', url: 'https://heritageaction.com/scorecard/members/R000614/' },
+      ],
+      econ_school_choice: [
+        { text: 'Introduced SCHOOL Act for universal vouchers', url: 'https://roy.house.gov/media/press-releases/rep-roy-rolls-out-education-bills-defund-racist-curricula-and-put-parents-back' },
+      ],
+      health_coverage_model: [
+        { text: 'Personalized Care Act: replace ACA with HSAs', url: 'https://roy.house.gov/media/press-releases/rep-roy-reintroduces-personalized-care-act-help-restore-americans-healthcare' },
+        { text: 'Daily Signal: healthcare system overhaul plan', url: 'https://www.dailysignal.com/2025/01/22/exclusive-chip-roy-unveils-cure-health-care-system/' },
+      ],
+      health_cost_control: [
+        { text: 'Market-based: eliminate ACA, expand HSAs', url: 'https://www.dailysignal.com/2025/01/22/exclusive-chip-roy-unveils-cure-health-care-system/' },
+      ],
+      health_public_health: [
+        { text: 'Bill to protect against vaccine mandates', url: 'https://roy.house.gov/media/press-releases/rep-roy-sen-lee-team-protect-individuals-businesses-tyrannical-vaccine-mandate' },
+      ],
+      housing_transport_priority: [
+        { text: 'Opposes federal transit spending', url: 'https://roy.house.gov/media/press-releases/rep-roy-issues-statement-infrastructure-bill-vote' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Voted NO on George Floyd Act', url: 'https://www.govtrack.us/congress/votes/117-2021/h60' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Federal criminal code reform (bipartisan)', url: 'https://roy.house.gov/media/press-releases/reps-roy-mcbath-biggs-and-cohen-lead-bipartisan-effort-simplify-federal-criminal-code' },
+        { text: 'Anti-Medicaid discrimination bill', url: 'https://roy.house.gov/media/press-releases/reps-roy-fitzgerald-introduce-legislation-end-medicaid-discrimination-against' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A grade; No Backdoor Gun Control Act', url: 'https://roy.house.gov/media/press-releases/rep-roy-introduces-bill-close-loophole-national-firearms-act' },
+        { text: 'Voted NO on BSCA', url: 'https://www.govtrack.us/congress/votes/117-2022/h299' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 2% lifetime scorecard', url: 'https://www.lcv.org/moc/chip-roy/' },
+        { text: 'Energy Freedom Act: repeal all IRA subsidies', url: 'https://brecheen.house.gov/news/documentsingle.aspx?DocumentID=1447' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 2%; Energy Freedom Act repeals clean energy', url: 'https://www.lcv.org/moc/chip-roy/' },
+        { text: 'AFL-CIO 0%: fossil fuel-first energy policy', url: 'https://aflcio.org/scorecard/legislators/chip-roy' },
+      ],
+      climate_permitting: [
+        { text: 'Libertarian federalism: reduce federal oversight', url: 'https://heritageaction.com/scorecard/members/R000614/' },
+      ],
+    },
     valueStances: {
       universalism: -0.7,
       benevolence: 0.1,
@@ -665,6 +1223,52 @@ const candidatesTXAG: Candidate[] = [
       climate_ambition: 9,
       climate_energy_portfolio: 9,
       climate_permitting: 8,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'YCT 100% (88th Legislature)', url: 'https://ratings.yct.org/legislators/mayes-middleton/88th-legislature' },
+        { text: 'Fiscal Responsibility Index: max conservative', url: 'https://index.texastaxpayers.com/legislators/mayes-middleton/2023-index' },
+      ],
+      econ_investment: [
+        { text: 'YCT 100%; opposes government spending programs', url: 'https://ratings.yct.org/legislators/mayes-middleton/88th-legislature' },
+      ],
+      econ_tax_structure: [
+        { text: 'Fiscal Responsibility Index: anti-tax position', url: 'https://index.texastaxpayers.com/legislators/mayes-middleton/2023-index' },
+      ],
+      econ_school_choice: [
+        { text: 'Filed universal ESA/voucher bill', url: 'https://teachthevote.atpe.org/Our-Blog/Latest-Posts/TTexas-Senate-predictably-passes-its-private-schoo' },
+        { text: 'School prayer and chaplain bills authored', url: 'https://www.houstonpublicmedia.org/articles/news/religion/2025/05/22/522105/school-prayer-bible-reading-bill-authored-by-houston-area-senator-passes-texas-house/' },
+      ],
+      health_coverage_model: [
+        { text: 'iVoterGuide: opposes Medicaid expansion', url: 'https://ivoterguide.com/candidate/39321/race/23525/election/1343' },
+      ],
+      health_public_health: [
+        { text: 'Authored COVID vaccine mandate ban (SB 7)', url: 'https://www.texastribune.org/2023/10/31/texas-legislature-covid-vaccine-mandates-ban-bill/' },
+        { text: 'Transgender bathroom ban legislation', url: 'https://thehill.com/homenews/lgbtq/5487156-texas-transgender-bathroom-ban/' },
+      ],
+      housing_supply_zoning: [
+        { text: 'Texas Values Action: local control emphasis', url: 'https://txvaluesaction.org/legislator/mayes-middleton/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Pro-law enforcement; tough on crime stance', url: 'https://ivoterguide.com/candidate/39321/race/23525/election/1343' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Punitive justice approach; anti-reform', url: 'https://ivoterguide.com/candidate/39321/race/23525/election/1343' },
+      ],
+      justice_firearms: [
+        { text: 'NRA-ILA: 2A legislation signed into law', url: 'https://www.nraila.org/articles/20250623/texas-second-amendment-legislation-signed-by-governor' },
+        { text: 'Texas Right to Life endorsed', url: 'https://www.texasrighttolifepac.com/texas-right-to-life-endorses-mayes-middleton-for-texas-attorney-general/' },
+      ],
+      climate_ambition: [
+        { text: 'Anti-ESG legislation and fossil fuel advocacy', url: 'https://www.texastribune.org/2026/02/04/texas-investment-divest-boycott-fossil-fuels-lawsuit-ruling-esg/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Oil exec; opposes renewable subsidies', url: 'https://austinjournal.com/middleton-believes-proposed-legislation-will-go-a-long-way-to-provide-reliable-dispatchable-energy-for-texans/' },
+        { text: 'Anti-ESG divestment legislation', url: 'https://www.texastribune.org/2026/02/04/texas-investment-divest-boycott-fossil-fuels-lawsuit-ruling-esg/' },
+      ],
+      climate_permitting: [
+        { text: 'Dispatchable energy legislation for fossil fuels', url: 'https://austinjournal.com/middleton-believes-proposed-legislation-will-go-a-long-way-to-provide-reliable-dispatchable-energy-for-texans/' },
+      ],
     },
     valueStances: {
       universalism: -0.8,
@@ -717,6 +1321,46 @@ const candidatesTXHouse28: Candidate[] = [
       climate_energy_portfolio: 7,
       climate_permitting: 8,
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Chamber of Commerce 92-93%; voted against PRO Act', url: 'https://www.uschamber.com/improving-government/release-us-chamber-endorsed-candidate-henry-cuellar-wins-democratic-primary-tx-28' },
+        { text: 'AFL-CIO 64% (2024); high variance across years', url: 'https://aflcio.org/scorecard/legislators/henry-cuellar' },
+      ],
+      econ_investment: [
+        { text: 'Voted YES on IRA (reluctantly)', url: 'https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=407352' },
+        { text: 'Blue Dog Coalition fiscal hawk' },
+      ],
+      econ_tax_structure: [
+        { text: 'Chamber of Commerce aligned; Blue Dog member', url: 'https://www.uschamber.com/improving-government/release-us-chamber-endorsed-candidate-henry-cuellar-wins-democratic-primary-tx-28' },
+      ],
+      econ_school_choice: [
+        { text: 'Education issues page; created TEXAS Grant', url: 'https://cuellar.house.gov/issues/issue/?IssueID=45897' },
+      ],
+      health_coverage_model: [
+        { text: 'Voted YES on ACA (2010)', url: 'https://www.healthreformvotes.org/congress/400657' },
+      ],
+      health_cost_control: [
+        { text: 'Voted YES on H.R.3 Lower Drug Costs Act', url: 'https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=404924' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Voted YES on George Floyd Justice in Policing Act', url: 'https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=405467' },
+      ],
+      justice_firearms: [
+        { text: 'NRA C grade (downgraded from A after BSCA)', url: 'https://justfacts.votesmart.org/candidate/evaluations/5486/henry-cuellar/37' },
+        { text: 'Voted YES on Bipartisan Safer Communities Act', url: 'https://cuellar.house.gov/news/documentsingle.aspx?DocumentID=407217' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 42% (2025); 51% lifetime', url: 'https://www.lcv.org/moc/henry-cuellar/' },
+        { text: 'One of 4 Dems to vote for GOP H.R.1 energy bill', url: 'https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'All-of-the-above energy; top oil/gas district', url: 'https://cuellar.house.gov/issues/issue/?IssueID=3998' },
+        { text: 'Lobbied Senate to drop methane fee from BBB', url: 'https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/' },
+      ],
+      climate_permitting: [
+        { text: 'H.R.1 Yes vote: faster fossil fuel permitting', url: 'https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/' },
+      ],
+    },
     valueStances: {
       universalism: -0.1,
       benevolence: 0.1,
@@ -754,6 +1398,26 @@ const candidatesTXHouse28: Candidate[] = [
       health_public_health: 4,
       climate_ambition: 8,
       climate_energy_portfolio: 8,
+    },
+    axisEvidence: {
+      econ_tax_structure: [
+        { text: 'Low taxes as core campaign pillar', url: 'https://www.tanoforcongress.com/' },
+        { text: 'TX Tribune: fiscal conservative positioning', url: 'https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/' },
+      ],
+      econ_investment: [
+        { text: 'Infrastructure investment as county judge', url: 'https://www.ksat.com/news/texas/2025/12/02/webb-county-judge-tano-tijerina-launches-run-for-congress-seeking-to-flip-south-texas-district-red/' },
+      ],
+      health_public_health: [
+        { text: 'Strict COVID lockdown as Webb County Judge', url: 'https://www.borderreport.com/news/breaking-laredo-going-into-lockdown-saturday-due-to-covid-19/' },
+        { text: 'Washington Examiner: liberal COVID-era record', url: 'https://www.washingtonexaminer.com/news/campaigns/4428447/gop-recruit-against-henry-cuellar-is-trump-backed-challenger-with-liberal-past/' },
+      ],
+      climate_ambition: [
+        { text: 'Dem attacks on oil and gas cited for party switch', url: 'https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Explicit oil and gas industry support', url: 'https://www.tanoforcongress.com/' },
+        { text: 'Fox & Friends: energy independence framing', url: 'https://www.foxnews.com/video/6365801922112' },
+      ],
     },
     valueStances: {
       universalism: -0.2,
