@@ -41,19 +41,40 @@ export default function CandidateComparisonSheet({
         </div>
 
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-          <div className="flex-1">
-            <h3 className="text-lg font-bold text-gray-900">
-              {candidate.name}
-            </h3>
-            <p className="text-sm text-gray-500">{match.matchPercent}% match with your values</p>
+        <div className="px-5 py-3 border-b border-gray-200">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900">
+                {candidate.name}
+              </h3>
+              <p className="text-sm text-gray-500">{match.matchPercent}% match with your values</p>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+            >
+              <X className="h-5 w-5 text-gray-600" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
-          >
-            <X className="h-5 w-5 text-gray-600" />
-          </button>
+
+          {/* Full summary */}
+          {candidate.profile.summary && (
+            <p className="text-[13px] text-gray-600 leading-relaxed mt-2">
+              {candidate.profile.summary}
+            </p>
+          )}
+
+          {/* Policy positions */}
+          {candidate.profile.positions && candidate.profile.positions.length > 0 && (
+            <ul className="mt-2 space-y-1">
+              {candidate.profile.positions.map((position, i) => (
+                <li key={i} className="text-[12px] text-gray-500 leading-[17px] flex items-start gap-1.5">
+                  <span className="text-gray-400 mt-0.5 shrink-0">&bull;</span>
+                  <span>{position}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         {/* Content */}
@@ -74,6 +95,11 @@ export default function CandidateComparisonSheet({
                       <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
                       You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
+                    {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
+                      <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
+                        Based on: {detail.candidateEvidence.join('; ')}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -96,6 +122,11 @@ export default function CandidateComparisonSheet({
                       <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
                       You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
+                    {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
+                      <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
+                        Based on: {detail.candidateEvidence.join('; ')}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
