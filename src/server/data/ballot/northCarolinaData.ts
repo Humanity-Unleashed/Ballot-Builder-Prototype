@@ -45,17 +45,49 @@ const candidatesNCSenate: Candidate[] = [
       climate_energy_portfolio: 3,
     },
     axisEvidence: {
-      econ_safetynet: ['Medicaid expansion signing (2023)', 'NC AFL-CIO endorsement'],
-      econ_investment: ['Teacher pay and education investment record', 'Medicaid expansion ($$ investment)'],
-      econ_tax_structure: ['Multiple budget vetoes over broad corporate/income tax cuts', 'Called for freezing high-income tax cuts for education revenue'],
-      econ_school_choice: ['Vetoed HB 10 ($6B+ voucher expansion, 2024)', 'Press release: \'Sending taxpayer dollars to private schools with no accountability\''],
-      health_coverage_model: ['Signed Medicaid expansion into law (2023, covering 600,000+)', '2026 campaign: defends ACA subsidies, Medicaid, Medicare'],
-      housing_affordability_tools: ['Proposed $160M affordable housing investment (2019)'],
-      justice_policing_accountability: ['Created TREC (Task Force for Racial Equity in Criminal Justice, 2020)', 'Signed SB 300 reform package: duty to intervene, early intervention systems'],
-      justice_sentencing_goals: ['Commuted 15 death row sentences (largest in NC history, Dec 2024)', 'Signed First Step Act-related reforms'],
-      justice_firearms: ['Vetoed SB 41 (permit-to-purchase repeal, 2023)', 'Created statewide Office of Violence Prevention (2023)'],
-      climate_ambition: ['Signed HB 951: 70% carbon reduction by 2030, carbon neutral by 2050', 'Executive Order 246 (2022): strengthened to 50% reduction by 2030'],
-      climate_energy_portfolio: ['HB 951: clean energy targets working with Duke Energy', 'NC became #9 nationally in clean energy jobs'],
+      econ_safetynet: [
+        { text: 'Medicaid expansion signing (2023)', url: 'https://governor.nc.gov/news/press-releases/2023/03/27/governor-cooper-signs-medicaid-expansion-law' },
+        { text: 'NC AFL-CIO endorsement', url: 'https://aflcionc.org/press/north-carolina-afl-cio-endorses-statewide-candidates-2026' },
+      ],
+      econ_investment: [
+        { text: 'Teacher pay and education investment record', url: 'https://www.govroycooper.org/accomplishments' },
+        { text: 'Medicaid expansion ($$ investment)', url: 'https://thehill.com/homenews/campaign/5428774-roy-cooper-medicaid-north-carolina-senate-campaign/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Multiple budget vetoes over broad corporate/income tax cuts', url: 'https://www.theassemblync.com/news/politics/roy-cooper-legacy-governor-north-carolina/' },
+        { text: 'Called for freezing high-income tax cuts for education revenue', url: 'https://www.wfdd.org/health-safety/2026-02-19/u-s-senate-candidate-roy-cooper-talks-affordability-in-greensboro-on-campaign-trail' },
+      ],
+      econ_school_choice: [
+        { text: 'Vetoed HB 10 ($6B+ voucher expansion, 2024)', url: 'https://governor.nc.gov/news/press-releases/2024/03/27/case-against-school-vouchers-steroids-governor-cooper-outlines-threats-extreme-gop-plan-poses-public' },
+        { text: "Press release: 'Sending taxpayer dollars to private schools with no accountability'", url: 'https://governor.nc.gov/news/press-releases/2024/03/27/case-against-school-vouchers-steroids-governor-cooper-outlines-threats-extreme-gop-plan-poses-public' },
+      ],
+      health_coverage_model: [
+        { text: 'Signed Medicaid expansion into law (2023, covering 600,000+)', url: 'https://governor.nc.gov/news/press-releases/2023/03/27/governor-cooper-signs-medicaid-expansion-law' },
+        { text: '2026 campaign: defends ACA subsidies, Medicaid, Medicare', url: 'https://www.wfdd.org/health-safety/2026-02-19/u-s-senate-candidate-roy-cooper-talks-affordability-in-greensboro-on-campaign-trail' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Proposed $160M affordable housing investment (2019)', url: 'https://www.govroycooper.org/accomplishments' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Created TREC (Task Force for Racial Equity in Criminal Justice, 2020)', url: 'https://governor.nc.gov/news/press-releases/2021/09/02/governor-cooper-signs-criminal-justice-reform-bills-law' },
+        { text: 'Signed SB 300 reform package: duty to intervene, early intervention systems', url: 'https://governor.nc.gov/news/press-releases/2021/09/02/governor-cooper-signs-criminal-justice-reform-bills-law' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Commuted 15 death row sentences (largest in NC history, Dec 2024)', url: 'https://governor.nc.gov/news/press-releases/2024/12/31/governor-cooper-takes-capital-clemency-actions' },
+        { text: 'Signed First Step Act-related reforms' },
+      ],
+      justice_firearms: [
+        { text: 'Vetoed SB 41 (permit-to-purchase repeal, 2023)', url: 'https://www.nraila.org/articles/20210830/north-carolina-gov-cooper-vetoes-pistol-permit-repeal' },
+        { text: 'Created statewide Office of Violence Prevention (2023)', url: 'https://governor.nc.gov/news/press-releases/2023/03/24/governor-cooper-vetoes-legislation-eliminating-sheriffs-background-checks-handguns' },
+      ],
+      climate_ambition: [
+        { text: 'Signed HB 951: 70% carbon reduction by 2030, carbon neutral by 2050', url: 'https://www.all4inc.com/4-the-record-articles/house-bill-951-in-north-carolina-what-is-it-and-what-is-duke-energys-plan/' },
+        { text: 'Executive Order 246 (2022): strengthened to 50% reduction by 2030', url: 'https://www.govroycooper.org/accomplishments' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'HB 951: clean energy targets working with Duke Energy', url: 'https://www.all4inc.com/4-the-record-articles/house-bill-951-in-north-carolina-what-is-it-and-what-is-duke-energys-plan/' },
+        { text: 'NC became #9 nationally in clean energy jobs', url: 'https://nclcv.org/cib09292025-lcv-endorses-roy-cooper-for-us-senate/' },
+      ],
     },
     valueStances: {
       universalism: 0.6,
@@ -99,17 +131,50 @@ const candidatesNCSenate: Candidate[] = [
       climate_permitting: 9,
     },
     axisEvidence: {
-      econ_safetynet: ['Newsmax DOGE interview Jan 2026', 'Campaign website'],
-      econ_investment: ['Newsmax DOGE interview Jan 2026', 'Career record at CEA (deregulation advocacy 2008-2019)'],
-      econ_tax_structure: ['Washington Examiner campaign platform', 'Campaign website'],
-      health_coverage_model: ['Newsmax DOGE interview (Medicaid work requirements)', 'Campaign website'],
-      health_public_health: ['WRAL pastor summit interview 2026', 'Campaign website (anti-transgender mandates)'],
-      justice_policing_accountability: ['Fox News ICE/immigration interview 2026', 'Campaign website'],
-      justice_sentencing_goals: ['Fox News interview (soft on crime framing)', 'Campaign website'],
-      justice_firearms: ['Trump endorsement (inference)', 'No gun safety statements found in campaign materials'],
-      climate_ambition: ['Consumer Energy Alliance career 2008-2019 (opposed emission rules)', 'E&E News reporting on oil ties'],
-      climate_energy_portfolio: ['Consumer Energy Alliance career record', 'CEA offshore drilling advocacy (2010)'],
-      climate_permitting: ['Consumer Energy Alliance career record (lobbied for expedited energy permitting)', 'Campaign website (deregulation framing)'],
+      econ_safetynet: [
+        { text: 'Newsmax DOGE interview Jan 2026', url: 'https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/' },
+        { text: 'Campaign website', url: 'https://www.michaelwhatley.com' },
+      ],
+      econ_investment: [
+        { text: 'Newsmax DOGE interview Jan 2026', url: 'https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/' },
+        { text: 'Career record at CEA (deregulation advocacy 2008-2019)', url: 'https://www.eenews.net/articles/republicans-oil-ties-a-focus-in-north-carolina-senate-race/' },
+      ],
+      econ_tax_structure: [
+        { text: 'Washington Examiner campaign platform', url: 'https://www.washingtonexaminer.com/news/3488275/whatley-running-on-strong-economy-safe-communities-respected-america/' },
+        { text: 'Campaign website', url: 'https://www.michaelwhatley.com' },
+      ],
+      health_coverage_model: [
+        { text: 'Newsmax DOGE interview (Medicaid work requirements)', url: 'https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/' },
+        { text: 'Campaign website', url: 'https://www.michaelwhatley.com' },
+      ],
+      health_public_health: [
+        { text: 'WRAL pastor summit interview 2026', url: 'https://www.wral.com/story/gop-senate-candidate-whatley-we-don-t-need-separation-of-church-and-state/22151351/' },
+        { text: 'Campaign website (anti-transgender mandates)', url: 'https://www.michaelwhatley.com' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Fox News ICE/immigration interview 2026', url: 'https://www.foxnews.com/politics/nc-senate-candidate-says-ice-charlotte-ops-result-ex-gov-opponent-repeatedly-blunting-cooperation' },
+        { text: 'Campaign website', url: 'https://www.michaelwhatley.com' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Fox News interview (soft on crime framing)', url: 'https://www.foxnews.com/politics/nc-senate-candidate-says-ice-charlotte-ops-result-ex-gov-opponent-repeatedly-blunting-cooperation' },
+        { text: 'Campaign website', url: 'https://www.michaelwhatley.com' },
+      ],
+      justice_firearms: [
+        { text: 'Trump endorsement (inference)', url: 'https://www.nbcnews.com/politics/2026-election/michael-whatley-ties-trump-north-carolina-senate-race-rcna249551' },
+        { text: 'No gun safety statements found in campaign materials', url: 'https://www.michaelwhatley.com' },
+      ],
+      climate_ambition: [
+        { text: 'Consumer Energy Alliance career 2008-2019 (opposed emission rules)', url: 'https://www.eenews.net/articles/republicans-oil-ties-a-focus-in-north-carolina-senate-race/' },
+        { text: 'E&E News reporting on oil ties', url: 'https://www.eenews.net/articles/republicans-tap-former-oil-lobbyist-for-national-chair/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Consumer Energy Alliance career record', url: 'https://www.sourcewatch.org/index.php/Michael_Whatley' },
+        { text: 'CEA offshore drilling advocacy (2010)', url: 'https://consumerenergyalliance.org/2010/11/michael-whatley-we-need-offshore-drilling/' },
+      ],
+      climate_permitting: [
+        { text: 'Consumer Energy Alliance career record (lobbied for expedited energy permitting)', url: 'https://www.eenews.net/articles/republicans-oil-ties-a-focus-in-north-carolina-senate-race/' },
+        { text: 'Campaign website (deregulation framing)', url: 'https://www.michaelwhatley.com' },
+      ],
     },
     valueStances: {
       universalism: -0.6,
@@ -152,16 +217,43 @@ const candidatesNCSenate: Candidate[] = [
       justice_firearms: 10,
     },
     axisEvidence: {
-      econ_safetynet: ['WCTI12 interview 2026', 'Campaign website policies page'],
-      econ_investment: ['Campaign website policies page', 'WCTI12 interview 2026'],
-      econ_tax_structure: ['Campaign website policies page'],
-      health_coverage_model: ['WSOC Political Beat Guide 2026', 'Campaign website'],
-      health_cost_control: ['WSOC Political Beat Guide 2026 (inferred from market philosophy)'],
-      health_public_health: ['Campaign website policies page', 'WCTI12 interview 2026'],
-      housing_affordability_tools: ['WCTI12 interview 2026'],
-      justice_policing_accountability: ['WUNC elections article 2026', 'Campaign website'],
-      justice_sentencing_goals: ['Campaign website policies page', 'WUNC elections article 2026'],
-      justice_firearms: ['BallotReady profile', 'Campaign website policies page'],
+      econ_safetynet: [
+        { text: 'WCTI12 interview 2026', url: 'https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate' },
+        { text: 'Campaign website policies page', url: 'https://www.donbrownfornc.com/policies' },
+      ],
+      econ_investment: [
+        { text: 'Campaign website policies page', url: 'https://www.donbrownfornc.com/policies' },
+        { text: 'WCTI12 interview 2026', url: 'https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign website policies page', url: 'https://www.donbrownfornc.com/policies' },
+      ],
+      health_coverage_model: [
+        { text: 'WSOC Political Beat Guide 2026', url: 'https://www.wsoctv.com/news/local/political-beat-candidate-guide-united-states-senate/AO4BCYOWQRGMDC35FBG3G3QWUI/' },
+        { text: 'Campaign website', url: 'https://www.donbrownfornc.com/policies' },
+      ],
+      health_cost_control: [
+        { text: 'WSOC Political Beat Guide 2026 (inferred from market philosophy)', url: 'https://www.wsoctv.com/news/local/political-beat-candidate-guide-united-states-senate/AO4BCYOWQRGMDC35FBG3G3QWUI/' },
+      ],
+      health_public_health: [
+        { text: 'Campaign website policies page', url: 'https://www.donbrownfornc.com/policies' },
+        { text: 'WCTI12 interview 2026', url: 'https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate' },
+      ],
+      housing_affordability_tools: [
+        { text: 'WCTI12 interview 2026', url: 'https://wcti12.com/news/local/meet-don-brown-candidate-for-us-senate' },
+      ],
+      justice_policing_accountability: [
+        { text: 'WUNC elections article 2026', url: 'https://www.wunc.org/elections/2026-02-24/in-north-carolinas-u-s-senate-gop-primary-contenders-try-to-topple-trump-endorsed-candidate' },
+        { text: 'Campaign website', url: 'https://www.donbrownfornc.com/policies' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Campaign website policies page', url: 'https://www.donbrownfornc.com/policies' },
+        { text: 'WUNC elections article 2026', url: 'https://www.wunc.org/elections/2026-02-24/in-north-carolinas-u-s-senate-gop-primary-contenders-try-to-topple-trump-endorsed-candidate' },
+      ],
+      justice_firearms: [
+        { text: 'BallotReady profile', url: 'https://www.ballotready.org/people/don-brown-3e66559c-c1c7-441a-ad50-67450812c85c' },
+        { text: 'Campaign website policies page', url: 'https://www.donbrownfornc.com/policies' },
+      ],
     },
     valueStances: {
       universalism: -0.6,
@@ -199,11 +291,25 @@ const candidatesNCSenate: Candidate[] = [
       justice_firearms: 9,
     },
     axisEvidence: {
-      econ_safetynet: ['Campaign website (morrow4nc.com)', 'Anti-spending, eliminate-waste framing'],
-      econ_school_choice: ['2024 Superintendent campaign platform', 'EdNC debate September 2024'],
-      health_coverage_model: ['Campaign website (morrow4nc.com)'],
-      health_public_health: ['NPR October 2024', 'CNN K-File'],
-      justice_firearms: ['iVoterGuide profile', 'Campaign statements'],
+      econ_safetynet: [
+        { text: 'Campaign website (morrow4nc.com)', url: 'https://www.morrow4nc.com' },
+        { text: 'Anti-spending, eliminate-waste framing', url: 'https://www.morrow4nc.com' },
+      ],
+      econ_school_choice: [
+        { text: '2024 Superintendent campaign platform', url: 'https://www.ednc.org/09-12-2024-nc-school-superintendent-candidates-mo-green-michele-morrow-first-debate/' },
+        { text: 'EdNC debate September 2024', url: 'https://www.ednc.org/09-12-2024-nc-school-superintendent-candidates-mo-green-michele-morrow-first-debate/' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign website (morrow4nc.com)', url: 'https://www.morrow4nc.com' },
+      ],
+      health_public_health: [
+        { text: 'NPR October 2024', url: 'https://www.npr.org/2024/10/21/nx-s1-5154035/north-carolina-schools-candidate-michele-morrow-obama' },
+        { text: 'CNN K-File', url: 'https://www.cnn.com/2024/03/14/politics/kfile-gop-nominee-north-carolina-public-schools-michele-morrow-executing-democrats/index.html' },
+      ],
+      justice_firearms: [
+        { text: 'iVoterGuide profile', url: 'https://ivoterguide.com/candidate/71701/race/9793/election/1206' },
+        { text: 'Campaign statements', url: 'https://www.morrow4nc.com' },
+      ],
     },
     valueStances: {
       universalism: -0.8,
@@ -250,20 +356,58 @@ const candidatesNCSenate: Candidate[] = [
       climate_permitting: 8,
     },
     axisEvidence: {
-      econ_safetynet: ['Campaign website issues page (2026)', 'Consistent position across 4 campaign cycles (2020-2026)'],
-      econ_investment: ['Campaign website issues page', 'Consistent anti-subsidy stance across 4 cycles'],
-      econ_school_choice: ['LPNC platform page', 'Consistent position 2024-2026'],
-      econ_tax_structure: ['Campaign website issues page (2020-2026)', 'Book "Liberty Unleashed"'],
-      health_coverage_model: ['Campaign website healthcare/data policy page (2026)', 'Consistent across campaigns'],
-      health_cost_control: ['Campaign website healthcare/data policy page (2026)'],
-      health_public_health: ['Campaign website issues page (2020-2026)', 'Anti-mandate, anti-lockdown stance across COVID era'],
-      housing_affordability_tools: ['Inferred from consistent anti-subsidy philosophy across all policy areas'],
-      justice_policing_accountability: ['BallotReady 2024 questionnaire responses', 'Campaign website issues page'],
-      justice_sentencing_goals: ['Campaign website issues page (2026)', 'iSideWith policy responses'],
-      justice_firearms: ['Campaign website dedicated guns policy page', 'Consistent position across all campaigns'],
-      climate_ambition: ['Campaign website energy/utilities policy page (2026)'],
-      climate_energy_portfolio: ['Campaign website energy/utilities policy page (2026)'],
-      climate_permitting: ['Campaign website energy/utilities page', 'General deregulation philosophy'],
+      econ_safetynet: [
+        { text: 'Campaign website issues page (2026)', url: 'https://www.shannonbray.us/issues' },
+        { text: 'Consistent position across 4 campaign cycles (2020-2026)', url: 'https://www.shannonbray.us/' },
+      ],
+      econ_investment: [
+        { text: 'Campaign website issues page', url: 'https://www.shannonbray.us/issues' },
+        { text: 'Consistent anti-subsidy stance across 4 cycles', url: 'https://www.shannonbray.us/a_government_that_works_in_the_real_world' },
+      ],
+      econ_school_choice: [
+        { text: 'LPNC platform page', url: 'https://www.lpnc.org/shannon_bray_my_vision_for_nc' },
+        { text: 'Consistent position 2024-2026', url: 'https://www.shannonbray.us/issues' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign website issues page (2020-2026)', url: 'https://www.shannonbray.us/issues' },
+        { text: 'Book "Liberty Unleashed"', url: 'https://www.amazon.com/Liberty-Unleashed-Shannon-Prosperous-Carolina-ebook/dp/B0GCPLD6QX' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign website healthcare/data policy page (2026)', url: 'https://www.shannonbray.us/healthcare_data' },
+        { text: 'Consistent across campaigns', url: 'https://www.shannonbray.us/' },
+      ],
+      health_cost_control: [
+        { text: 'Campaign website healthcare/data policy page (2026)', url: 'https://www.shannonbray.us/healthcare_data' },
+      ],
+      health_public_health: [
+        { text: 'Campaign website issues page (2020-2026)', url: 'https://www.shannonbray.us/issues' },
+        { text: 'Anti-mandate, anti-lockdown stance across COVID era', url: 'https://www.shannonbray.us/issues' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Inferred from consistent anti-subsidy philosophy across all policy areas' },
+      ],
+      justice_policing_accountability: [
+        { text: 'BallotReady 2024 questionnaire responses', url: 'https://www.ballotready.org/people/shannon-w-bray' },
+        { text: 'Campaign website issues page', url: 'https://www.shannonbray.us/issues' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Campaign website issues page (2026)', url: 'https://www.shannonbray.us/issues' },
+        { text: 'iSideWith policy responses', url: 'https://www.isidewith.com/candidates/shannon-bray/policies' },
+      ],
+      justice_firearms: [
+        { text: 'Campaign website dedicated guns policy page', url: 'https://www.shannonbray.us/guns_and_social_media' },
+        { text: 'Consistent position across all campaigns', url: 'https://www.shannonbray.us/' },
+      ],
+      climate_ambition: [
+        { text: 'Campaign website energy/utilities policy page (2026)', url: 'https://www.shannonbray.us/cyber_resilient_energy_utilities' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website energy/utilities policy page (2026)', url: 'https://www.shannonbray.us/cyber_resilient_energy_utilities' },
+      ],
+      climate_permitting: [
+        { text: 'Campaign website energy/utilities page', url: 'https://www.shannonbray.us/cyber_resilient_energy_utilities' },
+        { text: 'General deregulation philosophy', url: 'https://www.shannonbray.us/issues' },
+      ],
     },
     valueStances: {
       universalism: 0.1,
@@ -309,19 +453,52 @@ const candidatesNCSenate: Candidate[] = [
       justice_firearms: 1,
     },
     axisEvidence: {
-      econ_safetynet: ['Campaign page: anti-war, pro social services perspective', 'Green Party platform: expand all safety net programs'],
-      econ_investment: ['Campaign page: ramping up manufacturing and energy in NC with solar farms', 'Campaign page: education system in dire need of increased funding'],
-      econ_school_choice: ['Campaign page: education system in dire need of increased funding', 'Green Party platform: fully fund public schools, oppose vouchers'],
-      econ_tax_structure: ['Campaign page: no corporate donations pledge', 'Green Party platform: highly progressive taxation'],
-      health_coverage_model: ['Campaign page: pro social services', 'Green Party platform: Medicare for All / single-payer'],
-      health_cost_control: ['Green Party platform: single-payer system implies government price setting'],
-      climate_ambition: ['Campaign page: solar farms in rural NC', 'Green Party platform: Green New Deal, 100% clean energy by 2030'],
-      climate_energy_portfolio: ['Campaign page: solar farms in rural areas', 'Green Party platform: 100% clean renewable energy by 2030'],
-      housing_affordability_tools: ['Green Party platform: housing as a human right, rent control, public housing investment'],
-      housing_transport_priority: ['Green Party platform: mass transit expansion, reduce car dependence'],
-      justice_policing_accountability: ['Green Party platform: demilitarize police, independent civilian review boards'],
-      justice_sentencing_goals: ['Green Party platform: end war on drugs, oppose mandatory minimums'],
-      justice_firearms: ['Green Party platform: ban on assault weapons, universal background checks'],
+      econ_safetynet: [
+        { text: 'Campaign page: anti-war, pro social services perspective', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Green Party platform: expand all safety net programs', url: 'https://gpus.org/organizing-tools/the-green-new-deal/' },
+      ],
+      econ_investment: [
+        { text: 'Campaign page: ramping up manufacturing and energy in NC with solar farms', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Campaign page: education system in dire need of increased funding', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+      ],
+      econ_school_choice: [
+        { text: 'Campaign page: education system in dire need of increased funding', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Green Party platform: fully fund public schools, oppose vouchers', url: 'https://www.gp.org/the_green_party_on_education' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign page: no corporate donations pledge', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Green Party platform: highly progressive taxation', url: 'https://www.gp.org/economic_justice_and_sustainability' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign page: pro social services', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Green Party platform: Medicare for All / single-payer', url: 'https://www.gp.org/single_payer' },
+      ],
+      health_cost_control: [
+        { text: 'Green Party platform: single-payer system implies government price setting', url: 'https://www.gp.org/single_payer' },
+      ],
+      climate_ambition: [
+        { text: 'Campaign page: solar farms in rural NC', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Green Party platform: Green New Deal, 100% clean energy by 2030', url: 'https://gpus.org/organizing-tools/the-green-new-deal/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign page: solar farms in rural areas', url: 'https://www.gp.org/brian_mcginnis_4_us_senate' },
+        { text: 'Green Party platform: 100% clean renewable energy by 2030', url: 'https://gpus.org/organizing-tools/the-green-new-deal/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Green Party platform: housing as a human right, rent control, public housing investment', url: 'https://www.gp.org/green_party_demands_rent_control_an_end_to_homelessness' },
+      ],
+      housing_transport_priority: [
+        { text: 'Green Party platform: mass transit expansion, reduce car dependence', url: 'https://www.gp.org/platform' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Green Party platform: demilitarize police, independent civilian review boards', url: 'https://www.gp.org/social_justice' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Green Party platform: end war on drugs, oppose mandatory minimums', url: 'https://www.gp.org/social_justice' },
+      ],
+      justice_firearms: [
+        { text: 'Green Party platform: ban on assault weapons, universal background checks', url: 'https://www.gp.org/on_gun_violence' },
+      ],
     },
     valueStances: {
       universalism: 0.5,
@@ -376,20 +553,62 @@ const candidatesNC02: Candidate[] = [
       climate_permitting: 3,
     },
     axisEvidence: {
-      econ_safetynet: ['ARP vote (2021) — expanded Child Tax Credit', 'No vote on 2025 GOP budget resolution cutting Medicaid/SNAP'],
-      econ_investment: ['Infrastructure Investment and Jobs Act vote (2021)', 'CHIPS and Science Act vote ($280B, 2022)'],
-      econ_tax_structure: ['No vote on 2025 GOP budget resolution ($4.5T in tax cuts)', 'IRA vote (corporate minimum tax and stock buyback excise tax)'],
-      econ_school_choice: ['Campaign website: public education, reducing class sizes, teacher pay', 'AFL-CIO endorsement'],
-      health_coverage_model: ['Wake County Dems candidate info: explicit public option support', 'Campaign website: lower Medicare eligibility from 65 to 60'],
-      health_cost_control: ['Authored PBM Reform Act (passed House Jan 2026)', 'IRA vote (Medicare drug price negotiation provisions)'],
-      housing_affordability_tools: ['Letter to FHFA/CFPB urging investigation of institutional investors in housing (2024)', 'Secured federal affordable housing appropriations for Wake County'],
-      housing_transport_priority: ['Secured $19.3M for Raleigh BRT', 'Secured $176M+ for NC transit overall'],
-      justice_policing_accountability: ['Co-sponsored George Floyd Justice in Policing Act', 'Former NC-ACLU Director: pushed police to collect race-based stop statistics'],
-      justice_sentencing_goals: ['Overhauled NC youth offender system as ACLU director', 'Introduced End Prison Gerrymandering Act (Feb 2026)'],
-      justice_firearms: ['Voted for assault weapons ban (2022)', 'Brady PAC and Everytown endorsements'],
-      climate_ambition: ['LCV 100% (2024), 99% lifetime', 'Authored IRA offshore wind provision'],
-      climate_energy_portfolio: ['Authored offshore wind moratorium repeal (IRA provision)', 'Introduced Defend Our Coast Act'],
-      climate_permitting: ['Introduced NOW Act: decouple offshore wind from oil/gas lease sales', 'Defend Our Coast Act: block fossil fuel permitting off Atlantic coast'],
+      econ_safetynet: [
+        { text: 'ARP vote (2021) — expanded Child Tax Credit', url: 'https://en.wikipedia.org/wiki/Deborah_Ross_(politician)' },
+        { text: 'No vote on 2025 GOP budget resolution cutting Medicaid/SNAP', url: 'https://ross.house.gov/2025/2/congresswoman-ross-votes-against-house-budget-resolution-that-would-cut-billions-in-funding-for-medicaid-snap-and-other-critical-services' },
+      ],
+      econ_investment: [
+        { text: 'Infrastructure Investment and Jobs Act vote (2021)', url: 'https://ross.house.gov/2021/11/congresswoman-ross-applauds-passage-bipartisan-infrastructure-package' },
+        { text: 'CHIPS and Science Act vote ($280B, 2022)', url: 'https://en.wikipedia.org/wiki/Deborah_Ross_(politician)' },
+      ],
+      econ_tax_structure: [
+        { text: 'No vote on 2025 GOP budget resolution ($4.5T in tax cuts)', url: 'https://ross.house.gov/2025/2/congresswoman-ross-votes-against-house-budget-resolution-that-would-cut-billions-in-funding-for-medicaid-snap-and-other-critical-services' },
+        { text: 'IRA vote (corporate minimum tax and stock buyback excise tax)', url: 'https://ross.house.gov/2022/8/congresswoman-ross-secures-historic-support-north-carolinas-clean-energy' },
+      ],
+      econ_school_choice: [
+        { text: 'Campaign website: public education, reducing class sizes, teacher pay', url: 'https://deborahross.com/priorities/education-and-opportunity/' },
+        { text: 'AFL-CIO endorsement', url: 'https://aflcionc.org/news/endorsements-november-5-2024-general-elections' },
+      ],
+      health_coverage_model: [
+        { text: 'Wake County Dems candidate info: explicit public option support', url: 'https://www.wakedems.org/election-central-2024/candidate-info-deborah-ross/' },
+        { text: 'Campaign website: lower Medicare eligibility from 65 to 60', url: 'https://deborahross.com/priorities/' },
+      ],
+      health_cost_control: [
+        { text: 'Authored PBM Reform Act (passed House Jan 2026)', url: 'https://ross.house.gov/2026/1/house-passes-congresswoman-ross-bill-to-combat-harmful-pbm-practices-lower-prescription-drug-prices' },
+        { text: 'IRA vote (Medicare drug price negotiation provisions)', url: 'https://ross.house.gov/2022/8/congresswoman-ross-secures-historic-support-north-carolinas-clean-energy' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Letter to FHFA/CFPB urging investigation of institutional investors in housing (2024)', url: 'https://foushee.house.gov/media/press-releases/foushee-ross-call-for-greater-accountability-in-housing-amid-concerns-over-wall-street-influence' },
+        { text: 'Secured federal affordable housing appropriations for Wake County' },
+      ],
+      housing_transport_priority: [
+        { text: 'Secured $19.3M for Raleigh BRT', url: 'https://ross.house.gov/transportation-and-infrastructure' },
+        { text: 'Secured $176M+ for NC transit overall', url: 'https://ross.house.gov/transportation-and-infrastructure' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Co-sponsored George Floyd Justice in Policing Act', url: 'https://www.congress.gov/bill/117th-congress/house-bill/1280/cosponsors' },
+        { text: 'Former NC-ACLU Director: pushed police to collect race-based stop statistics', url: 'https://ross.house.gov/equality-and-justice' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Overhauled NC youth offender system as ACLU director', url: 'https://en.wikipedia.org/wiki/Deborah_Ross_(politician)' },
+        { text: 'Introduced End Prison Gerrymandering Act (Feb 2026)', url: 'https://www.billtrack50.com/legislatordetail/2351' },
+      ],
+      justice_firearms: [
+        { text: 'Voted for assault weapons ban (2022)', url: 'https://georgiarecorder.com/2022/07/29/u-s-house-passes-ban-on-assault-weapons-after-spate-of-gun-violence/' },
+        { text: 'Brady PAC and Everytown endorsements', url: 'https://elections.bradyunited.org/press/brady-campaign-endorses-deborah-ross-for-u-s-house-of-representatives' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 100% (2024), 99% lifetime', url: 'https://www.lcv.org/moc/deborah-ross/' },
+        { text: 'Authored IRA offshore wind provision', url: 'https://ross.house.gov/2022/8/congresswoman-ross-secures-historic-support-north-carolinas-clean-energy' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Authored offshore wind moratorium repeal (IRA provision)', url: 'https://ross.house.gov/2023/7/reps-ross-ocasio-cortez-kamlager-dove-introduce-clean-energy-now-acts' },
+        { text: 'Introduced Defend Our Coast Act' },
+      ],
+      climate_permitting: [
+        { text: 'Introduced NOW Act: decouple offshore wind from oil/gas lease sales', url: 'https://ross.house.gov/2023/7/reps-ross-ocasio-cortez-kamlager-dove-introduce-clean-energy-now-acts' },
+        { text: 'Defend Our Coast Act: block fossil fuel permitting off Atlantic coast' },
+      ],
     },
     valueStances: {
       universalism: 0.8,
@@ -431,15 +650,40 @@ const candidatesNC02: Candidate[] = [
       climate_energy_portfolio: 8,
     },
     axisEvidence: {
-      econ_safetynet: ['Ballotpedia Candidate Connection Survey 2023', 'News & Observer questionnaire 2024'],
-      econ_investment: ['Ballotpedia Survey 2023: small federal government, less regulation', 'Balanced budget amendment support'],
-      econ_tax_structure: ['OpenCampaign profile 2024: huge tax decreases to end overspending', 'OnTheIssues: voted YES on FY99 GOP budget, $792B tax cuts'],
-      econ_school_choice: ['Ballotpedia Survey 2023: disband the Department of Education', 'OnTheIssues: voted YES on school vouchers (DC)'],
-      health_coverage_model: ['Full endorsement of 2016 GOP platform (ACA repeal)', 'OnTheIssues: voted YES on Medicare means-testing'],
-      health_public_health: ['Ballotpedia Survey 2023: protect life from conception to natural death', 'Opposition to gender-affirming care for minors'],
-      justice_firearms: ['GRNC-PVF 96% score and four-star recommendation (2024)', 'Full endorsement of 2016 GOP platform'],
-      climate_ambition: ['General anti-regulation, small-government philosophy'],
-      climate_energy_portfolio: ['General anti-regulation, small-government philosophy'],
+      econ_safetynet: [
+        { text: 'Ballotpedia Candidate Connection Survey 2023', url: 'https://news.ballotpedia.org/2024/02/23/all-candidates-for-u-s-house-north-carolina-district-2-republican-primary-complete-ballotpedias-candidate-connection-survey/' },
+        { text: 'News & Observer questionnaire 2024', url: 'https://www.aol.com/candidate-us-house-district-2-010829234.html' },
+      ],
+      econ_investment: [
+        { text: 'Ballotpedia Survey 2023: small federal government, less regulation', url: 'https://news.ballotpedia.org/2024/02/23/all-candidates-for-u-s-house-north-carolina-district-2-republican-primary-complete-ballotpedias-candidate-connection-survey/' },
+        { text: 'Balanced budget amendment support', url: 'https://www.aol.com/candidate-us-house-district-2-010829234.html' },
+      ],
+      econ_tax_structure: [
+        { text: 'OpenCampaign profile 2024: huge tax decreases to end overspending', url: 'https://www.opencampaign.com/politicians-in-united-states/192927/eugene-douglass' },
+        { text: 'OnTheIssues: voted YES on FY99 GOP budget, $792B tax cuts', url: 'https://www.ontheissues.org/Senate/Eugene_Douglass.htm' },
+      ],
+      econ_school_choice: [
+        { text: 'Ballotpedia Survey 2023: disband the Department of Education', url: 'https://news.ballotpedia.org/2024/02/23/all-candidates-for-u-s-house-north-carolina-district-2-republican-primary-complete-ballotpedias-candidate-connection-survey/' },
+        { text: 'OnTheIssues: voted YES on school vouchers (DC)', url: 'https://www.ontheissues.org/Senate/Eugene_Douglass.htm' },
+      ],
+      health_coverage_model: [
+        { text: 'Full endorsement of 2016 GOP platform (ACA repeal)', url: 'https://www.aol.com/candidate-us-house-district-2-010829234.html' },
+        { text: 'OnTheIssues: voted YES on Medicare means-testing', url: 'https://www.ontheissues.org/Senate/Eugene_Douglass.htm' },
+      ],
+      health_public_health: [
+        { text: 'Ballotpedia Survey 2023: protect life from conception to natural death', url: 'https://news.ballotpedia.org/2024/02/23/all-candidates-for-u-s-house-north-carolina-district-2-republican-primary-complete-ballotpedias-candidate-connection-survey/' },
+        { text: 'Opposition to gender-affirming care for minors', url: 'https://efdouglass.substack.com/p/nc-second-congressional-district-be7' },
+      ],
+      justice_firearms: [
+        { text: 'GRNC-PVF 96% score and four-star recommendation (2024)', url: 'https://www.grnc.org/grnc-pvf/grnc-pvf-alertsupdates/1429-grnc-pvf-2022-general-election-candidate-recommendations' },
+        { text: 'Full endorsement of 2016 GOP platform', url: 'https://www.aol.com/candidate-us-house-district-2-010829234.html' },
+      ],
+      climate_ambition: [
+        { text: 'General anti-regulation, small-government philosophy', url: 'https://ballotpedia.org/Eugene_Douglass' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'General anti-regulation, small-government philosophy', url: 'https://ballotpedia.org/Eugene_Douglass' },
+      ],
     },
     valueStances: {
       universalism: -0.5,
@@ -483,17 +727,46 @@ const candidatesNC02: Candidate[] = [
       justice_firearms: 9,
     },
     axisEvidence: {
-      econ_safetynet: ['2024 campaign website (matt4nc.us)', 'Yahoo News interview 2024'],
-      econ_investment: ['2024 campaign website (matt4nc.us)', 'Yahoo News interview 2024'],
-      econ_tax_structure: ['2024 campaign website (matt4nc.us)', 'LP national platform'],
-      econ_school_choice: ['2024 campaign website: detailed ESA/voucher policy page'],
-      health_coverage_model: ['2024 campaign website (matt4nc.us)'],
-      health_cost_control: ['2024 campaign website (matt4nc.us)', 'Yahoo News interview 2024'],
-      health_public_health: ['NORML A- grade 2024', 'Yahoo News interview 2024'],
-      housing_supply_zoning: ['2024 campaign website (matt4nc.us)'],
-      housing_affordability_tools: ['LP national platform', 'Overall deregulation philosophy'],
-      justice_sentencing_goals: ['NORML A- grade 2024', 'Yahoo News interview 2024'],
-      justice_firearms: ['LP national platform (Section 1.9)'],
+      econ_safetynet: [
+        { text: '2024 campaign website (matt4nc.us)', url: 'https://matt4nc.us/' },
+        { text: 'Yahoo News interview 2024', url: 'https://www.yahoo.com/news/libertarian-matthew-laszacs-candidate-nc-175746762.html' },
+      ],
+      econ_investment: [
+        { text: '2024 campaign website (matt4nc.us)', url: 'https://matt4nc.us/' },
+        { text: 'Yahoo News interview 2024', url: 'https://www.yahoo.com/news/libertarian-matthew-laszacs-candidate-nc-175746762.html' },
+      ],
+      econ_tax_structure: [
+        { text: '2024 campaign website (matt4nc.us)', url: 'https://matt4nc.us/' },
+        { text: 'LP national platform', url: 'https://lp.org/platform-page/' },
+      ],
+      econ_school_choice: [
+        { text: '2024 campaign website: detailed ESA/voucher policy page', url: 'https://matt4nc.us/' },
+      ],
+      health_coverage_model: [
+        { text: '2024 campaign website (matt4nc.us)', url: 'https://matt4nc.us/' },
+      ],
+      health_cost_control: [
+        { text: '2024 campaign website (matt4nc.us)', url: 'https://matt4nc.us/' },
+        { text: 'Yahoo News interview 2024', url: 'https://www.yahoo.com/news/libertarian-matthew-laszacs-candidate-nc-175746762.html' },
+      ],
+      health_public_health: [
+        { text: 'NORML A- grade 2024', url: 'https://vote.norml.org/politicians/207126' },
+        { text: 'Yahoo News interview 2024', url: 'https://www.yahoo.com/news/libertarian-matthew-laszacs-candidate-nc-175746762.html' },
+      ],
+      housing_supply_zoning: [
+        { text: '2024 campaign website (matt4nc.us)', url: 'https://matt4nc.us/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'LP national platform', url: 'https://lp.org/platform-page/' },
+        { text: 'Overall deregulation philosophy' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'NORML A- grade 2024', url: 'https://vote.norml.org/politicians/207126' },
+        { text: 'Yahoo News interview 2024', url: 'https://www.yahoo.com/news/libertarian-matthew-laszacs-candidate-nc-175746762.html' },
+      ],
+      justice_firearms: [
+        { text: 'LP national platform (Section 1.9)', url: 'https://lp.org/platform-page/' },
+      ],
     },
     valueStances: {
       universalism: -0.2,
@@ -545,18 +818,54 @@ const candidatesNCSenateD8: Candidate[] = [
       climate_energy_portfolio: 8,
     },
     axisEvidence: {
-      econ_safetynet: ['NC Senate budget votes 2023-2025', 'Conditional Medicaid expansion via HB76'],
-      econ_investment: ['NC FREE Foundation 99.3 score (2023-2024)', 'SB651 sponsor (income tax below 2.5%)'],
-      econ_tax_structure: ['SB651 sponsor: personal income tax below 2.5% by 2026', 'NC FREE Foundation 99.3 score'],
-      econ_school_choice: ['HB10 Opportunity Scholarship expansion (party-line vote, $463.5M)', 'Veto override vote on HB10 (30-19)'],
-      health_coverage_model: ['AffordableCareNC: HB76 Medicaid expansion support', 'NC FREE Foundation 99.3 score'],
-      health_cost_control: ['Drug transparency bills (SB479, SB316, SB315, SB537)', 'CON law reform advocacy'],
-      health_public_health: ['SB3 medical cannabis primary sponsorship (NORML B+)', 'The Assembly NC profile on marijuana advocacy'],
-      housing_supply_zoning: ['SB382 downzoning ban (2024)', 'NC Home Builders Association endorsement of SB382'],
-      housing_affordability_tools: ['General free-enterprise record (99.3 NCFREE)', 'SB382 property-rights framing'],
-      justice_firearms: ['SB50 permitless carry: YES on passage and veto override', 'Sunday hunting expansion: primary sponsor (2017)'],
-      climate_ambition: ['SB266 co-sponsor: eliminates 2030 70% carbon reduction target', 'SB266 veto override vote'],
-      climate_energy_portfolio: ['SB266 allows cost-recovery for new carbon-emitting generation', 'NC Sustainable Energy Association criticism of SB266'],
+      econ_safetynet: [
+        { text: 'NC Senate budget votes 2023-2025', url: 'https://www.wral.com/story/nc-senate-votes-to-approve-budget-plan-with-tax-cuts-employee-raises-helene-aid-and-doge-style-review/21962982/' },
+        { text: 'Conditional Medicaid expansion via HB76', url: 'https://www.affordablecarenc.com/general-assembly-members/senate-district-8' },
+      ],
+      econ_investment: [
+        { text: 'NC FREE Foundation 99.3 score (2023-2024)', url: 'https://nsjonline.com/article/2024/08/nonprofit-ncfree-releases-2023-24-legislative-business-ratings/' },
+        { text: 'SB651 sponsor (income tax below 2.5%)', url: 'https://www.carolinajournal.com/senate-republicans-signal-new-tax-relief-for-all-north-carolinians/' },
+      ],
+      econ_tax_structure: [
+        { text: 'SB651 sponsor: personal income tax below 2.5% by 2026', url: 'https://www.carolinajournal.com/senate-republicans-signal-new-tax-relief-for-all-north-carolinians/' },
+        { text: 'NC FREE Foundation 99.3 score', url: 'https://nsjonline.com/article/2024/08/nonprofit-ncfree-releases-2023-24-legislative-business-ratings/' },
+      ],
+      econ_school_choice: [
+        { text: 'HB10 Opportunity Scholarship expansion (party-line vote, $463.5M)', url: 'https://www.wunc.org/politics/2024-09-09/nc-senate-override-veto-private-school-vouchers' },
+        { text: 'Veto override vote on HB10 (30-19)', url: 'https://www.wunc.org/politics/2024-09-09/nc-senate-override-veto-private-school-vouchers' },
+      ],
+      health_coverage_model: [
+        { text: 'AffordableCareNC: HB76 Medicaid expansion support', url: 'https://www.affordablecarenc.com/general-assembly-members/senate-district-8' },
+        { text: 'NC FREE Foundation 99.3 score', url: 'https://nsjonline.com/article/2024/08/nonprofit-ncfree-releases-2023-24-legislative-business-ratings/' },
+      ],
+      health_cost_control: [
+        { text: 'Drug transparency bills (SB479, SB316, SB315, SB537)', url: 'https://www.affordablecarenc.com/general-assembly-members/senate-district-8' },
+        { text: 'CON law reform advocacy', url: 'https://www.affordablecarenc.com/general-assembly-members/senate-district-8' },
+      ],
+      health_public_health: [
+        { text: 'SB3 medical cannabis primary sponsorship (NORML B+)', url: 'https://vote.norml.org/politicians/117772' },
+        { text: 'The Assembly NC profile on marijuana advocacy', url: 'https://www.theassemblync.com/politics/bill-rabon-medical-marijuanas-conservative-champion/' },
+      ],
+      housing_supply_zoning: [
+        { text: 'SB382 downzoning ban (2024)', url: 'https://www.newsargus.com/brunswick_beacon/news/s-b-382-has-local-town-concerned-over-zoning-implications/article_ccb20390-d4b3-5c69-a292-ea2f667cf26e.html' },
+        { text: 'NC Home Builders Association endorsement of SB382' },
+      ],
+      housing_affordability_tools: [
+        { text: 'General free-enterprise record (99.3 NCFREE)', url: 'https://nsjonline.com/article/2024/08/nonprofit-ncfree-releases-2023-24-legislative-business-ratings/' },
+        { text: 'SB382 property-rights framing', url: 'https://www.newsargus.com/brunswick_beacon/news/s-b-382-has-local-town-concerned-over-zoning-implications/article_ccb20390-d4b3-5c69-a292-ea2f667cf26e.html' },
+      ],
+      justice_firearms: [
+        { text: 'SB50 permitless carry: YES on passage and veto override', url: 'https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/50' },
+        { text: 'Sunday hunting expansion: primary sponsor (2017)', url: 'https://congressionalsportsmen.org/news/north-carolina-caucus-member-honored-with-prestigious-conservation-award/' },
+      ],
+      climate_ambition: [
+        { text: 'SB266 co-sponsor: eliminates 2030 70% carbon reduction target', url: 'https://www.ncleg.gov/BillLookUp/2025/S266' },
+        { text: 'SB266 veto override vote', url: 'https://www.ncleg.gov/BillLookUp/2025/S266' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'SB266 allows cost-recovery for new carbon-emitting generation', url: 'https://ncchamber.com/2025/07/02/veto-of-sb-266-threatens-affordable-reliable-energy-for-nc/' },
+        { text: 'NC Sustainable Energy Association criticism of SB266', url: 'https://www.ncleg.gov/BillLookUp/2025/S266' },
+      ],
     },
     valueStances: {
       universalism: -0.5,
@@ -614,20 +923,52 @@ const candidatesNCSenateD8: Candidate[] = [
       climate_energy_portfolio: 8,
     },
     axisEvidence: {
-      econ_safetynet: ['LPNC platform (lpnc.org)'],
-      econ_investment: ['LPNC platform (lpnc.org)'],
-      econ_tax_structure: ['LPNC platform (lpnc.org)', 'LP national platform (lp.org)'],
-      econ_school_choice: ['LPNC platform (lpnc.org)', 'LPNC educational opportunity issue paper'],
-      health_coverage_model: ['LPNC healthcare position (lpnc.org/healthcare)'],
-      health_cost_control: ['LPNC healthcare position (lpnc.org/healthcare)'],
-      health_public_health: ['LPNC healthcare position', 'LP national platform'],
-      housing_supply_zoning: ['LPNC platform (lpnc.org)'],
-      housing_affordability_tools: ['LPNC platform (lpnc.org)'],
-      housing_transport_priority: ['LPNC platform (lpnc.org)'],
-      justice_policing_accountability: ['LPNC platform (lpnc.org)'],
-      justice_firearms: ['LPNC 2nd Amendment position (lpnc.org/gun-control)'],
-      climate_ambition: ['LPNC platform (lpnc.org)', 'LP national platform'],
-      climate_energy_portfolio: ['LP national platform: Environment/Energy Resources'],
+      econ_safetynet: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+      ],
+      econ_investment: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+      ],
+      econ_tax_structure: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+        { text: 'LP national platform (lp.org)', url: 'https://lp.org/platform-page/' },
+      ],
+      econ_school_choice: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+        { text: 'LPNC educational opportunity issue paper', url: 'https://www.lpnc.org/educational_opportunity' },
+      ],
+      health_coverage_model: [
+        { text: 'LPNC healthcare position (lpnc.org/healthcare)', url: 'https://www.lpnc.org/healthcare' },
+      ],
+      health_cost_control: [
+        { text: 'LPNC healthcare position (lpnc.org/healthcare)', url: 'https://www.lpnc.org/healthcare' },
+      ],
+      health_public_health: [
+        { text: 'LPNC healthcare position', url: 'https://www.lpnc.org/healthcare' },
+        { text: 'LP national platform', url: 'https://lp.org/platform-page/' },
+      ],
+      housing_supply_zoning: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+      ],
+      housing_transport_priority: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+      ],
+      justice_policing_accountability: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+      ],
+      justice_firearms: [
+        { text: 'LPNC 2nd Amendment position (lpnc.org/gun-control)', url: 'https://www.lpnc.org/gun-control' },
+      ],
+      climate_ambition: [
+        { text: 'LPNC platform (lpnc.org)', url: 'https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/' },
+        { text: 'LP national platform', url: 'https://lp.org/platform-page/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LP national platform: Environment/Energy Resources', url: 'https://lp.org/environment-energy-resources/' },
+      ],
     },
     valueStances: {
       universalism: -0.2,

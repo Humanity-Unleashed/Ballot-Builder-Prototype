@@ -33,7 +33,7 @@ export interface CandidateProfile {
   stances: Record<string, number>;
   summary?: string;
   positions?: string[];
-  evidence?: Record<string, string[]>;
+  evidence?: Record<string, { text: string; url?: string }[]>;
 }
 
 export interface Candidate {
@@ -93,7 +93,7 @@ export interface CandidateAxisComparison {
   candidateLabel: string;
   difference: number;
   alignment: 'strong' | 'moderate' | 'weak' | 'opposed';
-  candidateEvidence?: string[];
+  candidateEvidence?: { text: string; url?: string }[];
 }
 
 export interface CandidateMatch {

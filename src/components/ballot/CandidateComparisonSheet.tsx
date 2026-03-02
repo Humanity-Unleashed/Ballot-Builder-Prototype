@@ -1,8 +1,35 @@
 'use client';
 
 import React from 'react';
-import { X, Check, AlertTriangle, Minus } from 'lucide-react';
-import type { Candidate, CandidateMatch } from '@/lib/ballotHelpers';
+import { X, Check, AlertTriangle, Minus, ExternalLink } from 'lucide-react';
+import type { Candidate, CandidateMatch, CandidateAxisComparison } from '@/lib/ballotHelpers';
+
+function EvidenceRow({ evidence }: { evidence: { text: string; url?: string }[] }) {
+  return (
+    <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
+      Based on:{' '}
+      {evidence.map((e, i) => (
+        <span key={i}>
+          {i > 0 && '; '}
+          {e.url ? (
+            <a
+              href={e.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-primary/70 hover:text-brand-primary underline decoration-dotted inline-flex items-center gap-0.5"
+              onClick={(ev) => ev.stopPropagation()}
+            >
+              {e.text}
+              <ExternalLink className="h-2.5 w-2.5 inline shrink-0" />
+            </a>
+          ) : (
+            e.text
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
 
 interface CandidateComparisonSheetProps {
   visible: boolean;
@@ -96,9 +123,7 @@ export default function CandidateComparisonSheet({
                       You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
                     {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
-                      <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
-                        Based on: {detail.candidateEvidence.join('; ')}
-                      </p>
+                      <EvidenceRow evidence={detail.candidateEvidence} />
                     )}
                   </div>
                 </div>
@@ -123,9 +148,7 @@ export default function CandidateComparisonSheet({
                       You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
                     {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
-                      <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
-                        Based on: {detail.candidateEvidence.join('; ')}
-                      </p>
+                      <EvidenceRow evidence={detail.candidateEvidence} />
                     )}
                   </div>
                 </div>
