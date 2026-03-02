@@ -263,6 +263,8 @@ export interface Candidate {
   valueStances?: Record<string, number>;
   /** Summary of candidate's policy profile */
   profileSummary?: string;
+  /** Per-axis evidence sources: axisId -> top source strings */
+  axisEvidence?: Record<string, string[]>;
   policyProfile?: CandidatePreferenceItem[];
 }
 

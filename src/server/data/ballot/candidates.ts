@@ -262,6 +262,12 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_energy_portfolio: 2,
       climate_permitting: 3,
     },
+    axisEvidence: {
+      econ_investment: ['CHIPS Act advocacy and manufacturing investment focus', 'Workforce development champion'],
+      health_coverage_model: ['Supports ACA expansion and public option, not Medicare for All'],
+      climate_ambition: ['LCV 100% (2024), 98% lifetime score in Congress'],
+      climate_energy_portfolio: ['Strong environmental voting record', 'Clean energy manufacturing focus'],
+    },
     valueStances: {
       universalism: 0.6,
       benevolence: 0.6,
@@ -303,6 +309,12 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_ambition: 2,
       climate_energy_portfolio: 2,
     },
+    axisEvidence: {
+      justice_firearms: ['Authored Michigan\'s first red flag gun law'],
+      econ_safetynet: ['Passed $15/hr minimum wage in MI legislature'],
+      housing_affordability_tools: ['Expanded affordable housing in MI legislature'],
+      health_coverage_model: ['Supports public option; opposes Medicare for All as immediate goal'],
+    },
     valueStances: {
       universalism: 0.7,
       benevolence: 0.8,
@@ -340,6 +352,11 @@ export const candidatesMIUSSenate: Candidate[] = [
       justice_policing_accountability: 3,
       justice_firearms: 2,
       climate_ambition: 1,
+    },
+    axisEvidence: {
+      health_coverage_model: ['Signature issue: Medicare for All — guaranteed government health insurance', 'Endorsed by Bernie Sanders'],
+      health_cost_control: ['Medicare for All: no premiums or deductibles'],
+      econ_safetynet: ['Accepts no PAC donations; all-individual-donation campaign', 'Most progressive major candidate in the race'],
     },
     valueStances: {
       universalism: 0.9,
@@ -381,6 +398,12 @@ export const candidatesMIUSSenate: Candidate[] = [
       climate_ambition: 9,
       climate_energy_portfolio: 8,
       climate_permitting: 8,
+    },
+    axisEvidence: {
+      health_coverage_model: ['Voted repeatedly against the ACA and for Medicare vouchers', 'Opposes government drug price negotiation'],
+      justice_firearms: ['NRA A-rated throughout career', 'Opposed all major gun safety legislation'],
+      climate_ambition: ['LCV lifetime score 8%', '14-year record of opposing environmental protections'],
+      climate_energy_portfolio: ['LCV lifetime score 8%', 'Supports fossil fuel development'],
     },
     valueStances: {
       universalism: -0.4,
@@ -499,6 +522,12 @@ export const candidatesMISenateD38: Candidate[] = [
       climate_energy_portfolio: 7,
       climate_permitting: 7,
     },
+    axisEvidence: {
+      justice_firearms: ['Open-carried at State of the State address in protest', 'Strongly pro-2nd Amendment record'],
+      health_public_health: ['Opposed COVID mandates; sued Gov. Whitmer over lockdowns', 'Won at Michigan Supreme Court'],
+      econ_school_choice: ['Endorsed by Great Lakes Education Project'],
+      climate_energy_portfolio: ['Supports keeping Line 5 pipeline open', 'Michigan LCV score 35%'],
+    },
     valueStances: {
       universalism: -0.3,
       benevolence: 0.3,
@@ -538,6 +567,12 @@ export const candidatesMISenateD38: Candidate[] = [
       climate_ambition: 9,
       climate_energy_portfolio: 8,
       climate_permitting: 8,
+    },
+    axisEvidence: {
+      justice_firearms: ['Strong pro-2A record; supports constitutional carry'],
+      econ_investment: ['Committed to limiting government growth and opposing regulations'],
+      justice_policing_accountability: ['Wants to solve law enforcement staffing shortages'],
+      climate_ambition: ['Michigan LCV score 14%', 'Pro-life; endorsed by Right to Life of Michigan'],
     },
     valueStances: {
       universalism: -0.3,

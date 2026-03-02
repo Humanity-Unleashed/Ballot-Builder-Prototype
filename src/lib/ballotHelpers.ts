@@ -32,6 +32,8 @@ export interface ValueAxis {
 export interface CandidateProfile {
   stances: Record<string, number>;
   summary?: string;
+  positions?: string[];
+  evidence?: Record<string, string[]>;
 }
 
 export interface Candidate {
@@ -91,6 +93,7 @@ export interface CandidateAxisComparison {
   candidateLabel: string;
   difference: number;
   alignment: 'strong' | 'moderate' | 'weak' | 'opposed';
+  candidateEvidence?: string[];
 }
 
 export interface CandidateMatch {
@@ -179,6 +182,8 @@ export function transformCandidate(apiCandidate: BallotCandidate): Candidate {
     profile: {
       stances: apiCandidate.axisStances || {},
       summary: apiCandidate.profileSummary,
+      positions: apiCandidate.positions,
+      evidence: apiCandidate.axisEvidence,
     },
   };
 }
@@ -368,6 +373,7 @@ export function computeCandidateMatches(
         candidateLabel,
         difference: diff,
         alignment,
+        candidateEvidence: candidate.profile.evidence?.[axisId],
       });
 
       if (diff <= 2) {
