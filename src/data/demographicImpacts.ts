@@ -702,6 +702,137 @@ export const demographicImpacts: Record<string, DemographicImpactRule[]> = {
     },
   ],
 
+  // ─── NC Voter ID Amendment (SB 921) ───
+  'nc-2026-voter-id-amendment': [
+    {
+      field: 'ageRange',
+      matchValues: ['18_24'],
+      effect: 'concern',
+      headline: 'Young voters are less likely to have qualifying photo ID — 18% of 18-24 year-olds lack one nationally',
+      detail: 'First-time voters and students with out-of-state IDs face the biggest barriers under expanded ID requirements',
+    },
+    {
+      field: 'ageRange',
+      matchValues: ['65_plus'],
+      effect: 'concern',
+      headline: 'Older voters who vote absentee are most affected — the amendment extends ID requirements to mail-in ballots for the first time',
+    },
+    {
+      field: 'householdIncome',
+      matchValues: ['under_25k', '25k_50k'],
+      effect: 'concern',
+      headline: 'Lower-income voters are 2-3x more likely to lack qualifying photo ID due to costs of obtaining one',
+      detail: 'Getting a state ID requires documents, transportation, and sometimes fees that create barriers',
+    },
+    {
+      field: 'householdIncome',
+      matchValues: ['100k_150k', '150k_200k', 'over_200k'],
+      effect: 'context',
+      headline: 'You almost certainly have qualifying ID already — this amendment primarily affects voters without driver\'s licenses or state-issued photo ID',
+    },
+    {
+      field: 'housingSituation',
+      matchValues: ['unhoused'],
+      effect: 'concern',
+      headline: 'Without a stable address, obtaining and maintaining a qualifying photo ID is significantly harder',
+    },
+    {
+      field: 'housingSituation',
+      matchValues: ['rent'],
+      effect: 'concern',
+      headline: 'Frequent movers face ID-address mismatch issues — renters move 2x more often than homeowners',
+    },
+    {
+      field: 'housingSituation',
+      matchValues: ['own_home'],
+      effect: 'context',
+      headline: 'Homeowners nearly always have qualifying ID — this amendment mainly affects people without driver\'s licenses or stable addresses',
+    },
+    {
+      field: 'employmentType',
+      matchValues: ['student'],
+      effect: 'concern',
+      headline: 'Student IDs don\'t qualify under NC voter ID law — out-of-state students must obtain an NC ID to vote',
+    },
+    {
+      field: 'employmentType',
+      matchValues: ['retired'],
+      effect: 'concern',
+      headline: 'Retirees who vote absentee are directly affected — the amendment extends photo ID requirements to mail-in ballots',
+    },
+    {
+      field: 'veteranStatus',
+      matchValues: ['veteran'],
+      effect: 'context',
+      headline: 'VA-issued veteran health ID cards are accepted as qualifying photo ID under NC law',
+    },
+    {
+      field: 'healthInsurance',
+      matchValues: ['medicaid', 'uninsured'],
+      effect: 'concern',
+      headline: 'Voters on Medicaid or without insurance are more likely to lack qualifying photo ID — access barriers compound',
+    },
+    {
+      field: 'dependents',
+      matchValues: ['one', 'two', 'three_plus'],
+      effect: 'context',
+      headline: 'This is a voting access policy — it doesn\'t directly affect family finances, but courts found prior NC voter ID laws disproportionately burdened minority voters',
+    },
+  ],
+
+  // ─── GA Conservation Use Property Acreage Increase ───
+  'ga-2026-conservation-use-acreage': [
+    {
+      field: 'housingSituation',
+      matchValues: ['own_home'],
+      effect: 'mixed',
+      headline: 'If you own large rural acreage, you could benefit from expanded tax breaks — but other homeowners may see slightly higher tax assessments to offset lost revenue',
+    },
+    {
+      field: 'housingSituation',
+      matchValues: ['rent'],
+      effect: 'context',
+      headline: 'This mainly affects large rural landowners — the tax shift could modestly increase property taxes passed through to renters in rural counties',
+    },
+    {
+      field: 'householdIncome',
+      matchValues: ['under_25k', '25k_50k'],
+      effect: 'concern',
+      headline: 'Lost property tax revenue in rural counties could reduce funding for schools, roads, and services you rely on',
+      detail: 'The tax benefit goes to landowners with 2,000-4,000 acres — ordinary residents absorb the revenue loss',
+    },
+    {
+      field: 'householdIncome',
+      matchValues: ['100k_150k', '150k_200k', 'over_200k'],
+      effect: 'context',
+      headline: 'If you own qualifying agricultural or timber land over 2,000 acres, this directly reduces your property tax bill — otherwise the impact is minimal',
+    },
+    {
+      field: 'employmentType',
+      matchValues: ['self_employed'],
+      effect: 'mixed',
+      headline: 'If you operate a farm or timber business, this could significantly lower your property tax burden — but the benefit also extends to large corporate landowners',
+    },
+    {
+      field: 'ageRange',
+      matchValues: ['65_plus'],
+      effect: 'context',
+      headline: 'Framed as protecting family farmland, but the legal mechanism doesn\'t restrict benefits to family farms — corporate agribusiness also qualifies',
+    },
+    {
+      field: 'ageRange',
+      matchValues: ['18_24', '25_34'],
+      effect: 'context',
+      headline: 'This is a narrow agricultural property tax policy — it mainly benefits owners of very large tracts of land (2,000-4,000 acres)',
+    },
+    {
+      field: 'dependents',
+      matchValues: ['one', 'two', 'three_plus'],
+      effect: 'context',
+      headline: 'In rural counties, reduced property tax revenue could affect school funding — though the overall fiscal impact is uncertain',
+    },
+  ],
+
   // ─── City Council District 5 ───
   council_d5: [
     {
