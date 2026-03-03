@@ -123,6 +123,37 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     ],
   },
 
+  econ_tax_structure: {
+    axisId: 'econ_tax_structure',
+    question: 'How should the tax burden be distributed across income levels?',
+    poleALabel: 'Progressive\nTaxation',
+    poleBLabel: 'Flat / Sales\nTax',
+    currentPolicyIndex: 1,
+    positions: [
+      {
+        title: 'Highly progressive with wealth tax',
+        description: 'Steep graduated rates plus taxes on large fortunes and capital gains',
+      },
+      {
+        title: 'Progressive income tax',
+        description: 'Graduated rates where higher earners pay higher percentages',
+        isCurrentPolicy: true,
+      },
+      {
+        title: 'Simplified brackets with fewer deductions',
+        description: 'Fewer tax brackets, lower top rate, close loopholes',
+      },
+      {
+        title: 'Flat income tax',
+        description: 'Everyone pays the same percentage regardless of income',
+      },
+      {
+        title: 'Replace income tax with consumption tax',
+        description: 'Eliminate income tax, fund government through sales or value-added tax',
+      },
+    ],
+  },
+
   health_coverage_model: {
     axisId: 'health_coverage_model',
     question: 'Should government offer health insurance to everyone?',

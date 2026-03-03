@@ -1,0 +1,248 @@
+{
+  "slug": "gina-hinojosa",
+  "name": "Gina Hinojosa",
+  "party": "Democratic",
+  "office": "Governor of Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Five-term Texas state representative and former school board president running for governor on an anti-voucher, pro-public school, Medicaid expansion, and anti-corruption platform. Career union lawyer with a 9-year legislative record anchored in education, healthcare access, climate action, and labor rights.",
+  "keyPositions": [
+    "Led House Democrats in defeating school vouchers for four consecutive sessions; authored $40B Fully Fund Our Future Act for public schools",
+    "Explicit Medicaid expansion commitment; sponsored $1B indigent healthcare funding bill (SB 1350)",
+    "Spearheaded 41-bill Texas Climate Plan to reduce carbon emissions and regulate fossil fuel industry",
+    "Supports universal background checks, red flag laws, and licensing for long guns; frames gun violence as public health issue",
+    "Pro-labor: AFL-CIO endorsed, career union lawyer, supports right to organize in right-to-work Texas"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: explicit Medicaid expansion",
+        "Legislative record: HB 1307 disaster assistance (signed into law)",
+        "Legislative record: SB 1350 indigent healthcare funding (House sponsor)",
+        "Texas AFL-CIO endorsement; career union lawyer",
+        "Texans for Fiscal Responsibility: F rating (2017, 2019, 2021)"
+      ],
+      "notes": "Consistent record of expanding public safety net through legislation and campaign commitments. Pro-labor organizing in a right-to-work state signals willingness to expand worker protections beyond current Texas baseline."
+    },
+    "econ_investment": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Legislative record: HB 3 public school finance reform (co-led, passed)",
+        "Legislative record: Fully Fund Our Future Act ($40B public school investment, filed)",
+        "Legislative record: HB 3488 Public Benefit Corporations (authored, signed into law)",
+        "Campaign website: redirect state incentives to small business from multinational corporations",
+        "Texans for Fiscal Responsibility: F rating"
+      ],
+      "notes": "Aggressive public investment orientation across education, clean energy, and small business. The Fiscal Responsibility Index F is consistent across multiple sessions, confirming this is not just campaign rhetoric."
+    },
+    "econ_tax_structure": {
+      "score": 2,
+      "confidence": "low",
+      "sources": [
+        "Campaign rhetoric: 'working Texans vs. billionaires'; anti-corporate greed framing",
+        "Texans for Fiscal Responsibility: F rating"
+      ],
+      "notes": "Texas has no state income tax, limiting the governor's direct tax authority. No specific tax proposals found in campaign or legislative record. Score inferred from consistent anti-corporate, pro-redistribution rhetoric and fiscal scorecard. Low confidence because there is no Tier 1 evidence of specific tax votes or proposals."
+    },
+    "econ_school_choice": {
+      "score": 0,
+      "confidence": "high",
+      "sources": [
+        "Voting record: voted NO on ESA/voucher program across four consecutive legislative sessions",
+        "Legislative record: HB 3 public school finance reform (co-led)",
+        "Legislative record: Fully Fund Our Future Act ($40B public school investment)",
+        "ATPE/Teach the Vote endorsement",
+        "Texas Parent PAC endorsement (2016, 2018, 2022)",
+        "AFT national endorsement",
+        "Campaign website: 'Abbott's voucher scam'"
+      ],
+      "notes": "This is her defining legislative issue. She led House Democrats' effort to block vouchers for four consecutive sessions and authored the most ambitious public school funding bill in recent Texas history. Score of 0 reflects a candidate at the absolute pole of opposing school choice and championing universal public education."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: explicit Medicaid expansion commitment",
+        "Legislative record: SB 1350 indigent healthcare funding (House sponsor)",
+        "2019 Healthy Texas Act organizing participation",
+        "San Antonio Express-News endorsement citing Medicaid expansion"
+      ],
+      "notes": "Explicitly supports Medicaid expansion, not single-payer or Medicare for All. In 2019 she participated in Healthy Texas Act organizing that had a universal coverage framing, but her 2026 campaign platform is specifically Medicaid expansion. Scored on current position per recency rule. Positioned between public option (3) and single-payer (0) because Medicaid expansion is a significant government-led coverage expansion but not a system replacement."
+    },
+    "health_cost_control": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Campaign website: opposes private equity buying doctors' offices; opposes big insurance and drug company pricing",
+        "Campaign rhetoric: 'profits over patients' framing"
+      ],
+      "notes": "Explicitly supports government/regulatory intervention against corporate consolidation in healthcare. Targets private equity, insurance companies, and pharmaceutical pricing. Consistent with broader anti-corporate orientation."
+    },
+    "health_public_health": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Voting record: voted NO on all abortion restriction bills (SB 8 heartbeat bill, total abortion ban, criminal penalties for providers)",
+        "Texas Right to Life 2019 scorecard: strongly negative/failing",
+        "Choice Tracker: rated Pro-Choice",
+        "EMILY's List endorsement (2026)",
+        "Planned Parenthood Texas Votes endorsement (2024)"
+      ],
+      "notes": "Score driven primarily by reproductive rights, which is the dominant policy dimension of this axis in current Texas politics. Complete pro-choice voting record across five terms. Called Dobbs decision 'unjust.' No evidence found on vaccine mandates or other public health mandate positions; if those were weighted more heavily, confidence on that sub-dimension would be low."
+    },
+    "housing_supply_zoning": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Legislative record: HB 3050 filed multiple sessions to repeal Texas ban on inclusionary zoning",
+        "Austin Monitor reporting on inclusionary zoning bills"
+      ],
+      "notes": "Multiple legislative attempts to repeal the state ban on inclusionary zoning, which would allow cities (not mandate them) to require affordable housing in new developments. This is pro-zoning-reform but focused on enabling local tools rather than mandating density or upzoning statewide. Score reflects a reform orientation that stops short of aggressive state-level zoning mandates."
+    },
+    "housing_affordability_tools": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Legislative record: HB 3050 inclusionary zoning (multiple sessions)",
+        "Campaign website: frames housing costs as corporate greed problem requiring government action"
+      ],
+      "notes": "Inclusionary zoning is a direct government tool requiring developers to include affordable units. Combined with anti-corporate housing framing, signals strong support for government intervention in housing affordability. Score limited by lack of specific rent control, public housing, or housing subsidy proposals."
+    },
+    "housing_transport_priority": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Biographical: executive director of Transit Forward (Austin pro-transit advocacy organization)"
+      ],
+      "notes": "Transit Forward background is the primary evidence and is biographical (Tier 4). No specific 2026 campaign transportation platform found. Scored cautiously at 3 rather than omitting because the professional background in transit advocacy is a meaningful signal, but confidence is low."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Campaign press releases: called on Abbott to stop facilitating fatal ICE operations (Jan 2026)",
+        "Campaign press releases: demanded release of body cam footage after ICE killing (Feb 2026)",
+        "Opposition to Operation Lone Star; supports redirecting DPS border overtime to local community policing",
+        "Legislative record: quorum break to block voting restriction bills (2021)"
+      ],
+      "notes": "Accountability-oriented: transparency demands, body camera access, opposition to militarized border operations. Framing is community policing and oversight, not defund/abolish. No evidence of supporting civilian review boards with binding authority or ending qualified immunity. Score of 3 reflects reform orientation that stops short of the most aggressive structural changes."
+    },
+    "justice_sentencing_goals": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Legislative record: HB 351 ability-to-pay sentencing reform (co-authored, signed into law)",
+        "Legislative record: HB 81 marijuana decriminalization (co-authored)",
+        "Legislative record: HB 2107 medical marijuana legalization (co-authored)",
+        "Legislative record: HB 73 ban on gay/trans panic defense (filed, did not pass)",
+        "NORML database: supportive rating",
+        "ACC interview: decriminalization, youth jobs programs to reduce incarceration",
+        "PolitiFact 2016: cited Texas incarceration rate higher than Russia or Iran as motivation for reform"
+      ],
+      "notes": "Comprehensive rehabilitation and reform orientation: sentencing reform, decriminalization, alternatives to incarceration, youth diversion. Explicitly frames Texas incarceration rate as a problem to reverse. Multiple bills filed and one signed into law."
+    },
+    "justice_firearms": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "TribTalk op-ed 2017: universal background checks, red flag laws, domestic abuser surrender, stolen gun reporting, License to Carry for long guns",
+        "TribTalk op-ed 2019: challenges 'Texas gun culture' narrative to defend regulation",
+        "Consistent positions across 2017-2026 with no retreat"
+      ],
+      "notes": "Specific named proposals: universal background checks, red flag laws, licensing for long guns, domestic abuser firearm surrender, stolen gun reporting. Frames gun violence as public health issue. No evidence of assault weapons ban or magazine limit support (which would push to 0-1). Score of 2 reflects significant regulation support that is comprehensive but stops short of the full Pole A package."
+    },
+    "climate_ambition": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Legislative record: 41-bill Texas Climate Plan to reduce carbon emissions and regulate fossil fuel industry (2021)",
+        "Legislative record: clean energy employment transition bill (passed)",
+        "ACC interview: 'with urgency, respond to and be prepared for a warming planet'",
+        "Austin Chronicle reporting on Texas Climate Plan"
+      ],
+      "notes": "Leading a 41-bill climate package with 16 colleagues is strong legislative climate action. Describes climate response as urgent. Passed clean energy employment transition legislation. Score of 2 (not 0-1) because the plan is aggressive but framed as economic opportunity for Texas rather than emergency-level transformation or fossil fuel elimination."
+    },
+    "climate_energy_portfolio": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Legislative record: 41-bill climate package including fossil fuel industry regulation",
+        "Legislative record: clean energy employment transition bill",
+        "ACC interview: 'Texas can continue to be a leader in energy if we take advantage of new technologies'",
+        "Campaign/former House website: Texas Climate Plan details"
+      ],
+      "notes": "Strong clean energy push with fossil fuel regulation, but explicitly frames Texas as an energy leader that should transition rather than rapidly eliminate fossil fuels. 'Both the problem and the solution' framing. Score of 3 reflects strong renewables priority with pragmatic transition approach rather than rapid fossil fuel phase-out."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.7,
+      "reasoning": "Climate action (41-bill plan for all Texans and the planet), Medicaid expansion (healthcare for all), anti-discrimination legislation (trans panic defense ban, LGBTQ+ caucus endorsement), ICE accountability (immigrant welfare). Strong signals across environment and social inclusion. Limited by: no strong international/foreign policy dimension; her universalism is primarily Texas-centered rather than global."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "Central to her entire political identity. Public school funding (HB 3, Fully Fund Our Future Act), community healthcare access (SB 1350, Medicaid expansion), disaster assistance (HB 1307), labor rights for workers, small business investment. Career built on direct community welfare: school board trustee, union lawyer, state representative. One of the strongest benevolence signals in the research file."
+    },
+    "tradition": {
+      "score": -0.5,
+      "reasoning": "Actively challenges multiple Texas political and cultural traditions: gun culture ('the false narrative of Texas gun culture'), right-to-work norms (supports organizing), existing fiscal structure (Fiscal Responsibility F), voucher-as-innovation movement (opposes as 'scam'). Broke quorum to block legislation. Filed inclusionary zoning bills to repeal existing state ban. Her candidacy is fundamentally about changing the Texas status quo."
+    },
+    "conformity": {
+      "score": 0.2,
+      "reasoning": "Generally works through institutional channels: filing bills, going through legislative process, 9 years of legislative service. However, the 2021 quorum break was an explicit norm violation (even if for democratic ends), and her entire gubernatorial campaign frames the current system as corrupt and in need of overhaul. Net slightly positive because she primarily operates within the system, but the quorum break and anti-system rhetoric temper the score."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Frames security through social programs: disaster assistance (HB 1307), healthcare access, school stability, worker protections. Opposes Operation Lone Star and ICE operations (which are traditional security framing). Does not frame gun safety as personal liberty restriction but as public safety. Mixed: positive on community safety through social investment, negative on traditional law enforcement/border security framing."
+    },
+    "power": {
+      "score": -0.6,
+      "reasoning": "Explicitly anti-power-concentration. Career union lawyer challenging employers. Campaign identity is 'working Texans vs. billionaires.' Opposes corporate subsidies, private equity in healthcare, pay-to-play politics. $1.3M raised vs. Abbott's $106M -- running against the donor class, not with it. Jim Hightower endorsement (populist icon). Public Benefit Corporation bill (HB 3488) represents stakeholder over shareholder capitalism. One of the clearest anti-power signals in the evidence."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "Some workforce development signals: clean energy employment transition bill, small business support, entrepreneurship framing. But her dominant framing is structural/systemic (the system is rigged by billionaires/corporations) rather than individual achievement-oriented. Not a defining value in her political identity."
+    },
+    "hedonism": {
+      "score": 0.2,
+      "reasoning": "Marijuana decriminalization (HB 81) and medical marijuana (HB 2107) support could signal personal freedom orientation, but these are framed as criminal justice reform and public health rather than lifestyle liberty. Minor signal; not a meaningful part of her political identity."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Running to unseat a three-term governor in a deep-red state. Led 41-bill climate package (ambitious structural change). 'Take Back Texas' campaign framing with Rep. Talarico signals transformation agenda. Quorum break was a dramatic norm-challenging action. Anti-status-quo identity. But works within the Democratic Party structure and does not propose truly radical policy departures. Moderate-high stimulation."
+    },
+    "self_direction": {
+      "score": 0.5,
+      "reasoning": "Strong pro-choice stance (bodily autonomy), LGBTQ+ rights advocacy (trans panic defense ban, Houston LGBTQ+ Caucus endorsement), marijuana decriminalization. These are clear self-direction signals in the social domain. However, supports significant gun regulation (restricts individual liberty on firearms) and government mandates in healthcare and education (restricts market/individual choice). Score reflects strong social-domain self-direction partially offset by economic-domain interventionism."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Healthcare model: 2019 universal coverage organizing vs. 2026 Medicaid expansion",
+      "description": "In 2019, Hinojosa participated in 'Healthy Texas Act' organizing that framed healthcare as a universal coverage issue. Her 2026 gubernatorial campaign explicitly commits to Medicaid expansion only, not single-payer or public option. This may reflect pragmatic positioning for a statewide race in Texas rather than a genuine shift.",
+      "sources": ["2019 Healthy Texas Act organizing", "2026 campaign website"],
+      "scoringImpact": "Scored on 2026 campaign position per recency rule; health_coverage_model at 2 rather than 0-1."
+    },
+    {
+      "topic": "Labor unity: AFL-CIO endorsement vs. Teamster locals backing Abbott",
+      "description": "While Texas AFL-CIO (250,000+ members) and SEIU endorsed Hinojosa, some Teamster locals endorsed Abbott. The Texas labor movement is not monolithic on this race, reflecting a national trend of some building trades and Teamster locals breaking from Democratic candidates.",
+      "sources": ["Texas Tribune, February 11, 2026", "Texas AFL-CIO endorsement, January 2026"],
+      "scoringImpact": "Does not change her policy positions or axis scores. Noted as context for the labor landscape."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 16,
+    "axesSkipped": ["climate_permitting"],
+    "reasonSkipped": "No specific permitting position found in legislative record or campaign materials. Climate Plan included fossil fuel regulation but no permitting-specific proposals were documented.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific vaccine mandate or broader public health mandate position found (health_public_health scored on reproductive rights only)",
+      "No 2026 campaign transportation platform found (housing_transport_priority scored on biographical inference only)",
+      "No specific tax structure proposals found (econ_tax_structure scored on rhetoric and fiscal scorecard inference)",
+      "No permitting-specific position found (climate_permitting omitted)",
+      "No foreign policy or international governance positions found (limits universalism value assessment)"
+    ]
+  }
+}

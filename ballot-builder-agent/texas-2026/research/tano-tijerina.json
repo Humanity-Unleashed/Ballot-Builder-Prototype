@@ -1,0 +1,330 @@
+{
+  "slug": "tano-tijerina",
+  "name": "Tano Tijerina",
+  "party": "Republican",
+  "office": "U.S. House, Texas 28th Congressional District, 2026",
+  "contestId": "tx28-general",
+  "incumbencyStatus": "challenger (first-time congressional candidate; current Webb County Judge)",
+  "researchedAt": "2026-02-27T00:00:00.000Z",
+
+  "biography": {
+    "currentRole": "Webb County Judge (2015–present, term ends Dec. 31, 2026)",
+    "priorRoles": [
+      "Minor league baseball pitcher, Milwaukee Brewers organization (1993–1998, Low-A peak)",
+      "Minor league baseball, various independent leagues (2002–2009)",
+      "Rancher and businessman, Laredo TX",
+      "Chairman, Texas Border Coalition (elected Dec. 2024, stepped down Dec. 2025 upon congressional campaign launch)"
+    ],
+    "education": "J.W. Nixon High School, Laredo (1992); Navarro College (two-year); B.A., Texas A&M International University (2002)",
+    "background": "Born June 23, 1974, in Laredo, TX. Son of educators Cayetano Tijerina III and Rosalinda Flores. Drafted 8th round by Milwaukee Brewers (1993). Rancher and businessman. Elected Webb County Judge as a Democrat in 2014; re-elected 2018 (76.3%) and 2022 (100% of Democratic primary, unopposed in general). Switched from Democratic to Republican Party on December 10, 2024, announced live on Fox & Friends. Announced congressional campaign December 2, 2025, after timing the announcement to avoid triggering Texas's resign-to-run law (which would have required him to vacate the county judgeship).",
+    "partyHistory": "Registered Democrat 2014–Dec. 10, 2024. Registered Republican Dec. 10, 2024–present."
+  },
+
+  "campaignWebsite": {
+    "url": "https://www.tanoforcongress.com/",
+    "fetchedAt": "2026-02-27T00:00:00.000Z",
+    "notes": "Campaign website found; direct fetch blocked. Content reconstructed from search snippets and news coverage referencing the site.",
+    "statedPositions": [
+      {
+        "topic": "border_security_immigration",
+        "quote": "Yes the border has been secured, but now it's time to take a different step, which is true immigration reform.",
+        "sourceUrl": "https://www.krgv.com/news/webb-county-judge-newcomer-compete-for-district-28-gop-nomination-in-south-texas",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Stated in KRGV primary coverage; consistent with multiple other sources. Positions border security as achieved under Trump and now pivots to 'reform' — a more moderate framing than pure enforcement-only. Ambiguous on specifics (no DACA, pathways, or deportation stances found)."
+      },
+      {
+        "topic": "energy_oil_gas",
+        "quote": "fighting for supporting our oil and gas industry",
+        "sourceUrl": "https://www.ksat.com/news/texas/2025/12/02/webb-county-judge-tano-tijerina-launches-run-for-congress-seeking-to-flip-south-texas-district-red/",
+        "date": "2025-12",
+        "confidence": "high",
+        "notes": "Consistent across campaign launch, party switch rationale, and Fox & Friends interview. Explicitly cited Democratic 'attacks on our oil and gas industry' as a reason for party switch."
+      },
+      {
+        "topic": "taxes",
+        "quote": "worked hard to keep taxes low, support local businesses, and improve our county's infrastructure and services",
+        "sourceUrl": "https://ballotpedia.org/Tano_Tijerina",
+        "date": "2025-2026",
+        "confidence": "medium",
+        "notes": "Record as county judge cited in support; no specific federal tax platform details (e.g., TCJA extension, corporate tax rates) found in available sources."
+      },
+      {
+        "topic": "infrastructure_economic_development",
+        "quote": "improving infrastructure, lowering taxes and addressing immigration",
+        "sourceUrl": "https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/",
+        "date": "2025-12",
+        "confidence": "medium",
+        "notes": "Stated as top-three priorities at campaign launch. County-level record includes construction of Bridge 4/5, renovation of fairgrounds, and advancing the 5th international bridge."
+      },
+      {
+        "topic": "faith_family_values",
+        "quote": "Every lesson I have learned about faith, family, hard work, and never giving up came from the people here",
+        "sourceUrl": "https://www.tanoforcongress.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Homepage messaging; signals socially conservative orientation consistent with GOP alignment. Also cited 'keeping faith and family at the center of everything we do' in party-switch statements."
+      },
+      {
+        "topic": "public_safety",
+        "quote": "border security, affordability and public safety",
+        "sourceUrl": "https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/",
+        "date": "2025-12",
+        "confidence": "medium",
+        "notes": "Named as top three congressional priorities at campaign launch. No specific policing reform or gun policy statements found."
+      },
+      {
+        "topic": "america_first_alignment",
+        "quote": "Together, we are going to take South Texas back and put America First.",
+        "sourceUrl": "https://x.com/JudgeTano/status/2008674857689772334",
+        "date": "2026-01-06",
+        "confidence": "high",
+        "notes": "Official Tijerina X post following Trump endorsement. Explicit embrace of 'America First' framing."
+      }
+    ]
+  },
+
+  "votingRecord": {
+    "available": false,
+    "notes": "No federal legislative record — first-time congressional candidate. Webb County Judge is an executive/administrative role (county's chief executive); there is no formal legislative voting record available in public databases. County commissioner court votes are not tracked by standard third-party scorecards.",
+    "countyJudgeRecord": {
+      "summary": "Served as Webb County's chief elected executive 2015–present (11 years). Key county-level actions documented:",
+      "keyActions": [
+        {
+          "action": "COVID-19 shelter-in-place order",
+          "date": "2020-03",
+          "description": "Signed one of the strictest shelter-in-place orders in South Texas, ordering Laredo residents and Webb County to shelter in place beginning March 2020.",
+          "topic": "public_health",
+          "sourceUrl": "https://www.borderreport.com/news/breaking-laredo-going-into-lockdown-saturday-due-to-covid-19/",
+          "notes": "Enacted against the broader grain of Texas Republican governance at the time. Now frames his party switch partly around opposing such mandates, though his own record implemented them."
+        },
+        {
+          "action": "Mask mandate for county government offices",
+          "date": "2020-2021",
+          "description": "Maintained mask mandates for county government offices despite Gov. Greg Abbott's executive order prohibiting state and local government entities from requiring masks.",
+          "topic": "public_health",
+          "sourceUrl": "https://www.washingtonexaminer.com/news/campaigns/4428447/gop-recruit-against-henry-cuellar-is-trump-backed-challenger-with-liberal-past/",
+          "notes": "Documented by Washington Examiner as part of 'liberal past' framing. Conflicts directly with current party affiliation's stance on mask/vaccine mandates."
+        },
+        {
+          "action": "Expanded voting access prior to 2022 elections",
+          "date": "2021-2022",
+          "description": "Prioritized expanding access to voting ahead of the 2022 elections, even as Texas Republicans were tightening voter integrity rules statewide.",
+          "topic": "voting_rights",
+          "sourceUrl": "https://www.washingtonexaminer.com/news/campaigns/4428447/gop-recruit-against-henry-cuellar-is-trump-backed-challenger-with-liberal-past/",
+          "notes": "Documented by Washington Examiner. Contradicts typical Republican stance on election administration."
+        },
+        {
+          "action": "Defended election officials after ballot recount discrepancy",
+          "date": "2024",
+          "description": "Defended election officials following a recount discrepancy involving roughly 300 ballots in Henry Cuellar's 2024 reelection race.",
+          "topic": "election_integrity",
+          "sourceUrl": "https://www.washingtonexaminer.com/news/campaigns/4428447/gop-recruit-against-henry-cuellar-is-trump-backed-challenger-with-liberal-past/",
+          "notes": "Defended Democratic-aligned election officials. Switched to Republican two months later."
+        },
+        {
+          "action": "Infrastructure: Bridge 4/5 and 5th international bridge",
+          "date": "2015-2025",
+          "description": "Oversaw construction of Bridge 4/5 and advanced the 5th international bridge project. Also renovated county fairgrounds.",
+          "topic": "infrastructure",
+          "sourceUrl": "https://ballotpedia.org/Tano_Tijerina"
+        },
+        {
+          "action": "Texas Border Coalition chairmanship",
+          "date": "2024-12 to 2025-12",
+          "description": "Elected Chairman of TBC in December 2024. TBC advocates for 'fair and effective immigration reform that strengthens borders and recognizes the economic contributions immigrants make to the U.S.' Stepped down upon congressional campaign launch.",
+          "topic": "immigration",
+          "sourceUrl": "https://texasbordercoalition.org/news/texas-border-coalition-elects-judge-tano-tijerina-as-new-chairman/"
+        }
+      ]
+    }
+  },
+
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA rating found — consistent with no federal legislative record. No explicit pro-gun or anti-gun positions stated in available sources. Cannot score firearms_policy axis from scorecards."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV rating — no federal record. County-level environmental record not tracked by LCV. Explicitly supports oil and gas industry, suggesting low ambition_level and market-oriented energy_portfolio if a score were available."
+    },
+    {
+      "organization": "AFL-CIO / Labor",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No labor scorecard found. No explicit positions on unions, right-to-work, minimum wage, or labor policy in available sources."
+    },
+    {
+      "organization": "Chamber of Commerce / NRCC",
+      "score": null,
+      "grade": null,
+      "url": "https://nrcc.org/2026/01/06/%F0%9F%9A%A8-president-trump-endorses-tano-tijerina-to-beat-henry-cuellar/",
+      "notes": "NRCC characterizes him as someone who knows 'what it takes to provide a strong economy, secure borders, and low energy prices for families in South Texas.' NRCC is actively supporting his campaign with advertising."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "President Donald Trump",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "2026-01-06",
+      "sourceUrl": "https://www.nbcnews.com/politics/2026-election/trump-endorses-tano-tijerina-running-against-democrat-henry-cuellar-rcna252686",
+      "notes": "Trump posted on Truth Social: 'Tano's views are stronger, better, and far less tainted than Henry's, and he has my Complete and Total Endorsement.' Endorsement came after Trump pardoned Cuellar in Dec. 2025 on federal bribery charges but was disappointed by Cuellar's continued Democratic candidacy."
+    },
+    {
+      "organization": "NRCC (National Republican Congressional Committee)",
+      "type": "active campaign support / advertising",
+      "cycle": "2026",
+      "sourceUrl": "https://nrcc.org/2026/01/13/%F0%9F%9A%A8new-nrcc-launches-ad-blasting-cuellar-for-failing-south-texas/",
+      "notes": "NRCC launched ads blasting Cuellar in January 2026, coordinating with Tijerina campaign effort. TX-28 is a top NRCC target seat."
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "Fox & Friends (Fox News)",
+      "date": "2024-12-10",
+      "url": "https://www.foxnews.com/video/6365801922112",
+      "keyExchanges": [
+        {
+          "topic": "party_switch_rationale",
+          "quote": "Over the years, I've watched the Democratic Party shift further and further to the left, and leaving the values that I hold dear to my heart. I've always been a conservative, and the radicalization of the national Democrats pushed me away a long time ago. For that reason, I'm proud to announce I will be leaving the Democratic Party and joining the Republican Party.",
+          "notes": "Made the party-switch announcement live on Fox & Friends. Cited immigration/border, oil and gas industry threats, transgender women in sports, and 'woke movements' as specific concerns."
+        },
+        {
+          "topic": "south_texas_identity",
+          "quote": "When you look down here in South Texas, our Democrats are really not the same as national Democrats. We're very conservative for the most part. I think everybody started to understand and realize what was going on the last three to four years.",
+          "notes": "Frames switch as alignment with regional identity rather than departure from long-held views. This framing is significant context for the party switch."
+        }
+      ]
+    },
+    {
+      "outlet": "KGNS TV (Laredo local news)",
+      "date": "2026-01-06",
+      "url": "https://www.kgns.tv/2026/01/06/rep-cuellar-tijerina-respond-trumps-truth-social-endorsement-post/",
+      "keyExchanges": [
+        {
+          "topic": "trump_endorsement_response",
+          "quote": "Honored to have the support of @realDonaldTrump! Together, we are going to take South Texas back and put America First.",
+          "notes": "Response to Trump Truth Social endorsement. Full embrace of Trump/America First branding."
+        }
+      ]
+    },
+    {
+      "outlet": "KRGV (Rio Grande Valley news)",
+      "date": "2026-02",
+      "url": "https://www.krgv.com/news/webb-county-judge-newcomer-compete-for-district-28-gop-nomination-in-south-texas",
+      "keyExchanges": [
+        {
+          "topic": "immigration_reform",
+          "quote": "Yes the border has been secured, but now it's time to take a different step, which is true immigration reform.",
+          "notes": "Acknowledges border security progress under Trump, calls for next step of 'true immigration reform.' More moderate than pure enforcement-only framing. No details on what immigration reform entails."
+        },
+        {
+          "topic": "campaign_rationale",
+          "quote": "I ran because South Texas is in trouble.",
+          "notes": "Core campaign message. Focuses on regional identity and economic distress."
+        },
+        {
+          "topic": "transparency",
+          "quote": "[Tijerina] says he wants to bring what he calls more transparency to the district.",
+          "notes": "Paraphrase by KRGV reporter; no direct quote. Alludes to Cuellar's legal troubles (federal bribery charges, pardoned by Trump Dec. 2025)."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Tribune (campaign announcement coverage)",
+      "date": "2025-12-02",
+      "url": "https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/",
+      "keyExchanges": [
+        {
+          "topic": "top_priorities",
+          "quote": "border security, affordability and public safety",
+          "notes": "Named as top three congressional priorities. Paraphrased from campaign announcement."
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "public_health_mandates",
+      "conflict": "As Webb County Judge (2020–2021), Tijerina imposed some of the strictest COVID-19 shelter-in-place and mask mandate orders in South Texas, defying GOP Gov. Abbott's order banning mask mandates in government buildings. He now campaigns as a Republican aligned with those who opposed such mandates, and cited 'woke policies' as a reason for his party switch. His own COVID-era record stands in direct tension with his current political identity.",
+      "sources": [
+        "https://www.borderreport.com/news/breaking-laredo-going-into-lockdown-saturday-due-to-covid-19/",
+        "https://www.washingtonexaminer.com/news/campaigns/4428447/gop-recruit-against-henry-cuellar-is-trump-backed-challenger-with-liberal-past/"
+      ]
+    },
+    {
+      "topic": "voting_access",
+      "conflict": "Prioritized expanding voting access ahead of 2022 elections while Texas Republicans were tightening voting rules statewide. Defended election officials after a ballot recount discrepancy in November 2024. Switched to the Republican Party two months after that defense.",
+      "sources": [
+        "https://www.washingtonexaminer.com/news/campaigns/4428447/gop-recruit-against-henry-cuellar-is-trump-backed-challenger-with-liberal-past/"
+      ]
+    },
+    {
+      "topic": "immigration_framing",
+      "conflict": "As Texas Border Coalition chairman (Dec. 2024 – Dec. 2025), Tijerina led an organization that advocates for recognizing 'the economic contributions immigrants make to the U.S.' and 'fair immigration policies.' His current Republican campaign focuses on border security and supporting Trump's enforcement agenda. The TBC framing is more pro-immigrant than his current political messaging, though the two are not necessarily incompatible.",
+      "sources": [
+        "https://texasbordercoalition.org/about/tano-tijerina/",
+        "https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run/"
+      ]
+    },
+    {
+      "topic": "timing_of_campaign_announcement",
+      "conflict": "A federal election complaint (filed Nov. 2025) alleged Tijerina operated an exploratory committee beyond legal limits to avoid triggering Texas's resign-to-run law. He timed his formal December 2 announcement to remain in the county judgeship through the end of his term (Dec. 31, 2026). Tijerina denied wrongdoing. The complaint was filed by Cecilia Martinez, a San Antonio resident, former journalist, and professor.",
+      "sources": [
+        "https://www.texastribune.org/2025/11/24/tano-tijerina-resign-to-run-law-fec-complaint-henry-cuellar-congress/",
+        "https://www.kgns.tv/2025/12/09/complaint-alleges-webb-county-judge-violated-federal-election-laws/"
+      ]
+    }
+  ],
+
+  "raceContext": {
+    "district": "Texas 28th Congressional District",
+    "districtDescription": "Runs from San Antonio to the Texas-Mexico border; covers all of Webb County (Laredo). Majority-Hispanic district.",
+    "cookPVI": "R+2 (heading into 2026; was D+3 heading into 2024)",
+    "pviNotes": "One of the most dramatic partisan shifts in the country. Trump won Webb County in 2024 — the county had been reliably Democratic for generations. Webb County saw the fourth-largest swing toward Trump since 2016, a swing of more than 50 percentage points from its previous Democratic baseline.",
+    "primaryOpponent": "Eileen Day (Republican, political newcomer; focuses on stray animal populations and border/poverty interconnections)",
+    "primaryDate": "2026-03-03",
+    "likelyGeneralOpponent": "Henry Cuellar (D, incumbent; federally indicted for bribery, pardoned by Trump Dec. 2025; still running as Democrat)"
+  },
+
+  "campaignFinance": {
+    "totalContributions": 303085,
+    "totalExpenditures": 234553,
+    "cashOnHand": 68532,
+    "asOf": "2026-02-11",
+    "source": "Ballotpedia (via FEC filings)",
+    "notes": "No PAC breakdown found in available sources. FEC complaint about exploratory committee fundraising still unresolved at time of research."
+  },
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "energy_portfolio — explicit, repeated support for oil and gas industry across party switch, Fox interview, and campaign materials",
+      "immigration / border_security — consistent pro-border-security framing with 'true immigration reform' caveat; Texas Border Coalition background adds nuance",
+      "public_investment (econ) — general alignment with low-tax, business-friendly platform; county record cited"
+    ],
+    "weakestAxes": [
+      "firearms_policy — no NRA rating, no explicit gun policy statements found",
+      "healthcare / coverage_model — no healthcare policy positions found; county-level role involved healthcare access but no partisan framing",
+      "reproductive_rights / abortion — no statements found in any available source",
+      "climate_ambition — inferred from oil/gas support as opposing aggressive climate action, but no direct climate policy statement",
+      "school_choice — no statements found",
+      "police_accountability / sentencing — no statements found; mentioned 'public safety' generically",
+      "housing / zoning — not addressed"
+    ],
+    "keyConflict": "Prior Democrat record (mask mandates, voting access expansion, election official defense) directly conflicts with current Republican identity. Washington Examiner documented this as 'liberal past.' His own COVID-era governance contradicts his stated reasons for leaving the Democratic Party.",
+    "overallConfidence": "low-to-medium",
+    "notes": "First-time federal candidate with no congressional voting record. All positions derive from: (1) campaign messaging (high-level, vague), (2) party-switch rationale statements (specific on border/oil/gas/cultural issues), (3) county-level administrative record (available but not mapped to federal policy axes by standard scorecards). Major axes — guns, abortion, healthcare, climate detail, housing, education — have no usable evidence. Do not score these axes. Axes where evidence exists: energy/oil-gas, border security/immigration framing, low-taxes/public investment, faith/family values signal."
+  }
+}

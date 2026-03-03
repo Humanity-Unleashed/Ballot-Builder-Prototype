@@ -1,0 +1,197 @@
+{
+  "slug": "ga-conservation-use-acreage",
+  "officialTitle": "Georgia Increase Maximum Acreage of Bona Fide Conservation Use Property Amendment (2026)",
+  "ballotpediaTitle": "Georgia Increase Acre Limit for Agriculture and Timber Conservation Use Property Tax Classification Amendment (2026)",
+  "shortName": "Conservation Use Acreage Increase",
+  "state": "GA",
+  "electionDate": "2026-11-03",
+  "measureType": "Legislatively referred constitutional amendment",
+  "constitutionalArticle": "Article VII, Section I, Paragraph III(e)(1) of the Georgia Constitution",
+  "legislativeSource": {
+    "resolution": "HR 32",
+    "primarySponsor": "Rep. Chuck Efstration (R-104)",
+    "senateSponsor": "Sen. Sam Watson (R-11)",
+    "houseFloorSponsor": "Rep. Chas Cannon (R-Moultrie)",
+    "companionBill": "HB 90 (enabling legislation by Rep. Chas Cannon — amends O.C.G.A. § 48-5-7.4; takes effect January 1, 2027 only if voters ratify HR 32)",
+    "introducedDate": "2025-01-16",
+    "housePassage": {
+      "date": "2025-03-06",
+      "vote": "168-5",
+      "breakdown": "99 House Republicans yes, 0 no; 69 House Democrats yes, 5 no"
+    },
+    "senatePassage": {
+      "date": "2025-03-18",
+      "vote": "50-1",
+      "notes": "All 20 Senate Democrats voted yes; 1 unspecified dissent"
+    }
+  },
+  "certificationStatus": "confirmed — passed both chambers in March 2025 by near-unanimous margins; will appear on November 3, 2026 statewide general election ballot",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "officialBallotQuestion": "Shall the Constitution of Georgia, for the purpose of protecting family farmland, be amended so as to increase the maximum acreage to qualify for assessment and taxation as a bona fide conservation use property from 2,000 acres to 4,000 acres?",
+  "yesVoteMeans": "The Georgia Constitution is amended to raise the CUVA per-owner enrollment cap from 2,000 acres to 4,000 acres, effective January 1, 2027; landowners who previously hit the cap become eligible to enroll an additional 2,000 acres under the preferential tax assessment",
+  "noVoteMeans": "The 2,000-acre per-owner cap remains in the Georgia Constitution and HB 90 does not take effect; the CUVA program continues unchanged",
+  "mechanism": {
+    "summary": "Doubles the maximum acreage a single landowner may enroll in Georgia's Conservation Use Valuation Assessment (CUVA) program from 2,000 acres to 4,000 acres",
+    "programBackground": "CUVA was established in 1990 via constitutional amendment (passed 62%-38%). Landowners sign a 10-year covenant pledging to maintain agricultural, timber, or conservation use. In return, property is assessed at current-use value (based on soil productivity, annual yields, and comparable agricultural sales) rather than fair market value. Assessed value is then taxed at 40%, yielding significant tax savings — in many cases greater than 50% compared to fair-market-value assessment.",
+    "covenantRequirements": "Minimum 10-year covenant; early breach triggers penalty equal to twice the tax savings realized during the covenant period plus applicable interest. Annual changes in assessed value are capped at +/- 3% per year.",
+    "eligibility": "U.S. citizens only; minimum 10 acres enrolled (25 acres in some counties); property must be used for bona fide agriculture, timber production, or environmentally sensitive purposes. One-time $25 filing fee per application.",
+    "assessmentBasis": "Georgia DOR publishes annual CUVA land values by county, soil type, and use. Property is taxed at 40% of this conservation-use value — not 40% of fair market value.",
+    "acreageCapHistory": "The 2,000-acre cap has been in place since the program's founding in 1990 — this would be the first increase in 35+ years.",
+    "enrollmentScale": "As of 2010, 166,206 parcels were enrolled statewide; current enrollment not publicly aggregated in easily accessible form. The Georgia EPD documented the program helps keep hundreds of thousands of acres in agriculture.",
+    "effectiveDate": "January 1, 2027 (contingent on voter ratification)"
+  },
+  "legislativeHistory": {
+    "senateStudyCommittee": {
+      "name": "Senate Study Committee on the Preservation of Georgia's Farmlands",
+      "chair": "Sen. Billy Hickman (R-Statesboro)",
+      "authorizedBy": "Senate Resolution 470, 2024 Legislative Session",
+      "meetingLocations": ["Statesboro", "Clarkesville", "Moultrie", "Cedartown", "Atlanta"],
+      "reportDate": "2024-11-25",
+      "relevantRecommendation": "Unanimous recommendation to double maximum CUVA acreage from 2,000 to 4,000 acres per owner; also recommended reforming CUVA to allow leased land to qualify",
+      "sourceUrl": "https://www.senate.ga.gov/committees/Documents/2024SenateStudyCommPreservingFarmlands-FinalReport.pdf"
+    },
+    "context": "Georgia lost approximately 2.6 million acres of crop, hay, and pasture land from 1974 to 2016 due to development pressure. The legislature has been taking a multi-pronged approach to farmland preservation, which also includes the Georgia Farmland Conservation Act (SB 220) creating a Farmland Conservation Fund."
+  },
+  "supportingArguments": [
+    {
+      "argument": "Modern family farms have grown larger to remain economically viable; the 2,000-acre cap dates to 1990 and no longer reflects current agricultural operations",
+      "source": "Sen. Sam Watson (R-11), floor statement: 'Agriculture has changed. Our family farms are getting much larger today.'",
+      "sourceUrl": "https://capitol-beat.org/2025/02/state-senate-passes-farmland-preservation-constitutional-change/"
+    },
+    {
+      "argument": "Raising the cap helps protect agricultural land from development pressure by extending the economic incentive to hold land in farm use rather than sell to developers",
+      "source": "Georgia Senate Study Committee final report (November 2024); general CUVA program rationale",
+      "sourceUrl": "https://www.senate.ga.gov/committees/Documents/2024SenateStudyCommPreservingFarmlands-FinalReport.pdf"
+    },
+    {
+      "argument": "The ballot question frames the measure explicitly as 'protecting family farmland,' signaling the legislative intent is to benefit working farms, not speculative large landowners",
+      "source": "Official ballot language",
+      "notes": "Framing is worth noting — the ballot question's 'family farmland' language could be seen as political framing, since the program is open to any landowner with eligible acreage, not limited to 'family farms' by legal definition"
+    },
+    {
+      "argument": "Near-unanimous bipartisan passage (168-5 in House, 50-1 in Senate) reflects broad legislative consensus from both parties across rural and urban districts",
+      "source": "Legislative vote records",
+      "sourceUrl": "https://news.ballotpedia.org/2025/03/21/georgia-voters-to-decide-2026-constitutional-amendment-to-increase-acreage-limit-for-conservation-use-property-tax-classification/"
+    }
+  ],
+  "opposingArguments": [
+    {
+      "argument": "No formal opposition organizations or arguments have been identified as of research date",
+      "source": "Ballotpedia documents 'no arguments in opposition located'; no organized opposition found in legislative record or news coverage",
+      "notes": "Absence of documented opposition may reflect: (1) genuine consensus; (2) early stage (measure not yet publicly salient); or (3) potential critics have not yet mobilized"
+    },
+    {
+      "argument": "POTENTIAL LATENT CONCERN (not yet publicly articulated): Doubling the cap primarily benefits the largest landowners — those with 2,000+ acres — who are not typical 'family farmers' and may include wealthy investors, timber companies, and corporate agricultural operations",
+      "source": "Inferred from program structure; not a documented opposition argument as of Feb 2026",
+      "confidence": "speculative — scorer should note as a potential counter-argument in evidence output, not a confirmed opposition position"
+    },
+    {
+      "argument": "POTENTIAL LATENT CONCERN: Expanding the tax reduction for large landowners may shift property tax burden onto other taxpayers (residential, commercial) in rural counties where agricultural land makes up a large share of the tax digest",
+      "source": "General fiscal policy analysis of preferential agricultural assessment programs; not a documented opposition argument as of Feb 2026",
+      "confidence": "speculative"
+    }
+  ],
+  "supporters": [
+    {
+      "organization": "Georgia Farm Bureau",
+      "type": "implicit support / advocacy organization",
+      "notes": "GFB actively supports CUVA program preservation and expansion; their 'Georgia Neighbors' publication featured a 'What You Should Know About CUVA' guide. No formal press release on HR 32 found in research, but GFB's 2025 Legislative Bill Review lists CUVA-related legislation favorably.",
+      "sourceUrl": "https://www.gfb.org/advocate/2025legislative-bill-review"
+    },
+    {
+      "organization": "Georgia Senate Study Committee on Preservation of Georgia's Farmlands",
+      "type": "legislative body — formal recommendation",
+      "notes": "Unanimously recommended this specific change in its November 2024 final report; the recommendation became the legislative basis for HR 32 and HB 90",
+      "sourceUrl": "https://www.senate.ga.gov/committees/Documents/2024SenateStudyCommPreservingFarmlands-FinalReport.pdf"
+    },
+    {
+      "organization": "Georgia General Assembly — House Republican Caucus",
+      "type": "legislative passage",
+      "notes": "99 House Republicans voted yes, 0 opposed",
+      "sourceUrl": "https://news.ballotpedia.org/2025/03/21/georgia-voters-to-decide-2026-constitutional-amendment-to-increase-acreage-limit-for-conservation-use-property-tax-classification/"
+    },
+    {
+      "organization": "Georgia General Assembly — House Democratic Caucus",
+      "type": "legislative passage",
+      "notes": "69 House Democrats voted yes, 5 opposed — strong bipartisan support",
+      "sourceUrl": "https://news.ballotpedia.org/2025/03/21/georgia-voters-to-decide-2026-constitutional-amendment-to-increase-acreage-limit-for-conservation-use-property-tax-classification/"
+    },
+    {
+      "organization": "Georgia General Assembly — Senate Democratic Caucus",
+      "type": "legislative passage",
+      "notes": "All 20 Senate Democrats voted yes; Senate passed 50-1",
+      "sourceUrl": "https://news.ballotpedia.org/2025/03/21/georgia-voters-to-decide-2026-constitutional-amendment-to-increase-acreage-limit-for-conservation-use-property-tax-classification/"
+    }
+  ],
+  "opponents": [],
+  "fiscalAnalysis": {
+    "officialFiscalNoteAvailable": false,
+    "notes": "No formal fiscal note or fiscal impact analysis has been publicly identified in research. The Georgia General Assembly did not publish a legislative fiscal note in the sources reviewed. The Georgia DOR 2025 Legislative Summary describes the bill but does not include a fiscal estimate.",
+    "fiscalMechanism": "The amendment reduces property tax revenue for county governments, school boards, and other local taxing authorities by allowing more acreage to qualify for the preferential CUVA assessment rate (current-use value at 40% rather than fair market value at 40%)",
+    "revenueImpactDirection": "net tax revenue reduction for local governments — magnitude unknown without knowing how many landowners currently exceed the 2,000-acre threshold and would newly qualify for additional CUVA acres under the expanded cap",
+    "fiscalContextFromProgram": "One county example (Forsyth County) documents approximately $3.8 million in combined annual CUVA/Agricultural Preferential Assessment tax benefits for that county alone. Total statewide CUVA tax savings across all enrolled parcels is not publicly aggregated in accessible form.",
+    "fiscalImpactScope": "Impact is primarily on county property tax digests, not state revenue; Georgia's state government does not levy a property tax"
+  },
+  "policyContext": {
+    "programAge": "Established 1990 — this would be the first acreage cap increase in 35+ years",
+    "originalAmendmentVote": "1990 constitutional amendment passed 62%-38%",
+    "farmlandLossContext": "Georgia lost approximately 2.6 million acres of crop, hay, and pasture land from 1974 to 2016 due to development pressure",
+    "relatedLegislation": "Georgia Farmland Conservation Act (SB 220, 2025 session) — creates Georgia Farmland Conservation Fund providing financial incentives to farmland owners to conserve land against development; companion measure to HR 32/HB 90 in the legislature's farmland preservation package",
+    "parallelReform": "HB 129 (Rep. Chas Cannon) also passed in 2025 — allows certain entities that lease CUVA-enrolled land to qualify; addresses a separate limitation in the existing program",
+    "nationalComparison": "Most agricultural states with use-value assessment programs (Current Use, Agricultural Preferential, Circuit Breaker) have similar per-owner caps; this acreage doubling reflects trend toward accommodating larger-scale farm operations. Georgia's cap of 2,000 acres (soon potentially 4,000) is toward the upper end of state-by-state limits."
+  },
+  "keySourceUrls": [
+    {
+      "description": "Ballotpedia measure page",
+      "url": "https://ballotpedia.org/Georgia_Increase_Maximum_Acreage_of_Bona_Fide_Conservation_Use_Property_Amendment_(2026)"
+    },
+    {
+      "description": "Ballotpedia News article on certification (March 2025)",
+      "url": "https://news.ballotpedia.org/2025/03/21/georgia-voters-to-decide-2026-constitutional-amendment-to-increase-acreage-limit-for-conservation-use-property-tax-classification/"
+    },
+    {
+      "description": "Capitol Beat — Senate passes farmland preservation constitutional change (February 2025)",
+      "url": "https://capitol-beat.org/2025/02/state-senate-passes-farmland-preservation-constitutional-change/"
+    },
+    {
+      "description": "Georgia DOR 2025 Summary of Enacted Legislation",
+      "url": "https://dor.georgia.gov/document/document/2025-legislative-summary/download"
+    },
+    {
+      "description": "Senate Study Committee on Preservation of Georgia's Farmlands — Final Report 2024",
+      "url": "https://www.senate.ga.gov/committees/Documents/2024SenateStudyCommPreservingFarmlands-FinalReport.pdf"
+    },
+    {
+      "description": "Georgia EPD CUVA fact sheet",
+      "url": "https://epd.georgia.gov/document/publication/cuva-fact-sheetpdf/download"
+    },
+    {
+      "description": "Georgia Farm Bureau — What You Should Know About CUVA",
+      "url": "https://www.gfbinsurance.com/news/georgia-farm-bureau/2022/04/29/what-you-should-know-about-cuva"
+    },
+    {
+      "description": "Grice Connect — Voters will be asked whether to expand conservation tax breaks for farmers",
+      "url": "https://www.griceconnect.com/local-news/voters-will-be-asked-next-year-whether-to-expand-conservation-tax-breaks-for-farmers-10391816"
+    },
+    {
+      "description": "Valdosta Daily Times — State Senate passes farmland preservation constitutional change",
+      "url": "https://valdostadailytimes.com/2025/02/19/state-senate-passes-farmland-preservation-constitutional-change/"
+    },
+    {
+      "description": "Georgia Municipal Association legislative tracker — CUVA acreage increase bill entry",
+      "url": "https://billtracker.gacities.com/legislation/69429"
+    },
+    {
+      "description": "Georgia Justia — O.C.G.A. § 48-5-7.4 (current CUVA statute, 2022)",
+      "url": "https://law.justia.com/codes/georgia/2022/title-48/chapter-5/article-1/section-48-5-7-4/"
+    }
+  ],
+  "evidenceSummary": {
+    "qualityOfText": "Ballot question text confirmed from multiple sources including Ballotpedia and DOR 2025 legislative summary. Full HR 32 resolution text available via legis.ga.gov and LegiScan but not directly fetched — legal effect is well-documented. Companion HB 90 statutory text confirmed (amends O.C.G.A. § 48-5-7.4).",
+    "fiscalNoteStatus": "No official fiscal note found. Fiscal impact direction is clear (reduces local property tax revenue for landowners newly eligible to enroll additional acres); magnitude is unknown without DOR data on how many owners currently exceed 2,000 acres enrolled.",
+    "oppositionStatus": "No organized opposition found. Ballotpedia explicitly documents no opposition arguments have been located. The measure passed both chambers with near-unanimous bipartisan margins (99% House, 98% Senate). May face low-salience voter confusion rather than organized opposition campaigns.",
+    "mainDebate": "There is effectively no documented public debate as of February 2026. The core policy tension that could emerge in campaign season: the measure is framed as protecting 'family farmland' but the benefit flows specifically to owners of 2,000+ acres, who are not typical family-scale farmers — potentially benefiting large timber companies, agribusiness operations, and wealthy landowners. This framing gap may be raised by opponents if any emerge.",
+    "confidenceAssessment": "HIGH confidence on: what the measure does (well documented), legislative history, certification status, program mechanics, key sponsor quotes. MEDIUM confidence on: fiscal impact magnitude (no official fiscal note). LOW confidence on: actual number of landowners affected, total additional acreage that would enter CUVA, voter campaign dynamics (measure is 20+ months from election).",
+    "overallConfidence": "medium-high — measure text, legislative history, and program mechanics are well-documented; fiscal magnitude and voter campaign context are gaps"
+  }
+}

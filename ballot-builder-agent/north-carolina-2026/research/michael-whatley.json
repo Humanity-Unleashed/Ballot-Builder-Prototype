@@ -1,0 +1,233 @@
+{
+  "slug": "michael-whatley",
+  "name": "Michael Whatley",
+  "party": "Republican",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "incumbencyStatus": "first-time candidate (party operative background)",
+  "researchedAt": "2026-02-26T00:00:00Z",
+  "biography": {
+    "currentRole": "Former Chair, Republican National Committee (2024-2025)",
+    "priorRoles": [
+      "Chair, North Carolina Republican Party (2019-2024)",
+      "Executive Vice President and co-founder, Consumer Energy Alliance (2008-2019)",
+      "Congressional staffer and political operative"
+    ],
+    "education": "Not specified in available sources",
+    "background": "Born in WNC (Western North Carolina). Spent 2008-2019 as EVP and co-founder of Consumer Energy Alliance, a fossil fuel industry advocacy group funded by BP, Chevron, ExxonMobil, Marathon, Shell, and Statoil. Chaired NC GOP from 2019-2024, then served as RNC Chair 2024-2025. Endorsed by President Donald Trump before officially entering the race. Holds ~38% support in Feb 2026 GOP primary polling with ~50% undecided. Raised $6.27 million as of Feb 11, 2026; $2.5M+ cash on hand. NRSC-backed. Clear front-runner for the Republican nomination."
+  },
+  "campaignWebsite": {
+    "url": "https://www.michaelwhatley.com",
+    "fetchedAt": "2026-02-26T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "climate_energy",
+        "quote": "All-of-the-above energy including carbon",
+        "sourceUrl": "https://www.michaelwhatley.com",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "2026 campaign uses 'all-of-the-above including carbon' framing with no climate action commitments. Career background: 2008-2019 at Consumer Energy Alliance opposing low-carbon fuel standards, fracking regulations, power plant emission rules, and advocating for offshore Atlantic drilling."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Supports Medicaid work requirements, purging undocumented immigrants from Medicaid, DOGE-style spending cuts",
+        "sourceUrl": "https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Consistent messaging on reducing government programs and spending."
+      },
+      {
+        "topic": "econ_investment",
+        "quote": "DOGE support, deregulatory career background. National deficit is one of the biggest threats America faces",
+        "sourceUrl": "https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Opposition to 'woke' government spending. Career in deregulation advocacy."
+      },
+      {
+        "topic": "econ_tax_structure",
+        "quote": "Supports no-tax-on-tips, no-tax-on-overtime, no-tax-on-Social-Security, middle-class tax cuts",
+        "sourceUrl": "https://www.washingtonexaminer.com/news/3488275/whatley-running-on-strong-economy-safe-communities-respected-america/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Aligns with Trump's tax cut agenda."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Back the blue every day. Supports eliminating sanctuary cities as public safety measure",
+        "sourceUrl": "https://www.foxnews.com/politics/nc-senate-candidate-says-ice-charlotte-ops-result-ex-gov-opponent-repeatedly-blunting-cooperation",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Attacks Cooper as soft on crime. Strong law enforcement support."
+      },
+      {
+        "topic": "health_public_health",
+        "quote": "We don't need separation of faith and politics. We don't need separation of church and state",
+        "sourceUrl": "https://www.wral.com/story/gop-senate-candidate-whatley-we-don-t-need-separation-of-church-and-state/22151351/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Said at a pastor summit. Anti-transgender mandates. Strong individual liberty framing on public health."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Celebrated Dobbs decision. Called NC 12-week ban 'responsible, reasonable, and mainstream'",
+        "sourceUrl": "https://www.theassemblync.com/politics/michael-whatley-nc-senate/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Supported NC GOP platform with no-exceptions abortion ban language."
+      },
+      {
+        "topic": "immigration",
+        "quote": "ICE cooperation, eliminate sanctuary cities, mass deportation support",
+        "sourceUrl": "https://www.foxnews.com/politics/nc-senate-candidate-says-ice-charlotte-ops-result-ex-gov-opponent-repeatedly-blunting-cooperation",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Central campaign issue — attacks Cooper for blocking ICE cooperation as governor."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No prior elected office. No legislative voting record exists. Career has been in party operations and energy industry advocacy."
+  },
+  "scorecards": [],
+  "endorsements": [
+    {
+      "organization": "Donald Trump (President)",
+      "type": "personal endorsement",
+      "cycle": "2026",
+      "notes": "Endorsed before Whatley officially entered the race. Appeared with Trump at rallies."
+    },
+    {
+      "organization": "Lara Trump (former RNC co-chair)",
+      "type": "personal endorsement",
+      "cycle": "2026",
+      "notes": "Part of Trump orbit endorsement."
+    },
+    {
+      "organization": "NRSC (National Republican Senatorial Committee)",
+      "type": "institutional endorsement",
+      "cycle": "2026",
+      "notes": "NRSC-backed candidate."
+    }
+  ],
+  "careerEnergyRecord": {
+    "organization": "Consumer Energy Alliance (CEA)",
+    "role": "Executive Vice President and co-founder",
+    "years": "2008-2019",
+    "funders": ["BP", "Chevron", "ExxonMobil", "Marathon", "Shell", "Statoil"],
+    "positions": [
+      "Opposed low-carbon fuel standards",
+      "Opposed fracking regulations",
+      "Opposed power plant emission rules",
+      "Advocated for offshore Atlantic drilling including off NC coast",
+      "Called CEA a 'consumer' advocacy group (critics note industry funding)"
+    ],
+    "sources": [
+      "https://www.eenews.net/articles/republicans-oil-ties-a-focus-in-north-carolina-senate-race/",
+      "https://consumerenergyalliance.org/2010/11/michael-whatley-we-need-offshore-drilling/",
+      "https://www.sourcewatch.org/index.php/Michael_Whatley"
+    ]
+  },
+  "interviews": [
+    {
+      "outlet": "WRAL",
+      "date": "2026",
+      "url": "https://www.wral.com/story/gop-senate-candidate-whatley-we-don-t-need-separation-of-church-and-state/22151351/",
+      "keyExchanges": [
+        {
+          "topic": "church and state",
+          "quote": "We don't need separation of faith and politics. We don't need separation of church and state",
+          "notes": "Said at pastor summit."
+        }
+      ]
+    },
+    {
+      "outlet": "WRAL",
+      "date": "2026",
+      "url": "https://www.wral.com/story/what-to-know-about-roy-cooper-michael-whatley-and-the-2026-u-s-senate-race-to-replace-thom-tillis/22097765/",
+      "keyExchanges": [
+        {
+          "topic": "race overview",
+          "quote": "Background and positioning against Cooper",
+          "notes": "General race overview article."
+        }
+      ]
+    },
+    {
+      "outlet": "NBC News",
+      "date": "2026",
+      "url": "https://www.nbcnews.com/politics/2026-election/michael-whatley-ties-trump-north-carolina-senate-race-rcna249551",
+      "keyExchanges": [
+        {
+          "topic": "Trump alignment",
+          "quote": "Ties himself closely to Trump in the early stages of the race",
+          "notes": "Comprehensive look at the Trump-Whatley relationship."
+        }
+      ]
+    },
+    {
+      "outlet": "Newsmax",
+      "date": "2026-01-16",
+      "url": "https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/",
+      "keyExchanges": [
+        {
+          "topic": "DOGE / government spending",
+          "quote": "Bring Back DOGE to Reduce Waste, Fraud",
+          "notes": "Strong deregulation and spending cut messaging."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "axis": "election_integrity",
+      "conflict": "As RNC Chair, parroted Trump's 2020 election fraud claims (CNN KFile). Now runs on 'election integrity' platform",
+      "resolution": "Consistent within GOP framing of voter ID and election security"
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition — Pole B (8-9), HIGH confidence (decade of fossil fuel industry advocacy)",
+      "climate_energy_portfolio — Pole B (8-9), HIGH confidence (all-of-the-above including carbon, career at CEA)",
+      "climate_permitting — Pole B (9-10), MEDIUM-HIGH confidence (decade lobbying to expedite energy permitting)",
+      "econ_safetynet — Pole B (8-9), HIGH confidence (Medicaid work requirements, DOGE, spending cuts)",
+      "econ_investment — Pole B (8-9), HIGH confidence (DOGE, deregulation, deficit reduction)",
+      "econ_tax_structure — Pole B (8), MEDIUM confidence (Trump tax cut alignment)",
+      "justice_policing_accountability — Pole B (8-9), HIGH confidence (back the blue, eliminate sanctuary cities)",
+      "health_public_health — Pole B (8-9), HIGH confidence (church-state statement, anti-transgender mandates)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning — only Fed interest rate statement, no zoning/density position",
+      "housing_affordability_tools — no explicit position",
+      "housing_transport_priority — no position found",
+      "econ_school_choice — no explicit statement; Trump alignment suggests pro-choice but nothing stated",
+      "justice_sentencing_goals — 'soft on crime' framing implies punishment/deterrence but no sentencing specifics",
+      "health_coverage_model — work requirements + immigrant exclusions signal market direction; no explicit ACA repeal statement",
+      "justice_firearms — no NRA grade (no legislative record), but Trump endorsement and complete absence of gun safety statements imply strong 2A alignment"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Whatley has no legislative record but has an extensive career record in fossil fuel advocacy and Republican Party operations that provides high-confidence evidence on climate, economic, and law enforcement axes. His Trump alignment and campaign statements fill in most remaining axes at medium confidence. Housing and education have the least direct evidence."
+  },
+  "sources": [
+    {"url": "https://www.michaelwhatley.com", "description": "Campaign website"},
+    {"url": "https://ballotpedia.org/Michael_Whatley", "description": "Ballotpedia profile"},
+    {"url": "https://en.wikipedia.org/wiki/Michael_Whatley", "description": "Wikipedia page"},
+    {"url": "https://www.theassemblync.com/politics/michael-whatley-nc-senate/", "description": "Assembly NC profile"},
+    {"url": "https://www.wral.com/story/gop-senate-candidate-whatley-we-don-t-need-separation-of-church-and-state/22151351/", "description": "WRAL church-state comments"},
+    {"url": "https://www.wral.com/story/what-to-know-about-roy-cooper-michael-whatley-and-the-2026-u-s-senate-race-to-replace-thom-tillis/22097765/", "description": "WRAL race overview"},
+    {"url": "https://www.wral.com/news/nccapitol/economy-inflation-tariffs-top-concern-north-carolina-senate-primaries-feb-2026/", "description": "WRAL economy/inflation"},
+    {"url": "https://www.wral.com/story/fact-check-whatley-says-cooper-bears-direct-responsibility-for-charlotte-stabbing/22156713/", "description": "WRAL fact check"},
+    {"url": "https://www.nbcnews.com/politics/2026-election/michael-whatley-ties-trump-north-carolina-senate-race-rcna249551", "description": "NBC News Trump ties"},
+    {"url": "https://www.washingtonexaminer.com/news/3488275/whatley-running-on-strong-economy-safe-communities-respected-america/", "description": "Washington Examiner campaign platform"},
+    {"url": "https://www.foxnews.com/politics/nc-senate-candidate-says-ice-charlotte-ops-result-ex-gov-opponent-repeatedly-blunting-cooperation", "description": "Fox News ICE/immigration"},
+    {"url": "https://www.eenews.net/articles/republicans-oil-ties-a-focus-in-north-carolina-senate-race/", "description": "E&E News oil ties"},
+    {"url": "https://www.eenews.net/articles/republicans-tap-former-oil-lobbyist-for-national-chair/", "description": "E&E News RNC chair oil ties"},
+    {"url": "https://consumerenergyalliance.org/2010/11/michael-whatley-we-need-offshore-drilling/", "description": "CEA offshore drilling advocacy"},
+    {"url": "https://www.sourcewatch.org/index.php/Michael_Whatley", "description": "SourceWatch profile"},
+    {"url": "https://www.cnn.com/2024/02/09/politics/kfile-whatley-promoted-false-election-fraud-claims/index.html", "description": "CNN KFile election fraud claims"},
+    {"url": "https://www.wfae.org/politics/2025-08-04/michael-whatley-is-ride-or-die-with-trump", "description": "WFAE Trump alignment"},
+    {"url": "https://aflcionc.org/news/housekeeping-democracy-our-endorsements-march-3rd-primary", "description": "NC AFL-CIO endorsements (not Whatley)"},
+    {"url": "https://www.newsmax.com/politics/whatley-doge-reduce/2026/01/16/id/1242466/", "description": "Newsmax DOGE interview"},
+    {"url": "https://theappalachianonline.com/what-to-know-about-michael-whatley-the-wnc-native-running-for-us-senate-in-2026/", "description": "Appalachian Online profile"}
+  ]
+}

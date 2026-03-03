@@ -1,0 +1,236 @@
+{
+  "slug": "wesley-hunt",
+  "name": "Wesley Hunt",
+  "party": "Republican",
+  "office": "U.S. Senate, Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Two-term Houston-area congressman and Army veteran running hard-right in the TX Senate primary on border security, fossil energy expansion, and absolute Second Amendment positions. Heritage Action 96%, LCV 0% lifetime, NRA AQ -- one of the most consistently conservative House voting records across all measured dimensions.",
+  "keyPositions": [
+    "Zero-compromise Second Amendment stance; would repeal the Bipartisan Safer Communities Act as first Senate act",
+    "Self-styled 'Energy Congressman of the World'; opposes energy transition, sponsors LNG and offshore drilling bills",
+    "Hardline immigration: military at border, end birthright citizenship, eliminate TPS, codify invasion declaration",
+    "Supports DOGE spending cuts and Balanced Budget Amendment; voted against 2023 debt ceiling deal as too soft",
+    "Pro-life with explicit religious framing; 100% National Right to Life rating"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Heritage Action 96% (118th Congress)",
+        "AFL-CIO 6% (2024) / 10% (2023)",
+        "Freedom Index 83%",
+        "Voted No on Fiscal Responsibility Act 2023 (debt ceiling deal) as insufficiently conservative",
+        "Supports Balanced Budget Amendment and DOGE codification"
+      ],
+      "notes": "Consistent across all scorecards and votes. Absent for ACA subsidy extension vote (Jan 2026) during campaign travel; 22 other TX Republicans voted No on that bill. Pattern is unmistakably toward cutting government programs and spending."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Heritage Action 96%",
+        "Campaign: 'fighting alongside President Trump to codify DOGE cuts'",
+        "Voted No on FRA 2023 debt deal",
+        "Balanced Budget Amendment support (VoteSmart Political Courage Test)"
+      ],
+      "notes": "Strong anti-government-spending orientation. Only public investment Hunt supports is military/border and energy infrastructure (fossil). No support for industrial policy, green investment, or manufacturing subsidies found."
+    },
+    "econ_tax_structure": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Heritage Action 96%",
+        "Freedom Index 83%",
+        "VoteSmart Political Courage Test: 'reckless spending' framing, Balanced Budget Amendment"
+      ],
+      "notes": "No specific tax legislation votes found in the research file. Score inferred from very high conservative scorecard ratings and strong fiscal conservatism rhetoric. Likely supports lower rates and opposes new taxes, but specific tax proposals are not documented."
+    },
+    "econ_school_choice": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "iSideWith: 'supports parental and school choice'",
+        "General conservative alignment (Heritage 96%)"
+      ],
+      "notes": "Only one Tier 3 source (iSideWith paraphrase). No specific voucher or school choice legislation found in his legislative record. Score reflects stated position but confidence is low due to thin evidence."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Absent on ACA subsidy extension vote (Jan 2026)",
+        "Voted to block bipartisan healthcare price spike legislation (DSCC vote alert)",
+        "Heritage Action 96%",
+        "ABC7 Amarillo: 'Healthcare isn't a political issue; it's a family issue' (no specific policy)"
+      ],
+      "notes": "No explicit 'repeal ACA' or specific market-based healthcare proposal found, but voting pattern and scorecard alignment indicate strong market-oriented healthcare preferences. The generic 'family issue' framing avoids any commitment to government healthcare programs. DSCC framing of ACA absence is partisan but directionally correct given overall record."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Voted to block bipartisan effort on healthcare price spikes (DSCC vote alert, 2023-2024)",
+        "Heritage Action 96%"
+      ],
+      "notes": "Only one direct healthcare cost-control vote found (blocking price spike legislation). DSCC source has partisan framing but confirms the vote. No pro-price-control or drug negotiation positions found anywhere in record."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": [
+        "Co-sponsored H.R. 497 Freedom for Health Care Workers Act (repeal COVID vaccine mandate for Medicare/Medicaid facilities)",
+        "Individual liberty framing throughout campaign and voting record"
+      ],
+      "notes": "One specific bill (vaccine mandate repeal) plus consistent individual-choice-over-collective-mandate orientation. No public health mandate support found in any source."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Campaign website: 'stand with men and women in blue against radical liberals seeking to defund them'",
+        "Legislative sponsorship: Crime and Law Enforcement is 24% of his bills",
+        "No police reform or accountability positions found"
+      ],
+      "notes": "Strong 'back the blue' rhetoric with no reform positions stated. Not scored at 10 because no specific anti-accountability legislation (e.g., qualified immunity bills) found. The 24% crime/law enforcement legislative focus and absence of any reform language justify a strong Pole B score."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "NRA AQ grade",
+        "Introduced Second Amendment Restoration Act (partial repeal of BSCA)",
+        "Campaign: 'No compromise. Absolutely zero compromise' on 2A",
+        "Would repeal Bipartisan Safer Communities Act as first Senate act",
+        "Opposes red flag laws; wants them eliminated",
+        "KLTV interview: 'newer gun laws only hurt the law-abiding citizen'",
+        "Breitbart/Bearing Arms campaign ads attacking Cornyn on guns"
+      ],
+      "notes": "Strongest axis in the evidence file. Multiple Tier 1 (NRA grade, introduced legislation) and Tier 2 (repeated campaign statements across multiple outlets) sources all pointing the same direction. Actively seeks to roll back existing gun regulations -- not just opposing new ones but repealing enacted law. This is the ceiling of the scale."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "LCV 0% (2024 annual)",
+        "LCV 0% (lifetime)",
+        "VoteSmart: 'energy addition, not energy transition'",
+        "Protect LNG Act (2025, introduced)",
+        "CORE Act (passed committee)"
+      ],
+      "notes": "Perfect 0% LCV score on both annual and lifetime -- voted against every tracked environmental measure. Not scored at 10 because Hunt does not explicitly deny climate science; he uses a 'cleanest fossil fuels reduce carbon footprint' frame rather than outright denial. But he opposes every climate policy measure and actively legislates to expand fossil fuel production."
+    },
+    "climate_energy_portfolio": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Protect LNG Act (2025, introduced -- shields LNG permits from NEPA challenges)",
+        "CORE Act (offshore resource enhancement)",
+        "Hart Energy interview: 'Unleashing US LNG will do more to reduce our carbon footprint than any solar or wind project'",
+        "LCV 0% lifetime",
+        "Self-described 'Energy Congressman of the World'"
+      ],
+      "notes": "Actively legislates for fossil fuel expansion. Not scored at 10 because he has not explicitly called for eliminating all clean energy subsidies or repealing renewable standards -- his framing is 'addition not transition,' which implies tolerance of renewables in a fossil-dominant mix. But the legislative and voting record is overwhelmingly fossil-fuel focused."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Protect LNG Act (shields permits from NEPA litigation)",
+        "CORE Act (offshore resource permitting)",
+        "General pro-fossil-fuel permitting orientation"
+      ],
+      "notes": "Two specific bills target permitting reform for fossil fuel projects. The Protect LNG Act specifically reduces environmental review by limiting NEPA challenges to LNG permits. However, these are sector-specific rather than broad permitting reform, so scored at 8 rather than higher."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "LCV 0% lifetime indicates consistent action against environmental protection. Hardline anti-immigration positions (end birthright citizenship, eliminate TPS, border invasion declaration) explicitly exclude outsiders from welfare consideration. Proposed redirecting Ukraine aid to domestic school security. Strong in-group (American citizens, Texans) focus with no humanitarian aid, refugee, or global welfare positions. The universalism deficit is one of the strongest value signals in this profile."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "Some community-oriented rhetoric ('healthcare is a family issue,' school safety via armed guards, veteran identity). However, support for DOGE cuts, opposition to ACA subsidies, and Balanced Budget Amendment work against concrete community welfare programs. Missed 78% of House votes during Senate campaign -- arguably prioritized personal ambition over constituent service. The net signal is weakly positive: Hunt claims to care about his community but his legislative priorities lean toward ideology over direct constituent welfare."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "Explicit religious framing on abortion ('precious gift in the image of God'). Defense of traditional institutions: law enforcement, military, conventional family structure. Anti-DEI framed as defending meritocratic tradition. Strong alignment with established cultural conservatism. Not scored higher because his MAGA orientation does challenge some established GOP institutional norms (attacking sitting Republican senator, missed votes)."
+    },
+    "conformity": {
+      "score": 0.1,
+      "reasoning": "Mixed signals. Positive: military background instills institutional discipline; works within legislative process (introduces bills, uses committees); strong rule-of-law rhetoric on border and policing. Negative: MAGA movement is explicitly anti-establishment; attacks sitting GOP senator (Cornyn) as insufficiently conservative; seeks to repeal bipartisan consensus legislation; missed 78% of House votes in campaign period (violating norms of office). The institutional and anti-institutional impulses roughly cancel out."
+    },
+    "security": {
+      "score": 0.8,
+      "reasoning": "Border security is the central campaign theme alongside energy and guns. Military background (West Point, 55 combat missions, Iraq deployment). 'Deploy military to the border,' 'label cartels as terrorists,' 'invasion' framing. Strong law enforcement support. Armed guards in schools for security. National defense orientation throughout career. Security is one of Hunt's defining motivational values."
+    },
+    "power": {
+      "score": 0.5,
+      "reasoning": "Allied super PAC spent $4.1M on his behalf. First to endorse Trump (alignment with dominant power figure). Running for Senate as a second-term congressman (political advancement). Pro-business orientation (Heritage 96%, energy industry champion). Supports strong executive authority (invasion proclamation power, DOGE as executive-driven). Not scored higher because Hunt frames power pursuit in service of constituency rather than pure self-aggrandizement."
+    },
+    "achievement": {
+      "score": 0.7,
+      "reasoning": "West Point graduate, Army Captain, three Cornell master's degrees -- exceptional personal achievement. Anti-DEI framed explicitly through merit: 'I never want to be chosen, promoted, or rewarded because of how I look. I want to earn every opportunity on merit, through hard work, grit, discipline, and determination.' 'Energy Congressman of the World' is a personal competence brand. Career trajectory (military -> private sector -> Congress -> Senate bid) reflects sustained individual achievement drive."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "No lifestyle liberty or personal pleasure positions found. Social conservative on abortion and personal behavior. Gun rights framed as security/liberty rather than lifestyle. Overall orientation is duty and discipline (military, merit, hard work) rather than pleasure or personal gratification."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some 'next generation' rhetoric and the ambition of challenging a sitting senator as a second-term congressman show openness to disruption. However, policy positions are entirely conventional hard-right conservatism with no novel or transformative proposals. The disruption is directed at personnel (replacing Cornyn) rather than policy innovation. Modest positive signal only."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Mixed across issue domains. Strong individual liberty on guns ('no compromise' on 2A, oppose red flag laws) and medical freedom (vaccine mandate repeal). Supports school choice as parental autonomy. However, anti-reproductive-choice (100% National Right to Life), hardline immigration restriction (limits others' freedom of movement), and strong law enforcement orientation (collective security over individual liberty). The pro-liberty positions in some domains are offset by restriction in others. Net is weakly positive, reflecting selective rather than consistent self-direction values."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "DEI and school board history",
+      "description": "Hunt publicly calls for 'permanent abolition of DEI' and markets himself as anti-woke, but opponent ads surfaced records from his time on the St. John's School board showing the school implemented DEI curriculum redesigns during his tenure. Hunt's campaign states he pushed back internally and resigned. Opponents ran 'Woke Wesley Hunt' ads.",
+      "sources": [
+        "The Texas Voice (opponent ad coverage)",
+        "Daily Caller (records report, Jan 2026)"
+      ],
+      "scoringImpact": "Scored on current stated position (anti-DEI) as the evidence of his board-level involvement is contested and his public legislative record is unambiguously anti-DEI. Noted as a conflict for transparency."
+    },
+    {
+      "topic": "Missed House votes during Senate campaign",
+      "description": "Missed 78% of House votes from Dec 2025 through Feb 2026 due to Senate campaign travel. Overall missed rate is 20.8% vs. 2.0% median. Hunt defends by citing Vance and Scott precedent. Cornyn camp attacks him for abandoning his district.",
+      "sources": [
+        "Texas Tribune (Jan 2026)",
+        "The Hill (2026)"
+      ],
+      "scoringImpact": "Reduced benevolence and conformity value scores. Makes healthcare axis scoring harder because ACA subsidy extension absence cannot be treated as a definitive policy vote."
+    },
+    {
+      "topic": "ACA subsidy extension absence",
+      "description": "DSCC framed Hunt's absence on the January 2026 ACA subsidy extension vote as a 'refusal' to extend healthcare. In context, Hunt was absent from most votes in this period. 22 other TX Republicans voted against the extension, making it likely Hunt would have voted No had he been present.",
+      "sources": [
+        "DSCC vote alert (Jan 2026)",
+        "Texas Tribune (Jan 2026 ACA coverage)"
+      ],
+      "scoringImpact": "Health coverage model scored at 8 with medium confidence rather than high, because the direct vote was an absence rather than a No. Overall pattern supports the score."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_sentencing_goals"
+    ],
+    "reasonSkipped": "All three housing axes have zero evidence in the research file (no zoning, affordability, or transit positions found in a federal House record focused on energy, crime, and immigration). Sentencing goals axis skipped because no specific criminal sentencing positions were identified beyond general 'support law enforcement' rhetoric.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific tax legislation votes -- tax structure axis scored on scorecards and rhetoric only",
+      "No school choice legislation -- scored on one Tier 3 source",
+      "Limited direct healthcare votes due to campaign absences",
+      "No criminal sentencing or corrections policy positions found",
+      "No housing or transportation policy positions found",
+      "U.S. Chamber of Commerce score not retrieved"
+    ]
+  }
+}

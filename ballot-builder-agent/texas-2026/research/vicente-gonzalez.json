@@ -1,0 +1,405 @@
+{
+  "slug": "vicente-gonzalez",
+  "name": "Vicente Gonzalez Jr.",
+  "party": "Democratic",
+  "office": "U.S. House of Representatives, Texas 34th Congressional District, 2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-02-27T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Representative, Texas 34th Congressional District (2023-present); previously Texas 15th Congressional District (2017-2023)",
+    "priorRoles": [
+      "Plaintiff's attorney, Law Offices of V. Gonzalez and Associates, McAllen TX (pre-2017)",
+      "Congressional intern for Rep. Solomon P. Ortiz (law school era)"
+    ],
+    "education": "GED (1985); A.A. Banking and Finance, Del Mar College (1990); B.S. Aviation Business Administration, Embry-Riddle Aeronautical University (1992); J.D., Texas Wesleyan University School of Law (1996)",
+    "background": "Born September 4, 1967 in Corpus Christi, TX. Son of a Korean War veteran merchant seaman and a mother born in Mexico. Catholic. Plaintiff's attorney who recovered millions from contractors for South Texas school districts. Life-long Rio Grande Valley resident (McAllen). Married to Lorena Saenz, former educator.",
+    "caucuses": [
+      "Blue Dog Coalition (co-chair)",
+      "Problem Solvers Caucus",
+      "Congressional Hispanic Caucus",
+      "Oil and Gas Caucus",
+      "Renewable Energy Caucus"
+    ],
+    "committees": [
+      "House Financial Services Committee (Subcommittee on Capital Markets; Subcommittee on National Security, Illicit Finance, and International Financial Institutions)"
+    ]
+  },
+  "electionContext": {
+    "2024Result": "Won TX-34 general election 51.28% to 48.72% over Mayra Flores (R)",
+    "redistrictingNote": "Texas redrew congressional districts August 2025. TX-34 now extends to Corpus Christi area, adding more conservative voters. Trump would have won new district lines by ~10 points in 2024.",
+    "2026Opponents": "Republican primary between Eric Flores (Trump-endorsed Army veteran) and Mayra Flores (two-time loser to Gonzalez). General election TBD.",
+    "NRCCTargeting": "NRCC added TX-34 to 2026 target list after redistricting. Cook Political Report rates race as competitive.",
+    "fundraising": "$1.9M raised (2024 cycle)"
+  },
+  "campaignWebsite": {
+    "url": "https://www.vicentegonzalez.com",
+    "fetchedAt": "2026-02-27T00:00:00.000Z",
+    "statedPositions": [
+      {
+        "topic": "education",
+        "quote": "Fully fund pre-kindergarten and local Head Start programs; help college students graduate debt free; support the new medical school at UTRGV and expanding engineering programs",
+        "sourceUrl": "https://www.vicentegonzalez.com/issues",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Supports public school investment and public university expansion; no reference to vouchers or school choice. Aligns with traditional public school investment model."
+      },
+      {
+        "topic": "healthcare / Social Security",
+        "quote": "Strengthening and protecting Social Security and Medicare for seniors is a promise that must be kept; seeks to expand social security to keep up with inflation and cost of living adjustments",
+        "sourceUrl": "https://www.vicentegonzalez.com/issues",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Defend/expand frame for existing government programs."
+      },
+      {
+        "topic": "economy / jobs",
+        "quote": "Fight for good paying jobs to build local economies and grow the middle class; create quality higher wage jobs",
+        "sourceUrl": "https://www.vicentegonzalez.com/issues",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "General values statement, no specific policy mechanism."
+      },
+      {
+        "topic": "border / trade",
+        "quote": "Committed to enforcing the USMCA and its critical components such as intellectual property rights, labor agreements, and free trade standards",
+        "sourceUrl": "https://gonzalez.house.gov/issues/borderandtrade",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Pro-trade enforcement; moderate on border — not abolish-ICE, not wall-first. See immigration section for voting record."
+      },
+      {
+        "topic": "framing / opponents",
+        "quote": "South Texans are facing the harsh reality of an extreme Republican agenda that caters to the wealthiest few while driving up everyday costs and pushing affordable health care out of reach",
+        "sourceUrl": "https://www.valleycentral.com/valleycentrals-local-elections-hq/vicente-gonzalez-texas-34th/",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Campaign launch rhetoric, not a specific policy commitment."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "Congress.gov", "House press releases", "Texas Tribune", "NBC News", "The Hill"],
+    "tenure": "U.S. House 2017-present (TX-15 through 2022, TX-34 2023-present)",
+    "dwNominate": {
+      "score": -0.379,
+      "interpretation": "More liberal than 74% of entire House; roughly 51st percentile (more conservative) within Democratic caucus. Confirms moderate-conservative positioning within the party.",
+      "source": "Voteview.com"
+    },
+    "keyVotes": [
+      {
+        "bill": "Bipartisan Safer Communities Act (S. 2938, 2022)",
+        "vote": "Yes",
+        "topic": "firearms",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-bipartisan-safer-communities-act-keep-our-children",
+        "notes": "Voted yes on first major federal gun safety legislation in decades — enhanced background checks, closing boyfriend loophole, juvenile records, crisis intervention. Issued supportive press release.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Assault Weapons Ban of 2022 (H.R. 1808)",
+        "vote": "No",
+        "topic": "firearms",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-no-assault-weapons-ban-calls-senate-take-house",
+        "notes": "Voted against assault weapons ban despite supporting background checks, waiting periods, red flag laws, and magazine limits. Rationale: tens of millions already in circulation; responsible hunting use in South Texas. Only Democrat in TX delegation to vote no while voting yes on Bipartisan Safer Communities Act.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Inflation Reduction Act (H.R. 5376, 2022)",
+        "vote": "Yes",
+        "topic": "climate / healthcare / taxes",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-favor-inflation-reduction-act-lowering-costs-south",
+        "notes": "Voted yes, highlighting drug price negotiation, insulin caps, ACA subsidy extension. Expressed earlier misgivings about oil/gas burden on South Texas workers. Issued supportive press release emphasizing consumer savings rather than climate provisions.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Lower Energy Costs Act / H.R. 1 (118th Congress, March 2023)",
+        "vote": "Yes",
+        "topic": "climate / energy / permitting",
+        "sourceUrl": "https://www.texastribune.org/2023/03/29/texas-democrats-vicente-gonzalez-henry-cuellar-climate/",
+        "notes": "One of only four Democrats (alongside Cuellar) to vote for Republican-led bill loosening fossil fuel restrictions and rolling back IRA climate provisions. Cited permitting reform and infrastructure benefits. Announced vote in advance. Direct break with Democratic leadership on climate.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Promoting Domestic Energy Production Act (H.R. 5073, co-introduced with Rep. Mike Carey R-OH, 2023)",
+        "vote": "Introduced/co-sponsored",
+        "topic": "climate / energy",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressmen-gonzalez-carey-introduce-bipartisan-bill-unleash-american-energy",
+        "notes": "Co-introduced bipartisan bill to fix IRA provision he said 'unfairly penalizes America's energy producers.' All-of-the-above energy framing; protective of oil/gas industry.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Protection of Women and Girls in Sports Act (119th Congress, January 2025)",
+        "vote": "Yes",
+        "topic": "social / gender policy",
+        "sourceUrl": "https://www.texastribune.org/2025/01/14/texas-vicente-gonzalez-henry-cuellar-anti-trans-sports-bill/",
+        "notes": "One of only two House Democrats to vote yes. Bill amends federal law to define sex 'based solely on reproductive biology and genetics at birth.' Passed 218-206. Gonzalez stated: 'I believe that there should be rules to keep our sports fair and that boys should not play in girls sports.'",
+        "confidence": "high"
+      },
+      {
+        "bill": "Gender-affirming care Medicaid ban (2025)",
+        "vote": "Yes",
+        "topic": "social / gender policy / healthcare",
+        "sourceUrl": "https://www.metroweekly.com/2025/12/house-medicaid-ban-trans-youth-care",
+        "notes": "Voted with Republicans to ban Medicaid coverage for trans youth health care. Passed 215-201.",
+        "confidence": "high"
+      },
+      {
+        "bill": "MTG anti-trans care criminalization bill (2025)",
+        "vote": "Yes",
+        "topic": "social / gender policy / healthcare",
+        "sourceUrl": "https://www.out.com/politics/mtg-trans-youth-care-ban",
+        "notes": "Voted for Rep. Marjorie Taylor Greene-sponsored bill to criminalize gender-affirming procedures for minors. Passed 216-211. One of a handful of Democrats voting yes.",
+        "confidence": "medium",
+        "notes2": "Source is advocacy outlet; bill passage confirmed by multiple outlets."
+      },
+      {
+        "bill": "DHS Spending / ICE Funding Bill (January 22, 2026)",
+        "vote": "Yes (then opposed on later version)",
+        "topic": "immigration / border",
+        "sourceUrl": "https://www.parriva.com/news-digest/three-latino-democrats-dhs-funding-ice-vote/",
+        "notes": "One of seven House Democrats to vote for $64.4B DHS funding bill on Jan. 22, 2026, which passed 220-207. Gonzalez argued voting yes ensured resources for South Texas. Then on Feb. 3, 2026, he announced opposition to DHS funding package after constituent backlash and fatal ICE-linked shooting in Minnesota, writing he needed to 'hold this Administration accountable for its rogue immigration operations.' Illustrates the political pressure from both sides.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Secure the Border Act (H.R. 2, 118th Congress, 2023)",
+        "vote": "No",
+        "topic": "immigration",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-releases-statement-house-republicans-hr-2",
+        "notes": "Voted against Republican-led border security bill. Cited opposition to resuming ineffective wall construction, funding cuts to NGOs serving border communities, and mandatory E-Verify harming agriculture industry.",
+        "confidence": "high"
+      },
+      {
+        "bill": "One Big Beautiful Bill (H.R. 1, 119th Congress, July 3, 2025)",
+        "vote": "No",
+        "topic": "healthcare / taxes / budget",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-against-shameful-republican-budget-bill",
+        "notes": "Voted against Republican reconciliation bill that stripped healthcare from millions, added ~$4T to deficit, and cut Medicaid/Medicare. Called it 'One Big Betrayal.' Bill passed 218-214 along party lines.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Debt Ceiling / Fiscal Responsibility Act (June 2023)",
+        "vote": "Yes",
+        "topic": "fiscal / budget",
+        "sourceUrl": "https://myrgv.com/local-news/2023/06/01/rgv-representatives-in-house-all-voted-for-the-debt-ceiling-deal/",
+        "notes": "Voted for bipartisan debt ceiling deal. Cited fiscal responsibility as Blue Dog member but noted a clean bill would have been preferable.",
+        "confidence": "high"
+      },
+      {
+        "bill": "National Defense Authorization Act (FY2023)",
+        "vote": "Yes",
+        "topic": "defense",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-national-defense-authorization-act-support-service",
+        "notes": "Voted yes on $847B NDAA. Son of a veteran. Strong defense posture consistent across terms.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Elijah Cummings Lower Drug Costs Now Act (H.R. 3)",
+        "vote": "Yes",
+        "topic": "healthcare / cost control",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-lower-prescription-drug-prices-house-passage-hr-3",
+        "notes": "Voted for House-passed bill to allow Medicare drug price negotiation (similar to what ultimately passed in IRA).",
+        "confidence": "high"
+      },
+      {
+        "bill": "Voted against Republican budget stripping healthcare (July 2025)",
+        "vote": "No",
+        "topic": "healthcare / safety net",
+        "sourceUrl": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-against-shameful-republican-budget-bill",
+        "notes": "Voted against Republican bill that would strip healthcare from 17M Americans including 1.6M Texans, described as giving billionaires and corporations a tax break.",
+        "confidence": "high"
+      },
+      {
+        "bill": "Women's Health Protection Act (2022 — abortion codification)",
+        "vote": "Yes (reported)",
+        "topic": "reproductive rights",
+        "sourceUrl": "https://www.ontheissues.org/TX/Vicente_Gonzalez_Abortion.htm",
+        "notes": "Reported as voting yes on Women's Health Protection Act. Personally Catholic and describes himself as not personally for abortion but supports separation of church and state. Complex: voted yes on WHPA (codify Roe), but has criticized Democratic messaging on abortion as 'lazy' and out of touch with his Catholic district. Voted 'present' rather than no on born-alive bill.",
+        "confidence": "medium",
+        "notes2": "Primary source for WHPA vote not confirmed independently; OnTheIssues citation."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "52% (2024 annual); 77% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/vicente-gonzalez/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "2024 annual score notably lower than lifetime (52% vs. 77%), reflecting energy/fossil fuel votes in 118th Congress. The gap is meaningful — his pro-fossil votes in 2023 (H.R. 1 energy bill) pulled annual score down substantially. Lifetime score elevated by older terms when he represented less oil-dependent district."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "Score page exists but specific number not retrieved from search snippets",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/vicente-gonzalez",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "AFL-CIO maintains a scorecard page for him. As Blue Dog who voted for IRA (which includes union provisions), debt ceiling deal, and NDAA, score is likely moderate. Score not confirmed numerically."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "0% session score (116th Congress); 6% lifetime",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/G000581/116",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Near-zero Heritage Action score confirms he votes against conservative priorities on most issues Heritage tracks. The 6% lifetime score means occasional agreement on Heritage-tracked votes (likely trade or limited government items) but general Democratic alignment."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No specific NRA grade found. Voting record shows mixed profile: voted YES on Bipartisan Safer Communities Act (moderate gun safety), voted NO on Assault Weapons Ban. This split suggests NRA grade is likely C or D — not an A, but not the F that a full gun safety voting record would generate. Profile at ammo.com 2024 assessment describes him as supporting most gun control but not all. This is consistent with a B- or C+ NRA assessment.",
+      "inferredRange": "Likely C or D from NRA based on voting pattern"
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "score": "Listed on scorecard; rated unfavorably",
+      "grade": null,
+      "url": "https://sbaprolife.org/representative/vicente-gonzalez",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "SBA Pro-Life endorsed Mayra Flores (R) against Gonzalez, noting he has 'consistently voted against efforts to protect the lives of the unborn.' His record includes YES on Women's Health Protection Act (codify Roe). However, his nuanced Catholic position and 'present' vote on born-alive bill show he's not a straightforward pro-choice champion."
+    },
+    {
+      "organization": "US Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "Score not found in search results. Blue Dog membership and pro-trade/USMCA enforcement stance suggests moderate Chamber alignment, possibly 40-60%. Not confirmed."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Blue Dog Coalition",
+      "type": "caucus membership / co-chair",
+      "cycle": "ongoing",
+      "notes": "Co-chair of Blue Dog Coalition, the caucus of centrist-conservative House Democrats. Strongest institutional signal of his moderate positioning."
+    },
+    {
+      "organization": "Problem Solvers Caucus",
+      "type": "caucus membership",
+      "cycle": "ongoing",
+      "notes": "Bipartisan caucus committed to cross-aisle dealmaking."
+    },
+    {
+      "organization": "Trump-backed Eric Flores (R)",
+      "type": "opponent endorsed by Trump",
+      "cycle": "2026",
+      "notes": "Trump endorsed Eric Flores in Republican primary, indicating Gonzalez is a priority target for Republican flipping."
+    },
+    {
+      "organization": "SBA Pro-Life America",
+      "type": "opposition — endorsed Mayra Flores (R) against Gonzalez",
+      "cycle": "2024",
+      "notes": "Indicates anti-endorsement from national pro-life organization."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune",
+      "date": "2024-11-26",
+      "url": "https://www.texastribune.org/2024/11/26/texas-vicente-gonzalez-congress-democrats-abortion-transgender/",
+      "keyExchanges": [
+        {
+          "topic": "abortion / Democratic strategy",
+          "quote": "Somebody needs to get fired... the party's fixation on abortion this cycle was 'lazy' and out of touch with his majority-Catholic district",
+          "notes": "Post-2024 election autopsy. Strong signal that he sees abortion as a political liability, not an asset, in his district. Suggests he is likely to be more cautious on reproductive rights framing going into 2026."
+        },
+        {
+          "topic": "transgender",
+          "quote": "There are issues that I don't agree with, like boys and girls bathrooms, or boys competing in girls sports, and I think we should be outspoken about it",
+          "notes": "Stated position matches his January 2025 vote for the transgender sports ban."
+        }
+      ]
+    },
+    {
+      "outlet": "MyRGV.com",
+      "date": "2026-01-27",
+      "url": "https://myrgv.com/local-news/2026/01/27/reps-gonzalez-cuellar-respond-to-ice-funding-backlash-after-fatal-minn-shooting/",
+      "keyExchanges": [
+        {
+          "topic": "immigration / ICE",
+          "quote": "ICE already had 'all the resources they need'; voted for DHS bill to ensure access to resources for South Texas",
+          "notes": "January 2026 justification for DHS/ICE funding vote. Then flipped to oppose further DHS funding in February 2026 after constituent pressure."
+        }
+      ]
+    },
+    {
+      "outlet": "Rio Grande Guardian",
+      "date": "prior term",
+      "url": "https://riograndeguardian.com/stories/gonzalez-we-need-to-control-prescription-drug-prices,15920",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / drug pricing",
+          "quote": "We need to control prescription drug prices",
+          "notes": "Supports government-side drug price control mechanisms."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "climate / energy",
+      "conflict": "Voted YES on Inflation Reduction Act (2022) — major climate bill — then voted YES on H.R. 1 Lower Energy Costs Act (2023) which explicitly rolled back IRA climate provisions and expanded fossil fuel access. Co-introduced legislation to further weaken IRA oil/gas penalties.",
+      "resolution": "The 2023 energy vote is more recent and more specific to his district's oil/gas economy. Score energy axis on the totality, weighting his fossil-fuel-protective votes as meaningful modifiers to his IRA vote.",
+      "sources": ["gonzalez.house.gov press releases", "Texas Tribune 2023"]
+    },
+    {
+      "topic": "abortion / reproductive rights",
+      "conflict": "Voted YES on Women's Health Protection Act (codify Roe). But called Democratic abortion messaging 'lazy,' voted 'present' on born-alive bill rather than no, and has described himself as personally pro-life Catholic. His district is majority-Catholic and he's said the focus on abortion was a mistake.",
+      "resolution": "His voting record (yes on WHPA) is Tier 1 and beats rhetorical positioning. However, his 'present' on born-alive and explicit critique of abortion-focused messaging indicate he is at the conservative end of pro-choice Democrats. Score accordingly.",
+      "sources": ["Texas Tribune 2024", "OnTheIssues", "NRCC press release", "SBA Pro-Life scorecard"]
+    },
+    {
+      "topic": "immigration / ICE funding",
+      "conflict": "Voted NO on H.R. 2 Secure the Border Act (opposed wall, mandatory E-Verify). Voted YES on DHS/ICE funding bill January 2026, then reversed position in February 2026 after backlash.",
+      "resolution": "His position is genuinely moderate — not abolish-ICE, not wall-first. He supports enforcement with community-oriented approach. The reversal on DHS funding shows sensitivity to constituent pressure rather than a clear ideological position.",
+      "sources": ["gonzalez.house.gov", "parriva.com", "texaspolitics.com"]
+    }
+  ],
+  "issuePageSummaries": {
+    "healthcare": {
+      "statedPosition": "Supports strengthening ACA; supports Medicare drug price negotiation; supported Medicare for All as a co-sponsor (earlier term); supports Social Security expansion; voted against Republican budget that cuts Medicaid.",
+      "keyVotes": ["Yes on IRA (drug pricing)", "Yes on H.R. 3 Lower Drug Costs", "No on 'One Big Beautiful Bill' (Medicaid cuts)", "No on stripping ACA tax credits"],
+      "sourceUrl": "https://gonzalez.house.gov/issues/health"
+    },
+    "energy_environment": {
+      "statedPosition": "Member of both Oil and Gas Caucus and Renewable Energy Caucus — explicitly all-of-the-above. Supports domestic energy production. Expressed misgivings about IRA burden on oil/gas industry.",
+      "keyVotes": ["Yes on IRA (clean energy investments)", "Yes on H.R. 1 Lower Energy Costs Act (fossil fuel expansion)", "Co-introduced Promoting Domestic Energy Production Act"],
+      "sourceUrl": "https://gonzalez.house.gov/issues/energy"
+    },
+    "immigration": {
+      "statedPosition": "Supports pathway to citizenship, DACA/DREAM Act, compassionate immigration reform. Opposes wall construction. Represents a border district — nuanced on enforcement.",
+      "keyVotes": ["No on H.R. 2 Secure the Border Act", "Yes then reversal on DHS/ICE funding (Jan-Feb 2026)"],
+      "sourceUrl": "https://gonzalez.house.gov/issues/borderandtrade"
+    },
+    "education": {
+      "statedPosition": "Strong supporter of public school funding — Head Start, Title I, GEAR-UP, Pell Grants; supports student debt relief; announced $4.7M for mental health in schools; no stated support for vouchers or school choice.",
+      "sourceUrl": "https://gonzalez.house.gov/issues/education"
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_energy_portfolio (all-of-the-above; voted to expand fossil fuels while also supporting IRA — clear centrist/moderate lean toward Pole B)",
+      "justice_firearms (mixed: yes Bipartisan Safer Communities, no Assault Weapons Ban — genuinely between poles)",
+      "health_cost_control (consistent support for drug price negotiation/Medicare negotiation — clear Pole A direction)",
+      "econ_safetynet (voted against every Republican healthcare cut; supports Medicaid, Medicare, Social Security expansion — Pole A)",
+      "econ_tax_structure (opposed 'One Big Beautiful Bill' which favored billionaires; framing consistently favors progressive taxation — Pole A)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning (no evidence found)",
+      "housing_affordability_tools (no evidence found)",
+      "housing_transport_priority (no evidence found)",
+      "justice_sentencing_goals (limited evidence; no major sentencing reform votes found)",
+      "justice_policing_accountability (limited evidence; no major policing reform votes found; Blue Dog suggests moderate-conservative lean)"
+    ],
+    "notablePatterns": [
+      "Consistent with Blue Dog Coalition identity: protects safety net programs (Medicaid, Medicare, Social Security) while being more conservative on social issues (guns, gender, abortion messaging) and fiscal issues (debt ceiling deal, energy).",
+      "Oil and gas constituency shapes energy votes significantly — his 2023 fossil fuel votes are the sharpest departure from party line and cannot be dismissed as tactical.",
+      "Multiple instances of crossing party line with Cuellar (Henry Cuellar, TX-28): energy bill, trans sports ban, DHS/ICE funding — this is a deliberate pattern, not one-off votes.",
+      "DW-NOMINATE of -0.379 places him as the most conservative House Democrat from Texas who is not Cuellar. He is genuinely a centrist within Democratic caucus, not just a moderate."
+    ],
+    "overallConfidence": "high",
+    "notes": "9-year House record (2017-2026) provides strong evidence across most axes. Clear gaps are housing (no federal housing-specific votes found) and policing/sentencing (Blue Dog inference only). Energy axis has the richest and most complex record — two seemingly contradictory votes require careful scoring based on totality."
+  }
+}

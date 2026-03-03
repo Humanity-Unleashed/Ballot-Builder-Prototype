@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-02-25T00:00:00.000Z",
+  "state": "Georgia",
+  "scopeNote": "Georgia's 6th Congressional District (GA-06). NOTE: This seat is held by Democrat Lucy McBath (D), NOT Republican Rich McCormick. McCormick represents GA-07. GA-06 was redrawn after 2023 court-ordered redistricting into a D+25 safe-Democratic seat covering portions of Cobb, Fulton, Douglas, and Fayette counties.",
+  "contests": [
+    {
+      "id": "GA-06-US-HOUSE-2026",
+      "office": "U.S. House of Representatives",
+      "state": "GA",
+      "district": "6",
+      "primaryDate": "2026-05-19",
+      "primaryRunoffDate": "2026-06-16",
+      "generalDate": "2026-11-03",
+      "generalRunoffDate": "2026-12-01",
+      "filingDeadline": "2026-03-06",
+      "isOpenSeat": false,
+      "incumbentName": "Lucy McBath",
+      "incumbentParty": "Democratic",
+      "incumbentStatus": "McBath suspended a gubernatorial bid March 2025 and stated she is remaining in Congress. Has NOT formally filed for 2026 reelection as of 2026-02-25. Filing deadline March 6.",
+      "raceRating": "Solid Democratic",
+      "raceRatingSource": "Cook PVI D+25",
+      "raceContext": "Safe Democratic seat. McBath won 74.7% in 2024. Small field — McBath likely running but not yet filed. Sonya Halpern (State Senator) originally filed conditionally on McBath running for governor.",
+      "candidates": [
+        {
+          "slug": "lucy-mcbath",
+          "name": {
+            "full": "Lucy McBath",
+            "ballotDisplay": "Lucy McBath"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "incumbent",
+          "campaignWebsite": "https://lucyforcongress.com",
+          "evidenceTier": "high",
+          "notes": "Four-term Congresswoman. Gun violence prevention advocate; mother of Jordan Davis. Won 2024 with 74.7%. Not yet formally filed for 2026 but active legislatively (introduced H.R.7599 Feb 2026)."
+        },
+        {
+          "slug": "sonya-halpern",
+          "name": {
+            "full": "Sonya Halpern",
+            "ballotDisplay": "Sonya Halpern"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://www.sonya4ga.com",
+          "evidenceTier": "high",
+          "notes": "Georgia State Senator (District 39, since 2021). Former marketing executive. Filed FEC Statement of Candidacy. Originally conditional on McBath running for governor, but remains listed as active candidate."
+        },
+        {
+          "slug": "chris-capparell-ga06",
+          "name": {
+            "full": "Chris Capparell",
+            "ballotDisplay": "Chris Capparell"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Also registered as Independent U.S. Senate candidate. Minimal public presence."
+        },
+        {
+          "slug": "justin-pinker",
+          "name": {
+            "full": "Justin Pinker",
+            "ballotDisplay": "Justin Pinker"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://justinpinkerforcongress.com",
+          "evidenceTier": "medium",
+          "notes": "Sole declared Republican. D+25 district makes GOP general election prospects minimal."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [
+    {
+      "slug": "ga-2026-conservation-use-acreage",
+      "state": "GA",
+      "officialTitle": "Georgia Increase Acre Limit for Agriculture and Timber Conservation Use Property Tax Classification Amendment (2026)",
+      "shortName": "Conservation Use Property Tax Acreage Limit Increase",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "confirmed",
+      "yesVoteMeans": "Doubles max acreage eligible for CUVA tax benefits from 2,000 to 4,000 acres per owner",
+      "noVoteMeans": "Keeps existing 2,000-acre maximum unchanged",
+      "evidenceTier": "high"
+    }
+  ],
+  "pendingBallotMeasures": [
+    {
+      "slug": "ga-2026-sports-betting-pending",
+      "state": "GA",
+      "officialTitle": "Georgia Sports Betting Constitutional Amendment (HR 450 / HB 686)",
+      "shortName": "Sports Betting Legalization",
+      "certificationStatus": "pending — not yet certified as of 2026-02-25",
+      "yesVoteMeans": "Would legalize sports betting in Georgia",
+      "noVoteMeans": "Sports betting remains illegal",
+      "evidenceTier": "medium"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Georgia's_6th_Congressional_District_election,_2026",
+      "description": "Ballotpedia GA-06 2026 race page",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Lucy_McBath",
+      "description": "Ballotpedia profile for Lucy McBath",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    }
+  ]
+}

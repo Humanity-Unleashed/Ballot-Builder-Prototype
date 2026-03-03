@@ -1,0 +1,129 @@
+{
+  "slug": "michele-morrow",
+  "name": "Michele Morrow",
+  "party": "Republican",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "scoredAt": "2026-02-26T00:00:00Z",
+  "profileSummary": "Conservative activist and former homeschool educator with no legislative record; best known for her 2024 Superintendent of Public Instruction campaign centered on school choice, medical freedom, and anti-establishment rhetoric. Extensive controversy record including calls for political violence and conspiracy theory promotion.",
+  "keyPositions": [
+    "Universal school choice advocate: supports vouchers, opposes public school 'monopoly,' launched school choice lobbying group",
+    "Anti-vaccine mandate activist; called COVID vaccine 'population control'",
+    "Replace ACA with market-based healthcare and health savings accounts",
+    "Hardline immigration: mass deportation, self-deportation programs",
+    "Strongly pro-2A: supports arming teachers, no gun regulation positions found"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Campaign website (morrow4nc.com)", "General anti-spending, eliminate-waste framing"],
+      "notes": "No specific safety net policy proposals found. Anti-spending rhetoric and no support for expanding programs. Score reflects directional signal without policy specifics."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["2024 Superintendent campaign platform", "EdNC debate September 2024", "Post-2024 school choice lobbying group", "NC Values Coalition endorsement"],
+      "notes": "This is Morrow's signature issue. Ran for NC Superintendent of Public Instruction on a school choice platform. Supports vouchers, parental choice, competition model. Called public school teachers 'groomers.' Launched a lobbying group for school choice after losing the 2024 general election. Near-maximum Pole B."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Campaign website (morrow4nc.com)"],
+      "notes": "Stated position: replace ACA with market-based solutions and health savings accounts. No nuance or caveats found. Standard conservative healthcare framing without detailed policy proposals."
+    },
+    "health_public_health": {
+      "score": 10,
+      "confidence": "high",
+      "sources": ["NPR October 2024", "CNN K-File", "Social media record", "Campaign website"],
+      "notes": "Extreme Pole B position. Called COVID vaccine 'population control.' Extensive anti-vaccine mandate activism is central to her public identity. 'Medical freedom' is a core campaign theme. Multiple independent sources document this position consistently. This is the most extreme anti-public-health-mandate position on the scale."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["iVoterGuide profile", "Campaign statements"],
+      "notes": "Broad 2nd Amendment support including arming teachers. No gun safety or regulation positions found in any source. Scored at 9 rather than 10 because evidence comes from campaign statements only (no voting record) and she has not explicitly advocated for permitless carry or eliminating all existing regulations."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.8,
+      "reasoning": "Hardline anti-immigrant stance (mass deportation), QAnon promotion, #DeathtoTraitors rhetoric, and no environmental or tolerance positions found. Called for Obama's execution. Her political identity is explicitly exclusionary -- benefits are for the in-group, threats come from outsiders. Strong negative universalism signal across multiple sources."
+    },
+    "benevolence": {
+      "score": -0.1,
+      "reasoning": "Claims to advocate for children and parents through school choice, but the framing is combative rather than caring -- calls public school teachers 'groomers.' Anti-vaccine activism works against community health. Benevolence is narrowly scoped to ideological in-group only. Near-neutral overall because the care-for-children framing is real but undermined by hostility toward out-group community members."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "NC Values Coalition endorsed. Strongly anti-abortion. Traditional family values and religious values in governance are central to her identity. Defense of established cultural norms and skepticism of progressive social change. Homeschool advocacy rooted in traditional family structure. Strong and consistent tradition signal."
+    },
+    "conformity": {
+      "score": -0.9,
+      "reasoning": "Among the most anti-conformity candidates scoreable. Called for the public execution of a former president. Urged Trump to 'put the Constitution to the side' and invoke the Insurrection Act. Attended January 6 rally. Used #DeathtoTraitors hashtag 12 times. Promoted QAnon conspiracy theories. These are not minor norm violations -- they represent a fundamental rejection of democratic institutional norms and rule of law. The only reason this is not -1.0 is that she is running for office within the electoral system itself."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Border security and national defense framing suggest positive security orientation. Immigration enforcement is framed as protecting Americans. However, January 6 participation, calls for political violence, and advocacy for suspending constitutional norms are fundamentally destabilizing to social order. These competing signals partially cancel out. Net positive because her stated platform emphasizes security themes, but the contradictions are significant."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Aligns with MAGA power structure and seeks political office. However, she has minimal fundraising ($10,720 raised, ~$5,248 cash on hand), low polling (1.6-4%), and no institutional power base. More aspiration than demonstrated power alignment. Not strongly pro-corporate or pro-wealth in explicit policy terms."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Self-reliance framing through homeschool advocacy. Individual effort and parental responsibility emphasis. School choice as enabling individual achievement. Meritocracy-adjacent rhetoric. Moderate positive signal without being a defining trait."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "Social conservatism on personal behavior (anti-abortion, traditional family values) works against personal pleasure/freedom framing. Anti-vaccine position could be read as personal liberty but her framing is conspiracy-based ('population control') rather than liberty-based. Weakly negative overall."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Strongly anti-establishment. Defeated the Republican incumbent (Truitt) in the 2024 Superintendent primary. Explicitly revolutionary and disruptive rhetoric. Challenges the status quo as a core identity trait. QAnon and conspiracy engagement suggest attraction to novel/radical frameworks. However, the disruption is aimed at restoring a perceived past order rather than creating something new, which moderates the score."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on school choice as parental autonomy, gun rights as individual liberty, anti-vaccine mandates as medical freedom -- all self-direction signals. However, anti-abortion stance restricts others' bodily autonomy, and her desire for government enforcement of immigration and moral norms works against self-direction for out-groups. Net positive because she consistently frames her positions in individual liberty terms, but the inconsistency across domains prevents a higher score."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Conformity vs. Security tension",
+      "description": "Morrow frames herself as pro-security (border, law enforcement) while simultaneously engaging in deeply anti-institutional behavior (calling for political executions, urging suspension of the Constitution, attending January 6). These are fundamentally incompatible -- you cannot support rule of law while calling for extrajudicial violence against political opponents.",
+      "sources": ["CNN K-File March 2024", "CNN K-File August 2024", "Campaign website"],
+      "scoringImpact": "Conformity scored at -0.9; security moderated to 0.3 due to this tension."
+    },
+    {
+      "topic": "Self-direction selective application",
+      "description": "Invokes individual freedom on school choice, gun rights, and medical freedom, but supports restricting reproductive autonomy and deporting immigrants. Self-direction is applied selectively to in-group freedoms only.",
+      "sources": ["Campaign website", "NC Values Coalition endorsement", "iVoterGuide"],
+      "scoringImpact": "Self-direction scored at 0.4 rather than higher due to inconsistent application."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 5,
+    "axesSkipped": [
+      "econ_investment",
+      "econ_tax_structure",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No legislative record exists (never held elected office). Campaign platform focuses on education, healthcare freedom, firearms, and immigration. No evidence found for 11 of 16 civic axes -- climate, housing, most justice, and most economic axes are entirely unaddressed in available sources.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No climate or energy positions found despite these being major Senate policy areas",
+      "No housing policy positions found",
+      "No criminal justice or policing positions found",
+      "No tax policy specifics beyond general anti-spending rhetoric",
+      "No public investment positions found",
+      "Very limited fundraising ($10,720) and low polling (1.6-4%) suggest this is not a competitive candidacy, which may limit future evidence availability"
+    ]
+  }
+}

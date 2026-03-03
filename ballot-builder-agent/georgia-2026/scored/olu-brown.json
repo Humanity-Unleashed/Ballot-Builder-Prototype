@@ -1,0 +1,131 @@
+{
+  "slug": "olu-brown",
+  "name": "Olu Brown",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00.000Z",
+  "profileSummary": "Former megachurch pastor and small business consultant with no prior elected office; campaigns on healthcare access, teacher pay, small business investment, and rural equity as a progressive outsider in a crowded Democratic primary.",
+  "keyPositions": [
+    "Expand Medicaid and ACA in Georgia; invest in telehealth and maternal/prenatal care for rural access",
+    "Direct Georgia's $14B+ budget surplus to small business capital reserves, healthcare, and education rather than tax cuts",
+    "Raise educator pay; reform QBE formula; add technical/vocational education in high schools",
+    "Push Georgia toward a living wage through business accountability",
+    "Invest in affordable housing fund and rental assistance"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["41NBC interview (Medicaid expansion)", "WSAV interview (living wage)", "NAACP forum (affordable housing, minimum wage)", "Savannah forum (Medicaid expansion consensus)"],
+      "notes": "Consistent commitment to Medicaid expansion, living/minimum wage, affordable housing, and surplus-to-services. No voting record available (first-time candidate). Multiple Tier 2/3 sources all point in the same direction."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Capital B News forum Feb 2026 (small business capital reserve, first-hire tax credit)", "WSAV interview (tariff relief for business owners)", "Atlanta News First (campaign launch priorities)"],
+      "notes": "Most specific policy proposal in his platform: use state surplus for small business capital reserve and first-hire tax credit. Consistent public investment orientation across healthcare, education, and business support. Framing is 'invest the surplus' not 'cut taxes.'"
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["WSAV interview (surplus to services not tax cuts)", "Capital B News forum (small business tax breaks, first-hire tax credit)"],
+      "notes": "No direct statement on income tax rates, corporate tax rates, or progressive vs. flat structure. Inferred from consistent preference for surplus-to-services over tax cuts, plus targeted small business credits. Scored cautiously as modestly progressive fiscal orientation."
+    },
+    "econ_school_choice": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["Red and Black interview (teacher pay)", "DeKalb/Fulton forum (QBE reform)", "Savannah forum (technical education in public schools)"],
+      "notes": "No direct statement on vouchers, charter schools, or school choice. Emphasis is entirely on public school investment: teacher compensation, QBE reform, technical/vocational tracks. Inferred public-school-first orientation. Low confidence because the absence of a school choice position is not the same as opposition to it."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["41NBC interview (Medicaid expansion)", "WSAV interview (telehealth, rural access)", "Savannah forum (Medicaid expansion consensus)", "DeKalb/Fulton forum (ACA expansion consensus)", "NAACP forum ('universal healthcare coverage')"],
+      "notes": "Core position is Medicaid expansion and ACA expansion with telehealth and preventive care. Used 'universal healthcare coverage' once at NAACP forum, but all other sources frame position as expanding existing public programs, not single-payer. Scored as public option / Medicaid expansion territory, not Medicare for All."
+    },
+    "housing_affordability_tools": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["NAACP forum (affordable housing fund, rental assistance, home ownership)"],
+      "notes": "Called for investing in affordable housing and rental assistance at NAACP forum; identified housing cost as quality-of-life crisis. No specifics on rent control, inclusionary zoning, public housing, or other mechanisms. Single forum appearance is the primary source."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Strong on social inclusion: explicit LGBTQ+ advocacy framed as justice alongside racial justice ('the isms have the same tactics'). Regional equity emphasis across all of Georgia including rural communities. Healthcare access for all Georgians. However, no environmental/climate positions found and no international/humanitarian evidence. Universalism is domestic and social-justice-focused, not global or ecological."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "The most consistently evidenced value. Built a community institution from 25 to 5,000+ members over 15 years. Healthcare access, education/teacher pay, small business support, and affordable housing all reflect direct community welfare focus. Conducted 30+ listening sessions across Georgia. Campaign identity is fundamentally 'pastor who cares about community well-being and wants to scale that to the state.'"
+    },
+    "tradition": {
+      "score": 0.1,
+      "reasoning": "15-year United Methodist pastor -- faith background is deeply traditional. However, explicitly challenged church orthodoxy on LGBTQ+ inclusion ('we hide it in theology and the Bible'), reframing tradition through a justice lens. Running as a change candidate with 'new vision for Georgia.' Net: comes from tradition but pushes against its constraints. Weakly positive because the institutional faith identity is real even if he reformed its application."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Led a denominational institution for 15 years (conformity-oriented structure). Running through democratic process. Pledged to fully fund election boards (institutional support). No norm-violating or disruptive political behavior documented. Moderate institutional actor working within systems."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Healthcare access framed as economic security ('cheaper to keep you healthy'). Affordable housing and living wage as stability. 'Build a firewall that protects us from Trump's chaos' -- security framing against federal disruption. No military, defense, or law enforcement positions documented. Economic security orientation is genuine; traditional security dimensions are absent."
+    },
+    "power": {
+      "score": -0.2,
+      "reasoning": "No corporate PAC backing or major institutional endorsements found. Outsider candidate without establishment power base. 'Hold businesses accountable' -- accountability over deference. Surplus directed to services rather than tax cuts benefiting the wealthy. Not aggressively anti-corporate, but clearly not aligned with concentrated economic power."
+    },
+    "achievement": {
+      "score": 0.6,
+      "reasoning": "Strongly entrepreneurial biography: grew a church from 25 to 5,000+ attendees with a $4M budget, then pivoted to a consulting firm. Platform centers small business capital reserves, first-hire tax credits, and workforce development. Vocational/technical education emphasis. The megachurch growth story IS an achievement narrative, and the small business platform extends that to others."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence on recreational cannabis, lifestyle liberty, or personal pleasure/freedom issues. Pastor background does not inherently predict either direction. Insufficient basis to score in either direction."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "First-time candidate with no elected office challenging established politicians (Bottoms, Thurmond, Esteves). 'New vision for Georgia' branding. Pulpit-to-politics career pivot is itself a novelty narrative. 30+ grassroots listening sessions suggest unconventional campaign approach. However, actual policy proposals are mainstream Democratic, not radical or structurally transformative. The novelty is in the messenger more than the message."
+    },
+    "self_direction": {
+      "score": 0.3,
+      "reasoning": "LGBTQ+ inclusion advocacy framed as personal freedom and justice -- a notable independent stance for a Black megachurch pastor. Independent career path (pastor to consultant to gubernatorial candidate). But no evidence on civil liberties broadly, reproductive rights, surveillance, or other self-direction markers. Weakly positive based on limited evidence."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Healthcare model label",
+      "description": "Used 'universal healthcare coverage' at NAACP forum (Aug 2025) but consistently advocates Medicaid expansion and ACA expansion in all other appearances. Could be forum shorthand for 'coverage for everyone via expanded public programs' rather than single-payer advocacy.",
+      "sources": ["NAACP forum (georgianaacp.org)", "41NBC interview", "WSAV interview", "DeKalb/Fulton forum"],
+      "scoringImpact": "Scored at 3 (Medicaid/ACA expansion territory) based on preponderance of evidence. The single 'universal' reference is noted but outweighed by consistent Medicaid-expansion-specific framing elsewhere."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 6,
+    "axesSkipped": [
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate with no legislative record. Evidence is entirely from campaign forums, media interviews, and pastoral background. Ten axes have no documented position from any source. The candidate has not completed the Ballotpedia Candidate Connection survey and has not been scored by any interest group.",
+    "overallConfidence": "medium-low",
+    "researchGaps": [
+      "Reproductive rights / abortion: No statement found despite Georgia's 6-week ban being a central 2026 issue. Significant gap.",
+      "Gun policy / firearms: Complete gap. No statement or rating from any source.",
+      "Immigration / ICE: Complete gap despite forums covering this topic.",
+      "Criminal justice / policing: No specific positions. Pastoral justice framing is too indirect to score.",
+      "Climate / energy / environment: Not mentioned in any retrieved source.",
+      "Transit / transportation: 'Traffic is terrible' is problem identification without policy commitment.",
+      "No interest group scorecards available for any axis.",
+      "No endorsements from major organizations documented as of research date.",
+      "11Alive full video interview exists but transcript was not retrievable -- may contain additional positions."
+    ]
+  }
+}

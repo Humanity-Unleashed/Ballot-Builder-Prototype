@@ -1,8 +1,35 @@
 'use client';
 
 import React from 'react';
-import { X, Check, AlertTriangle, Minus } from 'lucide-react';
-import type { Candidate, CandidateMatch } from '@/lib/ballotHelpers';
+import { X, Check, AlertTriangle, Minus, ExternalLink } from 'lucide-react';
+import type { Candidate, CandidateMatch, CandidateAxisComparison } from '@/lib/ballotHelpers';
+
+function EvidenceRow({ evidence }: { evidence: { text: string; url?: string }[] }) {
+  return (
+    <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
+      Based on:{' '}
+      {evidence.map((e, i) => (
+        <span key={i}>
+          {i > 0 && '; '}
+          {e.url ? (
+            <a
+              href={e.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-primary/70 hover:text-brand-primary underline decoration-dotted inline-flex items-center gap-0.5"
+              onClick={(ev) => ev.stopPropagation()}
+            >
+              {e.text}
+              <ExternalLink className="h-2.5 w-2.5 inline shrink-0" />
+            </a>
+          ) : (
+            e.text
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
 
 interface CandidateComparisonSheetProps {
   visible: boolean;
@@ -32,7 +59,7 @@ export default function CandidateComparisonSheet({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg bg-white rounded-t-3xl max-h-[75vh] pb-8 animate-slide-up"
+        className="w-full max-w-lg bg-white rounded-t-3xl max-h-[85vh] flex flex-col pb-8 animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Handle bar */}
@@ -41,23 +68,44 @@ export default function CandidateComparisonSheet({
         </div>
 
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-          <div className="flex-1">
-            <h3 className="text-lg font-bold text-gray-900">
-              {candidate.name}
-            </h3>
-            <p className="text-sm text-gray-500">{match.matchPercent}% match with your values</p>
+        <div className="px-5 py-3 border-b border-gray-200">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900">
+                {candidate.name}
+              </h3>
+              <p className="text-sm text-gray-500">{match.matchPercent}% match with your values</p>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+            >
+              <X className="h-5 w-5 text-gray-600" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
-          >
-            <X className="h-5 w-5 text-gray-600" />
-          </button>
+
+          {/* Full summary */}
+          {candidate.profile.summary && (
+            <p className="text-[13px] text-gray-600 leading-relaxed mt-2">
+              {candidate.profile.summary}
+            </p>
+          )}
+
+          {/* Policy positions */}
+          {candidate.profile.positions && candidate.profile.positions.length > 0 && (
+            <ul className="mt-2 space-y-1">
+              {candidate.profile.positions.map((position, i) => (
+                <li key={i} className="text-[12px] text-gray-500 leading-[17px] flex items-start gap-1.5">
+                  <span className="text-gray-400 mt-0.5 shrink-0">&bull;</span>
+                  <span>{position}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto p-5 space-y-4">
+        <div className="overflow-y-auto flex-1 min-h-0 p-5 space-y-4">
           {/* Where you align */}
           {alignedDetails.length > 0 && (
             <div className="space-y-2.5">
@@ -74,6 +122,9 @@ export default function CandidateComparisonSheet({
                       <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
                       You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
+                    {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
+                      <EvidenceRow evidence={detail.candidateEvidence} />
+                    )}
                   </div>
                 </div>
               ))}
@@ -96,6 +147,9 @@ export default function CandidateComparisonSheet({
                       <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
                       You: {detail.userLabel} / Candidate: {detail.candidateLabel}
                     </p>
+                    {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
+                      <EvidenceRow evidence={detail.candidateEvidence} />
+                    )}
                   </div>
                 </div>
               ))}

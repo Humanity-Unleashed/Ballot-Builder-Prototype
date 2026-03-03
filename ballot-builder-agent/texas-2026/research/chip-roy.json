@@ -1,0 +1,591 @@
+{
+  "slug": "chip-roy",
+  "name": "Chip Roy",
+  "party": "Republican",
+  "office": "Texas Attorney General, 2026 Republican Primary (March 3, 2026)",
+  "incumbencyStatus": "challenger — sitting U.S. Representative (TX-21, 2019–2026) vacating House seat to run",
+  "researchedAt": "2026-02-27T00:00:00.000Z",
+  "biography": {
+    "currentRole": "U.S. Representative, Texas 21st Congressional District (2019–present); leaving to run for TX AG",
+    "priorRoles": [
+      "First Assistant Attorney General of Texas under Ken Paxton (2015–2017)",
+      "Chief of Staff, U.S. Senator Ted Cruz (2012–2014)",
+      "Senior Advisor to Texas Governor Rick Perry",
+      "Staff Director, Senate Judiciary Committee (under Sen. John Cornyn)",
+      "Special Assistant U.S. Attorney, Eastern District of Texas (federal prosecutor, violent crime and immigration, 2003–2007)",
+      "Investment banking analyst, NationsBanc Capital Markets; technology consultant; oil & gas counsel"
+    ],
+    "education": "B.S. Commerce, University of Virginia (1994); M.S. Information Systems, UVA (1995); J.D., University of Texas School of Law (2003)",
+    "background": "Born August 7, 1972, Bethesda, MD; raised Lovettsville, VA. Policy Chair, House Freedom Caucus. One of the most conservative members of Congress by all major scorecards. Describes himself as 'great-great-grandson of a Texas Ranger, grandson of a Texas Police Chief.' Running for AG as next step in state-level conservative legal career.",
+    "caucuses": ["House Freedom Caucus (Policy Chair)", "Republican Study Committee"],
+    "committees": ["House Judiciary", "House Rules", "House Budget"]
+  },
+  "campaignWebsite": {
+    "url": "https://chiproy.com/",
+    "issuesUrl": "https://chiproy.com/issues/",
+    "fetchedAt": "2026-02-27T00:00:00.000Z",
+    "statedPositions": [
+      {
+        "topic": "border / immigration",
+        "quote": "Open border politicians have flooded our streets, hospitals, jails, and schools with illegal immigrants and dangerous fentanyl, empowering cartels while endangering Texans and the immigrants they use as political pawns.",
+        "sourceUrl": "https://chiproy.com/",
+        "date": "2025–2026",
+        "confidence": "high",
+        "notes": "Central campaign theme. Consistent with entire congressional record."
+      },
+      {
+        "topic": "AG role / rule of law",
+        "quote": "I've prosecuted criminals and had law enforcement's back. I will defend Texas families, secure our communities, and preserve the Lone Star State's legacy of freedom.",
+        "sourceUrl": "https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-republican-primary-candidates-for-texas-attorney-general/",
+        "date": "2026-01",
+        "confidence": "medium",
+        "notes": "Campaign announcement framing. Specific to AG role, not a policy axis signal."
+      },
+      {
+        "topic": "school choice",
+        "quote": "Introduced the SCHOOL Act — federal funds follow the student, public, private, or homeschool.",
+        "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-rolls-out-education-bills-defund-racist-curricula-and-put-parents-back",
+        "date": "2021–2025",
+        "confidence": "high",
+        "notes": "Consistent legislation across multiple congressional terms. Called out TX state GOP legislators for failing to pass universal school choice."
+      },
+      {
+        "topic": "healthcare freedom",
+        "quote": "Republicans in Congress suck on this and are running afraid to touch and deal with health care.",
+        "sourceUrl": "https://thehill.com/homenews/house/5547218-chip-roy-republicans-health-care-reform/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Has called for overhaul of all federal health programs 'top to bottom.' Consistently opposes ACA and Medicaid expansion."
+      },
+      {
+        "topic": "Second Amendment",
+        "quote": "The second amendment must always be defended and protected… I oppose dangerous red flag laws that put the state in the position of taking guns first and giving you due process later.",
+        "sourceUrl": "https://roy.house.gov/media/in-the-news/rep-roy-second-amendment-empowers-people-resist-force-tyranny",
+        "date": "2021–2026",
+        "confidence": "high",
+        "notes": "Consistent position. Voted present (not yes) on Bipartisan Safer Communities Act."
+      },
+      {
+        "topic": "elections / AG priorities",
+        "quote": "SAVE Act — require documentary proof of U.S. citizenship to register to vote in federal elections.",
+        "sourceUrl": "https://www.kxan.com/state-of-texas/state-of-texas-gop-ag-hopefuls-agree-on-policy-but-clash-over-records-in-dallas-debate/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Active champion of the SAVE Act in Congress."
+      },
+      {
+        "topic": "overturning Plyler v. Doe / Obergefell",
+        "quote": "All four candidates agreed they would work to overturn Plyler v. Doe (requiring public schools to educate undocumented immigrants) and Obergefell v. Hodges (same-sex marriage).",
+        "sourceUrl": "https://www.ksat.com/news/texas/2026/02/18/republican-attorney-general-candidates-meet-for-only-debate-in-primary-to-succeed-ken-paxton/",
+        "date": "2026-02-17",
+        "confidence": "high",
+        "notes": "Stated at the only primary debate (Feb. 17, 2026, Dallas, moderated by RAGA/Allie Beth Stuckey)."
+      },
+      {
+        "topic": "energy",
+        "quote": "Introduced the Energy Freedom Act to end Biden's trillion-dollar Green New Deal tax subsidies — 'not just the solar and wind credits, but all of them.'",
+        "sourceUrl": "https://brecheen.house.gov/news/documentsingle.aspx?DocumentID=1447",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Only potential exception: nuclear, given regulatory burden."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": ["GovTrack", "VoteSmart", "Congress.gov", "Heritage Action", "LCV"],
+    "attendanceRate": "97.7% (missed 85 of 3,633 roll call votes, Jan 2019–Feb 2026)",
+    "keyVotes": [
+      {
+        "bill": "Bipartisan Safer Communities Act (S. 2938, 2022)",
+        "vote": "Present (not Yes, not No)",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://www.govtrack.us/congress/votes/117-2022/h299",
+        "notes": "Voted present — neither supporting nor opposing. The bill included enhanced background checks, juvenile record provisions, and crisis intervention funding. Roy publicly opposed red flag laws and background check expansions. Voting 'present' instead of 'no' was unusual; suggests political calculation given Uvalde (in TX). Scored on record: strongly opposes gun regulations."
+      },
+      {
+        "bill": "George Floyd Justice in Policing Act (HR 1280, 2021)",
+        "vote": "No",
+        "topic": "justice_policing_accountability",
+        "sourceUrl": "https://www.govtrack.us/congress/votes/117-2021/h60",
+        "notes": "Voted No. Roy stated the bill 'poses a grave danger to law-abiding police officers, as it would eliminate qualified immunity protections, lower the standard for federal civil rights lawsuits, and limit access to necessary equipment during emergencies.'"
+      },
+      {
+        "bill": "Infrastructure Investment and Jobs Act (2021)",
+        "vote": "No",
+        "topic": "econ_investment / housing_transport_priority",
+        "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-issues-statement-infrastructure-bill-vote",
+        "notes": "Called it a '$1.2 trillion almost 3,000-page monstrosity' that would 'increase the deficit by over a quarter trillion dollars and exacerbate already skyrocketing inflation.'"
+      },
+      {
+        "bill": "Inflation Reduction Act (2022)",
+        "vote": "No",
+        "topic": "climate_ambition / climate_energy_portfolio / health_coverage_model",
+        "sourceUrl": "https://www.lcv.org/moc/chip-roy/",
+        "notes": "Voted No. Introduced Energy Freedom Act to repeal IRA's clean energy subsidies. Described IRA green energy provisions as a 'green scam.'"
+      },
+      {
+        "bill": "CHIPS and Science Act (2022)",
+        "vote": "No (inferred from pattern)",
+        "topic": "econ_investment",
+        "sourceUrl": "https://www.eenews.net/articles/republicans-cheer-spending-from-bill-they-opposed-again/",
+        "notes": "Strong circumstantial evidence of No vote — consistent with his opposition to industrial policy. Pattern: GOP members who opposed CHIPS took credit for benefits. Marked as inferred, not confirmed direct vote record."
+      },
+      {
+        "bill": "One Big Beautiful Bill Act (HR 1, 2025)",
+        "vote": "Yes (after initially voting No in committee, then switching to Present, then Yes on floor)",
+        "topic": "econ_safetynet / health_coverage_model",
+        "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-statement-house-passage-one-big-beautiful-bill-act-0",
+        "notes": "Initially voted No in Budget Committee (May 2025) demanding DEEPER Medicaid cuts and earlier work requirement start dates. Switched to Yes only after leadership agreed to accelerate Medicaid work requirements. Said promise of 'deep entitlement cuts' won his vote. Bill included major Medicaid/SNAP reductions."
+      },
+      {
+        "bill": "Bipartisan Background Checks Act",
+        "vote": "No",
+        "topic": "justice_firearms",
+        "sourceUrl": "https://justfacts.votesmart.org/candidate/key-votes/177319/chip-roy/37/guns",
+        "notes": "Opposed universal background checks as making it 'more difficult for law-abiding citizens to purchase, own, carry, and use a firearm.'"
+      },
+      {
+        "bill": "Violence Against Women Act reauthorization (2022)",
+        "vote": "No",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://www.sacurrent.com/news/chip-roy-was-the-only-member-of-san-antonios-us-house-delegation-to-vote-against-reauthorizing-the-violence-against-women-act-20839084",
+        "notes": "Was the only member of San Antonio's House delegation to vote against VAWA reauthorization."
+      },
+      {
+        "bill": "Authorization for Use of Military Force Against Iraq Resolution repeal (2021)",
+        "vote": "Yes",
+        "topic": "national security / foreign policy",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Chip_Roy",
+        "notes": "One of 49 House Republicans to vote to repeal the 2002 Iraq AUMF. Non-interventionist streak."
+      },
+      {
+        "bill": "Sweden and Finland NATO accession (2022)",
+        "vote": "No",
+        "topic": "national security / foreign policy",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Chip_Roy",
+        "notes": "One of 18 Republicans to vote against ratifying Sweden and Finland's NATO applications. Non-interventionist/America First position."
+      },
+      {
+        "bill": "H.R. 3746 — fiscal negotiations / continuing resolutions",
+        "vote": "No (multiple CRs)",
+        "topic": "econ_safetynet / econ_investment",
+        "sourceUrl": "https://x.com/chiproytx/status/1870232311280685563",
+        "notes": "Voted against multiple continuing resolutions. On one: 'I must vote no. $110bb unpaid-for, extension of food stamps with no reform, gimmicks to pay for health extenders.' Consistently demands spending cuts as condition for any vote."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "0% (2024 annual); 2% lifetime",
+      "grade": null,
+      "url": "https://www.lcv.org/moc/chip-roy/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Among the lowest possible LCV scores. Voted against every major climate/environment bill tracked by LCV. Consistent across entire 7-year House tenure."
+    },
+    {
+      "organization": "Heritage Action for America",
+      "score": "100% (118th Congress); 98% (117th Congress); 94% (116th Congress); ~97% lifetime",
+      "grade": null,
+      "url": "https://heritageaction.com/scorecard/members/R000614/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Among the highest Heritage Action scorers in Congress. Used as primary conservative movement benchmark."
+    },
+    {
+      "organization": "CPAC",
+      "score": "98% lifetime",
+      "grade": null,
+      "url": "https://www.cpac.org/bio/r000614",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "CPAC Award for Conservative Excellence requires 90%+. Roy consistently scores near 100%."
+    },
+    {
+      "organization": "AFL-CIO",
+      "score": "Low (specific number not retrieved; consistent with near-0% based on voting record)",
+      "grade": null,
+      "url": "https://aflcio.org/scorecard/legislators/chip-roy",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Exact 2024 and lifetime percentages not retrieved from search snippets. Given Heritage Action 100%/CPAC 98% and consistent anti-labor votes, AFL-CIO score is expected to be 0–5%. Not confirmed numerically."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": "A",
+      "url": "https://www.nrapvf.org/grades/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "NRA 'A' grade. Has received NRA endorsement in congressional races. Consistent with voting record: opposed Bipartisan Safer Communities Act (voted Present), opposed background check expansions, opposed red flag laws, introduced No Backdoor Gun Control Act."
+    },
+    {
+      "organization": "National Right to Life / SBA Pro-Life",
+      "score": "100%",
+      "grade": null,
+      "url": "https://sbaprolife.org/representative/chip-roy",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Perfect pro-life score. Consistent with life-begins-at-conception position and legislative record."
+    },
+    {
+      "organization": "Reproductive Freedom for All (formerly NARAL)",
+      "score": "0% (2024)",
+      "grade": null,
+      "url": "https://reproductivefreedomforall.org/lawmaker/chip-roy/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Perfect inverse of pro-life score. Confirms strong anti-abortion record."
+    },
+    {
+      "organization": "Freedom Index (John Birch Society-aligned)",
+      "score": "100% (118th Congress, 1st session)",
+      "grade": null,
+      "url": "https://thefreedomindex.org/legislator/R000614/",
+      "fetchedAt": "2026-02-27T00:00:00.000Z",
+      "notes": "Perfect constitutional-liberty score. Consistent with anti-federal-overreach philosophy."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Sen. Ted Cruz (R-TX)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Roy's former boss. Cruz endorsed him for AG."
+    },
+    {
+      "organization": "Republican Attorneys General Association (RAGA)",
+      "type": "debate host",
+      "cycle": "2026",
+      "notes": "RAGA hosted the only primary debate on Feb. 17, 2026."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune",
+      "date": "2026-02-17",
+      "url": "https://www.texastribune.org/2026/02/17/chip-roy-attorney-general-texas-primary-2026-paxton-trump/",
+      "keyExchanges": [
+        {
+          "topic": "AG independence / federalism",
+          "quote": "People look to [the Texas AG's Office] to lead, to hold the line against an overbearing federal government if they're getting out of their lanes. You have to do that no matter who's in the White House. We gotta defend Texas.",
+          "notes": "Emphasized independence from federal overreach — including from Republican administrations."
+        },
+        {
+          "topic": "relationship with Trump",
+          "quote": "He has voted with President Donald Trump's agenda more than almost any other candidate, but he's vowing to keep federal overreach out of the state — no matter who is president.",
+          "notes": "High Trump alignment on policy, but maintains states-rights independence framing."
+        }
+      ]
+    },
+    {
+      "outlet": "RAGA / CBS Austin primary debate",
+      "date": "2026-02-17",
+      "url": "https://www.ksat.com/news/texas/2026/02/18/republican-attorney-general-candidates-meet-for-only-debate-in-primary-to-succeed-ken-paxton/",
+      "keyExchanges": [
+        {
+          "topic": "Plyler v. Doe / Obergefell",
+          "quote": "All four candidates agreed they would work to overturn Plyler v. Doe and Obergefell v. Hodges.",
+          "notes": "Explicitly stated he would pursue overturning same-sex marriage ruling and undocumented immigrant schooling requirement. Highly significant — goes beyond standard Republican positions."
+        },
+        {
+          "topic": "trans youth / federal vs. state authority",
+          "quote": "Roy took criticism for pushing back against a GOP bill that would have criminalized providing hormone therapy to minors, arguing it would give the federal government unconstitutional authority over the states.",
+          "notes": "NUANCED: Roy opposed a federal ban on gender-affirming care for minors — not because he supports it, but because he opposed federal preemption of state authority. Consistent with his pure states-rights federalism. Does NOT mean he supports gender-affirming care."
+        },
+        {
+          "topic": "islamification",
+          "quote": "Roy said he would take a more aggressive approach to border security and challenge what he calls the 'Islamification of Texas' if elected.",
+          "sourceUrl": "https://www.kltv.com/2026/02/01/republican-candidate-attorney-general-calls-aggressive-approach-border-islamic-centers/",
+          "notes": "Targeted rhetoric about Islamic centers. Stated in campaign context."
+        }
+      ]
+    },
+    {
+      "outlet": "Community Impact / Q&A",
+      "date": "2026-01",
+      "url": "https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-republican-primary-candidates-for-texas-attorney-general/",
+      "keyExchanges": [
+        {
+          "topic": "AG priorities",
+          "quote": "Defend Texas families, uphold the rule of law, preserve the Texas way of life. Argue against federal overreach, stand for election integrity.",
+          "notes": "General platform statement."
+        }
+      ]
+    },
+    {
+      "outlet": "Daily Signal (Heritage Foundation)",
+      "date": "2025-01-22",
+      "url": "https://www.dailysignal.com/2025/01/22/exclusive-chip-roy-unveils-cure-health-care-system/",
+      "keyExchanges": [
+        {
+          "topic": "healthcare",
+          "quote": "Overhaul of federal health programs top to bottom. End crony capitalism in healthcare. Overhaul NIH, CDC, USDA. Take on Big Insurance, Big Hospital, Big Pharma.",
+          "notes": "Market-based vision. Wants more competition, HSAs, Direct Primary Care. Not seeking public option or Medicare expansion."
+        }
+      ]
+    }
+  ],
+  "legislativeInitiatives": [
+    {
+      "bill": "Energy Freedom Act",
+      "topic": "climate_energy_portfolio",
+      "description": "Repeal all 20+ clean energy tax subsidies created/expanded by the Inflation Reduction Act. 'Not just solar and wind credits, but all of them.' Possible exception for nuclear.",
+      "sourceUrl": "https://brecheen.house.gov/news/documentsingle.aspx?DocumentID=1447"
+    },
+    {
+      "bill": "SCHOOL Act",
+      "topic": "econ_school_choice",
+      "description": "Federal funds follow the student — public, private, or homeschool. Universal school choice mechanism.",
+      "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-rolls-out-education-bills-defund-racist-curricula-and-put-parents-back"
+    },
+    {
+      "bill": "Healthcare Freedom Act / Personalized Care Act",
+      "topic": "health_coverage_model",
+      "description": "Expand HSAs, direct primary care. Break Americans 'out of the broken healthcare system.' Market-based.",
+      "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-reintroduces-personalized-care-act-help-restore-americans-healthcare"
+    },
+    {
+      "bill": "No Backdoor Gun Control Act",
+      "topic": "justice_firearms",
+      "description": "Remove 'Any Other Weapon' from NFA definition to prevent ATF from using that classification to restrict firearms.",
+      "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-introduces-bill-close-loophole-national-firearms-act"
+    },
+    {
+      "bill": "H.R. 29, Border Safety and Security Act (2023)",
+      "topic": "immigration",
+      "description": "Border enforcement; included $9.5B to support border states.",
+      "sourceUrl": "https://roy.house.gov/issues/border-security"
+    },
+    {
+      "bill": "SAVE Act",
+      "topic": "elections",
+      "description": "Require documentary proof of U.S. citizenship to register to vote in federal elections.",
+      "sourceUrl": "https://www.campaignnow.com/blog/rep.-chip-roy-pushes-save-act-while-highlighting-border-security-concerns-in-report"
+    },
+    {
+      "bill": "Ending Medicaid Discrimination Against the Most Vulnerable Act (HR 3321)",
+      "topic": "econ_safetynet",
+      "description": "Eliminate differential federal match rates — Obamacare expansion gives 90% match for 'able-bodied, working-age adults' vs 60% for traditional populations (children, disabled). Roy framed this as discrimination against the most vulnerable. In practice, would effectively end Medicaid expansion.",
+      "sourceUrl": "https://roy.house.gov/media/press-releases/reps-roy-fitzgerald-introduce-legislation-end-medicaid-discrimination-against"
+    },
+    {
+      "bill": "Bipartisan Federal Criminal Code Reform (with Reps. McBath, Biggs, Cohen)",
+      "topic": "justice_sentencing_goals",
+      "description": "Reduce overcriminalization of nonviolent offenders. Bipartisan. Roy stated: 'Federal politicians have created innumerable crimes, used and abused to lock many nonviolent offenders in prison for unwarranted amounts of time.'",
+      "sourceUrl": "https://roy.house.gov/media/press-releases/reps-roy-mcbath-biggs-and-cohen-lead-bipartisan-effort-simplify-federal-criminal-code"
+    },
+    {
+      "bill": "No Taxation Without Congressional Consent Act (COVID vaccines)",
+      "topic": "health_public_health",
+      "description": "Prohibit federal fines/taxes on individuals or businesses penalizing non-compliance with COVID vaccine mandates.",
+      "sourceUrl": "https://roy.house.gov/media/press-releases/rep-roy-sen-lee-team-protect-individuals-businesses-tyrannical-vaccine-mandate"
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "justice_firearms — Bipartisan Safer Communities Act",
+      "conflict": "Voted 'present' (not 'no') on the first major federal gun safety bill in decades, passed in direct response to the Uvalde, TX school shooting in his home state. His record and stated positions are maximally anti-gun-regulation, but he did not vote 'no' outright — likely due to Uvalde political pressure. Scored on full record: opposes virtually all gun regulations.",
+      "sources": ["GovTrack vote record", "Roy's own statements on red flag laws and background checks"]
+    },
+    {
+      "topic": "gender-affirming care / federalism nuance",
+      "conflict": "Opposed a federal ban on hormone therapy for trans minors — not because he supports such care, but because he opposed federal preemption of state authority. His states-rights libertarian-leaning federalism applies even to culture war issues. Should NOT be interpreted as moderate on LGBTQ issues — he stated he would work to overturn Obergefell at the Feb. 2026 debate.",
+      "sources": ["Texas Tribune Feb 2026", "KXAN debate coverage Feb 2026"]
+    },
+    {
+      "topic": "One Big Beautiful Bill — strategic vs. principled vote",
+      "conflict": "Voted No in committee, then switched to Yes on floor only after Medicaid work requirements were accelerated. His initial No was because cuts weren't DEEP ENOUGH — not opposition to cuts. Final Yes vote is the operative position. He stated 'promise of deep entitlement cuts' won his vote.",
+      "sources": ["The Hill", "Roy's own press release on House passage"]
+    }
+  ],
+  "axisEvidenceSummary": {
+    "econ_safetynet": {
+      "direction": "strongly poleB (conditional safety net)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Voted Yes on One Big Beautiful Bill only after demanding deeper Medicaid/SNAP cuts",
+        "Introduced HR 3321 to effectively end Medicaid expansion",
+        "Voted No on food stamp extension with 'no reform' attached",
+        "Wrote op-ed demanding Medicaid reform to prevent 'financial crisis'",
+        "Heritage Action 100%: entitlement reform is a core component"
+      ]
+    },
+    "econ_investment": {
+      "direction": "strongly poleB (minimize government investment)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Voted No on $1.2T Infrastructure Investment and Jobs Act",
+        "Voted No on Inflation Reduction Act",
+        "Opposed CHIPS Act (inferred from pattern)",
+        "Called for balanced budget amendment before any legislation",
+        "Heritage Action 100%: anti-industrial-policy across the board"
+      ]
+    },
+    "econ_tax_structure": {
+      "direction": "strongly poleB (lower rates, simplified structure)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Supports simplifying tax code, eliminating exemptions to lower rates",
+        "Stated every American should complete taxes on a 'postcard-sized form'",
+        "CPAC 98% lifetime: tax reduction is a core component",
+        "Insisted tax cuts be paired with equal or greater spending cuts (fiscal hawk framing)"
+      ]
+    },
+    "econ_school_choice": {
+      "direction": "strongly poleB (universal school choice)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Introduced SCHOOL Act — federal funds follow the student across public/private/homeschool",
+        "Called out TX state GOP for failing to pass universal choice",
+        "Introduced CRT Act defunding schools teaching critical race theory",
+        "National Education Association would give him near-0% (inferred)"
+      ]
+    },
+    "health_coverage_model": {
+      "direction": "strongly poleB (market-based, eliminate public expansion)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Reintroduced Personalized Care Act — HSAs, direct primary care, market competition",
+        "Opposed ACA and all its expansions consistently",
+        "Voted Yes on OBBB only after Medicaid work requirements accelerated",
+        "HR 3321 would effectively end Medicaid expansion",
+        "Called for overhaul of all federal health programs 'top to bottom'"
+      ]
+    },
+    "health_cost_control": {
+      "direction": "poleB (market competition, oppose price controls)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Voted No on IRA which included Medicare drug price negotiation",
+        "Healthcare Freedom vision: market competition, HSAs, direct primary care",
+        "Opposes government price-setting across all healthcare sectors"
+      ]
+    },
+    "health_public_health": {
+      "direction": "strongly poleB (individual liberty paramount)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Led House opposition to Biden's COVID vaccine mandates — called them 'unconstitutional and flat-out tyrannical'",
+        "Led 38+ colleagues to defund mandate enforcement",
+        "Introduced No Taxation Without Congressional Consent Act",
+        "Introduced legislation to repeal final federal COVID vaccine mandate",
+        "Filed amicus brief against federal workforce vaccine mandate with Ted Cruz"
+      ]
+    },
+    "housing_supply_zoning": {
+      "direction": "likely poleB (local control), but NO DIRECT EVIDENCE",
+      "confidence": "LOW",
+      "keyEvidence": [
+        "Consistent states-rights / local control philosophy across all domains strongly suggests opposition to federal zoning mandates",
+        "Voted No on infrastructure bill which included some housing provisions",
+        "No specific housing zoning legislation found in research"
+      ]
+    },
+    "housing_affordability_tools": {
+      "direction": "likely poleB (market solutions), but NO DIRECT EVIDENCE",
+      "confidence": "LOW",
+      "keyEvidence": [
+        "Consistent market-over-government philosophy across economic domains",
+        "Opposes government subsidies broadly (safety net, Medicaid expansion, clean energy)",
+        "No specific housing affordability legislation found"
+      ]
+    },
+    "housing_transport_priority": {
+      "direction": "poleB (oppose transit mandates, market infrastructure)",
+      "confidence": "MEDIUM",
+      "keyEvidence": [
+        "Voted No on Infrastructure Investment and Jobs Act, which included major public transit funding",
+        "Called it a monstrosity that would increase the deficit",
+        "No specific pro-transit positions found"
+      ]
+    },
+    "justice_policing_accountability": {
+      "direction": "strongly poleB (back the blue, protect qualified immunity)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Voted No on George Floyd Justice in Policing Act (HR 1280)",
+        "Stated the bill 'poses a grave danger to law-abiding police officers' by eliminating qualified immunity",
+        "States 'law enforcement is in my blood' (great-great-grandson of Texas Ranger, grandson of Police Chief)",
+        "In 2026 AG campaign: 'George Soros-funded DAs and liberal judges' framing",
+        "Former federal prosecutor — strong law enforcement identity"
+      ]
+    },
+    "justice_sentencing_goals": {
+      "direction": "mixed — poleB on violent crime / enforcement; libertarian streak on nonviolent overcriminalization",
+      "confidence": "MEDIUM",
+      "keyEvidence": [
+        "Co-led BIPARTISAN effort with Democrats to simplify federal criminal code and reduce incarceration of nonviolent offenders (with McBath, Cohen)",
+        "Demanded DOJ explain 'abnormally lenient sentence' for violent offender",
+        "Voted No on VAWA reauthorization",
+        "Liberty-based concern about overcriminalization is genuine — but limited to nonviolent/federal context",
+        "OVERALL: Best scored as poleB-leaning with notable nonviolent-offense exception"
+      ]
+    },
+    "justice_firearms": {
+      "direction": "strongly poleB (protect gun rights, oppose regulations)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "NRA 'A' grade",
+        "Voted Present (not Yes) on Bipartisan Safer Communities Act — effectively a protest abstention",
+        "Voted No on Bipartisan Background Checks Act",
+        "Introduced No Backdoor Gun Control Act to limit ATF authority",
+        "Explicitly opposes red flag laws ('taking guns first, due process later')",
+        "States '2nd Amendment empowers people to resist the force of tyranny'"
+      ]
+    },
+    "climate_ambition": {
+      "direction": "strongly poleB (skeptical of climate policy costs, fossil fuel expansion)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "LCV 0% (2024), 2% lifetime — literally among the lowest possible scores",
+        "Voted No on Inflation Reduction Act (climate/clean energy)",
+        "Introduced Energy Freedom Act to repeal all IRA clean energy subsidies",
+        "Criticized EPA's 'war on reliable fossil fuel-produced American energy'",
+        "Criticized EPA 'Clean Air' programs for advancing 'climate hysteria'",
+        "Climate of Denial tracker lists him as climate change denier/obstructionist"
+      ]
+    },
+    "climate_energy_portfolio": {
+      "direction": "strongly poleB (fossil fuel expansion, eliminate clean energy subsidies)",
+      "confidence": "HIGH",
+      "keyEvidence": [
+        "Energy Freedom Act: repeal 'not just solar and wind credits, but ALL of them'",
+        "Joined Lauren Boebert petition for Protecting American Energy Jobs Act",
+        "Introduced legislation to repeal Biden's fossil fuel production limits",
+        "Advocates coal development on public lands",
+        "Only possible exception: nuclear (due to regulatory burden)"
+      ]
+    },
+    "climate_permitting": {
+      "direction": "poleB (cut permitting timelines — but specifically for fossil fuels; opposes if it benefits clean energy)",
+      "confidence": "MEDIUM",
+      "keyEvidence": [
+        "Opposed SPEED Act permitting reform because it could accelerate clean energy projects",
+        "Requested that offshore wind projects be EXCLUDED from permitting reform benefits",
+        "Supports reducing regulatory review for fossil fuel projects",
+        "Position is ideologically consistent: permitting reform only if it benefits fossil fuels/conventional energy"
+      ]
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "justice_firearms (LCV 0%, NRA A, voting record, explicit statements)",
+      "climate_ambition (LCV 2% lifetime, voting record, Energy Freedom Act)",
+      "climate_energy_portfolio (Energy Freedom Act, IRA vote, fossil fuel expansion)",
+      "health_public_health (led anti-mandate effort for 2+ years in Congress)",
+      "econ_safetynet (One Big Beautiful Bill strategic vote, Medicaid reform legislation)",
+      "health_coverage_model (consistent opposition to ACA, Medicaid expansion, all public options)",
+      "econ_school_choice (SCHOOL Act, multiple terms of legislation)",
+      "justice_policing_accountability (voted No on George Floyd Act, qualified immunity protection)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning (no direct evidence — inferred from philosophy)",
+      "housing_affordability_tools (no direct evidence — inferred from philosophy)",
+      "justice_sentencing_goals (mixed: bipartisan nonviolent reform + tough-on-crime enforcement — genuine tension)"
+    ],
+    "overallConfidence": "HIGH — 7-year House voting record provides extensive Tier 1 evidence. Multiple corroborating scorecards (Heritage Action 100%, CPAC 98%, NRA A, LCV 2%). Campaign positions in 2026 are perfectly consistent with congressional record — no evolution or flip-flopping detected.",
+    "notableNuances": [
+      "Roy is a genuine fiscal hawk who has BLOCKED his own party's spending bills — including going against Trump. Not a rubber-stamp Republican.",
+      "His states-rights federalism is consistent even when applied against conservative culture-war legislation (e.g., opposed federal trans-care ban on 10th Amendment grounds while also saying he'd overturn Obergefell as AG).",
+      "On sentencing, he has a genuine bipartisan streak on nonviolent overcriminalization that is out of character with his otherwise hard-right record. This is rooted in libertarian philosophy, not moderate politics.",
+      "His 'present' vote on Bipartisan Safer Communities Act (vs. No) after Uvalde is his most politically calculated vote — does not indicate softening on gun rights."
+    ],
+    "campaignContextNotes": "Running for AG (not legislative office) means platform focuses on law enforcement, border security, state sovereignty, election integrity. His legislative record from Congress is the primary evidence base for scoring the 16 civic axes — it is detailed, consistent, and extensive."
+  }
+}

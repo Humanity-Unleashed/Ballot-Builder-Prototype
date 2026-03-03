@@ -1,0 +1,288 @@
+{
+  "generatedAt": "2026-02-27T00:00:00.000Z",
+  "state": "Texas",
+  "contests": [
+    {
+      "id": "TX-US-HOUSE-34-2026",
+      "office": "U.S. House of Representatives",
+      "state": "TX",
+      "district": "34",
+      "districtDescription": "Rio Grande Valley — Brownsville to Corpus Christi (post-2025 redistricting: Hidalgo County portion removed, Nueces County / Corpus Christi area added)",
+      "primaryDate": "2026-03-03",
+      "primaryRunoffDate": "2026-05-26",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Vicente Gonzalez Jr.",
+      "incumbentParty": "Democratic",
+      "raceRating": "Toss-up",
+      "raceRatingSource": "Cook Political Report",
+      "raceRatingNotes": "Cook moved from Lean Republican to Toss-up (Jan 15, 2026). Sabato's Crystal Ball also rates Toss-up (moved from Lean Republican after apparent Democratic rebound with Latino voters). Inside Elections: Toss-up. District PVI shifted dramatically under 2025 Republican gerrymander from D+16 to approximately D+1; Trump carried the new district lines by ~10 pts in 2024 vs. Biden +3 in 2020.",
+      "redistrictingNotes": "2025 Texas mid-decade Republican gerrymander removed Hidalgo County Democratic base and added Corpus Christi / Nueces County Republican-leaning territory. Supreme Court allowed the new map to proceed (Dec 2025). District is majority-Latino but trending Republican in presidential voting.",
+      "candidates": [
+        {
+          "slug": "vicente-gonzalez-jr",
+          "name": {
+            "full": "Vicente Gonzalez Jr.",
+            "ballotDisplay": "Vicente Gonzalez Jr."
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "incumbent",
+          "campaignWebsite": "https://www.vicentegonzalez.com",
+          "fecCandidateId": "H6TX15162",
+          "fundraising": {
+            "receipts": 1916886,
+            "disbursements": 930094,
+            "cashOnHand": 1268852,
+            "reportDate": "2026-02-11"
+          },
+          "evidenceTier": "high",
+          "notes": "Incumbent U.S. Rep. for TX-34 since 2023 (previously served TX-15 2017-2023 before switching districts). Won 2024 general vs. Mayra Flores 51%-49%. McAllen-based attorney. Running for re-election; announced reelection bid with focus on education, Social Security/Medicare, and South Texas job creation. Faces a much tougher district after 2025 gerrymander."
+        },
+        {
+          "slug": "etienne-rosas",
+          "name": {
+            "full": "Etienne Rosas",
+            "ballotDisplay": "Etienne Rosas"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "fecCandidateId": null,
+          "fundraising": {
+            "receipts": 33160,
+            "disbursements": 22411,
+            "cashOnHand": 7932,
+            "reportDate": "2025-12-31"
+          },
+          "evidenceTier": "low",
+          "notes": "First-generation Mexican-American from Brownsville. Holds PhD in public policy from RAND (Pardee RAND Graduate School), postdoctoral fellow at Princeton. Works as public policy researcher and musician. Self-described democratic socialist. Ran on universal healthcare, childcare, campaign finance reform, border cooperation over militarization. Raised only ~$33K vs. Gonzalez's $1.9M — not a serious electoral threat to the incumbent."
+        },
+        {
+          "slug": "eric-flores",
+          "name": {
+            "full": "Eric Flores",
+            "ballotDisplay": "Eric Flores"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://www.ericflores.com",
+          "fecCandidateId": "H6TX34080",
+          "fundraising": {
+            "receipts": 1294218,
+            "disbursements": 1123672,
+            "cashOnHand": 170546,
+            "reportDate": "2026-02-11"
+          },
+          "keyEndorsements": [
+            "Donald Trump (Dec 2025 — 'Complete and Total Endorsement')",
+            "Multiple candidates dropped out and coalesced behind Flores after Trump endorsement"
+          ],
+          "evidenceTier": "high",
+          "notes": "U.S. Army veteran and Texas Army National Guard member; former assistant U.S. Attorney for Southern District of Texas. Emphasized landmark prosecutions of cartel-connected and human trafficking operations. Announced July 2025. Received Trump endorsement in December 2025, causing several other GOP candidates to drop out or consolidate support behind him. No relation to Mayra Flores. Campaign focuses on border security, veterans issues, economy, and anti-cartel enforcement record."
+        },
+        {
+          "slug": "mayra-flores",
+          "name": {
+            "full": "Mayra Flores",
+            "ballotDisplay": "Mayra Flores"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://www.mayrafloresforcongress.com",
+          "fecCandidateId": "H2TX34113",
+          "fundraising": {
+            "receipts": 1367939,
+            "disbursements": 1229000,
+            "cashOnHand": 141767,
+            "reportDate": "2026-02-11"
+          },
+          "evidenceTier": "high",
+          "notes": "Former U.S. Rep. for TX-34 (Jun 2022 – Jan 2023): first Mexican-born woman elected to Congress, won 2022 special election. Lost TX-34 general to Gonzalez in Nov 2022, then ran against Gonzalez again in 2024 in TX-34 and lost 49%-51%. Third consecutive campaign for the same seat. Born in Burgos Tamaulipas, Mexico; U.S. citizen; respiratory therapist background. Previously served on Homeland Security and Agriculture Committees. Switched from TX-28 (where she briefly considered running) to TX-34 in Aug 2025. Despite Trump backing rival Eric Flores, she has remained in the race, arguing she has the highest name recognition and proven vote totals in the district. This is the headline 'Flores vs. Flores' primary matchup."
+        },
+        {
+          "slug": "keith-allen-tx34",
+          "name": {
+            "full": "Keith Allen",
+            "ballotDisplay": "Keith Allen"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "fecCandidateId": null,
+          "fundraising": {
+            "receipts": 152475,
+            "disbursements": 145304,
+            "cashOnHand": 8115,
+            "reportDate": "2026-02-11"
+          },
+          "evidenceTier": "medium",
+          "notes": "Retail leadership professional. Campaigns on faith-based governance, pro-life stance, and traditional family values. Raised $152K — third-highest among GOP primary field, well behind the two Floreses but meaningfully above the remaining field. Included as the only other Republican with a credible (though long-shot) fundraising base. No campaign website confirmed."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [],
+  "screenedOutCandidates": [
+    {
+      "slug": "luis-buentello",
+      "name": "Luis Buentello",
+      "party": "Republican",
+      "reason": "Raised $40K with $0 cash on hand by late 2025; no public profile, no confirmed website, no news coverage as a primary contender",
+      "fundraising": { "receipts": 40104, "cashOnHand": 10705 }
+    },
+    {
+      "slug": "jay-nagy",
+      "name": "Jay Nagy",
+      "party": "Republican",
+      "reason": "Engineer; raised $15K, zero cash on hand; no news coverage beyond Ballotpedia candidate connection survey",
+      "fundraising": { "receipts": 15459, "cashOnHand": 0 }
+    },
+    {
+      "slug": "gregory-kunkle-jr",
+      "name": "Gregory Kunkle Jr.",
+      "party": "Republican",
+      "reason": "Raised $9K total; no public profile, no media coverage",
+      "fundraising": { "receipts": 9155, "cashOnHand": 1301 }
+    },
+    {
+      "slug": "fred-hinojosa",
+      "name": "Fred Hinojosa",
+      "party": "Republican",
+      "reason": "Unofficially withdrew per Ballotpedia; $0 cash on hand",
+      "fundraising": { "receipts": 36058, "cashOnHand": 0 }
+    },
+    {
+      "slug": "scott-mandel",
+      "name": "Scott Mandel",
+      "party": "Republican",
+      "reason": "Former law enforcement / security industry; appeared on November 2025 Ballotpedia list of 10 filers but not on final 7-candidate primary page, suggesting withdrawal or disqualification. No FEC fundraising data found.",
+      "fundraising": null
+    },
+    {
+      "slug": "mauro-garza",
+      "name": "Mauro Garza",
+      "party": "Republican",
+      "reason": "Appeared on November 2025 filer list; not on final 7-candidate primary listing; no fundraising data; no news coverage",
+      "fundraising": null
+    },
+    {
+      "slug": "bam-morales",
+      "name": "Bam Morales",
+      "party": "Republican",
+      "reason": "Appeared on November 2025 filer list; not on final 7-candidate primary listing; no fundraising data; no news coverage",
+      "fundraising": null
+    },
+    {
+      "slug": "chris-royal-l",
+      "name": "Chris Royal",
+      "party": "Libertarian",
+      "reason": "Libertarian convention candidate (April 12, 2026); minor party, no polling or fundraising data available",
+      "fundraising": null
+    },
+    {
+      "slug": "eddie-espinoza-g",
+      "name": "Eddie Espinoza",
+      "party": "Green",
+      "reason": "Green convention candidate (April 11, 2026); minor party, no polling or fundraising data available",
+      "fundraising": null
+    }
+  ],
+  "ballotMeasuresNotes": "No statewide Texas ballot measures confirmed for November 3, 2026 general election as of this research date (Feb 27, 2026). The March 3, 2026 primary ballots contain non-binding party propositions (10 Republican, 13 Democratic) but these are internal party advisory questions, not official ballot measures. Texas constitutional amendments for 2026 were not identified from available sources — the legislature adjourned in June 2025 and may have placed measures on the ballot; check Ballotpedia Texas 2026 ballot measures page for updates.",
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/Texas'_34th_Congressional_District_election,_2026",
+      "description": "Ballotpedia main race page — all candidates, fundraising as of Feb 11 2026, race ratings",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas'_34th_Congressional_District_election,_2026_(March_3_Republican_primary)",
+      "description": "Ballotpedia Republican primary page — 7 confirmed candidates with backgrounds and fundraising",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas'_34th_Congressional_District_election,_2026_(March_3_Democratic_primary)",
+      "description": "Ballotpedia Democratic primary page — Gonzalez and Rosas with fundraising details",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://news.ballotpedia.org/2025/11/13/ten-candidates-are-running-in-the-republican-primary-for-texas-34th-congressional-district-on-march-3-2026/",
+      "description": "Ballotpedia News Nov 2025 — original 10-candidate Republican filer list for context on screened-out candidates",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/02/26/south-texas-34th-congressional-district-eric-mayra-flores-vicente-gonzalez/",
+      "description": "Texas Tribune Feb 26 2026 — Flores vs. Flores primary dynamics, Trump endorsement context, electability debate",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/07/21/texas-congress-eric-flores-vicente-gonzalez-34th-district/",
+      "description": "Texas Tribune July 2025 — Eric Flores campaign launch announcement",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/08/27/mayra-flores-vicente-gonzalez-congress-2026-south-texas/",
+      "description": "Texas Tribune Aug 2025 — Mayra Flores switches to TX-34, third campaign against Gonzalez",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.washingtontimes.com/news/2026/feb/24/mayra-flores-fights-reclaim-rio-grande-valley-seat-congress/",
+      "description": "Washington Times Feb 24 2026 — Mayra Flores campaign status, Trump backing rival",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.thetexasvoice.com/trumps-latest-endorsements-include-three-texas-candidates/",
+      "description": "Texas Voice — Trump endorsement of Eric Flores for TX-34",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/scoop-republican-launches-house-bid-key-swing-district-gop-aims-flip-2026-midterms",
+      "description": "Fox News — Eric Flores campaign launch, vows to stand with Trump",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://centerforpolitics.org/crystalball/texasredistricting/",
+      "description": "Sabato's Crystal Ball — Texas redistricting analysis, TX-34 from D+16 to D+1 baseline",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://centerforpolitics.org/crystalball/house-rating-changes-six-moves-toward-democrats-although-topline-remains-close/",
+      "description": "Sabato's Crystal Ball — TX-34 moved to Toss-up from Lean Republican",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cookpolitical.com/house/race/485386",
+      "description": "Cook Political Report — TX-34 2026 race page, Toss-up rating (moved from Lean R Jan 15 2026)",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H6TX15162/",
+      "description": "FEC — Vicente Gonzalez campaign finance",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H6TX34080/",
+      "description": "FEC — Eric Flores campaign finance",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.fec.gov/data/candidate/H2TX34113/",
+      "description": "FEC — Mayra Flores campaign finance",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/Texas_elections,_2026",
+      "description": "Ballotpedia Texas 2026 elections overview — confirmed election dates, no statewide ballot measures listed",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.valleycentral.com/local-political-show/inside-valley-politics-interview-with-etienne-rosas-democratic-candidate-for-tx-34/",
+      "description": "Valley Central — Interview with Etienne Rosas, Democratic primary challenger",
+      "fetchedAt": "2026-02-27T00:00:00.000Z"
+    }
+  ]
+}

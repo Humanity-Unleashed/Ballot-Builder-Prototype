@@ -1,0 +1,387 @@
+{
+  "slug": "rick-jackson",
+  "name": "Rick Jackson",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger — political outsider, no prior elected office",
+  "researchedAt": "2026-02-25T00:00:00Z",
+  "biography": {
+    "currentRole": "Chairman and CEO, Jackson Healthcare (Alpharetta, GA)",
+    "age": 71,
+    "priorRoles": [
+      "Founder, Jackson Healthcare (founded approximately 2000)",
+      "Founder, Giving Films (faith-based nonprofit film production)",
+      "Philanthropist — Georgia foster care advocacy"
+    ],
+    "education": "Attended David Lipscomb College (Nashville, TN) — did not finish; took courses at Georgia State University",
+    "background": "Self-described rags-to-riches story: grew up in Atlanta's Techwood Homes (nation's first public housing project), spent childhood in 5 foster homes and attended 13 schools. Built Jackson Healthcare into one of the largest healthcare staffing firms in the U.S., reporting $3B in annual revenue (2025), serving 5M+ patients in 1,300+ facilities nationwide. Describes himself as a 'million dollar Trump donor' and political outsider. No prior elected or appointed government experience.",
+    "religion": "Faith-based philanthropist; Giving Films produces movies with faith-based messages",
+    "notablePhilanthropy": "Championed Georgia legislation (passed) providing free college tuition, room, and board for former foster youth at public colleges and technical schools — claims this came at zero new cost to taxpayers. His companies and family foundation fund scholarships, housing, and support services for foster youth. Supports FaithBridge Foster Care."
+  },
+  "campaignWebsite": {
+    "url": "https://rickjackson.com",
+    "keyPagesFound": [
+      "https://rickjackson.com/action-plan/",
+      "https://rickjackson.com/about/"
+    ],
+    "fetchedAt": "2026-02-25T00:00:00Z",
+    "notes": "WebFetch unavailable; content reconstructed from search snippets and multiple news sources citing the site directly.",
+    "statedPositions": [
+      {
+        "topic": "taxes — income",
+        "quote": "Cut the state income tax in half within 4 years and work to eliminate it within 8 years",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Also phrased in launch coverage as: 'if we can't cut the state income tax in half and freeze property taxes, I won't run again' — treated as a firm pledge"
+      },
+      {
+        "topic": "taxes — property",
+        "quote": "Freeze property taxes immediately to stop runaway assessments that price families out of their homes",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Listed as first priority on Action Plan page"
+      },
+      {
+        "topic": "spending / government efficiency",
+        "quote": "Use technology and AI to eliminate wasteful spending and improve services",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "General efficiency framing; no specifics on which programs would be cut"
+      },
+      {
+        "topic": "education — higher ed affordability",
+        "quote": "Freeze tuition, room, and board at public colleges and technical schools",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Paired with record of already passing foster youth tuition-free legislation"
+      },
+      {
+        "topic": "education — K-12 / DEI",
+        "quote": "Schools should exist to educate rather than indoctrinate. Rick will restore common sense and parental authority in Georgia classrooms.",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Anti-DEI, anti-woke framing; supports parental rights over curriculum"
+      },
+      {
+        "topic": "immigration",
+        "quote": "Make Georgia the number one state in the nation for deporting criminal illegal immigrants",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Also described in launch coverage as pledging 'criminal deportations'"
+      },
+      {
+        "topic": "DEI / civil rights",
+        "quote": "Prohibit DEI programs in state government, public universities and classrooms; criminalize reverse discrimination",
+        "sourceUrl": "https://rickjackson.com/action-plan/",
+        "date": "2026-02",
+        "confidence": "high",
+        "notes": "Multiple news sources (Georgia Recorder, 11alive, WABE) confirm both the DEI ban and the 'criminalize reverse discrimination' pledge from campaign launch"
+      },
+      {
+        "topic": "law enforcement",
+        "quote": "I grew up in places where law enforcement was the difference between safety and chaos. I will always stand with those who protect our communities.",
+        "sourceUrl": "https://rickjackson.com/about/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Pro-law enforcement values statement; no specific policy proposal cited"
+      },
+      {
+        "topic": "foster care",
+        "quote": "Making supporting foster children a major cause of his life — and will continue to do so as governor",
+        "sourceUrl": "https://rickjackson.com/about/",
+        "date": "2026-02",
+        "confidence": "medium",
+        "notes": "Values statement backed by concrete legislative record on tuition bill"
+      },
+      {
+        "topic": "affordability — general",
+        "quote": "Fight to make Georgia the most affordable state in America",
+        "sourceUrl": "https://rickjackson.com/",
+        "date": "2026-02",
+        "confidence": "low",
+        "notes": "Homepage tagline level; operationalized through tax cuts and tuition freeze"
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No prior elected office. No legislative voting record exists. All scoring must rely on stated campaign positions, business record, and donor/endorsement history."
+  },
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade available — political newcomer with no prior elected office or tracked votes. Campaign does not appear to have issued explicit gun policy positions. General MAGA/Trump alignment suggests pro-Second Amendment lean but no direct evidence found."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score — never held elected office. No climate or energy policy positions found in campaign materials or interviews."
+    },
+    {
+      "organization": "Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "Not applicable — first-time candidate. His tax-cut and income-tax-elimination platform aligns directionally with Chamber preferences but no formal relationship found."
+    },
+    {
+      "organization": "AFL-CIO / Labor Unions",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement or scorecard. As CEO of a major healthcare staffing firm in a non-union sector, labor alignment unlikely but not confirmed."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Self (financial)",
+      "type": "self-funding",
+      "cycle": "2026",
+      "notes": "$50M self-funded campaign commitment, including $40M advertising buy. Described as one of the largest self-funded gubernatorial campaign launches in Georgia history."
+    },
+    {
+      "organization": "Donald Trump",
+      "type": "not endorsed — Trump endorsed Burt Jones",
+      "cycle": "2026",
+      "notes": "Jackson is actively courting Trump's attention, running ads in DC and Palm Beach media markets 'aimed at an audience of one.' Jackson describes himself as 'million dollar Trump donor' and says he'll be 'Trump's favorite governor.' As of Feb 2026, Trump has NOT endorsed Jackson."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Atlanta Journal-Constitution",
+      "date": "2026-02",
+      "url": "https://www.ajc.com/politics/2026/02/why-rick-jackson-says-hell-be-trumps-favorite-governor/",
+      "keyExchanges": [
+        {
+          "topic": "Trump alignment",
+          "quote": "Couldn't name a single White House policy he disagrees with",
+          "notes": "Paraphrase from AJC reporting — Jackson was unable to identify any Trump policy he opposed, even as Trump tariffs increased costs for Georgia families and ACA cuts raised premiums"
+        },
+        {
+          "topic": "abortion",
+          "quote": "I'm entirely pro life. I support the bill we have here. As governor, I wouldn't change a thing, one way or the other.",
+          "notes": "Refers to Georgia's LIFE Act (6-week abortion ban / heartbeat bill signed by Kemp 2019). Explicit endorsement of status quo; no mention of exceptions."
+        },
+        {
+          "topic": "healthcare — Medicaid",
+          "quote": "Opposes Medicaid expansion",
+          "notes": "Paraphrase from AJC/DGA reporting. Notable: Jackson is a healthcare industry billionaire who nonetheless opposes Medicaid expansion, which has contributed to closure of 9 rural Georgia hospitals since 2010. No alternative healthcare access proposal found."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Journal-Constitution — campaign launch coverage",
+      "date": "2026-02-04",
+      "url": "https://www.ajc.com/politics/2026/02/surprise-republican-rick-jackson-enters-georgia-governors-race/",
+      "keyExchanges": [
+        {
+          "topic": "campaign identity",
+          "quote": "Pro-Donald Trump, straight-shooting outsider with nothing to lose",
+          "notes": "Jackson's self-description at launch; billed as MAGA-aligned political outsider"
+        },
+        {
+          "topic": "press access",
+          "quote": "After his event, once cameras were set up, his team shut it down and Jackson walked away without answering questions",
+          "notes": "Reporting from Georgia Recorder. Jackson avoided press Q&A at launch. This limits depth of interview-based evidence."
+        }
+      ]
+    },
+    {
+      "outlet": "Georgia Recorder",
+      "date": "2026-02-07",
+      "url": "https://georgiarecorder.com/2026/02/07/a-little-known-candidate-shakes-up-gop-primary-for-georgia-governor/",
+      "keyExchanges": [
+        {
+          "topic": "immigration",
+          "quote": "Pledged support for 'criminal deportations'",
+          "notes": "Paraphrase from Georgia Recorder coverage of launch"
+        },
+        {
+          "topic": "education / DEI",
+          "quote": "Promised to purge schools of 'woke ideology,' banning diversity, equity and inclusion initiatives",
+          "notes": "Direct characterization from Georgia Recorder"
+        }
+      ]
+    },
+    {
+      "outlet": "WABE (Atlanta NPR affiliate)",
+      "date": "2026-02-03",
+      "url": "https://www.wabe.org/business-owner-rick-jackson-launches-republican-bid-for-georgia-governor/",
+      "keyExchanges": [
+        {
+          "topic": "tax pledge",
+          "quote": "If we can't cut the state income tax in half and freeze property taxes, I won't run again",
+          "notes": "Firm accountability pledge on taxes; ties re-election to measurable outcome"
+        }
+      ]
+    },
+    {
+      "outlet": "11alive (WXIA Atlanta)",
+      "date": "2026-02-03",
+      "url": "https://www.11alive.com/article/news/politics/rick-jackson-atlanta-billionaire-founder-jackson-healthcare-campaign-for-governor/85-6aedaa7c-9b90-4433-ba49-fca078ae0173",
+      "keyExchanges": [
+        {
+          "topic": "identity / donor record",
+          "quote": "Million dollar Trump donor",
+          "notes": "Self-description confirmed in coverage; reinforces MAGA alignment"
+        }
+      ]
+    }
+  ],
+  "campaignContext": {
+    "primaryDate": "2026-05-19",
+    "primaryField": "8 candidates in Republican primary",
+    "majorOpponents": [
+      {
+        "name": "Burt Jones",
+        "office": "Lt. Governor of Georgia",
+        "notes": "Trump-endorsed incumbent Lt. Gov.; Jackson's main competition for MAGA base. Jackson sued Jones over campaign finance law regarding Jones's leadership committee (WBJ Leadership Committee, $15.9M balance). Federal judge issued TRO against Jones's committee Feb 2026."
+      },
+      {
+        "name": "Brad Raffensperger",
+        "office": "Georgia Secretary of State",
+        "notes": "Contested 2020 election results against Trump; less MAGA-aligned"
+      },
+      {
+        "name": "Chris Carr",
+        "office": "Georgia Attorney General",
+        "notes": "Establishment Republican"
+      }
+    ],
+    "pollingSnapshot": "Quantus Insights poll (Feb 2026, commissioned by Jackson campaign) showed Jackson at 33% leading field. Rasmussen (Feb 2026) also showed Jackson ahead. Both polls taken within 2-3 weeks of entry; high name-ID effect from $40M ad buy. Many undecided voters in field.",
+    "campaignFinanceLawsuit": "Jackson sued Lt. Gov. Jones alleging Georgia's 2021 'leadership committee' statute gives incumbents unconstitutional fundraising advantage. Jackson's limit: $8,400/donor (primary). Jones's leadership committee had no cap. Federal TRO issued Feb 20, 2026, barring Jones's committee from fundraising or spending for his governor's race."
+  },
+  "positionConflicts": [
+    {
+      "topic": "healthcare / Medicaid",
+      "conflict": "Jackson built his fortune in healthcare staffing and markets himself as a healthcare industry leader, yet opposes Medicaid expansion that would expand coverage to hundreds of thousands of Georgians and potentially keep rural hospitals open. His opposition is consistent with the full GOP primary field but creates tension with his industry background.",
+      "sources": [
+        "georgiademocrat.org (citing AJC interview)",
+        "democraticgovernors.org",
+        "Georgia Recorder launch coverage"
+      ]
+    },
+    {
+      "topic": "Trump tariffs / White House alignment",
+      "conflict": "Jackson said he couldn't name a single White House policy he disagrees with, even as Trump tariffs are reportedly costing Georgia families $1,200+ annually and ACA-related changes are raising premiums by $860+/month. His healthcare business background makes blanket support of policies harming healthcare affordability notable.",
+      "sources": [
+        "AJC 'Why Rick Jackson says he'll be Trump's favorite governor'"
+      ]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_investment (explicit income tax elimination pledge; property tax freeze)",
+      "school_choice / DEI (explicit anti-woke, anti-DEI, parental authority positions)",
+      "health_coverage_model (opposes Medicaid expansion — explicit)",
+      "justice_policing (pro-law enforcement values; 'back the blue' framing)",
+      "reproductive_rights (explicitly 'entirely pro life'; supports 6-week ban, wouldn't change it)"
+    ],
+    "weakestAxes": [
+      "climate / energy (no positions found — zero evidence)",
+      "housing / zoning (no positions found — zero evidence)",
+      "firearms / gun policy (no explicit position found; MAGA alignment suggests pro-gun but unconfirmed)",
+      "sentencing / criminal justice reform (no specific policy positions found beyond pro-law enforcement values)"
+    ],
+    "overallConfidence": "medium — Entered race late February 2026 as political newcomer with no voting record. Strong evidence on taxes, healthcare (Medicaid), abortion, DEI/education, and immigration. Genuine gaps on climate, housing, guns, and criminal justice specifics. Press access was limited at launch; deeper interview record not yet established.",
+    "notes": "As a first-time candidate, Jackson has fewer scored axes than incumbents. Do NOT infer positions from party affiliation alone — flag climate, guns, housing, and sentencing as genuinely missing data. His most distinctive positions are: (1) income tax elimination pledge with explicit accountability mechanism, (2) Medicaid expansion opposition despite healthcare industry background, (3) 'criminalize reverse discrimination' pledge alongside DEI ban, (4) self-funded MAGA outsider framing competing directly with Trump's own endorsed candidate."
+  },
+  "sources": [
+    {
+      "url": "https://rickjackson.com/action-plan/",
+      "description": "Campaign action plan page — primary source for stated policy positions"
+    },
+    {
+      "url": "https://rickjackson.com/about/",
+      "description": "Campaign biography page"
+    },
+    {
+      "url": "https://ballotpedia.org/Rick_Jackson_(Georgia)",
+      "description": "Ballotpedia candidate profile"
+    },
+    {
+      "url": "https://georgiarecorder.com/2026/02/07/a-little-known-candidate-shakes-up-gop-primary-for-georgia-governor/",
+      "description": "Georgia Recorder — campaign launch analysis, Feb 7 2026"
+    },
+    {
+      "url": "https://georgiarecorder.com/briefs/republican-health-care-executive-becomes-surprise-late-entrant-in-georgias-race-for-governor/",
+      "description": "Georgia Recorder brief on entry"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2026/02/surprise-republican-rick-jackson-enters-georgia-governors-race/",
+      "description": "AJC — campaign launch, Feb 2026"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2026/02/8-takeaways-from-rick-jacksons-surprise-entry-into-georgia-governors-race/",
+      "description": "AJC — 8 takeaways from entry, Feb 2026"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2026/02/why-rick-jackson-says-hell-be-trumps-favorite-governor/",
+      "description": "AJC — interview on Trump alignment, policy positions including abortion and Medicaid"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2026/02/rick-jacksons-campaign-for-governor-resets-fight-for-maga-base-in-georgia/",
+      "description": "AJC — MAGA base competition analysis"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2026/02/republican-outsiders-50m-bet-remakes-georgia-governors-race/",
+      "description": "AJC — $50M campaign analysis"
+    },
+    {
+      "url": "https://www.wabe.org/business-owner-rick-jackson-launches-republican-bid-for-georgia-governor/",
+      "description": "WABE (Atlanta NPR) — campaign launch coverage"
+    },
+    {
+      "url": "https://www.11alive.com/article/news/politics/rick-jackson-atlanta-billionaire-founder-jackson-healthcare-campaign-for-governor/85-6aedaa7c-9b90-4433-ba49-fca078ae0173",
+      "description": "11alive — campaign launch, 'million dollar Trump donor' detail"
+    },
+    {
+      "url": "https://georgiademocrat.org/new-billionaire-rick-jackson-opposes-medicaid-expansion-supports-georgias-extreme-abortion-ban-as-his-gov-campaign-races-to-the-right/",
+      "description": "Georgia Democratic Party — Medicaid expansion opposition and abortion position (partisan source; positions verified independently)"
+    },
+    {
+      "url": "https://democraticgovernors.org/updates/rick-jackson-announces-opposition-to-medicaid-expansion/",
+      "description": "DGA — Medicaid expansion opposition announcement"
+    },
+    {
+      "url": "https://www.cbsnews.com/atlanta/news/georgia-gop-gubernatorial-candidate-rick-jackson-sues-lt-gov-burt-jones-over-campaign-finance-law/",
+      "description": "CBS Atlanta — campaign finance lawsuit against Burt Jones"
+    },
+    {
+      "url": "https://www.gpb.org/news/2026/02/24/judge-rules-against-burt-jones-unlimited-fundraising-in-race-for-georgia-governor",
+      "description": "GPB — judge rules on TRO against Jones's leadership committee, Feb 24 2026"
+    },
+    {
+      "url": "https://www.washingtonexaminer.com/news/campaigns/state/4450630/rick-jackson-threatens-burt-jones-lock-maga-base-georgia-governor-race-campaign-launch/",
+      "description": "Washington Examiner — MAGA base threat to Jones"
+    },
+    {
+      "url": "https://www.washingtonexaminer.com/news/campaigns/state/4453961/rick-jackson-ahead-georgia-governor-race-polling-despite-leadership-support-burt-jones/",
+      "description": "Washington Examiner — polling analysis, Jackson leading"
+    },
+    {
+      "url": "https://jacksonhealthcare.com/about/",
+      "description": "Jackson Healthcare corporate about page — company background"
+    },
+    {
+      "url": "https://finance.yahoo.com/news/rick-jackson-entered-governors-race-163028524.html",
+      "description": "Yahoo Finance — Jackson Healthcare company valuation and revenue"
+    },
+    {
+      "url": "https://specials.myajc.com/self-made-philanthropist/",
+      "description": "AJC special feature — Rick Jackson biography and philanthropy"
+    }
+  ]
+}

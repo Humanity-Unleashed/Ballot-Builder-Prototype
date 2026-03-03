@@ -283,6 +283,7 @@ export interface BallotCandidate {
   axisStances?: Record<string, number>;
   valueStances?: Record<string, number>;
   profileSummary?: string;
+  axisEvidence?: Record<string, { text: string; url?: string }[]>;
 }
 
 export interface BallotContest {

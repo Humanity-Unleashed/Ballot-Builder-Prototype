@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-02-25T00:00:00.000Z",
+  "state": "Georgia",
+  "notes": "Filing deadline is March 2-6, 2026 (qualifying period). Candidate list reflects all known declared candidates as of 2026-02-25. Additional minor candidates may file before the qualifying deadline closes.",
+  "contests": [
+    {
+      "id": "GA-US-SENATE-2026",
+      "office": "U.S. Senate",
+      "state": "GA",
+      "district": null,
+      "seatClass": "II",
+      "primaryDate": "2026-05-19",
+      "primaryRunoffDate": "2026-06-16",
+      "generalDate": "2026-11-03",
+      "generalRunoffDate": "2026-12-01",
+      "filingDeadline": "2026-03-06",
+      "isOpenSeat": false,
+      "incumbentName": "Jon Ossoff",
+      "incumbentParty": "Democratic",
+      "raceRating": "Toss-up",
+      "raceRatingSource": "Cook Political Report",
+      "raceContext": "Ossoff is the only Democratic senator seeking reelection in a state carried by Donald Trump in 2024. The Republican primary features three notable candidates: Rep. Buddy Carter, Rep. Mike Collins (polling frontrunner at 36%), and former UT football coach Derek Dooley (Kemp-endorsed). Georgia uses a majority-required runoff system.",
+      "candidates": [
+        {
+          "slug": "jon-ossoff",
+          "name": {
+            "full": "T. Jonathan Ossoff",
+            "ballotDisplay": "Jon Ossoff"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "incumbent",
+          "campaignWebsite": "https://electjon.com",
+          "evidenceTier": "high",
+          "notes": "Incumbent U.S. Senator, elected January 5, 2021. Attorney and documentary filmmaker. $25M+ cash on hand."
+        },
+        {
+          "slug": "kia-legette",
+          "name": {
+            "full": "Kia Legette",
+            "ballotDisplay": "Kia Legette"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Democratic primary challenger. Minimal public profile or news coverage."
+        },
+        {
+          "slug": "buddy-carter",
+          "name": {
+            "full": "Earl LeRoy Carter",
+            "ballotDisplay": "Buddy Carter"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://buddycarter.com",
+          "evidenceTier": "high",
+          "notes": "U.S. Representative GA-01 (2015-present). Pharmacist. Self-described 'MAGA Warrior.' Feb 2026 polling: 11%."
+        },
+        {
+          "slug": "mike-collins",
+          "name": {
+            "full": "Michael Collins",
+            "ballotDisplay": "Mike Collins"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://mikecollinsga.com",
+          "evidenceTier": "high",
+          "notes": "U.S. Representative GA-10 (2023-present). Trucking business owner. Feb 2026 polling frontrunner at 36%."
+        },
+        {
+          "slug": "derek-dooley",
+          "name": {
+            "full": "Derek Dooley",
+            "ballotDisplay": "Derek Dooley"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://www.dooleyforgeorgia.com",
+          "evidenceTier": "high",
+          "notes": "Former UT head football coach, son of legendary UGA coach Vince Dooley. Attorney. Endorsed by Gov. Kemp. Political newcomer. Feb 2026 polling: 9%."
+        },
+        {
+          "slug": "reagan-box",
+          "name": {
+            "full": "Reagan Box",
+            "ballotDisplay": "Reagan Box"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": "https://reaganforsenate.com",
+          "evidenceTier": "low",
+          "notes": "Horse trainer. Constitutional conservative. Negligible polling or fundraising."
+        },
+        {
+          "slug": "vinson-watkins",
+          "name": {
+            "full": "Vinson Watkins",
+            "ballotDisplay": "Vinson Watkins"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "primary",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Writer/editor. Minimal news coverage."
+        },
+        {
+          "slug": "elbert-bartell",
+          "name": {
+            "full": "Elbert Bartell",
+            "ballotDisplay": "Elbert Bartell"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Independent. Air Force veteran. Policy analyst."
+        },
+        {
+          "slug": "chris-capparell",
+          "name": {
+            "full": "Chris Capparell",
+            "ballotDisplay": "Chris Capparell"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Independent. Minimal public presence."
+        },
+        {
+          "slug": "develle-jackson",
+          "name": {
+            "full": "DeVelle Jackson",
+            "ballotDisplay": "DeVelle Jackson"
+          },
+          "party": "Independent",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Independent. Minimal public presence."
+        }
+      ]
+    }
+  ],
+  "ballotMeasures": [
+    {
+      "slug": "ga-2026-conservation-use-acreage",
+      "state": "GA",
+      "officialTitle": "Georgia Increase Acre Limit for Agriculture and Timber Conservation Use Property Tax Classification Amendment (2026)",
+      "shortName": "Conservation Use Property Tax Acreage Limit Increase",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "confirmed",
+      "yesVoteMeans": "Increase the maximum acreage of agricultural and timber property eligible for CUVA tax benefits from 2,000 acres to 4,000 acres per owner",
+      "noVoteMeans": "Keep the existing 2,000-acre maximum for CUVA eligibility unchanged",
+      "evidenceTier": "high"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+      "description": "Ballotpedia main race page",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia",
+      "description": "Wikipedia race article",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.fec.gov/data/elections/senate/GA/2026/",
+      "description": "FEC 2026 Georgia Senate election",
+      "fetchedAt": "2026-02-25T00:00:00.000Z"
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import { AlertCircle } from 'lucide-react';
 import { useBlueprint } from '@/context/BlueprintContext';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import { getSliderConfig } from '@/data/sliderPositions';
+import { calculateFineTunedScore } from '@/data/fineTuningPositions';
 import { deriveMetaDimensions } from '@/lib/archetypes';
 import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
 import { useDemographicStore } from '@/stores/demographicStore';
@@ -242,6 +243,13 @@ export default function BlueprintPage() {
         ...prev,
         [fineTuningAxisId]: responses,
       }));
+
+      // Update the axis value based on fine-tuning results
+      const score = calculateFineTunedScore(fineTuningAxisId, responses);
+      if (score !== null) {
+        const newValue = Math.round((score + 1) * 5); // Convert -1..+1 to 0..10
+        updateAxisValue(fineTuningAxisId, newValue);
+      }
     }
     setFineTuningAxisId(null);
     setPageState('results');

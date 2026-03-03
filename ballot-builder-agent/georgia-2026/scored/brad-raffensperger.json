@@ -1,0 +1,190 @@
+{
+  "slug": "brad-raffensperger",
+  "name": "Brad Raffensperger",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T00:00:00.000Z",
+  "profileSummary": "Georgia Secretary of State and former two-term state legislator running for governor on an aggressive tax-cutting and law-and-order platform. Nationally known for refusing Trump's 2021 demand to overturn Georgia's election results, he campaigns on integrity and affordability while governing and running as a conventional fiscal and social conservative.",
+  "keyPositions": [
+    "Eliminate Georgia's state income tax entirely; cap property taxes at inflation rate; eliminate all taxes on retirement benefits",
+    "Expand parental school choice via tax credits; purge 'woke curriculums' from public schools",
+    "Fund state-local-federal law enforcement partnerships for immigration enforcement; 'restore law and order'",
+    "Ban puberty blockers, gender-affirming surgery for minors, and transgender participation in women's sports",
+    "Championed SB 202 (Election Integrity Act) and proposes REAL ID requirement for voting; refused Trump's 2020 pressure to overturn election"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "AJC Politically Georgia forum Nov 2025",
+        "CBS Atlanta campaign launch Sep 2025",
+        "The Georgia Virtue Feb 2026"
+      ],
+      "notes": "No proposals to expand safety net programs. Addresses affordability through job creation and tax cuts rather than direct assistance: 'Great-paying jobs solves a lot of issues.' Tax-free zones for struggling communities and childcare incentives are market-oriented tools, not entitlement expansion. Senior property tax exemptions are targeted. Overall economic philosophy is supply-side rather than redistributive."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "AJC Sep 2025 campaign launch (eliminate income tax)",
+        "The Georgia Virtue Nov 2025 (property tax package)",
+        "The Citizen Feb 2026 (retirement tax elimination)",
+        "CBS Atlanta Sep 2025 (repeal closing cost taxes)",
+        "AJC candidate forum Nov 2025 (jobs-first framing)"
+      ],
+      "notes": "Comprehensive tax elimination agenda (income tax, retirement taxes, closing cost taxes, property tax caps) would dramatically reduce state revenue available for public investment. Doubled school security grants ($50K to $100K) and voiced support for Georgia Tech/UGA research are modest targeted investments within an overwhelmingly tax-cutting framework. 'Tax-free zones for struggling communities' further reduces government revenue in targeted areas."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "AJC Sep 2025 campaign launch",
+        "The Georgia Virtue Nov 2025 property tax package",
+        "The Citizen Feb 2026 retirement tax plan",
+        "CBS Atlanta Sep 2025 closing cost tax repeal",
+        "GA House record: sponsored 1-mill property tax cut"
+      ],
+      "notes": "Eliminating the state income tax entirely goes beyond a flat tax to abolishing the most significant progressive revenue instrument at the state level. Georgia currently has a graduated income tax being phased to a flat 5.39% under Kemp's 2022 reform; Raffensperger would eliminate it completely, shifting the tax burden to consumption (sales tax) and property. Combined with property tax caps and retirement tax elimination, this is among the most aggressive anti-tax platforms in the race. Legislative record (1-mill property tax cut bill) corroborates campaign rhetoric. Scored 9 rather than 10 because some targeted taxes (local school and public safety funding) are preserved in the senior property tax exemption."
+    },
+    "econ_school_choice": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "AJC Sep 2025 campaign launch",
+        "The Georgia Virtue Feb 2026 (school security grants)"
+      ],
+      "notes": "Explicitly supports expanding tax credits for parental school choice. Uses tax credit mechanism rather than direct vouchers, which is a moderate-to-strong school choice position but not maximalist. Also proposes doubling school security grants to $100K for public schools, showing some continued public school investment. 'Purging woke curriculums' is about content control within public schools rather than structural school choice."
+    },
+    "health_coverage_model": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "The Georgia Virtue Feb 2026 interview",
+        "The Center Square Feb 2026 interview"
+      ],
+      "notes": "Framed healthcare as an affordability problem within an existing strong system: 'America has the best hospital coverage in the world. It's the affordability issue.' No support for public option, Medicaid expansion (Georgia is one of 10 states that have not expanded Medicaid), or government insurance alternatives identified. Promised detailed healthcare plan before May 19, 2026 primary; plan not yet released as of research date. Low confidence because available evidence is one quote; score may need revision when full proposal emerges."
+    },
+    "health_cost_control": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "The Georgia Virtue Feb 2026 interview"
+      ],
+      "notes": "Acknowledges healthcare affordability as a problem but provides no specific cost control mechanisms. Framing as 'affordability issue' within 'best hospital coverage in the world' suggests market-based solutions rather than government price controls. No mention of drug price negotiation, hospital rate setting, or transparency requirements. Detailed proposal promised but not yet released. Scored based on directional framing only."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "GPB Sep 2025 campaign launch ('restore law and order')",
+        "AJC Sep 2025 (state-federal law enforcement partnerships for deportation)",
+        "The Georgia Virtue Feb 2026 (school security grants)",
+        "GA House record: sponsored human trafficking legislation"
+      ],
+      "notes": "Strong law-and-order orientation with zero reform or accountability language anywhere in the evidence. Proposes empowering and funding state law enforcement to partner with local police and Sheriff's Departments for immigration enforcement. Doubled school security grants. Sponsored human trafficking legislation in state House. No body camera, civilian oversight, demilitarization, or accountability proposals found in any source. Scored 8 (strong back-the-blue) rather than 10 because no explicit opposition to accountability measures was found -- the evidence is on the 'more funding and authority' side with silence on reform."
+    },
+    "justice_sentencing_goals": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "GPB Sep 2025 ('restore law and order')",
+        "AJC Sep 2025 (immigration enforcement, law and order framing)"
+      ],
+      "notes": "General 'restore law and order' framing suggests punishment/deterrence orientation, but no specific sentencing policy positions found. No mention of mandatory minimums, death penalty, three-strikes, rehabilitation programs, or expungement in any available source. Scored on directional framing only; low confidence."
+    },
+    "climate_energy_portfolio": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "Georgia Conservation Voters press release Mar 2024 (PSC election cancellation)"
+      ],
+      "notes": "No explicit energy policy positions found in 2026 campaign materials. As Secretary of State, cancelled the 2024 Georgia Public Service Commission elections -- Georgia Conservation Voters characterized this as 'an attack on our democracy and our clean energy future,' as the PSC regulates Georgia Power and oversees the state's energy policy. Served on GA House Energy, Utilities and Telecommunications committee (2015-2018) but no specific energy votes identified. Complete absence of clean energy or renewable energy language in gubernatorial campaign. Score is tentative and based on one indirect action plus absence of any clean energy advocacy."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.3,
+      "reasoning": "Policies consistently narrow the circle of concern: transgender healthcare bans restrict access for a vulnerable population; immigration enforcement rhetoric targets 'criminal aliens' for exclusion; personhood bill (2016, no exceptions) would restrict all reproductive choice; RFRA-style legislation (alleged 2016 vote) privileged religious liberty over LGBTQ inclusion; voter ID restrictions disproportionately affect minority communities. The 2020 election defense shows genuine universalism -- protecting the votes of all Georgians regardless of party -- but is outweighed by the overall pattern of exclusionary social policy. No environmental protection positions found; PSC election cancellation drew criticism from conservation groups."
+    },
+    "benevolence": {
+      "score": 0.4,
+      "reasoning": "Genuine community-oriented proposals: co-founded childcare center (133-174 children); proposes childcare incentives; senior property tax relief and retirement tax elimination; school security grants doubled; 'tax-free zones for struggling communities'; jobs-first affordability framing shows constituent welfare concern. Delivers community care through conservative market mechanisms (tax cuts, business incentives) rather than direct government services. Benevolence is real but bounded by in-group: Georgians, seniors, homebuyers, families -- not extended to out-groups (immigrants, LGBTQ individuals)."
+    },
+    "tradition": {
+      "score": 0.6,
+      "reasoning": "Strong cultural traditionalism on social issues: sponsored personhood bill with no exceptions (2016); Georgia Life Alliance questionnaire ('all abortions should be illegal'); alleged yes vote on RFRA-style legislation; 'purge woke curriculums'; transgender healthcare and athletic participation bans enforce traditional gender norms. These are not peripheral -- they are featured campaign pledges. The 2020 election defense also reflects a form of tradition -- fidelity to constitutional process and institutional norms. Scored 0.6 rather than higher because the constitutional traditionalism creates tension with the partisan populist wing of conservative tradition."
+    },
+    "conformity": {
+      "score": 0.8,
+      "reasoning": "This is Raffensperger's defining value. His refusal of Trump's demand to overturn the 2020 election was one of the most consequential acts of institutional conformity in recent American politics -- following the law and respecting democratic process at enormous personal and political cost (death threats, primary challenge, party censure attempt). Deployed auditable paper ballot system for election integrity. Conducted voter roll citizenship audits through proper legal channels. Implemented SB 202 through the legislative process. Sponsored anti-profiteering legislation targeting officials who violated institutional norms. Testified under immunity as legally required. The PSC election cancellation (criticized as anti-democratic) is a notable contrary signal, preventing 0.8 from being higher."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Security framing pervades nearly every policy domain. Campaign tagline: 'Make Georgia affordable and safe.' Economic security: tax cuts framed as affordability protection. Physical security: 'restore law and order,' double school security grants, law enforcement partnerships for immigration enforcement, human trafficking legislation. Electoral security: SB 202, REAL ID for voting, voter roll citizenship audits, paper ballot audit trails. The security orientation is comprehensive, spanning personal (economic), community (law enforcement), and institutional (election integrity) dimensions."
+    },
+    "power": {
+      "score": 0.2,
+      "reasoning": "Business background (CEO of multi-state construction firm with ~150 employees) and corporate-friendly tax agenda (income tax elimination primarily benefits high earners and businesses) suggest comfort with economic power structures. However, he defied the most powerful person in the Republican Party at great personal cost. The Georgia GOP convention tried to ban him from running; he persisted anyway. He operates outside the party power structure rather than within it. No major PAC or donor alignment evidence found. Business-oriented but demonstrated willingness to sacrifice political capital for principle. Modest positive: structural alignment with wealth, not active pursuit of concentrated authority."
+    },
+    "achievement": {
+      "score": 0.6,
+      "reasoning": "Strong meritocracy and competence orientation. B.S. Civil Engineering (Western University), M.B.A. (Georgia State). Licensed Professional Engineer, Structural Engineer, and General Contractor in multiple states. Built Tendon Systems from startup to ~150 employees across 40+ states. Co-founded childcare center. Campaign identity built on personal competence: 'I am the best person to solve that.' Jobs-first economic philosophy ('great-paying jobs solve a lot of issues') prioritizes individual economic advancement. The 2020 stand is also framed as character and competence: 'I honor the Constitution, I'm honest, I have integrity.'"
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Policies actively restrict personal bodily and lifestyle choices: transgender surgery and puberty blocker bans for minors; personhood bill would restrict reproductive autonomy and potentially hormonal contraception; RFRA-style bill would enable discrimination based on personal identity. No cannabis legalization, lifestyle liberty, or personal freedom positions found. Overall orientation is socially restrictive rather than permissive on matters of individual bodily autonomy."
+    },
+    "stimulation": {
+      "score": -0.1,
+      "reasoning": "Fundamentally a stability and order-oriented figure. Campaign brand is integrity, proven competence, and making Georgia 'affordable and safe' -- not disruption or transformation. The 2020 election defense was explicitly about preserving the existing constitutional order. 'Restore law and order' implies returning to a prior state, not creating something new. Platform is conventional Republican with no novel policy proposals (income tax elimination has precedent in other states). References innovation and university research in general terms but with no specific transformative agenda."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Deeply mixed. Positive: the 2020 election defiance was one of the most significant acts of independent political judgment in recent American politics -- choosing his own constitutional analysis over enormous party pressure, death threats, and political isolation. School choice supports parental autonomy in education. Tax cuts expand individual economic freedom. Negative: transgender healthcare bans restrict individual medical self-direction; personhood bill restricts reproductive self-direction; RFRA-style legislation restricts LGBTQ personal freedom. The extraordinary personal independence is genuine but partially offset by policy positions that restrict others' self-direction on social and bodily issues."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Trump alignment: 2020 defiance vs. 2026 policy embrace",
+      "description": "Nationally known for defying Trump in 2020 and labeled a 'Never Trumper' by primary opponents (Lt. Gov. Burt Jones). Yet his 2026 campaign explicitly pledges to 'work alongside President Donald Trump' and mirrors many MAGA policy priorities: state-federal deportation partnerships, transgender bans, school choice, income tax elimination. The AJC described his platform as blending 'bread-and-butter promises with culture-war priorities.' Campaign attempts to square this by emphasizing integrity and process while adopting Trump-era policy positions.",
+      "sources": ["AJC Sep 2025", "NBC News campaign profile", "Washington Times profile", "11Alive interview Sep 2025"],
+      "scoringImpact": "Scored on actual policy positions as stated, not on the Trump relationship narrative. Conformity value (0.8) captures the institutional-norm identity; tradition value (0.6) captures social conservatism that overlaps with MAGA priorities. The tension is noted but does not distort axis scores."
+    },
+    {
+      "topic": "Abortion: extreme 2016 legislative record vs. 2026 campaign silence",
+      "description": "As a state legislator, Raffensperger sponsored a personhood bill recognizing the 'paramount right to life of all human beings at any stage of development' (no exceptions; would effectively ban hormonal contraception) and checked 'all abortions should be illegal, with no exceptions' on a 2016 Georgia Life Alliance questionnaire -- the most restrictive position available. His 2026 gubernatorial campaign does not feature abortion and he has said his personal views 'are not relevant' to his SoS role. His current position on Georgia's six-week ban (HB 481) is undocumented.",
+      "sources": ["therealraffensperger.com (opposition research; needs primary-source verification)", "Georgia Life Alliance 2016 questionnaire", "iSideWith candidate profile", "AJC Sep 2025"],
+      "scoringImpact": "Per the voting record > stated position rule, the 2016 legislative record (personhood bill sponsorship, Tier 1) is weighted more heavily than 2026 campaign silence. This affects universalism (-0.3), hedonism (-0.3), self-direction (0.2), and tradition (0.6) value scores. No dedicated reproductive rights civic axis exists in the current framework. The opposition research source needs independent verification against Georgia General Assembly records."
+    },
+    {
+      "topic": "Democratic norms: 2020 election defense vs. 2024 PSC election cancellation",
+      "description": "Raffensperger's national identity rests on defending democratic election integrity in 2020. However, as Secretary of State he cancelled the 2024 Georgia Public Service Commission elections, which Georgia Conservation Voters called 'an attack on our democracy and our clean energy future.' This creates a tension in his pro-democracy brand that opponents may exploit.",
+      "sources": ["Georgia Conservation Voters press release Mar 2024"],
+      "scoringImpact": "PSC cancellation is a countervailing signal that prevents the conformity value from scoring higher (0.8 rather than 0.9+). It is also the sole evidence for the climate_energy_portfolio axis (7, low confidence)."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 9,
+    "axesSkipped": [
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "health_public_health: Trans healthcare bans do not map cleanly to this axis's core focus (vaccine mandates, FDA/CDC authority, pandemic response, environmental health regulation); no evidence on those core topics found. housing axes: No housing, zoning, transit, or land use positions in campaign materials or legislative record. justice_firearms: No NRA grade found; no firearms legislation in House record; 2026 platform does not address guns -- a notable gap for a Republican gubernatorial candidate. climate_ambition: No climate ambition statements; PSC evidence maps more directly to energy_portfolio. climate_permitting: No permitting positions found.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "Healthcare plan: Raffensperger promised a detailed healthcare proposal before May 19, 2026 primary; not yet released as of research date. health_coverage_model (7, low) and health_cost_control (7, low) scores may need revision.",
+      "Firearms: No NRA grade, no legislative votes, no campaign position. This is a significant gap for a Republican gubernatorial candidate and should be resolved before final scoring.",
+      "Climate/energy: No stated positions despite serving on Energy, Utilities and Telecommunications committee in GA House. PSC election cancellation is the only signal for climate_energy_portfolio (7, low).",
+      "Personhood bill and RFRA vote: Primary source is opposition research site (therealraffensperger.com); corroborated indirectly by news references and Georgia Life Alliance questionnaire but should be verified against Georgia General Assembly records for full confidence.",
+      "Medicaid expansion: Georgia is one of 10 states that have not expanded Medicaid; Raffensperger's specific position on expansion is not documented.",
+      "Housing and transit: No positions found; a gubernatorial candidate's housing policy is relevant and should be sought.",
+      "Criminal justice detail: Only generic 'law and order' rhetoric; no specific sentencing, incarceration, or reform positions documented."
+    ]
+  }
+}

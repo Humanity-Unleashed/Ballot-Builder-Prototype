@@ -1,0 +1,257 @@
+{
+  "slug": "roy-cooper",
+  "name": "Roy Cooper",
+  "party": "Democratic",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "incumbencyStatus": "challenger (former two-term Governor)",
+  "researchedAt": "2026-02-26T00:00:00Z",
+  "biography": {
+    "currentRole": "Former Governor of North Carolina (2017-2025)",
+    "priorRoles": [
+      "Governor of North Carolina (2017-2025)",
+      "NC Attorney General (2001-2017)",
+      "NC State Senate / Majority Leader (1991-2001)",
+      "NC House of Representatives (1987-1991)"
+    ],
+    "education": "Not specified in research summary",
+    "background": "Roy Asberry Cooper III (born June 13, 1957). Six-time statewide winner with 38+ years in NC public office. Announced Senate bid July 28, 2025 for the seat vacated by retiring Sen. Thom Tillis. Faces no significant primary opposition. $12.3M cash on hand entering 2026; raised $7M in Q4 2025 — led opponent Whatley nearly 2:1."
+  },
+  "campaignWebsite": {
+    "url": "https://roycooper.com",
+    "fetchedAt": "2026-02-26T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "climate_ambition",
+        "quote": "Executive Order 80 (2018): 40% GHG reduction by 2025; signed HB 951 (2021): 70% carbon reduction by 2030, carbon neutral by 2050; Executive Order 246 (2022): strengthened to 50% reduction by 2030",
+        "sourceUrl": "https://www.govroycooper.org/accomplishments",
+        "date": "2018-2022",
+        "confidence": "high",
+        "notes": "First 'purple state' governor to sign emissions mandate into law. NCLCV grade: A (2018, 2019). LCV Action Fund endorsed for 2026 Senate."
+      },
+      {
+        "topic": "climate_energy_portfolio",
+        "quote": "HB 951 does not ban fossil fuels; sets targets and requires utilities to plan clean transition. NC became #9 nationally in clean energy jobs",
+        "sourceUrl": "https://www.all4inc.com/4-the-record-articles/house-bill-951-in-north-carolina-what-is-it-and-what-is-duke-energys-plan/",
+        "date": "2021",
+        "confidence": "high",
+        "notes": "Not a rapid-transition / fossil fuel ban position — moderate Pole A. Bipartisan bill."
+      },
+      {
+        "topic": "justice_firearms",
+        "quote": "Vetoed SB 41 (permit-to-purchase repeal, 2023) — overridden. Vetoed HB 398 (pistol permit repeal, 2021) — sustained. Created statewide Office of Violence Prevention (2023)",
+        "sourceUrl": "https://www.nraila.org/articles/20210830/north-carolina-gov-cooper-vetoes-pistol-permit-repeal",
+        "date": "2021-2023",
+        "confidence": "high",
+        "notes": "NRA opposed him consistently. Multiple gun safety vetoes."
+      },
+      {
+        "topic": "health_coverage_model",
+        "quote": "Signed Medicaid expansion (2023): covered 600,000+ NCians. 2026 campaign: defends ACA subsidies, Medicaid, Medicare",
+        "sourceUrl": "https://governor.nc.gov/news/press-releases/2023/03/27/governor-cooper-signs-medicaid-expansion-law",
+        "date": "2023-2026",
+        "confidence": "high",
+        "notes": "ACA-protect/expand position. No explicit Medicare for All or public option endorsement found."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Medicaid expansion, teacher pay raises, $15/hr state employee minimum wage. 2026 campaign: 'cutting help for the poor' / 'give tax breaks to billionaires'",
+        "sourceUrl": "https://www.wfdd.org/health-safety/2026-02-19/u-s-senate-candidate-roy-cooper-talks-affordability-in-greensboro-on-campaign-trail",
+        "date": "2017-2026",
+        "confidence": "high",
+        "notes": "Consistent record of expanding safety net programs."
+      },
+      {
+        "topic": "econ_tax_structure",
+        "quote": "Vetoed multiple budgets over broad corporate and income tax cuts. Called for freezing high-income tax cuts; wanted revenue for education",
+        "sourceUrl": "https://www.theassemblync.com/news/politics/roy-cooper-legacy-governor-north-carolina/",
+        "date": "2017-2024",
+        "confidence": "medium",
+        "notes": "Progressive direction but with notable pragmatic compromises: eventually signed 2021 budget beginning corporate income tax phaseout. Also offered $930M+ in targeted corporate incentives to 22 corporations."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "Vetoed $6B+ voucher expansion (HB 10, 2024) — overridden. 'Sending taxpayer dollars to private schools with no accountability'",
+        "sourceUrl": "https://governor.nc.gov/news/press-releases/2024/03/27/case-against-school-vouchers-steroids-governor-cooper-outlines-threats-extreme-gop-plan-poses-public",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Clear pro-public school position. Conflict note: sent his own children to private school."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Created TREC (Task Force for Racial Equity in Criminal Justice, 2020). Signed SB 300 reform bills: duty to intervene, early intervention, diversity recruitment",
+        "sourceUrl": "https://governor.nc.gov/news/press-releases/2021/09/02/governor-cooper-signs-criminal-justice-reform-bills-law",
+        "date": "2020-2021",
+        "confidence": "high",
+        "notes": "Not a 'defund' or abolition position; reform-focused. Moderate Pole A (~3-4)."
+      },
+      {
+        "topic": "justice_sentencing_goals",
+        "quote": "Commuted 15 death row sentences (largest in NC history). Signed First Step Act reforms. As AG: supervised 27 executions; said death penalty 'appropriate in certain heinous cases'",
+        "sourceUrl": "https://governor.nc.gov/news/press-releases/2024/12/31/governor-cooper-takes-capital-clemency-actions",
+        "date": "2001-2024",
+        "confidence": "high",
+        "notes": "Reform direction, not abolitionist. Complex record spanning AG and Governor tenures."
+      },
+      {
+        "topic": "immigration",
+        "quote": "Vetoed 3+ ICE cooperation bills. Signed DACA support letter with 10 governors",
+        "sourceUrl": "https://wlos.com/news/local/ice-bill-vetoed-north-carolina-governor-roy-cooper-senate-101-show-me-your-papers-immigrations-customs-enforcement-legal-status-sheriffs-office-sanctuary-cities",
+        "date": "2017-2024",
+        "confidence": "medium",
+        "notes": "Lean Pole A with some moderation. Nuance: signed one bill FLOC-AFL-CIO called 'anti-immigrant, anti-worker.'"
+      },
+      {
+        "topic": "housing_affordability_tools",
+        "quote": "Proposed $160M affordable housing investment (2019)",
+        "sourceUrl": "https://www.govroycooper.org/accomplishments",
+        "date": "2019",
+        "confidence": "low",
+        "notes": "Limited housing record. No strong record on zoning reform."
+      },
+      {
+        "topic": "abortion",
+        "quote": "Vetoed SB 20 (12-week abortion ban, 2023) — overridden",
+        "sourceUrl": "https://governor.nc.gov/news/press-releases/2023/05/13/governor-cooper-vetoes-sb20",
+        "date": "2023",
+        "confidence": "high",
+        "notes": "Planned Parenthood Action Fund and Reproductive Freedom for All endorsed for 2026. Strong pro-choice position."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "notes": "No congressional voting record, but extensive executive record as Governor (2017-2025) including vetoes, executive orders, and bill signings. Also served in NC legislature 1987-2001 but those votes are historical and less relevant to current positioning."
+  },
+  "scorecards": [
+    {
+      "organization": "NCLCV (NC League of Conservation Voters)",
+      "score": null,
+      "grade": "A",
+      "url": "https://nclcv.org/cib09292025-lcv-endorses-roy-cooper-for-us-senate/",
+      "notes": "Grade A in 2018, 2019. LCV Action Fund endorsed for 2026 Senate."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": "https://www.nraila.org/articles/20210830/north-carolina-gov-cooper-vetoes-pistol-permit-repeal",
+      "notes": "NRA opposed him consistently. Multiple gun safety vetoes."
+    },
+    {
+      "organization": "Planned Parenthood Action Fund",
+      "score": null,
+      "grade": "Endorsed",
+      "url": "https://www.plannedparenthoodaction.org/pressroom/in-first-endorsements-of-2026-planned-parenthood-action-fund-backs-ossoff-cooper-pappas-and-brown",
+      "notes": "Endorsed for 2026 Senate."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "DSCC (Democratic Senatorial Campaign Committee)",
+      "type": "institutional endorsement",
+      "cycle": "2026",
+      "notes": "Called his entry a 'major coup for Senate Democrats.'"
+    },
+    {
+      "organization": "NC AFL-CIO",
+      "type": "institutional endorsement",
+      "cycle": "2026",
+      "notes": "Endorsed for statewide 2026 races."
+    },
+    {
+      "organization": "Planned Parenthood Action Fund",
+      "type": "institutional endorsement",
+      "cycle": "2026",
+      "notes": "First endorsement batch of 2026 cycle."
+    },
+    {
+      "organization": "Reproductive Freedom for All",
+      "type": "institutional endorsement",
+      "cycle": "2026",
+      "notes": "Reproductive rights endorsement."
+    },
+    {
+      "organization": "LCV Action Fund",
+      "type": "institutional endorsement",
+      "cycle": "2026",
+      "notes": "Environmental endorsement."
+    },
+    {
+      "organization": "NC Democratic Party",
+      "type": "party endorsement",
+      "cycle": "2026",
+      "notes": "Standard party endorsement."
+    }
+  ],
+  "positionConflicts": [
+    {
+      "axis": "econ_tax_structure",
+      "conflict": "Opposed broad corporate tax cuts but offered $930M+ in targeted incentives to 22 corporations",
+      "resolution": "Pragmatic moderation — opposes across-the-board cuts but uses targeted incentives for economic development"
+    },
+    {
+      "axis": "econ_school_choice",
+      "conflict": "Vetoed vouchers but sent his own kids to private school",
+      "resolution": "Personal choice vs. policy position — common for politicians. Policy position is clearly anti-voucher."
+    },
+    {
+      "axis": "justice_sentencing_goals",
+      "conflict": "Commuted 15 death row sentences as Governor but supervised 27 executions as AG and said death penalty 'appropriate in certain heinous cases'",
+      "resolution": "Evolution over time — moved from enforcement to clemency across career arc"
+    },
+    {
+      "axis": "lgbtq_rights",
+      "conflict": "HB2 compromise repeal (2017) criticized by LGBTQ advocates as insufficient",
+      "resolution": "Pragmatic compromise under Republican supermajority legislature"
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_ambition — Pole A (~2-3), HIGH confidence (Executive Orders, HB 951, NCLCV grade A, LCV endorsement)",
+      "climate_energy_portfolio — Pole A (~3-4), HIGH confidence (HB 951 clean energy targets, but all-of-the-above not fossil ban)",
+      "justice_firearms — Pole A (~2), HIGH confidence (multiple gun safety vetoes, Office of Violence Prevention, NRA opposition)",
+      "health_coverage_model — Pole A (~2-3), HIGH confidence (Medicaid expansion, ACA defense, but not single-payer)",
+      "econ_safetynet — Pole A (~2-3), HIGH confidence (Medicaid expansion, teacher pay, $15/hr min wage)",
+      "econ_school_choice — Pole A (~2), HIGH confidence (vetoed voucher expansion, pro-public school)",
+      "justice_policing_accountability — Pole A (~3-4), HIGH confidence (TREC, police reform bills, but not defund)",
+      "justice_sentencing_goals — Pole A (~3), HIGH confidence (15 commutations, First Step Act reforms)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning — LOW confidence (no zoning reform record)",
+      "housing_transport_priority — NO EVIDENCE",
+      "climate_permitting — NO EVIDENCE (no specific permitting positions found)",
+      "health_cost_control — NO EVIDENCE (no drug pricing or cost control positions found)",
+      "health_public_health — NO EVIDENCE (no specific public health mandate positions found)",
+      "econ_tax_structure — MEDIUM confidence (progressive direction but with corporate incentive compromises)"
+    ],
+    "overallConfidence": "high",
+    "notes": "Roy Cooper has an extensive executive record as a two-term Governor providing high-confidence evidence on most axes. His gubernatorial vetoes, executive orders, and bill signings create a rich evidence base. Immigration is the axis with the most nuance — he vetoed ICE cooperation bills but signed one bill labor advocates criticized. Housing and transport have the least evidence. His positions are consistently center-left, moderate Democratic — not progressive/left wing. He is not a Medicare for All, Green New Deal, or defund-the-police candidate."
+  },
+  "sources": [
+    {"url": "https://en.wikipedia.org/wiki/Roy_Cooper", "description": "Wikipedia biography"},
+    {"url": "https://ballotpedia.org/Roy_Cooper", "description": "Ballotpedia profile"},
+    {"url": "https://roycooper.com/", "description": "Campaign website"},
+    {"url": "https://www.govroycooper.org/accomplishments", "description": "Official Governor accomplishments page"},
+    {"url": "https://www.theassemblync.com/news/politics/roy-cooper-legacy-governor-north-carolina/", "description": "Assembly NC legacy assessment"},
+    {"url": "https://governor.nc.gov/news/press-releases/2023/03/27/governor-cooper-signs-medicaid-expansion-law", "description": "Medicaid expansion signing"},
+    {"url": "https://governor.nc.gov/news/press-releases/2023/05/13/governor-cooper-vetoes-sb20", "description": "SB20 abortion ban veto"},
+    {"url": "https://governor.nc.gov/news/press-releases/2023/03/24/governor-cooper-vetoes-legislation-eliminating-sheriffs-background-checks-handguns", "description": "Gun safety veto"},
+    {"url": "https://governor.nc.gov/news/press-releases/2021/09/02/governor-cooper-signs-criminal-justice-reform-bills-law", "description": "Criminal justice reform bills"},
+    {"url": "https://governor.nc.gov/news/press-releases/2024/12/31/governor-cooper-takes-capital-clemency-actions", "description": "Death row commutations"},
+    {"url": "https://www.lcv.org/media-center/lcv-action-fund-endorses-roy-cooper-for-u-s-senate/", "description": "LCV Action Fund endorsement"},
+    {"url": "https://nclcv.org/cib09292025-lcv-endorses-roy-cooper-for-us-senate/", "description": "NCLCV endorsement"},
+    {"url": "https://www.plannedparenthoodaction.org/pressroom/in-first-endorsements-of-2026-planned-parenthood-action-fund-backs-ossoff-cooper-pappas-and-brown", "description": "PPAF endorsement"},
+    {"url": "https://aflcionc.org/press/north-carolina-afl-cio-endorses-statewide-candidates-2026", "description": "NC AFL-CIO endorsement"},
+    {"url": "https://www.nraila.org/articles/20210830/north-carolina-gov-cooper-vetoes-pistol-permit-repeal", "description": "NRA opposition"},
+    {"url": "https://www.wral.com/news/state/cooper-slams-trump-tariffs-nc-farm/", "description": "WRAL tariffs statement"},
+    {"url": "https://www.wfdd.org/health-safety/2026-02-19/u-s-senate-candidate-roy-cooper-talks-affordability-in-greensboro-on-campaign-trail", "description": "WFDD affordability interview"},
+    {"url": "https://www.dscc.org/article/what-theyre-saying-major-coup-for-senate-democrats-as-dream-recruit-roy-cooper-enters-north-carolina-senate-race/", "description": "DSCC announcement"},
+    {"url": "https://wlos.com/news/local/ice-bill-vetoed-north-carolina-governor-roy-cooper-senate-101-show-me-your-papers-immigrations-customs-enforcement-legal-status-sheriffs-office-sanctuary-cities", "description": "ICE bill veto"},
+    {"url": "https://wunc.org/show/the-state-of-things/2017-03-30/nc-gov-roy-cooper-signs-compromise-bill-repealing-hb2", "description": "HB2 compromise"},
+    {"url": "https://governor.nc.gov/news/press-releases/2024/03/27/case-against-school-vouchers-steroids-governor-cooper-outlines-threats-extreme-gop-plan-poses-public", "description": "Voucher veto statement"},
+    {"url": "https://www.theassemblync.com/politics/criminal-justice/roy-cooper-death-penalty/", "description": "Death penalty analysis"},
+    {"url": "https://thehill.com/homenews/campaign/5428774-roy-cooper-medicaid-north-carolina-senate-campaign/", "description": "The Hill Medicaid analysis"},
+    {"url": "https://justfacts.votesmart.org/candidate/5900/roy-cooper-iii", "description": "VoteSmart profile"},
+    {"url": "https://www.all4inc.com/4-the-record-articles/house-bill-951-in-north-carolina-what-is-it-and-what-is-duke-energys-plan/", "description": "HB 951 energy bill analysis"}
+  ]
+}

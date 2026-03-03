@@ -1,0 +1,145 @@
+{
+  "slug": "derek-dooley",
+  "name": "Derek Dooley",
+  "party": "Republican",
+  "office": "U.S. Senate, Georgia, 2026",
+  "scoredAt": "2026-02-25T12:00:00Z",
+  "profileSummary": "First-time candidate and former college football coach with no legislative record; running as a Kemp-backed outsider on a thin platform of lower taxes, less spending, border security, and market-based solutions.",
+  "keyPositions": [
+    "Lower taxes and reduced government spending -- 'hardworking people should keep more of their money'",
+    "Border security: 'opening our border makes us less safe'",
+    "Market-oriented housing policy: cut government regulation to reduce home prices",
+    "Rural healthcare via doctor incentives, not Medicaid expansion",
+    "Pledges to support Trump's agenda in the Senate while maintaining Kemp-establishment positioning"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Campaign website (Aug 2025)", "GPB interview (Aug 2025)"],
+      "notes": "General 'government should spend less' messaging. No specific safety net programs named for cuts or defense. DSCC claims he supports Medicaid cuts but original Dooley statement not found in primary sources. Scored on the consistent direction of his fiscal rhetoric, but low confidence due to lack of specifics."
+    },
+    "econ_investment": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Campaign website (Aug 2025)", "ABC News (Feb 2026)", "GPB (Aug 2025)"],
+      "notes": "Consistent deregulation and reduced-spending messaging. Favors market-led solutions over public investment (housing via deregulation, healthcare via doctor incentives). One exception: supports federal legislation for NCAA governance, showing willingness to use government power in sports context."
+    },
+    "econ_tax_structure": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Campaign website (Aug 2025)"],
+      "notes": "'Hardworking people should keep more of their money' is the sole tax statement. Clearly directional toward lower taxes but no specifics on rates, brackets, corporate taxes, or specific proposals. Standard GOP positioning without differentiation."
+    },
+    "health_coverage_model": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Red and Black interview (2025-2026)", "Statesboro Herald (2025-2026)"],
+      "notes": "Rural healthcare is a personal priority (wife is rural OB/GYN). Proposes incentivizing doctors to move to rural areas -- market-based, not government program expansion. No mention of Medicaid expansion, ACA, or any public insurance program. 'The two most important people in health care are patients and doctors' implies provider/patient-centered, not government-centered model. Score reflects consistent market orientation but confidence is low due to absence of specific healthcare coverage positions."
+    },
+    "housing_affordability_tools": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["ABC News (Feb 2026)", "National Today (Feb 2026)"],
+      "notes": "Stated he would reduce home prices by cutting back government regulation. Also blamed immigration for reducing housing availability. Both signals point toward market-only housing policy with no mention of subsidies, public housing, or government affordability programs. Evidence is from news paraphrases (Tier 3), not direct quotes, hence low confidence."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.3,
+      "reasoning": "Anti-immigration framing that frames outsiders as threats to Georgians' safety and housing. No climate, environmental, or international cooperation positions found. 'Georgia First' orientation is explicitly in-group focused. Opposition to transgender participation in women's sports restricts inclusion. Weak negative signal across multiple domains."
+    },
+    "benevolence": {
+      "score": 0.3,
+      "reasoning": "Rural healthcare concern is genuine and personal (wife's practice in rural Rabun County). Workforce training and community-level economic messaging. However, policy proposals are thin and general -- care for community is stated but not deeply operationalized with specific programs or commitments."
+    },
+    "tradition": {
+      "score": 0.5,
+      "reasoning": "Traditional gender norms (explicit opposition to transgender athletes in women's sports). Deep roots in Georgia sports tradition through father Vince Dooley's legendary coaching career. Federalist deference on abortion aligns with constitutional tradition. Implicit cultural conservatism throughout messaging. Does not explicitly invoke religious values but operates within traditional Southern conservative cultural framework."
+    },
+    "conformity": {
+      "score": 0.2,
+      "reasoning": "Defers to federalist structure on abortion (states decide, senators should stay out). Privately acknowledged Trump lost Georgia in 2020, conforming to factual reality -- but publicly hedged, suggesting willingness to bend to political pressure. Opposes 'lawlessness.' Overall a weak positive signal for institutional norms, diluted by the public hedging on 2020 election facts."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Border security is one of his most prominent and explicit positions: 'opening our border makes us less safe.' 'Lawlessness' opposition signals public safety priority. Trump agenda support includes national security dimensions. Immigration-to-housing framing connects economic security to border enforcement. This is one of the strongest value signals in his profile."
+    },
+    "power": {
+      "score": 0.2,
+      "reasoning": "Backed by Governor Kemp's political machine and prominent establishment GOP operatives. Raised $2.1M+ in early fundraising. However, he frames himself as an outsider challenging career politicians. Not explicitly pro-corporate in messaging. Moderate alignment with institutional power through endorsements and fundraising, but not an overt power-value candidate."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Entire biography is organized around competitive achievement: college football coaching career, law degree, parallels drawn between team leadership and national leadership. 'Outsider who can win' framing emphasizes competence over ideology. Workforce training and 'hardworking people' rhetoric foregrounds meritocratic individual effort."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence in either direction. No lifestyle liberty positions, no recreational drug policy, no personal freedom framing on social issues. Neutral/absent."
+    },
+    "stimulation": {
+      "score": 0.1,
+      "reasoning": "Mild outsider/change rhetoric ('new leadership,' frustration with career politicians). However, the change he proposes is not structural reform but rather personnel replacement -- swapping career politicians for non-politicians. No radical policy proposals. The underlying policy orientation is status-quo conservative, not transformational."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Federalist framing on abortion gives individual states autonomy. Lower-taxes/less-government messaging has a liberty dimension. However, opposition to transgender athlete participation restricts individual identity expression. No civil liberties, free speech, or privacy positions found. Mixed and weak signal overall."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Abortion / Georgia Heartbeat Bill",
+      "description": "Dooley explicitly declined to say whether he supports Georgia's existing 6-week heartbeat abortion law, calling it a state issue on which a senator should not have opinions. This was criticized by anti-abortion conservatives within the GOP primary as insufficient. His position is nominally Dobbs-aligned but he refused to endorse the specific Georgia law, creating ambiguity on a salient primary issue.",
+      "sources": ["AJC / Politically Georgia podcast (Aug 2025)", "PJ Media commentary (Aug 2025)", "Frontline Policy Action response"],
+      "scoringImpact": "Abortion-related axes not scored due to genuine ambiguity -- his stated position is procedural (federalism) rather than substantive (for or against)."
+    },
+    {
+      "topic": "Outsider vs. establishment positioning",
+      "description": "Dooley markets himself as a political outsider frustrated with career D.C. politicians, while being the chosen candidate of Georgia's Republican governor and political establishment. Primary competitors attack him as an insider despite never holding office.",
+      "sources": ["AJC (Feb 2026)", "Georgia Recorder (Aug 2025)", "11Alive"],
+      "scoringImpact": "Reflected in moderate power value score (0.2) and muted stimulation score (0.1)."
+    },
+    {
+      "topic": "Trump loyalty / 2020 election acknowledgment",
+      "description": "Dooley privately acknowledged Trump lost Georgia in 2020 (caught on audio), but his campaign spokesperson then pivoted to 'irregularities' language. In a public interview he refused to say directly whether 2020 was free and fair. He pledges to support Trump's agenda while being backed by Kemp, who certified the 2020 results and drew Trump's ire.",
+      "sources": ["Washington Examiner audio (Feb 2026)", "11Alive / The Georgia Vote (Feb 2026)"],
+      "scoringImpact": "Reflected in conformity value score (0.2) -- mixed signals on institutional norm adherence."
+    },
+    {
+      "topic": "Voting history gap",
+      "description": "Dooley did not vote for approximately two decades (roughly 2004-2020), including the 2016 and 2020 presidential elections. He acknowledged this in a Feb 2026 interview, citing being 'overly focused on work.' He did vote in 2022 and 2024.",
+      "sources": ["11Alive (Feb 2026)", "ABC News (Feb 2026)", "National Today (Feb 2026)"],
+      "scoringImpact": "Not directly reflected in axis scores but noted as context undermining civic engagement credibility."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 5,
+    "axesSkipped": [
+      "econ_school_choice",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate with no legislative record and no detailed policy platform. Campaign website has no issues page. Dooley has not completed Ballotpedia's Candidate Connection survey. Evidence exists only from campaign launch messaging and a small number of media interviews, which cover fiscal/economic themes and border security but provide no signal on guns, climate, energy, criminal justice, education, policing, public health, transportation, or zoning.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No firearms or Second Amendment positions found",
+      "No climate or energy positions found",
+      "No criminal justice, policing, or sentencing positions found",
+      "No education or school choice positions found",
+      "No public health positions found",
+      "Abortion position deliberately ambiguous -- federalism framing without substantive position",
+      "No healthcare cost control positions found",
+      "No transportation or transit positions found",
+      "No specific tax or budget proposals beyond general 'spend less, tax less' rhetoric",
+      "DSCC claim of 'cheerleading Medicaid cuts' not verified in primary sources"
+    ]
+  }
+}

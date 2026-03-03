@@ -1,0 +1,155 @@
+{
+  "slug": "don-brown",
+  "name": "Don Brown",
+  "party": "Republican",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "scoredAt": "2026-02-26T12:00:00Z",
+  "profileSummary": "Retired Navy JAG officer and January 6 defense attorney running a long-shot MAGA-wing Senate bid. Platforms on eliminating the IRS, banning vaccine mandates, Constitutional Carry, and aggressive deficit reduction.",
+  "keyPositions": [
+    "Eliminate the IRS and replace income tax with a national consumption tax (FairTax) supplemented by tariffs",
+    "Ban all vaccine and mask mandates federally via proposed 'Vax and Mask Freedom Act'",
+    "National Constitutional Carry; opposes all gun regulations",
+    "Personhood from conception; supports federal death penalty for fentanyl and child sex traffickers",
+    "Reduce federal spending to attack the $38 trillion national debt; route disaster relief through private/faith-based channels"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["WCTI12 interview 2026", "Campaign website policies page", "WSOC Political Beat Guide"],
+      "notes": "Core message is 'restoring fiscal sanity' and attacking $38T national debt. Proposes routing disaster relief through Samaritan's Purse rather than federal agencies. No support for any safety net expansion. Near Pole B but not full 10 because he hasn't explicitly called for eliminating specific entitlement programs like Social Security/Medicare."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Campaign website policies page", "WCTI12 interview 2026"],
+      "notes": "Frames government as 'regulatory strangulation' of small business. Deregulation is primary economic tool. Proposes privatizing disaster relief. Strong anti-government-intervention orientation across the board."
+    },
+    "econ_tax_structure": {
+      "score": 10,
+      "confidence": "medium",
+      "sources": ["Campaign website policies page"],
+      "notes": "Wants to eliminate the IRS entirely, abolish the federal income tax, and replace with a FairTax (national consumption tax) plus tariffs. This is the most extreme Pole B position possible on tax structure -- replacing progressive income tax with a flat consumption tax and eliminating the enforcement agency."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["WSOC Political Beat Guide 2026", "Campaign website"],
+      "notes": "Does not see an 'affordability crisis' in healthcare. Supports HSA-style direct payments. No support for ACA, public option, Medicaid expansion, or Medicare expansion. Near-pure market approach. Not scored at 10 because he references Trump's plan to 'send money directly to people' which implies some government role in funding."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["WSOC Political Beat Guide 2026 (inferred from market philosophy)"],
+      "notes": "No direct statement on drug pricing, hospital rate setting, or price transparency. Inferred from overall market-first healthcare philosophy and denial of affordability crisis. Scored with LOW confidence because this is inference, not a stated position."
+    },
+    "health_public_health": {
+      "score": 10,
+      "confidence": "high",
+      "sources": ["Campaign website policies page", "WCTI12 interview 2026", "BallotReady profile", "Personal litigation record"],
+      "notes": "Proposed 'Vax and Mask Freedom Act' to ban all vaccine and mask mandates federally. Personally litigated against COVID vaccine mandates for nuclear engineers at Savannah River Site. Multiple corroborating sources across campaign statements and legal career. Maximum individual liberty position on public health."
+    },
+    "housing_affordability_tools": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["WCTI12 interview 2026"],
+      "notes": "Proposed eliminating property taxes for first-time homebuyers -- a tax-cut approach rather than subsidies or rent control. No support for public housing, rent stabilization, or housing subsidies. Market-oriented but the property tax proposal shows some willingness to use government levers (tax policy) to affect housing, hence 8 not 10."
+    },
+    "justice_policing_accountability": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["WUNC elections article 2026", "Campaign website"],
+      "notes": "Called for National Guard on every Charlotte train. Attacked Roy Cooper for releasing pandemic-era inmates as 'soft on crime.' Supports aggressive Border Patrol enforcement. Strong law-and-order positioning. However, his J6 defense work complicates this -- he views those prosecutions as government overreach against 'patriots,' which is consistent within his framing (anti-federal-enforcement selectively) but creates a tension. See conflicts section."
+    },
+    "justice_sentencing_goals": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Campaign website policies page", "WUNC elections article 2026"],
+      "notes": "Supports federal death penalty for fentanyl traffickers and child sex traffickers. Attacked opponents as 'soft on crime.' No mention of rehabilitation, diversion, or sentencing reform. Strong punitive orientation."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": ["BallotReady profile", "Campaign website policies page"],
+      "notes": "Supports National Constitutional Carry. Explicit quote: 'Americans should not be arrested for exercising our clear 2nd Amendment Rights to bear arms without restriction.' Opposes all gun regulations. Maximum Pole B position."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.6,
+      "reasoning": "No evidence of concern for welfare of all people or nature. Endorsement network (Robinson, Flynn, Powell) and J6 defense work indicate strong in-group orientation. No climate, environmental, or international humanitarian positions. Denial of healthcare affordability crisis works against universal welfare."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Some community-oriented framing: protecting small businesses, Hurricane Helene relief (via Samaritan's Purse), defending what he sees as persecuted J6 defendants. But the scope of 'community' is narrow -- primarily his ideological in-group. No broader social services advocacy."
+    },
+    "tradition": {
+      "score": 0.8,
+      "reasoning": "Strong traditional values signals: personhood-from-conception position rooted in religious values, faith-based disaster relief preference (Samaritan's Purse), military service and patriotic framing, defense of 'patriot' J6 defendants as upholding American tradition. Endorsement by Mark Robinson (social conservative). The elimination of the IRS is radical enough to slightly temper the score from 1.0."
+    },
+    "conformity": {
+      "score": -0.5,
+      "reasoning": "Despite law-and-order rhetoric, Brown actively defended J6 defendants and called their prosecutions an 'illegal fedsurrection,' rejecting the legitimacy of federal law enforcement actions. Endorsed by Sidney Powell (who pleaded guilty to election interference) and Michael Flynn. This represents a willingness to reject institutional processes and norms when they conflict with his ideological commitments."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Strong national security orientation: military background (Navy JAG), aggressive border enforcement, National Guard deployment proposals, 'tough on crime' positioning, death penalty advocacy. Oriented toward physical/national security rather than economic security (opposes safety net expansion). The selective nature (strong on crime/border, skeptical of public health security) prevents a higher score."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Mixed signals. Not aligned with corporate donor class -- raised only $187K with $24K cash on hand, running a grassroots-style insurgent campaign against the Trump-endorsed establishment candidate (Whatley). However, his policies favor economic power holders (eliminate IRS, deregulate, market-based healthcare) and his strong executive/enforcement framing on crime suggests comfort with concentrated authority. Moderate positive."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Individual effort and self-reliance framing throughout: small business protection, market-based healthcare, opposition to government dependency, military career as personal accomplishment, author of 16 books. Meritocratic worldview implicit in his opposition to safety nets and support for deregulation."
+    },
+    "hedonism": {
+      "score": -0.1,
+      "reasoning": "Minimal relevance. His anti-mandate positions (Vax and Mask Freedom Act) touch on personal freedom but are framed as liberty/self-direction, not pleasure. Social conservatism (personhood from conception) works modestly against lifestyle liberty. Near-neutral."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Genuinely radical proposals: eliminate the IRS, FairTax, Vax and Mask Freedom Act, National Guard on trains, privatize disaster relief. Running as an insurgent against the party establishment's endorsed candidate. Anti-status-quo orientation is clear, though the direction of change is reactionary rather than progressive. Disruption as identity."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on gun rights as individual liberty, anti-mandate positions as personal freedom, deregulation as freedom from government control. However, personhood-from-conception position restricts reproductive autonomy, and aggressive law enforcement positions restrict personal freedom for those he considers criminals. The selective application of liberty (expansive for gun owners and anti-vaxxers, restrictive on reproductive rights and criminal justice) produces a moderate net positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Law and order vs. J6 defense",
+      "description": "Positions himself as a 'law and order' candidate (National Guard, death penalty, tough on crime) while simultaneously defending January 6 defendants and calling their federal prosecutions an 'illegal fedsurrection.'",
+      "sources": ["Campaign website", "WUNC elections article", "Ballotpedia profile"],
+      "scoringImpact": "Scored policing_accountability at 9 (pro-police) based on the weight of his stated positions on crime, but the J6 defense reveals a selective application of law-and-order principles. Reflected in conformity value score of -0.5."
+    },
+    {
+      "topic": "Fiscal hawk vs. targeted spending",
+      "description": "Campaigns on 'attacking the $38 trillion national debt' and cutting government spending, but proposes a dedicated Hurricane Helene trust fund and property tax elimination for first-time homebuyers.",
+      "sources": ["WCTI12 interview", "Campaign website"],
+      "scoringImpact": "Resolved in his framing via private/faith-based channels (Samaritan's Purse) rather than federal agencies. The property tax proposal is a tax cut, not spending. Both consistent with anti-government philosophy. Minor tension only."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 10,
+    "axesSkipped": [
+      "econ_school_choice",
+      "housing_supply_zoning",
+      "housing_transport_priority",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No evidence found in research file for school choice, zoning/housing supply, transportation, or any climate/energy positions. First-time candidate with no legislative record to infer from.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No climate or energy positions found despite being a Senate race",
+      "No school choice or education positions found",
+      "No housing supply or zoning positions found",
+      "No transportation policy positions found",
+      "No legislative voting record (first-time candidate)",
+      "No interest group scorecards with retrievable scores",
+      "GRNC evaluation published but specific rating not accessible"
+    ]
+  }
+}

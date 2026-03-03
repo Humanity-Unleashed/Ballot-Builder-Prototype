@@ -15,7 +15,7 @@ export default function TopNav() {
   const { user, isAnonymous, signInWithGoogle, logout } = useAuth();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 border-b border-gray-200 bg-white">
+    <nav className="fixed top-5 left-0 right-0 z-40 border-b border-gray-200 bg-white">
       <div className="mx-auto flex h-14 max-w-lg items-center px-4">
         {/* App icon — hide text on small screens */}
         <div className="flex items-center gap-2 mr-4 shrink-0">

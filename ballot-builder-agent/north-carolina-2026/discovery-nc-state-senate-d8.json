@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-03-01T00:00:00.000Z",
+  "state": "North Carolina",
+  "contests": [
+    {
+      "id": "NC-STATE-SENATE-D8-2026",
+      "office": "North Carolina State Senate, District 8",
+      "state": "NC",
+      "district": "8",
+      "primaryDate": "2026-03-03",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "William Rabon",
+      "raceRating": "Safe Republican",
+      "raceRatingSource": "Historical results and district partisan lean (Princeton Gerrymandering Project grades NC Senate map as heavily partisan-Republican; Rabon won 2024 with 60% in a three-candidate race)",
+      "districtNotes": "District 8 covers all of Brunswick County, all of Columbus County, and a portion of New Hanover County (including downtown Wilmington). The New Hanover portion was added after 2020 redistricting and has been criticized as a partisan gerrymander. Rabon has held this seat since 2011 and has never lost. His 2024 margin was approximately +20 points.",
+      "primaryOutcome": "All three party primaries (Republican, Democratic, Libertarian) were canceled. Each candidate advanced to the general election without appearing on the primary ballot. No primary contest occurred.",
+      "candidates": [
+        {
+          "slug": "william-rabon",
+          "name": {
+            "full": "William Peter Rabon",
+            "ballotDisplay": "Bill Rabon",
+            "preferred": "Bill Rabon"
+          },
+          "party": "Republican",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "incumbent",
+          "yearsInOffice": "2011–present (15 years as of 2026 election)",
+          "termHistory": "Won elections in 2010, 2012, 2014, 2016, 2018, 2020, 2022, and 2024. Running for a 9th term in 2026.",
+          "professionalBackground": "Veterinarian and small businessman. Doctor of Veterinary Medicine (University of Georgia, 1976). Partner in multiple animal hospitals in Brunswick County. Operates family farm in Winnabow, NC. Vice Chair, Brunswick Community College Board of Trustees.",
+          "education": [
+            "West Columbus High School, graduated 1969",
+            "B.S., North Carolina State University",
+            "Doctor of Veterinary Medicine, University of Georgia (1976)"
+          ],
+          "notableBackground": "Eagle Scout. Received the American Farmer Degree (highest FFA honor) upon high school graduation in 1969.",
+          "legislativeRole": "Chairman, Rules and Operations of the Senate (2025-2026 session). Chairman, Select Committee on Nominations. Previously chaired Appropriations on Department of Transportation. One of the most senior and powerful members of the North Carolina Senate Republican caucus.",
+          "campaignWebsite": null,
+          "officialPage": "https://www.ncleg.gov/Members/Biography/S/303",
+          "caucusPage": "https://ncstatesenate.com/members/bill-rabon/",
+          "evidenceTier": "high",
+          "notes": "Long-serving incumbent with a full voting record available via NC General Assembly website and VoteSmart. Rules Committee chairmanship makes him one of the most powerful figures in the NC Senate. No known announced retirement. District drawn to strongly favor Republicans. Previous Democratic challenger (Katherine Randall, 2024) received approximately 40% despite campaign effort."
+        },
+        {
+          "slug": "richard-combes",
+          "name": {
+            "full": "Richard Combes",
+            "ballotDisplay": "Richard Combes",
+            "preferred": "Rick Combes"
+          },
+          "party": "Democratic",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "yearsInOffice": null,
+          "professionalBackground": "Unknown. Residence listed as Brunswick County per NC General Assembly unofficial filing documents. No campaign website or public profile identified as of manifest generation date.",
+          "education": null,
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Confirmed on official NC General Assembly unofficial filing list for Senate District 8. Listed as 'Rick Combes' from Brunswick in some NC General Assembly filing documents. Advanced from Democratic primary without opposition (primary canceled). No campaign website, social media presence, news coverage, or FEC/NCSBE financial filings identified. First-time candidate with minimal public presence. Researcher should check NCSBE campaign finance and Democratic Party district contacts for additional information."
+        },
+        {
+          "slug": "tim-white-nc-s8",
+          "name": {
+            "full": "Tim White",
+            "ballotDisplay": "Tim White",
+            "preferred": "Tim White"
+          },
+          "party": "Libertarian",
+          "primaryOrGeneral": "general",
+          "incumbencyStatus": "challenger",
+          "yearsInOffice": null,
+          "professionalBackground": "Unknown. No campaign website or public profile identified as of manifest generation date.",
+          "education": null,
+          "campaignWebsite": null,
+          "evidenceTier": "low",
+          "notes": "Confirmed on Ballotpedia and NC State Board of Elections candidate lists. Advanced from Libertarian primary without opposition (primary canceled). Listed as part of the Libertarian Party of North Carolina's 2026 candidate slate. No campaign website, news coverage, or NCSBE financial filings identified. Researcher should check LPNC official communications for background information. Note: slug includes state+district suffix to disambiguate from other Tim Whites in NC 2026 races."
+        }
+      ],
+      "withdrawnCandidates": []
+    }
+  ],
+  "ballotMeasures": [
+    {
+      "slug": "nc-2026-voter-id-amendment",
+      "state": "NC",
+      "officialTitle": "North Carolina Require Voter Identification Amendment",
+      "shortName": "Voter ID for All Voters Amendment",
+      "referringLegislation": "Senate Bill 921 (2024)",
+      "electionDate": "2026-11-03",
+      "certificationStatus": "confirmed",
+      "yesVoteMeans": "Amends the North Carolina Constitution to require photographic identification for ALL voters, including those voting by absentee/mail-in ballot. Current law only requires photo ID for in-person voters.",
+      "noVoteMeans": "Maintains the status quo: photo ID required for in-person voters only. Mail-in/absentee voters continue to be exempt from the photo ID requirement.",
+      "legislativePassage": {
+        "senate": "Passed 30-19 on December 2, 2024 (partisan vote)",
+        "house": "Passed 73-45 on December 11, 2024 (73 Republicans, 1 Democrat in favor)"
+      },
+      "context": "North Carolina voters approved a constitutional photo voter ID requirement for in-person voting in 2018 (55.49% yes). This measure extends that requirement to absentee/mail-in voters. It must again be approved by voters as a constitutional amendment.",
+      "proponentArgument": "Voter ID is a commonsense security measure that should apply equally to all voters regardless of voting method (Senator Warren Daniel, sponsor).",
+      "opponentArgument": "Another attempt to disenfranchise voters by mail; will create barriers for elderly, disabled, and rural voters (Democracy North Carolina).",
+      "evidenceTier": "high"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://ballotpedia.org/North_Carolina_State_Senate_District_8",
+      "description": "Ballotpedia race page for NC State Senate District 8 — primary source for candidate list and primary/general election dates",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/William_Rabon",
+      "description": "Ballotpedia candidate page for William Rabon — biographical information and election history",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/North_Carolina_State_Senate_elections,_2026",
+      "description": "Ballotpedia overview of all 2026 NC State Senate elections — candidate confirmation and primary status",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ncleg.gov/Members/Biography/S/303",
+      "description": "Official NC General Assembly biography page for Senator Bill Rabon",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://webservices.ncleg.gov/ViewDocSiteFile/103524",
+      "description": "NC General Assembly unofficial Senate filing list — confirms Richard Combes (listed as 'Rick Combes') from Brunswick as Democratic candidate for District 8",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://ballotpedia.org/North_Carolina_Require_Voter_Identification_Amendment_(2026)",
+      "description": "Ballotpedia page for the 2026 NC Voter ID constitutional amendment — official title, yes/no meaning, and certification status",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.wunc.org/2024-10-31/a-closer-look-at-the-gerrymandered-state-senate-districts-in-the-cape-fear-region",
+      "description": "WUNC analysis of Cape Fear region senate districts, including District 8 geography and partisan lean",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://portcitydaily.com/local-news/2024/11/06/state-senate-house-races-indicate-tri-county-incumbents-will-keep-their-seats/",
+      "description": "Port City Daily 2024 election results coverage — Rabon vote share and margin data",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ncsbe.gov/results-data/candidate-lists",
+      "description": "NC State Board of Elections official candidate lists page",
+      "fetchedAt": "2026-03-01T00:00:00.000Z"
+    }
+  ],
+  "researchNotes": {
+    "confidenceAssessment": "HIGH for William Rabon (extensive public record as 15-year incumbent). LOW for Richard Combes and Tim White (both first-time candidates with no identifiable public presence). Researcher subagents should prioritize finding any campaign information for Combes and White.",
+    "dataGaps": [
+      "Richard Combes: no campaign website, no news coverage, no NCSBE financial filings identified. Full name (Richard vs Rick) needs confirmation from official NCSBE filing record.",
+      "Tim White: no campaign website, no biographical information, no NCSBE financial filings identified. Common name — researcher should confirm this is a distinct individual from other NC candidates named Tim White.",
+      "No formal race competitiveness rating exists from Cook Political Report, Sabato, or Inside Elections for this state senate district specifically. Rating in this manifest is inferred from 2024 results (Rabon +20) and district partisan lean."
+    ],
+    "crossCheckStatus": "Ballotpedia and NC General Assembly unofficial filing documents are consistent. All three primaries (R, D, L) canceled with candidates advancing uncontested. Primary date of March 3, 2026 has passed as of manifest generation; no primary results to report (no contest occurred).",
+    "nextSteps": "Scorer should note that District 8 is effectively uncompetitive based on partisan lean. Researcher subagent for Rabon should retrieve full voting record from NCLEG, VoteSmart, and interest group ratings. Researcher subagents for Combes and White should attempt contact via local Democratic and Libertarian party chapters respectively."
+  }
+}

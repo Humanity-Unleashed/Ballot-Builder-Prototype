@@ -1,0 +1,214 @@
+{
+  "slug": "jon-ossoff",
+  "name": "Jon Ossoff",
+  "party": "Democratic",
+  "office": "U.S. Senate, Georgia, 2026",
+  "scoredAt": "2026-02-25T12:00:00.000Z",
+  "profileSummary": "First-term Democratic senator with a center-left voting record (97% Biden alignment), strong climate and healthcare credentials, and a distinctive anti-corruption/oversight identity built through PSI investigations. Positions as a bipartisan dealmaker on select issues while sharply opposing Trump on democratic norms.",
+  "keyPositions": [
+    "Supports ACA expansion and a public option, explicitly opposes Medicare for All",
+    "LCV 97% lifetime; voted for IRA (largest US climate bill); sponsored Solar Manufacturing Act",
+    "Voted for Bipartisan Safer Communities Act; supports universal background checks and red flag laws",
+    "Primary sponsor of Federal Prison Oversight Act (signed into law 2024) — bipartisan prison conditions reform",
+    "Complex immigration stance: voted YES on Laken Riley Act (enforcement) while leading investigations into ICE detention abuse"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "American Rescue Plan vote (2021)",
+        "IRA vote — ACA subsidy extension (2022)",
+        "Heritage Action 6% scorecard",
+        "2026 campaign: ACA premium subsidy defense for 1.4M Georgians",
+        "Rally: criticized cutting rural clinics to fund tax cuts for the wealthy"
+      ],
+      "notes": "Consistent expansionary pattern across votes and messaging. Supports broader safety net through ACA subsidies, child tax credit, and direct payments. No evidence of work requirements or benefit-cutting positions."
+    },
+    "econ_investment": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "American Rescue Plan vote ($1.9T, 2021)",
+        "Bipartisan Infrastructure Law vote ($1.2T, 2021)",
+        "Inflation Reduction Act vote (~$369B climate + healthcare, 2022)",
+        "CHIPS and Science Act vote (2022)",
+        "Solar Manufacturing Act (enacted)",
+        "Heritage Action 6% scorecard",
+        "Platform: 'massive federal investment in clean energy, grid infrastructure, and R&D'"
+      ],
+      "notes": "Among the most aggressive public investment records in the Senate. Voted for all four major Biden-era investment bills. Also supports debt-free public college and free vocational training. The only moderating signal is bipartisan small business tax cut legislation with Hyde-Smith, but this adds to rather than limits public investment."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "2020 health care plan PDF — explicitly supports public option",
+        "AJC 2020 coverage confirming public option framing",
+        "AARP questionnaire — supports Medicare drug negotiation",
+        "IRA vote — extended ACA subsidies",
+        "2026 campaign: heavy focus on ACA premium subsidy protection"
+      ],
+      "notes": "Explicitly supports a public option added to the ACA marketplace while preserving private insurance. Explicitly opposes Medicare for All / single-payer. 2026 messaging focuses on ACA subsidies and drug pricing rather than the public option specifically, but no retraction of the public option position. Score of 3 reflects public option support without single-payer advocacy."
+    },
+    "health_cost_control": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "IRA vote — Medicare drug price negotiation enacted",
+        "IRA vote — $35 insulin cap for seniors",
+        "AARP questionnaire — supports drug imports from Canada",
+        "2020 health care plan — 'forcing private insurers to compete with the public plan on quality and price'"
+      ],
+      "notes": "Supports government price negotiation for drugs (voted for it), insulin price caps, and drug importation. Framing combines government negotiation power with market competition through public option. Solidly on the government-intervention side of cost control."
+    },
+    "health_public_health": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "ARP vote (included public health funding)",
+        "Mentioned CDC full funding as bipartisan accomplishment (Georgia Recorder March 2025)"
+      ],
+      "notes": "Supports public health infrastructure (CDC funding, ARP public health provisions) but no specific evidence on vaccine mandates, drug policy approaches, or public health authority questions. Score inferred from general orientation rather than specific votes or stated positions. Low confidence due to thin evidence."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Federal Prison Oversight Act (signed into law 2024) — oversight orientation",
+        "DHS funding refusal over ICE civil liberties protections (Jan 2026)",
+        "ICE detention abuse investigation — 1,000+ documented incidents"
+      ],
+      "notes": "No direct votes on police reform bills found. Score inferred from adjacent work: prison oversight legislation, ICE accountability investigations, and DHS funding conditioned on civil liberties protections. These suggest an accountability/oversight orientation, but the evidence is from corrections and immigration enforcement, not municipal policing. Score could shift meaningfully if direct policing evidence emerges."
+    },
+    "justice_sentencing_goals": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Federal Prison Oversight Act (2024) — prison conditions focus",
+        "Civil Rights Cold Case Investigations Support Act (signed into law)"
+      ],
+      "notes": "Prison conditions work is about oversight and humane treatment, not sentencing philosophy. No specific votes on mandatory minimums, decarceration, or sentencing reform found. The Federal Prison Oversight Act's creation of an ombudsman for incarcerated people's rights suggests rehabilitation/humane-treatment orientation but does not directly address sentencing length. Scored conservatively at 3 (leaning reform) with low confidence."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Bipartisan Safer Communities Act vote (2022) — enhanced background checks for under-21, red flag law funding, domestic violence restrictions",
+        "VoteSmart guns issue page",
+        "No NRA grade found (consistent with pro-regulation pattern)"
+      ],
+      "notes": "Voted for the first major federal gun safety legislation in decades. Supports universal background checks and red flag laws. The Bipartisan Safer Communities Act was a significant but not maximalist bill — it did not include assault weapons ban or magazine limits. Score of 3 reflects significant but not comprehensive regulation support."
+    },
+    "climate_ambition": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "LCV 97% lifetime score",
+        "LCV Action Fund endorsement",
+        "IRA vote — ~$369B largest US climate investment",
+        "Bipartisan Infrastructure Law vote — coastal resilience included",
+        "Solar Manufacturing Act (enacted)",
+        "Platform: 'massive federal investment in clean energy'"
+      ],
+      "notes": "Near-perfect environmental voting record per LCV. Voted for the largest climate bill in US history. Sponsored major clean energy manufacturing legislation. No fossil-fuel-friendly positions found. Score of 2 (strong climate policy) rather than 1 (emergency-level) because his framing emphasizes investment and jobs rather than emergency/phase-out language."
+    },
+    "climate_energy_portfolio": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Solar Manufacturing Act (enacted — domestic solar manufacturing)",
+        "Clean Energy for All Homes Act (passed House)",
+        "HOPE for HOMES Act / Zero-Emission Homes Act",
+        "IRA vote — massive clean energy investment",
+        "Platform: clean energy investment emphasis"
+      ],
+      "notes": "Strongly renewables-oriented through both legislation and votes. Solar manufacturing is his signature energy issue. No evidence of fossil fuel support or 'all-of-the-above' framing. Score of 2 rather than 1 because he has not explicitly called for banning new fossil fuel development or 100% renewables mandates."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.6,
+      "reasoning": "Strong environmental record (LCV 97%), healthcare access advocacy for all Georgians, voting rights legislation, civil rights cold case investigations. However, his Israel arms position is selective and situational rather than blanket humanitarian opposition, and his Laken Riley Act vote signals willingness to prioritize enforcement over universal immigrant protection. These cross-currents keep universalism from scoring higher."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Deep community investment orientation throughout his record: ACA subsidies protecting 1.4M Georgians, rural hospital defense, manufacturing job creation, prison conditions reform, CDC funding. Campaign framing consistently returns to constituent welfare. John Lewis mentorship shapes a service-oriented political identity. One of his strongest values."
+    },
+    "tradition": {
+      "score": -0.2,
+      "reasoning": "Challenges several established norms: progressive tax reform, voting rights expansion, clean energy transition, prison system reform. However, he is not a radical and works within institutional frameworks. His campaign invokes civil rights tradition (John Lewis legacy), but this is about extending justice rather than preserving the status quo. Mildly works against tradition overall."
+    },
+    "conformity": {
+      "score": 0.6,
+      "reasoning": "Strong 'work within the system' orientation. Bipartisan legislating is a signature (Federal Prison Oversight Act with Braun, small business taxes with Hyde-Smith). Ranked #33 in Senate bipartisanship index. Operates through committee investigations and legislative process (PSI chair). Even his opposition to Trump is framed as defending institutional norms (DOJ independence, election integrity, rule of law). High conformity."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Supports healthcare security (ACA subsidies), infrastructure investment (BIL), CDC funding, and military base improvements. Voted for Laken Riley Act (border security signal). But also conditions DHS funding on civil liberties protections, showing security is balanced against rights. Moderate positive — pursues security through institutional stability and benefit protection."
+    },
+    "power": {
+      "score": -0.3,
+      "reasoning": "End Citizens United A+ rating. Introduced Congressional stock trading ban. Anti-corruption is central to his identity — his pre-Senate career was investigative journalism covering corruption, and his PSI investigations continued this orientation. However, he is establishment-backed (DSCC top priority, $25M cash on hand), which involves pragmatic power alignment. Net negative due to anti-corruption orientation but not strongly so."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Supports workforce development through debt-free public college and free vocational training. Manufacturing job creation through CHIPS Act and Solar Manufacturing Act. Small business tax legislation. Framing combines structural support with opportunity creation. Moderately positive but not a defining trait."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal freedom or lifestyle liberty framing as a core issue. Pro-choice stance exists but is framed as rights and healthcare access, not personal freedom per se. No cannabis or recreational liberty positions found. Neutral."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Not a radical reformer — works within existing institutions rather than seeking to transform them. Some structural reform proposals (voting rights, prison oversight, stock trading ban) but pursued through conventional legislative channels. Youngest Democratic senator since Biden but does not heavily employ 'new generation' disruption rhetoric. Mild positive."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Pro-choice (bodily autonomy), strong voting rights advocacy (political self-direction for citizens), civil liberties emphasis (ICE detention reform, DHS funding conditioned on rights). But also supports gun regulation (limits self-direction in that domain) and collective public health measures. Net moderately positive, with some cross-cutting signals across issue domains."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Israel arms sales — evolving position",
+      "description": "November 2024: Voted to block rifle sales to Israel over civilian harm concerns. May 2025: Reversed course and voted AGAINST blocking $8.8B arms package, citing hostage negotiations. July 2025: Resumed selective blocking (assault rifles yes, heavy bombs no). Position is situational and evolving rather than fixed.",
+      "sources": [
+        "ossoff.senate.gov statement Nov 2024",
+        "AJC — Ossoff, Warnock reject latest bid to block Israel arms sales (May 2025)",
+        "AJC — Ossoff, Warnock vote to curb US arms sales to Israel (July 2025)"
+      ],
+      "scoringImpact": "Contributes to universalism score not exceeding 0.6 — selective humanitarian concern rather than blanket universalist position. Does not affect domestic policy axis scores."
+    },
+    {
+      "topic": "Immigration — enforcement vs. civil liberties",
+      "description": "Voted YES on Laken Riley Act (immigration enforcement, one of few Senate Democrats to do so) while simultaneously leading Senate investigations documenting 1,000+ credible abuse incidents in ICE detention and refusing to support DHS funding without civil liberties protections.",
+      "sources": [
+        "AJC — Laken Riley Act vote (Jan 2025)",
+        "Georgia Recorder — Ossoff will not support DHS funding (Jan 2026)",
+        "Ossoff Senate report on immigration detention oversight"
+      ],
+      "scoringImpact": "Reflects genuine centrist positioning rather than inconsistency — enforcement of criminal immigration law paired with accountability for detention conditions. Factored into universalism and security value scores."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 10,
+    "axesSkipped": [
+      "econ_school_choice",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No meaningful evidence found for K-12 school choice positions, housing/zoning policy (federal senator with no housing record), or permitting reform. Housing and zoning are primarily local/state issues rarely addressed by Georgia federal candidates.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No K-12 education positions found beyond debt-free public college",
+      "No housing or zoning policy positions found",
+      "No specific policing reform votes (only adjacent prison/ICE oversight work)",
+      "No sentencing reform votes found (prison oversight work does not address sentencing)",
+      "No permitting reform positions found",
+      "NRA grade not retrieved; Chamber of Commerce score not confirmed",
+      "AFL-CIO specific percentage not confirmed"
+    ]
+  }
+}

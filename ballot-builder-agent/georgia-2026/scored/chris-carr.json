@@ -1,0 +1,224 @@
+{
+  "slug": "chris-carr",
+  "name": "Chris Carr",
+  "party": "Republican",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T12:00:00.000Z",
+  "profileSummary": "Three-term Georgia Attorney General and Kemp-wing establishment Republican; built a decade-long conservative record through multi-state coalition lawsuits against federal climate, healthcare, and immigration policies, combined with aggressive prosecution of gangs, trafficking, and opioid manufacturers. Campaigns on lowest-tax-burden-in-the-Southeast and safe-streets themes.",
+  "keyPositions": [
+    "Pledges lowest tax burden of any southeastern state -- income, sales, property, fees, and business regulations all targeted",
+    "Opposes full Medicaid expansion; supports Georgia Pathways (work-requirement Medicaid); joined lawsuit to invalidate ACA",
+    "Led or joined 10+ multi-state lawsuits against federal climate and environmental regulations (SEC disclosure, EPA emissions, WOTUS, social cost of carbon)",
+    "Created Gang Prosecution Unit (115+ convictions), Human Trafficking Prosecution Unit (200+ victims rescued), and Organized Retail Theft unit",
+    "Proposed 8-part anti-corruption plan including felony self-enrichment, ban on self-dealing, and dedicated Public Corruption Unit"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Opposes full Medicaid expansion -- 'largest tax increase in state history' (Georgia Sun interview)",
+        "Supports Georgia Pathways work-requirement Medicaid waiver",
+        "Sued Biden to preserve work requirements when CMS tried to revoke them (2022)",
+        "Georgia Public Policy Foundation background (free-market think tank)"
+      ],
+      "notes": "Not a 10 because he actively defended Georgia Pathways -- he supports a limited, conditional form of public health coverage. But his opposition to the ACA and full Medicaid expansion is explicit and backed by AG legal action. Work-requirement framing is the clearest signal: aid must be conditional."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "11Alive interview: 'lowest tax burden of any state in the southeastern United States'",
+        "Property tax caps position: 'capped, limited and transparent' (11Alive 1-on-1)",
+        "Georgia Public Policy Foundation (free-market think tank) career",
+        "GDEcD Commissioner: facilitated $14.4B in investment, 84K+ jobs",
+        "AJC analysis: lawsuit portfolio consistently anti-federal-regulation"
+      ],
+      "notes": "Lowest-tax-burden pledge is the campaign's most repeated commitment, covering income, sales, property, fees, and regulations. Property tax caps directly limit local government revenue capacity. His GDEcD record shows comfort with government as economic development facilitator (public-private partnerships), which prevents a pure 10. But the comprehensive anti-tax agenda and free-market background place him firmly at 8."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Joined multi-state ACA invalidation lawsuit (2019) -- called ACA 'unconstitutional'",
+        "Georgia Sun: explicitly opposes full Medicaid expansion",
+        "Sued Biden to preserve Georgia Pathways work-requirement Medicaid (2022)",
+        "Campaign frames healthcare as an affordability issue, not a coverage expansion issue"
+      ],
+      "notes": "Tried to invalidate ACA entirely (which would suggest 9-10), but simultaneously defended Georgia Pathways -- a limited state Medicaid program with work requirements. This shows he supports minimal, conditional public coverage rather than zero government role. Both positions are internally consistent: he prefers market-based coverage with a narrow state-directed backstop for the working poor. Scored 8."
+    },
+    "health_public_health": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "AJC lawsuit analysis: opposed vaccine/mask mandates (Head Start lawsuit)",
+        "Led coalition urging end to federal funding for child gender-affirming procedures (Feb 2026)",
+        "Statewide Opioid Task Force creation (2017) and $1B+ in settlements",
+        "General pattern of opposing federal public health authority across Biden administration"
+      ],
+      "notes": "Opposed federal public health mandates (vaccines, masks) per AJC analysis. Opioid work represents genuine public health engagement but is framed primarily as enforcement against pharma companies, not as a treatment-first model. Scored 7 rather than 8 because the Opioid Task Force shows some public health engagement, and medium confidence because most evidence is from lawsuit analysis rather than direct policy statements."
+    },
+    "housing_affordability_tools": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "11Alive interview: supports property tax caps as housing affordability measure",
+        "Campaign affordability framing: 'kitchen table issues... affordability particularly as it comes to housing'",
+        "Free-market background; no rent control, public housing, or subsidy positions found"
+      ],
+      "notes": "Only housing-adjacent policy is property tax caps -- a tax-relief approach rather than government subsidy, rent control, or public housing. No positions found on inclusionary zoning, housing vouchers, or publicly funded affordable housing. Scored based on his one stated position plus overall free-market orientation. Low confidence because this is a single campaign statement about property taxes, not a housing policy record."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "160+ sheriff endorsements",
+        "Campaign homepage: 'supporting law enforcement, protecting Georgians' liberties'",
+        "Created Gang Prosecution Unit, Human Trafficking Prosecution Unit, Organized Retail Theft unit",
+        "Campaign identity built on prosecution, convictions, and safe streets",
+        "AJC: consistent pro-law-enforcement positioning"
+      ],
+      "notes": "Strongly pro-law-enforcement with no reform, oversight, or accountability rhetoric. Not scored at 9-10 because he hasn't explicitly opposed body cameras, civilian oversight, or basic accountability measures -- his framing is positive (support and fund law enforcement) rather than hostile to all reform. His anti-corruption platform shows he values accountability in governance, though directed at politicians, not police."
+    },
+    "justice_sentencing_goals": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "AG record: 115+ gang convictions via dedicated prosecution unit",
+        "Human trafficking prosecution (200+ victims rescued)",
+        "Organized retail theft prosecution unit",
+        "No rehabilitation, reentry, or sentencing reform language found anywhere in record"
+      ],
+      "notes": "All criminal justice rhetoric is prosecution-and-conviction focused. No discussion of rehabilitation, reentry programs, bail reform, mandatory minimums, or sentencing alternatives found in any source. Scored 7 rather than higher because evidence is about prosecution emphasis (indirect for sentencing) rather than explicit sentencing policy positions like mandatory minimums or three-strikes. Medium confidence reflects this indirectness."
+    },
+    "justice_firearms": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Joined NRA amicus brief in NRA v. James (NY AG, Dec 2020)",
+        "Filed amicus brief opposing Savannah gun ordinance on state preemption grounds (Aug 2025)",
+        "Consistent pro-gun-rights coalition actions throughout AG tenure",
+        "Georgia Gun Owners criticism: too slow on Savannah, defended 18-20 year-old carry restriction"
+      ],
+      "notes": "Clear pro-gun-rights record through AG actions: NRA coalition support, challenging local gun restrictions under state preemption law. Georgia Gun Owners (far-right gun group) criticism is useful calibration -- they specifically call out his defense of an 18-20 year-old carry ban and timing of the Savannah brief (filed only after announcing for governor). This positions him as mainstream conservative pro-gun (8), not Second Amendment absolutist (9-10)."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Challenged Biden social cost of carbon EO -- called it 'nothing but a license for gross federal overreach' (2021)",
+        "Led 10-state challenge of SEC climate disclosure rule (March 2024)",
+        "Challenged EPA emissions rule for oil/gas producers with 23 other Republican AGs (March 2024)",
+        "Challenged federal power plant emissions rule with 24-state coalition",
+        "Led 24-state coalition against WOTUS rule, won (2023)",
+        "Urged federal agencies to restore state authority over water regulation (Jan 2026)"
+      ],
+      "notes": "Five separate major legal actions opposing federal climate and environmental policy across different regulatory mechanisms. This is one of the most thoroughly documented axes in his record. Framing is 'federal overreach' and economic burden rather than explicit climate science denial -- he attacks the regulatory mechanism, not the science. But the practical effect is opposition to virtually all federal climate policy. No pro-climate or clean-energy positions found anywhere. Scored 9; not 10 because he does not engage in climate denial."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Challenged EPA emissions rule for oil and gas producers (March 2024)",
+        "Challenged federal power plant emissions rule (coal and gas plants)",
+        "Challenged SEC climate disclosure rule for businesses (March 2024)",
+        "No pro-renewables, clean energy, or energy transition positions found"
+      ],
+      "notes": "Actively shielded fossil fuel industry from emissions regulation across oil/gas production and coal/gas power generation. Scored 8 rather than 9 because his actions are defensive (blocking new regulation) rather than affirmatively promoting fossil fuel expansion or attacking existing clean energy programs. No evidence of positions on renewable energy mandates or clean energy investment in either direction."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Led WOTUS challenge -- restored state authority over water regulation (won 2023)",
+        "Urged federal agencies to restore state authority over water regulation (Jan 2026)",
+        "Pattern of opposing EPA and federal environmental review authority",
+        "Called social cost of carbon EO 'gross federal overreach'"
+      ],
+      "notes": "WOTUS litigation and anti-federal-environmental-authority pattern clearly favor reducing federal environmental review burdens and restoring state/local control. This maps to faster approvals and less environmental review. Medium confidence because his positions are about federal authority and states' rights rather than permitting speed specifically -- he has not taken direct positions on NEPA reform or permitting timelines."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "Consistently opposed environmental protections (5+ anti-climate lawsuits working against nature protection for all). Fought ACA coverage expansion (reduces universal healthcare access). Opposed transgender protections and gender-affirming care funding (multiple lawsuits). Defended restrictive voting law SB 202. Fought Biden immigration policies. Anti-trafficking work (200+ victims rescued) and opioid litigation are positive universalist signals, but the overwhelming pattern systematically narrows rather than expands the circle of concern."
+    },
+    "benevolence": {
+      "score": 0.4,
+      "reasoning": "Genuine community-welfare orientation through an in-group lens: anti-trafficking unit (200+ victims rescued), gang prosecution (community safety), opioid settlements ($1B+), property tax relief for homeowners, economic development (84K+ jobs as GDEcD Commissioner). Campaign framed around 'safe neighborhoods, world-class schools, good jobs.' Care for community is real but bounded -- extends to constituents, not to broader populations or structural equity."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "Strong traditional values orientation throughout AG record: defended Georgia's 6-week abortion ban in court; personal belief that abortion should be prohibited except to save mother's life; opposed transgender student protections and gender-affirming care (multiple lawsuits defending traditional gender norms); defended SB 202 (preserving conservative electoral norms). Establishment Republican aligned with existing institutional structures and social conservatism. Free-market economic tradition from Georgia Public Policy Foundation."
+    },
+    "conformity": {
+      "score": 0.7,
+      "reasoning": "Defining characteristic: declined to pursue 2020 election fraud case despite direct Trump phone pressure (Dec 8, 2020), upholding institutional norms and rule of law over political loyalty. Won 2022 primary despite Trump opposition. Defends Georgia election law through proper legal channels. Anti-corruption platform built on institutional accountability. 'I want to win this race legally, ethically, and honestly.' Uses the legal system (AG lawsuits) rather than executive overreach to pursue policy goals. One of the strongest conformity signals in the 2026 Georgia field."
+    },
+    "security": {
+      "score": 0.8,
+      "reasoning": "Arguably the most central value in his political identity. Public safety is the foundation of his AG tenure (gang prosecution unit, trafficking unit, retail theft unit, opioid task force) and campaign ('safe streets,' 'safe neighborhoods'). 160+ sheriff endorsements. Border enforcement lawsuits against Biden immigration policy. Community safety framing pervades all messaging. Security is not just a position -- it is his brand and his primary claim to office."
+    },
+    "power": {
+      "score": 0.4,
+      "reasoning": "Aligned with business establishment: GDEcD Commissioner facilitating corporate investment, 'No. 1 state to do business,' Georgia Public Policy Foundation career. Kemp-wing establishment Republican with institutional power base. Policy positions consistently favor corporate and high-income interests (lowest tax burden, anti-regulation, anti-ACA). However, his anti-corruption platform (criminalizing self-enrichment, banning self-dealing) cuts against pure power deference, and his willingness to defy Trump in 2020 shows he prioritizes institutional norms over political power alignment."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Work-requirement Medicaid (Georgia Pathways) conditions aid on personal effort -- the clearest achievement-value signal. GDEcD record is measured in results ($14.4B investment, 84K+ jobs). Campaign frames governance as competence-driven: prosecution statistics, job creation numbers, election victories. Career trajectory (campaign staffer to chief of staff to Commissioner to AG to governor candidate) reflects meritocratic advancement. Free-market think tank background philosophically grounded in individual achievement and entrepreneurship."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Social conservatism restricts personal lifestyle choices: defended 6-week abortion ban (restricts reproductive autonomy), multiple lawsuits opposing transgender protections (restricts identity expression), urged end to federal funding for gender-affirming procedures. No recreational cannabis, personal freedom, or lifestyle liberty positions found. His 'liberty' language is about economic freedom and gun rights, not personal lifestyle freedom. Net effect works against personal pleasure and lifestyle autonomy."
+    },
+    "stimulation": {
+      "score": -0.4,
+      "reasoning": "Classic institutional conservative positioned as the Kemp-wing continuity candidate. Campaign theme is 'we've kept Georgia the No. 1 state to do business' -- preserving success, not disrupting the status quo. Defends existing laws and structures (SB 202, Heartbeat Bill, Georgia Pathways) rather than proposing transformative change. Anti-corruption plan is the closest thing to a reform proposal, but even that strengthens existing institutions rather than reimagining them. Not a disruptor by temperament or strategy."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Sharply mixed signals that largely cancel out. Pro-freedom: gun rights as individual liberty (+), opposed vaccine/mask mandates as individual choice (+), anti-federal-regulation stance frames government as threat to autonomy (+). Anti-freedom: defended 6-week abortion ban restricting bodily autonomy (-), multiple lawsuits opposing transgender rights and identity expression (-), supported restrictive voting law SB 202 (-). The selectivity of his 'freedom' -- applied to firearms and economic activity but not to reproduction, gender identity, or voting access -- produces a near-zero net score."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Trump relationship and 2020 election",
+      "description": "Carr upheld 2020 Georgia election results under direct Trump phone pressure (Dec 8, 2020), earning Trump's enmity and a Trump-backed primary challenger in 2022 (which Carr won). Has since sought rapprochement: endorsed Trump in 2024, donated to his campaign. But Trump gave 'complete and total' endorsement to rival Burt Jones in August 2025. Carr is positioned as the Kemp-aligned institutionalist, not the MAGA candidate.",
+      "sources": ["AJC", "Democracy Docket", "Rough Draft Atlanta", "Multiple news outlets"],
+      "scoringImpact": "Boosted conformity value score significantly (0.7). Does not directly affect policy axis scores but contextualizes his position as establishment conservative who prioritizes institutional norms."
+    },
+    {
+      "topic": "Healthcare: ACA invalidation lawsuit vs. Georgia Pathways defense",
+      "description": "Joined suit to invalidate the ACA entirely in 2019, yet sued Biden in 2022 to preserve Georgia Pathways (a limited, work-requirement Medicaid program). Not a true contradiction -- both are consistent with preferring limited, conditional state-directed coverage over broad federal programs -- but shows he accepts some government health coverage role while attacking the ACA's framework.",
+      "sources": ["AJC", "Georgia AG press releases", "Georgia Sun"],
+      "scoringImpact": "Prevented health_coverage_model from scoring at 9-10. Scored at 8 to reflect his acceptance of conditional, limited state-directed coverage."
+    },
+    {
+      "topic": "Firearms: mainstream pro-gun record vs. far-right criticism",
+      "description": "AG record includes pro-NRA amicus briefs and opposition to local gun ordinances, but Georgia Gun Owners (far-right gun group) criticizes him for filing the Savannah brief only after announcing for governor (Aug 2025) and for defending an 18-20 year-old carry restriction in separate litigation.",
+      "sources": ["Georgia AG press releases", "Georgia Gun Owners website", "WABE"],
+      "scoringImpact": "Calibrated justice_firearms at 8 rather than 9-10. Far-right criticism serves as a ceiling indicator for his pro-gun positioning."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": [
+      "econ_school_choice",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_transport_priority"
+    ],
+    "reasonSkipped": "No meaningful education policy positions beyond general 'world-class schools' language -- confidence too low to score. No healthcare cost control positions found (opioid litigation is pharma enforcement, not price-setting policy). No housing supply, zoning reform, or transit/transportation positions found. These gaps reflect domains where an Attorney General has limited direct action and where Carr's campaign has not staked specific positions.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No school choice or education policy specifics -- only vague 'world-class schools' language",
+      "No healthcare cost control positions (drug pricing, hospital rate-setting, surprise billing)",
+      "No housing supply or zoning reform positions",
+      "No transit or transportation policy positions",
+      "No specific sentencing policy positions (mandatory minimums, death penalty, reentry) -- only prosecution emphasis inferred",
+      "Israel/Hamas position referenced in Atlanta News First headline but content not available",
+      "No specific budget or spending proposals beyond 'lowest tax burden' pledge"
+    ],
+    "evidenceQualityNotes": "Carr lacks a legislative voting record, but his nearly 10-year AG record provides Tier-1-equivalent evidence through legal actions (lawsuits filed, coalition briefs joined, prosecution units created). His lawsuit portfolio is remarkably extensive and internally consistent, making it the primary evidence base across climate, healthcare, firearms, and immigration. Campaign statements corroborate rather than contradict the AG record -- no significant say-do discrepancies were found. The strongest evidence clusters are climate/environment (5+ lawsuits) and criminal justice (prosecution units with measurable outcomes)."
+  }
+}

@@ -1,0 +1,576 @@
+{
+  "slug": "joe-jaworski",
+  "name": "Joe Jaworski",
+  "party": "Democratic",
+  "office": "Texas Attorney General, 2026",
+  "contest": "Texas AG Democratic Primary, March 3, 2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-27T00:00:00Z",
+  "biography": {
+    "currentRole": "Attorney, private practice (Galveston, TX) — trial and mediation law, full-time while campaigning",
+    "priorRoles": [
+      "55th Mayor of Galveston, Texas (2010-2012)",
+      "Galveston City Council member and Mayor Pro Tem (prior to mayorship)",
+      "Texas State Senate District 11 candidate (2008, unsuccessful)",
+      "Democratic nominee for Texas Attorney General (2022 general election, lost to Ken Paxton)"
+    ],
+    "education": "B.A. in Spanish Literature, Davidson College (1984); J.D., University of Texas School of Law (1991)",
+    "background": "Third-generation Texas trial attorney with 30+ years of full-time legal practice focused on mediation, civil litigation, and municipal matters. Grandson of Leon Jaworski, Watergate Special Prosecutor — family legacy of 'no one is above the law' is central to his campaign identity. As Galveston mayor, oversaw post-Hurricane Ike recovery, including politically costly support for rebuilding public housing as mixed-income development — lost re-election in 2012 over this stance. Lost 2022 Democratic AG primary runoff to Rochelle Garza 37%-63%. Now running against state Sen. Nathan Johnson and former FBI agent Tony Box in the 2026 primary. Self-describes as 'the progressive candidate.'",
+    "electoralContext": "$250K cash on hand as of research date. Polling at approximately 22% in a close three-way Democratic primary. Endorsed by Jolt Action (in the organization's first-ever official primary endorsement), 46 clubs/organizations, and 140+ individual leaders statewide. Texas AFL-CIO endorsed rival Nathan Johnson in 2026 (had endorsed Jaworski in 2022)."
+  },
+  "campaignWebsite": {
+    "url": "https://www.jaworskifortexas.com",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "notes": "Direct WebFetch unavailable; content reconstructed from multiple search result snippets referencing campaign website pages including homepage, /about/, /endorsements/, and /media-kit/, plus structured Q&A responses and coverage referencing campaign materials. Content is well-documented across two full campaign cycles.",
+    "statedPositions": [
+      {
+        "topic": "voting_rights",
+        "quote": "Replace Ken Paxton's voter suppression unit with a Voter Enhancement Division; stop voter harassment; enforce laws that expand access like requiring high schools to offer voter registration; prosecute those who suppress votes; interpret election laws to empower voters, not intimidate them; support same-day voter registration, online registration, and making voting by mail more accessible",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Core flagship platform commitment, repeated across all outlets and both 2022 and 2026 cycles. Directly within AG's enforcement remit."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "Work with School Boards to end vouchers and force the legislature to suitably provide for public education; fight to stop unconstitutional voucher schemes that siphon money from public schools; reversing the privatization of public education; support affordable/free community college and restore in-state tuition for Dreamers",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicitly anti-voucher; would challenge school vouchers in court via AG litigation power. Also supports Dreamer in-state tuition."
+      },
+      {
+        "topic": "health_coverage_model",
+        "quote": "Expand Medicaid to bring billions of federal dollars home, save rural hospitals, and lower local taxes; defend access to affordable care; protect those with pre-existing conditions; oppose cruel restrictions on reproductive health; knock down Paxton's roadblocks to Medicaid; would dismiss Paxton-era ACA lawsuits",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit Medicaid expansion support. AG-role framing: use office to remove barriers to health access. Supports ACA; not single-payer advocacy but consistent government-expansion direction."
+      },
+      {
+        "topic": "justice_sentencing_goals",
+        "quote": "Legalizing personal use marijuana, ending for-profit prisons, and respecting local decision-making on law enforcement and prosecution; innovative courts that focus on rehabilitation, like mental health and veterans courts; legalizing cannabis achieves criminal justice reform and actually funds the police because we will save $300 million annually when we cease this wasteful, petty prosecution",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2022-2026",
+        "confidence": "high",
+        "notes": "Consistent across both cycles: marijuana legalization, end for-profit prisons, rehabilitation-focused courts. Frames cannabis decriminalization explicitly as criminal justice reform."
+      },
+      {
+        "topic": "justice_firearms",
+        "quote": "Common-sense gun safety measures that keep kids safe in classrooms and communities; refused support from the gun lobby; believe in responsible gun ownership paired with strong safety standards",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2022-2026",
+        "confidence": "low",
+        "notes": "Only general statement — no specific measures named (background checks, red flag laws, assault weapons, etc.). Uvalde cited as motivating event in 2022 cycle. No voting record on gun legislation exists. Direction is clearly toward regulation, confidence is low on precise position."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Respect local officials' duties and let them lead; partner with local District Attorneys to prosecute corruption in state political office; supports local decision-making on law enforcement and prosecution",
+        "sourceUrl": "https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-democratic-primary-candidates-for-texas-attorney-general/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Frames policing via local-control lens and anti-corruption accountability, not explicit 'reform' or 'defund' language. Would not enforce SB8 (bathroom bill) — discretionary non-enforcement on LGBTQ-targeted laws. No history as prosecutor or law enforcement official."
+      },
+      {
+        "topic": "climate_ambition",
+        "quote": "Using science and technology to fight climate change while responsibly managing Texas's energy resources; saving our natural resources (water, land) from for-profit exploitation; join county attorneys to sue polluters",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2022-2026",
+        "confidence": "medium",
+        "notes": "Consistent across both cycles. 'Responsibly managing energy resources' is a hedge that keeps fossil fuel industry in view — not emergency-level climate rhetoric. Concrete action within AG's remit: litigation against polluters."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Division of Affordability focused on helping young adult Texans afford the American Dream: graduating debt free, getting a good job that pays good wages, home ownership or affordable rent and starting a family; limiting the power of billionaires who exert influence over the people's government; stand up for Texas workers by supporting higher wages, protecting the right to organize",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "AG-specific framing; anti-billionaire populist language. Housing affordability named explicitly. Supports higher wages and union organizing rights; no specific federal safety net program positions stated — not in scope for AG office."
+      },
+      {
+        "topic": "immigration",
+        "quote": "Protect immigrants' constitutional rights; distinguish between immigration and crime; support deploying resources to fight cartel violence while ensuring Dreamers, asylum seekers, and immigrant families are treated with dignity and respect; restore in-state tuition for Dreamers; use OAG budget to fund attorneys to prosecute cartel members; enlist law students to offer legal advice to immigrants seeking asylum; convicting cartel criminals bringing people and drugs over illegally",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Distinguishes cartel crime from immigration. Pro-Dreamer, pro-asylum. Pragmatic 'firm immigration partnership with federal government' framing. Not abolish-ICE rhetoric, but clearly pro-immigrant rights."
+      },
+      {
+        "topic": "abortion_reproductive_rights",
+        "quote": "Abortion is a health care decision that should remain between a woman and her doctor, not politicians; supports returning to the Roe v. Wade standard of care up to fetal viability; opposes Texas's extreme bans rooted in religious ideology; SB8 (Heartbeat Act) is facially unconstitutional; would not criminalize people seeking abortions or abortion providers",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2022-2026",
+        "confidence": "high",
+        "notes": "Consistent across both cycles. In 2022 runoff, both Democratic finalists explicitly vowed to defend reproductive rights. In 2026, framing retained 'Roe standard up to viability.' SB8 unconstitutionality is a firm legal position. In 2022 he also stated he does not think prosecuting abortion is within the AG's purview — prosecutorial restraint framing."
+      },
+      {
+        "topic": "consumer_protection",
+        "quote": "Create and staff within the OAG a Division of Ethics and Integrity; recruit top-flight attorneys to enhance antitrust and consumer protection enforcement; combine resources with other AGs around the country; pivot the office away from culture wars toward consumer protection; holding private health care insurance companies to account and using AG investigation powers to make them pay health care claims reasonably and on time",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2022-2026",
+        "confidence": "high",
+        "notes": "Central to his candidacy concept across both cycles. Anti-partisan framing: 'advocate for the people of Texas, rather than a general counsel for a political party.' Specifically names hotel junk fees, health insurance claims enforcement, antitrust."
+      },
+      {
+        "topic": "campaign_finance_term_limits",
+        "quote": "Create a Division of Ethics and Integrity that will advocate for constitutional amendments and laws providing for term limits, campaign contribution limits, independent redistricting commissions, and citizen-initiated legislation by petition",
+        "sourceUrl": "https://www.jaworskifortexas.com",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Structural democracy reform as AG platform — ambitious; would require constitutional amendments. Signals strong anti-corruption/pro-democratic-norms values."
+      },
+      {
+        "topic": "mayoral_public_housing",
+        "quote": "Risked his mayorship to support the rebuilding of Galveston's storm-damaged public housing by championing a community-based solution to build mixed-income housing for thousands, a game-changing first for the Island community — a political choice that made a positive difference for thousands of Island residents but cost him a second term",
+        "sourceUrl": "https://www.jaworskifortexas.com/about/",
+        "date": "2010-2012",
+        "confidence": "high",
+        "notes": "Tier 4 biographical but exceptionally concrete action: voluntarily sacrificed electoral viability to support public/mixed-income housing for low-income residents. 569 public housing units destroyed by Hurricane Ike. His plan: replace barracks-style projects with mixed-income developments interspersed throughout community. Lost re-election to Lewis Rosen who campaigned against housing plan. Strong signal on housing_affordability_tools and econ_safetynet values."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No legislative voting record exists. Jaworski has never held state or federal legislative office. Municipal mayoral record (Galveston 2010-2012) involves city council-level decisions, not tracked in standard databases. His mayoral record on public housing (see statedPositions above) is the primary action-based evidence. The 2022 AG nomination run and 2026 campaign are the main evidence sources."
+  },
+  "mayoralRecord": {
+    "available": true,
+    "office": "Mayor of Galveston, Texas (2010-2012)",
+    "keyDecisions": [
+      {
+        "issue": "Post-Hurricane Ike public housing rebuild",
+        "decision": "Championed rebuilding Galveston's 569 Hurricane Ike-destroyed public housing units as mixed-income development interspersed throughout community, rather than scattered-site solutions or permanent elimination of public housing stock. Opposed by significant community opposition. HUD ultimately directed Galveston to rebuild. Mixed-income plan approved at Oleander Homes site.",
+        "outcome": "New mixed-income housing eventually built; Jaworski lost re-election in 2012 largely over this stance. He has repeatedly cited this as evidence of taking courageous stands at political cost.",
+        "topic": "housing_affordability_tools",
+        "sourceUrls": [
+          "https://texashousers.org/2011/07/15/hud-pointedly-directs-galveston-to-rebuild-its-public-housing/",
+          "https://ballotpedia.org/Joe_Jaworski_recall,_Galveston,_Texas_(2011)"
+        ],
+        "notes": "Strongest behavioral evidence in the record. A 2011 recall effort failed (68.6% opposed recall). He lost re-election in 2012. This is the defining evidence for his values on housing_affordability_tools."
+      },
+      {
+        "issue": "Seawall Boulevard financing and transit",
+        "decision": "Resolved decades-long financing dispute for Seawall Boulevard improvements via popular election. Improvements included new Seawall Shuttle bus service with stops at 16 intersections between 4th and 81st Streets, bicycle racks at 28 locations, and public restroom facilities funded by parking fee revenues.",
+        "topic": "housing_transport_priority",
+        "sourceUrl": "https://www.jaworskifortexas.com/about/",
+        "notes": "Initiated public transit investment (Seawall Shuttle) and multi-modal infrastructure. Moderate signal toward transit/public investment. Practical governance rather than ideological posture."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "Texas AFL-CIO",
+      "score": null,
+      "grade": "Endorsed 2022 primary; did NOT endorse 2026",
+      "url": "https://texasaflcio.org/news/endorsements",
+      "notes": "Texas AFL-CIO COPE endorsed Jaworski in 2022 Democratic AG primary. In 2026, COPE endorsed rival Nathan Johnson for AG at the January 25, 2026 COPE Convention in Georgetown. Jaworski lost the labor federation endorsement this cycle despite claiming long-time friendship with labor."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade exists — Jaworski has never held state or federal legislative office subject to NRA rating. He explicitly 'refused support from the gun lobby.'"
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV scorecard — no legislative record to rate. Campaign language supports climate action via litigation and science-based policy."
+    },
+    {
+      "organization": "EMILY's List / Planned Parenthood Texas Votes / NARAL Pro-Choice America",
+      "score": null,
+      "grade": "None (2022 or 2026)",
+      "url": null,
+      "notes": "In 2022 these organizations endorsed rival Rochelle Garza, not Jaworski. Garza's background actively litigating for reproductive rights was viewed as a stronger fit. No 2026 endorsement from these groups found for Jaworski."
+    },
+    {
+      "organization": "VoteSmart / NPAT",
+      "score": null,
+      "grade": null,
+      "url": "https://justfacts.votesmart.org/candidate/biography/102262/joe-jaworski",
+      "notes": "VoteSmart biography page exists. No interest group ratings or legislative scores found — consistent with non-legislative background."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Jolt Action (Latino civic engagement)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Jolt Action's first-ever official primary endorsement in the organization's ~10-year history; significant signal of Latino civic community backing"
+    },
+    {
+      "organization": "Lone Star Left",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Progressive Texas blog/organizing outlet"
+    },
+    {
+      "organization": "Living Blue in Texas",
+      "type": "endorsement",
+      "cycle": "2022",
+      "notes": "Progressive Texas grassroots outlet; endorsed in 2022 cycle"
+    },
+    {
+      "organization": "State Representative Gene Wu",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Ron Reynolds",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Ann Johnson",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Jon Rosenthal",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Alma Allen",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Charlene Ward Johnson",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Ray Lopez",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Representative Josey Garcia",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Former U.S. Representative Nick Lampson",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Former State Representative Victoria Neave Criado",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Former Houston Mayor Annise Parker",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "State Board of Education member Rebecca Bell-Metereau",
+      "type": "individual endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "46 clubs and organizations; 140+ individual leaders across Texas (per campaign self-report)",
+      "type": "broad endorsement slate",
+      "cycle": "2026",
+      "sourceUrl": "https://www.jaworskifortexas.com/endorsements/"
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "type": "endorsement (2022 primary only)",
+      "cycle": "2022",
+      "notes": "Did NOT endorse in 2026 — endorsed Nathan Johnson instead at January 2026 COPE Convention"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune voter guide Q&A",
+      "date": "2026-01-28",
+      "url": "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+      "cycle": "2026",
+      "keyExchanges": [
+        {
+          "topic": "AG office priorities",
+          "quote": "Restoring integrity and accountability to an office that has been turned into a laughingstock; conduct a top-to-bottom review of all lawsuits and actions, keep the valid ones, drop the frivolous ones; making it easier for eligible Texans to vote, consumer protection, pivoting away from the office's current focus on blocking liberal policies from going into effect",
+          "notes": "Structured voter guide Q&A — most reliable format for stated positions"
+        }
+      ]
+    },
+    {
+      "outlet": "Community Impact Q&A",
+      "date": "2026-01-21",
+      "url": "https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-democratic-primary-candidates-for-texas-attorney-general/",
+      "cycle": "2026",
+      "keyExchanges": [
+        {
+          "topic": "Collaboration with local government",
+          "quote": "Respect local officials' duties and let them lead; partner with local District Attorneys to prosecute corruption in state political office; join county attorneys to sue polluters; work with School Boards to end vouchers and force the legislature to suitably provide for public education",
+          "notes": "Explicit local-control governance philosophy; AG as partner to local officials rather than as superseding authority"
+        },
+        {
+          "topic": "Natural resources",
+          "quote": "Saving our natural resources (water, land) from for-profit exploitation; limiting the power of billionaires who exert influence over the people's government",
+          "notes": "Anti-privatization framing on natural resources; connects to climate and econ_investment axes"
+        }
+      ]
+    },
+    {
+      "outlet": "Spectrum News Austin / Democratic AG debate",
+      "date": "2026-01-22",
+      "url": "https://spectrumlocalnews.com/tx/austin/news/2026/01/22/democrat-candidatess-hoping-to-make-history-by-becoming-texas-attorney-general-in-november-",
+      "cycle": "2026",
+      "keyExchanges": [
+        {
+          "topic": "LGBTQ enforcement / prosecutorial discretion",
+          "quote": "Would not seek to enforce SB 8 (prohibiting biological males from women's private spaces); would use discretion in choosing which state laws to defend as attorney general",
+          "notes": "Explicit non-enforcement commitment on LGBTQ-targeted legislation; both Jaworski and Johnson took this position"
+        },
+        {
+          "topic": "Progressive identity and courage",
+          "quote": "I'm the progressive candidate who has taken courageous stands, even at a political cost; I stood ten toes down to fight for my constituents",
+          "notes": "Reference to Galveston public housing stance as defining character evidence; primary debate format"
+        },
+        {
+          "topic": "Messaging strategy",
+          "quote": "Democrats should not 'take the bait' on Republican political tactics like discussions of Sharia law or bathroom issues",
+          "notes": "Strategic framing; indicates political pragmatism alongside progressive values identity"
+        }
+      ]
+    },
+    {
+      "outlet": "WFAA Dallas",
+      "date": "2025-07",
+      "url": "https://www.wfaa.com/article/news/politics/inside-politics/texas-politics/joe-jaworski-another-run-for-texas-attorney-general/287-3a2cbe00-65e6-48ec-b9dd-e0dd9d4fc651",
+      "cycle": "2026",
+      "keyExchanges": [
+        {
+          "topic": "AG office philosophy",
+          "quote": "Texas needs more than culture wars from its attorney general",
+          "notes": "Campaign announcement framing; consumer protection and anti-partisan posture"
+        }
+      ]
+    },
+    {
+      "outlet": "Longview News-Journal / AP wire (campaign formal announcement)",
+      "date": "2025-11-02",
+      "url": "https://news-journal.com/2025/11/02/ex-galveston-mayor-says-hell-return-power-to-people-as-texas-attorney-general/",
+      "cycle": "2026",
+      "keyExchanges": [
+        {
+          "topic": "Rule of law / democratic norms",
+          "quote": "I just see the great American experiment faltering, and I'm running for office to restore the rule of law with a capable attorney general who has been tested by fire",
+          "notes": "Anti-authoritarian, pro-democratic-norms framing; closely tied to family legacy (Leon Jaworski / Watergate)"
+        },
+        {
+          "topic": "Immigration cartel focus",
+          "quote": "Convicting cartel criminals bringing people and drugs over illegally, and putting young attorneys and law students into the system as pro bono counsel for asylum seekers",
+          "notes": "Targeted enforcement against cartels combined with legal aid for asylum seekers; consistent across both cycles"
+        }
+      ]
+    },
+    {
+      "outlet": "KXAN Austin candidate profile",
+      "date": "2022-01-01",
+      "url": "https://www.kxan.com/news/texas-politics/texas-democratic-ag-candidate-profiles-trial-attorney-joe-jaworski/",
+      "cycle": "2022",
+      "keyExchanges": [
+        {
+          "topic": "Federal-state litigation",
+          "quote": "Will take a different approach to the office, with less emphasis on suing the federal government — an anti-Washington tactic made popular by Texas AG predecessors; [will sue federal government only] if they behave in ways that hurt Texas interests",
+          "notes": "Contrast with Paxton-era approach; consistent with 2026 platform. Not anti-federal ideologically — substantive legal analysis framing."
+        },
+        {
+          "topic": "Healthcare consumer protection",
+          "quote": "Working with doctors and patients and all insureds in Texas, it would be very important for the AG to let private health insurance know there's a new sheriff in town and that insurance companies need to start paying claims and that doctors' care recommendations are being followed",
+          "notes": "Consumer-protection approach to healthcare via AG's enforcement role — complements 2026 Medicaid expansion stance"
+        },
+        {
+          "topic": "Marijuana legalization",
+          "quote": "Remove this wasteful, petty prosecution and let's make some money, let's help our veterans and let's let police and prosecutors fight real crime; legalizing cannabis achieves criminal justice reform and actually funds the police because we will save $300 million annually",
+          "notes": "Explicit marijuana legalization; fiscal, veterans, law enforcement efficiency arguments"
+        },
+        {
+          "topic": "Immigration partnership",
+          "quote": "Texas needs a 'firm immigration partnership' with the federal government; funding up to 8 attorneys to be placed in DOJ to prosecute cartel members; enlisting third-year law students to offer legal advice to immigrants seeking asylum",
+          "notes": "Most detailed immigration policy proposal in the record; cartel prosecution + asylum legal aid"
+        },
+        {
+          "topic": "Local government authority",
+          "quote": "Local decision-making authority is under attack in state government these days",
+          "notes": "Strong local-autonomy stance; would protect local jurisdictions from state preemption"
+        }
+      ]
+    },
+    {
+      "outlet": "CBS Texas / Democratic AG runoff debate",
+      "date": "2022-05-24",
+      "url": "https://www.cbsnews.com/texas/news/democratic-runoff-for-texas-ag-garza-jaworski-discuss-abortion-state-lawsuits-against-biden-administration/",
+      "cycle": "2022",
+      "keyExchanges": [
+        {
+          "topic": "Abortion prosecution",
+          "quote": "I would not [criminalize people seeking abortions or abortion providers]. I do not think prosecuting abortion is within the purview of the state's attorney general",
+          "notes": "Prosecutorial restraint framing, not lack of support for abortion rights. Distinguished from Garza who had actively litigated for reproductive rights in court."
+        },
+        {
+          "topic": "Abortion rights framework",
+          "quote": "Abortion is a health care decision that should remain between a woman and her doctor; supports return to Roe v. Wade standard of care up to fetal viability; the fight for reproductive rights in Texas will require a sincere commitment to voting rights",
+          "notes": "Direct policy position; equal protection framing under Texas constitution"
+        }
+      ]
+    },
+    {
+      "outlet": "Big Bend Sentinel (West Texas campaign stops)",
+      "date": "2021-07-14",
+      "url": "https://bigbendsentinel.com/2021/07/14/democratic-attorney-general-candidate-hits-8-campaign-stops-out-west/",
+      "cycle": "2022",
+      "keyExchanges": [
+        {
+          "topic": "Founding candidacy philosophy",
+          "quote": "Advocate for the people of Texas, rather than a general counsel for a political party",
+          "notes": "Founding framing of his AG candidacy concept — bipartisan service philosophy"
+        },
+        {
+          "topic": "Civil rights division",
+          "quote": "Turn the current AG's Voter Fraud Division into a Civil Rights Division",
+          "notes": "2022 precursor to 2026 Voter Enhancement Division proposal"
+        },
+        {
+          "topic": "Abortion / SB8",
+          "quote": "Spoke vehemently against SB 8 legislation allowing anyone in Texas to sue any person who accesses an abortion or helps in its provision",
+          "notes": "Early, strong public opposition to SB8 in 2021 West Texas stops"
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Climate/energy: progressive self-identification vs. hedged energy language",
+      "conflict": "Describes himself as 'the progressive candidate' but on climate states 'use science and technology to fight climate change while responsibly managing Texas's energy resources' — language that accommodates continued fossil fuel management. No explicit fossil-fuel phase-out position. This is a notable hedge.",
+      "sources": ["Campaign website", "Community Impact Q&A 2026"],
+      "notes": "Texas AG context: the office does not directly regulate energy. This language likely reflects Texas electoral reality and the AG's actual remit rather than a retreat from climate belief. Score toward moderate on climate_energy_portfolio, not at the progressive pole."
+    },
+    {
+      "topic": "Abortion prosecution framing (2022 vs. 2026)",
+      "conflict": "In 2022 runoff, Jaworski stated he would not prosecute abortion as outside the AG's purview — a more restrained framing than Garza's. His 2026 platform uses stronger language ('oppose cruel restrictions') but the underlying legal theory (prosecutorial restraint) may still shape his approach.",
+      "sources": ["CBS Texas 2022 runoff debate", "Campaign website 2026"],
+      "notes": "Not a contradiction — a distinction in approach (legal restraint framing vs. active litigation). Both cycles are clearly pro-choice. Score as clearly pro-access."
+    },
+    {
+      "topic": "Gun control specificity",
+      "conflict": "States 'common-sense gun safety' without naming specific measures. Cannot be scored with high confidence on the justice_firearms axis beyond the general direction.",
+      "sources": ["Campaign website 2022 and 2026", "Multiple news outlets"],
+      "notes": "Direction is clearly toward regulation; confidence is LOW on precise position. Score toward pole A but with low confidence."
+    },
+    {
+      "topic": "Labor endorsement: 2022 vs. 2026",
+      "conflict": "Endorsed by Texas AFL-CIO in 2022 but not in 2026 — that endorsement went to Nathan Johnson. His stated workers' rights positions are unchanged; the shift appears to reflect the AFL-CIO's preference for Johnson's legislative background rather than a policy differentiation.",
+      "sources": ["Texas AFL-CIO 2026 endorsement announcement"],
+      "notes": "Does not change the policy position evidence. Noted for context only."
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_school_choice: Explicit opposition to vouchers; would challenge them in court via AG power; supported community college funding and Dreamer in-state tuition — clear Pole A signal. HIGH confidence.",
+      "health_coverage_model: Explicit Medicaid expansion; ACA defense; dismiss Paxton ACA lawsuits; protect pre-existing conditions — consistent across cycles. HIGH confidence.",
+      "justice_sentencing_goals: Marijuana legalization, end for-profit prisons, rehabilitation courts — consistent across both cycles with specific fiscal argument. HIGH confidence.",
+      "abortion_reproductive_rights: Roe standard; SB8 unconstitutional; consistent 2022-2026 — HIGH confidence. Note: not scored as a civic axis but informs health_public_health and overall values profile.",
+      "housing_affordability_tools: Mayoral behavioral record — sacrificed re-election to rebuild public housing for low-income residents — strongest action-based evidence in the file. HIGH confidence on values direction.",
+      "consumer_protection/econ_investment (AG-framing): Anti-monopoly, anti-billionaire, sue polluters, protect workers — consistent populist-progressive economic orientation."
+    ],
+    "weakestAxes": [
+      "justice_firearms: Only 'common-sense' language; no specific bill positions named. LOW confidence — direction toward regulation is clear but precision is absent.",
+      "climate_energy_portfolio: Hedged 'responsibly managing Texas energy resources' language; no explicit fossil fuel phase-out position. MEDIUM confidence — moderate positioning, not progressive pole.",
+      "econ_tax_structure: No stated position — AG race, not legislative; omit this axis.",
+      "housing_supply_zoning: No stated position beyond mayoral-era mixed-income housing support — about affordability tools not supply-side zoning. Omit.",
+      "housing_transport_priority: Galveston Seawall Shuttle is too thin and local for statewide axis scoring. Omit.",
+      "climate_permitting: No evidence; AG does not set permitting rules. Omit."
+    ],
+    "axesToOmit": [
+      "econ_tax_structure: No evidence; AG does not set tax policy",
+      "climate_permitting: No evidence; AG does not set permitting rules",
+      "housing_supply_zoning: No statewide position evidence",
+      "housing_transport_priority: Evidence too thin and local"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Jaworski has no legislative voting record — all evidence is Tier 2-3 (campaign statements, structured interviews, news coverage) plus Tier 4 (mayoral behavioral record). The mayoral public housing decision is the only action-based evidence, and it is strong. His positions have been tested across two full AG campaigns (2022 and 2026), multiple structured Q&As, and a primary debate, giving reasonable confidence that stated 2026 positions are stable. Main scoring consideration: he is running for AG specifically, so his platform is filtered through 'what can the AG do?' — he may hold broader progressive views (e.g., on tax policy) that never surface because they are outside AG scope. Do not infer from silence on non-AG issues. The AG office context constrains fiscal, tax, permitting, and energy axes: these should be scored conservatively or omitted."
+  },
+  "sources": [
+    {
+      "url": "https://www.jaworskifortexas.com",
+      "description": "Official campaign website (positions reconstructed from search snippets referencing homepage, /about/, /endorsements/, /media-kit/)"
+    },
+    {
+      "url": "https://ballotpedia.org/Joe_Jaworski",
+      "description": "Ballotpedia biography and campaign record"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/01/28/texas-attorney-general-democrats-2026-primary-qa-voter-guide/",
+      "description": "Texas Tribune 2026 Democratic AG Q&A voter guide"
+    },
+    {
+      "url": "https://communityimpact.com/austin/south-central-austin/election/2026/01/21/qa-meet-the-democratic-primary-candidates-for-texas-attorney-general/",
+      "description": "Community Impact structured Q&A, January 2026"
+    },
+    {
+      "url": "https://spectrumlocalnews.com/tx/austin/news/2026/01/22/democrat-candidatess-hoping-to-make-history-by-becoming-texas-attorney-general-in-november-",
+      "description": "Spectrum News debate coverage, January 2026"
+    },
+    {
+      "url": "https://www.kxan.com/news/texas-politics/jaworski-promises-to-replace-voter-suppression-with-enhancement-division-in-campaign-for-attorney-general/",
+      "description": "KXAN: Voter Enhancement Division platform piece, 2026"
+    },
+    {
+      "url": "https://www.texastribune.org/2025/07/17/joe-jaworski-texas-attorney-general-democrat/",
+      "description": "Texas Tribune: Jaworski announces 2026 run, July 2025"
+    },
+    {
+      "url": "https://news-journal.com/2025/11/02/ex-galveston-mayor-says-hell-return-power-to-people-as-texas-attorney-general/",
+      "description": "Longview News-Journal / AP: Formal campaign announcement, November 2025"
+    },
+    {
+      "url": "https://www.kxan.com/news/texas-politics/texas-democratic-ag-candidate-profiles-trial-attorney-joe-jaworski/",
+      "description": "KXAN 2022 candidate profile with detailed policy positions"
+    },
+    {
+      "url": "https://www.cbsnews.com/texas/news/democratic-runoff-for-texas-ag-garza-jaworski-discuss-abortion-state-lawsuits-against-biden-administration/",
+      "description": "CBS Texas 2022 runoff: Garza and Jaworski on abortion and lawsuits"
+    },
+    {
+      "url": "https://www.wfaa.com/article/news/politics/inside-politics/texas-politics/joe-jaworski-another-run-for-texas-attorney-general/287-3a2cbe00-65e6-48ec-b9dd-e0dd9d4fc651",
+      "description": "WFAA: Jaworski 2026 campaign announcement coverage"
+    },
+    {
+      "url": "https://www.amarillopioneer.com/2026-primary-voter-guide/jjaworski",
+      "description": "Amarillo Pioneer 2026 voter guide profile"
+    },
+    {
+      "url": "https://justfacts.votesmart.org/candidate/biography/102262/joe-jaworski",
+      "description": "VoteSmart biography page"
+    },
+    {
+      "url": "https://ballotpedia.org/Joe_Jaworski_recall,_Galveston,_Texas_(2011)",
+      "description": "Ballotpedia: 2011 recall attempt over public housing decision (failed)"
+    },
+    {
+      "url": "https://texashousers.org/2011/07/15/hud-pointedly-directs-galveston-to-rebuild-its-public-housing/",
+      "description": "Texas Housers: HUD directive to Galveston on public housing rebuild"
+    },
+    {
+      "url": "https://bigbendsentinel.com/2021/07/14/democratic-attorney-general-candidate-hits-8-campaign-stops-out-west/",
+      "description": "Big Bend Sentinel 2021 coverage of early West Texas campaign stops"
+    },
+    {
+      "url": "https://texasaflcio.org/news/endorsements",
+      "description": "Texas AFL-CIO COPE 2026 primary election endorsements (endorsed Johnson, not Jaworski)"
+    },
+    {
+      "url": "https://www.wfaa.com/article/news/politics/elections/democrats-2026-texas-attorney-general-race-could-be-different-but-first-must-win-primary-voters/287-e1798944-c7d3-489a-bfcd-8b9982992357",
+      "description": "WFAA: 2026 Democratic AG race overview with candidate comparisons"
+    }
+  ]
+}

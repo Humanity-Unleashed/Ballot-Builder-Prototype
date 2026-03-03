@@ -1,0 +1,377 @@
+{
+  "slug": "nc-voter-id-amendment-2026",
+  "officialTitle": "North Carolina Require Voter Identification Amendment (2026)",
+  "shortName": "NC Photo ID for All Voting Methods",
+  "state": "NC",
+  "electionDate": "2026-11-03",
+  "measureType": "Legislatively referred constitutional amendment",
+  "legislativeBill": "Senate Bill 921 / Session Law 2024-58",
+  "certificationStatus": "Certified — passed NC General Assembly in December 2024 lame-duck session; on the 2026 general election ballot",
+  "researchedAt": "2026-03-01T00:00:00Z",
+
+  "constitutionalContext": {
+    "articleAmended": "Article VI, Sections 2 and 3 of the North Carolina Constitution",
+    "priorText": "Voters offering to vote in person shall present photographic identification before voting.",
+    "proposedChange": "Extends the photo ID requirement from in-person voters only to ALL voters, regardless of voting method — including absentee/mail-in ballots and provisional ballots.",
+    "ballotQuestion": "Constitutional amendment to require all voters, not just those presenting to vote in person, to present photo identification before voting."
+  },
+
+  "whatYesVoteMeans": "Amends the NC Constitution to require photo identification for all methods of voting, including absentee/mail-in ballots. The legislature would then enact implementing statutes specifying exactly how absentee voters must provide photo ID.",
+  "whatNoVoteMeans": "Maintains current constitutional language requiring photo ID only for in-person voters. The existing statutory framework for absentee voting (photocopy of ID or ID exception form with driver's license number / last 4 SSN digits) would remain in force.",
+
+  "currentLawBaseline": {
+    "inPersonVoters": "Must present one of ~10 acceptable photo ID types. Voters without ID may cast a provisional ballot and must return with ID or complete an ID Exception Form within a set period.",
+    "absenteeMailVoters": {
+      "primaryRequirement": "Include a photocopy of an acceptable photo ID in the 'photo ID envelope' that accompanies the ballot return envelope.",
+      "alternative": "If unable to include photocopy, voter may instead submit an ID Exception Form providing driver's license number OR last 4 digits of Social Security number.",
+      "exceptionGrounds": [
+        "Lost or stolen ID",
+        "Lack of transportation",
+        "Disability or illness",
+        "Religious objection to being photographed",
+        "Experiencing a natural disaster within 100 days before election",
+        "Family responsibilities",
+        "Other reasonable impediment"
+      ],
+      "notes": "The 2024 election was the first general election the in-person voter ID law was implemented; the absentee photocopy requirement for mail voters was established by statute (SB 824, 2018) but allowed alternative identifiers."
+    }
+  },
+
+  "legislativeHistory": {
+    "billNumber": "SB 921",
+    "sessionYear": "2024",
+    "sessionLaw": "S.L. 2024-58",
+    "senateVote": {
+      "date": "2024-12-02",
+      "result": "30-19",
+      "partisan": "All 30 Republican votes in favor; all 19 Democratic votes opposed",
+      "threshold": "60% required for constitutional amendments; 30/49 = 61.2%"
+    },
+    "houseVote": {
+      "date": "2024-12-11",
+      "result": "73-45",
+      "partisan": "72 Republicans in favor, 1 Republican opposed; 45 Democrats opposed, 1 Democrat in favor; 2 members did not vote",
+      "threshold": "60% required; 73/118 = 61.9%"
+    },
+    "governorAction": "Constitutional amendments do not require the governor's signature in North Carolina; this measure bypassed Governor Cooper.",
+    "politicalContext": "Passed in a lame-duck session, one month before Republicans were set to lose their legislative supermajority in January 2025, following Democrats winning upset victories in three state House seats in the 2024 elections. Once new representatives were sworn in January 1, 2025, Republicans could no longer pass constitutional amendments along purely partisan lines in the House.",
+    "sponsors": [
+      {
+        "name": "Sen. Warren Daniel",
+        "party": "Republican",
+        "district": "46",
+        "primarySponsor": true
+      },
+      {
+        "name": "Sen. Paul Newton",
+        "party": "Republican",
+        "primarySponsor": true
+      }
+    ]
+  },
+
+  "historicalBackground": {
+    "timeline": [
+      {
+        "year": 2013,
+        "event": "NC HB 589 omnibus voting restrictions passed by Republican legislature. Included photo ID for in-person voting, reduced early voting, eliminated same-day registration, eliminated out-of-precinct voting. Passed shortly after SCOTUS gutted Voting Rights Act preclearance (Shelby County v. Holder)."
+      },
+      {
+        "year": 2016,
+        "event": "4th Circuit Court of Appeals unanimously struck down HB 589's main provisions, finding that the legislature obtained racial voting statistics and 'with almost surgical precision' targeted Black voters. The court found discriminatory intent, not just disparate impact."
+      },
+      {
+        "year": 2018,
+        "event": "Voters approve constitutional amendment requiring in-person photo ID, 55.49% to 44.51%. NC NAACP immediately challenged the amendment, arguing it was passed by a legislature elected from unconstitutionally racially gerrymandered districts — making the legislature a 'usurper legislature.' Legislature also enacted SB 824 (implementing statute)."
+      },
+      {
+        "year": 2019,
+        "event": "Superior Court Judge Bryan Collins struck down the 2018 amendment, ruling the racially gerrymandered legislature lacked authority to propose constitutional amendments. Appeals panel reversed."
+      },
+      {
+        "year": 2021,
+        "event": "Three-judge panel struck down SB 824 implementing statute, finding it was 'enacted in part for a discriminatory purpose' against Black voters. Expert testimony: Black voters approximately 39% less likely than white voters to have qualifying photo ID."
+      },
+      {
+        "year": 2022,
+        "event": "NC Supreme Court (Democrat-controlled) ruled against the 'gerrymandered legislature' claim but punted on amendment validity. U.S. Supreme Court ruled 8-1 (Berger v. NC State Conference of NAACP) that Republican legislative leaders could intervene to defend the voter ID law."
+      },
+      {
+        "year": 2023,
+        "event": "After Republicans won a 5-2 majority on the NC Supreme Court in the 2022 elections, the court reversed its earlier decision and upheld SB 824 on April 28, 2023. Voter ID requirement took effect for the first time in NC history."
+      },
+      {
+        "year": 2024,
+        "event": "First general election with voter ID enforcement. 1,670 ballots ultimately rejected for ID noncompliance — approximately 1 in every 3,400 voters. 23,000 more provisional ballots were cast than in 2020. Separately, NAACP v. Hirsch federal trial began in May 2024; decision pending as of research date. Legislature passed SB 921 in December lame-duck session."
+      },
+      {
+        "year": 2025,
+        "event": "Three-judge panel rules North Carolina's 2018 voter ID and tax cap constitutional amendments are enforceable (September 2025)."
+      },
+      {
+        "year": 2026,
+        "event": "SB 921 constitutional amendment to extend photo ID to all voting methods appears on November 3, 2026 general election ballot."
+      }
+    ]
+  },
+
+  "supporters": [
+    {
+      "organization": "North Carolina Republican Party / Republican legislative caucus",
+      "type": "legislative sponsor and party backing",
+      "notes": "Unanimous Republican support in both chambers"
+    },
+    {
+      "organization": "Heritage Foundation / election integrity movement nationally",
+      "type": "ideological alignment",
+      "notes": "No specific endorsement found for SB 921 but broadly supportive of photo ID expansion. National polling shows ~80%+ Republican voter support for voter ID."
+    }
+  ],
+
+  "supporterArguments": [
+    {
+      "argument": "Election security consistency: 'Voter ID is a commonsense security measure that needs to apply equally to all voters.' (Sen. Warren Daniel)",
+      "source": "Ballotpedia / Ballotpedia News, December 2024",
+      "sourceType": "primary — legislator statement"
+    },
+    {
+      "argument": "Fraud prevention parity: 'As voting has evolved over the years, protecting against fraud needs to as well. We shouldn't treat one form of voting differently, and our constitution should reflect that.' (Sen. Warren Daniel)",
+      "source": "Ballotpedia News, December 2024",
+      "sourceType": "primary — legislator statement"
+    },
+    {
+      "argument": "High public support: Gallup polling (2022) showed 79% of Americans favor requiring photo ID to vote; Pew Research (January 2024) found over 80% support, including 69% of Democrats. Supporters argue the measure reflects broad democratic consensus.",
+      "source": "Gallup, Pew Research (national polling)",
+      "sourceType": "secondary — public opinion data"
+    },
+    {
+      "argument": "Absentee fraud risk: Proponents argue that mail-in voting is more susceptible to fraud, coercion, or third-party ballot harvesting than in-person voting, and that photo ID extends a protective layer to those methods.",
+      "source": "Standard voter ID advocacy position; not found stated specifically by NC sponsors in available sources",
+      "sourceType": "inferred from general voter ID advocacy"
+    }
+  ],
+
+  "opponents": [
+    {
+      "organization": "Democracy North Carolina",
+      "type": "organized opposition",
+      "statement": "Policy director Katelin Kaiser: 'This is another attempt to disenfranchise voters by mail, and it is working. Legislative leadership has made it more difficult for students, older people, and people who are disabled to vote by mail in North Carolina.'",
+      "sourceUrl": "https://news.ballotpedia.org/2024/12/13/north-carolina-legislature-sends-constitutional-amendment-to-2026-ballot-requiring-photo-id-to-vote-including-by-mail/",
+      "date": "2024-12-13"
+    },
+    {
+      "organization": "Common Cause North Carolina",
+      "type": "organized opposition",
+      "statement": "Listed as opponent by Ballotpedia; specific statement not located in available sources.",
+      "sourceUrl": "https://ballotpedia.org/North_Carolina_Require_Voter_Identification_Amendment_(2026)",
+      "date": "2024"
+    },
+    {
+      "organization": "NC NAACP",
+      "type": "organizational opposition (inferred from prior litigation and positions)",
+      "notes": "NC NAACP has litigated every iteration of NC voter ID since 2013. No specific SB 921 statement found but consistent opposition expected. Active plaintiffs in NAACP v. Hirsch federal case challenging SB 824.",
+      "sourceUrl": "https://www.democracydocket.com/cases/north-carolina-photo-id-challenge/",
+      "date": "ongoing"
+    },
+    {
+      "organization": "ACLU of North Carolina",
+      "type": "organizational opposition (inferred from prior positions and litigation)",
+      "notes": "ACLU has been involved in voter ID litigation in NC since 2013 (co-counsel in NAACP v. Berger and related cases). No specific SB 921 statement found in available sources.",
+      "sourceUrl": "https://www.acluofnorthcarolina.org/cases/north-carolina-state-conference-of-the-naacp-v-berger/"
+    },
+    {
+      "organization": "League of Women Voters",
+      "type": "organizational opposition (inferred from national position)",
+      "notes": "LWV nationally opposes photo ID voting requirements as suppressive. No NC-specific SB 921 statement located.",
+      "sourceUrl": "https://www.lwv.org/blog/whats-so-bad-about-voter-id-laws"
+    },
+    {
+      "organization": "State Rep. Mary Harrison (D)",
+      "type": "legislative opponent",
+      "notes": "Quoted in Ballotpedia as floor opponent during House debate",
+      "sourceUrl": "https://ballotpedia.org/North_Carolina_Require_Voter_Identification_Amendment_(2026)"
+    },
+    {
+      "organization": "North Carolina Democratic Party",
+      "type": "partisan opposition",
+      "notes": "Every House Democrat but one (45-1) voted against; all 19 Senate Democrats voted against"
+    }
+  ],
+
+  "opponentArguments": [
+    {
+      "argument": "Targets populations who disproportionately use absentee voting: Students (who may be away from home), elderly voters, disabled voters. These groups may have difficulty obtaining a photocopy of ID and mailing it with a ballot.",
+      "source": "Democracy NC, Rep. Harrison statements",
+      "sourceType": "primary — opponent statements"
+    },
+    {
+      "argument": "Racial disparate impact: Black voters are approximately 39% less likely than white voters to have qualifying photo ID (expert testimony in Holmes v. Moore, 2021). Black voters were 23% of registered voters but 34% of those with no photo ID. In the 2024 election, Black voters accounted for 30% of rejected ballots while being ~20% of the electorate.",
+      "source": "NAACP v. Hirsch trial testimony; ProPublica; FiveThirtyEight; NCSBE data",
+      "sourceType": "empirical data and court record",
+      "sourceUrl": "https://www.propublica.org/article/in-north-carolina-black-voters-mail-in-ballots-much-more-likely-to-be-rejected-than-those-from-any-other-race"
+    },
+    {
+      "argument": "Prior NC voter ID laws were found by courts to have been enacted with discriminatory intent. The 4th Circuit (2016) found the 2013 law targeted Black voters 'with almost surgical precision.' A 2021 three-judge panel found SB 824 was 'enacted in part for a discriminatory purpose.' This historical context makes the 2026 amendment suspect.",
+      "source": "North Carolina State Conference of NAACP v. McCrory (4th Cir. 2016); Holmes v. Moore (NC 2021)",
+      "sourceType": "court findings"
+    },
+    {
+      "argument": "Voter fraud in absentee voting is not demonstrated at scale. NC State Board of Elections has found no evidence of systematic absentee fraud. Critics argue this is a solution to a nonexistent problem that imposes real costs on legitimate voters.",
+      "source": "NC State Board of Elections; Democracy NC",
+      "sourceType": "primary — election authority statement"
+    },
+    {
+      "argument": "Lame-duck process: The amendment was passed one month before Republicans lost their supermajority, specifically to prevent the newly elected Democratic members from having any input. Critics characterize this as an anti-democratic power grab.",
+      "source": "State Democracy Lab (University of Wisconsin); NC Newsline",
+      "sourceType": "secondary — procedural analysis",
+      "sourceUrl": "https://statedemocracy.law.wisc.edu/explainers/2024/explainer-lame-duck-power-grabs-in-north-carolina-and-beyond/"
+    },
+    {
+      "argument": "Voter suppression even without formal rejection: Even if few ballots are ultimately rejected, ID requirements can create confusion and deterrence. After in-person voter ID took effect in NC in 2023, voter advocates found that some voters chose not to vote after learning of the requirement. 'Even after the voter ID law was overturned in the past, it continued to wreak havoc, deterring voters from the ballot box' (Democracy NC).",
+      "source": "Democracy NC; NPR (Dec. 2024)",
+      "sourceType": "primary — advocacy organization; journalism",
+      "sourceUrl": "https://www.npr.org/2024/12/03/nx-s1-5205348/north-carolina-voter-id-law"
+    }
+  ],
+
+  "populationImpact": {
+    "absenteeVotersAtRisk": "The amendment's primary impact would be on voters who lack a qualifying photo ID and currently vote by mail using the alternative identifier (driver's license number / last 4 SSN digits). These voters would now need to obtain and photocopy a qualifying photo ID.",
+    "estimatedIDGap": "National and NC-specific research consistently finds that 10-15% of eligible voters lack qualifying photo ID. Disparities by race: Black and Latino voters are more than twice as likely to lack qualifying ID compared to white voters.",
+    "groupsDisproportionatelyAffected": [
+      "Black voters (23% of registered voters but 34% of those with no qualifying photo ID)",
+      "Latino/Hispanic voters (more than twice as likely as white voters to lack qualifying ID)",
+      "Elderly voters who may no longer drive and whose other forms of ID have lapsed",
+      "Disabled voters with difficulty accessing DMV or similar ID-issuing agencies",
+      "Students (out-of-state students using home address registration without local ID)",
+      "Low-income voters less likely to have passports, driver's licenses, or other government ID",
+      "Rural voters with limited access to DMV offices"
+    ],
+    "currentMitigations": "The existing absentee law allows alternative identifiers and an ID exception form. The constitutional amendment would require the legislature to enact implementing statutes; it is unclear whether those statutes would preserve, narrow, or eliminate these mitigations.",
+    "firstImplementationData": {
+      "election": "2024 General Election (in-person voter ID only, not absentee)",
+      "provisionalBallotsCast": "23,000 more than in 2020 due to ID confusion",
+      "ballotsRejectedForID": "1,670 (1 in approximately 3,400 voters)",
+      "advocateNotes": "Kathleen Roblez (attorney) noted actual impact was likely larger than rejection numbers show, as deterrence is not captured in official rejection statistics",
+      "source": "NPR (Dec. 2024); Democracy NC canvass monitoring report"
+    }
+  },
+
+  "ongoingLitigation": [
+    {
+      "case": "NAACP v. Hirsch",
+      "court": "U.S. District Court, Eastern District of North Carolina (federal)",
+      "status": "Trial completed May 2024; decision pending as of research date",
+      "claims": "Challenges SB 824 voter ID implementing statute under Section 2 of the Voting Rights Act and the 14th and 15th Amendments",
+      "plaintiffs": "NC State Conference of NAACP, local NAACP chapters",
+      "sourceUrl": "https://www.democracydocket.com/cases/north-carolina-photo-id-challenge/"
+    },
+    {
+      "case": "Holmes v. Moore (state court chain)",
+      "court": "NC Supreme Court",
+      "status": "SB 824 upheld April 28, 2023 by 5-2 Republican majority court after earlier Democratic majority struck it down",
+      "notes": "Court composition changed after 2022 elections (Republicans won majority); the 2023 reversal demonstrates how the judicial outcome turned on which party controlled the court",
+      "sourceUrl": "https://statecourtreport.org/our-work/analysis-opinion/north-carolina-supreme-court-upholds-voter-id-law-5-months-after-striking"
+    },
+    {
+      "case": "NC voter ID and tax cap constitutional validity (2025 ruling)",
+      "court": "Three-judge state panel",
+      "status": "Upheld (September 2025) — ruled 2018 amendments are enforceable",
+      "sourceUrl": "https://www.wfdd.org/politics-government/2025-09-08/north-carolina-voter-id-and-tax-cap-amendments-are-enforceable-judges-rule"
+    }
+  ],
+
+  "comparativeContext": {
+    "nationalLandscape": "As of 2026, the majority of states require some form of ID to vote. NC's proposed amendment would bring its absentee voting into alignment with stricter photo ID states. The federal SAVE America Act (proposed 2026) would extend strict voter ID requirements nationally.",
+    "priorNCAmendment": {
+      "year": 2018,
+      "result": "Approved 55.49% to 44.51%",
+      "scope": "Required photo ID for in-person voting only",
+      "notes": "2018 amendment was itself challenged and only took effect April 2023 after years of litigation"
+    },
+    "otherStates": "Similar absentee photo ID requirements exist in a handful of states. Most states with mail-in voting use signature matching or other non-photo verification. NC would be among the stricter states for absentee identification if this amendment passes.",
+    "nationalPolling": "Gallup (2022) found 79% of Americans support photo ID requirements broadly. Pew Research (January 2024): 81% support including 69% of Democrats. However, polling on absentee-specific photo ID requirements is less clearly supportive.",
+    "racialGapInIDOwnership": "Brennan Center, University of Michigan (Prof. Kevin Quinn) and trial evidence in NC voter ID litigation consistently find Black and Latino voters 1.4-2x more likely than white voters to lack qualifying photo ID. This gap is statistically significant and documented across multiple independent studies."
+  },
+
+  "civicAxesAnalysis": {
+    "primaryAxes": [
+      {
+        "axisId": "police_accountability",
+        "domain": "justice",
+        "relevance": "indirect — but the voting rights / election administration axis captures the systemic tension between institutional rule enforcement (requiring ID, formal compliance) versus protecting access for marginalized groups who face systemic barriers to compliance. The measure is not about policing per se, but it engages the same underlying justice dimension: do rules that are formally race-neutral violate equal protection when their disparate impact and historical context indicate discriminatory purpose?",
+        "yesVoteSignal": "poleB — emphasizes institutional rules and formal compliance (Back the Status Quo); accepts some deterrent effect on marginalized groups as acceptable cost",
+        "noVoteSignal": "poleA — skeptical of rules whose historical application has been found to be discriminatory; centers systemic access over formal uniformity",
+        "confidence": "medium — the axis ID policy axis does not perfectly map to a voting-rights question but the underlying values tension is highly analogous"
+      },
+      {
+        "axisId": "public_health",
+        "domain": "healthcare",
+        "relevance": "indirect — 'collective mandates vs. individual choice' maps partially. Supporters frame voter ID as a collective compliance requirement all citizens should accept for the public good of election integrity. Opponents frame it as an unjustified state burden on individual exercise of a fundamental right.",
+        "yesVoteSignal": "poleA (collective mandate) — everyone must comply with the same formal rule regardless of personal circumstance",
+        "noVoteSignal": "poleB (individual choice/access) — the state should not impose burdens on individuals' exercise of a fundamental right when individual circumstances make compliance difficult",
+        "confidence": "low — the analogy is loose; this axis primarily addresses health mandates, not voting"
+      }
+    ],
+    "schwartzValueImplications": {
+      "securityVsUniversalism": {
+        "description": "The core tension in voter ID debates in Schwartz terms. Security values (law and order, protection of institutions, social stability) align with the YES position — photo ID as a safeguard for the integrity of elections. Universalism values (equal treatment, justice for all, protecting the vulnerable) align with the NO position — opposing measures that create unequal access to the ballot based on systemic barriers.",
+        "yesVotePrimaryValues": ["security", "conformity", "power"],
+        "noVotePrimaryValues": ["universalism", "benevolence", "self-direction"]
+      },
+      "conformityVsSelfDirection": {
+        "description": "YES: All voters should conform to the same formal process; exceptions undermine institutional trust. NO: Individual voters should not face state-imposed barriers to self-directed civic participation (casting a ballot).",
+        "notes": "Self-direction in Schwartz refers to autonomy of thought and action, which maps to unimpeded exercise of voting rights"
+      },
+      "traditionVsUniversalism": {
+        "description": "Supporters often invoke the traditional norm of presenting identification as a social practice (voting is a serious civic act requiring verification of identity). Opponents invoke universalist norms of equal civic participation regardless of socioeconomic or demographic position.",
+        "notes": "This is one of the sharpest Schwartz value conflicts in election administration debates"
+      }
+    }
+  },
+
+  "fiscalImpact": {
+    "directCosts": "No formal fiscal note located. Implementation costs would be incurred by county boards of elections to modify absentee ballot processing procedures, train workers, and update voter communications.",
+    "voterOutreachCosts": "The state would likely incur costs in publicizing changed absentee requirements and distributing free voter ID cards (already offered under SB 824).",
+    "litigationCosts": "If enacted, opponents will likely challenge the implementing statutes. NC has spent substantial public funds litigating voter ID across three different legal frameworks since 2013.",
+    "notes": "Constitutional amendment itself creates no immediate fiscal obligation; costs arise from the implementing legislation the General Assembly would subsequently pass."
+  },
+
+  "keyUncertainties": [
+    "The constitutional amendment delegates to the legislature the specifics of implementation for absentee photo ID. If passed, the legislature could create generous exceptions (preserving the ID exception form, allowing alternative identifiers) or impose strict requirements (photo copy only, no alternatives). The amendment text itself does not specify.",
+    "NAACP v. Hirsch federal case (trial May 2024; decision pending) could limit or strike down implementing statutes if enacted, even if the constitutional amendment passes.",
+    "Public opinion polling specific to absentee photo ID (as distinct from in-person photo ID) is not available for NC as of research date. National support for photo ID broadly is high (79-81%), but support for the more targeted absentee extension is less documented.",
+    "2024 in-person voter ID implementation data (1,670 rejections) may either reassure voters that impact is modest, or alarm voters who note deterrent effects are not captured in rejection statistics.",
+    "If passed, the amendment would essentially foreclose legislative flexibility to remove absentee photo ID without another constitutional amendment, locking in a more stringent framework than could be changed by statutory action alone."
+  ],
+
+  "evidenceSummary": {
+    "overallConfidence": "high",
+    "qualityOfSources": "Measure text confirmed via NC General Assembly and Ballotpedia. Legislative vote counts confirmed. Supporter and opponent primary statements confirmed. Historical legal record well-documented via federal and state court records. Racial impact data confirmed via multiple independent academic and journalistic sources.",
+    "mainDebate": "Election integrity and formal rule uniformity (YES) versus documented racial disparate impact, deterrence of legitimate voters, and the lame-duck procedural legitimacy of the amendment's passage (NO). The key empirical dispute is whether absentee voter fraud is prevalent enough to justify the access costs the requirement would impose.",
+    "gaps": [
+      "No campaign committees registered for or against as of research date — expect organized campaign activity to emerge as November 2026 approaches",
+      "No NC-specific polling on this specific measure located",
+      "Implementing legislation not yet drafted; the practical burden on absentee voters (how strictly exceptions would be allowed) is unknown",
+      "NAACP v. Hirsch federal case outcome pending — could significantly affect legal status of NC voter ID framework"
+    ],
+    "sourcesConsulted": [
+      "Ballotpedia — North Carolina Require Voter Identification Amendment (2026)",
+      "NC General Assembly — SB 921 summary and legislative action",
+      "Ballotpedia News — December 2024 coverage of lame-duck passage",
+      "WUNC — Lame-duck session coverage",
+      "Democracy Docket — NAACP v. Hirsch case page",
+      "Democracy NC — opposition statements",
+      "ProPublica — NC Black voters mail-in ballot rejection rates",
+      "FiveThirtyEight — NC racial disparity in ballot rejection",
+      "NPR — December 2024 first-test coverage of voter ID implementation",
+      "Carolina Public Press — new voter ID rule racial impact",
+      "State Court Report — NC Supreme Court voter ID rulings",
+      "4th Circuit Court of Appeals — NC v. McCrory (2016)",
+      "Pew Research — voter ID national polling January 2024",
+      "Gallup — photo ID polling",
+      "State Democracy Lab (UW-Madison) — lame-duck explainer",
+      "NC State Board of Elections — voter ID FAQ and 2024 data",
+      "Forward Justice — NAACP v. Hirsch updates"
+    ]
+  }
+}

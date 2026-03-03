@@ -1,0 +1,340 @@
+{
+  "slug": "tim-white-nc-s8",
+  "name": "Tim White",
+  "legalName": "Timothy Michael White",
+  "party": "Libertarian",
+  "office": "North Carolina State Senate, District 8, 2026",
+  "contestId": "NC-STATE-SENATE-D8-2026",
+  "electionDate": "2026-11-03",
+  "incumbencyStatus": "first-time candidate",
+  "researchedAt": "2026-03-01T00:00:00.000Z",
+
+  "biography": {
+    "currentRole": "Unknown — no public employment information found",
+    "priorRoles": [],
+    "education": "Unknown",
+    "background": "Resident of Bolivia, NC (Brunswick County). No prior electoral history found. Contact email on NCSBE filing: TMWHITEY44@YAHOO.COM; phone: (803) 250-1075 (803 area code is upstate South Carolina, suggesting possible recent relocation to the district). Mailing address on file: Bolivia, NC.",
+    "notes": "Very limited public biographical information available. The 803 area code on his contact phone number is a South Carolina area code, which may indicate he is a relatively recent resident of District 8. No occupational background, military service, civic involvement, or other biographical details located through public search."
+  },
+
+  "districtContext": {
+    "district": "NC Senate District 8",
+    "counties": ["Brunswick County", "Columbus County", "New Hanover County (partial)"],
+    "incumbent": "William Rabon (R)",
+    "otherCandidates": [
+      { "name": "William Rabon", "party": "Republican", "status": "incumbent" },
+      { "name": "Richard Combes", "party": "Democratic", "status": "challenger" }
+    ]
+  },
+
+  "candidateFilingRecord": {
+    "source": "Brunswick County Board of Elections / NCSBE 2026 General Candidate List",
+    "filedDate": "2025-12-16",
+    "partyOnBallot": "Libertarian",
+    "mailingAddress": "Bolivia, NC",
+    "phone": "(803) 250-1075",
+    "email": "TMWHITEY44@YAHOO.COM",
+    "primaryOutcome": "Advanced to general election without a contested Libertarian primary (no ballot appearance required — Libertarian Party in NC selects candidates by convention/nomination process, not primary ballot).",
+    "sourceUrl": "https://www.brunswickcountync.gov/DocumentCenter/View/7020/2026-General-Current-Candidate-List",
+    "notes": "Filing confirmed via Brunswick County Board of Elections candidate detail list. Also confirmed via Port City Daily (Dec 19 2025) and Ballotpedia NC Senate District 8 page."
+  },
+
+  "campaignWebsite": {
+    "url": null,
+    "fetchedAt": null,
+    "statedPositions": [],
+    "notes": "No campaign website identified through exhaustive web search. No campaign social media accounts (Facebook, Twitter/X, Instagram) identified under this candidate's name. The email domain is a personal Yahoo address, not a campaign domain. As of 2026-03-01, this candidate has zero digital campaign presence discoverable through public search."
+  },
+
+  "votingRecord": {
+    "available": false,
+    "sources": [],
+    "notes": "No prior elected office. No legislative voting record exists."
+  },
+
+  "scorecards": [],
+
+  "endorsements": [],
+
+  "interviews": [],
+
+  "mediaAppearances": [],
+
+  "voterGuideResponses": {
+    "found": false,
+    "notes": "NC Voter Guide (ncvoterguide.org) queried — no profile for this candidate found as of research date. No WHQR, WUNC, Port City Daily, or local media questionnaire responses located."
+  },
+
+  "partyPlatformEvidence": {
+    "rationale": "Because no candidate-specific policy evidence exists, party platform positions are documented here as the best available proxy. Per LP and LPNC practice, candidates are expected to generally align with the party platform. These positions must be treated as LOW confidence inferences — they represent the LPNC/LP platform, not confirmed individual positions of Tim White.",
+    "platformSources": [
+      {
+        "organization": "Libertarian Party of North Carolina (LPNC)",
+        "platformUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "notes": "LPNC affirms and adopts the national LP platform; also maintains state-specific issue papers. Both are used below."
+      },
+      {
+        "organization": "Libertarian Party (national)",
+        "platformUrl": "https://lp.org/platform-page/",
+        "notes": "National platform used to supplement LPNC positions where LPNC is silent."
+      }
+    ],
+    "positionsByAxis": [
+      {
+        "axisId": "safety_net_breadth",
+        "topic": "Economic Safety Net / Welfare Programs",
+        "platformPosition": "Strong opposition to government welfare programs. LPNC: 'government welfare programs have created a system that encourages dependency and is subject to abuse and corruption'; favors 'ending government welfare programs as quickly as possible.' Believes private charitable care is preferable. National LP calls for phasing out Social Security and the welfare state.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "This is a party platform inference, not a direct Tim White statement. Libertarian platform is unusually explicit on this axis — strong poleB signal."
+      },
+      {
+        "axisId": "public_investment",
+        "topic": "Public Investment / Government Spending",
+        "platformPosition": "Opposes government economic intervention, subsidies, and public investment beyond minimal state functions. LPNC: 'opposes any action by state or local government to subsidize the costs of private business'; 'challenges state and local governments to seek private solutions for basic needs'; calls for rejecting all federal grants and mandates. Advocates for occupational licensing elimination to free markets.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "Party platform inference only."
+      },
+      {
+        "axisId": "school_choice",
+        "topic": "Education / School Choice",
+        "platformPosition": "Strong school choice and separation of school and state. LPNC: supports 'lifting the burden of regulation from private education, encouraging home schooling, and allowing as much school choice as possible'; 'where taxpayer dollars are allocated to education, the disposition of each student's share should be determined by that student's family'; 'supports the separation of school and state.' Dedicated LPNC issue papers exist on this topic.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/educational_opportunity",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. LPNC is notably explicit on school choice — stronger signal than some other axes."
+      },
+      {
+        "axisId": "coverage_model",
+        "topic": "Healthcare Coverage Model",
+        "platformPosition": "Opposes government-provided or mandated healthcare. LPNC: 'calls on government to get out of the healthcare industry entirely'; 'calls for the elimination of all legislation or government regulation that coerces or limits people's choices in pursuing their own healthcare'; 'calls for the elimination of public health services paid for through taxation in favor of more responsive, more efficient private charitable care.' Explicitly targets Medicare and Medicaid as harmful interventions that raise prices.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/healthcare",
+        "date": "2024-2025",
+        "notes": "Party platform inference only."
+      },
+      {
+        "axisId": "cost_control",
+        "topic": "Healthcare Cost Control",
+        "platformPosition": "Opposes government price controls. LPNC argues Medicare/Medicaid 'subsidizing healthcare causes demand to be artificially increased, leading to higher prices for everyone'; believes 'when people are allowed free choice, they will be more able to choose the care they want at a price they can afford.' Favors market competition as the mechanism for cost control.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/healthcare",
+        "date": "2024-2025",
+        "notes": "Party platform inference only."
+      },
+      {
+        "axisId": "public_health",
+        "topic": "Public Health / Collective Mandates",
+        "platformPosition": "Opposes government-mandated public health interventions. LPNC calls for elimination of regulations that 'coerce or limit people's choices in pursuing their own healthcare.' National LP platform broadly emphasizes individual sovereignty over body and medical decisions — vaccines, drug use, and personal health choices are treated as individual decisions free from state compulsion.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/healthcare",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. Particularly relevant given COVID-era debates over mandates."
+      },
+      {
+        "axisId": "zoning_supply",
+        "topic": "Zoning and Housing Supply",
+        "platformPosition": "Opposes all zoning ordinances. LPNC: 'calls for the repeal of all zoning ordinances'; 'uphold the rights of private owners to use and develop their property as they see fit'; 'advocates a free and unregulated housing market'; 'calls for the elimination of all laws that dictate to homeowners how they will build, inhabit, or use their property, and of all regulations that increase the costs of housing.'",
+        "poleSignal": "poleA",
+        "confidence": "low",
+        "notes": "Party platform inference only. Note: the Libertarian position reaches the same 'loosen zoning' conclusion as progressive urbanists, but from a property-rights rather than affordable-housing rationale. The policy outcome aligns with poleA (more supply / loosen zoning) even though the philosophical motivation differs from the typical left-urbanist version of that position.",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025"
+      },
+      {
+        "axisId": "affordability_tools",
+        "topic": "Housing Affordability Tools",
+        "platformPosition": "Opposes government housing subsidies. LPNC platform favors market solutions exclusively; calls for eliminating regulations that increase housing costs rather than adding subsidies. Private charitable solutions preferred over government programs.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "Party platform inference only."
+      },
+      {
+        "axisId": "transit_priority",
+        "topic": "Transit / Transportation Infrastructure",
+        "platformPosition": "Opposes government-run public transit in favor of private alternatives. LPNC: 'gives private enterprise the opportunity to come up with innovative transportation solutions without government interference'; 'current roads should be maintained by private enterprise until such time as they can be transferred to private ownership'; calls for 'free and open competition in all areas previously reserved to government-granted monopolies, including public transportation.'",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. Note: District 8 is a largely rural/coastal district — transit may not be a salient state-senate-level issue here."
+      },
+      {
+        "axisId": "police_accountability",
+        "topic": "Police Accountability / Reform",
+        "platformPosition": "Supports significant police reform. LPNC: 'decries the increasing militarization of police'; 'SWAT teams increasingly violate rights and terrorize innocent civilians unconstitutionally'; 'calls for an end to no-knock searches and hooded officers'; 'calls on local and state governments to reject the militarization of police forces, including the acquisition of military hardware'; calls for 'end to warrantless searches of any kind.' However, this comes from a civil liberties/property-rights framing rather than a racial-justice framing.",
+        "poleSignal": "poleA",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. The Libertarian position on police reform overlaps with poleA in policy terms (more oversight/reform) but is motivated by anti-government-power rather than racial justice concerns. Scorer should note this philosophical distinction."
+      },
+      {
+        "axisId": "sentencing_goals",
+        "topic": "Sentencing Philosophy / Criminal Justice Goals",
+        "platformPosition": "Victim-restitution model rather than either rehabilitation or punishment/deterrence in the traditional partisan sense. LPNC: 'the proper focus of a system of criminal justice is to require criminals to provide restitution to the victims of their crime'; 'calls for repeal of all statutes that assert a crime has been committed in cases where no specific victim or damage to property can be identified'; 'immediate pardon of those convicted under such laws'; 'opposes execution of prisoners.' Also calls for legalization of all recreational drugs and pardon of nonviolent drug offenders.",
+        "poleSignal": "mixed",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. The Libertarian position does not map cleanly onto the rehabilitation vs. punishment/deterrence axis. The restitution model is distinct from both poles. Drug legalization and victimless-crime pardons push toward poleA (rehabilitation/decarceration), but the victim-restitution emphasis and skepticism of state-run rehabilitation programs complicate the mapping. Scorer should note this as a poor fit for binary axis scoring."
+      },
+      {
+        "axisId": "firearms_policy",
+        "topic": "Firearms Policy",
+        "platformPosition": "Strongly opposes all gun regulations. LPNC: 'acknowledges every individual's inalienable right to choose to own and carry firearms or other means of self-defense, without government licensing, registration, monitoring, or interference of any kind'; 'opposes all gun registration or instant-background-check schemes that allow the government to create lists of what citizens own'; 'possession of such lists by government leads inevitably to confiscation.'",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/gun-control",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. This is one of the clearest Libertarian positions — explicitly opposes background check databases, licensing, and all registration. Strongly toward poleB."
+      },
+      {
+        "axisId": "ambition_level",
+        "topic": "Climate Policy Ambition",
+        "platformPosition": "Skeptical of government-led climate intervention; favors property-rights and market-based approaches. LPNC: 'the basis for effective environmental protection is found in upholding property rights'; 'pollution is a violation of rights and should be treated as such'; 'polluters should be required to make full compensation for any personal injuries or property damages they cause'; 'enable and reward rather than inhibit environmental innovators.' National LP: 'competitive free markets and property rights stimulate the technological innovations and behavioral changes required to protect our environment'; opposes government regulation of energy or climate. No stated acceptance of government emissions targets, carbon pricing, or mandates.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+        "date": "2024-2025",
+        "notes": "Party platform inference only. The Libertarian platform is not explicitly climate-denialist — it does not dispute the science — but strongly rejects government-led climate policy, aligning with poleB (gradual/no government climate policy)."
+      },
+      {
+        "axisId": "energy_portfolio",
+        "topic": "Energy Portfolio / Renewables vs. Fossil Fuels",
+        "platformPosition": "Opposes government subsidies or mandates for any energy source, including renewables. National LP: 'government should not be subsidizing any particular form of energy'; 'opposes all government control of energy pricing, allocation, and production'; calls for 'removing all subsidies that support power systems and industries that should fail, while opening competition fully for the best, cleanest products and services to thrive.' This would end both fossil fuel and clean energy subsidies — a neutral-by-principle position that in practice, in 2026's energy market, would likely advantage fossil fuels over renewables which still benefit from government incentives.",
+        "poleSignal": "poleB",
+        "confidence": "low",
+        "sourceUrl": "https://lp.org/environment-energy-resources/",
+        "date": "2024",
+        "notes": "Party platform inference only. The no-subsidy-for-anything position scores toward poleB in practice because the Inflation Reduction Act clean energy credits the Libertarians would repeal primarily benefit renewables, not fossil fuels."
+      },
+      {
+        "axisId": "permitting_speed",
+        "topic": "Permitting / Environmental Review",
+        "platformPosition": "LPNC and LP have not issued explicit statements specifically on permitting speed for energy projects. The general platform favoring deregulation and property rights suggests opposition to lengthy government environmental review processes, which would align with faster permitting. However, the property-rights framework cuts both ways — neighbors' rights to be protected from pollution could be invoked to require review. No direct platform statement located on this specific axis.",
+        "poleSignal": "likely_poleA",
+        "confidence": "very_low",
+        "sourceUrl": null,
+        "date": null,
+        "notes": "Weakest inference of all axes. Scored toward poleA (faster permitting) only because the deregulatory baseline suggests reducing government review processes, but this is speculative. Scorer should consider omitting this axis or using minimum confidence weight."
+      }
+    ]
+  },
+
+  "positionConflicts": [],
+
+  "disambiguationNotes": {
+    "otherTimWhitesInNC": [
+      "Dr. Tim White — faculty at Carolina University (Winston-Salem area); no political role",
+      "Tim White — 2018 WHQR coverage of NC Senate District 8 was about different candidates (Rabon cycle); not this Tim White",
+      "Royce White — unrelated U.S. Senate candidate (Minnesota); name similarity noted but not NC"
+    ],
+    "confirmationBasis": "Tim White (Libertarian, NC Senate District 8, 2026) confirmed by: (1) Ballotpedia NC Senate District 8 page listing him in the 2026 general election; (2) Port City Daily Dec 19 2025 article on Brunswick/Columbus/New Hanover filings; (3) Brunswick County Board of Elections 2026 general candidate detail list (TMWHITEY44@YAHOO.COM, Bolivia NC mailing address, filed Dec 16 2025); (4) LPNC Dec 26 2025 press release via Independent Political Report listing six LPNC state senate candidates for 2026."
+  },
+
+  "evidenceSummary": {
+    "campaignWebsiteFound": false,
+    "socialMediaFound": false,
+    "voterGuideResponsesFound": false,
+    "mediaInterviewsFound": false,
+    "priorVotingRecord": false,
+    "interestGroupScorecardsFound": false,
+    "candidateSpecificStatements": 0,
+    "primaryEvidenceType": "LPNC/LP party platform only",
+    "strongestAxes": [
+      "firearms_policy (LPNC platform is explicit: oppose all registration, licensing, background check systems — clear poleB)",
+      "safety_net_breadth (LPNC platform explicitly favors ending government welfare — clear poleB)",
+      "coverage_model (LPNC platform explicitly calls for government to exit healthcare entirely — clear poleB)",
+      "school_choice (LPNC has dedicated issue papers supporting school choice and separation of school/state — clear poleB)",
+      "zoning_supply (LPNC explicitly calls for repeal of all zoning ordinances — poleA, though from property-rights rationale)"
+    ],
+    "weakestAxes": [
+      "permitting_speed (no direct platform statement; inference only)",
+      "sentencing_goals (Libertarian restitution model does not map cleanly to the rehabilitation/punishment binary)",
+      "transit_priority (may not be salient in this rural/coastal district)"
+    ],
+    "overallConfidence": "very_low",
+    "confidenceRationale": "Zero candidate-specific evidence found after exhaustive search. No campaign website, no social media, no voter guide responses, no news interviews, no press statements. All 15 axis positions are inferences from LPNC/LP party platform, which is a poor substitute for individual candidate evidence. First-time candidates frequently diverge from their party platform — in either direction — and there is no way to assess where Tim White personally stands. The party platform evidence is internally consistent and directionally clear (strongly libertarian across all axes), but confidence must remain LOW on every axis.",
+    "scorerGuidance": "Score all axes at LOW confidence. Do not present these scores to users as reflecting Tim White's stated views — present them only as reflecting the LPNC party platform for a candidate with no public record. Consider displaying a special UI note for this candidate: 'No campaign materials available — positions inferred from Libertarian Party of North Carolina platform only.'"
+  },
+
+  "sources": [
+    {
+      "title": "Ballotpedia: North Carolina State Senate District 8",
+      "url": "https://ballotpedia.org/North_Carolina_State_Senate_District_8",
+      "type": "candidate confirmation"
+    },
+    {
+      "title": "Port City Daily: A look at who filed in the 2026 tri-county elections",
+      "url": "https://portcitydaily.com/local-news/2025/12/19/look-at-who-filed-in-2026-elections/",
+      "type": "candidate confirmation"
+    },
+    {
+      "title": "Brunswick County Board of Elections: 2026 General Current Candidate List",
+      "url": "https://www.brunswickcountync.gov/DocumentCenter/View/7020/2026-General-Current-Candidate-List",
+      "type": "official filing record"
+    },
+    {
+      "title": "NCSBE: 2026 General Candidate List — Federal and State",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf",
+      "type": "official filing record"
+    },
+    {
+      "title": "Independent Political Report: LPNC Announces Slate of Candidates for 2026 Election Cycle",
+      "url": "https://independentpoliticalreport.com/2025/12/libertarian-party-of-north-carolina-announces-slate-of-candidates-for-2026-election-cycle/",
+      "type": "party announcement"
+    },
+    {
+      "title": "LPNC Platform of the Libertarian Party of North Carolina",
+      "url": "https://www.lpnc.org/our-principles/platform-of-the-libertarian-party-of-north-carolina/",
+      "type": "party platform"
+    },
+    {
+      "title": "LPNC Healthcare Position",
+      "url": "https://www.lpnc.org/healthcare",
+      "type": "party platform"
+    },
+    {
+      "title": "LPNC Educational Opportunity Position",
+      "url": "https://www.lpnc.org/educational_opportunity",
+      "type": "party platform"
+    },
+    {
+      "title": "LPNC 2nd Amendment / Gun Control Position",
+      "url": "https://www.lpnc.org/gun-control",
+      "type": "party platform"
+    },
+    {
+      "title": "Libertarian Party (national): Environment / Energy Resources",
+      "url": "https://lp.org/environment-energy-resources/",
+      "type": "party platform"
+    },
+    {
+      "title": "Libertarian Party (national): Platform Page",
+      "url": "https://lp.org/platform-page/",
+      "type": "party platform"
+    },
+    {
+      "title": "Ballotpedia: Libertarian Party of North Carolina",
+      "url": "https://ballotpedia.org/Libertarian_Party_of_North_Carolina",
+      "type": "reference"
+    },
+    {
+      "title": "NC Voter Guide Candidate Profiles",
+      "url": "https://ncvoterguide.org/profiles/",
+      "type": "voter guide (no Tim White profile found)"
+    }
+  ]
+}

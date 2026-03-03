@@ -3,6 +3,8 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 
 // ── Value types ──
 
+export type DemoState = 'GA' | 'MI' | 'NC' | 'TX';
+
 export type HouseholdIncome =
   | 'under_25k'
   | '25k_50k'
@@ -77,6 +79,8 @@ export interface DemographicProfile {
   healthInsurance: HealthInsurance | null;
   zipCode: string;
   veteranStatus: VeteranStatus | null;
+  selectedState: DemoState | null;
+  selectedBallotId: string | null;
 }
 
 // ── Store types ──
@@ -108,6 +112,8 @@ const initialProfile: DemographicProfile = {
   healthInsurance: null,
   zipCode: '',
   veteranStatus: null,
+  selectedState: null,
+  selectedBallotId: null,
 };
 
 const initialState: DemographicState = {
@@ -166,6 +172,13 @@ export const useDemographicStore = create<DemographicStore>()(
       onRehydrateStorage: () => (state) => {
         if (state) {
           state._hasHydrated = true;
+          // Migration: ensure new fields exist for users with older localStorage
+          if (state.profile.selectedState === undefined) {
+            state.profile.selectedState = null;
+          }
+          if (state.profile.selectedBallotId === undefined) {
+            state.profile.selectedBallotId = null;
+          }
         }
       },
     },

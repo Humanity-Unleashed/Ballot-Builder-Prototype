@@ -1,0 +1,402 @@
+{
+  "slug": "michael-thurmond",
+  "name": "Michael Thurmond",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "contestId": "GA-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00Z",
+  "biography": {
+    "currentRole": "Former DeKalb County CEO (2017–January 2025)",
+    "priorRoles": [
+      "Interim Superintendent, DeKalb County School District (2013–2015)",
+      "Georgia Labor Commissioner (1999–2011)",
+      "Director, Georgia Division of Family and Children Services / DFACS (1994–1997)",
+      "Georgia House of Representatives, District 67 (1987–1992, Clarke County)",
+      "Distinguished Lecturer, UGA Carl Vinson Institute of Government (1997–1998)",
+      "Democratic nominee, U.S. Senate Georgia (2010) — lost to incumbent Johnny Isakson (R), 39%–58%"
+    ],
+    "education": "B.A. Philosophy and Religion (cum laude), Paine College; J.D., University of South Carolina School of Law; Political Executives Program, Harvard Kennedy School",
+    "background": "Born January 5, 1953, raised as a sharecropper's son in Clarke County, Georgia. In 1986 became the first African American elected to the Georgia General Assembly from Clarke County since Reconstruction. First Black man elected to statewide executive office in Georgia (Labor Commissioner, 1998). Author of several books on Georgia history including 'Freedom: Georgia's Antislavery Heritage, 1733–1865' (Lilla Hawes Award). Married to Zola Fletcher Thurmond; one daughter, Mikaya.",
+    "notableAchievements": [
+      "First Black statewide elected official in Georgia since Reconstruction (Labor Commissioner, 1998)",
+      "As Labor Commissioner: cut employer taxes by $1.2 billion (largest single employer tax cut in Georgia history) while simultaneously raising unemployment benefits",
+      "As interim DeKalb schools superintendent: eliminated $14 million deficit, reversed accreditation probation (AdvancED/SACS placed district on probation Dec. 2012; removed from probation 2014)",
+      "As DeKalb County CEO: inherited $24.7 million structural deficit; built $150 million rainy-day fund by end of term (2025); balanced budgets eight consecutive years; gave employees $1,500 retention bonus for four consecutive years"
+    ]
+  },
+  "campaignWebsite": {
+    "url": "https://mikethurmond.com",
+    "fetchedAt": null,
+    "notes": "WebFetch tool unavailable. Website confirmed active via search results. Key platform planks extracted from multiple news source references to campaign website content.",
+    "statedPositions": [
+      {
+        "topic": "education",
+        "quote": "As governor, he is committed to fully funding our public schools and modernizing our school funding formula, increasing pay for Georgia's teachers, and expanding early learning programs for three and four-year-olds.",
+        "sourceUrl": "https://mikethurmond.com",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "Campaign website quote referenced by multiple outlets including The Current GA, GPB, 11Alive"
+      },
+      {
+        "topic": "healthcare / Medicaid",
+        "quote": "I'm going to protect it and expand it.",
+        "sourceUrl": "https://www.atlantanewsfirst.com/2025/08/06/michael-thurmond-announces-2026-georgia-governors-bid/",
+        "date": "2025-08-06",
+        "confidence": "high",
+        "notes": "Explicit commitment to full Medicaid expansion in first year if elected. Georgia is one of the few remaining states that declined ACA Medicaid expansion."
+      },
+      {
+        "topic": "economic / cost of living",
+        "quote": "I'm running for Governor to fight for working families, protect and expand access to healthcare, and build an education system that creates multiple pathways to success.",
+        "sourceUrl": "https://www.gpb.org/news/2025/08/06/democrat-michael-thurmond-launches-2026-run-for-georgia-governor",
+        "date": "2025-08-06",
+        "confidence": "high",
+        "notes": "Campaign announcement statement; framing device for entire campaign"
+      },
+      {
+        "topic": "workforce / AI",
+        "quote": "Create the most AI proficient workforce in America by using technical colleges, two year institutions as well as four year schools, wanting all workers to go back to school to become AI efficient.",
+        "sourceUrl": "https://www.11alive.com/article/news/politics/former-dekalb-ceo-michael-thurmond-interview-campaign-georgia-governor/85-b80cc943-bef3-4d78-8b32-76f8877a7dc8",
+        "date": "2025-08",
+        "confidence": "medium",
+        "notes": "Paraphrase from 11Alive interview; no direct quote captured. Georgia already has rule allowing free technical college for in-demand professions, which Thurmond wants to expand."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": "partial",
+    "sources": ["Georgia General Assembly archives (limited)", "Wikipedia biography", "Ballotpedia candidate page", "News retrospectives"],
+    "notes": "Thurmond's legislative career was 1987–1992 (Georgia House, District 67, Clarke County). He left the legislature in 1992, was appointed DFACS director in 1994. As Labor Commissioner and county-level executive he did not cast legislative votes. His 2010 U.S. Senate race was a statewide candidacy he lost (39%); no congressional record exists.",
+    "attendanceRate": null,
+    "keyVotes": [
+      {
+        "bill": "Tax relief legislation for senior citizens and working families (Georgia General Assembly, circa 1987-1992)",
+        "vote": "Authored / sponsored",
+        "topic": "economic / tax",
+        "sourceUrl": "https://www.dekalbcountyga.gov/sites/default/files/Michael%20L%20Thurmond%20Bio.pdf",
+        "notes": "Thurmond authored legislation providing more than $250 million in tax relief to Georgia's senior citizens and working families during his House tenure. Specific bill numbers not identified in available sources."
+      }
+    ]
+  },
+  "executiveRecord": {
+    "laborCommissioner": {
+      "period": "1999–2011 (three terms)",
+      "keyActions": [
+        {
+          "action": "Employer tax cut of $1.2 billion",
+          "topic": "economic / labor",
+          "description": "Largest single employer tax cut in Georgia history, paired with raising unemployment benefits for out-of-work Georgians — a combination that signals belief in employer relief AND worker support simultaneously.",
+          "sourceUrl": "https://www.axios.com/local/atlanta/2025/08/06/michael-thurmond-georgia-governor-labor-commissioner-democrat",
+          "confidence": "high"
+        },
+        {
+          "action": "Construction of $20 million school at Roosevelt Warm Springs Institute for children with disabilities",
+          "topic": "education / disability services",
+          "description": "Major capital project during labor commissioner tenure; reflects prioritization of vocational and special needs education.",
+          "sourceUrl": "https://www.valdostadailytimes.com/news/local_news/thurmond-running-on-record/article_9f57e831-0212-5fcc-b268-d1e018aaf8e3.html",
+          "confidence": "medium"
+        },
+        {
+          "action": "Expansion of unemployment offices to career centers statewide",
+          "topic": "labor / workforce",
+          "description": "Converted unemployment offices into broader career services centers — aligns with workforce-investment framing in current campaign.",
+          "sourceUrl": "https://www.valdostadailytimes.com/news/local_news/thurmond-running-on-record/article_9f57e831-0212-5fcc-b268-d1e018aaf8e3.html",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "deKalbCEO": {
+      "period": "2017–January 2025 (two terms)",
+      "keyActions": [
+        {
+          "action": "Fiscal turnaround from $24.7M deficit to $150M rainy-day fund",
+          "topic": "fiscal / economic",
+          "description": "Budget discipline while maintaining services. Represents executive record of balanced-budget governance without ideological austerity.",
+          "sourceUrl": "https://ocgnews.com/ceo-michael-thurmond-dekalb-ends-fy2024-with-150-million-rainy-day-fund/",
+          "confidence": "high"
+        },
+        {
+          "action": "Pandemic response: food insecurity programs, rental assistance, job creation initiatives",
+          "topic": "safety net / housing",
+          "description": "Directed county resources toward safety net programs during COVID-19; signal of government intervention inclination.",
+          "sourceUrl": "https://www.dekalbcountyga.gov/sites/default/files/Michael%20L%20Thurmond%20Bio.pdf",
+          "confidence": "medium"
+        },
+        {
+          "action": "Employee retention bonus ($1,500) for four consecutive years for 6,000 county employees",
+          "topic": "labor / public sector workers",
+          "description": "Used fiscal surplus to reward government workforce; pro-labor signal in public sector context.",
+          "sourceUrl": "https://ocgnews.com/ceo-michael-thurmond-dekalb-ends-fy2024-with-150-million-rainy-day-fund/",
+          "confidence": "high"
+        },
+        {
+          "action": "Water and sewer infrastructure investment — addressing long-delayed sewer spills and broken water mains",
+          "topic": "infrastructure / environment",
+          "description": "Environmental/infrastructure maintenance prioritized; no explicit climate policy framing identified.",
+          "sourceUrl": "https://www.wsbtv.com/news/local/dekalb-county/retiring-dekalb-ceo-michael-thurmond-reflects-decades-service/QDXMZRZPFNBVVMAVJ7VNIJRDAI/",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "deKalbSchoolsInterim": {
+      "period": "2013–2015",
+      "keyActions": [
+        {
+          "action": "Reversed accreditation probation of DeKalb County School District",
+          "topic": "education / governance",
+          "description": "Inherited district on AdvancED/SACS probation (placed Dec. 2012); eliminated $14M deficit; district removed from probation 2014. Credited with stabilizing governance crisis.",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Mike_Thurmond",
+          "confidence": "high",
+          "notes": "PolitiFact flagged in Oct. 2013 that Thurmond overstated outcomes of accreditation review mid-tenure; probation was formally lifted in 2014."
+        }
+      ]
+    }
+  },
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found for Thurmond. As a state-level executive (Labor Commissioner, DeKalb CEO) rather than legislator, NRA ratings are not applicable to most of his tenure. No campaign-cycle NRA engagement found."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "LCV does not score state executives. No LCV scorecard found. Climate positions in current campaign not explicitly stated in available sources."
+    },
+    {
+      "organization": "AFL-CIO / Georgia labor unions",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No documented endorsement from AFL-CIO or Georgia labor unions found as of research date (Feb 2026). Thurmond's Labor Commissioner record and pro-worker executive actions suggest alignment with labor but no formal endorsement confirmed."
+    },
+    {
+      "organization": "Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No scorecard found. Note: His $1.2B employer tax cut as Labor Commissioner and opposition to full income-tax elimination (favoring targeted relief) may be signals of mixed posture toward business interests."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "No major organizational endorsements documented as of February 2026",
+      "type": "none confirmed",
+      "cycle": "2026",
+      "notes": "Primary still ten weeks out (May 19, 2026). Thurmond's long bipartisan track record and moderate framing may delay union/advocacy group endorsements given competitive primary field."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "GPB / Politically Georgia podcast",
+      "date": "2025-08",
+      "url": "https://podcasts.apple.com/us/podcast/michael-thurmond-on-his-run-for-georgia-governor/id1356662668?i=1000721920842",
+      "keyExchanges": [
+        {
+          "topic": "campaign framing",
+          "quote": "It's not fighting Trump. I'm going to fight for Georgia residents.",
+          "notes": "Deliberately deemphasizes anti-Trump framing in favor of kitchen-table issues focus; bridges to persuadable voters."
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive (Zach Merchant)",
+      "date": "2025-08",
+      "url": "https://www.11alive.com/article/news/politics/former-dekalb-ceo-michael-thurmond-interview-campaign-georgia-governor/85-b80cc943-bef3-4d78-8b32-76f8877a7dc8",
+      "keyExchanges": [
+        {
+          "topic": "Medicaid / healthcare",
+          "quote": "No Georgian should have to drive an hour or hour and a half to get affordable health care. No woman in labor should lose her life, or a baby lose his or her life, because they didn't have access to quality delivery room services.",
+          "notes": "Frames healthcare as access issue; invokes maternal mortality which Georgia ranks worst or near-worst nationally."
+        },
+        {
+          "topic": "healthcare access",
+          "quote": "healthcare is a right that every Georgian should have access to",
+          "notes": "Strong healthcare-as-right framing; explicit."
+        },
+        {
+          "topic": "tax policy",
+          "quote": "If we relied more on the sales tax then we must take steps because a sales tax is regressive and consequently the burden of that would rest on the shoulders of those who are on the lower end of the economic scale.",
+          "notes": "Opposes income-tax elimination; cites regressivity of sales tax as concern for low-income Georgians. Wants to evaluate full impact on all taxpayers before committing to income tax changes."
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive — 1-on-1 Georgia Candidates for Governor series",
+      "date": "2026",
+      "url": "https://www.11alive.com/article/news/politics/1-on-1-georgia-governor-2026-candidate-mike-thurmond/85-24f31249-1120-4a58-805e-3b364b98b1a2",
+      "keyExchanges": [
+        {
+          "topic": "workforce / AI",
+          "notes": "Reiterated AI workforce initiative and role of technical colleges. Specific quotes not captured from this interview in available search results."
+        }
+      ]
+    },
+    {
+      "outlet": "The Red and Black (University of Georgia student paper)",
+      "date": "2026",
+      "url": "https://www.redandblack.com/athensnews/athens-on-the-ballot-q-a-with-michael-thurmond-candidate-for-georgia-governor/article_3c3825e5-3b75-46b0-96e8-760c13dd2c40.html",
+      "keyExchanges": [
+        {
+          "topic": "campaign motivation / moment",
+          "quote": "We are at a pivotal moment in the history of our state and nation, and it's incumbent upon all of us to engage in this very important process that will culminate in the 2026 elections.",
+          "notes": "Broad framing; did not yield specific policy quotes in available search results."
+        },
+        {
+          "topic": "housing",
+          "quote": "declare housing affordability as a statewide issue, a crisis",
+          "notes": "First-day executive order commitment on housing crisis declaration; then partner with cities, counties, and private developers to create more affordable multi-family and single-family units."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Voice — 'This is beyond party politics' profile",
+      "date": "2025",
+      "url": "https://theatlantavoice.com/this-is-beyond-party-politics-michael-thurmond-wants-to-be-georgias-next-governor/",
+      "keyExchanges": [
+        {
+          "topic": "coalition building",
+          "quote": "We have to move beyond the racial and political divides. Sometimes in order to build a bridge, you have to be the bridge.",
+          "notes": "Core campaign identity: bipartisan bridge-builder; risks de-energizing Democratic base but targets persuadable rural/suburban voters."
+        }
+      ]
+    },
+    {
+      "outlet": "Atlanta Magazine",
+      "date": "2025-08",
+      "url": "https://www.atlantamagazine.com/news-culture-articles/michael-thurmond-officially-enters-the-georgia-governors-race-with-a-moderate-approach/",
+      "keyExchanges": [
+        {
+          "topic": "bipartisan governance",
+          "quote": "if Georgia can have an 'and' governor, I might be your guy",
+          "notes": "Moderate framing; magazine explicitly describes his approach as 'moderate.' UGA political science professor Audrey Haynes notes this bridge-building strategy is risky but may attract exhausted voters."
+        }
+      ]
+    },
+    {
+      "outlet": "AJC (announcement story)",
+      "date": "2025-08",
+      "url": "https://www.ajc.com/politics/2025/08/michael-thurmond-enters-ga-governors-race-pledging-to-be-bridge-builder/",
+      "keyExchanges": [
+        {
+          "topic": "bridge-building / Trump response",
+          "notes": "Pledged to fight fallout from Republican-backed spending law cutting Medicaid and public health programs, but framed as fighting for Georgia residents rather than opposing Trump."
+        }
+      ]
+    }
+  ],
+  "forumAppearances": [
+    {
+      "event": "AJC / GPB Gubernatorial Forum",
+      "date": "2025-11-06",
+      "location": "Atlanta",
+      "url": "https://www.gpb.org/news/2025/11/06/they-want-be-georgias-next-governor-candidates-make-pitches-in-forum-year-ahead-of",
+      "notes": "Cost of living took center stage. Thurmond placed second in AJC poll (15%), behind Bottoms (40%). Specific Thurmond quotes not captured from this forum in available sources."
+    },
+    {
+      "event": "Savannah Democratic Gubernatorial Forum (Jonesville Baptist Church)",
+      "date": "2026-01-08",
+      "location": "Savannah, GA",
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "topics": ["healthcare", "economic development and workforce training", "Trump administration", "housing"],
+      "keyExchanges": [
+        {
+          "topic": "workforce / local hire",
+          "quote": "would require recipients of tax breaks to hire local labor rather than foreigners",
+          "notes": "Apparent jab at subsidies given to South Korean Hyundai under Gov. Kemp. Strong local-hire/economic nationalist labor position; notable departure from free-trade framing."
+        },
+        {
+          "topic": "healthcare",
+          "notes": "All Democratic candidates aligned on Medicaid expansion; Thurmond committed to expanding in first year."
+        }
+      ]
+    },
+    {
+      "event": "DeKalb/Fulton Democrats Forum — Chamblee High School",
+      "date": "2026-02-19",
+      "location": "Chamblee, GA",
+      "url": "https://theatlantavoice.com/candidates-education-healthcare-georgia/",
+      "topics": ["education", "healthcare", "ICE presence in Georgia", "FBI raid on Board of Elections"],
+      "keyExchanges": [
+        {
+          "topic": "education",
+          "notes": "All seven candidates agreed Georgia's Quality Basic Education (QBE) funding formula is failing students. Specific Thurmond position on remedies not captured."
+        },
+        {
+          "topic": "healthcare",
+          "quote": "expand Medicaid in his first year as governor if elected",
+          "notes": "Consistent with all prior statements."
+        },
+        {
+          "topic": "elections / election integrity",
+          "quote": "as governor, Thurmond would make sure that local election boards remain independent and are not influenced by the state or federal governments",
+          "sourceUrl": "https://www.decaturish.com/voter_guide/gubernatorial-candidates-talk-healthcare-elections/article_69446cbd-d4b9-4d98-bfa9-1714df111e41.html",
+          "notes": "Affirmation of local election board independence; pushback against state/federal override mechanisms."
+        }
+      ]
+    },
+    {
+      "event": "Shaping The New Georgia — Bipartisan Forum (Lakewood, Capital B News co-sponsor)",
+      "date": "2026-02-22",
+      "location": "Lakewood, Atlanta",
+      "url": "https://atlanta.capitalbnews.org/georgia-2026-governor-race-small-business-atlanta/",
+      "topics": ["small business", "bipartisanship", "local economy"],
+      "keyExchanges": [
+        {
+          "topic": "economic / jobs",
+          "quote": "A job for every Georgian and a Georgian for every job.",
+          "notes": "Campaign motto introduced at this forum. Community bank rebuilding initiative announced."
+        },
+        {
+          "topic": "banking / community economic development",
+          "notes": "Thurmond proposed starting initiative to rebuild community banks to boost job growth across the state. Specific policy details not available from search results."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Tax policy — income tax vs. sales tax",
+      "conflict": "Thurmond explicitly opposed complete income tax elimination (calling it potentially regressive if replaced by sales taxes), but has not articulated a specific alternative income tax reform proposal. Moderate stance may draw criticism from both progressive Democrats (who want higher taxes on wealthy) and conservative voters who want income tax elimination.",
+      "sources": ["11Alive interview Aug 2025", "Atlanta News First Aug 2025"]
+    },
+    {
+      "topic": "Bipartisan 'bridge-builder' identity vs. Democratic primary electorate",
+      "conflict": "Thurmond explicitly downplays partisan anti-Trump framing to appeal to independents and disaffected Republicans. UGA political scientist flagged this as risky with a Democratic primary electorate that may want a stronger fighter posture. His moderate positioning in a primary field also including progressive candidates (Esteves on abortion repeal, Romman on universal healthcare pilot) may limit his primary coalition.",
+      "sources": ["Atlanta Magazine Aug 2025", "WABE first forum coverage", "GPB Savannah forum coverage"]
+    },
+    {
+      "topic": "Workforce / 'local hire' vs. free trade / internationalism",
+      "conflict": "His Savannah forum statement that tax-break recipients should 'hire local labor rather than foreigners' is a notably populist/economic-nationalist position that diverges from mainstream Democratic free-trade consensus. Could be read as xenophobic by some; may resonate with rural/Blue-collar Georgia voters.",
+      "sources": ["Georgia Recorder Savannah forum Jan 2026", "GPB Savannah forum Jan 2026"]
+    },
+    {
+      "topic": "DeKalb schools interim tenure controversy",
+      "conflict": "PolitiFact (Oct. 2013) found Thurmond overstated the outcomes of DeKalb's accreditation review mid-tenure. The AJC also reported his time was 'mired by both controversial and problematic hiring decisions.' However, the district was ultimately removed from probation (2014) under his watch.",
+      "sources": ["PolitiFact Oct 2013", "AJC reporting", "Axios Atlanta timeline Oct 2025"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "health_coverage_model — Explicit, repeated Medicaid expansion commitment; healthcare as a right framing",
+      "safety_net_breadth — As Labor Commissioner raised unemployment benefits; as DeKalb CEO deployed rental assistance and food insecurity programs during pandemic",
+      "public_investment — As county executive built infrastructure, invested in workforce training, paid public employees retention bonuses; as governor wants public tech college workforce pipeline",
+      "school_choice — Pro-public-school: committed to fully funding public schools, fixing QBE formula, raising teacher pay, pre-K expansion; no school choice language found"
+    ],
+    "weakestAxes": [
+      "climate_ambition — No stated position on climate, clean energy, or environmental policy found in any source",
+      "energy_portfolio — No position found",
+      "permitting_speed — No position found",
+      "firearms_policy — No stated position found; no NRA engagement; no gun safety legislation in his record",
+      "sentencing_goals — No explicit criminal justice reform position; Thurmond notably did not raise prison/parole reform as a campaign issue",
+      "police_accountability — No documented position; Chamblee forum discussed school-to-prison pipeline but Thurmond's specific stance not captured"
+    ],
+    "overallConfidence": "medium-high",
+    "notes": "Thurmond has a long multi-decade record but primarily in executive roles (Labor Commissioner, DeKalb CEO, school superintendent) rather than legislative. This means his record is expressed through administrative actions and budget decisions rather than bill votes. His 2026 campaign is heavily focused on healthcare (Medicaid), education (public school funding, teacher pay), cost of living, and workforce (AI/technical college). He deliberately avoids climate, guns, immigration, and criminal justice — possibly as a bipartisan strategy to avoid alienating persuadable Republican and independent voters. Major gaps: climate/energy, guns, criminal justice/policing, and reproductive rights (abortion) — these are notable absences across 6+ months of campaign coverage reviewed. His 'moderate' identity confirmed by Atlanta Magazine framing and multiple analysts; he is NOT running as a progressive on social issues. Primary electorate risk noted by political scientists."
+  }
+}

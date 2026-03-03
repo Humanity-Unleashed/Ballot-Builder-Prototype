@@ -1,0 +1,189 @@
+{
+  "slug": "justin-pinker",
+  "name": "Justin Pinker",
+  "party": "Republican",
+  "office": "U.S. House, Georgia 6th Congressional District, 2026",
+  "incumbencyStatus": "challenger",
+  "contestId": "GA-06-US-HOUSE-2026",
+  "researchedAt": "2026-02-25T00:00:00Z",
+  "biography": {
+    "currentRole": "Businessman and Community Activist (per Ballotpedia and Politics1 candidate listings)",
+    "priorRoles": [],
+    "education": "Not publicly available",
+    "background": "Associated with Teenovel, a digital marketing / T-shirt design company based in the Atlanta metro area (ZoomInfo record). No prior elected office found. Described uniformly in aggregator sources as 'Businessman & Community Activist.'",
+    "notes": "ZoomInfo lists a Justin Pinker at teenovel.com in a T-shirt sales role; this is the most specific professional record found. Unverified whether this is the same individual. Age estimated ~27 based on one public records site, but not confirmed."
+  },
+  "districtContext": {
+    "cookPVI": "D+25",
+    "electoralContext": "30th most Democratic district nationally per Ballotpedia. Incumbent Lucy McBath won 2024 general with approximately 74.7% of the vote. Republican general election prospects are minimal in this district.",
+    "incumbent": "Lucy McBath (D), first elected 2018, re-elected 2020, 2022, 2024",
+    "primaryDate": "2026-05-19",
+    "generalDate": "2026-11-03",
+    "republicanPrimaryField": "Pinker appears to be the sole declared Republican primary candidate based on Ballotpedia and Wikipedia candidate lists as of research date. Note: candidate lists may be incomplete before the qualifying deadline."
+  },
+  "campaignWebsite": {
+    "url": "https://justinpinkerforcongress.com",
+    "sloganTagline": "Fighting for Freedom",
+    "fetchedAt": "2026-02-25T00:00:00Z",
+    "fetchMethod": "Search engine snippets and aggregator summaries — direct page fetch unavailable in research environment",
+    "statedPositions": [
+      {
+        "topic": "border_security / immigration",
+        "quote": "Freedom is knowing our borders are secure.",
+        "sourceUrl": "https://justinpinkerforcongress.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Pithy slogan-style statement; no specific policy detail (e.g., wall, deportation, DACA) specified in available snippets. Directionally clear: supports border enforcement."
+      },
+      {
+        "topic": "economy / jobs / wages",
+        "quote": "Freedom is having a job and a wage that allows you to prosper, own a home, feed a family and save for retirement.",
+        "sourceUrl": "https://justinpinkerforcongress.com/",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Aspirational framing only; no specific policy vehicle stated (e.g., minimum wage position, tax cuts, deregulation). Direction ambiguous — could support either market-based or government-supported wage growth framing."
+      },
+      {
+        "topic": "public_safety / policing / crime",
+        "quote": "Freedom is taking your kids to a playground absent fear of harm, an altercation with a drug dealer, or caught in a turf war between drug gangs.",
+        "sourceUrl": "https://justinpinkerforcongress.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Emphasizes crime and drug-related public safety concerns. Critique of incumbent framing suggests he views McBath's tenure as having worsened public safety. Direction: law enforcement / tough on crime lean. No explicit anti-reform or pro-reform policing position stated."
+      },
+      {
+        "topic": "education / curriculum / parental rights",
+        "quote": "Freedom is knowing that your child is mastering math, science, and reading rather than lectured on deviant subjects they are too young to understand.",
+        "sourceUrl": "https://justinpinkerforcongress.com/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Use of 'deviant subjects' is signaling language consistent with opposition to gender/sexuality curriculum and critical race theory. Framing aligns with GOP parental rights / curriculum restriction movement of 2021-2026. No explicit stance on school choice vouchers vs. public school funding found."
+      },
+      {
+        "topic": "free_speech / government_surveillance",
+        "quote": "Freedom is having the right to say what you think absent fear that your keystrokes can land you on a government watchlist.",
+        "sourceUrl": "https://justinpinkerforcongress.com/",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Anti-surveillance / anti-censorship framing. Consistent with right-populist free speech concerns (social media moderation, government monitoring). No specific legislative position stated."
+      },
+      {
+        "topic": "healthcare_costs",
+        "quote": "During her time schools have become worse, streets more dangerous, and healthcare more expensive.",
+        "sourceUrl": "https://justinpinkerforcongress.com/",
+        "date": "2026",
+        "confidence": "low",
+        "notes": "Critique of incumbent framing; not a stated healthcare policy position. Implies concern about rising costs but offers no specific mechanism (e.g., ACA repeal, drug pricing, market competition). Insufficient to score any healthcare axis."
+      }
+    ],
+    "topicsWithNoStatedPosition": [
+      "firearms / Second Amendment",
+      "climate / energy",
+      "housing / zoning",
+      "immigration (specific policy beyond border security rhetoric)",
+      "Medicare / Medicaid / ACA",
+      "reproductive rights / abortion",
+      "labor / unions",
+      "criminal justice reform / sentencing"
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "No prior elected office identified. First-time candidate. No legislative voting record exists to analyze."
+  },
+  "scorecards": [
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. No prior record to rate. Firearms position not stated on campaign website."
+    },
+    {
+      "organization": "League of Conservation Voters",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score found. No prior record to rate. Climate/environment position not stated on campaign website."
+    },
+    {
+      "organization": "AFL-CIO / labor unions",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsements or ratings found."
+    },
+    {
+      "organization": "Planned Parenthood / NARAL",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement or opposition found. Reproductive rights position not stated on campaign website."
+    },
+    {
+      "organization": "US Chamber of Commerce",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No scorecard applicable — no legislative record."
+    }
+  ],
+  "endorsements": [],
+  "interviews": [],
+  "newsCoverage": [
+    {
+      "outlet": "Ballotpedia",
+      "url": "https://ballotpedia.org/Georgia's_6th_Congressional_District_election,_2026",
+      "notes": "Lists Pinker as Republican primary candidate. Describes him as 'Businessman & Community Activist.' Confirms D+25 district rating and May 19 primary date.",
+      "date": "2026"
+    },
+    {
+      "outlet": "Politics1",
+      "url": "https://politics1.com/ga.htm",
+      "notes": "Lists Pinker as Republican candidate for GA-06. Confirms 'Businessman & Community Activist' description.",
+      "date": "2026"
+    },
+    {
+      "outlet": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Georgia",
+      "notes": "Lists Pinker in Republican primary for GA-06. Confirms general election date of November 3, 2026.",
+      "date": "2026"
+    }
+  ],
+  "positionConflicts": [],
+  "evidenceSummary": {
+    "strongestAxes": [],
+    "weakestAxes": [
+      "climate_ambition (no statement found)",
+      "energy_portfolio (no statement found)",
+      "firearms_policy (no statement found)",
+      "coverage_model (no statement found)",
+      "zoning_supply (no statement found)",
+      "affordability_tools (no statement found)",
+      "transit_priority (no statement found)",
+      "sentencing_goals (no statement found)"
+    ],
+    "inferableAxes": [
+      {
+        "axisId": "public_health",
+        "direction": "individual_choice",
+        "basis": "Campaign framing around personal freedom and anti-government-watchlist rhetoric consistent with individual liberty emphasis. Weak inference only.",
+        "confidence": "low"
+      },
+      {
+        "axisId": "police_accountability",
+        "direction": "poleB (back the blue / status quo)",
+        "basis": "Public safety messaging emphasizes crime and drug gangs as the problem; critique of incumbent for worsening streets suggests pro-enforcement lean. Weak inference.",
+        "confidence": "low"
+      },
+      {
+        "axisId": "school_choice",
+        "direction": "ambiguous",
+        "basis": "Curriculum/content critique ('deviant subjects') aligns with GOP parental rights movement, but no position on vouchers or school choice funding stated. Cannot score school_choice axis.",
+        "confidence": "low"
+      }
+    ],
+    "overallConfidence": "low",
+    "notes": "Pinker is a first-time candidate with no prior legislative record. His campaign website uses slogan-style 'freedom' framing across five themes but provides no specific policy commitments on any of the 15 civic axes. No third-party scorecards apply (no prior record). No press interviews or news profile pieces found. ZoomInfo suggests a possible business background in digital marketing/T-shirt design (Teenovel), but this is unverified as referring to the candidate. The district's D+25 rating means this candidacy is largely symbolic; low media attention is expected for the challenger. Scorer should leave axes unscored where evidence is absent — do not infer neutral positions from silence."
+  }
+}

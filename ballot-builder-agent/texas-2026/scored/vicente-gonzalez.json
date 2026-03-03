@@ -1,0 +1,264 @@
+{
+  "slug": "vicente-gonzalez",
+  "name": "Vicente Gonzalez Jr.",
+  "party": "Democratic",
+  "office": "U.S. House of Representatives, Texas 34th Congressional District, 2026",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Blue Dog Coalition co-chair and five-term border-district Democrat with a consistently pro-safety-net voting record, mixed firearms positions, fossil-fuel-protective energy votes, and socially conservative stances on transgender issues that place him among the most conservative House Democrats.",
+  "keyPositions": [
+    "Defends Medicare, Medicaid, Social Security expansion; voted against every Republican healthcare cut",
+    "Voted YES on Bipartisan Safer Communities Act but NO on Assault Weapons Ban — supports background checks and red flag laws, protects hunting rifles",
+    "All-of-the-above energy: voted for IRA climate investments AND Republican fossil fuel expansion bill; co-chairs Oil and Gas Caucus",
+    "One of two House Democrats to vote for transgender sports ban and gender-affirming care Medicaid restrictions",
+    "Moderate on immigration: opposes border wall and mandatory E-Verify but voted for DHS/ICE funding before reversing under constituent pressure"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "No vote on 'One Big Beautiful Bill' (Medicaid/Medicare cuts) July 2025",
+        "Yes vote on IRA (ACA subsidy extension, insulin caps)",
+        "Campaign website: expand Social Security with COLA",
+        "Heritage Action 6% lifetime score"
+      ],
+      "notes": "Consistently votes to preserve and expand safety net programs. Voted against every Republican bill that would cut Medicaid, Medicare, or ACA subsidies. Campaign platform explicitly calls for Social Security expansion. Heritage Action near-zero score confirms alignment against conservative safety-net cuts. Blue Dog fiscal caution does not extend to cutting entitlements."
+    },
+    "econ_investment": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Yes vote on IRA (clean energy and manufacturing investment)",
+        "Yes vote on NDAA ($847B defense)",
+        "Campaign website: UTRGV medical school, engineering expansion",
+        "Campaign website: Head Start, Title I, GEAR-UP, Pell Grants"
+      ],
+      "notes": "Supports public investment in education, healthcare infrastructure, defense, and energy. Voted for IRA's industrial policy provisions. Blue Dog fiscal constraint philosophy moderates his investment appetite compared to progressive wing — he voted for the bipartisan debt ceiling deal with spending caps. Score reflects a moderate-progressive lean on public investment, not aggressive industrial policy."
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "No vote on 'One Big Beautiful Bill' (described as tax breaks for billionaires)",
+        "Campaign rhetoric: 'extreme Republican agenda caters to wealthiest few'",
+        "Blue Dog Coalition fiscal orientation"
+      ],
+      "notes": "Opposes Republican tax cut packages that favor wealthy; frames opposition in progressive redistribution terms. However, no specific advocacy for wealth taxes or dramatically progressive restructuring. Blue Dog identity suggests comfort with moderate progressivity rather than aggressive redistribution. Score of 3 reflects center-left positioning without aggressive tax reform advocacy."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": [
+        "Campaign website: fully fund pre-K, Head Start, Title I, GEAR-UP, Pell Grants",
+        "Campaign website: support UTRGV medical school expansion",
+        "No stated support for vouchers or school choice programs",
+        "Background as plaintiff's attorney who recovered funds for South Texas school districts"
+      ],
+      "notes": "Strong and consistent public school investment advocate with no evidence of support for vouchers, charter expansion, or school choice mechanisms. His legal career involved recovering money for public school districts. Score reflects clear Pole A orientation. Not scored at 0 because there is no explicit anti-voucher legislative vote — just absence of support plus strong public school investment."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Co-sponsored Medicare for All (earlier term, per issue page)",
+        "Yes vote on IRA (ACA subsidy extension)",
+        "No vote on 'One Big Beautiful Bill' (strips ACA tax credits)",
+        "Yes vote on H.R. 3 Lower Drug Costs Now Act",
+        "Campaign website: strengthen Medicare and Social Security"
+      ],
+      "notes": "Co-sponsored Medicare for All in an earlier term, though this may have been a caucus solidarity move rather than a defining commitment. Current framing emphasizes strengthening ACA and Medicare rather than single-payer transformation. Consistently votes to expand public coverage options and oppose Republican coverage reductions. Score of 2 reflects strong public coverage support — placed between 'public option' (3) and single-payer (0) based on M4A co-sponsorship tempered by moderate current framing."
+    },
+    "health_cost_control": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Yes vote on H.R. 3 Lower Drug Costs Now Act (Medicare drug negotiation)",
+        "Yes vote on IRA (drug price negotiation, insulin cap provisions)",
+        "Rio Grande Guardian interview: 'We need to control prescription drug prices'",
+        "No vote on 'One Big Beautiful Bill' (opposed removing cost controls)"
+      ],
+      "notes": "One of the most consistent axes in his record. Voted for every major drug price control bill. Explicit statement supporting government price controls. Multiple Tier 1 votes plus Tier 2 interview all point the same direction. Clear Pole A."
+    },
+    "health_reproductive": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": [
+        "Yes vote on Women's Health Protection Act (codify Roe) — reported, not independently confirmed",
+        "Voted 'present' on born-alive bill (not 'no')",
+        "SBA Pro-Life unfavorable rating; endorsed opponent",
+        "Texas Tribune interview: called Democratic abortion messaging 'lazy' and out of touch with Catholic district",
+        "Personally Catholic, describes self as not personally for abortion"
+      ],
+      "notes": "Complex position. WHPA yes vote (Tier 1 if confirmed) places him on the pro-choice side legislatively. But 'present' vote on born-alive bill (rather than 'no'), personal Catholic pro-life identity, and explicit critique of abortion-focused messaging indicate he is at the conservative edge of pro-choice Democrats. Score of 4 reflects legislative pro-choice record moderated by rhetorical and cultural conservatism on the issue. SBA Pro-Life opposition confirms he is not reliably pro-life, but he is not a reproductive rights champion either."
+    },
+    "health_public_health": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Campaign website: $4.7M for mental health in schools",
+        "Blue Dog moderate orientation",
+        "No specific votes on vaccine mandates, FDA authority, or public health mandates found"
+      ],
+      "notes": "Limited direct evidence. Mental health funding support suggests moderate public health investment. Blue Dog identity and socially conservative lean on personal liberty issues suggest he would not support strong mandates. Score of 4 reflects a slight lean toward individual choice within a context of supporting public health funding. Low confidence due to sparse evidence."
+    },
+    "justice_firearms": {
+      "score": 4,
+      "confidence": "high",
+      "sources": [
+        "Yes vote on Bipartisan Safer Communities Act (background checks, red flag, crisis intervention)",
+        "No vote on Assault Weapons Ban (H.R. 1808)",
+        "Press release: supports background checks, waiting periods, red flag laws, magazine limits but not AWB",
+        "Inferred NRA grade: C or D range"
+      ],
+      "notes": "Genuinely mixed record that defies simple categorization. Supports significant regulation (background checks, red flag laws, waiting periods, magazine limits) but drew the line at banning assault weapons, citing South Texas hunting culture and tens of millions already in circulation. Only Democrat in TX delegation to split this way. Score of 4 reflects someone who supports meaningful gun safety measures but stops short of comprehensive regulation. Placed just below the 5 midpoint because the weight of his supported measures (background checks + red flag + waiting periods + magazine limits) is more substantive than his single opposition (AWB)."
+    },
+    "climate_ambition": {
+      "score": 5,
+      "confidence": "high",
+      "sources": [
+        "Yes vote on IRA (largest climate investment in US history)",
+        "Yes vote on H.R. 1 Lower Energy Costs Act (rolled back IRA climate provisions)",
+        "Co-introduced Promoting Domestic Energy Production Act (weakened IRA oil/gas penalties)",
+        "LCV 52% (2024 annual), 77% lifetime",
+        "Member of both Oil and Gas Caucus AND Renewable Energy Caucus"
+      ],
+      "notes": "The most internally contradictory axis in his record. He voted for the IRA's climate investments but then voted for a Republican bill that explicitly rolled back IRA climate provisions and co-authored legislation to weaken IRA oil/gas penalties. LCV 2024 annual score of 52% (down from 77% lifetime) reflects this rightward shift on climate in the 118th Congress. His dual caucus membership (Oil and Gas + Renewable Energy) is the institutional expression of his all-of-the-above positioning. Score of 5 reflects a genuinely moderate position — not climate denial, not aggressive climate action. The recent trajectory (2023-2025 fossil fuel votes) is weighted more heavily per recency rule."
+    },
+    "climate_energy_portfolio": {
+      "score": 6,
+      "confidence": "high",
+      "sources": [
+        "Yes vote on H.R. 1 Lower Energy Costs Act (fossil fuel expansion)",
+        "Co-introduced Promoting Domestic Energy Production Act with Republican",
+        "Member of Oil and Gas Caucus",
+        "Member of Renewable Energy Caucus",
+        "Yes vote on IRA (clean energy tax credits)",
+        "LCV 52% (2024)"
+      ],
+      "notes": "Leans toward fossil fuel accommodation. While he voted for the IRA's clean energy provisions, his subsequent votes and co-sponsorship specifically aimed to protect oil/gas industry interests in his South Texas district. The H.R. 1 vote was one of only four Democratic yes votes and explicitly expanded fossil fuel access. Co-introduced bipartisan bill to 'unleash American energy' and fix IRA provisions he said 'unfairly penalize America's energy producers.' This is not all-of-the-above in the balanced sense — it's all-of-the-above with a fossil fuel thumb on the scale. Score of 6 (slightly toward Pole B) reflects the fossil fuel lean within an all-of-the-above frame."
+    },
+    "climate_permitting": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "Yes vote on H.R. 1 Lower Energy Costs Act (permitting reform provisions)",
+        "Co-introduced Promoting Domestic Energy Production Act (permitting provisions)",
+        "Cited 'permitting reform and infrastructure benefits' as rationale for H.R. 1 vote"
+      ],
+      "notes": "Explicitly cited permitting reform as his rationale for voting for the Republican energy bill. His co-introduced legislation also included permitting streamlining provisions. He wants faster permitting for energy projects broadly, including fossil fuels. Score of 7 reflects clear support for expedited permitting — not maximum deregulation (he did not advocate eliminating environmental review) but meaningfully faster than status quo."
+    },
+    "justice_policing_accountability": {
+      "score": 6,
+      "confidence": "low",
+      "sources": [
+        "Blue Dog Coalition co-chair (moderate-conservative positioning)",
+        "Problem Solvers Caucus membership",
+        "No specific policing reform votes found",
+        "DHS/ICE funding vote (supports law enforcement funding)"
+      ],
+      "notes": "Very limited direct evidence on policing. Blue Dog identity, Problem Solvers Caucus membership, and willingness to vote for DHS/ICE funding suggest a law-enforcement-supportive orientation rather than reform-focused. His district (South Texas border) has high law enforcement presence. Score of 6 is an inference-based estimate reflecting moderate support for law enforcement without strong reform advocacy. Low confidence — this should be updated if specific policing votes emerge."
+    },
+    "justice_sentencing_goals": {
+      "score": 5,
+      "confidence": "low",
+      "sources": [
+        "Blue Dog Coalition co-chair",
+        "No specific sentencing reform votes found in research"
+      ],
+      "notes": "No meaningful evidence found. Blue Dog identity suggests neither aggressive decarceration nor harsh sentencing maximalism. Score of 5 represents genuine absence of signal rather than phantom centrism — included only because Blue Dog membership provides a weak directional signal. If no evidence existed at all, this axis would be omitted."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.1,
+      "reasoning": "Mixed signals. Environmental record is moderate rather than strong (LCV 52% recent). Healthcare access advocacy extends to all constituents. However, votes against transgender rights (sports ban, care bans) work against universalism's tolerance dimension. Immigration positions show some compassion (oppose wall, support DACA/DREAM) but also willingness to fund enforcement. Overall: weak positive — cares about community welfare broadly but with clear limits on who is included in his moral circle, particularly transgender individuals."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Strong and consistent community welfare orientation. Fights for South Texas constituent interests: healthcare access, school funding, Social Security expansion, veteran support, local jobs. His legal career recovering money for school districts, his campaign framing around working families, and his consistent votes to protect Medicaid/Medicare all demonstrate active benevolence toward his community. His DHS/ICE funding reversal was driven by constituent backlash — further evidence of community responsiveness. Among his strongest value signals."
+    },
+    "tradition": {
+      "score": 0.5,
+      "reasoning": "Catholic identity is meaningful and publicly expressed — it shapes his positions on abortion messaging and transgender issues. Supports traditional gender norms in sports. Defers to established institutions (Social Security, Medicare) rather than proposing structural transformation. South Texas cultural conservatism is a defining feature of his political identity. Does not advocate dismantling existing institutions. However, not a pure traditionalist — willing to support some progressive policy within established frameworks."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Works within institutional channels consistently. Blue Dog and Problem Solvers Caucus membership signals commitment to bipartisan process and institutional norms. Voted for bipartisan debt ceiling deal to maintain fiscal order. Does not engage in norm-breaking behavior. Even his party-line defections (H.R. 1 energy vote, trans sports vote) are done through proper voting channels with public statements explaining rationale. His DHS reversal shows responsiveness to democratic feedback rather than unilateral action."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Strong defense posture (NDAA yes vote, son of veteran, $847B defense). Supports law enforcement funding (DHS/ICE vote). Protects Social Security and Medicare as economic security for seniors. Border security through enforcement (not abolish ICE, not open borders). Represents a district where physical and economic security are top-of-mind issues. Values stability of existing programs over transformation. Security is expressed across both progressive (economic security through entitlements) and conservative (defense, border enforcement) dimensions."
+    },
+    "power": {
+      "score": 0.1,
+      "reasoning": "Not a strong power signal in either direction. Raised $1.9M (moderate for a competitive House race). Blue Dog identity and corporate-friendly energy positioning suggest some alignment with established economic interests (oil and gas industry). However, he is not a major PAC recipient in the AIPAC/corporate megadonor sense, and his policy positions (drug price negotiation, opposing billionaire tax cuts) work against concentrated wealth. Weak positive reflects pragmatic power-alignment with district economic interests rather than active pursuit of concentrated power."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Personal biography demonstrates strong achievement orientation — GED to law degree, built a successful plaintiff's law practice, recovered millions for school districts, self-made career trajectory. Campaign framing emphasizes jobs and economic mobility. Workforce development and education investment are achievement-oriented. However, his policy focus is more on community welfare than individual meritocracy, and he does not emphasize 'pull yourself up' rhetoric. Moderate positive."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "Socially conservative on personal liberty issues that intersect with lifestyle freedom — transgender rights restrictions, Catholic moral framework, cautious on abortion. No evidence of libertarian personal freedom framing. His policy orientation prioritizes community norms over individual lifestyle expression. Weak negative rather than strong negative because he does not lead with restriction — it is a secondary feature of his positioning."
+    },
+    "stimulation": {
+      "score": -0.3,
+      "reasoning": "Explicitly establishment-oriented. Blue Dog co-chair, Problem Solvers Caucus, works within existing institutional frameworks. No transformative policy proposals — his agenda is protecting existing programs (Medicare, Social Security, public schools) rather than proposing new ones. Does not use 'new generation' or 'disruption' framing. His most notable political identity is institutional moderation. Negative score reflects active preference for stability over novelty."
+    },
+    "self_direction": {
+      "score": -0.1,
+      "reasoning": "Mixed across domains. Supports gun owner liberty (no on AWB) which is a self-direction signal. But votes to restrict transgender individuals' self-expression (sports ban, care bans) which works against self-direction. Voted for WHPA (reproductive choice) but with personal reservations and rhetorical distancing. Net effect is approximately neutral with a slight negative lean — the transgender restriction votes are active policy interventions against individual autonomy that slightly outweigh the gun liberty and reproductive choice signals."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Climate and energy",
+      "description": "Voted YES on IRA (largest climate investment in US history) in 2022, then voted YES on H.R. 1 in 2023 which explicitly rolled back IRA climate provisions, and co-introduced legislation to weaken IRA penalties on oil/gas producers. LCV annual score dropped from 77% lifetime to 52% in 2024.",
+      "sources": ["gonzalez.house.gov press releases", "Texas Tribune March 2023", "LCV scorecard"],
+      "scoringImpact": "Climate axes scored based on totality with recency weighting. The 2023 fossil fuel votes are more recent and more specific than the 2022 IRA vote, pulling climate_ambition to 5 and climate_energy_portfolio to 6."
+    },
+    {
+      "topic": "Abortion and reproductive rights",
+      "description": "Voted YES on Women's Health Protection Act (codify Roe) but called Democratic abortion messaging 'lazy,' voted 'present' on born-alive bill, and describes himself as personally pro-life Catholic. SBA Pro-Life still rates him unfavorably and endorsed his opponent.",
+      "sources": ["OnTheIssues", "Texas Tribune November 2024", "SBA Pro-Life scorecard"],
+      "scoringImpact": "Scored health_reproductive at 4 — legislative record is pro-choice but rhetorical and cultural positioning is conservative for a Democrat. WHPA vote is Tier 1 evidence but 'present' on born-alive and Catholic framing are meaningful modifiers."
+    },
+    {
+      "topic": "Immigration / ICE funding",
+      "description": "Voted NO on H.R. 2 Secure the Border Act (opposed wall, E-Verify). Then voted YES on DHS/ICE $64.4B funding bill on January 22, 2026, before reversing to oppose further DHS funding on February 3, 2026 after constituent backlash and a fatal ICE-linked shooting.",
+      "sources": ["gonzalez.house.gov", "parriva.com", "myrgv.com"],
+      "scoringImpact": "Immigration axis not scored as a standalone civic axis (not in the 16-axis framework). The conflict is noted in security and benevolence value scores. His position is genuinely moderate — not abolish-ICE, not wall-first — and the reversal demonstrates constituent responsiveness rather than a settled ideological position."
+    },
+    {
+      "topic": "Transgender rights",
+      "description": "As a Democrat, voted with Republicans on three anti-transgender bills: Protection of Women and Girls in Sports Act, Medicaid ban on trans youth care, and MTG-sponsored criminalization bill. Stated: 'boys should not play in girls sports.' One of only two House Democrats on the sports vote.",
+      "sources": ["Texas Tribune January 2025", "metroweekly.com", "out.com"],
+      "scoringImpact": "Factored into health_reproductive (modestly), universalism (significantly negative), self_direction (negative), hedonism (negative), and tradition (positive). These are among his sharpest departures from Democratic caucus positioning."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority"
+    ],
+    "reasonSkipped": "No meaningful housing or transportation record found in federal House tenure. No votes, no stated positions, no scorecard data on housing policy.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "NRA grade not confirmed — inferred from voting pattern as C or D range",
+      "AFL-CIO score page exists but specific number not retrieved",
+      "US Chamber of Commerce score not found",
+      "WHPA vote reported by OnTheIssues but not independently confirmed with primary source",
+      "No policing reform or sentencing reform votes found — justice_policing_accountability and justice_sentencing_goals scored at low confidence",
+      "No specific positions on drug sentencing, marijuana legalization, or criminal justice reform found",
+      "Public health mandates (vaccines, FDA authority) — no evidence found; health_public_health scored at low confidence"
+    ],
+    "notablePatterns": [
+      "DW-NOMINATE of -0.379 confirms he is among the most conservative House Democrats — roughly 51st percentile within the Democratic caucus",
+      "Consistent pattern of crossing party lines with Henry Cuellar (TX-28) on energy, transgender, and immigration votes — a deliberate moderate bloc strategy",
+      "Oil and gas district constituency clearly shapes his energy votes, which are his sharpest departure from Democratic orthodoxy",
+      "Safety net defense is his most consistent through-line — never voted to cut Medicaid, Medicare, or Social Security despite Blue Dog fiscal identity"
+    ]
+  }
+}

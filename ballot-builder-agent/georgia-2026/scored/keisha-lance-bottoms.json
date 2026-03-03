@@ -1,0 +1,261 @@
+{
+  "slug": "keisha-lance-bottoms",
+  "name": "Keisha Lance Bottoms",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "scoredAt": "2026-02-26T12:00:00.000Z",
+  "profileSummary": "Former two-term Atlanta mayor and Biden White House advisor with a deep executive record on policing reform, climate action, affordable housing, and criminal justice reform; running on Medicaid expansion, reproductive rights, and anti-Trump framing as the Democratic frontrunner for Georgia governor.",
+  "keyPositions": [
+    "Full Medicaid expansion as top stated priority — 300,000 uninsured Georgians and rural hospital closures",
+    "Explicit pro-Roe; opposes Georgia's 6-week abortion ban; EMILYs List endorsed",
+    "100% clean energy plan for Atlanta (2025 municipal, 2035 community-wide); Senate climate testimony",
+    "Closed Atlanta city jail; eliminated cash bail; signed ICE detainee ban — strong criminal justice reform record",
+    "Affordable housing: $50M bond, 20,000-home goal, inclusionary zoning, corporate landlord crackdown"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "One Atlanta Economic Mobility Plan (2020) — targeted Black and brown communities with high poverty",
+        "Medicaid expansion as top campaign priority (2025-2026)",
+        "First-time homebuyer grants proposal",
+        "Teacher income tax elimination proposal"
+      ],
+      "notes": "No direct legislative safety net votes. Mayoral economic plan focused on equity and access for low-income communities. Medicaid expansion is the strongest safety net signal. Teacher tax elimination and homebuyer grants are targeted support expansions. Overall orientation is clearly toward broader safety net, but scored at 2 rather than 0-1 because evidence is from executive actions and campaign statements rather than a legislative voting record with specific safety net bill votes."
+    },
+    "econ_investment": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "$50M affordable housing bond (2021)",
+        "More MARTA Atlanta program — largest transit investment in 40+ years",
+        "One Atlanta Economic Mobility Plan — neighborhood investment, small business, job creation",
+        "Clean Energy Atlanta Plan — major municipal investment",
+        "Four balanced budgets without tax increases (2018-2022) — fiscal discipline within a public investment framework",
+        "2026 campaign: education funding increase, teacher tax elimination"
+      ],
+      "notes": "Bottoms' mayoral record is defined by aggressive public investment: housing bonds, transit, clean energy, economic development plans. She did this while maintaining balanced budgets and $181M in reserves, suggesting she is not fiscally reckless but strongly favors public investment. Multiple Tier 1.5 (executive actions) and Tier 2 sources all point the same direction. High confidence."
+    },
+    "econ_school_choice": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "2026 campaign: teacher income tax elimination, education funding increase",
+        "Mayoral record: Atlanta public schools child savings accounts program"
+      ],
+      "notes": "Teacher tax elimination and education funding increases signal public school investment (Pole A direction). No position found on vouchers, charter schools, or education savings accounts. Scored at 3 (leaning public school) rather than lower because the evidence is limited to general teacher/funding support without explicit anti-choice positions. Research file explicitly flags this as a gap."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Campaign launch video (May 2025): 'fight to expand Medicaid so 300,000 Georgians can get coverage'",
+        "NAACP Forum (August 2025): 'Would commit Georgia to full expansion of Medicaid benefits'",
+        "19th News interview (May 2025): top stated priority",
+        "WABE interviews (2025-2026): consistent Medicaid expansion messaging",
+        "11Alive interview (2026): repeated commitment"
+      ],
+      "notes": "Full Medicaid expansion is her most frequently stated position, repeated across every available interview source. This places her clearly at the 'more government insurance' end. Scored at 2 rather than 0 because she advocates Medicaid expansion (public option/buy-in territory), not single-payer/Medicare for All. Rural hospital closure prevention frames this as both coverage and access. No evidence she supports eliminating private insurance. Multiple Tier 2 sources all consistent = high confidence."
+    },
+    "health_public_health": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Led Atlanta through COVID-19 pandemic as mayor (2020-2021)",
+        "Senate climate testimony cited 26,000 annual ER asthma visits — framed climate as public health",
+        "Reproductive rights framing: 'reproductive health care' language emphasizes health access",
+        "First city allocation of funds to combat HIV",
+        "LGBTQ health: HIV funding, LGBTQ Affairs office"
+      ],
+      "notes": "No specific evidence on vaccine mandates or drug policy. However, the COVID pandemic leadership, climate-as-public-health framing, HIV funding, and reproductive rights as healthcare all point toward proactive public health intervention (Pole A). Scored at 2 for strong collective health orientation. Confidence is medium because specific pandemic policy details (mask mandates, business closures) were not documented in the research file."
+    },
+    "housing_supply_zoning": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Housing Affordability Action Plan (2019): inclusionary zoning, ADU legalization, elimination of minimum parking requirements",
+        "Missing middle housing reforms: second units on single-family lots",
+        "Redevelopment of vacant public land for affordable housing",
+        "20,000 affordable homes goal by 2026"
+      ],
+      "notes": "This is one of her strongest-evidenced axes. As mayor, Bottoms pursued a comprehensive pro-supply, pro-density agenda: ADU legalization, parking minimum elimination, inclusionary zoning, missing middle housing. These are actual executive policy actions, not just campaign promises. Score of 2 reflects strong pro-density/loosen-zoning orientation. Not scored at 0 because she did not pursue by-right approval or state preemption of local zoning — she worked within municipal authority."
+    },
+    "housing_affordability_tools": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "$50M affordable housing bond (2021)",
+        "Housing Affordability Action Plan: 20,000 affordable homes, $1B public-private goal",
+        "Inclusionary zoning mandates",
+        "2026 campaign: first-time homebuyer grants, corporate landlord crackdown, stricter oversight of institutional investors",
+        "Redevelopment of vacant public land for affordable housing"
+      ],
+      "notes": "Bottoms' record on affordability tools is among the most aggressive of any recent big-city mayor. $50M bond, inclusionary zoning mandates, public land for affordable housing, and the 2026 corporate landlord crackdown proposal all point to strong government intervention in housing markets. Scored at 1 — one of her clearest Pole A positions. The corporate landlord framing goes beyond standard Democratic housing positions."
+    },
+    "housing_transport_priority": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": [
+        "More MARTA Atlanta program approval (2019) — 'region's largest transit investment in more than four decades'",
+        "Elimination of minimum parking requirements in housing plan",
+        "No evidence of car-centric or highway-focused investment"
+      ],
+      "notes": "As mayor, Bottoms championed the largest transit expansion in Atlanta's modern history and eliminated parking minimums — both strong transit-first signals. No 2026 gubernatorial statement on statewide transit vs. highway investment was found, which is why confidence is medium rather than high. But the mayoral record is concrete executive action, not just rhetoric. The research file flags that no specific gubernatorial transit policy exists yet."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Rayshard Brooks response: called it 'murder,' fired officer, mandated de-escalation training, duty-to-intervene policy",
+        "PERF review of APD policy commissioned",
+        "'Guardians, not warriors' rhetoric for police",
+        "Cash bail elimination (Ordinance 18-O-1045, 2018)",
+        "Atlanta City Detention Center closure (2021) — proposed reimagining as 'Center for Equity'",
+        "Simultaneously: increased APD budget by $13M, historic pay raises for officers, retention bonuses, 13% raise for 911 operators",
+        "Crime surge context: homicides and auto thefts rose, 400 APD vacancies, contributed to decision not to seek reelection"
+      ],
+      "notes": "This is the most complex axis to score. Bottoms implemented major accountability reforms (de-escalation mandates, duty-to-intervene, jail closure, cash bail elimination) that place her clearly in reform territory. However, she simultaneously funded police significantly — increasing the APD budget, offering historic pay raises, and seeking retention bonuses during the staffing crisis. She did NOT defund police; she reformed AND funded them. The crime surge and its political consequences are real context. Scored at 3 (reform-oriented but not at the defund/abolish pole) because her record shows genuine reform combined with pragmatic law enforcement investment. The 2026 campaign is 'reframing her record' toward stability and executive competence, moving slightly away from the reform-first messaging. This is a genuinely nuanced position, not a contradiction — she represents the 'reform and fund' school of thought."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Cash bail elimination for city ordinance violations (2018): 'People should not be held in jail because they cannot pay bond'",
+        "Atlanta City Detention Center closure (2021): reimagined as 'Center for Equity' for tools for success rather than incarceration",
+        "ICE detainee ban (2018): opposed federal incarceration of immigrants in city facilities"
+      ],
+      "notes": "Mayoral record strongly favors rehabilitation over punishment: jail closure, cash bail elimination, equity center vision. No 2026 gubernatorial statements on state sentencing policy, mandatory minimums, or prison reform were found — this is flagged as a research gap. Scored at 2 based on the strong mayoral pattern. Confidence is medium rather than high because the evidence is all from municipal-level actions (city ordinance violations, city jail) which may not directly predict positions on state-level felony sentencing. The scale of the challenge is different as governor."
+    },
+    "justice_firearms": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Signed bipartisan 214-mayor letter urging universal background checks (2019)",
+        "Called on Georgia leaders to address 'lax gun laws'",
+        "Participated in Everytown/Moms Demand Action advocacy (2019-2020)",
+        "Featured in Everytown editorial",
+        "Personal loss: nephew Darius killed by gun violence",
+        "No NRA grade found"
+      ],
+      "notes": "Multiple independent sources consistently point to strong gun safety advocacy: the mayors' letter (universal background checks, secondary sale limits), Everytown/Moms Demand alignment, calling for stricter Georgia laws, and personal motivation from family gun violence loss. Scored at 2 rather than 0 because the evidence shows support for background checks and 'gun safety laws' generally — no specific evidence of supporting an assault weapons ban, magazine limits, licensing, or insurance requirements. The positions documented are significant but represent the mainstream gun safety agenda, not comprehensive regulation."
+    },
+    "climate_ambition": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Clean Energy Atlanta Plan (2019): 100% clean energy municipal by 2025, community-wide by 2035",
+        "U.S. Senate climate testimony (July 2019): only Southern mayor on the panel",
+        "Cited 26,000 annual ER asthma visits as climate/public health nexus",
+        "Joined Paris Agreement commitments despite federal withdrawal",
+        "Sierra Club covered the plan favorably"
+      ],
+      "notes": "This is one of Bottoms' strongest axes by evidence quality. The 100% clean energy plan with specific targets, Senate testimony, and Paris Agreement commitment represent aggressive climate action. As the only Southern mayor to testify before the Senate climate committee, she went beyond the baseline for her region. Scored at 1 (aggressive climate action). No 2026 gubernatorial climate platform has been articulated yet, but the mayoral record is deeply documented executive action, not just rhetoric."
+    },
+    "climate_energy_portfolio": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Clean Energy Atlanta Plan: 100% clean energy targets",
+        "Senate climate testimony focused on renewable transition",
+        "Sierra Club favorable coverage of energy plan"
+      ],
+      "notes": "The 100% clean energy target implies renewables priority over fossil fuels. However, the research file flags that no 2026 gubernatorial statement on natural gas, Georgia Power, or state energy policy was found. As governor, Georgia's energy landscape (dominated by Georgia Power, Plant Vogtle nuclear, significant natural gas) is very different from Atlanta's municipal operations. Scored at 2 with medium confidence — the mayoral record is clearly pro-renewables, but the state-level translation is uncertain."
+    },
+    "climate_permitting": {
+      "score": 5,
+      "confidence": "low",
+      "sources": [
+        "No direct evidence on permitting policy"
+      ],
+      "notes": "The research file contains no evidence on Bottoms' position regarding environmental review speed, permitting reform, or community veto power over projects. Her housing record suggests she favors faster housing permitting (ADU legalization, parking minimum elimination), but her environmental record suggests she values environmental review. These could point in opposite directions. Scored at 5 (genuinely ambiguous) with low confidence. This axis should ideally be omitted, but the weak cross-signals from housing (faster approvals) and environment (thorough review) genuinely suggest a moderate position rather than no position."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.7,
+      "reasoning": "Strong and consistent signals across multiple domains: aggressive climate action (100% clean energy, Senate testimony framing climate as public health), LGBTQ rights (perfect HRC scores, first LGBTQ Affairs director, HIV funding), ICE detainee ban (protecting immigrants from federal enforcement), cash bail elimination, anti-discrimination orientation. The 'Center for Equity' jail reimagining and One Atlanta plan explicitly target equity for marginalized communities. Environmental justice framing (26,000 asthma ER visits) connects climate to human welfare. Reproductive rights framing as healthcare access. Not scored at +1 because her universalism is domestically focused — no evidence of international humanitarian or foreign policy positions."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "Community welfare is central to Bottoms' identity and record. Medicaid expansion to prevent rural hospital closures, affordable housing investments, teacher support, small business programs, neighborhood investment, economic mobility plan targeting high-poverty communities, LGBTQ services, HIV funding, first-time homebuyer grants — nearly every policy position is framed around caring for community members. The personal framing ('Georgians need a fighter') emphasizes protective caregiving for constituents. One of the strongest benevolence signals in the research. Scored at 0.8 rather than 1.0 because the intensity is high but not singular — she also emphasizes competence and anti-Trump resistance alongside community care."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Bottoms actively challenged several traditions: eliminated cash bail (long-standing practice), closed city jail, reformed police use-of-force norms, created new LGBTQ institutions, legalized ADUs in single-family zones, and frames reproductive rights explicitly as overturning Georgia's abortion ban. The campaign is framed as resistance to Trump-era policies. However, she is not a radical tradition-breaker — she worked within existing institutional channels, delivered balanced budgets (a fiscal tradition), and did not pursue truly disruptive structural changes. Modest negative score reflects a reform orientation that challenges some traditions while respecting institutional processes."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Bottoms consistently worked within institutional channels: executive orders (not extralegal action), balanced budgets, partnerships with MARTA Board, city council legislation for jail closure. She acknowledged state law prevented sanctuary city status and worked within that constraint. She served in all three branches of city government. The 2026 campaign works through democratic electoral processes. However, the ICE detainee ban pushed boundaries of federal-city relations, and the 'fighting back' rhetoric against Trump signals willingness to resist authority. Net positive but modest — she is an institutionalist who pushes institutional boundaries."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Mixed signals create a moderate positive. Bottoms championed Medicaid expansion (health security), affordable housing (housing security), and economic mobility for vulnerable communities (economic security). She increased police funding and gave officers historic pay raises (public safety investment). She maintained $181M in city reserves (fiscal security). However, the crime surge during her tenure and 400 APD vacancies represent a security failure — not by intent but by outcome. The jail closure and cash bail elimination could be seen as prioritizing reform over incapacitation-based security. Net positive because she pursued multiple forms of security, but the mixed public safety record prevents a higher score."
+    },
+    "power": {
+      "score": -0.2,
+      "reasoning": "Bottoms' policy record leans anti-concentrated-power: corporate landlord crackdown, affordable housing mandates, inclusionary zoning, ICE enforcement opposition, equity-focused economic plans. The 'fighting back' rhetoric against Trump frames her as challenging institutional power. However, she is not a grassroots-only or anti-establishment candidate — she served in the Biden White House, has establishment Democratic backing, and her campaign benefits from EMILY's List and institutional support. She is not an outsider challenging power structures from the outside; she is an insider using institutional power for equity-oriented ends. Modest negative reflects the anti-corporate, pro-equity policy orientation offset by her own institutional power positioning."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Workforce development and economic mobility are present in her record: One Atlanta Economic Mobility Plan focused on 'Creation of Good Jobs, Access to Good Jobs,' career training and college pathways in education platform, small business support. The personal narrative (fifth-generation Georgian, first person to serve in all three branches of city government, potential first Black woman governor) embodies achievement through competence. However, her framing emphasizes structural solutions (public investment, government programs) more than individual effort narratives. She is not an 'individual bootstraps' candidate but does value competence and opportunity."
+    },
+    "hedonism": {
+      "score": 0.1,
+      "reasoning": "Minimal direct evidence. LGBTQ rights support and reproductive rights advocacy can be read as personal freedom/lifestyle liberty signals, but Bottoms frames these as justice and healthcare rather than personal pleasure or freedom. No evidence of libertarian personal freedom framing, cannabis legalization positions, or explicit 'government out of personal choices' rhetoric. Slight positive only because the LGBTQ and reproductive rights positions implicitly support personal autonomy."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Some signals of change-orientation: reimagining a jail as a 'Center for Equity,' 100% clean energy transformation, creating Atlanta's first LGBTQ Affairs office, new housing typologies (ADUs, missing middle). The 2026 campaign frames itself as resistance to Trumpism and a new direction for Georgia. However, Bottoms is fundamentally an establishment candidate — former mayor, White House advisor, institutional Democrat. She is not running as a disruptor or anti-establishment outsider. The 'first Black woman governor' narrative contains novelty, but her policy proposals are largely within the mainstream Democratic framework rather than structurally radical. Moderate positive for reform energy within an institutionalist frame."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Reproductive rights as bodily autonomy (explicit opposition to 6-week ban, EMILYs List endorsement), LGBTQ rights (personal identity freedom), and ICE detainee ban (protection of immigrants' freedom from federal detention) all signal support for individual autonomy and freedom. However, she also supports significant government intervention in markets (housing mandates, corporate landlord regulation, public health programs), which works against pure self-direction in the economic domain. The civil liberties signals are strong but balanced by interventionist economic positions. Score reflects the net pattern across domains."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Police accountability vs. public safety record",
+      "description": "Bottoms implemented major APD reforms (de-escalation mandates, duty-to-intervene, cash bail elimination, jail closure) while simultaneously increasing APD funding by $13M, giving historic pay raises, and seeking retention bonuses. Crime rose significantly during her tenure — homicides, rapes, and auto thefts increased, and APD had 400 unfilled positions. She chose not to seek reelection in part due to the political cost of the crime surge. In 2026, she is 'reframing her record' toward stability and executive competence rather than the reform-first messaging of 2020.",
+      "sources": [
+        "GPB (May 2021): 'Mayor Bottoms paying the political cost for COVID crime wave'",
+        "AJC (November 2025): 'Bottoms reframes her record as 2026 race takes shape'",
+        "The Appeal: 'Atlanta's Mayor Wants $13 Million More for Police'",
+        "CBS News: Rayshard Brooks reform executive orders"
+      ],
+      "scoringImpact": "Scored justice_policing_accountability at 3 (reform-oriented but not defund) rather than 1-2 to reflect the genuine duality. Notes explain the complexity."
+    },
+    {
+      "topic": "Immigration: mayoral constraints vs. gubernatorial ambiguity",
+      "description": "As mayor, Bottoms banned ICE detainees from the city jail but explicitly stated state law prevented Atlanta from becoming a full 'sanctuary city.' As a 2026 gubernatorial candidate, she has referenced opposing ICE raids but has not articulated a specific immigration enforcement posture as governor. The anti-Trump framing is consistent, but the specific tools available to a Georgia governor on immigration are different from those of an Atlanta mayor.",
+      "sources": [
+        "11Alive: Atlanta terminates ICE relationship",
+        "Capital B News: Bottoms frames candidacy against Trump's DEI ban and ICE raids"
+      ],
+      "scoringImpact": "Immigration is not a scored civic axis in the current framework. The ICE actions contribute to universalism and self-direction value scores."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["health_cost_control"],
+    "reasonSkipped": "health_cost_control: No evidence found on drug pricing, hospital price regulation, or insurance cost control beyond Medicaid expansion. Research file explicitly flags this gap.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No 2026 gubernatorial platform on school choice (vouchers, charters) — only general education funding support",
+      "No healthcare cost control positions beyond Medicaid expansion",
+      "No state-level sentencing, mandatory minimum, or prison reform positions for 2026",
+      "No specific state energy portfolio position (natural gas, Georgia Power, Plant Vogtle) for 2026",
+      "No state-level transit vs. highway investment position for 2026",
+      "No permitting/environmental review position documented",
+      "Immigration enforcement posture as governor not specified beyond anti-ICE framing"
+    ],
+    "evidenceStrengths": [
+      "Four-year mayoral executive record provides Tier 1.5 evidence across most axes — actual governance decisions, not campaign rhetoric",
+      "Multiple independent media sources (11Alive, WABE, AJC, GPB, 19th News, Capital B) corroborate positions",
+      "EMILYs List endorsement, HRC perfect score, and Everytown alignment provide Tier 1 scorecard evidence on reproductive rights, LGBTQ rights, and firearms",
+      "Campaign positions stated consistently across multiple outlets with no contradictions between them",
+      "The one major complexity (policing reform vs. public safety outcomes) is well-documented from multiple angles"
+    ],
+    "noteOnEvidenceType": "Bottoms has no legislative voting record — her career has been judicial and executive. Mayoral executive actions (signed ordinances, executive orders, budget decisions) are treated as equivalent to Tier 1.5 evidence because they represent actual governance decisions with real policy consequences, not just stated positions."
+  }
+}

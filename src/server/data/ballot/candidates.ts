@@ -230,12 +230,462 @@ export const candidatesCouncilD5: Candidate[] = [
 ];
 
 // ============================================
+// Candidates - MI U.S. Senate 2026
+// Real-world data scored from public sources (Feb 2026)
+// Open seat — Gary Peters (D) retiring
+// ============================================
+
+export const candidatesMIUSSenate: Candidate[] = [
+  {
+    id: 'stevens',
+    contestId: CONTEST_IDS.MI_US_SENATE,
+    name: { full: 'Haley Stevens', ballotDisplay: 'Haley Stevens' },
+    party: 'Democratic',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 1,
+    positions: [
+      'Supports ACA expansion and a public option, not Medicare for All',
+      'Champions manufacturing investment and workforce development; CHIPS Act advocate',
+      'Calls for ICE overhaul with accountability, not abolition',
+      'Strong environmental record: LCV 100% (2024), 98% lifetime score in Congress',
+    ],
+    axisStances: {
+      econ_safetynet: 2,
+      econ_investment: 2,
+      econ_school_choice: 3,
+      health_coverage_model: 3,
+      health_cost_control: 3,
+      health_public_health: 2,
+      justice_policing_accountability: 4,
+      justice_firearms: 3,
+      climate_ambition: 1,
+      climate_energy_portfolio: 2,
+      climate_permitting: 3,
+    },
+    axisEvidence: {
+      econ_investment: [
+        { text: 'Authored CHIPS Act provisions; voted for $280B semiconductor bill (2022)', url: 'https://stevens.house.gov/media/press-releases/rep-stevens-secures-wins-chips-and-science-act-votes-historic-investments' },
+      ],
+      econ_safetynet: [
+        { text: 'Voted for Inflation Reduction Act (Medicare drug pricing, ACA subsidies, 2022)', url: 'https://www.govtrack.us/congress/votes/117-2022/h404' },
+      ],
+      health_coverage_model: [
+        { text: 'WDET Feb 2026: supports ACA expansion + public option, not Medicare for All', url: 'https://wdet.org/2026/02/19/haley-stevens-runs-for-michigans-open-us-senate-seat/' },
+      ],
+      justice_firearms: [
+        { text: 'Voted for Bipartisan Safer Communities Act (2022)', url: 'https://www.govtrack.us/congress/votes/117-2022/h304' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 100% (2025 annual), 98% lifetime — near-perfect environmental record', url: 'https://www.lcv.org/moc/haley-stevens/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 98% lifetime; voted for IRA clean energy investments (2022)', url: 'https://scorecard.lcv.org/members-of-congress' },
+      ],
+    },
+    valueStances: {
+      universalism: 0.6,
+      benevolence: 0.6,
+      tradition: 0.1,
+      conformity: 0.4,
+      security: 0.4,
+      power: 0.3,
+      achievement: 0.5,
+      hedonism: 0.1,
+      stimulation: 0.3,
+      self_direction: 0.3,
+    },
+    profileSummary: 'Four-term centrist congresswoman with a manufacturing and clean energy focus; establishment-backed with the strongest environmental voting record in the race.',
+  },
+  {
+    id: 'mcmorrow',
+    contestId: CONTEST_IDS.MI_US_SENATE,
+    name: { full: 'Mallory McMorrow', ballotDisplay: 'Mallory McMorrow' },
+    party: 'Democratic',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 2,
+    positions: [
+      'Authored Michigan\'s first red flag gun law; wants to take it national',
+      'Supports public option for healthcare; opposes Medicare for All as immediate goal',
+      'Passed $15/hr minimum wage, repealed Michigan\'s 1931 abortion ban, expanded affordable housing',
+      'Calls for new Democratic leadership in Washington; positions herself as next-generation leader',
+    ],
+    axisStances: {
+      econ_safetynet: 2,
+      econ_investment: 2,
+      econ_school_choice: 2,
+      health_coverage_model: 3,
+      health_cost_control: 3,
+      health_public_health: 2,
+      housing_supply_zoning: 2,
+      housing_affordability_tools: 2,
+      housing_transport_priority: 3,
+      justice_firearms: 2,
+      climate_ambition: 2,
+      climate_energy_portfolio: 2,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Supported Right to Work repeal (SB 34) and prevailing wage restoration (2023)', url: 'https://michiganadvance.com/2023/03/22/right-to-work-prevailing-wage-bills-clear-final-passage-in-democratic-led-legislature/' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Lowering MI Costs Plan: first permanent $50M Housing & Community Development Fund', url: 'https://senatedems.com/mcmorrow/2024/01/25/2023-legislative-year-in-review/' },
+      ],
+      justice_firearms: [
+        { text: "Authored SB 83 — Michigan's first red flag / ERPO law (signed May 2023)", url: 'https://www.michigan.gov/whitmer/news/press-releases/2023/05/22/whitmer-signs-extreme-risk-protection-order-legislation-to-keep-michigan-communities-safe' },
+        { text: '2026 platform: federal ERPO expansion, ghost gun ban', url: 'https://michiganadvance.com/2026/02/05/mcmorrows-gun-violence-prevention-plan-would-take-michigans-red-flag-laws-nationwide/' },
+      ],
+      health_coverage_model: [
+        { text: 'Supports public option; has not endorsed Medicare for All' },
+      ],
+      climate_ambition: [
+        { text: 'Voted for MI 100% Clean Energy package (signed Dec 2023)' },
+      ],
+    },
+    valueStances: {
+      universalism: 0.7,
+      benevolence: 0.8,
+      tradition: -0.1,
+      conformity: 0.2,
+      security: 0.4,
+      power: 0.1,
+      achievement: 0.4,
+      hedonism: 0.2,
+      stimulation: 0.5,
+      self_direction: 0.5,
+    },
+    profileSummary: 'State Senate Majority Whip who became a national Democratic figure; pragmatic progressive with a strong legislative record on gun safety, housing, wages, and reproductive rights.',
+  },
+  {
+    id: 'el-sayed',
+    contestId: CONTEST_IDS.MI_US_SENATE,
+    name: { full: 'Abdul El-Sayed', ballotDisplay: 'Abdul El-Sayed' },
+    party: 'Democratic',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 3,
+    positions: [
+      'Signature issue: Medicare for All — guaranteed government health insurance, no premiums or deductibles',
+      'Accepts no PAC donations; runs an all-individual-donation campaign',
+      'Endorsed by Bernie Sanders; the most progressive major candidate in the race',
+      'Critical of Israeli military conduct in Gaza; generally skeptical of U.S. military aid abroad',
+    ],
+    axisStances: {
+      econ_safetynet: 1,
+      econ_investment: 1,
+      econ_school_choice: 2,
+      health_coverage_model: 0,
+      health_cost_control: 0,
+      health_public_health: 1,
+      justice_policing_accountability: 3,
+      justice_firearms: 2,
+      climate_ambition: 1,
+    },
+    axisEvidence: {
+      health_coverage_model: [
+        { text: 'WDET Jan 2026: "I\'ve been consistent about the need for Medicare for All"', url: 'https://wdet.org/2026/01/22/abdul-el-sayed-runs-for-michigans-open-u-s-senate-seat/' },
+        { text: 'Co-authored Medicare for All: A Citizen\'s Guide (Oxford Univ. Press, 2021)' },
+      ],
+      health_cost_control: [
+        { text: 'M4A platform: eliminate private insurer overhead, government price-setting', url: 'https://abdulforsenate.com/' },
+      ],
+      health_public_health: [
+        { text: 'Led Detroit Health Dept (2015-17); made Narcan universally accessible', url: 'https://abdulforsenate.com/about/' },
+        { text: 'Spearheaded $700M medical debt cancellation for 300K Michiganders', url: 'https://abdulforsenate.com/about/' },
+      ],
+      econ_safetynet: [
+        { text: 'Platform: abolish medical debt, tuition-free higher ed, anti-monopoly enforcement', url: 'https://abdulforsenate.com/' },
+      ],
+    },
+    valueStances: {
+      universalism: 0.9,
+      benevolence: 0.9,
+      tradition: -0.3,
+      conformity: -0.1,
+      security: 0.5,
+      power: -0.5,
+      achievement: 0.3,
+      hedonism: 0.1,
+      stimulation: 0.6,
+      self_direction: 0.3,
+    },
+    profileSummary: 'Physician, epidemiologist, and former public health director; the most progressive major candidate, defined by Medicare for All advocacy and a no-PAC-money pledge.',
+  },
+  {
+    id: 'rogers',
+    contestId: CONTEST_IDS.MI_US_SENATE,
+    name: { full: 'Mike Rogers', ballotDisplay: 'Mike Rogers' },
+    party: 'Republican',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 4,
+    positions: [
+      'Voted repeatedly against the ACA and for Medicare vouchers; opposes government drug price negotiation',
+      'NRA A-rated throughout career; opposed all major gun safety legislation',
+      'LCV lifetime score 8%; 14-year record of opposing environmental protections',
+      'Supports Trump\'s tariffs and border wall; backs increased immigration enforcement',
+    ],
+    axisStances: {
+      econ_safetynet: 8,
+      econ_investment: 8,
+      econ_school_choice: 9,
+      health_coverage_model: 9,
+      health_cost_control: 8,
+      health_public_health: 7,
+      justice_policing_accountability: 8,
+      justice_sentencing_goals: 7,
+      justice_firearms: 9,
+      climate_ambition: 9,
+      climate_energy_portfolio: 8,
+      climate_permitting: 8,
+    },
+    axisEvidence: {
+      climate_ambition: [
+        { text: 'LCV 8% lifetime score — near-perfect anti-environment congressional record', url: 'https://www.lcv.org/moc/mike-j-rogers/' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 8% lifetime; opposed IRA clean energy provisions', url: 'https://www.lcv.org/moc/mike-j-rogers/' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A-rated; opposed gun safety legislation across 14-year House career', url: 'https://michiganindependent.com/politics/nra-funded-mike-rogers-elissa-slotkin-senate-election-gun-violence-mental-health/' },
+      ],
+      health_coverage_model: [
+        { text: 'Voted against ACA (2010); voted repeatedly to repeal; backed Medicare vouchers (2011)', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+      health_cost_control: [
+        { text: 'Voted for Medicare Part D drug pricing ban (2003); opposed IRA negotiation provision', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+      econ_safetynet: [
+        { text: 'Backed Social Security partial privatization (early 2000s); Medicare voucher plan (2011)', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+      econ_investment: [
+        { text: 'AFL-CIO alignment just 11% of congressional career; opposed overtime pay protections', url: 'https://michiganindependent.com/politics/senate-2026-election-mike-rogers-gary-peters-republican/' },
+      ],
+    },
+    valueStances: {
+      universalism: -0.4,
+      benevolence: 0.3,
+      tradition: 0.6,
+      conformity: 0.7,
+      security: 0.8,
+      power: 0.6,
+      achievement: 0.6,
+      hedonism: 0.0,
+      stimulation: 0.1,
+      self_direction: 0.5,
+    },
+    profileSummary: 'Former 14-term congressman, FBI agent, and Army veteran who nearly won Michigan\'s Senate seat in 2024; backed by Senate Republican leadership with a consistently conservative record across all major policy areas.',
+  },
+];
+
+// ============================================
+// Candidates - MI State Senate District 38
+// Real-world data scored from public sources (Feb 2026)
+// ============================================
+
+export const candidatesMISenateD38: Candidate[] = [
+  {
+    id: 'vanginhoven',
+    contestId: CONTEST_IDS.MI_SENATE_D38,
+    name: { full: 'Kelli van Ginhoven', ballotDisplay: 'Kelli van Ginhoven' },
+    party: 'Democratic',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 1,
+    positions: [
+      'Supports unions and collective bargaining for UP workers',
+      'Advocates for state-funded housing solutions and wage increases in the UP',
+      'Serves on Opioid Task Force; supports prevention-focused public health approach',
+      'Wants UP communities to have stronger representation and resources in Lansing',
+    ],
+    axisStances: {
+      econ_safetynet: 2,
+      econ_investment: 2,
+      health_public_health: 2,
+      housing_affordability_tools: 3,
+      housing_supply_zoning: 4,
+      climate_ambition: 3,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Delta County Commissioner; pro-union labor record, county opioid task force' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Affordable housing advocate; housing access cited as priority in county commissioner role' },
+      ],
+    },
+    valueStances: {
+      universalism: 0.6,
+      benevolence: 0.8,
+      tradition: 0.2,
+      conformity: 0.3,
+      security: 0.4,
+      power: 0.1,
+      achievement: 0.4,
+      hedonism: 0.0,
+      stimulation: 0.2,
+      self_direction: 0.3,
+    },
+    profileSummary: 'Delta County Commissioner and small business owner running on a pro-union, community-investment platform for the Upper Peninsula.',
+  },
+  {
+    id: 'mapps',
+    contestId: CONTEST_IDS.MI_SENATE_D38,
+    name: { full: 'Chris Mapps', ballotDisplay: 'Chris Mapps' },
+    party: 'Democratic',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 2,
+    positions: [
+      'Wants good-paying jobs to stay in UP communities rather than be lost to corporate tax breaks',
+      'Supports expanding rural healthcare access so UP residents don\'t face long drives for care',
+      'Committed to protecting and expanding veterans\' services in the region',
+      'Advocates for fair wages, collective bargaining, and workers\' rights through union background',
+    ],
+    axisStances: {
+      econ_safetynet: 2,
+      econ_investment: 2,
+      health_coverage_model: 2,
+      health_public_health: 3,
+      climate_ambition: 4,
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFGE union representative; veterans services and workers\' rights platform' },
+      ],
+      health_coverage_model: [
+        { text: 'Rural healthcare access platform; Army veteran with VA healthcare experience' },
+      ],
+    },
+    valueStances: {
+      universalism: 0.5,
+      benevolence: 0.9,
+      tradition: 0.3,
+      conformity: 0.5,
+      security: 0.7,
+      power: 0.2,
+      achievement: 0.5,
+      hedonism: 0.0,
+      stimulation: 0.1,
+      self_direction: 0.3,
+    },
+    profileSummary: 'Army combat veteran and AFGE union representative running on a working-class platform emphasizing rural healthcare, veterans\' services, and keeping jobs in the UP.',
+  },
+  {
+    id: 'lafave',
+    contestId: CONTEST_IDS.MI_SENATE_D38,
+    name: { full: 'Beau LaFave', ballotDisplay: 'Beau LaFave' },
+    party: 'Republican',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 3,
+    positions: [
+      'Strongly pro-2nd Amendment; open-carried at State of the State address in protest of gun proposals',
+      'Opposed COVID mandates; sued Gov. Whitmer over lockdowns and won at the Michigan Supreme Court',
+      'Supports school choice; endorsed by Great Lakes Education Project',
+      'Supports keeping Line 5 pipeline open for UP energy reliability; Michigan LCV score 35%',
+    ],
+    axisStances: {
+      econ_safetynet: 7,
+      econ_investment: 7,
+      econ_school_choice: 8,
+      health_coverage_model: 7,
+      health_public_health: 8,
+      justice_policing_accountability: 7,
+      justice_sentencing_goals: 7,
+      justice_firearms: 10,
+      climate_ambition: 8,
+      climate_energy_portfolio: 7,
+      climate_permitting: 7,
+    },
+    axisEvidence: {
+      justice_firearms: [
+        { text: 'Open-carried AR-15 at MI State of the State address (2014)' },
+        { text: 'Consistent A-rated NRA record across 3 state House terms' },
+      ],
+      health_public_health: [
+        { text: 'Sued Whitmer over COVID lockdowns; won at MI Supreme Court (2020)' },
+      ],
+      climate_ambition: [
+        { text: 'MI LCV lifetime score: 35%', url: 'https://www.michiganlcv.org/' },
+      ],
+      econ_safetynet: [
+        { text: 'Opposed pandemic-era economic restrictions; anti-regulatory voting record' },
+      ],
+    },
+    valueStances: {
+      universalism: -0.3,
+      benevolence: 0.3,
+      tradition: 0.7,
+      conformity: 0.4,
+      security: 0.5,
+      power: 0.5,
+      achievement: 0.6,
+      hedonism: 0.2,
+      stimulation: 0.2,
+      self_direction: 0.8,
+    },
+    profileSummary: 'Former three-term state representative and licensed attorney with a strong conservative record; known for aggressive 2nd Amendment advocacy and opposition to COVID mandates.',
+  },
+  {
+    id: 'prestin',
+    contestId: CONTEST_IDS.MI_SENATE_D38,
+    name: { full: 'David Prestin', ballotDisplay: 'Dave Prestin' },
+    party: 'Republican',
+    incumbencyStatus: 'challenger',
+    ballotOrder: 4,
+    positions: [
+      'Strong pro-2A record; supports constitutional carry for law-abiding citizens',
+      'Committed to limiting government growth and opposing regulations that harm UP businesses and families',
+      'Wants to solve law enforcement and first-responder staffing shortages',
+      'Pro-life; endorsed by Right to Life of Michigan; Michigan LCV score 14%',
+    ],
+    axisStances: {
+      econ_safetynet: 7,
+      econ_investment: 7,
+      econ_school_choice: 8,
+      health_coverage_model: 7,
+      health_public_health: 8,
+      justice_policing_accountability: 8,
+      justice_sentencing_goals: 7,
+      justice_firearms: 9,
+      climate_ambition: 9,
+      climate_energy_portfolio: 8,
+      climate_permitting: 8,
+    },
+    axisEvidence: {
+      justice_firearms: [
+        { text: 'Supports constitutional carry; NRA-backed voting record in state House' },
+      ],
+      health_public_health: [
+        { text: 'Former paramedic; voted against vaccine mandate legislation' },
+      ],
+      climate_ambition: [
+        { text: 'MI LCV lifetime score: 14%', url: 'https://www.michiganlcv.org/' },
+      ],
+      econ_safetynet: [
+        { text: 'Right to Life endorsement; anti-regulatory state House voting record' },
+      ],
+    },
+    valueStances: {
+      universalism: -0.3,
+      benevolence: 0.4,
+      tradition: 0.6,
+      conformity: 0.5,
+      security: 0.7,
+      power: 0.4,
+      achievement: 0.6,
+      hedonism: 0.1,
+      stimulation: 0.1,
+      self_direction: 0.7,
+    },
+    profileSummary: 'Current state representative and former paramedic/firefighter with a strongly conservative record; focused on limiting government growth and public safety staffing.',
+  },
+];
+
+// ============================================
 // All Candidates
 // ============================================
 
 export const allCandidates: Candidate[] = [
   ...candidatesMayor,
   ...candidatesCouncilD5,
+  ...candidatesMIUSSenate,
+  ...candidatesMISenateD38,
 ];
 
 export function getCandidateById(candidateId: string): Candidate | null {

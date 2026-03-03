@@ -52,7 +52,11 @@ export default function WelcomePage() {
 
   const handleGuest = async () => {
     track('click', { element: 'continue_as_guest' });
-    await signInAnonymously();
+    try {
+      await signInAnonymously();
+    } catch {
+      // Auth unavailable (no DB) — continue without auth
+    }
     router.replace('/blueprint');
   };
 

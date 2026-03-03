@@ -1,0 +1,209 @@
+{
+  "slug": "shannon-bray",
+  "name": "Shannon Bray",
+  "party": "Libertarian",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "scoredAt": "2026-02-26T12:00:00Z",
+  "profileSummary": "Perennial Libertarian candidate (4th statewide race since 2020) with a cybersecurity background and Navy veteran status; presents an unusually detailed platform combining extreme free-market economics with strong civil liberties positions on policing and criminal justice.",
+  "keyPositions": [
+    "Abolish the IRS and replace income tax with FairTax (national sales tax); phase out Social Security by 2035",
+    "Repeal the ACA; replace with health savings accounts and patient data ownership",
+    "Abolish qualified immunity, end civil asset forfeiture, ban no-knock warrants",
+    "Full drug legalization and abolish the federal death penalty",
+    "Repeal existing gun regulations; strong Second Amendment absolutist"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Campaign website issues page (2026)",
+        "Consistent position across 4 campaign cycles (2020-2026)",
+        "LPNC platform alignment"
+      ],
+      "notes": "Explicit plan to phase out Social Security by 2035. This is the most extreme Pole B position on this axis — not merely work requirements or block grants, but elimination of the core safety net program."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Campaign website 'A Government That Works in the Real World' page",
+        "Consistent anti-subsidy stance across 4 cycles",
+        "LPNC platform"
+      ],
+      "notes": "Opposes government subsidies and industrial policy. Consistent across all campaigns. Scored 9 rather than 10 because his focus is on eliminating subsidies and industrial policy rather than explicitly abolishing all public infrastructure investment."
+    },
+    "econ_school_choice": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "LPNC platform page ('My Vision for NC')",
+        "Consistent position 2024-2026"
+      ],
+      "notes": "Supports school choice, vouchers, and competition. Strong Pole B but not extensively detailed enough to warrant 9-10 — clear direction without a granular plan."
+    },
+    "econ_tax_structure": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Campaign website issues page (2020-2026)",
+        "Book 'Liberty Unleashed' (detailed treatment)",
+        "Consistent across all 4 campaign cycles",
+        "Multiple interviews (Libertarian Republic 2020, Elon News 2022, Spectrum News 2024)"
+      ],
+      "notes": "FairTax / abolish the IRS is the defining policy position of his candidacy. A national consumption tax replacing all income taxes is the most extreme Pole B position on this axis. Consistent across every campaign cycle and detailed in his book."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Campaign website healthcare/data policy page (2026)",
+        "Consistent across campaigns"
+      ],
+      "notes": "Explicit ACA repeal. Proposes HSAs and patient data ownership as replacement mechanisms. Scored 9 rather than 10: his data ownership approach involves some systemic reform rather than pure laissez-faire, but the direction is strongly market-based with no public insurance role."
+    },
+    "health_cost_control": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": [
+        "Campaign website healthcare/data policy page (2026)",
+        "General anti-government-intervention philosophy"
+      ],
+      "notes": "No explicit statement on drug price negotiation or hospital rate-setting, but opposes government intervention in healthcare markets broadly. Patient data ownership framing suggests market transparency as the cost control mechanism rather than government price-setting. Medium confidence because the position is inferred from philosophy rather than stated on specific cost control policies."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Campaign website issues page (2020-2026)",
+        "Consistent anti-mandate, anti-lockdown stance across COVID era and beyond"
+      ],
+      "notes": "Strong individual choice framing on all public health mandates. Consistent since 2020 (COVID was a formative issue for his 2020 Senate campaign). Scored 9: clear anti-mandate but does not explicitly advocate eliminating all public health infrastructure."
+    },
+    "housing_affordability_tools": {
+      "score": 9,
+      "confidence": "low",
+      "sources": [
+        "Inferred from consistent anti-subsidy philosophy across all policy areas"
+      ],
+      "notes": "No housing-specific affordability statement found. Score inferred from his comprehensive anti-subsidy, anti-government-intervention philosophy which would logically extend to opposing rent control, housing subsidies, and public housing investment. Low confidence because this is philosophical inference, not a stated housing position."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "BallotReady 2024 questionnaire responses",
+        "Campaign website issues page",
+        "Libertarian Party platform alignment"
+      ],
+      "notes": "Abolish qualified immunity, end civil asset forfeiture, ban no-knock warrants. This is a strong Pole A reform position — notable and distinctive contrast with his extreme Pole B economic positions. Scored 2 rather than 0-1 because he does not advocate defunding or abolishing police, only structural accountability reforms rooted in civil liberties."
+    },
+    "justice_sentencing_goals": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Campaign website issues page (2026)",
+        "Consistent position across campaigns",
+        "iSideWith policy responses"
+      ],
+      "notes": "Full drug legalization (not just decriminalization) and abolishing the federal death penalty. This is among the most extreme Pole A positions on this axis — rooted in individual liberty rather than rehabilitation framing, but the policy outcome (decarceration, end punitive measures) aligns with Pole A. The liberty-based reasoning is distinctive from typical progressive framing."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Campaign website dedicated guns policy page",
+        "Consistent position across all campaigns",
+        "Libertarian Party platform alignment"
+      ],
+      "notes": "Supports repealing existing gun regulations. Second Amendment absolutist. This is the most extreme Pole B position: not merely opposing new restrictions but seeking to repeal existing ones."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Campaign website energy/utilities policy page (2026)",
+        "Consistent deregulation philosophy"
+      ],
+      "notes": "Explicitly opposes carbon taxes and wants to slash energy regulations. Scored 9 rather than 10: opposes climate policy intervention but does not appear to deny climate science outright or advocate maximum fossil fuel development as a goal."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "Campaign website energy/utilities policy page (2026)",
+        "Consistent position"
+      ],
+      "notes": "Pro-nuclear, anti-clean-energy-subsidy. Scored 8 rather than 9-10 because his support for nuclear power represents acceptance of low-carbon technology — his objection is to subsidies and mandates, not to clean energy per se. This distinguishes him from fossil fuel maximalists."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "General deregulation philosophy consistent across all policy areas",
+        "Campaign website energy/utilities page"
+      ],
+      "notes": "No specific permitting reform statement. Score inferred from comprehensive deregulation philosophy — he would almost certainly favor faster approvals and reduced environmental review. Medium confidence because the position is inferred rather than directly stated."
+    }
+  },
+  "valueStances": {
+    "self_direction": {
+      "score": 0.9,
+      "reasoning": "Individual liberty is the foundational and defining principle of Bray's entire political identity. Every policy position — from abolishing the IRS to drug legalization to opposing health mandates — is framed through the lens of independent choice and action. This is the single most central value in his public persona, consistent across 4 campaigns, a book, and extensive policy documentation."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Running for statewide office 4 times as a third-party candidate with radical policy proposals (FairTax, drug legalization, abolish IRS) demonstrates comfort with novelty and challenge. His cybersecurity background involves operating at the edge of technological change. His willingness to propose dramatic systemic overhauls shows appetite for disruption. Not his core motivator, but clearly present."
+    },
+    "hedonism": {
+      "score": 0.2,
+      "reasoning": "Weak positive signal. Drug legalization stance implies tolerance for personal pleasure-seeking, and his general 'live and let live' philosophy aligns with allowing people to pursue enjoyment. But this is incidental to his liberty framework rather than a standalone motivation."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Professional background shows personal competence orientation: Navy veteran, master's degree, career at Visa and Microsoft, published author. Persistent candidacy despite repeated losses demonstrates drive and personal standards. However, achievement is not the defining frame of his political messaging — liberty is."
+    },
+    "power": {
+      "score": -0.3,
+      "reasoning": "Actively and consistently works to dismantle governmental power structures: abolish the IRS, end qualified immunity, reduce federal authority. His entire philosophy is anti-power-concentration. He seeks elected office, which implies some power-seeking, but his stated goal is to reduce the power of the office itself. Net negative: he is running to reduce institutional power, not to wield it."
+    },
+    "security": {
+      "score": -0.5,
+      "reasoning": "Policy positions systematically oppose security-oriented interventions: phase out Social Security, repeal ACA, oppose public health mandates, drug legalization, anti-lockdown. Despite being a Navy veteran and cybersecurity professional (security-adjacent careers), his political identity prioritizes liberty over safety at virtually every decision point. His framework explicitly trades collective security for individual freedom."
+    },
+    "conformity": {
+      "score": -0.6,
+      "reasoning": "Strongly anti-conformity across all dimensions. Runs as a third-party candidate despite near-certain electoral loss — a direct challenge to two-party norms. Proposes repealing existing laws and abolishing established institutions (IRS, Social Security). Drug legalization and anti-mandate positions reject social control. His entire political project is about removing constraints on individual behavior."
+    },
+    "tradition": {
+      "score": -0.2,
+      "reasoning": "Mixed signals. His policy positions are radical departures from established systems and institutions — abolishing the IRS, replacing income tax, legalizing drugs, restructuring Social Security. These are not tradition-preserving positions. However, libertarians often invoke founding-era constitutional principles and the tradition of limited government, suggesting some reverence for a specific historical tradition. Net slightly negative: he wants to change existing institutions more than preserve them."
+    },
+    "benevolence": {
+      "score": -0.1,
+      "reasoning": "Weak negative signal. Navy service and repeated candidacy suggest some care for community welfare. But his policy positions consistently prioritize individual choice over collective care mechanisms — eliminating safety nets, opposing public health mandates, repealing healthcare coverage. He does not frame issues in terms of helping the vulnerable; he frames them in terms of removing government obstacles. Not actively hostile to others' welfare, but does not prioritize it."
+    },
+    "universalism": {
+      "score": 0.1,
+      "reasoning": "Genuinely mixed. His justice reform positions (end qualified immunity, drug legalization, abolish death penalty) reflect concern for equal treatment under law and disproportionate impact of the criminal justice system — a universalist impulse. But his economic positions (eliminate safety net, repeal ACA) would disproportionately affect vulnerable populations. His framework is equal liberty (everyone has the same minimal government) rather than equal outcomes or protection of the disadvantaged. The justice reform signal is real but offset by economic indifference to inequality."
+    }
+  },
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": [
+      "housing_supply_zoning",
+      "housing_transport_priority"
+    ],
+    "reasonSkipped": "Both axes had only LP platform inference with no Bray-specific statements. Housing supply/zoning is additionally ambiguous for libertarians (deregulating zoning is Pole A in outcome but Pole B in philosophy of removing government). Transport priority had no direct evidence at all.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No legislative voting record exists (never held elected office)",
+      "No third-party scorecards (NRA, LCV, etc.) exist for non-officeholders",
+      "Housing positions are inferred rather than stated — all three housing axes have low or no direct evidence",
+      "No specific position on drug pricing, hospital rate-setting, or healthcare cost control mechanisms beyond general market philosophy",
+      "Foreign policy and immigration positions not researched for civic axes (not covered by current axis framework)"
+    ],
+    "notablePattern": "Shannon Bray presents a distinctive libertarian cross-axis pattern: extreme Pole B on all economic axes (9-10), all health axes (9), and climate axes (8-9), combined with strong Pole A on justice/policing (2) and sentencing (1), while being extreme Pole B on firearms (10). This scatter means he will not match cleanly with either progressive or conservative user profiles — he will produce uniquely high matches with users who combine economic conservatism with civil libertarian justice positions."
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "slug": "olu-brown",
+  "name": "Olu Brown",
+  "party": "Democratic",
+  "office": "Governor, Georgia, 2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-02-25T00:00:00.000Z",
+  "biography": {
+    "currentRole": "Small business owner / consultant (Culverhouse, LLC, 2022–present)",
+    "priorRoles": [
+      "Founding and Lead Pastor, Impact United Methodist Church, East Point, GA (2007–2022)",
+      "Adjunct Faculty, McCormick Theological Seminary",
+      "Author of multiple books on church leadership and organizational growth"
+    ],
+    "education": "B.A., Jarvis Christian College, Hawkins, TX; M.Div., Gammon Theological Seminary, Interdenominational Theological Center, Atlanta, GA",
+    "background": "Brown founded Impact Church in 2007 from a core team of 25 people and grew it to 5,000+ in-person and online weekly attendees with a $4M operating budget. He retired from pastoral ministry in June 2022 and now runs a coaching and consulting firm, Culverhouse, LLC, serving business and church leaders. He is the only candidate in the 2026 Democratic field with no prior electoral office. Born in Lufkin, TX; has lived in Atlanta/Georgia area for nearly 30 years. Father of four."
+  },
+  "campaignWebsite": {
+    "url": "https://oluforga.com",
+    "alternateUrl": "https://www.olubrownforgovernor2026.org",
+    "fetchedAt": "2026-02-25T00:00:00.000Z",
+    "notes": "WebFetch not available; positions reconstructed from search snippets referencing oluforga.com/my-story and related campaign pages, plus multi-source news coverage.",
+    "statedPositions": [
+      {
+        "topic": "healthcare / Medicaid expansion",
+        "quote": "I want to look into lowering the barrier of entry for Medicaid so more Georgians have access",
+        "sourceUrl": "https://www.41nbc.com/georgia-democrat-olu-brown-talks-bid-for-governor/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Consistent across multiple interviews and forums. He also frames this as: 'it's a lot cheaper to keep you healthy than it is to take care of you when you have a chronic illness.' Telehealth and maternal/prenatal health care cited as specific vehicles."
+      },
+      {
+        "topic": "healthcare / rural access",
+        "quote": "his healthcare vision looks like telehealth and more maternal and prenatal health care, ensuring a person in rural Georgia doesn't have to drive three or four hours for primary care",
+        "sourceUrl": "https://www.wsav.com/news/your-local-election-hq/a-vision-for-georgia-candidate-for-georgia-governor-talks-policies-ideas/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Framed as preventive care and mobile healthcare investment."
+      },
+      {
+        "topic": "economic / living wage",
+        "quote": "encourage businesses but also hold them accountable to push Georgia toward a living wage, making it the best place not only to do business but also to work",
+        "sourceUrl": "https://www.wsav.com/news/your-local-election-hq/a-vision-for-georgia-candidate-for-georgia-governor-talks-policies-ideas/",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "No specific dollar figure for minimum wage found in available sources. 'Living wage' is consistent campaign theme. Framing is corporate accountability, not mandate."
+      },
+      {
+        "topic": "economic / small business",
+        "quote": "plans to use some of Georgia's estimated $14 billion budget surplus to create a capital reserve for small-business startups and provide a first hire tax credit to allow them to hire additional staff",
+        "sourceUrl": "https://atlanta.capitalbnews.org/georgia-2026-governor-race-small-business-atlanta/",
+        "date": "2026-02-24",
+        "confidence": "high",
+        "notes": "Stated at bipartisan 'Shaping The New Georgia' forum, Feb 24 2026. Also includes 'tax breaks for small businesses' and investment in 'capital and technology' for small business owners."
+      },
+      {
+        "topic": "economic / tariffs / business cost",
+        "quote": "find creative ways to resource business owners experiencing higher product costs from tariffs",
+        "sourceUrl": "https://www.wsav.com/news/your-local-election-hq/a-vision-for-georgia-candidate-for-georgia-governor-talks-policies-ideas/",
+        "date": "2025",
+        "confidence": "medium",
+        "notes": "Framed as governor needing to 'tell Washington enough is enough'; general anti-tariff signal but no specific policy mechanism specified."
+      },
+      {
+        "topic": "education / teacher pay",
+        "quote": "I never want any educator in Georgia to do what they love and not be able to afford to live",
+        "sourceUrl": "https://www.redandblack.com/athensnews/q-a-olu-brown-has-a-new-vision-for-georgia/article_2394e910-df2c-4bc3-a366-a8e3ce27f4b1.html",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Consistent across interviews. Would raise educator pay. Also cited Heroes Tax Credit as vehicle for teacher support (noted from Patch summary). Agreed at multiple forums that QBE is failing Georgia students."
+      },
+      {
+        "topic": "education / curriculum / technical",
+        "quote": "would insert more technical education into high school classrooms",
+        "sourceUrl": "https://roughdraftatlanta.com/2026/01/09/democrats-governor-forum-savannah/",
+        "date": "2026-01-08",
+        "confidence": "medium",
+        "notes": "Stated at Savannah forum, Jan 8 2026. Signals differentiation through workforce/vocational training track, not just academic reform."
+      },
+      {
+        "topic": "housing / affordability",
+        "quote": "our quality of life is horrible. Health care is inaccessible. Traffic is terrible. Housing is expensive.",
+        "sourceUrl": "https://www.georgianaacp.org/post/middle-georgia-meets-the-candidates-inside-the-naacp-governor-meet-greet",
+        "date": "2025-08",
+        "confidence": "high",
+        "notes": "NAACP forum, Warner Robins. Brown called for investing in affordable housing and rental assistance to help improve home ownership. Also called for 'universal healthcare coverage' at same event — though this framing appears to be forum-specific shorthand rather than a consistent single-payer advocacy."
+      },
+      {
+        "topic": "budget / state surplus",
+        "quote": "tapping into Georgia's $16 billion surplus",
+        "sourceUrl": "https://www.wsav.com/news/your-local-election-hq/a-vision-for-georgia-candidate-for-georgia-governor-talks-policies-ideas/",
+        "date": "2025",
+        "confidence": "medium",
+        "notes": "Surplus figure varies across sources ($14B–$16B depending on reporting date). Consistent position: direct surplus funds toward healthcare, small business capital, and education rather than tax cuts."
+      },
+      {
+        "topic": "regional equity",
+        "quote": "we must be more equitable in how we approach areas of education, healthcare affordability and access across metro, northern mountains, middle, south and coastal Georgia",
+        "sourceUrl": "https://www.redandblack.com/athensnews/q-a-olu-brown-has-a-new-vision-for-georgia/article_2394e910-df2c-4bc3-a366-a8e3ce27f4b1.html",
+        "date": "2025",
+        "confidence": "high",
+        "notes": "Consistent theme. Brown conducted 30+ listening sessions in rural and South Georgia specifically. Frames himself as a candidate for all of Georgia, not just metro Atlanta."
+      },
+      {
+        "topic": "elections / election funding",
+        "quote": "Brown agreed that he would fully fund local election boards",
+        "sourceUrl": "https://www.decaturish.com/voter_guide/gubernatorial-candidates-talk-healthcare-elections/article_69446cbd-d4b9-4d98-bfa9-1714df911e41.html",
+        "date": "2026-02-19",
+        "confidence": "medium",
+        "notes": "DeKalb/Fulton Democrats forum, Feb 19 2026. Context: candidates were asked about supporting election infrastructure. No detail on specific funding levels."
+      },
+      {
+        "topic": "federal / Trump resistance",
+        "quote": "I will build a firewall that protects us from Donald Trump, his antics and his chaos",
+        "sourceUrl": "https://roughdraftatlanta.com/2026/01/09/democrats-governor-forum-savannah/",
+        "date": "2026-01-08",
+        "confidence": "high",
+        "notes": "Savannah forum, Jan 8 2026. Consistent with all Democratic candidates in race."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "sources": [],
+    "notes": "No prior elected office at any level. No legislative voting record exists. First-time candidate."
+  },
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV score — no legislative record. No environmental scorecards applicable for first-time candidate."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade — no legislative record. No public statement on gun policy found in research. Gap in evidence."
+    },
+    {
+      "organization": "AFL-CIO / UAW / AFSCME",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement found from major labor unions as of research date. Campaign emphasizes living wage and small business — could attract labor interest but no confirmation."
+    },
+    {
+      "organization": "Planned Parenthood / NARAL / Reproductive Freedom for All",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement found as of research date. No explicit abortion position statement surfaced in available sources — notable gap given Georgia's 6-week ban is a live political issue."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "No major endorsements documented",
+      "type": "none found",
+      "cycle": "2026",
+      "notes": "Ballotpedia lists endorsement data as not yet compiled. No union, activist organization, or major elected official endorsements surfaced as of Feb 25, 2026. Brown is positioned as an outsider candidate without the institutional backing of frontrunners Bottoms, Thurmond, or Esteves."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "41NBC News (WMGT-DT)",
+      "date": "2025",
+      "url": "https://www.41nbc.com/georgia-democrat-olu-brown-talks-bid-for-governor/",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / Medicaid",
+          "quote": "protecting and expanding Medicaid",
+          "notes": "Core stated reason for running. Medicaid expansion cited as priority action."
+        },
+        {
+          "topic": "leadership qualification",
+          "quote": "leaders go first and when they see a problem they want to be part of the solution",
+          "notes": "Justification for candidacy without elected experience."
+        }
+      ]
+    },
+    {
+      "outlet": "WSAV-TV (Savannah)",
+      "date": "2025",
+      "url": "https://www.wsav.com/news/your-local-election-hq/a-vision-for-georgia-candidate-for-georgia-governor-talks-policies-ideas/",
+      "keyExchanges": [
+        {
+          "topic": "healthcare",
+          "quote": "telehealth and more maternal and prenatal health care, ensuring a person in rural Georgia doesn't have to drive three or four hours for primary care",
+          "notes": "Specific rural health access framing."
+        },
+        {
+          "topic": "economic / business / tariffs",
+          "quote": "find creative ways to resource business owners experiencing higher product costs from tariffs",
+          "notes": "Anti-tariff signal, business-focused."
+        },
+        {
+          "topic": "economic / living wage",
+          "quote": "hold [businesses] accountable to push Georgia toward a living wage",
+          "notes": "Corporate accountability framing vs. legislative mandate."
+        }
+      ]
+    },
+    {
+      "outlet": "Red and Black (UGA student newspaper)",
+      "date": "2025",
+      "url": "https://www.redandblack.com/athensnews/q-a-olu-brown-has-a-new-vision-for-georgia/article_2394e810-df2c-4bc3-a366-a8e3ce27f4b1.html",
+      "keyExchanges": [
+        {
+          "topic": "education / teacher compensation",
+          "quote": "no educator in Georgia should do what they love and not be able to afford to live",
+          "notes": "Signals teacher pay raise commitment. Framing: if children are the future, educators should be 'compensated according to their value.'"
+        },
+        {
+          "topic": "regional equity",
+          "quote": "more equitable in areas of education, healthcare affordability and access across metro, northern mountains, middle, south and coastal Georgia",
+          "notes": "Whole-state framing; explicitly includes underserved rural regions."
+        }
+      ]
+    },
+    {
+      "outlet": "Savannah Forum (Georgia Recorder / GPB / Rough Draft Atlanta)",
+      "date": "2026-01-08",
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "keyExchanges": [
+        {
+          "topic": "Medicaid expansion",
+          "quote": "all seven candidates said they would expand Medicaid",
+          "notes": "Group consensus; Brown included. He had previously committed to this in Year 1."
+        },
+        {
+          "topic": "Trump resistance",
+          "quote": "will build a firewall that protects us from Donald Trump, his antics and his chaos",
+          "notes": "Strong anti-Trump framing. Consistent Democratic primary positioning."
+        },
+        {
+          "topic": "education",
+          "quote": "would insert more technical education into high school classrooms",
+          "notes": "Workforce/vocational track emphasis; distinguishes from purely academic reform."
+        }
+      ]
+    },
+    {
+      "outlet": "DeKalb/Fulton Democrats Forum (Decaturish / Atlanta Voice)",
+      "date": "2026-02-19",
+      "url": "https://www.decaturish.com/voter_guide/gubernatorial-candidates-talk-healthcare-elections/article_69446cbd-d4b9-4d98-bfa9-1714df911e41.html",
+      "keyExchanges": [
+        {
+          "topic": "healthcare / ACA",
+          "quote": "all of the candidates also agreed on expanding the Affordable Care Act",
+          "notes": "Group consensus; Brown included."
+        },
+        {
+          "topic": "elections",
+          "quote": "Brown agreed that he would fully fund local election boards",
+          "notes": "Forum topic was elections and ICE; context suggests response to FBI raid on GA election board."
+        },
+        {
+          "topic": "education",
+          "quote": "all the candidates agreed that Georgia's Quality Basic Education (QBE) was failing the state's students",
+          "notes": "Group consensus; Brown included."
+        }
+      ]
+    },
+    {
+      "outlet": "NAACP Georgia Governor Meet and Greet, Warner Robins",
+      "date": "2025-08",
+      "url": "https://www.georgianaacp.org/post/middle-georgia-meets-the-candidates-inside-the-naacp-governor-meet-greet",
+      "keyExchanges": [
+        {
+          "topic": "cost of living / healthcare / housing",
+          "quote": "our quality of life is horrible. Health care is inaccessible. Traffic is terrible. Housing is expensive.",
+          "notes": "Most explicit statement on housing as a crisis. Also called for 'universal healthcare coverage' and 'investing in both education and affordable housing' at this forum."
+        },
+        {
+          "topic": "wages",
+          "quote": "raise the minimum wage",
+          "notes": "One of few uses of 'minimum wage' language vs. 'living wage.' No dollar figure stated."
+        }
+      ]
+    },
+    {
+      "outlet": "Capital B News Atlanta — Bipartisan 'Shaping The New Georgia' Forum",
+      "date": "2026-02-24",
+      "url": "https://atlanta.capitalbnews.org/georgia-2026-governor-race-small-business-atlanta/",
+      "keyExchanges": [
+        {
+          "topic": "small business / budget surplus",
+          "quote": "use some of Georgia's estimated $14 billion budget surplus to create a capital reserve for small-business startups and provide a first hire tax credit",
+          "notes": "Most specific policy proposal found. Targets Black small business owners specifically."
+        },
+        {
+          "topic": "small business technology",
+          "quote": "A top priority of his campaign is helping other small business owners across the state by investing in capital and technology",
+          "notes": "General framing."
+        }
+      ]
+    },
+    {
+      "outlet": "11Alive (WXIA-TV Atlanta) — Full interview",
+      "date": "2025-2026",
+      "url": "https://www.11alive.com/video/news/politics/the-georgia-vote/1-on-1-with-olu-brown-democratic-candidate-for-governor-full-interview/85-802b3047-26e1-4913-82ed-957a02559988",
+      "keyExchanges": [],
+      "notes": "Video only; transcript not retrievable via search. Available for additional review."
+    },
+    {
+      "outlet": "Atlanta News First",
+      "date": "2025-06-06",
+      "url": "https://www.atlantanewsfirst.com/2025/06/06/pulpit-politics-former-metro-atlanta-pastor-olu-brown-launches-governor-bid/",
+      "keyExchanges": [
+        {
+          "topic": "platform summary",
+          "quote": "education, affordable health care and small business advocacy would be some of his top priorities",
+          "notes": "Campaign launch framing. Consistent with all subsequent coverage."
+        }
+      ]
+    }
+  ],
+  "pastoralRecord": {
+    "lgbtqInclusion": {
+      "quote": "If you're going to fight for Black Lives Matter and say that you got to get your foot off my neck, and then in the next breath you tell your own brother and sister that they can't get married because they're in a same-sex relationship — that's an injustice",
+      "sourceUrl": "https://www.thereckoningmag.com/the-reckoning-blog/metro-atlanta-pastor-olu-brown-on-lgbtq-inclusion-in-the-church-its-a-social-justice-issue",
+      "date": "pre-2022 (pastoral career)",
+      "notes": "Brown explicitly framed LGBTQ+ inclusion as a social justice issue during his pastoral tenure, placing it alongside racial justice. He described an evolution of his views after a regrettable anti-same-sex-relationship sermon led to a transformative conversation with an affected parishioner. Also stated: 'the isms have the same tactics, whether it's sexism, racism, classism, they all use the same tactics of oppression, but we hide it in theology and the Bible.' This is a significant pre-campaign position signal on civil rights/LGBTQ+ issues, unusual for a Black megachurch pastor."
+    },
+    "socialJusticeMinistry": {
+      "notes": "Impact Church's stated mission included bringing 'healing, justice and compassion to the world.' Brown described his church as 'inclusive' and 'compelled to help bring healing, justice and compassion.' This background is consistent with progressive social justice orientation but predates his campaign and should be weighted accordingly."
+    }
+  },
+  "positionGaps": [
+    {
+      "topic": "reproductive rights / abortion",
+      "notes": "No explicit statement found in any available source. Georgia's 6-week heartbeat law (LIFE Act) is a central political issue in the 2026 race. Multiple forums covered this topic among candidates. Brown's absence of a documented position here is a significant evidence gap. His pastoral record on LGBTQ+ justice suggests progressive orientation but does not directly speak to abortion. Ballotpedia notes he has not completed their Candidate Connection survey."
+    },
+    {
+      "topic": "gun policy / firearms",
+      "notes": "No statement found across any source. No NRA grade applicable. No endorsement from gun safety orgs found. Complete gap."
+    },
+    {
+      "topic": "immigration / ICE",
+      "notes": "Feb 19 2026 DeKalb/Fulton forum covered ICE as a topic (context: FBI raid on Georgia Board of Elections). No specific Olu Brown quote on ICE or immigration policy retrieved. Complete gap."
+    },
+    {
+      "topic": "criminal justice / policing / sentencing",
+      "notes": "No statement found in available sources. Pastoral justice framing suggests reform orientation but no specific policy positions documented."
+    },
+    {
+      "topic": "climate / energy / environment",
+      "notes": "Not mentioned in any retrieved source. Complete gap."
+    },
+    {
+      "topic": "transit / transportation",
+      "notes": "Mentioned 'traffic is terrible' at NAACP forum but no transit investment policy articulated. Gap."
+    },
+    {
+      "topic": "zoning / housing supply mechanisms",
+      "notes": "Called for 'affordable housing fund and rental assistance' at multiple forums, but no specific zoning, supply-side, or density policy stated."
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "healthcare model label",
+      "conflict": "At NAACP forum he used 'universal healthcare coverage' language; in most other sources he advocates specifically for Medicaid expansion and lowering Medicaid barriers. These could be consistent (Medicaid expansion toward universal coverage) or could reflect imprecise language in a live forum context.",
+      "sources": ["NAACP forum (georgianaacp.org)", "41NBC interview", "WSAV interview"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "health_coverage_model — consistent explicit commitment to Medicaid expansion, ACA expansion, rural telehealth, preventive care (HIGH confidence)",
+      "safety_net_breadth — surplus-to-services orientation, Medicaid expansion, affordable housing fund, minimum/living wage (HIGH confidence)",
+      "public_investment — explicit plan to direct $14B+ surplus to small business capital, healthcare, education rather than tax cuts (HIGH confidence)",
+      "school_choice — no signal either direction, but strong teacher pay and public school QBE reform emphasis suggests traditional public school orientation (MEDIUM confidence — inferred)"
+    ],
+    "weakestAxes": [
+      "firearms_policy — no evidence",
+      "ambition_level (climate) — no evidence",
+      "energy_portfolio — no evidence",
+      "police_accountability — no evidence",
+      "sentencing_goals — no evidence",
+      "zoning_supply — minimal evidence (housing crisis acknowledged, no supply-side mechanism stated)",
+      "transit_priority — minimal evidence"
+    ],
+    "overallConfidence": "medium-low",
+    "notes": "Brown is a first-time candidate in a crowded primary. His policy record is almost entirely built on forum appearances and media interviews over a ~20-month campaign. He has consistent, credible positions on healthcare access, education/teacher pay, small business economics, and general affordability. His pastoral record provides a strong LGBTQ+ justice signal that is unusual in its explicitness. However, he has not publicly addressed several major scoring axes including reproductive rights, gun policy, immigration/ICE, criminal justice, climate, or transit — likely because forums have not forced those questions or he is avoiding positional risk as a lower-tier primary candidate. The abortion gap is particularly notable given it is a defining issue in Georgia. Scorer should note that the absence of evidence is not evidence of absence but cannot be scored. Confidence levels per axis should be flagged accordingly. Among Democratic primary candidates he is consistently positioned as a progressive outsider; his strongest differentiation is the small business / rural equity framing and personal faith-to-justice arc."
+  },
+  "sources": [
+    {
+      "url": "https://www.ajc.com/news/impact-churchs-former-pastor-olu-brown-announces-bid-for-georgia-governor/KWIGNX5IJRGNNC7JTZA5LTPK2Y/",
+      "outlet": "Atlanta Journal-Constitution",
+      "type": "news",
+      "date": "2024"
+    },
+    {
+      "url": "https://www.atlantanewsfirst.com/2025/06/06/pulpit-politics-former-metro-atlanta-pastor-olu-brown-launches-governor-bid/",
+      "outlet": "Atlanta News First",
+      "type": "news",
+      "date": "2025-06-06"
+    },
+    {
+      "url": "https://www.redandblack.com/athensnews/q-a-olu-brown-has-a-new-vision-for-georgia/article_2394e810-df2c-4bc3-a366-a8e3ce27f4b1.html",
+      "outlet": "Red and Black (UGA)",
+      "type": "interview/Q&A",
+      "date": "2025"
+    },
+    {
+      "url": "https://theatlantavoice.com/pastor-brown-political-aspirations/",
+      "outlet": "Atlanta Voice",
+      "type": "profile",
+      "date": "2025"
+    },
+    {
+      "url": "https://www.wsav.com/news/your-local-election-hq/a-vision-for-georgia-candidate-for-georgia-governor-talks-policies-ideas/",
+      "outlet": "WSAV-TV (Savannah)",
+      "type": "interview",
+      "date": "2025"
+    },
+    {
+      "url": "https://www.41nbc.com/georgia-democrat-olu-brown-talks-bid-for-governor/",
+      "outlet": "41NBC News (WMGT-DT Macon)",
+      "type": "interview",
+      "date": "2025"
+    },
+    {
+      "url": "https://georgiarecorder.com/2026/01/08/georgia-democrats-align-on-key-issues-at-savannah-forum/",
+      "outlet": "Georgia Recorder",
+      "type": "forum coverage",
+      "date": "2026-01-08"
+    },
+    {
+      "url": "https://roughdraftatlanta.com/2026/01/09/democrats-governor-forum-savannah/",
+      "outlet": "Rough Draft Atlanta",
+      "type": "forum coverage",
+      "date": "2026-01-09"
+    },
+    {
+      "url": "https://www.gpb.org/news/2026/01/09/georgia-democrats-align-on-key-issues-at-savannah-forum",
+      "outlet": "Georgia Public Broadcasting (GPB)",
+      "type": "forum coverage",
+      "date": "2026-01-09"
+    },
+    {
+      "url": "https://www.decaturish.com/voter_guide/gubernatorial-candidates-talk-healthcare-elections/article_69446cbd-d4b9-4d98-bfa9-1714df911e41.html",
+      "outlet": "Decaturish",
+      "type": "voter guide / forum coverage",
+      "date": "2026-02-19"
+    },
+    {
+      "url": "https://theatlantavoice.com/candidates-education-healthcare-georgia/",
+      "outlet": "Atlanta Voice",
+      "type": "forum coverage",
+      "date": "2026-02"
+    },
+    {
+      "url": "https://atlanta.capitalbnews.org/georgia-2026-governor-race-small-business-atlanta/",
+      "outlet": "Capital B News Atlanta",
+      "type": "forum coverage",
+      "date": "2026-02-24"
+    },
+    {
+      "url": "https://www.georgianaacp.org/post/middle-georgia-meets-the-candidates-inside-the-naacp-governor-meet-greet",
+      "outlet": "Georgia NAACP",
+      "type": "forum coverage",
+      "date": "2025-08"
+    },
+    {
+      "url": "https://www.gpb.org/news/2025/08/21/candidates-for-georgia-governor-attend-naacp-forum-sticking-party-lines",
+      "outlet": "Georgia Public Broadcasting (GPB)",
+      "type": "forum coverage",
+      "date": "2025-08-21"
+    },
+    {
+      "url": "https://www.gpb.org/news/2025/11/06/they-want-be-georgias-next-governor-candidates-make-pitches-in-forum-year-ahead-of",
+      "outlet": "Georgia Public Broadcasting (GPB)",
+      "type": "forum coverage",
+      "date": "2025-11-06"
+    },
+    {
+      "url": "https://www.ajc.com/politics/2025/11/governor-hopefuls-focus-on-affordability-during-politically-georgia-forum/",
+      "outlet": "Atlanta Journal-Constitution",
+      "type": "forum coverage",
+      "date": "2025-11"
+    },
+    {
+      "url": "https://www.thereckoningmag.com/the-reckoning-blog/metro-atlanta-pastor-olu-brown-on-lgbtq-inclusion-in-the-church-its-a-social-justice-issue",
+      "outlet": "The Reckoning Magazine",
+      "type": "interview (pastoral career)",
+      "date": "pre-2022"
+    },
+    {
+      "url": "https://ballotpedia.org/Olu_Brown",
+      "outlet": "Ballotpedia",
+      "type": "candidate profile",
+      "date": "2026"
+    },
+    {
+      "url": "https://www.11alive.com/video/news/politics/the-georgia-vote/1-on-1-with-olu-brown-democratic-candidate-for-governor-full-interview/85-802b3047-26e1-4913-82ed-957a02559988",
+      "outlet": "11Alive (WXIA-TV Atlanta)",
+      "type": "video interview",
+      "date": "2025-2026",
+      "notes": "Video only; transcript not retrieved"
+    },
+    {
+      "url": "https://www.olubrown.com/about",
+      "outlet": "Personal website (olubrown.com)",
+      "type": "biography",
+      "date": "2022-present"
+    },
+    {
+      "url": "https://oluforga.com/",
+      "outlet": "Campaign website",
+      "type": "campaign",
+      "date": "2026"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "slug": "william-rabon",
+  "name": "William (Bill) Rabon",
+  "party": "Republican",
+  "office": "North Carolina State Senate, District 8, 2026",
+  "scoredAt": "2026-03-01T00:00:00Z",
+  "profileSummary": "Fourteen-year NC Senate veteran and Rules Committee chairman with near-total control over the legislative calendar; anchored by a 99.3 NCFREE free-enterprise score, aggressive tax-cut agenda, and strong pro-gun record, with a distinctive personal break from party orthodoxy on medical marijuana.",
+  "keyPositions": [
+    "Co-sponsored SB266 rolling back NC's 2030 carbon-reduction target; voted to override governor's veto",
+    "Sponsored SB651 to cut personal income tax below 2.5%; led multi-year income-tax-rate glide path as Finance Chair",
+    "Voted YES on SB50 (permitless carry) on passage and veto override; avid hunter and Sunday-hunting-expansion sponsor",
+    "Led party-line expansion of Opportunity Scholarships (private school vouchers) to $463.5M with escalation to $825M/year",
+    "Primary sponsor of SB3 (medical cannabis) motivated by personal cancer experience; NORML B+ grade"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "NC Senate budget votes 2023-2025",
+        "NC Budget & Tax Center analysis (bottom 20% save $5/yr vs top 1% saves $4K)",
+        "Conditional Medicaid expansion via HB76 (work-requirement-compatible)",
+        "DOGE-style agency review in 2025 budget"
+      ],
+      "notes": "Supported Medicaid expansion in 2023 but only as a conditional trade for CON reform and market deregulation — not a shift toward broader safety net. Budget leadership consistently prioritizes tax cuts over social spending."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "NC FREE Foundation 99.3 score (2023-2024)",
+        "SB651 sponsor (income tax below 2.5%)",
+        "Multi-year budget leadership with phased income tax reductions",
+        "NC Budget & Tax Center criticism of regressive budget priorities"
+      ],
+      "notes": "Exception: supported $700M Hurricane Helene recovery appropriations, but disaster spending does not indicate a general pro-public-investment philosophy. NCFREE near-perfect score is the strongest signal."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "SB651 sponsor — personal income tax below 2.5% by 2026",
+        "NC Senate budget: phased reductions from 4.75% to 2.49% with triggers to 1.99%",
+        "NC FREE Foundation 99.3 score",
+        "Stated position: 'significant reduction in the state's corporate and personal tax rates'"
+      ],
+      "notes": "NC already has a flat income tax; Rabon is driving rates toward near-elimination. This is as close to flat/low-tax maximalism as a sitting state legislator can get while retaining a nominal income tax."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "HB10 Opportunity Scholarship expansion (party-line vote, $463.5M added)",
+        "Veto override vote on HB10 (30-19)",
+        "Rules Chair facilitation of voucher legislation through committee"
+      ],
+      "notes": "As Rules Chairman, Rabon controls what reaches the floor. His procedural power in advancing HB10 is as significant as his floor vote."
+    },
+    "health_coverage_model": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "AffordableCareNC profile listing HB76 Medicaid expansion support",
+        "Healthcare positions framed as CON reform, drug transparency, nurse scope of practice",
+        "NC FREE Foundation 99.3 score"
+      ],
+      "notes": "Supported Medicaid expansion HB76 (2023) but Senate Republicans conditioned it on Certificate of Need reform — a market-deregulation trade, not an endorsement of government coverage expansion. All other healthcare positions use market mechanisms. Score reflects market orientation with the Medicaid expansion moderating slightly from the extreme."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Drug transparency bills (SB479, SB316, SB315, SB537)",
+        "CON law reform advocacy",
+        "Nurse scope-of-practice expansion",
+        "AffordableCareNC profile"
+      ],
+      "notes": "All cost-control mechanisms in Rabon's record are market-competition or deregulation tools. No evidence of supporting government price controls, drug price negotiation, or rate-setting."
+    },
+    "health_public_health": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": [
+        "SB3 medical cannabis primary sponsorship (NORML B+)",
+        "General Republican caucus positioning on health mandates",
+        "The Assembly NC profile on marijuana advocacy"
+      ],
+      "notes": "Medical marijuana advocacy is the distinctive signal but it is explicitly individual-choice framed ('a few puffs during chemotherapy'), not collective public health. His conservative framing — individual access to treatment — is consistent with poleB (personal choice and enforcement). The NORML B+ does not indicate broader progressive public health orientation."
+    },
+    "housing_supply_zoning": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "SB382 downzoning ban (2024)",
+        "NC Home Builders Association endorsement of SB382",
+        "Brunswick Beacon coverage of local government opposition"
+      ],
+      "notes": "SB382 bans local downzoning without all affected property owners' consent — a sweeping restriction on local government's ability to limit development. Effect is strongly pro-development/pro-supply (poleA direction). However, the motivation is property-rights deregulation, not affordability or urban density goals. Local governments in Rabon's own district opposed the bill."
+    },
+    "housing_affordability_tools": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "General free-enterprise record (99.3 NCFREE)",
+        "SB382 property-rights framing",
+        "No evidence of supporting government housing subsidies or rent control"
+      ],
+      "notes": "No direct housing affordability votes found. Score inferred from general anti-regulatory, pro-market orientation and absence of any subsidy/rent-control advocacy. Low confidence due to limited direct evidence."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "SB50 permitless carry — YES on passage (2025-03-21) and veto override (2025-07-29)",
+        "Sunday hunting expansion — primary sponsor (2017)",
+        "Congressional Sportsmen's Foundation award",
+        "Avid hunter and fisherman (biographical)"
+      ],
+      "notes": "SB50 eliminates concealed carry permit requirement and lowers carry age to 18. Combined with hunting expansion advocacy and no evidence of supporting any gun regulations, this is a near-maximum pro-gun-rights position."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "SB266 co-sponsor — eliminates 2030 70% carbon reduction target (2025)",
+        "SB266 veto override vote",
+        "NC Chamber of Commerce support for SB266",
+        "NRDC, Sierra Club, NC Justice Center opposition to SB266"
+      ],
+      "notes": "SB266 retains the 2050 carbon neutrality goal while eliminating the binding 2030 interim target — this is a significant rollback but not outright climate denial. In 2013 Rabon procedurally blocked repeal of the renewable energy standard, but this older signal is superseded by his 2025 co-sponsorship of SB266. Scored on the most recent and most definitive action."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "SB266 allows cost-recovery for new carbon-emitting generation resources",
+        "NC Sustainable Energy Association criticism of SB266",
+        "NC FREE Foundation 99.3 score",
+        "NC Chamber of Commerce support"
+      ],
+      "notes": "SB266 explicitly opens the door to continued and new fossil fuel generation investment with ratepayer cost-recovery. Critics estimate up to $23B in additional ratepayer costs. This is fossil-fuel-permissive energy policy, though not fossil-fuel-maximalist (2050 goal retained)."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "Tax cuts that disproportionately benefit the wealthy (bottom 20% saves $5/yr vs top 1% saves $4K), school voucher expansion that redirects public funds, rollback of environmental protections (SB266), and anti-abortion votes (SB20) all work against equal welfare for all. Conditional Medicaid expansion is a mild countervailing signal but was structured as a market-deregulation trade."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "Medical marijuana advocacy is genuinely motivated by personal cancer experience and concern for patients suffering. Helene disaster relief ($700M) shows community responsiveness. However, the broader legislative agenda prioritizes economic freedom and tax reduction over community welfare programs. Net signal is weakly positive due to the marijuana advocacy's personal authenticity."
+    },
+    "tradition": {
+      "score": 0.4,
+      "reasoning": "Pro-hunting heritage, rural/coastal district values, anti-abortion position (SB20, NC Right to Life endorsement), and general social conservatism. Moderated by breaks with conservative orthodoxy on medical marijuana and sports betting legalization. The tradition signal is real but not absolute."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Party-line voting on most major legislation. As Rules Chair, enforces institutional discipline and procedural order. However, medical marijuana advocacy openly defied House Republican leadership. Pattern of media disengagement suggests selective conformity — he conforms to party structure but not to norms of public accountability."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Pro-gun positions framed as personal safety and self-defense. HB10 included ICE cooperation requirements (immigration enforcement). Budget includes law enforcement spending. SB382 protects property rights (economic security). Helene recovery spending addresses physical security for constituents. Consistent security orientation across multiple domains."
+    },
+    "power": {
+      "score": 0.8,
+      "reasoning": "Rules Committee chairmanship gives near-total control over what bills reach the NC Senate floor. 14+ years building and exercising legislative dominance. NC Budget & Tax Center criticizes his 'rushed, untransparent process.' Consistent pattern of using procedural authority to shape outcomes. Also chairs Finance Committee and Select Committee on Nominations. One of the most powerful legislators in the state."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Successful veterinarian and farmer. Eight consecutive election victories. Built career from community college board trustee to most senior Senate Republican. Economic development focus for his district ('recruiting new industries'). DVM from University of Georgia. Cancer survivor. Consistent pattern of personal accomplishment and competence-based advancement."
+    },
+    "hedonism": {
+      "score": 0.2,
+      "reasoning": "Co-sponsored sports betting legalization (SB688). Sunday hunting expansion sponsor. Avid hunter and fisherman — lifestyle oriented toward outdoor recreation. Mild but genuine signal of valuing enjoyment and personal gratification."
+    },
+    "stimulation": {
+      "score": 0.0,
+      "reasoning": "Medical marijuana advocacy is novel for a senior Republican, but his overall legislative approach is conservative and institutional rather than novelty-seeking. No other evidence of excitement-seeking or openness to radical change. Neutral."
+    },
+    "self_direction": {
+      "score": 0.3,
+      "reasoning": "Medical marijuana advocacy against House Republican opposition demonstrates independent judgment grounded in personal experience. Disclosed illegal marijuana use during cancer treatment — willingness to break social norms when personally convicted. But on most policy issues, follows party line and institutional expectations. The independence is selective and issue-specific."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Climate / energy evolution",
+      "description": "In 2021, Rabon voted for or allowed passage of HB951, which set NC's 70% carbon reduction by 2030 target. In 2025, he co-sponsored SB266 to eliminate that same interim target. His 2025 action is the controlling signal — he supported the bipartisan compromise in 2021 but rolled it back when the political coalition shifted.",
+      "sources": ["HB951 (2021) NC General Assembly", "SB266 (2025) NC General Assembly — Rabon listed as co-sponsor"],
+      "scoringImpact": "climate_ambition and climate_energy_portfolio scored on 2025 record (SB266) per recency rule; 2021 HB951 vote noted but superseded"
+    },
+    {
+      "topic": "Healthcare coverage framing",
+      "description": "Rabon is listed as supporting HB76 Medicaid expansion (2023), which expanded coverage to ~600K low-income North Carolinians. However, Senate Republicans conditioned expansion on Certificate of Need reform, and Rabon frames all healthcare positions as market-based deregulation. This is not a shift toward government coverage — it was a strategic trade.",
+      "sources": ["AffordableCareNC Senate District 8 profile", "NC General Assembly HB76 (2023)"],
+      "scoringImpact": "health_coverage_model scored at 7 (market-oriented) rather than closer to center; the conditional Medicaid expansion moderates the score slightly from 8"
+    },
+    {
+      "topic": "Medical marijuana vs. overall conservatism",
+      "description": "Rabon's B+ NORML rating for medical marijuana primary sponsorship contrasts sharply with his otherwise very conservative record. His marijuana advocacy is grounded in personal medical experience and framed in libertarian/individual-access terms, not progressive public health philosophy.",
+      "sources": ["The Assembly NC profile", "NORML B+ rating", "NC FREE 99.3 score"],
+      "scoringImpact": "Does not shift axis scores; reflected in self_direction and benevolence value scores and in health_public_health notes"
+    },
+    {
+      "topic": "Media disengagement",
+      "description": "Rabon has a long pattern of declining media interviews and skipping candidate forums, making it difficult to document nuanced stated positions. Voting record and sponsored bills are the primary evidence by necessity, not by choice.",
+      "sources": ["WHQR 2024 reporting"],
+      "scoringImpact": "Reduces confidence on axes where voting record is thin (e.g., policing, sentencing) since no interview positions fill the gap"
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 12,
+    "axesSkipped": [
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "housing_transport_priority: only inferred from rural district and DOT chair role — no direct transit votes or positions found. justice_policing_accountability: 2021 bipartisan reform bill facilitated but ACLU criticized it; personal position unclear. justice_sentencing_goals: insufficient direct evidence beyond party membership. climate_permitting: no direct permitting votes or positions documented.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No NRA grade found despite strong pro-gun voting record — likely a data gap",
+      "No direct transit or transportation-mode votes identified",
+      "No direct sentencing or criminal justice reform positions documented",
+      "Media disengagement limits ability to capture nuanced stated positions on many topics",
+      "No dedicated 2026 campaign website with issue positions found"
+    ]
+  }
+}

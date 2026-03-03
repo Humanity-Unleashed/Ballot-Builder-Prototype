@@ -1,0 +1,247 @@
+{
+  "slug": "deborah-ross",
+  "name": "Deborah K. Ross",
+  "party": "Democratic",
+  "office": "U.S. House, North Carolina 2nd Congressional District, 2026",
+  "scoredAt": "2026-03-01T00:00:00.000Z",
+  "profileSummary": "Three-term progressive congresswoman and former NC-ACLU director with near-perfect environmental and gun safety records; champions public transit investment, prescription drug price reform, and police accountability from a reform-oriented but establishment-aligned posture.",
+  "keyPositions": [
+    "LCV 100% (2024), 99% lifetime -- near-perfect environmental voting record; authored IRA offshore wind provision",
+    "Supports public option and ACA expansion, explicitly not Medicare for All; authored PBM Reform Act (passed House Jan 2026)",
+    "Voted for assault weapons ban and Bipartisan Safer Communities Act; endorsed by Brady PAC and Everytown",
+    "Co-sponsored George Floyd Justice in Policing Act; former NC-ACLU director who pioneered anti-racial profiling legislation",
+    "Voted for ARP, Infrastructure Act, CHIPS Act, and IRA -- consistent support for major public investment"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "ARP vote (2021) -- expanded Child Tax Credit",
+        "No vote on 2025 GOP budget resolution cutting Medicaid/SNAP",
+        "Social Security Fairness Act cosponsor (2024)",
+        "Raise the Wage Act cosponsor",
+        "Campaign platform: expand and strengthen Social Security"
+      ],
+      "notes": "Consistent across five years of House votes and 10 years of state legislative service. Every major safety net expansion vote available, she took it."
+    },
+    "econ_investment": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "ARP vote ($1.9T, 2021)",
+        "Infrastructure Investment and Jobs Act vote (2021)",
+        "CHIPS and Science Act vote ($280B, 2022)",
+        "Inflation Reduction Act vote (2022)",
+        "Campaign website: infrastructure and clean energy investment"
+      ],
+      "notes": "Voted for all four of the Biden-era landmark public investment bills. Secured $176M+ in transit funding for NC specifically."
+    },
+    "econ_tax_structure": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "No vote on 2025 GOP budget resolution ($4.5T in tax cuts for wealthy)",
+        "ARP vote (included temporary CTC expansion funded by progressive revenue)",
+        "IRA vote (includes corporate minimum tax and stock buyback excise tax)"
+      ],
+      "notes": "No authored tax legislation, but voting pattern is consistently progressive on revenue. Opposed every Republican tax cut effort. IRA included 15% corporate minimum tax and 1% stock buyback tax which she voted for."
+    },
+    "econ_school_choice": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Campaign website: public education, reducing class sizes, teacher pay, free pre-K",
+        "AFL-CIO endorsement (union consistently opposes vouchers)",
+        "No federal voucher/charter votes found"
+      ],
+      "notes": "Platform is exclusively pro-public-school with no voucher or charter support. No explicit anti-voucher vote found at federal level, but overall posture and endorser alignment are clear. Scored medium confidence because evidence is Tier 2 (platform + endorsement inference) rather than Tier 1 (direct vote)."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Wake County Dems candidate info (2024): explicit public option support",
+        "Campaign website: lower Medicare eligibility from 65 to 60",
+        "Opposes Medicare voucher privatization",
+        "NC Medicare for All Coalition gap: has NOT cosponsored Medicare for All Act"
+      ],
+      "notes": "Clear and consistent public option advocate. Explicitly does not support single-payer/Medicare for All. This places her at the strong-public-option anchor (score 3) rather than the single-payer anchor (score 0-1). A meaningful distinction from the progressive left flank."
+    },
+    "health_cost_control": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Authored PBM Reform Act (passed House Jan 2026)",
+        "IRA vote (Medicare drug price negotiation provisions)",
+        "Press release: PBMs are 'unregulated middlemen driving up prices'"
+      ],
+      "notes": "Active legislator on drug pricing -- not just a vote-caster but an author of price control legislation. PBM Reform Act bans spread pricing in Medicaid and delinks PBM compensation from drug costs in Medicare Part D."
+    },
+    "health_public_health": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "ACA/Medicaid expansion support (inferred collective health orientation)",
+        "Party alignment on pandemic-era public health measures"
+      ],
+      "notes": "No specific pandemic mandate or vaccine requirement votes retrieved. Posture is consistent with collective public health approach based on ACA support and overall record, but this is inference from general orientation rather than specific evidence. Scored low confidence accordingly."
+    },
+    "housing_affordability_tools": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "Letter to FHFA/CFPB urging investigation of institutional investor impact on housing (2024)",
+        "Secured federal affordable housing appropriations for Wake County",
+        "Stated: 'Federal housing policy should prioritize the housing needs of everyday Americans, not speculative profits'"
+      ],
+      "notes": "Clearly on the government intervention side but housing is not a primary focus area. No authored housing legislation found. Evidence is Tier 2 (letters, statements, appropriations) rather than Tier 1 votes on major housing bills."
+    },
+    "housing_transport_priority": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Infrastructure Investment and Jobs Act vote (2021)",
+        "Secured $19.3M for Raleigh BRT specifically",
+        "Secured $176M+ for NC transit overall",
+        "Led NC Democratic delegation calling for robust transit/rail funding (2023)",
+        "Campaign website: 'Wake County needs modern, efficient transportation options'",
+        "Professional background: attorney for regional transit agency"
+      ],
+      "notes": "One of her strongest and most personally invested policy areas. Not just voting for transit but actively securing specific funding, leading delegation efforts, and having professional transit expertise. Transit-first orientation is unmistakable."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "Co-sponsored George Floyd Justice in Policing Act (limits qualified immunity, lowers misconduct conviction standard)",
+        "Former NC-ACLU State Director (1994-2002): pushed state police to collect race-based traffic stop statistics",
+        "Passed South's first anti-racial profiling bill as state legislator",
+        "ACLU scorecard exists (expected very high)"
+      ],
+      "notes": "Career-defining issue. The ACLU directorship was not passive -- she led specific, successful police accountability campaigns. The George Floyd Act cosponsorship is consistent with a 30-year track record. Scored 2 (strong reform) rather than 0-1 (defund/abolish) because she advocates reform within institutions, not their elimination."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Overhauled NC youth offender system as ACLU director (1994-2002)",
+        "Passed South's first anti-racial profiling bill as state legislator",
+        "Introduced End Prison Gerrymandering Act (Feb 2026)",
+        "No punitive/mandatory minimum legislation found"
+      ],
+      "notes": "Rehabilitation orientation is a career-long theme from ACLU work through current legislation. Confidence is medium rather than high because most evidence comes from pre-congressional career (Tier 4 biographical) and authored bills that haven't been voted on, rather than multiple roll-call votes on sentencing legislation."
+    },
+    "justice_firearms": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Voted for Bipartisan Safer Communities Act (2022)",
+        "Voted for assault weapons ban (2022 House vote)",
+        "As state legislator: opposed concealed carry expansion into restaurants/parks",
+        "Brady PAC endorsement (featured on campaign site)",
+        "Everytown for Gun Safety endorsement",
+        "Quote: 'assault rifles designed for combat not recreation'"
+      ],
+      "notes": "Comprehensive gun regulation supporter across federal and state career. Supports universal background checks, assault weapons ban, red flag laws, and restrictions on concealed carry. Brady + Everytown dual endorsement confirms top-tier gun safety record."
+    },
+    "climate_ambition": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "LCV 100% (2024 annual scorecard)",
+        "LCV 99% lifetime scorecard",
+        "NC LCV 94% lifetime (state legislature)",
+        "IRA vote ($369B+ climate spending)",
+        "Campaign website: climate change is 'existential threat'",
+        "Heritage Action 0-11% (inverse confirmation)"
+      ],
+      "notes": "Near-perfect environmental record across 20+ years of public service at both state and federal levels. Three independent scorecards (LCV annual, LCV lifetime, Heritage Action) all confirm the same positioning."
+    },
+    "climate_energy_portfolio": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Authored offshore wind moratorium repeal (provision in IRA)",
+        "Introduced NOW Act (decouple wind from fossil fuel leases, with AOC)",
+        "Introduced Defend Our Coast Act (ban Atlantic oil/gas leases)",
+        "Co-introduced CLEAN Energy NOW Acts (2023)",
+        "Opposes fracking (campaign website)",
+        "INDY Week: 'North Carolina needs someone in Congress to say No to drilling off their shores'"
+      ],
+      "notes": "Not just a renewables supporter but an active legislator against fossil fuel expansion. She has authored multiple bills banning new fossil fuel development AND promoting renewables. This is about as close to the 'rapid transition' pole as a sitting member of Congress gets."
+    },
+    "climate_permitting": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Introduced NOW Act: decouple offshore wind permitting from IRA oil/gas lease sale requirements",
+        "Stated IRA offshore wind provision 'was not enough' -- wants faster clean energy permitting",
+        "Defend Our Coast Act: would block fossil fuel permitting off Atlantic coast"
+      ],
+      "notes": "Nuanced position: wants faster permitting specifically for clean energy, while maintaining or strengthening environmental review for fossil fuels. She is not a blanket deregulator on permitting -- she wants to selectively accelerate green projects. This is faster green permitting (toward Pole B direction) but with maintained environmental review for fossil projects, placing her at 3 rather than 0 or 5."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.8,
+      "reasoning": "Environmental protection is central (LCV 99% lifetime). Racial justice advocacy spans 30 years (ACLU directorship, anti-profiling bills, George Floyd Act). Reproductive rights champion. Safety net expansion for all. Housing fairness. Consistent concern for welfare of all people and nature across career. Not scored at 1.0 because some positions are pragmatic center-left (public option not M4A) rather than maximally universalist."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Worker protections (Raise the Wage Act), community investment (transit, broadband, affordable housing), healthcare access expansion, youth offender rehabilitation. Strong care-for-community orientation. Her legislative focus on Wake County constituents (transit, broadband, housing) shows in-group care. Slightly below universalism because her focus extends broadly beyond in-group to systemic concerns."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "First Amendment advocacy from ACLU career. Independent positioning (public option rather than following progressive base on M4A). Civil liberties orientation throughout career. But governance approach is predominantly collective and regulatory -- she favors government-led solutions, which works against pure individual autonomy as a value."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Notable legislative productivity: authored successful bills (PBM Reform Act passed House, IRA offshore wind provision enacted), secured significant funding ($176M+ NC transit). Career trajectory from ACLU director to state legislator to congresswoman to Chief Deputy Whip shows competence-driven advancement. But achievement serves policy goals rather than being an end in itself."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Embraces new energy technologies (offshore wind, battery storage, grid modernization). Introduced innovative policy approaches (prison gerrymandering reform, PBM structural reform). But overall style is pragmatic establishment rather than revolutionary or risk-seeking. Innovation serves established progressive goals."
+    },
+    "security": {
+      "score": 0.1,
+      "reasoning": "Gun safety framing is partially about community security. Public health orientation includes protective elements. But consistently prioritizes reform and civil liberties over security concerns -- challenges police authority, opposes security-maximalist approaches. The net signal is near-neutral with a very slight positive from the community safety dimension of gun regulation."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "Actively challenges existing legal structures: qualified immunity reform, racial profiling law changes, prison gerrymandering reform, new energy regulatory frameworks. ACLU career is fundamentally about challenging government authority and established rules when they conflict with rights. Chief Deputy Whip role shows institutional participation, but her policy agenda consistently pushes to change rather than uphold existing rules."
+    },
+    "tradition": {
+      "score": -0.4,
+      "reasoning": "Progressive reformer throughout career. Pushes for structural changes in energy systems (away from fossil fuels), policing models (away from status quo), tax structures (away from current distribution), and criminal justice (away from punitive norms). Career defined by changing established systems rather than preserving them. No traditional/conservative cultural appeals found in campaign materials."
+    },
+    "power": {
+      "score": -0.2,
+      "reasoning": "Policy orientation is redistributive: from high earners to safety net, from institutional investors to everyday homeowners, from police authority to civilian oversight. Opposes concentrated economic power (PBM reform, institutional investor accountability). Holds institutional leadership (Chief Deputy Whip) but uses it for redistributive rather than power-concentrating ends."
+    },
+    "hedonism": {
+      "score": 0,
+      "reasoning": "No meaningful evidence in either direction. Campaign and legislative record are policy-focused without hedonistic or anti-hedonistic themes."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Healthcare coverage model: public option vs. Medicare for All",
+      "description": "NC Medicare for All Coalition has urged Ross to cosponsor the Medicare for All Act; she has not done so. She explicitly supports a public option and ACA expansion, not single-payer. This is not a conflict between stated and actual positions -- it is a known gap between progressive base expectations and her actual policy position.",
+      "sources": ["NC Medicare for All Coalition letter", "Wake County Dems candidate info 2024", "Campaign website"],
+      "scoringImpact": "Scored health_coverage_model at 3 (public option anchor) rather than 0-1 (single-payer anchor). This is the correct score for her actual position."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 15,
+    "axesSkipped": ["housing_supply_zoning"],
+    "reasonSkipped": "No federal zoning legislation votes found. Zoning is primarily a local/state issue where federal records are inherently thin. No stated YIMBY/NIMBY position found.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific pandemic public health mandate votes retrieved (health_public_health scored low confidence)",
+      "No US Chamber of Commerce or NFIB scorecard data available to cross-check economic axis scores",
+      "ACLU scorecard percentage not retrieved (expected very high based on career history)",
+      "No NRA grade available (removed from site; inferred NRA-opposed from comprehensive gun safety record)"
+    ]
+  }
+}

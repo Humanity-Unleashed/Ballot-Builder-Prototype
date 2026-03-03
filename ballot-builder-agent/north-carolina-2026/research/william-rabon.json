@@ -1,0 +1,473 @@
+{
+  "slug": "william-rabon",
+  "name": "William (Bill) Rabon",
+  "party": "Republican",
+  "office": "North Carolina State Senate, District 8, 2026",
+  "contestId": "NC-STATE-SENATE-D8-2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-03-01T00:00:00Z",
+  "biography": {
+    "currentRole": "NC State Senator, District 8 (2011–present); Chairman, Senate Rules and Operations Committee; Chairman, Senate Finance Committee; Chairman, Select Committee on Nominations",
+    "priorRoles": [
+      "Vice Chair, Brunswick Community College Board of Trustees",
+      "Partner, multiple animal hospitals (ongoing)"
+    ],
+    "education": "B.S., North Carolina State University; Doctor of Veterinary Medicine (DVM), University of Georgia (1976)",
+    "background": "Veterinarian, farmer, avid hunter and fisherman. Brunswick County native. Cancer survivor who used marijuana medicinally during chemotherapy, which motivated his medical marijuana advocacy. 14+ years as one of the most powerful legislators in NC—Rules Committee chair gives him near-total control over what bills reach the floor. District 8 covers Brunswick, Columbus, and a portion of New Hanover counties.",
+    "electionHistory": "Won 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024. Defeated Katherine Randall (D) 60%–40% in 2024 general election. 2026 opponents: Richard Combes (D), Tim White (L).",
+    "mediaEngagement": "Consistent pattern of declining media interviews and candidate forums. WHQR reports he has ignored local journalist inquiries and skipped media-hosted forums for many years. Declined 2024 forum citing scheduling conflict."
+  },
+  "campaignWebsite": {
+    "url": null,
+    "fetchedAt": null,
+    "notes": "No dedicated campaign website identified in 2026 cycle research. Campaign committee is 'Rabon for Senate.' As of Dec 31 2025: total contributions $39,000, total expenditures $37,998.",
+    "statedPositions": [
+      {
+        "topic": "taxes",
+        "quote": "Touts lowered state tax rates among accomplishments over his past 14 years in the state senate",
+        "sourceUrl": "https://www.nrcolumbus.com/townnews/politics/rabon-hopes-to-hold-on-to-n-c-senate-seat-despite-challenge-from-randall/article_bef86a80-826c-11ef-be54-ff05b7890b1e.html",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Paraphrase from 2024 campaign coverage; no direct quote available"
+      },
+      {
+        "topic": "healthcare",
+        "quote": "Committed to achieving greater affordable access to quality healthcare for all North Carolinians",
+        "sourceUrl": "https://www.affordablecarenc.com/general-assembly-members/senate-district-8",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Framing emphasizes market-side reforms (CON reform, drug price transparency, nurse scope of practice), not coverage expansion"
+      },
+      {
+        "topic": "economic development",
+        "quote": "Recruiting new industries to southeastern North Carolina",
+        "sourceUrl": "https://www.nrcolumbus.com/townnews/politics/rabon-hopes-to-hold-on-to-n-c-senate-seat-despite-challenge-from-randall/article_bef68a80-826c-11ef-be54-ff05b7890b1e.html",
+        "date": "2024",
+        "confidence": "medium",
+        "notes": "Paraphrase; no direct quote available"
+      },
+      {
+        "topic": "taxes",
+        "quote": "Opposing future tax increases and supporting a significant reduction in the state's corporate and personal tax rates",
+        "sourceUrl": "https://www.affordablecarenc.com/general-assembly-members/senate-district-8",
+        "date": "2024",
+        "confidence": "high",
+        "notes": "Explicit stated position; consistent with 14-year legislative record"
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": [
+      "NC General Assembly official records",
+      "Ballotpedia",
+      "VoteSmart",
+      "ChoiceTracker",
+      "NC FREE Foundation",
+      "NORML"
+    ],
+    "notes": "State legislator — no federal voting record. Long record in NC Senate 2011–present. As Rules Committee chair, he controls which bills advance; his influence is exercised procedurally as well as through floor votes.",
+    "keyVotes": [
+      {
+        "bill": "SB 20 — Care for Women, Children, and Families Act (2023)",
+        "vote": "Yes",
+        "topic": "reproductive_rights",
+        "sourceUrl": "https://choicetracker.org/nc/people/william-rabon/203554816",
+        "date": "2023-05-04",
+        "notes": "Voted to pass 12-week abortion ban. Senate passed 29-20 on party line. Also voted to override Gov. Cooper's veto (Senate 30-20, party line). ChoiceTracker labels Rabon 'Anti-Choice.' Endorsed by NC Right to Life in 2024."
+      },
+      {
+        "bill": "SB 20 — Care for Women, Children, and Families Act — veto override (2023)",
+        "vote": "Yes",
+        "topic": "reproductive_rights",
+        "sourceUrl": "https://www.nbcnews.com/politics/politics-news/north-carolina-republicans-aim-override-governors-abortion-ban-rcna84651",
+        "date": "2023-05-16",
+        "notes": "Confirmed party-line veto override vote; Rabon is a Republican Senate leader voting with caucus"
+      },
+      {
+        "bill": "HB 76 — Medicaid Expansion / CON Reform (2023)",
+        "vote": "Yes (inferred — party leadership support)",
+        "topic": "healthcare_coverage",
+        "sourceUrl": "https://www.affordablecarenc.com/general-assembly-members/senate-district-8",
+        "date": "2023-03-27",
+        "notes": "AffordableCareNC lists Rabon as supporting the Senate version of HB76, which expanded Medicaid and reformed CON laws. Signed by governor 3/27/2023. NOTE: Senate Republicans conditioned Medicaid expansion on CON reform (market deregulation); this is NOT a straightforward endorsement of single-payer or government coverage expansion — it is a market-compatible, work-requirement-friendly version of expansion. Confidence: medium (sourced from advocacy site; individual vote record not confirmed directly)."
+      },
+      {
+        "bill": "SB 3 — NC Compassionate Care Act / Medical Cannabis (2023)",
+        "vote": "Primary sponsor",
+        "topic": "public_health / drug_policy",
+        "sourceUrl": "https://www.theassemblync.com/politics/bill-rabon-medical-marijuanas-conservative-champion/",
+        "date": "2023",
+        "notes": "Rabon was lead primary sponsor of SB3, the medical marijuana bill. Senate passed 36-10 (March 2023) and 33-9 (June 2024). Bill died in House repeatedly due to House Republican opposition. Rabon publicly disclosed he used marijuana illegally during chemotherapy for cancer. NORML gave him B+ for primary sponsorship. Bill did NOT become law during 2023-2024 session."
+      },
+      {
+        "bill": "HB 10 — Private School Voucher Expansion / ICE Cooperation (2024)",
+        "vote": "Yes (inferred — party-line vote, Senate Rules Chairman)",
+        "topic": "school_choice / immigration",
+        "sourceUrl": "https://www.wunc.org/politics/2024-09-09/nc-senate-override-veto-private-school-vouchers",
+        "date": "2024-09-09 and 2024-11-20",
+        "notes": "Senate voted 30-19 along party lines to pass and then override veto. Added $463.5M to Opportunity Scholarship program; escalates to $825M/year by 2032-33. Rabon, as Senate Rules Chair and party caucus leader, would have facilitated passage of this bill. Also required sheriffs to comply with ICE detainment requests."
+      },
+      {
+        "bill": "SB 50 — Freedom to Carry NC (Permitless Carry) (2025)",
+        "vote": "Yes (confirmed)",
+        "topic": "firearms_policy",
+        "sourceUrl": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/50",
+        "date": "2025-03-21 (passage); 2025-07-29 (veto override)",
+        "notes": "SB50 eliminates permit requirement to carry a concealed handgun; lowers carry age to 18. Bill passed Senate; Governor Stein vetoed June 2025; Senate voted 30-19 to override. As of Dec 2025 House veto override vote still pending. Rabon voted Yes on both passage and veto override."
+      },
+      {
+        "bill": "SB 266 — Power Bill Reduction Act (2025)",
+        "vote": "Yes (co-sponsor; voted for veto override)",
+        "topic": "climate / energy",
+        "sourceUrl": "https://www.ncleg.gov/BillLookUp/2025/S266",
+        "date": "2025-06-23 (passage); 2025-07-29 (veto override)",
+        "notes": "Rabon is listed as co-sponsor. SB266 eliminates HB951's interim 70% carbon reduction target by 2030 (while retaining 2050 neutrality goal); allows cost-recovery for new carbon-emitting generation. Critics say it raises rates by up to $23B for ratepayers. NC Chamber of Commerce supported it. NRDC, Sierra Club, NC Justice Center opposed. Governor Stein vetoed July 2 2025; legislature overrode."
+      },
+      {
+        "bill": "HB 951 — Energy Solutions for NC (2021)",
+        "vote": "Yes (inferred — bipartisan bill; individual vote not confirmed)",
+        "topic": "climate / energy",
+        "sourceUrl": "https://www.ncleg.gov/BillLookup/2021/H951",
+        "date": "2021-10-07",
+        "notes": "This bipartisan clean energy bill set the 70% carbon reduction by 2030 goal and 2050 carbon neutrality target that SB266 (2025) later rolled back. The bill passed broadly with bipartisan support. Rabon's individual vote not confirmed but passage was widely supported in both chambers. His later co-sponsorship of SB266 to roll back HB951's interim targets is the stronger, more recent signal."
+      },
+      {
+        "bill": "HB 259 — State Budget 2023-2025 (income tax cuts)",
+        "vote": "Yes (inferred — party-line Senate vote)",
+        "topic": "econ_tax_structure / public_investment",
+        "sourceUrl": "https://www.wral.com/story/nc-senate-votes-to-approve-budget-plan-with-tax-cuts-employee-raises-helene-aid-and-doge-style-review/21962982/",
+        "date": "2023-2025",
+        "notes": "NC Senate passed budget with phased income tax reductions: 4.75% (2023) → 4.5% (2024) → 4.25% (2025) → 3.99% with future triggers potentially reaching 2.49%–1.99%. Rabon filed SB 651 ('Tax Relief For All') as Finance Chair to cut personal income tax below 2.5% by 2026. Budget also preserved/extended tax cuts benefiting top earners disproportionately (bottom 20% save avg $5/yr; top 1% save avg $4,000/yr per NC Budget & Tax Center)."
+      },
+      {
+        "bill": "SB 651 — Tax Relief For All (introduced)",
+        "vote": "Primary sponsor",
+        "topic": "econ_tax_structure",
+        "sourceUrl": "https://www.carolinajournal.com/senate-republicans-signal-new-tax-relief-for-all-north-carolinians/",
+        "date": "2025",
+        "notes": "Rabon as Finance Chair filed legislation to cut personal income tax rate below 2.5% by 2026. Strong signal of aggressive anti-tax stance."
+      },
+      {
+        "bill": "SB 382 — Omnibus Bill with Downzoning Ban (2024)",
+        "vote": "Yes (inferred — party leadership vote)",
+        "topic": "housing / zoning",
+        "sourceUrl": "https://www.newsargus.com/brunswick_beacon/news/s-b-382-has-local-town-concerned-over-zoning-implications/article_ccb20390-d4b3-5c69-a292-ea2f667cf26e.html",
+        "date": "2024-12-11",
+        "notes": "SB382 enacted a sweeping ban on downzoning without all affected property owners' written consent, effectively stripping local zoning authority for density-reducing changes. Retroactive 180 days. NC Home Builders Association called it 'a huge victory for property rights.' Local governments, including towns in Rabon's district, lobbied Rabon to address concerns. Passed after Cooper veto override. Rabon's individual vote not confirmed but as Rules Chair he controlled the bill's path."
+      },
+      {
+        "bill": "Renewable Energy Portfolio Standard (2013 committee action)",
+        "vote": "Procedural obstruction of repeal",
+        "topic": "climate / energy",
+        "sourceUrl": "https://www.wral.com/renewable-energy-bill-would-have-failed-committee-vote/12409327/",
+        "date": "2013",
+        "notes": "In 2013, as Senate Finance Committee Co-chairman, Rabon declined to count a voice vote that would have ended a key renewable energy requirement, effectively blocking the repeal. This is a decade-old signal and is superseded by his 2025 co-sponsorship of SB266 rolling back clean energy targets — the more recent and more definitive evidence."
+      },
+      {
+        "bill": "SB 688 — Sports Wagering (2021)",
+        "vote": "Co-sponsor",
+        "topic": "other",
+        "sourceUrl": "https://www.ncleg.gov/BillLookup/2021/S688",
+        "date": "2021",
+        "notes": "Rabon was listed as a sponsor of sports betting legalization. Bill passed Senate but failed House by 1 vote (51-50) in 2022. Sports betting was later legalized in 2023. Limited relevance to civic axes."
+      },
+      {
+        "bill": "Sunday Hunting Expansion — HB 559/SB 624 (2017)",
+        "vote": "Primary sponsor",
+        "topic": "firearms / outdoor heritage",
+        "sourceUrl": "https://congressionalsportsmen.org/news/north-carolina-caucus-member-honored-with-prestigious-conservation-award/",
+        "date": "2017",
+        "notes": "Rabon was instrumental in removing Sunday hunting restrictions in NC. Consistent with pro-gun-rights, pro-outdoor-sports constituency."
+      },
+      {
+        "bill": "SR 370 — Opposition to Federal Catch Shares for Coastal Fisheries (2017)",
+        "vote": "Primary sponsor",
+        "topic": "coastal / fisheries policy",
+        "sourceUrl": "https://congressionalsportsmen.org/news/north-carolina-caucus-member-honored-with-prestigious-conservation-award/",
+        "date": "2017",
+        "notes": "Rabon sponsored Senate Resolution opposing federal fisheries management restrictions. Consistent with anti-federal-regulatory stance."
+      },
+      {
+        "bill": "2021 Police Reform Bill (SB 300 / SL 2021-138)",
+        "vote": "Facilitated passage as Rules Chair",
+        "topic": "police_accountability",
+        "sourceUrl": "https://www.ncleg.gov/BillLookUp/2021/s300",
+        "date": "2021",
+        "notes": "Rabon was credited with being willing to work with Democrats on police reform as Rules Chair, since all legislation passes through his committee. The bill made bipartisan changes to law enforcement oversight. However, the ACLU of NC criticized it for barring public access to critical information, undermining accountability. Rabon's facilitation of the bill is not equivalent to endorsing strong oversight; it was a compromise measure."
+      },
+      {
+        "bill": "NC Senate 2025 Budget (tax cuts, DOGE-style review)",
+        "vote": "Yes (led as Rules Chair)",
+        "topic": "econ_tax_structure / public_investment",
+        "sourceUrl": "https://www.wral.com/story/nc-senate-votes-to-approve-budget-plan-with-tax-cuts-employee-raises-helene-aid-and-doge-style-review/21962982/",
+        "date": "2025-04",
+        "notes": "NC Senate passed $32.6B budget with personal income tax cut to 2.49% by 2030 (additional triggers to 1.99%), a DOGE-style review of state agencies, $700M Helene relief, and small employee raises. Rabon as Rules Chair set the procedural pace and was cited by critics as enabling a 'rushed, untransparent process.' Budget sides with wealthy over social spending (NC Budget & Tax Center analysis)."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "NC FREE Foundation (Free Enterprise Foundation)",
+      "score": "99.3 (2023-2024 cycle); 95.7 (prior cycle, 4th overall)",
+      "grade": null,
+      "url": "https://nsjonline.com/article/2024/08/nonprofit-ncfree-releases-2023-24-legislative-business-ratings/",
+      "fetchedAt": "2026-03-01",
+      "notes": "Near-perfect score from NC's leading pro-business scorecard. Evaluates votes and sponsorship alignment with free-enterprise principles. Rabon consistently ranks in top tier of NC Senate. Strong signal: anti-regulatory, pro-tax-cut, pro-business economic positions."
+    },
+    {
+      "organization": "NORML (National Organization for the Reform of Marijuana Laws)",
+      "score": null,
+      "grade": "B+",
+      "url": "https://vote.norml.org/politicians/117772",
+      "fetchedAt": "2026-03-01",
+      "notes": "B+ awarded for being primary sponsor of a medical marijuana bill. This is issue-specific (SB3 medical cannabis) and does not reflect general progressive tendencies — Rabon's overall record is conservative."
+    },
+    {
+      "organization": "ChoiceTracker (reproductive rights tracker)",
+      "score": "Anti-Choice",
+      "grade": null,
+      "url": "https://choicetracker.org/nc/people/william-rabon/203554816",
+      "fetchedAt": "2026-03-01",
+      "notes": "Documented votes: (1) passed 12-week abortion ban SB20; (2) voted to ban abortions based on race/sex/Down syndrome diagnosis; (3) voted to require providers to preserve life of infant born alive during abortion. All 3 votes consistent with anti-abortion position."
+    },
+    {
+      "organization": "NC Right to Life",
+      "score": null,
+      "grade": "Endorsement",
+      "url": null,
+      "fetchedAt": "2026-03-01",
+      "notes": "Endorsed Rabon in 2024 general election. Consistent with his SB20 votes and overall record."
+    },
+    {
+      "organization": "Congressional Sportsmen's Foundation",
+      "score": "Prestigious Conservation Award recipient",
+      "grade": null,
+      "url": "https://congressionalsportsmen.org/news/north-carolina-caucus-member-honored-with-prestigious-conservation-award/",
+      "fetchedAt": "2026-03-01",
+      "notes": "Award recognizes his legislative work expanding hunting and fishing access. Context: 'conservation' here means hunting/fishing access, not environmental protection."
+    },
+    {
+      "organization": "NRA (National Rifle Association)",
+      "score": null,
+      "grade": "Not found in search results",
+      "url": null,
+      "fetchedAt": "2026-03-01",
+      "notes": "No direct NRA grade found, but his voting record (SB50 permitless carry, Sunday hunting expansion, general Republican caucus alignment) is strongly consistent with an A or A+ rating. Absence of NRA grade likely a data gap, not an absence of support."
+    },
+    {
+      "organization": "NC Budget & Tax Center",
+      "score": "Critic",
+      "grade": null,
+      "url": "https://ncbudget.org/nc-senate-budget-plan-deepens-tax-cuts-in-a-rushed-untransparent-process/",
+      "fetchedAt": "2026-03-01",
+      "notes": "Progressive budget watchdog has consistently criticized Senate budgets Rabon helped advance for deepening income inequality via regressive tax cuts and bypassing transparent process."
+    },
+    {
+      "organization": "NC Chamber of Commerce",
+      "score": "Supported",
+      "grade": null,
+      "url": "https://ncchamber.com/2025/07/02/veto-of-sb-266-threatens-affordable-reliable-energy-for-nc/",
+      "fetchedAt": "2026-03-01",
+      "notes": "NC Chamber supported SB266 (which Rabon co-sponsored); consistent with his near-perfect NCFREE score. NC Chamber typically endorses candidates aligned with his positions."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "NC Right to Life",
+      "type": "endorsement",
+      "cycle": "2024",
+      "notes": "Anti-abortion group endorsement; consistent with SB20 votes"
+    },
+    {
+      "organization": "Congressional Sportsmen's Foundation",
+      "type": "award / recognition",
+      "cycle": "Multiple",
+      "notes": "Honored for expanding hunting and fishing access in NC"
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Columbus County (nrcolumbus.com)",
+      "date": "2024-10",
+      "url": "https://www.nrcolumbus.com/townnews/politics/rabon-hopes-to-hold-on-to-n-c-senate-seat-despite-challenge-from-randall/article_bef68a80-826c-11ef-be54-ff05b7890b1e.html",
+      "keyExchanges": [
+        {
+          "topic": "taxes",
+          "quote": "Touts lowered state tax rates among accomplishments over his past 14 years in the state senate",
+          "notes": "Paraphrase from local coverage; no extended interview"
+        },
+        {
+          "topic": "economic development",
+          "quote": "Recruiting new industries to southeastern North Carolina",
+          "notes": "Paraphrase; framing consistent with his rural district priorities"
+        }
+      ]
+    },
+    {
+      "outlet": "The Assembly NC",
+      "date": "2023",
+      "url": "https://www.theassemblync.com/politics/bill-rabon-medical-marijuanas-conservative-champion/",
+      "keyExchanges": [
+        {
+          "topic": "medical marijuana / public health",
+          "quote": "Rabon revealed publicly that he used marijuana illegally while undergoing chemotherapy for cancer in an effort to advance the measure",
+          "notes": "Lengthy profile. Rabon's medical marijuana advocacy is genuine and personal. He describes using 'a few puffs' to manage chemotherapy side effects. His motivation is explicitly conservative-framed: individual access to a treatment, not broader drug liberalization."
+        }
+      ]
+    },
+    {
+      "outlet": "WHQR / Port City Daily",
+      "date": "2024-10",
+      "url": "https://www.whqr.org/local/2024-10-18/from-questionnaires-to-town-halls-some-republican-candidates-disengage-with-the-media",
+      "keyExchanges": [
+        {
+          "topic": "media engagement",
+          "quote": "Rabon has a record of ignoring local journalists' inquiries and skipping past forums hosted by the media consortium (he's either declined or not responded to candidate interview requests by WHQR for many years)",
+          "notes": "Rabon declined a 2024 forum citing scheduling conflict with a leadership conference. Pattern of disengagement from media and public debate makes it difficult to document nuanced stated positions."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "climate / energy",
+      "conflict": "In 2021, Rabon voted for or allowed passage of HB951 setting NC's 70% carbon reduction by 2030 goal. In 2025, he co-sponsored SB266 to eliminate that same 2030 interim target. His 2025 action is the more definitive signal — he appears to have supported the compromise in 2021 but then used his majority-control to roll it back when the coalition shifted.",
+      "sources": [
+        "HB951 (2021) NC General Assembly",
+        "SB266 (2025) NC General Assembly — Rabon listed as co-sponsor"
+      ]
+    },
+    {
+      "topic": "healthcare coverage",
+      "conflict": "Rabon is listed as supporting HB76 Medicaid expansion (2023), which expanded coverage to ~600K low-income NC residents. However, he frames healthcare positions consistently as market-based reform (CON law repeal, drug transparency, nursing scope of practice) rather than coverage expansion. The Senate version of HB76 was conditioned on CON reform and was supported by Senate Republican leaders as a trade, not a shift toward government coverage. His overall healthcare scorecard is market-oriented.",
+      "sources": [
+        "AffordableCareNC Senate District 8 profile",
+        "NC General Assembly HB76 (2023)"
+      ]
+    },
+    {
+      "topic": "public health / marijuana",
+      "conflict": "Rabon's B+ NORML rating for medical marijuana advocacy stands in contrast to his otherwise very conservative public-health record (anti-vaccine mandate, anti-collective-mandate positions inferred from party record). His marijuana position is grounded in personal medical experience and libertarian framing, not progressive public health philosophy.",
+      "sources": [
+        "The Assembly NC profile",
+        "NORML rating"
+      ]
+    }
+  ],
+  "policyPositions": {
+    "economic": {
+      "safety_net_breadth": {
+        "inferredPosition": "Conditional Safety Net (poleB)",
+        "confidence": "high",
+        "evidence": "Consistent voting for budgets that reduce social spending relative to tax cuts for upper-income earners. NC Budget & Tax Center analysis shows 2023-2025 budget priorities wealth-concentrated tax cuts over safety net. Senate caucus leadership on budgets that trim state agency spending ('DOGE-style review' 2025). Supported Medicaid expansion only in conditioned form (work requirements allowed, CON reform trade)."
+      },
+      "public_investment": {
+        "inferredPosition": "Less Public Investment / Market Priority (poleB)",
+        "confidence": "high",
+        "evidence": "99.3 NCFREE score (near-perfect free-enterprise rating). Sponsored SB651 to cut income tax below 2.5%. Consistently voted for multi-year income tax reduction glide paths. As Rules Chair, shaped budgets that deepen tax cuts at the expense of public programs. Exception: supported large Hurricane Helene recovery appropriations ($700M+), which may reflect disaster response rather than general public investment philosophy."
+      },
+      "school_choice": {
+        "inferredPosition": "More School Choice (poleB)",
+        "confidence": "high",
+        "evidence": "Voted (as Senate Rules Chairman, party-line Republican) for HB10 and related bills expanding Opportunity Scholarship program from ~$113M to $463.5M additional funding, with escalation to $825M/year by 2032-33. Voted to override Governor's veto. All voucher expansion votes were party-line Republican, and Rabon is the most senior Senate Republican after Berger."
+      }
+    },
+    "healthcare": {
+      "coverage_model": {
+        "inferredPosition": "Market-Based Coverage (poleB, with moderate nuance)",
+        "confidence": "medium",
+        "evidence": "Supported market-side healthcare reforms: CON law reform, drug price transparency (SB479, SB316, SB315, SB537), nurse scope of practice expansion — all framed as reducing government regulation, not expanding government coverage. Supported Medicaid expansion HB76 (2023) as a conditional trade with CON reform. This is not single-payer or public-option support. Near-perfect NCFREE score reinforces market orientation."
+      },
+      "cost_control": {
+        "inferredPosition": "Market Competition (poleB)",
+        "confidence": "medium",
+        "evidence": "Supported drug transparency bills, CON law reform, and nursing scope-of-practice bills — all market-competition/deregulation mechanisms for cost control. No evidence of supporting government price controls or rate-setting. AffordableCareNC positions (SB479, SB316, SB315, SB537) all use market mechanisms."
+      },
+      "public_health": {
+        "inferredPosition": "Individual Choice (poleB)",
+        "confidence": "medium",
+        "evidence": "Medical marijuana advocacy is individual-rights-based, not collective mandate. Party-line Republican voting record overall. No evidence of supporting COVID mandates, vaccine requirements, or other collective public health mandates. His healthcare framing is consistently patient-choice and market-based."
+      }
+    },
+    "housing": {
+      "zoning_supply": {
+        "inferredPosition": "Loosen Zoning / More Supply via property-rights lens (toward poleA, but motivated by deregulation not affordability)",
+        "confidence": "medium",
+        "evidence": "SB382 (2024) banned local downzoning without all affected property owners' consent — this expands what landowners can do with property (anti-zoning-restriction) but is motivated by property rights and development deregulation, not affordable housing goals. NC Home Builders Association praised it as 'a huge victory for property rights.' Local governments in Rabon's district opposed it. Rabon facilitated SB382's passage through Rules Committee."
+      },
+      "affordability_tools": {
+        "inferredPosition": "Market Solutions (poleB)",
+        "confidence": "low",
+        "evidence": "No direct evidence of supporting government housing subsidies. General free-enterprise/anti-regulation stance suggests opposition to rent control or direct subsidy programs. SB382's framing as property rights expansion, not affordability, is consistent with poleB. Low confidence — limited direct evidence on this axis."
+      },
+      "transit_priority": {
+        "inferredPosition": "Car-Centric Infrastructure (poleB, inferred)",
+        "confidence": "low",
+        "evidence": "Rabon serves as Chair of Appropriations on Department of Transportation. District is rural/coastal (Brunswick, Columbus counties) where car dependency is baseline. NC Senate Republican priorities consistently favor road/highway investment over transit. Helene recovery budget includes $560M to rebuild roads and bridges. No evidence of transit advocacy. Low confidence — no direct transit votes found."
+      }
+    },
+    "justice": {
+      "police_accountability": {
+        "inferredPosition": "Moderate — facilitated bipartisan reform but within constrained parameters (toward poleB)",
+        "confidence": "low",
+        "evidence": "As Rules Chair, Rabon was credited with working with Democrats to pass NC's 2021 police reform bill. However, ACLU-NC criticized the bill for barring public access to critical accountability information. The measure was a procedural compromise, not a strong accountability bill. Rabon's individual position on police oversight is not clearly documented. Low confidence.",
+        "notes": "Insufficient evidence to score this axis with confidence. The 2021 bill was a bipartisan procedural vehicle; Rabon's personal position is unclear."
+      },
+      "sentencing_goals": {
+        "inferredPosition": "Punishment / Deterrence (poleB, inferred)",
+        "confidence": "low",
+        "evidence": "Republican Senate caucus leader; 2023 fiscal notes reference legislation creating new misdemeanor/felony classes and sentencing enhancements. General Republican positioning. No specific sentencing reform advocacy found. Low confidence.",
+        "notes": "Insufficient direct evidence to score with confidence."
+      },
+      "firearms_policy": {
+        "inferredPosition": "Protect Gun Rights (poleB)",
+        "confidence": "high",
+        "evidence": "Voted YES on SB50 (permitless carry) both on passage and veto override (2025). Primary sponsor of Sunday hunting expansion (2017). Avid hunter and fisherman. Sponsored SR370 opposing federal fisheries management restrictions. District is rural/coastal with strong gun culture. Voting record consistent with A-range NRA alignment. No evidence of supporting any gun regulations."
+      }
+    },
+    "climate": {
+      "ambition_level": {
+        "inferredPosition": "Gradual / No Climate Policy (poleB)",
+        "confidence": "high",
+        "evidence": "Co-sponsored SB266 (2025) eliminating NC's 2030 70%-carbon-reduction interim target from HB951 — the most significant rollback of clean energy policy in NC in years. Voted for veto override. NC Chamber supported it; NRDC, Sierra Club, NC Justice Center, and Governor Stein opposed it. His 2013 procedural blocking of the renewable energy standard repeal (a nuanced older signal) is superseded by this direct co-sponsorship of a rollback."
+      },
+      "energy_portfolio": {
+        "inferredPosition": "All-of-the-Above / Fossil Fuel Permissive (poleB)",
+        "confidence": "high",
+        "evidence": "SB266 allows cost-recovery for new carbon-emitting generation resources — explicitly opening the door to continued fossil fuel investment. The NC Sustainable Energy Association and SEIA criticized SB266 as a 'step back' for NC's clean energy economy. Rabon's NCFREE score and free-enterprise orientation aligns with fossil-fuel-permissive energy policy."
+      },
+      "permitting_speed": {
+        "inferredPosition": "Standard Review Process / No urgency for green permitting (toward poleB)",
+        "confidence": "low",
+        "evidence": "No direct evidence on permitting speed specifically. His general anti-regulatory, pro-market stance and SB266 support suggest he would oppose expedited permitting for renewables at the expense of standard review. Low confidence — no direct bill votes found.",
+        "notes": "Insufficient direct evidence."
+      }
+    }
+  },
+  "evidenceSummary": {
+    "strongestAxes": [
+      "firearms_policy (high confidence: SB50 Yes vote, Sunday hunting expansion, rural pro-gun district)",
+      "econ_tax_structure / public_investment (high confidence: 99.3 NCFREE score, SB651 tax cut sponsorship, budget leadership)",
+      "school_choice (high confidence: party-line voucher expansion votes, Rules Chair facilitation)",
+      "climate_ambition (high confidence: SB266 co-sponsor and veto override, rollback of 2030 target)",
+      "energy_portfolio (high confidence: SB266 allows fossil fuel cost-recovery, NCFREE alignment)"
+    ],
+    "weakestAxes": [
+      "sentencing_goals (low confidence: insufficient direct evidence)",
+      "transit_priority (low confidence: rural district inferred, no direct transit votes)",
+      "permitting_speed (low confidence: no direct evidence)",
+      "police_accountability (low confidence: 2021 bipartisan bill facilitated but ACLU criticized it; personal position unclear)",
+      "affordability_tools — housing (low confidence: SB382 is property-rights framed, not affordability-focused)"
+    ],
+    "overallConfidence": "high for economic, firearms, climate, school choice axes; medium for healthcare; low for sentencing, transit, permitting",
+    "notableNuances": [
+      "Medical marijuana advocacy (B+ NORML) is genuine and personal but conservatively framed — individual access, not public health reform.",
+      "Medicaid expansion support (HB76 2023) was conditional on market deregulation (CON reform) and is not evidence of single-payer or public-option sympathies.",
+      "SB382 downzoning ban expands what developers can build but is property-rights motivated, not affordability-motivated.",
+      "Rabon's most powerful influence is procedural (Rules Chair) — he shapes the legislative calendar more than any individual floor vote suggests.",
+      "Long pattern of media disengagement means few direct quotes on policy positions — voting record and sponsored bills are primary evidence."
+    ],
+    "keyConflict": "Climate record shows tension: supported HB951 (2021 bipartisan clean energy bill) then co-sponsored SB266 (2025) to roll back its interim targets. The 2025 action is the current, controlling signal."
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "slug": "brian-mcginnis",
+  "name": "Brian McGinnis",
+  "party": "Green",
+  "office": "U.S. Senate, North Carolina, 2026",
+  "incumbencyStatus": "first-time candidate",
+  "researchedAt": "2026-02-26T00:00:00Z",
+  "biography": {
+    "currentRole": "Firefighter (active)",
+    "priorRoles": [
+      "U.S. Marine Corps, 2000–2004 (Iraq War veteran, served during the 2003 invasion)",
+      "Humanitarian work — visited West Bank, witnessed Israeli settler tactics firsthand (documented in September 2024 podcast)"
+    ],
+    "education": "Associate degree, John Wood Community College (Illinois)",
+    "background": "Originally from Illinois. Iraq War combat veteran who served with the Marine Corps 2000–2004. Active firefighter. Father. Green Party of North Carolina candidate. Visited the West Bank and has spoken publicly about the Israeli-Palestinian conflict. Appeared on 'Behind The Shield' podcast (Episode 984, September 25, 2024) discussing the Iraq invasion, firefighting, and his observations from the West Bank. No prior elected office held. Advocates no corporate donations to his campaign."
+  },
+  "campaignWebsite": {
+    "url": "https://www.gp.org/brian_mcginnis_4_us_senate",
+    "fetchedAt": "2026-02-26T00:00:00Z",
+    "notes": "Hosted on the national Green Party website (gp.org), not an independent campaign domain.",
+    "statedPositions": [
+      {
+        "topic": "foreign_policy_military",
+        "quote": "anti war, pro social services perspective in Congress",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Direct paraphrase from campaign page. Anti-war framing consistent with his Iraq veteran background and stated opposition to 'wars based on greed.'"
+      },
+      {
+        "topic": "military_VA",
+        "quote": "if political leaders cared about its veterans it would reserve involving our military for imminent national security instead of wars based on greed",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Explicit anti-interventionist foreign policy framing."
+      },
+      {
+        "topic": "veterans_affairs",
+        "quote": "the VA is far too hard to access and needs to be better staffed",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Calls for expanded, more accessible VA — consistent with econ_safetynet (Pole A) and econ_investment (Pole A)."
+      },
+      {
+        "topic": "education",
+        "quote": "our education system is failing and is in dire need of increased funding instead of federal cuts",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Explicitly calls for increased public education funding. Consistent with opposing school privatization."
+      },
+      {
+        "topic": "campaign_finance_corruption",
+        "quote": "will not accept donations from any corporate groups",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit commitment. Standard Green Party stance."
+      },
+      {
+        "topic": "term_limits",
+        "quote": "one term is all he is looking for and term limits need to be instated",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Personal commitment to one term; supports legislative term limits."
+      },
+      {
+        "topic": "local_economy_energy",
+        "quote": "ramping up manufacturing and energy in NC with furniture and other factories, as well as solar farms in rural areas with low economies",
+        "sourceUrl": "https://www.gp.org/brian_mcginnis_4_us_senate",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Supports solar energy investment in rural NC and manufacturing revival — signals both climate_energy_portfolio (Pole A) and econ_investment (Pole A)."
+      },
+      {
+        "topic": "israel_palestine",
+        "quote": "Stand with Palestine and End Corruption in Our Government",
+        "sourceUrl": "https://www.instagram.com/reel/DQJ0mqBDp08/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Instagram reel title. Corroborated by September 2024 podcast discussing West Bank visit."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": false,
+    "notes": "First-time candidate with no prior elected office. No legislative voting record exists."
+  },
+  "scorecards": [
+    {
+      "organization": "LCV (League of Conservation Voters)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No LCV scorecard — McGinnis has no congressional voting record."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade — no legislative record. Green Party platform explicitly opposes NRA positions."
+    },
+    {
+      "organization": "AFL-CIO / labor unions",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement found. Green Party generally supports labor and worker-owned enterprises."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Green Party of North Carolina",
+      "type": "party nomination",
+      "cycle": "2026",
+      "notes": "Listed as the GPNC candidate for U.S. Senate on the official GPNC candidates page."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Behind The Shield podcast",
+      "date": "2024-09-25",
+      "url": "https://podcasts.apple.com/us/podcast/brian-mcginnis-the-iraq-invasion-firefighting-and/id1178831764?i=1000670592661",
+      "keyExchanges": [
+        {
+          "topic": "Iraq War / foreign policy",
+          "quote": "Discussed his 9/11 story, being part of the Iraq invasion",
+          "notes": "Episode 984 — 1h 48m. The framing 'wars based on greed' on his campaign page suggests disillusionment with the Iraq War rationale."
+        },
+        {
+          "topic": "Israel/Palestine",
+          "quote": "Stolen land he witnessed whilst in the West Bank and the forcible tactics Israeli settlers are using",
+          "notes": "Firsthand witness account. Corroborates his 2026 campaign Instagram post."
+        }
+      ]
+    }
+  ],
+  "greenPartyPlatformPositions": {
+    "notes": "McGinnis is a first-time candidate with a thin public record. As a Green Party candidate, his positions can be reasonably attributed to the national Green Party platform on issues where he has not made contrary statements. Each attribution is flagged as platform-derived (Tier 3-4 confidence).",
+    "healthcare": {
+      "position": "Medicare for All / single-payer universal healthcare; eliminate private insurance role",
+      "sourceUrl": "https://www.gp.org/single_payer",
+      "confidence": "low",
+      "notes": "McGinnis's campaign page references 'pro social services.' Consistent with M4A but no explicit personal statement."
+    },
+    "climate_energy": {
+      "position": "Green New Deal — WWII-scale mobilization; 100% clean renewable energy by 2030; end new fossil fuel development",
+      "sourceUrl": "https://gpus.org/organizing-tools/the-green-new-deal/",
+      "confidence": "medium",
+      "notes": "McGinnis personally called for 'solar farms in rural areas' — partially corroborates the platform."
+    },
+    "transit": {
+      "position": "Mass transit expansion; reduce car dependence; combine land use and transit planning",
+      "sourceUrl": "https://www.gp.org/platform",
+      "confidence": "low",
+      "notes": "Platform-derived only. No McGinnis-specific statement."
+    },
+    "guns": {
+      "position": "Comprehensive gun regulation: ban on assault weapons; universal background checks; firearms safety course requirement",
+      "sourceUrl": "https://www.gp.org/on_gun_violence",
+      "confidence": "low",
+      "notes": "Platform-derived. No McGinnis-specific statement on firearms."
+    },
+    "housing": {
+      "position": "Housing as a human right; rent control with vacancy control; public housing investment",
+      "sourceUrl": "https://www.gp.org/green_party_demands_rent_control_an_end_to_homelessness",
+      "confidence": "low",
+      "notes": "Platform-derived only. No McGinnis-specific housing statement."
+    },
+    "criminal_justice": {
+      "position": "Demilitarize police; independent civilian review boards; end war on drugs; oppose mandatory minimums; end mass incarceration",
+      "sourceUrl": "https://www.gp.org/social_justice",
+      "confidence": "low",
+      "notes": "Platform-derived. No McGinnis-specific criminal justice statement."
+    },
+    "education": {
+      "position": "Fully fund public schools; oppose vouchers; oppose privatization and for-profit charter schools; free higher education; student debt cancellation",
+      "sourceUrl": "https://www.gp.org/the_green_party_on_education",
+      "confidence": "medium",
+      "notes": "McGinnis personally stated the education system 'is in dire need of increased funding instead of federal cuts' — corroborates the platform."
+    },
+    "economy_tax": {
+      "position": "Highly progressive taxation; shift tax burden to corporations; tax wealth and speculation; $25/hour minimum wage; guaranteed basic income",
+      "sourceUrl": "https://www.gp.org/economic_justice_and_sustainability",
+      "confidence": "low",
+      "notes": "Platform-derived. McGinnis's no-corporate-donations pledge and 'pro social services' framing are consistent but not specific."
+    },
+    "safety_net": {
+      "position": "Expand all safety net programs; universal basic income; guaranteed living-wage jobs; universal childcare",
+      "sourceUrl": "https://gpus.org/organizing-tools/the-green-new-deal/",
+      "confidence": "low",
+      "notes": "Platform-derived. McGinnis's VA staffing call and 'pro social services' framing are consistent."
+    }
+  },
+  "positionConflicts": [],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "climate_energy_portfolio — personally advocates solar farms; Green Party platform calls for 100% renewables by 2030 (medium confidence)",
+      "econ_school_choice — personally calls for increased public education funding; party strongly opposes vouchers (medium confidence)",
+      "justice_firearms — Green Party platform is comprehensive on gun regulation (low-medium confidence)",
+      "econ_safetynet — 'pro social services' framing + VA expansion (low-medium confidence)"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning — platform-derived only",
+      "housing_transport_priority — platform-derived only",
+      "justice_sentencing_goals — platform-derived only",
+      "health_public_health — no statement found",
+      "climate_permitting — no statement found"
+    ],
+    "overallConfidence": "low",
+    "notes": "First-time candidate with a thin public record. Campaign page provides a handful of stated positions. September 2024 podcast and Instagram add color on foreign policy. Bulk of axis scoring relies on Green Party platform positions as Tier 3-4 evidence. No voting record. No third-party scorecards applicable."
+  }
+}

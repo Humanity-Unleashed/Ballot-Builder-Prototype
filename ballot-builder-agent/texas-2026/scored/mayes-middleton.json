@@ -1,0 +1,241 @@
+{
+  "slug": "mayes-middleton",
+  "name": "Mayes Middleton",
+  "party": "Republican",
+  "office": "Texas Attorney General, 2026 Republican Primary (March 3, 2026)",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Third-generation oil executive and Freedom Caucus state senator running for Texas AG on an explicitly Christian nationalist, MAGA-aligned platform. Seven-year legislative record is among the most conservative in the Texas Legislature, anchored by culture-war bills (transgender bans, vaccine mandate ban, school prayer) and aggressive school choice advocacy.",
+  "keyPositions": [
+    "Authored Texas's COVID vaccine mandate ban for all private employers including hospitals (SB 7)",
+    "Filed universal Education Savings Account (ESA/voucher) bill; authored school chaplain and school prayer bills",
+    "Oil and gas executive who opposes renewable energy subsidies and led anti-ESG legislation",
+    "Signed all eight Texas Right to Life Pro-Life Pledge commitments; opposes elective abortion under all circumstances",
+    "Pledges to deport 'all illegal immigrants' and criminally prosecute sanctuary city officials as AG"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Texans for Fiscal Responsibility 90/A rating (2023)",
+        "iVoterGuide survey: 'no other taxpayer-funded programs necessary' beyond Medicare/Medicaid",
+        "Authored bans on taxpayer-funded local government lobbying (SB 12, SB 19)"
+      ],
+      "notes": "No direct votes on federal safety net programs (state legislature). Scored based on consistent anti-government-spending fiscal record and explicit statements opposing expansion of taxpayer-funded programs. Not scored at 9-10 because he acknowledged Medicaid/Medicare should remain, suggesting he does not advocate dismantling existing programs entirely."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Texans for Fiscal Responsibility 90/A rating; Taxpayer Champion designation (2023)",
+        "Anti-ESG legislation (SB 13, SB 19) opposing government-directed investment criteria",
+        "Explicit statement against renewable energy subsidies as 'unfair advantage through heavy tax subsidies'",
+        "Authored bans on taxpayer-funded lobbying by local governments"
+      ],
+      "notes": "Consistently opposes government economic intervention. Explicitly frames government subsidies for renewables as market distortion. Fiscal conservative rating and Taxpayer Champion designation from ideological scorecard corroborate. One of the strongest anti-public-investment records in the Texas Senate."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Texans for Fiscal Responsibility 90/A rating (2023)",
+        "Taxpayer Champion designation (one of three Senate members)",
+        "Voted YES on property tax cuts: homestead exemption increase from $100K to $140K (SB 4) and up to $200K (SB 23)",
+        "Declines state salary, donates to charity"
+      ],
+      "notes": "Consistent across-the-board tax reduction advocate. Texas has no income tax, so state-level evidence centers on property tax. His approach is uniformly to reduce taxes rather than restructure progressively. Fiscal Responsibility Index rates him among the most fiscally conservative senators."
+    },
+    "econ_school_choice": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Authored SB 176 (universal ESA voucher bill, 88th Legislature)",
+        "Voted YES on ESA bills in both 88th and 89th Legislatures",
+        "Authored SB 763 (chaplains replacing school counselors in public schools)",
+        "Authored SB 11 (school prayer and Bible reading in public schools)",
+        "ATPE (teachers' union) marked unfavorable",
+        "Texas Values Action 100% score"
+      ],
+      "notes": "Among the most aggressive school choice advocates in the Texas Legislature. Filed universal ESA legislation providing vouchers to all families including private/homeschool. The chaplain and school prayer bills further erode the traditional public school model by introducing religious alternatives to credentialed staff. Teachers' union opposition confirms. A score of 10 is warranted: he advocates universal vouchers, not merely limited charter expansion."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "iVoterGuide survey: 'Medicaid and Medicare should remain available, but no other taxpayer-funded programs are necessary'",
+        "Overall anti-government-spending philosophy consistent across all scorecards",
+        "No advocacy for ACA, public option, or any coverage expansion found"
+      ],
+      "notes": "No direct votes on federal healthcare coverage (state legislature). iVoterGuide responses contained a contradictory signal (one answer suggesting defunding Medicare/Medicaid, another preserving them). Scored at 8 based on the more considered response preserving existing programs but opposing any expansion. His overall posture is market-based with minimal government role. Not scored at 9-10 because he did not advocate eliminating Medicare/Medicaid."
+    },
+    "health_public_health": {
+      "score": 10,
+      "confidence": "high",
+      "sources": [
+        "Authored SB 7 (88th Legislature): COVID vaccine mandate ban for all private employers including healthcare facilities, no healthcare worker exception",
+        "Direct quote: 'right to choose whether or not to get the shot'",
+        "Campaign describes SB 7 as 'strongest ban on COVID vaccine mandates in the country'",
+        "Authored school chaplain bill (SB 763) allowing replacement of credentialed counselors"
+      ],
+      "notes": "The vaccine mandate ban is one of the strongest public health authority restrictions enacted by any state. It applied even to hospitals and healthcare facilities with no exception for healthcare workers -- an extreme position that goes beyond most Republican-authored mandate bans nationally. Individual liberty framing is absolute on this axis. A score of 10 is clearly supported."
+    },
+    "housing_supply_zoning": {
+      "score": 4,
+      "confidence": "low",
+      "sources": [
+        "Conference committee member on SB 15 (by-right townhomes/starter homes in large cities)",
+        "Authored SB 854 (limiting city restrictions on religious organizations developing multi-family housing)"
+      ],
+      "notes": "Limited evidence. Conference committee membership alone is not a strong authorship signal. However, SB 854 explicitly overrides local zoning to allow religious organizations to build multi-family housing, which is a supply-side, loosening-zoning position (toward Pole A). Both signals point modestly toward loosening zoning, which is somewhat surprising for a conservative profile. Scored at 4 (slightly toward Pole A) with low confidence because this is not a primary legislative focus and the evidence is thin."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Campaign platform: making Texas 'safest state'; law enforcement support rhetoric",
+        "Immigration enforcement maximalism: pledges to prosecute local officials who obstruct federal immigration operations",
+        "No police reform or accountability bills found in 7-year legislative record",
+        "Young Conservatives of Texas 88/100 (overall conservative alignment)"
+      ],
+      "notes": "No specific policing accountability bills or votes found, which itself is informative for a prolific bill author. Campaign rhetoric is exclusively pro-law-enforcement. Immigration enforcement maximalism implies strong law enforcement authority preference. Absence of any reform advocacy across 7 years is a meaningful signal. Scored at 8 rather than 9-10 because there are no explicit votes against specific accountability measures (just absence of reform advocacy)."
+    },
+    "justice_sentencing_goals": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Authored SB 476 (increased punishment for intoxication manslaughter with court-ordered interlock device violation)",
+        "Supported death penalty expansion for child murders",
+        "Immigration maximalism: 'deport all illegal immigrants'",
+        "Campaign emphasizes punishment/deterrence framing"
+      ],
+      "notes": "Authored at least one stricter sentencing bill. Supported death penalty expansion (not primary author). Overall philosophy is punishment and deterrence over rehabilitation. No rehabilitation, restorative justice, or decarceration advocacy found. Scored at 8 based on documented harsher sentencing legislation plus consistent rhetoric. Not scored at 9-10 because the sentencing record is limited to a few bills rather than a comprehensive tough-on-crime legislative agenda."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Authored SB 755 (firearms sales tax holiday -- annual tax-free period for guns, ammunition, accessories)",
+        "Carried foster care firearms privacy bill (HB 1403 companion)",
+        "Worked directly with NRA on State Fair of Texas gun ban policy",
+        "Anti-ESG bill SB 19 prohibited state business with companies that boycott firearms industry",
+        "No gun safety or gun regulation votes found in 7-year record"
+      ],
+      "notes": "Consistent pro-gun record across multiple sessions and multiple bill types: tax incentives for firearms purchases, privacy protections for gun owners, and using government contracting power to punish companies with gun safety policies. NRA collaboration confirmed. Scored at 9 rather than 10 because no evidence of explicit opposition to background checks or advocacy for permitless carry was found in the research (though Texas already has permitless carry)."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "President of Middleton Oil Company (60+ wells, South Texas and Gulf Coast)",
+        "Led anti-ESG legislation (SB 13 banning state business with banks divesting from fossil fuels)",
+        "Statement characterizing renewables as receiving 'unfair advantage through heavy tax subsidies'",
+        "Supported SB 6/7 incentivizing dispatchable thermal (fossil fuel) generation",
+        "No climate action, emissions reduction, or environmental legislation found"
+      ],
+      "notes": "Oil and gas executive whose legislative record actively promotes fossil fuel interests and opposes climate-related financial regulation. Anti-ESG bills specifically targeted institutions trying to divest from fossil fuels. Frames renewables as market-distorting rather than climate-necessary. No evidence of climate science denial per se, but no climate action either. Scored at 9 rather than 10 because the research does not document explicit climate denial or calls to eliminate EPA authority -- his posture is pro-fossil-fuel rather than explicitly anti-science."
+    },
+    "climate_energy_portfolio": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Middleton Oil Company president (direct financial interest in fossil fuels)",
+        "Supported SB 6/7 incentivizing 'dispatchable, reliable generation' (thermal/gas)",
+        "Direct quote: 'intermittent, renewable technologies receiving an unfair advantage through heavy tax subsidies'",
+        "Anti-ESG legislation penalizing institutions that boycott fossil fuels",
+        "No renewable energy advocacy found"
+      ],
+      "notes": "Explicitly frames renewables as 'intermittent' market distortion and advocates for thermal/fossil generation incentives. His business ownership creates a direct financial interest in fossil fuel expansion. Anti-ESG legislation used government contracting power to protect fossil fuel industry. Scored at 9: clear fossil fuel expansion advocacy and opposition to renewable subsidies, but stops short of calling for elimination of all clean energy programs (which would warrant 10)."
+    },
+    "climate_permitting": {
+      "score": 8,
+      "confidence": "low",
+      "sources": [
+        "Anti-regulation philosophy across all domains",
+        "Pro-fossil-fuel legislative record implies preference for expedited energy project permitting",
+        "Support for dispatchable thermal generation bills (SB 6/7)"
+      ],
+      "notes": "No specific permitting bills found in the research. Scored based on inference from anti-regulatory philosophy and pro-fossil-fuel orientation. The evidence is directionally clear but lacks specific legislative action on permitting timelines. Low confidence because this is inference rather than documented votes or statements."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.8,
+      "reasoning": "Actively works against universalism across multiple domains. Anti-ESG legislation opposes environmental protection for private gain. Explicit Christian nationalist framing excludes non-Christian perspectives ('no separation of God and government'). Anti-Islam rhetoric ('treat Sharia law as organized crime'). Opposition to transgender rights denies recognition to a vulnerable group. Immigration maximalism ('deport all') and anti-refugee posture. Oil executive whose business model conflicts with environmental universalism. Virtually no evidence of concern for out-group welfare or nature protection."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Some signals of community care: donates state salary to local charities, frames child protection as a priority ('as a father of four'), and authored bills framed as protecting women and children (sports bans, online safety). However, the in-group definition is narrow (Christian, conservative, native-born). Vaccine mandate ban actively harms healthcare workers and patients in the name of individual liberty. Property tax relief benefits his community broadly. Net: weak positive because he does demonstrate care for his defined community, but the scope is narrow and some actions (vaccine mandate ban for hospitals) work against community welfare."
+    },
+    "tradition": {
+      "score": 0.9,
+      "reasoning": "One of the strongest tradition scores in the research set. Explicitly Christian nationalist: 'no such thing as separation of church and state,' authored school prayer bill, authored school chaplain bill. Defends traditional gender binary through multiple transgender restriction bills. Traditional family values framing throughout. Texas Values Action 100% 'Faith & Family Champion.' Third-generation family business. Traditional gender roles in sports. Nearly every bill he authors is designed to preserve or restore traditional social arrangements. Rare candidate who warrants a near-maximum score."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "Despite traditional values orientation, Middleton is a norm-challenger rather than a rule-follower. Chaired the Freedom Caucus, which explicitly disrupts legislative process to push ideological goals. Anti-ESG bill SB 13 was ruled unconstitutional (First Amendment violation). Pushed vaccine mandate ban that overrode private employer autonomy. Advocates using AG office to prosecute local officials who disagree with his immigration stance. Declined Texas Tribune Q&A (norm for major candidates). Pattern is one of aggressive ideological imposition over institutional norms and process restraint."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Security is a primary motivational frame: border security, immigration enforcement ('deport all'), law enforcement support, energy grid reliability (SB 6/7 for dispatchable generation), election integrity package, protecting children from online exploitation, making Texas 'safest state.' The type of security emphasized is physical/national rather than economic security (he opposes safety net expansion). Strong across multiple security domains. The vaccine mandate ban could be read as anti-security (public health), but Middleton frames it as protecting individual security from government overreach."
+    },
+    "power": {
+      "score": 0.7,
+      "reasoning": "Oil and gas executive running for highest law enforcement office in the state. Self-funded campaign ($11M+ raised, $5M+ cash on hand) from personal/business wealth. Anti-ESG legislation directly protects fossil fuel industry interests (his own industry). As AG, would have authority over environmental regulation enforcement affecting his business. Alignment with concentrated wealth and corporate interests. Pro-business fiscal record. Uses legislative power aggressively to impose ideological vision. Financial independence gives him power over other legislators who depend on donors."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Meritocracy and individual effort implicit in his worldview: bootstraps framing, individual liberty emphasis, opposition to government dependency, entrepreneurial background (built/maintained oil company). Declines state salary and benefits as a signal of self-sufficiency. School choice advocacy frames education as individual/family achievement rather than collective provision. However, achievement is not his primary motivational frame -- tradition and security are more central."
+    },
+    "hedonism": {
+      "score": -0.5,
+      "reasoning": "Actively restricts personal freedom and pleasure choices in multiple domains: opposes transgender expression, authored school prayer mandates, Christian nationalist framing imposes religious norms on secular spaces, anti-abortion with no exceptions for elective choice. While the vaccine mandate ban invokes 'individual choice,' the overall pattern heavily restricts personal autonomy in lifestyle, identity, and reproductive domains. Social conservative orientation is fundamentally about restricting hedonistic self-expression in favor of traditional norms."
+    },
+    "stimulation": {
+      "score": -0.3,
+      "reasoning": "Anti-change orientation on social issues: seeks to restore traditional arrangements (school prayer, gender binary, religious governance). Opposes innovation in energy (renewable energy is a 'distortion'). Anti-ESG opposes novel financial frameworks. However, he does challenge the status quo from the right -- Freedom Caucus disruptor, pushing aggressive new legislation rather than defending the current order. Net slightly negative because his vision is restoration of a prior order rather than creation of a new one."
+    },
+    "self_direction": {
+      "score": -0.1,
+      "reasoning": "Deeply mixed. On one hand: vaccine mandate ban framed as individual choice, gun rights as individual liberty, school choice as parental autonomy, opposes government economic intervention. On the other: restricts transgender self-expression, opposes reproductive autonomy, imposes religious practice in public schools, Christian nationalist vision constrains secular self-direction, anti-LGBTQ legislation limits identity expression. The net effect is approximately neutral -- he champions self-direction in domains aligned with conservative values (guns, vaccines, economic freedom) while actively restricting it in domains aligned with progressive values (gender identity, reproduction, religious neutrality)."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Medicaid/Medicare position",
+      "description": "iVoterGuide responses contain contradictory answers -- one suggesting Medicaid/Medicare should remain available, another reportedly suggesting they should be defunded. Likely reflects different survey question framing rather than a genuine policy shift.",
+      "sources": ["iVoterGuide survey 2026"],
+      "scoringImpact": "Scored health_coverage_model at the more moderate interpretation (8 rather than 9-10), with note about the contradiction."
+    },
+    {
+      "topic": "Anti-ESG legislation ruled unconstitutional",
+      "description": "SB 13 (anti-ESG fossil fuel boycott ban), which Middleton championed, was ruled unconstitutional by a federal court in February 2026 on First Amendment grounds. No response from Middleton campaign found. He continues to tout championing this legislation.",
+      "sources": ["Texas Tribune, Feb. 4, 2026"],
+      "scoringImpact": "Does not change axis scores (the underlying policy position is clear regardless of constitutionality). Relevant context for AG candidacy: the candidate who wants to be the state's top lawyer championed legislation found to violate the First Amendment."
+    },
+    {
+      "topic": "Oil industry conflict of interest as AG candidate",
+      "description": "As president of Middleton Oil Company (60+ wells), Middleton has direct financial interests in fossil fuel development. As AG, he would have authority to enforce or oppose environmental regulations affecting the oil and gas industry.",
+      "sources": ["Business background research", "Campaign disclosures"],
+      "scoringImpact": "Noted in climate axis scores and power value score. His energy/climate positions are fully aligned with his business interests."
+    },
+    {
+      "topic": "Housing supply zoning position vs. overall philosophy",
+      "description": "Middleton's limited housing record (conference committee on SB 15, authored SB 854) shows some support for overriding local zoning to increase housing supply -- a position that conflicts with his general anti-government-intervention philosophy. This may reflect pragmatic recognition of Texas housing costs rather than a genuine pro-density ideological commitment.",
+      "sources": ["SB 15 conference committee membership", "SB 854 authored"],
+      "scoringImpact": "Housing axis scored at 4 with low confidence. The supply-side measures are narrow and may not reflect a core policy commitment."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["housing_affordability_tools", "housing_transport_priority"],
+    "reasonSkipped": "No direct evidence found for housing affordability tools or transportation priorities. Middleton's legislative record does not address rent control, public housing, transit, or transportation infrastructure in any documented way. Inference from general philosophy would be speculative.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No NRA letter grade found despite consistent pro-gun record (likely never graded in a contested race requiring it)",
+      "No specific drug pricing or healthcare cost control legislation found (state legislature limited scope)",
+      "No environmental/climate scorecard from conservation organizations (likely never rated)",
+      "Transportation/transit positions entirely undocumented",
+      "Policing accountability evidence is inferential (absence of reform bills rather than documented pro-police votes)"
+    ]
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "slug": "lucy-mcbath",
+  "name": "Lucy McBath",
+  "party": "Democratic",
+  "office": "U.S. House, Georgia 6th Congressional District, 2026",
+  "scoredAt": "2026-02-26T00:00:00Z",
+  "profileSummary": "Four-term Democratic incumbent and former Everytown for Gun Safety spokesperson whose son's murder catalyzed her political career; a New Democrat Coalition member who combines near-perfect environmental, labor, and civil liberties voting records with pragmatic centrist positioning on immigration and healthcare delivery.",
+  "keyPositions": [
+    "Signature issue: gun violence prevention -- universal background checks, assault weapons ban, federal red flag laws (ERPO Act), high-capacity magazine ban",
+    "Supports ACA expansion and public option, not Medicare for All; led $35/month insulin cost cap legislation",
+    "LCV 96% lifetime, AFL-CIO 99%, ACLU 100% -- strong progressive voting record across environment, labor, and civil liberties",
+    "Co-sponsored George Floyd Justice in Policing Act; Ranking Member on House Judiciary Crime Subcommittee",
+    "Voted YES on Laken Riley Act (2025) -- one of 48 Democrats to back Republican immigration enforcement bill, a notable centrist deviation"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "AFL-CIO 99% scorecard",
+        "Heritage Action 0-2% lifetime scorecard",
+        "IRA vote (insulin cost cap, ACA subsidies)",
+        "2025 government shutdown advocacy for ACA subsidies"
+      ],
+      "notes": "Consistently votes to expand and protect safety net programs. Led effort to preserve ACA subsidies during 2025 shutdown. Insulin cost cap legislation directly addresses out-of-pocket burdens. Not at the UBI/universal-programs extreme -- her New Democrat Coalition framing emphasizes affordability and cost reduction rather than new universal entitlements."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "IRA vote ($369B climate + healthcare investment)",
+        "Infrastructure Investment and Jobs Act vote",
+        "New Democrat Coalition Affordability Agenda (Feb 2026)",
+        "AFL-CIO 99%",
+        "Heritage Action 0-2%"
+      ],
+      "notes": "Voted for the two largest public investment bills in a generation (IRA + IIJA). Supports fully funding K-12 education and making higher education more affordable. The 71% Chamber of Commerce score is an outlier suggesting some business-friendly votes on regulation or trade, but it does not override the voting record on major spending bills."
+    },
+    "econ_school_choice": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Campaign website issues page",
+        "Committee on Education and Workforce membership"
+      ],
+      "notes": "Supports 'fully funding K-12 education' and making public universities and vocational schools more affordable. No explicit school choice or voucher position found. The emphasis on public education funding and her Education Committee role suggest a public-schools orientation, but without specific anti-voucher votes or statements, confidence is low."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": [
+        "Campaign website (explicit ACA expansion + public option position)",
+        "2025 11Alive interview on ACA subsidies",
+        "Supports Georgia Medicaid expansion",
+        "Supports lowering Medicare eligibility to 55",
+        "New Democrat Coalition membership"
+      ],
+      "notes": "Explicitly supports ACA expansion with a public option and Medicaid expansion in Georgia -- not Medicare for All or single-payer. This places her squarely at the public option tier (score 3), not at the single-payer extreme (score 0). Consistent since 2018 campaign."
+    },
+    "health_cost_control": {
+      "score": 1,
+      "confidence": "high",
+      "sources": [
+        "Lead sponsor of Affordable Insulin Now Act (enacted as part of IRA, $35/month cap)",
+        "IRA vote including Medicare drug price negotiation",
+        "2025 bill to extend insulin cap to private insurance",
+        "GPB/11Alive interviews on ACA subsidy preservation"
+      ],
+      "notes": "Among the most active House members on government price intervention. Led the insulin cost cap that became law. Voted for Medicare drug price negotiation. Actively pushing to extend price caps beyond Medicare to all insured Americans. This is a strong government-price-control orientation."
+    },
+    "housing_supply_zoning": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": [
+        "New Democrat Coalition Affordability Agenda (Feb 2026): 'cut red tape and update permitting and zoning to build four million homes'",
+        "McBath official House website press release (Feb 2026)"
+      ],
+      "notes": "The Feb 2026 Affordability Agenda explicitly supports loosening zoning and streamlining permitting to increase housing supply. This is a pro-density, pro-supply position (Pole A). However, this is a recent coalition statement rather than a deep legislative record on housing -- confidence is medium. As a federal legislator, her direct housing zoning authority is limited."
+    },
+    "housing_affordability_tools": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": [
+        "New Democrat Coalition Affordability Agenda (Feb 2026)",
+        "Support for increased LIHTC allocations"
+      ],
+      "notes": "The Affordability Agenda combines supply-side reforms (zoning, permitting) with targeted subsidies (LIHTC expansion). This blended approach sits between government-subsidy-heavy (Pole A) and pure market solutions (Pole B), leaning slightly toward subsidy tools. No positions found on rent control, public housing construction, or housing-as-right framing. Score of 4 reflects the moderate, supply-plus-subsidy approach."
+    },
+    "housing_transport_priority": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Infrastructure Investment and Jobs Act vote (includes transit funding)",
+        "Official House website transportation-and-infrastructure page",
+        "Press releases on Georgia infrastructure funding ($73M+)"
+      ],
+      "notes": "Voted for IIJA which included significant transit investment. Has highlighted infrastructure funding secured for Georgia. However, no specific transit-vs-roads positions found, and GA-06 is a suburban district where transit is less central. Low confidence due to limited specific evidence."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "ACLU 100% scorecard",
+        "Co-sponsored George Floyd Justice in Policing Act (ending qualified immunity, national misconduct registry, banning chokeholds)",
+        "Ranking Member, House Judiciary Subcommittee on Crime and Federal Government Surveillance"
+      ],
+      "notes": "Strong reform orientation: supported ending qualified immunity, national police misconduct registry, and chokehold bans via the George Floyd Act. ACLU perfect score confirms civil liberties alignment. However, she has not advocated for defunding police or abolition -- her approach is reform-focused accountability, not radical restructuring. Score of 2 reflects strong reform without the defund/abolish extreme."
+    },
+    "justice_sentencing_goals": {
+      "score": 3,
+      "confidence": "low",
+      "sources": [
+        "Federal Prison Oversight Act (H.R.3019, enacted)",
+        "ACLU 100% scorecard",
+        "Ranking Member on Crime Subcommittee"
+      ],
+      "notes": "Enacted the Federal Prison Oversight Act, which improves conditions in federal prisons -- a reform-oriented signal. ACLU 100% suggests alignment with civil liberties in the justice system. However, no explicit positions found on mandatory minimums, sentencing reform, decarceration, or bail reform. Her Laken Riley Act vote (mandatory detention) suggests a willingness to support enforcement-side measures in specific contexts. Limited evidence keeps this at low confidence."
+    },
+    "justice_firearms": {
+      "score": 0,
+      "confidence": "high",
+      "sources": [
+        "Universal background checks (H.R.8, first official act as Member)",
+        "Assault Weapons Ban (H.R.3115, 2025 lead sponsor)",
+        "Federal ERPO Act (H.R.7599, 2026)",
+        "GOSAFE Act (2025, high-capacity magazine ban)",
+        "Bipartisan Safer Communities Act vote (2022)",
+        "Brady United grade A",
+        "Giffords grade A",
+        "NRA grade F (de facto)",
+        "Former Everytown/Moms Demand Action spokesperson"
+      ],
+      "notes": "McBath is arguably the single most prominent gun violence prevention advocate in Congress. Her entire political career was catalyzed by her son's murder. She supports every major category of gun regulation: universal background checks, assault weapons ban, red flag laws, high-capacity magazine bans, bump stock bans, and safe storage. She is endorsed at the highest level by every major gun safety organization and actively opposed by the NRA. This is a definitive score of 0 -- maximum gun regulation."
+    },
+    "climate_ambition": {
+      "score": 2,
+      "confidence": "high",
+      "sources": [
+        "LCV 94% (2024), 96% lifetime",
+        "IRA vote (~$369B in climate investment)",
+        "IIJA vote (clean energy infrastructure)",
+        "Campaign website: 'science of climate change is conclusive and indisputable'"
+      ],
+      "notes": "Strong climate action orientation. Accepts scientific consensus, voted for the largest climate investment in U.S. history. LCV near-perfect score across seven years in Congress. Not quite at the emergency/Green New Deal level (score 0-1) -- her New Democrat Coalition framing emphasizes investment and incentives over mandates and rapid fossil fuel phase-out. Score of 2 reflects strong but not maximalist climate ambition."
+    },
+    "climate_energy_portfolio": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": [
+        "Campaign website: supports incentives for solar and renewables",
+        "IRA vote (clean energy tax credits and incentives)",
+        "LCV 96% lifetime"
+      ],
+      "notes": "Supports renewable energy investment and incentives. No evidence found of supporting fossil fuel expansion or opposing clean energy mandates. No explicit position on nuclear energy or 100% renewables mandate found. The LCV near-perfect score is a strong signal toward renewables priority, but without explicit positions on phase-out timelines or fossil fuel development, confidence is medium rather than high."
+    },
+    "climate_permitting": {
+      "score": 5,
+      "confidence": "low",
+      "sources": [
+        "New Democrat Coalition Affordability Agenda (Feb 2026): 'cut red tape and update permitting'",
+        "LCV 96% lifetime (suggests general environmental review support)"
+      ],
+      "notes": "Mixed signals. The Feb 2026 Affordability Agenda explicitly supports faster permitting and cutting red tape for housing construction, which leans toward Pole B (faster approvals). But her near-perfect LCV score suggests she generally supports environmental review processes. The tension may reflect a distinction between housing permitting (faster) and industrial/energy permitting (maintain review). With limited evidence to resolve this tension, a score of 5 reflects genuine ambiguity."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.6,
+      "reasoning": "Strong environmental record (LCV 96% lifetime), LGBTQ equality (Equality Act), reproductive rights protections, Respect for Marriage Act, and general civil liberties advocacy (ACLU 100%). However, the Laken Riley Act vote suggests limits on universalism when it comes to immigration enforcement -- she prioritized constituent safety framing over universal inclusion for undocumented immigrants. Her healthcare approach extends coverage but within an incremental framework, not a universal-rights framing. Net strong positive but not maximum."
+    },
+    "benevolence": {
+      "score": 0.8,
+      "reasoning": "McBath's entire political identity is rooted in community care following personal tragedy. Her son's murder drove her from flight attendant to Congress to protect other families. She leads on insulin cost caps (helping seniors and diabetics), ACA subsidies (protecting constituents' healthcare), public education funding, and gun violence prevention framed as protecting children and communities. The care-for-community orientation is among the strongest of any member of Congress. Not +1 because she operates within institutional frameworks rather than maximalist community-welfare advocacy."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Actively challenges several traditional positions: supports Equality Act (LGBTQ protections that challenge traditional gender/family norms), reproductive rights (challenges religious-conservative positions), and seeks to change longstanding gun culture. Her campaign finance reform stance (opposing Citizens United) challenges established political traditions. However, she is not a radical challenger of all traditions -- she works within institutional norms, respects democratic processes, and is a member of a centrist coalition. Moderately negative."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Highly institutional orientation. 98.2% attendance rate demonstrates process adherence. 8 bills enacted shows effectiveness through proper legislative channels. Member of New Democrat Coalition (centrist, institutional). Does not engage in protest politics, norm-breaking, or confrontational tactics. The Laken Riley Act vote showed willingness to break from party line when she judged it appropriate for her constituents, which could be read as conformity to constituent expectations over party conformity. Overall, a strong work-within-the-system orientation."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Her core motivation -- gun violence prevention -- is fundamentally about physical safety and security for families and communities. She frames gun safety as public safety, not just rights restriction. She fights for healthcare stability (ACA subsidies as security against medical bankruptcy). She supported the Laken Riley Act (immigration enforcement framed as community safety). However, she also challenges law enforcement status quo (George Floyd Act, ACLU 100%), which works against a law-and-order security framing. The net is positive because her defining issue is making people physically safer."
+    },
+    "power": {
+      "score": -0.2,
+      "reasoning": "Opposes Citizens United and supports campaign finance reform -- explicitly challenges concentrated political power. However, she receives substantial PAC support (Everytown $9M+ across four cycles) and operates within the establishment donor framework. The unusually high 71% Chamber of Commerce score suggests some alignment with business interests. She does not position herself as an anti-corporate crusader. Net slightly negative -- she challenges power structures rhetorically and on campaign finance, but operates comfortably within the establishment."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Her personal biography embodies perseverance and achievement through adversity -- from flight attendant to gun safety advocate to four-term congresswoman after her son's murder. She supports workforce development, vocational schools, and higher education affordability through her Education and Workforce Committee work. However, her policy framing emphasizes structural support (funding schools, capping costs) rather than individual meritocracy or pull-yourself-up rhetoric. Modest positive."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful evidence of personal liberty or lifestyle freedom framing in her political identity. She does not invoke government-out-of-personal-choices framing. Her gun regulation stance actively restricts personal choice in one domain. No cannabis or recreational freedom positions found. Neutral."
+    },
+    "stimulation": {
+      "score": -0.1,
+      "reasoning": "McBath is an establishment figure operating through the New Democrat Coalition. She does not position herself as a disruptor, radical reformer, or challenger of the status quo in structural terms. Her approach is incremental improvement through institutional channels -- fix the ACA, not replace the system; reform policing, not abolish it. She is not anti-change, but she is decidedly not a transformational-change candidate. Very slightly negative."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on reproductive rights (bodily autonomy), LGBTQ rights (personal freedom to marry and live freely), and civil liberties broadly (ACLU 100%). These represent significant positive signals for self-direction. However, her signature issue -- comprehensive gun regulation -- represents the most prominent restriction of individual choice in her entire portfolio. The firearms positions actively constrain self-direction in a major domain. The net is moderately positive because the reproductive/LGBTQ/civil liberties positions span more areas, but the gun regulation counterweight is substantial and central to her identity."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Immigration: Laken Riley Act vote vs. stated reform position",
+      "description": "McBath voted YES on the Laken Riley Act (Jan 2025), requiring mandatory detention of undocumented immigrants arrested for certain crimes, after voting NO on a prior version of the legislation. This is a significant rightward shift from her stated positions on comprehensive immigration reform and 'dignity and respect for all people.' She was among only 48 Democrats to support this Republican-backed bill.",
+      "sources": ["GovTrack vote record H6/2025", "AJC reporting on 4 Georgia Democrats who flipped", "GPB reporting"],
+      "scoringImpact": "Noted in universalism and security value scores. No specific immigration axis in the 15 civic axes, but the vote signals pragmatic centrist positioning that informs the overall profile."
+    },
+    {
+      "topic": "Chamber of Commerce score vs. progressive profile",
+      "description": "McBath's 71% U.S. Chamber of Commerce score is unusually high for a Democrat with near-perfect AFL-CIO (99%), LCV (96%), and ACLU (100%) scores. This likely reflects New Democrat Coalition positioning on specific business-friendly regulatory or trade votes that do not directly conflict with her labor and environmental record.",
+      "sources": ["VoteSmart interest group ratings", "U.S. Chamber of Commerce scorecard"],
+      "scoringImpact": "Noted in econ_investment notes and power value score. Does not override the multiple Tier 1 sources (voting record + labor/environmental scorecards) that consistently show progressive economic positioning."
+    },
+    {
+      "topic": "2026 re-election status uncertainty",
+      "description": "McBath filed an exploratory committee for the Georgia governor's race in March 2025, then suspended it due to her husband's cancer surgery. As of February 2026, she has not formally announced a 2026 congressional re-election campaign, though she continues serving and introducing legislation (H.R.7599 in Feb 2026).",
+      "sources": ["AJC reporting on gubernatorial exploratory committee", "McBath House website press releases (Feb 2026)"],
+      "scoringImpact": "No impact on axis or value scores. Noted for completeness -- her 2026 candidacy status is uncertain."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["health_public_health"],
+    "reasonSkipped": "No evidence found on public health mandates, vaccine policy, or drug policy approach. General ACA support and breast cancer survivor status are insufficient to score this axis, which specifically addresses collective mandates vs. individual health choices.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific school choice or voucher positions found -- general public education support inferred (econ_school_choice scored at low confidence)",
+      "Limited sentencing philosophy evidence beyond prison oversight legislation (justice_sentencing_goals scored at low confidence)",
+      "No public health mandate positions found -- vaccine mandates, drug policy approach, etc. (health_public_health skipped entirely)",
+      "No specific transit vs. roads priority evidence beyond general IIJA vote (housing_transport_priority scored at low confidence)",
+      "Climate permitting position ambiguous -- housing permitting reform vs. environmental review tension unresolved (climate_permitting scored at low confidence)"
+    ]
+  }
+}

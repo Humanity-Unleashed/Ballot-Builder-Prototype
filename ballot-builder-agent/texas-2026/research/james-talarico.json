@@ -1,0 +1,725 @@
+{
+  "slug": "james-talarico",
+  "name": "James Talarico",
+  "party": "Democratic",
+  "office": "U.S. Senate, Texas, 2026",
+  "contest": "Texas U.S. Senate 2026, Democratic Primary March 3, 2026",
+  "incumbencyStatus": "challenger (current TX State House Rep, District 50)",
+  "researchedAt": "2026-02-27T00:00:00Z",
+
+  "biography": {
+    "born": "May 17, 1989, Round Rock, Texas (born James Dell Causey)",
+    "currentRole": "Texas State Representative, House District 50 (Austin area), 2019–present",
+    "priorRoles": [
+      "Central Texas Executive Director, Reasoning Mind (nonprofit, ed-tech for low-income classrooms)",
+      "6th-grade English Language Arts teacher, Jeremiah Rhodes Middle School, San Antonio (Teach For America, 2011–2013)"
+    ],
+    "education": "B.A. Government, University of Texas at Austin; M.Ed. Education Policy, Harvard University; M.Div. (in progress), Austin Presbyterian Theological Seminary",
+    "background": "Eighth-generation Texan. Born to single mother; father was abusive; mother and son lived in hotel where she worked before finding apartment. Later adopted by Mark Talarico. Former public school teacher and Teach For America alum whose students were predominantly undocumented, at-risk, and low-income. Type 1 diabetic (diagnosed 2018 — personal experience motivates insulin/drug pricing legislation). Presbyterian seminarian. First elected to Texas House 2018 by walking full length of the district. Re-elected 2020, 2022, 2024. Served on Public Education Committee, Juvenile Justice and Family Issues Committee, and Calendars Committee. Vice Chair, House Trade, Workforce and Economic Development Committee. Called a 'rising star' among Texas Democrats. Texas Monthly named him one of Top 10 Best Legislators. No corporate PAC fundraising record throughout legislative career.",
+    "legislativeHighlights": [
+      "Lead sponsor of 16 bills that became law; 8 related to education, childcare, or youth workforce development",
+      "Helped write most significant school finance reform in 20 years (2019)",
+      "HB 82 (2021): co-authored $25/month insulin cost cap (SB 827 enacted)",
+      "HB 25 (2023): Texas Wholesale Prescription Drug Importation Program (passed 144-1; signed into law)",
+      "HB 54 (2021): Javier Ambler's Law — banned reality TV policing contracts in Texas",
+      "Opened child mental health and character education funding",
+      "First-ever cap on Pre-K class sizes",
+      "Legislation requiring all incarcerated minors to have opportunity to earn high school diploma",
+      "Filed Texas Climate Action Act (HB 2206, 2021) after Winter Storm Uri — set emissions reduction goals for 2030/2040/2050 (did not pass in Republican House)",
+      "Opposed school vouchers/ESA in every session; proposed public referendum amendment on SB 2 in 2025 (tabled by Republicans)",
+      "Voted against HB 900 library book-banning bill (2023)",
+      "HB 3792 (2025): Convert surplus state property to affordable housing — failed to advance from committee",
+      "Helped impeach Texas AG Ken Paxton in 2023 Texas House"
+    ],
+    "notes": "State-level legislator with no federal voting record. All scoring is based on Texas House record plus 2026 campaign platform and interviews. Fundraising: $20.7M raised as of February 11, 2026 — self-described grassroots ('98% of donations $100 or less'); pro-Talarico Lone Star Rising PAC separately received $3.75M from Government That Works PAC, which got $4M from the Sixteen Thirty Fund (leading Democratic dark-money hub). Campaign response: will fight to ban super PACs when in Senate."
+  },
+
+  "campaignWebsite": {
+    "url": "https://jamestalarico.com",
+    "issuesPageUrl": "https://jamestalarico.com/issues/",
+    "fetchedAt": "2026-02-27T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "health_coverage_model",
+        "brandName": "Medicare for Y'all",
+        "quote": "Allow every American — regardless of their age — to join Medicare. Providing an affordable not-for-profit health care option for every American, while also bringing down costs for those who don't participate by increasing competition with private insurance.",
+        "sourceUrl": "https://jamestalarico.com/issue/health-care/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicitly stated he would vote for Medicare for All. Also confirmed at Jan 24, 2026 AFL-CIO debate: 'We have to allow every Texan and every American the chance to join Medicare. I think universal coverage should be a nonnegotiable.' However, the actual 'Medicare for Y'all' proposal preserves private insurance alongside Medicare — this is a universal buy-in/public option model, not single-payer. Talarico says he sees public option as 'a bridge, not a destination' toward M4A."
+      },
+      {
+        "topic": "health_cost_control",
+        "quote": "Lowering prescription drug costs by increasing price transparency and negotiating power to ensure fair pricing, incentivizing the development and approval of generic drugs, instituting caps on out-of-pocket costs, and regulating pharmacy benefit managers.",
+        "sourceUrl": "https://jamestalarico.com/issue/health-care/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Corroborated by two pieces of Tier 1 TX House voting record: HB 82 insulin cap ($25/month) and HB 25 (Canadian drug importation program, passed 144-1)."
+      },
+      {
+        "topic": "climate_ambition",
+        "quote": "Texas has experienced historic droughts, devastating wildfires, '500-year' floods, and deadly winter storms... that kind of incompetence in the face of increasingly frequent climate disasters is completely unacceptable.",
+        "sourceUrl": "https://jamestalarico.com/issue/energy-environment/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Also authored Texas Climate Action Act (HB 2206, 2021) establishing 2030/2040/2050 emissions reduction targets. Sierra Club endorsement corroborates. Strong climate acknowledgment but does not endorse Green New Deal by name."
+      },
+      {
+        "topic": "climate_energy_portfolio",
+        "quote": "If any state can figure out how to grow our economy, lower costs, and combat climate change, it's Texas... investing in innovation to create new jobs in cutting-edge technologies like geothermal and hydrogen-fueled energy, while adding to Texas' existing oil, gas, wind, solar, and battery jobs.",
+        "sourceUrl": "https://jamestalarico.com/issue/energy-environment/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "NOTABLE MODERATION: Talarico does NOT call for fossil fuel phase-out, phasedown, or banning new fossil fuel development. He frames energy as Texas leadership that includes existing oil and gas jobs PLUS green additions. All-of-the-above approach. This is significantly more moderate than GND-style renewables-first positions and reflects strategic positioning in Texas. Score should be approximately 3-4, not 0-1."
+      },
+      {
+        "topic": "climate_permitting",
+        "quote": "Pioneering innovative ways to streamline permitting processes without compromising environmental protection so that Texas can lead in increasing energy supply and driving down costs.",
+        "sourceUrl": "https://jamestalarico.com/issue/energy-environment/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "States 'without compromising environmental protection' — explicitly not a pure deregulation position. Moderate on permitting; not at either extreme."
+      },
+      {
+        "topic": "justice_firearms",
+        "quote": "Establishing universal background checks for gun sales, prioritizing the prosecution of firearms traffickers, requiring secure firearm storage around children in the home, and raising the age to purchase semi-automatic rifles with certain military-style features like high-capacity magazines.",
+        "sourceUrl": "https://jamestalarico.com/issue/public-safety-justice/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Significant gun regulations but does not call for assault weapons ban by name in this platform. Raising age restriction on military-style semi-auto rifles is a meaningful restriction. Texas Gun Rights org (TXGR) explicitly attacks both Crockett and Talarico as 'two peas in the same anti-gun pod.' No NRA grade found."
+      },
+      {
+        "topic": "justice_policing_accountability",
+        "quote": "Supporting strong investments in police training, oversight, and accountability... Addressing root causes of crime through well-funded schools, youth programs, mental health care, and substance abuse treatment.",
+        "sourceUrl": "https://jamestalarico.com/issue/public-safety-justice/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Reform-oriented but explicitly NOT 'defund.' 2021 tweet after Austin Prop A (police defund measure): 'The only way to achieve true public safety is to invest directly in communities.' Passed Javier Ambler's Law (Tier 1). Supports training/oversight/accountability without abolition framing. Score approximately 3 on policing_accountability axis."
+      },
+      {
+        "topic": "justice_sentencing_goals",
+        "quote": "Investing in strong reentry programs, including job training, housing, and treatment that reduce recidivism; legalizing regulated marijuana for adults and expunging marijuana arrest records.",
+        "sourceUrl": "https://jamestalarico.com/issue/public-safety-justice/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Corroborated by Tier 1: passed HB 30 (juvenile diploma program) and TJJD accountability legislation at TX House. Strong rehabilitation framing throughout."
+      },
+      {
+        "topic": "econ_safetynet",
+        "quote": "Increasing Texas' minimum wage to $15 per hour, making Texas a Right to Organize state, and codifying overtime protections for workers. Pass the PRO Act so that all working people have the freedom to join together and negotiate with their employers.",
+        "sourceUrl": "https://jamestalarico.com/issue/labor-business/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Self-described '100% pro-labor voting record.' AFL-CIO debate also cited: universal early childhood education, caps on life-saving drugs. Supports ACA expansion, Medicare dental/vision expansion."
+      },
+      {
+        "topic": "econ_tax_structure",
+        "quote": "I absolutely think that billionaires need to pay their fair share in taxes. These billionaires aren't just buying yachts and jets. They are buying power. [And:] The biggest welfare queens in this country are the giant corporations that don't pay a penny in federal taxes.",
+        "sourceUrl": "https://fortune.com/2025/12/20/james-talarico-welfare-queens-corporations-income-tax-avoidance/",
+        "date": "2025-12-20",
+        "confidence": "high",
+        "notes": "Direct quotes; central campaign messaging. Specific proposal: raise income and capital gains taxes on the ultra-wealthy; create special tax on corporations paying executives more than 250x median worker salary; end tax loopholes letting largest corporations pay $0 federal income taxes."
+      },
+      {
+        "topic": "econ_school_choice",
+        "quote": "I am against voucher scams in any shape or size and will never vote to defund our public schools.",
+        "sourceUrl": "https://teachthevote.atpe.org/candidates/james-talarico",
+        "date": "2025-2026",
+        "confidence": "high",
+        "notes": "Tier 1 voting record: voted NO on SB 2 (Texas ESA voucher bill, April 17, 2025). Proposed referendum amendment to let voters decide (tabled by Republicans). Said 'Remember this day next time a school closes in your neighborhood' when Abbott signed SB 2. Former teacher identity central to candidacy. Endorsed by ATPE, Texas AFT, TSTA."
+      },
+      {
+        "topic": "econ_investment",
+        "quote": "Creating new jobs in cutting-edge technologies like geothermal and hydrogen-fueled energy... maintaining and extending energy leadership for generations to come.",
+        "sourceUrl": "https://jamestalarico.com/issue/energy-environment/",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Strong public investment framing implied by PRO Act, workforce development, school finance, and energy innovation. PCCC endorsement frames him as pro-working-class public investment. No explicit Green New Deal or industrial policy by name."
+      },
+      {
+        "topic": "housing_affordability_tools",
+        "quote": "Banning Wall Street from buying up housing stock to enrich wealthy investors while making it harder for families to afford homes.",
+        "sourceUrl": "https://texasaflcio.org/news/crockett-talarico-face-texas-afl-cio-us-senate-debate",
+        "date": "2026-01-24",
+        "confidence": "medium",
+        "notes": "Campaign website also references lowering housing costs generally. Filed HB 3792 (surplus state property to affordable housing) in 2025 — failed to advance. The Wall Street homebuying ban is his primary specific federal housing proposal."
+      },
+      {
+        "topic": "housing_supply_zoning",
+        "quote": "Talarico hopes that whatever housing moves the Legislature considers do not exclude local governments from the decision-making table.",
+        "sourceUrl": "https://www.ksat.com/news/texas/2024/03/28/republicans-budding-interest-in-texas-housing-crisis-could-create-strange-political-bedfellows/",
+        "date": "2024",
+        "confidence": "low",
+        "notes": "Voted in favor of allowing ADUs/granny flats on single-family lots (pro-supply). But expressed preference for preserving local government role in housing decisions. Mixed signal — center-left on zoning, not a radical upzoner or preemption advocate."
+      },
+      {
+        "topic": "immigration",
+        "quote": "Our southern border should be like our front porch. There should be a giant welcome mat out front and a lock on the door. We can welcome immigrants who want to live the American dream. We can build a pathway to citizenship for those neighbors who have been here, making us richer and stronger, and we can keep out people who mean to do us harm.",
+        "sourceUrl": "https://jamestalarico.com/issue/immigration-border-security/",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Not a scored axis in the 16 civic axes but noted. Also stated at AFL-CIO debate: 'It's time to tear down this secret police force and replace it with an agency that actually is going to focus on public safety' — referring to ICE. Advocates repeal-and-replace of ICE focused on cartels and gang members."
+      }
+    ]
+  },
+
+  "votingRecord": {
+    "available": true,
+    "jurisdiction": "Texas State House of Representatives, HD-50 (Austin/Round Rock area)",
+    "sources": ["Texas Legislature Online (house.texas.gov/members/3685)", "VoteSmart (justfacts.votesmart.org/candidate/key-votes/177454)", "ATPE TeachTheVote", "LegiScan", "Ballotpedia", "Texas Tribune reporting"],
+    "chamber": "Texas House of Representatives",
+    "termsServed": "4 terms (87th, 88th, 89th Legislatures — 2019 to present)",
+    "billsPassedIntoLaw": 16,
+    "attendanceRate": "Not retrieved; no absences cited in research",
+    "importantNote": "Talarico has NO federal voting record — he is a state legislator challenging for federal office. All votes below are Texas state house votes.",
+    "keyVotes": [
+      {
+        "bill": "SB 2 (89th Legislature, 2025) — Texas Education Savings Account / School Voucher Program",
+        "vote": "No",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://house.texas.gov/members/3685/legislation/R",
+        "date": "2025-04-17",
+        "notes": "Voted against final passage. Also authored floor amendment (Record Vote #244, April 16, 2025) to require statewide referendum before enactment — failed 86-62. Tier 1 evidence for strong public school position. Said upon signing: 'Remember this day next time a school closes in your neighborhood.'"
+      },
+      {
+        "bill": "Budget amendment to prohibit state funds for private school vouchers (various sessions)",
+        "vote": "Yes (for the amendment — i.e., against vouchers)",
+        "topic": "econ_school_choice",
+        "sourceUrl": "https://teachthevote.atpe.org/candidates/james-talarico",
+        "date": "2019-2023",
+        "notes": "Voted for ATPE-supported Raney amendment stripping voucher language (2023). Consistent record across multiple sessions."
+      },
+      {
+        "bill": "School Finance Reform (HB 3, 86th Legislature, 2019)",
+        "vote": "Co-Author / Passed",
+        "topic": "econ_school_choice / econ_investment",
+        "sourceUrl": "https://teachthevote.atpe.org/candidates/james-talarico",
+        "date": "2019",
+        "notes": "Most significant reform to Texas school finance system in 20 years. Tier 1 evidence for public school investment priority."
+      },
+      {
+        "bill": "HB 82 (87th Legislature, 2021) — Insulin Out-of-Pocket Cost Cap ($25/month)",
+        "vote": "Primary Author / Enacted as SB 827",
+        "topic": "health_cost_control",
+        "sourceUrl": "https://www.texastribune.org/2026/01/27/james-talarico-insulin-cap-texas-legislature-senate-primary-attacks/",
+        "date": "2021",
+        "notes": "Talarico is Type 1 diabetic. Filed original HB 82; enacted version was SB 827 by Republican Sen. Kolkhorst. $25 cap on out-of-pocket insulin for state-regulated health plans. Strong Tier 1 healthcare cost-control evidence."
+      },
+      {
+        "bill": "HB 25 (88th Legislature, 2023) — Texas Wholesale Prescription Drug Importation Program",
+        "vote": "Primary Author / Passed 144-1 / Signed into law",
+        "topic": "health_cost_control",
+        "sourceUrl": "https://thedailytexan.com/2023/04/13/texas-house-passes-bipartisan-bill-to-import-cheaper-prescription-drugs/",
+        "date": "2023",
+        "notes": "Bipartisan (2 Dems + 3 Republicans, 118 cosponsors). Allows Texas to import FDA-approved Canadian drugs at 60-70% lower cost. Signed into law. Strong Tier 1 evidence for government drug price intervention."
+      },
+      {
+        "bill": "HB 54 / Javier Ambler's Law (87th Legislature, 2021) — Ban on Reality TV Policing",
+        "vote": "Primary Author / Passed 110-34",
+        "topic": "justice_policing_accountability",
+        "sourceUrl": "https://www.kxan.com/news/texas-politics/javier-amblers-law-passes-in-the-texas-house/",
+        "date": "2021",
+        "notes": "Bans Texas law enforcement agencies from entering contracts with reality TV shows. Authored with Ambler's family after Live PD's alleged role in his death by Williamson County police. Bipartisan. Tier 1 policing accountability evidence; reform-not-defund approach."
+      },
+      {
+        "bill": "HB 30 (88th Legislature, 2023) — Diploma Path for Juveniles Adjudicated as Adults",
+        "vote": "Primary Author / Passed",
+        "topic": "justice_sentencing_goals",
+        "sourceUrl": "https://en.wikipedia.org/wiki/James_Talarico",
+        "date": "2023",
+        "notes": "Requires all incarcerated minors in Texas to have opportunity to earn a high school diploma. Tier 1 rehabilitation / sentencing reform evidence."
+      },
+      {
+        "bill": "Texas Climate Action Act (HB 2206, 87th Legislature, 2021)",
+        "vote": "Primary Author / Did not pass (Republican-controlled House)",
+        "topic": "climate_ambition",
+        "sourceUrl": "https://communityimpact.com/austin/round-rock/weather/2021/02/24/after-winter-storm-uri-rep-james-talarico-files-climate-action-plan-in-texas-house/",
+        "date": "2021",
+        "notes": "Filed immediately after Winter Storm Uri. Would mandate state climate action plan, emissions reduction goals for 2030/2040/2050, commission climate change report, and regulate emissions. Strong climate ambition signal even though it failed."
+      },
+      {
+        "bill": "HB 900 (88th Legislature, 2023) — School Library Book Restrictions",
+        "vote": "No (bill passed 95-52)",
+        "topic": "civil liberties",
+        "sourceUrl": "https://www.texastribune.org/2023/04/19/texas-libraries-books-schools-legislature/",
+        "date": "2023",
+        "notes": "Opposed bill requiring book vendors to rate materials for sexual content; raised floor concerns about vague 'community values' language that could ban classics. Not a scored axis but illustrates civil liberties posture."
+      },
+      {
+        "bill": "ADU / Accessory Dwelling Unit legislation (approximate 2024)",
+        "vote": "Yes",
+        "topic": "housing_supply_zoning",
+        "sourceUrl": "https://www.ksat.com/news/texas/2024/03/28/republicans-budding-interest-in-texas-housing-crisis-could-create-strange-political-bedfellows/",
+        "date": "2024",
+        "notes": "Voted to allow granny flats/ADUs on single-family lots; views as 'one tool in the toolbox' against housing unaffordability. Low-weight Tier 1 evidence for supply-side housing orientation."
+      },
+      {
+        "bill": "Ken Paxton Impeachment (Texas House, 2023)",
+        "vote": "Yes",
+        "topic": "government accountability",
+        "sourceUrl": "https://en.wikipedia.org/wiki/James_Talarico",
+        "date": "2023",
+        "notes": "Voted to impeach Texas AG Ken Paxton. Not a scored axis but demonstrates willingness to hold powerful officials accountable and bipartisan work (required Republican support to pass). Talarico has cited this experience when discussing potential Trump impeachment."
+      }
+    ]
+  },
+
+  "scorecards": [
+    {
+      "organization": "Texas Right to Life",
+      "score": "0% (2019 scorecard)",
+      "grade": null,
+      "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/302-191112-123554-TalaricoJ2019Scorecard.pdf",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Perfect 0% pro-life score from Texas Right to Life in 2019. Consistent with his strong pro-choice legislative record throughout tenure."
+    },
+    {
+      "organization": "Planned Parenthood Texas Votes",
+      "score": "Endorsed",
+      "grade": null,
+      "url": "https://www.plannedparenthoodaction.org/planned-parenthood-texas-votes/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Endorsed in 2024 Primary AND 2026 Senate race. Authored bills to decriminalize abortion and repeal pre-Roe bans. Sponsored HJR 56 proposing constitutional amendment to protect abortion access in Texas."
+    },
+    {
+      "organization": "ATPE TeachTheVote (Texas Association of Professional Educators)",
+      "score": "Endorsed ally — long-standing",
+      "grade": null,
+      "url": "https://teachthevote.atpe.org/candidates/james-talarico",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "ATPE ally throughout legislative career. Voted against school vouchers consistently. Co-authored 2019 school finance reform. Supported teacher hiring/training, Pre-K class size caps, student mental health funding."
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "score": "Self-reports 100% pro-labor voting record",
+      "grade": null,
+      "url": "https://texasaflcio.org/texas-house-scorecard",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Texas AFL-CIO COPE declined to make endorsement in Senate primary after January 24, 2026 debate (both Crockett and Talarico competed for it). Talarico supports PRO Act, $15 minimum wage, Right to Organize."
+    },
+    {
+      "organization": "Young Conservatives of Texas (YCT)",
+      "score": "Available at ratings.yct.org; expected to be low",
+      "grade": null,
+      "url": "https://ratings.yct.org/legislators/james-talarico/86th-legislature",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Conservative student org annual ratings. Listed on their site for 86th Legislature. Consistent with overall progressive record."
+    },
+    {
+      "organization": "Texas Freedom Index (Libertarian/Limited Government)",
+      "score": "Low (consistent with progressive record)",
+      "grade": null,
+      "url": "https://thefreedomindex.org/tx/legislator/20246/votes/report-tx-scorecard-2025/",
+      "fetchedAt": "2026-02-27T00:00:00Z",
+      "notes": "Conservative/libertarian scorecard. Low score consistent with support for government programs, regulation, and public schools."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No NRA grade found. Texas Gun Rights (TXGR) explicitly attacks Talarico and Crockett as 'two peas in the same anti-gun pod.' VoteSmart has gun votes on file (justfacts.votesmart.org/candidate/key-votes/177454/james-talarico/37/guns). Consistent with his gun safety campaign platform."
+    },
+    {
+      "organization": "LCV (League of Conservation Voters)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "LCV only scores federal members of Congress; Talarico has no federal voting record. No Texas equivalent LCV score found. Sierra Club endorsement and Climate Action Act authorship serve as climate signal proxies."
+    },
+    {
+      "organization": "Sierra Club",
+      "score": "Endorsed",
+      "grade": null,
+      "url": null,
+      "notes": "Sierra Club endorsed Talarico for 2026 Senate race. Strong environmental/climate signal despite his all-of-the-above energy portfolio stance."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "Progressive Change Campaign Committee (PCCC)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "date": "2026-02-24",
+      "notes": "National progressive organization. Chose Talarico over Crockett. Cited his vision to 'fight for working people, hold corporations accountable, and materially improve people's lives.'"
+    },
+    {
+      "organization": "Planned Parenthood Texas Votes",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Previously endorsed in 2024. Endorsed for 2026 Senate race. Strong reproductive rights signal."
+    },
+    {
+      "organization": "Sierra Club",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Major environmental organization endorsement; corroborates climate action stance."
+    },
+    {
+      "organization": "Texas AFT COPE (American Federation of Teachers)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Teachers union endorsement; corroborates public education / anti-voucher stance."
+    },
+    {
+      "organization": "Texas State Teachers Association (TSTA)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "Major Texas teachers union endorsement."
+    },
+    {
+      "organization": "Texas State Employees Union",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Sen. Martin Heinrich (D-NM)",
+      "type": "political endorsement",
+      "cycle": "2026",
+      "notes": "First U.S. Senate endorsement in the race. Heinrich has strong climate/energy credentials."
+    },
+    {
+      "organization": "Rep. Julie Johnson (D-TX)",
+      "type": "political endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Houston Chronicle",
+      "type": "newspaper editorial endorsement",
+      "cycle": "2026",
+      "date": "2026-02",
+      "notes": "One of four major Texas newspaper editorial boards that endorsed Talarico over Crockett."
+    },
+    {
+      "organization": "Austin American-Statesman",
+      "type": "newspaper editorial endorsement",
+      "cycle": "2026",
+      "date": "2026-02"
+    },
+    {
+      "organization": "Dallas Morning News",
+      "type": "newspaper editorial endorsement",
+      "cycle": "2026",
+      "date": "2026-02"
+    },
+    {
+      "organization": "Fort Worth Star-Telegram",
+      "type": "newspaper editorial endorsement",
+      "cycle": "2026",
+      "date": "2026-02"
+    },
+    {
+      "organization": "Black Austin Democrats",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Austin Tejano Democrats",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Stonewall Democrats of Austin",
+      "type": "endorsement",
+      "cycle": "2026",
+      "notes": "LGBTQ+ Democratic caucus endorsement."
+    },
+    {
+      "organization": "Progressive Hispanic Democrats",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Texas Democrats with Disabilities",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Austin Young Democrats",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Mothers Against Greg Abbott",
+      "type": "endorsement",
+      "cycle": "2026"
+    },
+    {
+      "organization": "Capital Area Progressive Democrats",
+      "type": "endorsement",
+      "cycle": "2026"
+    }
+  ],
+
+  "interviews": [
+    {
+      "outlet": "Texas AFL-CIO Democratic Senate Primary Debate (KUT Radio)",
+      "date": "2026-01-24",
+      "url": "https://www.kut.org/2026-01-24/texas-primary-debate-jasmine-crockett-james-talarico-senate-race",
+      "keyExchanges": [
+        {
+          "topic": "health_coverage_model",
+          "quote": "We have to reverse all the cuts made of the Affordable Care Act, and we have to allow every Texan and every American the chance to join Medicare. I think universal coverage should be a nonnegotiable in the wealthiest country in human history.",
+          "notes": "Strong Medicare buy-in / public option statement."
+        },
+        {
+          "topic": "immigration / ICE",
+          "quote": "ICE executed a man in broad daylight on our streets just this morning. It's time to tear down this secret police force and replace it with an agency that actually is going to focus on public safety.",
+          "notes": "Said hours after ICE shooting in Minneapolis. More forceful than Crockett who called for 'clean house.' Talarico advocates repeal-and-replace, not mere reform."
+        },
+        {
+          "topic": "econ_safetynet",
+          "quote": "Caps on life-saving drugs, universal early childhood education, and banning Wall Street from purchasing housing stock.",
+          "notes": "Three core economic demands at labor union debate."
+        },
+        {
+          "topic": "econ_tax_structure",
+          "quote": "I absolutely think that billionaires need to pay their fair share in taxes. These billionaires aren't just buying yachts and jets. They are buying power.",
+          "notes": "Corroborates progressive tax platform."
+        }
+      ]
+    },
+    {
+      "outlet": "El Paso Matters",
+      "date": "2026-02-21",
+      "url": "https://elpasomatters.org/2026/02/21/james-talarico-immigration-el-paso-ice-facility-2026-senate-race-primary-elections/",
+      "keyExchanges": [
+        {
+          "topic": "immigration / border",
+          "quote": "ICE should be cracking down on the cartels, not our communities. ICE should be deporting gang members, not small business owners. ICE should be hunting down human traffickers, not moms and babies.",
+          "notes": "Spoke outside ICE detention facility in El Paso. Nuanced immigration enforcement framing — supports enforcement against bad actors, not mass deportation."
+        },
+        {
+          "topic": "economic development",
+          "quote": "We cannot just have economic activity and prosperity in the big cities and the big suburbs.",
+          "notes": "Wants to promote economic development in border communities and rural areas; would open Senate district office in El Paso if elected."
+        }
+      ]
+    },
+    {
+      "outlet": "Fortune",
+      "date": "2025-12-20",
+      "url": "https://fortune.com/2025/12/20/james-talarico-welfare-queens-corporations-income-tax-avoidance/",
+      "keyExchanges": [
+        {
+          "topic": "econ_tax_structure",
+          "quote": "The biggest welfare queens in this country are the giant corporations that don't pay a penny in federal taxes.",
+          "notes": "Core campaign messaging; national visibility interview. Also: special tax on executives making 250x median worker salary."
+        }
+      ]
+    },
+    {
+      "outlet": "NBC News (debate/ICE coverage)",
+      "date": "2026-02",
+      "url": "https://www.nbcnews.com/politics/2026-election/democrats-call-ice-overhaul-texas-senate-debate-hours-minnesota-shooti-rcna255593",
+      "keyExchanges": [
+        {
+          "topic": "ICE accountability",
+          "quote": "We need to prosecute agents who have abused their power... haul these masked men before Congress so the world can see their faces.",
+          "notes": "Called for criminal accountability for ICE/CBP agents who conduct deportation operations."
+        }
+      ]
+    },
+    {
+      "outlet": "James Talarico Twitter/X (2021)",
+      "date": "2021-11-01",
+      "url": "https://x.com/jamestalarico/status/1455582599875792900",
+      "keyExchanges": [
+        {
+          "topic": "justice_policing_accountability",
+          "quote": "Republicans tried to beat me with 'Defund the Police' scare tactics in 2020. Now they're doing the same thing in Austin's city election. The only way to achieve true public safety is to invest directly in communities. Choose hope over fear today. Defeat Prop A.",
+          "notes": "Explicitly rejected defund framing in 2021. Represents consistent reform-not-abolish policing posture."
+        }
+      ]
+    }
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "ICE / immigration enforcement",
+      "conflict": "Talarico's January 2026 debate statement ('tear down this secret police force') is more aggressive than his campaign website and El Paso framing, which emphasizes replacement with a focused enforcement agency. The debate quote reflects a charged moment (hours after ICE shooting in Minneapolis). The El Paso interview shows more nuanced border-security framing.",
+      "sources": ["KUT debate transcript (Jan 24, 2026)", "El Paso Matters interview (Feb 21, 2026)", "Campaign website immigration page"],
+      "resolution": "Score the repeal-and-replace position. The consistent framing is ICE overhaul/replacement focused on cartels and gang members, not dismantlement of all border enforcement."
+    },
+    {
+      "topic": "climate_energy_portfolio",
+      "conflict": "Talarico acknowledges climate disasters as a serious threat and authored the Texas Climate Action Act with long-term emissions targets. But his energy platform does NOT call for fossil fuel phase-out or limits on new oil/gas development. He explicitly praises Texas's oil, gas, wind, solar, and battery jobs. This is more moderate than his progressive positioning on other axes and inconsistent with what the Sierra Club typically endorses.",
+      "sources": ["Campaign website energy/environment page", "CBS Austin 2021 climate bill coverage", "Sierra Club endorsement"],
+      "resolution": "Score climate_ambition and climate_energy_portfolio separately. Climate_ambition is moderate-to-strong (authored climate legislation, acknowledges urgency). Climate_energy_portfolio is moderate/all-of-the-above (~3-4 on axis). His Texas context explains the difference from national progressive norms."
+    },
+    {
+      "topic": "healthcare_coverage_model",
+      "conflict": "Talarico says he supports Medicare for All as an ultimate goal, but his actual proposal ('Medicare for Y'all') is a universal Medicare buy-in that preserves private insurance — closer to a robust public option than single-payer. He has stated the public option is 'a bridge, not a destination' toward M4A.",
+      "sources": ["Lonestar Left analysis", "Campaign website health care page", "AFL-CIO debate"],
+      "resolution": "Score on the basis of actual stated proposal (Medicare for Y'all universal buy-in = approximately 2-3 on health_coverage_model axis), not the stated end-goal M4A. His actual proposal still preserves private insurance."
+    },
+    {
+      "topic": "campaign_finance",
+      "conflict": "Talarico ran on a no-corporate-PAC pledge and anti-dark-money rhetoric. But pro-Talarico Lone Star Rising PAC received $3.75M from Government That Works PAC, which received $4M from the Sixteen Thirty Fund (leading Democratic dark-money hub).",
+      "sources": ["Texas Tribune dark money investigation (Feb 20, 2026)"],
+      "resolution": "Note for context only; not directly relevant to policy axis scoring. Campaign response: 'will fight to ban super PACs like this one when in the Senate.'"
+    }
+  ],
+
+  "policyAxesSummary": {
+    "econ_safetynet": {
+      "signalDirection": "strongly Pole A (expand safety net)",
+      "keyEvidence": "$15/hr minimum wage; PRO Act / Right to Organize; expanded overtime; universal early childhood education; ACA expansion; Medicare dental/vision; caps on life-saving drugs",
+      "confidence": "HIGH"
+    },
+    "econ_investment": {
+      "signalDirection": "Pole A (pro-public investment)",
+      "keyEvidence": "Energy innovation investment; workforce development / apprenticeship programs; school finance co-authorship; PCCC framing of his candidacy as pro-public-investment",
+      "confidence": "MEDIUM"
+    },
+    "econ_tax_structure": {
+      "signalDirection": "strongly Pole A (progressive taxation)",
+      "keyEvidence": "Multiple direct quotes: raise taxes on billionaires/corporations; end corporate tax loopholes; 250x executive pay tax; calling tax-avoiding corporations 'biggest welfare queens'",
+      "confidence": "HIGH"
+    },
+    "econ_school_choice": {
+      "signalDirection": "strongly Pole A (public schools, oppose vouchers)",
+      "keyEvidence": "Tier 1: voted NO on SB 2 (2025 ESA voucher bill); proposed referendum amendment; explicit quote 'I am against voucher scams in any shape or size'; co-authored 2019 school finance reform; endorsed by ATPE, Texas AFT, TSTA",
+      "confidence": "HIGH"
+    },
+    "health_coverage_model": {
+      "signalDirection": "Pole A (toward universal public coverage; ~2-3 on 0-10 scale)",
+      "keyEvidence": "Medicare for Y'all = universal Medicare buy-in preserving private insurance; stated he would vote for Medicare for All as end goal; 'universal coverage should be a nonnegotiable'",
+      "confidence": "HIGH",
+      "scoringNote": "Score approximately 2 (universal buy-in/strong public option), not 0 (pure M4A/single-payer), because the actual proposal preserves private insurance."
+    },
+    "health_cost_control": {
+      "signalDirection": "strongly Pole A (government price intervention)",
+      "keyEvidence": "Tier 1 voting record: authored insulin cap bill (HB 82/SB 827); authored drug importation program (HB 25, 144-1, signed into law). Campaign: price transparency, negotiation, out-of-pocket caps, PBM regulation.",
+      "confidence": "HIGH"
+    },
+    "health_public_health": {
+      "signalDirection": "Pole A (collective public health measures)",
+      "keyEvidence": "Strong ACA protection stance; fentanyl prevention legislation passed; no evidence of anti-mandate or anti-vax positions; separation of church/state (Ten Commandments bill opposition)",
+      "confidence": "MEDIUM"
+    },
+    "housing_supply_zoning": {
+      "signalDirection": "slight Pole A (modest supply, preserve local control)",
+      "keyEvidence": "Voted for ADU/granny flat bill (pro-supply). Expressed preference for not excluding local governments from housing decisions. Not a radical upzoner.",
+      "confidence": "LOW"
+    },
+    "housing_affordability_tools": {
+      "signalDirection": "Pole A (government tools — ban institutional investor homebuying)",
+      "keyEvidence": "Ban Wall Street from buying housing stock (AFL-CIO debate); filed HB 3792 (surplus property to affordable housing, failed); general affordability framing",
+      "confidence": "MEDIUM"
+    },
+    "housing_transport_priority": {
+      "signalDirection": "OMIT — no evidence found",
+      "keyEvidence": "No specific transportation or transit policy position found in any source reviewed.",
+      "confidence": "OMIT"
+    },
+    "justice_policing_accountability": {
+      "signalDirection": "moderate Pole A (reform-focused, ~3 on 0-10 scale)",
+      "keyEvidence": "Tier 1: authored Javier Ambler's Law (reality TV policing ban, 2021). Campaign: supports training/oversight/accountability. Explicitly rejected 'defund' framing (2021 tweet). Not abolitionist.",
+      "confidence": "HIGH",
+      "scoringNote": "Score approximately 3 (meaningful reform, not defund/abolish). The explicit anti-defund tweet and 'invest in communities' framing is Tier 1 signal."
+    },
+    "justice_sentencing_goals": {
+      "signalDirection": "Pole A (rehabilitation focus)",
+      "keyEvidence": "Tier 1: passed HB 30 (juvenile diploma program, 2023); TJJD accountability legislation. Campaign: reentry programs, marijuana legalization and expungement. Strong rehabilitation framing.",
+      "confidence": "HIGH"
+    },
+    "justice_firearms": {
+      "signalDirection": "Pole A (more gun regulation, ~2-3 on 0-10 scale)",
+      "keyEvidence": "Campaign: universal background checks; raise age for military-style semi-auto rifles; secure storage requirements. Texas Gun Rights org attacks him as anti-gun. VoteSmart has gun votes on file. Does not call for assault weapons ban or red flag laws by name.",
+      "confidence": "HIGH",
+      "scoringNote": "Score approximately 2-3 (significant regulations including age limits and background checks) rather than 0-1 (comprehensive licensing + AWB). Stops short of the most aggressive gun control position."
+    },
+    "climate_ambition": {
+      "signalDirection": "Pole A (strong climate action, ~2-3 on 0-10 scale)",
+      "keyEvidence": "Authored Texas Climate Action Act (HB 2206, 2021) with 2030/2040/2050 emissions targets; Sierra Club endorsement; strong rhetoric about Texas climate disasters. Does not use Green New Deal branding.",
+      "confidence": "HIGH"
+    },
+    "climate_energy_portfolio": {
+      "signalDirection": "moderate, all-of-the-above (~3-4 on 0-10 scale)",
+      "keyEvidence": "Explicitly includes 'adding to Texas' existing oil, gas' jobs in energy platform. Geothermal, hydrogen, renewables added alongside — not instead of — fossil fuels. No phase-out commitment. Most notable moderate stance for an otherwise strongly progressive candidate.",
+      "confidence": "MEDIUM",
+      "scoringNote": "Score approximately 4 (strong clean energy push without fossil fuel phase-out). Distinct from GND-style renewables-first platform. Strategic in Texas context."
+    },
+    "climate_permitting": {
+      "signalDirection": "moderate (~4-5 on 0-10 scale)",
+      "keyEvidence": "Campaign statement: 'streamline permitting processes without compromising environmental protection.' Not a deregulation position but not full environmental review strengthening either.",
+      "confidence": "MEDIUM"
+    },
+    "econ_tax_structure_note": "See econ_tax_structure above."
+  },
+
+  "evidenceSummary": {
+    "strongestAxes": [
+      "econ_school_choice — Tier 1: multiple votes against vouchers across 4 sessions; co-authored school finance reform; explicit quote; teacher union endorsements",
+      "health_cost_control — Tier 1: authored insulin cap bill and Canadian drug importation program (both signed into law)",
+      "econ_tax_structure — Multiple direct Tier 2 quotes from Fortune, debates; specific policy proposals (250x executive tax, corporate loophole closure)",
+      "justice_policing_accountability — Tier 1: Javier Ambler's Law; Tier 1: explicit anti-defund tweet; reform-not-abolition position clearly documented",
+      "justice_sentencing_goals — Tier 1: juvenile diploma program passed; TJJD accountability legislation",
+      "health_coverage_model — Tier 2: explicit Medicare for Y'all buy-in proposal; confirmed would vote for M4A",
+      "justice_firearms — Tier 2 campaign + Tier 3 opposition scorecard: specific restrictions named; TXGR opposition"
+    ],
+    "weakestAxes": [
+      "housing_supply_zoning — Only one ADU vote with local-control caveat; insufficient for confident scoring",
+      "housing_transport_priority — No evidence found; OMIT entirely",
+      "housing_affordability_tools — General Wall Street ban framing and one failed state bill; limited specificity",
+      "climate_permitting — Single general campaign statement; ambiguous",
+      "econ_investment — Implied by platform and endorsements but no specific industrial policy bill cited"
+    ],
+    "keyNuances": [
+      "Healthcare model: 'Medicare for Y'all' = universal buy-in preserving private insurance. Should score ~2, NOT 0 (M4A/single-payer), despite stated M4A support as end goal.",
+      "Energy portfolio: Explicitly includes oil/gas jobs. Score ~4 on climate_energy_portfolio, not 0-1. This is Talarico's most notable policy moderation and likely reflects strategic positioning for a Texas statewide race.",
+      "Policing: Reform-focused but explicitly anti-defund. Score ~3 on justice_policing_accountability.",
+      "Firearms: Calls for meaningful regulations (background checks, age limits for semi-auto rifles) but stops short of assault weapons ban. Score ~2-3.",
+      "No federal voting record: All Tier 1 evidence is state-level Texas House votes. For federal-only issues (foreign policy, federal spending, Social Security), only Tier 2 campaign positions available.",
+      "Dark money tension: Pro-Talarico PAC received Sixteen Thirty Fund money despite his anti-dark-money platform. Not relevant to axis scoring but relevant for authenticity assessment."
+    ],
+    "overallConfidence": "HIGH for economic, education, healthcare cost-control, firearms, and justice axes. MEDIUM for climate energy portfolio, housing affordability, and healthcare coverage model (ambiguity between stated M4A support and actual buy-in proposal). LOW/OMIT for housing zoning and transportation.",
+    "notes": "Talarico has a 6+ year Texas House voting record that provides strong Tier 1 evidence on education, healthcare cost control, and criminal justice axes. His campaign platform (Tier 2) is detailed and well-documented across multiple major issues. The main scoring complexities are: (1) healthcare model ambiguity between M4A goal and buy-in proposal; (2) energy portfolio moderation in a Texas statewide context. He is a first-time federal candidate with no congressional voting record, so all federal-level scoring depends on Tier 2 stated positions."
+  },
+
+  "fundraisingContext": {
+    "totalRaised": "$20.7 million as of February 11, 2026",
+    "corporatePACPledge": "No corporate PAC money — '98% of donations are $100 or less' per campaign",
+    "superPACContext": "Lone Star Rising PAC (pro-Talarico) received $3.75M from Government That Works PAC, which got $4M from the Sixteen Thirty Fund (Democratic dark-money hub). Talarico stated he will fight to ban super PACs when in Senate and would not 'unilaterally disarm' in current race.",
+    "comparison": "Surpasses Colin Allred's 2024 Texas Senate Democratic fundraising. Grassroots fundraising is central to his anti-establishment campaign narrative."
+  },
+
+  "sources": [
+    { "url": "https://jamestalarico.com/issue/health-care/", "type": "campaign website" },
+    { "url": "https://jamestalarico.com/issue/energy-environment/", "type": "campaign website" },
+    { "url": "https://jamestalarico.com/issue/public-safety-justice/", "type": "campaign website" },
+    { "url": "https://jamestalarico.com/issue/immigration-border-security/", "type": "campaign website" },
+    { "url": "https://jamestalarico.com/issue/labor-business/", "type": "campaign website" },
+    { "url": "https://jamestalarico.com/meet-james-talarico/", "type": "campaign website" },
+    { "url": "https://en.wikipedia.org/wiki/James_Talarico", "type": "encyclopedia" },
+    { "url": "https://ballotpedia.org/James_Talarico", "type": "ballotpedia" },
+    { "url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026_(March_3_Democratic_primary)", "type": "ballotpedia" },
+    { "url": "https://house.texas.gov/members/3685/biography", "type": "official government bio" },
+    { "url": "https://house.texas.gov/members/3685/legislation/R", "type": "official voting record" },
+    { "url": "https://justfacts.votesmart.org/candidate/key-votes/177454/james-talarico", "type": "voting record / scorecard" },
+    { "url": "https://justfacts.votesmart.org/candidate/key-votes/177454/james-talarico/37/guns", "type": "voting record - guns" },
+    { "url": "https://www.kut.org/2026-01-24/texas-primary-debate-jasmine-crockett-james-talarico-senate-race", "type": "debate / interview" },
+    { "url": "https://www.houstonpublicmedia.org/articles/news/politics/2026/01/24/541575/crockett-talarico-take-on-affordability-ice-and-trump-during-texas-primary-debate/", "type": "news coverage / debate" },
+    { "url": "https://elpasomatters.org/2026/02/21/james-talarico-immigration-el-paso-ice-facility-2026-senate-race-primary-elections/", "type": "interview" },
+    { "url": "https://fortune.com/2025/12/20/james-talarico-welfare-queens-corporations-income-tax-avoidance/", "type": "interview" },
+    { "url": "https://texasaflcio.org/news/crockett-talarico-face-texas-afl-cio-us-senate-debate", "type": "debate coverage" },
+    { "url": "https://www.texastribune.org/2026/01/27/james-talarico-insulin-cap-texas-legislature-senate-primary-attacks/", "type": "news coverage" },
+    { "url": "https://thedailytexan.com/2023/04/13/texas-house-passes-bipartisan-bill-to-import-cheaper-prescription-drugs/", "type": "news coverage / voting record" },
+    { "url": "https://www.kxan.com/news/texas-politics/javier-amblers-law-passes-in-the-texas-house/", "type": "news coverage / voting record" },
+    { "url": "https://communityimpact.com/austin/round-rock/weather/2021/02/24/after-winter-storm-uri-rep-james-talarico-files-climate-action-plan-in-texas-house/", "type": "news coverage / bill authorship" },
+    { "url": "https://choicetracker.org/tx/people/james-talarico/82771968", "type": "scorecard - reproductive rights" },
+    { "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/302-191112-123554-TalaricoJ2019Scorecard.pdf", "type": "scorecard - pro-life (0%)" },
+    { "url": "https://txgunrights.org/crockett-and-talarico-are-two-peas-in-the-same-anti-gun-pod/", "type": "opposition scorecard - firearms" },
+    { "url": "https://teachthevote.atpe.org/candidates/james-talarico", "type": "scorecard - education" },
+    { "url": "https://thehill.com/homenews/campaign/5752263-pccc-endorses-talarico-texas-senate/", "type": "endorsement news" },
+    { "url": "https://prospect.org/2026/02/24/talarico-crockett-senate-primary-texas-adam-green-qa/", "type": "progressive analysis / interview" },
+    { "url": "https://www.texastribune.org/2026/02/20/texas-senate-dark-money-superpacs-talarico-hunt-crockett-paxton-cornyn/", "type": "campaign finance news" },
+    { "url": "https://www.nbcnews.com/politics/2026-election/democrats-call-ice-overhaul-texas-senate-debate-hours-minnesota-shooti-rcna255593", "type": "news coverage / interview" },
+    { "url": "https://x.com/jamestalarico/status/1455582599875792900", "type": "social media / primary source" },
+    { "url": "https://ratings.yct.org/legislators/james-talarico/86th-legislature", "type": "scorecard - conservative" },
+    { "url": "https://thefreedomindex.org/tx/legislator/20246/votes/report-tx-scorecard-2025/", "type": "scorecard - libertarian/limited government" },
+    { "url": "https://www.texastribune.org/2026/02/25/texas-senate-poll-crockett-talarico-university-of-texas-paxton-cornyn-hunt-2026/", "type": "polling" }
+  ]
+}

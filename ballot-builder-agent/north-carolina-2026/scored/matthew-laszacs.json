@@ -1,0 +1,160 @@
+{
+  "slug": "matthew-laszacs",
+  "name": "Matthew F. Laszacs",
+  "party": "Libertarian",
+  "office": "U.S. House, North Carolina 2nd Congressional District (NC-02), 2026",
+  "scoredAt": "2026-03-01T00:00:00.000Z",
+  "profileSummary": "IT executive and three-time Libertarian candidate with no prior office; strongest documented positions are universal school choice (ESAs/vouchers), healthcare deregulation (CON law elimination, Medicaid-to-HSA conversion), and full cannabis legalization.",
+  "keyPositions": [
+    "Universal ESAs and vouchers for all NC families; calls for dismantling district-based school assignment",
+    "Convert Medicaid to state-funded health savings accounts; eliminate Certificate of Need laws",
+    "Full cannabis legalization with no criminal or civil penalties (NORML A-)",
+    "Core philosophy: low taxes, deregulation, individual freedom over government programs",
+    "No-victim-no-crime criminal justice philosophy; decriminalization of victimless offenses"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["2024 campaign website (matt4nc.us)", "Yahoo News interview 2024"],
+      "notes": "Emphasis on low taxes and self-reliance. Medicaid HSA conversion is a market restructuring, not abolition -- more moderate than LP platform default but clearly oriented toward conditional/limited safety net. No support for expanding safety net programs."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["2024 campaign website (matt4nc.us)", "Yahoo News interview 2024"],
+      "notes": "Explicit and consistent: 'keeping taxes low, deregulating health care, lowering costs and regulations for new businesses.' No stated support for any public investment program. Opposes selective corporate subsidies as well."
+    },
+    "econ_tax_structure": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["2024 campaign website (matt4nc.us)", "LP national platform"],
+      "notes": "Consistent 'low taxes' emphasis but no specific personal statement on flat vs. progressive tax structure. LP platform favors flat/consumption taxes. Score based on overall anti-tax orientation and party alignment, but lacks specific personal evidence on structure."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["2024 campaign website (matt4nc.us) -- detailed policy page"],
+      "notes": "Most thoroughly documented position. Supports ESAs for all families covering tuition, tutoring, study materials, field learning, counseling. Calls for 'dismantling the outmoded, racist, and classist system of school assignment.' More moderate than LP default (works within ESA/voucher framework rather than calling for full abolition of public schools), but among the strongest possible school choice positions within a public framework."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["2024 campaign website (matt4nc.us)"],
+      "notes": "Explicit Medicaid-to-HSA conversion proposal. Retains some state-funded element (not pure free market), but structural transformation away from direct government insurance. No support for universal coverage, public option, or single-payer. Anchors at 8 (HSAs, minimize mandates) rather than 10 because he preserves a state-funded HSA mechanism."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["2024 campaign website (matt4nc.us)", "Yahoo News interview 2024"],
+      "notes": "Named policy targets: eliminate Certificate of Need laws, grant full practice authority to NPs and pharmacists. Frames all cost reduction through supply-side deregulation and market competition. No stated support for any government price-setting mechanism."
+    },
+    "health_public_health": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": ["NORML A- grade 2024", "Yahoo News interview 2024", "2024 campaign website"],
+      "notes": "NORML A- for full cannabis legalization with no penalties. 'No victim, no crime' philosophy strongly implies opposition to public health mandates. However, drug legalization itself is not purely Pole B -- removing criminal penalties for drugs is also consistent with harm-reduction approaches (Pole A). Scored at 7 rather than 9 to reflect this mixed signal: strong individual-choice orientation on mandates (Pole B) but anti-carceral drug policy has Pole A characteristics."
+    },
+    "housing_supply_zoning": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["2024 campaign website (matt4nc.us)"],
+      "notes": "Explicit personal statement: 'reducing occupational licensing rules and zoning laws to create an economic environment enabling entrepreneurs and individual freedom.' Direction aligns with Pole A (loosen zoning, more supply), though mechanism is market deregulation rather than government-directed density planning. Not scored at 0-1 because his rationale is property rights, not equity-driven supply mandates."
+    },
+    "housing_affordability_tools": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LP national platform", "overall deregulation philosophy"],
+      "notes": "No direct personal statement on housing subsidies or affordability programs. LP platform opposes government housing assistance. His consistent anti-government-intervention philosophy strongly suggests market-only orientation. Scored at 9 (not 10) because his 'incremental' self-description suggests slightly more moderation than the pure LP platform. Low confidence -- party inference only."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["NORML A- grade 2024", "Yahoo News interview 2024"],
+      "notes": "Explicit: no criminal or civil penalties for cannabis possession. Philosophy: 'if there is no victim, there is no crime.' Consistent with strong decriminalization and decarceration orientation. NORML grade is a Tier 1 source for drug-specific sentencing. Broader sentencing philosophy (mandatory minimums, violent crime, etc.) inferred from stated principles but not directly addressed."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["LP national platform (Section 1.9)"],
+      "notes": "No personal statements on firearms found in any available source. LP platform opposes all restrictions on firearms ownership, manufacture, or transfer. As a three-time Libertarian candidate whose positions consistently align with LP framework, alignment is probable but unconfirmed. Scored at 9 (not 10) to reflect slight uncertainty. Low confidence -- party inference only."
+    }
+  },
+  "valueStances": {
+    "self_direction": {
+      "score": 0.8,
+      "reasoning": "Core defining value. 'Peace and prosperity occur only when individuals are free to make rational choices.' Self-described 'classical liberal.' Every policy position -- school choice, HSAs, deregulation, no-victim-no-crime -- centers on individual autonomy over institutional authority. This is the single most consistent thread across all evidence."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Director/VP-level IT executive managing ~$70M book of business. BS cum laude, professional certifications (CTS, ITIL). Career trajectory demonstrates personal success orientation. Policy framing emphasizes individual capability and self-reliance. Moderate positive signal from professional identity."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Three-time third-party candidate challenging the two-party system. Proposes structural reforms (ESAs, Medicaid HSA conversion, CON law elimination) rather than incremental adjustments. Self-describes as advancing change 'iteratively as the public will accept them' -- reformist orientation."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Personal narrative of being a young father on limited means who arrived at Libertarian philosophy through lived experience. Frames school choice as helping all families, especially those in 'racist and classist' district assignment systems. But no evidence of community welfare actions, volunteer work, or care-for-others policy proposals beyond the philosophical framing."
+    },
+    "universalism": {
+      "score": -0.2,
+      "reasoning": "Uses 'racist and classist' framing to critique current school assignment system, suggesting some fairness concern. However, all policy solutions (vouchers, HSAs, deregulation) primarily benefit those with capacity to navigate market systems. No support for equality-of-outcome programs, redistribution, or collective welfare. Overall policy direction works mildly against universalism's emphasis on welfare of all people."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence either way. Cannabis legalization is framed through individual liberty, not pleasure-seeking. No lifestyle-oriented rhetoric."
+    },
+    "power": {
+      "score": -0.2,
+      "reasoning": "No evidence of seeking social status or dominance over others. Consistent anti-authority framing. Runs as a third-party candidate with no institutional backing or endorsements -- the opposite of power-seeking through establishment channels. Mild negative signal."
+    },
+    "security": {
+      "score": -0.3,
+      "reasoning": "Philosophy consistently prioritizes freedom over safety. 'No victim, no crime' deprioritizes preventive enforcement. Opposition to government mandates, regulation, and intervention. No stated interest in public safety expansion or harm prevention through government authority."
+    },
+    "tradition": {
+      "score": -0.4,
+      "reasoning": "Calls for 'dismantling' established systems (district-based school assignment, Certificate of Need regime). Proposes structural transformation of Medicaid. Self-describes as advancing change that challenges institutional norms. His philosophy explicitly opposes preserving systems because they are established."
+    },
+    "conformity": {
+      "score": -0.6,
+      "reasoning": "'No victim, no crime' directly challenges legal conventions and social norms around law enforcement. Full cannabis legalization with zero penalties defies established regulatory frameworks. Opposition to occupational licensing, zoning laws, and healthcare regulations. His entire political identity is built on challenging institutional rules and regulatory compliance. Active, consistent opposition to conformity across all policy areas."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Personal positions vs. LP platform intensity",
+      "description": "Laszacs self-describes as advancing Libertarian ideas 'iteratively as the public will accept them.' His personal positions (ESAs within a public framework, Medicaid-to-HSA conversion) are consistently more moderate than LP national platform (which calls for abolishing public schools and disbanding Medicaid entirely). Scored based on his personal stated positions, not LP platform defaults.",
+      "sources": ["matt4nc.us", "LP national platform"],
+      "scoringImpact": "Axes with personal evidence scored ~1-2 points more moderate than pure LP platform would suggest. Axes with LP-default-only evidence adjusted slightly toward moderate end."
+    },
+    {
+      "topic": "2024 state-level positions applied to 2026 federal race",
+      "description": "All substantive policy evidence comes from his 2024 NC House District 41 campaign. No 2026 congressional policy statements, campaign website, or interviews exist as of research date. Federal office may require different positions (e.g., federal healthcare vs. state CON law).",
+      "sources": ["matt4nc.us (2024)", "Research gaps noted in evidence file"],
+      "scoringImpact": "All scored axes are based on 2024 evidence. Confidence levels reflect this limitation."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": [
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "climate_ambition",
+      "climate_energy_portfolio",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No personal stated positions found for these axes. For a first-time candidate with no voting record, party platform defaults alone do not meet the evidence floor for scoring. Libertarian Party platform positions exist for all five, but Laszacs' self-described 'incremental' approach makes pure LP defaults unreliable proxies.",
+    "overallConfidence": "low-medium",
+    "researchGaps": [
+      "No 2026 campaign website, press releases, or policy statements exist as of research date",
+      "No voting record at any level of government",
+      "No third-party scorecards beyond NORML A- (never held office)",
+      "Firearms position entirely inferred from party platform",
+      "All climate/energy positions absent -- no personal evidence",
+      "Transit and transportation position absent",
+      "NC Family Voter Guide responses were completed but individual answers not extractable from available sources"
+    ]
+  }
+}

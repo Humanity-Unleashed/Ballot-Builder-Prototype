@@ -1,0 +1,146 @@
+{
+  "slug": "eric-flores",
+  "name": "Eric Flores",
+  "party": "Republican",
+  "office": "U.S. House, Texas 34th Congressional District, 2026",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "First-time Republican candidate and former federal prosecutor running in a swing South Texas border district; Trump-endorsed with a law enforcement and military background, but notably more pragmatic on legal immigration than standard MAGA positioning.",
+  "keyPositions": [
+    "Border security as top priority, framed through prosecutorial and National Guard experience",
+    "Supports efficient legal immigration pathways to address RGV labor shortages -- softer than typical MAGA restrictionism",
+    "Endorsed by Texas Alliance for Life, confirming anti-abortion stance",
+    "Champions law enforcement funding and veteran support; endorsed by National Border Patrol Council",
+    "Pledges to safeguard seniors' benefits (Social Security/Medicare) -- notable for a Trump-aligned Republican"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 6,
+      "confidence": "low",
+      "sources": ["Campaign website priority: 'safeguarding seniors' benefits'", "Rio Grande Guardian op-ed: 'reducing red tape and taxes on small businesses'", "Trump alignment implies general GOP orientation"],
+      "notes": "Explicitly pledges to protect seniors' benefits (Social Security/Medicare), which is unusual for a strongly Trump-aligned Republican and likely reflects the district's large elderly Hispanic population. However, no stated position on broader safety net programs (SNAP, Medicaid expansion, unemployment). The seniors pledge pulls toward center; Trump alignment and 'reducing red tape' framing pull toward conditional safety net. Scored slightly toward Pole B on overall lean, with recognition that seniors' benefits pledge moderates the position. Very low evidence density."
+    },
+    "econ_investment": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Rio Grande Guardian op-ed: 'infrastructure in colonia communities'", "Campaign website: 'revitalizing our local economy'", "Trump alignment", "Small business tax relief emphasis"],
+      "notes": "Mentions colonia infrastructure investment (a local need) and 'revitalizing our local economy,' but overall framing emphasizes reducing government burden ('reducing red tape and taxes') rather than increasing public investment. Trump-aligned Republicans generally oppose major public investment programs. Scored moderately toward less public investment, but the colonia infrastructure mention and district-specific needs suggest he would not be maximally anti-investment."
+    },
+    "econ_tax_structure": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Rio Grande Guardian op-ed: 'reducing red tape and taxes on small businesses'", "Trump alignment", "GOP platform orientation"],
+      "notes": "Only specific tax-related statement is support for small business tax relief. Trump alignment implies lower taxes generally. No specific position on progressive vs. flat tax structure, corporate tax rates, or wealth taxes. Scored based on inferred Republican/Trump alignment with the small business tax relief as the only direct evidence."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Campaign website priority: 'championing law enforcement'", "NBPC endorsement", "AUSA career background", "Trump endorsement: 'LAW AND ORDER'", "Forum quote: 'battle-tested fighter who has always stood the watch'"],
+      "notes": "Multiple converging signals: career as a federal prosecutor, National Guard service on the border, explicit campaign priority of championing law enforcement, endorsement by the National Border Patrol Council, and Trump's endorsement specifically citing 'LAW AND ORDER.' There is zero indication of interest in police reform, civilian oversight, or accountability measures. Strong back-the-blue orientation. Not scored at 9 or 10 because he has not explicitly opposed accountability measures -- the evidence shows strong support for law enforcement rather than active opposition to oversight."
+    },
+    "justice_sentencing_goals": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["AUSA career: prosecuted cartel members, human smugglers, child predators", "Forum quote: 'locked up Texas' Top 10 Most Wanted child predator and dismantled the largest human smuggling organization'", "Trump 'LAW AND ORDER' endorsement", "Campaign emphasis on fighting cartels"],
+      "notes": "Flores' entire professional identity is built on prosecution. He highlights putting criminals away, not rehabilitation or alternatives to incarceration. His proudest achievements are locking up a top-10 wanted predator and dismantling smuggling organizations. This is a clear punishment/deterrence orientation. No statements about sentencing reform, alternatives to incarceration, or rehabilitation. Not scored at 9 or 10 because he has not explicitly advocated for mandatory minimums, three-strikes, or death penalty -- his stance is inferred from his prosecutorial identity rather than specific sentencing policy proposals."
+    },
+    "justice_firearms": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Trump endorsement and explicit 'stand with Trump' pledge", "Texas Alliance for Life endorsement (social conservative alignment)", "'Faith, family, country' framing", "Texas Republican primary positioning"],
+      "notes": "No direct statements on firearms policy found. Score is inferred from: (1) explicit Trump alignment -- Trump opposes virtually all gun regulations; (2) Texas Alliance for Life endorsement signals broader social conservative values that correlate with pro-gun positions; (3) running in a Texas Republican primary where pro-gun positions are essentially mandatory; (4) law enforcement background could theoretically moderate this, but his campaign does not signal any gun reform interest. Confidence is low because this is entirely inferred from alignment rather than stated position."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Trump alignment -- Trump withdrew from Paris Agreement, rolled back climate regulations", "Texas oil/gas state context", "No climate or environmental statements found"],
+      "notes": "Zero direct evidence on climate policy. Flores has made no public statements about climate change, emissions, or environmental regulation found in the research. Score is inferred entirely from Trump alignment (Trump is maximally anti-climate-action) and the Texas political context. Not scored at 9 or 10 because the absence of evidence is not evidence of the most extreme position -- he simply has not addressed the topic."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Trump alignment", "Texas energy economy context", "No energy policy statements found"],
+      "notes": "No direct statements on energy policy. Texas CD-34 has significant fossil fuel infrastructure along the Gulf Coast. Trump alignment suggests fossil fuel expansion orientation. Same caveat as climate_ambition: absence of evidence prevents scoring at the extreme."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.3,
+      "reasoning": "Flores' political identity is built around in-group protection (community, nation) rather than universal welfare. Strong border enforcement orientation, Trump's America First alignment, and no signals toward environmental protection, international cooperation, or concern for out-group welfare. However, his support for legal immigration pathways shows some openness beyond pure nationalism, preventing a more negative score."
+    },
+    "benevolence": {
+      "score": 0.5,
+      "reasoning": "Genuine orientation toward community welfare, specifically for the Rio Grande Valley: safeguarding seniors' benefits, colonia infrastructure, local economy revitalization, veteran support. His campaign is framed around serving and protecting his community. The 'faith, family, country' framing centers close-community care. His legal immigration stance is explicitly motivated by helping local businesses and workers. Strong benevolence signal within community scope."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "Explicitly roots values in 'faith, family, and country.' Endorsed by Texas Alliance for Life (religious conservative organization). Political family with deep local roots (grandfather was first mayor of Sullivan City, maternal grandfather mayor of Palmview for 20 years). Party switch framed as values-driven: 'That's not the Democratic Party today' implies the party left his traditional values, not that he changed. Strong cultural-religious tradition orientation."
+    },
+    "conformity": {
+      "score": 0.4,
+      "reasoning": "Career as a federal prosecutor and military officer -- both institutions that demand rule-following, process adherence, and working within established systems. His defense against the Biden DOJ attack emphasizes institutional continuity: 'I served alongside millions of Americans' across administrations. However, Trump alignment introduces some tension with institutional norms (Trump frequently challenges democratic institutions). Net positive but not strongly so."
+    },
+    "security": {
+      "score": 0.8,
+      "reasoning": "Security is arguably the central value of Flores' campaign. Border security is his top priority. Law enforcement championing is his second priority. Safeguarding seniors' benefits is about financial security. His career (prosecutor, National Guard border deployment) is entirely security-oriented. Trump endorsement cites 'LAW AND ORDER.' NBPC endorsement reinforces. This is one of the clearest value signals in the entire profile."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Aligning with Trump, Abbott, and House GOP leadership represents pragmatic power-seeking. Raised $1.29M with institutional GOP support. Political dynasty background (father was state legislator). However, he is not a corporate-power-aligned candidate in the traditional sense -- his district is working-class, his framing is populist, and he is not obviously aligned with wealthy donor interests beyond standard Republican fundraising. Modest positive signal."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Strong personal achievement narrative: first-generation professional, UT Austin and law school, rose to Assistant U.S. Attorney, Army Captain, law firm partner by age 33. Campaign highlights personal accomplishments (dismantling smuggling organizations, locking up predators). 'Battle-tested fighter' framing emphasizes personal competence. Meritocratic orientation is present but not the dominant campaign theme."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "Faith-based values framing and social conservative endorsements (Texas Alliance for Life) suggest restriction rather than expansion of personal lifestyle choices. No libertarian personal freedom framing detected. Not strongly negative because he has not explicitly campaigned on restricting personal behaviors beyond the implied pro-life position."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some anti-establishment 'fighter' rhetoric ('South Texas doesn't need another career politician') and the disruption of running as a party-switcher against an incumbent provide modest stimulation signals. However, his overall orientation is toward restoring order and tradition rather than embracing novelty. The Trump movement itself is paradoxically both anti-establishment and conservative, which limits this score."
+    },
+    "self_direction": {
+      "score": 0.1,
+      "reasoning": "Mixed and weak signals. His party switch represents personal independence (bucking family political tradition -- his father was a Democratic legislator). However, his policy orientation toward restricting reproductive rights (Texas Alliance for Life endorsement) and his conformity-heavy career in prosecution and military service work against self-direction. The legal immigration stance shows some independent thinking within his party. Net near-zero with a slight positive tilt for the independent party-switch decision."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Party identity and Biden DOJ service",
+      "description": "Flores served as an AUSA in the Biden DOJ through late 2024/early 2025, previously posted social media content apparently congratulating Biden's inauguration, and only recently registered as Republican. Opponent Mayra Flores attacks him as a 'former Democrat, Biden DOJ attorney.' Flores maintains he was a career prosecutor serving across administrations, not a political appointee.",
+      "sources": ["Texas Politics coverage (Sept/Oct 2025)", "Coastal Candidate Rumble forum (Feb 2026)", "Texas Tribune interview (July 2025)"],
+      "scoringImpact": "The party switch introduces uncertainty about how firmly held his current Republican positions are. All axis scores carry slightly more uncertainty than they would for a lifelong Republican. However, the scoring methodology weights current stated positions for first-time candidates, so scores reflect his 2025-2026 positioning."
+    },
+    {
+      "topic": "Immigration: enforcement vs. legal pathways",
+      "description": "Flores campaigns on 'bolstering border security' (top priority) and is endorsed by the hardline NBPC and Trump, yet explicitly advocates for efficient legal immigration pathways to address RGV labor shortages. These positions are not necessarily contradictory (enforcement + legal pathways), but they create tension in how to score his immigration stance relative to typical MAGA restrictionism.",
+      "sources": ["Texas Tribune interview: legal worker immigration quote", "Coastal Candidate Rumble forum: legal immigration defense", "Campaign website: border security priority", "NBPC endorsement"],
+      "scoringImpact": "Immigration does not map to a single civic axis in the Ballot Builder framework. His enforcement stance aligns with justice/security axes; his legal immigration pragmatism is a notable deviation from MAGA positioning that is captured in the notes and value scores (benevolence, universalism) rather than a specific axis score."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 8,
+    "axesSkipped": [
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate with no legislative record and no stated positions on these topics. Campaign website priorities are limited to border security, law enforcement/veterans, economy (vague), and seniors' benefits. No healthcare policy specifics, no housing positions, no school choice positions, and no climate permitting positions found in any source. Party alignment alone is insufficient to score these axes per the evidence floor rule.",
+    "overallConfidence": "low",
+    "researchGaps": [
+      "No Ballotpedia Candidate Connection survey completed -- would have provided direct policy positions on many axes",
+      "Campaign website priorities page was not directly accessible for scraping; content inferred from search snippets",
+      "No healthcare policy positions found beyond vague 'safeguarding seniors' benefits'",
+      "No education or school choice positions found",
+      "No housing or transportation positions found",
+      "No specific fiscal policy positions beyond 'reducing taxes on small businesses'",
+      "No firearms policy statement found -- scored entirely from party/endorsement inference",
+      "No climate or energy policy statements found -- scored entirely from party alignment inference"
+    ]
+  }
+}

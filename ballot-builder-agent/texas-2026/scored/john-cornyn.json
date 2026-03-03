@@ -1,0 +1,229 @@
+{
+  "slug": "john-cornyn",
+  "name": "John Cornyn",
+  "party": "Republican",
+  "office": "U.S. Senate, Texas, 2026",
+  "scoredAt": "2026-02-27T12:00:00Z",
+  "profileSummary": "Four-term Texas senator and former Senate Majority Whip with a strongly conservative record tempered by occasional high-profile bipartisan dealmaking (gun safety, CHIPS Act, First Step Act). Faces MAGA primary challengers who attack his bipartisan moments; campaign emphasizes 99.2% Trump voting alignment.",
+  "keyPositions": [
+    "Co-authored Bipartisan Safer Communities Act (2022) -- first major federal gun safety law in 30 years; NRA previously rated A+",
+    "Co-authored CHIPS Act ($280B semiconductor investment) but voted against Infrastructure Act ($1.2T) and Inflation Reduction Act",
+    "20+ votes to repeal or defund the ACA; voted three times in 2025 against ACA subsidy extensions",
+    "Champion of 2017 TCJA tax cuts and their permanent extension; supports school vouchers and ESAs",
+    "Led First Step Act (2018) criminal justice reform: reduced mandatory minimums, expanded earned time credits"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "AFL-CIO near-0% career score",
+        "Voted against federal minimum wage increases (multiple)",
+        "One Big Beautiful Bill: Medicaid work requirements, SNAP cuts",
+        "Voted against ACA subsidy extensions (3 votes, 2025)"
+      ],
+      "notes": "Consistent support for work requirements and benefit conditionality. First Step Act shows limited willingness to invest in incarcerated population welfare, preventing a score of 9-10."
+    },
+    "econ_investment": {
+      "score": 7,
+      "confidence": "high",
+      "sources": [
+        "Voted NO on Infrastructure Investment and Jobs Act (2021)",
+        "Co-authored and voted YES on CHIPS and Science Act (2022)",
+        "Voted NO on Inflation Reduction Act (2022)",
+        "Club for Growth 62% (2024), 59% (2023)"
+      ],
+      "notes": "Genuinely conflicting signals. Opposes broad public investment (Infrastructure Act, IRA) but co-authored CHIPS Act -- a $280B industrial policy bill. Pattern: supports national-security-framed targeted investment while opposing general infrastructure/climate spending. Scored at 7 rather than 8-9 because CHIPS Act is a substantial pro-investment vote. Took credit for Tesla Gigafactory benefits from IRA he voted against (Washington Post documented contradiction)."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Voted YES on Tax Cuts and Jobs Act (2017); served on conference committee",
+        "Champions permanent extension of TCJA in 2025 reconciliation",
+        "Campaign platform: 'tax cuts' as core issue",
+        "U.S. Chamber of Commerce endorsement citing 'pro-growth fiscal and tax policy'"
+      ],
+      "notes": "Consistently supports lower rates, reduced corporate taxes, estate tax reduction. TCJA added ~$1.7T to deficit per CBO. No evidence of supporting progressive tax mechanisms."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "Introduced resolution for National School Choice Week",
+        "Cosponsored CHOICE Act and Educational Choice for Children Act",
+        "Attended Texas Gov. Abbott's $1B voucher program signing",
+        "Working Families Tax Cuts Act expanded ESAs and school choice tax credit"
+      ],
+      "notes": "Strong, active school choice advocate across multiple legislative vehicles. Consistent over time."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "high",
+      "sources": [
+        "20+ votes to repeal or defund ACA (2010-2017)",
+        "Led Senate Whip efforts for ACA repeal (2017)",
+        "Voted against ACA subsidy extensions three times (2025)",
+        "One Big Beautiful Bill includes Medicaid work requirements (CBO: ~12M lose coverage)",
+        "DSCC documented contradiction: told COVID-affected constituents to sign up for ACA he voted 20+ times to repeal"
+      ],
+      "notes": "Scored at 8 rather than 9-10 because he has never explicitly called for eliminating Medicare/Medicaid entirely, and introduced narrow bipartisan drug pricing bills (patent reform). But record is overwhelmingly anti-ACA and anti-public coverage expansion. The ACA-enrollment contradiction is documented but does not change the legislative record."
+    },
+    "health_cost_control": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": [
+        "Voted NO on Inflation Reduction Act (which included Medicare drug price negotiation)",
+        "Introduced narrow bipartisan patent reform bills (drug pricing)",
+        "General Chamber of Commerce alignment on healthcare market policy"
+      ],
+      "notes": "Opposes government drug price negotiation as enacted in IRA. Supports narrow, market-compatible measures like patent reform. One specific IRA vote is strong Tier 1 evidence but broader cost-control record is less documented than coverage model."
+    },
+    "housing_transport_priority": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "Voted NO on Infrastructure Investment and Jobs Act (2021) -- included major transit funding",
+        "Texas Tribune: cited deficit concerns for infrastructure opposition"
+      ],
+      "notes": "Single relevant vote. His infrastructure opposition was framed around deficit, not explicitly anti-transit. Texas context (car-centric state) and general Republican orientation suggest car-centric preference but direct evidence is thin. Low confidence."
+    },
+    "justice_policing_accountability": {
+      "score": 7,
+      "confidence": "low",
+      "sources": [
+        "Co-sponsored 'Back the Blue' legislation",
+        "Co-sponsored de-escalation training bill (bipartisan)",
+        "Research file flags mixed signals, net pro-law-enforcement"
+      ],
+      "notes": "Pro-law-enforcement orientation is clear from Back the Blue sponsorship. De-escalation training bill shows he is not at maximum Pole B (10). Evidence is limited to these two data points; low confidence."
+    },
+    "justice_sentencing_goals": {
+      "score": 6,
+      "confidence": "medium",
+      "sources": [
+        "Primary Senate champion of First Step Act (2018) -- passed 87-12",
+        "Pushed criminal justice reform since 2014",
+        "First Step Act: recalibrated mandatory minimums, expanded earned time credits, improved prison conditions"
+      ],
+      "notes": "First Step Act is one of Cornyn's signature achievements and represents a genuine departure from standard Republican tough-on-crime positioning. Reduced mandatory minimums for nonviolent offenders and expanded rehabilitation programs. However, he has not advocated for broader decarceration, voting rights restoration for felons, or ending the death penalty. Scored at 6 (slightly toward Pole B but closer to center) because First Step Act is strong evidence of rehabilitation orientation within a generally conservative framework."
+    },
+    "justice_firearms": {
+      "score": 7,
+      "confidence": "high",
+      "sources": [
+        "NRA A+ grade (career through 2022)",
+        "Co-authored Bipartisan Safer Communities Act (2022) -- NRA opposed",
+        "BSCA: extended background check review for under-21, closed boyfriend loophole, funded state red flag programs",
+        "One Big Beautiful Bill: reduces NFA tax on firearms/suppressors to $0",
+        "Texas Republican Party formally rebuked him over BSCA"
+      ],
+      "notes": "This is the most nuanced axis for Cornyn. His career record (A+ NRA, consistent pro-gun votes over 20 years) would put him at 9. But BSCA is the first major federal gun safety legislation in ~30 years and he was the lead Republican negotiator. It included provisions (red flag program funding, background check extensions, boyfriend loophole closure) that are substantive gun regulation measures. Scored at 7: still clearly pro-gun rights overall, but the BSCA is too significant to ignore. His primary rivals are correct that this differentiates him from maximalist gun rights positions."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "LCV 0% (2024), 7% lifetime",
+        "Voted YES on barring EPA from regulating greenhouse gases",
+        "Voted NO on Inflation Reduction Act ($369B clean energy)",
+        "Characterized renewable energy as 'a cult, or religion' (CSIS interview)",
+        "One Big Beautiful Bill rolls back IRA clean energy tax credits"
+      ],
+      "notes": "In a 2020 Texas Tribune interview, acknowledged 'the days of ignoring climate change are over' but ruled out any new taxes or regulation to combat it. This acknowledgment prevents a score of 10 (climate denial). Active legislative opposition to climate action across his entire career. Near-zero LCV scores are among the strongest evidence available."
+    },
+    "climate_energy_portfolio": {
+      "score": 9,
+      "confidence": "high",
+      "sources": [
+        "LCV 0% (2024), 7% lifetime",
+        "Called renewables 'a cult, or religion'",
+        "LNG export supporter",
+        "Voted NO on IRA clean energy investment",
+        "One Big Beautiful Bill repeals IRA clean energy tax credits",
+        "Oil/gas PAC donor base"
+      ],
+      "notes": "Fossil fuel champion. Opposes renewable mandates and clean energy subsidies. Actively seeks to repeal existing clean energy tax credits through reconciliation. CHIPS Act (which includes some clean tech R&D) prevents a score of 10, as does occasional rhetoric about 'all-of-the-above' energy in general terms."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.5,
+      "reasoning": "LCV 7% lifetime -- near-total opposition to environmental protection. 'America First' framing and opposition to immigration pathways (voted against DREAM Act, Gang of Eight). Opposed IRA climate investment. Called renewables 'a cult.' Bipartisan moments (CHIPS, First Step) show some pragmatic openness but do not reflect universalist motivation -- CHIPS was framed as national security, First Step was framed as fiscal responsibility. Overall pattern actively works against universalist goals of protecting nature and welfare of all people."
+    },
+    "benevolence": {
+      "score": 0.3,
+      "reasoning": "First Step Act improved prison conditions and helped incarcerated Texans. CHIPS Act framed as creating Texas manufacturing jobs. Campaign rhetoric centers on serving Texas constituents. However, Medicaid work requirements (CBO: ~12M lose coverage), SNAP cuts, and ACA subsidy opposition directly harm vulnerable community members. Net positive because he does frame policy around constituent welfare, but the concrete policy outcomes undercut the rhetoric for the most vulnerable."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "SBA Pro-Life A+/100% -- defense of traditional social values on reproduction. Skeptical of rapid policy change (opposed IRA, Infrastructure Act as too large). 24-year institutional insider respecting Senate norms. Cultural conservatism. However, BSCA and First Step Act represent departures from conservative orthodoxy, and his bipartisan dealmaking shows willingness to evolve on specific issues. Strong but not absolute traditionalist."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Former judge and attorney general -- deep legal/institutional background. Lugar Center top-5 most bipartisan senator (2023). Works through legislative process for bipartisan deals. Respects Senate institutional norms. However, 99.2% Trump voting alignment claim in 2026 campaign suggests conformity to party leadership over independent institutional judgment. Net positive: a system player who works within established structures."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Border security is central to platform and legislative record (Operation Lone Star reimbursement in reconciliation bill). 'Back the Blue' law enforcement support. CHIPS Act framed explicitly as national security (semiconductor supply chain). Military/defense support consistent across career. Strong, consistent security orientation spanning border, law enforcement, and national defense domains."
+    },
+    "power": {
+      "score": 0.6,
+      "reasoning": "Senate Majority Whip (2013-2019); ran for Senate Majority Leader (2024). $11.2M fundraising; Chamber of Commerce endorsement and corporate PAC alignment. Establishment-backed by NRSC and Senate Leadership Fund. AFL-CIO near-0% reflects alignment with business/corporate interests over labor. Actively pursues and exercises institutional power; policy orientations favor those who already hold economic power."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Career arc from district judge to state Supreme Court to AG to four-term Senator demonstrates personal achievement orientation. CHIPS Act supports economic competitiveness and workforce development. School choice advocacy framed around parental empowerment and student achievement. General meritocracy orientation in economic policy (work requirements, opposition to universal benefits). Moderate positive -- achievement is present but not a defining rhetorical theme."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "Pro-life record (SBA 100%) restricts personal reproductive choice. No cannabis legalization advocacy. Social conservatism on lifestyle issues. No libertarian personal-freedom framing observed. Modestly works against personal pleasure/lifestyle liberty, though not a crusading social conservative on all fronts."
+    },
+    "stimulation": {
+      "score": -0.4,
+      "reasoning": "24-year incumbent; establishment figure; ran for Senate leadership. Fundamentally a preservationist who defends existing institutional order. Campaign pitch is continuity ('pick up where we left off with Trump'). Opposes disruptive policy change (IRA, Infrastructure Act). BSCA and First Step Act show occasional willingness to pursue novel legislation, but these are exceptions within a deeply status-quo-oriented career. Actively works against disruption and transformation."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Supports gun rights (individual liberty to bear arms) and school choice (parental autonomy). However, pro-life record (SBA 100%) restricts reproductive autonomy; no advocacy for LGBTQ+ rights or civil liberties expansion; general 'law and order' orientation favors collective enforcement over individual freedom. The gun rights and school choice signals are real but are offset by restrictions on bodily autonomy and limited civil liberties advocacy. Net slight positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Firearms policy",
+      "description": "Career A+ NRA rating through 2022, then co-authored Bipartisan Safer Communities Act -- the first major federal gun safety law in ~30 years. Texas GOP formally rebuked him. Primary opponents attack him as 'anti-gun.' NRA opposed the bill but was 'restrained in criticism.'",
+      "sources": ["NRA career ratings", "BSCA vote record", "Texas Tribune 2025", "KERA News 2025"],
+      "scoringImpact": "Scored justice_firearms at 7 rather than 9 to reflect BSCA as a genuine, significant moderate deviation from an otherwise maximalist pro-gun record."
+    },
+    {
+      "topic": "Public investment / industrial policy",
+      "description": "Co-authored $280B CHIPS Act (major industrial policy) but voted against $1.2T Infrastructure Act and $369B IRA climate/energy investment. Also took credit for Tesla Gigafactory benefits from the IRA he voted against.",
+      "sources": ["CHIPS Act vote", "Infrastructure Act vote", "IRA vote", "Washington Post contradiction report", "Texas Tribune 2021"],
+      "scoringImpact": "Scored econ_investment at 7 rather than 8-9 because CHIPS Act is a substantial pro-investment vote, even though his broader pattern opposes public investment."
+    },
+    {
+      "topic": "Healthcare access contradiction",
+      "description": "Voted 20+ times to repeal or defund the ACA, then during COVID told constituents who lost employer coverage to sign up for Obamacare. DSCC documented this explicitly.",
+      "sources": ["DSCC documentation", "Cornyn COVID-era public statements", "20+ ACA repeal votes"],
+      "scoringImpact": "Voting record takes precedence per methodology. Scored health_coverage_model at 8 based on legislative record, not on pandemic-era advice to use a program he repeatedly voted to eliminate."
+    },
+    {
+      "topic": "Immigration pattern",
+      "description": "Publicly expressed openness to DACA fix and bipartisan immigration reform on multiple occasions, but voted against every comprehensive immigration bill (DREAM Act 2010, Gang of Eight 2013, 2024 bipartisan border bill). Pattern: signals bipartisan interest then votes no when bills don't meet his border-security demands.",
+      "sources": ["Texas Tribune 2023", "Houston Public Media 2024", "Wikipedia voting record"],
+      "scoringImpact": "Immigration is not a scored civic axis, but this pattern is noted as context for the candidate's approach to bipartisan negotiation."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": ["housing_supply_zoning", "housing_affordability_tools", "climate_permitting", "health_public_health"],
+    "reasonSkipped": "No meaningful Senate record on housing/zoning policy or housing affordability tools. Climate permitting evidence is too sparse for Cornyn specifically. Health/public health mandates record was flagged as thin in research -- inferred party-line positions do not meet evidence floor.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific COVID public health mandate votes documented (e.g., vaccine mandates)",
+      "Housing policy is nearly absent from his federal record",
+      "Permitting reform positions not specifically documented",
+      "Exact current NRA grade post-BSCA is unclear -- organization was 'restrained in criticism' but formal grade change not confirmed"
+    ]
+  }
+}

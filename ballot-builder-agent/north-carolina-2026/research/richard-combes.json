@@ -1,0 +1,180 @@
+{
+  "slug": "richard-combes",
+  "name": "Richard (Rick) Combes",
+  "party": "Democratic",
+  "office": "North Carolina State Senate, District 8, 2026",
+  "contestId": "NC-STATE-SENATE-D8-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-01T00:00:00Z",
+
+  "biography": {
+    "currentRole": "Unknown — no occupation listed in available public filings",
+    "priorRoles": [],
+    "education": "Unknown",
+    "residency": "Ocean Isle Beach, NC 28469 (Brunswick County)",
+    "background": "First-time candidate. Filed for the Democratic primary on December 16, 2025. Advanced to the general election without appearing on the primary ballot (Democratic primary for this race was canceled on or before March 3, 2026). No prior elected office identified.",
+    "notes": "Brunswick County Democratic Party noted in January 2026 that Combes 'was unable to attend' their kick-off celebration, indicating he is known to the local party but has a low public profile."
+  },
+
+  "districtContext": {
+    "counties": ["Brunswick County (full)", "Columbus County (full)", "New Hanover County (partial — downtown Wilmington notch)"],
+    "partisanLean": "Strongly Republican. District was redrawn in 2023 maps that Princeton Gerrymandering Project graded F for partisan bias. The New Hanover County portion is a gerrymandered notch including majority-Black downtown Wilmington neighborhoods attached to the more Republican Brunswick and Columbus counties.",
+    "incumbent": "William (Bill) Rabon (R), Winnabow — multi-term incumbent",
+    "otherCandidates": ["Tim White (L), Bolivia"],
+    "generalElectionDate": "2026-11-03",
+    "primaryStatus": "Democratic primary canceled — Combes advanced without a ballot contest",
+    "electionPrognosis": "Strongly favored for Republican incumbent. District designed to dilute Democratic-leaning urban votes."
+  },
+
+  "campaignWebsite": {
+    "url": null,
+    "fetchedAt": null,
+    "statedPositions": [],
+    "notes": "No campaign website identified as of 2026-03-01. Multiple search approaches returned no campaign URL for this candidate."
+  },
+
+  "votingRecord": {
+    "available": false,
+    "sources": [],
+    "notes": "First-time candidate with no prior elected office. No voting record exists."
+  },
+
+  "scorecards": [
+    {
+      "organization": "League of Conservation Voters (NC)",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "Not applicable — no legislative record."
+    },
+    {
+      "organization": "NRA",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "Not applicable — no legislative record."
+    },
+    {
+      "organization": "AFL-CIO / NC labor unions",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement or scorecard found."
+    },
+    {
+      "organization": "Planned Parenthood / reproductive rights orgs",
+      "score": null,
+      "grade": null,
+      "url": null,
+      "notes": "No endorsement found."
+    }
+  ],
+
+  "endorsements": [
+    {
+      "organization": "Brunswick County Democratic Party",
+      "type": "implicit — party candidate",
+      "cycle": "2026",
+      "notes": "Combes is the sole Democratic candidate for this seat. The Brunswick County Democrats named him in their January 2026 kick-off celebration announcement. No formal endorsement language found beyond acknowledgment of his candidacy."
+    }
+  ],
+
+  "campaignFinance": {
+    "available": false,
+    "notes": "No campaign finance filings for Combes identified in NCSBE database searches as of 2026-03-01. Possible that no committee has been registered yet or filings have not been made public in searchable form at this early stage of the general election cycle."
+  },
+
+  "interviews": [],
+
+  "voterGuideResponses": [],
+
+  "socialMedia": {
+    "facebook": null,
+    "twitter": null,
+    "instagram": null,
+    "notes": "No social media accounts identified under the name 'Rick Combes' or 'Richard Combes' linked to this North Carolina candidacy."
+  },
+
+  "newsMediaMentions": [
+    {
+      "outlet": "Port City Daily",
+      "date": "2025-12-19",
+      "url": "https://portcitydaily.com/local-news/2025/12/19/look-at-who-filed-in-2026-elections/",
+      "summary": "Combes listed among candidates who filed for 2026 races in the tri-county (Brunswick, Columbus, New Hanover) area. No policy content. Identifies him as a Democrat from Ocean Isle Beach running against incumbent Bill Rabon (R) and Tim White (L)."
+    },
+    {
+      "outlet": "News Argus / Brunswick Beacon",
+      "date": "2025-12-19 (approx)",
+      "url": "https://www.newsargus.com/brunswick_beacon/news/candidate-fields-set-for-2026-elections/article_1318a28e-67c2-5e6a-9dfe-662731debc6d.html",
+      "summary": "Confirms candidate field for District 8: Rabon (R), Combes (D), White (L). No biographical or policy detail beyond name and party."
+    },
+    {
+      "outlet": "Brunswick County Democratic Party (brunswickdem.org)",
+      "date": "2026-01 (approx)",
+      "url": "https://www.brunswickdem.org/post/brunswick-county-democratic-party-kick-off-celebration-a-rousing-success",
+      "summary": "'Rick Combes for NC Senate and Gary Woods for County Commissioner were unable to attend' the January 8th kick-off celebration. No policy content. Confirms party recognition of his candidacy."
+    },
+    {
+      "outlet": "NC State Board of Elections — candidate filing documents",
+      "date": "2025-12-16 (filing date)",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_detail_list_federal_and_state.pdf",
+      "summary": "Official filing confirms: Richard Combes, Democrat, NC Senate District 8, residential address 1592 Sand Harbor Circle, Ocean Isle Beach, NC 28469. Filed December 16, 2025."
+    }
+  ],
+
+  "statedPositions": [],
+
+  "partyPlatformContext": {
+    "relevantPlatform": "North Carolina Democratic Party 2020 Platform (most recent full platform document)",
+    "platformUrl": "https://www.ncdp.org/wp-content/uploads/2020/09/2020-NCDP-Platform-1.pdf",
+    "platformReadAt": "2026-03-01",
+    "disclaimer": "The following platform positions are from the NCDP, NOT from Combes personally. They are provided as contextual reference ONLY. Do NOT use these to infer Combes' individual positions — he has not stated alignment with any specific platform plank. The scorer must treat all NCDP platform items as zero-weight evidence for this candidate.",
+    "ncdpPositionsSummary": {
+      "healthcare": "Supports Medicaid expansion and the ACA; opposes ACA repeal; seeks public health insurance option; supports drug price negotiation. NCDP progressive caucus supports Medicare for All.",
+      "housing": "Supports local government control over housing policy including mandatory inclusionary zoning; supports affordable mortgage credit and first-time homebuyer incentives.",
+      "climate": "Supports clean air and clean water protections; opposes coal ash pollution; NCDP progressive caucus supports Green New Deal framing.",
+      "education": "Supports strong public schools and opposes policies that divert funds from public education.",
+      "laborEconomy": "Supports living wages, worker protections, and union rights.",
+      "criminalJustice": "Supports criminal justice reform; limited specifics in 2020 platform.",
+      "firearms": "Platform does not contain detailed gun policy positions per available summaries. NC is a competitive state; Dems vary on this axis."
+    }
+  },
+
+  "positionConflicts": [],
+
+  "evidenceSummary": {
+    "campaignWebsiteFound": false,
+    "votingRecordFound": false,
+    "voterGuideResponsesFound": false,
+    "interviewsFound": false,
+    "socialMediaPolicyContentFound": false,
+    "scorecardDataFound": false,
+    "financialFilingsFound": false,
+
+    "whatIsKnown": [
+      "Full legal name: Richard Combes, goes by Rick",
+      "Residential address: 1592 Sand Harbor Circle, Ocean Isle Beach, NC 28469",
+      "Party: Democratic",
+      "Filing date: December 16, 2025",
+      "Advanced from Democratic primary without appearing on ballot (primary canceled)",
+      "Acknowledged by Brunswick County Democratic Party as their Senate candidate",
+      "Running against heavily favored Republican incumbent Bill Rabon in a gerrymandered, strongly Republican district"
+    ],
+
+    "whatIsNotKnown": [
+      "Occupation / professional background",
+      "Education",
+      "Position on any of the 15 civic axes",
+      "Whether a campaign has been formally organized or a committee registered",
+      "Any policy statements, interviews, or social media activity"
+    ],
+
+    "scorableAxes": [],
+
+    "overallConfidence": "none — zero policy evidence available. No axis can be scored for this candidate from available public information.",
+
+    "researchNotes": "Exhaustive search conducted across: Ballotpedia, NCSBE candidate filing documents, Brunswick County Board of Elections, Port City Daily, News Argus / Brunswick Beacon, WHQR, State Port Pilot, Brunswick County Democratic Party website, VOTE411/LWV NC voter guide, NC Voter Guide (ncvoterguide.org), Google/general web search for campaign website, social media, interviews, and voter guide responses. No policy-relevant content was found for this candidate. This is consistent with the pattern of a low-resource first-time challenger in a heavily gerrymandered, safe-incumbent district — candidates in this situation often file primarily to ensure the party has a presence on the ballot rather than to run a full campaign.",
+
+    "researcherRecommendation": "The scorer should produce a scored JSON with all 15 axes marked as unscored with zero confidence. Filling in any axis score — even a neutral 5.0 — would be fabrication. If the app needs to display something for this candidate, the UI should show an explicit 'Insufficient data to score' state rather than inferred positions."
+  }
+}

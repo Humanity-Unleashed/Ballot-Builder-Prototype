@@ -1,0 +1,159 @@
+{
+  "slug": "joe-jaworski",
+  "name": "Joe Jaworski",
+  "party": "Democratic",
+  "office": "Texas Attorney General, 2026 Democratic Primary (March 3, 2026)",
+  "scoredAt": "2026-02-27T12:00:00.000Z",
+  "profileSummary": "Third-generation trial attorney and former Galveston mayor running for Texas AG a second time; centers campaign on voter rights, consumer protection, and pivoting the office away from culture wars toward constituent advocacy.",
+  "keyPositions": [
+    "Replace Paxton's voter suppression unit with a Voter Enhancement Division; enforce laws expanding voter access",
+    "Fight school vouchers as unconstitutional; use AG office to defend public school funding",
+    "Expand Medicaid; dismiss Paxton-era ACA lawsuits; hold insurance companies accountable on claims",
+    "Legalize personal-use marijuana; end for-profit prisons; create rehabilitation-focused courts",
+    "Protect reproductive rights to the Roe v. Wade viability standard; declares SB8 unconstitutional"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Campaign website 2026 (Division of Affordability)", "Community Impact Q&A Jan 2026"],
+      "notes": "Limited direct safety-net evidence. 'Division of Affordability' focuses on young-adult homeownership, debt-free graduation, and affordable rent -- directionally progressive but filtered through AG-office scope. Anti-billionaire populist language. No positions on specific federal safety net programs (SNAP, unemployment, etc.) because they are outside AG jurisdiction. Scored conservatively toward Pole A based on directional signal only."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": ["Campaign website 2026", "Community Impact Q&A Jan 2026", "Living Blue TX 2022 endorsement"],
+      "notes": "One of his strongest and most specific positions. Would use AG office to challenge vouchers in court as unconstitutional. Frames vouchers as 'siphoning money from public schools.' Also supports affordable/free community college and restoring in-state tuition for Dreamers. Consistent across 2022 and 2026 cycles. Score of 1 reflects strong, explicit anti-voucher and pro-public-school stance."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Campaign website 2026", "KXAN 2022 profile", "Campaign website 2022"],
+      "notes": "Explicit Medicaid expansion support; would dismiss Paxton-era ACA lawsuits. Consumer-protection framing on insurers ('new sheriff in town' on claims payment). Not single-payer advocacy -- positions as public option / Medicaid expansion / ACA defense. Consistent across both cycles. Score of 2 reflects strong public-coverage orientation without going to single-payer."
+    },
+    "health_cost_control": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["KXAN 2022 profile", "Campaign website 2026 (consumer protection)"],
+      "notes": "Framed through AG consumer-protection lens: hold insurance companies accountable on claims, combat hotel junk fees, enhance antitrust enforcement. Not explicit price-control policy (drug negotiation, hospital rate-setting) but clearly government-intervention-oriented on cost control. Low confidence because the evidence is indirect -- consumer protection rather than direct healthcare cost policy."
+    },
+    "health_public_health": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["Campaign website 2026 (marijuana legalization)", "KXAN 2022 profile (marijuana)", "San Antonio Current 2022"],
+      "notes": "Marijuana legalization framed as public health and criminal justice reform -- treatment over punishment. Veterans access mentioned. Mental health courts proposed. However, no stated positions on vaccine mandates, FDA authority, or broader public health regulation. Scored based on the treatment-over-enforcement orientation that is present."
+    },
+    "housing_affordability_tools": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["Mayoral record (Galveston 2010-2012)", "Campaign website 2026 (Division of Affordability)"],
+      "notes": "The strongest action-based evidence in Jaworski's entire profile: as Galveston mayor, championed rebuilding storm-devastated public housing as mixed-income housing post-Hurricane Ike, lost reelection over this stance (recall attempt). This is Tier 4 biographical but exceptionally concrete -- he sacrificed political career for public housing. 2026 platform names 'affordable rent' and 'home ownership' as priorities. No positions on rent control, inclusionary zoning mandates, or specific affordability tools beyond the mayoral record. Scored at 2 based primarily on the mayoral action."
+    },
+    "justice_policing_accountability": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Campaign website 2026", "Community Impact Q&A Jan 2026", "KXAN 2022 profile"],
+      "notes": "Moderate reform orientation: respects local decision-making on law enforcement, would partner with DAs to prosecute corruption, supports defunding wasteful marijuana prosecution to redirect resources to real crime. NOT 'defund police' rhetoric -- explicitly frames cannabis savings as funding police. Local-control emphasis is the dominant signal rather than structural police reform. Score of 3 reflects reform-leaning but not aggressive oversight/restructuring."
+    },
+    "justice_sentencing_goals": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": ["Campaign website 2022-2026", "KXAN 2022 profile", "San Antonio Current 2022", "Community Impact Q&A Jan 2026"],
+      "notes": "Among his clearest and most consistent positions across both cycles: legalize personal-use marijuana, end for-profit prisons, create innovative courts focused on rehabilitation (mental health courts, veterans courts). Explicitly frames marijuana prosecution as wasteful. Specific dollar figure cited ($300M savings). Consistent across at least four independent sources spanning 2022-2026. Score of 1 reflects strong rehabilitation focus."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Campaign website 2022-2026"],
+      "notes": "Only general 'common-sense gun safety measures that keep kids safe' language. Uvalde cited as motivating event. No specific measures named (no mention of background checks, red flag laws, assault weapons ban, magazine limits, licensing). No voting record. No NRA or Brady rating. Directionally toward regulation (Pole A) but impossible to determine how far. Score of 3 is a conservative estimate reflecting the general direction without specifics."
+    },
+    "climate_ambition": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Campaign website 2022-2026", "Community Impact Q&A Jan 2026"],
+      "notes": "Supports 'using science and technology to fight climate change' and would 'join county attorneys to sue polluters.' However, 'responsibly managing Texas's energy resources' is hedged language that leaves room for continued fossil fuel development. Not emergency-level climate rhetoric. AG-office framing limits what he can promise on climate. Galveston coastal context suggests personal awareness of climate impacts but this is inference. Score of 3 reflects moderate climate action orientation with notable hedging."
+    },
+    "climate_energy_portfolio": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["Campaign website 2022-2026", "Community Impact Q&A Jan 2026"],
+      "notes": "'Responsibly managing Texas's energy resources' with 'science and technology' does not call for fossil fuel phase-out, renewables mandates, or specific energy portfolio changes. 'Saving our natural resources from for-profit exploitation' is anti-privatization framing that could apply to either fossil or renewable contexts. No explicit position on energy mix. Score of 4 reflects slight lean toward clean energy based on general climate concern but genuinely insufficient evidence for a more decisive score."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Pro-immigrant stance (Dreamers, asylum seekers, constitutional rights for immigrants); climate action through litigation; reproductive rights framing as healthcare access. However, universalism is bounded -- his platform is Texas-focused, not global. Pro-immigrant advocacy and environmental litigation extend concern beyond in-group, earning a moderately positive score."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Central to his political identity. Galveston public housing fight is the defining example -- sacrificed his own political career for constituents in need. Voter Enhancement Division framed as helping people. Medicaid expansion to 'save rural hospitals.' Consumer protection as 'advocate for the people of Texas.' Division of Affordability for young adults. Consistent community-care orientation across his entire career."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Challenges several established Texas traditions: would overturn decades of Texas AG culture-war orientation, challenges SB8 and post-Roe status quo, supports marijuana legalization breaking with prohibition tradition, seeks structural democracy reforms (term limits, redistricting commissions, citizen-initiated legislation). Grandson-of-Watergate-prosecutor heritage invokes a different tradition (rule of law), but the net direction is reform-oriented against current Texas institutional norms."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Strong rule-of-law orientation: 'advocate for the people, not a political party,' Division of Ethics and Integrity, would use constitutional arguments (not executive fiat) to challenge vouchers and SB8. Works through legitimate legal channels -- litigation, not protest. Frames changes as restoring proper constitutional order rather than breaking norms. The Watergate prosecutor lineage reinforces institutional-process identity."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Medicaid expansion framed as saving rural hospitals (healthcare security). Housing affordability as economic security for young Texans. Voter enhancement as democratic stability. Anti-cartel prosecution as border security. However, not a law-and-order maximalist -- marijuana legalization and for-profit prison opposition work against traditional security framing. Net positive but modest."
+    },
+    "power": {
+      "score": -0.5,
+      "reasoning": "Explicitly anti-concentrated-power: 'limiting the power of billionaires who exert influence over the people's government,' enhanced antitrust enforcement, campaign finance reform advocacy, challenges to corporate insurance practices. No major corporate PAC dependency noted. Campaign finance reform (contribution limits) is a core platform plank. This is a candidate who builds identity around challenging power structures."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Emphasizes personal competence: '35-year full-time legal practice,' 'only candidate with combined eight years in public office and 35-year law practice.' Division of Affordability focuses on helping young adults achieve homeownership and good jobs -- opportunity-oriented. However, framing is more structural (remove barriers, expand access) than individual-effort meritocracy."
+    },
+    "hedonism": {
+      "score": 0.2,
+      "reasoning": "Marijuana legalization is the primary signal -- framed partly as personal freedom and partly as criminal justice reform and fiscal efficiency. Not a libertarian personal-freedom candidate, but the cannabis position does have a lifestyle-liberty dimension. Veterans' access to cannabis is mentioned. Modest positive signal on this otherwise typically low-scoring value."
+    },
+    "stimulation": {
+      "score": 0.4,
+      "reasoning": "Proposes restructuring the AG office with new divisions (Voter Enhancement, Ethics and Integrity, Affordability), constitutional amendments for term limits and redistricting, citizen-initiated legislation. These are transformative structural proposals, not incremental. Two-time AG challenger framing as change agent. However, framing emphasizes 'restoring' proper governance rather than radical novelty -- reform, not revolution."
+    },
+    "self-direction": {
+      "score": 0.5,
+      "reasoning": "Reproductive rights as bodily autonomy ('between a woman and her doctor, not politicians'). Marijuana legalization as personal freedom. Immigrant rights and Dreamer protections. Voter rights as participatory freedom. However, also supports government consumer protection regulation and would use AG power to constrain corporate behavior -- not a small-government libertarian. The pattern across reproductive rights, cannabis, and voting access nets a moderately positive score."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Climate and energy ambiguity",
+      "description": "Uses 'responsibly managing Texas's energy resources' language that hedges on fossil fuels while also calling for climate action through litigation against polluters. No explicit fossil-fuel phase-out or renewables mandate position. The hedge may be strategic (running statewide in oil-and-gas Texas) or substantive (genuinely moderate on energy).",
+      "sources": ["Campaign website 2022-2026", "Community Impact Q&A Jan 2026"],
+      "scoringImpact": "climate_ambition scored at 3 (not lower) and climate_energy_portfolio scored at 4 (near center) to reflect the ambiguity. Both scored at low confidence."
+    },
+    {
+      "topic": "Gun policy vagueness",
+      "description": "'Common-sense gun safety measures that keep kids safe' is the entirety of his firearms position across two campaign cycles. No specific policy proposals named despite Uvalde being cited as motivation. Cannot determine whether he supports universal background checks, red flag laws, assault weapons restrictions, or other specific measures.",
+      "sources": ["Campaign website 2022-2026"],
+      "scoringImpact": "justice_firearms scored at 3 (directionally toward regulation) with low confidence. A more specific position could move this score significantly in either direction (toward 1 if comprehensive regulation, toward 4-5 if modest enforcement-only approach)."
+    },
+    {
+      "topic": "AG-scope filtering on economic positions",
+      "description": "Jaworski is running for Attorney General, not legislature. His platform is filtered through 'what can the AG do?' -- he may hold broader progressive economic views (tax policy, federal safety net programs, public investment) that never surface because they are outside AG jurisdiction. Silence on non-AG economic issues should not be interpreted as centrism.",
+      "sources": ["Research evidence summary"],
+      "scoringImpact": "econ_safetynet, econ_investment, and econ_tax_structure either scored with low confidence or omitted entirely. Notes flag the AG-scope limitation."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": ["econ_investment", "econ_tax_structure", "housing_supply_zoning", "housing_transport_priority", "climate_permitting"],
+    "reasonSkipped": "No meaningful evidence found for these axes. econ_investment and econ_tax_structure are outside AG-office scope with no stated positions. housing_supply_zoning and housing_transport_priority have no evidence beyond general affordability language. climate_permitting has no stated position -- 'sue polluters' does not map clearly to permitting speed preferences.",
+    "overallConfidence": "medium-low",
+    "researchGaps": [
+      "No legislative voting record exists -- all scoring based on Tier 2-4 evidence",
+      "No interest group scorecards available for any axis",
+      "Firearms position lacks specificity despite two full campaign cycles",
+      "Energy portfolio position hedged and ambiguous",
+      "Economic positions (tax structure, public investment) filtered by AG-office scope -- cannot determine broader views",
+      "No public health positions beyond marijuana/mental health courts -- no evidence on vaccine policy, FDA, environmental health regulation specifics"
+    ]
+  }
+}

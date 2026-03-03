@@ -47,6 +47,7 @@ import BallotNavigator from '@/components/ballot/BallotNavigator';
 import BallotSummary from '@/components/ballot/BallotSummary';
 import ValuesSection from '@/components/ballot/ValuesSection';
 import DemographicSection from '@/components/ballot/DemographicSection';
+import DemoBanner from '@/components/ballot/DemoBanner';
 
 // =============================================
 // Main Ballot Page Orchestrator
@@ -103,8 +104,8 @@ export default function BallotPage() {
   const clearBallot = useBallotStore((s) => s.clearBallot);
   const getVoteForItem = useBallotStore((s) => s.getVoteForItem);
 
-  // Zipcode from demographic survey
-  const zipCode = useDemographicStore((s) => s.profile.zipCode);
+  // Selected ballot from demographic survey
+  const selectedBallotId = useDemographicStore((s) => s.profile.selectedBallotId);
 
   // Ballot data from API
   const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
@@ -134,7 +135,7 @@ export default function BallotPage() {
   const { setScreenLabel } = useFeedbackScreen();
 
   // --------------------------------------------------
-  // Fetch ballot data from API on mount
+  // Fetch ballot data from API on mount / ballot change
   // --------------------------------------------------
   useEffect(() => {
     async function fetchBallot() {
@@ -143,16 +144,15 @@ export default function BallotPage() {
         setBallotError(null);
 
         let ballot;
-        if (zipCode && zipCode.length === 5) {
-          console.log(`[BallotPage] Using getByZipcode with zipcode: ${zipCode}`);
-          const result = await ballotApi.getByZipcode(zipCode);
-          ballot = result.ballot;
-          setBallotSource(result.source);
-          setLocation(result.location ?? null);
-          setVoterInfo(result.voterInfo ?? null);
-          console.log(`[BallotPage] Ballot source: ${result.source}, items: ${result.ballot.items?.length ?? 0}`);
+        if (selectedBallotId) {
+          console.log(`[BallotPage] Fetching ballot by ID: ${selectedBallotId}`);
+          ballot = await ballotApi.getById(selectedBallotId);
+          setBallotSource('static_selected');
+          setLocation(null);
+          setVoterInfo(null);
+          console.log(`[BallotPage] Ballot loaded, items: ${ballot.items?.length ?? 0}`);
         } else {
-          console.log(`[BallotPage] No valid zipcode (got: "${zipCode}"), using getDefault`);
+          console.log(`[BallotPage] No selected ballot, using getDefault`);
           ballot = await ballotApi.getDefault();
           setBallotSource('static_fallback');
           setLocation(null);
@@ -170,7 +170,16 @@ export default function BallotPage() {
       }
     }
     fetchBallot();
-  }, [zipCode]);
+  }, [selectedBallotId]);
+
+  // Clear saved votes when ballot changes
+  useEffect(() => {
+    if (selectedBallotId) {
+      clearBallot();
+    }
+    // Only trigger on ballot ID change, not on clearBallot reference
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedBallotId]);
 
   // Restore current vote from persisted store after ballot loads
   useEffect(() => {
@@ -405,7 +414,8 @@ export default function BallotPage() {
   if (showSummary) {
     return (
       <div>
-        <div className="px-4 pt-4">
+        <div className="px-4 pt-4 space-y-3">
+          <DemoBanner />
           <ElectionBanner
             daysUntilElection={daysRemaining}
             electionLabel={electionLabel}
@@ -509,6 +519,7 @@ export default function BallotPage() {
 
       {/* Scrollable ballot content */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-4">
+        <DemoBanner />
         <ElectionBanner
           daysUntilElection={daysRemaining}
           electionLabel={electionLabel}
