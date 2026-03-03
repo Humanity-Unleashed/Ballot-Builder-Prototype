@@ -42,8 +42,11 @@ export default function AppLayout({
 
   return (
     <>
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-white text-center text-[11px] font-medium py-0.5 tracking-wide">
+        Prototype for evaluation only — not an official voter guide
+      </div>
       <TopNav />
-      <main className="mx-auto max-w-lg px-4 pt-14">
+      <main className="mx-auto max-w-lg px-4 pt-[4.75rem]">
         {children}
       </main>
     </>
