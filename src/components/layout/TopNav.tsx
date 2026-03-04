@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { CheckSquare, LogIn, LogOut } from 'lucide-react';
+import { CheckSquare, Info, LogIn, LogOut } from 'lucide-react';
 import { useAuth } from '@/lib/auth-client';
 
 const tabs = [
@@ -47,6 +47,18 @@ export default function TopNav() {
 
         {/* Auth controls */}
         <div className="flex items-center gap-2 ml-auto shrink-0">
+          <Link
+            href="/about"
+            className={[
+              'flex items-center rounded-lg p-1.5 transition-colors',
+              pathname === '/about'
+                ? 'text-brand-primary bg-gray-100'
+                : 'text-gray-500 hover:bg-gray-100',
+            ].join(' ')}
+            aria-label="About Ballot Builder"
+          >
+            <Info className="h-3.5 w-3.5" />
+          </Link>
           {isAnonymous ? (
             <button
               onClick={() => signInWithGoogle()}
