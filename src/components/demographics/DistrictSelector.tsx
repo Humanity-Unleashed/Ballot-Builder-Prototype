@@ -16,7 +16,7 @@ interface StateBallotConfig {
   races: string[];
 }
 
-const STATE_CONFIGS: StateBallotConfig[] = [
+export const STATE_CONFIGS: StateBallotConfig[] = [
   {
     state: 'GA',
     label: 'Georgia',
