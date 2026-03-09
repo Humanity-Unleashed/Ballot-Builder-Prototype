@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import { Send, SkipForward, Check, MessageCircle, ChevronDown } from 'lucide-react';
+import { Send, SkipForward, Check, MessageCircle, ChevronDown, ThumbsUp, ThumbsDown } from 'lucide-react';
 import type { BallotItem, PropositionRecommendation, CandidateMatch, ValueAxis } from '@/lib/ballotHelpers';
 import { computePropositionRecommendation, computeCandidateMatches } from '@/lib/ballotHelpers';
 import type { ConversationMessage, ConversationTurnResponse } from '@/types/conversation';
@@ -9,6 +9,8 @@ import { useConversationStore } from '@/stores/conversationStore';
 import { useVoiceInput } from '@/hooks/useVoiceInput';
 import ChatBubble from './ChatBubble';
 import VoiceButton from './VoiceButton';
+import CandidateCard from '@/components/ballot/CandidateCard';
+import CandidateComparisonSheet from '@/components/ballot/CandidateComparisonSheet';
 
 interface AxisDef {
   id: string;
@@ -52,33 +54,16 @@ function profileToValueAxes(
  */
 function buildOpenerWithRecommendation(item: BallotItem, rec: PropositionRecommendation | CandidateMatch[] | null): string {
   if (item.type === 'proposition') {
-    const propRec = rec as PropositionRecommendation | null;
-    if (propRec?.vote) {
-      return `${item.questionText}\n\nBased on what you've told me, I'd recommend voting **${propRec.vote.toUpperCase()}**.${propRec.explanation ? ` ${propRec.explanation}` : ''} Want to discuss it, or does that sound right?`;
-    }
+    // Cards will show the YES/NO recommendation, so just show the question
     return item.questionText;
   }
 
-  // Candidate race
-  const matches = rec as CandidateMatch[] | null;
-  const bestMatch = matches?.find((m) => m.isBestMatch) || matches?.[0];
-  const candidateNames = item.candidates?.map((c) => {
-    const party = c.party ? ` (${c.party})` : '';
-    return `${c.name}${party}`;
-  });
-
-  if (bestMatch && candidateNames?.length) {
-    const candidate = item.candidates?.find((c) => c.id === bestMatch.candidateId);
-    const agreementText = bestMatch.keyAgreements.length > 0
-      ? ` You align on ${bestMatch.keyAgreements.join(' and ')}.`
-      : '';
-    return `Next up: **${item.title}**. The candidates are ${candidateNames.join(', ')}.\n\nBased on your values, **${candidate?.name || 'Unknown'}** is a **${bestMatch.matchPercent}% match**.${agreementText} Want to discuss, or accept?`;
+  // Candidate race — cards show all details, so keep the opener brief
+  if (rec && Array.isArray(rec) && rec.length > 0) {
+    return `Next up: **${item.title}**. Here's how the candidates align with your values.`;
   }
 
-  if (candidateNames && candidateNames.length > 0) {
-    return `Next up: ${item.title}. The candidates are ${candidateNames.join(', ')}. Based on what you've told me, here's how they align with your values.`;
-  }
-  return `Next up: ${item.title}.`;
+  return `Next up: **${item.title}**.`;
 }
 
 export default function ConversationView({
@@ -91,6 +76,9 @@ export default function ConversationView({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
+  const [selectedPropositionVote, setSelectedPropositionVote] = useState<'yes' | 'no' | null>(null);
+  const [comparingCandidate, setComparingCandidate] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const openerSentRef = useRef<string | null>(null);
 
@@ -127,6 +115,17 @@ export default function ConversationView({
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages.length, recommendation]);
+
+  // Auto-select best match candidate or recommended proposition vote
+  useEffect(() => {
+    if (!recommendation) return;
+    if (Array.isArray(recommendation)) {
+      const best = recommendation.find((m) => m.isBestMatch) || recommendation[0];
+      if (best) setSelectedCandidateId(best.candidateId);
+    } else {
+      if (recommendation.vote) setSelectedPropositionVote(recommendation.vote);
+    }
+  }, [recommendation]);
 
   // When voice transcript arrives, use it as input
   useEffect(() => {
@@ -252,18 +251,178 @@ export default function ConversationView({
     }
   };
 
-  const handleAcceptRecommendation = () => {
-    if (!recommendation) return;
-
-    let choice: string | null = null;
-    if (Array.isArray(recommendation)) {
-      const best = recommendation.find((m) => m.isBestMatch);
-      choice = best?.candidateId || recommendation[0]?.candidateId || null;
+  const handleConfirmSelection = () => {
+    if (ballotItem.type === 'candidate_race') {
+      if (!selectedCandidateId) return;
+      onVoteConfirmed(ballotItem.id, selectedCandidateId);
     } else {
-      choice = recommendation.vote;
+      if (!selectedPropositionVote) return;
+      onVoteConfirmed(ballotItem.id, selectedPropositionVote);
     }
+  };
 
-    onVoteConfirmed(ballotItem.id, choice);
+  // Get confidence label for proposition recommendations
+  const getConfidenceLabel = (confidence: number): string => {
+    if (confidence >= 0.7) return 'Strong match';
+    if (confidence >= 0.4) return 'Slight lean';
+    return 'Close call';
+  };
+
+  // Render candidate cards for a candidate race
+  const renderCandidateCards = () => {
+    if (!recommendation || !Array.isArray(recommendation)) return null;
+    if (!ballotItem.candidates || ballotItem.candidates.length === 0) return null;
+
+    const sortedMatches = [...recommendation].sort((a, b) => b.matchPercent - a.matchPercent);
+    const comparingCandidateObj = comparingCandidate
+      ? ballotItem.candidates.find((c) => c.id === comparingCandidate) ?? null
+      : null;
+    const comparingMatch = comparingCandidate
+      ? recommendation.find((m) => m.candidateId === comparingCandidate)
+      : undefined;
+
+    return (
+      <>
+        <div className="space-y-2">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-1">
+            Based on what you told me, here&apos;s how the candidates compare:
+          </p>
+          {sortedMatches.map((match) => {
+            const candidate = ballotItem.candidates!.find((c) => c.id === match.candidateId);
+            if (!candidate) return null;
+            return (
+              <CandidateCard
+                key={candidate.id}
+                candidate={candidate}
+                isSelected={selectedCandidateId === candidate.id}
+                match={match}
+                onSelect={() => setSelectedCandidateId(candidate.id)}
+                onCompare={() => setComparingCandidate(candidate.id)}
+              />
+            );
+          })}
+        </div>
+        {renderActionButtons()}
+        <CandidateComparisonSheet
+          visible={comparingCandidate !== null}
+          candidate={comparingCandidateObj}
+          match={comparingMatch}
+          onClose={() => setComparingCandidate(null)}
+        />
+      </>
+    );
+  };
+
+  // Render YES/NO option cards for a proposition
+  const renderPropositionCards = () => {
+    if (!recommendation || Array.isArray(recommendation)) return null;
+    const rec = recommendation as PropositionRecommendation;
+
+    const yesIsRecommended = rec.vote === 'yes';
+    const noIsRecommended = rec.vote === 'no';
+    const confidenceLabel = getConfidenceLabel(rec.confidence);
+
+    // Separate breakdown factors by alignment
+    const yesFactors = rec.breakdown
+      .filter((b) => b.alignment === 'yes')
+      .map((b) => b.axisName);
+    const noFactors = rec.breakdown
+      .filter((b) => b.alignment === 'no')
+      .map((b) => b.axisName);
+
+    return (
+      <div className="space-y-3">
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-1">
+          {confidenceLabel}
+        </p>
+
+        {/* YES card */}
+        <button
+          onClick={() => setSelectedPropositionVote('yes')}
+          className={`w-full text-left p-3 rounded-xl border-2 transition-colors ${
+            selectedPropositionVote === 'yes'
+              ? 'border-brand-primary bg-brand-primary/[0.03]'
+              : yesIsRecommended
+                ? 'border-green-300 bg-green-50/50'
+                : 'border-gray-200 bg-white'
+          }`}
+        >
+          <div className="flex items-start gap-2.5">
+            {/* Radio */}
+            <div
+              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mt-0.5 shrink-0 ${
+                selectedPropositionVote === 'yes' ? 'border-brand-primary bg-brand-primary' : 'border-gray-300'
+              }`}
+            >
+              {selectedPropositionVote === 'yes' && <div className="w-2 h-2 rounded-full bg-white" />}
+            </div>
+
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <ThumbsUp className="h-4 w-4 text-green-600" />
+                <span className="text-[15px] font-bold text-gray-900">Vote YES</span>
+                {yesIsRecommended && (
+                  <span className="px-2 py-0.5 rounded-full bg-green-100 text-[11px] font-semibold text-green-700">
+                    Recommended
+                  </span>
+                )}
+              </div>
+              {yesFactors.length > 0 && (
+                <p className="text-xs text-gray-500 mt-1">
+                  Aligns with your values on {yesFactors.join(', ')}
+                </p>
+              )}
+            </div>
+          </div>
+        </button>
+
+        {/* NO card */}
+        <button
+          onClick={() => setSelectedPropositionVote('no')}
+          className={`w-full text-left p-3 rounded-xl border-2 transition-colors ${
+            selectedPropositionVote === 'no'
+              ? 'border-brand-primary bg-brand-primary/[0.03]'
+              : noIsRecommended
+                ? 'border-red-300 bg-red-50/50'
+                : 'border-gray-200 bg-white'
+          }`}
+        >
+          <div className="flex items-start gap-2.5">
+            {/* Radio */}
+            <div
+              className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mt-0.5 shrink-0 ${
+                selectedPropositionVote === 'no' ? 'border-brand-primary bg-brand-primary' : 'border-gray-300'
+              }`}
+            >
+              {selectedPropositionVote === 'no' && <div className="w-2 h-2 rounded-full bg-white" />}
+            </div>
+
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <ThumbsDown className="h-4 w-4 text-red-600" />
+                <span className="text-[15px] font-bold text-gray-900">Vote NO</span>
+                {noIsRecommended && (
+                  <span className="px-2 py-0.5 rounded-full bg-red-100 text-[11px] font-semibold text-red-700">
+                    Recommended
+                  </span>
+                )}
+              </div>
+              {noFactors.length > 0 && (
+                <p className="text-xs text-gray-500 mt-1">
+                  Aligns with your values on {noFactors.join(', ')}
+                </p>
+              )}
+            </div>
+          </div>
+        </button>
+
+        {rec.explanation && (
+          <p className="text-xs text-gray-500 px-1">{rec.explanation}</p>
+        )}
+
+        {renderActionButtons()}
+      </div>
+    );
   };
 
   // Render recommendation inline in the chat flow
@@ -271,66 +430,24 @@ export default function ConversationView({
     if (!recommendation || itemStatus !== 'recommended') return null;
 
     if (Array.isArray(recommendation)) {
-      const bestMatch = recommendation.find((m) => m.isBestMatch) || recommendation[0];
-      if (!bestMatch) return null;
-      const candidate = ballotItem.candidates?.find((c) => c.id === bestMatch.candidateId);
-
-      return (
-        <div className="space-y-3">
-          <div className="bg-brand-primary/5 border border-brand-primary/20 rounded-2xl rounded-bl-md p-4 max-w-[85%]">
-            <p className="text-sm font-semibold text-brand-primary mb-1">
-              Based on what you told me:
-            </p>
-            <p className="text-[15px] font-bold text-gray-900">
-              {candidate?.name || 'Unknown'} — {bestMatch.matchPercent}% match
-            </p>
-            {bestMatch.keyAgreements.length > 0 && (
-              <p className="text-xs text-gray-500 mt-1">
-                You align on {bestMatch.keyAgreements.join(' and ')}
-              </p>
-            )}
-          </div>
-          {renderActionButtons()}
-        </div>
-      );
+      return renderCandidateCards();
     }
-
-    // Proposition
-    const rec = recommendation as PropositionRecommendation;
-    const isYes = rec.vote === 'yes';
-
-    return (
-      <div className="space-y-3">
-        <div className="bg-brand-primary/5 border border-brand-primary/20 rounded-2xl rounded-bl-md p-4 max-w-[85%]">
-          <p className="text-sm font-semibold text-brand-primary mb-1">
-            Based on what you told me:
-          </p>
-          {rec.vote ? (
-            <p className={`text-[15px] font-bold ${isYes ? 'text-green-700' : 'text-red-700'}`}>
-              Vote {rec.vote.toUpperCase()}
-            </p>
-          ) : (
-            <p className="text-[15px] font-bold text-gray-600">
-              This one could go either way for you
-            </p>
-          )}
-          {rec.explanation && (
-            <p className="text-xs text-gray-500 mt-1">{rec.explanation}</p>
-          )}
-        </div>
-        {renderActionButtons()}
-      </div>
-    );
+    return renderPropositionCards();
   };
+
+  const hasSelection = ballotItem.type === 'candidate_race'
+    ? selectedCandidateId !== null
+    : selectedPropositionVote !== null;
 
   const renderActionButtons = () => (
     <div className="flex gap-2 pl-1">
       <button
-        onClick={handleAcceptRecommendation}
-        className="flex items-center gap-1.5 px-4 py-2 bg-brand-primary text-white rounded-full text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
+        onClick={handleConfirmSelection}
+        disabled={!hasSelection}
+        className="flex items-center gap-1.5 px-4 py-2 bg-brand-primary text-white rounded-full text-sm font-semibold hover:bg-brand-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
       >
         <Check className="h-3.5 w-3.5" />
-        Got it
+        Confirm
       </button>
       <button
         onClick={() => setItemStatus(ballotItem.id, 'discussing')}
