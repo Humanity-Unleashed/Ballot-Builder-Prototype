@@ -59,10 +59,24 @@ export function validateExtractionOutput(
     let confidence = Math.max(0, Math.min(1, Number(signal.confidence) || 0.5));
     const importance = Math.max(0, Math.min(10, Number(signal.importance) || 5));
 
-    // 3. Check source quote exists in user message (fuzzy — first 20 chars)
+    // 3. Check source quote exists in user message (check multiple segments)
     const sourceStr = String(signal.source || '');
-    const sourceSnippet = sourceStr.toLowerCase().slice(0, 20);
-    const sourceInMessage = sourceSnippet.length > 0 && userMessage.toLowerCase().includes(sourceSnippet);
+    const userLower = userMessage.toLowerCase();
+    const sourceLower = sourceStr.toLowerCase();
+    // Check overlapping 4-word windows from the source quote
+    const sourceWords = sourceLower.split(/\s+/).filter(Boolean);
+    let sourceInMessage = false;
+    if (sourceWords.length >= 3) {
+      for (let i = 0; i <= sourceWords.length - 3; i++) {
+        const window = sourceWords.slice(i, i + 3).join(' ');
+        if (userLower.includes(window)) {
+          sourceInMessage = true;
+          break;
+        }
+      }
+    } else if (sourceLower.length > 0) {
+      sourceInMessage = userLower.includes(sourceLower);
+    }
     if (!sourceInMessage && sourceStr.length > 0) {
       issues.push(`${axisId}: source quote not found in user message`);
       // Still include the signal but reduce confidence
@@ -75,10 +89,12 @@ export function validateExtractionOutput(
       issues.push(`${axisId}: high confidence (${confidence.toFixed(2)}) but thin reasoning`);
     }
 
-    // 5. Reject exact-5 scores with high confidence (likely a default, not real interpretation)
-    if (direction === 5 && confidence > 0.6) {
-      issues.push(`${axisId}: suspicious neutral score (5.0) with high confidence`);
-      confidence = 0.3; // Demote
+    // 5. Near-neutral scores (3.5-6.5) with high confidence — likely vague/centrist
+    //    response that the LLM overrated. Demote confidence.
+    //    Research 06 Failure Mode B: "confident but vague"
+    if (direction >= 3.5 && direction <= 6.5 && confidence > 0.6) {
+      issues.push(`${axisId}: near-neutral score (${direction.toFixed(1)}) with high confidence — demoting`);
+      confidence = 0.3;
     }
 
     // Parse optional enriched fields

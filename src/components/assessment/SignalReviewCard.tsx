@@ -109,6 +109,12 @@ export default function SignalReviewCard({
                   </span>
                 </div>
               )}
+              {/* LLM reasoning */}
+              {signal.rawSignal.reasoning && (
+                <p className="text-[11px] text-gray-500 leading-snug mt-1 italic">
+                  {signal.rawSignal.reasoning}
+                </p>
+              )}
             </div>
           );
         })}

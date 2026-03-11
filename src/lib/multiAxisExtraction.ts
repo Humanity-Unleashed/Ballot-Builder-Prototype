@@ -39,6 +39,29 @@ const SECONDARY_MIN_CONFIDENCE = 0.50;
 /** Minimum source quote length for explicit mention check. */
 const EXPLICIT_MENTION_MIN_LENGTH = 10;
 
+// ── Position snapping ──
+
+/** The 5 discrete positions cards offer: [0, 2.5, 5, 7.5, 10] */
+const DISCRETE_POSITIONS = [0, 2.5, 5, 7.5, 10];
+
+/**
+ * Snap a continuous LLM score to the nearest discrete position.
+ * Eliminates false precision from NLP extraction — the LLM might return 3.7
+ * but the axis only has 5 meaningful positions.
+ */
+function snapToNearestPosition(value: number): number {
+  let closest = DISCRETE_POSITIONS[0];
+  let minDist = Math.abs(value - closest);
+  for (let i = 1; i < DISCRETE_POSITIONS.length; i++) {
+    const dist = Math.abs(value - DISCRETE_POSITIONS[i]);
+    if (dist < minDist) {
+      minDist = dist;
+      closest = DISCRETE_POSITIONS[i];
+    }
+  }
+  return closest;
+}
+
 // ── Signal classification ──
 
 /**
@@ -47,6 +70,9 @@ const EXPLICIT_MENTION_MIN_LENGTH = 10;
  * - Primary: the axis we asked about (always exactly one)
  * - Secondary: user explicitly mentioned another topic with enough clarity
  * - Spillover: inferred from correlation, not directly stated
+ *
+ * Also snaps LLM direction scores to the nearest of the 5 discrete positions
+ * to eliminate false precision.
  */
 export function classifySignals(
   askedAxis: string,
@@ -63,8 +89,12 @@ export function classifySignals(
       strength = 'spillover';
     }
 
-    // Compute entropy-hybrid confidence
-    const entropyResult = entropyConfidenceNLP(signal.direction, signal.confidence);
+    // Snap direction to nearest discrete position
+    const snappedDirection = snapToNearestPosition(signal.direction);
+    const snappedSignal = { ...signal, direction: snappedDirection };
+
+    // Compute entropy-hybrid confidence using snapped direction
+    const entropyResult = entropyConfidenceNLP(snappedDirection, signal.confidence);
     const hybridConf = computeHybridConfidence(
       entropyResult.confidence,
       signal.confidence,
@@ -77,7 +107,7 @@ export function classifySignals(
     return {
       axisId: signal.axisId,
       strength,
-      rawSignal: signal,
+      rawSignal: snappedSignal,
       entropyConfidence: entropyResult.confidence,
       hybridConfidence: discountedConf,
       userConfirmed: strength === 'primary', // primary is auto-confirmed

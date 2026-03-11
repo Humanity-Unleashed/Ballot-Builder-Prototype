@@ -93,10 +93,14 @@ export function bimodalPosterior(
 /**
  * Convert LLM extraction confidence (0-1 heuristic) to a posterior sigma.
  * High LLM confidence → tight sigma. Low → wide sigma.
+ *
+ * NLP minimum sigma is 1.0 (not 0.5) because LLM confidence is uncalibrated —
+ * even high-confidence extractions carry interpretation uncertainty that
+ * structured card selections don't. See Research 06 Section 5.4.
  */
 export function llmConfidenceToSigma(llmConf: number): number {
   const clamped = Math.max(0.05, Math.min(0.95, llmConf));
-  return Math.max(0.5, 4.0 * (1 - clamped));
+  return Math.max(1.0, 4.0 * (1 - clamped));
 }
 
 /**
