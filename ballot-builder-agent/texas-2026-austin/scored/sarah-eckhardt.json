@@ -1,0 +1,146 @@
+{
+  "slug": "sarah-eckhardt",
+  "name": "Sarah Eckhardt",
+  "party": "Democratic",
+  "office": "Comptroller of Public Accounts, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Progressive Austin state senator and former Travis County Judge running for Comptroller on a government accountability and Medicaid expansion platform. Strong reform record in criminal justice and environmental conservation.",
+  "keyPositions": [
+    "Supports Medicaid expansion, framed around rural hospital viability and fiscal benefits",
+    "Voted against school voucher legislation; would audit ESA program as Comptroller",
+    "Established public defender's office, jail diversion, and first PACE program in Texas as County Judge",
+    "Preserved 30,000+ acres of green space; endorsed by Environment Texas",
+    "Campaigns on ending no-bid contracts and one-party accountability in state spending"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["KLTV Medicaid expansion interview Feb 2026", "Texas AFL-CIO endorsement", "YCT 16% rating"],
+      "notes": "Explicit Medicaid expansion support is the strongest signal. General progressive orientation confirmed by YCT score of 16% and Texas Values Action 0%."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Campaign website (Rainy Day Fund for water infrastructure)", "SB 1915 energy efficiency bill", "County record (green space preservation)"],
+      "notes": "Consistent public investment orientation across water, energy, and conservation. Comptroller platform centers fiscal accountability rather than cutting spending."
+    },
+    "econ_tax_structure": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Campaign interviews on progressive tax reform", "Opposition to regressive property tax system"],
+      "notes": "Supports progressive tax reform and critiques Texas's regressive property tax structure. No specific bill votes found on tax policy."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Senate floor vote against voucher legislation", "Campaign platform to audit ESA program as Comptroller"],
+      "notes": "Voting record and campaign platform are fully aligned: opposes vouchers, would use Comptroller office to audit the ESA program."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["KLTV interview Feb 2026", "Campaign website"],
+      "notes": "Explicit Medicaid expansion support, framed around rural hospital viability and fiscal returns to state. Does not go as far as single-payer rhetoric; focused on expansion of existing public programs."
+    },
+    "housing_supply_zoning": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["SB 1567 (roommate occupancy bill)", "Campaign statements on local control"],
+      "notes": "Co-authored SB 1567 which preempts municipal occupancy restrictions (leans toward loosening zoning). However, separately criticized state overreach on zoning as 'putting the big boot of the state on the neck of local governments.' Genuine tension in her record on state preemption vs. local control."
+    },
+    "justice_policing_accountability": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["Travis County Judge record: public defender's office", "Jail diversion programs", "First PACE program in Texas"],
+      "notes": "County Judge record shows strong, consistent reform orientation. Established institutional alternatives to incarceration rather than just rhetoric."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["Jail diversion programs as County Judge", "PACE program (first in Texas)", "Public defender's office establishment"],
+      "notes": "Rehabilitation-focused record as County Judge. PACE (Pretrial Alternative to Continued Incarceration through Electronic monitoring) and jail diversion show clear decarceration orientation with institutional follow-through."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Senate vote against blocking gun transparency in foster homes"],
+      "notes": "Only one documented firearms vote found. Directionally pro-regulation but insufficient evidence for higher confidence. YCT 16% rating is consistent with pro-regulation stance but not firearms-specific."
+    },
+    "climate_ambition": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Environment Texas endorsement (2020)", "30,000+ acres green space preservation as County Judge", "SB 1915 energy efficiency bill"],
+      "notes": "Consistent environmental orientation across endorsements, conservation record, and legislative action. No specific emissions targets or climate emergency framing found."
+    },
+    "climate_energy_portfolio": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["SB 1915 energy efficiency bill"],
+      "notes": "Energy efficiency bill sponsorship signals clean energy orientation, but no direct evidence on fossil fuel phase-out, renewables mandates, or broader energy portfolio positions."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.7,
+      "reasoning": "Strong environmental conservation record (30,000 acres), Medicaid expansion framed for rural communities statewide, reproductive rights (Avow highest rating), LGBTQ+ Political Caucus endorsement. Consistent pattern of extending concern beyond her Austin base to broader populations and nature."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Deep community investment record: public defender's office, jail diversion programs, water infrastructure, school funding defense. County Judge role was fundamentally about direct community welfare. Comptroller pitch is framed around protecting taxpayer dollars for community benefit."
+    },
+    "tradition": {
+      "score": -0.5,
+      "reasoning": "YCT 16% and Texas Values Action 0% indicate active departure from Texas conservative traditions. Voted against SB 8 (abortion restrictions rooted in traditional values). Reform orientation across criminal justice and fiscal policy challenges established institutional norms."
+    },
+    "conformity": {
+      "score": 0.1,
+      "reasoning": "Works within legislative and institutional channels (Senate votes, County Judge governance, running for office). But challenges institutional norms and one-party dominance. Net slightly positive — she is a system-worker, not an outsider disruptor."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Water infrastructure investment (resource security), Medicaid expansion framed around hospital viability (healthcare security), jail diversion as public safety alternative. Security expressed through social infrastructure rather than law enforcement or military framing."
+    },
+    "power": {
+      "score": -0.4,
+      "reasoning": "Campaigns explicitly against no-bid contracts and one-party accountability. Accountability-focused Comptroller pitch is about checking concentrated power. AFL-CIO endorsement over corporate interests. No evidence of deference to business elites or donor class."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "Comptroller pitch includes fiscal competence framing. Career trajectory from County Judge to State Senator to statewide race shows personal ambition. But policy emphasis is on collective outcomes rather than individual meritocracy."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful evidence of personal liberty/lifestyle freedom framing in available record."
+    },
+    "stimulation": {
+      "score": 0.4,
+      "reasoning": "Created first PACE program in Texas (institutional innovation). Switched from congressional race to Comptroller race (adaptability). Reform agenda challenges status quo. But framing is pragmatic reform, not radical transformation."
+    },
+    "self_direction": {
+      "score": 0.5,
+      "reasoning": "Strong reproductive rights record (Avow highest rating, voted against SB 8). LGBTQ+ Political Caucus endorsement. Bodily autonomy and personal freedom signals are clear on social issues, though economic positions favor collective action over individual choice."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Local control vs. state preemption on housing",
+      "description": "Co-authored SB 1567 (state preemption of municipal occupancy restrictions) while simultaneously criticizing state overreach on zoning as 'putting the big boot of the state on the neck of local governments.'",
+      "sources": ["Senate record (SB 1567)", "Campaign statements on local control"],
+      "scoringImpact": "Lowered confidence on housing_supply_zoning to LOW; scored at 4 (slight lean toward loosening) rather than committing to a stronger position in either direction."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": ["housing_affordability_tools", "housing_transport_priority", "health_cost_control", "climate_permitting"],
+    "reasonSkipped": "No meaningful evidence found on housing affordability tools, transit policy, healthcare cost control mechanisms, or permitting reform in available record.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "Limited firearms policy record beyond one vote",
+      "No specific energy portfolio positions beyond efficiency",
+      "No evidence on healthcare cost control mechanisms",
+      "Federal policy positions limited since she is a state-level officeholder running for state office",
+      "No public health mandate positions found (vaccine policy, FDA/CDC stance)"
+    ]
+  }
+}

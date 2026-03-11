@@ -1,0 +1,77 @@
+{
+  "candidateSlug": "james-wright",
+  "candidateName": "James 'Jim' Wright",
+  "party": "Republican",
+  "office": "Railroad Commissioner, Texas",
+  "contestId": "TX-RAILROAD-COMMISSIONER-2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "CORRECTION": "Discovery manifest listed Wright as 'appointed by Gov. Abbott 2024.' He was actually elected November 2020 and took office January 2021. Became RRC Chair June 2025 via commissioner rotation — that is the Abbott connection.",
+
+  "biography": {
+    "fullName": "James 'Jim' Wright",
+    "background": "5th-generation Texas rancher from Orange Grove (Jim Wells County). First worked in oil at 19. Built career in oilfield waste management and environmental services. Owner of multiple oilfield environmental companies (DeWitt Recyclable Products, Environmental Evolutions, etc.). Professional bull rider / PRCA member 20+ years. Texas Oil and Gas Association member as of 2018.",
+    "elected": "Defeated incumbent Republican Ryan Sitton in March 2020 primary; defeated Democrat Chrysta Castaneda in Nov 2020 general by ~10 points. Became RRC Chair June 2025.",
+    "primaryResult": "Advancing to May 26 runoff vs. Bo French — neither cleared 50%"
+  },
+
+  "campaignWebsite": "https://wrightfortexas.com/",
+
+  "policyPositions": [
+    {"topic": "Energy/oil-gas", "position": "'Fighting every day to defend Texas jobs, cut red tape, and keep American energy strong.' Pro-industry, pro-deregulation.", "confidence": "HIGH"},
+    {"topic": "Federal permitting", "position": "Cutting red tape for pipelines and LNG terminals; opposing federal regulatory delays", "confidence": "HIGH"},
+    {"topic": "Landowner rights", "position": "Defending landowners and surface rights — one of three stated campaign priorities", "confidence": "HIGH"},
+    {"topic": "Emerging tech", "position": "Supports geothermal, hydrogen, CCS as extensions of oil/gas infrastructure — NOT as replacements for fossil fuels", "confidence": "MEDIUM"},
+    {"topic": "Water management", "position": "Supports treating oilfield produced water for beneficial reuse to address TX water scarcity", "confidence": "MEDIUM"},
+    {"topic": "Climate", "position": "'I'm not sure that we have good facts on what's causing our climate change' (2020). 'Solar, wind and all those actually harm the environment worse than natural gas' (2020). No public reversal found.", "confidence": "HIGH"},
+    {"topic": "Flaring", "position": "Approved flaring permits (e.g. Callon Petroleum 7th consecutive year) while verbally criticizing industry. Opposes federal methane regulations.", "confidence": "HIGH"},
+    {"topic": "Federal methane rules", "position": "Applauded TX AG challenge to Biden EPA methane rule; called it 'another attempt to harm domestic oil and gas production'", "confidence": "HIGH"}
+  ],
+
+  "officialRecord": {
+    "keyActions": [
+      "Adopted TX's first weatherization rule for natural gas infrastructure post-Uri (2022)",
+      "Approved flaring permits while rhetorically criticizing flaring — pattern of permissive votes with verbal concern",
+      "Opposed Railway Safety Act of 2023 (federal) to protect oil/gas freight transport",
+      "Testified before Congress for more state flexibility on orphan well plugging funds (2024)",
+      "Recused from Eagleford Recycling permit due to personal financial ties (2025) — first RRC recusal in 5+ years",
+      "Oversaw plugging of 730+ orphan wells via IIJA funds; received IOGCC Environmental Stewardship Award"
+    ]
+  },
+
+  "controversies": [
+    {"topic": "Conflict of interest", "description": "Founded DeWitt Recyclable Products (oilfield waste); sold 2014. Company became Eagleford Recycling, permit cancelled 2017 for contamination, new permit 2020. Wright recused from 2025 vote — first recusal in 5+ years. Holds stock in 6 energy services companies per 2024 disclosures.", "sources": ["InsideClimate News", "Commission Shift"]},
+    {"topic": "Prior environmental violations", "description": "As private businessman, accepted responsibility for 255 environmental violations from the RRC and paid $181,000 in fines.", "sources": ["DeSmog", "New Republic"]},
+    {"topic": "Democratic donations", "description": "Donated $46,050 to Abel Herrero (D), $750 to Leticia Van de Putte (D Lt Gov 2014), $1,000 to Joe Straus. Used as primary attack by Bo French.", "sources": ["Texas Scorecard"]}
+  ],
+
+  "interestGroupRatings": [
+    {"organization": "Texas Alliance for Life", "rating": "Endorsed 2026"},
+    {"organization": "TXOGA PAC", "rating": "Endorsed/financial support"},
+    {"organization": "Texas Pipeline Association", "rating": "Endorsed"},
+    {"organization": "Commission Shift (watchdog)", "rating": "Critical — documents conflict-of-interest and insufficient enforcement"}
+  ],
+
+  "endorsements": ["Gov. Greg Abbott", "Land Commissioner Dawn Buckingham", "TXOGA PAC", "Texas Pipeline Association", "Texas Chemistry Council PAC", "Texas Association of Manufacturers", "Grassroots America"],
+
+  "evidenceSummary": {
+    "axesScorable": 4,
+    "overallConfidence": "HIGH for energy/climate axes; NOT SCOREABLE for non-RRC axes",
+    "strongAxes": ["climate_energy_portfolio (fossil fuels first, skeptical of wind/solar)", "climate_ambition_level (explicit climate skepticism, anti-regulation)", "climate_permitting_speed (pro-industry, anti-federal permitting delays)"],
+    "weakAxes": ["All non-energy axes — no positions on firearms, healthcare, immigration, housing, education, criminal justice"],
+    "notes": "5-year RRC record provides HIGH confidence on energy/climate. Rhetorical moderation on some topics (geothermal, orphan wells, produced water) does not override consistently pro-fossil-fuel regulatory record. Score from record, not rhetoric, where they conflict."
+  },
+
+  "sources": [
+    {"url": "https://wrightfortexas.com/", "description": "Campaign website"},
+    {"url": "https://ballotpedia.org/James_Wright_(Texas_Railroad_Commission)", "description": "Ballotpedia"},
+    {"url": "https://www.rrc.texas.gov/about-us/commissioners/jim-wright/", "description": "Official RRC page"},
+    {"url": "https://www.texastribune.org/2026/02/09/texas-railroad-commission-primary-2026-guide-wright-rosenthal/", "description": "Tribune primary guide"},
+    {"url": "https://insideclimatenews.org/news/24112025/texas-railroad-commissioner-jim-wright-recusal/", "description": "InsideClimate — recusal"},
+    {"url": "https://www.desmog.com/jim-wright/", "description": "DeSmog profile"},
+    {"url": "https://www.huffpost.com/entry/jim-wright-texas-railroad-commission_n_5fa04ce8c5b60e7e37d0da2c", "description": "HuffPost — climate skepticism quotes"},
+    {"url": "https://shalemag.com/texas-railroad-commission-chairman/", "description": "Shale Magazine interview"}
+  ]
+}

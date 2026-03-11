@@ -15,8 +15,10 @@ import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { calculateFineTunedScore } from '@/data/fineTuningPositions';
 import { deriveMetaDimensions } from '@/lib/archetypes';
+import { transformBallot } from '@/lib/ballotHelpers';
 import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
 import { useDemographicStore } from '@/stores/demographicStore';
+import { ballotApi } from '@/services/api';
 
 import DemographicScreen from '@/components/demographics/DemographicScreen';
 import IntroScreen from '@/components/blueprint/IntroScreen';
@@ -81,6 +83,13 @@ export default function BlueprintPage() {
     () => assessmentProgress?.strengthValues ?? {},
   );
 
+  // ── Ballot-relevant axes (used to filter assessment questions) ──
+  const [ballotRelevantAxes, setBallotRelevantAxes] = useState<Set<string> | null>(
+    () => assessmentProgress?.ballotRelevantAxes
+      ? new Set(assessmentProgress.ballotRelevantAxes)
+      : null,
+  );
+
   // ── Animation state ──
   const [fadeVisible, setFadeVisible] = useState(true);
 
@@ -120,21 +129,23 @@ export default function BlueprintPage() {
         currentAxisIndex: index,
         sliderPositions: positions,
         strengthValues: strengths,
+        ballotRelevantAxes: ballotRelevantAxes ? Array.from(ballotRelevantAxes) : undefined,
       });
     },
-    [saveAssessmentProgress],
+    [saveAssessmentProgress, ballotRelevantAxes],
   );
 
-  // ── Build axis queue from spec ──
-  const buildAxisQueue = useCallback((): string[] => {
+  // ── Build axis queue from spec, filtered to ballot-relevant axes ──
+  const buildAxisQueue = useCallback((relevantAxes?: Set<string>): string[] => {
     if (!spec) return [];
     const axes: string[] = [];
     for (const domain of spec.domains) {
       for (const axisId of domain.axes) {
         // Only include axes that have slider configs
-        if (getSliderConfig(axisId)) {
-          axes.push(axisId);
-        }
+        if (!getSliderConfig(axisId)) continue;
+        // If we have ballot context, only include axes that appear on the ballot
+        if (relevantAxes && relevantAxes.size > 0 && !relevantAxes.has(axisId)) continue;
+        axes.push(axisId);
       }
     }
     return axes;
@@ -142,8 +153,8 @@ export default function BlueprintPage() {
 
   // ── Handlers ──
 
-  const startAssessment = () => {
-    const queue = buildAxisQueue();
+  const startAssessment = (relevantAxes?: Set<string>) => {
+    const queue = buildAxisQueue(relevantAxes);
     if (queue.length === 0) return;
 
     isRetaking.current = false;
@@ -152,11 +163,46 @@ export default function BlueprintPage() {
     setSliderPositions({});
     setStrengthValues({});
     setFadeVisible(true);
+    setBallotRelevantAxes(relevantAxes ?? null);
     saveProgress(queue, 0, {}, {});
     setPageState('assessment');
   };
 
-  const handleDemographicsComplete = () => {
+  /** Collect all axis IDs that appear on a ballot's items */
+  const collectRelevantAxes = useCallback((ballotItems: ReturnType<typeof transformBallot>['items']): Set<string> => {
+    const axes = new Set<string>();
+    for (const item of ballotItems) {
+      if (item.relevantAxes) {
+        for (const a of item.relevantAxes) axes.add(a);
+      }
+      if (item.yesAxisEffects) {
+        for (const a of Object.keys(item.yesAxisEffects)) axes.add(a);
+      }
+      if (item.type === 'candidate_race' && item.candidates) {
+        for (const c of item.candidates) {
+          if (c.profile?.stances) {
+            for (const a of Object.keys(c.profile.stances)) axes.add(a);
+          }
+        }
+      }
+    }
+    return axes;
+  }, []);
+
+  const handleDemographicsComplete = async () => {
+    const ballotId = useDemographicStore.getState().profile.selectedBallotId;
+    if (ballotId) {
+      try {
+        const ballot = await ballotApi.getById(ballotId);
+        const { items } = transformBallot(ballot);
+        const relevant = collectRelevantAxes(items);
+        startAssessment(relevant);
+        return;
+      } catch (err) {
+        console.warn('[Blueprint] Failed to load ballot for axis filtering, using all axes:', err);
+      }
+    }
+    // Fallback: no ballot or fetch failed — ask all axes
     startAssessment();
   };
 
@@ -226,6 +272,7 @@ export default function BlueprintPage() {
     setFineTuningResponses({});
     setAxisQueue([]);
     setCurrentAxisIndex(0);
+    setBallotRelevantAxes(null);
     clearAssessmentProgress();
     resetDemographics();
     resetBlueprint();

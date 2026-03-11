@@ -1,0 +1,328 @@
+{
+  "researchedAt": "2026-03-07T00:00:00Z",
+  "researchedBy": "researcher-agent",
+  "state": "GA",
+  "electionCycle": "2026",
+  "notes": "This file summarizes all confirmed, proposed, and failed Georgia 2026 statewide ballot measures as of March 7, 2026. The 2026 Georgia General Assembly session ends on Sine Die, April 2, 2026; additional measures could theoretically still be referred from bills that crossed over on March 6. However, constitutional amendments must pass both chambers with a two-thirds supermajority (120 House votes / 38 Senate votes) and cannot be initiated by citizens. No new constitutional amendments are expected after Crossover Day per normal legislative procedure.",
+
+  "confirmedBallotMeasures": [
+    {
+      "slug": "ga-2026-conservation-use-acreage",
+      "type": "constitutional_amendment",
+      "status": "CONFIRMED — certified for November 3, 2026 ballot",
+      "officialTitle": "Georgia Increase Acre Limit for Agriculture and Timber Conservation Use Property Tax Classification Amendment (2026)",
+      "shortName": "Conservation Use Acreage Increase",
+      "billNumber": "HR 32 (House Resolution 32, 2025 session)",
+      "sponsoredBy": "Rep. Chuck Efstration (R-104, Mulberry)",
+      "electionDate": "2026-11-03",
+      "ballotQuestion": "Shall the Constitution of Georgia, for the purpose of protecting family farmland, be amended so as to increase the maximum acreage to qualify for assessment and taxation as a bona fide conservation use property from 2,000 acres to 4,000 acres?",
+      "mechanism": {
+        "summary": "Amends Article VII, Section I, Paragraph III(e)(1) of the Georgia Constitution to raise the acreage cap of 'bona fide conservation use property' that a single owner can enroll from 2,000 acres to 4,000 acres. Land enrolled in conservation use receives a reduced property tax assessment in exchange for a covenant to maintain the land in agricultural or timber use.",
+        "effectiveDate": "January 1, 2027 (if ratified by voters in November 2026)",
+        "fiscalImpact": "Reduces property tax revenue for local governments on newly eligible acreage above the 2,000-acre threshold; specific dollar amount not publicly estimated in available sources"
+      },
+      "yesVoteMeans": "Increase the maximum acreage a single landowner can enroll in the conservation use property tax program from 2,000 to 4,000 acres, lowering their property tax burden in exchange for a land-use covenant.",
+      "noVoteMeans": "Status quo; the 2,000-acre per-owner cap on conservation use enrollment remains in place.",
+      "legislativeHistory": {
+        "housePassage": {
+          "date": "2025-03-06",
+          "vote": "168-5",
+          "notes": "99 House Republicans in favor, 0 opposed; 69 House Democrats in favor, 5 opposed"
+        },
+        "senatePassage": {
+          "date": "2025-03-18",
+          "vote": "50-1",
+          "notes": "30 Senate Republicans in favor, 1 opposed; all 20 Senate Democrats voted in favor"
+        },
+        "sessionPassedIn": "2025 Georgia legislative session (HR 32 introduced January 16, 2025)"
+      },
+      "supporters": [
+        {
+          "organization": "Georgia Farm Bureau",
+          "type": "presumed support — consistent with agricultural interests"
+        },
+        {
+          "organization": "Georgia Forestry Association",
+          "type": "presumed support — consistent with timber interests"
+        },
+        {
+          "organization": "House and Senate Republican majority",
+          "type": "legislative sponsor and majority support"
+        },
+        {
+          "organization": "Georgia Democratic caucus",
+          "type": "largely supportive — 69 of 74 House Democrats voted yes"
+        }
+      ],
+      "opponents": [
+        {
+          "organization": "5 House Democrats",
+          "type": "voted no",
+          "notes": "Opposition rationale not documented in available sources; likely concerns about large landowner benefit vs. small family farm intent"
+        }
+      ],
+      "policyContext": {
+        "background": "Georgia's Conservation Use Value Assessment (CUVA) program allows qualifying agricultural and timber landowners to enroll acreage in exchange for a covenant to maintain conservation use; in return they pay taxes on a lower appraised value. The current cap of 2,000 acres per owner was set previously. Proponents argue family farm operations and timber tracts frequently exceed 2,000 acres and the cap limits the program's reach. Critics note the change primarily benefits larger landowners rather than small family farms.",
+        "mainDebate": "Whether raising the cap from 2,000 to 4,000 acres serves genuine family farm protection or primarily benefits large agricultural landowners and timber corporations with pass-through structures."
+      },
+      "sources": [
+        {
+          "url": "https://ballotpedia.org/Georgia_Increase_Acre_Limit_for_Agriculture_and_Timber_Conservation_Use_Property_Tax_Classification_Amendment_(2026)",
+          "description": "Ballotpedia — full measure detail"
+        },
+        {
+          "url": "https://news.ballotpedia.org/2025/03/21/georgia-voters-to-decide-2026-constitutional-amendment-to-increase-acreage-limit-for-conservation-use-property-tax-classification/",
+          "description": "Ballotpedia News — certification announcement, March 21, 2025"
+        },
+        {
+          "url": "https://www.billtrack50.com/billdetail/1788888",
+          "description": "BillTrack50 — GA HR 32 legislative history"
+        }
+      ],
+      "confidence": "HIGH — confirmed certified; passed both chambers; Ballotpedia-certified"
+    }
+  ],
+
+  "proposedMeasuresFailedOrDead": [
+    {
+      "slug": "ga-2026-sports-betting-hr450",
+      "type": "constitutional_amendment",
+      "status": "DEAD — failed House floor vote on March 6–7, 2026 (Crossover Day); did not meet two-thirds threshold",
+      "officialTitle": "Georgia Sports Betting Legalization Constitutional Amendment (proposed)",
+      "shortName": "Sports Betting Legalization",
+      "billNumbers": "HR 450 (constitutional amendment) + HB 686 (enabling legislation)",
+      "proposedBallotDate": "November 3, 2026 (would have been, if passed)",
+      "mechanism": {
+        "summary": "Would have amended the Georgia Constitution to authorize wagering on sporting events. HB 686 (enabling legislation) would have detailed licensing, taxation, and oversight of operators. Revenue was proposed to flow to a special fund supporting pre-K education and addiction treatment programs.",
+        "sponsoredBy": "House Republican leadership; bipartisan co-sponsors"
+      },
+      "failureDetails": {
+        "houseVote": "63 yes, 98 no — needed 120 yes votes for the required two-thirds majority",
+        "date": "2026-03-07",
+        "reasonsFailed": [
+          "Democrats objected to lack of input on revenue allocation",
+          "Some Republicans preferred broader destination resort legislation",
+          "Bipartisan opposition prevented the supermajority threshold"
+        ]
+      },
+      "priorAttempts": [
+        {
+          "year": "2025",
+          "outcome": "HR 450 introduced in 2025 session; did not pass; carried over into 2026 session"
+        },
+        {
+          "year": "Multiple prior years",
+          "outcome": "Georgia sports betting legalization has failed multiple consecutive sessions"
+        }
+      ],
+      "policyContext": {
+        "background": "Georgia is one of the few remaining states without legal sports betting. Professional sports teams (Atlanta Falcons, Braves, Hawks, United) have been notable advocates. Opposition has come from traditional conservative and religious constituencies, as well as legislators of both parties with structural objections to the specific revenue allocation proposed."
+      },
+      "sources": [
+        {
+          "url": "https://thecurrentga.org/2026/03/07/efforts-to-legalize-sports-betting-in-georgia-stall-as-lawmakers-reject-bill/",
+          "description": "The Current GA — failure coverage, March 7, 2026"
+        },
+        {
+          "url": "https://www.wfxg.com/news/state/house-lawmakers-overwhelmingly-reject-proposal-to-legalize-sports-betting-in-georgia/article_bd2df8a6-6ba5-5fa1-87e0-717ea16b58c9.html",
+          "description": "WFXG — vote result reporting"
+        },
+        {
+          "url": "https://roughdraftatlanta.com/2026/03/07/georgia-sports-betting-bill-fails/",
+          "description": "Rough Draft Atlanta — vote breakdown"
+        }
+      ],
+      "confidence": "HIGH — multiple Georgia news outlets confirm the failure vote"
+    },
+    {
+      "slug": "ga-2026-voter-id-save-amendment-sr838",
+      "type": "constitutional_amendment",
+      "status": "DEAD — SR 838 passed Senate (32-23) but 32 votes fell short of the required two-thirds majority (38 votes); failed on Crossover Day March 6-7, 2026 and did not cross to House",
+      "officialTitle": "State Assurance of Voter Eligibility (SAVE) Amendment",
+      "shortName": "Voter ID / Citizenship Constitutional Amendment",
+      "billNumber": "SR 838 (Senate Resolution 838)",
+      "sponsoredBy": "Georgia Senate Republicans; co-authored by Sen. Greg Dolezal",
+      "proposedBallotDate": "November 3, 2026 (would have been, if passed)",
+      "mechanism": {
+        "summary": "Would have amended the Georgia Constitution in two ways: (1) changed 'Every person who is a citizen' to 'Only individuals who are citizens' in the voter eligibility clause — a clarifying change proponents argued strengthened the noncitizen voting prohibition; (2) constitutionally enshrined Georgia's existing photo ID requirement for voting, which is already required by state statute but not embedded in the state constitution.",
+        "yesVoteMeant": "Enshrine citizenship-only voting language and photo ID requirements directly in the Georgia Constitution",
+        "noVoteMeant": "Existing statutory voter ID and citizenship requirements remain — no constitutional change"
+      },
+      "failureDetails": {
+        "senateVote": "32 yes, 23 no — needed 38 votes for the required two-thirds Senate majority",
+        "date": "2026-03-06",
+        "reasonsFailed": [
+          "Democrats argued noncitizen voting is already illegal under Georgia law and federal law; the amendment was redundant",
+          "Six Republican senators did not vote in favor — precise reasons not documented in available sources",
+          "Did not receive the supermajority threshold required for constitutional amendments"
+        ]
+      },
+      "policyContext": {
+        "background": "Modeled on the federal SAVE Act (Safeguard American Voter Eligibility Act). Georgia already requires photo ID to vote and prohibits noncitizen voting by statute. Proponents argued constitutional entrenchment would make requirements harder to challenge or repeal. Critics said it was redundant and potentially voter-suppressive.",
+        "nationalContext": "Similar to state-level voter citizenship amendments passed in other Republican-controlled states in the 2024–2026 cycle"
+      },
+      "sources": [
+        {
+          "url": "https://www.gpb.org/news/2026/03/07/lawmakers-day-28-crossover-day-senates-voter-amendment-fails-house-oks-income-tax",
+          "description": "Georgia Public Broadcasting — Crossover Day wrap-up including SAVE amendment failure"
+        },
+        {
+          "url": "https://www.thegeorgiavirtue.com/georgia-legislature/bill-to-amend-georgia-constitution-on-voter-id-fails-in-senate-on-crossover-day/",
+          "description": "The Georgia Virtue — amendment failure details"
+        },
+        {
+          "url": "https://trackbill.com/bill/georgia-senate-resolution-838-state-assurance-of-voter-eligibility-save-amendment/2821510/",
+          "description": "TrackBill — SR 838 legislative tracking"
+        }
+      ],
+      "confidence": "HIGH — confirmed failed by GPB and multiple Georgia outlets"
+    },
+    {
+      "slug": "ga-2026-property-tax-elimination-hr1114",
+      "type": "constitutional_amendment",
+      "status": "DEAD — HR 1114 failed House floor vote (approximately 99-73) on March 3, 2026; fell well short of 120-vote supermajority required; motion to reconsider also failed before Crossover Day",
+      "officialTitle": "Homestead Property Tax Phaseout Constitutional Amendment (proposed)",
+      "shortName": "Property Tax Elimination / 75% Reduction Amendment",
+      "billNumbers": "HR 1114 (constitutional amendment) + HB 1116 (enabling legislation)",
+      "sponsoredBy": "House Republican leadership; Speaker Jon Burns",
+      "proposedBallotDate": "November 3, 2026 (would have been, if passed)",
+      "mechanism": {
+        "summary": "Would have amended the Georgia Constitution to progressively reduce the assessed value of homestead property from the current 40% of market value down to 10% of market value by 2032–2037 (a reduction of 3 percentage points per year). This would effectively cut residential property tax bills for homeowners by up to 75%, phasing in over roughly a decade.",
+        "fiscalImpact": "Estimated to cost local governments and school districts billions of dollars in annual revenue; opponents argued it would devastate school funding that is heavily dependent on property taxes"
+      },
+      "failureDetails": {
+        "houseVote": "Approximately 99 yes, 73 no — needed 120 yes votes for two-thirds majority",
+        "date": "2026-03-03",
+        "reasonsFailed": [
+          "Nearly all House Democrats voted against the measure",
+          "The bill required all 99 House Republicans plus 21 Democrats — an effectively impossible coalition",
+          "Local governments and school boards opposed the measure due to revenue loss",
+          "Governor Kemp reportedly preferred his income tax rebate approach over the property tax approach"
+        ]
+      },
+      "aftermath": "After HR 1114 failed, House Majority Leader Efstration said Republicans would pursue a statutory property tax cap instead (requiring only a simple majority). A bill to cap annual property tax increases at 3% reportedly did pass before Crossover Day.",
+      "policyContext": {
+        "background": "Georgia property taxes fund approximately 50-60% of K-12 school budgets and significant local government operations. Republican proponents argued homeowners face unaffordable tax increases tied to rising property values. Opponents (including the Georgia Budget and Policy Institute and local school superintendents) warned of catastrophic effects on public education funding."
+      },
+      "sources": [
+        {
+          "url": "https://www.wabe.org/vote-on-proposal-to-eliminate-georgia-property-taxes-fails/",
+          "description": "WABE — vote failure report"
+        },
+        {
+          "url": "https://roughdraftatlanta.com/2026/03/03/georgia-property-tax-vote-fails/",
+          "description": "Rough Draft Atlanta — failure coverage"
+        },
+        {
+          "url": "https://georgiarecorder.com/2026/03/03/high-profile-gop-property-tax-overhaul-fails-to-clear-the-house/",
+          "description": "Georgia Recorder — detailed coverage"
+        },
+        {
+          "url": "https://gbpi.org/passing-the-buck-property-taxes-fund-georgias-schools-and-local-services/",
+          "description": "Georgia Budget and Policy Institute — policy analysis of property tax and school funding"
+        }
+      ],
+      "confidence": "HIGH — multiple sources confirm the failed vote"
+    },
+    {
+      "slug": "ga-2026-timber-ad-valorem-hr1000",
+      "type": "constitutional_amendment",
+      "status": "STATUS UNCLEAR as of March 7, 2026 — HR 1000 was introduced in 2026 session and reportedly advanced in committee; no confirmed floor vote or passage found in available sources. Session ends April 2, 2026.",
+      "officialTitle": "Georgia Timber Sales Tax Exemption Constitutional Amendment (proposed)",
+      "shortName": "Timber Harvest Ad Valorem Tax Exemption",
+      "billNumber": "HR 1000 (House Resolution 1000, 2026 session)",
+      "sponsoredBy": "House Majority Leader Chuck Efstration (R-Mulberry)",
+      "proposedBallotDate": "November 3, 2026 (if passed both chambers with two-thirds majority before April 2, 2026)",
+      "mechanism": {
+        "summary": "Would amend the Georgia Constitution to exempt standing timber from ad valorem (property) taxation at the point of harvest or sale, specifically for timber on land enrolled in a forest land conservation use covenant. The state would reimburse local governments for a portion of lost ad valorem revenue.",
+        "fiscalImpact": "Reduces local government property tax revenue; the state reimbursement mechanism is meant to offset local fiscal impact, but the net cost to state budget would increase"
+      },
+      "policyContext": {
+        "background": "Timber is Georgia's largest agricultural commodity. The industry faced severe economic hardship following Hurricane Helene (2024) and multiple sawmill closures. Proponents argue the ad valorem tax on standing timber penalizes landowners for holding timber until market conditions improve, discouraging conservation practices. The measure is companion to the already-passed HR 32 (conservation use acreage increase).",
+        "industryContext": "Georgia timber industry groups have lobbied aggressively following Hurricane Helene damage and mill closures"
+      },
+      "sources": [
+        {
+          "url": "https://capitol-beat.org/2026/01/struggling-georgia-timber-industry-could-receive-big-tax-break/",
+          "description": "Capitol Beat News — HR 1000 introduction and background, January 2026"
+        },
+        {
+          "url": "https://chattooga1180.com/georgia-lawmakers-push-constitutional-amendment-to-end-sales-taxes-on-timber/",
+          "description": "AM 1180 Radio — legislative push reporting"
+        }
+      ],
+      "confidence": "LOW-MEDIUM — introduced and reported favorably in committee; no confirmed crossover or floor vote found as of March 7, 2026. Needs further monitoring before April 2 Sine Die."
+    }
+  ],
+
+  "notableLocalMeasures": [
+    {
+      "slug": "ga-athens-clarke-tsplost-2026",
+      "type": "local_referendum",
+      "status": "CONFIRMED — scheduled for May 19, 2026 primary ballot",
+      "jurisdiction": "Athens-Clarke County, GA",
+      "officialTitle": "Transportation Special Purpose Local Option Sales Tax (TSPLOST) 2026",
+      "shortName": "Athens-Clarke TSPLOST 2026",
+      "electionDate": "2026-05-19",
+      "mechanism": {
+        "summary": "1% sales tax dedicated to a specific program of transportation projects in Athens-Clarke County. Voters must approve TSPLOST renewals or new programs at referendum before collection can begin. The current TSPLOST program continues the existing 8% total sales tax rate in the county.",
+        "duration": "Typically set for a defined multi-year period",
+        "revenueUse": "Transportation infrastructure projects as specified in the program list"
+      },
+      "policyContext": {
+        "background": "TSPLOST is a Georgia mechanism allowing local governments to fund transportation improvements via a 1% sales tax approved at referendum. Athens-Clarke County has used TSPLOST programs since at least 2022. Local measures of this type appear on primary ballots in Georgia."
+      },
+      "sources": [
+        {
+          "url": "https://www.accgov.com/11240/TSPLOST-2026",
+          "description": "Athens-Clarke County official TSPLOST 2026 page"
+        }
+      ],
+      "confidence": "MEDIUM — official county website page exists; specific project list and dollar amount not fully reviewed"
+    },
+    {
+      "slug": "ga-metro-atlanta-counties-2026-local",
+      "type": "local_referendum",
+      "status": "NO CONFIRMED 2026 LOCAL BALLOT MEASURES FOUND for Fulton, DeKalb, Cobb, or Gwinnett counties as of March 7, 2026",
+      "jurisdiction": "Fulton, DeKalb, Cobb, Gwinnett Counties (major metro Atlanta counties)",
+      "notes": "The November 2024 transit TSPLOST measures in Cobb County (Mobility SPLOST) and Gwinnett County (Transit SPLOST) both failed at the ballot. No replacement or new transit tax referenda have been confirmed for 2026 in these counties in available sources. SPLOST renewals cycle on multi-year timelines and county budget calendars — it is possible local measures will be announced closer to the 2026 filing deadlines, but none have been publicly confirmed as of the research date.",
+      "sources": [
+        {
+          "url": "https://www.11alive.com/article/news/politics/elections/cobb-gwinnett-counties-transit-referendums-november-election/85-576aca35-fde5-42d3-a841-8506995d3d43",
+          "description": "11Alive — 2024 Cobb/Gwinnett transit TSPLOST failures (background)"
+        },
+        {
+          "url": "https://ballotpedia.org/Fulton_County,_Georgia,_elections,_2026",
+          "description": "Ballotpedia — Fulton County 2026 elections (no local ballot measures listed as of research date)"
+        }
+      ],
+      "confidence": "LOW — no local measures confirmed; this may reflect early timing rather than a definitive absence"
+    }
+  ],
+
+  "legislativeProcessNotes": {
+    "howGeorgiaBallotMeasuresWork": "Georgia does not allow citizen-initiated ballot measures (no initiative or referendum by petition at the state level). All statewide constitutional amendments must be referred by the Georgia General Assembly with a two-thirds supermajority vote (120 of 180 House members; 38 of 56 Senate members) during a single legislative session. The Governor's signature is NOT required for a constitutional amendment to go to the ballot. Amendments require simple majority (50%+1) voter approval to be ratified.",
+    "keyDates2026": {
+      "sessionStart": "January 2026",
+      "crossoverDay": "2026-03-06 (Day 28 of 40)",
+      "sinedie": "2026-04-02",
+      "primaryElection": "2026-05-19",
+      "generalElection": "2026-11-03"
+    },
+    "postCrossoverProspects": "Constitutional amendments must originate in one chamber and cross to the other before Crossover Day. Bills that have already crossed (e.g., Senate bills now in the House, or House bills now in the Senate) can still be amended and passed before Sine Die on April 2, 2026. However, no new constitutional amendment bills introduced after Crossover Day can advance in the same session. As of March 7, 2026, no additional constitutional amendments beyond HR 32 appear on track for the 2026 ballot."
+  },
+
+  "evidenceSummary": {
+    "confirmedForNovember2026Ballot": 1,
+    "failedOrDead": 3,
+    "statusUnclear": 1,
+    "confirmedLocalMeasures": 1,
+    "localMeasuresUnconfirmed": 4,
+    "overallConfidence": "HIGH for statewide picture. The 2025 session produced exactly one constitutional amendment (HR 32) that was certified for the 2026 ballot. The 2026 session, which ends April 2, has so far produced no new constitutional amendments following Crossover Day failures of HR 450 (sports betting), SR 838 (voter ID), and HR 1114 (property tax elimination). HR 1000 (timber tax) remains technically possible before Sine Die but no passage evidence found.",
+    "keyGaps": [
+      "Final status of HR 1000 (timber ad valorem amendment) before Sine Die April 2",
+      "Any additional amendments that may emerge from bills already crossed over in the 2026 session",
+      "Local ballot measures for Fulton, DeKalb, Cobb, Gwinnett — these are determined by county commissions and boards closer to filing deadlines, not yet announced"
+    ]
+  }
+}

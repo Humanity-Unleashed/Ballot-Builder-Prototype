@@ -1,0 +1,239 @@
+{
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "claude-code-manual-search",
+  "state": "GA",
+  "electionCycle": "2026",
+  "keyDates": {
+    "qualifyingPeriod": "2026-03-02 to 2026-03-06",
+    "primaryElection": "2026-05-19",
+    "primaryRunoff": "2026-06-16",
+    "generalElection": "2026-11-03",
+    "generalRunoff": "2026-12-01"
+  },
+  "notes": "This is a broad inventory of all potential races and known candidates for Georgia 2026. It is NOT a full research/scoring pass — intended to assess pipeline feasibility. Candidate lists may be incomplete; qualifying period just closed March 6.",
+
+  "federalRaces": {
+    "usSenate": {
+      "seats": 1,
+      "incumbent": "Jon Ossoff (D)",
+      "description": "Class II seat. One of two Democratic-held Senate seats in a state Trump carried in 2024. Expected to be highly competitive.",
+      "democraticPrimary": [
+        "Jon Ossoff (incumbent)",
+        "Hisham Darwish",
+        "Kia Legette"
+      ],
+      "republicanPrimary": [
+        "Buddy Carter (U.S. Rep, GA-01)",
+        "Mike Collins (U.S. Rep, GA-10)",
+        "Derek Dooley (former football coach, Kemp-backed)"
+      ],
+      "estimatedTotalCandidates": 6
+    },
+    "usHouse": {
+      "totalDistricts": 14,
+      "partisanSplit": "9R-5D after redistricting",
+      "openSeats": [
+        {
+          "district": "GA-01",
+          "reason": "Buddy Carter running for U.S. Senate"
+        },
+        {
+          "district": "GA-10",
+          "reason": "Mike Collins running for U.S. Senate"
+        },
+        {
+          "district": "GA-14",
+          "reason": "Marjorie Taylor Greene resigned January 5, 2026. Special election March 10, 2026 for remainder of term; regular election November 2026."
+        }
+      ],
+      "knownCandidatesByDistrict": {
+        "GA-02": {
+          "democrat": ["Sanford Bishop Jr. (incumbent)"],
+          "republican": ["Benjamin Day"]
+        },
+        "GA-08": {
+          "democrat": ["Justin Lucas", "Kelly Esti"],
+          "republican": ["Austin Scott (incumbent)"]
+        },
+        "GA-10": {
+          "democrat": ["Alexandra 'Lexy' Doherty", "John B. Dority", "Pamela 'Pam' Delancy"],
+          "republican": ["TBD — open seat"]
+        },
+        "GA-12": {
+          "democrat": ["5 candidates (names TBD)"],
+          "republican": ["Rick Allen (incumbent)"]
+        }
+      },
+      "estimatedTotalCandidates": "40-60 across all 14 districts",
+      "dataGaps": "Full candidate lists for GA-01, GA-03 through GA-07, GA-09, GA-11, GA-13, GA-14 not yet compiled"
+    }
+  },
+
+  "statewideExecutiveRaces": {
+    "totalOffices": 8,
+    "races": {
+      "governor": {
+        "democraticPrimary": [
+          "Keisha Lance Bottoms (former Atlanta mayor, frontrunner ~40%)",
+          "Michael Thurmond (former DeKalb CEO / Labor Commissioner)",
+          "Geoff Duncan (former Lt. Governor)",
+          "Jason Esteves (state senator)",
+          "Amanda Duffy",
+          "Derrick Jackson",
+          "Olu Brown"
+        ],
+        "republicanPrimary": [
+          "Burt Jones (Lt. Governor, frontrunner ~22%)",
+          "Brad Raffensperger (Secretary of State)",
+          "Chris Carr (Attorney General)",
+          "Clark Dean",
+          "Gregg Kirkpatrick",
+          "Ken Yasger",
+          "Rick Jackson",
+          "Thomas E. Williams"
+        ]
+      },
+      "lieutenantGovernor": {
+        "democraticPrimary": ["Josh McLaurin (state senator)", "Nabilah Parkes (state senator)"],
+        "republicanPrimary": ["Gregory Dolezal (state senator)", "Blake Tillery (state senator)", "Steve Gooch (state senator)", "John F. Kennedy (former state senator)"]
+      },
+      "attorneyGeneral": {
+        "democraticPrimary": ["Tanya Miller", "Robert Trammell"],
+        "republicanPrimary": ["Bill Cowsert", "Brian Strickland"]
+      },
+      "secretaryOfState": {
+        "democraticPrimary": ["Dana Barrett", "Adrian Consonery Jr.", "Penny Brown Reynolds"],
+        "republicanPrimary": ["Tim Fleming", "Vernon Jones", "Kelvin King", "Gabriel Sterling"]
+      },
+      "insuranceCommissioner": {
+        "democraticPrimary": ["David Greene", "Nabilah Islam Parkes"],
+        "republicanPrimary": ["John King (incumbent)"]
+      },
+      "laborCommissioner": {
+        "democraticPrimary": ["Nikki Porcher"],
+        "republicanPrimary": ["Barbara Rivera Holmes (incumbent)"]
+      },
+      "agricultureCommissioner": {
+        "democraticPrimary": ["LeMario Brown", "Handy Kennedy"],
+        "republicanPrimary": ["Tyler Harper (incumbent)"]
+      },
+      "superintendentOfSchools": {
+        "democraticPrimary": ["Anton Anthony", "Lydia Powell", "Otha Thornton"],
+        "republicanPrimary": ["Fred Longgrear", "Mesha Mainor", "Randell Trammell"]
+      }
+    },
+    "estimatedTotalCandidates": "~45-50"
+  },
+
+  "judicialAndRegulatory": {
+    "supremeCourt": {
+      "seatsUp": 3,
+      "incumbents": ["Sarah Warren", "Charlie Bethel", "Benjamin Land"],
+      "challengers": ["Jen Jordan (vs. Warren)", "Miracle Rankin (vs. Bethel)"],
+      "notes": "Nonpartisan, on May 19 ballot. Land may be unopposed."
+    },
+    "courtOfAppeals": {
+      "seatsUp": "TBD",
+      "notes": "Not yet researched"
+    },
+    "superiorCourt": {
+      "judicialCircuits": 49,
+      "notes": "Number of contested races not yet compiled"
+    },
+    "districtAttorney": {
+      "racesUp": 9,
+      "of": 49,
+      "notes": "9 of 49 circuits holding DA elections"
+    },
+    "publicServiceCommission": {
+      "seatsUp": 2,
+      "candidates": "Not yet compiled",
+      "notes": "Regulates utilities — significant for energy policy"
+    },
+    "estimatedTotalCandidates": "~150+"
+  },
+
+  "stateLegislature": {
+    "stateSenate": {
+      "totalSeats": 56,
+      "allUp": true,
+      "currentSplit": "33R-23D",
+      "estimatedCandidates": "150-200+"
+    },
+    "stateHouse": {
+      "totalSeats": 180,
+      "allUp": true,
+      "currentSplit": "100R-80D",
+      "estimatedCandidates": "400-600+"
+    },
+    "notes": "All 236 state legislative seats are up in 2026. Many will have contested primaries on at least one side. This is the largest single category of races."
+  },
+
+  "countyAndLocal": {
+    "totalCounties": 159,
+    "officesPerCounty": [
+      "Sheriff",
+      "Tax Commissioner",
+      "Clerk of Superior Court",
+      "Probate Judge",
+      "Coroner",
+      "Surveyor",
+      "County Commission seats",
+      "School Board seats"
+    ],
+    "estimatedTotalRaces": "1,000+",
+    "estimatedTotalCandidates": "2,000-4,000+",
+    "notes": "Too granular to enumerate at state level. Data availability for individual candidates is very thin for most county races."
+  },
+
+  "ballotMeasures": {
+    "statewide": {
+      "confirmed": 1,
+      "description": "See measure-georgia-2026-ballot-measures-summary.json for full details",
+      "confirmedMeasure": "Conservation Use Acreage Increase (HR 32)"
+    },
+    "local": {
+      "confirmed": 1,
+      "description": "Athens-Clarke TSPLOST 2026 (May 19 primary ballot)"
+    }
+  },
+
+  "pipelineFeasibilityAssessment": {
+    "tier1_federalAndStatewide": {
+      "races": "~23 contests",
+      "candidates": "~100-110",
+      "agentCalls": "~200-220 (researcher + scorer per candidate)",
+      "feasibility": "VERY DOABLE — high-profile candidates, abundant public data, interest group ratings available for most",
+      "expectedConfidence": "HIGH for most candidates"
+    },
+    "tier2_stateLegislature": {
+      "races": "236 seats",
+      "candidates": "~400-600",
+      "agentCalls": "~800-1200",
+      "feasibility": "CHALLENGING — possible but expect many LOW confidence scores. Rural/uncontested districts will have minimal data.",
+      "expectedConfidence": "MIXED — urban/suburban competitive seats will have decent data; rural seats often have almost nothing"
+    },
+    "tier3_judicial": {
+      "races": "~60+",
+      "candidates": "~150+",
+      "agentCalls": "~300+",
+      "feasibility": "MIXED — nonpartisan races have less ideological signal. Scoring methodology (civic axes) may not map well to judicial philosophy.",
+      "expectedConfidence": "LOW-MEDIUM for most"
+    },
+    "tier4_countyLocal": {
+      "races": "1,000+",
+      "candidates": "2,000-4,000+",
+      "agentCalls": "4,000-8,000+",
+      "feasibility": "NOT FEASIBLE with current pipeline — too many candidates, too little public data for most",
+      "expectedConfidence": "VERY LOW for most"
+    },
+    "practicalConcerns": [
+      "Even Tier 1+2 alone = ~1,000-1,400 subagent calls",
+      "Web search rate limits could be hit at scale",
+      "Evidence quality drops sharply below statewide level",
+      "Cost: each subagent uses context window — hundreds of parallel runs = substantial API usage",
+      "First-time candidates (especially state legislature) will have few scored axes"
+    ],
+    "recommendation": "Start with Tier 1 fully (~23 races, ~100 candidates). Selectively add 10-20 competitive state legislative districts from Tier 2. Skip Tiers 3-4 for initial feasibility testing."
+  }
+}

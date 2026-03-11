@@ -1,0 +1,72 @@
+{
+  "candidateSlug": "dan-patrick",
+  "candidateName": "Dan Patrick",
+  "party": "Republican",
+  "office": "Lieutenant Governor, Texas",
+  "contestId": "TX-LT-GOVERNOR-2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Dan Patrick",
+    "background": "Conservative talk radio host turned politician. Texas State Senator District 7 (2007-2015). Lt. Governor since 2015 — seeking 4th term. As Lt. Gov, controls Texas Senate agenda. Trump's Religious Liberty Commission leader (2025). One of the most powerful figures in Texas politics.",
+    "primaryResult": "Won Republican primary March 3, 2026"
+  },
+
+  "campaignWebsite": "https://www.danpatrick.org/",
+
+  "policyPositions": [
+    {"topic": "Firearms", "position": "NRA A+ grade. Controlled agenda for campus carry, open carry, permitless carry (HB 1927). Brief 2019 background-check advocacy abandoned; long-term NRA A+ record dominates.", "confidence": "HIGH"},
+    {"topic": "Abortion", "position": "Pro-life. Controlled agenda for SB 8 (heartbeat), trigger law. Life of the Mother Act (SB 31). Taxpayer-Funded Abortion Travel Ban (SB 33). Texas Right to Life 111-138% index.", "confidence": "HIGH"},
+    {"topic": "School choice", "position": "Named school choice as highest legislative priority. Pushed $1B ESA/voucher program (SB 2) through Senate. Foundational issue.", "confidence": "HIGH"},
+    {"topic": "Property taxes", "position": "$18B property tax cut. Named property tax relief as 2027 interim charge priority.", "confidence": "HIGH"},
+    {"topic": "Border security", "position": "Aggressive enforcement. Interim charges include border security. Aligned with Trump on immigration.", "confidence": "HIGH"},
+    {"topic": "Energy", "position": "Texas Energy Fund ($10B for gas plants). Pro-fossil fuel. ESG anti-boycott law (SB 13). Climate skeptic.", "confidence": "HIGH"},
+    {"topic": "DEI/CRT", "position": "DEI ban, CRT ban, tenure reform at public universities. 'Strongest pushback to woke policies in higher education.'", "confidence": "HIGH"},
+    {"topic": "THC ban", "position": "Pushed THC ban (SB 3) as top 2025 priority despite GOP backlash. Uses government-mandate logic unusual for liberty conservative.", "confidence": "HIGH"},
+    {"topic": "Ten Commandments in schools", "position": "SB 10 requiring Ten Commandments display in public schools.", "confidence": "HIGH"},
+    {"topic": "Housing", "position": "SB 15 removing barriers to affordable housing — supply-side deregulation + anti-institutional investor. Bipartisan passage.", "confidence": "MEDIUM"},
+    {"topic": "Anti-Sharia law", "position": "Named as 2027 interim charge. Anti-Muslim rhetoric.", "confidence": "MEDIUM"}
+  ],
+
+  "votingRecord": {
+    "chamber": "Controls Texas Senate agenda as Lt. Governor (president of Senate)",
+    "notes": "Does not vote on legislation directly (breaks ties only), but controls what reaches the Senate floor. Legislative record is measured by what he prioritizes and pushes through.",
+    "priorSenateRecord": "Texas State Senator District 7 (2007-2015): authored mandatory ultrasound law, small business tax cuts, Tea Party Caucus founder"
+  },
+
+  "interestGroupRatings": [
+    {"organization": "NRA", "grade": "A+", "notes": "Endorsed 2022 and 2026"},
+    {"organization": "Texas Right to Life PAC", "score": "111-138% index scores", "notes": "Endorsed 2026"},
+    {"organization": "Texas Alliance for Life", "rating": "Endorsed 2026"},
+    {"organization": "TXOGA (oil and gas)", "rating": "Endorsed multiple cycles"},
+    {"organization": "AFL-CIO", "rating": "Opposed — endorsed Patrick's Democratic challenger"}
+  ],
+
+  "positionConflicts": [
+    {"topic": "Firearms", "conflict": "Brief 2019 background-check advocacy (post-El Paso shooting) vs. long-term NRA A+ record. Resolved toward gun rights — abandoned background check push quickly under NRA pressure."},
+    {"topic": "Public health/THC", "conflict": "THC ban (SB 3) uses government-mandate logic unusual for a liberty conservative who opposes other mandates."},
+    {"topic": "Housing", "conflict": "SB 15 supply-side deregulation + anti-institutional investor = internally mixed market philosophy."}
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 13,
+    "overallConfidence": "HIGH",
+    "strongAxes": ["justice_firearms_policy (NRA A+)", "econ_school_choice (highest priority)", "climate_ambition_level (climate skeptic, pro-fossil)", "climate_energy_portfolio (Texas Energy Fund, ESG anti-boycott)", "health_coverage_model (opposes Medicaid expansion)", "justice_police_accountability (back the blue)", "justice_sentencing_goals (tough on crime)", "econ_safety_net_breadth (limited government)"],
+    "mediumAxes": ["econ_public_investment", "health_cost_control", "health_public_health (THC ban complicates)", "housing_affordability_tools", "housing_zoning_supply"],
+    "weakAxes": ["housing_transit_priority (no record)", "climate_permitting_speed (no record)"],
+    "notes": "11+ year record as Lt. Governor controlling Senate agenda provides exceptionally strong evidence across nearly all axes. One of the most well-documented politicians in Texas."
+  },
+
+  "sources": [
+    {"url": "https://www.danpatrick.org/", "description": "Campaign website"},
+    {"url": "https://ballotpedia.org/Dan_Patrick", "description": "Ballotpedia"},
+    {"url": "https://en.wikipedia.org/wiki/Dan_Patrick_(politician)", "description": "Wikipedia"},
+    {"url": "https://www.nrapvf.org/articles/20220111/nra-endorses-texas-lt-governor-dan-patrick", "description": "NRA endorsement"},
+    {"url": "https://www.texasrighttolifepac.com/texas-right-to-life-pac-proudly-endorses-lt-governor-dan-patrick/", "description": "TX Right to Life endorsement"},
+    {"url": "https://www.texastribune.org/2026/01/30/dan-patrick-interim-charges-senate-texas-legislature-2027/", "description": "Tribune — 2027 priorities"},
+    {"url": "https://www.texastribune.org/2025/06/10/dan-patrick-texas-thc-ban-republican-gop-backlash/", "description": "Tribune — THC ban"},
+    {"url": "https://www.texastribune.org/2019/09/06/texas-dan-patrick-nra-feud-gun-background-checks/", "description": "Tribune — 2019 background check feud"}
+  ]
+}

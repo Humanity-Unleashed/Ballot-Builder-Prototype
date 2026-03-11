@@ -1,0 +1,150 @@
+{
+  "slug": "mike-collier",
+  "name": "Mike Collier",
+  "party": "Independent",
+  "office": "Lieutenant Governor, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Three-time Lt. Gov candidate (R primary 2018, D nominee 2022, Independent 2026) with deep oil/gas and accounting background; self-describes as fiscally conservative and socially moderate, running on public education, property tax reform, and grid reliability.",
+  "keyPositions": [
+    "Top priority is public education funding; conditionally opposes vouchers unless they demonstrably help low-income students",
+    "Supports Medicaid expansion framed around rural hospital viability",
+    "All-of-the-above energy with battery storage, ERCOT reform, and national grid interconnection",
+    "Supports background checks, red flag laws, and gun owner liability",
+    "Supports term limits as a top-tier priority"
+  ],
+  "axisStances": {
+    "econ_school_choice": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Campaign interviews 2026", "Texas AFT coverage", "2022 campaign position"],
+      "notes": "Opposes vouchers but softened between 2022 (hard opposition as Democrat) and 2026 (conditional openness as Independent). Currently: open to vouchers only if they demonstrably help low-income students. Still predominantly pro-public-school but no longer absolute. Scored at 3 rather than 1-2 to reflect the conditional stance."
+    },
+    "econ_tax_structure": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["Campaign platform — property tax reform"],
+      "notes": "Property tax reform via eliminating unfunded mandates is a moderate position. Self-describes as 'fiscally conservative' but no specific income or corporate tax proposals found. Scored slightly left of center based on reform framing targeting relief for homeowners rather than across-the-board cuts."
+    },
+    "econ_investment": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Campaign platform", "Grid reform proposals", "The Eagle expert evaluation"],
+      "notes": "Supports significant public investment in grid infrastructure, battery storage, and ERCOT reform. Public education funding is top priority. But 'fiscally conservative' self-description and business background suggest he would not support Green New Deal-scale programs. Moderate public investment orientation."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Campaign interviews — Medicaid expansion"],
+      "notes": "Explicit support for Medicaid expansion, which is a significant government coverage expansion in Texas context. Framed pragmatically around rural hospitals rather than ideologically. No evidence of support for single-payer or public option beyond Medicaid. Scored at 3: meaningful government expansion but not single-payer."
+    },
+    "health_public_health": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["Campaign interviews — THC ban opposition"],
+      "notes": "Opposes blanket THC prohibition, suggesting moderate individual-choice orientation on public health matters. Insufficient evidence for stronger score in either direction."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Gun Sense Voter profile", "2022 campaign detail", "2026 consistency"],
+      "notes": "Supports universal background checks, red flag laws, and gun owner liability. Listed as gun sense voter candidate. This is a significant regulation package — scored at 3. Consistent across 2022 and 2026 campaigns."
+    },
+    "climate_ambition": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": ["Campaign interviews", "The Eagle expert evaluation", "Campaign platform"],
+      "notes": "Acknowledges climate tech and grid modernization but does not frame climate as an emergency. All-of-the-above energy approach includes fossil fuels. Background is in oil/gas. Moderate climate awareness without aggressive action framing. Scored at 4: leans toward action but far from aggressive."
+    },
+    "climate_energy_portfolio": {
+      "score": 5,
+      "confidence": "medium",
+      "sources": ["Multiple interviews", "The Eagle expert evaluation"],
+      "notes": "Explicitly all-of-the-above: supports battery storage and renewables expansion alongside continued fossil fuel production. Wants national grid interconnection and ERCOT reform. As a former oil/gas executive, credibly supports fossil fuels continuing alongside clean energy build-out. True center on this axis."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.2,
+      "reasoning": "Medicaid expansion and public education investment show some concern for broader welfare. But framing is pragmatic and local (rural hospitals, Texas students) rather than universal. No evidence of environmental justice or global humanitarian orientation. Oil/gas background works mildly against environmental universalism."
+    },
+    "benevolence": {
+      "score": 0.5,
+      "reasoning": "Strong community orientation: public education as top priority, Medicaid expansion for rural communities, property tax relief for homeowners, grid reliability to protect Texans. Consistent care-for-community framing across all three campaigns."
+    },
+    "tradition": {
+      "score": -0.1,
+      "reasoning": "Reproductive rights stance and THC opposition challenge social conservative traditions. However, fiscal conservatism self-description and respect for institutional processes show some traditional orientation. Net slightly negative due to the social positions."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Works within the system orientation; term limits advocacy is institutional reform through legitimate channels. Running as Independent rather than trying to disrupt a party from within. CPA/Big Four background suggests rule-following orientation."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Grid reliability is fundamentally a security issue — protecting Texans from blackouts. Medicaid expansion framed around hospital stability. Property tax reform as economic security. Gun safety as community security. Strong security-through-stability orientation."
+    },
+    "power": {
+      "score": 0.1,
+      "reasoning": "PWC partner and oil company CFO background suggest comfort with business power structures. But no evidence of large donor alignment or corporate PAC dependence in 2026 run. Independent candidacy somewhat challenges institutional power. Near neutral."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Strong personal achievement narrative: CPA, Big Four partner, oil company founder. Meritocratic framing implicit in fiscal conservatism. Workforce and economic competence emphasis. Three-time candidate shows persistence-as-achievement orientation."
+    },
+    "hedonism": {
+      "score": 0.2,
+      "reasoning": "THC prohibition opposition and casino legalization support suggest personal liberty orientation on lifestyle choices. Modest positive signal but not a defining characteristic."
+    },
+    "stimulation": {
+      "score": 0.4,
+      "reasoning": "Running as Independent is itself a stimulation signal — challenging the two-party status quo. Grid modernization, ERCOT reform, and term limits are all change-oriented. But not a radical disruptor — proposals are pragmatic reforms, not structural transformation."
+    },
+    "self-direction": {
+      "score": 0.4,
+      "reasoning": "Independent candidacy signals independent thought. Reproductive rights as personal choice. THC and casino positions emphasize individual freedom. Gun safety positions work against pure self-direction on that dimension. Net moderately positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Voucher position evolution",
+      "description": "Opposed vouchers categorically in 2022 as Democratic nominee. In 2026 as Independent, position softened to conditional openness if vouchers demonstrably help low-income students.",
+      "sources": ["Texas AFT coverage", "2026 campaign interviews"],
+      "scoringImpact": "Scored current (2026) conditional position at econ_school_choice: 3, not the harder 2022 opposition which would have been 1-2."
+    },
+    {
+      "topic": "Reproductive rights evolution",
+      "description": "In 2022 pledged to repeal Texas abortion ban. In 2026, softened to 'between a woman, her doctor, and her preacher' framing.",
+      "sources": ["2022 campaign platform", "2026 campaign interviews"],
+      "scoringImpact": "Not scored as a standalone axis (health_reproductive not in current axis set), but noted in self-direction value score."
+    },
+    {
+      "topic": "Oil/gas background vs. climate positioning",
+      "description": "Career as Exxon employee, West Texas landman, and oil company CFO contrasts with support for grid modernization and climate tech. All-of-the-above energy approach is consistent with both backgrounds.",
+      "sources": ["Biography", "Campaign energy platform"],
+      "scoringImpact": "Scored climate_energy_portfolio at 5 (true center) and climate_ambition at 4 (mild lean toward action). The oil/gas background is not disqualifying but prevents scoring him as a strong climate advocate."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 8,
+    "axesSkipped": [
+      "econ_safetynet",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No evidence in research file for these axes. Collier has never held office and his campaign statements do not address these topics specifically enough to score.",
+    "overallConfidence": "medium",
+    "researchGaps": [
+      "No voting record exists — all evidence is Tier 2-3 campaign statements and interviews",
+      "No interest group scorecards available (never held office)",
+      "Housing and transportation positions not documented",
+      "Policing and criminal justice positions not documented",
+      "Safety net positions beyond Medicaid expansion not documented",
+      "Ballot qualification still pending — may not appear on November 2026 ballot"
+    ]
+  }
+}

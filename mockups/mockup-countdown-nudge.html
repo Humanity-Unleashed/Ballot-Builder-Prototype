@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Nudge — Ballot Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2B5797',
+            'primary-dark': '#1E3F6F',
+            success: '#22C55E',
+            incomplete: '#D1D5DB',
+            'bg-light': '#F9FAFB',
+            'text-primary': '#111827',
+            'text-secondary': '#6B7280',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-bg-light min-h-screen">
+  <div class="max-w-md mx-auto px-4 py-8">
+
+    <!-- Section A: Push Notification Preview -->
+    <div class="mb-3">
+      <p class="text-xs text-text-secondary uppercase tracking-wide font-semibold mb-3 px-1">A. Push Notification</p>
+    </div>
+
+    <!-- Phone frame -->
+    <div class="bg-gray-800 rounded-3xl p-3 pb-6 mb-10 shadow-xl">
+      <!-- Status bar -->
+      <div class="flex justify-between items-center px-4 py-2 text-white text-xs mb-2">
+        <span class="font-medium">9:41</span>
+        <div class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+        </div>
+      </div>
+
+      <!-- Notification card -->
+      <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-4 mx-1 shadow-sm">
+        <div class="flex items-start gap-3">
+          <!-- App icon -->
+          <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between mb-0.5">
+              <span class="text-xs font-semibold text-text-primary">BALLOT BUILDER</span>
+              <span class="text-xs text-text-secondary">now</span>
+            </div>
+            <p class="text-sm font-semibold text-text-primary mb-0.5">7 days until Election Day</p>
+            <p class="text-xs text-text-secondary leading-relaxed">2 of your squad members haven't finished their sample ballot. Send them a friendly nudge?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section B: Nudge Compose Screen -->
+    <div class="mb-3">
+      <p class="text-xs text-text-secondary uppercase tracking-wide font-semibold mb-3 px-1">B. Nudge Compose Screen</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+      <!-- Header -->
+      <div class="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
+        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <h2 class="text-lg font-bold text-text-primary">Send a nudge</h2>
+      </div>
+
+      <div class="p-5">
+        <!-- Members who need nudging -->
+        <p class="text-sm font-medium text-text-primary mb-3">Haven't finished sample ballot:</p>
+
+        <div class="space-y-3 mb-6">
+          <!-- Jake S. -->
+          <div class="flex items-center gap-3 bg-bg-light rounded-xl p-3">
+            <div class="w-9 h-9 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold text-xs shrink-0">JS</div>
+            <div class="flex-1">
+              <p class="text-sm font-medium text-text-primary">Jake S.</p>
+              <div class="flex gap-1 mt-1">
+                <span class="w-5 h-5 rounded bg-success/15 flex items-center justify-center">
+                  <svg class="w-3 h-3 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="w-5 h-5 rounded bg-success/15 flex items-center justify-center">
+                  <svg class="w-3 h-3 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="w-5 h-5 rounded bg-gray-100 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-sm bg-incomplete"></div>
+                </span>
+                <span class="w-5 h-5 rounded bg-gray-100 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-sm bg-incomplete"></div>
+                </span>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-9 h-5 bg-gray-200 peer-checked:bg-primary rounded-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] peer-checked:after:translate-x-full after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
+            </label>
+          </div>
+
+          <!-- Dad -->
+          <div class="flex items-center gap-3 bg-bg-light rounded-xl p-3">
+            <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs shrink-0">D</div>
+            <div class="flex-1">
+              <p class="text-sm font-medium text-text-primary">Dad</p>
+              <div class="flex gap-1 mt-1">
+                <span class="w-5 h-5 rounded bg-success/15 flex items-center justify-center">
+                  <svg class="w-3 h-3 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="w-5 h-5 rounded bg-gray-100 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-sm bg-incomplete"></div>
+                </span>
+                <span class="w-5 h-5 rounded bg-gray-100 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-sm bg-incomplete"></div>
+                </span>
+                <span class="w-5 h-5 rounded bg-gray-100 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-sm bg-incomplete"></div>
+                </span>
+              </div>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" checked class="sr-only peer">
+              <div class="w-9 h-5 bg-gray-200 peer-checked:bg-primary rounded-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] peer-checked:after:translate-x-full after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Editable message -->
+        <p class="text-sm font-medium text-text-primary mb-2">Message</p>
+        <textarea
+          rows="4"
+          class="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-sm text-text-primary focus:border-primary focus:outline-none transition-colors resize-none leading-relaxed"
+        >Hey! Election Day is one week away. Have you had a chance to finish your ballot prep on Ballot Builder? Here's the link: ballotbuilder.app</textarea>
+
+        <!-- Send button -->
+        <button class="w-full bg-primary text-white rounded-xl py-3.5 font-semibold text-sm hover:bg-primary-dark transition-colors mt-4 flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          Send via Text
+        </button>
+
+        <!-- Disclaimer -->
+        <p class="text-xs text-text-secondary text-center mt-3 flex items-center justify-center gap-1.5">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          This sends a text from your phone — not from Ballot Builder
+        </p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

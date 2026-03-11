@@ -1,0 +1,138 @@
+{
+  "slug": "jon-rosenthal",
+  "name": "Jon Rosenthal",
+  "party": "Democratic",
+  "office": "Railroad Commissioner, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Former oilfield engineer and one-term state rep running to reform the Railroad Commission from within; favors strict environmental enforcement and grid weatherization while explicitly supporting continued oil and gas production.",
+  "keyPositions": [
+    "End routine flaring/venting; authored HB 1452 to eliminate it by 2025",
+    "Mandate grid weatherization with deadlines and third-party audits post-Winter Storm Uri",
+    "Explicitly 'All of the Above' on energy -- reform the oil/gas industry, not replace it",
+    "Ban industry donations to Railroad Commissioners; full transparency on enforcement hearings",
+    "Deny new permits to operators with unresolved violations"
+  ],
+  "axisStances": {
+    "econ_investment": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Positive citation of Biden IRA and Bipartisan Infrastructure Law", "Orphan well plugging tied to local hiring", "AFL-CIO COPE endorsement"],
+      "notes": "No direct state-level fiscal voting record on public investment broadly, but infrastructure and industrial policy signals are consistently pro-investment."
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Texans for Fiscal Responsibility 24/100 F grade", "YCT career 19/100"],
+      "notes": "Conservative fiscal scorecards consistently rate him poorly, indicating progressive fiscal orientation. No specific tax policy statements found -- scored from scorecards."
+    },
+    "econ_school_choice": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["Voted against school voucher legislation in Texas House", "ATPE-aligned"],
+      "notes": "Clear anti-voucher voting record."
+    },
+    "justice_firearms": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Voted NO on HB 1927 (permitless carry)"],
+      "notes": "One strong signal (voting against permitless carry) but no broader gun policy platform documented. Scored as favoring significant regulation based on the vote; confidence medium because only one data point."
+    },
+    "climate_ambition": {
+      "score": 3,
+      "confidence": "high",
+      "sources": ["HB 1452 (authored anti-flaring bill)", "Sierra Club 100% (2019)", "SB 3 weatherization amendments", "Campaign platform on enforcement"],
+      "notes": "Strong climate policy through regulation and enforcement, but not emergency-level transformation. His framing is 'clean up the industry' rather than 'end fossil fuels.' Sierra Club 2021 score of 5% is misleading -- their own narrative praised his work; the 100% in 2019 and his authored legislation are the stronger signals."
+    },
+    "climate_energy_portfolio": {
+      "score": 5,
+      "confidence": "high",
+      "sources": ["Campaign website 'All of the Above' framing", "Texas Tribune profile", "25-year oilfield engineering career"],
+      "notes": "Explicitly supports continued oil and gas production with stricter accountability. Positively cited IRA clean energy provisions but does not advocate fossil fuel phase-out. This is a genuine moderate position: reform the industry, don't replace it. Score reflects 'all-of-the-above' anchor on the methodology scale. Despite Democratic affiliation and strong environmental regulation stance, he is NOT a renewables-priority candidate."
+    },
+    "climate_permitting": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["Campaign platform: deny permits to violators", "Third-party audit requirement", "Continuous monitoring mandate", "HB 1452 enforcement provisions"],
+      "notes": "Would significantly strengthen environmental review and enforcement at the Railroad Commission. Wants to add preconditions (clean violation record) before permit issuance. This moves clearly toward strengthened environmental review (Pole A)."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.4,
+      "reasoning": "Environmental protection through anti-flaring legislation and methane monitoring shows concern for nature and public welfare beyond immediate community. However, his 'All of the Above' energy stance and industry-insider approach limit the scope -- he's protecting people from pollution, not transforming the energy system for the planet. Moderate positive."
+    },
+    "benevolence": {
+      "score": 0.5,
+      "reasoning": "Consistent community-welfare orientation: grid weatherization to protect Texans from another Uri, orphan well plugging tied to local hiring, public school defense, AFL-CIO endorsement. His campaign is framed around protecting Texas communities from industry negligence."
+    },
+    "tradition": {
+      "score": -0.1,
+      "reasoning": "Voted against SB 8 (heartbeat act) and permitless carry -- both challenges to conservative Texas traditions. But his 'All of the Above' energy stance and respect for the oil/gas industry as an institution show some deference to Texas economic traditions. Near neutral with slight negative lean."
+    },
+    "conformity": {
+      "score": 0.5,
+      "reasoning": "Strong rule-of-law and institutional reform orientation. Wants to fix the Railroad Commission through proper regulatory enforcement, not abolish it. Ethics reform (ban donations, publish calendars, livestream hearings) is about making institutions follow their own rules. Filed amendments through proper legislative process even as minority-party member."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Grid weatherization is fundamentally about energy security and preventing another Winter Storm Uri disaster. Plugging orphan wells addresses environmental safety hazards. Enforcement against polluters protects community health. His entire campaign is framed around making Texas safer from infrastructure failures and industrial negligence."
+    },
+    "power": {
+      "score": -0.3,
+      "reasoning": "Ethics reform platform (ban industry donations, transparency requirements) is explicitly about breaking the oil/gas industry's control over the Railroad Commission. Challenging a captured regulatory body. AFL-CIO backed rather than industry-backed. However, he's not anti-corporate broadly -- he respects the industry and wants to reform it, not destroy it."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Engineering credentials and technical expertise are central to his pitch -- 'I actually understand this industry.' Defeated a 12-term incumbent. Named Freshman of the Year. Competence-based identity is clear."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence of personal liberty/lifestyle freedom framing in his campaign or record."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Some reform energy -- he wants to modernize the Railroad Commission and change how it operates. But his approach is incremental and institutional, not radical or disruptive. Low positive."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Pro-choice vote (SB 8) signals bodily autonomy. But his overall orientation is more about collective regulation and institutional accountability than individual freedom. Modest positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Sierra Club 2021 scorecard vs. actual environmental record",
+      "description": "Sierra Club scored Rosenthal at 5% in 2021, which at face value would suggest anti-environment votes. However, Sierra Club's own narrative that session praised his anti-flaring bill (HB 1452). The low score reflects minority-party constraints on floor votes, not changed values. His 100% Sierra Club score in 2019 and authored environmental legislation are the accurate signals.",
+      "sources": ["Sierra Club 2021 scorecard", "Sierra Club 2019 scorecard", "HB 1452 record"],
+      "scoringImpact": "Weighted 2019 score and authored legislation over 2021 numerical score for climate axes."
+    },
+    {
+      "topic": "Democratic affiliation vs. energy portfolio position",
+      "description": "As a Democrat, one might expect a renewables-priority position. Rosenthal explicitly embraces 'All of the Above' energy and has 25 years in the oil/gas industry. His climate ambition is real (anti-flaring, enforcement) but his energy portfolio position is genuinely centrist.",
+      "sources": ["Campaign website", "Texas Tribune profile", "Career biography"],
+      "scoringImpact": "climate_energy_portfolio scored at 5 (true center) rather than toward Pole A. climate_ambition scored at 3 reflecting strong regulation without fossil fuel phase-out."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 7,
+    "axesSkipped": [
+      "econ_safetynet",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals"
+    ],
+    "reasonSkipped": "Railroad Commissioner race centers on energy regulation and industry oversight. Rosenthal's one-term state House record covers a few non-energy votes (firearms, school choice, abortion) but most policy domains outside energy have no documented positions or votes.",
+    "overallConfidence": "medium-high",
+    "researchGaps": [
+      "No healthcare positions documented",
+      "No housing or transportation positions",
+      "No criminal justice positions beyond the firearms vote",
+      "Limited safety net evidence -- AFL-CIO endorsement is indirect signal only",
+      "Only one term of legislative voting record (2019-2021)"
+    ]
+  }
+}

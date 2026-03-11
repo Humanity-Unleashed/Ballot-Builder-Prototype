@@ -30,9 +30,9 @@ export default function VoiceButton({
     );
   }
 
-  // Scale rings from 1.0 to ~1.8 based on audio level
-  const ring1 = 1 + audioLevel * 0.5;
-  const ring2 = 1 + audioLevel * 0.8;
+  // Scale rings from 1.0 to ~2.2 based on audio level
+  const ring1 = 1 + audioLevel * 0.8;
+  const ring2 = 1 + audioLevel * 1.2;
 
   return (
     <div className="relative flex items-center justify-center">
@@ -40,11 +40,11 @@ export default function VoiceButton({
       {isRecording && (
         <>
           <span
-            className="absolute h-14 w-14 rounded-full bg-red-400/20 transition-transform duration-100"
+            className="absolute h-14 w-14 rounded-full bg-red-400/30 transition-transform duration-100"
             style={{ transform: `scale(${ring2})` }}
           />
           <span
-            className="absolute h-14 w-14 rounded-full bg-red-400/30 transition-transform duration-75"
+            className="absolute h-14 w-14 rounded-full bg-red-400/50 transition-transform duration-75"
             style={{ transform: `scale(${ring1})` }}
           />
         </>

@@ -54,8 +54,17 @@ function profileToValueAxes(
  */
 function buildOpenerWithRecommendation(item: BallotItem, rec: PropositionRecommendation | CandidateMatch[] | null): string {
   if (item.type === 'proposition') {
-    // Cards will show the YES/NO recommendation, so just show the question
-    return item.questionText;
+    const propRec = rec as PropositionRecommendation | null;
+    // Brief summary of the measure + how it connects to their values
+    let opener = `Next up is a ballot measure: **${item.title}**.\n\n${item.questionText}`;
+    if (propRec?.vote) {
+      const voteLabel = propRec.vote === 'yes' ? 'YES' : 'NO';
+      const confidence = propRec.confidence >= 0.7 ? 'strongly' : propRec.confidence >= 0.4 ? 'slightly' : 'very slightly';
+      opener += `\n\nBased on what you've told me, your values ${confidence} lean toward voting **${voteLabel}** on this one. You can confirm below, or ask me to explain why.`;
+    } else {
+      opener += `\n\nThis one's a close call based on your values — take a look at both sides below, or ask me to break it down.`;
+    }
+    return opener;
   }
 
   // Candidate race — cards show all details, so keep the opener brief
@@ -261,6 +270,87 @@ export default function ConversationView({
     }
   };
 
+  /** "Tell me more" handler — sends an explanation request to the LLM */
+  const handleTellMeMore = useCallback(async () => {
+    if (isLoading || !session) return;
+
+    // For propositions, build a contextual "explain this" prompt
+    const explainPrompt = ballotItem.type === 'proposition'
+      ? "Can you break down what this measure means and why it connects to my values?"
+      : "Can you tell me more about the differences between these candidates?";
+
+    // Add a synthetic user message so the conversation flows naturally
+    const userMessage: ConversationMessage = {
+      id: `user-${Date.now()}`,
+      role: 'user',
+      content: explainPrompt,
+      timestamp: new Date().toISOString(),
+      ballotItemId: ballotItem.id,
+    };
+
+    addMessage(ballotItem.id, userMessage);
+    setItemStatus(ballotItem.id, 'discussing');
+    setIsLoading(true);
+
+    try {
+      const currentMessages = [...messages, userMessage];
+
+      const response = await fetch('/api/conversation/turn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ballotItemId: ballotItem.id,
+          userMessage: explainPrompt,
+          currentProfile: session.profile,
+          conversationHistory: currentMessages,
+          ballotItem: {
+            id: ballotItem.id,
+            type: ballotItem.type,
+            title: ballotItem.title,
+            questionText: ballotItem.questionText,
+            explanation: ballotItem.explanation,
+            relevantAxes: ballotItem.relevantAxes,
+            yesAxisEffects: ballotItem.yesAxisEffects,
+            candidates: ballotItem.candidates?.map((c) => ({
+              id: c.id,
+              name: c.name,
+              party: c.party,
+              profile: {
+                stances: c.profile.stances,
+                summary: c.profile.summary,
+              },
+            })),
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to get response');
+      }
+
+      const data: ConversationTurnResponse = await response.json();
+
+      addMessage(ballotItem.id, data.assistantMessage);
+
+      if (data.valueSignals.length > 0) {
+        applyValueSignals(data.valueSignals);
+      }
+
+      if (data.updatedProfile) {
+        updateProfile(data.updatedProfile);
+      }
+
+      if (data.recommendation && data.status === 'recommended') {
+        setItemRecommendation(ballotItem.id, data.recommendation);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [isLoading, session, messages, ballotItem, addMessage, setItemStatus, applyValueSignals, setItemRecommendation, updateProfile]);
+
   // Get confidence label for proposition recommendations
   const getConfidenceLabel = (confidence: number): string => {
     if (confidence >= 0.7) return 'Strong match';
@@ -450,8 +540,9 @@ export default function ConversationView({
         Confirm
       </button>
       <button
-        onClick={() => setItemStatus(ballotItem.id, 'discussing')}
-        className="flex items-center gap-1.5 px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+        onClick={handleTellMeMore}
+        disabled={isLoading}
+        className="flex items-center gap-1.5 px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-40"
       >
         <MessageCircle className="h-3.5 w-3.5" />
         Tell me more

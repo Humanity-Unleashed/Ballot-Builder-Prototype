@@ -1,0 +1,72 @@
+{
+  "candidateSlug": "sarah-eckhardt",
+  "candidateName": "Sarah Eckhardt",
+  "party": "Democratic",
+  "office": "Comptroller of Public Accounts, Texas",
+  "contestId": "TX-COMPTROLLER-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Sarah Eckhardt",
+    "currentOffice": "Texas State Senator, District 14 (since 2020)",
+    "priorOffice": "Travis County Judge (2015-2020)",
+    "background": "Progressive Austin Democrat. Announced run for Congress TX-10 then switched to Comptroller race Dec 2025. Won primary with >60% of vote."
+  },
+
+  "campaignWebsite": "https://www.saraheckhardt.com/",
+
+  "policyPositions": [
+    {"topic": "Government accountability", "position": "Stop no-bid contracts; audit the voucher program; one-party accountability", "confidence": "HIGH", "source": "Campaign website"},
+    {"topic": "Medicaid expansion", "position": "Explicit support — key Comptroller platform plank; framed around rural hospital viability and fiscal benefits to state", "confidence": "HIGH", "source": "KLTV interview Feb 2026"},
+    {"topic": "Water infrastructure", "position": "Use Rainy Day Fund for water infrastructure investment", "confidence": "HIGH", "source": "Campaign website"},
+    {"topic": "Tax fairness", "position": "Supports progressive tax reform; opposes current regressive property tax system", "confidence": "HIGH", "source": "Campaign interviews"},
+    {"topic": "School vouchers", "position": "Opposed voucher legislation on the Senate floor; would audit ESA program as Comptroller", "confidence": "HIGH", "source": "Senate voting record"},
+    {"topic": "Abortion/reproductive rights", "position": "Voted against SB 8 (abortion bounty hunter law); Avow Texas highest rating (2021)", "confidence": "HIGH", "source": "Senate voting record + Avow scorecard"},
+    {"topic": "Firearms", "position": "Voted against blocking gun transparency in foster homes", "confidence": "MEDIUM", "source": "Senate voting record"},
+    {"topic": "Energy efficiency", "position": "Sponsored SB 1915 (energy efficiency)", "confidence": "MEDIUM", "source": "Senate record"},
+    {"topic": "Criminal justice", "position": "As Travis County Judge: established public defender's office, jail diversion programs, first PACE program in Texas", "confidence": "HIGH", "source": "County record"},
+    {"topic": "Conservation", "position": "Preserved 30,000+ acres of green space as Travis County Judge", "confidence": "HIGH", "source": "Campaign bio"},
+    {"topic": "Housing", "position": "Co-authored SB 1567 (roommate occupancy bill — state preemption of municipal occupancy restrictions)", "confidence": "MEDIUM", "source": "Senate record"}
+  ],
+
+  "interestGroupRatings": [
+    {"organization": "Avow Texas", "score": "Highest rating (4 stars)", "cycle": "2021"},
+    {"organization": "Young Conservatives of Texas", "score": "16/100, career average 13", "notes": "Described as most liberal Democrat in Texas Senate"},
+    {"organization": "Texas Values Action", "score": "0%", "cycle": "2023"},
+    {"organization": "Environment Texas", "rating": "Endorsed (2020 Senate race)"}
+  ],
+
+  "endorsements": ["Texas AFL-CIO", "Houston LGBTQ+ Political Caucus", "Austin Chronicle", "Environment Texas", "Lloyd Doggett", "Greg Casar", "Kirk Watson", "Garry Mauro", "Gary Bledsoe"],
+
+  "positionConflicts": [
+    {
+      "topic": "Local control vs state preemption",
+      "conflict": "Co-authored SB 1567 (state preemption of municipal occupancy restrictions) while simultaneously criticizing state overreach on zoning as 'putting the big boot of the state on the neck of local governments'",
+      "notes": "Scorer should note this tension on housing/zoning axis"
+    }
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 10,
+    "overallConfidence": "MEDIUM-HIGH",
+    "strongAxes": ["econ_public_investment", "econ_school_choice", "health_coverage_model", "justice_police_accountability", "justice_sentencing_goals", "climate_ambition"],
+    "weakAxes": ["housing_transit_priority", "climate_permitting_speed", "justice_firearms_policy"],
+    "notes": "Senate voting record + county judge record provide good evidence. YCT 16% and Texas Values 0% confirm strongly progressive positioning. Main gap is limited federal-level evidence since she's a state officeholder."
+  },
+
+  "sources": [
+    {"url": "https://www.saraheckhardt.com/about-sarah-eckhardt", "description": "Campaign about page"},
+    {"url": "https://www.saraheckhardt.com/why-im-running", "description": "Campaign platform"},
+    {"url": "https://ballotpedia.org/Sarah_Eckhardt", "description": "Ballotpedia profile"},
+    {"url": "https://en.wikipedia.org/wiki/Sarah_Eckhardt", "description": "Wikipedia"},
+    {"url": "https://www.texasobserver.org/sarah-eckhardt-texas-comptroller-bob-bullock/", "description": "Texas Observer profile"},
+    {"url": "https://www.texastribune.org/2025/12/08/sarah-eckhardt-texas-comptroller-democratic-primary-2026/", "description": "Texas Tribune — Comptroller announcement"},
+    {"url": "https://www.kltv.com/2026/02/11/texas-state-senator-seeks-comptroller-seat-expand-medicaid/", "description": "KLTV — Medicaid expansion interview"},
+    {"url": "https://ratings.yct.org/legislators/sarah-eckhardt/88th-legislature", "description": "YCT rating"},
+    {"url": "https://txvaluesaction.org/legislator/sarah-eckhardt/", "description": "Texas Values Action scorecard"},
+    {"url": "https://avowtexas.org/2021-scorecard/", "description": "Avow Texas scorecard"},
+    {"url": "https://communityimpact.com/austin/south-central-austin/election/2026/01/22/qa-get-to-know-the-texas-democrats-running-for-state-comptroller-in-the-march-primary/", "description": "Community Impact Q&A"}
+  ]
+}

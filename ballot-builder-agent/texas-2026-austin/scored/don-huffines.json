@@ -1,0 +1,151 @@
+{
+  "slug": "don-huffines",
+  "name": "Don Huffines",
+  "party": "Republican",
+  "office": "Comptroller of Public Accounts, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Former Texas state senator and real estate developer running as a Trump-endorsed, hard-right fiscal conservative. Signature issues are eliminating property taxes, implementing school vouchers, and running a 'DOGE Texas' efficiency audit of state government.",
+  "keyPositions": [
+    "Slash or eliminate property taxes; redirect government savings to tax relief",
+    "Administer Texas's $1B ESA/voucher program with full parental choice and no strings",
+    "Complete abolition of abortion with Comstock Act enforcement",
+    "'DOGE Texas' government efficiency push to expose waste, fraud, and abuse",
+    "Constitutional Carry author; first Texas lawmaker to file the bill"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["TFR 97-99% fiscal score", "Campaign platform: eliminate taxpayer benefits to undocumented immigrants", "2022 Gov race platform"],
+      "notes": "Consistent across 4-year Senate record and two campaign cycles. Wants to cut government spending broadly and eliminate benefits for unauthorized immigrants. TFR near-perfect score confirms strong anti-safety-net orientation."
+    },
+    "econ_investment": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["TFR 97-99%", "DOGE Texas platform", "'Use it or lose it' budgeting critique", "YCT 92%"],
+      "notes": "Core identity is minimizing government spending. 'DOGE Texas' framing signals workforce reduction and agency cuts. Self-described Rothbardian. Multiple scorecards confirm extreme fiscal conservatism."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Property tax elimination platform (2022 and 2026)", "TFR 97-99%", "Campaign website"],
+      "notes": "Signature issue is eliminating property taxes. Texas has no income tax; his orientation is clearly toward minimizing all taxation. Not scored 10 because he frames tax cuts as shifting burden rather than pure anti-tax ideology."
+    },
+    "econ_school_choice": {
+      "score": 10,
+      "confidence": "high",
+      "sources": ["Authored school voucher study bill (84th Legislature)", "$1B ESA administration platform", "Texas Tribune post-primary", "iVoterGuide"],
+      "notes": "Maximum school choice position held consistently from 2015 Senate authorship through 2026 Comptroller campaign. 'No strings attached' ESA framing plus 'put God and prayer back in the classroom' signals intent to channel public funds to religious private schools."
+    },
+    "health_coverage_model": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["TFR fiscal orientation", "General anti-government spending position", "2022 Gov campaign"],
+      "notes": "No specific healthcare platform statements in research file, but his across-the-board anti-government-spending orientation and Rothbardian self-identification strongly imply opposition to government healthcare expansion. Scored medium confidence because no direct healthcare vote or statement was documented."
+    },
+    "health_public_health": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["DEI/transgender website shutdown", "General anti-government-mandate orientation", "Libertarian self-identification"],
+      "notes": "No direct public health votes documented, but his strong anti-government-mandate orientation and actions against state health-adjacent programs (transgender youth resources) suggest strong individual-choice-over-collective-mandate positioning."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": ["Authored first TX Constitutional Carry bill (84th Legislature)", "Gun Owners of America endorsement", "Voted yes on SB 17 open carry 'with heavy heart' it didn't go far enough"],
+      "notes": "Maximum pro-gun position with legislative action backing it up. Authored Constitutional Carry before it was mainstream in TX GOP. GOA endorsement (more absolutist than NRA) confirms this is a defining position."
+    },
+    "justice_sentencing_goals": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Law-and-order orientation", "SB 4 Sanctuary Cities co-sponsor", "Endorsement profile (Trump, Cruz, law enforcement aligned)"],
+      "notes": "Co-sponsoring sanctuary cities ban and general tough-on-immigration stance signal punitive orientation. No specific sentencing votes documented, so not scored at maximum. Scored medium confidence."
+    },
+    "justice_policing_accountability": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["General law-and-order orientation", "SB 4 co-sponsor", "Endorsement alignment"],
+      "notes": "No direct policing votes documented. Inferred from overall law-and-order positioning and endorsement profile. Low confidence because this is inference, not direct evidence."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "low",
+      "sources": ["Anti-government spending orientation", "No climate statements found"],
+      "notes": "No specific climate or energy statements in the research file. However, his extreme fiscal conservatism, Rothbardian ideology, and zero mentions of climate or environment across two campaigns strongly suggest opposition to climate policy spending. Low confidence because it is inferred."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Texas fiscal conservative orientation", "No specific energy statements"],
+      "notes": "Inferred from fiscal conservatism and Texas political context. No direct energy policy statements documented. Low confidence."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "Explicitly seeks to eliminate benefits for undocumented immigrants, authored LGBT nondiscrimination preemption bill, forced shutdown of transgender youth resources, complete abortion abolition. Consistent pattern of narrowing the circle of moral concern to exclude out-groups."
+    },
+    "benevolence": {
+      "score": 0.1,
+      "reasoning": "Frames property tax relief as helping Texas families, and school choice as empowering parents. But the dominant orientation is cutting government services rather than investing in community welfare. Weak positive signal at best."
+    },
+    "tradition": {
+      "score": 0.9,
+      "reasoning": "'Put God and prayer back in the classroom.' Complete abortion abolition based on conception-to-natural-death framing. Defense of traditional social norms against DEI and transgender rights. Religion in governance is a core, defining theme."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "Despite law-and-order rhetoric, Huffines is an anti-establishment insurgent who ran against his own party's governor in 2022 and against the acting comptroller in 2026. His political identity is built on challenging institutional Republican leadership as insufficiently conservative. The DOGE framing is about disrupting government norms."
+    },
+    "security": {
+      "score": 0.6,
+      "reasoning": "Strong border security emphasis; sanctuary cities ban co-sponsor; law enforcement alignment; national defense through Trump alignment. Security framing is primarily about borders and crime, not economic security for vulnerable populations."
+    },
+    "power": {
+      "score": 0.5,
+      "reasoning": "Self-funded $13M campaign (personal wealth as political instrument). Real estate developer background. Alignment with concentrated wealth interests through fiscal conservatism that disproportionately benefits high-income taxpayers. Not scored higher because he frames his wealth as independence from donors rather than alignment with donor class."
+    },
+    "achievement": {
+      "score": 0.6,
+      "reasoning": "Self-made businessman narrative. Meritocracy framing implicit in opposition to safety net programs. School choice framed as individual empowerment. 'No strings attached' ESA language emphasizes individual initiative over collective provision."
+    },
+    "hedonism": {
+      "score": -0.4,
+      "reasoning": "Despite libertarian self-identification, his actual positions restrict personal freedom on abortion (complete abolition), LGBT rights (preemption of nondiscrimination), and religion in schools (imposing prayer). Libertarianism applies to economic choices only; personal lifestyle freedoms are actively curtailed."
+    },
+    "stimulation": {
+      "score": 0.5,
+      "reasoning": "Anti-establishment insurgent identity; 'DOGE Texas' disruption framing; challenging party leadership; running against incumbents in both 2022 and 2026. Clearly oriented toward shaking up the status quo, though the desired end-state is restoration rather than novel transformation."
+    },
+    "self_direction": {
+      "score": -0.1,
+      "reasoning": "Mixed signals. Strong on economic self-direction (anti-regulation, anti-tax, school choice as parental control, gun rights as individual liberty). But actively restricts self-direction on reproductive choice, LGBT identity, and religious freedom in schools. The net effect is close to zero — economic liberty expanded, personal/social liberty restricted."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Libertarian self-label vs. social authoritarianism",
+      "description": "Huffines cites Murray Rothbard as his ideological touchstone and self-describes as libertarian-conservative. However, his positions on abortion (complete abolition via Comstock Act), religion in schools (mandatory prayer), and LGBT rights (preempting local nondiscrimination ordinances) are socially authoritarian. The libertarian framework applies selectively to economic/fiscal issues only.",
+      "sources": ["Texas Monthly", "iVoterGuide", "84th Legislature record"],
+      "scoringImpact": "Self-direction value scored near zero rather than positive; hedonism scored negative. Social-issue axes scored on actual positions, not libertarian label."
+    },
+    {
+      "topic": "Property tax elimination vs. school funding",
+      "description": "Property taxes are the primary funding mechanism for Texas public schools. Huffines calls for eliminating property taxes while also administering the $1B ESA program and implying reduced public school funding. The fiscal mechanics of simultaneous property tax elimination and school choice expansion are not reconciled.",
+      "sources": ["Campaign website", "Texas Tribune", "ABC13 2022 coverage"],
+      "scoringImpact": "Both econ_tax_structure and econ_school_choice scored at their respective extremes based on stated positions; the tension is noted but does not change individual axis scores."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 11,
+    "axesSkipped": ["housing_supply_zoning", "housing_affordability_tools", "housing_transport_priority", "health_cost_control"],
+    "reasonSkipped": "No housing policy positions documented despite real estate developer background. No healthcare cost control positions found. Comptroller role is fiscal, not housing or healthcare policy.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific climate or energy policy statements — axes scored on inference only",
+      "No healthcare-specific positions beyond general anti-government orientation",
+      "Housing policy absent despite real estate career — notably not part of his political platform",
+      "No policing-specific votes or statements beyond general law-and-order signals"
+    ]
+  }
+}

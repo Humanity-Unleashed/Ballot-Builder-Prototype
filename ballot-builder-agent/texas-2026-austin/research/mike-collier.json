@@ -1,0 +1,126 @@
+{
+  "candidateSlug": "mike-collier",
+  "candidateName": "Mike Collier",
+  "party": "Independent",
+  "office": "Lieutenant Governor, Texas",
+  "contestId": "TX-LT-GOVERNOR-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "CORRECTION": {
+    "note": "Discovery manifest listed Collier as 'Democratic' based on web search results. He is actually running as an INDEPENDENT. He announced as Independent in November 2025 and did not enter the Democratic primary. The Democratic Lt. Gov nominee is state Rep. Vikki Goodwin — she needs to be added to the pipeline.",
+    "sources": [
+      "https://www.texastribune.org/2025/11/13/mike-collier-texas-lieutenant-governor-independent-2026/",
+      "https://ballotpedia.org/Texas_lieutenant_gubernatorial_election,_2026"
+    ]
+  },
+
+  "biography": {
+    "fullName": "Mike Collier",
+    "background": "CPA; PriceWaterhouseCoopers partner (22 years, energy M&A); founder/CFO of Texas oil company; early career at Exxon and as a West Texas landman. Based in Kingwood. Self-describes as 'fiscally conservative, socially moderate.'",
+    "priorRuns": "Three-time Lt. Gov candidate: 2018 Republican primary (lost), 2022 Democratic nominee (lost to Patrick), 2026 Independent",
+    "electedOffice": "None — has never held elected office"
+  },
+
+  "campaignWebsite": "https://collierfortexas.com/",
+
+  "ballotQualificationStatus": {
+    "status": "PENDING — must gather ~81,030 petition signatures by June 2026 to qualify for November ballot",
+    "notes": "Not yet guaranteed on ballot"
+  },
+
+  "policyPositions": [
+    {
+      "topic": "Public education",
+      "position": "Top priority; opposes Dan Patrick's culture-war framing of education policy",
+      "confidence": "HIGH",
+      "source": "Campaign website and multiple interviews"
+    },
+    {
+      "topic": "School vouchers",
+      "position": "Conditional opposition — open to them if they demonstrably help low-income students; softer stance than 2022",
+      "confidence": "HIGH",
+      "source": "2026 campaign interviews; Texas AFT coverage"
+    },
+    {
+      "topic": "Property taxes",
+      "position": "Reform via eliminating state unfunded mandates to counties/cities",
+      "confidence": "HIGH",
+      "source": "Campaign platform"
+    },
+    {
+      "topic": "Medicaid expansion",
+      "position": "Explicit support, framed around rural hospital viability",
+      "confidence": "HIGH",
+      "source": "Campaign interviews"
+    },
+    {
+      "topic": "Reproductive rights",
+      "position": "'Between a woman, her doctor and her preacher'; softer than 2022 pledge to repeal abortion ban",
+      "confidence": "HIGH",
+      "source": "2026 campaign interviews"
+    },
+    {
+      "topic": "Term limits",
+      "position": "Top-tier priority",
+      "confidence": "HIGH",
+      "source": "Campaign platform"
+    },
+    {
+      "topic": "THC ban",
+      "position": "Opposes blanket prohibition",
+      "confidence": "MEDIUM",
+      "source": "Campaign interviews"
+    },
+    {
+      "topic": "Casino resorts",
+      "position": "Supports legalization",
+      "confidence": "MEDIUM",
+      "source": "Campaign interviews"
+    },
+    {
+      "topic": "Firearms",
+      "position": "Gun sense voter; supports background checks, red flag laws, gun owner liability",
+      "confidence": "HIGH",
+      "source": "Gun Sense Voter profile; 2022 campaign detail consistent with 2026"
+    },
+    {
+      "topic": "Energy and grid",
+      "position": "All-of-the-above production increase + battery storage + ERCOT reform + national grid tie-in + climate tech",
+      "confidence": "HIGH",
+      "source": "Multiple interviews; The Eagle expert evaluation of grid proposals"
+    }
+  ],
+
+  "interestGroupRatings": {
+    "notes": "No ratings from LCV, NRA, AFL-CIO, or other major groups — has never held office",
+    "gunSenseVoter": "Listed as gun sense voter candidate"
+  },
+
+  "votingRecord": null,
+
+  "positionConflicts": [
+    "Softened on vouchers between 2022 (Democratic, hard opposition) and 2026 (Independent, conditional)",
+    "Softened on abortion between 2022 (pledged to repeal ban) and 2026 (more moderate framing)",
+    "Energy background as oil/gas executive complicates simple climate axis placement"
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": "10-12 estimated",
+    "overallConfidence": "MEDIUM",
+    "evidenceGaps": ["Housing/zoning", "Police accountability", "Sentencing", "Immigration (2026 specific)", "Broader safety net positions"],
+    "notes": "No voting record to cross-reference. All evidence is Tier 2-3 (campaign statements, interviews, prior campaign positions). Position evolution between 2022 Democratic run and 2026 Independent run is notable and should be flagged in scoring."
+  },
+
+  "sources": [
+    {"url": "https://collierfortexas.com/", "description": "Campaign website"},
+    {"url": "https://ballotpedia.org/Mike_Collier_(Texas)", "description": "Ballotpedia profile"},
+    {"url": "https://www.texastribune.org/2025/11/13/mike-collier-texas-lieutenant-governor-independent-2026/", "description": "Texas Tribune — Independent announcement"},
+    {"url": "https://marshallnewsmessenger.com/2026/02/04/now-running-as-independent-mike-collier-outlines-platform-for-third-texas-lieutenant-governor-campaign/", "description": "Platform outline"},
+    {"url": "https://www.wfaa.com/article/news/politics/inside-politics/texas-politics/mike-collier-ditches-both-parties-new-bid-to-become-texas-lt-governor/287-545d1694-78d1-41c8-a1e4-72cc332e4e1e", "description": "WFAA — party switch coverage"},
+    {"url": "https://gunsensevoter.org/candidates/details/?cid=554090bb244f8ca3f21c7bc7e2ed09f344db287283cfb19c07b81cf6d66dfe19", "description": "Gun Sense Voter profile"},
+    {"url": "https://theeagle.com/news/state-regional/govt-and-politics/experts-evaluate-o-rourke-colliers-energy-grid-ideas/article_af18def4-20f0-11ed-a229-c764289bee42.html", "description": "Energy grid proposals evaluation"},
+    {"url": "https://www.texasaft.org/policy/privatization/vouchers/mike-collier-defends-public-education-funding-stands-with-the-majority-53-of-likely-texas-voters-that-are-against-taxpayer-funded-private-school-voucher-programs/", "description": "Texas AFT — voucher position"}
+  ]
+}

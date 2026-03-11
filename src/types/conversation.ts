@@ -25,6 +25,21 @@ export interface ValueSignal {
   source: string;
   /** LLM reasoning chain for how this signal was extracted */
   reasoning?: string;
+  /** Ambiguities, partial coverage, or internal tensions detected */
+  warnings?: string[];
+  /** If this contradicts a prior signal, quote the prior evidence */
+  conflictsWith?: string | null;
+}
+
+export interface TurnMeta {
+  /** Axes with at least one signal this turn */
+  axesCovered: string[];
+  /** Domain axes with no signal yet */
+  axesMissing: string[];
+  /** True if any signal has warnings about contradictions */
+  hasContradictions: boolean;
+  /** How interpretable the user's message was overall, 0-1 */
+  overallClarity: number;
 }
 
 // =============================================

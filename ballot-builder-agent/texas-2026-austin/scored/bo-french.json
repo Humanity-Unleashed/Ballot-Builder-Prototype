@@ -1,0 +1,123 @@
+{
+  "slug": "bo-french",
+  "name": "Bo French",
+  "party": "Republican",
+  "office": "Railroad Commissioner, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "First-time candidate from a Midland oil family running on fossil-fuel deregulation, permitting decentralization, and culture-war grievances. Former Tarrant County GOP chair forced to resign over antisemitic social media post.",
+  "keyPositions": [
+    "Decentralize RRC permitting to regional offices; modernize to electronic submission",
+    "Roll back environmental regulations he characterizes as 'Biden-era EPA' overreach",
+    "End DEI-based RRC contracting; enforce competitive bidding on all contracts",
+    "Block Chinese land and oil asset acquisition in Texas",
+    "Proposes formal TX RRC-Israel energy research cooperation agreement"
+  ],
+  "axisStances": {
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Campaign website", "Texas Tribune profile", "Community Impact Q&A"],
+      "notes": "Explicitly frames environmental regulations as obstacles to roll back. No acknowledgment of climate as a policy concern. The entire campaign platform is oriented around reducing regulatory burden on fossil fuel producers. Scored 9 rather than 10 because he addresses orphaned well plugging (a minimal environmental concern), albeit framed fiscally."
+    },
+    "climate_energy_portfolio": {
+      "score": 9,
+      "confidence": "medium",
+      "sources": ["Campaign website", "Texas Tribune", "Oil family background"],
+      "notes": "From Midland oil family (French Oil Company). Entire career in fossil energy — trading, security for energy companies. Campaign is explicitly pro-fossil-fuel expansion with no mention of renewables or energy transition. Scored 9 not 10 because he hasn't explicitly called for eliminating clean energy subsidies."
+    },
+    "climate_permitting": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Campaign website (permitting reform is signature issue)", "Texas Tribune", "Community Impact Q&A"],
+      "notes": "Permitting decentralization and streamlining is his most substantive policy proposal. Wants to move permit approval back to regional offices and shift to electronic submission. Framed entirely as reducing burden on industry, not balancing environmental review."
+    },
+    "econ_investment": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["Campaign website (deregulation framing)", "DEI contracting elimination proposal"],
+      "notes": "No direct statements on broader public investment, but entire posture is anti-government-intervention and pro-deregulation within RRC scope. DEI contracting elimination and 'competitive bidding' framing suggest market-first orientation. Scored with LOW confidence because evidence is limited to RRC regulatory context; broader economic views unknown."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.7,
+      "reasoning": "Documented antisemitic social media post; slurs targeting gay people and people with disabilities; called Native Americans 'third world savages' and called for their deportation; called for denaturalization of two naturalized-citizen state representatives. Anti-environmental regulation stance works against nature protection. Pattern is consistent and documented across multiple incidents and outlets."
+    },
+    "benevolence": {
+      "score": 0.0,
+      "reasoning": "No meaningful evidence of community welfare orientation. Orphaned well reform is framed as fiscal efficiency, not community protection. Campaign platform is almost entirely deregulatory and grievance-oriented rather than community-service-oriented."
+    },
+    "tradition": {
+      "score": 0.5,
+      "reasoning": "Defense of existing fossil fuel industry and Texas energy culture. Anti-DEI framing implies resistance to progressive institutional changes. Conservative cultural orientation. But not strongly tradition-centered — more grievance-centered than heritage-centered."
+    },
+    "conformity": {
+      "score": -0.5,
+      "reasoning": "Repeated public norm violations: antisemitic posts, slurs, calling for deportation of citizens and denaturalization of elected officials. Forced to resign as county party chair. The pattern is one of deliberate provocation rather than restraint or institutional deference."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Anti-China land acquisition framing invokes national security. Career included security work for energy companies in the Middle East. However, security is not a central campaign theme — it appears instrumentally in the China/foreign-acquisition context."
+    },
+    "power": {
+      "score": 0.6,
+      "reasoning": "Oil family wealth background. $150K in-kind anonymous advertising. Moncrief Oil International as top donor. Career path from oil family to energy trader to party chair to statewide office pursuit. Alignment with fossil fuel industry power structure is clear and central."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Entrepreneurial background (security businesses, energy trading). Competitive bidding emphasis over DEI contracting suggests meritocratic framing. Modest signal, not a defining characteristic."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence in either direction. Personal lifestyle liberty is not part of his platform."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Challenger running against incumbent; positions himself as an outsider reformer of RRC bureaucracy. But the 'reform' is deregulatory and backward-looking (decentralize to how it used to work), not genuinely novel. Modest positive signal."
+    },
+    "self_direction": {
+      "score": 0.2,
+      "reasoning": "Deregulation framing implies individual/business freedom from government. But no evidence of civil liberties concern more broadly. The freedom framing is narrowly industry-focused, not a broader self-direction orientation."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Pro-Israel stance vs antisemitic rhetoric",
+      "description": "Proposes formal RRC-Israel energy cooperation and claims strong pro-Israel alignment, but posted an antisemitic poll framing Jews as potential threats that led to his forced resignation as Tarrant County GOP chair.",
+      "sources": ["Campaign website", "Texas Tribune", "CBS Texas"],
+      "scoringImpact": "Contributes to negative universalism score; the contradiction itself is noted but does not create competing axis scores since neither position maps cleanly to a civic axis."
+    },
+    {
+      "topic": "Bipartisan background vs far-right positioning",
+      "description": "Served as Legislative Director for Democratic U.S. Rep. Pete Gallego earlier in career; now campaigns on a far-right platform with explicitly exclusionary rhetoric.",
+      "sources": ["Ballotpedia", "Texas Tribune"],
+      "scoringImpact": "Noted as biographical context. Current positions scored; historical Democratic employment does not override current explicit policy stances."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 4,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_tax_structure",
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms"
+    ],
+    "reasonSkipped": "Railroad Commissioner is an energy regulatory office. Candidate has no voting record, no interest group ratings, and stated no positions on healthcare, housing, education, firearms, criminal justice, or tax policy. Scoring these axes would be fabrication.",
+    "overallConfidence": "low-medium",
+    "researchGaps": [
+      "No voting record exists (first-time candidate)",
+      "No interest group ratings available",
+      "CCHC-PAC questionnaire listed as source but contents not fully documented in research file",
+      "No positions on any non-energy policy domain",
+      "Anonymous $150K in-kind donor unidentified"
+    ]
+  }
+}

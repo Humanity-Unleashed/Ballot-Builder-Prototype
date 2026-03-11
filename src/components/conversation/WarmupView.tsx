@@ -16,6 +16,29 @@ interface WarmupViewProps {
   ballotItems: BallotItem[];
 }
 
+/** Build compact ballot context from full ballot items for the warmup API */
+function buildBallotContext(items: BallotItem[]) {
+  return items.map((item) => {
+    if (item.type === 'proposition') {
+      return {
+        id: item.id,
+        type: 'proposition' as const,
+        title: item.title,
+        summary: item.questionText || item.explanation,
+        relevantAxes: item.relevantAxes ?? (item.yesAxisEffects ? Object.keys(item.yesAxisEffects) : []),
+      };
+    }
+    return {
+      id: item.id,
+      type: 'candidate_race' as const,
+      title: item.title,
+      summary: item.questionText || item.explanation,
+      relevantAxes: item.relevantAxes ?? [],
+      candidates: item.candidates?.map((c) => c.name) ?? [],
+    };
+  });
+}
+
 export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupViewProps) {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +46,9 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
   const [transitioning, setTransitioning] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const openerSentForDomainRef = useRef<number>(-1);
+
+  // Memoize ballot context so it doesn't rebuild every render
+  const ballotContext = React.useMemo(() => buildBallotContext(ballotItems), [ballotItems]);
 
   const session = useConversationStore((s) => s.session);
   const addWarmupMessage = useConversationStore((s) => s.addWarmupMessage);
@@ -51,11 +77,15 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
   }, [messages.length]);
 
   // Fetch LLM-generated opener when entering a new domain
+  // In React Strict Mode (dev), effects run twice. We use AbortController to
+  // cancel the first run's fetch, and reset the ref on cleanup so the second
+  // run can start a fresh fetch.
   useEffect(() => {
     if (openerSentForDomainRef.current >= currentDomainIndex) return;
-    openerSentForDomainRef.current = currentDomainIndex;
 
-    let cancelled = false;
+    const prevRef = openerSentForDomainRef.current;
+    openerSentForDomainRef.current = currentDomainIndex;
+    const controller = new AbortController();
 
     async function fetchOpener() {
       setIsLoading(true);
@@ -71,7 +101,9 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
             currentDomainIndex,
             domainTurnCount: 0,
             relevantAxes,
+            ballotContext,
           }),
+          signal: controller.signal,
         });
 
         if (!response.ok) {
@@ -79,15 +111,12 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
         }
 
         const data = await response.json();
-        if (cancelled) return;
-
         addWarmupMessage(data.assistantMessage);
       } catch (err) {
-        if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Failed to start conversation');
-        }
+        if (err instanceof DOMException && err.name === 'AbortError') return;
+        setError(err instanceof Error ? err.message : 'Failed to start conversation');
       } finally {
-        if (!cancelled) {
+        if (!controller.signal.aborted) {
           setIsLoading(false);
         }
       }
@@ -95,7 +124,11 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
 
     fetchOpener();
 
-    return () => { cancelled = true; };
+    return () => {
+      controller.abort();
+      // Reset ref so Strict Mode's second mount can re-fetch
+      openerSentForDomainRef.current = prevRef;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentDomainIndex]);
 
@@ -137,6 +170,7 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
           currentDomainIndex,
           domainTurnCount,
           relevantAxes,
+          ballotContext,
         }),
       });
 
@@ -177,7 +211,7 @@ export default function WarmupView({ onWarmupComplete, ballotItems }: WarmupView
     } finally {
       setIsLoading(false);
     }
-  }, [isLoading, session, messages, turnCount, currentDomainIndex, domainTurnCount, relevantAxes, addWarmupMessage, incrementWarmupTurn, applyValueSignals, updateProfile, advanceDomain, finishWarmup, onWarmupComplete]);
+  }, [isLoading, session, messages, turnCount, currentDomainIndex, domainTurnCount, relevantAxes, ballotContext, addWarmupMessage, incrementWarmupTurn, applyValueSignals, updateProfile, advanceDomain, finishWarmup, onWarmupComplete]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

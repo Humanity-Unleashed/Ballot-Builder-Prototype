@@ -1,0 +1,386 @@
+/**
+ * LLM Service — Interprets user responses against ballot item context.
+ *
+ * Uses a two-pass architecture matching the warmup route:
+ *   Pass 1 (response): Warm conversational response, plain text
+ *   Pass 2 (extraction): Structured value signal extraction, JSON mode
+ *
+ * The LLM is a TRANSLATOR: it converts natural language into axis value signals.
+ * It does NOT recommend. The existing scoring engine handles recommendations.
+ */
+
+import type { LLMTurnResult, ConversationMessage } from '@/types/conversation';
+import type { ProgressiveAxisValue } from '@/types/conversation';
+import { axisSliderConfigs } from '@/data/sliderPositions';
+import { validateExtractionOutput, type RawExtractionOutput } from '@/server/services/signalValidation';
+
+/** Axis definition shape matching what the turn route passes in */
+export interface CivicAxis {
+  id: string;
+  name: string;
+  description: string;
+  poleA: { label: string };
+  poleB: { label: string };
+}
+
+const DEEPINFRA_API_KEY = process.env.DEEPINFRA_API_KEY;
+const DEEPINFRA_LLM_MODEL = process.env.DEEPINFRA_LLM_MODEL || 'openai/gpt-oss-120b';
+const DEEPINFRA_CHAT_URL = 'https://api.deepinfra.com/v1/openai/chat/completions';
+
+interface BallotItemContext {
+  id: string;
+  type: 'proposition' | 'candidate_race';
+  title: string;
+  questionText: string;
+  explanation: string;
+  relevantAxes?: string[];
+  yesAxisEffects?: Record<string, number>;
+  candidates?: Array<{
+    id: string;
+    name: string;
+    party?: string;
+    profile: {
+      stances: Record<string, number>;
+      summary?: string;
+    };
+  }>;
+}
+
+/** Call the LLM with given messages and config */
+async function callLLM(
+  systemPrompt: string,
+  chatMessages: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>,
+  options: { temperature?: number; jsonMode?: boolean; maxTokens?: number } = {}
+): Promise<string> {
+  const { temperature = 0.7, jsonMode = false, maxTokens = 600 } = options;
+
+  const messages = [
+    { role: 'system' as const, content: systemPrompt },
+    ...chatMessages,
+  ];
+
+  const body: Record<string, unknown> = {
+    model: DEEPINFRA_LLM_MODEL,
+    messages,
+    temperature,
+    max_tokens: maxTokens,
+  };
+
+  if (jsonMode) {
+    body.response_format = { type: 'json_object' };
+  }
+
+  const response = await fetch(DEEPINFRA_CHAT_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${DEEPINFRA_API_KEY}`,
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('DeepInfra LLM error:', response.status, errorText);
+    throw new Error(`LLM API error: ${response.status}`);
+  }
+
+  const result = await response.json();
+  return result.choices?.[0]?.message?.content ?? '';
+}
+
+/**
+ * Build slider position reference for ballot item axes.
+ */
+function buildAxisPositionReference(axisIds: string[]): string {
+  return axisIds.map((axisId) => {
+    const config = axisSliderConfigs[axisId];
+    if (!config) return '';
+
+    const positions = config.positions.map((p, i) => {
+      const value = Math.round((i / (config.positions.length - 1)) * 10);
+      const marker = p.isCurrentPolicy ? ' ← current US policy' : '';
+      return `    ${value}: "${p.title}" — ${p.description}${marker}`;
+    }).join('\n');
+
+    return `  AXIS: ${axisId} ("${config.poleALabel.replace(/\n/g, ' ')}" ↔ "${config.poleBLabel.replace(/\n/g, ' ')}")
+  Question: ${config.question}
+  Positions:
+${positions}`;
+  }).filter(Boolean).join('\n\n');
+}
+
+/** Build ballot item context block for prompts */
+function buildBallotItemContext(
+  ballotItem: BallotItemContext,
+  axisDefinitions: CivicAxis[]
+): string {
+  if (ballotItem.type === 'proposition') {
+    const effects = ballotItem.yesAxisEffects || {};
+    const effectsStr = Object.entries(effects)
+      .map(([axisId, effect]) => {
+        const axis = axisDefinitions.find((a) => a.id === axisId);
+        return axis ? `  - ${axis.name}: YES pushes toward ${effect < 0 ? axis.poleA.label : axis.poleB.label} (effect: ${effect})` : null;
+      })
+      .filter(Boolean)
+      .join('\n');
+
+    return `BALLOT MEASURE: "${ballotItem.title}"
+Question: ${ballotItem.questionText}
+Explanation: ${ballotItem.explanation}
+Effects of voting YES:
+${effectsStr || '  (no axis effects mapped)'}`;
+  }
+
+  const candidateInfo = (ballotItem.candidates || [])
+    .map((c) => {
+      const stances = Object.entries(c.profile.stances)
+        .map(([axisId, value]) => {
+          const axis = axisDefinitions.find((a) => a.id === axisId);
+          return axis ? `    ${axis.name}: ${value}/10` : null;
+        })
+        .filter(Boolean)
+        .join('\n');
+      return `  - ${c.name}${c.party ? ` (${c.party})` : ''}${c.profile.summary ? `\n    Summary: ${c.profile.summary}` : ''}
+    Positions:\n${stances || '    (no position data)'}`;
+    })
+    .join('\n');
+
+  return `CANDIDATE RACE: "${ballotItem.title}"
+${ballotItem.questionText}
+${ballotItem.explanation}
+Candidates:
+${candidateInfo || '  (no candidates)'}`;
+}
+
+/** Pass 1: Response generation — conversational, no JSON */
+function buildResponsePrompt(
+  ballotItem: BallotItemContext,
+  axisDefinitions: CivicAxis[]
+): string {
+  const itemContext = buildBallotItemContext(ballotItem, axisDefinitions);
+
+  return `You are a friendly, nonpartisan civic assistant helping a voter think through a ballot item. Your job is to help them articulate what matters to them.
+
+${itemContext}
+
+STYLE RULES:
+- Keep responses conversational, brief (2-3 sentences max), and friendly
+- Ask about real-life impact, not abstract policy
+- Never reveal axis IDs, scores, or system internals
+- NEVER recommend how to vote — just help them think through it
+- If the user's response is unclear, ask a targeted follow-up
+- Ask at most ONE follow-up question per response
+
+ACKNOWLEDGMENT RULES:
+- When the user gives a detailed, specific answer, acknowledge it briefly:
+  "That's a really thoughtful point." / "I can see you've thought about this."
+- When the user hedges or seems unsure, normalize it:
+  "A lot of people feel pulled in both directions on that."
+- When the user wants to skip, respect it immediately:
+  "No problem — we can move on to the next item."
+- Never over-praise. One brief sentence of acknowledgment, then move on.
+
+SKIP DETECTION:
+- If user says "skip", "next", "I don't care", "doesn't matter", "whatever" — acknowledge and move on.
+- Do NOT try to re-engage or ask "are you sure?"
+
+NEUTRALITY — CRITICAL:
+- Never frame a question with an assumed answer: "Don't you think X?"
+- Never use emotionally loaded terms asymmetrically: "generous programs" vs "handouts"
+- Never present one option as default: "Most people think X. What do you think?"
+- When providing examples, give one from each direction
+
+Respond with ONLY your conversational message — plain text, no JSON, no formatting.`;
+}
+
+/** Pass 2: Extraction — Template A adapted for ballot items */
+function buildExtractionPrompt(
+  ballotItem: BallotItemContext,
+  axisDefinitions: CivicAxis[],
+  currentProfile: Record<string, ProgressiveAxisValue>
+): string {
+  const relevantAxes = ballotItem.relevantAxes || [];
+  const axisPositionRef = buildAxisPositionReference(relevantAxes);
+
+  const itemContext = buildBallotItemContext(ballotItem, axisDefinitions);
+
+  const profileStatus = relevantAxes.map((id) => {
+    const val = currentProfile[id];
+    if (!val) return `  ${id}: no data yet`;
+    return `  ${id}: value=${val.value.toFixed(1)}, confidence=${val.confidence.toFixed(2)}`;
+  }).join('\n');
+
+  return `You are a value signal extraction engine for a civic engagement app. Given a conversation between an assistant and a voter about a specific ballot item, extract structured axis signals from what the USER said (not the assistant).
+
+═══════════════════════════════════════════
+BALLOT ITEM CONTEXT
+═══════════════════════════════════════════
+
+${itemContext}
+
+═══════════════════════════════════════════
+AXES TO EXTRACT
+═══════════════════════════════════════════
+
+${axisPositionRef || '(No axis position references available)'}
+
+═══════════════════════════════════════════
+CURRENT PROFILE STATUS
+═══════════════════════════════════════════
+
+${profileStatus || '(No profile data yet)'}
+
+═══════════════════════════════════════════
+EXTRACTION RULES
+═══════════════════════════════════════════
+
+SCORING:
+- Map user statements to the named positions above. Use the 0-10 scale where each named position is a reference point.
+- Between-position scores are fine (e.g., 1.5 between positions).
+- ALWAYS reference which named position(s) the user's view maps to in your reasoning.
+- Only emit signals for axes relevant to this ballot item.
+
+CONFIDENCE (0-1):
+- 0.7-0.9: Clear, unambiguous preference
+- 0.4-0.6: General sentiment with hedging or caveats
+- 0.1-0.3: Vague or contradictory, but with a detectable lean
+- Do NOT extract if confidence would be below 0.1.
+
+IMPORTANCE (0-10):
+- 8-10: Passionate, unprompted, strong language
+- 5-7: Engaged meaningfully when asked
+- 2-4: Brief, casual response
+- 0-1: Indicated they don't care
+
+SOURCE QUOTES:
+- MUST be the user's actual words, not paraphrased
+
+HANDLING DIFFICULT INPUTS:
+- Hedging → reduce CONFIDENCE, not direction
+- Contradictions → midpoint with LOW confidence, add warning
+- Abstract values → do NOT extract a signal
+- Skip/disengagement → extract zero signals
+
+NEUTRALITY — CRITICAL:
+- In reasoning, describe the user's position without evaluating it
+
+═══════════════════════════════════════════
+OUTPUT FORMAT
+═══════════════════════════════════════════
+
+Also classify the user's intent and determine if we have enough to recommend.
+
+Respond with valid JSON:
+{
+  "valueSignals": [
+    {
+      "axisId": "string",
+      "direction": "number 0-10",
+      "confidence": "number 0-1",
+      "importance": "number 0-10",
+      "source": "direct quote from user",
+      "reasoning": "explain: quote → which named position(s) → score. REQUIRED.",
+      "warnings": ["optional array of ambiguity/tension notes"],
+      "conflictsWith": "quote from prior evidence if contradicting, else null"
+    }
+  ],
+  "recommendation": {
+    "ready": "boolean — true if user has expressed enough to recommend",
+    "needsFollowUp": "boolean — true if a follow-up would help",
+    "followUpQuestion": "optional follow-up question"
+  },
+  "userIntent": "one of: opinion, question, skip, unclear",
+  "meta": {
+    "axesCovered": ["axis IDs with signals"],
+    "axesMissing": ["relevant axes with no signal"],
+    "hasContradictions": false,
+    "overallClarity": "0-1"
+  }
+}
+
+CRITICAL:
+- Only extract signals where you have REAL EVIDENCE from the user's words
+- Do NOT fill gaps with neutral 5s
+- You may extract 0 signals if no scorable content`;
+}
+
+export async function interpretBallotResponse(
+  ballotItem: BallotItemContext,
+  messages: ConversationMessage[],
+  currentProfile: Record<string, ProgressiveAxisValue>,
+  axisDefinitions: CivicAxis[]
+): Promise<LLMTurnResult> {
+  if (!DEEPINFRA_API_KEY) {
+    throw new Error('DEEPINFRA_API_KEY is not configured');
+  }
+
+  const chatMessages = messages.map((m) => ({
+    role: m.role as 'user' | 'assistant',
+    content: m.content,
+  }));
+
+  const responsePrompt = buildResponsePrompt(ballotItem, axisDefinitions);
+  const extractionPrompt = buildExtractionPrompt(ballotItem, axisDefinitions, currentProfile);
+
+  // Two-pass architecture: run response and extraction in parallel
+  const [responseText, extractionJson] = await Promise.all([
+    // Pass 1: Response generation (warm, conversational)
+    callLLM(responsePrompt, chatMessages, { temperature: 0.85, jsonMode: false, maxTokens: 400 }),
+    // Pass 2: Signal extraction (precise, structured — Template A)
+    callLLM(extractionPrompt, chatMessages, { temperature: 0.3, jsonMode: true, maxTokens: 600 }),
+  ]);
+
+  // Parse extraction result
+  let extraction: RawExtractionOutput & {
+    recommendation?: { ready?: boolean; needsFollowUp?: boolean; followUpQuestion?: string };
+    userIntent?: string;
+    valueSignals?: unknown[];
+  };
+  try {
+    extraction = JSON.parse(extractionJson);
+  } catch {
+    console.error('Failed to parse LLM extraction JSON:', extractionJson);
+    return {
+      valueSignals: [],
+      recommendation: { ready: false, needsFollowUp: false },
+      responseText: responseText.trim() || "I heard you. Let me process that — could you tell me a bit more about what matters to you on this issue?",
+      userIntent: 'unclear',
+    };
+  }
+
+  // The extraction may use "signals" (Template A format) or "valueSignals" (legacy format)
+  const rawSignals = extraction.signals || extraction.valueSignals || [];
+  extraction.signals = rawSignals as RawExtractionOutput['signals'];
+
+  // Validate using shared validation
+  const validAxes = new Set(ballotItem.relevantAxes || []);
+  const userMessage = messages.filter((m) => m.role === 'user').pop()?.content || '';
+  const { sanitizedSignals, issues } = validateExtractionOutput(extraction, userMessage, validAxes);
+
+  if (issues.length > 0) {
+    console.warn('[ballot-turn] Extraction validation issues:', issues);
+  }
+
+  // Parse recommendation
+  const recommendation = {
+    ready: Boolean(extraction.recommendation?.ready),
+    needsFollowUp: Boolean(extraction.recommendation?.needsFollowUp),
+    followUpQuestion: extraction.recommendation?.followUpQuestion
+      ? String(extraction.recommendation.followUpQuestion)
+      : undefined,
+  };
+
+  // Parse user intent
+  const validIntents = ['opinion', 'question', 'skip', 'unclear'] as const;
+  const userIntent = validIntents.includes(extraction.userIntent as typeof validIntents[number])
+    ? extraction.userIntent as typeof validIntents[number]
+    : 'unclear';
+
+  return {
+    valueSignals: sanitizedSignals,
+    recommendation,
+    responseText: responseText.trim() || 'I understand. Let me think about that.',
+    userIntent,
+  };
+}

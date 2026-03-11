@@ -1,0 +1,128 @@
+{
+  "slug": "nate-sheets",
+  "name": "Nate Sheets",
+  "party": "Republican",
+  "office": "Agriculture Commissioner, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "First-time candidate and founder of Nature Nate's Honey Co.; Abbott-endorsed Republican who defeated incumbent Sid Miller in the March 2026 primary. Combines MAHA clean-food advocacy with Trump-aligned positions on trade, immigration, and government efficiency.",
+  "keyPositions": [
+    "MAHA movement advocate; clean food and school nutrition reform",
+    "100% Texas Gun Rights survey score; Gun Owners of America endorsed",
+    "Mandatory e-Verify and border enforcement for agricultural sector",
+    "DOGE-style audit of Agriculture Department; government downsizing rhetoric",
+    "Pro-life from conception; Texas Alliance for Life endorsed"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["DOGE-style audit rhetoric (Texas Tribune interview)", "general government-reduction framing"],
+      "notes": "No direct safety net positions, but government downsizing orientation and DOGE framing suggest preference for leaner government programs. Scored conservatively given indirect evidence only."
+    },
+    "econ_investment": {
+      "score": 4,
+      "confidence": "medium",
+      "sources": ["Big Country Homepage interview", "LBJ/Evan Smith conversation", "campaign website"],
+      "notes": "Interesting mix: supports value-added rural economic development and farm survival programs (public investment framing) but also DOGE-style government reduction. Net score reflects genuine support for targeted agricultural/rural investment within a smaller-government framework."
+    },
+    "econ_tax_structure": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["general Trump-alignment", "government efficiency rhetoric"],
+      "notes": "No specific tax positions found. Score inferred from overall Trump-aligned, business-owner, government-reduction orientation. Low confidence — could shift with more evidence."
+    },
+    "justice_firearms": {
+      "score": 10,
+      "confidence": "high",
+      "sources": ["Texas Gun Rights 100% survey score", "Gun Owners of America endorsement"],
+      "notes": "Two of the most hardline pro-gun organizations in Texas both rate/endorse him at maximum level. GOA and TXGR are more absolutist than the NRA. This is as far toward unrestricted 2A as the scale goes."
+    },
+    "health_public_health": {
+      "score": 4,
+      "confidence": "low",
+      "sources": ["MAHA movement identification (campaign website, Blaze Media)", "clean food advocacy"],
+      "notes": "MAHA framing is unusual — it signals interest in public health outcomes (clean food, school nutrition) but through an anti-regulatory, anti-corporate-food-industry lens rather than government mandates. The MAHA movement generally opposes vaccine mandates and FDA authority while supporting food quality. Scored slightly toward individual choice given the movement's overall orientation, but closer to center than typical Republican because of genuine public health concern."
+    },
+    "climate_energy_portfolio": {
+      "score": 7,
+      "confidence": "low",
+      "sources": ["Trump trade/tariff alignment", "anti-China agricultural security stance"],
+      "notes": "No direct energy or climate positions found. Score inferred from overall Trump alignment. Texas Agriculture Commissioner has limited climate/energy jurisdiction. Low confidence — omitting climate_ambition and climate_permitting entirely due to insufficient evidence."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.2,
+      "reasoning": "Anti-China stance, border enforcement, and Texas-first trade framing suggest in-group preference over universal welfare. MAHA clean-food advocacy has a universalist flavor (everyone deserves healthy food) but is framed in nationalistic terms. Texas Wildlife Association endorsement is a modest positive signal for nature protection."
+    },
+    "benevolence": {
+      "score": 0.5,
+      "reasoning": "Genuine concern for rural Texas communities, farm family survival, value-added rural jobs, and school nutrition. Multiple interviews emphasize community welfare in agricultural context. This is his most consistent positive value signal."
+    },
+    "tradition": {
+      "score": 0.6,
+      "reasoning": "Pro-life from conception, pro-gun rights, evangelical identity, defense of rural agricultural way of life, and general cultural conservatism. Ranch lifestyle and honey business background reinforce traditional values orientation."
+    },
+    "conformity": {
+      "score": 0.1,
+      "reasoning": "Mixed signals. Ran against and defeated a sitting Republican incumbent (anti-conformity within party), and DOGE-style government disruption rhetoric suggests willingness to break norms. But Abbott endorsement and working-within-the-system campaign approach pull modestly positive. Near neutral."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Border security emphasis, anti-agroterrorism legislation, opposing Chinese agricultural land purchases, food security focus, gun ownership as self-protection. Security is a dominant frame across multiple issue areas."
+    },
+    "power": {
+      "score": 0.3,
+      "reasoning": "Successful business founder (sold company); Abbott-backed establishment candidate in the general; comfortable with institutional power. But not strongly aligned with corporate donor class — ran as outsider businessman, not political insider."
+    },
+    "achievement": {
+      "score": 0.6,
+      "reasoning": "Built and sold a successful business (Nature Nate's Honey); entrepreneurship narrative is central to campaign identity; meritocracy and self-made success framing throughout D CEO profile and campaign materials."
+    },
+    "hedonism": {
+      "score": -0.2,
+      "reasoning": "Evangelical pro-life orientation and social conservatism suggest modest opposition to personal pleasure as governing value. No libertarian personal freedom framing on lifestyle issues."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "DOGE-style disruption rhetoric, outsider businessman challenging the political establishment, and clean-house framing show some appetite for change. But this is channeled through conservative reform, not radical transformation."
+    },
+    "self_direction": {
+      "score": 0.4,
+      "reasoning": "Strong on gun rights as individual liberty and government-out-of-your-business framing. But pro-life stance and mandatory e-Verify support work against individual autonomy in other domains. Net moderate positive, reflecting selective application of individual freedom."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Mandatory e-Verify vs agricultural labor supply",
+      "description": "Supports mandatory e-Verify for agricultural employers while Texas agriculture is heavily dependent on immigrant labor. No stated plan to reconcile the labor supply impact of strict enforcement.",
+      "sources": ["Campaign website", "Researcher evidence file"],
+      "scoringImpact": "Noted as unresolved policy tension; does not change axis scores but relevant context for voters in agricultural districts."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 6,
+    "axesSkipped": [
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "climate_ambition",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time candidate running for Agriculture Commissioner; no voting record and no stated positions on healthcare system design, housing, criminal justice, or most climate policy. Agriculture Commissioner role has narrow jurisdiction.",
+    "overallConfidence": "medium-low",
+    "researchGaps": [
+      "No healthcare system or coverage model positions found",
+      "No housing or transportation positions found",
+      "No criminal justice or policing positions found",
+      "No specific climate or energy policy beyond inferred Trump alignment",
+      "No school choice positions found despite researcher suggestion of MAHA connection",
+      "iVoterGuide questionnaire referenced but full responses not available in research file"
+    ]
+  }
+}

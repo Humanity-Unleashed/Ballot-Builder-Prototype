@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page — Navigation Mockups</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f3f4f6; padding: 20px; }
+
+    h1 { font-size: 20px; color: #111; margin-bottom: 8px; }
+    .subtitle { font-size: 13px; color: #6b7280; margin-bottom: 32px; }
+
+    .mockup-section { margin-bottom: 48px; }
+    .mockup-label { font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 4px; }
+    .mockup-desc { font-size: 12px; color: #6b7280; margin-bottom: 12px; }
+
+    /* Phone frame */
+    .phone {
+      width: 375px;
+      height: 720px;
+      background: #fff;
+      border-radius: 24px;
+      border: 2px solid #d1d5db;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Prototype banner */
+    .proto-banner {
+      background: #f59e0b;
+      color: #fff;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 0;
+      letter-spacing: 0.3px;
+    }
+
+    /* Top nav */
+    .topnav {
+      display: flex;
+      align-items: center;
+      height: 56px;
+      padding: 0 16px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #fff;
+    }
+    .topnav .app-icon { width: 20px; height: 20px; background: #2563eb; border-radius: 3px; margin-right: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; }
+    .topnav .app-name { font-size: 16px; font-weight: 700; color: #111827; margin-right: 8px; }
+    .topnav .info-btn { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #9ca3af; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #9ca3af; cursor: pointer; margin-right: 16px; flex-shrink: 0; }
+    .topnav .info-btn:hover { border-color: #2563eb; color: #2563eb; }
+    .topnav .info-btn.active { border-color: #2563eb; color: #2563eb; background: #eff6ff; }
+    .topnav .tabs { display: flex; gap: 20px; }
+    .topnav .tab { font-size: 14px; font-weight: 600; color: #6b7280; text-decoration: none; padding-bottom: 2px; }
+    .topnav .tab.active { color: #2563eb; border-bottom: 2px solid #2563eb; }
+    .topnav .spacer { flex: 1; }
+    .topnav .signin { font-size: 12px; font-weight: 500; color: #6b7280; border: 1px solid #e5e7eb; border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+    .topnav .menu-btn { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #6b7280; cursor: pointer; border-radius: 8px; }
+    .topnav .menu-btn:hover { background: #f3f4f6; }
+
+    /* Page content */
+    .page-content { padding: 20px 16px; overflow-y: auto; height: calc(100% - 56px - 24px); }
+    .page-content.dimmed { opacity: 0.3; pointer-events: none; }
+
+    .placeholder-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .placeholder-card .card-title { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+    .placeholder-card .card-bar { height: 8px; background: #e5e7eb; border-radius: 4px; margin-bottom: 6px; }
+    .placeholder-card .card-bar.short { width: 60%; }
+    .placeholder-card .card-bar.med { width: 80%; }
+
+    /* Bottom sheet */
+    .bottom-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+      padding: 12px 20px 24px;
+      max-height: 75%;
+      overflow-y: auto;
+    }
+    .sheet-handle { width: 36px; height: 4px; background: #d1d5db; border-radius: 2px; margin: 0 auto 16px; }
+    .sheet-title { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+    .sheet-text { font-size: 13px; color: #4b5563; line-height: 1.5; margin-bottom: 16px; }
+    .sheet-section { margin-bottom: 16px; }
+    .sheet-section-title { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 6px; }
+    .sheet-step { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .sheet-step-num { width: 22px; height: 22px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .sheet-step-text { font-size: 13px; color: #374151; line-height: 1.4; }
+    .sheet-step-text strong { font-weight: 600; }
+
+    .faq-item { border-top: 1px solid #e5e7eb; padding: 10px 0; }
+    .faq-q { font-size: 13px; font-weight: 600; color: #111827; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q .chevron { color: #9ca3af; font-size: 12px; }
+    .faq-a { font-size: 12px; color: #6b7280; line-height: 1.5; margin-top: 6px; }
+
+    /* Dropdown menu */
+    .dropdown {
+      position: absolute;
+      top: 80px;
+      right: 16px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 10;
+    }
+    .dropdown-item { padding: 10px 14px; font-size: 13px; color: #374151; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+    .dropdown-item:hover { background: #f3f4f6; }
+    .dropdown-item:first-child { border-radius: 10px 10px 0 0; }
+    .dropdown-item:last-child { border-radius: 0 0 10px 10px; }
+    .dropdown-item .di-icon { font-size: 14px; color: #6b7280; }
+    .dropdown-sep { height: 1px; background: #e5e7eb; }
+
+    /* About page content */
+    .about-page { padding: 20px 16px; overflow-y: auto; height: calc(100% - 56px - 24px); }
+    .about-hero { margin-bottom: 20px; }
+    .about-hero h2 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .about-hero p { font-size: 13px; color: #6b7280; line-height: 1.5; }
+
+    .about-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .about-card .ac-title { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 8px; }
+    .about-card .ac-text { font-size: 12px; color: #4b5563; line-height: 1.5; }
+
+    .source-table { width: 100%; font-size: 12px; margin-top: 8px; border-collapse: collapse; }
+    .source-table th { text-align: left; font-weight: 600; color: #374151; padding: 4px 6px; border-bottom: 1px solid #e5e7eb; }
+    .source-table td { padding: 4px 6px; color: #4b5563; border-bottom: 1px solid #f3f4f6; }
+    .source-table .priority-high { color: #059669; font-weight: 600; }
+    .source-table .priority-med { color: #d97706; font-weight: 600; }
+    .source-table .priority-low { color: #6b7280; font-weight: 500; }
+
+    .privacy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #059669;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    /* Layout */
+    .mockups-row { display: flex; gap: 32px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<h1>About Page — 3 Navigation Options</h1>
+<p class="subtitle">Click through to compare how each approach looks. Content is the same across all three.</p>
+
+<div class="mockups-row">
+
+<!-- ============================================ -->
+<!-- OPTION A: Info icon in TopNav → /about page  -->
+<!-- ============================================ -->
+<div class="mockup-section">
+  <div class="mockup-label">Option A: Info icon in TopNav</div>
+  <div class="mockup-desc">Small (i) next to app name. Navigates to a full /about page.</div>
+
+  <div class="phone">
+    <div class="proto-banner">Prototype for evaluation only — not an official voter guide</div>
+    <div class="topnav">
+      <div class="app-icon">B</div>
+      <span class="app-name">Ballot Builder</span>
+      <div class="info-btn active">i</div>
+      <div class="tabs">
+        <a class="tab" href="#">Blueprint</a>
+        <a class="tab" href="#">Build</a>
+      </div>
+      <div class="spacer"></div>
+      <div class="signin">Sign in</div>
+    </div>
+
+    <div class="about-page">
+      <div class="about-hero">
+        <h2>About Ballot Builder</h2>
+        <p>A nonpartisan tool that helps you prepare for elections based on your own values — not party labels, endorsements, or someone else's opinion.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="ac-title">How It Works</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="sheet-step">
+            <div class="sheet-step-num">1</div>
+            <div class="sheet-step-text"><strong>You tell us what matters.</strong> A 5-minute quiz on 15 policy topics. You pick positions, not parties.</div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">2</div>
+            <div class="sheet-step-text"><strong>We score the candidates.</strong> Using voting records, interest group ratings, and stated positions — not party affiliation.</div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">3</div>
+            <div class="sheet-step-text"><strong>We compute your match.</strong> Topics you care more about count more. The result is a percentage.</div>
+          </div>
+          <div class="sheet-step">
+            <div class="sheet-step-num">4</div>
+            <div class="sheet-step-text"><strong>You decide.</strong> We show evidence and reasoning. You pick your votes.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <div class="ac-title">Where Candidate Scores Come From</div>
+        <table class="source-table">
+          <tr><th>Priority</th><th>Source</th><th>Example</th></tr>
+          <tr><td class="priority-high">Highest</td><td>Voting records</td><td>How they voted on specific bills</td></tr>
+          <tr><td class="priority-high">Highest</td><td>Interest group ratings</td><td>LCV, NRA, Chamber of Commerce scores</td></tr>
+          <tr><td class="priority-med">Medium</td><td>Campaign website</td><td>Their own stated positions</td></tr>
+          <tr><td class="priority-med">Medium</td><td>Interviews</td><td>Policy answers in media Q&As</td></tr>
+          <tr><td class="priority-low">Lower</td><td>News &amp; endorsements</td><td>Reporting and org support</td></tr>
+        </table>
+      </div>
+
+      <div class="about-card">
+        <div class="ac-title">Your Privacy</div>
+        <div class="ac-text">All your data stays on your device. We don't send it to a server, track your positions, or share anything with anyone.</div>
+        <div class="privacy-badge">
+          <span>&#x1f512;</span> Data stays on your device
+        </div>
+      </div>
+
+      <div class="about-card">
+        <div class="ac-title">Common Questions</div>
+        <div class="faq-item">
+          <div class="faq-q">Is this affiliated with a political party? <span class="chevron">&#9660;</span></div>
+          <div class="faq-a">No. We score candidates on their individual records, not their party. A Republican who voted for gun safety gets a different score than one who didn't.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do you prevent bias? <span class="chevron">&#9654;</span></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if a candidate has no voting record? <span class="chevron">&#9654;</span></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I see the evidence behind a score? <span class="chevron">&#9654;</span></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How accurate are match percentages? <span class="chevron">&#9654;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================ -->
+<!-- OPTION B: Slide-up bottom sheet              -->
+<!-- ============================================ -->
+<div class="mockup-section">
+  <div class="mockup-label">Option B: Slide-up Bottom Sheet</div>
+  <div class="mockup-desc">(i) icon triggers a sheet over current page. No navigation.</div>
+
+  <div class="phone">
+    <div class="proto-banner">Prototype for evaluation only — not an official voter guide</div>
+    <div class="topnav">
+      <div class="app-icon">B</div>
+      <span class="app-name">Ballot Builder</span>
+      <div class="info-btn active">i</div>
+      <div class="tabs">
+        <a class="tab active" href="#">Blueprint</a>
+        <a class="tab" href="#">Build</a>
+      </div>
+      <div class="spacer"></div>
+      <div class="signin">Sign in</div>
+    </div>
+
+    <div class="page-content dimmed">
+      <div class="placeholder-card">
+        <div class="card-title">Your Civic Priorities</div>
+        <div class="card-bar"></div>
+        <div class="card-bar short"></div>
+      </div>
+      <div class="placeholder-card">
+        <div class="card-title">Economic Policy</div>
+        <div class="card-bar med"></div>
+        <div class="card-bar short"></div>
+      </div>
+      <div class="placeholder-card">
+        <div class="card-title">Healthcare</div>
+        <div class="card-bar"></div>
+        <div class="card-bar med"></div>
+      </div>
+    </div>
+
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-title">About Ballot Builder</div>
+      <div class="sheet-text">A nonpartisan tool that helps you prepare for elections based on your own values — not party labels or someone else's opinion.</div>
+
+      <div class="sheet-section">
+        <div class="sheet-section-title">How It Works</div>
+        <div class="sheet-step">
+          <div class="sheet-step-num">1</div>
+          <div class="sheet-step-text"><strong>You tell us what matters.</strong> A 5-min quiz on 15 policy topics.</div>
+        </div>
+        <div class="sheet-step">
+          <div class="sheet-step-num">2</div>
+          <div class="sheet-step-text"><strong>We score candidates</strong> from voting records and ratings — not party.</div>
+        </div>
+        <div class="sheet-step">
+          <div class="sheet-step-num">3</div>
+          <div class="sheet-step-text"><strong>We compute your match.</strong> Topics you care about count more.</div>
+        </div>
+        <div class="sheet-step">
+          <div class="sheet-step-num">4</div>
+          <div class="sheet-step-text"><strong>You decide.</strong> We show evidence. You pick your votes.</div>
+        </div>
+      </div>
+
+      <div class="sheet-section">
+        <div class="sheet-section-title">Common Questions</div>
+        <div class="faq-item">
+          <div class="faq-q">Is this affiliated with a party? <span class="chevron">&#9660;</span></div>
+          <div class="faq-a">No. We score individuals on their records, not their party membership.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where do candidate scores come from? <span class="chevron">&#9654;</span></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do you prevent bias? <span class="chevron">&#9654;</span></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Your privacy <span class="chevron">&#9654;</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================ -->
+<!-- OPTION C: 3-dot menu with dropdown           -->
+<!-- ============================================ -->
+<div class="mockup-section">
+  <div class="mockup-label">Option C: 3-dot Menu</div>
+  <div class="mockup-desc">Menu icon replaces sign-in. Contains About, Sign in, Feedback. Scales to more items.</div>
+
+  <div class="phone">
+    <div class="proto-banner">Prototype for evaluation only — not an official voter guide</div>
+    <div class="topnav">
+      <div class="app-icon">B</div>
+      <span class="app-name">Ballot Builder</span>
+      <div class="tabs">
+        <a class="tab active" href="#">Blueprint</a>
+        <a class="tab" href="#">Build</a>
+      </div>
+      <div class="spacer"></div>
+      <div class="menu-btn">&#8942;</div>
+    </div>
+
+    <div class="dropdown">
+      <div class="dropdown-item" style="background: #f3f4f6;">
+        <span class="di-icon">&#9432;</span> About Ballot Builder
+      </div>
+      <div class="dropdown-sep"></div>
+      <div class="dropdown-item">
+        <span class="di-icon">&#8594;</span> Sign in
+      </div>
+      <div class="dropdown-sep"></div>
+      <div class="dropdown-item">
+        <span class="di-icon">&#9993;</span> Give feedback
+      </div>
+    </div>
+
+    <div class="page-content" style="opacity: 0.5;">
+      <div class="placeholder-card">
+        <div class="card-title">Your Civic Priorities</div>
+        <div class="card-bar"></div>
+        <div class="card-bar short"></div>
+      </div>
+      <div class="placeholder-card">
+        <div class="card-title">Economic Policy</div>
+        <div class="card-bar med"></div>
+        <div class="card-bar short"></div>
+      </div>
+      <div class="placeholder-card">
+        <div class="card-title">Healthcare</div>
+        <div class="card-bar"></div>
+        <div class="card-bar med"></div>
+      </div>
+      <div class="placeholder-card">
+        <div class="card-title">Justice</div>
+        <div class="card-bar med"></div>
+        <div class="card-bar short"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end mockups-row -->
+
+</body>
+</html>

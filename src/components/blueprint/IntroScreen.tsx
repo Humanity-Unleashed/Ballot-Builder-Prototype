@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { ArrowRight, ClipboardCheck, Compass, MessageSquarePlus, Users, X } from 'lucide-react';
 
 interface IntroScreenProps {
@@ -34,9 +34,12 @@ const slides = [
   },
 ];
 
+const SWIPE_THRESHOLD = 50;
+
 export default function IntroScreen({ onClose }: IntroScreenProps) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<'left' | 'right'>('left');
+  const touchStartX = useRef<number | null>(null);
 
   const isLast = current === slides.length - 1;
 
@@ -48,11 +51,19 @@ export default function IntroScreen({ onClose }: IntroScreenProps) {
     [current],
   );
 
-  const handleNext = () => {
-    if (isLast) {
-      onClose();
-    } else {
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (delta < -SWIPE_THRESHOLD && current < slides.length - 1) {
       goTo(current + 1);
+    } else if (delta > SWIPE_THRESHOLD && current > 0) {
+      goTo(current - 1);
     }
   };
 
@@ -60,7 +71,11 @@ export default function IntroScreen({ onClose }: IntroScreenProps) {
   const Icon = slide.icon;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-white">
+    <div
+      className="fixed inset-0 z-50 flex flex-col bg-white"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Skip (hidden on last slide) */}
       <div className="flex justify-end px-5 pt-4">
         {!isLast ? (
@@ -115,14 +130,18 @@ export default function IntroScreen({ onClose }: IntroScreenProps) {
             ))}
           </div>
 
-          {/* Action button */}
-          <button
-            onClick={handleNext}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-4 font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80"
-          >
-            {isLast ? 'Accept and continue' : 'Next'}
-            {isLast && <ArrowRight className="h-5 w-5" />}
-          </button>
+          {/* Action button — only on last slide */}
+          {isLast ? (
+            <button
+              onClick={onClose}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-4 font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80"
+            >
+              Accept and continue
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          ) : (
+            <p className="text-center text-xs text-text-secondary">Swipe to continue</p>
+          )}
         </div>
       </div>
 

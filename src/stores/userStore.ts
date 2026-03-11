@@ -38,6 +38,8 @@ export interface AssessmentProgress {
   currentAxisIndex: number;
   sliderPositions: Record<string, number>;
   strengthValues: Record<string, number>;
+  /** Axes that appear on the user's ballot — used to filter assessment questions */
+  ballotRelevantAxes?: string[];
 }
 
 interface UserState {

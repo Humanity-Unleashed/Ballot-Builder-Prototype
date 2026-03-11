@@ -8,6 +8,7 @@ import { useAuth } from '@/lib/auth-client';
 const tabs = [
   { label: 'Blueprint', href: '/blueprint' },
   { label: 'Build', href: '/ballot' },
+  { label: 'Chat', href: '/conversation' },
 ];
 
 export default function TopNav() {

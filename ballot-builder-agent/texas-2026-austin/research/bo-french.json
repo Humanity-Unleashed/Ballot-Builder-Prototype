@@ -1,0 +1,79 @@
+{
+  "candidateSlug": "bo-french",
+  "candidateName": "Bo French",
+  "party": "Republican",
+  "office": "Railroad Commissioner, Texas",
+  "contestId": "TX-RAILROAD-COMMISSIONER-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Bo French",
+    "background": "From Fort Worth/Midland. Grew up in oil family (French Oil Company, Midland). Energy trader for a decade after 1994. Ran security businesses in Middle East for major energy companies. Tarrant County Republican Party Chairman (2023-2025), resigned to run for Railroad Commission. Earlier career: aide under Republican TX Land Commissioner Jerry Patterson; Legislative Director for Democratic U.S. Rep. Pete Gallego.",
+    "firstTimeCandidate": true
+  },
+
+  "primaryResult": "Finished first in March 3, 2026 Republican primary with 33.3%, forcing runoff against incumbent James Wright (31.5%). Runoff May 26, 2026.",
+
+  "campaignWebsite": "https://bofrench.com/",
+
+  "campaignFinance": {
+    "totalRaised": "$279,000+ in primary cycle",
+    "notableDonors": ["Moncrief Oil International ($15,000)", "Unidentified source ($150,000 in-kind advertising)"]
+  },
+
+  "policyPositions": [
+    {"topic": "Permitting reform", "position": "Decentralize permit approval back to regional RRC offices; modernize to electronic submission", "confidence": "HIGH", "notes": "Most substantive policy proposal"},
+    {"topic": "Deregulation", "position": "Roll back RRC environmental rules he characterizes as 'Biden-era EPA regulations'; reduce regulatory burden on oil and gas", "confidence": "HIGH"},
+    {"topic": "DEI elimination", "position": "End DEI-based RRC contracting (claims ~$1M/year); enforce competitive bidding on all contracts", "confidence": "HIGH"},
+    {"topic": "Anti-China", "position": "Block Chinese land and oil asset acquisition in Texas", "confidence": "HIGH"},
+    {"topic": "Israel energy partnership", "position": "Proposes formal joint research/cooperation agreement between TX RRC and Israeli energy industry", "confidence": "MEDIUM"},
+    {"topic": "Orphaned wells", "position": "Reform plugging process for efficiency and cost reduction (framed as fiscal, not environmental)", "confidence": "MEDIUM"}
+  ],
+
+  "votingRecord": null,
+
+  "interestGroupRatings": [],
+
+  "controversies": [
+    {"date": "2025-06", "description": "Posted antisemitic Jews-vs-Muslims poll on X while TCGOP Chair; Lt. Gov. Dan Patrick and Sen. John Cornyn called for his resignation", "source": "Texas Tribune, CBS Texas"},
+    {"date": "2024-10", "description": "Used slurs for gay people and people with disabilities in public X posts", "source": "Texas Tribune"},
+    {"date": "2026-02", "description": "Called Native Americans in a photo 'third world savages' and called for their deportation; Snopes confirmed factually accurate", "source": "Snopes"},
+    {"description": "Called for denaturalization and deportation of two Democratic Texas state representatives (Bhojani and Wu)"}
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "Pro-Israel vs antisemitic rhetoric",
+      "conflict": "Claims strong pro-Israel alignment and proposes formal RRC-Israel cooperation, but posted poll framing Jews as potential threats",
+      "notes": "Direct tension flagged by multiple outlets"
+    },
+    {
+      "topic": "Bipartisan background vs far-right positioning",
+      "conflict": "Was Legislative Director for Democratic U.S. Rep. Pete Gallego; now campaigns on far-right platform",
+      "notes": "Background context only — not necessarily a policy conflict"
+    }
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 4,
+    "overallConfidence": "LOW-MEDIUM",
+    "strongAxes": ["climate_energy_portfolio (fossil fuel priority clear)", "climate_ambition (anti-regulation clear)"],
+    "weakAxes": ["All non-energy axes — no positions stated on healthcare, labor, housing, firearms, education, criminal justice"],
+    "notes": "First-time candidate with no voting record. Highly scorable on energy/regulatory axes (very explicit positions), barely scorable on everything else. Immigration extremism documented but outside RRC regulatory scope. Controversies should be noted in output but don't map to civic axes."
+  },
+
+  "sources": [
+    {"url": "https://bofrench.com/", "description": "Campaign website"},
+    {"url": "https://bofrench.com/about/", "description": "Issues/about page"},
+    {"url": "https://ballotpedia.org/Bo_French", "description": "Ballotpedia profile"},
+    {"url": "https://www.texastribune.org/2025/11/12/bo-french-texas-railroad-commission-republican-primary-2026/", "description": "Texas Tribune — announcement"},
+    {"url": "https://www.texastribune.org/2026/02/12/texas-railroad-commission-bo-french-election-2026/", "description": "Texas Tribune — DEI/China campaign focus"},
+    {"url": "https://www.texastribune.org/2026/03/03/texas-railroad-commission-republican-primary/", "description": "Texas Tribune — primary results"},
+    {"url": "https://www.texasmonthly.com/news-politics/bo-french-railroad-commission/", "description": "Texas Monthly — profile"},
+    {"url": "https://communityimpact.com/austin/south-central-austin/election/2026/01/16/qa-get-to-know-the-republican-primary-candidates-for-texas-railroad-commissioner/", "description": "Community Impact Q&A"},
+    {"url": "https://www.snopes.com/fact-check/bo-french-deport-native-americans/", "description": "Snopes fact check"},
+    {"url": "https://cchc-pac.org/answers/2026-March-Races/2026-03-S-RR-Commissioner-Bo-French.pdf", "description": "CCHC-PAC questionnaire"}
+  ]
+}

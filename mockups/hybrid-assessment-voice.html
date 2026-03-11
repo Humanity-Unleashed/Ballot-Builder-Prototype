@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Assessment — Voice/Text Escape Hatch</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1a1a2e;
+      color: #111827;
+      padding: 40px 20px;
+    }
+
+    .mockup-label {
+      color: #a5b4fc;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .mockup-title {
+      color: #e0e7ff;
+      font-size: 28px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .mockup-subtitle {
+      color: #94a3b8;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 48px;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .mockup-subtitle strong { color: #c4b5fd; }
+
+    .section-label {
+      color: #c4b5fd;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .side-by-side {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phone-frame {
+      width: 390px;
+      background: #f9fafb;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      border: 6px solid #2a2a4a;
+    }
+
+    .phone-screen {
+      display: flex;
+      flex-direction: column;
+      min-height: 780px;
+    }
+
+    /* ---- Top Nav ---- */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .top-nav .logo {
+      font-weight: 800;
+      font-size: 15px;
+      color: #6C2BD9;
+    }
+    .top-nav .tabs {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .top-nav .tab { color: #9E9EB8; }
+    .top-nav .tab.active { color: #6C2BD9; border-bottom: 2px solid #6C2BD9; padding-bottom: 2px; }
+
+    /* ---- Progress Header ---- */
+    .progress-header {
+      padding: 12px 16px;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .progress-label {
+      font-size: 11px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .progress-bar-track {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 99px;
+    }
+    .progress-bar-fill {
+      height: 6px;
+      background: #8B7AAF;
+      border-radius: 99px;
+      transition: width 0.3s;
+    }
+
+    /* ---- Question Area ---- */
+    .question-area {
+      flex: 1;
+      padding: 20px 16px 12px;
+      background: #f9fafb;
+      overflow-y: auto;
+    }
+    .domain-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6C2BD9;
+      background: #EDE6FA;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .question-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1f2937;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    /* ---- Option Cards ---- */
+    .option-card {
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .option-card:hover {
+      border-color: #d1d5db;
+    }
+    .option-card.selected {
+      border-color: #6C2BD9;
+      background: #EDE6FA;
+    }
+    .option-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 2px;
+    }
+    .option-card.selected .option-title { color: #6C2BD9; }
+    .option-desc {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+    .policy-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      color: #059669;
+      background: #ecfdf5;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    /* ---- Voice Escape Hatch ---- */
+    .escape-hatch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 0;
+      margin-top: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .escape-hatch .label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #9E9EB8;
+      transition: color 0.15s;
+    }
+    .escape-hatch:hover .label {
+      color: #6C2BD9;
+    }
+    .escape-hatch .mic-icon {
+      width: 18px;
+      height: 18px;
+      color: #9E9EB8;
+      transition: color 0.15s;
+    }
+    .escape-hatch:hover .mic-icon {
+      color: #6C2BD9;
+    }
+
+    /* ---- Expanded Voice Panel ---- */
+    .voice-panel {
+      border: 2px solid #6C2BD9;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 8px;
+      background: white;
+    }
+    .voice-panel-header {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+    .voice-panel-hint {
+      font-size: 12px;
+      color: #9E9EB8;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    /* Text input row */
+    .text-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f3f4f6;
+      border-radius: 99px;
+      padding: 6px 6px 6px 16px;
+    }
+    .text-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 14px;
+      color: #374151;
+      outline: none;
+      font-family: inherit;
+    }
+    .text-input::placeholder { color: #9ca3af; }
+
+    /* Mic button */
+    .mic-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #6C2BD9;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .mic-btn svg { color: white; width: 20px; height: 20px; }
+    .mic-btn.recording {
+      background: #ef4444;
+      animation: pulse-ring 1.5s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+      70% { box-shadow: 0 0 0 12px rgba(239,68,68,0); }
+      100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+    }
+
+    /* Send button */
+    .send-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #6C2BD9;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .send-btn svg { color: white; width: 18px; height: 18px; }
+
+    /* ---- Voice Processing State ---- */
+    .voice-processing {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: #EDE6FA;
+      border-radius: 12px;
+      margin-top: 8px;
+    }
+    .voice-processing .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #d4c4f0;
+      border-top-color: #6C2BD9;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .voice-processing .text {
+      font-size: 13px;
+      color: #6C2BD9;
+      font-weight: 500;
+    }
+
+    /* ---- Extracted Signal Card ---- */
+    .signal-card {
+      border: 2px solid #2DA562;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 8px;
+      background: #f0fdf4;
+    }
+    .signal-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .signal-check {
+      width: 20px;
+      height: 20px;
+      background: #2DA562;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .signal-check svg { color: white; width: 12px; height: 12px; }
+    .signal-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #166534;
+    }
+    .signal-quote {
+      font-size: 13px;
+      color: #374151;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      padding-left: 12px;
+      border-left: 3px solid #86efac;
+    }
+    .signal-result {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .signal-axis-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b7280;
+      min-width: 100px;
+    }
+    .signal-bar-track {
+      flex: 1;
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 99px;
+      position: relative;
+    }
+    .signal-bar-fill {
+      height: 8px;
+      background: linear-gradient(90deg, #8B7AAF, #6C2BD9);
+      border-radius: 99px;
+    }
+    .signal-bar-dot {
+      position: absolute;
+      top: -3px;
+      width: 14px;
+      height: 14px;
+      background: #6C2BD9;
+      border: 2px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .signal-poles {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2px;
+    }
+    .signal-pole {
+      font-size: 10px;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+    .signal-confidence {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+    .signal-confidence strong {
+      color: #2DA562;
+    }
+    .signal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .signal-btn {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+    }
+    .signal-btn.accept {
+      background: #2DA562;
+      color: white;
+    }
+    .signal-btn.refine {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* ---- Importance Slider ---- */
+    .importance-section {
+      padding: 12px 16px;
+      border-top: 1px solid #e5e7eb;
+      background: white;
+    }
+    .importance-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+    .importance-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .importance-pole {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9ca3af;
+    }
+    .importance-slider {
+      flex: 1;
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 99px;
+      position: relative;
+    }
+    .importance-thumb {
+      position: absolute;
+      top: -7px;
+      width: 20px;
+      height: 20px;
+      background: #6C2BD9;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .importance-fill {
+      height: 6px;
+      background: #6C2BD9;
+      border-radius: 99px;
+    }
+
+    /* ---- Footer Nav ---- */
+    .footer-nav {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+    }
+    .btn-back {
+      flex: 1;
+      padding: 14px 0;
+      border-radius: 12px;
+      background: #f3f4f6;
+      color: #4b5563;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-next {
+      flex: 1;
+      padding: 14px 0;
+      border-radius: 12px;
+      background: #6C2BD9;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* ---- Chat-in-card ---- */
+    .mini-chat {
+      margin-top: 8px;
+    }
+    .mini-bubble {
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 90%;
+      margin-bottom: 6px;
+    }
+    .mini-bubble.user {
+      background: #6C2BD9;
+      color: white;
+      border-bottom-right-radius: 6px;
+      margin-left: auto;
+    }
+    .mini-bubble.assistant {
+      background: #f3f4f6;
+      color: #1f2937;
+      border-bottom-left-radius: 6px;
+    }
+
+    /* ---- Annotation Arrows ---- */
+    .annotation {
+      position: relative;
+      background: rgba(108, 43, 217, 0.08);
+      border: 1px dashed #6C2BD9;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-top: 6px;
+      font-size: 11px;
+      color: #6C2BD9;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 0;
+    }
+    .flow-arrow svg {
+      color: #64648C;
+      width: 32px;
+      height: 32px;
+    }
+    .flow-arrow .arrow-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<div class="mockup-label">HYBRID ASSESSMENT MOCKUPS</div>
+<div class="mockup-title">Questionnaire + Voice Escape Hatch</div>
+<div class="mockup-subtitle">
+  The questionnaire remains the primary flow. A <strong>"None of these — tell us"</strong> option lets users voice or type their nuanced take when the card options don't fit. The LLM extracts a signal and maps it to the same axis.
+</div>
+
+<!-- ==================== MOCKUP A: Normal Flow ==================== -->
+<div class="section-label">MOCKUP A &mdash; Normal Card Selection (Unchanged)</div>
+<div class="side-by-side">
+  <div class="column">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="top-nav">
+          <div class="logo">Ballot Builder</div>
+          <div class="tabs">
+            <div class="tab active">Blueprint</div>
+            <div class="tab">Ballot</div>
+            <div class="tab">Values</div>
+          </div>
+        </div>
+
+        <div class="progress-header">
+          <div class="progress-meta">
+            <span class="progress-label">Question 3 of 16</span>
+            <span class="progress-label">Economic</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: 18.75%"></div>
+          </div>
+        </div>
+
+        <div class="question-area">
+          <div class="domain-badge">Economic Policy</div>
+          <div class="question-text">How should we structure taxes in America?</div>
+
+          <div class="option-card">
+            <div class="option-title">Strongly progressive taxes</div>
+            <div class="option-desc">Much higher rates on top earners; expand brackets to fund public services</div>
+          </div>
+
+          <div class="option-card selected">
+            <div class="option-title">Moderately progressive taxes</div>
+            <div class="option-desc">Keep graduated rates but simplify brackets; close loopholes</div>
+            <div class="policy-badge">Close to current policy</div>
+          </div>
+
+          <div class="option-card">
+            <div class="option-title">Flat tax for everyone</div>
+            <div class="option-desc">Same rate for all income levels; simpler and more predictable</div>
+          </div>
+
+          <div class="option-card">
+            <div class="option-title">Consumption-based taxes</div>
+            <div class="option-desc">Shift from income tax to sales/spending taxes; reward saving</div>
+          </div>
+
+          <!-- The escape hatch link -->
+          <div class="escape-hatch">
+            <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" x2="12" y1="19" y2="22"/>
+            </svg>
+            <span class="label">None of these fit — tell us in your own words</span>
+          </div>
+
+          <div class="importance-section" style="margin-top: 12px; padding: 12px 0; border-top: 1px solid #e5e7eb; background: transparent;">
+            <div class="importance-label">How important is this to you?</div>
+            <div class="importance-slider-row">
+              <span class="importance-pole">Not very</span>
+              <div class="importance-slider">
+                <div class="importance-fill" style="width: 60%"></div>
+                <div class="importance-thumb" style="left: calc(60% - 10px)"></div>
+              </div>
+              <span class="importance-pole">Very</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <button class="btn-back">Back</button>
+          <button class="btn-next">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="annotation" style="max-width: 390px; margin-top: 16px;">
+      Most users pick a card as usual. The escape hatch is a subtle link below the options — present but not distracting.
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== MOCKUP B: Voice Panel Expanded ==================== -->
+<div class="section-label">MOCKUP B &mdash; User Taps "None of these fit" &rarr; Voice/Text Panel Opens</div>
+<div class="side-by-side">
+  <div class="column">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="top-nav">
+          <div class="logo">Ballot Builder</div>
+          <div class="tabs">
+            <div class="tab active">Blueprint</div>
+            <div class="tab">Ballot</div>
+            <div class="tab">Values</div>
+          </div>
+        </div>
+
+        <div class="progress-header">
+          <div class="progress-meta">
+            <span class="progress-label">Question 7 of 16</span>
+            <span class="progress-label">Housing</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: 43.75%"></div>
+          </div>
+        </div>
+
+        <div class="question-area">
+          <div class="domain-badge">Housing Policy</div>
+          <div class="question-text">How should cities make housing more affordable?</div>
+
+          <!-- Dimmed option cards (not selected) -->
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">Government rent controls & public housing</div>
+          </div>
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">Subsidies and vouchers for low-income renters</div>
+          </div>
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">Loosen zoning, let the market build more</div>
+          </div>
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">No government intervention needed</div>
+          </div>
+
+          <!-- Expanded Voice Panel -->
+          <div class="voice-panel">
+            <div class="voice-panel-header">Tell us what you think</div>
+            <div class="voice-panel-hint">Speak or type your view on housing affordability. We'll map it to this policy axis.</div>
+
+            <div class="text-input-row">
+              <input class="text-input" type="text" placeholder="Share your thoughts...">
+              <button class="mic-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  <line x1="12" x2="12" y1="19" y2="22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <button class="btn-back">Back</button>
+          <button class="btn-next" style="opacity: 0.5;">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="annotation" style="max-width: 390px; margin-top: 16px;">
+      Card options dim. A panel slides up with text input + mic button. User can type or tap the mic to speak. Next button is disabled until we have a signal.
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== MOCKUP C: Recording State ==================== -->
+<div class="section-label">MOCKUP C &mdash; User is Speaking (Recording)</div>
+<div class="side-by-side">
+  <div class="column">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="top-nav">
+          <div class="logo">Ballot Builder</div>
+          <div class="tabs">
+            <div class="tab active">Blueprint</div>
+            <div class="tab">Ballot</div>
+            <div class="tab">Values</div>
+          </div>
+        </div>
+
+        <div class="progress-header">
+          <div class="progress-meta">
+            <span class="progress-label">Question 7 of 16</span>
+            <span class="progress-label">Housing</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: 43.75%"></div>
+          </div>
+        </div>
+
+        <div class="question-area">
+          <div class="domain-badge">Housing Policy</div>
+          <div class="question-text">How should cities make housing more affordable?</div>
+
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">Government rent controls & public housing</div>
+          </div>
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">Subsidies and vouchers for low-income renters</div>
+          </div>
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">Loosen zoning, let the market build more</div>
+          </div>
+          <div class="option-card" style="opacity: 0.4;">
+            <div class="option-title">No government intervention needed</div>
+          </div>
+
+          <div class="voice-panel" style="border-color: #ef4444;">
+            <div class="voice-panel-header">Listening...</div>
+
+            <div class="text-input-row" style="background: #fef2f2;">
+              <input class="text-input" type="text" value="I think it depends on the city. In Detroit we need more housing built but..." style="color: #374151;" readonly>
+              <button class="mic-btn recording">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="6" y="6" width="12" height="12" rx="2"/>
+                </svg>
+              </button>
+            </div>
+
+            <div style="font-size: 11px; color: #9ca3af; margin-top: 8px; text-align: center;">Tap the stop button when you're done</div>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <button class="btn-back" style="opacity: 0.5;">Back</button>
+          <button class="btn-next" style="opacity: 0.5;">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="annotation" style="max-width: 390px; margin-top: 16px;">
+      Live transcription appears in the text field. Panel border turns red while recording. Mic button shows a stop icon with the pulsing ring animation.
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== MOCKUP D: Signal Extracted ==================== -->
+<div class="section-label">MOCKUP D &mdash; Signal Extracted &amp; Mapped to Axis</div>
+<div class="side-by-side">
+  <div class="column">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="top-nav">
+          <div class="logo">Ballot Builder</div>
+          <div class="tabs">
+            <div class="tab active">Blueprint</div>
+            <div class="tab">Ballot</div>
+            <div class="tab">Values</div>
+          </div>
+        </div>
+
+        <div class="progress-header">
+          <div class="progress-meta">
+            <span class="progress-label">Question 7 of 16</span>
+            <span class="progress-label">Housing</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: 43.75%"></div>
+          </div>
+        </div>
+
+        <div class="question-area">
+          <div class="domain-badge">Housing Policy</div>
+          <div class="question-text">How should cities make housing more affordable?</div>
+
+          <!-- Signal card replaces voice panel -->
+          <div class="signal-card">
+            <div class="signal-header">
+              <div class="signal-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div class="signal-title">Got it — here's what we understood</div>
+            </div>
+
+            <div class="signal-quote">"I think it depends on the city. In Detroit we need more housing built, but I don't want developers pushing out existing residents. Some government help is needed, but mainly to protect people, not to control the market."</div>
+
+            <!-- Axis visualization -->
+            <div style="margin-bottom: 12px;">
+              <div class="signal-result">
+                <span class="signal-axis-label">Affordability</span>
+                <div class="signal-bar-track">
+                  <div class="signal-bar-fill" style="width: 35%"></div>
+                  <div class="signal-bar-dot" style="left: calc(35% - 7px)"></div>
+                </div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Govt subsidies</span>
+                <span class="signal-pole">Market solutions</span>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+              <div class="signal-result">
+                <span class="signal-axis-label">Zoning</span>
+                <div class="signal-bar-track">
+                  <div class="signal-bar-fill" style="width: 30%"></div>
+                  <div class="signal-bar-dot" style="left: calc(30% - 7px)"></div>
+                </div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Loosen zoning</span>
+                <span class="signal-pole">Preserve local</span>
+              </div>
+            </div>
+
+            <div class="signal-confidence">Confidence: <strong>Medium</strong> &mdash; your answer touched 2 axes in this domain</div>
+
+            <div class="signal-actions">
+              <button class="signal-btn accept">Looks right</button>
+              <button class="signal-btn refine">Not quite — let me clarify</button>
+            </div>
+          </div>
+
+          <div class="importance-section" style="margin-top: 12px; padding: 12px 0; border-top: 1px solid #e5e7eb; background: transparent;">
+            <div class="importance-label">How important is this to you?</div>
+            <div class="importance-slider-row">
+              <span class="importance-pole">Not very</span>
+              <div class="importance-slider">
+                <div class="importance-fill" style="width: 80%"></div>
+                <div class="importance-thumb" style="left: calc(80% - 10px)"></div>
+              </div>
+              <span class="importance-pole">Very</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <button class="btn-back">Back</button>
+          <button class="btn-next">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="annotation" style="max-width: 390px; margin-top: 16px;">
+      LLM extracts signal(s) and shows: their quote, where it lands on each relevant axis, and confidence. User can accept or clarify. This may score multiple axes in the domain at once — a bonus over single-card selection.
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== MOCKUP E: Clarification Follow-up ==================== -->
+<div class="section-label">MOCKUP E &mdash; User Taps "Not quite" &rarr; Quick Clarification</div>
+<div class="side-by-side">
+  <div class="column">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="top-nav">
+          <div class="logo">Ballot Builder</div>
+          <div class="tabs">
+            <div class="tab active">Blueprint</div>
+            <div class="tab">Ballot</div>
+            <div class="tab">Values</div>
+          </div>
+        </div>
+
+        <div class="progress-header">
+          <div class="progress-meta">
+            <span class="progress-label">Question 7 of 16</span>
+            <span class="progress-label">Housing</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" style="width: 43.75%"></div>
+          </div>
+        </div>
+
+        <div class="question-area">
+          <div class="domain-badge">Housing Policy</div>
+          <div class="question-text">How should cities make housing more affordable?</div>
+
+          <!-- Mini chat for clarification -->
+          <div class="voice-panel" style="padding-bottom: 12px;">
+            <div class="mini-chat">
+              <div class="mini-bubble user">
+                I think it depends on the city. In Detroit we need more housing built, but I don't want developers pushing out existing residents.
+              </div>
+              <div class="mini-bubble assistant">
+                It sounds like you support building more housing but with protections for current residents. Would you say the government should <em>directly build or subsidize</em> affordable units, or mainly <em>set rules</em> (like anti-displacement protections) and let private builders do the rest?
+              </div>
+              <div class="mini-bubble user">
+                More the rules — like community land trusts and inclusionary zoning. Not big government housing projects.
+              </div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <div class="signal-result">
+                <span class="signal-axis-label">Affordability</span>
+                <div class="signal-bar-track">
+                  <div class="signal-bar-fill" style="width: 45%"></div>
+                  <div class="signal-bar-dot" style="left: calc(45% - 7px)"></div>
+                </div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Govt subsidies</span>
+                <span class="signal-pole">Market solutions</span>
+              </div>
+              <div class="signal-confidence" style="margin-top: 4px;">Confidence: <strong>High</strong> &mdash; updated from your clarification</div>
+            </div>
+
+            <div class="signal-actions" style="margin-top: 10px;">
+              <button class="signal-btn accept">Looks right</button>
+              <button class="signal-btn refine">Still not right</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <button class="btn-back">Back</button>
+          <button class="btn-next">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="annotation" style="max-width: 390px; margin-top: 16px;">
+      If the user says "not quite," the LLM asks one targeted clarifying question (like the conversation flow). The mini-chat stays compact — 2-3 exchanges max, then re-shows the updated signal. Confidence upgrades.
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== MOCKUP F: Blueprint Result with Source Attribution ==================== -->
+<div class="section-label">MOCKUP F &mdash; Blueprint Result Shows Mixed Sources</div>
+<div class="side-by-side">
+  <div class="column">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="top-nav">
+          <div class="logo">Ballot Builder</div>
+          <div class="tabs">
+            <div class="tab active">Blueprint</div>
+            <div class="tab">Ballot</div>
+            <div class="tab">Values</div>
+          </div>
+        </div>
+
+        <div class="question-area" style="padding-top: 24px;">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <div style="font-size: 20px; font-weight: 800; color: #1f2937;">Your Civic Blueprint</div>
+            <div style="font-size: 13px; color: #6b7280; margin-top: 4px;">Based on your assessment responses</div>
+          </div>
+
+          <!-- Domain: Economic -->
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 12px;">Economic Policy</div>
+
+            <!-- Axis from card selection -->
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">Safety Net Programs</span>
+                <span style="font-size: 10px; font-weight: 500; color: #8B7AAF; background: #f5f3ff; padding: 1px 8px; border-radius: 99px;">card</span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 25%"></div>
+                <div class="signal-bar-dot" style="left: calc(25% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Broader safety net</span>
+                <span class="signal-pole">Conditional</span>
+              </div>
+            </div>
+
+            <!-- Axis from card selection -->
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">Public Investment</span>
+                <span style="font-size: 10px; font-weight: 500; color: #8B7AAF; background: #f5f3ff; padding: 1px 8px; border-radius: 99px;">card</span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 35%"></div>
+                <div class="signal-bar-dot" style="left: calc(35% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">More investment</span>
+                <span class="signal-pole">Lower taxes</span>
+              </div>
+            </div>
+
+            <!-- Axis from VOICE input -->
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">Tax Structure</span>
+                <span style="font-size: 10px; font-weight: 500; color: #6C2BD9; background: #EDE6FA; padding: 1px 8px; border-radius: 99px; display: flex; align-items: center; gap: 3px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  </svg>
+                  voice
+                </span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 40%"></div>
+                <div class="signal-bar-dot" style="left: calc(40% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Progressive</span>
+                <span class="signal-pole">Flat/consumption</span>
+              </div>
+            </div>
+
+            <!-- Axis from card selection -->
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">School Choice</span>
+                <span style="font-size: 10px; font-weight: 500; color: #8B7AAF; background: #f5f3ff; padding: 1px 8px; border-radius: 99px;">card</span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 60%"></div>
+                <div class="signal-bar-dot" style="left: calc(60% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Public schools</span>
+                <span class="signal-pole">School choice</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Domain: Housing (voice-sourced) -->
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 12px;">Housing Policy</div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">Housing Affordability</span>
+                <span style="font-size: 10px; font-weight: 500; color: #6C2BD9; background: #EDE6FA; padding: 1px 8px; border-radius: 99px; display: flex; align-items: center; gap: 3px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  </svg>
+                  voice
+                </span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 45%"></div>
+                <div class="signal-bar-dot" style="left: calc(45% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Govt subsidies</span>
+                <span class="signal-pole">Market solutions</span>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">Zoning & Supply</span>
+                <span style="font-size: 10px; font-weight: 500; color: #6C2BD9; background: #EDE6FA; padding: 1px 8px; border-radius: 99px; display: flex; align-items: center; gap: 3px;">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  </svg>
+                  voice
+                </span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 30%"></div>
+                <div class="signal-bar-dot" style="left: calc(30% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Loosen zoning</span>
+                <span class="signal-pole">Preserve local</span>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <span style="font-size: 12px; font-weight: 600; color: #374151;">Transit Priority</span>
+                <span style="font-size: 10px; font-weight: 500; color: #8B7AAF; background: #f5f3ff; padding: 1px 8px; border-radius: 99px;">card</span>
+              </div>
+              <div class="signal-bar-track">
+                <div class="signal-bar-fill" style="width: 25%"></div>
+                <div class="signal-bar-dot" style="left: calc(25% - 7px)"></div>
+              </div>
+              <div class="signal-poles">
+                <span class="signal-pole">Public transit</span>
+                <span class="signal-pole">Car-centric</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary note -->
+          <div style="background: #EDE6FA; border-radius: 12px; padding: 14px 16px; margin-top: 8px;">
+            <div style="font-size: 13px; font-weight: 600; color: #6C2BD9; margin-bottom: 4px;">How your profile was built</div>
+            <div style="font-size: 12px; color: #374151; line-height: 1.5;">
+              <strong>12 axes</strong> from card selections &nbsp;&bull;&nbsp;
+              <strong>4 axes</strong> from your voice input<br>
+              Voice responses scored 2 of the housing axes simultaneously — a bonus over picking one card at a time.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annotation" style="max-width: 390px; margin-top: 16px;">
+      The Blueprint result page shows source badges: "card" vs "voice" (with mic icon). The summary note highlights that voice input can score multiple axes at once. Users can tap any axis to edit or re-answer.
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

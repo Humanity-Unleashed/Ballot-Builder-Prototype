@@ -1,0 +1,81 @@
+{
+  "candidateSlug": "nate-sheets",
+  "candidateName": "Nate Sheets",
+  "party": "Republican",
+  "office": "Agriculture Commissioner, Texas",
+  "contestId": "TX-AG-COMMISSIONER-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Nathan 'Nate' Sheets",
+    "background": "Founder of Nature Nate's Honey Co. (sold 2020s); evangelist; honey producer; Henderson County rancher. First-time candidate. Abbott-endorsed. Defeated incumbent Sid Miller in March 2026 primary with ~53%.",
+    "firstTimeCandidate": true
+  },
+
+  "campaignWebsite": "https://natesheets.com/",
+
+  "policyPositions": [
+    {"topic": "Trade/tariffs", "position": "Texas-first trade policy; supports Trump tariff approach for agricultural products", "confidence": "HIGH", "source": "Campaign website + interviews"},
+    {"topic": "Food safety/MAHA", "position": "Clean food advocate; MAHA (Make America Healthy Again) movement self-identification; school nutrition reform", "confidence": "HIGH", "source": "Campaign website + Blaze Media interview"},
+    {"topic": "Immigration/labor", "position": "Mandatory e-Verify; border enforcement", "confidence": "HIGH", "source": "Campaign website", "conflict": "e-Verify vs agricultural labor supply dependency — unresolved"},
+    {"topic": "Rural economic development", "position": "Value-added job creation in rural areas; farm survival focus", "confidence": "HIGH", "source": "Big Country Homepage, LBJ/Evan Smith conversation"},
+    {"topic": "Anti-agroterrorism/China", "position": "Anti-China legislation for agricultural security; opposes Chinese land purchases", "confidence": "HIGH", "source": "Campaign website"},
+    {"topic": "Firearms", "position": "100% Texas Gun Rights survey score; Gun Owners of America endorsed", "confidence": "HIGH", "source": "TXGR, GOA"},
+    {"topic": "Abortion", "position": "Pro-life from conception; Texas Alliance for Life endorsed", "confidence": "HIGH", "source": "iVoterGuide questionnaire"},
+    {"topic": "Government efficiency", "position": "DOGE-style audit of Ag department; 'clean house' rhetoric", "confidence": "HIGH", "source": "Post-primary Texas Tribune interview"}
+  ],
+
+  "votingRecord": null,
+
+  "interestGroupRatings": [
+    {"organization": "Texas Gun Rights", "score": "100% pro-gun survey score", "notes": "Required for endorsement"},
+    {"organization": "Gun Owners of America", "rating": "Endorsed"},
+    {"organization": "Texas Alliance for Life", "rating": "Endorsed, pro-life from conception"},
+    {"organization": "Texas Wildlife Association", "rating": "Endorsed"}
+  ],
+
+  "endorsements": ["Gov. Greg Abbott", "Texas Gun Rights", "Gun Owners of America", "Texas Alliance for Life", "Texas Wildlife Association"],
+
+  "interviews": [
+    {"outlet": "Texas Tribune", "date": "2026-03", "topic": "Post-primary plans"},
+    {"outlet": "Community Impact", "date": "2026-01", "topic": "Primary Q&A"},
+    {"outlet": "Blaze Media", "topic": "Farm survival and MAHA"},
+    {"outlet": "TX Soil Sisters podcast", "topic": "Vision for Texas agriculture"},
+    {"outlet": "LBJ School/Evan Smith", "topic": "What Rural Texas Needs"},
+    {"outlet": "iVoterGuide questionnaire", "topic": "Full issue positions"},
+    {"outlet": "Big Country Homepage", "topic": "Food security, water, farm survival"},
+    {"outlet": "D CEO Magazine", "topic": "Business-to-politics transition"}
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "Mandatory e-Verify vs agricultural labor",
+      "conflict": "Supports mandatory e-Verify but Texas agriculture heavily depends on immigrant labor. No stated plan to reconcile labor supply impact.",
+      "notes": "Scorer should flag this tension"
+    }
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 6,
+    "overallConfidence": "MEDIUM",
+    "strongAxes": ["justice_firearms_policy (100% TXGR, GOA endorsed)", "econ_school_choice (implied via MAHA/food freedom framing)"],
+    "weakAxes": ["climate (no specific positions)", "healthcare (no positions beyond MAHA framing)", "housing (no positions)", "police accountability (no positions)", "sentencing (no positions)"],
+    "notes": "First-time candidate with no voting record. MAHA movement identification is clearest ideological signal on food/health. Trump-aligned on trade, border, government downsizing. Endorsed by hardest-line gun groups in Texas. No progressive scorecard evidence exists or expected."
+  },
+
+  "sources": [
+    {"url": "https://natesheets.com/about-nate-sheets/", "description": "Campaign about page"},
+    {"url": "https://natesheets.com/nate-sheets-on-the-issues/", "description": "Campaign issues page"},
+    {"url": "https://ballotpedia.org/Nate_Sheets", "description": "Ballotpedia"},
+    {"url": "https://www.texastribune.org/2026/03/04/sid-miller-nate-sheets-texas-agricultural-commissioner-republican-primary-2/", "description": "Texas Tribune — primary win"},
+    {"url": "https://www.texastribune.org/2026/01/21/texas-abbott-endorse-nate-sheets-ag-commissioner/", "description": "Abbott endorsement"},
+    {"url": "https://www.texastribune.org/2026/01/27/texas-agriculture-commissioner-primary/", "description": "Primary guide"},
+    {"url": "https://txgunrights.org/texas-gun-owners-deliver-primary-earthquake-as-no-compromise-candidates-advance/", "description": "Texas Gun Rights endorsement"},
+    {"url": "https://texas.gunowners.org/elections/", "description": "GOA endorsement"},
+    {"url": "https://www.texasallianceforlife.org/2026-primary-election-endorsements/", "description": "Texas Alliance for Life endorsement"},
+    {"url": "https://ivoterguide.com/candidate/88676/race/23566/election/1343", "description": "iVoterGuide profile"},
+    {"url": "https://www.dmagazine.com/publications/d-ceo/2025/november/why-nature-nate-is-shifting-from-business-to-texas-politics/", "description": "D CEO profile"}
+  ]
+}

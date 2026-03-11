@@ -99,8 +99,8 @@ export default function ConversationPage() {
           setBallotItems(items);
         })
         .catch((err) => {
-          setError('Failed to load ballot data');
-          console.error(err);
+          console.error('Stored ballot no longer available, resetting session:', err);
+          resetSession();
         })
         .finally(() => setIsLoading(false));
     }

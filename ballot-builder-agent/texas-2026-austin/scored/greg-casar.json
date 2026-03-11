@@ -1,0 +1,171 @@
+{
+  "slug": "greg-casar",
+  "name": "Greg Casar",
+  "party": "Democratic",
+  "office": "U.S. House TX-37, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Progressive freshman congressman and youngest-ever CPC Chair; son of Mexican immigrants with a strong labor, climate, and criminal justice reform record built on Austin City Council and two House terms.",
+  "keyPositions": [
+    "Medicare for All co-sponsor; supports Medicaid expansion as interim step",
+    "Green New Deal co-sponsor; LCV 100% (2025); Connect the Grid Act sponsor",
+    "Giffords endorsed; co-sponsors assault weapons ban, PLCAA repeal, Ethan's Law",
+    "Supports BREATHE Act, George Floyd Justice in Policing Act; called for DOJ investigation of APD",
+    "Called school vouchers a 'scam'; NEA/AFT endorsed"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["NO vote on Fiscal Responsibility Act 2023", "AFL-CIO endorsement", "Campaign platform: raise minimum wage, tax the wealthy"],
+      "notes": "One of 46 Democrats to vote against the FRA spending deal. Consistent expand-the-safety-net orientation across all evidence."
+    },
+    "econ_investment": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Green New Deal co-sponsor", "Connect the Grid Act sponsor", "American Energy Worker Opportunity Act sponsor"],
+      "notes": "Aggressive public investment stance across energy, infrastructure, and workforce. No evidence of any market-deference on investment."
+    },
+    "econ_tax_structure": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": ["Campaign platform: 'taxing the wealthy'", "NO vote on Fiscal Responsibility Act"],
+      "notes": "Clearly progressive on taxation but no specific tax bill votes found in evidence. Scored on stated positions and consistent progressive economic record."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Called vouchers a 'scam' and 'masquerade' (2025)", "NEA endorsement", "AFT endorsement"],
+      "notes": "Unambiguous opposition to school choice/voucher programs."
+    },
+    "health_coverage_model": {
+      "score": 0,
+      "confidence": "high",
+      "sources": ["Medicare for All Act co-sponsor (HR 3421)", "Official healthcare page"],
+      "notes": "Co-sponsors single-payer legislation. Also supports Medicaid expansion as interim, but the policy goal is clearly M4A."
+    },
+    "health_cost_control": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": ["Medicare for All co-sponsor (implies government price setting)", "OSHA heat rule advocacy"],
+      "notes": "M4A co-sponsorship inherently implies government as price-setter. No specific standalone drug pricing votes found, but the M4A framework is the maximalist position on cost control."
+    },
+    "health_public_health": {
+      "score": 1,
+      "confidence": "medium",
+      "sources": ["9-hour Capitol thirst strike for heat protections (July 2023)", "Led 100+ member letter to Biden DOL on heat rule", "OSHA heat rule proposed Aug 2024"],
+      "notes": "Heat protection advocacy is a strong public health mandate signal. No direct evidence on vaccines or other public health mandates, but the overall orientation is clearly pro-collective-mandate."
+    },
+    "housing_affordability_tools": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["Austin City Council record: subsidies and tenant protection emphasis"],
+      "notes": "City-level record suggests strong government intervention on housing affordability, but limited federal-level housing evidence. Scored conservatively at 2 rather than 0-1."
+    },
+    "justice_policing_accountability": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["BREATHE Act support", "George Floyd Justice in Policing Act support", "Advocated for DOJ investigation of Austin Police Department"],
+      "notes": "Among the most reform-oriented positions in the House. BREATHE Act goes beyond standard police reform into structural reimagining. DOJ investigation advocacy is a strong accountability signal."
+    },
+    "justice_sentencing_goals": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["BREATHE Act support (includes decarceration provisions)", "Criminal justice reform page"],
+      "notes": "BREATHE Act includes sentencing reform and decarceration components. No standalone sentencing bill votes found. Scored on inference from related positions."
+    },
+    "justice_firearms": {
+      "score": 0,
+      "confidence": "high",
+      "sources": ["Giffords endorsement", "Assault weapons ban co-sponsor", "PLCAA repeal co-sponsor", "Ethan's Law (safe storage) co-sponsor"],
+      "notes": "Maximalist gun regulation position: supports comprehensive background checks, assault weapons ban, manufacturer liability, and safe storage mandates."
+    },
+    "climate_ambition": {
+      "score": 0,
+      "confidence": "high",
+      "sources": ["Green New Deal co-sponsor", "LCV 100% annual (2025)", "LCV 75% lifetime", "Endorsed as 'climate and environmental justice champion'"],
+      "notes": "Emergency-level climate action stance. GND is the maximalist position. LCV 100% annual confirms consistent votes."
+    },
+    "climate_energy_portfolio": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Green New Deal co-sponsor", "Connect the Grid Act sponsor", "LCV 100%"],
+      "notes": "GND implies rapid transition away from fossil fuels. Connect the Grid Act focuses on renewable energy grid connectivity. Scored at 1 rather than 0 because he frames energy transition through jobs lens, not pure fossil fuel abolition."
+    },
+    "climate_permitting": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Connect the Grid Act (faster grid interconnection for renewables)"],
+      "notes": "Connect the Grid Act suggests support for faster permitting of green energy specifically. However, his environmental justice orientation likely means he supports strong environmental review for fossil projects. Limited direct evidence; scored slightly toward expedited green permitting."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.8,
+      "reasoning": "Climate and environmental justice champion (LCV 100%); immigrant rights advocacy as CPC Chair; voted against Israel military aid and co-sponsored ceasefire resolution; BREATHE Act support. Extends concern beyond constituents to global and environmental welfare. Not +1 because focus is primarily domestic policy."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Heat protection thirst strike for workers; labor endorsements; healthcare access advocacy; community investment orientation from Austin Council through Congress. Consistent care for constituents and working people."
+    },
+    "tradition": {
+      "score": -0.4,
+      "reasoning": "Actively challenges status quo institutions; Squad member identity built on disrupting political norms; supports structural reimagining of policing (BREATHE Act); youngest CPC chair framing as generational change. Not deeply anti-tradition (-0.5+) because he works within legislative institutions."
+    },
+    "conformity": {
+      "score": 0.0,
+      "reasoning": "Mixed signals. As CPC Chair, works within institutional leadership structures and coalition processes. But also: thirst strike as protest tactic, defied caucus leadership on Gaza votes, and attendance gaps during redistricting. Neither consistently norm-following nor norm-breaking."
+    },
+    "security": {
+      "score": 0.2,
+      "reasoning": "Social safety net expansion (economic security for working families) and heat protection (worker safety) are security-oriented. But anti-police-authority stance and opposition to traditional national security spending (Israel aid vote) cut the other direction. Net mildly positive via social security framing."
+    },
+    "power": {
+      "score": -0.6,
+      "reasoning": "Justice Democrats backed; anti-corporate orientation; 'taxing the wealthy' framing; NO on Fiscal Responsibility Act as a stand against corporate-aligned spending deal; challenges institutional power structures. CPC Chair role gives him institutional power, but he wields it against concentrated economic power rather than in service of it."
+    },
+    "achievement": {
+      "score": 0.2,
+      "reasoning": "Youngest-ever CPC Chair signals personal ambition and competence. Energy worker opportunity framing combines workforce development with structural investment. But overall narrative emphasizes collective action over individual achievement."
+    },
+    "stimulation": {
+      "score": 0.7,
+      "reasoning": "Youngest-ever CPC Chair; Squad member; Green New Deal as transformative vision; structural reform advocacy; generational change framing; thirst strike as novel protest. Consistently frames politics as requiring bold, disruptive action rather than incremental adjustment."
+    },
+    "self_direction": {
+      "score": 0.3,
+      "reasoning": "Immigrant rights and reproductive rights (implied by progressive record) signal personal freedom orientation. But also supports extensive government regulation (gun control, OSHA mandates, M4A). The regulatory stance moderates what would otherwise be a stronger self-direction score."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Attendance record",
+      "description": "Missed 70% of House votes Nov 2025-Jan 2026 during redistricting/primary campaign period. Perfect attendance since Jan 22, 2026.",
+      "sources": ["GovTrack attendance data"],
+      "scoringImpact": "Noted in conformity value; does not affect axis scores since the votes he did cast are consistent with his overall record"
+    },
+    {
+      "topic": "CPC Chair messaging shift",
+      "description": "As CPC Chair, shifted toward economic populist messaging over social issues. Evidence suggests this is strategic framing, not substantive position change.",
+      "sources": ["Texas Tribune June 2025 profile"],
+      "scoringImpact": "No axis score impact — underlying positions unchanged. Noted as context."
+    },
+    {
+      "topic": "LCV lifetime vs. annual discrepancy",
+      "description": "LCV annual 100% (2025) vs. 75% lifetime. The gap likely reflects missed votes during the attendance gap period rather than anti-environment votes.",
+      "sources": ["LCV scorecard"],
+      "scoringImpact": "Scored on annual and overall pattern rather than penalizing for attendance-related lifetime score"
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 14,
+    "axesSkipped": ["housing_supply_zoning", "housing_transport_priority"],
+    "reasonSkipped": "No meaningful evidence on zoning reform positions or transit vs. car-centric infrastructure priorities at the federal level",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No specific federal tax bill votes documented (tax stance inferred from platform and economic votes)",
+      "Housing positions based primarily on Austin City Council record; federal housing votes not documented",
+      "No evidence on sentencing-specific legislation beyond BREATHE Act inference",
+      "No evidence on vaccine mandates or other traditional public health mandates beyond heat protection"
+    ]
+  }
+}
