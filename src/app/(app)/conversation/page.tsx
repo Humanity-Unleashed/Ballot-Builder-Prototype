@@ -18,6 +18,9 @@ import WarmupView from '@/components/conversation/WarmupView';
 import ConversationView from '@/components/conversation/ConversationView';
 import ConversationProgress from '@/components/conversation/ConversationProgress';
 import ConversationSummary from '@/components/conversation/ConversationSummary';
+import HybridAssessmentView from '@/components/assessment/HybridAssessmentView';
+import type { UserValueRecord } from '@/types/hybridAssessment';
+import type { ProgressiveAxisValue } from '@/types/conversation';
 import StateSelectView from '@/components/conversation/StateSelectView';
 import DemographicGate from '@/components/conversation/DemographicGate';
 
@@ -177,6 +180,28 @@ export default function ConversationPage() {
     // warmup → ballot transition is handled by store (finishWarmup sets phase='ballot')
   }, []);
 
+  const finishWarmup = useConversationStore((s) => s.finishWarmup);
+  const updateProfile = useConversationStore((s) => s.updateProfile);
+
+  /** Convert hybrid assessment profile → conversation store profile format, then transition to ballot */
+  const handleHybridAssessmentComplete = useCallback(
+    (hybridProfile: Record<string, UserValueRecord>) => {
+      // Convert UserValueRecord → ProgressiveAxisValue for the conversation store
+      const converted: Record<string, ProgressiveAxisValue> = {};
+      for (const [axisId, record] of Object.entries(hybridProfile)) {
+        converted[axisId] = {
+          value: record.score,
+          confidence: record.confidence,
+          importance: 5, // Default importance — hybrid assessment doesn't track this per-axis
+          signalCount: record.isImputed ? 0 : 1,
+        };
+      }
+      updateProfile(converted);
+      finishWarmup();
+    },
+    [updateProfile, finishWarmup],
+  );
+
   // Loading state (hydration or ballot fetch in progress)
   if (!hasHydrated || (isLoading && !session)) {
     return (
@@ -260,11 +285,13 @@ export default function ConversationPage() {
     );
   }
 
-  // Phase: Warmup
+  // Phase: Warmup — now uses the hybrid structured + NLP assessment
   if (session.phase === 'warmup') {
     return (
       <div className="flex flex-col h-[calc(100vh-theme(spacing.20))]">
-        <WarmupView onWarmupComplete={handleWarmupComplete} ballotItems={ballotItems} />
+        <HybridAssessmentView
+          onComplete={handleHybridAssessmentComplete}
+        />
       </div>
     );
   }
