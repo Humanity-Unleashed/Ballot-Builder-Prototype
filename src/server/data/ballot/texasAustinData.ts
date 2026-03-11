@@ -85,6 +85,72 @@ const allCandidates: Candidate[] = [
       // housing_transport_priority omitted — no transit or transportation position found
       // health_public_health omitted — no vaccine mandate or FDA positions found
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Campaign platform (labor, childcare, school meals)' },
+        { text: 'AFL-CIO debate Jan 2026' },
+        { text: 'Fortune interview Dec 2025' },
+        { text: 'PCCC endorsement framing' },
+      ],
+      econ_investment: [
+        { text: 'Campaign energy/environment platform' },
+        { text: 'Campaign labor/business platform' },
+        { text: '2019 school finance reform co-authorship' },
+        { text: 'PCCC endorsement framing' },
+      ],
+      econ_tax_structure: [
+        { text: 'Fortune interview Dec 2025' },
+        { text: 'AFL-CIO debate Jan 2026' },
+        { text: 'Super Bowl ad Feb 2026' },
+        { text: 'Texas Tribune debate coverage' },
+      ],
+      econ_school_choice: [
+        { text: 'Voted NO on SB 2 (Texas school voucher bill, April 2025)' },
+        { text: 'Authored referendum amendment (Record Vote #244, failed 86-62)' },
+        { text: 'Co-authored 2019 school finance reform' },
+        { text: 'ATPE TeachTheVote endorsement/ally designation' },
+        { text: 'Texas Tribune Sep 2025 — \'Remember this day next time a school closes\'' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign website (\'Medicare for Y\'all\')' },
+        { text: 'AFL-CIO debate Jan 2026 (\'universal coverage should be a nonnegotiable\')' },
+        { text: 'Campaign issues page describing Medicare buy-in for all ages' },
+      ],
+      health_cost_control: [
+        { text: 'HB 82 — insulin cap $25/month (authored, passed into law 2021)' },
+        { text: 'HB 25 — Canadian drug importation (authored 2023)' },
+        { text: 'Campaign healthcare platform (price transparency, negotiating power, PBM regulation, out-of-pocket caps)' },
+      ],
+      housing_affordability_tools: [
+        { text: 'HB 3792 — surplus state property to affordable housing (authored, failed to advance 2025)' },
+        { text: 'Campaign website general affordability framing' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Javier Ambler\'s Law (authored, passed into law 2021) — banned reality TV policing' },
+        { text: 'Campaign platform: \'strong investments in police training, oversight, and accountability\'' },
+        { text: 'ICE repeal-and-replace position (AFL-CIO debate, El Paso Matters interview)' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'HB 30 — juvenile diploma program (authored, passed into law 2023)' },
+        { text: 'Campaign platform: marijuana legalization and record expungement' },
+        { text: 'Campaign platform: reentry programs, root cause investment' },
+      ],
+      justice_firearms: [
+        { text: 'Campaign platform (universal background checks, age limits, secure storage, firearms trafficking prosecution)' },
+        { text: 'Texas Gun Rights opposition (\'two peas in the same anti-gun pod\')' },
+        { text: 'Floor speech after Texas gun bill' },
+      ],
+      climate_ambition: [
+        { text: 'Campaign energy/environment page' },
+        { text: 'Position conflict analysis in research file' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign energy/environment page' },
+      ],
+      climate_permitting: [
+        { text: 'Campaign energy/environment page' },
+      ],
+    },
     valueStances: {
       universalism:    0.6,  // Universal healthcare advocacy, climate acknowledgment, immigrant pathways, LGBTQ+/reproductive rights; moderated by pragmatic energy stance
       benevolence:     0.8,  // Central to identity: teacher of low-income students, 16 enacted bills, insulin cap, school finance, juvenile rehab; PCCC 'material improvements'
@@ -135,6 +201,80 @@ const allCandidates: Candidate[] = [
       // health_public_health omitted — thin record; inferred party-line does not meet evidence floor
       // climate_permitting omitted — too sparse for Cornyn specifically
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'AFL-CIO near-0% career score' },
+        { text: 'Voted against federal minimum wage increases (multiple)' },
+        { text: 'One Big Beautiful Bill: Medicaid work requirements, SNAP cuts' },
+        { text: 'Voted against ACA subsidy extensions (3 votes, 2025)' },
+      ],
+      econ_investment: [
+        { text: 'Voted NO on Infrastructure Investment and Jobs Act (2021)' },
+        { text: 'Co-authored and voted YES on CHIPS and Science Act (2022)' },
+        { text: 'Voted NO on Inflation Reduction Act (2022)' },
+        { text: 'Club for Growth 62% (2024), 59% (2023)' },
+      ],
+      econ_tax_structure: [
+        { text: 'Voted YES on Tax Cuts and Jobs Act (2017); served on conference committee' },
+        { text: 'Champions permanent extension of TCJA in 2025 reconciliation' },
+        { text: 'Campaign platform: \'tax cuts\' as core issue' },
+        { text: 'U.S. Chamber of Commerce endorsement citing \'pro-growth fiscal and tax policy\'' },
+      ],
+      econ_school_choice: [
+        { text: 'Introduced resolution for National School Choice Week' },
+        { text: 'Cosponsored CHOICE Act and Educational Choice for Children Act' },
+        { text: 'Attended Texas Gov. Abbott\'s $1B voucher program signing' },
+        { text: 'Working Families Tax Cuts Act expanded ESAs and school choice tax credit' },
+      ],
+      health_coverage_model: [
+        { text: '20+ votes to repeal or defund ACA (2010-2017)' },
+        { text: 'Led Senate Whip efforts for ACA repeal (2017)' },
+        { text: 'Voted against ACA subsidy extensions three times (2025)' },
+        { text: 'One Big Beautiful Bill includes Medicaid work requirements (CBO: ~12M lose coverage)' },
+        { text: 'DSCC documented contradiction: told COVID-affected constituents to sign up for ACA he voted 20+ times to repeal' },
+      ],
+      health_cost_control: [
+        { text: 'Voted NO on Inflation Reduction Act (which included Medicare drug price negotiation)' },
+        { text: 'Introduced narrow bipartisan patent reform bills (drug pricing)' },
+        { text: 'General Chamber of Commerce alignment on healthcare market policy' },
+      ],
+      housing_transport_priority: [
+        { text: 'Voted NO on Infrastructure Investment and Jobs Act (2021) -- included major transit funding' },
+        { text: 'Texas Tribune: cited deficit concerns for infrastructure opposition' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Co-sponsored \'Back the Blue\' legislation' },
+        { text: 'Co-sponsored de-escalation training bill (bipartisan)' },
+        { text: 'Research file flags mixed signals, net pro-law-enforcement' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Primary Senate champion of First Step Act (2018) -- passed 87-12' },
+        { text: 'Pushed criminal justice reform since 2014' },
+        { text: 'First Step Act: recalibrated mandatory minimums, expanded earned time credits, improved prison conditions' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A+ grade (career through 2022)' },
+        { text: 'Co-authored Bipartisan Safer Communities Act (2022) -- NRA opposed' },
+        { text: 'BSCA: extended background check review for under-21, closed boyfriend loophole, funded state red flag programs' },
+        { text: 'One Big Beautiful Bill: reduces NFA tax on firearms/suppressors to $0' },
+        { text: 'Texas Republican Party formally rebuked him over BSCA' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 0% (2024), 7% lifetime' },
+        { text: 'Voted YES on barring EPA from regulating greenhouse gases' },
+        { text: 'Voted NO on Inflation Reduction Act ($369B clean energy)' },
+        { text: 'Characterized renewable energy as \'a cult, or religion\' (CSIS interview)' },
+        { text: 'One Big Beautiful Bill rolls back IRA clean energy tax credits' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'LCV 0% (2024), 7% lifetime' },
+        { text: 'Called renewables \'a cult, or religion\'' },
+        { text: 'LNG export supporter' },
+        { text: 'Voted NO on IRA clean energy investment' },
+        { text: 'One Big Beautiful Bill repeals IRA clean energy tax credits' },
+        { text: 'Oil/gas PAC donor base' },
+      ],
+    },
     valueStances: {
       universalism:   -0.5,  // LCV 7% lifetime; 'America First'; opposed DREAM Act, Gang of Eight; bipartisan moments framed as national security/fiscal responsibility
       benevolence:     0.3,  // First Step Act improved prison conditions; CHIPS framed as TX manufacturing jobs; Medicaid work requirements/SNAP cuts undercut vulnerable constituents
@@ -184,6 +324,94 @@ const allCandidates: Candidate[] = [
       // housing_supply_zoning omitted — no AG or legislative housing record found
       // housing_affordability_tools omitted — no evidence
       // housing_transport_priority omitted — no evidence
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Campaign platform: \'stop the wasteful spending\'' },
+        { text: 'Sued Biden $1.7T spending package (2023)' },
+        { text: '95% YCT career rating' },
+        { text: '100% Texans for Fiscal Responsibility' },
+      ],
+      econ_investment: [
+        { text: 'Sued Biden $1.7T spending package as \'unlawfully passed\' (2023)' },
+        { text: 'Campaign platform: \'cut taxes and stop wasteful spending\'' },
+        { text: '95% YCT career rating (anti-regulation, anti-spending)' },
+        { text: '100% Texans for Fiscal Responsibility' },
+        { text: 'Opposed EPA vehicle emissions and green energy regulations' },
+      ],
+      econ_tax_structure: [
+        { text: '100% Texans for Fiscal Responsibility (81st Legislature)' },
+        { text: 'Campaign platform: \'fight to cut taxes\'' },
+        { text: 'Investigated ~1,000 TX cities for excess property tax increases (2025-2026)' },
+        { text: '95% YCT career rating' },
+      ],
+      econ_school_choice: [
+        { text: 'Issued legal opinion that ESAs are legal in Texas (2023)' },
+        { text: 'Ruled Blaine Amendments unconstitutional, clearing path for religious school funding' },
+        { text: 'Vowed to defend TX ESA law from legal challenges (2026)' },
+        { text: 'Campaign alignment with school choice movement' },
+      ],
+      health_coverage_model: [
+        { text: 'Led 20-state ACA repeal lawsuit, Texas v. United States (2018)' },
+        { text: 'Applauded district court ruling declaring ACA unconstitutional (2018)' },
+        { text: 'Sued over Biden pharmacy mandate (2023)' },
+        { text: 'Quote: \'Our lawsuit seeks to effectively repeal Obamacare\'' },
+        { text: 'Texas Tribune: no 2026 statement found on ACA tax credits' },
+      ],
+      health_cost_control: [
+        { text: 'ACA repeal litigation would have eliminated marketplace price regulations' },
+        { text: 'Overall anti-regulation, anti-federal mandate posture' },
+        { text: '100% fiscal conservative ratings' },
+      ],
+      health_public_health: [
+        { text: 'Sued to block Biden pharmacy mandate on abortion pills (2023)' },
+        { text: 'Filed first TX lawsuit under SB 14 against gender-affirming care for minors (2024-2026)' },
+        { text: 'Sued Children\'s Health hospital and multiple doctors over gender-affirming care' },
+        { text: 'Sued Aid Access over abortion pills shipped to TX (2026)' },
+        { text: 'Sought out-of-state health records of abortion patients (2024)' },
+        { text: 'Gave AG employees paid day off to celebrate Roe v. Wade reversal (2022)' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Sued City of Dallas for underfunding police (Feb 2026)' },
+        { text: 'Quote: \'fully fund the brave men and women in law enforcement\'' },
+        { text: 'Described police reform efforts as \'attacks from the radical Left\'' },
+        { text: 'Pro-law enforcement positioning central to campaign' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Co-led bipartisan 38-AG coalition supporting First Step Act (2018)' },
+        { text: 'Enforcement-first AG record: election fraud prosecutions, opioid prosecutions' },
+        { text: 'Texas closed 8 prisons during his tenure (though this began under prior administrations)' },
+        { text: 'Research notes: \'not purely punitive — supports evidence-based reform when framed as reducing recidivism and saving money\'' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A-grade, three consecutive AG endorsements (2014, 2018, 2022)' },
+        { text: 'NAGR endorsement for 2026 Senate (more extreme than NRA)' },
+        { text: 'Sued ATF over pistol brace ban, universal registration rule, TX suppressor regulation, expanded background checks on private sales' },
+        { text: 'Sued City of Dallas over State Fair gun ban' },
+        { text: 'Quote: \'The more we talk about gun regulation, the more people are gonna die\' (2014)' },
+        { text: 'Partnered with Gun Owners of America on multiple lawsuits' },
+      ],
+      climate_ambition: [
+        { text: '15+ multistate lawsuits against EPA environmental regulations (2015-2024)' },
+        { text: 'Called climate change \'a matter of opinion\' (2019)' },
+        { text: 'Railed against \'radical climate change movement\'' },
+        { text: 'Sierra Club TX: Paxton \'fights against measures that would reduce deaths and climate extremes\'' },
+        { text: 'Sued EPA over ozone rules, methane regulations, particulate matter standards, coal mining rules, vehicle emissions' },
+        { text: 'Stopped EPA\'s Waters of the United States (WOTUS) rule' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Defended ExxonMobil against state AG climate fraud investigations (2017)' },
+        { text: 'Led 14-state coalition challenging Biden EPA vehicle emissions regulations (2024)' },
+        { text: 'Quote: \'Biden chooses to go to war against fossil fuels\'' },
+        { text: 'Sued EPA over methane emission regulations from oil and gas operations (2016, 2024)' },
+        { text: 'Campaign framing: energy policy as protecting Texas oil and gas industry' },
+      ],
+      climate_permitting: [
+        { text: 'Stopped WOTUS rule that would have regulated waterways on private property' },
+        { text: 'Opposed EPA ozone, methane, and particulate matter standards' },
+        { text: 'Led challenge to Biden EPA vehicle emissions rules' },
+        { text: 'Overall pattern: systematically reducing federal environmental review authority' },
+      ],
     },
     valueStances: {
       universalism:   -0.8,  // Fought every major environmental protection; ACA repeal; mass deportation; restricted reproductive and transgender healthcare; state sovereignty over universal welfare
@@ -238,6 +466,95 @@ const allCandidates: Candidate[] = [
       climate_energy_portfolio:    3, // HIGH — 41-bill climate package including fossil fuel regulation; 'TX can lead in energy if we take advantage of new technologies'; transition not elimination framing
       // climate_permitting omitted — no permitting-specific position found in 41-bill plan
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Campaign website: explicit Medicaid expansion' },
+        { text: 'Legislative record: HB 1307 disaster assistance (signed into law)' },
+        { text: 'Legislative record: SB 1350 indigent healthcare funding (House sponsor)' },
+        { text: 'Texas AFL-CIO endorsement; career union lawyer' },
+        { text: 'Texans for Fiscal Responsibility: F rating (2017, 2019, 2021)' },
+      ],
+      econ_investment: [
+        { text: 'Legislative record: HB 3 public school finance reform (co-led, passed)' },
+        { text: 'Legislative record: Fully Fund Our Future Act ($40B public school investment, filed)' },
+        { text: 'Legislative record: HB 3488 Public Benefit Corporations (authored, signed into law)' },
+        { text: 'Campaign website: redirect state incentives to small business from multinational corporations' },
+        { text: 'Texans for Fiscal Responsibility: F rating' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign rhetoric: \'working Texans vs. billionaires\'; anti-corporate greed framing' },
+        { text: 'Texans for Fiscal Responsibility: F rating' },
+      ],
+      econ_school_choice: [
+        { text: 'Voting record: voted NO on ESA/voucher program across four consecutive legislative sessions' },
+        { text: 'Legislative record: HB 3 public school finance reform (co-led)' },
+        { text: 'Legislative record: Fully Fund Our Future Act ($40B public school investment)' },
+        { text: 'ATPE/Teach the Vote endorsement' },
+        { text: 'Texas Parent PAC endorsement (2016, 2018, 2022)' },
+        { text: 'AFT national endorsement' },
+        { text: 'Campaign website: \'Abbott\'s voucher scam\'' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign website: explicit Medicaid expansion commitment' },
+        { text: 'Legislative record: SB 1350 indigent healthcare funding (House sponsor)' },
+        { text: '2019 Healthy Texas Act organizing participation' },
+        { text: 'San Antonio Express-News endorsement citing Medicaid expansion' },
+      ],
+      health_cost_control: [
+        { text: 'Campaign website: opposes private equity buying doctors\' offices; opposes big insurance and drug company pricing' },
+        { text: 'Campaign rhetoric: \'profits over patients\' framing' },
+      ],
+      health_public_health: [
+        { text: 'Voting record: voted NO on all abortion restriction bills (SB 8 heartbeat bill, total abortion ban, criminal penalties for providers)' },
+        { text: 'Texas Right to Life 2019 scorecard: strongly negative/failing' },
+        { text: 'Choice Tracker: rated Pro-Choice' },
+        { text: 'EMILY\'s List endorsement (2026)' },
+        { text: 'Planned Parenthood Texas Votes endorsement (2024)' },
+      ],
+      housing_supply_zoning: [
+        { text: 'Legislative record: HB 3050 filed multiple sessions to repeal Texas ban on inclusionary zoning' },
+        { text: 'Austin Monitor reporting on inclusionary zoning bills' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Legislative record: HB 3050 inclusionary zoning (multiple sessions)' },
+        { text: 'Campaign website: frames housing costs as corporate greed problem requiring government action' },
+      ],
+      housing_transport_priority: [
+        { text: 'Biographical: executive director of Transit Forward (Austin pro-transit advocacy organization)' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Campaign press releases: called on Abbott to stop facilitating fatal ICE operations (Jan 2026)' },
+        { text: 'Campaign press releases: demanded release of body cam footage after ICE killing (Feb 2026)' },
+        { text: 'Opposition to Operation Lone Star; supports redirecting DPS border overtime to local community policing' },
+        { text: 'Legislative record: quorum break to block voting restriction bills (2021)' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Legislative record: HB 351 ability-to-pay sentencing reform (co-authored, signed into law)' },
+        { text: 'Legislative record: HB 81 marijuana decriminalization (co-authored)' },
+        { text: 'Legislative record: HB 2107 medical marijuana legalization (co-authored)' },
+        { text: 'Legislative record: HB 73 ban on gay/trans panic defense (filed, did not pass)' },
+        { text: 'NORML database: supportive rating' },
+        { text: 'ACC interview: decriminalization, youth jobs programs to reduce incarceration' },
+        { text: 'PolitiFact 2016: cited Texas incarceration rate higher than Russia or Iran as motivation for reform' },
+      ],
+      justice_firearms: [
+        { text: 'TribTalk op-ed 2017: universal background checks, red flag laws, domestic abuser surrender, stolen gun reporting, License to Carry for long guns' },
+        { text: 'TribTalk op-ed 2019: challenges \'Texas gun culture\' narrative to defend regulation' },
+        { text: 'Consistent positions across 2017-2026 with no retreat' },
+      ],
+      climate_ambition: [
+        { text: 'Legislative record: 41-bill Texas Climate Plan to reduce carbon emissions and regulate fossil fuel industry (2021)' },
+        { text: 'Legislative record: clean energy employment transition bill (passed)' },
+        { text: 'ACC interview: \'with urgency, respond to and be prepared for a warming planet\'' },
+        { text: 'Austin Chronicle reporting on Texas Climate Plan' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Legislative record: 41-bill climate package including fossil fuel industry regulation' },
+        { text: 'Legislative record: clean energy employment transition bill' },
+        { text: 'ACC interview: \'Texas can continue to be a leader in energy if we take advantage of new technologies\'' },
+        { text: 'Campaign/former House website: Texas Climate Plan details' },
+      ],
+    },
     valueStances: {
       universalism:    0.7,  // Climate action (41-bill plan), Medicaid expansion, anti-discrimination legislation, ICE accountability for immigrants; primarily TX-focused not global
       benevolence:     0.8,  // School board trustee, union lawyer, state rep career: HB 3 school finance, SB 1350, HB 1307 disaster assistance, labor rights; core political identity
@@ -287,6 +604,113 @@ const allCandidates: Candidate[] = [
       climate_ambition:            9, // HIGH — zero climate policy across 3 terms; executive order directing agencies to fight federal climate action; anti-ESG law; avoids term 'climate change'
       climate_energy_portfolio:    9, // HIGH — excluded renewables from incentive programs; 5 bills penalizing wind/solar + subsidizing gas/coal; $18B natural gas plant plan; blamed green energy for Winter Storm Uri
       climate_permitting:          9, // HIGH — no green energy permitting streamlining; directed PUC to penalize renewable projects; sued EPA multiple times as AG; deliberately added friction for clean energy
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Medicaid expansion refusal (2015-present)' },
+        { text: 'Redirected $210M from HHSC to border ops (2022)' },
+        { text: 'Ended federal pandemic unemployment early (2021)' },
+        { text: 'SNAP junk food restriction waiver (2025)' },
+        { text: 'ACA lawsuits as AG and governor' },
+      ],
+      econ_investment: [
+        { text: '$28B+ property tax cuts reducing revenue for public services' },
+        { text: 'Constitutional income tax ban' },
+        { text: 'Anti-ESG executive orders opposing federal climate investment' },
+        { text: 'Texas Enterprise Fund targeted deal-closing' },
+      ],
+      econ_tax_structure: [
+        { text: 'Signed constitutional amendment banning state income tax' },
+        { text: '$18B property tax cut (SB 2, 2023)' },
+        { text: '$10B property tax relief package (2025)' },
+        { text: '2026 campaign: eliminate school district property taxes for homeowners' },
+        { text: 'Fox Business interview (2026)' },
+      ],
+      econ_school_choice: [
+        { text: '$1B ESA school voucher law signed May 2025 (nation\'s largest)' },
+        { text: 'Primaryed 11 Republican opponents of vouchers in 2024' },
+        { text: 'SB 17 DEI ban at public universities (2023)' },
+        { text: 'HB 900 school library restrictions (2023)' },
+        { text: 'SB 12 Parental Bill of Rights banning LGBTQ+ curriculum (2025)' },
+        { text: 'Campaign website' },
+      ],
+      health_coverage_model: [
+        { text: 'Consistent Medicaid expansion opposition (2015-present)' },
+        { text: 'ACA lawsuits as AG (2010+) and governor' },
+        { text: 'Statement: \'The best way to get health care insurance is through an employer\'' },
+        { text: 'Texas AFL-CIO opposition citing healthcare failures' },
+      ],
+      health_cost_control: [
+        { text: 'ACA opposition (which included drug pricing provisions)' },
+        { text: 'Free-market orientation across all policy domains' },
+        { text: 'No evidence of support for pharmaceutical price controls or government cost regulation' },
+      ],
+      health_public_health: [
+        { text: 'Lifted statewide mask mandate March 2021 (EO GA-34)' },
+        { text: 'Banned COVID vaccine mandates statewide for public and private employers (EO GA-40, Oct 2021)' },
+        { text: 'Prohibited local government mask/vaccine mandates' },
+        { text: 'SB 12/SB 13 Parental Bill of Rights (2025)' },
+      ],
+      housing_supply_zoning: [
+        { text: 'SB 15: prohibits unreasonably large lot requirements (2025)' },
+        { text: 'SB 840: allows multifamily/mixed-use in office/retail zones (2025)' },
+        { text: 'HB 24: reforms petition process to ease zoning changes (2025)' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Housing reform bills are entirely deregulatory/supply-side' },
+        { text: 'Property tax cuts as primary affordability tool' },
+        { text: 'No evidence of support for housing vouchers, inclusionary zoning, or government housing programs' },
+      ],
+      housing_transport_priority: [
+        { text: '$146B-$148B transportation plan emphasizing \'roadways\' and \'congestion relief\'' },
+        { text: 'No state-funded urban rail expansion programs under Abbott' },
+        { text: 'Houston and Dallas highway expansion during tenure' },
+      ],
+      justice_policing_accountability: [
+        { text: 'HB 1900: froze property taxes for cities defunding police (2021)' },
+        { text: 'SB 23: voter approval required to reduce law enforcement budgets' },
+        { text: 'Daniel Perry pardon pledge (2023)' },
+        { text: '\'Back the Blue\' legislation package' },
+        { text: 'Texas Tribune: \'remained silent on calls for changes to policing tactics or accountability\'' },
+        { text: 'Criminal justice blogger: \'police reform cannot occur while Abbott remains in office\'' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Bail reform restricting cashless bail for violent/repeat offenders (2025)' },
+        { text: 'Presided over 55+ executions; clemency granted only once (Whitaker, 2018)' },
+        { text: 'Vetoed bipartisan criminal justice reform bill (2021)' },
+        { text: 'Increased penalties for stolen goods (2025)' },
+        { text: 'Daniel Perry pardon pledge' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A+ grade (highest attainable)' },
+        { text: 'HB 1927: constitutional carry signed 2021' },
+        { text: '7-bill gun rights package (2021)' },
+        { text: 'SB 19: anti-boycott protections for gun industry' },
+        { text: '24+ pro-gun bills signed across governorship' },
+        { text: 'NRA CEO attended signing ceremony' },
+      ],
+      climate_ambition: [
+        { text: 'No climate policy across three terms' },
+        { text: 'Executive order directing agencies to fight all federal climate actions' },
+        { text: 'Repeatedly avoids term \'climate change\'' },
+        { text: 'Anti-ESG law (SB 13) protecting fossil fuel investments' },
+        { text: 'No greenhouse gas reduction targets or emissions standards beyond federal minimums' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Excluded renewables from economic incentive programs (2023)' },
+        { text: '5 bills penalizing wind/solar and subsidizing natural gas/coal' },
+        { text: '$18B natural gas plant construction plan (zero-interest loans)' },
+        { text: 'Directed PUC to penalize renewable energy companies' },
+        { text: 'SB 13 anti-ESG law' },
+        { text: 'Blamed green energy for Winter Storm Uri (disputed by experts)' },
+      ],
+      climate_permitting: [
+        { text: 'No green energy permitting streamlining under Abbott' },
+        { text: 'Directed PUC to impose penalties on renewable projects' },
+        { text: 'Sued EPA multiple times over clean air regulations as AG' },
+        { text: 'Anti-ESG law limiting renewable energy investment' },
+        { text: 'Championed opposition to EPA climate regulations' },
+      ],
     },
     valueStances: {
       universalism:   -0.7,  // Opposes climate action, healthcare universality, immigration access; DEI ban; anti-LGBTQ+ legislation; scope explicitly limited to in-group conservative Texans
@@ -343,6 +767,86 @@ const allCandidates: Candidate[] = [
       // housing_transport_priority omitted — no evidence
       // climate_permitting omitted — no evidence
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'SB 1296 (2021) authored -- Medicaid expansion workaround for 350K Texans' },
+        { text: 'SB 195 authored -- full Medicaid expansion via 1115 waiver' },
+        { text: 'NO vote on SB 321 (defined-contribution pension conversion)' },
+        { text: 'Texas AFL-CIO 2026 endorsement' },
+      ],
+      econ_investment: [
+        { text: 'Texas Power Promise legislation authored' },
+        { text: 'Virtual power plant pilot authored' },
+        { text: 'Microgrid fund for hospitals/police stations authored' },
+        { text: 'Corporate tax abatement reform authored' },
+        { text: 'Housing construction regulatory reform filed' },
+      ],
+      econ_tax_structure: [
+        { text: 'Corporate tax abatement reform bill authored' },
+        { text: 'YCT score 22-30/100' },
+      ],
+      econ_school_choice: [
+        { text: 'NO vote on SB 8 (88th Leg.) ESA voucher' },
+        { text: 'NO vote on HB 100 (amended with ESA)' },
+        { text: 'NO vote on SB 1 (3rd Special Session) ESA voucher' },
+        { text: 'YES vote on $10K teacher pay raise' },
+        { text: 'ATPE/Teach the Vote alignment' },
+        { text: 'Texas Parent PAC 2022 endorsement' },
+      ],
+      health_coverage_model: [
+        { text: 'SB 1296 (2021) authored -- private coverage for 350K uninsured' },
+        { text: 'SB 195 authored -- full Medicaid expansion via waiver' },
+        { text: 'Palliative care expansion authored' },
+        { text: 'D Magazine Medicaid coverage' },
+        { text: 'Ballotpedia legislative record' },
+      ],
+      health_cost_control: [
+        { text: 'AG campaign: Medicaid fraud investigation emphasis' },
+        { text: 'Consumer protection enforcement framing' },
+        { text: 'AI/data privacy consumer protection bill authored' },
+      ],
+      health_public_health: [
+        { text: 'Fentanyl testing strip decriminalization bill authored (bipartisan, with Sen. Bob Hall)' },
+        { text: 'Palliative care expansion authored' },
+      ],
+      housing_supply_zoning: [
+        { text: '89th session first-day bill removing regulatory blocks on new housing forms authored' },
+        { text: 'D Magazine 2025 housing interview' },
+      ],
+      housing_affordability_tools: [
+        { text: 'D Magazine 2025 housing article (supply-side framing)' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Criminal justice reform bills filed from Day 1 (2019)' },
+        { text: 'Dallas DA John Creuzot endorsement (progressive CJ reform advocate)' },
+        { text: 'Harris County Commissioner Rodney Ellis endorsement (CJ reform advocate)' },
+        { text: 'YCT score 22-30 consistent with reform voting' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Fentanyl testing strip decriminalization (harm reduction)' },
+        { text: 'CJ reform bills from Day 1' },
+        { text: 'DA Creuzot endorsement' },
+        { text: 'YES vote on SB 4 (2023) -- 10-year mandatory minimum for human smuggling' },
+      ],
+      justice_firearms: [
+        { text: 'Self-stated NRA \'F\' grade' },
+        { text: 'Quote: \'the people overwhelmingly support meaningful gun safety laws. I\'m good with Fs on the NRA report card\'' },
+        { text: 'Consistent Democratic voting on gun issues' },
+      ],
+      climate_ambition: [
+        { text: 'Polluter penalty increase authored' },
+        { text: 'ERCOT reform work' },
+        { text: 'Virtual power plant pilot authored' },
+        { text: 'Microgrid fund authored' },
+        { text: 'Opposed politicizing ERCOT board' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Texas virtual power plant pilot authored' },
+        { text: 'Texas Power Promise/microgrid legislation authored' },
+        { text: 'Statement: \'balance renewable energy sources with more traditional forms of energy to ensure grid reliability\'' },
+        { text: 'texasenergyandpower.com Power Promise interview' },
+      ],
+    },
     valueStances: {
       universalism:    0.5,  // Environmental protection, Medicaid expansion for 350K, LGBTQ rights, civil rights endorsements, pro bono Human Rights Initiative; TX-focused not global
       benevolence:     0.7,  // Entire legislative record oriented toward constituent welfare; passed 135 bills; teacher pay, grid reliability for hospitals, consumer protection, CJ reform
@@ -392,6 +896,57 @@ const allCandidates: Candidate[] = [
       // housing_supply_zoning omitted — no evidence beyond general affordability language
       // housing_transport_priority omitted — no evidence
       // climate_permitting omitted — 'sue polluters' does not map to permitting speed preferences
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Campaign website 2026 (Division of Affordability)' },
+        { text: 'Community Impact Q&A Jan 2026' },
+      ],
+      econ_school_choice: [
+        { text: 'Campaign website 2026' },
+        { text: 'Community Impact Q&A Jan 2026' },
+        { text: 'Living Blue TX 2022 endorsement' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign website 2026' },
+        { text: 'KXAN 2022 profile' },
+        { text: 'Campaign website 2022' },
+      ],
+      health_cost_control: [
+        { text: 'KXAN 2022 profile' },
+        { text: 'Campaign website 2026 (consumer protection)' },
+      ],
+      health_public_health: [
+        { text: 'Campaign website 2026 (marijuana legalization)' },
+        { text: 'KXAN 2022 profile (marijuana)' },
+        { text: 'San Antonio Current 2022' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Mayoral record (Galveston 2010-2012)' },
+        { text: 'Campaign website 2026 (Division of Affordability)' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Campaign website 2026' },
+        { text: 'Community Impact Q&A Jan 2026' },
+        { text: 'KXAN 2022 profile' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Campaign website 2022-2026' },
+        { text: 'KXAN 2022 profile' },
+        { text: 'San Antonio Current 2022' },
+        { text: 'Community Impact Q&A Jan 2026' },
+      ],
+      justice_firearms: [
+        { text: 'Campaign website 2022-2026' },
+      ],
+      climate_ambition: [
+        { text: 'Campaign website 2022-2026' },
+        { text: 'Community Impact Q&A Jan 2026' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website 2022-2026' },
+        { text: 'Community Impact Q&A Jan 2026' },
+      ],
     },
     valueStances: {
       universalism:    0.5,  // Pro-immigrant (Dreamers, asylum seekers); climate litigation; reproductive rights as healthcare access; bounded to TX not global
@@ -443,6 +998,96 @@ const allCandidates: Candidate[] = [
       // housing_supply_zoning omitted — no direct housing evidence; evidence floor not met
       // housing_affordability_tools omitted — no direct evidence
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'One Big Beautiful Bill vote (initially No in committee demanding deeper cuts, Yes on floor after Medicaid work requirements accelerated)' },
+        { text: 'HR 3321 to end Medicaid expansion differential match rates' },
+        { text: 'No votes on continuing resolutions citing food stamp spending without reform' },
+        { text: 'Heritage Action 100% (118th Congress)' },
+      ],
+      econ_investment: [
+        { text: 'No vote on Infrastructure Investment and Jobs Act (called it a \'$1.2T monstrosity\')' },
+        { text: 'No vote on Inflation Reduction Act' },
+        { text: 'No on CHIPS Act (inferred from pattern; not confirmed directly)' },
+        { text: 'Heritage Action 100%' },
+        { text: 'Calls for balanced budget amendment before any spending' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign platform: simplified tax code, postcard-sized filing' },
+        { text: 'CPAC 98% lifetime score' },
+        { text: 'Heritage Action 100%' },
+        { text: 'Insists tax cuts be paired with equal or greater spending cuts' },
+      ],
+      econ_school_choice: [
+        { text: 'SCHOOL Act (federal funds follow the student to public, private, or homeschool)' },
+        { text: 'CRT Act to defund schools teaching critical race theory' },
+        { text: 'Public criticism of Texas state GOP for failing to pass universal school choice' },
+        { text: 'Multiple terms of education legislation' },
+      ],
+      health_coverage_model: [
+        { text: 'Personalized Care Act / Healthcare Freedom Act (HSAs, direct primary care, market competition)' },
+        { text: 'HR 3321 to effectively end Medicaid expansion' },
+        { text: 'No vote on Inflation Reduction Act (included ACA subsidy extensions)' },
+        { text: 'Daily Signal interview Jan 2025: \'overhaul federal health programs top to bottom\'' },
+        { text: 'One Big Beautiful Bill vote (accelerated Medicaid work requirements)' },
+      ],
+      health_cost_control: [
+        { text: 'No vote on Inflation Reduction Act (included Medicare drug price negotiation)' },
+        { text: 'Healthcare Freedom vision: market competition as cost control mechanism' },
+        { text: 'HSA expansion and direct primary care as alternatives to price regulation' },
+      ],
+      health_public_health: [
+        { text: 'Led House opposition to COVID vaccine mandates for 2+ years' },
+        { text: 'Introduced No Taxation Without Congressional Consent Act (block mandate enforcement)' },
+        { text: 'Led 38+ colleagues to defund vaccine mandate enforcement' },
+        { text: 'Introduced legislation to repeal final federal COVID vaccine mandate' },
+        { text: 'Filed amicus brief with Ted Cruz against federal workforce vaccine mandate' },
+      ],
+      housing_transport_priority: [
+        { text: 'No vote on Infrastructure Investment and Jobs Act (included major public transit funding)' },
+        { text: 'General anti-spending philosophy' },
+      ],
+      justice_policing_accountability: [
+        { text: 'No vote on George Floyd Justice in Policing Act (HR 1280)' },
+        { text: 'Explicit defense of qualified immunity in floor statement' },
+        { text: 'Law enforcement family identity (Texas Ranger great-great-grandson, Police Chief grandson)' },
+        { text: 'Former federal prosecutor' },
+        { text: '\'Soros-funded DAs and liberal judges\' campaign framing' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Bipartisan Federal Criminal Code Reform with Reps. McBath, Biggs, Cohen (reduce nonviolent overcriminalization)' },
+        { text: 'Demanded DOJ explain lenient sentence for violent offender' },
+        { text: 'No vote on VAWA reauthorization (only San Antonio delegation member to do so)' },
+        { text: 'Former federal prosecutor focused on violent crime' },
+      ],
+      justice_firearms: [
+        { text: 'NRA \'A\' grade and endorsement' },
+        { text: 'No vote on Bipartisan Background Checks Act' },
+        { text: 'Introduced No Backdoor Gun Control Act (limit ATF authority)' },
+        { text: 'Explicit opposition to red flag laws (\'taking guns first, due process later\')' },
+        { text: 'Present (not No) vote on Bipartisan Safer Communities Act after Uvalde' },
+      ],
+      climate_ambition: [
+        { text: 'LCV 0% (2024 annual scorecard)' },
+        { text: 'LCV 2% lifetime scorecard' },
+        { text: 'No vote on Inflation Reduction Act' },
+        { text: 'Introduced Energy Freedom Act to repeal all IRA clean energy subsidies' },
+        { text: 'Criticized EPA \'Clean Air\' programs as \'climate hysteria\'' },
+        { text: 'Climate of Denial tracker listing' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Energy Freedom Act: repeal ALL clean energy tax subsidies (\'not just solar and wind, but all of them\')' },
+        { text: 'Joined Protecting American Energy Jobs Act petition' },
+        { text: 'Introduced legislation to repeal Biden fossil fuel production limits' },
+        { text: 'Advocates coal development on public lands' },
+        { text: 'Requested offshore wind excluded from permitting reform benefits' },
+      ],
+      climate_permitting: [
+        { text: 'Opposed SPEED Act permitting reform because it could accelerate clean energy projects' },
+        { text: 'Requested offshore wind projects be excluded from permitting reform benefits' },
+        { text: 'Supports reducing regulatory review for fossil fuel projects' },
+      ],
+    },
     valueStances: {
       universalism:   -0.7,  // LCV 2% lifetime; would overturn Plyler v. Doe (deny education to undocumented children); would overturn Obergefell; 'Islamification of Texas' rhetoric; opposed NATO expansion
       benevolence:     0.1,  // Claims to defend TX families; bipartisan criminal code reform shows some CJ welfare concern; but Medicaid/SNAP cuts and ideology override community welfare when they conflict
@@ -491,6 +1136,86 @@ const allCandidates: Candidate[] = [
       climate_permitting:          8, // LOW — anti-regulation philosophy across all domains; pro-fossil-fuel record implies expedited energy permitting; SB 6/7 thermal generation support; no specific permitting bills documented
       // housing_affordability_tools omitted — no direct evidence
       // housing_transport_priority omitted — no evidence
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Texans for Fiscal Responsibility 90/A rating (2023)' },
+        { text: 'iVoterGuide survey: \'no other taxpayer-funded programs necessary\' beyond Medicare/Medicaid' },
+        { text: 'Authored bans on taxpayer-funded local government lobbying (SB 12, SB 19)' },
+      ],
+      econ_investment: [
+        { text: 'Texans for Fiscal Responsibility 90/A rating; Taxpayer Champion designation (2023)' },
+        { text: 'Anti-ESG legislation (SB 13, SB 19) opposing government-directed investment criteria' },
+        { text: 'Explicit statement against renewable energy subsidies as \'unfair advantage through heavy tax subsidies\'' },
+        { text: 'Authored bans on taxpayer-funded lobbying by local governments' },
+      ],
+      econ_tax_structure: [
+        { text: 'Texans for Fiscal Responsibility 90/A rating (2023)' },
+        { text: 'Taxpayer Champion designation (one of three Senate members)' },
+        { text: 'Voted YES on property tax cuts: homestead exemption increase from $100K to $140K (SB 4) and up to $200K (SB 23)' },
+        { text: 'Declines state salary, donates to charity' },
+      ],
+      econ_school_choice: [
+        { text: 'Authored SB 176 (universal ESA voucher bill, 88th Legislature)' },
+        { text: 'Voted YES on ESA bills in both 88th and 89th Legislatures' },
+        { text: 'Authored SB 763 (chaplains replacing school counselors in public schools)' },
+        { text: 'Authored SB 11 (school prayer and Bible reading in public schools)' },
+        { text: 'ATPE (teachers\' union) marked unfavorable' },
+        { text: 'Texas Values Action 100% score' },
+      ],
+      health_coverage_model: [
+        { text: 'iVoterGuide survey: \'Medicaid and Medicare should remain available, but no other taxpayer-funded programs are necessary\'' },
+        { text: 'Overall anti-government-spending philosophy consistent across all scorecards' },
+        { text: 'No advocacy for ACA, public option, or any coverage expansion found' },
+      ],
+      health_public_health: [
+        { text: 'Authored SB 7 (88th Legislature): COVID vaccine mandate ban for all private employers including healthcare facilities, no healthcare worker exception' },
+        { text: 'Direct quote: \'right to choose whether or not to get the shot\'' },
+        { text: 'Campaign describes SB 7 as \'strongest ban on COVID vaccine mandates in the country\'' },
+        { text: 'Authored school chaplain bill (SB 763) allowing replacement of credentialed counselors' },
+      ],
+      housing_supply_zoning: [
+        { text: 'Conference committee member on SB 15 (by-right townhomes/starter homes in large cities)' },
+        { text: 'Authored SB 854 (limiting city restrictions on religious organizations developing multi-family housing)' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Campaign platform: making Texas \'safest state\'; law enforcement support rhetoric' },
+        { text: 'Immigration enforcement maximalism: pledges to prosecute local officials who obstruct federal immigration operations' },
+        { text: 'No police reform or accountability bills found in 7-year legislative record' },
+        { text: 'Young Conservatives of Texas 88/100 (overall conservative alignment)' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Authored SB 476 (increased punishment for intoxication manslaughter with court-ordered interlock device violation)' },
+        { text: 'Supported death penalty expansion for child murders' },
+        { text: 'Immigration maximalism: \'deport all illegal immigrants\'' },
+        { text: 'Campaign emphasizes punishment/deterrence framing' },
+      ],
+      justice_firearms: [
+        { text: 'Authored SB 755 (firearms sales tax holiday -- annual tax-free period for guns, ammunition, accessories)' },
+        { text: 'Carried foster care firearms privacy bill (HB 1403 companion)' },
+        { text: 'Worked directly with NRA on State Fair of Texas gun ban policy' },
+        { text: 'Anti-ESG bill SB 19 prohibited state business with companies that boycott firearms industry' },
+        { text: 'No gun safety or gun regulation votes found in 7-year record' },
+      ],
+      climate_ambition: [
+        { text: 'President of Middleton Oil Company (60+ wells, South Texas and Gulf Coast)' },
+        { text: 'Led anti-ESG legislation (SB 13 banning state business with banks divesting from fossil fuels)' },
+        { text: 'Statement characterizing renewables as receiving \'unfair advantage through heavy tax subsidies\'' },
+        { text: 'Supported SB 6/7 incentivizing dispatchable thermal (fossil fuel) generation' },
+        { text: 'No climate action, emissions reduction, or environmental legislation found' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Middleton Oil Company president (direct financial interest in fossil fuels)' },
+        { text: 'Supported SB 6/7 incentivizing \'dispatchable, reliable generation\' (thermal/gas)' },
+        { text: 'Direct quote: \'intermittent, renewable technologies receiving an unfair advantage through heavy tax subsidies\'' },
+        { text: 'Anti-ESG legislation penalizing institutions that boycott fossil fuels' },
+        { text: 'No renewable energy advocacy found' },
+      ],
+      climate_permitting: [
+        { text: 'Anti-regulation philosophy across all domains' },
+        { text: 'Pro-fossil-fuel legislative record implies preference for expedited energy project permitting' },
+        { text: 'Support for dispatchable thermal generation bills (SB 6/7)' },
+      ],
     },
     valueStances: {
       universalism:   -0.8,  // Anti-ESG opposes environmental protection; explicit Christian nationalist ('no separation of God and government'); anti-Islam rhetoric; transgender rights denial; immigration maximalism; oil exec conflicts with environmental universalism
@@ -544,6 +1269,72 @@ const allCandidates: Candidate[] = [
       climate_permitting:          3, // LOW — Connect the Grid Act (faster grid interconnection for renewables); likely supports strong environmental review for fossil projects; limited direct evidence
       // housing_supply_zoning omitted — no meaningful evidence on zoning reform
       // housing_transport_priority omitted — no evidence
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'NO vote on Fiscal Responsibility Act 2023' },
+        { text: 'AFL-CIO endorsement' },
+        { text: 'Campaign platform: raise minimum wage, tax the wealthy' },
+      ],
+      econ_investment: [
+        { text: 'Green New Deal co-sponsor' },
+        { text: 'Connect the Grid Act sponsor' },
+        { text: 'American Energy Worker Opportunity Act sponsor' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign platform: \'taxing the wealthy\'' },
+        { text: 'NO vote on Fiscal Responsibility Act' },
+      ],
+      econ_school_choice: [
+        { text: 'Called vouchers a \'scam\' and \'masquerade\' (2025)' },
+        { text: 'NEA endorsement' },
+        { text: 'AFT endorsement' },
+      ],
+      health_coverage_model: [
+        { text: 'Medicare for All Act co-sponsor (HR 3421)' },
+        { text: 'Official healthcare page' },
+      ],
+      health_cost_control: [
+        { text: 'Medicare for All co-sponsor (implies government price setting)' },
+        { text: 'OSHA heat rule advocacy' },
+      ],
+      health_public_health: [
+        { text: '9-hour Capitol thirst strike for heat protections (July 2023)' },
+        { text: 'Led 100+ member letter to Biden DOL on heat rule' },
+        { text: 'OSHA heat rule proposed Aug 2024' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Austin City Council record: subsidies and tenant protection emphasis' },
+      ],
+      justice_policing_accountability: [
+        { text: 'BREATHE Act support' },
+        { text: 'George Floyd Justice in Policing Act support' },
+        { text: 'Advocated for DOJ investigation of Austin Police Department' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'BREATHE Act support (includes decarceration provisions)' },
+        { text: 'Criminal justice reform page' },
+      ],
+      justice_firearms: [
+        { text: 'Giffords endorsement' },
+        { text: 'Assault weapons ban co-sponsor' },
+        { text: 'PLCAA repeal co-sponsor' },
+        { text: 'Ethan\'s Law (safe storage) co-sponsor' },
+      ],
+      climate_ambition: [
+        { text: 'Green New Deal co-sponsor' },
+        { text: 'LCV 100% annual (2025)' },
+        { text: 'LCV 75% lifetime' },
+        { text: 'Endorsed as \'climate and environmental justice champion\'' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Green New Deal co-sponsor' },
+        { text: 'Connect the Grid Act sponsor' },
+        { text: 'LCV 100%' },
+      ],
+      climate_permitting: [
+        { text: 'Connect the Grid Act (faster grid interconnection for renewables)' },
+      ],
     },
     valueStances: {
       universalism:    0.8,  // Climate and environmental justice champion (LCV 100%); immigrant rights advocacy as CPC Chair; voted against Israel military aid; BREATHE Act; extends concern beyond constituents
@@ -618,6 +1409,59 @@ const allCandidates: Candidate[] = [
       // justice_sentencing_goals omitted — no evidence
       // climate_permitting omitted — no evidence
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Medicaid expansion campaign position' },
+        { text: '$15 minimum wage commitment' },
+        { text: 'state employee salary/teacher COLA co-authorship' },
+        { text: 'Our Revolution endorsement' },
+      ],
+      econ_investment: [
+        { text: '50% state school funding target (Community Impact interview)' },
+        { text: 'water infrastructure position' },
+        { text: 'missing middle housing incentives' },
+        { text: 'Food System Security Council legislation' },
+      ],
+      econ_tax_structure: [
+        { text: 'School funding/property tax framing (Community Impact 2026-01-27)' },
+      ],
+      econ_school_choice: [
+        { text: 'Texas Standard interview: \'No public dollars to private schools\'' },
+        { text: 'Houston Public Media top 3 priorities' },
+        { text: 'Community Impact Q&A' },
+        { text: 'Amarillo Pioneer voter guide' },
+        { text: 'teachers union endorsements' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign website healthcare page' },
+        { text: 'Amarillo Pioneer: \'highest rate of uninsured\'' },
+        { text: 'Houston Public Media top 3' },
+        { text: 'Medicaid expansion advocacy' },
+      ],
+      housing_supply_zoning: [
+        { text: 'Community Impact interview: \'incentivizing building of starter/missing middle homes\'' },
+        { text: 'Campaign website priorities page' },
+      ],
+      housing_affordability_tools: [
+        { text: 'Campaign website: \'collaborate with local governments to expand housing access, reduce homelessness\'' },
+        { text: 'Community Impact interview' },
+      ],
+      justice_firearms: [
+        { text: '12 gun safety bills filed in 2023 session (Austin Chronicle)' },
+        { text: 'Opposed permitless carry (KVUE)' },
+        { text: 'Called for special session post-Uvalde (KVUE)' },
+        { text: 'HB 298 waiting period bill' },
+      ],
+      climate_ambition: [
+        { text: 'Campaign website: \'bold action... reduce greenhouse gas emissions\'' },
+        { text: 'SW Travis County Groundwater Conservation District legislation' },
+        { text: 'Water conservation/reuse advocacy' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website: \'clean power\' language' },
+        { text: 'Criticism of water diversion for data centers' },
+      ],
+    },
     valueStances: {
       universalism:    0.5,  // Healthcare for uninsured Texans; environmental stewardship; ICE civil liberties concerns extending to non-citizens; groundwater conservation; scope primarily TX-focused
       benevolence:     0.7,  // Core political identity: public school funding for 90% of TX kids, healthcare access, Cati's Act (drowning prevention), teacher COLAs, Natalia Cox Act, vote-by-mail for new mothers
@@ -665,6 +1509,41 @@ const allCandidates: Candidate[] = [
       // justice_policing_accountability omitted — no evidence
       // justice_sentencing_goals omitted — no evidence
       // climate_permitting omitted — no evidence
+    },
+    axisEvidence: {
+      econ_school_choice: [
+        { text: 'Campaign interviews 2026' },
+        { text: 'Texas AFT coverage' },
+        { text: '2022 campaign position' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign platform — property tax reform' },
+      ],
+      econ_investment: [
+        { text: 'Campaign platform' },
+        { text: 'Grid reform proposals' },
+        { text: 'The Eagle expert evaluation' },
+      ],
+      health_coverage_model: [
+        { text: 'Campaign interviews — Medicaid expansion' },
+      ],
+      health_public_health: [
+        { text: 'Campaign interviews — THC ban opposition' },
+      ],
+      justice_firearms: [
+        { text: 'Gun Sense Voter profile' },
+        { text: '2022 campaign detail' },
+        { text: '2026 consistency' },
+      ],
+      climate_ambition: [
+        { text: 'Campaign interviews' },
+        { text: 'The Eagle expert evaluation' },
+        { text: 'Campaign platform' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Multiple interviews' },
+        { text: 'The Eagle expert evaluation' },
+      ],
     },
     valueStances: {
       universalism:    0.2,  // Medicaid expansion + public education investment; but pragmatic and local framing (rural hospitals, TX students) rather than universal; oil/gas background works mildly against environmental universalism
@@ -714,6 +1593,73 @@ const allCandidates: Candidate[] = [
       climate_energy_portfolio:    9, // HIGH — $10B fund for gas-fired power plants; SB 13 penalizing companies boycotting fossil fuels; TXOGA endorsement; clear fossil fuel prioritization
       // housing_transport_priority omitted — no evidence
       // climate_permitting omitted — no evidence
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: '11-year record controlling Senate agenda' },
+        { text: 'AFL-CIO opposition' },
+        { text: 'Property tax cut orientation over social spending' },
+      ],
+      econ_investment: [
+        { text: '$18B property tax cut' },
+        { text: 'Texas Energy Fund ($10B)' },
+        { text: 'Small business tax cuts (prior Senate record)' },
+      ],
+      econ_tax_structure: [
+        { text: '$18B property tax cut' },
+        { text: 'Small business tax cuts as state senator' },
+        { text: '2027 interim charges prioritize property tax relief' },
+      ],
+      econ_school_choice: [
+        { text: 'SB 2 ($1B ESA/voucher program)' },
+        { text: 'Campaign website' },
+        { text: 'Named as highest legislative priority' },
+      ],
+      health_coverage_model: [
+        { text: 'Opposes Medicaid expansion (evidence summary)' },
+        { text: 'General limited-government orientation' },
+        { text: 'AFL-CIO opposition' },
+      ],
+      health_public_health: [
+        { text: 'THC ban (SB 3)' },
+        { text: 'Ten Commandments in schools (SB 10)' },
+        { text: 'General anti-mandate orientation' },
+      ],
+      housing_supply_zoning: [
+        { text: 'SB 15 removing barriers to affordable housing' },
+      ],
+      housing_affordability_tools: [
+        { text: 'SB 15 anti-institutional investor provisions' },
+        { text: 'General limited-government orientation' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Back the blue orientation (evidence summary)' },
+        { text: 'Border security priority' },
+        { text: 'Law enforcement endorsements' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Tough on crime orientation (evidence summary)' },
+        { text: 'Border security priority' },
+        { text: 'General law-and-order framing' },
+      ],
+      justice_firearms: [
+        { text: 'NRA A+ grade' },
+        { text: 'Permitless carry (HB 1927)' },
+        { text: 'Campus carry' },
+        { text: 'Open carry' },
+        { text: 'NRA endorsement 2022 and 2026' },
+      ],
+      climate_ambition: [
+        { text: 'Climate skeptic (evidence summary)' },
+        { text: 'Texas Energy Fund for gas plants' },
+        { text: 'ESG anti-boycott law (SB 13)' },
+        { text: 'TXOGA endorsement' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Texas Energy Fund ($10B for gas plants)' },
+        { text: 'ESG anti-boycott law (SB 13)' },
+        { text: 'TXOGA endorsement' },
+      ],
     },
     valueStances: {
       universalism:   -0.6,  // Anti-Muslim rhetoric in interim charges; opposes climate action; opposes Medicaid expansion; ESG anti-boycott law works against environmental protection; in-group over universal welfare
@@ -767,6 +1713,55 @@ const allCandidates: Candidate[] = [
       // health_cost_control omitted — no evidence
       // climate_permitting omitted — no evidence
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'KLTV Medicaid expansion interview Feb 2026' },
+        { text: 'Texas AFL-CIO endorsement' },
+        { text: 'YCT 16% rating' },
+      ],
+      econ_investment: [
+        { text: 'Campaign website (Rainy Day Fund for water infrastructure)' },
+        { text: 'SB 1915 energy efficiency bill' },
+        { text: 'County record (green space preservation)' },
+      ],
+      econ_tax_structure: [
+        { text: 'Campaign interviews on progressive tax reform' },
+        { text: 'Opposition to regressive property tax system' },
+      ],
+      econ_school_choice: [
+        { text: 'Senate floor vote against voucher legislation' },
+        { text: 'Campaign platform to audit ESA program as Comptroller' },
+      ],
+      health_coverage_model: [
+        { text: 'KLTV interview Feb 2026' },
+        { text: 'Campaign website' },
+      ],
+      housing_supply_zoning: [
+        { text: 'SB 1567 (roommate occupancy bill)' },
+        { text: 'Campaign statements on local control' },
+      ],
+      justice_policing_accountability: [
+        { text: 'Travis County Judge record: public defender\'s office' },
+        { text: 'Jail diversion programs' },
+        { text: 'First PACE program in Texas' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Jail diversion programs as County Judge' },
+        { text: 'PACE program (first in Texas)' },
+        { text: 'Public defender\'s office establishment' },
+      ],
+      justice_firearms: [
+        { text: 'Senate vote against blocking gun transparency in foster homes' },
+      ],
+      climate_ambition: [
+        { text: 'Environment Texas endorsement (2020)' },
+        { text: '30,000+ acres green space preservation as County Judge' },
+        { text: 'SB 1915 energy efficiency bill' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'SB 1915 energy efficiency bill' },
+      ],
+    },
     valueStances: {
       universalism:    0.7,  // Environmental conservation (30,000 acres); Medicaid expansion for rural TX statewide; reproductive rights (Avow highest rating); LGBTQ+ Political Caucus endorsement; extends concern beyond Austin base
       benevolence:     0.7,  // Public defender's office; jail diversion programs; water infrastructure; school funding defense; County Judge role was direct community welfare; Comptroller pitch protects taxpayer dollars for community benefit
@@ -815,6 +1810,63 @@ const allCandidates: Candidate[] = [
       // housing_affordability_tools omitted — no evidence
       // housing_transport_priority omitted — no evidence
       // health_cost_control omitted — no evidence
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'TFR 97-99% fiscal score' },
+        { text: 'Campaign platform: eliminate taxpayer benefits to undocumented immigrants' },
+        { text: '2022 Gov race platform' },
+      ],
+      econ_investment: [
+        { text: 'TFR 97-99%' },
+        { text: 'DOGE Texas platform' },
+        { text: '\'Use it or lose it\' budgeting critique' },
+        { text: 'YCT 92%' },
+      ],
+      econ_tax_structure: [
+        { text: 'Property tax elimination platform (2022 and 2026)' },
+        { text: 'TFR 97-99%' },
+        { text: 'Campaign website' },
+      ],
+      econ_school_choice: [
+        { text: 'Authored school voucher study bill (84th Legislature)' },
+        { text: '$1B ESA administration platform' },
+        { text: 'Texas Tribune post-primary' },
+        { text: 'iVoterGuide' },
+      ],
+      health_coverage_model: [
+        { text: 'TFR fiscal orientation' },
+        { text: 'General anti-government spending position' },
+        { text: '2022 Gov campaign' },
+      ],
+      health_public_health: [
+        { text: 'DEI/transgender website shutdown' },
+        { text: 'General anti-government-mandate orientation' },
+        { text: 'Libertarian self-identification' },
+      ],
+      justice_firearms: [
+        { text: 'Authored first TX Constitutional Carry bill (84th Legislature)' },
+        { text: 'Gun Owners of America endorsement' },
+        { text: 'Voted yes on SB 17 open carry \'with heavy heart\' it didn\'t go far enough' },
+      ],
+      justice_sentencing_goals: [
+        { text: 'Law-and-order orientation' },
+        { text: 'SB 4 Sanctuary Cities co-sponsor' },
+        { text: 'Endorsement profile (Trump, Cruz, law enforcement aligned)' },
+      ],
+      justice_policing_accountability: [
+        { text: 'General law-and-order orientation' },
+        { text: 'SB 4 co-sponsor' },
+        { text: 'Endorsement alignment' },
+      ],
+      climate_ambition: [
+        { text: 'Anti-government spending orientation' },
+        { text: 'No climate statements found' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Texas fiscal conservative orientation' },
+        { text: 'No specific energy statements' },
+      ],
     },
     valueStances: {
       universalism:   -0.7,  // Eliminate benefits for undocumented immigrants; authored LGBT nondiscrimination preemption bill; shut down transgender youth resources; complete abortion abolition; pattern of narrowing moral concern circle
@@ -867,6 +1919,43 @@ const allCandidates: Candidate[] = [
       // health_cost_control omitted — no evidence
       // climate_permitting omitted — no evidence
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'iVoterGuide 2022 response on healthcare' },
+        { text: 'overall conservative record' },
+      ],
+      econ_investment: [
+        { text: 'GLO record' },
+        { text: 'Coastal Resiliency Master Plan' },
+        { text: 'carbon sequestration lease' },
+      ],
+      econ_tax_structure: [
+        { text: 'HB 3 property tax reform vote (31-0)' },
+        { text: 'overall conservative orientation' },
+      ],
+      health_coverage_model: [
+        { text: 'iVoterGuide 2022 questionnaire' },
+      ],
+      health_public_health: [
+        { text: 'Co-authored church protection/COVID powers legislation' },
+        { text: 'conservative record' },
+      ],
+      justice_firearms: [
+        { text: 'NRA endorsement 2022' },
+        { text: 'HB 1927 constitutional carry vote' },
+        { text: 'nearly two dozen pro-gun bills authored' },
+      ],
+      climate_ambition: [
+        { text: 'GLO fossil fuel leasing record' },
+        { text: 'carbon sequestration framing' },
+        { text: 'Shale Magazine interview' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'GLO fossil fuel leasing program' },
+        { text: 'carbon sequestration as revenue supplement' },
+        { text: 'nuclear support' },
+      ],
+    },
     valueStances: {
       universalism:   -0.4,  // Offered state land for deportation facilities; immigration enforcement orientation excludes outsiders; fossil fuel leasing prioritizes economic gain over environmental protection; coastal resilience framed as TX-specific
       benevolence:     0.5,  // Strong veteran support through VLB ($1B+ disbursed); record $4.8B PSF distribution for public schools; Hurricane Harvey recovery ($5.7B); genuine community-welfare within jurisdictional scope
@@ -916,6 +2005,37 @@ const allCandidates: Candidate[] = [
       // justice_* omitted — no evidence
       // climate_permitting omitted — no evidence
     },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'Campaign website (universal free school meals)' },
+        { text: '2020 Senate campaign (Medicaid expansion)' },
+        { text: 'Campaign website (rural healthcare access)' },
+      ],
+      econ_investment: [
+        { text: 'Campaign website (farm-to-school programs)' },
+        { text: 'Campaign website (soil health, water infrastructure)' },
+        { text: 'Campaign website (rural health infrastructure)' },
+      ],
+      econ_school_choice: [
+        { text: '2020 Senate campaign platform (anti-privatization)' },
+      ],
+      health_coverage_model: [
+        { text: '2020 Senate campaign (Medicaid expansion)' },
+        { text: '2026 campaign website (\'affordable, timely healthcare for all\')' },
+      ],
+      health_public_health: [
+        { text: 'Campaign website (food safety/chemical removal)' },
+        { text: 'Campaign website (PFAS opposition)' },
+        { text: 'Campaign website (school nutrition standards)' },
+      ],
+      climate_ambition: [
+        { text: '2020 Senate campaign (wind investment, climate crisis framing)' },
+        { text: '2026 campaign (soil health, water protection, anti-AI-data-center water use)' },
+      ],
+      climate_energy_portfolio: [
+        { text: '2020 Senate campaign (wind energy investment)' },
+      ],
+    },
     valueStances: {
       universalism:    0.7,  // Universal free school meals; healthcare for all; environmental/water protection as public goods; food safety regulation protecting all consumers; anti-monopoly fairness framing
       benevolence:     0.7,  // Family farm preservation; rural community healthcare; school nutrition for children; protecting small farmers against corporate consolidation; consistent care-for-community centered on rural TX families
@@ -963,6 +2083,33 @@ const allCandidates: Candidate[] = [
       // justice_sentencing_goals omitted — no evidence
       // climate_ambition omitted — insufficient evidence to score
       // climate_permitting omitted — no evidence
+    },
+    axisEvidence: {
+      econ_safetynet: [
+        { text: 'DOGE-style audit rhetoric (Texas Tribune interview)' },
+        { text: 'general government-reduction framing' },
+      ],
+      econ_investment: [
+        { text: 'Big Country Homepage interview' },
+        { text: 'LBJ/Evan Smith conversation' },
+        { text: 'campaign website' },
+      ],
+      econ_tax_structure: [
+        { text: 'general Trump-alignment' },
+        { text: 'government efficiency rhetoric' },
+      ],
+      justice_firearms: [
+        { text: 'Texas Gun Rights 100% survey score' },
+        { text: 'Gun Owners of America endorsement' },
+      ],
+      health_public_health: [
+        { text: 'MAHA movement identification (campaign website, Blaze Media)' },
+        { text: 'clean food advocacy' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Trump trade/tariff alignment' },
+        { text: 'anti-China agricultural security stance' },
+      ],
     },
     valueStances: {
       universalism:   -0.2,  // Anti-China stance; border enforcement; Texas-first trade framing suggest in-group preference; MAHA clean-food has universalist flavor but framed nationalistically; TX Wildlife Association endorsement is modest positive for nature
@@ -1014,6 +2161,41 @@ const allCandidates: Candidate[] = [
       // justice_policing_accountability omitted — no evidence beyond firearms vote
       // justice_sentencing_goals omitted — no evidence
     },
+    axisEvidence: {
+      econ_investment: [
+        { text: 'Positive citation of Biden IRA and Bipartisan Infrastructure Law' },
+        { text: 'Orphan well plugging tied to local hiring' },
+        { text: 'AFL-CIO COPE endorsement' },
+      ],
+      econ_tax_structure: [
+        { text: 'Texans for Fiscal Responsibility 24/100 F grade' },
+        { text: 'YCT career 19/100' },
+      ],
+      econ_school_choice: [
+        { text: 'Voted against school voucher legislation in Texas House' },
+        { text: 'ATPE-aligned' },
+      ],
+      justice_firearms: [
+        { text: 'Voted NO on HB 1927 (permitless carry)' },
+      ],
+      climate_ambition: [
+        { text: 'HB 1452 (authored anti-flaring bill)' },
+        { text: 'Sierra Club 100% (2019)' },
+        { text: 'SB 3 weatherization amendments' },
+        { text: 'Campaign platform on enforcement' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website \'All of the Above\' framing' },
+        { text: 'Texas Tribune profile' },
+        { text: '25-year oilfield engineering career' },
+      ],
+      climate_permitting: [
+        { text: 'Campaign platform: deny permits to violators' },
+        { text: 'Third-party audit requirement' },
+        { text: 'Continuous monitoring mandate' },
+        { text: 'HB 1452 enforcement provisions' },
+      ],
+    },
     valueStances: {
       universalism:    0.4,  // Environmental protection through anti-flaring + methane monitoring; concern for nature and public welfare beyond community; 'All of the Above' and industry-insider approach limit scope — protecting from pollution, not transforming energy system
       benevolence:     0.5,  // Grid weatherization to protect TX from another Uri; orphan well plugging tied to local hiring; public school defense; AFL-CIO endorsement; protecting TX communities from industry negligence
@@ -1058,6 +2240,32 @@ const allCandidates: Candidate[] = [
       // housing_* omitted — no evidence
       // justice_* omitted — no evidence
     },
+    axisEvidence: {
+      climate_ambition: [
+        { text: '2020 climate skepticism quotes (HuffPost)' },
+        { text: 'Opposition to Biden EPA methane rule' },
+        { text: '5-year RRC voting record' },
+        { text: 'Campaign website rhetoric' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website' },
+        { text: 'RRC regulatory record' },
+        { text: '2020 quotes on solar/wind' },
+        { text: 'Shale Magazine interview' },
+        { text: 'TXOGA/Pipeline Association endorsements' },
+      ],
+      climate_permitting: [
+        { text: 'Campaign website (\'cut red tape\')' },
+        { text: 'Opposition to Railway Safety Act 2023' },
+        { text: 'Opposition to federal methane permitting' },
+        { text: 'Congressional testimony on orphan well state flexibility' },
+      ],
+      econ_investment: [
+        { text: 'Campaign website' },
+        { text: 'Opposition to federal regulatory framework' },
+        { text: 'Support for state over federal control of energy investment' },
+      ],
+    },
     valueStances: {
       universalism:   -0.6,  // Explicit climate skepticism works against environmental protection for all; 255 prior environmental violations; pattern of approving flaring permits despite stated concern; industry over environmental/public welfare
       benevolence:     0.2,  // Landowner rights advocacy; produced water reuse for TX water scarcity; orphan well plugging; but these are narrow and often aligned with industry interests
@@ -1101,6 +2309,27 @@ const allCandidates: Candidate[] = [
       // health_* omitted — no evidence
       // housing_* omitted — no evidence
       // justice_* omitted — no evidence; Railroad Commissioner race is an energy regulatory office
+    },
+    axisEvidence: {
+      climate_ambition: [
+        { text: 'Campaign website' },
+        { text: 'Texas Tribune profile' },
+        { text: 'Community Impact Q&A' },
+      ],
+      climate_energy_portfolio: [
+        { text: 'Campaign website' },
+        { text: 'Texas Tribune' },
+        { text: 'Oil family background' },
+      ],
+      climate_permitting: [
+        { text: 'Campaign website (permitting reform is signature issue)' },
+        { text: 'Texas Tribune' },
+        { text: 'Community Impact Q&A' },
+      ],
+      econ_investment: [
+        { text: 'Campaign website (deregulation framing)' },
+        { text: 'DEI contracting elimination proposal' },
+      ],
     },
     valueStances: {
       universalism:   -0.7,  // Documented antisemitic post; slurs targeting gay people and people with disabilities; called Native Americans 'third world savages'; called for denaturalization of naturalized-citizen state representatives; anti-environmental regulation

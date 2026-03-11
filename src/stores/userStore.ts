@@ -73,6 +73,8 @@ interface UserActions {
   setAxisScores: (scores: AxisScore[]) => void;
   initializeFromSwipes: (swipes: SwipeInput[]) => Promise<void>;
   applySliderValues: (responses: Record<string, number>, importances: Record<string, number>) => void;
+  /** Bridge: apply a hybrid assessment profile (from conversation flow) to the Blueprint profile */
+  applyHybridProfile: (hybridProfile: Record<string, { score: number; confidence: number; isImputed: boolean; sourceModality?: string }>) => void;
   getAxisScore: (axisId: string) => AxisScore | null;
   saveAssessmentProgress: (progress: AssessmentProgress) => void;
   clearAssessmentProgress: () => void;
@@ -489,6 +491,66 @@ export const useUserStore = create<UserStore>()(
           blueprintProfile: {
             ...blueprintProfile,
             updated_at: new Date().toISOString(),
+            domains: updatedDomains,
+          },
+          hasCompletedAssessment: true,
+        });
+      },
+
+      applyHybridProfile: (hybridProfile) => {
+        const { blueprintProfile } = get();
+        if (!blueprintProfile) return;
+
+        const now = new Date().toISOString();
+
+        const updatedDomains = blueprintProfile.domains.map((domain) => {
+          const updatedAxes = domain.axes.map((axis) => {
+            const record = hybridProfile[axis.axis_id];
+            if (!record) return axis;
+
+            const value = Math.round(Math.max(0, Math.min(10, record.score)));
+            const source: ProfileSource = record.isImputed ? 'default' : 'learned_from_swipes';
+
+            return {
+              ...axis,
+              value_0_10: value,
+              source,
+              confidence_0_1: record.confidence,
+              learning_mode: 'normal' as LearningMode,
+              estimates: {
+                learned_score: (record.score - 5) / 5, // Map 0-10 → -1 to 1
+                learned_value_float: record.score,
+              },
+              evidence: {
+                n_items_answered: record.isImputed ? 0 : 1,
+                n_unsure: 0,
+                top_driver_item_ids: [],
+              },
+            };
+          });
+
+          // Domain importance = average confidence of answered axes (proxy for engagement)
+          const answeredAxes = updatedAxes.filter((a) => a.source !== 'default');
+          const domainConf = answeredAxes.length > 0
+            ? answeredAxes.reduce((s, a) => s + a.confidence_0_1, 0) / answeredAxes.length
+            : 0;
+
+          return {
+            ...domain,
+            importance: {
+              ...domain.importance,
+              value_0_10: Math.round(domainConf * 10),
+              source: answeredAxes.length > 0 ? 'learned_from_swipes' as ProfileSource : domain.importance.source,
+              last_updated_at: now,
+            },
+            axes: updatedAxes,
+          };
+        });
+
+        set({
+          blueprintProfile: {
+            ...blueprintProfile,
+            updated_at: now,
             domains: updatedDomains,
           },
           hasCompletedAssessment: true,

@@ -30,6 +30,7 @@ import type { BallotRelevanceWeights } from '@/lib/adaptiveSequencer';
 import AssessmentProgress from './AssessmentProgress';
 import CardQuestion from './CardQuestion';
 import NlpPanel from './NlpPanel';
+import SignalReviewCard from './SignalReviewCard';
 import ConfirmationCard from './ConfirmationCard';
 import ProfileSummary from './ProfileSummary';
 
@@ -38,6 +39,7 @@ import ProfileSummary from './ProfileSummary';
 type ViewState =
   | { type: 'card' }
   | { type: 'nlp' }
+  | { type: 'signal-review'; userText: string; classified: ClassifiedSignal[]; pendingSession: HybridAssessmentSession; confirmationCard: ConfirmationCardType | null }
   | { type: 'confirmation'; card: ConfirmationCardType; signals: ClassifiedSignal[] }
   | { type: 'summary'; profile: Record<string, UserValueRecord> };
 
@@ -192,7 +194,7 @@ export default function HybridAssessmentView({
         // Classify signals
         const classified = classifySignals(currentAxisId, data.signals);
 
-        // Process through hybrid session
+        // Process through hybrid session (hold the result — don't commit until user confirms)
         const result = processNlpSignals(
           session,
           currentAxisId,
@@ -201,9 +203,7 @@ export default function HybridAssessmentView({
           getPositionLabel,
         );
 
-        setSession(result.session);
-
-        // Check for T6 trigger (vague response)
+        // Check for T6 trigger (vague response) — skip review if vague
         const primarySignal = classified.find((s) => s.strength === 'primary');
         if (primarySignal) {
           const trigger = evaluateTriggers({
@@ -221,28 +221,20 @@ export default function HybridAssessmentView({
           });
 
           if (trigger?.id === 'T6') {
-            // Vague response — switch back to cards
+            // Vague response — switch back to cards without review
             handleShowCards();
             return;
           }
         }
 
-        // Show confirmation card if there are secondary signals
-        if (result.confirmationCard) {
-          setViewState({
-            type: 'confirmation',
-            card: result.confirmationCard,
-            signals: classified,
-          });
-        } else {
-          // No secondary signals — check stopping
-          const newStopping = evaluateHybridStopping(result.session, ballotWeights);
-          if (newStopping.shouldStop) {
-            setViewState({ type: 'summary', profile: getFullProfile(result.session) });
-          } else {
-            setViewState({ type: 'card' });
-          }
-        }
+        // Show signal review card so user can verify what the system heard
+        setViewState({
+          type: 'signal-review',
+          userText: text,
+          classified,
+          pendingSession: result.session,
+          confirmationCard: result.confirmationCard,
+        });
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Something went wrong');
       } finally {
@@ -251,6 +243,39 @@ export default function HybridAssessmentView({
     },
     [session, currentAxisId, ballotWeights, handleShowCards],
   );
+
+  // ── Signal review: user accepts extraction ──
+
+  const handleSignalAccept = useCallback(() => {
+    if (viewState.type !== 'signal-review') return;
+
+    // Commit the pending session
+    setSession(viewState.pendingSession);
+
+    // If there are secondary signals, show confirmation card next
+    if (viewState.confirmationCard) {
+      setViewState({
+        type: 'confirmation',
+        card: viewState.confirmationCard,
+        signals: viewState.classified,
+      });
+    } else {
+      // Check stopping
+      const newStopping = evaluateHybridStopping(viewState.pendingSession, ballotWeights);
+      if (newStopping.shouldStop) {
+        setViewState({ type: 'summary', profile: getFullProfile(viewState.pendingSession) });
+      } else {
+        setViewState({ type: 'card' });
+      }
+    }
+  }, [viewState, ballotWeights]);
+
+  // ── Signal review: user wants to clarify ──
+
+  const handleSignalRefine = useCallback(() => {
+    // Go back to NLP panel so user can re-answer — don't commit the pending session
+    setViewState({ type: 'nlp' });
+  }, []);
 
   // ── Confirmation card ──
 
@@ -321,6 +346,27 @@ export default function HybridAssessmentView({
       <div className="flex flex-col items-center justify-center h-full gap-3">
         <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
         <p className="text-sm text-gray-500">Finalizing your profile...</p>
+      </div>
+    );
+  }
+
+  // Signal review view — show user what was extracted from their voice/text
+  if (viewState.type === 'signal-review') {
+    return (
+      <div className="flex flex-col h-full">
+        <AssessmentProgress
+          progress={progress}
+          questionsAnswered={session.answeredAxes.length}
+          estimatedRemaining={stopping.shouldStop ? 0 : session.estimatedRemainingInteractions}
+        />
+        <div className="flex-1 overflow-y-auto flex items-start justify-center pt-4">
+          <SignalReviewCard
+            userText={viewState.userText}
+            signals={viewState.classified}
+            onAccept={handleSignalAccept}
+            onRefine={handleSignalRefine}
+          />
+        </div>
       </div>
     );
   }

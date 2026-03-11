@@ -59,6 +59,7 @@ export default function ConversationPage() {
   const saveBallotVote = useBallotStore((s) => s.saveVote);
   const userSpec = useUserStore((s) => s.spec);
   const loadSpec = useUserStore((s) => s.loadSpec);
+  const applyHybridProfile = useUserStore((s) => s.applyHybridProfile);
 
   const demoSetField = useDemographicStore((s) => s.setField);
   const demoSubmitProfile = useDemographicStore((s) => s.submitProfile);
@@ -197,9 +198,13 @@ export default function ConversationPage() {
         };
       }
       updateProfile(converted);
+
+      // Bridge to userStore so Blueprint page picks up the profile
+      applyHybridProfile(hybridProfile);
+
       finishWarmup();
     },
-    [updateProfile, finishWarmup],
+    [updateProfile, applyHybridProfile, finishWarmup],
   );
 
   // Loading state (hydration or ballot fetch in progress)
