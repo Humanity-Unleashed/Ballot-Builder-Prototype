@@ -13,6 +13,8 @@ export interface SliderPosition {
   title: string;
   description: string;
   isCurrentPolicy?: boolean;
+  /** Evidence-based tradeoffs shown when card is selected */
+  tradeoffs?: string[];
 }
 
 export interface AxisSliderConfig {
@@ -40,23 +42,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Universal support programs',
         description: 'Robust benefits available to all with minimal conditions',
+        tradeoffs: [
+          'Eliminates stigma and coverage gaps — everyone qualifies (Nordic model evidence)',
+          'Significantly higher tax burden needed (~10-15% GDP increase)',
+          'May reduce incentive to seek employment for some recipients (CBO estimates)',
+        ],
       },
       {
         title: 'Broad eligibility with some conditions',
         description: 'Wide access to assistance with basic requirements',
+        tradeoffs: [
+          'Covers most vulnerable while maintaining some accountability structure',
+          'Bureaucratic costs of eligibility verification can consume 10-20% of program budgets',
+          'Income cliffs can discourage earning more (losing benefits at thresholds)',
+        ],
       },
       {
         title: 'Targeted programs with work incentives',
         description: 'Benefits for those in need with participation requirements',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'EITC is one of the most effective anti-poverty programs (lifts ~6M out of poverty annually)',
+          'Work requirements exclude those who can\'t work due to disability, caregiving, or illness',
+          'Administrative burden causes eligible people to lose benefits (up to 25% churn rate)',
+        ],
       },
       {
         title: 'Strict eligibility and conditions',
         description: 'Aid limited to verified need with strong work requirements',
+        tradeoffs: [
+          'Focuses limited resources on those most in need',
+          'States with stricter requirements saw caseload drops but not poverty reduction (CBPP)',
+          'Verification processes can be humiliating and deter eligible applicants',
+        ],
       },
       {
         title: 'Minimal safety net',
         description: 'Limited government assistance, emphasize self-reliance',
+        tradeoffs: [
+          'Lower tax burden and less government bureaucracy',
+          'Countries without safety nets see higher child poverty and worse health outcomes (OECD data)',
+          'Private charity historically unable to meet scale of need during recessions',
+        ],
       },
     ],
   },
@@ -71,23 +98,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Major expansion of public services',
         description: 'Significantly increase spending on schools, infrastructure, and services',
+        tradeoffs: [
+          'Public infrastructure investment returns $1.50-$2.20 per dollar spent (CBO estimates)',
+          'Requires significant tax increases or deficit spending',
+          'Government programs can crowd out private sector alternatives',
+        ],
       },
       {
         title: 'Targeted public investments',
         description: 'Increase funding for high-priority community needs',
+        tradeoffs: [
+          'Focuses resources where public return is highest (education, infrastructure)',
+          'Political process often directs spending to connected interests, not highest need',
+          'Moderate tax increases more politically sustainable than large ones',
+        ],
       },
       {
         title: 'Maintain current balance',
         description: 'Keep existing service and tax levels',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Avoids disruption to existing programs and tax expectations',
+          'Current deficit trajectory adds ~$2T/year to national debt (CBO 2024)',
+          'Infrastructure rated D+ by ASCE — maintenance backlog growing',
+        ],
       },
       {
         title: 'Reduce spending, lower taxes',
         description: 'Cut programs to return money to taxpayers',
+        tradeoffs: [
+          'Tax cuts can stimulate economic growth and private investment',
+          'Service cuts disproportionately affect those who depend on public programs',
+          'Tax cut revenue effects are debated — some self-financing, most are not (CBO scoring)',
+        ],
       },
       {
         title: 'Minimal government spending',
         description: 'Dramatically reduce taxes and public programs',
+        tradeoffs: [
+          'Maximizes individual economic freedom and take-home pay',
+          'Would require eliminating or privatizing Social Security, Medicare, or military',
+          'No developed country operates at this spending level (~10% GDP vs current ~24%)',
+        ],
       },
     ],
   },
@@ -102,23 +154,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Fund public schools exclusively',
         description: 'All education dollars go to neighborhood public schools',
+        tradeoffs: [
+          'Ensures maximum resources per student in public system',
+          'Limits options for families in underperforming school districts',
+          'Public schools serve 90% of US students and must accept all children',
+        ],
       },
       {
         title: 'Prioritize public schools',
         description: 'Most funding to public schools with limited alternatives',
+        tradeoffs: [
+          'Maintains strong public system while allowing some innovation (magnet schools)',
+          'Charter schools show mixed results — some outperform, many don\'t (CREDO study)',
+          'Limited choice may not help families in chronically underperforming districts',
+        ],
       },
       {
         title: 'Mixed public and choice options',
         description: 'Public schools alongside charter and magnet programs',
         isCurrentPolicy: true,
+        tradeoffs: [
+          '7,800+ charter schools serve 3.7M students; bipartisan support varies by state (EdNext)',
+          'Charter expansion can reduce funding available to remaining public school students',
+          'Some charters achieve strong results (KIPP, Success Academy); quality is highly variable',
+        ],
       },
       {
         title: 'Expand school choice',
         description: 'Significant funding for charters, vouchers, and alternatives',
+        tradeoffs: [
+          'Empowers families, especially low-income, to access better-performing schools',
+          'Voucher programs in Milwaukee and DC show modest gains for some students (IES)',
+          'Can accelerate segregation by income and race without careful design',
+        ],
       },
       {
         title: 'Full funding portability',
         description: 'Families choose any school, funding follows the student',
+        tradeoffs: [
+          'Maximum family choice — competition may drive quality improvements',
+          'Rural and low-density areas may lack alternative school options',
+          'Accountability concerns: private schools receiving public funds face less oversight',
+        ],
       },
     ],
   },
@@ -133,23 +210,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Highly progressive with wealth tax',
         description: 'Steep graduated rates plus taxes on large fortunes and capital gains',
+        tradeoffs: [
+          'Top 1% hold 31% of wealth — progressive taxes reduce concentration (Federal Reserve)',
+          'Wealth taxes are difficult to administer; France repealed theirs due to capital flight',
+          'May discourage investment and entrepreneurship at the margins',
+        ],
       },
       {
         title: 'Progressive income tax',
         description: 'Graduated rates where higher earners pay higher percentages',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Top 10% pay ~74% of federal income taxes; bottom 50% pay ~3% (IRS data)',
+          'Complex deduction system creates loopholes and compliance costs (~$400B/year)',
+          'Broadly supported: Pew 2023 finds 61% say wealthy pay too little',
+        ],
       },
       {
         title: 'Simplified brackets with fewer deductions',
         description: 'Fewer tax brackets, lower top rate, close loopholes',
+        tradeoffs: [
+          'Reduces compliance costs and makes tax system more transparent',
+          'Eliminating popular deductions (mortgage interest, charity) faces strong opposition',
+          'May shift tax burden depending on which deductions are cut',
+        ],
       },
       {
         title: 'Flat income tax',
         description: 'Everyone pays the same percentage regardless of income',
+        tradeoffs: [
+          'Simple and transparent — everyone understands their rate',
+          'Without exemptions, a flat tax is regressive (takes larger share of low incomes)',
+          'Flat-tax countries (Estonia, Russia) are much smaller economies with different contexts',
+        ],
       },
       {
         title: 'Replace income tax with consumption tax',
         description: 'Eliminate income tax, fund government through sales or value-added tax',
+        tradeoffs: [
+          'Encourages saving and investment by not taxing income',
+          'Consumption taxes are regressive — low-income spend higher share of income',
+          'Would require ~25-30% national sales tax to replace income tax revenue (Tax Foundation)',
+        ],
       },
     ],
   },
@@ -159,28 +261,63 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     question: 'Should government offer health insurance to everyone?',
     poleALabel: 'More Government\nInsurance',
     poleBLabel: 'More Private\nInsurance',
-    currentPolicyIndex: 2,
+    currentPolicyIndex: 3,
+    // 6 positions: reflects distinct coverage models identified in KFF 2024 and ANES V201336
     positions: [
       {
         title: 'Single-payer government health system',
-        description: 'One public program covers everyone',
+        description: 'One public program replaces all private insurance',
+        tradeoffs: [
+          'Eliminates administrative overhead (~30% of US healthcare spending — PNHP research)',
+          'Would require major tax increases to fund (~$3T+ annually)',
+          'Eliminates out-of-pocket costs but may increase wait times for elective procedures',
+        ],
       },
       {
         title: 'Public option available to all',
-        description: 'Government plan competes with private insurance',
+        description: 'Government plan competes alongside private insurance',
+        tradeoffs: [
+          'Preserves choice while offering a lower-cost alternative (KFF 2024: 63% support)',
+          'May destabilize private insurance markets if government plan underprices competitors',
+          'Coverage gaps remain for those who fall between eligibility criteria',
+        ],
+      },
+      {
+        title: 'Expand public programs (Medicare/Medicaid)',
+        description: 'Lower Medicare age and broaden Medicaid eligibility',
+        tradeoffs: [
+          'Builds on existing trusted programs rather than creating new ones',
+          'Provider reimbursement rates are lower than private — some doctors limit Medicare patients',
+          'Increases federal spending without fully addressing uninsured population',
+        ],
       },
       {
         title: 'Mix of public and private coverage',
         description: 'Medicare/Medicaid for some, employer plans for others',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Familiar system that most Americans already navigate',
+          '~27 million still uninsured; coverage tied to employment creates gaps during job changes',
+          'Administrative complexity: different rules for Medicare, Medicaid, ACA, employer plans',
+        ],
       },
       {
         title: 'Private insurance with subsidies',
-        description: 'Market-based coverage with help for those who need it',
+        description: 'Market-based coverage with tax credits for those who need help',
+        tradeoffs: [
+          'Promotes competition that can drive innovation and consumer choice',
+          'Subsidies may not keep pace with premium increases (ACA marketplace experience)',
+          'Insurance company profits add to costs; healthy people may choose not to buy',
+        ],
       },
       {
         title: 'Fully private insurance market',
-        description: 'Individuals buy coverage directly from insurers',
+        description: 'Individuals and families buy coverage directly from insurers',
+        tradeoffs: [
+          'Maximum consumer choice and minimal government involvement',
+          'Pre-ACA experience: insurers denied coverage for pre-existing conditions',
+          'Without mandates, healthy people opt out, raising costs for those who remain',
+        ],
       },
     ],
   },
@@ -195,23 +332,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Comprehensive price controls',
         description: 'Government sets all healthcare prices',
+        tradeoffs: [
+          'Countries with price controls (Japan, Germany) spend 50-70% less per capita',
+          'Can reduce innovation incentives — most new drugs are developed where prices are highest',
+          'Provider shortages possible if reimbursement rates are set too low',
+        ],
       },
       {
         title: 'Regulate prices in key areas',
         description: 'Negotiate drug prices, cap hospital charges',
+        tradeoffs: [
+          'Medicare drug negotiation (IRA 2022) projected to save $100B over 10 years',
+          'Drug companies argue price controls will reduce R&D spending',
+          'Hospital price caps may cause cost-shifting to other services',
+        ],
       },
       {
         title: 'Mix of regulation and competition',
         description: 'Some price rules plus transparency for shopping',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Hospital price transparency rules took effect 2021 but compliance is low (~30%)',
+          'Combines government leverage with market incentives',
+          'US still spends ~$12,500/person (2x the OECD average) with mixed outcomes',
+        ],
       },
       {
         title: 'Promote competition and transparency',
         description: 'Require price disclosure so consumers can compare',
+        tradeoffs: [
+          'Informed consumers can drive down prices in competitive markets',
+          'Healthcare is hard to "shop" — emergencies, complex conditions limit consumer choice',
+          'Price transparency alone hasn\'t significantly reduced costs where implemented',
+        ],
       },
       {
         title: 'Let market set prices',
         description: 'Competition between providers drives efficiency',
+        tradeoffs: [
+          'Market mechanisms drive innovation and efficiency in other industries',
+          'Healthcare has limited competition — most markets have 1-2 hospital systems',
+          'Patients lack bargaining power when facing serious illness',
+        ],
       },
     ],
   },
@@ -226,23 +388,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Proactive public health programs',
         description: 'Government leads prevention, treatment, and harm reduction',
+        tradeoffs: [
+          'Prevention saves ~$5.60 for every $1 invested (Trust for America\'s Health)',
+          'Mandatory programs (vaccination, fluoridation) can conflict with individual autonomy',
+          'Harm reduction (needle exchanges, safe injection sites) reduces disease transmission but is controversial',
+        ],
       },
       {
         title: 'Robust health education and services',
         description: 'Fund community health and treatment programs',
+        tradeoffs: [
+          'Community health centers serve 30M+ Americans in underserved areas',
+          'Education campaigns have mixed effectiveness — smoking declined, obesity hasn\'t',
+          'Drug treatment on demand reduces overdose deaths but requires sustained funding',
+        ],
       },
       {
         title: 'Balanced approach',
         description: 'Some public health programs alongside personal responsibility',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Current system: CDC prevention, state health departments, limited drug treatment',
+          'Post-COVID: 40-point partisan gap on government health authority (Pew 2022)',
+          'Opioid crisis (100K+ deaths/year) highlights limits of current approach',
+        ],
       },
       {
         title: 'Limited intervention',
         description: 'Focus on essential disease control only',
+        tradeoffs: [
+          'Respects individual choice in health decisions',
+          'Infectious diseases require collective action — individual choices affect community health',
+          'May increase long-term healthcare costs by deferring prevention',
+        ],
       },
       {
         title: 'Minimal government role',
         description: 'Leave health decisions to individuals, enforce drug laws',
+        tradeoffs: [
+          'Maximum personal freedom over health and lifestyle choices',
+          'War on Drugs approach costs ~$50B/year with limited impact on drug use rates',
+          'Without public health infrastructure, pandemic response capacity is severely limited',
+        ],
       },
     ],
   },
@@ -253,27 +440,45 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     poleALabel: 'Build More\nAllow Density',
     poleBLabel: 'Preserve\nLimit Growth',
     currentPolicyIndex: 2,
+    // 4 positions: UCLA Lewis Center research shows cross-cutting (a=1)
+    // YIMBY vs NIMBY cuts across party lines — 55% Dem vs 45% GOP support building near transit
     positions: [
       {
         title: 'Allow housing everywhere by right',
-        description: 'Remove most zoning restrictions to maximize supply',
+        description: 'Remove most zoning restrictions — any lot can have apartments',
+        tradeoffs: [
+          'Minneapolis eliminated single-family zoning in 2018; rents stabilized while neighbors\' didn\'t',
+          'May change neighborhood character that existing residents value',
+          'Reduces housing costs overall but benefits take 3-5 years to materialize',
+        ],
       },
       {
-        title: 'Significantly expand where housing can go',
-        description: 'Allow apartments near transit, jobs, and commercial areas',
+        title: 'Allow density near transit and jobs',
+        description: 'Upzone commercial corridors and transit stops, protect interior neighborhoods',
+        tradeoffs: [
+          'Concentrates growth where infrastructure already exists — more efficient use of public investment',
+          'Can increase displacement pressure in transit-adjacent communities without anti-displacement measures',
+          'Oregon, California have passed similar "middle housing" laws with bipartisan support',
+        ],
       },
       {
-        title: 'Moderate density in select areas',
-        description: 'Some upzoning while protecting established neighborhoods',
+        title: 'Case-by-case with community input',
+        description: 'New development requires neighborhood review and approval',
         isCurrentPolicy: true,
-      },
-      {
-        title: 'Limited growth with community input',
-        description: 'New density requires neighborhood approval',
+        tradeoffs: [
+          'Gives existing residents a voice in changes to their neighborhood',
+          'Community review adds 1-3 years to project timelines, increasing housing costs (Up for Growth)',
+          'Opposition tends to come from homeowners; renters are underrepresented in public hearings',
+        ],
       },
       {
         title: 'Preserve current neighborhood character',
-        description: 'Maintain existing zoning to protect communities',
+        description: 'Maintain existing zoning to protect community stability',
+        tradeoffs: [
+          'Protects property values and neighborhood feel for existing residents',
+          'Restricting supply drives up housing costs — US is short ~3.8M homes (NAR 2024)',
+          'Single-family zoning has historical roots in racial exclusion (Rothstein, "The Color of Law")',
+        ],
       },
     ],
   },
@@ -288,23 +493,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Strong rent control and public housing',
         description: 'Cap rents and invest heavily in public/nonprofit housing',
+        tradeoffs: [
+          'Protects existing tenants from displacement in rapidly gentrifying areas',
+          'Economists broadly agree rent control reduces long-run housing supply (Stanford study: 15% reduction)',
+          'Public housing wait lists average 2+ years in most major cities',
+        ],
       },
       {
         title: 'Rent stabilization with affordability requirements',
         description: 'Limit rent increases and require affordable units',
+        tradeoffs: [
+          'Inclusionary zoning requires 10-20% affordable units in new developments',
+          'Developers may build less if affordability requirements reduce profit margins',
+          'Stabilization helps current renters but doesn\'t create new affordable units',
+        ],
       },
       {
         title: 'Mix of regulations and supply incentives',
         description: 'Some rent protections alongside encouraging construction',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'LIHTC program produces ~100K affordable units/year — most successful US housing program',
+          'Regulations add 30-40% to construction costs in high-cost cities (NAHB)',
+          'Neither pure regulation nor pure supply has solved affordability alone',
+        ],
       },
       {
         title: 'Focus on increasing supply',
         description: 'Build more housing, limit regulations that slow construction',
+        tradeoffs: [
+          'Research shows every 10% increase in housing supply reduces rents 1-3% (Mast 2021)',
+          'New market-rate construction is initially expensive; "filtering" takes decades to reach low-income',
+          'Removing regulations can lead to lower quality construction and displacement',
+        ],
       },
       {
         title: 'Let the market work',
         description: 'Remove rent controls and mandates to maximize building',
+        tradeoffs: [
+          'Markets efficiently allocate housing to those willing and able to pay',
+          'Without affordability requirements, low-income housing is never profitable to build',
+          'Houston (minimal zoning) has lower housing costs but also sprawl and flood risk',
+        ],
       },
     ],
   },
@@ -319,23 +549,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Prioritize transit, walking, and biking',
         description: 'Shift funding toward sustainable transportation',
+        tradeoffs: [
+          'Transit riders have 76% lower carbon footprint for commuting (APTA)',
+          'Transit investment doesn\'t serve rural and suburban areas effectively',
+          'Bike/pedestrian infrastructure has 10-25x return on investment in health benefits',
+        ],
       },
       {
         title: 'Major transit expansion',
         description: 'Grow bus and rail while maintaining roads',
+        tradeoffs: [
+          'Cities with strong transit (NYC, DC) have higher economic productivity per capita',
+          'US transit construction costs are 2-5x higher than peer countries',
+          'Transit ridership has not fully recovered post-COVID (~75% of 2019 levels)',
+        ],
       },
       {
         title: 'Balanced investment',
         description: 'Fund transit, roads, and active transportation equally',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Federal Highway Trust Fund spends ~80% on roads, ~20% on transit',
+          'Balanced approach can spread resources too thin to be effective in any mode',
+          'Infrastructure needs vary dramatically by geography — one size doesn\'t fit all',
+        ],
       },
       {
         title: 'Maintain roads with selective transit',
         description: 'Focus on road capacity, add transit where clearly needed',
+        tradeoffs: [
+          '85% of Americans commute by car — road investment serves the majority',
+          'Adding highway lanes induces demand — congestion returns within 5-10 years (Texas A&M)',
+          'Transit where ridership is high (urban corridors) can be cost-effective',
+        ],
       },
       {
         title: 'Prioritize roads and parking',
         description: 'Ensure drivers can get where they need to go',
+        tradeoffs: [
+          'Supports the way most Americans currently live and commute',
+          'Parking minimums add $30-50K per housing unit in construction costs',
+          'Car-dependent development increases household transportation costs (~$12K/year avg)',
+        ],
       },
     ],
   },
@@ -350,23 +605,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Strong independent oversight and alternatives',
         description: 'Civilian control and non-police crisis response',
+        tradeoffs: [
+          'CAHOOTS (Eugene, OR) diverts 5-8% of 911 calls to unarmed teams at 1/10th the cost',
+          'Civilian boards often lack enforcement power — recommendations may be ignored',
+          'Response time concerns for calls that escalate from non-violent to dangerous',
+        ],
       },
       {
         title: 'Civilian review with alternative responders',
         description: 'Oversight plus mental health teams for some calls',
+        tradeoffs: [
+          'Denver STAR program: 0 arrests in 2,500+ mental health calls handled by clinicians',
+          'Requires significant investment in training and staffing non-police responders',
+          'Police unions often resist external oversight mechanisms',
+        ],
       },
       {
         title: 'Advisory oversight, co-responder model',
         description: 'Police and mental health work together',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Co-responder programs in 20+ cities show reduced use of force on mental health calls',
+          'Officers still lead most calls — presence of armed responder can escalate situations',
+          '45-point partisan gap on whether major changes needed (Pew 2021)',
+        ],
       },
       {
         title: 'Support police with crisis training',
         description: 'More officers trained in crisis intervention',
+        tradeoffs: [
+          'CIT training shown to reduce injuries to both officers and civilians',
+          '40-hour training is minimal for complex mental health situations',
+          'Training alone may not change department culture without structural reform',
+        ],
       },
       {
         title: 'Expand police presence and authority',
         description: 'More officers with freedom to enforce proactively',
+        tradeoffs: [
+          'Research shows additional police reduce violent crime (10% more officers → 3-5% less crime)',
+          'Proactive policing (stop-and-frisk) disproportionately targets minority communities',
+          'Police misconduct costs cities billions annually in settlements',
+        ],
       },
     ],
   },
@@ -381,23 +661,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Rehabilitation and restoration',
         description: 'Focus on treatment, education, and reentry support',
+        tradeoffs: [
+          'Norway\'s rehabilitation model has 20% recidivism rate vs. US 44% (5-year)',
+          'Costs ~$35K/year for prison vs. ~$5-10K for community supervision with programs',
+          'Victims\' rights advocates argue rehabilitation undervalues harm done to victims',
+        ],
       },
       {
         title: 'Shorter sentences with programming',
         description: 'Address root causes, invest in alternatives to prison',
+        tradeoffs: [
+          'First Step Act (2018) — bipartisan reform — reduced some federal sentences with broad support',
+          'Drug courts reduce recidivism 8-14% compared to traditional prosecution (RAND)',
+          'Short sentences may not allow time for meaningful treatment completion',
+        ],
       },
       {
         title: 'Balance punishment and rehabilitation',
         description: 'Consequences plus programs for those who want them',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Most states offer some prison programs but funding is inconsistent',
+          'US incarceration rate (531/100K) is highest in developed world — 5x the OECD average',
+          'Participation-based programs may not reach those most likely to reoffend',
+        ],
       },
       {
         title: 'Accountability with some programs',
         description: 'Clear punishment, programs available for motivated individuals',
+        tradeoffs: [
+          'Consistent sentencing promotes fairness and public trust in justice system',
+          'Mandatory minimums reduce judicial discretion for individual circumstances',
+          'Program availability varies dramatically by facility and state',
+        ],
       },
       {
         title: 'Strict punishment and longer sentences',
         description: 'Remove offenders to protect the public',
+        tradeoffs: [
+          'Incapacitation does prevent crime during imprisonment (estimated 10-15% reduction)',
+          'Diminishing returns: most crime committed by young men who age out regardless',
+          'Long sentences destabilize families and communities, contributing to future crime cycles',
+        ],
       },
     ],
   },
@@ -407,28 +712,64 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     question: 'How much regulation should there be on firearms?',
     poleALabel: 'Stronger Gun\nSafety Rules',
     poleBLabel: 'Fewer\nRestrictions',
-    currentPolicyIndex: 2,
+    currentPolicyIndex: 3,
+    // 6 positions: ANES V201338/V201340/V201342 identify distinct policy clusters
+    // Pew 2023: 50-point partisan gap, bimodal distribution
     positions: [
       {
         title: 'Comprehensive licensing and registration',
         description: 'Mandatory training, licensing, and registration for all firearms',
+        tradeoffs: [
+          'Countries with licensing systems (Australia, Japan) have far lower gun death rates',
+          'Creates a national registry that many gun owners view as a precursor to confiscation',
+          'Licensing costs and requirements may disproportionately affect low-income gun owners',
+        ],
       },
       {
-        title: 'Universal background checks and waiting periods',
-        description: 'Close private sale loopholes, add cooling-off periods',
+        title: 'Ban assault-style weapons and high-capacity magazines',
+        description: 'Prohibit semi-automatic rifles and magazines over 10 rounds',
+        tradeoffs: [
+          '1994-2004 federal ban associated with reduced mass shooting fatalities (Stanford study)',
+          'Defining "assault weapon" is legally difficult — cosmetic features vs. function',
+          'An estimated 20M+ AR-style rifles already in circulation; enforcement is challenging',
+        ],
+      },
+      {
+        title: 'Universal background checks and red flag laws',
+        description: 'Close private sale loopholes, allow courts to temporarily remove guns from at-risk individuals',
+        tradeoffs: [
+          'Background checks supported by 80%+ of voters including gun owners (Pew 2023)',
+          'Red flag laws raise due process concerns — guns removed before a hearing',
+          'Private sale enforcement is difficult without a registry',
+        ],
       },
       {
         title: 'Current standards with state flexibility',
         description: 'Background checks for dealers, states set additional rules',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Allows states to tailor rules to local culture and needs',
+          'Creates patchwork: strict states undercut by neighboring states with looser laws',
+          'Private sales and gun shows can bypass federal background checks',
+        ],
       },
       {
-        title: 'Streamlined purchasing',
-        description: 'Quick background checks, fewer restrictions',
+        title: 'Expand concealed carry and reduce restrictions',
+        description: 'National concealed carry reciprocity, fewer purchase barriers',
+        tradeoffs: [
+          'More lawful carriers may deter some crimes (Lott research, debated)',
+          'More guns in public spaces associated with higher rates of gun injuries (RAND)',
+          'State-level variation in training requirements creates safety concerns',
+        ],
       },
       {
-        title: 'Minimal regulation',
-        description: 'Few government barriers for law-abiding citizens',
+        title: 'Constitutional carry, minimal regulation',
+        description: 'No permits needed, few government barriers for law-abiding citizens',
+        tradeoffs: [
+          '25+ states have adopted permitless carry as of 2024',
+          'Removes cost and time barriers that some see as infringing 2nd Amendment rights',
+          'Studies show permitless carry states see 11% increase in handgun homicides (Everytown)',
+        ],
       },
     ],
   },
@@ -439,27 +780,54 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     poleALabel: 'Act Fast\non Climate',
     poleBLabel: 'Go Slow\nKeep Costs Low',
     currentPolicyIndex: 2,
+    // 5 positions: Yale Climate Communication + ANES V201401
+    // 50+ point partisan gap (Pew 2023), IRT a=3
     positions: [
       {
         title: 'Emergency climate mobilization',
         description: 'Aggressive action even with significant short-term costs',
+        tradeoffs: [
+          'IPCC says limiting warming to 1.5°C requires 45% emissions cuts by 2030',
+          'Rapid transition may strand fossil fuel assets ($1-4T in value — Carbon Tracker)',
+          'Energy price spikes disproportionately impact low-income households',
+        ],
       },
       {
         title: 'Ambitious transition this decade',
         description: 'Major emissions cuts by 2035, net-zero by 2050',
+        tradeoffs: [
+          'Aligns with Paris Agreement targets and IRA investment timeline',
+          'Clean energy jobs are growing 2x faster than overall employment (DOE 2024)',
+          'Grid reliability concerns during transition — renewables need storage solutions',
+        ],
       },
       {
         title: 'Steady transition balancing priorities',
         description: 'Meaningful progress while managing economic impacts',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Current US policy (IRA + EPA rules) targets 40% reduction by 2030',
+          'May be too slow to avoid worst climate impacts per IPCC projections',
+          'Balances energy security with emissions goals — politically durable',
+        ],
       },
       {
         title: 'Gradual shift prioritizing affordability',
         description: 'Transition as clean energy becomes cost-competitive',
+        tradeoffs: [
+          'Solar and wind are already cheapest new electricity in most markets (Lazard 2024)',
+          'Delays lock in fossil infrastructure with 30-50 year lifespans',
+          'Protects energy-sector jobs and communities dependent on fossil fuel industry',
+        ],
       },
       {
         title: 'Slow transition for stability',
         description: 'Avoid disrupting reliable, affordable energy',
+        tradeoffs: [
+          'Preserves existing energy infrastructure and jobs in the near term',
+          'Each decade of delay increases eventual adaptation costs (Swiss Re: $23T by 2050)',
+          'US fossil fuel production supports ~1.7M direct jobs (BLS)',
+        ],
       },
     ],
   },
@@ -474,23 +842,48 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
       {
         title: 'Renewables only',
         description: 'Phase out all fossil fuels, prioritize solar and wind',
+        tradeoffs: [
+          'Solar costs dropped 90% since 2010 — now cheapest new electricity in most markets (Lazard)',
+          'Grid reliability requires storage solutions — battery costs still declining but not yet sufficient',
+          'Critical mineral supply chains (lithium, cobalt) raise new geopolitical dependencies',
+        ],
       },
       {
-        title: 'Primarily renewables',
-        description: 'Major investment in clean energy, limit fossil expansion',
+        title: 'Primarily renewables with nuclear',
+        description: 'Clean energy priority including nuclear as baseload power',
+        tradeoffs: [
+          'Nuclear provides 24/7 carbon-free power that complements intermittent solar/wind',
+          'New nuclear plants cost $10-15B and take 10+ years to build in the US',
+          'Existing nuclear fleet (93 reactors) provides 19% of US electricity — carbon-free',
+        ],
       },
       {
         title: 'Diverse energy mix',
         description: 'Support renewables alongside existing energy sources',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'IRA invests $370B in clean energy while US remains world\'s top oil/gas producer',
+          'Gallup 2024: 58% favor alternative energy vs. 38% fossil fuels',
+          'Transition pace depends on technology cost curves — market forces are shifting mix',
+        ],
       },
       {
         title: 'All-of-the-above including fossil fuels',
         description: 'Support domestic production across all energy types',
+        tradeoffs: [
+          'Energy security argument: domestic production reduces foreign dependency',
+          'Natural gas produces ~50% less CO2 than coal — a "bridge fuel" argument',
+          'Continued fossil investment locks in infrastructure with 30-50 year lifespans',
+        ],
       },
       {
         title: 'Energy independence first',
         description: 'Maximize domestic fossil fuel production',
+        tradeoffs: [
+          'US is already a net energy exporter as of 2019 (EIA)',
+          'Oil/gas industry supports ~1.7M direct jobs, many in rural communities (BLS)',
+          'Expanding production conflicts with emissions reduction goals',
+        ],
       },
     ],
   },
@@ -500,28 +893,47 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     question: 'How should we balance environmental review with project speed?',
     poleALabel: 'Thorough\nReview First',
     poleBLabel: 'Faster\nApprovals',
-    currentPolicyIndex: 2,
+    currentPolicyIndex: 1,
+    // 4 positions: Low salience (a=1), most voters lack stable preferences
+    // Double cross-cut: progressives split (build green fast vs protect communities),
+    // conservatives split (cut red tape vs protect property rights)
     positions: [
       {
-        title: 'Comprehensive environmental review',
-        description: 'Full impact assessment for all projects',
+        title: 'Full environmental review for all projects',
+        description: 'Comprehensive impact assessment before any construction',
+        tradeoffs: [
+          'NEPA review catches environmental harms before they happen — prevented thousands of toxic exposures',
+          'Average federal permitting takes 4.5 years (GAO) — delays add 20-30% to project costs',
+          'Review process gives affected communities a voice in decisions that impact their health',
+        ],
       },
       {
-        title: 'Thorough review with timelines',
-        description: 'Complete assessment within defined time limits',
-      },
-      {
-        title: 'Balanced review process',
-        description: 'Standard review with expedited paths for some projects',
+        title: 'Standard review with time limits',
+        description: 'Complete assessment within 2 years, with community input',
         isCurrentPolicy: true,
+        tradeoffs: [
+          'Debt ceiling deal (2023) imposed 2-year NEPA timelines — bipartisan compromise',
+          'Time limits may rush review of complex projects with long-term environmental consequences',
+          'Balances thoroughness with the cost of delay',
+        ],
       },
       {
-        title: 'Streamlined approval for priority projects',
-        description: 'Faster permitting for clean energy and housing',
+        title: 'Fast-track clean energy and housing',
+        description: 'Streamlined permitting for projects that reduce emissions or increase housing',
+        tradeoffs: [
+          'Solar/wind projects face same permitting delays as fossil fuel projects — self-defeating',
+          'Defining which projects qualify for fast-track creates lobbying and gaming opportunities',
+          'Bipartisan appeal: progressives want green energy speed, conservatives want less red tape',
+        ],
       },
       {
-        title: 'Rapid approval with basic safeguards',
-        description: 'Minimize delays while maintaining core protections',
+        title: 'Minimal review with basic safeguards',
+        description: 'Approve most projects quickly, intervene only for clear harm',
+        tradeoffs: [
+          'Dramatically reduces construction costs and timelines',
+          'Historical evidence: pre-NEPA era saw widespread pollution and environmental destruction',
+          'Shifts burden from prevention to after-the-fact cleanup (often more expensive)',
+        ],
       },
     ],
   },

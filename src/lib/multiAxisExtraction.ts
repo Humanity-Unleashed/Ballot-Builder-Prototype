@@ -22,6 +22,7 @@ import {
   entropyConfidenceNLP,
   computeHybridConfidence,
 } from './entropyConfidence';
+import { axisSliderConfigs } from '@/data/sliderPositions';
 
 // ── Constants ──
 
@@ -41,22 +42,36 @@ const EXPLICIT_MENTION_MIN_LENGTH = 10;
 
 // ── Position snapping ──
 
-/** The 5 discrete positions cards offer: [0, 2.5, 5, 7.5, 10] */
-const DISCRETE_POSITIONS = [0, 2.5, 5, 7.5, 10];
+/** Default positions if axis config not found */
+const DEFAULT_POSITIONS = [0, 2.5, 5, 7.5, 10];
 
 /**
- * Snap a continuous LLM score to the nearest discrete position.
- * Eliminates false precision from NLP extraction — the LLM might return 3.7
- * but the axis only has 5 meaningful positions.
+ * Get the discrete positions for a given axis from its slider config.
+ * Each axis may have a different number of positions (3-7).
  */
-function snapToNearestPosition(value: number): number {
-  let closest = DISCRETE_POSITIONS[0];
+function getAxisPositions(axisId: string): number[] {
+  const config = axisSliderConfigs[axisId];
+  if (!config) return DEFAULT_POSITIONS;
+  const n = config.positions.length;
+  if (n <= 1) return [5];
+  return Array.from({ length: n }, (_, i) => (i / (n - 1)) * 10);
+}
+
+/**
+ * Snap a continuous LLM score to the nearest discrete position for a given axis.
+ * Eliminates false precision from NLP extraction — the LLM might return 3.7
+ * but the axis only has a fixed number of meaningful positions.
+ * Ensures NLP and structured paths produce equivalent scores.
+ */
+function snapToNearestPosition(value: number, axisId: string): number {
+  const positions = getAxisPositions(axisId);
+  let closest = positions[0];
   let minDist = Math.abs(value - closest);
-  for (let i = 1; i < DISCRETE_POSITIONS.length; i++) {
-    const dist = Math.abs(value - DISCRETE_POSITIONS[i]);
+  for (let i = 1; i < positions.length; i++) {
+    const dist = Math.abs(value - positions[i]);
     if (dist < minDist) {
       minDist = dist;
-      closest = DISCRETE_POSITIONS[i];
+      closest = positions[i];
     }
   }
   return closest;
@@ -89,8 +104,8 @@ export function classifySignals(
       strength = 'spillover';
     }
 
-    // Snap direction to nearest discrete position
-    const snappedDirection = snapToNearestPosition(signal.direction);
+    // Snap direction to nearest discrete position for this axis
+    const snappedDirection = snapToNearestPosition(signal.direction, signal.axisId);
     const snappedSignal = { ...signal, direction: snappedDirection };
 
     // Compute entropy-hybrid confidence using snapped direction
