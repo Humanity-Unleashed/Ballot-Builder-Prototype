@@ -138,7 +138,8 @@ EXTRACTION RULES
 
 PRIMARY SIGNAL (the asked axis):
 - ALWAYS extract a signal for the asked axis (${askedAxis}) if the user said anything relevant
-- Map their position to the 0-10 scale using the reference positions above
+- Map their position to the 0-10 scale using the EXACT reference positions above (0, 2.5, 5, 7.5, 10)
+- Score 0 means STRONG Pole A. Score 10 means STRONG Pole B. Score 5 means genuinely neutral.
 - This is the signal we care most about — be thorough
 
 SECONDARY SIGNALS (other axes):
@@ -206,18 +207,22 @@ function buildAxisPositionReference(axisId: string): string {
 
   const positions = config.positions
     .map((p, i) => {
-      const value = Math.round((i / (config.positions.length - 1)) * 10);
+      // Use exact decimal values (0, 2.5, 5, 7.5, 10) — must match snapping positions
+      const value = (i / (config.positions.length - 1)) * 10;
+      const label = Number.isInteger(value) ? value.toString() : value.toFixed(1);
       const marker = p.isCurrentPolicy ? ' ← current US policy' : '';
-      return `    ${value}: "${p.title}" — ${p.description}${marker}`;
+      return `    ${label}: "${p.title}" — ${p.description}${marker}`;
     })
     .join('\n');
 
   return `AXIS: ${axisId}
 Question: ${config.question}
-Pole A (score 0): "${config.poleALabel.replace(/\n/g, ' ')}"
-Pole B (score 10): "${config.poleBLabel.replace(/\n/g, ' ')}"
-Positions:
-${positions}`;
+Pole A (score 0 = strongest "${config.poleALabel.replace(/\n/g, ' ')}"): score 0
+Pole B (score 10 = strongest "${config.poleBLabel.replace(/\n/g, ' ')}"): score 10
+Positions (use these EXACT scores):
+${positions}
+
+IMPORTANT: Score 0 is a VALID score meaning the user strongly holds the Pole A position. Do NOT treat 0 as "no opinion".`;
 }
 
 // ── Route handler ──
@@ -264,6 +269,8 @@ export async function POST(req: NextRequest) {
     });
 
     // Parse
+    console.log('[extract] Asked axis:', body.askedAxis, '| User input:', body.userInput.slice(0, 120));
+    console.log('[extract] Raw LLM response:', extractionJson.slice(0, 500));
     let extraction: RawExtractionOutput & { meta?: { overallClarity?: number } };
     try {
       extraction = JSON.parse(extractionJson);
@@ -287,6 +294,11 @@ export async function POST(req: NextRequest) {
 
     if (issues.length > 0) {
       console.warn('[extract] Validation issues:', issues);
+    }
+
+    // Log sanitized signals for debugging
+    for (const s of sanitizedSignals) {
+      console.log(`[extract] Signal: ${s.axisId} direction=${s.direction} confidence=${s.confidence} source="${s.source?.slice(0, 60)}"`);
     }
 
     // Ensure primary signal is first

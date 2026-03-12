@@ -136,14 +136,17 @@ function buildAxisPositionReference(axisIds: string[]): string {
     if (!config) return '';
 
     const positions = config.positions.map((p, i) => {
-      const value = Math.round((i / (config.positions.length - 1)) * 10);
+      // Use exact decimal values (0, 2.5, 5, 7.5, 10) — must match snapping positions
+      const value = (i / (config.positions.length - 1)) * 10;
+      const label = Number.isInteger(value) ? value.toString() : value.toFixed(1);
       const marker = p.isCurrentPolicy ? ' ← current US policy' : '';
-      return `    ${value}: "${p.title}" — ${p.description}${marker}`;
+      return `    ${label}: "${p.title}" — ${p.description}${marker}`;
     }).join('\n');
 
     return `  AXIS: ${axisId} ("${config.poleALabel.replace(/\n/g, ' ')}" ↔ "${config.poleBLabel.replace(/\n/g, ' ')}")
   Question: ${config.question}
-  Positions:
+  Score 0 = strongest "${config.poleALabel.replace(/\n/g, ' ')}". Score 10 = strongest "${config.poleBLabel.replace(/\n/g, ' ')}". Score 0 is a VALID score, not "no opinion".
+  Positions (use these EXACT scores):
 ${positions}`;
   }).filter(Boolean).join('\n\n');
 }
@@ -364,7 +367,7 @@ function buildClassifyStancePrompt(
     if (!config) return '';
 
     const positions = config.positions.map((p, i) => {
-      const value = Math.round((i / (config.positions.length - 1)) * 10);
+      const value = (i / (config.positions.length - 1)) * 10;
       const marker = p.isCurrentPolicy ? ' ← current US policy' : '';
       return `  ${value.toFixed(1)} — ${p.title} (${p.description})${marker}`;
     }).join('\n');
