@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Wizard Nav — Option B Refined — Ballot Builder</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f3f4f6; padding: 20px; }
+
+    .mockup-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      margin-top: 32px;
+    }
+    .mockup-desc {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .phone-frame {
+      width: 375px;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      margin-bottom: 32px;
+    }
+
+    /* Shared styles */
+    .prototype-bar { background: #f59e0b; color: white; text-align: center; font-size: 11px; font-weight: 500; padding: 2px 0; letter-spacing: 0.3px; }
+    .brand-row { display: flex; align-items: center; padding: 8px 16px; gap: 8px; border-bottom: 1px solid #e5e7eb; }
+    .brand-icon { width: 20px; height: 20px; background: #8B7AAF; border-radius: 4px; flex-shrink: 0; }
+    .brand-name { font-size: 16px; font-weight: 700; color: #111827; }
+    .brand-spacer { flex: 1; }
+    .auth-btn { font-size: 11px; color: #6b7280; border: 1px solid #e5e7eb; padding: 4px 10px; border-radius: 8px; }
+
+    /* Content placeholder */
+    .content-placeholder {
+      padding: 24px 16px;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 13px;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .content-placeholder .phase-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: #374151;
+    }
+
+    h1 { font-size: 24px; font-weight: 800; color: #111827; margin-bottom: 4px; }
+    h2 { font-size: 16px; font-weight: 700; color: #374151; margin-bottom: 4px; margin-top: 40px; }
+    .subtitle { font-size: 14px; color: #6b7280; margin-bottom: 24px; line-height: 1.5; }
+    hr { border: none; border-top: 2px solid #e5e7eb; margin: 40px 0; }
+
+    .note-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #92400e;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .note-box strong { color: #78350f; }
+
+    .changes-list {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+    .changes-list li { margin-bottom: 4px; }
+    .changes-list .highlight { background: #fef3c7; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<h1>Option B Refined — Collapsible Banners</h1>
+<p class="subtitle">
+  Updated per your feedback: "Blueprint" / "Build" naming replaces "Values" / "Vote".<br>
+  "About You" (demographics) is folded into the Blueprint flow as its first sub-step, not a separate phase.
+</p>
+
+<div class="note-box">
+  <strong>Key changes from v1:</strong>
+  <ul class="changes-list" style="margin-top: 6px; margin-bottom: 0;">
+    <li><span class="highlight">3 phases</span> instead of 5 — <strong>Select Ballot → Blueprint → Build</strong></li>
+    <li>"About You" demographics is now the <em>first part</em> of Blueprint (shown as sub-step text), not its own chip</li>
+    <li>"Blueprint" covers: demographics → assessment → profile review (one continuous flow)</li>
+    <li>"Build" covers: ballot items → summary</li>
+    <li>Retake assessment = re-expand the Blueprint banner (no separate button needed)</li>
+  </ul>
+</div>
+
+<hr>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R1: Blueprint phase — demographics sub-step -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<h2>Phase Flow</h2>
+
+<p class="mockup-label">B.1 — Blueprint phase: Demographics sub-step (early in flow)</p>
+<p class="mockup-desc">
+  User just selected their ballot (Austin, TX). Blueprint phase begins with demographics as a sub-step. The banner says "Civic Blueprint" and the sub-step indicator shows "About You" — but it's all one phase, not a separate page.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 12px 16px 0;">
+    <!-- Completed: Select Ballot (chip) -->
+    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+      <button style="display: flex; align-items: center; gap: 5px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+    </div>
+    <!-- Current: Blueprint banner (expanded) -->
+    <div style="background: linear-gradient(135deg, #8B7AAF, #7B6A9F); border-radius: 14px; padding: 12px 14px; color: white; margin-bottom: 12px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <!-- Blueprint icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18"/><path d="M2 9h6"/><path d="M2 15h6"/></svg>
+        <span style="font-size: 13px; font-weight: 700;">Civic Blueprint</span>
+        <span style="flex: 1;"></span>
+        <span style="background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;">1 of 3</span>
+      </div>
+      <p style="font-size: 11px; opacity: 0.8; margin-top: 4px;">About You &mdash; Tell us a bit about yourself</p>
+      <!-- Sub-step dots -->
+      <div style="display: flex; gap: 4px; margin-top: 8px;">
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: white;"></div>
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.3);"></div>
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.3);"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-placeholder" style="min-height: 180px;">
+    <span class="phase-label">Demographics Form</span>
+    <span>Age, housing, income questions</span>
+    <span style="font-size: 11px; color: #b0b8c4; margin-top: 8px;">Part of the Blueprint flow — not a separate step</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R2: Blueprint phase — Assessment sub-step -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<p class="mockup-label">B.2 — Blueprint phase: Assessment sub-step</p>
+<p class="mockup-desc">
+  Same Blueprint banner, sub-step indicator advances. The banner text updates to show "Values Assessment" as the current sub-step. Still one continuous phase.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 12px 16px 0;">
+    <!-- Completed: Select Ballot -->
+    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+      <button style="display: flex; align-items: center; gap: 5px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+    </div>
+    <!-- Current: Blueprint banner — assessment sub-step -->
+    <div style="background: linear-gradient(135deg, #8B7AAF, #7B6A9F); border-radius: 14px; padding: 12px 14px; color: white; margin-bottom: 12px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18"/><path d="M2 9h6"/><path d="M2 15h6"/></svg>
+        <span style="font-size: 13px; font-weight: 700;">Civic Blueprint</span>
+        <span style="flex: 1;"></span>
+        <span style="background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;">1 of 3</span>
+      </div>
+      <p style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Values Assessment &mdash; Share your perspective on key issues</p>
+      <!-- Sub-step dots — second active -->
+      <div style="display: flex; gap: 4px; margin-top: 8px;">
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.5);"></div>
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: white;"></div>
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.3);"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-placeholder" style="min-height: 180px;">
+    <span class="phase-label">Card Questions + Voice</span>
+    <span>Hybrid assessment (cards, NLP, adaptive)</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R3: Blueprint phase — Profile Review sub-step -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<p class="mockup-label">B.3 — Blueprint phase: Profile Review sub-step</p>
+<p class="mockup-desc">
+  Final sub-step of Blueprint: reviewing the profile, fine-tuning axes. Banner subtitle updates. Fine-tuning and "retake" are both accessible here — no separate tab needed.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 12px 16px 0;">
+    <!-- Completed: Select Ballot -->
+    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+      <button style="display: flex; align-items: center; gap: 5px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+    </div>
+    <!-- Current: Blueprint banner — profile review sub-step -->
+    <div style="background: linear-gradient(135deg, #8B7AAF, #7B6A9F); border-radius: 14px; padding: 12px 14px; color: white; margin-bottom: 12px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18"/><path d="M2 9h6"/><path d="M2 15h6"/></svg>
+        <span style="font-size: 13px; font-weight: 700;">Civic Blueprint</span>
+        <span style="flex: 1;"></span>
+        <span style="background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;">1 of 3</span>
+      </div>
+      <p style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Profile Review &mdash; Fine-tune your positions before building</p>
+      <!-- Sub-step dots — third active -->
+      <div style="display: flex; gap: 4px; margin-top: 8px;">
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.5);"></div>
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.5);"></div>
+        <div style="width: 24px; height: 3px; border-radius: 2px; background: white;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-placeholder" style="min-height: 180px;">
+    <span class="phase-label">Your Civic Blueprint</span>
+    <span>Domain cards, lean meters, fine-tune, archetype</span>
+    <span style="font-size: 11px; color: #b0b8c4; margin-top: 8px;">"Retake" lives here as "Redo Assessment" button within profile</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R4: Build phase — Blueprint collapsed -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<p class="mockup-label">B.4 — Build phase: Ballot items (Blueprint collapsed to chip)</p>
+<p class="mockup-desc">
+  User clicked "Build My Ballot" → Blueprint collapses into a green chip (tappable to go back). Build phase has its own banner + ballot navigator below.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 10px 16px 0;">
+    <!-- Completed chips: Ballot + Blueprint -->
+    <div style="display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px;">
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Blueprint
+      </button>
+    </div>
+    <!-- Current: Build banner -->
+    <div style="background: linear-gradient(135deg, #2563eb, #1d4ed8); border-radius: 14px; padding: 12px 14px; color: white; margin-bottom: 0;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <!-- Hammer/build icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span style="font-size: 13px; font-weight: 700;">Build Your Ballot</span>
+        <span style="flex: 1;"></span>
+        <span style="background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;">2 of 3</span>
+      </div>
+      <p style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Review candidates and make your picks</p>
+    </div>
+  </div>
+  <!-- BallotNavigator -->
+  <div style="background: #f9fafb; padding: 8px 16px; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; margin-top: 10px;">
+    <p style="font-size: 11px; color: #6b7280; text-align: center; margin-bottom: 6px;">3 of 9 &middot; 2 completed</p>
+    <div style="display: flex; gap: 3px;">
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 7px; background: #93C5FD; border-radius: 3px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+    </div>
+  </div>
+  <div class="content-placeholder">
+    <span class="phase-label">U.S. Senate Race</span>
+    <span>Candidate cards + match scores</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R5: Build phase — later in ballot (banner auto-collapsed) -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<p class="mockup-label">B.5 — Build phase: Mid-ballot (banner auto-collapses for space)</p>
+<p class="mockup-desc">
+  After the first few ballot items, the Build banner auto-collapses to maximize content space. Only chips + ballot navigator remain. Tap "Build" chip to re-expand.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 10px 16px 0;">
+    <!-- All phases as chips (Build is current but collapsed) -->
+    <div style="display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 4px;">
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Blueprint
+      </button>
+      <span style="display: flex; align-items: center; gap: 4px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 700; color: #2563eb;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+        Building...
+      </span>
+    </div>
+  </div>
+  <!-- BallotNavigator -->
+  <div style="background: #f9fafb; padding: 8px 16px; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
+    <p style="font-size: 11px; color: #6b7280; text-align: center; margin-bottom: 6px;">6 of 9 &middot; 5 completed</p>
+    <div style="display: flex; gap: 3px;">
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #86CFAC; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 7px; background: #93C5FD; border-radius: 3px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+      <div style="flex: 1; height: 5px; background: #e5e7eb; border-radius: 2px;"></div>
+    </div>
+  </div>
+  <div class="content-placeholder">
+    <span class="phase-label">Railroad Commissioner</span>
+    <span>Candidate cards + match %</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R6: Summary phase -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<p class="mockup-label">B.6 — Summary: All done</p>
+<p class="mockup-desc">
+  All phases collapsed to chips. Summary content fills the screen. Tapping "Blueprint" chip goes back to profile review; tapping "Build" goes back to ballot items.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 10px 16px 0;">
+    <div style="display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px;">
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Blueprint
+      </button>
+      <button style="display: flex; align-items: center; gap: 4px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Build
+      </button>
+    </div>
+  </div>
+  <div style="border-top: 1px solid #f3f4f6;"></div>
+  <div class="content-placeholder" style="min-height: 220px;">
+    <span style="font-size: 32px; margin-bottom: 4px;">🎉</span>
+    <span class="phase-label">Your Ballot is Ready!</span>
+    <span>Confetti, share, print, next steps, polling info</span>
+    <div style="margin-top: 12px; display: flex; gap: 8px;">
+      <span style="background: #f3f4f6; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #374151;">Redo Votes</span>
+      <span style="background: #f3f4f6; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #6b7280; border: 1px solid #e5e7eb;">Start Fresh</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- B-R7: Back-navigation — tapping Blueprint chip from Build -->
+<!-- ═══════════════════════════════════════════════ -->
+
+<hr>
+
+<h2>Back Navigation</h2>
+
+<p class="mockup-label">B.7 — Tapping "Blueprint" chip during Build → returns to profile review</p>
+<p class="mockup-desc">
+  When the user taps the Blueprint chip during Build, they return to the profile review (the last sub-step of Blueprint). Build phase collapses to a "paused" chip. This replaces the old separate "retake" button — it's just going back to your Blueprint.
+</p>
+<div class="phone-frame">
+  <div class="prototype-bar">Prototype for evaluation only</div>
+  <div class="brand-row">
+    <div class="brand-icon"></div>
+    <span class="brand-name">Ballot Builder</span>
+    <span class="brand-spacer"></span>
+    <span class="auth-btn">Sign in</span>
+  </div>
+  <div style="padding: 12px 16px 0;">
+    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;">
+      <button style="display: flex; align-items: center; gap: 5px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: #059669; cursor: pointer; font-family: inherit;">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 3.5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Austin, TX
+      </button>
+      <!-- Build paused chip -->
+      <span style="display: flex; align-items: center; gap: 4px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 20px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: #6b7280; cursor: pointer;">
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><circle cx="4" cy="6" r="1.5" fill="#6b7280"/><circle cx="8" cy="6" r="1.5" fill="#6b7280"/></svg>
+        Build (3/9)
+      </span>
+    </div>
+    <!-- Blueprint banner re-expanded -->
+    <div style="background: linear-gradient(135deg, #8B7AAF, #7B6A9F); border-radius: 14px; padding: 12px 14px; color: white; margin-bottom: 12px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18"/><path d="M2 9h6"/><path d="M2 15h6"/></svg>
+        <span style="font-size: 13px; font-weight: 700;">Civic Blueprint</span>
+        <span style="flex: 1;"></span>
+        <button style="background: rgba(255,255,255,0.25); border: none; color: white; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: inherit;">Resume Build →</button>
+      </div>
+      <p style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Reviewing your profile &mdash; fine-tune or retake assessment</p>
+    </div>
+  </div>
+  <div class="content-placeholder" style="min-height: 180px;">
+    <span class="phase-label">Your Civic Blueprint</span>
+    <span>Profile review with fine-tune + "Redo Assessment" option</span>
+  </div>
+</div>
+
+<hr>
+
+<h2>Phase Model Summary</h2>
+<table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 40px;">
+  <thead>
+    <tr style="border-bottom: 2px solid #e5e7eb;">
+      <th style="text-align: left; padding: 8px;">Phase</th>
+      <th style="text-align: left; padding: 8px;">Banner Color</th>
+      <th style="text-align: left; padding: 8px;">Sub-steps</th>
+      <th style="text-align: left; padding: 8px;">Chip Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 8px; font-weight: 600;">Select Ballot</td>
+      <td style="padding: 8px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: #10b981; vertical-align: middle;"></span> Green (auto-completes)</td>
+      <td style="padding: 8px;">State → Ballot picker</td>
+      <td style="padding: 8px;">"Austin, TX" (or selected location)</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 8px; font-weight: 600;">Civic Blueprint</td>
+      <td style="padding: 8px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: #8B7AAF; vertical-align: middle;"></span> Purple (brand)</td>
+      <td style="padding: 8px;">About You → Assessment → Profile Review</td>
+      <td style="padding: 8px;">"Blueprint"</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #f3f4f6;">
+      <td style="padding: 8px; font-weight: 600;">Build Your Ballot</td>
+      <td style="padding: 8px;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: #2563eb; vertical-align: middle;"></span> Blue</td>
+      <td style="padding: 8px;">Per-item voting → Summary</td>
+      <td style="padding: 8px;">"Build"</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note-box">
+  <strong>How this consolidates overlapping features:</strong>
+  <ul class="changes-list" style="margin-top: 6px; margin-bottom: 0;">
+    <li><strong>"About You" + "Values" + "Profile"</strong> → single "Civic Blueprint" phase with 3 sub-steps</li>
+    <li><strong>"Retake" button</strong> → tap the Blueprint chip to go back to profile review, where "Redo Assessment" is available</li>
+    <li><strong>"Vote" tab</strong> → "Build Your Ballot" phase (construction metaphor matches "Ballot Builder" brand)</li>
+    <li><strong>Summary</strong> is a completion state of Build, not its own phase</li>
+  </ul>
+</div>
+
+</body>
+</html>

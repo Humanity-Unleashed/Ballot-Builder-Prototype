@@ -60,6 +60,8 @@ interface BlueprintSummaryViewProps {
   onFineTune: (axisId: string) => void;
   onChangeAxis: (axisId: string, value: number) => void;
   onChangeAxisImportance: (axisId: string, value: number) => void;
+  /** Hide the floating "Build my ballot" CTA (wizard provides its own) */
+  hideCta?: boolean;
 }
 
 export default function BlueprintSummaryView({
@@ -70,6 +72,7 @@ export default function BlueprintSummaryView({
   onRetake,
   onFineTune,
   onChangeAxis,
+  hideCta = false,
 }: BlueprintSummaryViewProps) {
   const router = useRouter();
   const { track } = useAnalyticsContext();
@@ -281,15 +284,17 @@ export default function BlueprintSummaryView({
         <div className="h-20" />
       </div>
 
-      {/* ── Floating CTA button ── */}
-      <div className="fixed bottom-6 left-0 right-0 z-40 mx-auto max-w-lg px-4">
-        <button
-          onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
-          className="w-full rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white shadow-lg transition-opacity hover:opacity-90"
-        >
-          Build my ballot &rarr;
-        </button>
-      </div>
+      {/* ── Floating CTA button (hidden in wizard mode) ── */}
+      {!hideCta && (
+        <div className="fixed bottom-6 left-0 right-0 z-40 mx-auto max-w-lg px-4">
+          <button
+            onClick={() => { track('click', { element: 'build_ballot' }); router.push('/ballot'); }}
+            className="w-full rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+          >
+            Build my ballot &rarr;
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -10,6 +10,7 @@ import {
   ChevronUp,
 } from 'lucide-react';
 import type { VoteAmericaStateRules } from '@/server/types/externalApis';
+import { useDemographicStore } from '@/stores/demographicStore';
 
 interface VoterInfo {
   registrationUrl?: string;
@@ -31,11 +32,40 @@ interface ElectionBannerProps {
   location?: LocationInfo | null;
 }
 
-const DEFAULT_REGISTRATION_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
-const DEFAULT_ABSENTEE_URL = 'https://mvic.sos.state.mi.us/AVApplication/Index';
-const DEFAULT_POLLING_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
+/** Per-state default voter info URLs — keyed by two-letter state code */
+const STATE_VOTER_DEFAULTS: Record<string, {
+  location: string;
+  registrationUrl: string;
+  absenteeUrl: string;
+  pollingUrl: string;
+}> = {
+  TX: {
+    location: 'Austin, Texas',
+    registrationUrl: 'https://www.votetexas.gov/register-to-vote/',
+    absenteeUrl: 'https://www.votetexas.gov/voting/voting-by-mail.html',
+    pollingUrl: 'https://www.votetexas.gov/voting/where.html',
+  },
+  MI: {
+    location: 'Detroit, Michigan',
+    registrationUrl: 'https://mvic.sos.state.mi.us/Voter/Index',
+    absenteeUrl: 'https://mvic.sos.state.mi.us/AVApplication/Index',
+    pollingUrl: 'https://mvic.sos.state.mi.us/Voter/Index',
+  },
+  GA: {
+    location: 'Atlanta, Georgia',
+    registrationUrl: 'https://mvp.sos.ga.gov/s/',
+    absenteeUrl: 'https://mvp.sos.ga.gov/s/',
+    pollingUrl: 'https://mvp.sos.ga.gov/s/',
+  },
+  NC: {
+    location: 'Raleigh, North Carolina',
+    registrationUrl: 'https://www.ncsbe.gov/registering/how-register',
+    absenteeUrl: 'https://www.ncsbe.gov/voting/vote-mail',
+    pollingUrl: 'https://vt.ncsbe.gov/PPLkup/',
+  },
+};
 
-const DEFAULT_LOCATION = 'Detroit, Michigan';
+const FALLBACK_DEFAULTS = STATE_VOTER_DEFAULTS.TX;
 
 export default function ElectionBanner({
   daysUntilElection,
@@ -44,14 +74,16 @@ export default function ElectionBanner({
   location,
 }: ElectionBannerProps) {
   const [expanded, setExpanded] = useState(false);
+  const selectedState = useDemographicStore((s) => s.profile.selectedState);
+  const stateDefaults = (selectedState && STATE_VOTER_DEFAULTS[selectedState]) || FALLBACK_DEFAULTS;
 
   const locationLabel = location
     ? (location.city ? `${location.city}, ${location.stateName}` : location.stateName)
-    : DEFAULT_LOCATION;
+    : stateDefaults.location;
 
-  const registrationUrl = voterInfo?.registrationUrl ?? voterInfo?.stateRules?.voter_registration_url ?? DEFAULT_REGISTRATION_URL;
-  const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? DEFAULT_ABSENTEE_URL;
-  const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? DEFAULT_POLLING_URL;
+  const registrationUrl = voterInfo?.registrationUrl ?? voterInfo?.stateRules?.voter_registration_url ?? stateDefaults.registrationUrl;
+  const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? stateDefaults.absenteeUrl;
+  const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? stateDefaults.pollingUrl;
 
   const registrationDeadline = voterInfo?.stateRules?.registration_deadline_online;
   const earlyVotingStarts = voterInfo?.stateRules?.early_voting_starts;
