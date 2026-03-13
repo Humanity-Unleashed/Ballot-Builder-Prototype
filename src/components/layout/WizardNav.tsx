@@ -8,7 +8,7 @@ import {
   LogIn,
   LogOut,
   Layers,
-  ChevronRight,
+  MapPin,
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -27,10 +27,9 @@ import {
 } from '@/stores/ballotStore';
 import { useDemographicStore } from '@/stores/demographicStore';
 
-/** Get the chip label for a completed display phase */
-function getChipLabel(dp: DisplayPhase, selectedState?: string | null): string {
+/** Short label for each display phase */
+function getStepLabel(dp: DisplayPhase, selectedState?: string | null): string {
   if (dp === 'select-ballot') {
-    // Show location instead of generic "Select Ballot"
     if (selectedState === 'TX') return 'Austin, TX';
     if (selectedState === 'MI') return 'Detroit, MI';
     if (selectedState === 'GA') return 'Atlanta, GA';
@@ -41,7 +40,7 @@ function getChipLabel(dp: DisplayPhase, selectedState?: string | null): string {
   return 'Build';
 }
 
-/** Get the subtitle text for the current banner */
+/** Subtitle for the expanded current phase */
 function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
   if (dp === 'blueprint') {
     const subIndex = getSubStepIndex(wizardPhase);
@@ -61,9 +60,11 @@ function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
   return '';
 }
 
-/** Number displayed on the badge (1 of 3, etc.) */
-function getPhaseNumber(dp: DisplayPhase): number {
-  return DISPLAY_PHASES.indexOf(dp) + 1;
+/** Icon for each display phase */
+function StepIcon({ dp, size = 12 }: { dp: DisplayPhase; size?: number }) {
+  if (dp === 'select-ballot') return <MapPin style={{ width: size, height: size }} />;
+  if (dp === 'blueprint') return <Layers style={{ width: size, height: size }} />;
+  return <CheckSquare style={{ width: size, height: size }} />;
 }
 
 export default function WizardNav() {
@@ -77,9 +78,8 @@ export default function WizardNav() {
   const currentDP = getDisplayPhase(currentPhase);
   const subStepIndex = getSubStepIndex(currentPhase);
 
-  // Determine which display phases are completed, current, or future
   const phaseStates = useMemo(() => {
-    const states: Record<DisplayPhase, 'completed' | 'current' | 'future' | 'paused'> = {
+    const states: Record<DisplayPhase, 'completed' | 'current' | 'future'> = {
       'select-ballot': 'future',
       'blueprint': 'future',
       'build': 'future',
@@ -94,23 +94,9 @@ export default function WizardNav() {
     return states;
   }, [currentDP, completedPhases]);
 
-  // Completed chips (display phases before the current one that are done)
-  const completedChips = DISPLAY_PHASES.filter((dp) => phaseStates[dp] === 'completed');
-
-  // Find paused phases (phases that were started/completed but user navigated back)
-  // e.g., if user is in blueprint but build was started, show build as paused
-  const pausedChips = DISPLAY_PHASES.filter((dp) => {
-    if (dp === currentDP) return false;
-    if (phaseStates[dp] === 'completed') return false;
-    // Has at least one sub-phase completed but isn't the current display phase
+  const handleStepClick = (dp: DisplayPhase) => {
     const config = DISPLAY_PHASE_CONFIG[dp];
-    return config.wizardPhases.some((wp) => completedPhases.includes(wp));
-  });
-
-  const handleChipClick = (dp: DisplayPhase) => {
-    const config = DISPLAY_PHASE_CONFIG[dp];
-    // Navigate to the last sub-phase of this display phase
-    // For blueprint, go to profile-review; for build, go to ballot-item
+    // Navigate to the last completed sub-phase, or the first one
     const lastCompleted = [...config.wizardPhases]
       .reverse()
       .find((wp) => completedPhases.includes(wp));
@@ -121,11 +107,11 @@ export default function WizardNav() {
     }
   };
 
-  // Count ballot progress for paused build chip
-  const savedVotesCount = useBallotStore((s) => s.savedVotes.length);
+  const subtitle = getBannerSubtitle(currentDP, currentPhase);
+  const config = DISPLAY_PHASE_CONFIG[currentDP];
 
   return (
-    <nav className="sticky top-5 z-40 border-b border-gray-200 bg-white">
+    <nav className="shrink-0 z-40 border-b border-gray-200 bg-white">
       <div className="mx-auto max-w-lg px-4">
         {/* Top row: branding + auth */}
         <div className="flex h-10 items-center">
@@ -172,114 +158,102 @@ export default function WizardNav() {
           </div>
         </div>
 
-        {/* Chips + Banner area */}
+        {/* Unified banner */}
         <div className="pb-2.5">
-          {/* Completed chips row */}
-          {(completedChips.length > 0 || pausedChips.length > 0) && (
-            <div className="flex gap-1.5 flex-wrap mb-2">
-              {completedChips.map((dp) => (
-                <button
-                  key={dp}
-                  onClick={() => handleChipClick(dp)}
-                  className="flex items-center gap-1 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-emerald-600 hover:bg-emerald-100 transition-colors"
-                >
-                  <Check className="h-2.5 w-2.5" />
-                  {getChipLabel(dp, selectedState)}
-                </button>
-              ))}
-              {pausedChips.map((dp) => (
-                <button
-                  key={dp}
-                  onClick={() => handleChipClick(dp)}
-                  className="flex items-center gap-1 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5 text-[11px] font-semibold text-gray-500 hover:bg-gray-100 transition-colors"
-                >
-                  <span className="flex gap-0.5">
-                    <span className="w-1 h-1 rounded-full bg-gray-400" />
-                    <span className="w-1 h-1 rounded-full bg-gray-400" />
-                  </span>
-                  {getChipLabel(dp, selectedState)}
-                  {dp === 'build' && savedVotesCount > 0 && (
-                    <span className="text-[10px] text-gray-400">({savedVotesCount})</span>
-                  )}
-                </button>
-              ))}
-            </div>
-          )}
+          <div className="bg-gradient-to-r from-[#8B7AAF] to-[#7B6A9F] rounded-[14px] px-3.5 py-3 text-white">
+            {/* Stepper row */}
+            <div className="flex items-center gap-0">
+              {DISPLAY_PHASES.map((dp, idx) => {
+                const state = phaseStates[dp];
+                const isClickable = state === 'completed';
+                const label = getStepLabel(dp, selectedState);
 
-          {/* Current phase banner */}
-          {currentDP !== 'select-ballot' && (
-            <CurrentPhaseBanner
-              displayPhase={currentDP}
-              wizardPhase={currentPhase}
-              subStepIndex={subStepIndex}
-            />
-          )}
+                return (
+                  <React.Fragment key={dp}>
+                    {/* Connector line */}
+                    {idx > 0 && (
+                      <div
+                        className={[
+                          'flex-1 h-px mx-1',
+                          state === 'future' ? 'bg-white/20' : 'bg-white/50',
+                        ].join(' ')}
+                      />
+                    )}
+                    {/* Step */}
+                    {isClickable ? (
+                      <button
+                        onClick={() => handleStepClick(dp)}
+                        className="flex items-center gap-1 hover:bg-white/15 rounded-full px-2 py-1 -mx-1 transition-colors"
+                      >
+                        <span className="w-4 h-4 rounded-full bg-white/90 flex items-center justify-center shrink-0">
+                          <Check className="h-2.5 w-2.5 text-[#7B6A9F]" strokeWidth={3} />
+                        </span>
+                        <span className="text-[11px] font-semibold text-white/90">{label}</span>
+                      </button>
+                    ) : (
+                      <div className="flex items-center gap-1 px-2 py-1 -mx-1">
+                        <span
+                          className={[
+                            'w-4 h-4 rounded-full flex items-center justify-center shrink-0 text-[9px] font-bold',
+                            state === 'current'
+                              ? 'bg-white text-[#7B6A9F]'
+                              : 'bg-white/20 text-white/50',
+                          ].join(' ')}
+                        >
+                          {idx + 1}
+                        </span>
+                        <span
+                          className={[
+                            'text-[11px] font-semibold',
+                            state === 'current' ? 'text-white' : 'text-white/40',
+                          ].join(' ')}
+                        >
+                          {state === 'current' ? label : DISPLAY_PHASE_CONFIG[dp].label}
+                        </span>
+                      </div>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </div>
+
+            {/* Current phase detail */}
+            {currentDP !== 'select-ballot' && (
+              <>
+                {subtitle && (
+                  <p className="text-[11px] opacity-80 mt-2 ml-1">{subtitle}</p>
+                )}
+                {/* Sub-step dots */}
+                {config.subSteps.length > 0 && (
+                  <div className="flex gap-1 mt-2 ml-1">
+                    {config.subSteps.map((_, i) => {
+                      const isCurrent = i === subStepIndex;
+                      const phase = config.wizardPhases[i];
+                      const isNavigable = !isCurrent && (i < subStepIndex || completedPhases.includes(phase));
+                      return isNavigable ? (
+                        <button
+                          key={i}
+                          onClick={() => goToPhase(phase)}
+                          className="w-6 h-[3px] rounded-sm bg-white/50 hover:bg-white/80 transition-all cursor-pointer"
+                          aria-label={`Go to ${config.subSteps[i]}`}
+                        />
+                      ) : (
+                        <div
+                          key={i}
+                          className={[
+                            'w-6 h-[3px] rounded-sm transition-all',
+                            isCurrent ? 'bg-white' : 'bg-white/25',
+                          ].join(' ')}
+                        />
+                      );
+                    })}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </nav>
-  );
-}
-
-// ── Current Phase Banner ──
-
-function CurrentPhaseBanner({
-  displayPhase,
-  wizardPhase,
-  subStepIndex,
-}: {
-  displayPhase: DisplayPhase;
-  wizardPhase: WizardPhase;
-  subStepIndex: number;
-}) {
-  const config = DISPLAY_PHASE_CONFIG[displayPhase];
-  const subtitle = getBannerSubtitle(displayPhase, wizardPhase);
-  const phaseNum = getPhaseNumber(displayPhase);
-
-  const gradientClass =
-    displayPhase === 'blueprint'
-      ? 'from-[#8B7AAF] to-[#7B6A9F]'
-      : 'from-blue-600 to-blue-700';
-
-  const iconNode =
-    displayPhase === 'blueprint' ? (
-      <Layers className="h-4 w-4 text-white" />
-    ) : (
-      <CheckSquare className="h-4 w-4 text-white" />
-    );
-
-  return (
-    <div
-      className={`bg-gradient-to-r ${gradientClass} rounded-[14px] px-3.5 py-3 text-white`}
-    >
-      <div className="flex items-center gap-2">
-        {iconNode}
-        <span className="text-[13px] font-bold">{config.label}</span>
-        <span className="flex-1" />
-        <span className="bg-white/20 px-2.5 py-0.5 rounded-full text-[11px] font-bold">
-          {phaseNum} of 3
-        </span>
-      </div>
-      {subtitle && (
-        <p className="text-[11px] opacity-80 mt-1 ml-6">{subtitle}</p>
-      )}
-      {/* Sub-step dots for blueprint */}
-      {config.subSteps.length > 0 && (
-        <div className="flex gap-1 mt-2 ml-6">
-          {config.subSteps.map((_, i) => (
-            <div
-              key={i}
-              className={[
-                'w-6 h-[3px] rounded-sm transition-all',
-                i === subStepIndex
-                  ? 'bg-white'
-                  : i < subStepIndex
-                    ? 'bg-white/50'
-                    : 'bg-white/25',
-              ].join(' ')}
-            />
-          ))}
-        </div>
-      )}
-    </div>
   );
 }

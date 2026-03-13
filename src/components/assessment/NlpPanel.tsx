@@ -55,7 +55,7 @@ export default function NlpPanel({
   const topicName = axisConfig.question.replace(/\?$/, '').toLowerCase();
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col flex-1 min-h-0">
       {/* Header with back-to-cards option */}
       <div className="px-5 pt-4 pb-3">
         <button
@@ -80,20 +80,6 @@ export default function NlpPanel({
             A sentence or two is plenty, but say as much as you&apos;d like.
           </p>
 
-          {/* Pole labels as context */}
-          <div className="flex items-center gap-3 mt-4 pt-3 border-t border-gray-200">
-            <div className="flex-1">
-              <span className="text-[10px] font-semibold text-[#8B7AAF] uppercase tracking-wide">
-                {axisConfig.poleALabel.replace(/\n/g, ' ')}
-              </span>
-            </div>
-            <span className="text-[10px] text-gray-300">vs</span>
-            <div className="flex-1 text-right">
-              <span className="text-[10px] font-semibold text-[#5B9E94] uppercase tracking-wide">
-                {axisConfig.poleBLabel.replace(/\n/g, ' ')}
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* Extracting indicator */}
@@ -106,7 +92,7 @@ export default function NlpPanel({
       </div>
 
       {/* Input area — same layout as WarmupView */}
-      <div className="border-t border-gray-100 px-4 py-3 safe-area-bottom">
+      <div className="border-t border-gray-100 px-4 py-3">
         <form onSubmit={handleSubmit} className="flex items-center gap-3">
           <div className="flex-1 flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2.5">
             <input

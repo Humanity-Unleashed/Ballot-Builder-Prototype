@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useMemo } from 'react';
-import { MessageSquareText, Check, ChevronDown } from 'lucide-react';
+import { Mic, Check, ChevronDown } from 'lucide-react';
 import type { AxisSliderConfig } from '@/data/sliderPositions';
 
 interface CardQuestionProps {
@@ -57,25 +57,16 @@ export default function CardQuestion({
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col flex-1 min-h-0">
       {/* Question */}
       <div className="px-5 pt-4 pb-3">
         <h2 className="text-lg font-bold text-gray-900 leading-snug">
           {axisConfig.question}
         </h2>
-        <div className="flex items-center gap-3 mt-2">
-          <span className="text-[11px] font-semibold text-[#8B7AAF] uppercase tracking-wide">
-            {axisConfig.poleALabel.replace(/\n/g, ' ')}
-          </span>
-          <div className="flex-1 h-px bg-gray-200" />
-          <span className="text-[11px] font-semibold text-[#5B9E94] uppercase tracking-wide">
-            {axisConfig.poleBLabel.replace(/\n/g, ' ')}
-          </span>
-        </div>
       </div>
 
-      {/* Position cards */}
-      <div className="flex-1 overflow-y-auto px-4 pb-2">
+      {/* Position cards + inline action */}
+      <div className="flex-1 overflow-y-auto px-4 pb-4">
         <div className="space-y-2">
           {axisConfig.positions.map((position, index) => {
             const isSelected = selectedIndex === index;
@@ -165,18 +156,12 @@ export default function CardQuestion({
         <button
           onClick={onEscapeHatch}
           disabled={disabled || confirmed}
-          className={`w-full mt-3 p-3 rounded-xl border-2 border-dashed transition-colors flex items-center justify-center gap-2 ${
-            isNuancedAxis
-              ? 'border-brand-primary/30 bg-brand-primary/[0.02] hover:border-brand-primary/50 hover:bg-brand-primary/[0.04]'
-              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-          } ${disabled || confirmed ? 'opacity-40 cursor-not-allowed' : ''}`}
+          className={`w-full mt-3 p-3 rounded-xl border-2 transition-colors flex items-center justify-center gap-2 border-brand-primary/40 bg-brand-primary/[0.05] hover:border-brand-primary/60 hover:bg-brand-primary/[0.08] ${
+            disabled || confirmed ? 'opacity-40 cursor-not-allowed' : ''
+          }`}
         >
-          <MessageSquareText className={`h-4 w-4 ${
-            isNuancedAxis ? 'text-brand-primary/60' : 'text-gray-400'
-          }`} />
-          <span className={`text-[13px] font-medium ${
-            isNuancedAxis ? 'text-brand-primary/70' : 'text-gray-500'
-          }`}>
+          <Mic className="h-4 w-4 text-brand-primary/70" />
+          <span className="text-[13px] font-medium text-brand-primary/80">
             None of these fit — tell us in your own words
           </span>
         </button>
@@ -186,26 +171,26 @@ export default function CardQuestion({
             This topic has a lot of nuance. Feel free to explain your view.
           </p>
         )}
-      </div>
 
-      {/* Bottom actions */}
-      <div className="px-4 pb-4 pt-2 border-t border-gray-100 safe-area-bottom">
-        {selectedIndex !== null && !confirmed ? (
-          <button
-            onClick={handleConfirm}
-            className="w-full py-3 bg-brand-primary text-white rounded-xl text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
-          >
-            Confirm
-          </button>
-        ) : (
-          <button
-            onClick={onSkip}
-            disabled={disabled}
-            className="w-full py-3 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors"
-          >
-            Skip this question
-          </button>
-        )}
+        {/* Inline action — appears right after the cards */}
+        <div className="mt-3">
+          {selectedIndex !== null && !confirmed ? (
+            <button
+              onClick={handleConfirm}
+              className="w-full py-3 bg-brand-primary text-white rounded-xl text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
+            >
+              Confirm
+            </button>
+          ) : (
+            <button
+              onClick={onSkip}
+              disabled={disabled}
+              className="w-full py-3 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors"
+            >
+              Skip this question
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

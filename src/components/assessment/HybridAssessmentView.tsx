@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useRef, useMemo } from 'react';
+import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 import { axisSliderConfigs } from '@/data/sliderPositions';
 import type {
@@ -320,23 +320,24 @@ export default function HybridAssessmentView({
     [],
   );
 
-  // ── Profile confirmed ──
+  // ── Auto-advance when assessment is complete ──
 
-  const handleProfileConfirm = useCallback(() => {
-    const profile = getFullProfile(session);
-    onComplete(profile);
-  }, [session, onComplete]);
+  useEffect(() => {
+    if (viewState.type === 'summary') {
+      const profile = getFullProfile(session);
+      onComplete(profile);
+    }
+  }, [viewState.type]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Render ──
 
-  // Summary view
+  // Assessment complete — show brief loading while advancing
   if (viewState.type === 'summary') {
     return (
-      <ProfileSummary
-        profile={viewState.profile}
-        onOverrideAxis={handleOverrideAxis}
-        onConfirm={handleProfileConfirm}
-      />
+      <div className="flex flex-col items-center justify-center h-full gap-3">
+        <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
+        <p className="text-sm text-gray-500">Building your profile...</p>
+      </div>
     );
   }
 

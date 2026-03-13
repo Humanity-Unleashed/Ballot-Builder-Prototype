@@ -56,7 +56,7 @@ export const DISPLAY_PHASE_CONFIG: Record<DisplayPhase, {
     subSteps: ['About You', 'Values Assessment', 'Profile Review'],
   },
   'build': {
-    label: 'Build Your Ballot',
+    label: 'Build',
     wizardPhases: ['ballot-item', 'summary'],
     subSteps: [],
   },
@@ -170,9 +170,15 @@ export const useBallotStore = create<BallotStore>()(
       },
 
       goToPhase: (phase) => {
-        const { completedPhases } = get();
-        // Allow navigating to completed phases or the current phase
-        if (completedPhases.includes(phase) || phase === get().currentPhase) {
+        const { completedPhases, currentPhase } = get();
+        const targetIdx = WIZARD_PHASES.indexOf(phase);
+        const currentIdx = WIZARD_PHASES.indexOf(currentPhase);
+        // Allow navigating to completed phases, the current phase, or any earlier phase
+        if (
+          completedPhases.includes(phase) ||
+          phase === currentPhase ||
+          targetIdx < currentIdx
+        ) {
           set({ currentPhase: phase });
         }
       },
@@ -190,7 +196,9 @@ export const useBallotStore = create<BallotStore>()(
 
       isPhaseAccessible: (phase) => {
         const { completedPhases, currentPhase } = get();
-        return phase === currentPhase || completedPhases.includes(phase);
+        const targetIdx = WIZARD_PHASES.indexOf(phase);
+        const currentIdx = WIZARD_PHASES.indexOf(currentPhase);
+        return phase === currentPhase || completedPhases.includes(phase) || targetIdx < currentIdx;
       },
 
       // ── Ballot voting ──

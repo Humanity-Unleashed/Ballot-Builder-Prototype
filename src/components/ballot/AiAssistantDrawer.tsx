@@ -51,7 +51,7 @@ export default function AiAssistantDrawer({
       {!isOpen && (
         <button
           onClick={onToggle}
-          className="fixed bottom-24 right-4 z-50 flex items-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-white shadow-lg transition-all hover:bg-brand-primary/90 active:scale-95"
+          className="fixed bottom-44 right-4 z-50 flex items-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-white shadow-lg transition-all hover:bg-brand-primary/90 active:scale-95"
           aria-label="Ask AI about this ballot item"
         >
           <MessageCircle className="h-5 w-5" />

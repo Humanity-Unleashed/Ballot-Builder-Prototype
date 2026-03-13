@@ -143,7 +143,7 @@ export default function BlueprintSummaryView({
       <div className="overflow-y-auto px-4 pt-4 pb-10">
         {/* ── Title + Retake ── */}
         <div className="mb-1 flex items-center justify-between">
-          <h1 className="text-xl font-extrabold text-gray-900">Your Civic Priorities</h1>
+          <h1 className="text-xl font-extrabold text-gray-900">Your Civic Blueprint</h1>
           <button
             onClick={() => { track('click', { element: 'retake_blueprint' }); onRetake(); }}
             className="flex items-center gap-1 rounded-lg bg-gray-100 px-3 py-2 transition-colors hover:bg-gray-200"
@@ -170,11 +170,6 @@ export default function BlueprintSummaryView({
             </div>
           </div>
         )}
-
-        {/* ── Section label ── */}
-        <div className="mb-3 text-[11px] font-bold uppercase tracking-[1.2px] text-gray-700">
-          Your policy leanings
-        </div>
 
         {/* ── Domain cards (vertical stack, sorted by importance) ── */}
         <div className="flex flex-col gap-3">

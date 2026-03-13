@@ -95,7 +95,7 @@ export default function ProfileSummary({
     Math.max(1, Object.values(profile).length);
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col flex-1 min-h-0">
       {/* Header */}
       <div className="px-5 pt-4 pb-3">
         <h2 className="text-xl font-bold text-gray-900">Your Civic Blueprint</h2>
@@ -106,7 +106,7 @@ export default function ProfileSummary({
         </p>
       </div>
 
-      {/* Domain groups */}
+      {/* Domain groups + CTA */}
       <div className="flex-1 overflow-y-auto px-4 pb-4">
         {DOMAIN_ORDER.map((domainId) => {
           const axisIds = DOMAIN_AXES[domainId] ?? [];
@@ -171,16 +171,16 @@ export default function ProfileSummary({
             </div>
           );
         })}
-      </div>
 
-      {/* CTA */}
-      <div className="px-4 pb-4 pt-2 border-t border-gray-100 safe-area-bottom">
-        <button
-          onClick={onConfirm}
-          className="w-full py-3.5 bg-brand-primary text-white rounded-xl text-sm font-bold hover:bg-brand-primary/90 transition-colors"
-        >
-          Looks good — show my matches
-        </button>
+        {/* CTA — inline at end of scroll area */}
+        <div className="mt-4">
+          <button
+            onClick={onConfirm}
+            className="w-full py-3.5 bg-brand-primary text-white rounded-xl text-sm font-bold hover:bg-brand-primary/90 transition-colors"
+          >
+            Looks good — show my matches
+          </button>
+        </div>
       </div>
     </div>
   );

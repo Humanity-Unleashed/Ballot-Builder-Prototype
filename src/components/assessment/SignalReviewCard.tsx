@@ -98,17 +98,6 @@ export default function SignalReviewCard({
                   style={{ left: `calc(${pct}% - 7px)` }}
                 />
               </div>
-              {/* Pole labels */}
-              {config && (
-                <div className="flex justify-between mt-0.5">
-                  <span className="text-[9px] text-gray-400 font-medium">
-                    {config.poleALabel.replace(/\n/g, ' ')}
-                  </span>
-                  <span className="text-[9px] text-gray-400 font-medium">
-                    {config.poleBLabel.replace(/\n/g, ' ')}
-                  </span>
-                </div>
-              )}
               {/* LLM reasoning */}
               {signal.rawSignal.reasoning && (
                 <p className="text-[11px] text-gray-500 leading-snug mt-1 italic">

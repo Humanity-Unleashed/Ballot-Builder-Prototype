@@ -638,7 +638,7 @@ export default function UnifiedBallotPage() {
   // ── Phase: State selection ──
   if (currentPhase === 'state-select') {
     return (
-      <div className="flex flex-col h-[calc(100vh-theme(spacing.28))]">
+      <div className="flex flex-col h-full">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center h-full gap-3">
             <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
@@ -657,7 +657,7 @@ export default function UnifiedBallotPage() {
   // ── Phase: Demographics ──
   if (currentPhase === 'demographics') {
     return (
-      <div className="flex flex-col h-[calc(100vh-theme(spacing.28))]">
+      <div className="flex flex-col h-full">
         <DemographicGate
           relevantAxes={relevantAxes}
           onComplete={handleDemographicsComplete}
@@ -670,7 +670,7 @@ export default function UnifiedBallotPage() {
   // ── Phase: Assessment (hybrid structured + NLP) ──
   if (currentPhase === 'assessment') {
     return (
-      <div className="flex flex-col h-[calc(100vh-theme(spacing.28))]">
+      <div className="flex flex-col h-full">
         <HybridAssessmentView onComplete={handleAssessmentComplete} />
       </div>
     );
@@ -753,7 +753,7 @@ export default function UnifiedBallotPage() {
     // Intro screen (first time)
     if (!hasSeenIntro) {
       return (
-        <div className="flex min-h-[calc(100vh-7rem)] flex-col items-center justify-center bg-gray-50 px-6">
+        <div className="flex min-h-full flex-col items-center justify-center bg-gray-50 px-6">
           <div className="w-full max-w-sm">
             <h1 className="mb-2 text-center text-xl font-bold text-gray-900">
               Your Personalized Ballot
@@ -820,7 +820,7 @@ export default function UnifiedBallotPage() {
 
     // Main ballot item view
     return (
-      <div className="flex flex-col h-[calc(100vh-7rem)] overflow-hidden -mx-4 bg-gray-50">
+      <div className="flex flex-col h-full overflow-hidden -mx-4 bg-gray-50">
         <BallotNavigator
           ballotItems={ballotItems}
           savedVotes={savedVotes}
@@ -830,12 +830,6 @@ export default function UnifiedBallotPage() {
 
         <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-4">
           <DemoBanner />
-          <ElectionBanner
-            daysUntilElection={daysRemaining}
-            electionLabel={electionLabel}
-            voterInfo={voterInfo}
-            location={location}
-          />
           <BallotItemHeader item={currentItem} />
 
           {currentItem.type === 'proposition' && (

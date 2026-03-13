@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, CheckSquare } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ChevronDown, CheckSquare, X } from 'lucide-react';
 
 interface FaqItem {
   q: string;
@@ -106,6 +107,7 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
 ];
 
 export default function AboutPage() {
+  const router = useRouter();
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
   const toggle = (key: string) => {
@@ -122,12 +124,19 @@ export default function AboutPage() {
       {/* Compact hero */}
       <div className="flex items-center gap-2.5 pt-2">
         <CheckSquare className="h-5 w-5 text-brand-primary shrink-0" />
-        <div>
+        <div className="flex-1">
           <h1 className="text-lg font-bold text-gray-900">About Ballot Builder</h1>
           <p className="text-xs text-gray-500">
             Nonpartisan, values-based voter guidance
           </p>
         </div>
+        <button
+          onClick={() => router.back()}
+          className="p-2 rounded-lg text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+          aria-label="Close"
+        >
+          <X className="h-5 w-5" />
+        </button>
       </div>
 
       {/* Collapsible sections */}
