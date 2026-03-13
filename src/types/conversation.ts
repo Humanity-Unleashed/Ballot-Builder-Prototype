@@ -13,7 +13,7 @@ import type { PropositionRecommendation, CandidateMatch } from '@/lib/ballotHelp
 // =============================================
 
 export interface ValueSignal {
-  /** One of the 15 civic axis IDs */
+  /** One of the 16 civic axis IDs */
   axisId: string;
   /** Where the user falls on this axis, 0-10 scale */
   direction: number;

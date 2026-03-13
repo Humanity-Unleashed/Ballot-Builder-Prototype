@@ -19,8 +19,8 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
       {
         q: 'How does the assessment work?',
         a: [
-          'You answer a short adaptive assessment that covers 15 policy topics across five domains: Economy, Healthcare, Housing, Justice, and Climate.',
-          'The system uses information theory to figure out which questions will tell it the most about your values and skips the ones that won\'t. Most people finish in 5\u201310 questions instead of answering all 15.',
+          'You answer a short adaptive assessment that covers 16 policy topics across five domains: Economy, Healthcare, Housing, Justice, and Climate.',
+          'The system uses information theory to figure out which questions will tell it the most about your values and skips the ones that won\'t. Most people finish in 5\u201310 questions instead of answering all 16.',
           'You can respond with quick slider picks or switch to typing/speaking in your own words. When you use natural language, the system extracts signals across multiple topics from a single response — so one thoughtful answer can cover several issues at once.',
         ],
       },
@@ -51,7 +51,7 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
       {
         q: 'How are candidates scored?',
         a: [
-          'Candidates are independently scored on the same 15 topics using public evidence. Voting records and interest group scorecards (from organizations across the political spectrum) carry the most weight. Campaign statements, interviews, and endorsements fill in the gaps.',
+          'Candidates are independently scored on the same 16 topics using public evidence. Voting records and interest group scorecards (from organizations across the political spectrum) carry the most weight. Campaign statements, interviews, and endorsements fill in the gaps.',
           'When a candidate\'s voting record contradicts their campaign trail statements, the record wins and the discrepancy is flagged.',
         ],
       },

@@ -83,7 +83,7 @@ model CandidateScore {
   candidateId     String   @map("candidate_id")     // External ID from Ballotpedia
   candidateName   String   @map("candidate_name")
   raceId          String   @map("race_id")
-  axisId          String   @map("axis_id")           // One of the 15 civic axis IDs
+  axisId          String   @map("axis_id")           // One of the 16 civic axis IDs
   score           Float                               // 0-10 scale
   confidence      Float                               // 0-1 scale
   evidenceSource  String   @map("evidence_source")   // "vote_smart", "voting_record", "llm_analysis"
@@ -236,9 +236,9 @@ In `src/components/blueprint/ElectionBanner.tsx`:
 ### Context
 This is the core IP of the product. Currently `src/lib/ballotHelpers.ts` has `computeCandidateMatches()` and `computePropositionRecommendation()` that work against static data. We need to populate `CandidateScore` records from real sources.
 
-### The 15 Civic Axes (from `src/server/data/civicAxes/`)
+### The 16 Civic Axes (from `src/server/data/civicAxes/`)
 
-Reference the actual axis IDs and poles from the existing spec. The axes are organized as 5 domains × 3 axes:
+Reference the actual axis IDs and poles from the existing spec. The axes are organized as 5 domains × 3-4 axes:
 
 | Domain | Axis | Pole A (score 0) | Pole B (score 10) |
 |--------|------|-------------------|---------------------|

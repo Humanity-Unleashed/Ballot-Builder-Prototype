@@ -3,7 +3,7 @@
  *
  * This file contains the complete civic axes specification including:
  * - 5 policy domains
- * - 15 axes (3 per domain)
+ * - 16 axes (3-4 per domain)
  * - 144 assessment items
  *
  * Generated: 2026-01-14T17:07:19Z
