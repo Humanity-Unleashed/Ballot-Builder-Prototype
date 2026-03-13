@@ -25,6 +25,9 @@ interface ConversationViewProps {
   axisDefinitions: AxisDef[];
   onVoteConfirmed: (itemId: string, choice: string | null) => void;
   onSkip: (itemId: string) => void;
+  /** 'drawer' = opened from Ask AI button (user already sees the ballot item);
+   *  'standalone' = primary conversation flow (AI guides through items) */
+  mode?: 'drawer' | 'standalone';
 }
 
 /**
@@ -50,12 +53,11 @@ function profileToValueAxes(
 }
 
 /**
- * Build a short, natural opening line for a ballot item with a recommendation.
+ * Build an opening line for standalone mode (AI guides through items sequentially).
  */
-function buildOpenerWithRecommendation(item: BallotItem, rec: PropositionRecommendation | CandidateMatch[] | null): string {
+function buildStandaloneOpener(item: BallotItem, rec: PropositionRecommendation | CandidateMatch[] | null): string {
   if (item.type === 'proposition') {
     const propRec = rec as PropositionRecommendation | null;
-    // Brief summary of the measure + how it connects to their values
     let opener = `Next up is a ballot measure: **${item.title}**.\n\n${item.questionText}`;
     if (propRec?.vote) {
       const voteLabel = propRec.vote === 'yes' ? 'YES' : 'NO';
@@ -67,7 +69,6 @@ function buildOpenerWithRecommendation(item: BallotItem, rec: PropositionRecomme
     return opener;
   }
 
-  // Candidate race — cards show all details, so keep the opener brief
   if (rec && Array.isArray(rec) && rec.length > 0) {
     return `Next up: **${item.title}**. Here's how the candidates align with your values.`;
   }
@@ -75,11 +76,50 @@ function buildOpenerWithRecommendation(item: BallotItem, rec: PropositionRecomme
   return `Next up: **${item.title}**.`;
 }
 
+/**
+ * Build an opening line for drawer mode (user tapped "Ask AI" on an item they're already viewing).
+ * Skips restating what they can already see; leads with a useful insight or an invitation.
+ */
+function buildDrawerOpener(item: BallotItem, rec: PropositionRecommendation | CandidateMatch[] | null): string {
+  if (item.type === 'proposition') {
+    const propRec = rec as PropositionRecommendation | null;
+    if (propRec?.vote) {
+      const voteLabel = propRec.vote === 'yes' ? 'YES' : 'NO';
+      if (propRec.confidence >= 0.7) {
+        return `Your civic blueprint points pretty clearly toward **${voteLabel}** here. Want me to walk you through the reasoning?`;
+      }
+      if (propRec.confidence >= 0.4) {
+        return `This leans **${voteLabel}** based on your values, though it's not clear-cut. I can break down the tradeoffs if you'd like.`;
+      }
+      return `This one could go either way based on your values. Want me to help you think through it?`;
+    }
+    return `I can help you think through this measure. Ask me anything — what it means in practice, how it connects to your values, or what the arguments on each side look like.`;
+  }
+
+  // Candidate race
+  if (rec && Array.isArray(rec) && rec.length > 0) {
+    const sorted = [...rec].sort((a, b) => b.matchPercent - a.matchPercent);
+    const best = sorted[0];
+    const bestName = item.candidates?.find((c) => c.id === best.candidateId)?.name || 'the top match';
+    if (sorted.length >= 2) {
+      const gap = best.matchPercent - sorted[1].matchPercent;
+      if (gap < 5) {
+        return `This is a close one — your top candidates are within a few points of each other. I can help you dig into where they differ.`;
+      }
+      return `**${bestName}** looks like your strongest match at ${best.matchPercent}%. Want to know why, or compare on a specific issue?`;
+    }
+    return `**${bestName}** is your closest match at ${best.matchPercent}%. I can explain the reasoning or answer questions about any candidate.`;
+  }
+
+  return `I can help you learn more about the candidates in this race. What would you like to know?`;
+}
+
 export default function ConversationView({
   ballotItem,
   axisDefinitions,
   onVoteConfirmed,
   onSkip,
+  mode = 'standalone',
 }: ConversationViewProps) {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -152,10 +192,14 @@ export default function ConversationView({
 
     openerSentRef.current = ballotItem.id;
 
+    const openerContent = mode === 'drawer'
+      ? buildDrawerOpener(ballotItem, immediateRecommendation)
+      : buildStandaloneOpener(ballotItem, immediateRecommendation);
+
     const introMessage: ConversationMessage = {
       id: `intro-${ballotItem.id}`,
       role: 'assistant',
-      content: buildOpenerWithRecommendation(ballotItem, immediateRecommendation),
+      content: openerContent,
       timestamp: new Date().toISOString(),
       ballotItemId: ballotItem.id,
     };
@@ -270,30 +314,35 @@ export default function ConversationView({
     }
   };
 
-  /** "Tell me more" handler — sends an explanation request to the LLM */
+  /** "Tell me more" handler — sends an explanation request to the LLM.
+   *  In drawer mode, skips the fake user bubble to keep the chat feeling natural. */
   const handleTellMeMore = useCallback(async () => {
     if (isLoading || !session) return;
 
-    // For propositions, build a contextual "explain this" prompt
     const explainPrompt = ballotItem.type === 'proposition'
       ? "Can you break down what this measure means and why it connects to my values?"
       : "Can you tell me more about the differences between these candidates?";
 
-    // Add a synthetic user message so the conversation flows naturally
-    const userMessage: ConversationMessage = {
-      id: `user-${Date.now()}`,
-      role: 'user',
-      content: explainPrompt,
-      timestamp: new Date().toISOString(),
-      ballotItemId: ballotItem.id,
-    };
+    // In standalone mode, show the canned question as a user bubble for conversational flow.
+    // In drawer mode, skip it — the user tapped a button, not typed a message.
+    if (mode === 'standalone') {
+      const userMessage: ConversationMessage = {
+        id: `user-${Date.now()}`,
+        role: 'user',
+        content: explainPrompt,
+        timestamp: new Date().toISOString(),
+        ballotItemId: ballotItem.id,
+      };
+      addMessage(ballotItem.id, userMessage);
+    }
 
-    addMessage(ballotItem.id, userMessage);
     setItemStatus(ballotItem.id, 'discussing');
     setIsLoading(true);
 
     try {
-      const currentMessages = [...messages, userMessage];
+      const currentMessages = mode === 'standalone'
+        ? [...messages, { id: `user-${Date.now()}`, role: 'user' as const, content: explainPrompt, timestamp: new Date().toISOString(), ballotItemId: ballotItem.id }]
+        : messages;
 
       const response = await fetch('/api/conversation/turn', {
         method: 'POST',
@@ -349,7 +398,7 @@ export default function ConversationView({
     } finally {
       setIsLoading(false);
     }
-  }, [isLoading, session, messages, ballotItem, addMessage, setItemStatus, applyValueSignals, setItemRecommendation, updateProfile]);
+  }, [isLoading, session, messages, ballotItem, mode, addMessage, setItemStatus, applyValueSignals, setItemRecommendation, updateProfile]);
 
   // Get confidence label for proposition recommendations
   const getConfidenceLabel = (confidence: number): string => {
@@ -625,9 +674,11 @@ export default function ConversationView({
                 placeholder={
                   voice.isRecording
                     ? 'Listening...'
-                    : messages.length <= 1
-                      ? 'Share your thoughts...'
-                      : 'Reply...'
+                    : mode === 'drawer'
+                      ? 'Ask a question...'
+                      : messages.length <= 1
+                        ? 'Share your thoughts...'
+                        : 'Reply...'
                 }
                 className="flex-1 bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none min-w-0"
                 disabled={isLoading || voice.isRecording}

@@ -100,6 +100,7 @@ export default function AiAssistantDrawer({
               axisDefinitions={axisDefinitions}
               onVoteConfirmed={handleVoteConfirmed}
               onSkip={handleSkip}
+              mode="drawer"
             />
           )}
         </div>
