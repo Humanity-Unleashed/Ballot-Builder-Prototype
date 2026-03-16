@@ -44,8 +44,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Robust benefits available to all with minimal conditions',
         tradeoffs: [
           'Eliminates stigma and coverage gaps — everyone qualifies (Nordic model evidence)',
-          'Significantly higher tax burden needed (~10-15% GDP increase)',
-          'May reduce incentive to seek employment for some recipients (CBO estimates)',
+          'Nordic-level benefits require ~10-15% GDP more in taxes — roughly $8,000-$12,000 per household/year',
+          'Some studies find modest work disincentives; others (Finland basic-income trial) found minimal impact',
         ],
       },
       {
@@ -99,9 +99,9 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Major expansion of public services',
         description: 'Significantly increase spending on schools, infrastructure, and services',
         tradeoffs: [
-          'Public infrastructure investment returns $1.50-$2.20 per dollar spent (CBO estimates)',
-          'Requires significant tax increases or deficit spending',
-          'Government programs can crowd out private sector alternatives',
+          'Public infrastructure investment returns $1.50-$2.20 per dollar spent over 20 years (CBO estimates)',
+          'Scale matters: a 5% GDP increase means roughly $6,000-$8,000 more per household/year in taxes',
+          'Government programs can crowd out private alternatives, though evidence is mixed by sector',
         ],
       },
       {
@@ -119,7 +119,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         isCurrentPolicy: true,
         tradeoffs: [
           'Avoids disruption to existing programs and tax expectations',
-          'Current deficit trajectory adds ~$2T/year to national debt (CBO 2024)',
+          'Current deficit trajectory adds ~$2T/year to national debt — roughly $15,000 per household in new borrowing annually (CBO 2024)',
           'Infrastructure rated D+ by ASCE — maintenance backlog growing',
         ],
       },
@@ -136,8 +136,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Minimal government spending',
         description: 'Dramatically reduce taxes and public programs',
         tradeoffs: [
-          'Maximizes individual economic freedom and take-home pay',
-          'Would require eliminating or privatizing Social Security, Medicare, or military',
+          'Could save ~$10,000+ per household/year in taxes if services are cut proportionally',
+          'Would require eliminating or privatizing Social Security, Medicare, or defense — all politically popular',
           'No developed country operates at this spending level (~10% GDP vs current ~24%)',
         ],
       },
@@ -212,8 +212,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Steep graduated rates plus taxes on large fortunes and capital gains',
         tradeoffs: [
           'Top 1% hold 31% of wealth — progressive taxes reduce concentration (Federal Reserve)',
-          'Wealth taxes are difficult to administer; France repealed theirs due to capital flight',
-          'May discourage investment and entrepreneurship at the margins',
+          'Wealth taxes have been repealed in several EU countries due to capital flight and administrative cost',
+          'Debate is active: some economists argue wealth taxes are essential; others say they reduce investment',
         ],
       },
       {
@@ -222,7 +222,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         isCurrentPolicy: true,
         tradeoffs: [
           'Top 10% pay ~74% of federal income taxes; bottom 50% pay ~3% (IRS data)',
-          'Complex deduction system creates loopholes and compliance costs (~$400B/year)',
+          'Complex deduction system creates loopholes and compliance costs (~$400B/year, or ~$3,000 per household)',
           'Broadly supported: Pew 2023 finds 61% say wealthy pay too little',
         ],
       },
@@ -249,8 +249,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Eliminate income tax, fund government through sales or value-added tax',
         tradeoffs: [
           'Encourages saving and investment by not taxing income',
-          'Consumption taxes are regressive — low-income spend higher share of income',
-          'Would require ~25-30% national sales tax to replace income tax revenue (Tax Foundation)',
+          'Consumption taxes are regressive — low-income households spend a higher share of income on taxed goods',
+          'Would require ~25-30% national sales tax to replace income tax revenue; some proposals include rebates for low-income (Tax Foundation)',
         ],
       },
     ],
@@ -269,7 +269,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'One public program replaces all private insurance',
         tradeoffs: [
           'Eliminates administrative overhead (~30% of US healthcare spending — PNHP research)',
-          'Would require major tax increases to fund (~$3T+ annually)',
+          'Requires large new federal taxes, but replaces premiums, deductibles, and copays — most studies find total household costs similar or somewhat lower (CBO, Lancet)',
           'Eliminates out-of-pocket costs but may increase wait times for elective procedures',
         ],
       },
@@ -307,7 +307,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         tradeoffs: [
           'Promotes competition that can drive innovation and consumer choice',
           'Subsidies may not keep pace with premium increases (ACA marketplace experience)',
-          'Insurance company profits add to costs; healthy people may choose not to buy',
+          'Insurer overhead and profit account for ~12% of premiums (vs. ~2% for Medicare); healthy people may choose not to buy',
         ],
       },
       {
@@ -333,8 +333,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Comprehensive price controls',
         description: 'Government sets all healthcare prices',
         tradeoffs: [
-          'Countries with price controls (Japan, Germany) spend 50-70% less per capita',
-          'Can reduce innovation incentives — most new drugs are developed where prices are highest',
+          'Countries with price controls (Japan, Germany) spend 50-70% less per capita, though outcomes vary by measure',
+          'May reduce pharmaceutical innovation incentives — debated: some studies find minimal effect, others significant',
           'Provider shortages possible if reimbursement rates are set too low',
         ],
       },
@@ -342,8 +342,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Regulate prices in key areas',
         description: 'Negotiate drug prices, cap hospital charges',
         tradeoffs: [
-          'Medicare drug negotiation (IRA 2022) projected to save $100B over 10 years',
-          'Drug companies argue price controls will reduce R&D spending',
+          'Medicare drug negotiation (IRA 2022) projected to save $100B over 10 years (~$80 per household/year)',
+          'Drug companies argue price controls will reduce R&D spending; independent analyses show mixed effects on innovation',
           'Hospital price caps may cause cost-shifting to other services',
         ],
       },
@@ -389,9 +389,9 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Proactive public health programs',
         description: 'Government leads prevention, treatment, and harm reduction',
         tradeoffs: [
-          'Prevention saves ~$5.60 for every $1 invested (Trust for America\'s Health)',
+          'Some prevention programs return ~$5.60 per $1 invested, though returns vary widely by program (Trust for America\'s Health)',
           'Mandatory programs (vaccination, fluoridation) can conflict with individual autonomy',
-          'Harm reduction (needle exchanges, safe injection sites) reduces disease transmission but is controversial',
+          'Harm reduction (needle exchanges, safe injection sites) reduces disease transmission but remains controversial',
         ],
       },
       {
@@ -427,7 +427,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Leave health decisions to individuals, enforce drug laws',
         tradeoffs: [
           'Maximum personal freedom over health and lifestyle choices',
-          'War on Drugs approach costs ~$50B/year with limited impact on drug use rates',
+          'War on Drugs costs ~$50B/year (~$400 per household) with limited impact on drug use rates',
           'Without public health infrastructure, pandemic response capacity is severely limited',
         ],
       },
@@ -495,8 +495,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Cap rents and invest heavily in public/nonprofit housing',
         tradeoffs: [
           'Protects existing tenants from displacement in rapidly gentrifying areas',
-          'Economists broadly agree rent control reduces long-run housing supply (Stanford study: 15% reduction)',
-          'Public housing wait lists average 2+ years in most major cities',
+          'Most economists find rent control reduces long-run supply (Stanford study: 15% drop); some argue newer designs mitigate this',
+          'Public housing wait lists average 2+ years in most major cities — funding has been cut since the 1990s',
         ],
       },
       {
@@ -514,7 +514,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         isCurrentPolicy: true,
         tradeoffs: [
           'LIHTC program produces ~100K affordable units/year — most successful US housing program',
-          'Regulations add 30-40% to construction costs in high-cost cities (NAHB)',
+          'NAHB estimates regulations add 30-40% to costs in high-cost cities; critics argue this conflates safety codes with land-use rules',
           'Neither pure regulation nor pure supply has solved affordability alone',
         ],
       },
@@ -552,7 +552,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         tradeoffs: [
           'Transit riders have 76% lower carbon footprint for commuting (APTA)',
           'Transit investment doesn\'t serve rural and suburban areas effectively',
-          'Bike/pedestrian infrastructure has 10-25x return on investment in health benefits',
+          'Bike/pedestrian infrastructure shows high health ROI, though estimates vary widely by study and context (10-25x range)',
         ],
       },
       {
@@ -643,9 +643,9 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Expand police presence and authority',
         description: 'More officers with freedom to enforce proactively',
         tradeoffs: [
-          'Research shows additional police reduce violent crime (10% more officers → 3-5% less crime)',
-          'Proactive policing (stop-and-frisk) disproportionately targets minority communities',
-          'Police misconduct costs cities billions annually in settlements',
+          'Research shows additional police reduce violent crime (10% more officers → 3-5% less crime — multiple studies)',
+          'Proactive policing (stop-and-frisk) disproportionately targets minority communities (DOJ investigations)',
+          'Police misconduct settlements cost large cities hundreds of millions annually',
         ],
       },
     ],
@@ -662,9 +662,9 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Rehabilitation and restoration',
         description: 'Focus on treatment, education, and reentry support',
         tradeoffs: [
-          'Norway\'s rehabilitation model has 20% recidivism rate vs. US 44% (5-year)',
-          'Costs ~$35K/year for prison vs. ~$5-10K for community supervision with programs',
-          'Victims\' rights advocates argue rehabilitation undervalues harm done to victims',
+          'Norway\'s rehab model has 20% recidivism vs. US 44% — though population and crime mix differ significantly',
+          'Community supervision costs ~$5-10K/year vs. ~$35K/year for prison (varies widely by state)',
+          'Victims\' rights advocates argue rehabilitation can undervalue harm done to victims',
         ],
       },
       {
@@ -699,9 +699,9 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Strict punishment and longer sentences',
         description: 'Remove offenders to protect the public',
         tradeoffs: [
-          'Incapacitation does prevent crime during imprisonment (estimated 10-15% reduction)',
-          'Diminishing returns: most crime committed by young men who age out regardless',
-          'Long sentences destabilize families and communities, contributing to future crime cycles',
+          'Incapacitation does prevent crime during imprisonment (estimated 10-15% crime reduction)',
+          'Diminishing returns: most crime committed by young adults who age out regardless of sentence length',
+          'Long sentences destabilize families and communities — research links mass incarceration to intergenerational poverty',
         ],
       },
     ],
@@ -720,7 +720,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         title: 'Comprehensive licensing and registration',
         description: 'Mandatory training, licensing, and registration for all firearms',
         tradeoffs: [
-          'Countries with licensing systems (Australia, Japan) have far lower gun death rates',
+          'Countries with licensing (Australia, Japan) have far lower gun death rates, though cultural factors and gun prevalence also differ',
           'Creates a national registry that many gun owners view as a precursor to confiscation',
           'Licensing costs and requirements may disproportionately affect low-income gun owners',
         ],
@@ -768,7 +768,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         tradeoffs: [
           '25+ states have adopted permitless carry as of 2024',
           'Removes cost and time barriers that some see as infringing 2nd Amendment rights',
-          'Studies show permitless carry states see 11% increase in handgun homicides (Everytown)',
+          'Multiple studies find permitless carry associated with increased gun violence; effect sizes and methods are debated (Everytown, Johns Hopkins)',
         ],
       },
     ],
@@ -788,8 +788,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Aggressive action even with significant short-term costs',
         tradeoffs: [
           'IPCC says limiting warming to 1.5°C requires 45% emissions cuts by 2030',
-          'Rapid transition may strand fossil fuel assets ($1-4T in value — Carbon Tracker)',
-          'Energy price spikes disproportionately impact low-income households',
+          'Rapid transition could strand fossil fuel assets and raise energy costs in the short term, though long-term costs of inaction may be higher',
+          'Energy price spikes disproportionately impact low-income households without targeted subsidies',
         ],
       },
       {
@@ -825,8 +825,8 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Avoid disrupting reliable, affordable energy',
         tradeoffs: [
           'Preserves existing energy infrastructure and jobs in the near term',
-          'Each decade of delay increases eventual adaptation costs (Swiss Re: $23T by 2050)',
-          'US fossil fuel production supports ~1.7M direct jobs (BLS)',
+          'Delay increases adaptation costs — estimates range widely ($23T globally by 2050, Swiss Re; per-household impact depends on region)',
+          'US fossil fuel production supports ~1.7M direct jobs, many in communities with few alternatives (BLS)',
         ],
       },
     ],
@@ -862,7 +862,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
         description: 'Support renewables alongside existing energy sources',
         isCurrentPolicy: true,
         tradeoffs: [
-          'IRA invests $370B in clean energy while US remains world\'s top oil/gas producer',
+          'IRA invests $370B in clean energy over 10 years (~$300/household/year) while US remains world\'s top oil/gas producer',
           'Gallup 2024: 58% favor alternative energy vs. 38% fossil fuels',
           'Transition pace depends on technology cost curves — market forces are shifting mix',
         ],

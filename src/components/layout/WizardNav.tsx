@@ -25,31 +25,30 @@ import {
   type DisplayPhase,
   type WizardPhase,
 } from '@/stores/ballotStore';
-import { useDemographicStore } from '@/stores/demographicStore';
+
 
 /** Short label for each display phase */
-function getStepLabel(dp: DisplayPhase, selectedState?: string | null): string {
-  if (dp === 'select-ballot') {
-    if (selectedState === 'TX') return 'Austin, TX';
-    if (selectedState === 'MI') return 'Detroit, MI';
-    if (selectedState === 'GA') return 'Atlanta, GA';
-    if (selectedState === 'NC') return 'Raleigh, NC';
-    return selectedState || 'Ballot';
-  }
-  if (dp === 'blueprint') return 'Blueprint';
-  return 'Build';
+function getStepLabel(dp: DisplayPhase): string {
+  if (dp === 'select-ballot') return 'Your Info';
+  if (dp === 'blueprint') return 'Your Priorities';
+  return 'Your Guide';
 }
 
 /** Subtitle for the expanded current phase */
 function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
+  if (dp === 'select-ballot') {
+    const subIndex = getSubStepIndex(wizardPhase);
+    switch (subIndex) {
+      case 0: return 'Choose your state and ballot';
+      case 1: return 'Tell us a bit about yourself';
+      default: return '';
+    }
+  }
   if (dp === 'blueprint') {
     const subIndex = getSubStepIndex(wizardPhase);
-    const config = DISPLAY_PHASE_CONFIG[dp];
-    const subLabel = config.subSteps[subIndex] || '';
     switch (subIndex) {
-      case 0: return `${subLabel} \u2014 Tell us a bit about yourself`;
-      case 1: return `${subLabel} \u2014 Share your perspective on key issues`;
-      case 2: return `${subLabel} \u2014 Fine-tune your positions before building`;
+      case 0: return 'Share your perspective on key issues';
+      case 1: return 'Fine-tune your positions before matching';
       default: return '';
     }
   }
@@ -73,8 +72,6 @@ export default function WizardNav() {
   const currentPhase = useBallotStore(selectCurrentPhase);
   const completedPhases = useBallotStore(selectCompletedPhases);
   const goToPhase = useBallotStore((s) => s.goToPhase);
-  const selectedState = useDemographicStore((s) => s.profile.selectedState);
-
   const currentDP = getDisplayPhase(currentPhase);
   const subStepIndex = getSubStepIndex(currentPhase);
 
@@ -166,7 +163,7 @@ export default function WizardNav() {
               {DISPLAY_PHASES.map((dp, idx) => {
                 const state = phaseStates[dp];
                 const isClickable = state === 'completed';
-                const label = getStepLabel(dp, selectedState);
+                const label = getStepLabel(dp);
 
                 return (
                   <React.Fragment key={dp}>
@@ -218,7 +215,7 @@ export default function WizardNav() {
             </div>
 
             {/* Current phase detail */}
-            {currentDP !== 'select-ballot' && (
+            {(
               <>
                 {subtitle && (
                   <p className="text-[11px] opacity-80 mt-2 ml-1">{subtitle}</p>

@@ -46,17 +46,17 @@ export const DISPLAY_PHASE_CONFIG: Record<DisplayPhase, {
   subSteps: string[];
 }> = {
   'select-ballot': {
-    label: 'Select Ballot',
-    wizardPhases: ['state-select'],
-    subSteps: [],
+    label: 'Your Info',
+    wizardPhases: ['state-select', 'demographics'],
+    subSteps: ['Select State', 'About You'],
   },
   'blueprint': {
-    label: 'Civic Blueprint',
-    wizardPhases: ['demographics', 'assessment', 'profile-review'],
-    subSteps: ['About You', 'Values Assessment', 'Profile Review'],
+    label: 'Your Priorities',
+    wizardPhases: ['assessment', 'profile-review'],
+    subSteps: ['Values Assessment', 'Profile Review'],
   },
   'build': {
-    label: 'Build',
+    label: 'Your Guide',
     wizardPhases: ['ballot-item', 'summary'],
     subSteps: [],
   },
