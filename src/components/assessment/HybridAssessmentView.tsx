@@ -3,6 +3,7 @@
 import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 import { axisSliderConfigs } from '@/data/sliderPositions';
+import { getFineTuningConfig } from '@/data/fineTuningPositions';
 import type {
   HybridAssessmentSession,
   ConfirmationCard as ConfirmationCardType,
@@ -17,6 +18,7 @@ import {
   processStructuredSelection,
   processNlpSignals,
   processSecondaryConfirmation,
+  processFineTuningRefinement,
   skipAxis,
   recordModalitySwitch,
   evaluateHybridStopping,
@@ -26,13 +28,16 @@ import {
 import { evaluateTriggers, isNuancedAxis } from '@/lib/modalityTriggers';
 import { classifySignals, buildConfirmationCard } from '@/lib/multiAxisExtraction';
 import type { BallotRelevanceWeights } from '@/lib/adaptiveSequencer';
+import { civicAxesSpec } from '@/server/data/civicAxes/spec';
 
 import AssessmentProgress from './AssessmentProgress';
 import CardQuestion from './CardQuestion';
 import NlpPanel from './NlpPanel';
 import SignalReviewCard from './SignalReviewCard';
 import ConfirmationCard from './ConfirmationCard';
+import RefineOfferCard from './RefineOfferCard';
 import ProfileSummary from './ProfileSummary';
+import HybridFineTuningView from '@/components/blueprint/HybridFineTuningView';
 
 // ── Types ──
 
@@ -41,6 +46,8 @@ type ViewState =
   | { type: 'nlp' }
   | { type: 'signal-review'; userText: string; classified: ClassifiedSignal[]; pendingSession: HybridAssessmentSession; confirmationCard: ConfirmationCardType | null }
   | { type: 'confirmation'; card: ConfirmationCardType; signals: ClassifiedSignal[] }
+  | { type: 'refine-offer'; axisId: string; selectedValue: number }
+  | { type: 'refine'; axisId: string }
   | { type: 'summary'; profile: Record<string, UserValueRecord> };
 
 interface HybridAssessmentViewProps {
@@ -85,6 +92,20 @@ export default function HybridAssessmentView({
   const progress = useMemo(() => getProgress(session, ballotWeights), [session, ballotWeights]);
   const stopping = useMemo(() => evaluateHybridStopping(session, ballotWeights), [session, ballotWeights]);
 
+  // ── Advance to next question or stop ──
+
+  const advanceOrStop = useCallback(
+    (updatedSession: HybridAssessmentSession) => {
+      const newStopping = evaluateHybridStopping(updatedSession, ballotWeights);
+      if (newStopping.shouldStop) {
+        setViewState({ type: 'summary', profile: getFullProfile(updatedSession) });
+      } else {
+        setViewState({ type: 'card' });
+      }
+    },
+    [ballotWeights],
+  );
+
   // ── Structured card selection ──
 
   const handleCardSelect = useCallback(
@@ -116,16 +137,67 @@ export default function HybridAssessmentView({
         // The next question will load naturally.
       }
 
-      // Check if session should stop
-      const newStopping = evaluateHybridStopping(updated, ballotWeights);
-      if (newStopping.shouldStop) {
-        setViewState({ type: 'summary', profile: getFullProfile(updated) });
-      } else {
-        setViewState({ type: 'card' });
+      // Check if this axis has fine-tuning sub-dimensions to offer
+      const ftConfig = getFineTuningConfig(currentAxisId);
+      if (ftConfig && ftConfig.subDimensions.length > 0) {
+        // Offer refinement before moving on
+        setViewState({ type: 'refine-offer', axisId: currentAxisId, selectedValue: value });
+        return;
       }
+
+      // No fine-tuning available — advance normally
+      advanceOrStop(updated);
     },
-    [session, currentAxisId, ballotWeights],
+    [session, currentAxisId, ballotWeights, advanceOrStop],
   );
+
+  // ── Refine offer: user accepts → show fine-tuning ──
+
+  const handleRefineAccept = useCallback(() => {
+    if (viewState.type !== 'refine-offer') return;
+    setViewState({ type: 'refine', axisId: viewState.axisId });
+  }, [viewState]);
+
+  // ── Refine offer: user declines → advance normally ──
+
+  const handleRefineDecline = useCallback(() => {
+    advanceOrStop(session);
+  }, [session, advanceOrStop]);
+
+  // ── Fine-tuning complete → process sub-dimension responses ──
+
+  const handleFineTuningComplete = useCallback(
+    (responses: Record<string, number>) => {
+      if (viewState.type !== 'refine') return;
+      const axisId = viewState.axisId;
+
+      // Build position counts map from the fine-tuning config
+      const ftConfig = getFineTuningConfig(axisId);
+      const positionCounts: Record<string, number> = {};
+      if (ftConfig) {
+        for (const sub of ftConfig.subDimensions) {
+          positionCounts[sub.id] = sub.positions.length;
+        }
+      }
+
+      const updated = processFineTuningRefinement(
+        session,
+        axisId,
+        responses,
+        positionCounts,
+        ballotWeights,
+      );
+      setSession(updated);
+      advanceOrStop(updated);
+    },
+    [viewState, session, ballotWeights, advanceOrStop],
+  );
+
+  // ── Fine-tuning cancelled → advance without refinement ──
+
+  const handleFineTuningCancel = useCallback(() => {
+    advanceOrStop(session);
+  }, [session, advanceOrStop]);
 
   // ── Escape hatch — switch to NLP ──
 
@@ -260,15 +332,9 @@ export default function HybridAssessmentView({
         signals: viewState.classified,
       });
     } else {
-      // Check stopping
-      const newStopping = evaluateHybridStopping(viewState.pendingSession, ballotWeights);
-      if (newStopping.shouldStop) {
-        setViewState({ type: 'summary', profile: getFullProfile(viewState.pendingSession) });
-      } else {
-        setViewState({ type: 'card' });
-      }
+      advanceOrStop(viewState.pendingSession);
     }
-  }, [viewState, ballotWeights]);
+  }, [viewState, advanceOrStop]);
 
   // ── Signal review: user wants to clarify ──
 
@@ -283,15 +349,9 @@ export default function HybridAssessmentView({
     (confirmedAxisIds: string[]) => {
       const updated = processSecondaryConfirmation(session, confirmedAxisIds, ballotWeights);
       setSession(updated);
-
-      const newStopping = evaluateHybridStopping(updated, ballotWeights);
-      if (newStopping.shouldStop) {
-        setViewState({ type: 'summary', profile: getFullProfile(updated) });
-      } else {
-        setViewState({ type: 'card' });
-      }
+      advanceOrStop(updated);
     },
-    [session, ballotWeights],
+    [session, ballotWeights, advanceOrStop],
   );
 
   // ── Skip ──
@@ -300,14 +360,8 @@ export default function HybridAssessmentView({
     if (!currentAxisId) return;
     const updated = skipAxis(session, currentAxisId, ballotWeights);
     setSession(updated);
-
-    const newStopping = evaluateHybridStopping(updated, ballotWeights);
-    if (newStopping.shouldStop) {
-      setViewState({ type: 'summary', profile: getFullProfile(updated) });
-    } else {
-      setViewState({ type: 'card' });
-    }
-  }, [session, currentAxisId, ballotWeights]);
+    advanceOrStop(updated);
+  }, [session, currentAxisId, ballotWeights, advanceOrStop]);
 
   // ── Override imputed axis from summary ──
 
@@ -338,6 +392,47 @@ export default function HybridAssessmentView({
         <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
         <p className="text-sm text-gray-500">Building your profile...</p>
       </div>
+    );
+  }
+
+  // Refine offer view — ask if user wants to go deeper on sub-dimensions
+  // Must be checked before the currentAxisId guard since these views carry their own axisId
+  if (viewState.type === 'refine-offer') {
+    const ftConfig = getFineTuningConfig(viewState.axisId);
+    const axisSpec = civicAxesSpec.axes.find((a) => a.id === viewState.axisId);
+    const axisName = axisSpec?.name ?? viewState.axisId;
+    const posTitle = getPositionLabel(viewState.axisId, viewState.selectedValue);
+
+    return (
+      <div className="flex flex-col h-full">
+        <AssessmentProgress
+          progress={progress}
+          questionsAnswered={session.answeredAxes.length}
+          estimatedRemaining={stopping.shouldStop ? 0 : session.estimatedRemainingInteractions}
+        />
+        <div className="flex-1 overflow-y-auto flex items-start justify-center">
+          <RefineOfferCard
+            axisName={axisName}
+            subDimensionCount={ftConfig?.subDimensions.length ?? 0}
+            selectedPositionTitle={posTitle}
+            onAccept={handleRefineAccept}
+            onDecline={handleRefineDecline}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // Fine-tuning view — inline sub-dimension questions
+  if (viewState.type === 'refine') {
+    return (
+      <HybridFineTuningView
+        axisId={viewState.axisId}
+        spec={civicAxesSpec}
+        existingResponses={{}}
+        onComplete={handleFineTuningComplete}
+        onCancel={handleFineTuningCancel}
+      />
     );
   }
 

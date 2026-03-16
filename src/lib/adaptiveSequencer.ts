@@ -69,6 +69,7 @@ export interface ImputedValue {
 export const ANCHOR_AXES = [
   'health_coverage_model',   // High-salience, clear framing
   'justice_firearms',        // Cross-cutting, not left-right predictable
+  'justice_reproductive',    // High-salience, poorly predicted by other axes despite correlations
   'climate_ambition',        // High public interest, moderately correlated
   'housing_supply_zoning',   // Cross-cutting (YIMBY/NIMBY is bipartisan)
 ] as const;

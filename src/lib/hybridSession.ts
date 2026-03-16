@@ -549,6 +549,80 @@ export function getProgress(
   return estimateProgress(posteriors, ballotWeights);
 }
 
+// ── Fine-tuning refinement ──
+
+/**
+ * Process fine-tuning sub-dimension responses to narrow the posterior on a parent axis.
+ *
+ * Each sub-dimension response is an additional Bayesian observation that tightens
+ * the posterior around the user's true position. Does NOT count as a separate
+ * interaction for stopping purposes — it refines an already-answered axis.
+ *
+ * @param session     Current session state
+ * @param axisId      Parent axis being refined
+ * @param responses   Map of subDimensionId → positionIndex (0-based)
+ * @param positionCounts  Map of subDimensionId → number of positions (for score conversion)
+ * @param ballotWeights  Ballot relevance weights
+ * @returns Updated session with narrowed posterior and higher confidence
+ */
+export function processFineTuningRefinement(
+  session: HybridAssessmentSession,
+  axisId: string,
+  responses: Record<string, number>,
+  positionCounts: Record<string, number>,
+  ballotWeights: BallotRelevanceWeights = {},
+): HybridAssessmentSession {
+  const updated = deepCloneSession(session);
+  const axis = updated.axes[axisId];
+  if (!axis) return updated;
+
+  const posteriors = rebuildPosteriorMap(updated);
+  const prior = posteriors.get(axisId);
+  if (!prior) return updated;
+
+  let currentPosterior = prior;
+  let responseCount = 0;
+
+  for (const [subId, positionIndex] of Object.entries(responses)) {
+    const count = positionCounts[subId] ?? 5;
+    // Convert position index to 0-10 scale
+    const value = count <= 1 ? 5 : (positionIndex / (count - 1)) * 10;
+    // Sub-dimension signals use a moderate sigma (1.5) since they're
+    // refinements of an already-answered axis, not primary observations.
+    // This narrows the posterior without dominating the main card selection.
+    const sigma = 1.5;
+    currentPosterior = bayesianUpdate(currentPosterior, value, sigma);
+    responseCount++;
+  }
+
+  posteriors.set(axisId, currentPosterior);
+
+  // Cross-axis propagation from the refined estimate
+  propagateCrossAxis(posteriors, axisId);
+
+  // Write posteriors back
+  syncPosteriorsToAxes(updated, posteriors);
+
+  // Boost confidence from the additional evidence
+  if (responseCount > 0 && axis.currentRecord) {
+    // Each sub-dimension response adds evidence; confidence asymptotically approaches 1.0
+    const prevConf = axis.confidenceByModality.mergedConfidence;
+    const boost = responseCount / (responseCount + 4); // diminishing returns
+    const newConf = Math.min(0.98, prevConf + (1 - prevConf) * boost * 0.5);
+    axis.confidenceByModality.mergedConfidence = newConf;
+    axis.confidenceByModality.structuredConfidence = newConf;
+    axis.currentRecord.confidence = newConf;
+    // Update score to posterior mean (which has been refined by sub-dimensions)
+    axis.currentRecord.score = currentPosterior.mean;
+    axis.currentRecord.scoreNormalized = (currentPosterior.mean - 5.0) / 5.0;
+  }
+
+  // Recompute session state (question queue, entropy)
+  recomputeSessionState(updated, posteriors, ballotWeights);
+
+  return updated;
+}
+
 // ── Internal helpers ──
 
 /**
