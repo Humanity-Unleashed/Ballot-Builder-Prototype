@@ -8,7 +8,7 @@ import type { DomainId } from '@/types/conversation';
 import { axisSliderConfigs } from '@/data/sliderPositions';
 
 interface ProfileSummaryProps {
-  /** Full 16-axis profile */
+  /** Full 17-axis profile */
   profile: Record<string, UserValueRecord>;
   /** Called when user taps an imputed axis to answer directly */
   onOverrideAxis?: (axisId: string) => void;

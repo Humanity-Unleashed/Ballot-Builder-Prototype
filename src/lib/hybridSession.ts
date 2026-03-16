@@ -502,7 +502,7 @@ export function getImputedValues(
 
 /**
  * Build the complete profile from answered + imputed axes.
- * Returns all 16 axes with the best available record.
+ * Returns all 17 axes with the best available record.
  */
 export function getFullProfile(
   session: HybridAssessmentSession,

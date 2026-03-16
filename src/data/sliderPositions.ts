@@ -774,6 +774,73 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
     ],
   },
 
+  justice_reproductive: {
+    axisId: 'justice_reproductive',
+    question: 'What should the legal status of abortion and reproductive healthcare be?',
+    poleALabel: 'Full Reproductive\nRights',
+    poleBLabel: 'Protect\nFetal Life',
+    currentPolicyIndex: 3,
+    // 6 positions: Post-Dobbs landscape as current policy baseline
+    // Pew 2024: 63% say legal in all/most cases; 36% say illegal in all/most
+    positions: [
+      {
+        title: 'Unrestricted access with public funding',
+        description: 'Legal throughout pregnancy with government-funded coverage for all',
+        tradeoffs: [
+          'Eliminates geographic and financial barriers to access (Guttmacher 2024)',
+          'Approximately 930,000 abortions per year in the US (CDC 2023); most occur before 13 weeks regardless of legal status',
+          'Federal funding for abortion is currently prohibited by the Hyde Amendment, which has been in effect since 1977',
+        ],
+      },
+      {
+        title: 'Legal with viability limit (~24 weeks)',
+        description: 'Broad access through viability with health exceptions after; reflects pre-Dobbs Roe standard',
+        tradeoffs: [
+          'Was the constitutional standard for ~50 years under Roe v. Wade / Planned Parenthood v. Casey',
+          '93% of abortions occur in the first trimester; 1% occur at or after 21 weeks (CDC 2023)',
+          'Later abortions are almost exclusively for severe fetal anomalies or maternal health emergencies (ANSIRH Turnaway Study)',
+        ],
+      },
+      {
+        title: 'Legal with earlier gestational limit (12–15 weeks)',
+        description: 'First-trimester access with exceptions for health and fetal anomalies after',
+        tradeoffs: [
+          'Similar to most European countries (12-week limit common in France, Germany, Italy)',
+          'Covers 93% of current abortions without restriction (CDC 2023)',
+          'May delay patients who need diagnostic testing (many fetal anomalies detected at 18–20 week anatomy scan)',
+        ],
+      },
+      {
+        title: 'Post-Dobbs state patchwork',
+        description: 'Each state sets its own rules; ranges from full bans to broad access',
+        isCurrentPolicy: true,
+        tradeoffs: [
+          'Current reality since Dobbs v. Jackson (June 2022): 14 states ban most abortions, 7 restrict after 6–18 weeks',
+          'Cross-state travel for abortion increased 300%+ in first year post-Dobbs (Guttmacher)',
+          'Ballot measures to protect abortion access have passed in all 7 states where voters decided (2022–2024), including red states (Kansas, Ohio, Montana)',
+        ],
+      },
+      {
+        title: 'Exceptions only (rape, incest, life of mother)',
+        description: 'General prohibition with narrow exceptions for extreme circumstances',
+        tradeoffs: [
+          'Represents position of many pro-life voters; polls show 70%+ support at least these exceptions (Gallup 2024)',
+          'Exception enforcement is complex: rape exceptions may require police report, creating delays; life-of-mother exceptions create legal uncertainty for physicians',
+          'Estimated 5–10% of pregnancies involve these exceptions; the rest would be carried to term or sought through travel/other means',
+        ],
+      },
+      {
+        title: 'Banned from conception, no public funding',
+        description: 'Abortion prohibited at all stages; no government funding for reproductive services',
+        tradeoffs: [
+          'Consistent with the position that life begins at conception (held by ~20% of Americans per Gallup 2024)',
+          'Historical evidence: pre-Roe era had an estimated 200,000–1.2M illegal abortions per year (Guttmacher); maternal mortality was significantly higher',
+          'May also affect IVF access, miscarriage management, and ectopic pregnancy treatment depending on legal definitions',
+        ],
+      },
+    ],
+  },
+
   climate_ambition: {
     axisId: 'climate_ambition',
     question: 'How quickly should we act on climate change?',

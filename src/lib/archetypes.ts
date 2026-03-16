@@ -14,7 +14,7 @@ export interface MetaDimensionScores {
   governance_style: number;           // -1 = Rules & standards, +1 = Flexibility & choice
 }
 
-// Which axes contribute to each meta-dimension (all 16 axes mapped)
+// Which axes contribute to each meta-dimension (all 17 axes mapped)
 export const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
   responsibility_orientation: [
     'econ_safetynet',            // broader safety net ↔ conditional/limited
@@ -37,6 +37,7 @@ export const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
     'health_cost_control',            // government price limits ↔ market competition
     'justice_policing_accountability', // oversight & alternatives ↔ more police
     'justice_firearms',               // stronger gun rules ↔ fewer restrictions
+    'justice_reproductive',           // reproductive rights ↔ restrict access
     'climate_permitting'              // thorough review ↔ faster approvals
   ]
 };

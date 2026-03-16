@@ -1,6 +1,6 @@
 /**
  * Multi-Axis Extraction API — Extracts value signals from free-form user
- * input, scanning all 16 civic axes (not just the current domain).
+ * input, scanning all 17 civic axes (not just the current domain).
  *
  * Used by the hybrid assessment flow when a user switches to NLP mode
  * (voice or text) via the "None of these fit" escape hatch.
@@ -91,7 +91,7 @@ async function callLLM(
  * Build the multi-axis extraction prompt.
  *
  * Unlike the warmup extraction (which scans only the current domain),
- * this scans ALL 16 axes — the asked axis as PRIMARY, and any other
+ * this scans ALL 17 axes — the asked axis as PRIMARY, and any other
  * axis the user explicitly mentions as SECONDARY.
  */
 function buildMultiAxisExtractionPrompt(
@@ -284,7 +284,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Validate signals — allow all 16 axes, not just a domain subset
+    // Validate signals — allow all 17 axes, not just a domain subset
     const allAxisIds = new Set(AXIS_IDS as readonly string[]);
     const { sanitizedSignals, issues } = validateExtractionOutput(
       extraction,

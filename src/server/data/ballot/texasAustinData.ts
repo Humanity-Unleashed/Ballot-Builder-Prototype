@@ -78,6 +78,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 3, // HIGH — Javier Ambler's Law (enacted 2021); 'training, oversight, accountability'; ICE replacement advocacy
       justice_sentencing_goals:    2, // MEDIUM — HB 30 juvenile diploma program (enacted 2023); marijuana legalization + expungement; reentry programs
       justice_firearms:            3, // MEDIUM — universal background checks, age limits, secure storage; no assault weapons ban; Texas Gun Rights opposition
+      justice_reproductive:        2, // LOW — pro-choice implied from progressive record; no explicit 2026 position found; directionally supportive of reproductive rights
       climate_ambition:            4, // MEDIUM — acknowledges climate threat, supports preparedness; no fossil fuel phase-out or emergency-level framing
       climate_energy_portfolio:    5, // MEDIUM — praises TX oil/gas/wind/solar/geothermal; 'energy leader of the world'; true all-of-the-above
       climate_permitting:          5, // LOW — 'streamline permitting without compromising environmental protection'; genuinely ambiguous single statement
@@ -140,6 +141,10 @@ const allCandidates: Candidate[] = [
         { text: 'Texas Gun Rights opposition (\'two peas in the same anti-gun pod\')' },
         { text: 'Floor speech after Texas gun bill' },
       ],
+      justice_reproductive: [
+        { text: 'Progressive record implies pro-choice stance' },
+        { text: 'No explicit 2026 reproductive rights position documented' },
+      ],
       climate_ambition: [
         { text: 'Campaign energy/environment page' },
         { text: 'Position conflict analysis in research file' },
@@ -194,6 +199,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 7, // LOW — co-sponsored 'Back the Blue'; co-sponsored de-escalation training bill; net pro-law-enforcement
       justice_sentencing_goals:    6, // MEDIUM — First Step Act primary Senate champion (87-12 passage); reduced mandatory minimums; not broader decarceration advocate
       justice_firearms:            7, // HIGH — career NRA A+; co-authored BSCA (first major gun law in 30 years); Texas GOP rebuked him; BSCA too significant to ignore
+      justice_reproductive:        8, // HIGH — SBA Pro-Life A+/100%; co-sponsored Pain-Capable Unborn Child Protection Act; voted to confirm anti-Roe justices
       climate_ambition:            9, // HIGH — LCV 0% (2024), 7% lifetime; barred EPA from regulating GHGs; NO on IRA; renewables as 'a cult, or religion'
       climate_energy_portfolio:    9, // HIGH — LCV 0%, called renewables 'a cult'; NO on IRA; supports LNG exports; OBBB repeals IRA clean energy credits
       // housing_supply_zoning omitted — no Senate record on housing/zoning
@@ -259,6 +265,11 @@ const allCandidates: Candidate[] = [
         { text: 'One Big Beautiful Bill: reduces NFA tax on firearms/suppressors to $0' },
         { text: 'Texas Republican Party formally rebuked him over BSCA' },
       ],
+      justice_reproductive: [
+        { text: 'SBA Pro-Life A+/100% rating' },
+        { text: 'Co-sponsored Pain-Capable Unborn Child Protection Act' },
+        { text: 'Voted to confirm anti-Roe justices' },
+      ],
       climate_ambition: [
         { text: 'LCV 0% (2024), 7% lifetime' },
         { text: 'Voted YES on barring EPA from regulating greenhouse gases' },
@@ -318,6 +329,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 9, // HIGH — sued Dallas for underfunding police; 'attacks from the radical Left'; pro-law-enforcement central to campaign
       justice_sentencing_goals:    7, // MEDIUM — co-led bipartisan 38-AG coalition for First Step Act; enforcement-first AG record; not purely punitive when reform is framed as saving money
       justice_firearms:           10, // HIGH — NRA A-grade + 3 endorsements + NAGR; sued ATF over pistol braces, suppressors, background checks; 'more gun regulation → more people die'
+      justice_reproductive:       10, // HIGH — sued abortion providers post-SB 8; sought patient records from out-of-state clinics; sued Aid Access; enforced trigger law immediately after Dobbs
       climate_ambition:           10, // HIGH — 15+ multistate EPA lawsuits; 'climate change is a matter of opinion'; 'radical climate change movement'; Sierra Club: 'fights measures that would reduce deaths'
       climate_energy_portfolio:   10, // HIGH — defended ExxonMobil climate fraud investigations; led 14-state EPA vehicle emissions challenge; 'Biden goes to war against fossil fuels'
       climate_permitting:          9, // HIGH — stopped WOTUS rule; opposed EPA ozone/methane/particulate standards; systematically reducing federal environmental review authority
@@ -391,6 +403,12 @@ const allCandidates: Candidate[] = [
         { text: 'Quote: \'The more we talk about gun regulation, the more people are gonna die\' (2014)' },
         { text: 'Partnered with Gun Owners of America on multiple lawsuits' },
       ],
+      justice_reproductive: [
+        { text: 'Sued abortion providers post-SB 8' },
+        { text: 'Sought patient records from out-of-state clinics' },
+        { text: 'Sued Aid Access over mifepristone by mail' },
+        { text: 'Enforced trigger law immediately after Dobbs' },
+      ],
       climate_ambition: [
         { text: '15+ multistate lawsuits against EPA environmental regulations (2015-2024)' },
         { text: 'Called climate change \'a matter of opinion\' (2019)' },
@@ -462,6 +480,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 3, // MEDIUM — demanded body cam footage after ICE killing; called on Abbott to stop fatal ICE operations; redirecting DPS to community policing; not defund/abolish
       justice_sentencing_goals:    1, // HIGH — HB 351 ability-to-pay sentencing reform (enacted); HB 81 marijuana decrim (co-authored); HB 2107 medical marijuana; NORML; TX incarceration > Russia/Iran
       justice_firearms:            2, // HIGH — universal background checks, red flag laws, long-gun licensing, domestic abuser surrender, stolen gun reporting; 'public health issue' framing
+      justice_reproductive:        1, // HIGH — NO on SB 8, total ban, criminal penalties bills; EMILY's List endorsed; consistent pro-choice voting record
       climate_ambition:            2, // HIGH — 41-bill TX Climate Plan (2021); clean energy employment transition bill (passed); 'respond with urgency to a warming planet'
       climate_energy_portfolio:    3, // HIGH — 41-bill climate package including fossil fuel regulation; 'TX can lead in energy if we take advantage of new technologies'; transition not elimination framing
       // climate_permitting omitted — no permitting-specific position found in 41-bill plan
@@ -542,6 +561,12 @@ const allCandidates: Candidate[] = [
         { text: 'TribTalk op-ed 2019: challenges \'Texas gun culture\' narrative to defend regulation' },
         { text: 'Consistent positions across 2017-2026 with no retreat' },
       ],
+      justice_reproductive: [
+        { text: 'Voted NO on SB 8 (heartbeat bill)' },
+        { text: 'Voted NO on total abortion ban (HB 1280 trigger law)' },
+        { text: 'Voted NO on criminal penalties for abortion providers' },
+        { text: 'EMILY\'s List endorsed' },
+      ],
       climate_ambition: [
         { text: 'Legislative record: 41-bill Texas Climate Plan to reduce carbon emissions and regulate fossil fuel industry (2021)' },
         { text: 'Legislative record: clean energy employment transition bill (passed)' },
@@ -601,6 +626,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 9, // HIGH — HB 1900 froze property taxes for cities defunding police; SB 23 voter approval to reduce law enforcement budgets; Daniel Perry pardon pledge; 'Back the Blue'
       justice_sentencing_goals:    9, // HIGH — bail reform restricting cashless bail; 55+ executions with near-zero clemency; vetoed bipartisan CJ reform bill (2021); increased penalties for stolen goods
       justice_firearms:           10, // HIGH — NRA A+ (highest attainable); HB 1927 constitutional carry; 7-bill gun rights package; 24+ pro-gun bills; NRA CEO at signing ceremony; zero gun safety measures even after Uvalde
+      justice_reproductive:        9, // HIGH — signed trigger law + SB 8 heartbeat bill; defended TX abortion laws in federal court
       climate_ambition:            9, // HIGH — zero climate policy across 3 terms; executive order directing agencies to fight federal climate action; anti-ESG law; avoids term 'climate change'
       climate_energy_portfolio:    9, // HIGH — excluded renewables from incentive programs; 5 bills penalizing wind/solar + subsidizing gas/coal; $18B natural gas plant plan; blamed green energy for Winter Storm Uri
       climate_permitting:          9, // HIGH — no green energy permitting streamlining; directed PUC to penalize renewable projects; sued EPA multiple times as AG; deliberately added friction for clean energy
@@ -689,6 +715,11 @@ const allCandidates: Candidate[] = [
         { text: '24+ pro-gun bills signed across governorship' },
         { text: 'NRA CEO attended signing ceremony' },
       ],
+      justice_reproductive: [
+        { text: 'Signed SB 8 heartbeat bill into law (2021)' },
+        { text: 'Signed HB 1280 trigger law (2022)' },
+        { text: 'Defended Texas abortion laws in federal court' },
+      ],
       climate_ambition: [
         { text: 'No climate policy across three terms' },
         { text: 'Executive order directing agencies to fight all federal climate actions' },
@@ -762,6 +793,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 3, // MEDIUM — CJ reform bills from Day 1 (2019); Dallas DA Creuzot + Harris Co. Commissioner Ellis endorsements; 'partner with law enforcement' AG framing
       justice_sentencing_goals:    3, // MEDIUM — fentanyl testing strips (harm reduction); CJ reform bills; marijuana legalization + expungement campaign; YES on SB 4 (10-yr mandatory min for human smuggling)
       justice_firearms:            1, // HIGH — self-stated NRA 'F' grade; 'I'm good with Fs on the NRA report card'; consistent Democratic gun safety voting
+      justice_reproductive:        1, // HIGH — authored 4 pro-choice bills including medication abortion; filed Roe-standard protection bills; voted NO on all restrictive legislation
       climate_ambition:            3, // MEDIUM — polluter penalty increase authored; ERCOT reform; virtual power plant pilot; pragmatic incremental, not emergency-level
       climate_energy_portfolio:    4, // MEDIUM — virtual power plant; Texas Power Promise; 'balance renewable energy with traditional forms for grid reliability'; all-of-the-above in ERCOT context
       // housing_transport_priority omitted — no evidence
@@ -833,6 +865,11 @@ const allCandidates: Candidate[] = [
         { text: 'Quote: \'the people overwhelmingly support meaningful gun safety laws. I\'m good with Fs on the NRA report card\'' },
         { text: 'Consistent Democratic voting on gun issues' },
       ],
+      justice_reproductive: [
+        { text: 'Authored 4 pro-choice bills including medication abortion access' },
+        { text: 'Filed bills to protect reproductive rights to Roe standard' },
+        { text: 'Voted NO on all restrictive abortion legislation' },
+      ],
       climate_ambition: [
         { text: 'Polluter penalty increase authored' },
         { text: 'ERCOT reform work' },
@@ -889,6 +926,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 3, // MEDIUM — respects local decision-making on law enforcement; would partner with DAs to prosecute corruption; cannabis savings redirected to police; not defund
       justice_sentencing_goals:    1, // MEDIUM — legalize personal-use marijuana; end for-profit prisons; mental health courts; veterans courts; explicitly frames marijuana prosecution as wasteful ($300M savings cited)
       justice_firearms:            3, // LOW — 'common-sense gun safety measures that keep kids safe'; Uvalde cited; no specific measures named across two campaign cycles; directionally toward regulation
+      justice_reproductive:        2, // MEDIUM — campaign platform: protect reproductive rights to Roe standard; supports restoring pre-Dobbs access
       climate_ambition:            3, // LOW — 'using science and technology to fight climate change'; would join county attorneys to sue polluters; 'responsibly managing TX energy resources' hedged
       climate_energy_portfolio:    4, // LOW — 'responsibly managing Texas's energy resources' with 'science and technology'; no fossil fuel phase-out or renewables mandate; slight clean energy lean
       // econ_investment omitted — outside AG scope; no stated positions
@@ -938,6 +976,10 @@ const allCandidates: Candidate[] = [
       ],
       justice_firearms: [
         { text: 'Campaign website 2022-2026' },
+      ],
+      justice_reproductive: [
+        { text: 'Campaign platform: protect reproductive rights to Roe standard' },
+        { text: 'Supports restoring pre-Dobbs access' },
       ],
       climate_ambition: [
         { text: 'Campaign website 2022-2026' },
@@ -992,6 +1034,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 8, // HIGH — NO on George Floyd Justice in Policing Act; explicit qualified immunity defense; 'Soros-funded DAs' framing; law enforcement family identity (TX Ranger, Police Chief)
       justice_sentencing_goals:    7, // MEDIUM — bipartisan Federal Criminal Code Reform (reduce nonviolent overcriminalization); demanded DOJ explain lenient sentence for violent offenders; principled libertarian overcriminalization stance
       justice_firearms:            9, // HIGH — NRA 'A' grade + endorsement; NO on Bipartisan Background Checks Act; No Backdoor Gun Control Act; opposes red flag laws; voted Present (not No) on BSCA after Uvalde
+      justice_reproductive:        9, // HIGH — Pro-life 100% (National Right to Life); Heritage Action 100%; co-sponsored federal 15-week ban; voted against codifying Roe
       climate_ambition:           10, // HIGH — LCV 0% (2024 annual), 2% lifetime; NO on IRA; Energy Freedom Act to repeal ALL IRA clean energy subsidies; 'climate hysteria'; Climate of Denial tracker
       climate_energy_portfolio:   10, // HIGH — Energy Freedom Act repeals ALL clean energy subsidies; Protecting American Energy Jobs Act; legislation to repeal Biden fossil fuel production limits; coal on public lands; requested offshore wind excluded from permitting reform
       climate_permitting:          7, // MEDIUM — opposed SPEED Act permitting reform because it could accelerate clean energy; requested offshore wind excluded from permitting reform benefits; wants faster permitting for fossil fuels only
@@ -1067,6 +1110,12 @@ const allCandidates: Candidate[] = [
         { text: 'Explicit opposition to red flag laws (\'taking guns first, due process later\')' },
         { text: 'Present (not No) vote on Bipartisan Safer Communities Act after Uvalde' },
       ],
+      justice_reproductive: [
+        { text: 'Pro-life 100% rating from National Right to Life' },
+        { text: 'Heritage Action 100% score' },
+        { text: 'Co-sponsored federal 15-week abortion ban' },
+        { text: 'Voted against codifying Roe' },
+      ],
       climate_ambition: [
         { text: 'LCV 0% (2024 annual scorecard)' },
         { text: 'LCV 2% lifetime scorecard' },
@@ -1131,6 +1180,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 8, // MEDIUM — 'making Texas safest state'; law enforcement support rhetoric; pledges to prosecute local officials obstructing immigration ops; no reform bills in 7-year record
       justice_sentencing_goals:    8, // MEDIUM — authored SB 476 (increased punishment for intoxication manslaughter); supported death penalty expansion for child murders; 'deport all' immigration maximalism; punishment/deterrence framing
       justice_firearms:            9, // HIGH — authored SB 755 (firearms sales tax holiday); foster care firearms privacy bill; worked directly with NRA on State Fair gun ban; SB 19 anti-ESG punished companies with gun safety policies; no gun regulation votes in 7 years
+      justice_reproductive:       10, // HIGH — signed all 8 TX Right to Life Pledge items; authored restrictive abortion bills; 100% TX Right to Life rating
       climate_ambition:            9, // HIGH — president of Middleton Oil Company (60+ wells); led anti-ESG legislation (SB 13); renewables as 'unfair advantage through heavy tax subsidies'; supported SB 6/7 incentivizing thermal generation; no climate action found
       climate_energy_portfolio:    9, // HIGH — oil executive with direct financial interest in fossil fuels; SB 6/7 for 'dispatchable reliable' (thermal/gas) generation; 'intermittent renewable technologies'; anti-ESG penalizing institutions divesting from fossil fuels
       climate_permitting:          8, // LOW — anti-regulation philosophy across all domains; pro-fossil-fuel record implies expedited energy permitting; SB 6/7 thermal generation support; no specific permitting bills documented
@@ -1196,6 +1246,11 @@ const allCandidates: Candidate[] = [
         { text: 'Worked directly with NRA on State Fair of Texas gun ban policy' },
         { text: 'Anti-ESG bill SB 19 prohibited state business with companies that boycott firearms industry' },
         { text: 'No gun safety or gun regulation votes found in 7-year record' },
+      ],
+      justice_reproductive: [
+        { text: 'Signed all 8 Texas Right to Life Pledge items' },
+        { text: 'Authored bills to restrict abortion access' },
+        { text: '100% Texas Right to Life rating' },
       ],
       climate_ambition: [
         { text: 'President of Middleton Oil Company (60+ wells, South Texas and Gulf Coast)' },
@@ -1264,6 +1319,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 1, // HIGH — BREATHE Act support; George Floyd Justice in Policing Act support; called for DOJ investigation of Austin Police Department
       justice_sentencing_goals:    2, // LOW — BREATHE Act includes sentencing reform and decarceration components; no standalone sentencing bill votes found
       justice_firearms:            0, // HIGH — Giffords endorsement; assault weapons ban co-sponsor; PLCAA repeal co-sponsor; Ethan's Law (safe storage) co-sponsor
+      justice_reproductive:        1, // MEDIUM — progressive record; reproductive rights in valueStances; consistent pro-choice from Austin Council through Congress
       climate_ambition:            0, // HIGH — Green New Deal co-sponsor; LCV 100% annual (2025); LCV 75% lifetime; endorsed as 'climate and environmental justice champion'
       climate_energy_portfolio:    1, // HIGH — GND co-sponsor; Connect the Grid Act sponsor; LCV 100%; energy transition through jobs lens
       climate_permitting:          3, // LOW — Connect the Grid Act (faster grid interconnection for renewables); likely supports strong environmental review for fossil projects; limited direct evidence
@@ -1320,6 +1376,10 @@ const allCandidates: Candidate[] = [
         { text: 'Assault weapons ban co-sponsor' },
         { text: 'PLCAA repeal co-sponsor' },
         { text: 'Ethan\'s Law (safe storage) co-sponsor' },
+      ],
+      justice_reproductive: [
+        { text: 'Progressive record; reproductive rights listed in valueStances' },
+        { text: 'Consistent pro-choice orientation from Austin City Council through Congress' },
       ],
       climate_ambition: [
         { text: 'Green New Deal co-sponsor' },
@@ -1400,6 +1460,7 @@ const allCandidates: Candidate[] = [
       housing_supply_zoning:       3, // LOW — 'incentivizing building of starter/missing middle homes' (Community Impact); no explicit zoning reform legislation documented; real estate professional background
       housing_affordability_tools: 3, // LOW — 'collaborate with local governments to expand housing access, reduce homelessness'; government-involved approach through incentives and partnerships; no rent control proposals
       justice_firearms:            1, // HIGH — 12 gun safety bills filed in 2023 session; opposed permitless carry (KVUE); called for special session post-Uvalde; HB 298 waiting period bill; comprehensive package
+      justice_reproductive:        1, // HIGH — extensive pro-choice voting record; sponsored Medicaid abortion coverage bill; opposed SB 8 and trigger law
       climate_ambition:            3, // MEDIUM — 'bold action... reduce greenhouse gas emissions'; SW Travis County Groundwater Conservation District legislation; 'balances environmental protection with economic growth' language
       climate_energy_portfolio:    3, // LOW — 'clean power' language; criticism of water diversion for data centers; no specific renewable mandates or fossil fuel phase-out timelines documented
       // health_cost_control omitted — no evidence
@@ -1452,6 +1513,12 @@ const allCandidates: Candidate[] = [
         { text: 'Called for special session post-Uvalde (KVUE)' },
         { text: 'HB 298 waiting period bill' },
       ],
+      justice_reproductive: [
+        { text: 'Extensive pro-choice voting record in TX House' },
+        { text: 'Sponsored Medicaid coverage for abortion bill' },
+        { text: 'Opposed SB 8 and trigger law' },
+        { text: 'Campaign platform: reproductive healthcare access' },
+      ],
       climate_ambition: [
         { text: 'Campaign website: \'bold action... reduce greenhouse gas emissions\'' },
         { text: 'SW Travis County Groundwater Conservation District legislation' },
@@ -1501,6 +1568,7 @@ const allCandidates: Candidate[] = [
       health_coverage_model: 3, // MEDIUM — explicit Medicaid expansion support; framed pragmatically around rural hospitals; no single-payer or public option beyond Medicaid
       health_public_health:  4, // LOW — opposes blanket THC prohibition; moderate individual-choice orientation; insufficient evidence for stronger score in either direction
       justice_firearms:      3, // MEDIUM — supports universal background checks, red flag laws, and gun owner liability; Gun Sense Voter candidate; consistent across 2022 and 2026
+      justice_reproductive:  3, // LOW — challenges social conservative traditions; sparse detail on reproductive rights; general progressive-moderate orientation
       climate_ambition:      4, // MEDIUM — acknowledges climate tech and grid modernization; does not frame climate as emergency; all-of-the-above includes fossil fuels; oil/gas executive background
       climate_energy_portfolio: 5, // MEDIUM — explicitly all-of-the-above: battery storage + renewables + continued fossil fuel production; former oil/gas executive; ERCOT reform; true center on this axis
       // econ_safetynet omitted — no evidence beyond Medicaid expansion
@@ -1534,6 +1602,10 @@ const allCandidates: Candidate[] = [
         { text: 'Gun Sense Voter profile' },
         { text: '2022 campaign detail' },
         { text: '2026 consistency' },
+      ],
+      justice_reproductive: [
+        { text: 'Challenges social conservative traditions; sparse detail on reproductive policy' },
+        { text: 'General progressive-moderate orientation' },
       ],
       climate_ambition: [
         { text: 'Campaign interviews' },
@@ -1589,6 +1661,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 9, // HIGH — 'back the blue' orientation; border security as top priority; law enforcement endorsements; no evidence of supporting any police reform measures
       justice_sentencing_goals:    9, // HIGH — tough-on-crime orientation; border security priority; general law-and-order framing; no evidence of rehabilitation-focused or decarceration positions
       justice_firearms:            9, // HIGH — NRA A+; controlled Senate agenda for permitless carry (HB 1927), campus carry, and open carry; 2019 background check advocacy abandoned under NRA pressure (scored on dominant record)
+      justice_reproductive:        9, // HIGH — controlled Senate agenda for SB 8 + trigger law; TX Right to Life 111-138%; led all major anti-abortion Senate votes
       climate_ambition:            9, // HIGH — climate skeptic; Texas Energy Fund for gas plants; ESG anti-boycott law (SB 13); TXOGA endorsement; not 10: no explicit climate denial rhetoric documented
       climate_energy_portfolio:    9, // HIGH — $10B fund for gas-fired power plants; SB 13 penalizing companies boycotting fossil fuels; TXOGA endorsement; clear fossil fuel prioritization
       // housing_transport_priority omitted — no evidence
@@ -1649,6 +1722,11 @@ const allCandidates: Candidate[] = [
         { text: 'Open carry' },
         { text: 'NRA endorsement 2022 and 2026' },
       ],
+      justice_reproductive: [
+        { text: 'Controlled Senate agenda for SB 8 and HB 1280 trigger law passage' },
+        { text: 'TX Right to Life 111-138% rating' },
+        { text: 'Led Senate passage of all major anti-abortion bills' },
+      ],
       climate_ambition: [
         { text: 'Climate skeptic (evidence summary)' },
         { text: 'Texas Energy Fund for gas plants' },
@@ -1706,6 +1784,7 @@ const allCandidates: Candidate[] = [
       justice_policing_accountability: 2, // HIGH — Travis County Judge record: established public defender's office; jail diversion programs; first PACE program in TX; institutional reform not rhetoric
       justice_sentencing_goals:    2, // HIGH — jail diversion programs as County Judge; PACE program (first in TX); public defender's office establishment; rehabilitation-focused institutional record with follow-through
       justice_firearms:            3, // LOW — one documented firearms vote (against blocking gun transparency in foster homes); directionally pro-regulation; YCT 16% consistent; insufficient evidence for higher confidence
+      justice_reproductive:        2, // MEDIUM — voted against SB 8; Avow highest rating; consistent pro-choice votes in TX Senate
       climate_ambition:            2, // MEDIUM — Environment Texas endorsement (2020); 30,000+ acres green space preservation; SB 1915 energy efficiency bill; no specific emissions targets or climate emergency framing
       climate_energy_portfolio:    3, // LOW — SB 1915 energy efficiency bill sponsorship signals clean energy orientation; no direct evidence on fossil fuel phase-out, renewables mandates, or broader energy portfolio
       // housing_affordability_tools omitted — no evidence
@@ -1752,6 +1831,11 @@ const allCandidates: Candidate[] = [
       ],
       justice_firearms: [
         { text: 'Senate vote against blocking gun transparency in foster homes' },
+      ],
+      justice_reproductive: [
+        { text: 'Voted against SB 8 in TX Senate' },
+        { text: 'Avow (TX reproductive rights org) highest rating' },
+        { text: 'Consistent pro-choice votes' },
       ],
       climate_ambition: [
         { text: 'Environment Texas endorsement (2020)' },
@@ -1802,6 +1886,7 @@ const allCandidates: Candidate[] = [
       health_coverage_model:       9, // MEDIUM — TFR fiscal orientation; general anti-government spending; Rothbardian self-identification; no direct healthcare vote or statement documented; scored medium confidence
       health_public_health:        9, // MEDIUM — DEI/transgender website shutdown; general anti-government-mandate orientation; libertarian self-identification; no direct public health votes; scored medium confidence
       justice_firearms:           10, // HIGH — authored first TX Constitutional Carry bill (84th Legislature); GOA endorsement (more absolutist than NRA); voted yes on SB 17 open carry saying it didn't go far enough
+      justice_reproductive:       10, // HIGH — explicit 'complete abolition + Comstock enforcement' position; TX Right to Life endorsed
       justice_sentencing_goals:    8, // MEDIUM — law-and-order orientation; SB 4 Sanctuary Cities co-sponsor; Trump/Cruz/law enforcement endorsement alignment; no specific sentencing votes documented
       justice_policing_accountability: 8, // LOW — general law-and-order orientation; SB 4 co-sponsor; endorsement alignment; no direct policing votes; scored low confidence — inference not direct evidence
       climate_ambition:            9, // LOW — anti-government spending orientation; no climate statements found; Rothbardian ideology + zero climate mentions across two campaigns; scored low confidence
@@ -1848,6 +1933,11 @@ const allCandidates: Candidate[] = [
         { text: 'Authored first TX Constitutional Carry bill (84th Legislature)' },
         { text: 'Gun Owners of America endorsement' },
         { text: 'Voted yes on SB 17 open carry \'with heavy heart\' it didn\'t go far enough' },
+      ],
+      justice_reproductive: [
+        { text: 'Explicit \'complete abolition\' of abortion position' },
+        { text: 'Supports Comstock Act enforcement against mailing abortion drugs' },
+        { text: 'TX Right to Life endorsed' },
       ],
       justice_sentencing_goals: [
         { text: 'Law-and-order orientation' },
@@ -1910,6 +2000,7 @@ const allCandidates: Candidate[] = [
       health_coverage_model:       8, // MEDIUM — iVoterGuide 2022: 'Medicare and Medicaid should remain but no other taxpayer-funded programs'; market-based but stops short of calling for repeal of existing programs
       health_public_health:        8, // MEDIUM — co-authored church protection/COVID powers legislation (limits executive COVID authority); consistent with individual choice over collective mandates orientation
       justice_firearms:            9, // HIGH — NRA endorsement (2022); HB 1927 constitutional carry vote; 'nearly two dozen pro-gun bills' authored; one of the strongest pro-gun records in TX Senate; not 10: no explicit opposition to all regulation documented
+      justice_reproductive:        9, // HIGH — co-authored SB 8; supported HB 1280 trigger law; consistent pro-life record in TX Senate
       climate_ambition:            8, // HIGH — manages fossil fuel leasing as primary GLO mission; $130M carbon sequestration lease framed as revenue generation, never as climate policy; Shale Magazine interview confirms fossil-first framing; not 9-10: actions have real emissions-reduction effects even if unintentional
       climate_energy_portfolio:    8, // HIGH — pro-oil-and-gas as primary energy/economic driver; carbon sequestration and nuclear as 'revenue supplements' not alternatives; GLO fossil fuel leasing program; not 9-10: does embrace carbon sequestration and nuclear
       // econ_school_choice omitted — Senate-era record not sufficiently documented; Land Commissioner role doesn't cover education
@@ -1944,6 +2035,11 @@ const allCandidates: Candidate[] = [
         { text: 'NRA endorsement 2022' },
         { text: 'HB 1927 constitutional carry vote' },
         { text: 'nearly two dozen pro-gun bills authored' },
+      ],
+      justice_reproductive: [
+        { text: 'Co-authored SB 8 (heartbeat bill) as state senator' },
+        { text: 'Supported HB 1280 trigger law' },
+        { text: 'Consistent pro-life voting record in TX Senate' },
       ],
       climate_ambition: [
         { text: 'GLO fossil fuel leasing record' },
@@ -1999,6 +2095,7 @@ const allCandidates: Candidate[] = [
       health_public_health:        2, // MEDIUM — remove harmful chemicals from food; oppose PFAS forever chemicals; eliminate processed foods from schools; strong regulatory stance within TDA scope
       climate_ambition:            2, // LOW — 2020: explicit climate crisis language + wind investment; 2026: soil health, water protection, anti-AI-data-center water use; consistent direction but 2026 evidence indirect
       climate_energy_portfolio:    3, // LOW — only direct energy portfolio evidence is 2020 wind investment support; 2026 focuses on water/soil; scored pro-renewables lean but low confidence
+      justice_reproductive:        2, // LOW — progressive direction; no explicit reproductive rights position documented
       // econ_tax_structure omitted — no tax policy positions found; antitrust is not tax policy
       // health_cost_control omitted — no evidence
       // housing_* omitted — no evidence
@@ -2034,6 +2131,10 @@ const allCandidates: Candidate[] = [
       ],
       climate_energy_portfolio: [
         { text: '2020 Senate campaign (wind energy investment)' },
+      ],
+      justice_reproductive: [
+        { text: 'Progressive direction from campaign platform' },
+        { text: 'No explicit reproductive rights position documented' },
       ],
     },
     valueStances: {
@@ -2073,6 +2174,7 @@ const allCandidates: Candidate[] = [
       econ_investment:             4, // MEDIUM — supports value-added rural economic development + farm survival programs (public investment); DOGE-style government reduction; net score reflects genuine support for targeted agricultural/rural investment within smaller-government framework
       econ_tax_structure:          8, // LOW — general Trump-alignment; government efficiency rhetoric; no specific tax positions found; scored low confidence
       justice_firearms:           10, // HIGH — Texas Gun Rights 100% survey score; Gun Owners of America endorsement; two hardline pro-gun organizations at maximum level; GOA and TXGR more absolutist than NRA
+      justice_reproductive:        9, // HIGH — 'pro-life from conception'; TX Alliance for Life endorsed; consistent pro-life positions
       health_public_health:        4, // LOW — MAHA movement (anti-regulatory, anti-corporate-food-industry lens rather than government mandates); movement generally opposes vaccine mandates; closer to center than typical Republican because of genuine public health concern
       climate_energy_portfolio:    7, // LOW — Trump trade/tariff alignment; anti-China agricultural security stance; no direct energy or climate positions found; inferred from overall Trump alignment; TX Agriculture Commissioner has limited climate jurisdiction
       // econ_school_choice omitted — no positions found
@@ -2101,6 +2203,11 @@ const allCandidates: Candidate[] = [
       justice_firearms: [
         { text: 'Texas Gun Rights 100% survey score' },
         { text: 'Gun Owners of America endorsement' },
+      ],
+      justice_reproductive: [
+        { text: '\'Pro-life from conception\' campaign statement' },
+        { text: 'TX Alliance for Life endorsed' },
+        { text: 'Consistent pro-life positions across campaign' },
       ],
       health_public_health: [
         { text: 'MAHA movement identification (campaign website, Blaze Media)' },
@@ -2152,6 +2259,7 @@ const allCandidates: Candidate[] = [
       econ_tax_structure:    3, // MEDIUM — TFR 24/100 F grade; YCT career 19/100; no specific tax policy statements — scored from fiscal scorecards
       econ_school_choice:    2, // HIGH — voted against school voucher legislation in Texas House; ATPE-aligned
       justice_firearms:      3, // MEDIUM — voted NO on HB 1927 (permitless carry); one strong signal but no broader gun policy platform documented
+      justice_reproductive:  2, // MEDIUM — voted against SB 8 heartbeat act; general pro-choice orientation from Democratic record
       climate_ambition:      3, // HIGH — authored HB 1452 (anti-flaring bill); Sierra Club 100% (2019); SB 3 weatherization amendments; enforcement and accountability focus; 'clean up the industry' not 'end fossil fuels'
       climate_energy_portfolio: 5, // HIGH — explicitly 'All of the Above'; supports continued oil and gas production with stricter accountability; positively cited IRA clean energy provisions but no fossil fuel phase-out; 25-year oilfield engineering career; true center on this axis
       climate_permitting:    2, // HIGH — would deny permits to operators with unresolved violations; third-party audit requirement; continuous monitoring mandate; HB 1452 enforcement provisions; strengthened environmental review
@@ -2177,6 +2285,10 @@ const allCandidates: Candidate[] = [
       ],
       justice_firearms: [
         { text: 'Voted NO on HB 1927 (permitless carry)' },
+      ],
+      justice_reproductive: [
+        { text: 'Voted against SB 8 heartbeat act' },
+        { text: 'General pro-choice orientation from Democratic voting record' },
       ],
       climate_ambition: [
         { text: 'HB 1452 (authored anti-flaring bill)' },
@@ -2233,12 +2345,13 @@ const allCandidates: Candidate[] = [
       climate_energy_portfolio: 8, // HIGH — 'solar and wind harm the environment worse than natural gas' (2020); geothermal/hydrogen/CCS as extensions of fossil infrastructure not replacements; approved flaring permits while verbally criticizing; TXOGA/Pipeline Association endorsements; not 9-10: acknowledges some emerging energy tech
       climate_permitting:      9, // HIGH — 'cut red tape' campaign message; opposed Railway Safety Act 2023; opposed federal methane permitting; testified before Congress for more state flexibility; near-maximum deregulatory posture on permitting
       econ_investment:         7, // MEDIUM — anti-federal-regulation posture; pro-private-sector energy development; accepted IIJA orphan well funds complicates pure anti-government-investment reading; RRC jurisdiction is narrow
+      justice_reproductive:    8, // LOW — TX Alliance for Life endorsement; conservative alignment implies pro-life
       // econ_safetynet omitted — no evidence
       // econ_tax_structure omitted — no evidence
       // econ_school_choice omitted — no evidence
       // health_* omitted — no evidence
       // housing_* omitted — no evidence
-      // justice_* omitted — no evidence
+      // justice_* omitted — no evidence (except justice_reproductive above)
     },
     axisEvidence: {
       climate_ambition: [
@@ -2264,6 +2377,10 @@ const allCandidates: Candidate[] = [
         { text: 'Campaign website' },
         { text: 'Opposition to federal regulatory framework' },
         { text: 'Support for state over federal control of energy investment' },
+      ],
+      justice_reproductive: [
+        { text: 'TX Alliance for Life endorsement' },
+        { text: 'Conservative alignment implies pro-life position' },
       ],
     },
     valueStances: {
@@ -2303,12 +2420,13 @@ const allCandidates: Candidate[] = [
       climate_energy_portfolio: 9, // MEDIUM — from Midland oil family (French Oil Company); entire career in fossil energy; no mention of renewables or energy transition; pro-fossil-fuel expansion platform; not 10: hasn't explicitly called for eliminating all clean energy subsidies
       climate_permitting:      9, // HIGH — permitting decentralization and streamlining is his most substantive policy proposal; move approval to regional offices + electronic submission; framed entirely as reducing industry burden, not balancing environmental review
       econ_investment:         8, // LOW — entire posture is anti-government-intervention and pro-deregulation within RRC scope; DEI contracting elimination; 'competitive bidding' framing; market-first orientation; scored LOW confidence: evidence limited to RRC regulatory context
+      justice_reproductive:    7, // LOW — conservative alignment inferred; limited direct reproductive rights evidence
       // econ_safetynet omitted — no evidence
       // econ_tax_structure omitted — no evidence
       // econ_school_choice omitted — no evidence
       // health_* omitted — no evidence
       // housing_* omitted — no evidence
-      // justice_* omitted — no evidence; Railroad Commissioner race is an energy regulatory office
+      // justice_* omitted — no evidence; Railroad Commissioner race is an energy regulatory office (except justice_reproductive above)
     },
     axisEvidence: {
       climate_ambition: [
@@ -2329,6 +2447,10 @@ const allCandidates: Candidate[] = [
       econ_investment: [
         { text: 'Campaign website (deregulation framing)' },
         { text: 'DEI contracting elimination proposal' },
+      ],
+      justice_reproductive: [
+        { text: 'Conservative alignment inferred from party and campaign' },
+        { text: 'Limited direct evidence on reproductive rights' },
       ],
     },
     valueStances: {

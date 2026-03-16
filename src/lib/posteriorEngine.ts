@@ -1,7 +1,7 @@
 /**
  * Posterior Engine — 21-bin Bayesian updates and cross-axis propagation.
  *
- * Maintains discretized posterior distributions over each of the 16 civic axes.
+ * Maintains discretized posterior distributions over each of the 17 civic axes.
  * Supports direct observation updates (from structured cards or NLP signals)
  * and cross-axis propagation via the correlation matrix.
  *
@@ -64,7 +64,7 @@ export function createUniformPosterior(): AxisPosterior {
   return posteriorFromProbs(uniformPosterior());
 }
 
-/** Initialize posteriors for all 16 axes as uniform. */
+/** Initialize posteriors for all 17 axes as uniform. */
 export function initializePosteriors(): PosteriorMap {
   const map: PosteriorMap = new Map();
   for (const axisId of AXIS_IDS) {
