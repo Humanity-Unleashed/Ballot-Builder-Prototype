@@ -13,6 +13,8 @@ import type { LLMTurnResult, ConversationMessage } from '@/types/conversation';
 import type { ProgressiveAxisValue } from '@/types/conversation';
 import { axisSliderConfigs } from '@/data/sliderPositions';
 import { validateExtractionOutput, type RawExtractionOutput } from '@/server/services/signalValidation';
+import { getReferenceById, buildOfficeContextBlock } from '@/server/data/ballot/civicReferences';
+import type { OfficeReference } from '@/server/types';
 
 /** Axis definition shape matching what the turn route passes in */
 export interface CivicAxis {
@@ -35,6 +37,8 @@ interface BallotItemContext {
   explanation: string;
   relevantAxes?: string[];
   yesAxisEffects?: Record<string, number>;
+  /** ID into civicReferences store — provides grounded office description for LLM context */
+  officeRef?: string;
   candidates?: Array<{
     id: string;
     name: string;
@@ -135,6 +139,15 @@ Effects of voting YES:
 ${effectsStr || '  (no axis effects mapped)'}`;
   }
 
+  // Inject grounded office reference if available
+  let officeBlock = '';
+  if (ballotItem.officeRef) {
+    const ref = getReferenceById(ballotItem.officeRef);
+    if (ref && ref.type === 'role') {
+      officeBlock = `\n\n${buildOfficeContextBlock(ref as OfficeReference)}\n`;
+    }
+  }
+
   const candidateInfo = (ballotItem.candidates || [])
     .map((c) => {
       const stances = Object.entries(c.profile.stances)
@@ -151,7 +164,7 @@ ${effectsStr || '  (no axis effects mapped)'}`;
 
   return `CANDIDATE RACE: "${ballotItem.title}"
 ${ballotItem.questionText}
-${ballotItem.explanation}
+${ballotItem.explanation}${officeBlock}
 Candidates:
 ${candidateInfo || '  (no candidates)'}`;
 }

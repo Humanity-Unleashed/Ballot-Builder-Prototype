@@ -36,6 +36,15 @@ export { contests, getContestById, getAllContests } from './contests';
 // Measures
 export { measures, getMeasureById, getAllMeasures } from './measures';
 
+// Civic References (office & measure descriptions for LLM context)
+export {
+  getReferenceById,
+  getAllReferences,
+  getReferencesByLevel,
+  buildOfficeContextBlock,
+  buildMeasureContextBlock,
+} from './civicReferences';
+
 // Ballot
 export {
   sampleBallot,

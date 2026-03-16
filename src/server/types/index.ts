@@ -178,6 +178,44 @@ export interface ApiError extends Error {
 }
 
 // ============================================
+// Office & Ballot Measure Reference Types
+// ============================================
+
+/**
+ * Deterministic, validated reference for an elected office or ballot measure.
+ * Served to the LLM as grounded context so it doesn't hallucinate role descriptions.
+ */
+export interface OfficeReference {
+  id: string;                       // stable key, e.g. "tx_railroad_commissioner_statewide"
+  type: 'role';
+  jurisdiction: string;             // e.g. "Texas", "City of Austin", "Travis County"
+  jurisdictionLevel: Jurisdiction;  // federal | state | county | city | special_district
+  title: string;                    // e.g. "Texas Railroad Commissioner"
+  shortDescription: string;         // 1-3 sentences: what it is, what area it covers
+  responsibilities: string[];       // 3-7 concrete powers/duties
+  scopeLimits?: string[];           // things the office does NOT control (1-3 bullets)
+  termLength?: string;              // e.g. "6 years", "4 years, 2-term limit"
+  seats?: number;                   // number of seats (e.g. 3 commissioners)
+  sources: string[];                // 1-3 authoritative URLs
+  usageNotes: string[];             // 1-3 bullets telling future LLM prompts how to use this
+}
+
+export interface MeasureReference {
+  id: string;                       // stable key, e.g. "tx_prop_a_2026_austin"
+  type: 'ballot_measure';
+  jurisdiction: string;
+  jurisdictionLevel: Jurisdiction;
+  title: string;                    // e.g. "Proposition A – City of Austin"
+  shortDescription: string;
+  keyProvisions: string[];          // what the measure would do (3-7 bullets)
+  fiscalImpact?: string;            // cost/revenue impact summary
+  sources: string[];
+  usageNotes: string[];
+}
+
+export type CivicReference = OfficeReference | MeasureReference;
+
+// ============================================
 // Ballot & Election Types
 // ============================================
 
@@ -203,6 +241,8 @@ export interface Contest {
   jurisdiction: Jurisdiction;
   termInfo?: string;
   votingFor?: number; // e.g., 1 for "vote for one"
+  /** Deterministic office reference for grounded LLM context */
+  officeRef?: string; // ID into officeReferences store
   candidates: Candidate[];
 }
 
