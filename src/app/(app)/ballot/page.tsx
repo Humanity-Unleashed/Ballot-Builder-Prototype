@@ -242,6 +242,28 @@ export default function UnifiedBallotPage() {
     }
   }, [convHydrated, convSession, convStartSession]);
 
+  // ── Seed conversation profile from Blueprint assessment ──
+  useEffect(() => {
+    if (!convSession || !blueprintProfile) return;
+    // Only seed if conversation profile is empty (hasn't been populated yet)
+    if (Object.keys(convSession.profile).length > 0) return;
+
+    const seeded: Record<string, import('@/types/conversation').ProgressiveAxisValue> = {};
+    for (const domain of blueprintProfile.domains) {
+      for (const axis of domain.axes) {
+        seeded[axis.axis_id] = {
+          value: axis.value_0_10,
+          confidence: axis.confidence_0_1,
+          importance: axis.importance ?? 5,
+          signalCount: 1,
+        };
+      }
+    }
+    if (Object.keys(seeded).length > 0) {
+      updateConvProfile(seeded);
+    }
+  }, [convSession, blueprintProfile, updateConvProfile]);
+
   // ── Skip logic: if user returns with assessment already done, jump ahead ──
   useEffect(() => {
     if (!ballotHydrated || !userHydrated) return;

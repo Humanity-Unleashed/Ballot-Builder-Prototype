@@ -1,10 +1,157 @@
-# CLAUDE.md — Ballot Builder Production Implementation Brief
+# CLAUDE.md — Ballot Builder
 
-> **For Claude Code:** This document is the single source of truth for turning the Ballot Builder prototype into a production application. Read this file, then explore the repo to understand the current state before making changes.
->
-> **What this document IS:** Pre-researched decisions, concrete implementation tasks, and architectural guidance tied to this specific codebase.
->
-> **What this document is NOT:** A research prompt. All API selection, pricing analysis, and launch strategy decisions are already made. Do not re-research these — execute against them.
+> **For Claude Code:** This is the source of truth for the Ballot Builder / Values Blueprint project. It contains the conceptual model, key invariants, pointers to detailed research, and production implementation tasks. Read this file before making changes to values mapping, scoring, candidate comparison, or UI flow.
+
+---
+
+## Conceptual Model
+
+### Three Flows
+
+The system has three flows with different compute profiles. See `docs/THREE_FLOWS_OVERVIEW.md` for full details.
+
+| Flow | Purpose | Runs when | Model |
+|------|---------|-----------|-------|
+| **1. Values Capture** | Discover user's policy preferences via adaptive assessment | Once per user | DeepInfra OSS (two-pass extraction) or deterministic (structured cards) |
+| **2. Data Gathering** | Research candidates and ballot measures, score on 16 axes | Once per election per geography | Claude Sonnet (research) + Opus (scoring) |
+| **3. Matching** | Compare user profile to candidate/measure positions | Every page load | None — pure client-side TypeScript math |
+
+### The 16 Civic Axes
+
+Users and candidates are both scored on 16 policy axes across 5 domains. Both structured card selection and NLP extraction produce values on the same 0–10 scale per axis. The matching formula uses weighted Euclidean distance.
+
+| Domain | Axes |
+|--------|------|
+| Economic | `safety_net_breadth`, `public_investment`, `school_choice` |
+| Healthcare | `coverage_model`, `cost_control`, `public_health` |
+| Housing | `zoning_supply`, `affordability_tools`, `transit_priority` |
+| Justice | `police_accountability`, `sentencing_goals`, `firearms_policy` |
+| Climate | `ambition_level`, `energy_portfolio`, `permitting_speed` |
+| Cross-cutting | `immigration_approach` |
+
+Each axis has Pole A (score 0) and Pole B (score 10). See `src/server/data/civicAxes/` for full definitions and `src/data/sliderPositions.ts` for the 3–5 position cards per axis.
+
+### Matching Formula
+
+```
+w_i = gw_i * cov_i * conf_i * estr_i
+S   = SUM(w_i * A_i) / SUM(w_i)
+A_i = 1 - |U_i - C_i| / 2
+```
+
+Where `U_i` = user score, `C_i` = candidate score, `conf_i` = confidence, `gw_i` = ballot-dynamic weight. Implemented in `src/lib/ballotHelpers.ts` — do not change the math without reading Research 07.
+
+### User Assessment Pipeline
+
+The hybrid assessment uses information-theoretic adaptive sequencing:
+
+1. **Structured cards** (primary): User picks from 3–5 position cards per axis. Deterministic scoring.
+2. **NLP escape hatch**: User speaks/types freely. Two-pass LLM extraction (response + signal extraction, run in parallel). Can extract signals across multiple axes from a single response.
+3. **Adaptive stopping**: Shannon entropy tracks remaining uncertainty per axis. Assessment ends when total weighted entropy drops below threshold, typically after 5–10 questions instead of all 16.
+4. **Blueprint profile**: Output is a `BlueprintProfile` with per-axis `value_0_10`, `confidence_0_1`, and `importance`.
+
+### AI Chat (Ask AI)
+
+The ballot-item AI assistant receives the user's Blueprint profile as context so it can answer questions about candidate alignment without re-asking the user's positions. The chat uses a two-pass architecture: Pass 1 generates a warm conversational response (temp 0.85), Pass 2 extracts structured value signals (temp 0.3, JSON mode). Both run in parallel.
+
+---
+
+## Research Index
+
+Detailed research documents live in `research/`. **Read the relevant doc before modifying its area.**
+
+| File | Area | Key content |
+|------|------|-------------|
+| `research/01_irt_calibration.md` | Psychometrics | IRT item calibration strategy, Graded Response Model |
+| `research/02_adaptive_sequencing.md` | Assessment flow | Prior distributions, posterior updates, cross-axis correlation, EWIG axis selection, stopping criterion |
+| `research/03_conversation_router.md` | NLP path | Entropy-routed conversation, multi-axis extraction, session state |
+| `research/05_hybrid_flow.md` | Modality switching | Structured ↔ NLP switching triggers, conflict resolution, unified session state |
+| `research/06_entropy_confidence.md` | Confidence scoring | Entropy-based confidence, structured vs NLP calibration, failure modes |
+| `research/07_ballot_weighting.md` | Dynamic weights | Candidate spread measure, ballot-specific axis weights, adversarial robustness |
+| `research/08_end_to_end_synthesis.md` | Full pipeline | Six-stage data flow, spec delta, implementation phases |
+
+Additional docs in `docs/`:
+
+| File | Content |
+|------|---------|
+| `docs/THREE_FLOWS_OVERVIEW.md` | Three flows architecture, data lifecycle |
+| `docs/ARCHITECTURE.md` | System architecture overview |
+| `docs/ASSESSMENT_PIPELINE.md` | Assessment pipeline details |
+| `docs/CANDIDATE_SCORING_PROMPT.md` | Prompt design for candidate scoring |
+| `docs/SCORING_METHODOLOGY.md` | Full scoring rubric (in `references/`) |
+
+---
+
+## Key Invariants (Never Break These)
+
+1. **Assessment scoring algorithms are correct.** Do not modify `civicAxesService.ts`, `schwartzService.ts`, `src/lib/scoring.ts`, or the matching formula in `ballotHelpers.ts` without reading the relevant research doc first.
+2. **Evidence floors.** Only score axes where evidence exists. Never fill gaps with neutral 5s — for users or candidates.
+3. **Voting record > stated position.** When a candidate's votes contradict their campaign statements, the record wins. Flag the discrepancy.
+4. **Confidence scales linearly into match scores.** Confidence errors propagate directly. See Research 06 §2 for failure modes.
+5. **Blueprint profile seeds the AI chat.** The conversation store's profile must be initialized from the Blueprint assessment so the AI doesn't re-ask positions the user already provided.
+6. **Unauthenticated flow must work.** Users can take the full assessment and view recommendations without signing up. Auth is only required to save results.
+7. **The 16 axes and 5 domains are the canonical framework.** All user-facing values, candidate scores, and match computations go through this framework. Do not introduce parallel scoring systems.
+
+---
+
+## Do/Don't Rules
+
+### Values Mapping & NLP Extraction
+
+- **DO** extract signals across multiple axes from a single NLP response (cross-domain capture).
+- **DO** use the axis position reference (the 3–5 concrete positions per axis) to snap extracted values to meaningful positions. Avoid false precision.
+- **DO** respect confidence hierarchy: direct statement > strong implication > weak implication > inference from background.
+- **DON'T** fabricate scores for axes the user hasn't addressed. Leave them unscored with low confidence.
+- **DON'T** re-ask the user about positions already captured in their Blueprint profile.
+
+### Nuanced Issues (Guns, Abortion, Immigration, etc.)
+
+- **DO** present these through the axis framework like any other topic. The axes are designed to capture the policy dimension, not the emotional valence.
+- **DO** show tradeoffs with concrete, contextualized evidence — not abstract talking points.
+- **DON'T** editorialize or add value judgments. The system presents alignment, not endorsements.
+- **DON'T** assume positions correlate across axes (e.g., pro-gun ≠ anti-regulation on other axes).
+
+### Tradeoff & Impact Presentation
+
+- **DO** contextualize large numbers (e.g., "$50 billion" means nothing without "that's 2% of the federal budget" or "about $150 per taxpayer").
+- **DO** attribute claims to sources. "According to CBO estimates..." not "This would cost..."
+- **DON'T** present misleading tradeoff bullets that cherry-pick one side's framing.
+- **DON'T** use scare language or euphemisms. Use neutral, descriptive language for policy effects.
+
+### Candidate Comparison
+
+- **DO** use the same axis framework for users and candidates — the match is a geometric comparison, not an editorial judgment.
+- **DO** show per-axis breakdown with source attribution (interest group ratings, voting records, campaign statements).
+- **DO** distinguish confidence tiers visually: HIGH (multiple independent sources), MEDIUM (one strong source), LOW (inference only).
+- **DON'T** show match scores for axes with no candidate data — exclude them from the calculation.
+- **DON'T** favor incumbents in scoring. They have more data (higher confidence), not higher scores.
+
+---
+
+## Context Management Protocol
+
+### Before modifying values mapping, scoring, or recommendations:
+
+1. Re-read the relevant section of this file.
+2. Open and skim the linked `research/*.md` doc(s).
+3. Summarize the key rules you must preserve before proposing changes.
+
+### When you discover a new stable rule:
+
+1. If it's a high-level invariant or do/don't, propose an update to this file.
+2. If it's detailed research, put it in a `research/*.md` or `docs/*.md` file and add a pointer here.
+3. Do not stuff detailed content directly into this file — keep it as an index + rules.
+
+### When something seems inconsistent:
+
+1. Stop and explicitly note the inconsistency.
+2. Propose a change to either the code/logic or the research/CLAUDE.md — not both silently.
+
+### Prefer deterministic data over free-form domain knowledge when:
+
+- Explaining what a government office/role does.
+- Summarizing costs, tradeoffs, or policy implications.
+- Describing candidate positions (use scored evidence, not general knowledge).
 
 ---
 
@@ -12,7 +159,7 @@
 
 Before doing anything, familiarize yourself with the project structure:
 
-1. Read `PROJECT_CONTEXT.md` in the repo root (or `docs/`) for the full system overview.
+1. Read `docs/ARCHITECTURE.md` for the full system overview.
 2. Scan the key directories:
    - `src/server/data/` — Static TypeScript data that will eventually be replaced by live API calls
    - `src/server/services/` — Business logic (scoring, ballot retrieval)
@@ -20,10 +167,9 @@ Before doing anything, familiarize yourself with the project structure:
    - `src/lib/ballotHelpers.ts` — The recommendation engine (pure functions)
    - `src/lib/scoring.ts` — Client-side scoring utilities
    - `src/lib/archetypes.ts` — Archetype classification
-   - `src/components/blueprint/ElectionBanner.tsx` — Currently shows "Coming Soon" modals
-   - `src/components/ui/PrototypeModal.tsx` — The placeholder modal to eventually remove
    - `src/app/api/` — ~50 API route handlers
    - `prisma/` — Current schema (FeedbackEntry, AnalyticsEvent only)
+   - `research/` — Detailed research documents (see Research Index above)
 3. Run `npx tsc --noEmit` to confirm the project type-checks cleanly before making changes.
 4. Run `npm test` to see current test coverage.
 

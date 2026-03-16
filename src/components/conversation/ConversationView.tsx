@@ -564,8 +564,9 @@ export default function ConversationView({
     );
   };
 
-  // Render recommendation inline in the chat flow
+  // Render recommendation inline in the chat flow (standalone mode only)
   const renderRecommendation = () => {
+    if (mode === 'drawer') return null;
     if (!recommendation || itemStatus !== 'recommended') return null;
 
     if (Array.isArray(recommendation)) {
