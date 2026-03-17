@@ -945,14 +945,8 @@ export default function UnifiedBallotPage() {
           location={location}
         />
 
-        {/* Two-tier reset buttons */}
-        <div className="px-4 pb-8 space-y-3">
-          <button
-            onClick={() => setShowRedoConfirm(true)}
-            className="w-full py-3 bg-brand-primary/10 text-brand-primary rounded-xl text-sm font-semibold hover:bg-brand-primary/20 transition-colors"
-          >
-            Redo my votes
-          </button>
+        {/* Start fresh button */}
+        <div className="px-4 pb-8">
           <button
             onClick={() => setShowFreshConfirm(true)}
             className="w-full py-3 bg-gray-100 text-gray-600 border border-gray-200 rounded-xl text-sm font-semibold hover:bg-gray-200 transition-colors"
@@ -961,7 +955,7 @@ export default function UnifiedBallotPage() {
           </button>
         </div>
 
-        {/* Redo confirmation dialog */}
+        {/* Redo confirmation dialog (triggered by Start Over in review section) */}
         {showRedoConfirm && (
           <ConfirmDialog
             title="Redo your votes?"

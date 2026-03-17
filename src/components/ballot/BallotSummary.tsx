@@ -65,7 +65,7 @@ export default function BallotSummary({
   location,
 }: BallotSummaryProps) {
   const { track } = useAnalyticsContext();
-  const [reviewOpen, setReviewOpen] = useState(false);
+  const [reviewOpen, setReviewOpen] = useState(true);
   const votedCount = votes.length;
   const skippedCount = ballotItems.length - votedCount;
 
@@ -113,16 +113,7 @@ export default function BallotSummary({
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
-        {/* Next steps */}
-        <NextStepsCard voterInfo={voterInfo} location={location} />
-
-        {/* Voting Squad CTA */}
-        <SquadInviteCard />
-
-        {/* Share */}
-        <ShareSection />
-
-        {/* Collapsible vote review */}
+        {/* Vote review — prominent, open by default */}
         <div className="px-4">
           <button
             onClick={() => {
@@ -232,6 +223,15 @@ export default function BallotSummary({
             </div>
           )}
         </div>
+
+        {/* Next steps */}
+        <NextStepsCard voterInfo={voterInfo} location={location} />
+
+        {/* Voting Squad CTA */}
+        <SquadInviteCard />
+
+        {/* Share */}
+        <ShareSection />
 
         {/* Disclaimer */}
         <div className="mx-4 flex items-start gap-2.5 bg-gray-100 p-3.5 rounded-xl mb-10">

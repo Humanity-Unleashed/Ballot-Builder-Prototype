@@ -93,8 +93,8 @@ export default function NextStepsCard({ voterInfo, location }: NextStepsCardProp
       {/* Nearby Polling Places (preview) */}
       <div>
         <div className="flex items-center gap-2 mb-3">
-          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
-            Nearby Polling Places
+          <h2 className="text-sm font-semibold text-text-secondary">
+            Nearby polling places
           </h2>
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-primary/10 text-brand-primary">
             Preview
@@ -120,8 +120,8 @@ export default function NextStepsCard({ voterInfo, location }: NextStepsCardProp
 
       {/* Take Action links */}
       <div>
-        <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
-          Take Action
+        <h2 className="text-sm font-semibold text-text-secondary">
+          Take action
         </h2>
         <p className="text-xs text-text-muted mb-3 flex items-center gap-1">
           <MapPin className="h-3 w-3" />
