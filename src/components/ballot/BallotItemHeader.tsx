@@ -31,7 +31,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
         <Lightbulb className="h-4 w-4 text-gray-500 mt-0.5 shrink-0" />
         <div className="flex-1 space-y-0.5">
           <span className="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">
-            What this means
+            Why this matters
           </span>
           <p className="text-[13px] text-gray-600 leading-[19px]">
             {item.explanation}
