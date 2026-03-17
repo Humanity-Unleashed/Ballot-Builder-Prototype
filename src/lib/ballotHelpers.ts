@@ -14,6 +14,7 @@ import type {
 } from '@/services/api';
 import type { DemographicProfile } from '@/stores/demographicStore';
 import { demographicImpacts } from '@/data/demographicImpacts';
+import { candidateImpactTemplates, type CandidateImpactTemplate } from '@/data/candidateImpactTemplates';
 
 // =============================================
 // Type definitions
@@ -735,6 +736,10 @@ export interface PersonalImpact {
   effect: 'benefit' | 'concern' | 'mixed' | 'context';
   headline: string;
   detail?: string;
+  /** Attribution for the claim (e.g., "Kaiser Family Foundation, 2024") */
+  source?: string;
+  /** URL to the source */
+  sourceUrl?: string;
 }
 
 const EFFECT_PRIORITY: Record<PersonalImpact['effect'], number> = {
@@ -770,6 +775,8 @@ export function computeDemographicInsights(
       effect: rule.effect,
       headline: rule.headline,
       detail: rule.detail,
+      source: rule.source,
+      sourceUrl: rule.sourceUrl,
     });
   }
 
@@ -777,5 +784,70 @@ export function computeDemographicInsights(
   matched.sort((a, b) => EFFECT_PRIORITY[a.effect] - EFFECT_PRIORITY[b.effect]);
 
   // Cap at 4 insights
+  return matched.slice(0, 4);
+}
+
+// =============================================
+// Candidate Household Impact (template-based)
+// =============================================
+
+/** Map dependents field to household size for per-household scaling. */
+function householdSize(dependents: DemographicProfile['dependents']): number {
+  if (!dependents) return 1;
+  return { none: 1, one: 2, two: 3, three_plus: 4 }[dependents];
+}
+
+/**
+ * Compute personalized household impacts for a specific candidate.
+ *
+ * Uses axis-score-based templates: each template fires when a candidate's
+ * score on a given axis falls within a range AND the user's demographic
+ * profile matches. Headlines can include {name} and {householdSize} placeholders.
+ *
+ * Returns up to 4 impacts, sorted benefit/concern first, context last.
+ */
+export function computeCandidateHouseholdImpacts(
+  candidate: Candidate,
+  demographics: DemographicProfile,
+): PersonalImpact[] {
+  const matched: PersonalImpact[] = [];
+  const seenFields = new Set<string>();
+
+  const hhSize = householdSize(demographics.dependents);
+
+  for (const tpl of candidateImpactTemplates) {
+    // Check candidate has a stance on this axis and it's in range
+    const score = candidate.profile.stances[tpl.axisId];
+    if (score == null) continue;
+    if (score < tpl.scoreRange[0] || score > tpl.scoreRange[1]) continue;
+
+    // Check demographic match
+    const userValue = demographics[tpl.field];
+    if (userValue == null) continue;
+    if (!tpl.matchValues.includes(userValue as string)) continue;
+
+    // Deduplicate by field — one impact per demographic dimension
+    const dedupeKey = `${tpl.axisId}:${tpl.field}`;
+    if (seenFields.has(dedupeKey)) continue;
+    seenFields.add(dedupeKey);
+
+    // Interpolate placeholders
+    const headline = tpl.headline
+      .replace(/\{name\}/g, candidate.name)
+      .replace(/\{householdSize\}/g, String(hhSize));
+    const detail = tpl.detail
+      ?.replace(/\{name\}/g, candidate.name)
+      ?.replace(/\{householdSize\}/g, String(hhSize));
+
+    matched.push({
+      effect: tpl.effect,
+      headline,
+      detail,
+      source: tpl.source,
+      sourceUrl: tpl.sourceUrl,
+    });
+  }
+
+  matched.sort((a, b) => EFFECT_PRIORITY[a.effect] - EFFECT_PRIORITY[b.effect]);
   return matched.slice(0, 4);
 }
