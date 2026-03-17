@@ -282,7 +282,7 @@ export function derivePolicyMetaAlignment(
     for (const axisId of axisIds) {
       const effect = yesAxisEffects[axisId];
       if (effect !== undefined) {
-        sum += -effect;
+        sum += effect;
         count++;
       }
     }

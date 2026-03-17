@@ -55,10 +55,12 @@ export function getAxisMetaDimension(axisId: string): (keyof MetaDimensionScores
 }
 
 // Convert stance value (0..10) to axis_score in [-1,+1]
-// 0 => +1 (max left/poleA), 5 => 0 (neutral), 10 => -1 (max right/poleB)
+// 0 => -1 (max poleA / community / change / rules)
+// 5 =>  0 (neutral)
+// 10 => +1 (max poleB / individual / stability / flexibility)
 function stanceToScore(value0to10: number): number {
   const v = Math.max(0, Math.min(10, value0to10));
-  return (5 - v) / 5;
+  return (v - 5) / 5;
 }
 
 // Convert importance (0..10) to weight (0..1)

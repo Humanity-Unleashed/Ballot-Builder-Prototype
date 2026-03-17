@@ -566,6 +566,7 @@ export default function UnifiedBallotPage() {
     } else {
       // All items done → go to summary
       markPhaseCompleted('ballot-item');
+      markPhaseCompleted('summary');
       setPhase('summary');
     }
     setAiDrawerOpen(false);

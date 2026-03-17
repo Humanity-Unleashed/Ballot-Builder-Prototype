@@ -8,53 +8,22 @@ import { useRouter } from 'next/navigation';
 import { RefreshCw, ChevronRight } from 'lucide-react';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
-import type { MetaDimensionScores } from '@/lib/archetypes';
-import { generateValueSummary } from '@/lib/valueFraming';
 import {
   DOMAIN_DISPLAY_NAMES,
   getDomainEmoji,
 } from '@/lib/blueprintHelpers';
+import { computeArchetype, type ArchetypeResult } from '@/lib/archetypes';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import { useDemographicStore } from '@/stores/demographicStore';
-import type { DemographicProfile } from '@/stores/demographicStore';
 import DomainLeanMeter from './DomainLeanMeter';
-
-// ─── Demographic chip helpers ────────────────────────────
-
-const AGE_LABELS: Record<string, string> = {
-  '18_24': '18–24', '25_34': '25–34', '35_44': '35–44',
-  '45_54': '45–54', '55_64': '55–64', '65_plus': '65+',
-};
-const INCOME_LABELS: Record<string, string> = {
-  'under_25k': 'Under $25k', '25k_50k': '$25k–50k', '50k_75k': '$50k–75k',
-  '75k_100k': '$75k–100k', '100k_150k': '$100k–150k', '150k_200k': '$150k–200k',
-  'over_200k': '$200k+',
-};
-const HOUSING_LABELS: Record<string, string> = {
-  'own_home': 'Homeowner', 'rent': 'Renter', 'live_with_family': 'Living with family',
-  'unhoused': 'Unhoused', 'other': 'Other housing',
-};
-const EMPLOYMENT_LABELS: Record<string, string> = {
-  'full_time': 'Full-time', 'part_time': 'Part-time', 'self_employed': 'Self-employed',
-  'unemployed': 'Unemployed', 'student': 'Student', 'retired': 'Retired',
-  'homemaker': 'Homemaker', 'other': 'Other employment',
-};
-
-function getDemographicChips(profile: DemographicProfile): string[] {
-  const chips: string[] = [];
-  if (profile.ageRange && profile.ageRange in AGE_LABELS) chips.push(AGE_LABELS[profile.ageRange]);
-  if (profile.householdIncome && profile.householdIncome in INCOME_LABELS) chips.push(INCOME_LABELS[profile.householdIncome]);
-  if (profile.housingSituation && profile.housingSituation in HOUSING_LABELS) chips.push(HOUSING_LABELS[profile.housingSituation]);
-  if (profile.employmentType && profile.employmentType in EMPLOYMENT_LABELS) chips.push(EMPLOYMENT_LABELS[profile.employmentType]);
-  return chips;
-}
 
 // ─── Props ────────────────────────────────────────────────
 
 interface BlueprintSummaryViewProps {
   profile: BlueprintProfile;
   spec: Spec;
-  metaDimensions: MetaDimensionScores | null;
+  /** @deprecated No longer used — archetype computed internally from profile */
+  metaDimensions?: unknown;
   fineTuningResponses: Record<string, Record<string, number>>;
   onRetake: () => void;
   onFineTune: (axisId: string) => void;
@@ -67,7 +36,6 @@ interface BlueprintSummaryViewProps {
 export default function BlueprintSummaryView({
   profile,
   spec,
-  metaDimensions,
   fineTuningResponses,
   onRetake,
   onFineTune,
@@ -77,8 +45,6 @@ export default function BlueprintSummaryView({
   const router = useRouter();
   const { track } = useAnalyticsContext();
   const demographicProfile = useDemographicStore((s) => s.profile);
-  const demographicChips = useMemo(() => getDemographicChips(demographicProfile), [demographicProfile]);
-
   // ── Election date ──
   const { electionLabel, daysRemaining } = useMemo(() => {
     const electionDay = getNextElectionDay();
@@ -105,10 +71,8 @@ export default function BlueprintSummaryView({
     return () => { cancelled = true; };
   }, [zipCode]);
 
-  // ── Derived data ──
-  const valueSummary = useMemo(() => {
-    return metaDimensions ? generateValueSummary(metaDimensions) : null;
-  }, [metaDimensions]);
+  // ── Archetype ──
+  const archetype: ArchetypeResult = useMemo(() => computeArchetype(profile), [profile]);
 
   // ── Sort domains by average axis importance (highest first) ──
   const sortedDomains = useMemo(() => {
@@ -159,17 +123,33 @@ export default function BlueprintSummaryView({
         {/* ── Election banner ── */}
         <ElectionBanner daysUntilElection={daysRemaining} electionLabel={electionLabel} voterInfo={voterInfo} location={location} />
 
-        {/* ── Values context card ── */}
-        {metaDimensions && valueSummary && (
-          <div className="mb-4 rounded-[14px] border border-border-default bg-brand-primary-light px-4 py-3.5">
-            <div className="mb-1.5 text-[10px] font-bold uppercase tracking-[1.2px] text-brand-primary">
-              What drives your positions
-            </div>
-            <div className="text-[13px] leading-5 text-gray-600">
-              {valueSummary}
+        {/* ── Archetype card ── */}
+        <div className="mb-4 rounded-[14px] border border-gray-200 bg-white px-4 py-4 shadow-sm">
+          <div className="flex items-start gap-3">
+            <span className="text-3xl leading-none mt-0.5">{archetype.primary.emoji}</span>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-[15px] font-bold text-gray-900">{archetype.primary.name}</h2>
+              <p className="text-[13px] leading-[1.45] text-gray-500 mt-1">
+                {archetype.primary.summary}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-2.5">
+                {archetype.primary.traits.map((trait) => (
+                  <span
+                    key={trait}
+                    className="rounded-full bg-gray-100 px-2.5 py-0.5 text-[11px] font-semibold text-gray-600"
+                  >
+                    {trait}
+                  </span>
+                ))}
+              </div>
+              {archetype.secondary && archetype.margin < 0.3 && (
+                <p className="text-[11px] text-gray-400 mt-2.5">
+                  Also close to <span className="font-semibold">{archetype.secondary.emoji} {archetype.secondary.name}</span>
+                </p>
+              )}
             </div>
           </div>
-        )}
+        </div>
 
         {/* ── Domain cards (vertical stack, sorted by importance) ── */}
         <div className="flex flex-col gap-3">
@@ -231,48 +211,6 @@ export default function BlueprintSummaryView({
               </div>
             );
           })}
-        </div>
-
-        {/* ── Underlying values footer — hidden for now (data still computed for scoring) ── */}
-
-        {/* ── Bridge card ── */}
-        <div className="mb-3 rounded-2xl border border-emerald-200 bg-gradient-to-br from-green-50 via-emerald-50 to-emerald-100 p-5">
-          <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[1.2px] text-emerald-600">
-            How we build your ballot
-          </div>
-
-          {/* Diagram: Blueprint + Profile → Ballot */}
-          <div className="mb-3.5 flex items-center gap-2.5">
-            <div className="flex-1 rounded-[10px] border border-border-default bg-brand-primary-light px-3 py-2.5 text-center">
-              <span className="mb-1 block text-lg">📋</span>
-              <span className="text-[11px] font-bold text-gray-700">Your blueprint</span>
-            </div>
-            <span className="text-base font-extrabold text-gray-300">+</span>
-            <div className="flex-1 rounded-[10px] border border-brand-primary-light bg-brand-primary-surface px-3 py-2.5 text-center">
-              <span className="mb-1 block text-lg">👤</span>
-              <span className="text-[11px] font-bold text-gray-700">Your profile</span>
-            </div>
-          </div>
-
-          <div className="text-[13px] leading-5 text-gray-700">
-            We&apos;ll match your civic priorities to{' '}
-            <strong className="font-semibold text-emerald-800">what&apos;s actually on your ballot</strong>,
-            then check how each measure would impact{' '}
-            <strong className="font-semibold text-emerald-800">someone in your situation</strong>:
-          </div>
-
-          {demographicChips.length > 0 && (
-            <div className="mt-2.5 flex flex-wrap gap-1.5">
-              {demographicChips.map((chip) => (
-                <span
-                  key={chip}
-                  className="rounded-lg border border-gray-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-gray-500"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Spacer for floating CTA */}
