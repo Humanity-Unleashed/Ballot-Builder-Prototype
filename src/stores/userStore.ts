@@ -88,6 +88,72 @@ type UserStore = UserState & UserActions;
 
 const PROFILE_VERSION = '1.0.0';
 
+/**
+ * Backfill any axes that exist in the spec but are missing from a persisted profile.
+ * This handles the case where a new axis (e.g. justice_reproductive) was added to the
+ * spec after the user already completed their assessment and saved a profile to localStorage.
+ */
+function migrateProfileToCurrentSpec(
+  profile: BlueprintProfile,
+  spec: Spec
+): BlueprintProfile {
+  let changed = false;
+  const updatedDomains = spec.domains.map((specDomain) => {
+    const existingDomain = profile.domains.find(
+      (d) => d.domain_id === specDomain.id
+    );
+    if (!existingDomain) {
+      // Entire domain is new — create it with defaults
+      changed = true;
+      return {
+        domain_id: specDomain.id,
+        importance: {
+          value_0_10: 5,
+          source: 'default' as ProfileSource,
+          confidence_0_1: 0,
+          last_updated_at: new Date().toISOString(),
+        },
+        axes: specDomain.axes.map((axisId) => ({
+          axis_id: axisId,
+          value_0_10: 5,
+          source: 'default' as ProfileSource,
+          confidence_0_1: 0,
+          locked: false,
+          learning_mode: 'normal' as LearningMode,
+          estimates: { learned_score: 0, learned_value_float: 5 },
+          evidence: { n_items_answered: 0, n_unsure: 0, top_driver_item_ids: [] },
+        })),
+      };
+    }
+
+    // Domain exists — check for missing axes
+    const existingAxisIds = new Set(existingDomain.axes.map((a) => a.axis_id));
+    const missingAxes = specDomain.axes.filter((id) => !existingAxisIds.has(id));
+    if (missingAxes.length === 0) return existingDomain;
+
+    changed = true;
+    return {
+      ...existingDomain,
+      axes: [
+        ...existingDomain.axes,
+        ...missingAxes.map((axisId) => ({
+          axis_id: axisId,
+          value_0_10: 5,
+          source: 'default' as ProfileSource,
+          confidence_0_1: 0,
+          locked: false,
+          learning_mode: 'normal' as LearningMode,
+          estimates: { learned_score: 0, learned_value_float: 5 },
+          evidence: { n_items_answered: 0, n_unsure: 0, top_driver_item_ids: [] },
+        })),
+      ],
+    };
+  });
+
+  if (!changed) return profile;
+  return { ...profile, domains: updatedDomains };
+}
+
 function createDefaultProfile(spec: Spec, userId: string): BlueprintProfile {
   const domains: DomainProfile[] = spec.domains.map((domain) => ({
     domain_id: domain.id,
@@ -211,6 +277,12 @@ export const useUserStore = create<UserStore>()(
           const { blueprintProfile } = get();
           if (!blueprintProfile) {
             set({ blueprintProfile: createDefaultProfile(fetchedSpec, 'prototype-user') });
+          } else {
+            // Backfill any axes added to the spec since the profile was saved
+            const migrated = migrateProfileToCurrentSpec(blueprintProfile, fetchedSpec);
+            if (migrated !== blueprintProfile) {
+              set({ blueprintProfile: migrated });
+            }
           }
         } catch (error) {
           console.error('Failed to load civic axes spec:', error);

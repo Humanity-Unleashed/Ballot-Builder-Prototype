@@ -20,8 +20,8 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
       {
         q: 'How does the assessment work?',
         a: [
-          'You answer a short adaptive assessment that covers 16 policy topics across five domains: Economy, Healthcare, Housing, Justice, and Climate.',
-          'The system uses information theory to figure out which questions will tell it the most about your values and skips the ones that won\'t. Most people finish in 5\u201310 questions instead of answering all 16.',
+          'You answer a short adaptive assessment that covers 17 policy topics across five domains: Economy, Healthcare, Housing, Justice, and Climate.',
+          'The assessment tracks how much uncertainty remains about each of your positions and picks questions that will tell it the most about your values. It also prioritizes topics that matter most for your specific ballot. Once the remaining uncertainty is low enough, it wraps up automatically — most people finish in 5\u201310 questions instead of answering all 17.',
           'You can respond with quick slider picks or switch to typing/speaking in your own words. When you use natural language, the system extracts signals across multiple topics from a single response — so one thoughtful answer can cover several issues at once.',
         ],
       },
@@ -39,20 +39,13 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
     heading: 'Assessment & Scoring',
     items: [
       {
-        q: 'What does "adaptive" mean?',
-        a: [
-          'The assessment tracks how much uncertainty remains about each of your positions using Shannon entropy — a measure from information theory. Each question is chosen to reduce that uncertainty as much as possible.',
-          'It also accounts for which topics matter most for your specific ballot, so locally relevant issues get asked first. Once the remaining uncertainty drops below a threshold, the assessment wraps up automatically.',
-        ],
-      },
-      {
         q: 'How does the natural language option work?',
         a: 'When you type or speak a response, the system analyzes it to extract your position on the topic it asked about, plus any other topics you touched on. Each signal is classified by strength — a direct statement carries more weight than an implication — and snapped to a concrete position to avoid false precision.',
       },
       {
         q: 'How are candidates scored?',
         a: [
-          'Candidates are independently scored on the same 16 topics using public evidence. Voting records and interest group scorecards (from organizations across the political spectrum) carry the most weight. Campaign statements, interviews, and endorsements fill in the gaps.',
+          'Candidates are independently scored on the same 17 topics using public evidence. Voting records and interest group scorecards (from organizations across the political spectrum) carry the most weight. Campaign statements, interviews, and endorsements fill in the gaps.',
           'When a candidate\'s voting record contradicts their campaign trail statements, the record wins and the discrepancy is flagged.',
         ],
       },
