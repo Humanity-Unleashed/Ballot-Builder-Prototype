@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "purpose": "Authoritative statistics for axis x demographic policy impact templates",
+    "compiledAt": "2026-03-17",
+    "compiler": "researcher-agent",
+    "notes": "All stats drawn from federal or major nonpartisan sources. URLs are real and verifiable. Where a stat has a known date, it is noted. Do not fabricate or extrapolate beyond what is stated."
+  },
+
+  "axes": {
+
+    "healthcare_coverage_model": {
+      "axisDescription": "0 = universal/single-payer coverage, 10 = market-based coverage",
+      "demographicStats": {
+
+        "uninsured": [
+          {
+            "claim": "In expansion states, the uninsured rate among low-income non-elderly adults fell by more than half between 2013 and 2022 — from 35% to 15%. In non-expansion states the rate remained nearly twice as high (14.1% vs 7.6%).",
+            "source": "Kaiser Family Foundation",
+            "url": "https://www.kff.org/medicaid/5-key-facts-about-medicaid-expansion/",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "Over 20 million people were enrolled through Medicaid expansion as of June 2024, representing approximately a quarter of total Medicaid enrollment in expansion states.",
+            "source": "Kaiser Family Foundation — Medicaid Expansion Enrollment",
+            "url": "https://www.kff.org/medicaid/state-indicator/medicaid-expansion-enrollment/",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "70% of adults who were uninsured at any time in the past year said they did not get necessary services — prescriptions, specialist care, or follow-up tests — due to cost.",
+            "source": "Kaiser Family Foundation — The Uninsured Population and Health Coverage",
+            "url": "https://www.kff.org/uninsured/health-policy-101-the-uninsured-population-and-health-coverage/",
+            "year": "2023",
+            "confidence": "high"
+          },
+          {
+            "claim": "In 2023, 26 million people (8% of Americans) remained uninsured.",
+            "source": "Commonwealth Fund — State of Health Insurance Coverage in U.S. 2024 Biennial Survey",
+            "url": "https://www.commonwealthfund.org/publications/surveys/2024/nov/state-health-insurance-coverage-us-2024-biennial-survey",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "medicaid_enrollees": [
+          {
+            "claim": "Federal Medicaid work requirements could cause between 4.6 and 5.2 million expansion adults (ages 19–55) to lose coverage — 34 to 39 percent of all expansion enrollees in that age group. More than 9 in 10 of those at risk are already working, in school, caregiving, or have health issues that may limit employment.",
+            "source": "Urban Institute — Assessing Potential Coverage Losses under a Federal Medicaid Work Requirement",
+            "url": "https://www.urban.org/research/publication/assessing-potential-coverage-losses-among-medicaid-expansion-enrollees-under",
+            "year": "2025",
+            "confidence": "high"
+          },
+          {
+            "claim": "Extending work requirements up to age 64 would cause an additional approximately 1 million adults to lose federally funded Medicaid coverage.",
+            "source": "Urban Institute — Expanding Federal Work Requirements for Medicaid Expansion Coverage to Age 64",
+            "url": "https://www.urban.org/research/publication/expanding-federal-work-requirements-medicaid-expansion-coverage-age-64-would",
+            "year": "2025",
+            "confidence": "high"
+          }
+        ],
+
+        "households_with_dependents": [
+          {
+            "claim": "The national uninsured rate for children and teens rose to 6.0% in 2024, up from 5.4% in 2023 — the highest in a decade. There was an 18% increase in the number of uninsured U.S. children between 2022 and 2024.",
+            "source": "Georgetown University Center for Children and Families / U.S. Census Bureau American Community Survey",
+            "url": "https://ccf.georgetown.edu/2025/09/12/u-s-and-state-by-state-child-health-coverage-trends/",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "Children are the only age group to have lost health insurance coverage in recent Census data.",
+            "source": "First Focus on Children / U.S. Census Bureau",
+            "url": "https://firstfocus.org/news/children-are-only-group-to-lose-health-insurance-census-numbers-show/",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "healthcare_cost_control": {
+      "axisDescription": "0 = government price controls / negotiation, 10 = market competition sets prices",
+      "demographicStats": {
+
+        "uninsured_or_medicaid": [
+          {
+            "claim": "57% of underinsured adults avoided necessary medical care due to cost; nearly 30% are burdened with medical debt, half owing $2,000 or more.",
+            "source": "Commonwealth Fund — 2024 Biennial Health Insurance Survey",
+            "url": "https://www.commonwealthfund.org/press-release/2024/new-survey-nearly-1-4-adults-health-coverage-struggle-high-out-pocket-costs-and",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "Nearly 1 in 4 working-age adults with coverage are underinsured — facing out-of-pocket costs so high they effectively cannot afford care.",
+            "source": "Commonwealth Fund — 2024 Biennial Health Insurance Survey",
+            "url": "https://www.commonwealthfund.org/publications/surveys/2024/nov/state-health-insurance-coverage-us-2024-biennial-survey",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "elderly_65_plus": [
+          {
+            "claim": "Nearly a quarter of adults age 65+ report difficulty affording their prescription drugs; nearly 40% have either skipped filling a prescription due to cost or know someone who has.",
+            "source": "Kaiser Family Foundation — KFF Health Tracking Poll September 2024",
+            "url": "https://www.kff.org/medicare/kff-health-tracking-poll-september-2024-support-for-reducing-prescription-drug-prices-remains-high/",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "The IRA's new $2,000 out-of-pocket cap on Medicare Part D drug spending is projected to help an estimated 11 million Part D enrollees in 2025. Despite this, only about a quarter of older adults are aware the cap exists.",
+            "source": "Kaiser Family Foundation — The New Help for Medicare Beneficiaries with High Drug Costs",
+            "url": "https://www.kff.org/medicare/the-new-help-for-medicare-beneficiaries-with-high-drug-costs-that-few-seem-to-know-about/",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "More than 1 in 5 adults age 65+ (22%) report having debt due to their own or someone else's medical or dental expenses.",
+            "source": "Medicare Rights Center / KFF Health Care Debt Survey",
+            "url": "https://www.medicarerights.org/medicare-watch/2024/08/22/examining-the-consequences-of-health-care-debt-among-older-adults",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "economic_safety_net_breadth": {
+      "axisDescription": "0 = broader/unconditional safety net, 10 = conditional/work-linked safety net",
+      "demographicStats": {
+
+        "low_income": [
+          {
+            "claim": "SNAP served a monthly average of 41.7 million people in FY 2024, about 12.3% of the U.S. population. Benefits averaged $187.20 per participant per month — roughly $6.20 per person per day.",
+            "source": "USDA Economic Research Service — SNAP Key Statistics and Research",
+            "url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/supplemental-nutrition-assistance-program-snap/key-statistics-and-research",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "Federal SNAP spending totaled $99.8 billion in FY 2024.",
+            "source": "USDA Food and Nutrition Service — SNAP Data Tables",
+            "url": "https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "unemployed": [
+          {
+            "claim": "On average, state unemployment insurance benefits replaced less than 40% of wages in 2021. Benefits also do nothing to replace employer-provided health coverage, childcare contributions, or retirement savings.",
+            "source": "U.S. Department of Labor — Employment and Training Administration, UI Replacement Rates Report",
+            "url": "https://oui.doleta.gov/unemploy/ui_replacement_rates.asp",
+            "year": "2021",
+            "confidence": "medium",
+            "notes": "Most recent available full-year data from DOL ETA as of research date; check for FY 2023 update"
+          }
+        ],
+
+        "households_with_dependents": [
+          {
+            "claim": "Safety net programs lifted out of poverty roughly half of the children who would otherwise have been poor. SNAP alone lifted over 1.3 million children out of poverty in a recent analysis year.",
+            "source": "Center on Budget and Policy Priorities — Safety Net More Effective Against Poverty Than Previously Thought",
+            "url": "https://www.cbpp.org/research/poverty-and-inequality/safety-net-more-effective-against-poverty-than-previously-thought",
+            "year": "2023",
+            "confidence": "high"
+          },
+          {
+            "claim": "Economic security programs cut poverty nearly in half over the last 50 years, driven primarily by SNAP, EITC, and CTC. The near-halving of the child poverty rate since the late 1960s is largely attributable to these programs.",
+            "source": "Center on Budget and Policy Priorities — Economic Security Programs Cut Poverty Nearly in Half Over Last 50 Years",
+            "url": "https://www.cbpp.org/research/poverty-and-inequality/economic-security-programs-cut-poverty-nearly-in-half-over-last-50",
+            "year": "2023",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "economic_school_choice": {
+      "axisDescription": "0 = traditional public schools / oppose vouchers, 10 = school choice / support vouchers",
+      "demographicStats": {
+
+        "households_with_dependents": [
+          {
+            "claim": "The national average annual private K-12 tuition is approximately $12,350, though costs vary widely by region — e.g., $24,000 in Connecticut, $26,896 in the Houston area in 2024–25.",
+            "source": "Private School Review / Education Commission of the States — Private School Choice: Vouchers 2024",
+            "url": "https://reports.ecs.org/comparisons/private-school-choice-vouchers-2024",
+            "year": "2024",
+            "confidence": "medium",
+            "notes": "National average from multiple private school data aggregators; ECS provides state-by-state voucher amounts"
+          },
+          {
+            "claim": "Voucher amounts vary greatly by state. In Indiana the average voucher was about $6,536 for 2024–25 while average private school fees were ~$8,369, leaving families to cover the gap. Nationally, vouchers average about $4,600 per year.",
+            "source": "Education Commission of the States — Private School Choice: Vouchers 2024",
+            "url": "https://reports.ecs.org/comparisons/private-school-choice-vouchers-2024",
+            "year": "2024",
+            "confidence": "medium"
+          }
+        ],
+
+        "low_income_households_with_dependents": [
+          {
+            "claim": "Most rigorous NBER studies found that voucher programs can produce positive short- and long-term impacts for participating students — especially for Black and disadvantaged students — and positive spillover effects for students remaining in district schools. However, a 2017 Louisiana study found net negative results when scaling happened too quickly.",
+            "source": "NBER — School Vouchers: Results from Randomized Experiments (Rouse, Barrow)",
+            "url": "https://www.nber.org/system/files/chapters/c10087/c10087.pdf",
+            "year": "2008",
+            "confidence": "medium",
+            "notes": "Foundational meta-study; more recent Fordham Institute synthesis (2023) largely corroborates. Results are mixed; NYC program showed no average effect; DC program showed graduation benefits. Cite as 'mixed evidence'."
+          },
+          {
+            "claim": "The Fordham Institute's 2023 review of voucher program research concluded that most rigorous studies find positive or neutral effects on student outcomes for participants, with some urban Catholic school programs showing consistent graduation gains for low-income students.",
+            "source": "Thomas B. Fordham Institute — The impact of voucher programs: A deep dive into the research",
+            "url": "https://fordhaminstitute.org/national/commentary/impact-voucher-programs-deep-dive-research",
+            "year": "2023",
+            "confidence": "medium"
+          }
+        ]
+      }
+    },
+
+    "housing_zoning_supply": {
+      "axisDescription": "0 = loosen zoning / increase supply, 10 = preserve local zoning",
+      "demographicStats": {
+
+        "renters": [
+          {
+            "claim": "A 2024 meta-analysis found that upzoning increases housing units by approximately 9% over five to ten years in affected areas. However, rent effects are mixed: most researchers find that rents in upzoned areas parallel increased construction allowances (i.e., prices rise short-term), with a minority finding no change or decreases. Long-run supply increases take several years to materialize.",
+            "source": "Urban Institute — Zoning Change (Yonah Freemark, 2023); ScienceDirect 2024 study",
+            "url": "https://www.urban.org/research/publication/zoning-change",
+            "year": "2023",
+            "confidence": "medium",
+            "notes": "This is an area of active research dispute. The clearest honest summary: upzoning increases supply over the long run but short-term rent effects are uncertain. Do not present as settled."
+          },
+          {
+            "claim": "50% of all renters nationwide are now cost-burdened — paying more than 30% of their income on rent and utilities. Over 21 million renter households spent more than 30% of their income on housing in 2023.",
+            "source": "U.S. Census Bureau — Nearly Half of Renter Households Are Cost-Burdened",
+            "url": "https://www.census.gov/newsroom/press-releases/2024/renter-households-cost-burdened-race.html",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "homeowners": [
+          {
+            "claim": "Research shows upzoned parcels likely retain or increase in value (responding to increased development rights), but the evidence on neighborhood-wide home price effects is complex and context-dependent. Preliminary evidence from one study found upzoning reduced racial integration short-term in some neighborhoods.",
+            "source": "Yonah Freemark / Urban Institute — Zoning Change: Upzonings, Downzonings, and Their Impacts",
+            "url": "https://www.urban.org/research/publication/zoning-change",
+            "year": "2023",
+            "confidence": "medium",
+            "notes": "Effect on surrounding homeowners is contested; individual upzoned parcel values rise but neighborhood effects are mixed"
+          }
+        ],
+
+        "young_adults_18_34": [
+          {
+            "claim": "Only 26.1% of Gen Z young adults owned their home in 2024, essentially unchanged from 2022–2023, and significantly below the 40.5% rate baby boomers achieved at the same age. By spring 2024 the typical homebuyer was paying ~$2,800/month — an all-time high.",
+            "source": "Redfin — Gen Z and Millennial Homeownership Rates Flatlined in 2024",
+            "url": "https://www.redfin.com/news/homeownership-rate-by-generation-2024/",
+            "year": "2025",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "housing_affordability_tools": {
+      "axisDescription": "0 = government subsidies / rent assistance, 10 = market solutions",
+      "demographicStats": {
+
+        "low_income_renters": [
+          {
+            "claim": "Families that received Section 8 housing vouchers spent close to two and a half years on waiting lists first, exposing many to homelessness, overcrowding, and eviction while waiting. Demand for vouchers far exceeds available funding.",
+            "source": "Center on Budget and Policy Priorities — Families Wait Years for Housing Vouchers Due to Inadequate Funding",
+            "url": "https://www.cbpp.org/research/housing/families-wait-years-for-housing-vouchers-due-to-inadequate-funding",
+            "year": "2023",
+            "confidence": "high"
+          },
+          {
+            "claim": "50% of all renters are cost-burdened (spending >30% of income on housing); 26.5% of renter households are severely cost-burdened (spending >50% of income). Over 21 million renter households were cost-burdened in 2023.",
+            "source": "U.S. Census Bureau — Renter Households Cost-Burdened, 2024",
+            "url": "https://www.census.gov/newsroom/press-releases/2024/renter-households-cost-burdened-race.html",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "households_with_dependents": [
+          {
+            "claim": "More than a quarter (26.5%) of renter households were severely cost-burdened in 2023, spending more than 50% of their income on housing. Families with children are disproportionately represented among severely cost-burdened renters.",
+            "source": "Harvard Joint Center for Housing Studies — America's Rental Housing 2024",
+            "url": "https://www.jchs.harvard.edu/sites/default/files/research/files/harvard_jchs_rental_affordability_airgood-obrycki_2024.pdf",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "climate_ambition_level": {
+      "axisDescription": "0 = aggressive climate action, 10 = gradual or no climate policy",
+      "demographicStats": {
+
+        "low_income": [
+          {
+            "claim": "Low-income households spend a median of 8.3% of their annual income on home energy bills — well above the 6% 'high energy burden' threshold. One in four low-income households spends more than 15% of income on energy bills.",
+            "source": "American Council for an Energy-Efficient Economy (ACEEE) — 2024 Energy Burden Research",
+            "url": "https://www.aceee.org/press-release/2024/09/study-one-four-low-income-households-spend-over-15-income-energy-bills",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "When home energy and auto fuel costs are combined, low-income households spend nearly 20% of their income on energy — more than three times the national average.",
+            "source": "ACEEE — Low-Income Households Spend Nearly 20% of Income on Home Energy and Auto Fuel Costs",
+            "url": "https://www.aceee.org/blog-post/2024/05/low-income-households-spend-nearly-20-income-home-energy-and-auto-fuel-costs",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "households_with_dependents": [
+          {
+            "claim": "An estimated 6 million children in the United States have asthma, and they are especially vulnerable to air pollution from fossil fuels. Burning fossil fuels produces pollutants — fine particles, sulfur oxides, nitrogen oxides, and benzene — that have been linked to childhood asthma.",
+            "source": "U.S. EPA — The Links Between Air Pollution and Childhood Asthma",
+            "url": "https://www.epa.gov/sciencematters/links-between-air-pollution-and-childhood-asthma",
+            "year": "2023",
+            "confidence": "high"
+          },
+          {
+            "claim": "Current asthma rates decrease as family income increases — the highest asthma prevalence rate (11.3%) is among those with family income below the poverty threshold. Black children have asthma at a rate 44% higher than white children.",
+            "source": "CDC — Most Recent National Asthma Data",
+            "url": "https://www.cdc.gov/asthma/most_recent_national_asthma_data.htm",
+            "year": "2022",
+            "confidence": "high"
+          },
+          {
+            "claim": "A 2023 Boston University study found that air pollution from oil and gas production contributes to thousands of early deaths and childhood asthma cases nationwide annually.",
+            "source": "Boston University School of Public Health — Air Pollution from Oil and Gas Production",
+            "url": "https://www.bu.edu/sph/news/articles/2023/air-pollution-from-oil-and-gas-production-contributes-to-thousands-of-early-deaths-childhood-asthma-cases-nationwide/",
+            "year": "2023",
+            "confidence": "high"
+          }
+        ],
+
+        "young_adults": [
+          {
+            "claim": "Clean energy jobs grew 2.8% in 2024, adding nearly 100,000 new jobs — outpacing the rest of U.S. employment (0.8%) more than three times over. Since 2020, the sector has added more than 520,000 new jobs, growing 17% overall.",
+            "source": "E2 (Environmental Entrepreneurs) — Clean Jobs America 2025 Report",
+            "url": "https://e2.org/releases/report-clean-energy-jobs-grew-3x-faster-than-rest-of-u-s-workforce-in-2024-but-future-growth-now-at-risk/",
+            "year": "2025",
+            "confidence": "high"
+          },
+          {
+            "claim": "The Department of Energy's 2024 U.S. Energy and Employment Report shows the energy workforce added over 250,000 jobs in 2023, with 56% of those in clean energy. Solar and wind sectors grew 5.3% and 4.5% respectively.",
+            "source": "U.S. Department of Energy — United States Energy and Employment Report 2024",
+            "url": "https://www.energy.gov/policy/us-energy-employment-jobs-report-useer",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "BLS projects wind turbine service technicians to be the fastest-growing occupation in the 2022–2032 decade; solar PV installers are also among the top 15 fastest-growing occupations. BLS forecasts 73,500 electrician job openings annually through 2032.",
+            "source": "U.S. Bureau of Labor Statistics — Industry and Occupational Employment Projections 2024–34",
+            "url": "https://www.bls.gov/opub/mlr/2026/article/industry-and-occupational-employment-projections-overview.htm",
+            "year": "2026",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "justice_firearms_policy": {
+      "axisDescription": "0 = more gun regulations, 10 = protect gun rights / fewer regulations",
+      "demographicStats": {
+
+        "households_with_dependents": [
+          {
+            "claim": "Firearms are the leading cause of death among children and teens ages 1–17 in the United States, a status held since 2020. In 2023, 2,566 children and teens died from gun violence — averaging nearly 7 per day. 63% of those deaths were homicides, 29% suicides, and 5% unintentional.",
+            "source": "Johns Hopkins Bloomberg School of Public Health / Center for Gun Violence Solutions, based on CDC data",
+            "url": "https://publichealth.jhu.edu/2024/guns-remain-leading-cause-of-death-for-children-and-teens",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "Gun death rates among children ages 1–17 increased by 106% between 2013 and 2022.",
+            "source": "Johns Hopkins Bloomberg School of Public Health — Center for Gun Violence Solutions",
+            "url": "https://publichealth.jhu.edu/center-for-gun-violence-solutions/2024/continuing-trends-five-key-takeaways-from-2023-cdc-provisional-gun-violence-data",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "young_adults": [
+          {
+            "claim": "Persons ages 18–24 had a higher firearm homicide rate (14.2 per 100,000) during 2018–2022 than any other age group. Firearm suicide rates for 25–34-year-olds rose 43% between 2012 and 2022 (6.5 to 9.3 per 100,000).",
+            "source": "CDC — Fast Facts: Firearm Injury and Death / Pew Research Center analysis of CDC data",
+            "url": "https://www.cdc.gov/firearm-violence/data-research/facts-stats/index.html",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "In 2022, 48,204 people died from gunshots in the U.S., including 27,032 suicides — an all-time high. In 2023, gun violence claimed 46,728 lives.",
+            "source": "Pew Research Center — What the data says about gun deaths in the US (based on CDC data)",
+            "url": "https://www.pewresearch.org/short-reads/2025/03/05/what-the-data-says-about-gun-deaths-in-the-us/",
+            "year": "2025",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "justice_police_accountability": {
+      "axisDescription": "0 = more oversight/reform, 10 = back the blue / status quo",
+      "demographicStats": {
+
+        "low_income": [
+          {
+            "claim": "About 19% (49.2 million) of U.S. residents age 16+ had contact with police in 2022. Police are more likely to use fatal force in areas with economic disadvantage, high crime rates, and a high proportion of low-income populations.",
+            "source": "Bureau of Justice Statistics — Contacts Between Police and the Public, 2022",
+            "url": "https://bjs.ojp.gov/library/publications/contacts-between-police-and-public-2022",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "4% of Black people experienced police misconduct in their most recent contact — six times the proportion of white people (0.7%). Research shows police spend considerably more time in lower-income and minority neighborhoods relative to population, even after controlling for crime rates.",
+            "source": "Prison Policy Initiative — Despite fewer people experiencing police contact, racial disparities in arrests continue",
+            "url": "https://www.prisonpolicy.org/blog/2024/12/19/policing_survey_2022/",
+            "year": "2024",
+            "confidence": "high"
+          }
+        ],
+
+        "veterans": [
+          {
+            "claim": "Veterans with PTSD have 61% higher odds of criminal justice involvement compared to veterans without PTSD. 1 in 3 of the nation's approximately 19 million veterans have been arrested at some point.",
+            "source": "VA National Center for PTSD — Veterans with PTSD and the Criminal Legal System",
+            "url": "https://www.ptsd.va.gov/understand/related/justice_system_vets.asp",
+            "year": "2022",
+            "confidence": "high"
+          },
+          {
+            "claim": "Recent veterans are twice as likely as non-veterans to face incarceration. Combat exposure and associated conditions — PTSD, TBI, mood disorders, substance use disorders — are significantly associated with justice system involvement. TBI alone is associated with a 59% increase in odds of justice involvement.",
+            "source": "Council on Criminal Justice — From Service to Sentencing: Risk Factors for Criminal Justice Involvement Among U.S. Veterans",
+            "url": "https://counciloncj.org/from-service-to-sentencing-unraveling-risk-factors-for-criminal-justice-involvement-among-u-s-veterans/",
+            "year": "2023",
+            "confidence": "high"
+          }
+        ]
+      }
+    },
+
+    "housing_transit_priority": {
+      "axisDescription": "0 = public transit investment, 10 = car-centric infrastructure",
+      "demographicStats": {
+
+        "low_income": [
+          {
+            "claim": "Low-income households (income ≤$28,261) spent nearly 32% of their pre-tax income on transportation. Those with income under $25,000 who owned at least one vehicle spent 38% of their after-tax income on transportation. High-income households (>$148,682) spent only 9.6% of income on transportation.",
+            "source": "U.S. Department of Transportation / Bureau of Transportation Statistics — The Household Cost of Transportation",
+            "url": "https://www.bts.gov/data-spotlight/household-cost-transportation-it-affordable",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "30% of low-income households did not own or lease a vehicle in 2022, making access to public transit critical for work and daily needs.",
+            "source": "U.S. Department of Transportation / Bureau of Transportation Statistics",
+            "url": "https://www.bts.gov/data-spotlight/household-cost-transportation-it-affordable",
+            "year": "2024",
+            "confidence": "high"
+          },
+          {
+            "claim": "Low-income households spend about 24% of their income on transportation overall, according to the Urban Institute — compared to the 15% commonly used as an affordability benchmark.",
+            "source": "Urban Institute, cited by ITDP — The High Cost of Transportation in the United States",
+            "url": "https://itdp.org/2024/01/24/high-cost-transportation-united-states/",
+            "year": "2024",
+            "confidence": "medium",
+            "notes": "The 24% figure is Urban Institute's; ITDP article aggregates multiple sources. Verify directly if using in primary user-facing copy."
+          }
+        ],
+
+        "young_adults": [
+          {
+            "claim": "Only 26.1% of Gen Z young adults owned their home in 2024, flat from 2022–2023. The typical homebuyer in spring 2024 was paying ~$2,800/month — an all-time high. Younger generations face housing costs that have outpaced wage growth.",
+            "source": "Redfin — Gen Z and Millennial Homeownership Rates Flatlined in 2024",
+            "url": "https://www.redfin.com/news/homeownership-rate-by-generation-2024/",
+            "year": "2025",
+            "confidence": "high",
+            "notes": "This stat is more directly applicable to housing_zoning_supply but also contextualizes why transit matters for young renters"
+          },
+          {
+            "claim": "54% of Gen Z participants say owning a car is important to them (vs. 69% of baby boomers), but financial barriers — not preference — drive many young adults toward transit dependency.",
+            "source": "Statista Consumer Insights Survey, cited in ConsumerAffairs Car Ownership Statistics 2026",
+            "url": "https://www.consumeraffairs.com/automotive/car-ownership-statistics.html",
+            "year": "2024",
+            "confidence": "medium",
+            "notes": "Preference data from Statista omnibus; not a federal source — use with appropriate framing"
+          }
+        ]
+      }
+    }
+  },
+
+  "sourceQualityNotes": {
+    "tier1_federal": ["CDC", "U.S. Census Bureau", "BLS", "BTS", "USDA ERS", "USDA FNS", "HUD", "U.S. DOE", "DOL ETA", "EPA", "BJS", "VA"],
+    "tier2_major_nonpartisan": ["KFF (Kaiser Family Foundation)", "Urban Institute", "CBPP (Center on Budget and Policy Priorities)", "ACEEE", "Commonwealth Fund", "Pew Research Center", "Harvard JCHS", "NBER"],
+    "tier3_advocacy_adjacent": ["E2 (Environmental Entrepreneurs)", "Johns Hopkins Bloomberg SPH", "Georgetown CCF", "Council on Criminal Justice", "Redfin"],
+    "notes": "Tier 3 sources cited here are research/academic arms of their organizations, not advocacy campaigns. All specific statistics cited above are drawn from data-grounded studies, not position papers. Where Tier 3 sources are used, the underlying data is federal (CDC, Census, etc.) and the organization is analyzing it."
+  }
+}

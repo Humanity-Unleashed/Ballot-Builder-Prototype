@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-03-10T00:00:00Z",
+  "address": "1713 Webberville Rd, Austin, TX 78721",
+  "state": "Texas",
+  "primaryDate": "2026-03-03",
+  "primaryRunoffDate": "2026-05-26",
+  "generalDate": "2026-11-03",
+  "notes": "Discovery manifest for races relevant to 78721 Austin TX that were NOT already scored in the texas-2026 pipeline run (Feb 27). Reusable candidates from prior run: Talarico, Cornyn, Paxton (US Senate), Hinojosa, Abbott (Governor), Nathan Johnson, Jaworski, Chip Roy, Mayes Middleton (AG). This manifest covers the remaining races.",
+
+  "reusableFromPriorRun": {
+    "source": "ballot-builder-agent/texas-2026/",
+    "candidates": [
+      {"slug": "james-talarico", "office": "U.S. Senate", "party": "Democratic", "status": "nominee"},
+      {"slug": "john-cornyn", "office": "U.S. Senate", "party": "Republican", "status": "runoff"},
+      {"slug": "ken-paxton", "office": "U.S. Senate", "party": "Republican", "status": "runoff"},
+      {"slug": "gina-hinojosa", "office": "Governor", "party": "Democratic", "status": "nominee"},
+      {"slug": "greg-abbott", "office": "Governor", "party": "Republican", "status": "nominee"},
+      {"slug": "nathan-johnson", "office": "Attorney General", "party": "Democratic", "status": "runoff"},
+      {"slug": "joe-jaworski", "office": "Attorney General", "party": "Democratic", "status": "runoff"},
+      {"slug": "chip-roy", "office": "Attorney General", "party": "Republican", "status": "runoff"},
+      {"slug": "mayes-middleton", "office": "Attorney General", "party": "Republican", "status": "runoff"}
+    ]
+  },
+
+  "contests": [
+    {
+      "id": "TX-US-HOUSE-37-2026",
+      "office": "U.S. House",
+      "state": "TX",
+      "district": "37",
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Greg Casar",
+      "incumbentParty": "Democratic",
+      "raceRating": "Safe Democratic",
+      "candidates": [
+        {
+          "slug": "greg-casar",
+          "name": {"full": "Greg Casar", "ballotDisplay": "Greg Casar"},
+          "party": "Democratic",
+          "incumbencyStatus": "incumbent",
+          "currentOffice": "U.S. Representative, TX-37 (since 2023)",
+          "priorOffice": "Austin City Council District 4 (2015-2022)"
+        },
+        {
+          "slug": "james-kinney",
+          "name": {"full": "James Kinney", "ballotDisplay": "James Kinney"},
+          "party": "Independent",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null
+        }
+      ]
+    },
+    {
+      "id": "TX-LT-GOVERNOR-2026",
+      "office": "Lieutenant Governor",
+      "state": "TX",
+      "district": null,
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Dan Patrick",
+      "incumbentParty": "Republican",
+      "raceRating": "Safe Republican",
+      "candidates": [
+        {
+          "slug": "dan-patrick",
+          "name": {"full": "Dan Patrick", "ballotDisplay": "Dan Patrick"},
+          "party": "Republican",
+          "incumbencyStatus": "incumbent",
+          "currentOffice": "Lieutenant Governor of Texas (since 2015)",
+          "priorOffice": "Texas State Senator, District 7 (2007-2015)"
+        },
+        {
+          "slug": "mike-collier",
+          "name": {"full": "Mike Collier", "ballotDisplay": "Mike Collier"},
+          "party": "Independent",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": "2018 and 2022 Democratic nominee for Lt. Governor; running as Independent in 2026"
+        },
+        {
+          "slug": "vikki-goodwin",
+          "name": {"full": "Vikki Goodwin", "ballotDisplay": "Vikki Goodwin"},
+          "party": "Democratic",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas State Representative, HD-47 (since 2019)",
+          "priorOffice": null,
+          "notes": "In May 26 runoff vs Marcos Velez; strong frontrunner (~48% in primary)"
+        }
+      ]
+    },
+    {
+      "id": "TX-COMPTROLLER-2026",
+      "office": "Comptroller of Public Accounts",
+      "state": "TX",
+      "district": null,
+      "generalDate": "2026-11-03",
+      "isOpenSeat": true,
+      "raceRating": "Likely Republican",
+      "candidates": [
+        {
+          "slug": "don-huffines",
+          "name": {"full": "Don Huffines", "ballotDisplay": "Don Huffines"},
+          "party": "Republican",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": "Texas State Senator, District 16 (2015-2019); 2022 gubernatorial candidate"
+        },
+        {
+          "slug": "sarah-eckhardt",
+          "name": {"full": "Sarah Eckhardt", "ballotDisplay": "Sarah Eckhardt"},
+          "party": "Democratic",
+          "incumbencyStatus": "challenger",
+          "currentOffice": "Texas State Senator, District 14 (since 2020)",
+          "priorOffice": "Travis County Judge (2015-2020)"
+        }
+      ]
+    },
+    {
+      "id": "TX-LAND-COMMISSIONER-2026",
+      "office": "Land Commissioner",
+      "state": "TX",
+      "district": null,
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "Dawn Buckingham",
+      "incumbentParty": "Republican",
+      "raceRating": "Safe Republican",
+      "candidates": [
+        {
+          "slug": "dawn-buckingham",
+          "name": {"full": "Dawn Buckingham", "ballotDisplay": "Dawn Buckingham"},
+          "party": "Republican",
+          "incumbencyStatus": "incumbent",
+          "currentOffice": "Texas Land Commissioner (since 2023)",
+          "priorOffice": "Texas State Senator, District 24 (2017-2023)"
+        }
+      ]
+    },
+    {
+      "id": "TX-AG-COMMISSIONER-2026",
+      "office": "Agriculture Commissioner",
+      "state": "TX",
+      "district": null,
+      "generalDate": "2026-11-03",
+      "isOpenSeat": true,
+      "raceRating": "Likely Republican",
+      "candidates": [
+        {
+          "slug": "nate-sheets",
+          "name": {"full": "Nate Sheets", "ballotDisplay": "Nate Sheets"},
+          "party": "Republican",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": "Defeated incumbent Sid Miller in March 2026 primary"
+        },
+        {
+          "slug": "clayton-tucker",
+          "name": {"full": "Clayton Tucker", "ballotDisplay": "Clayton Tucker"},
+          "party": "Democratic",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": "Central Texas rancher; founder Texas Progressive Caucus; unopposed in Dem primary"
+        }
+      ]
+    },
+    {
+      "id": "TX-RAILROAD-COMMISSIONER-2026",
+      "office": "Railroad Commissioner",
+      "state": "TX",
+      "district": null,
+      "generalDate": "2026-11-03",
+      "isOpenSeat": false,
+      "incumbentName": "James Wright",
+      "incumbentParty": "Republican",
+      "raceRating": "Safe Republican",
+      "candidates": [
+        {
+          "slug": "james-wright",
+          "name": {"full": "James Wright", "ballotDisplay": "James Wright"},
+          "party": "Republican",
+          "incumbencyStatus": "incumbent",
+          "currentOffice": "Texas Railroad Commissioner (since Jan 2021); RRC Chair since June 2025",
+          "priorOffice": "Elected Nov 2020"
+        },
+        {
+          "slug": "bo-french",
+          "name": {"full": "Bo French", "ballotDisplay": "Bo French"},
+          "party": "Republican",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null
+        },
+        {
+          "slug": "jon-rosenthal",
+          "name": {"full": "Jon Rosenthal", "ballotDisplay": "Jon Rosenthal"},
+          "party": "Democratic",
+          "incumbencyStatus": "challenger",
+          "currentOffice": null,
+          "priorOffice": "Texas State Representative, District 135 (2019-2021)"
+        }
+      ]
+    }
+  ]
+}

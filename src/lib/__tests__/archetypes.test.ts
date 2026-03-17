@@ -81,7 +81,7 @@ describe('deriveMetaDimensions', () => {
     expect(meta.governance_style).toBe(0);
   });
 
-  it('shifts responsibility_orientation negative for low axis values', () => {
+  it('shifts responsibility_orientation negative for low axis values (poleA = community)', () => {
     const profile = makeProfile({
       domains: [{
         domain_id: 'econ',
@@ -93,8 +93,8 @@ describe('deriveMetaDimensions', () => {
       }],
     });
     const meta = deriveMetaDimensions(profile);
-    // value 0 => stanceToScore = (5-0)/5 = 1 (positive = community-led)
-    expect(meta.responsibility_orientation).toBeGreaterThan(0);
+    // value 0 (poleA / community) => stanceToScore = (0-5)/5 = -1 (community-led)
+    expect(meta.responsibility_orientation).toBeLessThan(0);
   });
 
   it('returns zero for empty profile', () => {

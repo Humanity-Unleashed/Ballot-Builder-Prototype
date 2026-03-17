@@ -1,0 +1,342 @@
+{
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "claude-code-manual-search",
+  "address": "1713 Webberville Rd, Austin, TX 78721",
+  "state": "TX",
+  "county": "Travis County",
+  "electionCycle": "2026",
+  "notes": "Texas held its primary on March 3, 2026 — most races already have nominees or runoff matchups set. Several key races (US Senate, AG, Railroad Commissioner) go to May 26 runoff. This inventory covers races that would appear on a ballot for the given address. District-level assignments for state House/Senate are best-guess based on geographic research — the address is in east Austin (Manor/Pflugerville area).",
+
+  "keyDates": {
+    "primaryElection": "2026-03-03 (COMPLETED)",
+    "primaryRunoff": "2026-05-26",
+    "generalElection": "2026-11-03",
+    "generalRunoff": "2026-12 (if needed)"
+  },
+
+  "districtAssignments": {
+    "usCongressional": {
+      "district": "TX-37 (most likely)",
+      "confidence": "MEDIUM-HIGH",
+      "notes": "TX-37 is the Austin/Travis County-centered district created after 2020 census. East Austin 78721 is squarely in Travis County. After 2025 redistricting, District 35 was moved out of Travis County — TX-37 absorbed most of Austin proper."
+    },
+    "texasStateSenate": {
+      "district": "SD-14 (most likely)",
+      "confidence": "MEDIUM",
+      "notes": "Sarah Eckhardt (D) represents SD-14 covering Austin. Her term runs through 2029 — NOT up in 2026. She is running for Comptroller but does not vacate the seat."
+    },
+    "texasStateHouse": {
+      "district": "HD-46 (most likely)",
+      "confidence": "MEDIUM-HIGH",
+      "notes": "HD-46 represented by Sheryl Cole (D) covers east Austin, Manor, Pflugerville. Webberville Rd is in east Austin. Could also be HD-49 (central Austin, Gina Hinojosa's former seat) — exact boundary depends on redistricting. Need to verify via wrm.capitol.texas.gov."
+    }
+  },
+
+  "federalRaces": {
+    "usSenate": {
+      "status": "PRIMARY COMPLETED — RUNOFFS PENDING",
+      "democraticNominee": "James Talarico (state representative from Austin)",
+      "republicanRunoff": {
+        "candidates": ["John Cornyn (incumbent, 43%)", "Ken Paxton (former AG, 41%)"],
+        "eliminated": "Wesley Hunt (13%)",
+        "runoffDate": "2026-05-26"
+      },
+      "generalElectionMatchup": "Talarico (D) vs. Cornyn or Paxton (R)",
+      "notes": "High-profile race. Talarico polling slightly ahead of both GOP candidates. One of the most competitive TX Senate races in decades."
+    },
+    "usHouse_TX37": {
+      "status": "PRIMARY COMPLETED — GENERAL SET",
+      "democraticNominee": "Greg Casar (incumbent)",
+      "republicanNominee": null,
+      "independents": ["James Kinney"],
+      "generalElectionMatchup": "Casar (D) vs. Kinney (I)",
+      "notes": "Safe Democratic seat. Casar defeated Esther Fleharty in Dem primary."
+    }
+  },
+
+  "statewideRaces": {
+    "governor": {
+      "status": "PRIMARY COMPLETED — GENERAL SET",
+      "democraticNominee": "Gina Hinojosa (state rep from Austin HD-49)",
+      "republicanNominee": "Greg Abbott (incumbent, 4th term bid)",
+      "libertarian": "Jenn Mack Raphoon",
+      "notes": "Abbott is heavy favorite in general."
+    },
+    "lieutenantGovernor": {
+      "status": "PRIMARY COMPLETED — GENERAL SET",
+      "democraticNominee": "Mike Collier",
+      "republicanNominee": "Dan Patrick (incumbent, 4th term bid)",
+      "libertarian": "Anthony Cristo (convention April 12)"
+    },
+    "attorneyGeneral": {
+      "status": "BOTH PARTIES IN RUNOFF",
+      "republicanRunoff": ["Chip Roy (US Rep)", "Mayes Middleton (state senator)"],
+      "democraticRunoff": ["Nathan Johnson (state senator, ~49%)", "Joe Jaworski (former Galveston mayor)"],
+      "runoffDate": "2026-05-26"
+    },
+    "comptroller": {
+      "status": "PRIMARY COMPLETED — GENERAL SET",
+      "democraticNominee": "Sarah Eckhardt (state senator SD-14, >60% of primary vote)",
+      "republicanNominee": "Don Huffines (former state senator)",
+      "notes": "Huffines defeated acting comptroller Kelly Hancock and Christi Craddick."
+    },
+    "landCommissioner": {
+      "status": "PRIMARY COMPLETED — GENERAL SET",
+      "republicanNominee": "Dawn Buckingham (incumbent, unopposed in primary)",
+      "democraticNominee": "TBD — need to verify"
+    },
+    "agricultureCommissioner": {
+      "status": "PRIMARY COMPLETED — GENERAL SET",
+      "republicanNominee": "Nate Sheets (~53%, defeated incumbent Sid Miller)",
+      "democraticNominee": "Clayton Tucker (unopposed)"
+    },
+    "railroadCommissioner": {
+      "status": "REPUBLICAN RUNOFF PENDING",
+      "democraticNominee": "Jon Rosenthal",
+      "republicanRunoff": ["James Wright (incumbent)", "Bo French"],
+      "runoffDate": "2026-05-26"
+    }
+  },
+
+  "stateLegislativeRaces": {
+    "texasStateSenate_SD14": {
+      "status": "NOT UP IN 2026",
+      "incumbent": "Sarah Eckhardt (D)",
+      "termExpires": "January 2029",
+      "notes": "Even-numbered TX Senate districts were last elected in 2024. SD-14 is not on the 2026 ballot. Eckhardt is running for Comptroller but retains her Senate seat."
+    },
+    "texasStateHouse_HD46": {
+      "status": "EFFECTIVELY DECIDED",
+      "democraticNominee": "Sheryl Cole (incumbent, unopposed in primary)",
+      "republicanNominee": "None — GOP primary was canceled",
+      "generalElectionMatchup": "Cole (D) unopposed",
+      "notes": "Safe D seat. Cole represents east Austin, Manor, Pflugerville."
+    },
+    "texasStateHouse_HD49_alternate": {
+      "status": "DEMOCRATIC RUNOFF PENDING",
+      "notes": "If the address falls in HD-49 instead of HD-46: Gina Hinojosa vacated this seat to run for Governor. Montserrat Garibay and Kathie Tovo (former Austin City Council member) advanced to a May 26 runoff.",
+      "democraticRunoff": ["Montserrat Garibay", "Kathie Tovo"],
+      "republicanNominee": "TBD",
+      "runoffDate": "2026-05-26"
+    }
+  },
+
+  "countyRaces_TravisCounty": {
+    "countyJudge": {
+      "status": "PRIMARY COMPLETED",
+      "democraticNominee": "Andy Brown (incumbent, advanced from primary)",
+      "republicanNominee": "TBD",
+      "notes": "Travis County is heavily Democratic — Dem primary winner typically wins general."
+    },
+    "countyCommissioner": {
+      "precinct2": {
+        "status": "DECIDED",
+        "winner": "Brigid Shea (D, incumbent, 57% — no Republican opponent)",
+        "notes": "Effectively re-elected in primary."
+      },
+      "precinct4": {
+        "status": "DEMOCRATIC RUNOFF PENDING",
+        "candidates": ["George Morales", "Susanna Ledesma-Woody"],
+        "runoffDate": "2026-05-26",
+        "notes": "Open seat — Margaret Gomez retired after 30+ years. No Republican opponent."
+      },
+      "relevantPrecinct": "Need to verify which commissioner precinct covers 78721"
+    },
+    "constable_precinct4": {
+      "status": "SPECIAL PRIMARY",
+      "candidates": ["Gabriel Padilla (incumbent)", "Al Saenz"],
+      "notes": "Special Democratic primary held March 3."
+    },
+    "districtAttorney": {
+      "status": "NOT UP IN 2026",
+      "incumbent": "José Garza (D)",
+      "notes": "Re-elected November 2024. Term through 2028."
+    },
+    "sheriff": {
+      "status": "NOT UP IN 2026",
+      "incumbent": "Sally Hernandez",
+      "notes": "Re-elected November 2024. Term through 2028."
+    }
+  },
+
+  "cityCouncil": {
+    "austinCityCouncil_District1": {
+      "status": "OPEN SEAT — filing deadline August 17, 2026",
+      "incumbent": "Natasha Harper-Madison (term-limited, not running)",
+      "description": "District 1 covers portions of Central and East Austin — 78721/Webberville Rd is in this district.",
+      "knownCandidates": [
+        {
+          "name": "Steven Brown",
+          "background": "Clinical specialist at Medtronic, born and raised in East Austin",
+          "fundraising": "~$6,000 raised as of Jan 2026"
+        },
+        {
+          "name": "Alexandria Anderson",
+          "background": "Retired professional track athlete, personal trainer, president of MLK Neighborhood Association",
+          "fundraising": "No fundraising reported as of Jan 2026"
+        }
+      ],
+      "notes": "Filing doesn't close until August 17, 2026 — more candidates likely. Other Austin council seats up: Districts 3, 5, 8, 9."
+    },
+    "otherDistrictsOnBallot": ["District 3", "District 5", "District 8", "District 9"],
+    "notableOtherRaces": {
+      "district5": "Incumbent Ryan Alter challenged by David Weinberg and Farrah Abraham"
+    }
+  },
+
+  "schoolBoardRaces": {
+    "austinISD": {
+      "seatsUp": 5,
+      "districts": ["District 1", "District 4", "District 6", "District 7", "At-Large Position 9"],
+      "relevantSeat": {
+        "district": "District 1",
+        "incumbent": "Candace Hunter (term expires November 2026)",
+        "candidates": "TBD — filing period July 20 to August 17, 2026",
+        "coverage": "East Austin including LBJ Early College HS, Bertha Sadler Means Young Women's Leadership Academy, Pecan Springs Elementary"
+      },
+      "electionDate": "2026-11-03",
+      "notes": "AISD board is 9 members — 7 single-member districts + 2 at-large. Nonpartisan election."
+    },
+    "austinCommunityCollege_ACC": {
+      "seatsUp": 3,
+      "positions": ["Place 1", "Place 2", "Place 3"],
+      "electionDate": "2026-11-03",
+      "filingPeriod": "July 20 to August 17, 2026",
+      "candidates": "TBD — filing not yet open",
+      "notes": "At-large seats covering the ACC taxing district (Travis, Williamson, Hays, and parts of Bastrop, Blanco, Caldwell counties). Six-year terms."
+    }
+  },
+
+  "judicialRaces": {
+    "notes": "Texas elects judges in partisan elections. Several judicial races appear on the Travis County ballot but specific matchups for courts covering 78721 not yet compiled. Texas Supreme Court, Court of Criminal Appeals, and local district court races would need separate research."
+  },
+
+  "ballotMeasures": {
+    "statewide2026": {
+      "status": "STILL BEING FINALIZED",
+      "confirmed": [],
+      "likely": [
+        {
+          "topic": "Casino gambling legalization",
+          "status": "Petition drive with significant funding — signature verification ongoing",
+          "type": "constitutional_amendment"
+        },
+        {
+          "topic": "Medical cannabis expansion",
+          "status": "Reportedly reached signature threshold — verification pending",
+          "type": "constitutional_amendment"
+        }
+      ],
+      "notes": "Texas voters approved all 17 propositions in November 2025. The 2026 slate is still forming from citizen-initiated petitions and any additional legislative referrals from the 89th Legislature session."
+    },
+    "cityOfAustin_bondPackage": {
+      "status": "LIKELY — council decision by August 6, 2026",
+      "proposedAmount": "$700-750 million general obligation bond",
+      "categories": [
+        {
+          "name": "Transportation",
+          "requestedAmount": "$925M requested (will be trimmed)",
+          "includes": "Complete Streets safety upgrades, street improvements, bridge rehabilitation, sidewalks, urban trails"
+        },
+        {
+          "name": "Parks & Recreation",
+          "requestedAmount": "$400M+ requested (will be trimmed)",
+          "includes": "Parkland acquisition ($100M), pool/senior center/playground upgrades, trail improvements"
+        },
+        {
+          "name": "Public Safety",
+          "requestedAmount": "$240M+ requested (will be trimmed)",
+          "includes": "5 new police substations, $100M shared training center, aircraft hangar"
+        },
+        {
+          "name": "Watershed Protection",
+          "requestedAmount": "TBD"
+        },
+        {
+          "name": "Community Facilities",
+          "requestedAmount": "TBD",
+          "includes": "Library branch upgrades, health centers, animal shelter space"
+        }
+      ],
+      "taxImpact": "~$722/year for typical homeowner by 2030 (~$100 more than no-bond scenario)",
+      "timeline": {
+        "initialRecommendation": "January 21, 2026 ($700M submitted to council)",
+        "communityEngagement": "Completed by March 1, 2026",
+        "taskForceRecommendation": "May 2026",
+        "councilDeadlineToPlaceOnBallot": "August 6, 2026"
+      },
+      "notes": "Each category would be a separate proposition on the ballot. City departments originally requested $3.9B — staff trimmed to ~$700M. Bond Advisory Task Force finalizing recommendations. Context: follows defeat of Prop Q in recent election."
+    },
+    "travisCounty": {
+      "status": "NONE CONFIRMED",
+      "notes": "Travis County passed a $500M road/parks bond in 2023 and a childcare tax increase recently. No new county ballot measures confirmed for November 2026."
+    }
+  },
+
+  "marchPrimaryPropositions": {
+    "notes": "Both Republican and Democratic primaries on March 3 included nonbinding party platform propositions. These are advisory only and do not appear on the November general election ballot.",
+    "republican": "10 propositions on taxes, schools, border security, etc.",
+    "democratic": "Party platform propositions on various issues"
+  },
+
+  "summaryBallotItemCount": {
+    "federalRaces": 2,
+    "statewideExecutive": 7,
+    "stateLegislative": "1 (HD-46 or HD-49; SD-14 not up)",
+    "countyRaces": "2-4 (judge, commissioner, constable)",
+    "cityCouncil": "1 (District 1, plus 4 other districts voter won't vote in)",
+    "schoolBoard_AISD": "5 seats (Districts 1, 4, 6, 7, At-Large 9)",
+    "communityCollege_ACC": "3 seats (Places 1, 2, 3)",
+    "judicialRaces": "TBD — likely 5-10",
+    "ballotMeasures_statewide": "TBD — likely 1-3 constitutional amendments",
+    "ballotMeasures_cityBond": "Likely 5 propositions (one per category) if council approves",
+    "ballotMeasures_other": "TBD",
+    "estimatedTotalBallotItems": "30-45 races/measures on the November ballot",
+    "estimatedTotalCandidatesAcrossAllRaces": "~50-80 individual candidates"
+  },
+
+  "pipelineFeasibilityForThisAddress": {
+    "scope": "All races on one voter's ballot",
+    "candidatesToResearchAndScore": "~50-80",
+    "ballotMeasuresToResearchAndScore": "~6-10 (statewide amendments + city bond props)",
+    "agentCalls": "~120-180 (researcher + scorer per candidate/measure)",
+    "feasibility": "VERY DOABLE — this is a manageable scope for the agent pipeline",
+    "advantages": [
+      "Texas primary already happened — most matchups known, reduces candidate count",
+      "Federal and statewide races have abundant data",
+      "Travis County is heavily Democratic — many races effectively decided in primary",
+      "Single-address scope naturally limits to ~30-45 ballot items",
+      "Bond propositions are well-documented with city staff recommendations"
+    ],
+    "challenges": [
+      "Need to verify exact district assignments (HD-46 vs HD-49, commissioner precinct)",
+      "Judicial races have less ideological signal for civic axis scoring",
+      "Some runoffs still pending (May 26) — final matchups not all known",
+      "Many local candidates (school board, ACC, city council) won't file until July-August 2026",
+      "City bond propositions not finalized until August 6 council vote",
+      "Statewide ballot measure slate still forming from citizen petitions"
+    ],
+    "timing": "Full ballot won't be known until late August 2026. A pipeline run now would cover federal + statewide + known county races. A second pass in September would be needed for local races and ballot measures."
+  },
+
+  "sources": [
+    "https://ballotpedia.org/Texas_gubernatorial_election,_2026",
+    "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026",
+    "https://ballotpedia.org/Texas_state_executive_official_elections,_2026",
+    "https://ballotpedia.org/Texas_House_of_Representatives_District_46",
+    "https://ballotpedia.org/Texas_State_Senate_District_14",
+    "https://ballotpedia.org/Travis_County,_Texas,_elections,_2026",
+    "https://ballotpedia.org/City_elections_in_Austin,_Texas_(2026)",
+    "https://ballotpedia.org/Municipal_elections_in_Travis_County,_Texas_(2026)",
+    "https://www.austinisd.org/board/elections",
+    "https://offices.austincc.edu/operations-and-public-affairs/public-affairs/acc-elections/",
+    "https://www.austintexas.gov/department/2026-bond-development",
+    "https://www.kut.org/austin/2026-01-21/austin-tx-2026-bond-package-tax-increase-proposition-q",
+    "https://communityimpact.com/austin/north-central-austin/election/2026/01/20/austin-candidates-raised-140k-heading-into-2026-city-council-elections-this-november/",
+    "https://www.kut.org/politics/2026-03-03/travis-county-tx-austin-election-results-2026-texas-primary",
+    "https://www.ksat.com/vote-2026/2026/03/03/election-results-2026-texas-statewide-races-democrat-and-republican-primaries/",
+    "https://www.texastribune.org/2026/03/03/john-cornyn-ken-paxton-wesley-hunt-runoff-primary-texas-senate-republican/",
+    "https://en.wikipedia.org/wiki/Texas's_37th_congressional_district",
+    "https://www.sos.state.tx.us/elections/candidates/guide/2026/offices2026.shtml"
+  ]
+}

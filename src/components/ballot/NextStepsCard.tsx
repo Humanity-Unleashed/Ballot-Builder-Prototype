@@ -3,6 +3,7 @@
 import { MapPin, Mail, ExternalLink } from 'lucide-react';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import type { VoteAmericaStateRules } from '@/server/types/externalApis';
+import { useDemographicStore } from '@/stores/demographicStore';
 
 interface VoterInfo {
   registrationUrl?: string;
@@ -28,21 +29,47 @@ const SAMPLE_LOCATIONS = [
   { name: 'Maplewood Public Library', address: '88 Birch Lane' },
 ];
 
-// Default to Michigan MVIC URLs when no zipcode is entered
-const DEFAULT_POLLING_URL = 'https://mvic.sos.state.mi.us/Voter/Index';
-const DEFAULT_ABSENTEE_URL = 'https://mvic.sos.state.mi.us/AVApplication/Index';
+/** Per-state default voter info URLs */
+const STATE_VOTER_DEFAULTS: Record<string, {
+  location: string;
+  pollingUrl: string;
+  absenteeUrl: string;
+}> = {
+  TX: {
+    location: 'Austin, Texas',
+    pollingUrl: 'https://www.votetexas.gov/voting/where.html',
+    absenteeUrl: 'https://www.votetexas.gov/voting/voting-by-mail.html',
+  },
+  MI: {
+    location: 'Detroit, Michigan',
+    pollingUrl: 'https://mvic.sos.state.mi.us/Voter/Index',
+    absenteeUrl: 'https://mvic.sos.state.mi.us/AVApplication/Index',
+  },
+  GA: {
+    location: 'Atlanta, Georgia',
+    pollingUrl: 'https://mvp.sos.ga.gov/s/',
+    absenteeUrl: 'https://mvp.sos.ga.gov/s/',
+  },
+  NC: {
+    location: 'Raleigh, North Carolina',
+    pollingUrl: 'https://vt.ncsbe.gov/PPLkup/',
+    absenteeUrl: 'https://www.ncsbe.gov/voting/vote-mail',
+  },
+};
 
-const DEFAULT_LOCATION = 'Detroit, Michigan';
+const FALLBACK_DEFAULTS = STATE_VOTER_DEFAULTS.TX;
 
 export default function NextStepsCard({ voterInfo, location }: NextStepsCardProps) {
   const { track } = useAnalyticsContext();
+  const selectedState = useDemographicStore((s) => s.profile.selectedState);
+  const stateDefaults = (selectedState && STATE_VOTER_DEFAULTS[selectedState]) || FALLBACK_DEFAULTS;
 
   const locationLabel = location
     ? (location.city ? `${location.city}, ${location.stateName}` : location.stateName)
-    : DEFAULT_LOCATION;
+    : stateDefaults.location;
 
-  const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? DEFAULT_POLLING_URL;
-  const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? DEFAULT_ABSENTEE_URL;
+  const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? stateDefaults.pollingUrl;
+  const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? stateDefaults.absenteeUrl;
 
   const actionLinks = [
     {
@@ -66,8 +93,8 @@ export default function NextStepsCard({ voterInfo, location }: NextStepsCardProp
       {/* Nearby Polling Places (preview) */}
       <div>
         <div className="flex items-center gap-2 mb-3">
-          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
-            Nearby Polling Places
+          <h2 className="text-sm font-semibold text-text-secondary">
+            Nearby polling places
           </h2>
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-primary/10 text-brand-primary">
             Preview
@@ -93,8 +120,8 @@ export default function NextStepsCard({ voterInfo, location }: NextStepsCardProp
 
       {/* Take Action links */}
       <div>
-        <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide">
-          Take Action
+        <h2 className="text-sm font-semibold text-text-secondary">
+          Take action
         </h2>
         <p className="text-xs text-text-muted mb-3 flex items-center gap-1">
           <MapPin className="h-3 w-3" />

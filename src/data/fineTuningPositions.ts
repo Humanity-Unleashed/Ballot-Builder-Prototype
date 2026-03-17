@@ -800,6 +800,79 @@ export const allFineTuningConfigs: Record<string, AxisFineTuning> = {
     ],
   },
 
+  justice_reproductive: {
+    axisId: 'justice_reproductive',
+    axisName: 'Reproductive Rights',
+    subDimensions: [
+      {
+        id: 'justice_reproductive_legality',
+        parentAxisId: 'justice_reproductive',
+        name: 'Legal Status',
+        question: 'What should the overall legal status of abortion be?',
+        poleALabel: 'Broadly\nLegal',
+        poleBLabel: 'Broadly\nProhibited',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'Legal through pregnancy', description: 'No government restrictions on abortion access' },
+          { title: 'Legal with late-term limits', description: 'Broad access with restrictions after viability' },
+          { title: 'State-by-state decisions', description: 'Each state sets its own abortion laws', isCurrentPolicy: true },
+          { title: 'Banned with exceptions', description: 'Generally prohibited with rape, incest, life exceptions' },
+          { title: 'Banned from conception', description: 'No legal abortion at any stage' },
+        ],
+      },
+      {
+        id: 'justice_reproductive_gestational',
+        parentAxisId: 'justice_reproductive',
+        name: 'Gestational Limits',
+        question: 'If abortion is legal, at what point should limits apply?',
+        poleALabel: 'No Time\nLimit',
+        poleBLabel: 'Very Early\nLimit',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'No gestational limit', description: 'Legal at all stages with physician judgment' },
+          { title: 'Viability (~24 weeks)', description: 'Pre-Dobbs Roe standard with health exceptions after' },
+          { title: 'Second trimester (15 weeks)', description: 'First-trimester access plus early second trimester', isCurrentPolicy: true },
+          { title: 'First trimester only (12 weeks)', description: 'Similar to many European countries' },
+          { title: 'Six weeks or earlier', description: 'Before most people know they are pregnant' },
+        ],
+        researchNote: '93% of abortions occur before 13 weeks (CDC 2023). Most European nations set limits at 12–14 weeks.',
+      },
+      {
+        id: 'justice_reproductive_exceptions',
+        parentAxisId: 'justice_reproductive',
+        name: 'Exception Policies',
+        question: 'If abortion is restricted, which exceptions should apply?',
+        poleALabel: 'Broad\nExceptions',
+        poleBLabel: 'No\nExceptions',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'Health of the mother (broadly defined)', description: 'Physical and mental health, fetal anomalies' },
+          { title: 'Rape, incest, life, and fetal anomaly', description: 'Standard exception set used in most restrictive states' },
+          { title: 'Rape, incest, and life of the mother', description: 'Most common exception framework', isCurrentPolicy: true },
+          { title: 'Life of the mother only', description: 'Only when pregnancy threatens survival' },
+          { title: 'No exceptions', description: 'Complete prohibition regardless of circumstances' },
+        ],
+      },
+      {
+        id: 'justice_reproductive_funding',
+        parentAxisId: 'justice_reproductive',
+        name: 'Public Funding',
+        question: 'Should government funds pay for abortion services?',
+        poleALabel: 'Full Public\nFunding',
+        poleBLabel: 'No Public\nFunding',
+        currentPolicyIndex: 2,
+        positions: [
+          { title: 'Full Medicaid coverage', description: 'Treat abortion like any medical procedure' },
+          { title: 'Coverage for low-income patients', description: 'Means-tested public funding' },
+          { title: 'Hyde Amendment (current federal policy)', description: 'No federal funds except rape, incest, life', isCurrentPolicy: true },
+          { title: 'No public funds, allow private coverage', description: 'Insurance can cover, but not taxpayer money' },
+          { title: 'No public or private coverage mandates', description: 'No insurance required to cover abortion' },
+        ],
+        researchNote: 'The Hyde Amendment has prohibited federal Medicaid funding for abortion since 1977, with narrow exceptions. 16 states use own funds to cover abortions through Medicaid.',
+      },
+    ],
+  },
+
   // ============================================
   // CLIMATE DOMAIN
   // ============================================
@@ -986,7 +1059,7 @@ export function getFineTuningForDomain(domainId: string): AxisFineTuning[] {
     econ: ['econ_safetynet', 'econ_investment', 'econ_school_choice', 'econ_tax_structure'],
     health: ['health_coverage_model', 'health_cost_control', 'health_public_health'],
     housing: ['housing_supply_zoning', 'housing_affordability_tools', 'housing_transport_priority'],
-    justice: ['justice_policing_accountability', 'justice_sentencing_goals', 'justice_firearms'],
+    justice: ['justice_policing_accountability', 'justice_sentencing_goals', 'justice_firearms', 'justice_reproductive'],
     climate: ['climate_ambition', 'climate_energy_portfolio', 'climate_permitting'],
   };
 

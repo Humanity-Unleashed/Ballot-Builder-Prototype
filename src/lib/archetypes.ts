@@ -14,7 +14,7 @@ export interface MetaDimensionScores {
   governance_style: number;           // -1 = Rules & standards, +1 = Flexibility & choice
 }
 
-// Which axes contribute to each meta-dimension (all 15 axes mapped)
+// Which axes contribute to each meta-dimension (all 17 axes mapped)
 export const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
   responsibility_orientation: [
     'econ_safetynet',            // broader safety net ↔ conditional/limited
@@ -37,6 +37,7 @@ export const META_AXIS_MAP: Record<keyof MetaDimensionScores, string[]> = {
     'health_cost_control',            // government price limits ↔ market competition
     'justice_policing_accountability', // oversight & alternatives ↔ more police
     'justice_firearms',               // stronger gun rules ↔ fewer restrictions
+    'justice_reproductive',           // reproductive rights ↔ restrict access
     'climate_permitting'              // thorough review ↔ faster approvals
   ]
 };
@@ -54,10 +55,12 @@ export function getAxisMetaDimension(axisId: string): (keyof MetaDimensionScores
 }
 
 // Convert stance value (0..10) to axis_score in [-1,+1]
-// 0 => +1 (max left/poleA), 5 => 0 (neutral), 10 => -1 (max right/poleB)
+// 0 => -1 (max poleA / community / change / rules)
+// 5 =>  0 (neutral)
+// 10 => +1 (max poleB / individual / stability / flexibility)
 function stanceToScore(value0to10: number): number {
   const v = Math.max(0, Math.min(10, value0to10));
-  return (5 - v) / 5;
+  return (v - 5) / 5;
 }
 
 // Convert importance (0..10) to weight (0..1)

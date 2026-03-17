@@ -1,0 +1,79 @@
+{
+  "candidateSlug": "jon-rosenthal",
+  "candidateName": "Jon Rosenthal",
+  "party": "Democratic",
+  "office": "Railroad Commissioner, Texas",
+  "contestId": "TX-RAILROAD-COMMISSIONER-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Jon Rosenthal",
+    "born": "1963",
+    "education": "B.S. Mechanical Engineering, UT Austin 1991; Graduate Certificate Subsea Engineering, U of Houston 2016",
+    "career": "25 years as oilfield mechanical engineer and project manager. Texas State Representative HD-135 (2019-2021, NW Houston/Cypress) — defeated 12-term Republican incumbent. Named Freshman of the Year by Texas Legislative Study Group. Served on Energy Resources Committee.",
+    "primaryResult": "Won Democratic primary March 3, 2026 unopposed."
+  },
+
+  "campaignWebsite": "https://jonrosenthaltx.com/priorities/",
+
+  "policyPositions": [
+    {"topic": "Grid weatherization", "position": "Winterization requirements for critical gas delivery systems with clear deadlines and third-party audits", "confidence": "HIGH"},
+    {"topic": "Flaring/venting", "position": "End routine flaring/venting; permit only genuine emergencies with continuous monitoring", "confidence": "HIGH", "notes": "Authored HB 1452 (2021) to eliminate routine flaring by 2025 — did not pass"},
+    {"topic": "Methane leak detection", "position": "Modern optical gas imaging, continuous monitors in hotspots", "confidence": "HIGH"},
+    {"topic": "Polluter pays", "position": "Raise surety bonds, plug orphan wells at scale tied to local hiring", "confidence": "HIGH"},
+    {"topic": "Enforcement", "position": "Deny new permits to companies with unresolved violations", "confidence": "HIGH"},
+    {"topic": "Ethics reform", "position": "Ban industry donations to commissioners; publish calendars, recusals; livestream enforcement hearings", "confidence": "HIGH"},
+    {"topic": "Energy framing", "position": "Explicitly 'All of the Above' — supports continued oil/gas production with stricter accountability. Not an energy-transition candidate. Positively cited Biden IRA and Bipartisan Infrastructure Law.", "confidence": "HIGH"},
+    {"topic": "Abortion", "position": "Voted NO on SB 8 (Heartbeat Act); Texas Choice Tracker: Pro-Choice confirmed", "confidence": "HIGH"},
+    {"topic": "Firearms", "position": "Voted NO on HB 1927 (permitless carry)", "confidence": "HIGH"},
+    {"topic": "School vouchers", "position": "Voted against school vouchers (ATPE-aligned)", "confidence": "HIGH"}
+  ],
+
+  "votingRecord": {
+    "chamber": "Texas House of Representatives, HD-135",
+    "sessions": ["86th Legislature (2019)", "87th Legislature (2021)"],
+    "keyVotes": [
+      {"bill": "SB 8 (Heartbeat Act)", "vote": "NO"},
+      {"bill": "HB 1927 (Permitless Carry)", "vote": "NO"},
+      {"bill": "HB 1452 (Eliminate routine flaring)", "action": "Authored — did not pass"},
+      {"bill": "SB 3 (Weatherization post-Uri)", "action": "Filed floor amendments to add specific deadlines — rejected by Republican majority"},
+      {"bill": "School voucher legislation", "vote": "NO"}
+    ]
+  },
+
+  "interestGroupRatings": [
+    {"organization": "Sierra Club Texas", "score": "100% (2019); 5% (2021 — low due to minority-party constraints, not changed values; Sierra Club narrative praised his anti-flaring bill)", "notes": "2019 score and authored legislation are stronger signals than 2021 numerical score"},
+    {"organization": "Young Conservatives of Texas", "score": "Career 19/100 (23 in 2019, 13 in 2021, 16 in 2023)"},
+    {"organization": "Texans for Fiscal Responsibility", "score": "24/100, F grade"},
+    {"organization": "Texas Choice Tracker", "rating": "Pro-Choice confirmed"},
+    {"organization": "Texas AFL-CIO COPE", "rating": "Endorsed (2026 primary, announced Jan 25, 2026)"}
+  ],
+
+  "endorsements": ["Texas AFL-CIO COPE"],
+
+  "scorerNotes": {
+    "energyPortfolioAxisNote": "His 'All of the Above' position means he scores toward Pole B (All-of-the-Above/Fossil) on energy_portfolio, not Pole A (Renewables Priority) — despite Democratic affiliation and environmental regulation stance. He is a reform-the-industry candidate, not a replace-fossil-fuels candidate.",
+    "sierraClub2021Note": "Sierra Club 2021 score of 5% should NOT be read at face value. Their own narrative praises his environmental work that session. The 100% in 2019 and his authored anti-flaring legislation are stronger signals."
+  },
+
+  "evidenceSummary": {
+    "axesScorable": 10,
+    "overallConfidence": "MEDIUM-HIGH",
+    "strongAxes": ["climate_ambition_level (anti-flaring, pro-regulation)", "climate_energy_portfolio (all-of-above, NOT renewables-only)", "climate_permitting_speed (stricter enforcement)", "justice_firearms_policy (NO on permitless carry)"],
+    "weakAxes": ["housing (no record)", "police_accountability (no record)", "sentencing (no record)", "safety_net (limited evidence)"],
+    "notes": "Has actual Texas House voting record + authored energy legislation. Engineering background gives credibility on energy technical issues. All-of-the-Above framing is a genuine moderate position, not just messaging."
+  },
+
+  "sources": [
+    {"url": "https://jonrosenthaltx.com/priorities/", "description": "Campaign priorities page"},
+    {"url": "https://ballotpedia.org/Jon_Rosenthal", "description": "Ballotpedia"},
+    {"url": "https://en.wikipedia.org/wiki/Jon_Rosenthal", "description": "Wikipedia"},
+    {"url": "https://www.texastribune.org/2025/09/29/jon-rosenthal-texas-railroad-commission-democrat-legislature-2026/", "description": "Tribune — RRC announcement"},
+    {"url": "https://www.texastribune.org/2026/02/09/texas-railroad-commission-primary-2026-guide-wright-rosenthal/", "description": "Tribune — primary guide"},
+    {"url": "https://ratings.yct.org/legislators/jon-rosenthal/86th-legislature", "description": "YCT rating"},
+    {"url": "https://www.sierraclub.org/texas/2021-texas-legislative-scorecard", "description": "Sierra Club 2021 scorecard"},
+    {"url": "https://house.texas.gov/members/3635", "description": "Texas House official page"}
+  ]
+}

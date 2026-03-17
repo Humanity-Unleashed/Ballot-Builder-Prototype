@@ -1,0 +1,85 @@
+{
+  "candidateSlug": "greg-casar",
+  "candidateName": "Greg Casar",
+  "party": "Democratic",
+  "office": "U.S. House TX-37",
+  "contestId": "TX-US-HOUSE-37-2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Gregorio Eduardo Casar",
+    "born": "1989, Houston",
+    "education": "B.A. University of Virginia, 2011",
+    "career": "Austin City Council D4 (2015-2022), U.S. House TX-35/TX-37 (2023-present). Chair, Congressional Progressive Caucus since Jan 2025 — youngest ever. Son of Mexican immigrants. Member of the Squad.",
+    "primaryResult": "Won March 3, 2026 Democratic primary for redrawn TX-37 with 80.7%"
+  },
+
+  "campaignWebsite": "https://www.casarforcongress.com/issues",
+
+  "policyPositions": [
+    {"topic": "Healthcare", "position": "Medicare for All Act co-sponsor (HR 3421); supports Medicaid expansion as interim step", "confidence": "HIGH"},
+    {"topic": "Climate", "position": "Green New Deal co-sponsor; LCV 100% annual (2025), 75% lifetime; endorsed as 'climate and environmental justice champion'", "confidence": "HIGH"},
+    {"topic": "Firearms", "position": "Giffords endorsed; co-sponsors assault weapons ban, PLCAA repeal, Ethan's Law (safe storage)", "confidence": "HIGH"},
+    {"topic": "Labor/Economy", "position": "AFL-CIO endorsed; supports raising minimum wage, taxing the wealthy; voted NO on Fiscal Responsibility Act 2023", "confidence": "HIGH"},
+    {"topic": "Criminal Justice", "position": "Supports BREATHE Act, George Floyd Justice in Policing Act; advocated for DOJ investigation of APD", "confidence": "HIGH"},
+    {"topic": "Immigration", "position": "As CPC Chair, demanded Senate reject ICE funding Jan 2026; called mass deportation 'out of control'; supports immigrant rights", "confidence": "HIGH"},
+    {"topic": "Education", "position": "Called vouchers a 'scam' and 'masquerade' (2025); NEA/AFT endorsed", "confidence": "HIGH"},
+    {"topic": "Housing", "position": "Affordable housing investment priority; Austin record emphasizes subsidies and tenant protection", "confidence": "MEDIUM"},
+    {"topic": "Energy/Grid", "position": "Sponsored Connect the Grid Act (119th Congress); American Energy Worker Opportunity Act", "confidence": "HIGH"},
+    {"topic": "Heat Protection", "position": "9-hour Capitol thirst strike (July 2023); led 100+ member letter to Biden DOL; OSHA proposed heat rule Aug 2024", "confidence": "HIGH"},
+    {"topic": "Gaza/Israel", "position": "Voted NO on Israel Security Supplemental (HR 8034); co-sponsored ceasefire resolution", "confidence": "HIGH"}
+  ],
+
+  "votingRecord": {
+    "chamber": "U.S. House of Representatives",
+    "attendance": "93.5% overall (109 of 1,681 votes missed Jan 2023-Feb 2026)",
+    "notableAbsences": "Nov 2025-Jan 2026 during redistricting/primary period (70% missed); perfect attendance since Jan 22, 2026",
+    "keyVotes": [
+      {"bill": "Fiscal Responsibility Act 2023", "vote": "NO", "notes": "One of 46 Democrats to vote no"},
+      {"bill": "Israel Security Supplemental (HR 8034, Apr 2024)", "vote": "NO"},
+      {"bill": "Medicare for All Act 2023", "action": "Co-sponsor"},
+      {"bill": "Green New Deal", "action": "Co-sponsor"},
+      {"bill": "Connect the Grid Act (119th)", "action": "Sponsor"}
+    ]
+  },
+
+  "interestGroupRatings": [
+    {"organization": "League of Conservation Voters", "score": "100% annual (2025), 75% lifetime", "notes": "Endorsed as climate and environmental justice champion"},
+    {"organization": "Giffords", "rating": "Endorsed 2022 and 2024 cycles"},
+    {"organization": "AFL-CIO Texas", "rating": "Endorsed"},
+    {"organization": "NRA", "rating": "No grade published — consistent with strong gun safety record"}
+  ],
+
+  "endorsements": ["Justice Democrats", "Sunrise Movement", "Congressional Progressive Caucus (chair)"],
+
+  "positionConflicts": [
+    "Attendance gaps Nov 2025-Jan 2026 (70% missed) during primary period",
+    "Tactical shift as CPC Chair toward economic messaging over social issues — strategic, not substantive",
+    "Gaza/Israel votes put him in tension with caucus leadership — no reversal detected"
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 12,
+    "overallConfidence": "HIGH",
+    "strongAxes": ["climate_ambition_level", "climate_energy_portfolio", "health_coverage_model", "health_cost_control", "justice_firearms_policy", "justice_police_accountability", "econ_safety_net_breadth", "econ_public_investment", "econ_school_choice"],
+    "weakAxes": ["housing_zoning_supply", "justice_sentencing_goals", "climate_permitting_speed", "housing_affordability_tools", "housing_transit_priority"],
+    "notes": "Strong progressive record across nearly all axes. Federal voting record + extensive scorecard data provides HIGH confidence on most axes."
+  },
+
+  "sources": [
+    {"url": "https://www.casarforcongress.com/issues", "description": "Campaign issues page"},
+    {"url": "https://casar.house.gov/issues/climate", "description": "Official climate page"},
+    {"url": "https://casar.house.gov/issues/health-care", "description": "Official healthcare page"},
+    {"url": "https://casar.house.gov/issues/gun-violence", "description": "Official gun violence page"},
+    {"url": "https://casar.house.gov/issues/criminal-justice", "description": "Official criminal justice page"},
+    {"url": "https://www.govtrack.us/congress/members/gregorio_casar/456945", "description": "GovTrack voting record"},
+    {"url": "https://www.lcv.org/moc/greg-casar/", "description": "LCV scorecard"},
+    {"url": "https://giffords.org/candidates/greg-casar/", "description": "Giffords endorsement"},
+    {"url": "https://aflcio.org/scorecard/legislators/greg-casar", "description": "AFL-CIO scorecard"},
+    {"url": "https://www.texastribune.org/2025/06/25/greg-casar-midterms-2026-democrats-economic-populist-message/", "description": "Texas Tribune — 2026 playbook"},
+    {"url": "https://en.wikipedia.org/wiki/Greg_Casar", "description": "Wikipedia"},
+    {"url": "https://ballotpedia.org/Greg_Casar", "description": "Ballotpedia"}
+  ]
+}

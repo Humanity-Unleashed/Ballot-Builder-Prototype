@@ -123,8 +123,8 @@ describe('derivePolicyMetaAlignment', () => {
     const result = derivePolicyMetaAlignment({ econ_safetynet: 0.5 });
     expect(result).toHaveProperty('responsibility_orientation');
     // econ_safetynet maps to responsibility_orientation
-    // sum = -0.5, count = 1, so result = -0.5
-    expect(result.responsibility_orientation).toBe(-0.5);
+    // positive effect = pushes toward poleB (individual) = positive meta-score
+    expect(result.responsibility_orientation).toBe(0.5);
   });
 
   it('handles climate_permitting mapping to two dimensions', () => {

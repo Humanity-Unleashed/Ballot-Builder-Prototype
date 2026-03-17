@@ -1,0 +1,66 @@
+{
+  "candidateSlug": "clayton-tucker",
+  "candidateName": "Clayton Tucker",
+  "party": "Democratic",
+  "office": "Agriculture Commissioner, Texas",
+  "contestId": "TX-AG-COMMISSIONER-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Clayton Tucker",
+    "background": "5th-generation Texas rancher (RX Ranch, Lampasas County). Secretary, Texas Farmers Union. Founder/President, Texas Progressive Caucus. Program Associate, Trade Justice Education Fund. B.A. International Politics + Mandarin Chinese from Southwestern University. Environmental researcher in China, kindergarten teacher in Taiwan, NSF water researcher.",
+    "priorElections": "Lost 2020 general for TX State Senate District 24 to Dawn Buckingham (R)",
+    "primaryResult": "Ran unopposed in Democratic primary March 3, 2026"
+  },
+
+  "campaignWebsite": "https://www.claytontuckertx.com/",
+
+  "policyPositions": [
+    {"topic": "Corporate concentration/antitrust", "position": "'Monopolies have rigged the system' — central campaign theme. Four corporations control 60%+ of coffee, cookies, bread, plus meat/seed/dairy concentration. Calls for antitrust enforcement.", "confidence": "HIGH"},
+    {"topic": "Family farm preservation", "position": "200,000+ TX farms are family-owned; 18,000+ disappeared since 2017. Restore viability against corporate consolidation.", "confidence": "HIGH"},
+    {"topic": "Water rights/aquifer protection", "position": "Dedicated /stop_ai_centers page. AI data centers consuming 49B gallons TX water in 2025, potentially 399B by 2030. PFAS contamination. Use TDA role in State Water Plan.", "confidence": "HIGH"},
+    {"topic": "Food safety/chemicals", "position": "Remove harmful chemicals and additives from food; oppose PFAS 'forever chemicals'", "confidence": "HIGH"},
+    {"topic": "School nutrition", "position": "Universal free school meals, farm-to-school local sourcing from TX farmers, eliminate processed foods from schools", "confidence": "HIGH"},
+    {"topic": "Rural healthcare", "position": "'No family should drive 90 miles to have a baby.' 25+ rural TX hospitals closed, 76 at risk. Use TDA's State Office of Rural Health.", "confidence": "HIGH"},
+    {"topic": "Fair trade", "position": "Opposes neoliberal trade policies; works professionally at Trade Justice Education Fund", "confidence": "HIGH"},
+    {"topic": "Healthcare access", "position": "2020: explicit Medicaid expansion. 2026: broader 'affordable, timely healthcare for all' framing", "confidence": "MEDIUM"},
+    {"topic": "Climate/energy", "position": "2020: wind investment to stop climate crisis. 2026: soil health, water protection, PFAS framing appropriate to TDA scope", "confidence": "MEDIUM"},
+    {"topic": "Soil health/sustainability", "position": "Promote clean water, healthy soil, long-term agricultural sustainability", "confidence": "MEDIUM"},
+    {"topic": "Public education", "position": "2020: explicitly opposed school privatization. Consistent values.", "confidence": "MEDIUM"}
+  ],
+
+  "votingRecord": null,
+
+  "interestGroupRatings": [],
+
+  "endorsements": [
+    {"name": "Our Revolution", "notes": "National progressive org aligned with Bernie Sanders"},
+    {"name": "U.S. Rep. Greg Casar (D-TX)"},
+    {"name": "U.S. Rep. Lloyd Doggett (D-TX)"},
+    {"name": "U.S. Rep. Jamie Raskin (D-MD)"},
+    {"name": "Lone Star Left"},
+    {"name": "Farm and Ranch Freedom Alliance (FARFA)", "notes": "Favorable coverage, nonpartisan farm group — 'long-time FARFA member'"}
+  ],
+
+  "positionConflicts": [],
+
+  "evidenceSummary": {
+    "axesScorable": 8,
+    "overallConfidence": "MEDIUM",
+    "strongAxes": ["econ_public_investment", "econ_safety_net_breadth (free school meals, rural health, Medicaid 2020)", "econ_school_choice (anti-privatization 2020)", "health_coverage_model (Medicaid expansion 2020)", "health_public_health (food safety regulations)", "climate_ambition"],
+    "weakAxes": ["justice_firearms_policy (no record)", "justice_police_accountability (no record)", "justice_sentencing_goals (no record)", "housing (no record)", "transit (no record)"],
+    "notes": "First-time statewide candidate with no voting record. Clear progressive-populist identity across two cycles. Strong evidence within TDA scope (agriculture, food, water, rural health). Thin outside that scope. 2020 Senate positions supplement but are 6 years old — flag as lower confidence."
+  },
+
+  "sources": [
+    {"url": "https://www.claytontuckertx.com/", "description": "Campaign website"},
+    {"url": "https://ballotpedia.org/Clayton_Tucker", "description": "Ballotpedia"},
+    {"url": "https://ourrevolution.com/clayton-tucker-texas-endorsement/", "description": "Our Revolution endorsement"},
+    {"url": "https://farmandranchfreedom.org/tx-ag-commissioner-race-2026/", "description": "FARFA op-ed"},
+    {"url": "https://www.lonestarleft.com/p/lone-star-left-endorses-clayton-tucker", "description": "Lone Star Left endorsement"},
+    {"url": "https://www.texastribune.org/2026/01/27/texas-agriculture-commissioner-primary/", "description": "Tribune primary guide"},
+    {"url": "https://texreporter.com/2025/12/30/clayton-tucker-a-populist-challenger-takes-on-sid-miller-in-texas-ag-commissioner-race/", "description": "Texas Reporter profile"}
+  ]
+}

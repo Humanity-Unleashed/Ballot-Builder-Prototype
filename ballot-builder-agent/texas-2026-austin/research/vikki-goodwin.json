@@ -1,0 +1,468 @@
+{
+  "slug": "vikki-goodwin",
+  "name": "Vikki Goodwin",
+  "party": "Democratic",
+  "office": "Texas Lieutenant Governor, 2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "primaryStatus": {
+    "note": "Goodwin received approximately 48% in the March 3, 2026 Democratic primary, short of the 50% threshold. She faces labor organizer Marcos Velez (who received ~31%) in a May 26, 2026 runoff. The task brief describes her as 'the actual Democratic nominee' — this file treats her as the presumptive nominee pending the May 26 runoff result.",
+    "primaryVoteShare": "~48%",
+    "runoffOpponent": "Marcos Velez (Houston-area steelworkers union leader)",
+    "runoffDate": "2026-05-26"
+  },
+  "biography": {
+    "currentRole": "Texas State Representative, House District 47, western Travis County (2019–present, serving 4th term). Member, House Appropriations Committee (Article III Subcommittee on education funding); Member, House Insurance Committee.",
+    "priorRoles": [
+      "Broker/owner, Goodwin & Goodwin Real Estate (residential real estate, co-owned with husband)"
+    ],
+    "education": "B.B.A. Marketing, University of Texas at Austin; M.P.A. (Master of Public Affairs), LBJ School of Public Affairs, UT Austin",
+    "background": "Born Arlington, Illinois; grew up in Dallas; moved to Austin in 1985. Small business owner. First won HD-47 in 2018, flipping the seat from Republican incumbent Paul Workman (52%-48%). Served continuously since January 2019 through current 89th legislative session. HD-47 covers southwest Austin and Lake Travis area in western Travis County.",
+    "notableNotes": "Mike Collier, who ran as the Democratic nominee for Lt. Gov. in 2018 and 2022, is running as an Independent in 2026 — he is NOT the Democratic nominee. Goodwin is the Democratic standard-bearer."
+  },
+  "campaignWebsite": {
+    "url": "https://www.vikkigoodwin.com",
+    "alternateUrl": "https://goodwin4texas.com",
+    "fetchedAt": "2026-03-10T00:00:00Z",
+    "statedPositions": [
+      {
+        "topic": "public education / school vouchers",
+        "quote": "increase funding for public schools and ending the voucher program... My plan would be no public dollars to private schools... funding them appropriately, not diverting our public tax dollars to private schools, supporting our teachers, our students, and a system that serves over 90% of the kids in Texas",
+        "sourceUrl": "https://www.vikkigoodwin.com/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit, repeated commitment across multiple sources. Also referenced in announcement: 'fully funding' state public schools per the State Constitution. Opposes school voucher/ESA program recently passed under Dan Patrick."
+      },
+      {
+        "topic": "healthcare access / Medicaid expansion",
+        "quote": "inclusive health care access... ensure all Texans can access the healthcare they need affordably... Texas is a prosperous state, and yet we have the highest rate of uninsured people who therefore end up in the emergency room where the cost for care is the highest... want medical professionals to assist their patients without fear of over-zealous prosecution... ensure more Texans can receive Medicaid, as well as reproductive and mental health services",
+        "sourceUrl": "https://www.vikkigoodwin.com/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicitly references Medicaid expansion as a goal. Also implicitly advocates for de-criminalizing provider environment post-Dobbs ('without fear of over-zealous prosecution'). No explicit endorsement of single-payer or ACA expansion as mechanisms stated, but Medicaid expansion language is clear."
+      },
+      {
+        "topic": "reproductive rights / abortion",
+        "quote": "women who have pregnancy complications are dying [under current Republican leadership]",
+        "sourceUrl": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Campaign framing clearly pro-choice. See voting record section for extensive legislative record. Endorsed by Planned Parenthood Texas Votes in 2024."
+      },
+      {
+        "topic": "housing affordability",
+        "quote": "prioritize incentivizing building of starter/'missing middle' homes to address housing affordability... collaborate with local governments to expand housing access, reduce homelessness, and support working families",
+        "sourceUrl": "https://www.vikkigoodwin.com/priorities",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Supply-side framing (building more homes) combined with local-government collaboration. Not opposed to zoning reform in principle. Also emphasizes state being better fiscal partner so localities rely less on property taxes."
+      },
+      {
+        "topic": "property taxes / school funding formula",
+        "quote": "the state should provide 50% of school funding... root cause of rising property taxes is the state shifting costs for education, healthcare, and transportation to local governments",
+        "sourceUrl": "https://communityimpact.com/austin/south-central-austin/election/2026/01/27/qa-get-to-know-the-democratic-primary-candidates-for-texas-lieutenant-governor",
+        "date": "2026-01-27",
+        "confidence": "high",
+        "notes": "Frames property tax relief as a school finance problem requiring state investment, not a simple tax cut. Explicit 50% state funding target."
+      },
+      {
+        "topic": "water infrastructure",
+        "quote": "ensure reliable, clean infrastructure without inflating costs or favoring political allies... gains can be found in common-sense conservation and re-use policies... criticizes current leadership wanting to spend billions on water projects to enable big-tech data centers instead of prioritizing drinking water for families",
+        "sourceUrl": "https://www.vikkigoodwin.com/priorities",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Emphasizes conservation/reuse rather than new mega-projects. Skeptical of corporate subsidy angle in water investment. No specific legislation or funding figures cited."
+      },
+      {
+        "topic": "clean energy / climate",
+        "quote": "clean power and water... bold action to protect all Texas communities through a comprehensive approach that balances environmental protection with economic growth while securing the state's water future... promotes environmental stewardship through sustainable land management to reduce wildfire risks and supports comprehensive strategies to address extreme weather impacts and reduce greenhouse gas emissions",
+        "sourceUrl": "https://www.vikkigoodwin.com/issues",
+        "date": "2026",
+        "confidence": "medium",
+        "notes": "Climate action framing, but 'balances with economic growth' language suggests not an aggressive/rapid-transition framing. No explicit renewable energy mandates or carbon pricing stated. General climate action supporter."
+      },
+      {
+        "topic": "ICE / immigration enforcement",
+        "quote": "calling on the Texas Legislature to establish an emergency, bipartisan committee to examine the state's mandated cooperation with Immigration and Customs Enforcement (ICE) and the safety, legality, and cost of that cooperation... widespread reports of ICE and Border Patrol agent activities such as home invasions, warrantless searches and detentions of US citizens, including the questionable deportation of a constituent in her district",
+        "sourceUrl": "https://www.kxan.com/investigations/lawmaker-lieutenant-governor-candidate-calls-for-review-of-texas-ice-cooperation/",
+        "date": "2026-02-15",
+        "confidence": "high",
+        "notes": "Not calling for abolition of ICE — calling for legislative accountability/review of cooperation mandates. Concerned about civil liberties violations and constitutionality of mandatory 287(g) agreements."
+      },
+      {
+        "topic": "minimum wage / labor",
+        "quote": "champions increasing the minimum wage to $15 per hour and increasing the tipped-worker wage",
+        "sourceUrl": "https://www.vikkigoodwin.com/issues",
+        "date": "2026",
+        "confidence": "high",
+        "notes": "Explicit $15 federal/state minimum wage commitment stated on issues page. Also: co-authored legislation to raise state employee salaries and cost-of-living adjustments for retired teachers."
+      },
+      {
+        "topic": "government / institutional tone",
+        "quote": "returning sanity to Texas government and restoring a collaborative and cooperative spirit... current leadership tearing down our agencies and institutions, instead of building trust within our communities",
+        "sourceUrl": "https://www.texastribune.org/2026/01/22/2026-texas-lieutenant-governor-primary-guide/",
+        "date": "2026-01-22",
+        "confidence": "medium",
+        "notes": "Values framing, not specific policy. Contrast with Dan Patrick's combative style."
+      }
+    ]
+  },
+  "votingRecord": {
+    "available": true,
+    "sources": [
+      "Texas House of Representatives official member page",
+      "Texas Choice Tracker (choicetracker.org)",
+      "Texas Right to Life scorecard (2019)",
+      "BillTrack50"
+    ],
+    "keyVotes": [
+      {
+        "bill": "Texas Heartbeat Act / SB 8 (2021) — 6-week abortion ban with citizen enforcement mechanism",
+        "vote": "No",
+        "topic": "reproductive rights",
+        "sourceUrl": "https://www.vikkigoodwin.com/news-posts/2021/9/12/3tlw9v8lnix1fzxkpt3yrlqacgejdw",
+        "notes": "Goodwin posted public list of who voted for/against. She voted No. Bans abortions after 6 weeks; allows private citizens to sue providers."
+      },
+      {
+        "bill": "Medication abortion ban after 7 weeks / anti-mailing bill",
+        "vote": "No",
+        "topic": "reproductive rights",
+        "sourceUrl": "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+        "notes": "Voted against banning all medication abortions after 7 weeks and preventing mailing of medication abortion drugs."
+      },
+      {
+        "bill": "Criminal penalties for abortion providers (all stages of pregnancy)",
+        "vote": "No",
+        "topic": "reproductive rights",
+        "sourceUrl": "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+        "notes": "Voted against creating harsh criminal penalties for providers."
+      },
+      {
+        "bill": "HB [permitless carry] — permitless carry legislation, 2021",
+        "vote": "No / Oppose",
+        "topic": "firearms",
+        "sourceUrl": "https://www.kvue.com/article/news/politics/vikki-goodwin-gov-abbott-veto-permitless-carry-bill/269-ca97aece-be02-459b-ab10-db9430d8fa2b",
+        "notes": "After an Austin shooting, Goodwin wrote to Gov. Abbott asking him to veto the permitless carry bill. Abbott signed it anyway."
+      },
+      {
+        "bill": "Gun safety bills (2023 session) — package of 12 bills filed by Goodwin post-Uvalde",
+        "vote": "Author/Sponsor",
+        "topic": "firearms",
+        "sourceUrl": "https://www.austinchronicle.com/news/2023-01-06/rep-vikki-goodwin-hd-47/",
+        "notes": "Filed 12 separate bills covering waiting periods, universal background checks for private transfers, and other safety measures. Most did not advance in Republican-controlled House. HB 298 would have required 3-business-day waiting period on firearm sales."
+      },
+      {
+        "bill": "Special session on gun reform (2022, post-Uvalde)",
+        "vote": "Urged / Advocate",
+        "topic": "firearms",
+        "sourceUrl": "https://www.kvue.com/article/news/local/texas/state-rep-vikki-goodwin-urging-special-session-gun-reform/269-e7b42a",
+        "notes": "Publicly called on Gov. Abbott to convene a special session on gun reform after the Uvalde shooting."
+      },
+      {
+        "bill": "Abortion coverage under state Medicaid / medical assistance program",
+        "vote": "Sponsor",
+        "topic": "reproductive rights / healthcare",
+        "sourceUrl": "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+        "notes": "Sponsored bill to provide abortion coverage under the state medical assistance program."
+      },
+      {
+        "bill": "Voluntary and informed abortion bill",
+        "vote": "Sponsor",
+        "topic": "reproductive rights",
+        "sourceUrl": "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+        "notes": "Sponsored bill reducing requirements for voluntary and informed consent process for abortion (reducing bureaucratic barriers)."
+      },
+      {
+        "bill": "Cati's Act (2023) — child drowning prevention",
+        "vote": "Author/Passed",
+        "topic": "child welfare",
+        "sourceUrl": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+        "notes": "Passed June 2023. Requires child care providers to ensure children who can't swim wear life jackets at pools."
+      },
+      {
+        "bill": "Texas Food System Security and Resiliency Planning Council — establishing legislation",
+        "vote": "Author/Passed",
+        "topic": "agriculture / infrastructure",
+        "sourceUrl": "https://ballotpedia.org/Vikki_Goodwin",
+        "notes": "Passed legislation establishing state council to address vulnerabilities in food supply chain."
+      },
+      {
+        "bill": "State employee salary increases / retired teacher COLA",
+        "vote": "Co-Author",
+        "topic": "labor / education",
+        "sourceUrl": "https://www.vikkigoodwin.com/issues",
+        "date": "2023",
+        "notes": "Co-authored legislation to raise state employee salaries and provide cost-of-living adjustments for retired teachers."
+      },
+      {
+        "bill": "Vote-by-mail expansion for new mothers",
+        "vote": "Author/Passed",
+        "topic": "voting rights",
+        "sourceUrl": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+        "notes": "Election law allowing women who have just given birth or are about to give birth to vote by mail."
+      },
+      {
+        "bill": "SW Travis County Groundwater Conservation District — establishing legislation",
+        "vote": "Author/Passed",
+        "topic": "environment / water",
+        "sourceUrl": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+        "notes": "Passed local groundwater conservation district establishment for southwest Travis County."
+      },
+      {
+        "bill": "Natalia Cox Act — violence prevention",
+        "vote": "Author/Passed",
+        "topic": "public safety",
+        "sourceUrl": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+        "notes": "Violence prevention law named for a victim."
+      }
+    ]
+  },
+  "scorecards": [
+    {
+      "organization": "Texas Choice Tracker (reproductive rights tracker)",
+      "score": "Pro-Choice — consistent force in fight to protect and expand abortion rights",
+      "grade": "Pro-Choice",
+      "url": "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+      "fetchedAt": "2026-03-10T00:00:00Z",
+      "notes": "Sponsored pro-choice bills; voted No on all major abortion restriction bills in Texas House."
+    },
+    {
+      "organization": "Texas Right to Life",
+      "score": "0% (inferred — 2019 scorecard available, rated as fully opposing their agenda)",
+      "grade": "Anti-life / Pro-choice by their designation",
+      "url": "https://www.texasrighttolife.com/wp-content/uploads/2019/11/301-191112-123246-Goodwin2019Scorecard.pdf",
+      "fetchedAt": "2026-03-10T00:00:00Z",
+      "notes": "2019 scorecard document exists. Scoring agency rates her as opposing their pro-life agenda."
+    },
+    {
+      "organization": "Young Conservatives of Texas (YCT)",
+      "score": "Among most liberal Democrats in Texas House",
+      "grade": "Low (from conservative standpoint)",
+      "url": "https://ratings.yct.org/legislators/vikki-goodwin/86th-legislature",
+      "fetchedAt": "2026-03-10T00:00:00Z",
+      "notes": "YCT has tracked her since 2019. Rated as consistently liberal/progressive on their scale."
+    },
+    {
+      "organization": "Texas Freedom Index",
+      "score": "Available but specific numerical score not retrieved",
+      "grade": null,
+      "url": "https://freedomindex.us/legislator/11234",
+      "fetchedAt": "2026-03-10T00:00:00Z",
+      "notes": "Right-leaning constitutional liberty tracker; Goodwin expected to score low given her legislative record."
+    },
+    {
+      "organization": "Texas Taxpayers Index",
+      "score": "Available but specific score not retrieved",
+      "grade": null,
+      "url": "https://index.texastaxpayers.com/legislators/vikki-goodwin/2023-index",
+      "fetchedAt": "2026-03-10T00:00:00Z",
+      "notes": "Tracks fiscal conservatism; Goodwin supports public investment and is expected to score low."
+    },
+    {
+      "organization": "League of Conservation Voters (LCV)",
+      "score": "No federal LCV score applicable — state legislator. No Texas LCV state scorecard data found.",
+      "grade": null,
+      "url": null,
+      "notes": "LCV primarily tracks federal Congress members. Texas LCV exists but no specific scorecard for Goodwin found in research. Environmental record inferred from votes and stated positions."
+    }
+  ],
+  "endorsements": [
+    {
+      "organization": "Our Revolution",
+      "type": "endorsement",
+      "cycle": "2026",
+      "url": "https://ourrevolution.com/vikki-goodwin-for-texas-lt-governor/",
+      "notes": "Described Goodwin as 'a four-term progressive leader with deep roots in public service and a powerful record of fighting for working families.' National progressive endorsement."
+    },
+    {
+      "organization": "Planned Parenthood Texas Votes",
+      "type": "endorsement",
+      "cycle": "2024 General (prior cycle — 2026 status not confirmed in research)",
+      "url": "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+      "notes": "Endorsed Goodwin in 2024 General Election for her HD-47 seat. 2026 LG endorsement not explicitly confirmed but consistent with her record."
+    },
+    {
+      "organization": "Rep. Lloyd Doggett (U.S. Congressman, TX-37)",
+      "type": "endorsement",
+      "cycle": "2026",
+      "url": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+      "notes": "Austin-area progressive Democratic congressman."
+    },
+    {
+      "organization": "Majority of Texas House Democratic caucus",
+      "type": "endorsement (collective)",
+      "cycle": "2026",
+      "url": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+      "notes": "Most Democratic colleagues in the Texas House endorsed her. Represents institutional Democratic establishment backing."
+    },
+    {
+      "organization": "Texas AFL-CIO",
+      "type": "NOT endorsing Goodwin — endorsed opponent Marcos Velez",
+      "cycle": "2026",
+      "notes": "Texas AFL-CIO endorsed Velez, the steelworkers union leader, in the primary. This is a notable gap in Goodwin's coalition. Goodwin is still backed by teachers' unions per general reporting."
+    },
+    {
+      "organization": "Teachers unions (general)",
+      "type": "endorsement (inferred)",
+      "cycle": "2026",
+      "notes": "Multiple sources reference teachers' union backing for Goodwin, though specific union (TEA / Texas American Federation of Teachers / Texas Classroom Teachers Association) not named in available sources."
+    }
+  ],
+  "interviews": [
+    {
+      "outlet": "Texas Tribune",
+      "date": "2025-05-20",
+      "url": "https://www.texastribune.org/2025/05/20/texas-rep-vikki-goodwin-dan-patrick/",
+      "keyExchanges": [
+        {
+          "topic": "Why run / overall framing",
+          "quote": "I'm running for Lieutenant Governor because I believe in building a Texas that works for all of us—not just the well-connected few",
+          "notes": "Announcement interview. Focus on public schools, affordable housing, healthcare access, and 'abundant and clean' water and power. Criticized 'current leadership' for 'tearing down our agencies and institutions.'"
+        }
+      ]
+    },
+    {
+      "outlet": "KXAN Austin",
+      "date": "2026",
+      "url": "https://www.kxan.com/video/lt-gov-democratic-candidate-vikki-goodwin-interview/11521175/",
+      "keyExchanges": [
+        {
+          "topic": "General campaign platform",
+          "notes": "Video interview available. Key themes: public schools, affordability, healthcare access, ICE cooperation review."
+        }
+      ]
+    },
+    {
+      "outlet": "KXAN Austin — Investigations",
+      "date": "2026-02-15",
+      "url": "https://www.kxan.com/investigations/lawmaker-lieutenant-governor-candidate-calls-for-review-of-texas-ice-cooperation/",
+      "keyExchanges": [
+        {
+          "topic": "ICE / immigration enforcement",
+          "quote": "calling on the Texas Legislature to establish an emergency, bipartisan committee to examine the state's mandated cooperation with Immigration and Customs Enforcement (ICE) and the safety, legality, and cost of that cooperation",
+          "notes": "Raised specific concerns: home invasions, warrantless searches, detentions of U.S. citizens (including a constituent deported from her district), children in detention, wrongful detainee deaths, mandatory 287(g) agreement costs. Did not call for abolition — called for bipartisan review and accountability."
+        }
+      ]
+    },
+    {
+      "outlet": "ABC-7 (KVIA El Paso)",
+      "date": "2026-01-29",
+      "url": "https://kvia.com/for/2026/01/29/abc-7-interview-with-vikki-goodwin-democratic-texas-lt-gov-candidate/",
+      "keyExchanges": [
+        {
+          "topic": "Campaign overview",
+          "notes": "Campaign platform interview. Specific content of exchanges not retrieved in research."
+        }
+      ]
+    },
+    {
+      "outlet": "Houston Public Media — Hello Houston",
+      "date": "2026-02-20",
+      "url": "https://www.houstonpublicmedia.org/articles/shows/hello-houston/2026/02/20/543972/hello-houston-february-20-2026/",
+      "keyExchanges": [
+        {
+          "topic": "Top three priorities",
+          "notes": "Articulated top 3: (1) increase funding for public schools and ending the voucher program; (2) ensuring all Texans can access healthcare affordably; (3) ensuring we can meet water needs without increasing cost."
+        }
+      ]
+    },
+    {
+      "outlet": "Texas Standard / KUT",
+      "date": "2026-02-09",
+      "url": "https://www.texasstandard.org/stories/texas-lieutenant-governor-race-democratic-candidates-goodwin-velez-head-patrick/",
+      "keyExchanges": [
+        {
+          "topic": "School vouchers",
+          "quote": "My plan would be no public dollars to private schools",
+          "notes": "Explicit anti-voucher commitment. Also noted Dan Patrick's THC ban (600 Texans testified against) as example of Republican leadership ignoring constituents."
+        }
+      ]
+    },
+    {
+      "outlet": "Community Impact",
+      "date": "2026-01-27",
+      "url": "https://communityimpact.com/austin/south-central-austin/election/2026/01/27/qa-get-to-know-the-democratic-primary-candidates-for-texas-lieutenant-governor",
+      "keyExchanges": [
+        {
+          "topic": "Property taxes and housing",
+          "quote": "The state should provide 50% of school funding... prioritize incentivizing building of starter/'missing middle' homes",
+          "notes": "Supply-side housing approach; school finance reform as property tax relief mechanism."
+        },
+        {
+          "topic": "Four priorities summary",
+          "quote": "Public education: increase funding, end private school vouchers; Health care: ensure people can access the care they need affordably; Housing: work towards greater affordability, better opportunities for home ownership; Water: ensure we can meet our water needs without increasing cost",
+          "notes": "Concise four-pillar platform statement."
+        }
+      ]
+    },
+    {
+      "outlet": "Amarillo Pioneer voter guide",
+      "date": "2026",
+      "url": "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+      "keyExchanges": [
+        {
+          "topic": "Why run",
+          "quote": "After thirty years of Republicans running the state, it is time for change. Republicans are sending our tax dollars to private schools and as a result, are severely underfunding our neighborhood schools. Under Republican leadership, women who have pregnancy complications are dying. Texas is a prosperous state, and yet we have the highest rate of uninsured people who therefore end up in the emergency room where the cost for care is the highest.",
+          "notes": "Comprehensive campaign rationale linking school vouchers, maternal mortality, and Medicaid gap."
+        }
+      ]
+    },
+    {
+      "outlet": "Spectrum News / Spectrum Local News",
+      "date": "2026-01-07",
+      "url": "https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/01/07/democrat-vikki-goodwin-focuses-on-affordability-in-campaign",
+      "keyExchanges": [
+        {
+          "topic": "Overall campaign framing",
+          "notes": "Described as 'longshot bid for lieutenant governor focused on affordability.' Platform confirmed: schools, affordable housing, water, healthcare."
+        }
+      ]
+    }
+  ],
+  "positionConflicts": [
+    {
+      "topic": "Labor / AFL-CIO endorsement",
+      "conflict": "Goodwin positions herself as a pro-worker progressive and supports $15 minimum wage, but the Texas AFL-CIO endorsed her primary opponent Marcos Velez (a steelworkers union leader) over her. This suggests organized labor's institutional preference was for Velez, despite Goodwin's stated labor positions.",
+      "sources": ["Houston Public Media (Jan 2026)", "TPR runoff coverage (March 2026)"]
+    }
+  ],
+  "evidenceSummary": {
+    "strongestAxes": [
+      "reproductive rights — extensive, unambiguous legislative record and campaign statements",
+      "firearms_policy — consistent opposition to loosening gun laws; filed 12 gun safety bills; opposed permitless carry",
+      "school_choice — explicit, repeated anti-voucher commitment is her signature issue",
+      "healthcare coverage — supports Medicaid expansion, provider protections, reproductive/mental health",
+      "minimum wage / labor — explicit $15/hour commitment",
+      "immigration / ICE accountability — clear 2026 position calling for review of cooperation, with specific documented concerns"
+    ],
+    "weakestAxes": [
+      "climate / energy portfolio — general clean energy support stated, but no specific renewable mandates, carbon pricing, or rapid-transition commitments documented",
+      "criminal justice / policing — no specific record on police accountability, sentencing, or criminal justice reform found in research",
+      "housing / zoning specifics — supply-side framing mentioned but no explicit zoning policy positions found",
+      "transit — no specific transit vs. car-infrastructure positions documented"
+    ],
+    "overallConfidence": "high",
+    "notes": "Seven-year Texas House record (2019–present) provides strong foundation. Campaign is running on four clear pillars (schools, healthcare, housing, water/energy) with most positions explicitly stated. Main gaps are criminal justice (where she has limited record) and detailed climate/energy mechanism specifics. Primary status note: as of research date (March 10, 2026), Goodwin leads the Democratic primary with ~48% and faces a May 26 runoff vs. Marcos Velez. The task brief designates her as the Democratic nominee — this is pending runoff confirmation.",
+    "sourcesUsed": [
+      "https://ballotpedia.org/Vikki_Goodwin",
+      "https://en.wikipedia.org/wiki/Vikki_Goodwin",
+      "https://www.vikkigoodwin.com/issues",
+      "https://www.vikkigoodwin.com/priorities",
+      "https://www.texastribune.org/2025/05/20/texas-rep-vikki-goodwin-dan-patrick/",
+      "https://www.texastribune.org/2026/01/22/2026-texas-lieutenant-governor-primary-guide/",
+      "https://choicetracker.org/tx/people/vikki-goodwin/82575360",
+      "https://www.kxan.com/investigations/lawmaker-lieutenant-governor-candidate-calls-for-review-of-texas-ice-cooperation/",
+      "https://ourrevolution.com/vikki-goodwin-for-texas-lt-governor/",
+      "https://www.amarillopioneer.com/2026-primary-voter-guide/vgoodwin",
+      "https://communityimpact.com/austin/south-central-austin/election/2026/01/27/qa-get-to-know-the-democratic-primary-candidates-for-texas-lieutenant-governor",
+      "https://www.texasstandard.org/stories/texas-lieutenant-governor-race-democratic-candidates-goodwin-velez-head-patrick/",
+      "https://spectrumlocalnews.com/tx/south-texas-el-paso/news/2026/01/07/democrat-vikki-goodwin-focuses-on-affordability-in-campaign",
+      "https://www.houstonpublicmedia.org/articles/shows/hello-houston/2026/02/20/543972/hello-houston-february-20-2026/",
+      "https://www.kvue.com/article/news/politics/vikki-goodwin-texas-lt-gov-campaign-dan-patrick-house/269-4671888c-19c3-4f9a-ba42-03b6568e4cc4",
+      "https://www.keranews.org/elections-2026/2026-03-09/texas-democrats-goodwin-velez-headed-to-lieutenant-governor-runoff",
+      "https://ratings.yct.org/legislators/vikki-goodwin/86th-legislature",
+      "https://www.texasrighttolife.com/wp-content/uploads/2019/11/301-191112-123246-Goodwin2019Scorecard.pdf",
+      "https://house.texas.gov/members/3820/biography"
+    ]
+  }
+}

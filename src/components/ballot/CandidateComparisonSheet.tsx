@@ -1,29 +1,81 @@
 'use client';
 
 import React from 'react';
-import { X, Check, AlertTriangle, Minus, ExternalLink } from 'lucide-react';
+import { X, Check, AlertTriangle, Minus } from 'lucide-react';
 import type { Candidate, CandidateMatch, CandidateAxisComparison } from '@/lib/ballotHelpers';
 
+/** Classify evidence text into a short source-domain label. */
+function classifySource(text: string): string {
+  const t = text.toLowerCase();
+  if (/^campaign\b|campaign (platform|website|interview|position)|campaign:/.test(t)) return 'Campaign';
+  if (/\b(voted|vote on|vote against|co-?authored|authored|sponsor|signed|passed|killed)\b/.test(t) ||
+      /^(no|yes) vote\b/.test(t) || /^[hs][br]\s?\d/.test(t) || /^hr\s?\d/.test(t) ||
+      /legislative record/.test(t)) return 'Voting record';
+  if (/\b(rating|score|rated|scorecard|%)\b/.test(t) || /\d+%/.test(t) ||
+      /\b(aclu|nra|afl-cio|sierra club|lcv|heritage action|planned parenthood|naral)\b/.test(t))
+    return 'Ratings';
+  if (/endorsement|endorsed\b/.test(t)) return 'Endorsements';
+  if (/\b(interview|debate|forum|q&a|town hall)\b/.test(t)) return 'Public statements';
+  if (/\b(survey|questionnaire|ivoterguide|ontheissues)\b/.test(t)) return 'Survey responses';
+  if (/\b(sued|lawsuit|court|legal|attorney general)\b/.test(t)) return 'Legal actions';
+  return 'Source';
+}
+
 function EvidenceRow({ evidence }: { evidence: { text: string; url?: string }[] }) {
+  // Group evidence by source domain
+  const groups = new Map<string, { text: string; url?: string; idx: number }[]>();
+  evidence.forEach((e, idx) => {
+    const domain = classifySource(e.text);
+    if (!groups.has(domain)) groups.set(domain, []);
+    groups.get(domain)!.push({ ...e, idx });
+  });
+
+  const domainEntries = Array.from(groups.entries());
+
   return (
     <p className="text-[11px] text-gray-400 leading-[15px] mt-0.5">
       Based on:{' '}
-      {evidence.map((e, i) => (
-        <span key={i}>
-          {i > 0 && '; '}
-          {e.url ? (
+      {domainEntries.map(([domain, items], gi) => (
+        <span key={domain}>
+          {gi > 0 && ', '}
+          {items.length === 1 && items[0].url ? (
             <a
-              href={e.url}
+              href={items[0].url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-primary/70 hover:text-brand-primary underline decoration-dotted inline-flex items-center gap-0.5"
+              className="text-brand-primary/70 hover:text-brand-primary underline decoration-dotted"
               onClick={(ev) => ev.stopPropagation()}
+              title={items[0].text}
             >
-              {e.text}
-              <ExternalLink className="h-2.5 w-2.5 inline shrink-0" />
+              {domain}
             </a>
           ) : (
-            e.text
+            <span title={items.map((it) => it.text).join('\n')}>
+              {domain}
+              {items.length > 1 && (
+                <sup className="text-[9px] text-gray-400 ml-px">
+                  {items.map((it, si) => (
+                    <span key={si}>
+                      {si > 0 && ','}
+                      {it.url ? (
+                        <a
+                          href={it.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-primary/70 hover:text-brand-primary"
+                          onClick={(ev) => ev.stopPropagation()}
+                          title={it.text}
+                        >
+                          {si + 1}
+                        </a>
+                      ) : (
+                        <span title={it.text}>{si + 1}</span>
+                      )}
+                    </span>
+                  ))}
+                </sup>
+              )}
+            </span>
           )}
         </span>
       ))}

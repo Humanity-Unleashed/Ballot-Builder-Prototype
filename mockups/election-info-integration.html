@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Info Integration - Blueprint View Options</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #E5E7EB;
+      padding: 20px;
+    }
+
+    h1.page-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      color: #111;
+      margin: 10px 0 6px;
+    }
+    p.page-subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    .mockup-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .mockup-container {
+      width: 375px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .mockup-label {
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      color: white;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .mockup-label .desc {
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0;
+      text-transform: none;
+      opacity: 0.85;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .screen {
+      background: #F9FAFB;
+      min-height: 780px;
+      padding-bottom: 16px;
+      overflow: hidden;
+    }
+
+    /* ========== Shared Blueprint Components ========== */
+
+    /* Top nav bar */
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .top-nav-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+    }
+    .top-nav-pill {
+      font-size: 11px;
+      color: #6B7280;
+      border: 1px solid #D1D5DB;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Blueprint header */
+    .bp-header {
+      padding: 16px 16px 0;
+    }
+    .bp-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .bp-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111;
+    }
+    .bp-retake {
+      font-size: 11px;
+      color: #6B7280;
+      background: #F3F4F6;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .bp-subtitle {
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+    /* Values context card */
+    .values-context {
+      margin: 12px 16px;
+      background: #F5F3FF;
+      border: 1px solid #DDD6FE;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .values-context-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #7C3AED;
+      margin-bottom: 6px;
+    }
+    .values-context-text {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.5;
+    }
+    .values-context-text strong {
+      color: #5B21B6;
+      font-weight: 700;
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #9CA3AF;
+      padding: 0 16px;
+      margin: 14px 0 8px;
+    }
+
+    /* Domain card */
+    .domain-card {
+      margin: 0 16px 10px;
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .domain-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .domain-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+    }
+    .domain-emoji {
+      margin-right: 6px;
+    }
+    .domain-tune {
+      font-size: 10px;
+      color: #7C3AED;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .domain-statement {
+      font-size: 12px;
+      color: #374151;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    /* Simplified slider representation */
+    .slider-track {
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 3px;
+      position: relative;
+      margin: 0 4px;
+    }
+    .slider-dot {
+      width: 18px;
+      height: 18px;
+      background: #7C3AED;
+      border-radius: 50%;
+      position: absolute;
+      top: -6px;
+      border: 3px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      padding: 0 2px;
+    }
+    .slider-label {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      letter-spacing: 0.3px;
+    }
+    .slider-label.active {
+      color: #7C3AED;
+    }
+
+    /* Underlying values */
+    .values-footer {
+      margin: 14px 16px;
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .values-footer-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #9CA3AF;
+      margin-bottom: 10px;
+    }
+    .value-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .value-bar-row:last-child { margin-bottom: 0; }
+    .value-bar-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #374151;
+      width: 80px;
+      flex-shrink: 0;
+    }
+    .value-bar-track {
+      flex: 1;
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .value-bar-fill {
+      height: 100%;
+      background: #7C3AED;
+      border-radius: 3px;
+    }
+
+    /* Bridge card (original) */
+    .bridge-card {
+      margin: 14px 16px;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .bridge-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 4px;
+    }
+    .bridge-text {
+      font-size: 12px;
+      color: #15803D;
+      line-height: 1.45;
+    }
+
+    /* CTA button */
+    .cta-btn {
+      margin: 12px 16px 16px;
+      background: #7C3AED;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Faded/truncated indicator */
+    .truncated {
+      position: relative;
+    }
+    .truncated::after {
+      content: '· · ·  2 more domain cards  · · ·';
+      display: block;
+      text-align: center;
+      font-size: 11px;
+      color: #9CA3AF;
+      padding: 8px 0 4px;
+      font-weight: 600;
+    }
+
+    /* ========== Election Info Components ========== */
+
+    /* Election countdown banner (compact) */
+    .election-banner {
+      margin: 10px 16px;
+      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .election-banner-header {
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+    .election-banner-icon { font-size: 16px; }
+    .election-banner-title {
+      font-size: 13px;
+      font-weight: 700;
+      flex: 1;
+    }
+    .election-banner-countdown {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+    }
+    .election-banner-body {
+      background: white;
+      padding: 10px 14px;
+    }
+    .election-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #F3F4F6;
+    }
+    .election-row:last-child { border-bottom: none; }
+    .election-row-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .election-row-info { flex: 1; }
+    .election-row-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #111;
+    }
+    .election-row-detail {
+      font-size: 10px;
+      color: #6B7280;
+      margin-top: 1px;
+    }
+    .election-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .election-badge.urgent { background: #FEE2E2; color: #DC2626; }
+    .election-badge.action { background: #7C3AED; color: white; cursor: pointer; }
+    .election-badge.info { background: #DBEAFE; color: #1D4ED8; }
+
+    /* Collapsible toggle indicator */
+    .collapse-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      gap: 4px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    /* Election readiness card (replaces bridge) */
+    .readiness-card {
+      margin: 14px 16px;
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .readiness-header {
+      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+    }
+    .readiness-header-text {
+      flex: 1;
+    }
+    .readiness-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .readiness-subtitle {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+    .readiness-countdown {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      color: white;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .readiness-countdown .days-label {
+      font-size: 9px;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    .readiness-body {
+      padding: 6px 14px;
+    }
+    .readiness-checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F3F4F6;
+    }
+    .readiness-checklist-item:last-child { border-bottom: none; }
+    .readiness-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .readiness-check.done { background: #D1FAE5; color: #059669; }
+    .readiness-check.pending { background: #FEF3C7; color: #D97706; }
+    .readiness-check.action { background: #DBEAFE; color: #1D4ED8; }
+    .readiness-item-info { flex: 1; }
+    .readiness-item-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #111;
+    }
+    .readiness-item-detail {
+      font-size: 10px;
+      color: #6B7280;
+      margin-top: 1px;
+    }
+    .readiness-item-action {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* Sticky bottom bar */
+    .sticky-bar {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+    .sticky-countdown {
+      background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      gap: 10px;
+      color: white;
+      cursor: pointer;
+    }
+    .sticky-countdown-icon { font-size: 16px; }
+    .sticky-countdown-text {
+      flex: 1;
+    }
+    .sticky-countdown-title {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .sticky-countdown-detail {
+      font-size: 10px;
+      opacity: 0.8;
+    }
+    .sticky-countdown-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .sticky-countdown-expand {
+      font-size: 16px;
+      opacity: 0.7;
+    }
+    .sticky-cta {
+      background: white;
+      padding: 10px 16px 14px;
+      border-top: 1px solid #E5E7EB;
+    }
+    .sticky-cta .cta-btn {
+      margin: 0;
+    }
+
+    /* Expanded drawer from sticky bar */
+    .drawer-overlay {
+      background: rgba(0,0,0,0.3);
+      padding-top: 20px;
+    }
+    .drawer {
+      background: white;
+      border-radius: 20px 20px 0 0;
+      overflow: hidden;
+    }
+    .drawer-handle {
+      width: 36px;
+      height: 4px;
+      background: #D1D5DB;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    /* Separate page mockup */
+    .vote-ready-page {
+      background: #F9FAFB;
+      min-height: 780px;
+    }
+    .vote-ready-hero {
+      background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+      padding: 24px 20px;
+      color: white;
+      text-align: center;
+    }
+    .vote-ready-days {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .vote-ready-days-label {
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+    .vote-ready-election {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-top: 8px;
+    }
+
+    .checklist-card {
+      margin: 16px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid #E5E7EB;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .checklist-header {
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #111;
+      border-bottom: 1px solid #F3F4F6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .checklist-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid #F3F4F6;
+    }
+    .checklist-row:last-child { border-bottom: none; }
+    .checklist-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .checklist-info { flex: 1; }
+    .checklist-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111;
+    }
+    .checklist-detail {
+      font-size: 11px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+    .checklist-action {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .poll-finder-card {
+      margin: 0 16px 16px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid #E5E7EB;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .poll-finder-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .poll-finder-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(239,68,68,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .poll-finder-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+    }
+    .poll-finder-subtitle {
+      font-size: 11px;
+      color: #6B7280;
+      margin-top: 2px;
+    }
+    .poll-finder-input {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #9CA3AF;
+      margin-bottom: 10px;
+    }
+    .poll-finder-btn {
+      background: #7C3AED;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Bottom nav for Option B */
+    .bottom-nav {
+      display: flex;
+      background: white;
+      border-top: 1px solid #E5E7EB;
+      padding: 8px 0 12px;
+    }
+    .bottom-nav-item {
+      flex: 1;
+      text-align: center;
+      font-size: 10px;
+      color: #9CA3AF;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .bottom-nav-item.active {
+      color: #7C3AED;
+    }
+    .bottom-nav-icon {
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
+    .bottom-nav-badge {
+      position: relative;
+    }
+    .bottom-nav-badge::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: calc(50% - 16px);
+      width: 8px;
+      height: 8px;
+      background: #EF4444;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Election Info Integration Options</h1>
+  <p class="page-subtitle">Four approaches for adding election countdown, voter registration, mail-in ballot request, and polling place finder to the blueprint view.</p>
+
+  <!-- =============================================
+       OPTION A: Collapsible Banner at top of blueprint
+       ============================================= -->
+  <h1 class="page-title" style="font-size: 20px; margin-top: 20px;">Option A: Collapsible Banner</h1>
+  <p class="page-subtitle">Compact election card inserted at the top of BlueprintSummaryView, below the header. Can be collapsed to just the countdown bar.</p>
+
+  <div class="mockup-row">
+    <!-- Expanded state -->
+    <div class="mockup-container">
+      <div class="mockup-label">A — Expanded State
+        <span class="desc">Full election info visible, scrolls with page</span>
+      </div>
+      <div class="screen">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <div class="bp-header">
+          <div class="bp-header-row">
+            <div class="bp-title">Your Civic Priorities</div>
+            <div class="bp-retake">Retake</div>
+          </div>
+          <div class="bp-subtitle">Based on your values, here's where you stand on key policy areas.</div>
+        </div>
+
+        <!-- ELECTION BANNER (NEW) -->
+        <div class="election-banner">
+          <div class="election-banner-header">
+            <span class="election-banner-icon">&#128197;</span>
+            <span class="election-banner-title">2026 General Election</span>
+            <span class="election-banner-countdown">23 days</span>
+          </div>
+          <div class="election-banner-body">
+            <div class="election-row">
+              <div class="election-row-icon" style="background: #FEE2E2;">&#9888;&#65039;</div>
+              <div class="election-row-info">
+                <div class="election-row-title">Voter Registration</div>
+                <div class="election-row-detail">Last day to register</div>
+              </div>
+              <div class="election-badge urgent">8 days</div>
+            </div>
+            <div class="election-row">
+              <div class="election-row-icon" style="background: #DBEAFE;">&#128230;</div>
+              <div class="election-row-info">
+                <div class="election-row-title">Mail-in Ballot</div>
+                <div class="election-row-detail">Request your mail ballot</div>
+              </div>
+              <div class="election-badge action">Request &rarr;</div>
+            </div>
+            <div class="election-row">
+              <div class="election-row-icon" style="background: #FEF3C7;">&#128205;</div>
+              <div class="election-row-info">
+                <div class="election-row-title">Polling Place</div>
+                <div class="election-row-detail">Find your voting location</div>
+              </div>
+              <div class="election-badge action">Find &rarr;</div>
+            </div>
+          </div>
+          <div class="collapse-toggle">&#9650; Collapse</div>
+        </div>
+
+        <div class="values-context">
+          <div class="values-context-label">What drives your positions</div>
+          <div class="values-context-text">You value <strong>Universalism</strong> and <strong>Benevolence</strong> most — prioritizing collective welfare and social harmony.</div>
+        </div>
+
+        <div class="section-label">Your policy leanings</div>
+
+        <div class="domain-card">
+          <div class="domain-header">
+            <div><span class="domain-emoji">&#128176;</span><span class="domain-name">Economy & Tax</span></div>
+            <div class="domain-tune">Fine-tune</div>
+          </div>
+          <div class="domain-statement">You lean toward progressive taxation and stronger safety nets.</div>
+          <div class="slider-track">
+            <div class="slider-dot" style="left: 25%;"></div>
+          </div>
+          <div class="slider-labels">
+            <span class="slider-label active">Free market</span>
+            <span class="slider-label">Regulated</span>
+          </div>
+        </div>
+
+        <div class="domain-card">
+          <div class="domain-header">
+            <div><span class="domain-emoji">&#127968;</span><span class="domain-name">Housing</span></div>
+            <div class="domain-tune">Fine-tune</div>
+          </div>
+          <div class="domain-statement">You support more housing development and tenant protections.</div>
+          <div class="slider-track">
+            <div class="slider-dot" style="left: 62%;"></div>
+          </div>
+          <div class="slider-labels">
+            <span class="slider-label">Market-led</span>
+            <span class="slider-label active">Policy-led</span>
+          </div>
+        </div>
+
+        <div class="truncated"></div>
+      </div>
+    </div>
+
+    <!-- Collapsed state -->
+    <div class="mockup-container">
+      <div class="mockup-label">A — Collapsed State
+        <span class="desc">Just the countdown bar, click to expand</span>
+      </div>
+      <div class="screen">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <div class="bp-header">
+          <div class="bp-header-row">
+            <div class="bp-title">Your Civic Priorities</div>
+            <div class="bp-retake">Retake</div>
+          </div>
+          <div class="bp-subtitle">Based on your values, here's where you stand on key policy areas.</div>
+        </div>
+
+        <!-- COLLAPSED ELECTION BANNER -->
+        <div style="margin: 10px 16px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); border-radius: 14px; overflow: hidden; cursor: pointer;">
+          <div class="election-banner-header">
+            <span class="election-banner-icon">&#128197;</span>
+            <span class="election-banner-title">Election Day</span>
+            <span class="election-banner-countdown">23 days</span>
+            <span style="font-size: 12px; opacity: 0.7;">&#9660;</span>
+          </div>
+        </div>
+
+        <div class="values-context">
+          <div class="values-context-label">What drives your positions</div>
+          <div class="values-context-text">You value <strong>Universalism</strong> and <strong>Benevolence</strong> most — prioritizing collective welfare and social harmony.</div>
+        </div>
+
+        <div class="section-label">Your policy leanings</div>
+
+        <div class="domain-card">
+          <div class="domain-header">
+            <div><span class="domain-emoji">&#128176;</span><span class="domain-name">Economy & Tax</span></div>
+            <div class="domain-tune">Fine-tune</div>
+          </div>
+          <div class="domain-statement">You lean toward progressive taxation and stronger safety nets.</div>
+          <div class="slider-track">
+            <div class="slider-dot" style="left: 25%;"></div>
+          </div>
+          <div class="slider-labels">
+            <span class="slider-label active">Free market</span>
+            <span class="slider-label">Regulated</span>
+          </div>
+        </div>
+
+        <div class="domain-card">
+          <div class="domain-header">
+            <div><span class="domain-emoji">&#127968;</span><span class="domain-name">Housing</span></div>
+            <div class="domain-tune">Fine-tune</div>
+          </div>
+          <div class="domain-statement">You support more housing development and tenant protections.</div>
+          <div class="slider-track">
+            <div class="slider-dot" style="left: 62%;"></div>
+          </div>
+          <div class="slider-labels">
+            <span class="slider-label">Market-led</span>
+            <span class="slider-label active">Policy-led</span>
+          </div>
+        </div>
+
+        <div class="domain-card">
+          <div class="domain-header">
+            <div><span class="domain-emoji">&#127973;</span><span class="domain-name">Healthcare</span></div>
+            <div class="domain-tune">Fine-tune</div>
+          </div>
+          <div class="domain-statement">You favor expanded public healthcare options.</div>
+          <div class="slider-track">
+            <div class="slider-dot" style="left: 30%;"></div>
+          </div>
+          <div class="slider-labels">
+            <span class="slider-label active">Private</span>
+            <span class="slider-label">Public</span>
+          </div>
+        </div>
+
+        <div class="truncated" style="margin-bottom: 0;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       OPTION B: Separate "Vote Ready" page
+       ============================================= -->
+  <h1 class="page-title" style="font-size: 20px; margin-top: 20px;">Option B: Separate "Vote Ready" Page</h1>
+  <p class="page-subtitle">A dedicated page accessible from nav. Blueprint stays untouched except for a small badge/link. Bottom nav adds a "Vote" tab with urgency indicator.</p>
+
+  <div class="mockup-row">
+    <!-- Blueprint with nav hint -->
+    <div class="mockup-container">
+      <div class="mockup-label">B — Blueprint (unchanged)
+        <span class="desc">Just a subtle link, blueprint stays clean</span>
+      </div>
+      <div class="screen" style="position: relative; display: flex; flex-direction: column;">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto;">
+          <div class="bp-header">
+            <div class="bp-header-row">
+              <div class="bp-title">Your Civic Priorities</div>
+              <div class="bp-retake">Retake</div>
+            </div>
+            <div class="bp-subtitle">Based on your values, here's where you stand on key policy areas.</div>
+          </div>
+
+          <div class="values-context">
+            <div class="values-context-label">What drives your positions</div>
+            <div class="values-context-text">You value <strong>Universalism</strong> and <strong>Benevolence</strong> most — prioritizing collective welfare and social harmony.</div>
+          </div>
+
+          <div class="section-label">Your policy leanings</div>
+
+          <div class="domain-card">
+            <div class="domain-header">
+              <div><span class="domain-emoji">&#128176;</span><span class="domain-name">Economy & Tax</span></div>
+              <div class="domain-tune">Fine-tune</div>
+            </div>
+            <div class="domain-statement">You lean toward progressive taxation and stronger safety nets.</div>
+            <div class="slider-track">
+              <div class="slider-dot" style="left: 25%;"></div>
+            </div>
+            <div class="slider-labels">
+              <span class="slider-label active">Free market</span>
+              <span class="slider-label">Regulated</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-header">
+              <div><span class="domain-emoji">&#127968;</span><span class="domain-name">Housing</span></div>
+              <div class="domain-tune">Fine-tune</div>
+            </div>
+            <div class="domain-statement">You support more housing development and tenant protections.</div>
+            <div class="slider-track">
+              <div class="slider-dot" style="left: 62%;"></div>
+            </div>
+            <div class="slider-labels">
+              <span class="slider-label">Market-led</span>
+              <span class="slider-label active">Policy-led</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-header">
+              <div><span class="domain-emoji">&#127973;</span><span class="domain-name">Healthcare</span></div>
+              <div class="domain-tune">Fine-tune</div>
+            </div>
+            <div class="domain-statement">You favor expanded public healthcare options.</div>
+            <div class="slider-track">
+              <div class="slider-dot" style="left: 30%;"></div>
+            </div>
+            <div class="slider-labels">
+              <span class="slider-label active">Private</span>
+              <span class="slider-label">Public</span>
+            </div>
+          </div>
+
+          <div class="truncated"></div>
+
+          <div class="bridge-card">
+            <div class="bridge-title">Next: your personalized ballot</div>
+            <div class="bridge-text">We'll match your positions to real ballot measures and candidates.</div>
+          </div>
+
+          <div class="cta-btn">Build my ballot &rarr;</div>
+        </div>
+
+        <!-- Bottom nav with Vote tab -->
+        <div class="bottom-nav">
+          <div class="bottom-nav-item">
+            <div class="bottom-nav-icon">&#128209;</div>
+            Blueprint
+          </div>
+          <div class="bottom-nav-item active">
+            <div class="bottom-nav-icon">&#9745;&#65039;</div>
+            Ballot
+          </div>
+          <div class="bottom-nav-item">
+            <div class="bottom-nav-icon bottom-nav-badge">&#128499;&#65039;</div>
+            Vote
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vote Ready page -->
+    <div class="mockup-container">
+      <div class="mockup-label">B — "Vote Ready" Page
+        <span class="desc">Dedicated page with all election logistics</span>
+      </div>
+      <div class="screen" style="position: relative; display: flex; flex-direction: column;">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto;" class="vote-ready-page">
+          <div class="vote-ready-hero">
+            <div class="vote-ready-days">23</div>
+            <div class="vote-ready-days-label">days until Election Day</div>
+            <div class="vote-ready-election">November 3, 2026 &middot; General Election</div>
+          </div>
+
+          <div class="checklist-card">
+            <div class="checklist-header">&#9745;&#65039; Your Voting Checklist</div>
+            <div class="checklist-row">
+              <div class="checklist-icon" style="background: #FEE2E2;">&#9888;&#65039;</div>
+              <div class="checklist-info">
+                <div class="checklist-title">Register to Vote</div>
+                <div class="checklist-detail">Deadline in 8 days &middot; Oct 21</div>
+              </div>
+              <div class="checklist-action" style="background: #FEE2E2; color: #DC2626;">Check &rarr;</div>
+            </div>
+            <div class="checklist-row">
+              <div class="checklist-icon" style="background: #DBEAFE;">&#128230;</div>
+              <div class="checklist-info">
+                <div class="checklist-title">Request Mail-in Ballot</div>
+                <div class="checklist-detail">Apply online or by mail</div>
+              </div>
+              <div class="checklist-action" style="background: #EDE9FE; color: #7C3AED;">Request &rarr;</div>
+            </div>
+            <div class="checklist-row">
+              <div class="checklist-icon" style="background: #D1FAE5;">&#128197;</div>
+              <div class="checklist-info">
+                <div class="checklist-title">Early Voting</div>
+                <div class="checklist-detail">Starts in 12 days &middot; Oct 25</div>
+              </div>
+              <div class="checklist-action" style="background: #F3F4F6; color: #6B7280;">12 days</div>
+            </div>
+          </div>
+
+          <div style="padding: 0 16px; margin-bottom: 8px;">
+            <div class="section-label" style="padding: 0;">Your polling place</div>
+          </div>
+          <div class="poll-finder-card">
+            <div class="poll-finder-header">
+              <div class="poll-finder-icon">&#128205;</div>
+              <div>
+                <div class="poll-finder-title">Find Your Polling Place</div>
+                <div class="poll-finder-subtitle">Enter your address to get started</div>
+              </div>
+            </div>
+            <div class="poll-finder-input">&#128269; Enter your home address...</div>
+            <div class="poll-finder-btn">&#128205; Find My Polling Place</div>
+          </div>
+
+          <div style="padding: 0 16px; margin-bottom: 8px;">
+            <div class="section-label" style="padding: 0;">Your ballot progress</div>
+          </div>
+          <div style="margin: 0 16px 16px; background: white; border: 1px solid #E5E7EB; border-radius: 14px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+              <div style="font-size: 28px; font-weight: 800; color: #7C3AED;">5/12</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #111;">Ballot Items Decided</div>
+                <div style="font-size: 11px; color: #6B7280;">3 races &middot; 2 propositions</div>
+              </div>
+            </div>
+            <div style="height: 6px; background: #E5E7EB; border-radius: 3px; overflow: hidden;">
+              <div style="width: 42%; height: 100%; background: #7C3AED; border-radius: 3px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom nav -->
+        <div class="bottom-nav">
+          <div class="bottom-nav-item">
+            <div class="bottom-nav-icon">&#128209;</div>
+            Blueprint
+          </div>
+          <div class="bottom-nav-item">
+            <div class="bottom-nav-icon">&#9745;&#65039;</div>
+            Ballot
+          </div>
+          <div class="bottom-nav-item active">
+            <div class="bottom-nav-icon">&#128499;&#65039;</div>
+            Vote
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       OPTION C: Replace the bridge card
+       ============================================= -->
+  <h1 class="page-title" style="font-size: 20px; margin-top: 20px;">Option C: Replace the Bridge Card</h1>
+  <p class="page-subtitle">The green "Next: your personalized ballot" bridge card becomes a richer "Election Day Readiness" checklist. No net increase in page length.</p>
+
+  <div class="mockup-row">
+    <div class="mockup-container">
+      <div class="mockup-label">C — Readiness Card replaces bridge
+        <span class="desc">Bottom of blueprint page, after domain cards & values</span>
+      </div>
+      <div class="screen">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <!-- Showing just the bottom portion of the blueprint -->
+        <div style="padding: 12px 16px 0;">
+          <div style="text-align: center; font-size: 11px; color: #9CA3AF; font-weight: 600; padding: 10px 0; border-bottom: 1px dashed #D1D5DB; margin-bottom: 14px;">&#9650; Domain cards & values above &#9650;</div>
+        </div>
+
+        <!-- Last domain card for context -->
+        <div class="domain-card">
+          <div class="domain-header">
+            <div><span class="domain-emoji">&#9878;&#65039;</span><span class="domain-name">Criminal Justice</span></div>
+            <div class="domain-tune">Fine-tune</div>
+          </div>
+          <div class="domain-statement">You favor rehabilitation-focused criminal justice reform.</div>
+          <div class="slider-track">
+            <div class="slider-dot" style="left: 35%;"></div>
+          </div>
+          <div class="slider-labels">
+            <span class="slider-label active">Tough on crime</span>
+            <span class="slider-label">Reform</span>
+          </div>
+        </div>
+
+        <!-- Underlying values (abbreviated) -->
+        <div class="values-footer">
+          <div class="values-footer-title">Underlying values</div>
+          <div class="value-bar-row">
+            <div class="value-bar-name">Universalism</div>
+            <div class="value-bar-track"><div class="value-bar-fill" style="width: 82%;"></div></div>
+          </div>
+          <div class="value-bar-row">
+            <div class="value-bar-name">Benevolence</div>
+            <div class="value-bar-track"><div class="value-bar-fill" style="width: 74%;"></div></div>
+          </div>
+          <div class="value-bar-row">
+            <div class="value-bar-name">Self-Direction</div>
+            <div class="value-bar-track"><div class="value-bar-fill" style="width: 65%;"></div></div>
+          </div>
+        </div>
+
+        <!-- READINESS CARD (replaces bridge card) -->
+        <div class="readiness-card">
+          <div class="readiness-header">
+            <div class="readiness-header-text">
+              <div class="readiness-title">Election Day Readiness</div>
+              <div class="readiness-subtitle">Make sure you're ready to vote</div>
+            </div>
+            <div class="readiness-countdown">
+              23
+              <div class="days-label">days</div>
+            </div>
+          </div>
+          <div class="readiness-body">
+            <div class="readiness-checklist-item">
+              <div class="readiness-check pending">&#9888;</div>
+              <div class="readiness-item-info">
+                <div class="readiness-item-title">Voter Registration</div>
+                <div class="readiness-item-detail">Deadline: Oct 21 (8 days)</div>
+              </div>
+              <div class="readiness-item-action" style="background: #FEE2E2; color: #DC2626;">Verify</div>
+            </div>
+            <div class="readiness-checklist-item">
+              <div class="readiness-check action">&#128230;</div>
+              <div class="readiness-item-info">
+                <div class="readiness-item-title">Mail-in Ballot</div>
+                <div class="readiness-item-detail">Request your mail ballot</div>
+              </div>
+              <div class="readiness-item-action" style="background: #EDE9FE; color: #7C3AED;">Request</div>
+            </div>
+            <div class="readiness-checklist-item">
+              <div class="readiness-check action">&#128205;</div>
+              <div class="readiness-item-info">
+                <div class="readiness-item-title">Polling Place</div>
+                <div class="readiness-item-detail">Find your voting location</div>
+              </div>
+              <div class="readiness-item-action" style="background: #EDE9FE; color: #7C3AED;">Find</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-btn">Build my ballot &rarr;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       OPTION D: Sticky bottom bar with drawer
+       ============================================= -->
+  <h1 class="page-title" style="font-size: 20px; margin-top: 20px;">Option D: Sticky Bottom Bar + Drawer</h1>
+  <p class="page-subtitle">A persistent mini countdown bar at the bottom of the screen. Tapping it reveals a slide-up drawer with full election details. Blueprint content stays completely untouched.</p>
+
+  <div class="mockup-row">
+    <!-- Collapsed bar -->
+    <div class="mockup-container">
+      <div class="mockup-label">D — Sticky Bar (collapsed)
+        <span class="desc">Always visible at bottom, above CTA button</span>
+      </div>
+      <div class="screen" style="position: relative; display: flex; flex-direction: column;">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto;">
+          <div class="bp-header">
+            <div class="bp-header-row">
+              <div class="bp-title">Your Civic Priorities</div>
+              <div class="bp-retake">Retake</div>
+            </div>
+            <div class="bp-subtitle">Based on your values, here's where you stand on key policy areas.</div>
+          </div>
+
+          <div class="values-context">
+            <div class="values-context-label">What drives your positions</div>
+            <div class="values-context-text">You value <strong>Universalism</strong> and <strong>Benevolence</strong> most — prioritizing collective welfare and social harmony.</div>
+          </div>
+
+          <div class="section-label">Your policy leanings</div>
+
+          <div class="domain-card">
+            <div class="domain-header">
+              <div><span class="domain-emoji">&#128176;</span><span class="domain-name">Economy & Tax</span></div>
+              <div class="domain-tune">Fine-tune</div>
+            </div>
+            <div class="domain-statement">You lean toward progressive taxation and stronger safety nets.</div>
+            <div class="slider-track">
+              <div class="slider-dot" style="left: 25%;"></div>
+            </div>
+            <div class="slider-labels">
+              <span class="slider-label active">Free market</span>
+              <span class="slider-label">Regulated</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-header">
+              <div><span class="domain-emoji">&#127968;</span><span class="domain-name">Housing</span></div>
+              <div class="domain-tune">Fine-tune</div>
+            </div>
+            <div class="domain-statement">You support more housing development and tenant protections.</div>
+            <div class="slider-track">
+              <div class="slider-dot" style="left: 62%;"></div>
+            </div>
+            <div class="slider-labels">
+              <span class="slider-label">Market-led</span>
+              <span class="slider-label active">Policy-led</span>
+            </div>
+          </div>
+
+          <div class="domain-card">
+            <div class="domain-header">
+              <div><span class="domain-emoji">&#127973;</span><span class="domain-name">Healthcare</span></div>
+              <div class="domain-tune">Fine-tune</div>
+            </div>
+            <div class="domain-statement">You favor expanded public healthcare options.</div>
+            <div class="slider-track">
+              <div class="slider-dot" style="left: 30%;"></div>
+            </div>
+            <div class="slider-labels">
+              <span class="slider-label active">Private</span>
+              <span class="slider-label">Public</span>
+            </div>
+          </div>
+
+          <div class="truncated"></div>
+          <div style="height: 80px;"></div>
+        </div>
+
+        <!-- Sticky bottom -->
+        <div class="sticky-bar">
+          <div class="sticky-countdown">
+            <span class="sticky-countdown-icon">&#128197;</span>
+            <div class="sticky-countdown-text">
+              <div class="sticky-countdown-title">Election Day</div>
+              <div class="sticky-countdown-detail">Registration deadline in 8 days</div>
+            </div>
+            <span class="sticky-countdown-badge">23d</span>
+            <span class="sticky-countdown-expand">&#9650;</span>
+          </div>
+          <div class="sticky-cta">
+            <div class="cta-btn">Build my ballot &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expanded drawer -->
+    <div class="mockup-container">
+      <div class="mockup-label">D — Drawer (expanded)
+        <span class="desc">Tap the bar to slide up full election details</span>
+      </div>
+      <div class="screen" style="position: relative; display: flex; flex-direction: column;">
+        <div class="top-nav">
+          <div class="top-nav-title">Ballot Builder</div>
+          <div class="top-nav-pill">Prototype</div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto;">
+          <!-- Dimmed blueprint content behind drawer -->
+          <div style="opacity: 0.3; pointer-events: none;">
+            <div class="bp-header">
+              <div class="bp-header-row">
+                <div class="bp-title">Your Civic Priorities</div>
+                <div class="bp-retake">Retake</div>
+              </div>
+              <div class="bp-subtitle">Based on your values, here's where you stand on key policy areas.</div>
+            </div>
+
+            <div class="values-context">
+              <div class="values-context-label">What drives your positions</div>
+              <div class="values-context-text">You value <strong>Universalism</strong> and <strong>Benevolence</strong> most.</div>
+            </div>
+
+            <div class="section-label">Your policy leanings</div>
+
+            <div class="domain-card">
+              <div class="domain-header">
+                <div><span class="domain-emoji">&#128176;</span><span class="domain-name">Economy & Tax</span></div>
+              </div>
+              <div class="slider-track"><div class="slider-dot" style="left: 25%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Drawer -->
+          <div class="drawer-overlay">
+            <div class="drawer">
+              <div class="drawer-handle"></div>
+              <div class="readiness-header" style="margin-top: 8px;">
+                <div class="readiness-header-text">
+                  <div class="readiness-title">Election Day Readiness</div>
+                  <div class="readiness-subtitle">2026 General Election</div>
+                </div>
+                <div class="readiness-countdown">
+                  23
+                  <div class="days-label">days</div>
+                </div>
+              </div>
+
+              <div style="padding: 6px 16px;">
+                <div class="readiness-checklist-item">
+                  <div class="readiness-check pending">&#9888;</div>
+                  <div class="readiness-item-info">
+                    <div class="readiness-item-title">Voter Registration</div>
+                    <div class="readiness-item-detail">Deadline: Oct 21 (8 days)</div>
+                  </div>
+                  <div class="readiness-item-action" style="background: #FEE2E2; color: #DC2626;">Verify</div>
+                </div>
+                <div class="readiness-checklist-item">
+                  <div class="readiness-check action">&#128230;</div>
+                  <div class="readiness-item-info">
+                    <div class="readiness-item-title">Mail-in Ballot</div>
+                    <div class="readiness-item-detail">Request your mail ballot</div>
+                  </div>
+                  <div class="readiness-item-action" style="background: #EDE9FE; color: #7C3AED;">Request</div>
+                </div>
+                <div class="readiness-checklist-item">
+                  <div class="readiness-check action">&#128205;</div>
+                  <div class="readiness-item-info">
+                    <div class="readiness-item-title">Polling Place</div>
+                    <div class="readiness-item-detail">Find your voting location</div>
+                  </div>
+                  <div class="readiness-item-action" style="background: #EDE9FE; color: #7C3AED;">Find</div>
+                </div>
+                <div class="readiness-checklist-item" style="border-bottom: none;">
+                  <div class="readiness-check" style="background: #D1FAE5; color: #059669;">&#128197;</div>
+                  <div class="readiness-item-info">
+                    <div class="readiness-item-title">Early Voting</div>
+                    <div class="readiness-item-detail">Starts Oct 25 (12 days)</div>
+                  </div>
+                  <div class="readiness-item-action" style="background: #F3F4F6; color: #6B7280;">12 days</div>
+                </div>
+              </div>
+
+              <div style="padding: 8px 16px 16px;">
+                <div class="cta-btn" style="margin: 0;">Build my ballot &rarr;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary comparison -->
+  <h1 class="page-title" style="font-size: 20px; margin-top: 30px;">Comparison</h1>
+  <div style="max-width: 800px; margin: 0 auto 40px; padding: 0 20px;">
+    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <thead>
+        <tr style="background: #F9FAFB; border-bottom: 2px solid #E5E7EB;">
+          <th style="padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; color: #6B7280;"></th>
+          <th style="padding: 12px 16px; text-align: center; font-size: 12px; font-weight: 700; color: #6B7280;">A: Banner</th>
+          <th style="padding: 12px 16px; text-align: center; font-size: 12px; font-weight: 700; color: #6B7280;">B: Separate Page</th>
+          <th style="padding: 12px 16px; text-align: center; font-size: 12px; font-weight: 700; color: #6B7280;">C: Replace Bridge</th>
+          <th style="padding: 12px 16px; text-align: center; font-size: 12px; font-weight: 700; color: #6B7280;">D: Sticky Bar</th>
+        </tr>
+      </thead>
+      <tbody style="font-size: 12px; color: #374151;">
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px 16px; font-weight: 600;">Blueprint impact</td>
+          <td style="padding: 10px 16px; text-align: center;">Moderate</td>
+          <td style="padding: 10px 16px; text-align: center; color: #059669; font-weight: 600;">None</td>
+          <td style="padding: 10px 16px; text-align: center;">Minimal</td>
+          <td style="padding: 10px 16px; text-align: center;">Minimal</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px 16px; font-weight: 600;">Visibility</td>
+          <td style="padding: 10px 16px; text-align: center;">High</td>
+          <td style="padding: 10px 16px; text-align: center;">Low</td>
+          <td style="padding: 10px 16px; text-align: center;">Medium</td>
+          <td style="padding: 10px 16px; text-align: center; color: #059669; font-weight: 600;">Always visible</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px 16px; font-weight: 600;">Scroll impact</td>
+          <td style="padding: 10px 16px; text-align: center;">Adds ~120px</td>
+          <td style="padding: 10px 16px; text-align: center; color: #059669; font-weight: 600;">None</td>
+          <td style="padding: 10px 16px; text-align: center; color: #059669; font-weight: 600;">Net zero</td>
+          <td style="padding: 10px 16px; text-align: center;">Adds ~90px sticky</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #F3F4F6;">
+          <td style="padding: 10px 16px; font-weight: 600;">Complexity</td>
+          <td style="padding: 10px 16px; text-align: center;">Low</td>
+          <td style="padding: 10px 16px; text-align: center;">High (new route)</td>
+          <td style="padding: 10px 16px; text-align: center; color: #059669; font-weight: 600;">Low</td>
+          <td style="padding: 10px 16px; text-align: center;">Medium (drawer)</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 16px; font-weight: 600;">Room to grow</td>
+          <td style="padding: 10px 16px; text-align: center;">Limited</td>
+          <td style="padding: 10px 16px; text-align: center; color: #059669; font-weight: 600;">Unlimited</td>
+          <td style="padding: 10px 16px; text-align: center;">Limited</td>
+          <td style="padding: 10px 16px; text-align: center;">Moderate</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

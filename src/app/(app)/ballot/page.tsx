@@ -1,7 +1,23 @@
 'use client';
 
+/**
+ * Unified Wizard Page — /ballot
+ *
+ * Merges Blueprint + Build + Chat into a single progressive flow:
+ * state-select → demographics → assessment → profile-review → ballot-item → summary
+ */
+
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { Loader2, AlertCircle, BarChart3, Sparkles, Hand, SlidersHorizontal } from 'lucide-react';
+import {
+  Loader2,
+  AlertCircle,
+  BarChart3,
+  Sparkles,
+  Hand,
+  SlidersHorizontal,
+} from 'lucide-react';
+
+// ── Stores ──
 import {
   useUserStore,
   selectHasHydrated,
@@ -13,12 +29,20 @@ import { useDemographicStore } from '@/stores/demographicStore';
 import {
   useBallotStore,
   selectBallotHasHydrated,
+  selectCurrentPhase,
   selectSavedVotes,
   selectCurrentIndex,
-  selectShowSummary,
   selectHasSeenIntro,
+  type WizardPhase,
 } from '@/stores/ballotStore';
+import {
+  useConversationStore,
+  selectConversationHasHydrated,
+} from '@/stores/conversationStore';
+
+// ── API + helpers ──
 import { ballotApi } from '@/services/api';
+import type { Ballot, BallotLookupResponse } from '@/services/api';
 import {
   transformBallot,
   computePropositionRecommendation,
@@ -32,10 +56,20 @@ import {
 } from '@/lib/ballotHelpers';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
-import type { BallotLookupResponse } from '@/services/api';
-
+import type { UserValueRecord } from '@/types/hybridAssessment';
+import type { ProgressiveAxisValue } from '@/types/conversation';
+import type { DemoState } from '@/stores/demographicStore';
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
+import { deriveMetaDimensions } from '@/lib/archetypes';
+import { calculateFineTunedScore } from '@/data/fineTuningPositions';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
+
+// ── Phase components ──
+import StateSelectView from '@/components/conversation/StateSelectView';
+import DemographicGate from '@/components/conversation/DemographicGate';
+import HybridAssessmentView from '@/components/assessment/HybridAssessmentView';
+import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
+import HybridFineTuningView from '@/components/blueprint/HybridFineTuningView';
 import ElectionBanner from '@/components/blueprint/ElectionBanner';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
@@ -48,10 +82,11 @@ import BallotSummary from '@/components/ballot/BallotSummary';
 import ValuesSection from '@/components/ballot/ValuesSection';
 import DemographicSection from '@/components/ballot/DemographicSection';
 import DemoBanner from '@/components/ballot/DemoBanner';
+import AiAssistantDrawer from '@/components/ballot/AiAssistantDrawer';
 
-// =============================================
-// Main Ballot Page Orchestrator
-// =============================================
+// ═══════════════════════════════════════════════════════════
+// Helpers
+// ═══════════════════════════════════════════════════════════
 
 /** Convert blueprint profile axes to ValueAxis[] for recommendation functions */
 function profileToValueAxes(profile: BlueprintProfile, spec: Spec): ValueAxis[] {
@@ -67,56 +102,119 @@ function profileToValueAxes(profile: BlueprintProfile, spec: Spec): ValueAxis[] 
         value: axis.value_0_10,
         poleA: axisDef.poleA.label,
         poleB: axisDef.poleB.label,
-        weight: (axis.importance ?? 5) / 5, // normalize 0-10 → 0-2 weight
+        weight: (axis.importance ?? 5) / 5,
       });
     }
   }
   return axes;
 }
 
-export default function BallotPage() {
-  // Blueprint profile store
-  const hasHydrated = useUserStore(selectHasHydrated);
+/** Scan ballot items and collect all axes that actually appear on this ballot */
+function collectRelevantAxes(items: BallotItem[]): string[] {
+  const axes = new Set<string>();
+  for (const item of items) {
+    if (item.relevantAxes) {
+      for (const a of item.relevantAxes) axes.add(a);
+    }
+    if (item.yesAxisEffects) {
+      for (const a of Object.keys(item.yesAxisEffects)) axes.add(a);
+    }
+    if (item.type === 'candidate_race' && item.candidates) {
+      for (const c of item.candidates) {
+        if (c.profile?.stances) {
+          for (const a of Object.keys(c.profile.stances)) axes.add(a);
+        }
+      }
+    }
+  }
+  return Array.from(axes);
+}
+
+// ═══════════════════════════════════════════════════════════
+// Main Unified Wizard Page
+// ═══════════════════════════════════════════════════════════
+
+export default function UnifiedBallotPage() {
+  // ── Store selectors ──
+  const userHydrated = useUserStore(selectHasHydrated);
   const hasCompletedAssessment = useUserStore(selectHasCompletedAssessment);
   const blueprintProfile = useUserStore(selectBlueprintProfile);
   const blueprintSpec = useUserStore(selectSpec);
+  const loadSpec = useUserStore((s) => s.loadSpec);
+  const applyHybridProfile = useUserStore((s) => s.applyHybridProfile);
+  const updateAxisValue = useUserStore((s) => s.updateAxisValue);
+  const updateAxisImportance = useUserStore((s) => s.updateAxisImportance);
+  const completeAssessment = useUserStore((s) => s.completeAssessment);
 
-  // Demographic profile store
   const demographicProfile = useDemographicStore((s) => s.profile);
   const demographicsWasSkipped = useDemographicStore((s) => s.wasSkipped);
+  const demoSetField = useDemographicStore((s) => s.setField);
+  const demoSubmitProfile = useDemographicStore((s) => s.submitProfile);
+  const demoSkipProfile = useDemographicStore((s) => s.skipProfile);
 
-  // Derive value axes from blueprint profile
+  const ballotHydrated = useBallotStore(selectBallotHasHydrated);
+  const currentPhase = useBallotStore(selectCurrentPhase);
+  const savedVotes = useBallotStore(selectSavedVotes);
+  const currentIndex = useBallotStore(selectCurrentIndex);
+  const hasSeenIntro = useBallotStore(selectHasSeenIntro);
+  const setPhase = useBallotStore((s) => s.setPhase);
+  const advancePhase = useBallotStore((s) => s.advancePhase);
+  const markPhaseCompleted = useBallotStore((s) => s.markPhaseCompleted);
+  const saveVote = useBallotStore((s) => s.saveVote);
+  const setCurrentIndex = useBallotStore((s) => s.setCurrentIndex);
+  const dismissIntro = useBallotStore((s) => s.dismissIntro);
+  const clearBallot = useBallotStore((s) => s.clearBallot);
+  const getVoteForItem = useBallotStore((s) => s.getVoteForItem);
+  const redoVotes = useBallotStore((s) => s.redoVotes);
+  const startFresh = useBallotStore((s) => s.startFresh);
+
+  const convHydrated = useConversationStore(selectConversationHasHydrated);
+  const updateConvProfile = useConversationStore((s) => s.updateProfile);
+  const convSelectState = useConversationStore((s) => s.selectState);
+  const convStartSession = useConversationStore((s) => s.startSession);
+  const convCompleteDemographics = useConversationStore((s) => s.completeDemographics);
+  const convSkipDemographics = useConversationStore((s) => s.skipDemographics);
+  const convFinishWarmup = useConversationStore((s) => s.finishWarmup);
+  const convSession = useConversationStore((s) => s.session);
+
+  // ── Local state ──
+  const [ballot, setBallot] = useState<Ballot | null>(null);
+  const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [relevantAxes, setRelevantAxes] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [ballotSource, setBallotSource] = useState<string | null>(null);
+  const [location, setLocation] = useState<BallotLookupResponse['location'] | null>(null);
+  const [voterInfo, setVoterInfo] = useState<BallotLookupResponse['voterInfo'] | null>(null);
+
+  // Ballot-item phase ephemeral state
+  const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
+  const [writeInName, setWriteInName] = useState('');
+  const [valuesExpanded, setValuesExpanded] = useState(false);
+  const [demographicExpanded, setDemographicExpanded] = useState(false);
+
+  // Profile-review sub-state (fine-tuning)
+  const [fineTuningAxisId, setFineTuningAxisId] = useState<string | null>(null);
+  const [fineTuningResponses, setFineTuningResponses] = useState<
+    Record<string, Record<string, number>>
+  >({});
+
+  // AI assistant drawer
+  const [aiDrawerOpen, setAiDrawerOpen] = useState(false);
+
+  // Two-tier reset confirmation dialogs
+  const [showRedoConfirm, setShowRedoConfirm] = useState(false);
+  const [showFreshConfirm, setShowFreshConfirm] = useState(false);
+
+  const { setScreenLabel } = useFeedbackScreen();
+
+  // ── Derived state ──
   const valueAxes = useMemo(() => {
     if (!blueprintProfile || !blueprintSpec) return [];
     return profileToValueAxes(blueprintProfile, blueprintSpec);
   }, [blueprintProfile, blueprintSpec]);
 
-  // Ballot store (persisted)
-  const ballotHydrated = useBallotStore(selectBallotHasHydrated);
-  const savedVotes = useBallotStore(selectSavedVotes);
-  const currentIndex = useBallotStore(selectCurrentIndex);
-  const showSummary = useBallotStore(selectShowSummary);
-  const hasSeenIntro = useBallotStore(selectHasSeenIntro);
-  const saveVote = useBallotStore((s) => s.saveVote);
-  const setCurrentIndex = useBallotStore((s) => s.setCurrentIndex);
-  const setShowSummary = useBallotStore((s) => s.setShowSummary);
-  const dismissIntro = useBallotStore((s) => s.dismissIntro);
-  const clearBallot = useBallotStore((s) => s.clearBallot);
-  const getVoteForItem = useBallotStore((s) => s.getVoteForItem);
-
-  // Selected ballot from demographic survey
-  const selectedBallotId = useDemographicStore((s) => s.profile.selectedBallotId);
-
-  // Ballot data from API
-  const [ballotItems, setBallotItems] = useState<BallotItem[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [isBallotLoading, setIsBallotLoading] = useState(true);
-  const [ballotError, setBallotError] = useState<string | null>(null);
-  const [ballotSource, setBallotSource] = useState<string | null>(null);
-  const [location, setLocation] = useState<BallotLookupResponse['location'] | null>(null);
-  const [voterInfo, setVoterInfo] = useState<BallotLookupResponse['voterInfo'] | null>(null);
-
-  // Election date computations for ElectionBanner
   const { daysRemaining, electionLabel } = useMemo(() => {
     const electionDay = getNextElectionDay();
     return {
@@ -125,98 +223,272 @@ export default function BallotPage() {
     };
   }, []);
 
-  // Ephemeral UI state (current selection before saving)
-  const [currentVote, setCurrentVote] = useState<VoteChoice>(null);
-  const [writeInName, setWriteInName] = useState('');
-  const [valuesExpanded, setValuesExpanded] = useState(false);
-  const [demographicExpanded, setDemographicExpanded] = useState(false);
+  const metaDimensions = useMemo(
+    () => (blueprintProfile ? deriveMetaDimensions(blueprintProfile) : null),
+    [blueprintProfile]
+  );
 
-  // Feedback screen context
-  const { setScreenLabel } = useFeedbackScreen();
+  const currentItem = ballotItems[currentIndex];
 
-  // --------------------------------------------------
-  // Fetch ballot data from API on mount / ballot change
-  // --------------------------------------------------
+  // ── Load spec on mount ──
   useEffect(() => {
-    async function fetchBallot() {
-      try {
-        setIsBallotLoading(true);
-        setBallotError(null);
+    if (!blueprintSpec) loadSpec();
+  }, [blueprintSpec, loadSpec]);
 
-        let ballot;
-        if (selectedBallotId) {
-          console.log(`[BallotPage] Fetching ballot by ID: ${selectedBallotId}`);
-          ballot = await ballotApi.getById(selectedBallotId);
-          setBallotSource('static_selected');
-          setLocation(null);
-          setVoterInfo(null);
-          console.log(`[BallotPage] Ballot loaded, items: ${ballot.items?.length ?? 0}`);
-        } else {
-          console.log(`[BallotPage] No selected ballot, using getDefault`);
-          ballot = await ballotApi.getDefault();
-          setBallotSource('static_fallback');
-          setLocation(null);
-          setVoterInfo(null);
-        }
+  // ── Initialize conversation session if needed ──
+  useEffect(() => {
+    if (convHydrated && !convSession) {
+      convStartSession();
+    }
+  }, [convHydrated, convSession, convStartSession]);
 
-        const { categories: fetchedCategories, items } = transformBallot(ballot);
-        setBallotItems(items);
-        setCategories(fetchedCategories);
-      } catch (error) {
-        console.error('Failed to fetch ballot:', error);
-        setBallotError('Failed to load ballot data');
-      } finally {
-        setIsBallotLoading(false);
+  // ── Seed conversation profile from Blueprint assessment ──
+  useEffect(() => {
+    if (!convSession || !blueprintProfile) return;
+    // Only seed if conversation profile is empty (hasn't been populated yet)
+    if (Object.keys(convSession.profile).length > 0) return;
+
+    const seeded: Record<string, import('@/types/conversation').ProgressiveAxisValue> = {};
+    for (const domain of blueprintProfile.domains) {
+      for (const axis of domain.axes) {
+        seeded[axis.axis_id] = {
+          value: axis.value_0_10,
+          confidence: axis.confidence_0_1,
+          importance: axis.importance ?? 5,
+          signalCount: 1,
+        };
       }
     }
-    fetchBallot();
-  }, [selectedBallotId]);
-
-  // Clear saved votes when ballot changes
-  useEffect(() => {
-    if (selectedBallotId) {
-      clearBallot();
+    if (Object.keys(seeded).length > 0) {
+      updateConvProfile(seeded);
     }
-    // Only trigger on ballot ID change, not on clearBallot reference
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedBallotId]);
+  }, [convSession, blueprintProfile, updateConvProfile]);
 
-  // Restore current vote from persisted store after ballot loads
+  // ── Skip logic: if user returns with assessment already done, jump ahead ──
+  useEffect(() => {
+    if (!ballotHydrated || !userHydrated) return;
+    // If the store says state-select but we already have a completed assessment + ballot selected,
+    // skip forward intelligently
+    if (currentPhase === 'state-select') {
+      const selectedBallotId = demographicProfile.selectedBallotId;
+      if (selectedBallotId && hasCompletedAssessment) {
+        // User has been here before — load ballot and jump to profile-review or ballot-item
+        loadBallotById(selectedBallotId).then(() => {
+          setPhase('ballot-item');
+          markPhaseCompleted('state-select');
+          markPhaseCompleted('demographics');
+          markPhaseCompleted('assessment');
+          markPhaseCompleted('profile-review');
+        });
+      } else if (selectedBallotId) {
+        // Has ballot but no assessment
+        loadBallotById(selectedBallotId).then(() => {
+          setPhase('assessment');
+          markPhaseCompleted('state-select');
+          markPhaseCompleted('demographics');
+        });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ballotHydrated, userHydrated]);
+
+  // ── If resuming mid-session, reload ballot data ──
+  useEffect(() => {
+    if (
+      ballotHydrated &&
+      currentPhase !== 'state-select' &&
+      currentPhase !== 'demographics' &&
+      ballotItems.length === 0 &&
+      !isLoading
+    ) {
+      const ballotId = demographicProfile.selectedBallotId;
+      if (ballotId) {
+        loadBallotById(ballotId);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ballotHydrated, currentPhase]);
+
+  // ── Restore current vote when index changes ──
   useEffect(() => {
     if (ballotItems.length === 0 || !ballotHydrated) return;
     const saved = getVoteForItem(ballotItems[currentIndex]?.id);
     if (saved) {
       setCurrentVote(saved.choice);
       setWriteInName(saved.writeInName || '');
+    } else {
+      setCurrentVote(null);
+      setWriteInName('');
     }
   }, [ballotItems, ballotHydrated, currentIndex, getVoteForItem]);
 
-  const currentItem = ballotItems[currentIndex];
-
-  // Update feedback screen label based on current sub-screen
+  // ── Feedback screen label ──
   useEffect(() => {
-    if (!hasHydrated || !ballotHydrated || isBallotLoading) {
-      setScreenLabel('Ballot - Loading');
-    } else if (!hasCompletedAssessment || valueAxes.length === 0) {
-      setScreenLabel('Ballot - Needs Blueprint');
-    } else if (ballotError) {
-      setScreenLabel('Ballot - Error');
-    } else if (showSummary) {
-      setScreenLabel('Ballot - Summary');
-    } else if (currentItem) {
-      setScreenLabel(`Ballot - Item ${currentIndex + 1}/${ballotItems.length}`);
-    } else {
-      setScreenLabel('Ballot');
-    }
-  }, [
-    hasHydrated, ballotHydrated, isBallotLoading, hasCompletedAssessment, valueAxes.length,
-    ballotError, showSummary, currentItem, currentIndex, ballotItems.length,
-    setScreenLabel,
-  ]);
+    setScreenLabel(`Wizard - ${currentPhase}`);
+  }, [currentPhase, setScreenLabel]);
 
-  // --------------------------------------------------
-  // Value-based recommendation computations
-  // --------------------------------------------------
+  // ═══════════════════════════════════════════════════════════
+  // Ballot loading
+  // ═══════════════════════════════════════════════════════════
+
+  const loadBallotById = useCallback(
+    async (ballotId: string) => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const data = await ballotApi.getById(ballotId);
+        setBallot(data);
+        const { categories: cats, items } = transformBallot(data);
+        setBallotItems(items);
+        setCategories(cats);
+        setRelevantAxes(collectRelevantAxes(items));
+        setBallotSource('static_selected');
+      } catch (err) {
+        setError('Failed to load ballot data');
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    []
+  );
+
+  // ═══════════════════════════════════════════════════════════
+  // Phase handlers
+  // ═══════════════════════════════════════════════════════════
+
+  /** State selection complete → load ballot + go to demographics */
+  const handleStateSelected = useCallback(
+    async (stateCode: string, ballotId: string) => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const data = await ballotApi.getById(ballotId);
+        setBallot(data);
+        const { categories: cats, items } = transformBallot(data);
+        setBallotItems(items);
+        setCategories(cats);
+
+        const axes = collectRelevantAxes(items);
+        setRelevantAxes(axes);
+
+        // Persist to demographic store
+        demoSetField('selectedState', stateCode as DemoState);
+        demoSetField('selectedBallotId', ballotId);
+
+        // Sync to conversation store for AI assistant
+        const itemIds = items.map((item) => item.id);
+        convSelectState(ballotId, itemIds, axes);
+
+        markPhaseCompleted('state-select');
+        setPhase('demographics');
+      } catch (err) {
+        setError('Failed to load ballot data');
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [demoSetField, convSelectState, markPhaseCompleted, setPhase]
+  );
+
+  /** Demographics complete → go to assessment */
+  const handleDemographicsComplete = useCallback(() => {
+    demoSubmitProfile();
+    convCompleteDemographics();
+    markPhaseCompleted('demographics');
+    setPhase('assessment');
+  }, [demoSubmitProfile, convCompleteDemographics, markPhaseCompleted, setPhase]);
+
+  const handleDemographicsSkip = useCallback(() => {
+    demoSkipProfile();
+    convSkipDemographics();
+    markPhaseCompleted('demographics');
+    setPhase('assessment');
+  }, [demoSkipProfile, convSkipDemographics, markPhaseCompleted, setPhase]);
+
+  /** Hybrid assessment complete → bridge to profile, go to profile-review */
+  const handleAssessmentComplete = useCallback(
+    (hybridProfile: Record<string, UserValueRecord>) => {
+      // Bridge to conversation store
+      const converted: Record<string, ProgressiveAxisValue> = {};
+      for (const [axisId, record] of Object.entries(hybridProfile)) {
+        converted[axisId] = {
+          value: record.score,
+          confidence: record.confidence,
+          importance: 5,
+          signalCount: record.isImputed ? 0 : 1,
+        };
+      }
+      updateConvProfile(converted);
+
+      // Bridge to userStore (sets blueprintProfile)
+      applyHybridProfile(hybridProfile);
+      completeAssessment();
+      convFinishWarmup();
+
+      markPhaseCompleted('assessment');
+      setPhase('profile-review');
+    },
+    [updateConvProfile, applyHybridProfile, completeAssessment, convFinishWarmup, markPhaseCompleted, setPhase]
+  );
+
+  /** Profile review → proceed to ballot items */
+  const handleProfileReviewNext = useCallback(() => {
+    markPhaseCompleted('profile-review');
+    setPhase('ballot-item');
+  }, [markPhaseCompleted, setPhase]);
+
+  // ── Fine-tuning (within profile-review phase) ──
+
+  const handleFineTune = useCallback((axisId: string) => {
+    setFineTuningAxisId(axisId);
+  }, []);
+
+  const handleFineTuningComplete = useCallback(
+    (responses: Record<string, number>) => {
+      if (fineTuningAxisId) {
+        setFineTuningResponses((prev) => ({
+          ...prev,
+          [fineTuningAxisId]: responses,
+        }));
+        const score = calculateFineTunedScore(fineTuningAxisId, responses);
+        if (score !== null) {
+          const newValue = Math.round((score + 1) * 5);
+          updateAxisValue(fineTuningAxisId, newValue);
+        }
+      }
+      setFineTuningAxisId(null);
+    },
+    [fineTuningAxisId, updateAxisValue]
+  );
+
+  const handleFineTuningCancel = useCallback(() => {
+    setFineTuningAxisId(null);
+  }, []);
+
+  const handleChangeAxis = useCallback(
+    (axisId: string, value: number) => {
+      updateAxisValue(axisId, value);
+    },
+    [updateAxisValue]
+  );
+
+  const handleChangeAxisImportance = useCallback(
+    (axisId: string, value: number) => {
+      updateAxisImportance(axisId, value);
+    },
+    [updateAxisImportance]
+  );
+
+  const handleRetakeAssessment = useCallback(() => {
+    setPhase('assessment');
+  }, [setPhase]);
+
+  // ═══════════════════════════════════════════════════════════
+  // Ballot-item phase handlers
+  // ═══════════════════════════════════════════════════════════
+
   const propositionRec = useMemo(() => {
     if (!currentItem || currentItem.type !== 'proposition' || valueAxes.length === 0) {
       return { vote: null, confidence: 0, explanation: '', factors: [], breakdown: [] };
@@ -224,7 +496,6 @@ export default function BallotPage() {
     return computePropositionRecommendation(currentItem, valueAxes);
   }, [currentItem, valueAxes]);
 
-  // Generate value framing from the recommendation breakdown
   const propositionValueFraming = useMemo(() => {
     if (!propositionRec.breakdown || propositionRec.breakdown.length === 0) {
       return { resonance: [] as string[], tension: [] as string[] };
@@ -252,17 +523,11 @@ export default function BallotPage() {
     return computeCandidateMatches(currentItem, valueAxes);
   }, [currentItem, valueAxes]);
 
-  // --------------------------------------------------
-  // Demographic-based personal impact insights
-  // --------------------------------------------------
   const personalImpacts = useMemo(() => {
     if (!currentItem || demographicsWasSkipped) return [];
     return computeDemographicInsights(currentItem.id, demographicProfile);
   }, [currentItem, demographicProfile, demographicsWasSkipped]);
 
-  // --------------------------------------------------
-  // Vote management helpers
-  // --------------------------------------------------
   const restoreVote = useCallback(
     (itemId: string) => {
       const saved = getVoteForItem(itemId);
@@ -276,10 +541,6 @@ export default function BallotPage() {
     },
     [getVoteForItem]
   );
-
-  const handleValueChange = useCallback((axisId: string, value: number) => {
-    useUserStore.getState().updateAxisValue(axisId, value);
-  }, []);
 
   const handleVoteSelect = useCallback((choice: VoteChoice) => {
     setCurrentVote(choice);
@@ -296,9 +557,6 @@ export default function BallotPage() {
     saveVote(vote);
   }, [currentItem, currentVote, writeInName, saveVote]);
 
-  // --------------------------------------------------
-  // Navigation handlers
-  // --------------------------------------------------
   const handleNext = useCallback(() => {
     saveCurrentVote();
     if (currentIndex < ballotItems.length - 1) {
@@ -306,47 +564,23 @@ export default function BallotPage() {
       setCurrentIndex(nextIndex);
       restoreVote(ballotItems[nextIndex].id);
     } else {
-      setShowSummary(true);
+      // All items done → go to summary
+      markPhaseCompleted('ballot-item');
+      markPhaseCompleted('summary');
+      setPhase('summary');
     }
-  }, [currentIndex, saveCurrentVote, restoreVote, ballotItems, setCurrentIndex, setShowSummary]);
-
-  const handleEditItem = useCallback(
-    (itemIndex: number) => {
-      setCurrentIndex(itemIndex);
-      restoreVote(ballotItems[itemIndex].id);
-      setShowSummary(false);
-    },
-    [restoreVote, ballotItems, setCurrentIndex, setShowSummary]
-  );
-
-  const handleJumpTo = useCallback(
-    (itemIndex: number) => {
-      if (currentVote) {
-        saveCurrentVote();
-      }
-      setCurrentIndex(itemIndex);
-      restoreVote(ballotItems[itemIndex].id);
-    },
-    [currentVote, saveCurrentVote, restoreVote, ballotItems, setCurrentIndex]
-  );
-
-  const handleStartOver = useCallback(() => {
-    clearBallot();
-    setCurrentVote(null);
-    setWriteInName('');
-  }, [clearBallot]);
-
-  const handlePrint = useCallback(() => {
-    alert(
-      'Print functionality would open a print-friendly version of your ballot selections.'
-    );
-  }, []);
+    setAiDrawerOpen(false);
+  }, [
+    currentIndex, saveCurrentVote, restoreVote, ballotItems,
+    setCurrentIndex, markPhaseCompleted, setPhase,
+  ]);
 
   const handleBack = useCallback(() => {
     if (currentIndex > 0) {
       const prevIndex = currentIndex - 1;
       setCurrentIndex(prevIndex);
       restoreVote(ballotItems[prevIndex].id);
+      setAiDrawerOpen(false);
     }
   }, [currentIndex, restoreVote, ballotItems, setCurrentIndex]);
 
@@ -357,61 +591,339 @@ export default function BallotPage() {
       restoreVote(ballotItems[nextIndex].id);
       setCurrentVote(null);
       setWriteInName('');
+      setAiDrawerOpen(false);
     }
   }, [currentIndex, restoreVote, ballotItems, setCurrentIndex]);
 
-  // --------------------------------------------------
-  // Loading / error states
-  // --------------------------------------------------
-  if (!hasHydrated || !ballotHydrated || isBallotLoading) {
+  const handleJumpTo = useCallback(
+    (itemIndex: number) => {
+      if (currentVote) saveCurrentVote();
+      setCurrentIndex(itemIndex);
+      restoreVote(ballotItems[itemIndex].id);
+      setAiDrawerOpen(false);
+    },
+    [currentVote, saveCurrentVote, restoreVote, ballotItems, setCurrentIndex]
+  );
+
+  const handleEditItem = useCallback(
+    (itemIndex: number) => {
+      setCurrentIndex(itemIndex);
+      restoreVote(ballotItems[itemIndex].id);
+      setPhase('ballot-item');
+    },
+    [restoreVote, ballotItems, setCurrentIndex, setPhase]
+  );
+
+  const handleValueChange = useCallback((axisId: string, value: number) => {
+    useUserStore.getState().updateAxisValue(axisId, value);
+  }, []);
+
+  const handlePrint = useCallback(() => {
+    window.print();
+  }, []);
+
+  // ── Two-tier reset handlers ──
+  const handleRedoVotes = useCallback(() => {
+    redoVotes();
+    setCurrentVote(null);
+    setWriteInName('');
+    setShowRedoConfirm(false);
+  }, [redoVotes]);
+
+  const handleStartFresh = useCallback(() => {
+    startFresh();
+    useDemographicStore.getState().reset();
+    useUserStore.getState().resetUserData();
+    useConversationStore.getState().resetSession();
+    setBallotItems([]);
+    setCategories([]);
+    setRelevantAxes([]);
+    setBallot(null);
+    setCurrentVote(null);
+    setWriteInName('');
+    setShowFreshConfirm(false);
+  }, [startFresh]);
+
+  // ═══════════════════════════════════════════════════════════
+  // Render
+  // ═══════════════════════════════════════════════════════════
+
+  // Global loading
+  if (!userHydrated || !ballotHydrated) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
         <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
-        <p className="text-base text-gray-500">Loading your ballot...</p>
+        <p className="text-sm text-gray-500">Loading...</p>
       </div>
     );
   }
 
-  // Check if user has completed the blueprint assessment
-  if (!hasCompletedAssessment || valueAxes.length === 0) {
+  // ── Phase: State selection ──
+  if (currentPhase === 'state-select') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 p-6">
-        <AlertCircle className="h-12 w-12 text-amber-500" />
-        <h2 className="text-lg font-semibold text-gray-900">Complete Your Blueprint First</h2>
-        <p className="text-center text-gray-600 max-w-sm">
-          To get personalized voting recommendations, please complete your civic blueprint assessment first.
-        </p>
-        <a
-          href="/blueprint"
-          className="mt-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 transition-colors"
-        >
-          Go to Blueprint
-        </a>
+      <div className="flex flex-col h-full">
+        {isLoading ? (
+          <div className="flex flex-col items-center justify-center h-full gap-3">
+            <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
+            <p className="text-sm text-gray-500">Loading ballot...</p>
+          </div>
+        ) : (
+          <StateSelectView onStateSelected={handleStateSelected} />
+        )}
+        {error && (
+          <p className="text-center text-sm text-red-600 py-2">{error}</p>
+        )}
       </div>
     );
   }
 
-  if (ballotError) {
+  // ── Phase: Demographics ──
+  if (currentPhase === 'demographics') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
-        <AlertCircle className="h-12 w-12 text-red-500" />
-        <p className="text-base text-gray-500">{ballotError}</p>
+      <div className="flex flex-col h-full">
+        <DemographicGate
+          relevantAxes={relevantAxes}
+          onComplete={handleDemographicsComplete}
+          onSkip={handleDemographicsSkip}
+        />
       </div>
     );
   }
 
-  if (!currentItem || ballotItems.length === 0) {
+  // ── Phase: Assessment (hybrid structured + NLP) ──
+  if (currentPhase === 'assessment') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
-        <p className="text-base text-gray-500">No ballot items available</p>
+      <div className="flex flex-col h-full">
+        <HybridAssessmentView onComplete={handleAssessmentComplete} />
       </div>
     );
   }
 
-  // --------------------------------------------------
-  // Summary view
-  // --------------------------------------------------
-  if (showSummary) {
+  // ── Phase: Profile Review ──
+  if (currentPhase === 'profile-review') {
+    // Fine-tuning sub-screen
+    if (fineTuningAxisId && blueprintSpec) {
+      return (
+        <HybridFineTuningView
+          axisId={fineTuningAxisId}
+          spec={blueprintSpec}
+          existingResponses={fineTuningResponses[fineTuningAxisId] || {}}
+          onComplete={handleFineTuningComplete}
+          onCancel={handleFineTuningCancel}
+        />
+      );
+    }
+
+    if (!blueprintProfile || !blueprintSpec) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
+          <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
+          <p className="text-sm text-gray-500">Loading profile...</p>
+        </div>
+      );
+    }
+
+    return (
+      <ProfileReviewPhase
+        profile={blueprintProfile}
+        spec={blueprintSpec}
+        metaDimensions={metaDimensions}
+        fineTuningResponses={fineTuningResponses}
+        onRetake={handleRetakeAssessment}
+        onFineTune={handleFineTune}
+        onChangeAxis={handleChangeAxis}
+        onChangeAxisImportance={handleChangeAxisImportance}
+        onNext={handleProfileReviewNext}
+        daysRemaining={daysRemaining}
+        electionLabel={electionLabel}
+        voterInfo={voterInfo}
+        location={location}
+      />
+    );
+  }
+
+  // ── Phase: Ballot items ──
+  if (currentPhase === 'ballot-item') {
+    // Loading ballot
+    if (isLoading || ballotItems.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
+          <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
+          <p className="text-sm text-gray-500">Loading your ballot...</p>
+        </div>
+      );
+    }
+
+    // Needs assessment
+    if (!hasCompletedAssessment || valueAxes.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 p-6">
+          <AlertCircle className="h-12 w-12 text-amber-500" />
+          <h2 className="text-lg font-semibold text-gray-900">Complete Your Assessment First</h2>
+          <p className="text-center text-gray-600 max-w-sm">
+            To get personalized voting recommendations, complete the values assessment.
+          </p>
+          <button
+            onClick={() => setPhase('assessment')}
+            className="mt-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 transition-colors"
+          >
+            Go to Assessment
+          </button>
+        </div>
+      );
+    }
+
+    // Intro screen (first time)
+    if (!hasSeenIntro) {
+      return (
+        <div className="flex min-h-full flex-col items-center justify-center bg-gray-50 px-6">
+          <div className="w-full max-w-sm">
+            <h1 className="mb-2 text-center text-xl font-bold text-gray-900">
+              Your Personalized Ballot
+            </h1>
+            <p className="mb-6 text-center text-sm text-gray-500">
+              Here&apos;s what to expect as you work through each item.
+            </p>
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">Match scores</p>
+                  <p className="text-[13px] leading-snug text-gray-500">
+                    Each candidate gets a match percentage based on your values.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">Recommendations</p>
+                  <p className="text-[13px] leading-snug text-gray-500">
+                    For ballot measures, you&apos;ll see a suggested vote tied to your values.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Hand className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">It&apos;s your call</p>
+                  <p className="text-[13px] leading-snug text-gray-500">
+                    Pick a candidate or vote YES/NO, or skip any item.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <SlidersHorizontal className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">Fine-tune anytime</p>
+                  <p className="text-[13px] leading-snug text-gray-500">
+                    Adjust your values on any item to see how recommendations shift.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={dismissIntro}
+              className="mt-8 w-full rounded-xl bg-brand-primary py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    if (!currentItem) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
+          <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
+        </div>
+      );
+    }
+
+    // Main ballot item view
+    return (
+      <div className="flex flex-col h-full overflow-hidden -mx-4 bg-gray-50">
+        <BallotNavigator
+          ballotItems={ballotItems}
+          savedVotes={savedVotes}
+          currentIndex={currentIndex}
+          onJumpTo={handleJumpTo}
+        />
+
+        <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-4">
+          <DemoBanner />
+          <BallotItemHeader item={currentItem} />
+
+          {currentItem.type === 'proposition' && (
+            <RecommendationBanner
+              recommendation={propositionRec}
+              valueFraming={propositionValueFraming}
+            />
+          )}
+
+          <PersonalImpactSection impacts={personalImpacts} />
+
+          {currentItem.type === 'proposition' ? (
+            <PropositionVoteButtons
+              selected={currentVote}
+              onSelect={handleVoteSelect}
+              recommendation={propositionRec}
+            />
+          ) : (
+            <CandidateVoteButtons
+              candidates={currentItem.candidates || []}
+              allowWriteIn={currentItem.allowWriteIn || false}
+              selected={currentVote}
+              writeInName={writeInName}
+              matches={candidateMatches}
+              onSelect={handleVoteSelect}
+              onWriteInChange={setWriteInName}
+            />
+          )}
+
+          <ValuesSection
+            axes={valueAxes}
+            relevantAxisIds={currentItem.relevantAxes || []}
+            onValueChange={handleValueChange}
+            expanded={valuesExpanded}
+            onToggle={() => setValuesExpanded((v) => !v)}
+          />
+
+          <DemographicSection
+            expanded={demographicExpanded}
+            onToggle={() => setDemographicExpanded((v) => !v)}
+          />
+        </div>
+
+        {/* Sticky navigation + AI button */}
+        <div className="shrink-0 border-t border-gray-200 bg-gray-50 px-4 pb-4 pt-3">
+          <NavigationButtons
+            canGoBack={currentIndex > 0}
+            hasSelection={
+              currentVote !== null && (currentVote !== 'write_in' || writeInName.trim() !== '')
+            }
+            onBack={handleBack}
+            onNext={handleNext}
+            onSkip={handleSkip}
+            isLast={currentIndex === ballotItems.length - 1}
+          />
+        </div>
+
+        {/* AI Assistant Drawer */}
+        <AiAssistantDrawer
+          isOpen={aiDrawerOpen}
+          onToggle={() => setAiDrawerOpen((v) => !v)}
+          ballotItem={currentItem}
+          axisDefinitions={blueprintSpec?.axes ?? []}
+          focusedCandidateId={currentItem.type === 'candidate_race' ? currentVote : undefined}
+        />
+      </div>
+    );
+  }
+
+  // ── Phase: Summary ──
+  if (currentPhase === 'summary') {
     return (
       <div>
         <div className="px-4 pt-4 space-y-3">
@@ -428,164 +940,158 @@ export default function BallotPage() {
           ballotItems={ballotItems}
           categories={categories}
           onEditItem={handleEditItem}
-          onStartOver={handleStartOver}
+          onStartOver={() => setShowRedoConfirm(true)}
           onPrint={handlePrint}
           voterInfo={voterInfo}
           location={location}
         />
-      </div>
-    );
-  }
 
-  // --------------------------------------------------
-  // Intro screen (first-time users only)
-  // --------------------------------------------------
-  if (!hasSeenIntro) {
-    return (
-      <div className="flex min-h-[calc(100vh-3.5rem)] flex-col items-center justify-center bg-gray-50 px-6">
-        <div className="w-full max-w-sm">
-          <h1 className="mb-2 text-center text-xl font-bold text-gray-900">
-            Your Personalized Ballot
-          </h1>
-          <p className="mb-6 text-center text-sm text-gray-500">
-            Here&apos;s what to expect as you work through each item.
-          </p>
-
-          <div className="space-y-4">
-            <div className="flex gap-3">
-              <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
-              <div>
-                <p className="text-sm font-semibold text-gray-800">Match scores</p>
-                <p className="text-[13px] leading-snug text-gray-500">
-                  Each candidate gets a match percentage based on your Civic Blueprint values.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
-              <div>
-                <p className="text-sm font-semibold text-gray-800">Recommendations</p>
-                <p className="text-[13px] leading-snug text-gray-500">
-                  For ballot measures, you&apos;ll see a suggested vote with reasoning tied to your values.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <Hand className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
-              <div>
-                <p className="text-sm font-semibold text-gray-800">It&apos;s your call</p>
-                <p className="text-[13px] leading-snug text-gray-500">
-                  Pick a candidate or vote YES/NO to save your choice, or skip any item you&apos;re unsure about.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <SlidersHorizontal className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
-              <div>
-                <p className="text-sm font-semibold text-gray-800">Fine-tune anytime</p>
-                <p className="text-[13px] leading-snug text-gray-500">
-                  Adjust your values or profile on any item to see how recommendations shift.
-                </p>
-              </div>
-            </div>
-          </div>
-
+        {/* Start fresh button */}
+        <div className="px-4 pb-8">
           <button
-            onClick={dismissIntro}
-            className="mt-8 w-full rounded-xl bg-brand-primary py-3.5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+            onClick={() => setShowFreshConfirm(true)}
+            className="w-full py-3 bg-gray-100 text-gray-600 border border-gray-200 rounded-xl text-sm font-semibold hover:bg-gray-200 transition-colors"
           >
-            Get Started
+            Start fresh
           </button>
         </div>
+
+        {/* Redo confirmation dialog (triggered by Start Over in review section) */}
+        {showRedoConfirm && (
+          <ConfirmDialog
+            title="Redo your votes?"
+            message="This will clear all your saved votes and return you to the first ballot item. Your values profile and demographics will be kept."
+            confirmLabel="Redo votes"
+            confirmStyle="primary"
+            onConfirm={handleRedoVotes}
+            onCancel={() => setShowRedoConfirm(false)}
+          />
+        )}
+
+        {/* Start fresh confirmation dialog */}
+        {showFreshConfirm && (
+          <ConfirmDialog
+            title="Start completely fresh?"
+            message="This will clear all your votes, your values assessment, and demographics. You'll start the wizard from the beginning."
+            confirmLabel="Start fresh"
+            confirmStyle="destructive"
+            onConfirm={handleStartFresh}
+            onCancel={() => setShowFreshConfirm(false)}
+          />
+        )}
       </div>
     );
   }
 
-  // --------------------------------------------------
-  // Main ballot builder view
-  // --------------------------------------------------
+  // Fallback
   return (
-    <div className="flex flex-col h-[calc(100vh-3.5rem)] overflow-hidden -mx-4 bg-gray-50">
-      {/* Ballot Navigator (progress bar) */}
-      <BallotNavigator
-        ballotItems={ballotItems}
-        savedVotes={savedVotes}
-        currentIndex={currentIndex}
-        onJumpTo={handleJumpTo}
+    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
+      <AlertCircle className="h-12 w-12 text-red-500" />
+      <p className="mt-3 text-gray-600">Something went wrong. Please refresh.</p>
+    </div>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+// Sub-components
+// ═══════════════════════════════════════════════════════════
+
+/** Profile Review phase — wraps BlueprintSummaryView with a "Next" CTA instead of router push */
+function ProfileReviewPhase({
+  profile,
+  spec,
+  metaDimensions,
+  fineTuningResponses,
+  onRetake,
+  onFineTune,
+  onChangeAxis,
+  onChangeAxisImportance,
+  onNext,
+  daysRemaining,
+  electionLabel,
+  voterInfo,
+  location,
+}: {
+  profile: BlueprintProfile;
+  spec: Spec;
+  metaDimensions: ReturnType<typeof deriveMetaDimensions> | null;
+  fineTuningResponses: Record<string, Record<string, number>>;
+  onRetake: () => void;
+  onFineTune: (axisId: string) => void;
+  onChangeAxis: (axisId: string, value: number) => void;
+  onChangeAxisImportance: (axisId: string, value: number) => void;
+  onNext: () => void;
+  daysRemaining: number;
+  electionLabel: string;
+  voterInfo: unknown;
+  location: unknown;
+}) {
+  return (
+    <div className="relative">
+      <BlueprintSummaryView
+        profile={profile}
+        spec={spec}
+        metaDimensions={metaDimensions}
+        fineTuningResponses={fineTuningResponses}
+        onRetake={onRetake}
+        onFineTune={onFineTune}
+        onChangeAxis={onChangeAxis}
+        onChangeAxisImportance={onChangeAxisImportance}
+        hideCta
       />
-
-      {/* Scrollable ballot content */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3 pb-4">
-        <DemoBanner />
-        <ElectionBanner
-          daysUntilElection={daysRemaining}
-          electionLabel={electionLabel}
-          voterInfo={voterInfo}
-          location={location}
-        />
-        <BallotItemHeader item={currentItem} />
-
-        {/* Recommendation section (propositions only) */}
-        {currentItem.type === 'proposition' && (
-          <RecommendationBanner
-            recommendation={propositionRec}
-            valueFraming={propositionValueFraming}
-          />
-        )}
-
-        {/* Demographic-based personal impact insights */}
-        <PersonalImpactSection impacts={personalImpacts} />
-
-        {/* Vote selection */}
-        {currentItem.type === 'proposition' ? (
-          <PropositionVoteButtons
-            selected={currentVote}
-            onSelect={handleVoteSelect}
-            recommendation={propositionRec}
-          />
-        ) : (
-          <CandidateVoteButtons
-            candidates={currentItem.candidates || []}
-            allowWriteIn={currentItem.allowWriteIn || false}
-            selected={currentVote}
-            writeInName={writeInName}
-            matches={candidateMatches}
-            onSelect={handleVoteSelect}
-            onWriteInChange={setWriteInName}
-          />
-        )}
-
-        {/* Adjust your values */}
-        <ValuesSection
-          axes={valueAxes}
-          relevantAxisIds={currentItem.relevantAxes || []}
-          onValueChange={handleValueChange}
-          expanded={valuesExpanded}
-          onToggle={() => setValuesExpanded((v) => !v)}
-        />
-
-        {/* Adjust your profile (demographics) */}
-        <DemographicSection
-          expanded={demographicExpanded}
-          onToggle={() => setDemographicExpanded((v) => !v)}
-        />
+      {/* Override the floating CTA with wizard advance */}
+      <div className="fixed bottom-6 left-0 right-0 z-50 mx-auto max-w-lg px-4">
+        <button
+          onClick={onNext}
+          className="w-full rounded-[14px] bg-brand-primary py-4 text-[15px] font-bold text-white shadow-lg transition-opacity hover:opacity-90"
+        >
+          Build my ballot &rarr;
+        </button>
       </div>
+    </div>
+  );
+}
 
-      {/* Sticky navigation buttons */}
-      <div className="shrink-0 border-t border-gray-200 bg-gray-50 px-4 pb-4 pt-3">
-        <NavigationButtons
-          canGoBack={currentIndex > 0}
-          hasSelection={
-            currentVote !== null && (currentVote !== 'write_in' || writeInName.trim() !== '')
-          }
-          onBack={handleBack}
-          onNext={handleNext}
-          onSkip={handleSkip}
-          isLast={currentIndex === ballotItems.length - 1}
-        />
+/** Confirmation dialog for destructive actions */
+function ConfirmDialog({
+  title,
+  message,
+  confirmLabel,
+  confirmStyle,
+  onConfirm,
+  onCancel,
+}: {
+  title: string;
+  message: string;
+  confirmLabel: string;
+  confirmStyle: 'primary' | 'destructive';
+  onConfirm: () => void;
+  onCancel: () => void;
+}) {
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-6">
+      <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
+        <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+        <p className="text-sm text-gray-600 mb-6">{message}</p>
+        <div className="flex gap-3">
+          <button
+            onClick={onCancel}
+            className="flex-1 rounded-xl bg-gray-100 py-3 text-sm font-semibold text-gray-600 hover:bg-gray-200 transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onConfirm}
+            className={[
+              'flex-1 rounded-xl py-3 text-sm font-semibold transition-colors',
+              confirmStyle === 'destructive'
+                ? 'bg-gray-700 text-white hover:bg-gray-800'
+                : 'bg-brand-primary text-white hover:bg-brand-primary/90',
+            ].join(' ')}
+          >
+            {confirmLabel}
+          </button>
+        </div>
       </div>
     </div>
   );

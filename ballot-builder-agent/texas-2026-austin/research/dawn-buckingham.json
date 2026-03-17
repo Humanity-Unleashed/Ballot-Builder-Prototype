@@ -1,0 +1,78 @@
+{
+  "candidateSlug": "dawn-buckingham",
+  "candidateName": "Dawn Buckingham",
+  "party": "Republican",
+  "office": "Land Commissioner, Texas",
+  "contestId": "TX-LAND-COMMISSIONER-2026",
+  "incumbencyStatus": "incumbent",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Dawn Buckingham",
+    "education": "B.S. Kinesiology UT Austin 1992; M.D. UTMB Galveston 1997",
+    "career": "Oculoplastic surgeon. Lake Travis ISD School Board (2012-2015). Texas State Senator SD-24 (2017-2023) — first Republican from Travis County in modern era. Texas Land Commissioner (Jan 2023-present) — first woman in Texas history. GLO manages 13M acres, Permanent School Fund (~$57B), Veterans Land Board, Alamo, coastal protection, disaster recovery.",
+    "primaryResult": "Ran unopposed in Republican primary March 3, 2026",
+    "generalOpponent": "Benjamin Flores (D) — Bay City Councilman, cybersecurity professional"
+  },
+
+  "campaignWebsite": "https://dawnbuckingham.com/",
+
+  "policyPositions": [
+    {"topic": "Energy", "position": "Pro-oil-and-gas as primary energy and economic driver. Manages fossil fuel leasing on 13M acres of state land. Supports carbon sequestration and nuclear as revenue supplements — NOT framed as climate action. Secured world's largest carbon sequestration lease (1.2M acres, $130M for PSF, projected $10B over decade).", "confidence": "HIGH"},
+    {"topic": "Public education funding", "position": "GLO contributed nearly $6B to public education through oil/gas revenues and carbon sequestration into PSF. Record $4.8B PSF distribution for 2026-27.", "confidence": "HIGH"},
+    {"topic": "Border/immigration", "position": "Jocelyn Initiative (Nov 2024): committed GLO resources for detention/deportation; offered 1,402 acres in Starr County for deportation facilities and border wall staging. Blocked Biden from disposing border wall materials.", "confidence": "HIGH"},
+    {"topic": "Veterans", "position": "Increased VLB home loan limit to $832,750; added lenders; disbursed $1B+ to 4,100+ veterans.", "confidence": "HIGH"},
+    {"topic": "Abortion", "position": "'Never allowed unless life of mother in jeopardy.' Co-authored SB 8 (heartbeat act). Supported HB 1280 (trigger law). Texas Alliance for Life endorsed 2026.", "confidence": "HIGH"},
+    {"topic": "Firearms", "position": "NRA endorsed 2022 citing 'nearly two dozen pro-gun bills.' Early supporter of constitutional carry (HB 1927).", "confidence": "HIGH"},
+    {"topic": "Healthcare", "position": "'Medicaid and Medicare should remain available, but no other taxpayer-funded programs are necessary' (2022 iVoterGuide).", "confidence": "MEDIUM"},
+    {"topic": "Coastal environment", "position": "2023 Coastal Resiliency Master Plan: 121 projects; $84.6M CEPRA funds. Framed as disaster prep, not climate adaptation.", "confidence": "HIGH"},
+    {"topic": "Disaster relief", "position": "Oversaw $5.7B Hurricane Harvey recovery. Launched 2024 Disasters programs ($287M).", "confidence": "HIGH"}
+  ],
+
+  "votingRecord": {
+    "chamber": "Texas State Senate SD-24 (2017-2023)",
+    "conservatismRanking": "13th most conservative TX Senator (2019 Rice); 8th most conservative (2021 Rice)",
+    "keyVotes": [
+      {"bill": "SB 8 (Heartbeat Act)", "vote": "Yes — co-authored"},
+      {"bill": "HB 1280 (Trigger Law)", "vote": "Yes"},
+      {"bill": "HB 1927 (Permitless Carry)", "vote": "Yes — early supporter"},
+      {"bill": "HB 3 (Property Tax Reform)", "vote": "Yes (31-0)"},
+      {"bill": "Election integrity legislation", "vote": "Yes — co-authored"},
+      {"bill": "Church protection/COVID powers", "vote": "Yes — co-authored"}
+    ]
+  },
+
+  "interestGroupRatings": [
+    {"organization": "Young Conservatives of Texas", "score": "80% career", "notes": "Won YCT Rookie of the Year (85th Legislature)"},
+    {"organization": "NRA Political Victory Fund", "rating": "Endorsed 2022"},
+    {"organization": "Texas Alliance for Life", "rating": "Endorsed 2026"},
+    {"organization": "iVoterGuide", "rating": "Consistent conservative ratings across all criteria"}
+  ],
+
+  "endorsements": ["Donald Trump (2022)", "Dan Patrick", "NRA", "Texas Alliance for Life"],
+
+  "positionConflicts": [
+    {"topic": "Climate/energy", "conflict": "Manages world's largest carbon sequestration lease and invests in coastal resilience (actions that objectively reduce emissions), but frames entirely in revenue/economic terms, never climate terms. Simultaneously champions oil/gas as primary mission. Actions = pragmatic revenue maximization, not climate ideology."},
+    {"topic": "Public lands/immigration", "conflict": "Offered GLO land for deportation facilities — novel use of land management authority beyond traditional mission."}
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 8,
+    "overallConfidence": "HIGH for GLO-jurisdiction and social conservative issues; LOW for non-office-scope axes",
+    "strongAxes": ["climate_energy_portfolio (fossil fuel champion + carbon sequestration for revenue)", "justice_firearms_policy (NRA endorsed, constitutional carry)", "health_coverage_model (market-based, opposes expansion)"],
+    "weakAxes": ["econ_school_choice (not within GLO scope — Senate-era record not fully recovered)", "justice_police_accountability (no record)", "justice_sentencing_goals (no record)", "housing (VLB is specific veteran housing, not general policy)", "transit (no record)"],
+    "notes": "3-year Land Commissioner record + 6-year Senate record. Carbon sequestration nuance is important: she takes emissions-reducing actions but frames them entirely as school fund revenue. Do not infer climate ambition from this."
+  },
+
+  "sources": [
+    {"url": "https://dawnbuckingham.com/", "description": "Campaign website"},
+    {"url": "https://ballotpedia.org/Dawn_Buckingham", "description": "Ballotpedia"},
+    {"url": "https://www.glo.texas.gov/about-glo/about-the-commissioner", "description": "Official GLO page"},
+    {"url": "https://shalemag.com/commissioner-dawn-buckingham/", "description": "Shale Magazine interview"},
+    {"url": "https://ratings.yct.org/legislators/dawn-buckingham/87th-legislature", "description": "YCT rating"},
+    {"url": "https://ivoterguide.com/candidate/27972/race/13671/election/871", "description": "iVoterGuide 2022"},
+    {"url": "https://sanangelolive.com/news/politics/2022-01-13/buckingham-secures-coveted-national-rifle-association-endorsement-texas-land-commissioner", "description": "NRA endorsement"},
+    {"url": "https://www.texasallianceforlife.org/2026-primary-election-endorsements/", "description": "Texas Alliance for Life 2026"}
+  ]
+}

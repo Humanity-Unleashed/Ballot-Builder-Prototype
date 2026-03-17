@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding — Ballot Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2B5797',
+            'primary-dark': '#1E3F6F',
+            success: '#22C55E',
+            incomplete: '#D1D5DB',
+            'bg-light': '#F9FAFB',
+            'text-primary': '#111827',
+            'text-secondary': '#6B7280',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .screen { display: none; }
+    .screen.active { display: flex; }
+    .slide-left {
+      animation: slideLeft 0.35s ease-out;
+    }
+    .slide-right {
+      animation: slideRight 0.35s ease-out;
+    }
+    @keyframes slideLeft {
+      from { transform: translateX(60px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideRight {
+      from { transform: translateX(-60px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen">
+  <div class="max-w-md mx-auto px-6 min-h-screen flex flex-col">
+
+    <!-- Skip button -->
+    <div class="flex justify-end pt-4">
+      <button id="skipBtn" class="text-text-secondary text-sm hover:text-text-primary transition-colors">Skip</button>
+    </div>
+
+    <!-- Screen 1: Know Your Ballot -->
+    <div id="screen1" class="screen active flex-col items-center justify-center flex-1 text-center pb-24">
+      <!-- Illustration -->
+      <div class="w-28 h-28 bg-primary/8 rounded-full flex items-center justify-center mb-8">
+        <svg class="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+        </svg>
+      </div>
+
+      <h1 class="text-2xl font-bold text-text-primary mb-4">Know Your Ballot</h1>
+      <p class="text-text-secondary leading-relaxed max-w-sm">
+        Every election has races and measures you've never heard of. Ballot Builder walks you through your actual ballot so you can vote with confidence — not confusion.
+      </p>
+    </div>
+
+    <!-- Screen 2: Vote Your Values -->
+    <div id="screen2" class="screen flex-col items-center justify-center flex-1 text-center pb-24">
+      <!-- Illustration -->
+      <div class="w-28 h-28 bg-primary/8 rounded-full flex items-center justify-center mb-8">
+        <svg class="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+
+      <h1 class="text-2xl font-bold text-text-primary mb-4">Vote Your Values</h1>
+      <p class="text-text-secondary leading-relaxed max-w-sm">
+        Take a 5-minute assessment. We'll map your priorities to real candidates and ballot measures — no party labels, no spin. Just your values matched to your choices.
+      </p>
+    </div>
+
+    <!-- Screen 3: Prep Together -->
+    <div id="screen3" class="screen flex-col items-center justify-center flex-1 text-center pb-24">
+      <!-- Illustration -->
+      <div class="w-28 h-28 bg-primary/8 rounded-full flex items-center justify-center mb-8">
+        <svg class="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+        </svg>
+      </div>
+
+      <h1 class="text-2xl font-bold text-text-primary mb-4">Prep Together</h1>
+      <p class="text-text-secondary leading-relaxed max-w-sm">
+        Invite a few friends or family to your Voting Squad. See who's registered, who's prepped, and who's voted — without sharing what anyone chose. Election prep is easier when you do it together.
+      </p>
+    </div>
+
+    <!-- Bottom navigation -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white pb-8 pt-4 px-6">
+      <div class="max-w-md mx-auto">
+        <!-- Dot indicators -->
+        <div class="flex justify-center gap-2 mb-6">
+          <button onclick="goTo(1)" id="d1" class="w-2.5 h-2.5 rounded-full bg-primary transition-colors"></button>
+          <button onclick="goTo(2)" id="d2" class="w-2.5 h-2.5 rounded-full bg-incomplete transition-colors"></button>
+          <button onclick="goTo(3)" id="d3" class="w-2.5 h-2.5 rounded-full bg-incomplete transition-colors"></button>
+        </div>
+
+        <!-- Action button -->
+        <button id="nextBtn" onclick="next()" class="w-full bg-primary text-white rounded-xl py-3.5 font-semibold text-base hover:bg-primary-dark transition-colors">
+          Next
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let current = 1;
+    const total = 3;
+
+    function goTo(n) {
+      const direction = n > current ? 'slide-left' : 'slide-right';
+      current = n;
+      updateUI(direction);
+    }
+
+    function next() {
+      if (current < total) {
+        current++;
+        updateUI('slide-left');
+      }
+    }
+
+    function updateUI(animClass) {
+      // Update screens
+      for (let i = 1; i <= total; i++) {
+        const screen = document.getElementById('screen' + i);
+        screen.classList.remove('active', 'slide-left', 'slide-right');
+        if (i === current) {
+          screen.classList.add('active', animClass);
+        }
+      }
+
+      // Update dots
+      for (let i = 1; i <= total; i++) {
+        document.getElementById('d' + i).className = 'w-2.5 h-2.5 rounded-full transition-colors ' + (i === current ? 'bg-primary' : 'bg-incomplete');
+      }
+
+      // Update button
+      const btn = document.getElementById('nextBtn');
+      if (current === total) {
+        btn.textContent = 'Get Started';
+      } else {
+        btn.textContent = 'Next';
+      }
+
+      // Hide skip on last
+      document.getElementById('skipBtn').style.visibility = current === total ? 'hidden' : 'visible';
+    }
+  </script>
+</body>
+</html>

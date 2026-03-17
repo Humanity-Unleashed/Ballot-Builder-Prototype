@@ -2,15 +2,20 @@
  * Assembled Ballot
  *
  * Combines contests and measures into a complete ballot.
+ * Default ballot: Austin, TX (78721) — November 2026 General Election.
  */
 
 import type { Ballot, BallotItem, Contest, Measure } from '../../types';
 import { BALLOT_IDS } from './ids';
 import { contests } from './contests';
 import { measures, michiganMeasures } from './measures';
-import { georgiaBallot } from './georgiaData';
-import { northCarolinaBallot } from './northCarolinaData';
-import { texasBallot } from './texasData';
+import { texasAustinBallot } from './texasAustinData';
+
+// Keep legacy state data imports available but not in the active ballots array.
+// To restore, re-add to the `ballots` array below.
+// import { georgiaBallot } from './georgiaData';
+// import { northCarolinaBallot } from './northCarolinaData';
+// import { texasBallot } from './texasData';
 
 // ============================================
 // All Ballot Items (in ballot order)
@@ -71,12 +76,12 @@ export const michiganBallot: Ballot = {
   items: michiganBallotItems,
 };
 
+// ============================================
+// Active Ballots — only Austin TX for demo
+// ============================================
+
 export const ballots: Ballot[] = [
-  sampleBallot,
-  michiganBallot,
-  georgiaBallot,
-  northCarolinaBallot,
-  texasBallot,
+  texasAustinBallot,
 ];
 
 // ============================================
@@ -92,7 +97,7 @@ export function getBallotByCounty(county: string): Ballot | null {
 }
 
 export function getDefaultBallot(): Ballot {
-  return michiganBallot;
+  return texasAustinBallot;
 }
 
 export function getBallotItemById(ballotId: string, itemId: string): BallotItem | null {

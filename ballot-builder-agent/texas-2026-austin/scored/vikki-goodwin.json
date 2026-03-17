@@ -1,0 +1,153 @@
+{
+  "slug": "vikki-goodwin",
+  "name": "Vikki Goodwin",
+  "party": "Democratic",
+  "office": "Texas Lieutenant Governor, 2026",
+  "scoredAt": "2026-03-11T00:00:00Z",
+  "profileSummary": "Four-term Texas state representative (HD-47, Austin area) running for lieutenant governor on a platform centered on public school funding, Medicaid expansion, housing affordability, and water infrastructure. Strong progressive legislative record on reproductive rights and gun safety; establishment-backed with Our Revolution endorsement adding progressive credibility.",
+  "keyPositions": [
+    "Signature issue: end school voucher program, restore 50% state funding for public schools",
+    "Supports Medicaid expansion and reproductive healthcare access; extensive pro-choice voting record",
+    "Filed 12 gun safety bills post-Uvalde including waiting periods and universal background checks",
+    "Calls for bipartisan review of Texas-ICE cooperation mandates, citing civil liberties violations",
+    "Champions $15 minimum wage, missing middle housing, and water conservation over corporate mega-projects"
+  ],
+  "primaryStatus": {
+    "note": "Received ~48% in March 3, 2026 Democratic primary; faces Marcos Velez in May 26, 2026 runoff. Strong frontrunner but not yet confirmed nominee.",
+    "runoffDate": "2026-05-26",
+    "runoffOpponent": "Marcos Velez"
+  },
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["Medicaid expansion campaign position", "$15 minimum wage commitment", "state employee salary/teacher COLA co-authorship", "Our Revolution endorsement"],
+      "notes": "Consistent pro-expansion stance across voting record and campaign. Framing centers on Texas having the highest uninsured rate despite prosperity."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "high",
+      "sources": ["50% state school funding target (Community Impact interview)", "water infrastructure position", "missing middle housing incentives", "Food System Security Council legislation"],
+      "notes": "Favors significant public investment in schools, water, and housing. Criticizes diverting public water funds to subsidize corporate data centers. Appropriations Committee member."
+    },
+    "econ_tax_structure": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["School funding/property tax framing (Community Impact 2026-01-27)"],
+      "notes": "Frames property tax relief as requiring increased state funding for schools — implicitly progressive redistribution from property tax to state revenue. No explicit income tax, wealth tax, or corporate tax proposals documented. Texas has no state income tax and she has not proposed one."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["Texas Standard interview: 'No public dollars to private schools'", "Houston Public Media top 3 priorities", "Community Impact Q&A", "Amarillo Pioneer voter guide", "teachers union endorsements"],
+      "notes": "Her defining issue. Explicitly opposes the voucher/ESA program Dan Patrick passed. Wants full public school funding restored. This is the single most consistent and emphatic position across all sources."
+    },
+    "health_coverage_model": {
+      "score": 3,
+      "confidence": "high",
+      "sources": ["Campaign website healthcare page", "Amarillo Pioneer: 'highest rate of uninsured'", "Houston Public Media top 3", "Medicaid expansion advocacy"],
+      "notes": "Explicitly supports Medicaid expansion. No single-payer or Medicare for All language — positions as ACA expansion and Medicaid buy-in. Also advocates for reproductive and mental health service access. Sponsored bill for Medicaid abortion coverage."
+    },
+    "housing_supply_zoning": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Community Impact interview: 'incentivizing building of starter/missing middle homes'", "Campaign website priorities page"],
+      "notes": "Supply-side framing focused on missing middle housing and local government collaboration. No explicit zoning reform legislation documented. Real estate professional background may inform supply-side orientation."
+    },
+    "housing_affordability_tools": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Campaign website: 'collaborate with local governments to expand housing access, reduce homelessness'", "Community Impact interview"],
+      "notes": "Government-involved approach through incentives and local partnerships. No rent control or large public housing proposals documented. Property tax relief framed as affordability tool via school finance reform."
+    },
+    "justice_firearms": {
+      "score": 1,
+      "confidence": "high",
+      "sources": ["12 gun safety bills filed in 2023 session (Austin Chronicle)", "Opposed permitless carry (KVUE)", "Called for special session post-Uvalde (KVUE)", "HB 298 waiting period bill"],
+      "notes": "Among the most active gun safety advocates in the Texas House. Filed comprehensive package: waiting periods, universal background checks for private sales, and additional measures. Wrote directly to governor asking for permitless carry veto. Consistent across entire tenure."
+    },
+    "climate_ambition": {
+      "score": 3,
+      "confidence": "medium",
+      "sources": ["Campaign website: 'bold action... reduce greenhouse gas emissions'", "SW Travis County Groundwater Conservation District legislation", "Water conservation/reuse advocacy"],
+      "notes": "Supports climate action but uses 'balances environmental protection with economic growth' language. No aggressive emissions targets, carbon pricing, or rapid transition commitments documented. Stronger on water conservation than energy transition specifics."
+    },
+    "climate_energy_portfolio": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["Campaign website: 'clean power' language", "Criticism of water diversion for data centers"],
+      "notes": "General clean energy supporter. No specific renewable mandates, fossil fuel phase-out timelines, or energy portfolio targets documented. 'Clean power and water' framing is directional but lacks mechanism detail."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.5,
+      "reasoning": "Healthcare for all Texans including uninsured, environmental stewardship, ICE civil liberties concerns extending to non-citizens and deportees. Groundwater conservation and food system security show nature/public welfare orientation. Scope is primarily Texas-focused rather than global, limiting to moderate-high score."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Core political identity is community care: public school funding for 90% of Texas kids, healthcare access for constituents, Cati's Act (child drowning prevention), teacher COLAs, Natalia Cox Act (violence prevention), vote-by-mail for new mothers. Consistently frames policy through the lens of working families and vulnerable community members."
+    },
+    "tradition": {
+      "score": -0.3,
+      "reasoning": "Explicitly challenges 30 years of Republican governance as needing change. Pro-choice record directly opposes Texas's social conservative traditions on abortion. Wants to repeal the recently-passed voucher program. However, 'restoring collaborative spirit' and institutional framing has a restorative quality — she wants to return to a prior norm, not create something wholly new."
+    },
+    "conformity": {
+      "score": 0.4,
+      "reasoning": "Strong institutional orientation: works within the legislative process, files bills through proper channels even when they won't advance, calls for bipartisan committees rather than unilateral action, frames ICE concerns as constitutional/legal rather than moral. 'Returning sanity to government' is a conformity-positive frame. Not a norm-breaker."
+    },
+    "security": {
+      "score": 0.4,
+      "reasoning": "Food System Security Council legislation, groundwater conservation, water infrastructure investment, Natalia Cox Act violence prevention. Security through public infrastructure, safety nets, and environmental stability rather than military/police/border framing. Concerned about ICE overreach as a threat to citizen security."
+    },
+    "power": {
+      "score": -0.3,
+      "reasoning": "Anti-concentrated-power framing: 'not just the well-connected few,' criticizes corporate water subsidies for data centers, Our Revolution endorsement. But she is establishment-backed (House Dem caucus majority, teachers unions) and has a real estate business background. Moderate anti-power signal — challenges Republican power structure but operates within Democratic institutional power."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "MPA from LBJ School, successful real estate business co-owner, four-term legislator who flipped a Republican seat. Personal career demonstrates competence-based advancement. But campaign rhetoric emphasizes structural solutions (public schools, Medicaid) over individual achievement narratives."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful signal. No documented positions on recreational cannabis, lifestyle liberty, or personal freedom framing. Policy focus is entirely on structural/community issues."
+    },
+    "stimulation": {
+      "score": 0.2,
+      "reasoning": "Running for higher office represents ambition for change. Wants to end vouchers and expand Medicaid — significant policy shifts for Texas. But framing is restorative ('returning sanity') rather than revolutionary. Not an anti-establishment disruptor; positioned as a competent institutional alternative."
+    },
+    "self_direction": {
+      "score": 0.5,
+      "reasoning": "Strong reproductive rights record (bodily autonomy across 4 terms), ICE civil liberties concerns (protecting against warrantless searches, wrongful detention), vote-by-mail expansion for new mothers. However, also supports significant regulation (gun safety, environmental) which works against pure self-direction framing. Net positive on civil liberties dimension of self-direction."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Labor coalition gap",
+      "description": "Goodwin positions herself as a pro-worker progressive and supports $15 minimum wage, but the Texas AFL-CIO endorsed her primary opponent Marcos Velez (a steelworkers union leader) over her. This suggests organized labor's institutional preference was for Velez despite Goodwin's stated labor positions.",
+      "sources": ["Houston Public Media (Jan 2026)", "TPR runoff coverage (March 2026)"],
+      "scoringImpact": "Does not affect axis scores (her stated positions and votes are pro-labor regardless of endorsement). Noted as context for her coalition composition — she draws more from teachers unions and progressive organizations than industrial labor."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 10,
+    "axesSkipped": [
+      "health_cost_control",
+      "health_public_health",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "No documented positions, votes, or scorecards found on healthcare cost control mechanisms, public health mandates, transit policy, policing accountability, criminal sentencing, or permitting reform. These are genuine evidence gaps, not inferred centrism.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "Criminal justice positions entirely undocumented — no record on policing, sentencing, or incarceration found",
+      "Public health mandate positions (vaccines, etc.) not documented",
+      "Transit vs. car-centric infrastructure preferences not stated",
+      "Specific energy portfolio targets or renewable mandates not articulated",
+      "No Texas LCV or equivalent environmental scorecard found for state legislators",
+      "Several scorecards (Texas Freedom Index, Texas Taxpayers Index) referenced but specific numerical scores not retrieved"
+    ]
+  }
+}

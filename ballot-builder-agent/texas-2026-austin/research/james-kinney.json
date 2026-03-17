@@ -1,0 +1,47 @@
+{
+  "candidateSlug": "james-kinney",
+  "candidateName": "James Kinney",
+  "party": "Independent (NNE)",
+  "office": "U.S. House TX-37",
+  "contestId": "TX-US-HOUSE-37-2026",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "identity": {
+    "fullName": "James Nicholas Kinney",
+    "background": "Global Chief AI Officer at INVNT (marketing agency); author on AI and mental health; 'The Ad Industry's Therapist'; based in Austin TX",
+    "fecCommittee": "KINNEY FOR CONGRESS (C00925123), registered October 30, 2025"
+  },
+
+  "fundraising": {
+    "totalRaised": "$0 reported to FEC",
+    "notes": "No fundraising activity reported"
+  },
+
+  "policyPositions": [],
+
+  "interestGroupRatings": [],
+
+  "votingRecord": null,
+
+  "endorsements": [],
+
+  "campaignContext": {
+    "district": "TX-37 (D+26)",
+    "opponent": "Greg Casar (D, incumbent, won primary with 80.7%)",
+    "viability": "Extremely low — no fundraising, no campaign infrastructure, no policy platform, running as Independent in a heavily Democratic district"
+  },
+
+  "evidenceSummary": {
+    "axesScorable": 0,
+    "overallConfidence": "NONE",
+    "notes": "No policy positions found anywhere. Ballotpedia confirms he has not completed their Candidate Connection survey. No campaign website with policy platform located. No interviews, endorsements, or press coverage of this candidacy. Scorer should not attempt to score — insufficient evidence across all 15 civic axes."
+  },
+
+  "sources": [
+    {"url": "https://ballotpedia.org/James_Kinney", "description": "Ballotpedia candidate page"},
+    {"url": "https://ballotpedia.org/Texas'_37th_Congressional_District_election,_2026", "description": "TX-37 race page"},
+    {"url": "https://www.fec.gov/data/committee/C00925123/", "description": "FEC committee page — $0 raised"},
+    {"url": "https://docquery.fec.gov/cgi-bin/forms/C00925123/1923858/", "description": "FEC Form 1 filing"}
+  ]
+}

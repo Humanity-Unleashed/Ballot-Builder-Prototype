@@ -1,0 +1,164 @@
+{
+  "slug": "dan-patrick",
+  "name": "Dan Patrick",
+  "party": "Republican",
+  "office": "Lieutenant Governor, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Three-term Texas Lt. Governor who controls the Senate agenda; one of the most powerful and ideologically conservative state officials in the country, with a record defined by school choice, pro-life legislation, gun rights, fossil fuel promotion, and border security.",
+  "keyPositions": [
+    "Named school choice as highest legislative priority; pushed $1B ESA/voucher program (SB 2) through Senate",
+    "NRA A+ grade; controlled agenda for permitless carry, campus carry, and open carry",
+    "Controlled Senate agenda for SB 8 (heartbeat bill) and the Texas trigger law; Texas Right to Life 111-138% index",
+    "Created $10B Texas Energy Fund for gas plants; signed ESG anti-boycott law (SB 13); climate skeptic",
+    "Pushed THC ban (SB 3) as top 2025 priority despite GOP backlash"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "high",
+      "sources": ["11-year record controlling Senate agenda", "AFL-CIO opposition", "Property tax cut orientation over social spending"],
+      "notes": "Consistently prioritizes tax cuts over safety net expansion. AFL-CIO endorsed his opponent. No evidence of safety net advocacy. Not scored at 10 because some pragmatic spending exists (e.g., housing bill SB 15)."
+    },
+    "econ_investment": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": ["$18B property tax cut", "Texas Energy Fund ($10B)", "Small business tax cuts (prior Senate record)"],
+      "notes": "Generally opposes government investment except where it aligns with fossil fuel and business interests. The $10B Texas Energy Fund is a notable exception — government investment in gas plants. Scored at 7 rather than 9 because of selective willingness to use public funds for favored sectors."
+    },
+    "econ_tax_structure": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["$18B property tax cut", "Small business tax cuts as state senator", "2027 interim charges prioritize property tax relief"],
+      "notes": "Texas has no income tax. Patrick's record is consistently oriented toward cutting taxes — property tax relief is a signature issue. Tea Party Caucus founder."
+    },
+    "econ_school_choice": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["SB 2 ($1B ESA/voucher program)", "Campaign website", "Named as highest legislative priority"],
+      "notes": "School choice is his self-identified top priority. Pushed $1B voucher program through Senate. Not scored at 10 because he hasn't called for defunding public schools entirely — framed as expanding options."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Opposes Medicaid expansion (evidence summary)", "General limited-government orientation", "AFL-CIO opposition"],
+      "notes": "No specific healthcare coverage legislation highlighted in the evidence, but opposition to Medicaid expansion is noted and consistent with his overall record. Scored at 8 rather than 10 because healthcare is not a signature issue — evidence is more inferential."
+    },
+    "health_public_health": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": ["THC ban (SB 3)", "Ten Commandments in schools (SB 10)", "General anti-mandate orientation"],
+      "notes": "Complicated axis. Generally opposes government health mandates (individual liberty framing), but the THC ban is a notable exception where he uses government-mandate logic to restrict personal choice. The conflict prevents a score closer to 10. Scored at 7 to reflect the mixed signals — anti-mandate generally, but pro-mandate on THC."
+    },
+    "housing_supply_zoning": {
+      "score": 6,
+      "confidence": "medium",
+      "sources": ["SB 15 removing barriers to affordable housing"],
+      "notes": "SB 15 is supply-side deregulation — removing regulatory barriers to housing construction. This is a modestly pro-supply position. However, Patrick's general orientation toward local control and the anti-institutional-investor component complicates a pure market reading. Single source."
+    },
+    "housing_affordability_tools": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["SB 15 anti-institutional investor provisions", "General limited-government orientation"],
+      "notes": "No evidence of supporting government housing subsidies or rent control. SB 15 takes a market approach with anti-institutional-investor provisions. Limited direct evidence on this axis."
+    },
+    "justice_policing_accountability": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Back the blue orientation (evidence summary)", "Border security priority", "Law enforcement endorsements"],
+      "notes": "Strong law enforcement support. Border security as top priority. No evidence of supporting police reform measures. Consistent across his entire tenure."
+    },
+    "justice_sentencing_goals": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Tough on crime orientation (evidence summary)", "Border security priority", "General law-and-order framing"],
+      "notes": "Tough-on-crime orientation is consistent across his record. No evidence of rehabilitation-focused or decarceration positions."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["NRA A+ grade", "Permitless carry (HB 1927)", "Campus carry", "Open carry", "NRA endorsement 2022 and 2026"],
+      "notes": "NRA A+ with endorsement. Controlled Senate agenda for every major gun rights expansion in Texas over the past decade. Brief 2019 background-check advocacy after El Paso abandoned under NRA pressure — scored on the dominant long-term record per methodology."
+    },
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Climate skeptic (evidence summary)", "Texas Energy Fund for gas plants", "ESG anti-boycott law (SB 13)", "TXOGA endorsement"],
+      "notes": "Climate skeptic who actively promotes fossil fuel development and penalizes ESG-based divestment from fossil fuels. Not scored at 10 because no explicit climate denial rhetoric documented — framed as energy independence and economic growth."
+    },
+    "climate_energy_portfolio": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Texas Energy Fund ($10B for gas plants)", "ESG anti-boycott law (SB 13)", "TXOGA endorsement"],
+      "notes": "Created a $10B fund specifically for gas-fired power plants. Signed law penalizing companies that boycott fossil fuels. TXOGA (oil and gas association) endorsement. Clear fossil fuel prioritization."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.6,
+      "reasoning": "Anti-Sharia law interim charge with anti-Muslim rhetoric; opposes climate action (nature protection); opposes Medicaid expansion (welfare of all people); ESG anti-boycott law works against environmental protection. Consistently prioritizes in-group over universal welfare."
+    },
+    "benevolence": {
+      "score": 0.3,
+      "reasoning": "Property tax relief benefits constituents; housing bill SB 15 addresses affordability; school choice framed as helping families. However, THC ban and tough-on-crime stance suggest limited compassion scope. Benevolence is present but narrowly defined to culturally conservative Texans."
+    },
+    "tradition": {
+      "score": 0.9,
+      "reasoning": "Ten Commandments in public schools (SB 10); anti-CRT/DEI bans; pro-life legislation rooted in religious values; anti-Sharia law (defense of Christian cultural tradition); talk radio background in traditional conservative media. One of the most tradition-oriented politicians in any state."
+    },
+    "conformity": {
+      "score": 0.4,
+      "reasoning": "Works within institutional channels (legislative process); respects Senate procedures as presiding officer. However, aggressive use of agenda control to block legislation he opposes and force priorities suggests a power-oriented rather than process-oriented conformity. Mixed."
+    },
+    "security": {
+      "score": 0.8,
+      "reasoning": "Border security as top priority; law enforcement support; tough on crime; energy independence framing for Texas Energy Fund; general stability-and-safety orientation. Security is a core motivational frame across multiple policy domains."
+    },
+    "power": {
+      "score": 0.7,
+      "reasoning": "Controls Texas Senate agenda — one of the most powerful state officials in the country. Uses agenda control aggressively to advance priorities. TXOGA and corporate endorsements. Tea Party founder who built institutional power. Trump's Religious Liberty Commission leader. Consistently aligns with concentrated power structures."
+    },
+    "achievement": {
+      "score": 0.4,
+      "reasoning": "Self-made narrative (talk radio to Lt. Governor); small business tax cuts; school choice framed as opportunity. Achievement is present but secondary to tradition and security as motivational frames."
+    },
+    "hedonism": {
+      "score": -0.5,
+      "reasoning": "THC ban (SB 3) is an explicit restriction of personal pleasure choices, pushed as a top priority. Pro-life stance restricts reproductive autonomy. Ten Commandments mandate imposes religious moral framework. Consistently restricts personal lifestyle freedom in service of moral/traditional values."
+    },
+    "stimulation": {
+      "score": -0.3,
+      "reasoning": "Defends existing institutional order and cultural traditions against change. Anti-DEI, anti-CRT orientation explicitly opposes cultural transformation. While politically combative and entrepreneurial in style, the substantive orientation is preservation of existing order, not novelty."
+    },
+    "self_direction": {
+      "score": -0.1,
+      "reasoning": "Mixed signals. Strong on gun rights (individual liberty) and school choice (parental control). But THC ban, abortion restrictions, Ten Commandments mandate, and anti-DEI legislation restrict individual autonomy in other domains. Net effect is slightly negative — liberty rhetoric is selective."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Firearms — 2019 background check advocacy",
+      "description": "Briefly advocated for background checks after the 2019 El Paso shooting, putting him in conflict with the NRA. Abandoned the position within weeks under NRA pressure. Long-term NRA A+ record and agenda control for gun rights expansion dominate.",
+      "sources": ["Texas Tribune Sept 2019", "NRA A+ grade", "Permitless carry HB 1927"],
+      "scoringImpact": "Scored on dominant long-term record (justice_firearms: 9). Brief deviation noted but does not materially affect score."
+    },
+    {
+      "topic": "THC ban vs. liberty conservatism",
+      "description": "Pushed THC ban (SB 3) as top 2025 priority despite being a liberty conservative on most other issues. Uses government-mandate logic to restrict personal choice, contradicting his anti-mandate stance on other issues.",
+      "sources": ["Texas Tribune June 2025", "SB 3"],
+      "scoringImpact": "Affects health_public_health score (7 instead of higher) and hedonism value (-0.5). Reflects genuine inconsistency in liberty framework."
+    },
+    {
+      "topic": "Housing — mixed market philosophy",
+      "description": "SB 15 combines supply-side deregulation (pro-market) with anti-institutional-investor provisions (anti-market). Internally inconsistent market philosophy on housing.",
+      "sources": ["SB 15"],
+      "scoringImpact": "Moderates housing_supply_zoning score to 6. Prevents confident classification on housing axes."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 13,
+    "axesSkipped": ["housing_transport_priority", "climate_permitting"],
+    "reasonSkipped": "No evidence found in research file for transit/transportation policy or permitting reform positions",
+    "overallConfidence": "high",
+    "researchGaps": ["No specific healthcare cost control positions documented", "No transit or transportation policy record found", "No permitting reform positions found", "Limited direct evidence on housing affordability tools — mostly inferred from ideology"]
+  }
+}

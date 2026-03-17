@@ -1,0 +1,127 @@
+{
+  "slug": "clayton-tucker",
+  "name": "Clayton Tucker",
+  "party": "Democratic",
+  "office": "Agriculture Commissioner, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Fifth-generation Texas rancher and progressive populist running for Agriculture Commissioner on an anti-corporate-consolidation, family-farm-preservation platform; no prior elected office or voting record.",
+  "keyPositions": [
+    "Central theme: break up monopolies in agriculture — four corporations control 60%+ of meat, seed, and dairy markets",
+    "Universal free school meals with farm-to-school local sourcing from Texas farmers",
+    "Protect Texas aquifers from AI data center water consumption and PFAS contamination",
+    "Restore rural healthcare access through TDA's State Office of Rural Health (25+ rural hospitals closed)",
+    "Supported Medicaid expansion and wind energy investment in 2020 state senate race"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Campaign website (universal free school meals)", "2020 Senate campaign (Medicaid expansion)", "Campaign website (rural healthcare access)"],
+      "notes": "Multiple consistent signals toward broad safety net expansion. Free school meals is a universal program proposal. Rural health framing uses TDA levers rather than federal entitlements, but direction is clearly expansionary."
+    },
+    "econ_investment": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Campaign website (farm-to-school programs)", "Campaign website (soil health, water infrastructure)", "Campaign website (rural health infrastructure)"],
+      "notes": "Aggressive public investment across agriculture, food systems, water infrastructure, and rural health. All proposals involve expanding government programs and spending through TDA."
+    },
+    "econ_school_choice": {
+      "score": 1,
+      "confidence": "low",
+      "sources": ["2020 Senate campaign platform (anti-privatization)"],
+      "notes": "Explicitly opposed school privatization in 2020 race. No 2026 restatement found, but universal free school meals through public schools is consistent. Scored low confidence because the direct anti-voucher statement is from a prior cycle."
+    },
+    "health_coverage_model": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["2020 Senate campaign (Medicaid expansion)", "2026 campaign website ('affordable, timely healthcare for all')"],
+      "notes": "2020 position was explicit Medicaid expansion. 2026 language is vaguer — 'affordable, timely healthcare for all' — possibly softened for statewide race or scoped to TDA's rural health mandate. Scored on the 2020 position as the more specific evidence, but confidence is low due to age and softer 2026 framing."
+    },
+    "health_public_health": {
+      "score": 2,
+      "confidence": "medium",
+      "sources": ["Campaign website (food safety/chemical removal)", "Campaign website (PFAS opposition)", "Campaign website (school nutrition standards)"],
+      "notes": "Strong regulatory stance: remove harmful chemicals from food, oppose PFAS forever chemicals, eliminate processed foods from schools. All point toward robust public health mandates and regulation within TDA scope."
+    },
+    "climate_ambition": {
+      "score": 2,
+      "confidence": "low",
+      "sources": ["2020 Senate campaign (wind investment, climate crisis framing)", "2026 campaign (soil health, water protection, anti-AI-data-center water use)"],
+      "notes": "2020 race used explicit climate crisis language and wind investment. 2026 campaign frames environmental issues through agricultural lens (soil health, water, PFAS) appropriate to TDA scope. Direction is consistent but 2026 evidence is indirect on broader climate ambition."
+    },
+    "climate_energy_portfolio": {
+      "score": 3,
+      "confidence": "low",
+      "sources": ["2020 Senate campaign (wind energy investment)"],
+      "notes": "Only direct energy portfolio evidence is 2020 wind investment support. 2026 campaign focuses on water/soil rather than energy mix. Score reflects pro-renewables lean but low confidence due to age and indirectness of evidence."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": 0.7,
+      "reasoning": "Universal free school meals, healthcare for all, environmental/water protection as public goods, food safety regulation protecting all consumers. Internationalist background (China, Taiwan). Anti-monopoly framing is about fairness for all farmers and consumers."
+    },
+    "benevolence": {
+      "score": 0.7,
+      "reasoning": "Family farm preservation, rural community healthcare, school nutrition for children, protecting small farmers against corporate consolidation. Consistent care-for-community orientation centered on rural Texas families."
+    },
+    "self-direction": {
+      "score": 0.4,
+      "reasoning": "Founded Texas Progressive Caucus and ran independent-minded campaigns. International career path (environmental research in China, teaching in Taiwan). Rancher identity suggests self-reliance. But political identity is more collectivist than individualist."
+    },
+    "stimulation": {
+      "score": 0.3,
+      "reasoning": "Cross-cultural career (China, Taiwan, NSF research), Mandarin Chinese study, willingness to challenge incumbents and political norms in deep-red Texas. Variety-seeking evident in biography."
+    },
+    "achievement": {
+      "score": 0.3,
+      "reasoning": "Founded multiple organizations (TX Progressive Caucus), professional career at Trade Justice Education Fund, ran for state senate. Demonstrates drive, but rhetoric centers community outcomes over personal accomplishment."
+    },
+    "security": {
+      "score": 0.3,
+      "reasoning": "Food safety, water protection, and PFAS opposition are safety-and-protection oriented. However, these are framed as collective security rather than personal/national security, and he is a political challenger seeking change rather than stability."
+    },
+    "tradition": {
+      "score": 0.2,
+      "reasoning": "5th-generation rancher identity is deeply rooted in Texas agricultural tradition. Family farm preservation is literally about maintaining traditional ways of life. But politically progressive — seeks systemic change, not preservation of political status quo."
+    },
+    "conformity": {
+      "score": -0.3,
+      "reasoning": "Progressive populist challenger in deep-red Texas. Founded progressive caucus. Challenges corporate and political establishment. Does not conform to dominant political culture of his state or sector."
+    },
+    "power": {
+      "score": -0.5,
+      "reasoning": "Anti-monopoly, anti-corporate-concentration is the defining campaign theme. Explicitly works against concentrated economic power. 'Monopolies have rigged the system' framing positions him against power structures. Endorsed by grassroots organizations rather than corporate interests."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No meaningful signal in either direction."
+    }
+  },
+  "conflicts": [],
+  "evidenceSummary": {
+    "axesScored": 7,
+    "axesSkipped": [
+      "econ_tax_structure",
+      "health_cost_control",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "First-time statewide candidate running for Agriculture Commissioner — no voting record, no interest group ratings, and no stated positions on housing, justice, firearms, tax structure, healthcare cost control, or permitting. TDA scope naturally limits relevant policy positions.",
+    "overallConfidence": "low-to-medium",
+    "researchGaps": [
+      "No voting record exists (never held elected office)",
+      "No interest group scorecards available",
+      "No firearms, policing, or criminal justice positions found",
+      "No housing or transportation positions found",
+      "No specific tax policy positions found (antitrust is not tax policy)",
+      "2020 Senate race positions are 6 years old and may not fully reflect 2026 stances",
+      "Healthcare and climate positions are inferred partly from a prior race for a different office"
+    ]
+  }
+}

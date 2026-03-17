@@ -1,0 +1,98 @@
+{
+  "candidateSlug": "don-huffines",
+  "candidateName": "Don Huffines",
+  "party": "Republican",
+  "office": "Comptroller of Public Accounts, Texas",
+  "contestId": "TX-COMPTROLLER-2026",
+  "incumbencyStatus": "challenger",
+  "researchedAt": "2026-03-10T00:00:00Z",
+  "researchedBy": "researcher-agent",
+
+  "biography": {
+    "fullName": "Donald Blaine Huffines",
+    "born": "1958-04-26",
+    "education": "B.B.A. in Finance, University of Texas at Austin",
+    "career": "Texas State Senator, District 16, Dallas County (2015-2019). Republican candidate for Governor 2022 (lost to Abbott in primary). Co-founder Huffines Communities (DFW real estate developer). Tea Party activist. Self-describes as Rothbardian libertarian-conservative.",
+    "primaryResult": "Won Republican primary March 3, 2026 with 57%+ in four-way race; avoided runoff. Defeated acting comptroller Kelly Hancock, railroad commissioner Christi Craddick, and Michael Berlanga.",
+    "campaignFinance": "Self-funded ~$13M ($10M personal loan + $3M from twin brother Phillip)"
+  },
+
+  "campaignWebsite": "https://donhuffines.com/issues/",
+
+  "policyPositions": [
+    {"topic": "Government efficiency", "position": "'DOGE Texas' — expose waste, fraud, abuse; workforce reduction implied; put savings into property tax relief", "confidence": "HIGH"},
+    {"topic": "Property taxes", "position": "Slash/eliminate property taxes — signature issue across 2022 Gov race and 2026 Comptroller race", "confidence": "HIGH"},
+    {"topic": "School vouchers/ESA", "position": "Will administer $1B ESA program; 'ensure it is transparent and empowers parents with no strings attached'", "confidence": "HIGH"},
+    {"topic": "DEI", "position": "'Eliminate woke DEI from government'; cites forcing shutdown of state-run transgender youth website", "confidence": "HIGH"},
+    {"topic": "Immigration", "position": "'Stand with Trump to secure border; eliminate all taxpayer-funded benefits to illegal aliens including billions educating illegal aliens in schools'", "confidence": "HIGH"},
+    {"topic": "Abortion", "position": "'Complete abolition of abortion; human life deserves legal protection from conception until natural death; supports enforcement of Comstock Act'", "confidence": "HIGH", "source": "iVoterGuide"},
+    {"topic": "Religion in schools", "position": "'Put God and prayer back in the classroom'", "confidence": "HIGH", "source": "iVoterGuide"},
+    {"topic": "Budget transparency", "position": "End 'use it or lose it' mentality in government budgeting", "confidence": "HIGH", "source": "Texas Scorecard interview"}
+  ],
+
+  "votingRecord": {
+    "chamber": "Texas State Senate, District 16",
+    "sessions": ["84th Legislature (2015)", "85th Legislature (2017)"],
+    "conservativeRanking": "4th most conservative senator in 2017 (Rice University Baker Institute)",
+    "keyVotes": [
+      {"bill": "SB 4 (Sanctuary Cities Ban)", "vote": "Yes (co-sponsor)", "session": "85th"},
+      {"bill": "Constitutional Carry", "action": "Authored first TX Constitutional Carry bill; voted yes on compromise open carry SB 17 'with heavy heart' — didn't go far enough", "session": "84th"},
+      {"bill": "LGBT nondiscrimination ordinance preemption", "action": "Authored (did not pass)", "session": "84th"},
+      {"bill": "Vehicle safety inspection elimination", "vote": "Yes (authored)", "session": "85th"},
+      {"bill": "Pro-life bills", "vote": "Yes on all", "notes": "100% pro-life record per Texas Right to Life"},
+      {"bill": "School voucher study bill", "action": "Authored", "session": "84th"}
+    ]
+  },
+
+  "interestGroupRatings": [
+    {"organization": "Texas Right to Life", "score": "100% (all sessions 2015-2019)"},
+    {"organization": "Texans for Fiscal Responsibility", "score": "97-99%", "grade": "A"},
+    {"organization": "Young Conservatives of Texas", "score": "92% career"},
+    {"organization": "Gun Owners of America", "rating": "Endorsed (credits him as first TX lawmaker to file Constitutional Carry)"}
+  ],
+
+  "endorsements": [
+    {"name": "Donald Trump", "date": "2026-02-27", "notes": "Countered Gov. Abbott's backing of Kelly Hancock"},
+    {"name": "Ted Cruz"},
+    {"name": "Charlie Kirk / Turning Point USA"},
+    {"name": "Texas Right to Life PAC"},
+    {"name": "Gun Owners of America"},
+    {"name": "Young Conservatives of Texas"}
+  ],
+
+  "positionConflicts": [
+    {
+      "topic": "Property taxes vs school funding",
+      "conflict": "Calls for eliminating/slashing property taxes (major source of local school funding) while promising aggressive implementation of $1B ESA/voucher program. Fiscal mechanics not reconciled.",
+      "sources": ["Campaign website", "Texas Tribune", "ABC13 2022 coverage"]
+    },
+    {
+      "topic": "Libertarian label vs social conservatism",
+      "conflict": "Cites Murray Rothbard as ideological touchstone (libertarian), but positions on abortion (Comstock Act enforcement), religion in public schools, and LGBT ordinance preemption are socially authoritarian rather than libertarian. Framework applies selectively to fiscal/economic issues.",
+      "sources": ["Texas Monthly", "iVoterGuide", "2015 Senate record"]
+    }
+  ],
+
+  "evidenceSummary": {
+    "axesScorable": 12,
+    "overallConfidence": "HIGH",
+    "strongAxes": ["econ_public_investment (TFR 97-99%)", "econ_school_choice (100% consistent 2015-2026)", "justice_firearms_policy (Constitutional Carry author, GOA endorsed)", "health_coverage_model (implied — anti-expansion)"],
+    "weakAxes": ["climate/energy (no specific statements)", "healthcare cost control (limited evidence)", "housing/zoning (real estate background but no stated policy)", "police_accountability (general law-and-order only)"],
+    "notes": "4-year Senate voting record + 2022 Gov campaign + 2026 Comptroller campaign provides extensive evidence. Interest group scorecards triangulate consistently. Score from actual record, not 'libertarian' self-label — they diverge significantly on social issues."
+  },
+
+  "sources": [
+    {"url": "https://donhuffines.com/issues/", "description": "Campaign issues page"},
+    {"url": "https://ballotpedia.org/Donald_Huffines", "description": "Ballotpedia"},
+    {"url": "https://en.wikipedia.org/wiki/Don_Huffines", "description": "Wikipedia"},
+    {"url": "https://www.texastribune.org/2026/03/06/don-huffines-texas-comptroller-school-vouchers-abbott/", "description": "Tribune — post-primary"},
+    {"url": "https://www.texastribune.org/2026/02/25/texas-comptroller-gop-primary-2026-culture-wars-huffines-craddick-hancock/", "description": "Tribune — culture wars framing"},
+    {"url": "https://www.texasmonthly.com/news-politics/texas-gop-comptroller-primary-don-huffines/", "description": "Texas Monthly profile"},
+    {"url": "https://texasrighttolife.com/huffinesrecord/", "description": "Texas Right to Life record"},
+    {"url": "https://ratings.yct.org/legislators/don-huffines/85th-legislature", "description": "YCT rating"},
+    {"url": "https://index.texastaxpayers.com/legislators/don-huffines/2017-index", "description": "TFR fiscal index"},
+    {"url": "https://ivoterguide.com/candidate/20037/race/23526/election/1343", "description": "iVoterGuide questionnaire"},
+    {"url": "https://texasscorecard.com/state/interview-don-huffines-on-primary-victory-and-plans-for-comptrollers-office/", "description": "Texas Scorecard post-primary interview"},
+    {"url": "https://www.transparencyusa.org/tx/candidate/donald-huffines", "description": "Campaign finance"}
+  ]
+}

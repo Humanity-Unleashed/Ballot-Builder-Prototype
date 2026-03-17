@@ -43,6 +43,23 @@ export default function PersonalImpactSection({ impacts }: PersonalImpactSection
                 {impact.detail}
               </p>
             )}
+            {impact.source && (
+              <p className="text-[11px] text-gray-400 leading-[15px] ml-4">
+                {impact.sourceUrl ? (
+                  <a
+                    href={impact.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-primary/60 hover:text-brand-primary underline decoration-dotted"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {impact.source}
+                  </a>
+                ) : (
+                  impact.source
+                )}
+              </p>
+            )}
           </div>
         ))}
       </div>

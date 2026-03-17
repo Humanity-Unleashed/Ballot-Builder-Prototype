@@ -1,0 +1,127 @@
+{
+  "slug": "james-wright",
+  "name": "James 'Jim' Wright",
+  "party": "Republican",
+  "office": "Railroad Commissioner, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Incumbent Railroad Commissioner and 5th-generation rancher with deep oil-and-gas industry ties; consistently pro-fossil-fuel regulatory record with climate skepticism, tempered by pragmatic support for orphan well plugging and produced water reuse.",
+  "keyPositions": [
+    "Explicit climate skepticism: 'I'm not sure we have good facts on what's causing our climate change'",
+    "Pro-deregulation: opposes federal methane rules, supports cutting permitting red tape for pipelines and LNG",
+    "Supports geothermal, hydrogen, and CCS as extensions of fossil fuel infrastructure, not replacements",
+    "Oversaw plugging of 730+ orphan wells using federal IIJA funds; received IOGCC Environmental Stewardship Award",
+    "255 prior environmental violations as private businessman; recused from Eagleford Recycling vote due to financial ties"
+  ],
+  "axisStances": {
+    "climate_ambition": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["2020 climate skepticism quotes (HuffPost)", "Opposition to Biden EPA methane rule", "5-year RRC voting record", "Campaign website rhetoric"],
+      "notes": "Explicit climate skepticism in 2020 with no public reversal found. Applauded legal challenge to federal methane regulations. Orphan well plugging was federally funded and does not indicate climate concern — it is standard industry cleanup. Score reflects consistent pattern of opposing climate-motivated regulation."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": ["Campaign website", "RRC regulatory record", "2020 quotes on solar/wind", "Shale Magazine interview", "TXOGA/Pipeline Association endorsements"],
+      "notes": "Stated solar and wind 'harm the environment worse than natural gas' (2020). Supports geothermal, hydrogen, CCS — but explicitly as extensions of fossil fuel infrastructure, not replacements. Approved flaring permits while verbally criticizing the practice. Not scored at 9-10 because he does acknowledge some emerging energy tech, just within a fossil-first framework."
+    },
+    "climate_permitting": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["Campaign website ('cut red tape')", "Opposition to Railway Safety Act 2023", "Opposition to federal methane permitting", "Congressional testimony on orphan well state flexibility"],
+      "notes": "Consistent record of opposing federal permitting requirements and advocating faster state-level approvals. Core campaign message is reducing regulatory burden on oil and gas. Testified before Congress for more state flexibility. Score reflects near-maximum deregulatory posture on permitting."
+    },
+    "econ_investment": {
+      "score": 7,
+      "confidence": "medium",
+      "sources": ["Campaign website", "Opposition to federal regulatory framework", "Support for state over federal control of energy investment"],
+      "notes": "Inferred from consistent anti-federal-regulation posture and pro-private-sector energy development stance. Accepted IIJA orphan well funds (federal public investment), which complicates a pure anti-government-investment reading. Scored medium confidence because RRC jurisdiction is narrow and does not cover broad economic investment policy."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.6,
+      "reasoning": "Explicit climate skepticism works directly against environmental protection for all. 255 prior environmental violations as private businessman. Pattern of approving flaring permits despite stated concern. Actions consistently prioritize industry over environmental/public welfare."
+    },
+    "benevolence": {
+      "score": 0.2,
+      "reasoning": "Some community-oriented signals: landowner rights advocacy, produced water reuse for Texas water scarcity, orphan well plugging. But these are narrow and often aligned with industry interests rather than pure community welfare. Weak positive."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "5th-generation Texas rancher identity; 20+ year PRCA bull rider; defense of existing energy economy and way of life; Texas Alliance for Life endorsement; resistance to change in energy policy. Deep cultural conservatism expressed through identity and policy."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Works within institutional channels (RRC, congressional testimony). Recused from conflict-of-interest vote when pressed — suggests some deference to institutional norms. However, 255 prior environmental violations as businessman indicate a history of norm-bending. Mixed signal."
+    },
+    "security": {
+      "score": 0.5,
+      "reasoning": "Energy security framing is central: 'keep American energy strong,' defend Texas jobs, oppose federal interference. Post-Uri weatherization rule shows responsiveness to infrastructure security threats. Framing is national energy independence and economic stability."
+    },
+    "power": {
+      "score": 0.6,
+      "reasoning": "Deep alignment with oil and gas industry power structure. TXOGA PAC funding, Pipeline Association endorsement, stock holdings in 6 energy services companies. Industry insider who became its regulator. Financial ties to regulated entities. Governor Abbott endorsement."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Self-made businessman narrative: started in oil at 19, built multiple companies, won primary against incumbent. Professional bull rider for 20+ years. Personal success and competence demonstration are central to identity."
+    },
+    "hedonism": {
+      "score": 0.0,
+      "reasoning": "No evidence relevant to personal liberty or lifestyle freedom issues."
+    },
+    "stimulation": {
+      "score": -0.3,
+      "reasoning": "Explicitly defends existing energy order against transformation. Opposes disruptive climate policy. Supports emerging tech only as extensions of status quo, not novel disruption. Anti-change orientation on core policy domain."
+    },
+    "self-direction": {
+      "score": 0.4,
+      "reasoning": "Anti-federal-regulation stance reflects individual and state liberty framing. Landowner rights advocacy. Opposes mandates. However, this is selective — applies to industry freedom, not broadly across social domains. Moderate positive."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Flaring rhetoric vs. regulatory action",
+      "description": "Verbally criticizes flaring practices while consistently approving flaring permits (e.g., Callon Petroleum 7th consecutive year). Pattern of permissive votes with rhetorical concern.",
+      "sources": ["InsideClimate News", "Commission Shift watchdog reports"],
+      "scoringImpact": "Scored on regulatory record (permissive) not rhetoric (critical). Reflected in climate_energy_portfolio score of 8."
+    },
+    {
+      "topic": "Conflict of interest — regulated industry ties",
+      "description": "Founded oilfield waste company (DeWitt Recyclable Products); holds stock in 6 energy services companies per 2024 disclosures. Recused from Eagleford Recycling vote in 2025 — first recusal in 5+ years, suggesting prior votes may have involved unrecused conflicts.",
+      "sources": ["InsideClimate News", "Commission Shift", "DeSmog"],
+      "scoringImpact": "Reflected in power value score (0.6) and universalism score (-0.6). Does not change axis scores directly but contextualizes them."
+    },
+    {
+      "topic": "Prior Democratic donations vs. Republican identity",
+      "description": "Donated $46,050 to Abel Herrero (D), $750 to Leticia Van de Putte (D), $1,000 to Joe Straus. Used as primary attack by opponent Bo French.",
+      "sources": ["Texas Scorecard"],
+      "scoringImpact": "No scoring impact — donations were pre-political-career and do not reflect current policy positions."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 4,
+    "axesSkipped": [
+      "econ_safetynet",
+      "econ_tax_structure",
+      "econ_school_choice",
+      "health_coverage_model",
+      "health_cost_control",
+      "health_public_health",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "justice_firearms"
+    ],
+    "reasonSkipped": "Railroad Commission jurisdiction covers oil, gas, mining, and pipeline regulation only. No positions found on healthcare, housing, education, criminal justice, firearms, or tax policy. These are genuinely outside Wright's public record and campaign platform.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No positions on any social policy issues (healthcare, education, criminal justice, firearms)",
+      "No tax or fiscal policy positions beyond opposition to federal energy regulation",
+      "Limited information on housing or transportation views"
+    ]
+  }
+}

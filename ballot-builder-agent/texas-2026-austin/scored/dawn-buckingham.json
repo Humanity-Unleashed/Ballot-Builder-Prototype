@@ -1,0 +1,143 @@
+{
+  "slug": "dawn-buckingham",
+  "name": "Dawn Buckingham",
+  "party": "Republican",
+  "office": "Land Commissioner, Texas, 2026",
+  "scoredAt": "2026-03-10T12:00:00Z",
+  "profileSummary": "Incumbent Texas Land Commissioner and former state senator; manages 13M acres of state land with a fossil-fuel-first revenue strategy, strong social conservative record, and pragmatic approach to carbon sequestration as a school fund revenue source rather than climate policy.",
+  "keyPositions": [
+    "Champions oil and gas leasing on state lands as primary economic driver; secured world's largest carbon sequestration lease ($130M for school fund) framed as revenue, not climate action",
+    "Co-authored SB 8 (heartbeat act) and supported HB 1280 (trigger law); endorsed by Texas Alliance for Life 2026",
+    "NRA-endorsed; early supporter of constitutional carry (HB 1927) and authored dozens of pro-gun bills",
+    "Committed GLO resources and 1,402 acres for border wall staging and deportation facilities (Jocelyn Initiative)",
+    "Opposes taxpayer-funded healthcare expansion beyond Medicare/Medicaid"
+  ],
+  "axisStances": {
+    "econ_safetynet": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["iVoterGuide 2022 response on healthcare", "overall conservative record"],
+      "notes": "Explicitly stated Medicaid/Medicare should remain but no other taxpayer-funded programs are necessary. Veterans benefits are the exception (VLB program). No direct safety net votes found, but consistent conservative framing and 2022 questionnaire responses indicate strong preference for limited government programs."
+    },
+    "econ_investment": {
+      "score": 6,
+      "confidence": "medium",
+      "sources": ["GLO record", "Coastal Resiliency Master Plan", "carbon sequestration lease"],
+      "notes": "Complicated picture. As Land Commissioner, she has actively invested public resources: $84.6M CEPRA coastal resilience, $5.7B Hurricane Harvey recovery. But these are core GLO functions, not ideological public investment. Carbon sequestration lease is framed as private-sector revenue generation for school fund, not government intervention. Senate-era Rice ranking (8th-13th most conservative) suggests limited-government orientation. Score reflects pragmatic public investment within existing institutional mandates, not expansion."
+    },
+    "econ_tax_structure": {
+      "score": 8,
+      "confidence": "low",
+      "sources": ["HB 3 property tax reform vote (31-0)", "overall conservative orientation"],
+      "notes": "Voted for property tax reform in Senate. No direct statements on progressive taxation found. Inference from consistent conservative positioning and Trump endorsement. Low confidence because Land Commissioner role does not directly involve tax policy."
+    },
+    "health_coverage_model": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["iVoterGuide 2022 questionnaire"],
+      "notes": "Explicitly stated Medicare and Medicaid should remain but no other taxpayer-funded programs are necessary. This is firmly market-based but stops short of calling for repeal of existing programs."
+    },
+    "health_public_health": {
+      "score": 8,
+      "confidence": "medium",
+      "sources": ["Co-authored church protection/COVID powers legislation", "conservative record"],
+      "notes": "Co-authored legislation to protect churches from COVID restrictions and limit executive COVID powers. Consistent with individual choice over collective mandates orientation."
+    },
+    "justice_firearms": {
+      "score": 9,
+      "confidence": "high",
+      "sources": ["NRA endorsement 2022", "HB 1927 constitutional carry vote", "nearly two dozen pro-gun bills authored"],
+      "notes": "NRA endorsed citing 'nearly two dozen pro-gun bills.' Early supporter of permitless carry. One of the strongest pro-gun records in the Texas Senate. Only scored 9 rather than 10 because no explicit opposition to all regulation was documented."
+    },
+    "climate_ambition": {
+      "score": 8,
+      "confidence": "high",
+      "sources": ["GLO fossil fuel leasing record", "carbon sequestration framing", "Shale Magazine interview"],
+      "notes": "Manages fossil fuel leasing as primary GLO mission. Carbon sequestration lease (1.2M acres) and coastal resilience ($84.6M) are objectively climate-positive actions, but she explicitly frames them as revenue generation and disaster prep, never as climate policy. The research file warns not to infer climate ambition from these actions. Scored 8 rather than 9-10 because the pragmatic revenue-maximizing actions do have real emissions-reduction effects, even if unintentional."
+    },
+    "climate_energy_portfolio": {
+      "score": 8,
+      "confidence": "high",
+      "sources": ["GLO fossil fuel leasing program", "carbon sequestration as revenue supplement", "nuclear support"],
+      "notes": "Pro-oil-and-gas as primary energy and economic driver. Supports carbon sequestration and nuclear as 'revenue supplements' not alternatives to fossil fuels. Not scored at 9-10 because she does embrace carbon sequestration and nuclear as part of the portfolio, even if motivated by revenue rather than transition."
+    }
+  },
+  "valueStances": {
+    "universalism": {
+      "score": -0.4,
+      "reasoning": "Offered state land for deportation facilities; immigration enforcement orientation that explicitly excludes outsiders. Fossil fuel leasing prioritizes economic gain over environmental protection. Coastal resilience spending is narrowly framed as Texas-specific disaster prep. No evidence of concern for global welfare, international cooperation, or broad environmental protection as values."
+    },
+    "benevolence": {
+      "score": 0.5,
+      "reasoning": "Strong veteran support through VLB ($1B+ disbursed). Record $4.8B PSF distribution for public schools. Hurricane Harvey recovery ($5.7B). These are genuine community-welfare actions within her jurisdictional scope. Benevolence is real but bounded to in-group (Texans, veterans, schoolchildren)."
+    },
+    "tradition": {
+      "score": 0.7,
+      "reasoning": "Co-authored heartbeat act and supported trigger law (traditional values on reproductive issues). Church protection legislation during COVID. Trump-aligned cultural conservatism. NRA endorsement aligns with traditional gun culture. Manages the Alamo as part of GLO portfolio, literally preserving Texas heritage."
+    },
+    "conformity": {
+      "score": 0.3,
+      "reasoning": "Works within institutional frameworks (GLO, state legislature). Uses existing legal authority for policy goals. However, the Jocelyn Initiative (using land management authority for immigration enforcement) pushes the boundaries of the Land Commissioner's traditional role, suggesting willingness to stretch institutional norms when aligned with political goals."
+    },
+    "security": {
+      "score": 0.7,
+      "reasoning": "Border security is a central theme (Jocelyn Initiative, border wall staging). Disaster preparedness through coastal resilience and Harvey recovery. Law enforcement alignment. Veterans housing security. Strong emphasis on physical and territorial safety."
+    },
+    "power": {
+      "score": 0.4,
+      "reasoning": "Trump endorsement and establishment Republican backing. Alignment with fossil fuel industry interests through GLO leasing. NRA and donor class alignment. Expanding GLO authority into immigration enforcement suggests comfort with institutional power accumulation. Not scored higher because she is not primarily defined by power-seeking."
+    },
+    "achievement": {
+      "score": 0.5,
+      "reasoning": "Personal narrative of accomplishment: first woman Land Commissioner, surgeon career, first Republican from Travis County. Revenue maximization framing (largest carbon sequestration lease, record PSF distribution) emphasizes measurable results and competence. Meritocratic orientation evident in biography and messaging."
+    },
+    "hedonism": {
+      "score": -0.3,
+      "reasoning": "Social conservative record on reproductive rights and COVID restrictions on churches suggests comfort restricting personal lifestyle choices. No libertarian personal freedom framing despite gun rights support (which is framed through self-direction/tradition, not hedonism)."
+    },
+    "stimulation": {
+      "score": -0.2,
+      "reasoning": "Defender of existing institutions and traditional values. The carbon sequestration lease is innovative in execution but framed as preserving the existing economic model, not disrupting it. No reform or transformation rhetoric. Status quo orientation on most cultural and policy questions."
+    },
+    "self-direction": {
+      "score": 0.2,
+      "reasoning": "Mixed signals. Strong gun rights record (individual liberty framing). But co-authored abortion restrictions and COVID church protection legislation that restrict some personal choices while protecting others. The net effect is selective self-direction: high for gun owners and religious practitioners, low for reproductive autonomy. Modest positive score reflects the partial pattern."
+    }
+  },
+  "conflicts": [
+    {
+      "topic": "Climate actions vs. climate framing",
+      "description": "Manages the world's largest carbon sequestration lease (1.2M acres, projected $10B/decade) and invested $84.6M in coastal resilience, which are objectively climate-positive actions. However, she frames these entirely as revenue generation and disaster preparedness, never as climate policy. Her primary mission remains fossil fuel leasing.",
+      "sources": ["GLO record", "Shale Magazine interview", "campaign website"],
+      "scoringImpact": "Climate axes scored at 8 rather than 9-10 to reflect that her actions have real emissions-reduction effects even though her framing and intent are not climate-motivated."
+    },
+    {
+      "topic": "GLO authority scope expansion",
+      "description": "Used Land Commissioner authority to commit state land for deportation facilities and border wall staging (Jocelyn Initiative), which is a novel expansion of the office's traditional portfolio beyond land management, veterans, and school fund.",
+      "sources": ["Jocelyn Initiative announcement Nov 2024"],
+      "scoringImpact": "Reflected in conformity value score (slightly lower than pure institutionalist) and noted as evidence of security/power orientation."
+    }
+  ],
+  "evidenceSummary": {
+    "axesScored": 8,
+    "axesSkipped": [
+      "econ_school_choice",
+      "housing_supply_zoning",
+      "housing_affordability_tools",
+      "housing_transport_priority",
+      "justice_policing_accountability",
+      "justice_sentencing_goals",
+      "health_cost_control",
+      "climate_permitting"
+    ],
+    "reasonSkipped": "Land Commissioner role does not cover most of these policy areas. Senate-era record on school choice, policing, sentencing, and healthcare cost control was not sufficiently documented in research. VLB housing is veteran-specific and does not inform general housing policy axes.",
+    "overallConfidence": "high",
+    "researchGaps": [
+      "No policing or criminal justice positions documented",
+      "Senate-era votes on school choice not recovered",
+      "No positions on healthcare cost control mechanisms",
+      "No housing or transit policy beyond veteran-specific VLB program",
+      "No permitting reform positions found"
+    ]
+  }
+}

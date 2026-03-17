@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Summary — Axis Breakdown Options</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #1a1a2e;
+      color: #111827;
+      padding: 40px 20px;
+    }
+
+    .mockup-label {
+      color: #a5b4fc;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .mockup-title {
+      color: #e0e7ff;
+      font-size: 28px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .mockup-subtitle {
+      color: #94a3b8;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 48px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .mockup-subtitle strong { color: #c4b5fd; }
+
+    .side-by-side {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+
+    .column-label {
+      color: #c4b5fd;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .column-desc {
+      color: #94a3b8;
+      font-size: 11px;
+      text-align: center;
+      margin-bottom: 16px;
+      max-width: 350px;
+      line-height: 1.5;
+    }
+
+    .phone-frame {
+      width: 390px;
+      background: #f9fafb;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      border: 6px solid #2a2a4a;
+    }
+    .phone-screen {
+      padding: 24px 20px 32px;
+    }
+
+    /* ── Common card styles ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    .domain-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .domain-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .domain-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .domain-emoji {
+      font-size: 14px;
+    }
+    .domain-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #374151;
+    }
+    .fine-tune-btn {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6366f1;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .fine-tune-btn svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* ── Single slider (current) ── */
+    .statement {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .lean-meter {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pole-label {
+      width: 70px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+      color: #9ca3af;
+    }
+    .pole-label.left { text-align: right; }
+    .pole-label.right { text-align: left; }
+    .pole-label.active { color: #6366f1; }
+
+    .track-container {
+      flex: 1;
+      position: relative;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+    .track-bar {
+      width: 100%;
+      height: 6px;
+      background: #f3f4f6;
+      border-radius: 3px;
+      position: relative;
+    }
+    .track-notch {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 10px;
+      background: #e5e7eb;
+    }
+    .track-notch.center {
+      height: 14px;
+      background: #d1d5db;
+    }
+    .track-dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #6366f1;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    /* ── Compact axis bar (Option A) ── */
+    .axis-row {
+      margin-bottom: 10px;
+    }
+    .axis-row:last-child {
+      margin-bottom: 0;
+    }
+    .axis-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .mini-meter {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .mini-pole {
+      width: 72px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      color: #9ca3af;
+      line-height: 1.2;
+    }
+    .mini-pole.left { text-align: right; }
+    .mini-pole.right { text-align: left; }
+    .mini-pole.active { color: #6366f1; }
+    .mini-track {
+      flex: 1;
+      position: relative;
+      height: 18px;
+      display: flex;
+      align-items: center;
+    }
+    .mini-track-bar {
+      width: 100%;
+      height: 4px;
+      background: #f3f4f6;
+      border-radius: 2px;
+      position: relative;
+    }
+    .mini-notch {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 8px;
+      background: #e5e7eb;
+    }
+    .mini-notch.center {
+      height: 10px;
+      background: #d1d5db;
+    }
+    .mini-dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #6366f1;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    }
+
+    /* ── Stacked dots (Option B) ── */
+    .dot-rows {
+      margin-top: 8px;
+    }
+    .dot-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .dot-row:last-child { margin-bottom: 0; }
+    .dot-label {
+      width: 110px;
+      font-size: 10px;
+      font-weight: 600;
+      color: #6b7280;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .dot-track {
+      flex: 1;
+      position: relative;
+      height: 14px;
+      display: flex;
+      align-items: center;
+    }
+    .dot-track-bar {
+      width: 100%;
+      height: 3px;
+      background: #e5e7eb;
+      border-radius: 2px;
+      position: relative;
+    }
+    .dot-track-center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px;
+      height: 8px;
+      background: #d1d5db;
+    }
+    .dot-indicator {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #6366f1;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    }
+    .dot-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 118px;
+      margin-top: 4px;
+    }
+    .dot-footer-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: #c4b5fd;
+      letter-spacing: 0.2px;
+    }
+
+    /* ── Hybrid expandable (Option C) ── */
+    .expand-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #6366f1;
+      cursor: pointer;
+    }
+    .expand-toggle svg {
+      width: 14px;
+      height: 14px;
+    }
+    .expanded-panel {
+      margin-top: 10px;
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid #f3f4f6;
+    }
+
+    /* ── Page header (shared) ── */
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .page-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #111827;
+    }
+    .retake-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+    .page-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    /* ── Comparison tag ── */
+    .tag-current {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .tag-new {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #f3f4f6;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title -->
+  <div class="mockup-label">Blueprint Summary Redesign</div>
+  <div class="mockup-title">Show All 3 Axes Per Domain</div>
+  <div class="mockup-subtitle">
+    Currently each domain collapses 3 axis scores into <strong>one averaged slider</strong>.
+    These mockups show three ways to surface all the nuance.
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- CURRENT vs OPTION A -->
+  <!-- ════════════════════════════════════════════════════════ -->
+
+  <div class="side-by-side">
+
+    <!-- CURRENT -->
+    <div>
+      <div class="column-label">CURRENT — Single Slider Per Domain</div>
+      <div class="column-desc">Each domain is one binary: averaged score, one statement, one slider.</div>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="page-header">
+            <div class="page-title">Your Civic Priorities</div>
+            <div class="retake-btn">↻ Retake</div>
+          </div>
+          <div class="page-subtitle">Here's where your values place you on key policy questions.</div>
+          <div class="section-label">Your policy leanings</div>
+
+          <!-- Economy -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">💰</span>
+                <span class="domain-name">Economy</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd invest in safety nets — with accountability built in.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Safety nets</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 35%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Lower taxes</span>
+            </div>
+          </div>
+
+          <!-- Healthcare -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏥</span>
+                <span class="domain-name">Healthcare</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd expand public coverage — phased in, evidence-based.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Public option</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 30%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Private market</span>
+            </div>
+          </div>
+
+          <!-- Housing -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏠</span>
+                <span class="domain-name">Housing</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd mix tenant protections with market incentives.</div>
+            <div class="lean-meter">
+              <span class="pole-label left">Protections</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 48%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Market freedom</span>
+            </div>
+          </div>
+
+          <!-- Justice -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">⚖️</span>
+                <span class="domain-name">Justice</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd reform institutions from within, not dismantle them.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Reform</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 28%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Status quo</span>
+            </div>
+          </div>
+
+          <!-- Climate -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🌱</span>
+                <span class="domain-name">Climate</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd regulate based on science, not urgency alone.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Regulation</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 32%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Market-led</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION A: Compact axis bars -->
+    <div>
+      <div class="column-label">OPTION A — Compact Axis Bars</div>
+      <div class="column-desc">Replace single slider with 3 mini axis bars per domain. Each axis has its own pole labels and position dot.</div>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="page-header">
+            <div class="page-title">Your Civic Priorities</div>
+            <div class="retake-btn">↻ Retake</div>
+          </div>
+          <div class="page-subtitle">Here's where your values place you on key policy questions.</div>
+          <div class="section-label">Your policy leanings</div>
+
+          <!-- Economy -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">💰</span>
+                <span class="domain-name">Economy</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Government Support Programs</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Broader safety net</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 30%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Conditional</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Taxes & Public Spending</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">More investment</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 38%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Lower taxes</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Public Schools vs School Choice</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Public schools</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 40%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">School choice</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Healthcare -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏥</span>
+                <span class="domain-name">Healthcare</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Who Provides Health Insurance</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Gov't insurance</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 25%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Private insurance</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Lowering Healthcare Costs</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Price limits</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 35%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Competition</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Public Health & Drug Policy</div>
+              <div class="mini-meter">
+                <span class="mini-pole left">Prevention</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 42%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Enforcement</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Housing -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏠</span>
+                <span class="domain-name">Housing</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Building More Housing</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Build more</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 32%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Preserve</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Making Housing Affordable</div>
+              <div class="mini-meter">
+                <span class="mini-pole left">Rent limits</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 52%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right active">Build more</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Getting Around</div>
+              <div class="mini-meter">
+                <span class="mini-pole left">Transit & bikes</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 60%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right active">Cars & parking</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Justice -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">⚖️</span>
+                <span class="domain-name">Justice</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">How Police Should Work</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Oversight</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 30%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Enforcement</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Prison vs. Rehabilitation</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Rehabilitation</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 22%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Punishment</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Gun Laws</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Stronger rules</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 28%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Fewer rules</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Climate -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🌱</span>
+                <span class="domain-name">Climate</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">How Fast to Act on Climate</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Act fast</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 28%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">Go slow</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Energy Sources</div>
+              <div class="mini-meter">
+                <span class="mini-pole left active">Solar & wind</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 35%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right">All energy types</span>
+              </div>
+            </div>
+
+            <div class="axis-row">
+              <div class="axis-name">Building vs. Environmental Review</div>
+              <div class="mini-meter">
+                <span class="mini-pole left">Thorough review</span>
+                <div class="mini-track">
+                  <div class="mini-track-bar">
+                    <div class="mini-notch center" style="left: 50%"></div>
+                    <div class="mini-dot" style="left: 55%"></div>
+                  </div>
+                </div>
+                <span class="mini-pole right active">Faster permits</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════ -->
+  <!-- OPTION B: Stacked dots  vs  OPTION C: Hybrid expandable -->
+  <!-- ════════════════════════════════════════════════════════ -->
+
+  <div class="side-by-side">
+
+    <!-- OPTION B -->
+    <div>
+      <div class="column-label">OPTION B — Stacked Dot Indicators</div>
+      <div class="column-desc">Keep the domain statement. Add 3 compact dot rows beneath showing per-axis positions without individual pole labels.</div>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="page-header">
+            <div class="page-title">Your Civic Priorities</div>
+            <div class="retake-btn">↻ Retake</div>
+          </div>
+          <div class="page-subtitle">Here's where your values place you on key policy questions.</div>
+          <div class="section-label">Your policy leanings</div>
+
+          <!-- Economy -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">💰</span>
+                <span class="domain-name">Economy</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd invest in safety nets — with accountability built in.</div>
+            <div class="dot-rows">
+              <div class="dot-row">
+                <span class="dot-label">Support Programs</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 30%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Taxes & Spending</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 38%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">School Choice</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 40%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Healthcare -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏥</span>
+                <span class="domain-name">Healthcare</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd expand public coverage — phased in, evidence-based.</div>
+            <div class="dot-rows">
+              <div class="dot-row">
+                <span class="dot-label">Insurance Model</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 25%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Cost Control</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 35%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Public Health</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 42%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Housing -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏠</span>
+                <span class="domain-name">Housing</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd mix tenant protections with market incentives.</div>
+            <div class="dot-rows">
+              <div class="dot-row">
+                <span class="dot-label">Housing Supply</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 32%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Affordability</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 52%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Transportation</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 60%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Justice -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">⚖️</span>
+                <span class="domain-name">Justice</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd reform institutions from within, not dismantle them.</div>
+            <div class="dot-rows">
+              <div class="dot-row">
+                <span class="dot-label">Policing</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 30%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Sentencing</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 22%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Gun Laws</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 28%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Climate -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🌱</span>
+                <span class="domain-name">Climate</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd regulate based on science, not urgency alone.</div>
+            <div class="dot-rows">
+              <div class="dot-row">
+                <span class="dot-label">Climate Urgency</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 28%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Energy Sources</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 35%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dot-row">
+                <span class="dot-label">Permitting</span>
+                <div class="dot-track">
+                  <div class="dot-track-bar">
+                    <div class="dot-track-center"></div>
+                    <div class="dot-indicator" style="left: 55%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION C: Hybrid expandable -->
+    <div>
+      <div class="column-label">OPTION C — Hybrid: Summary + Expandable</div>
+      <div class="column-desc">Keep the current single slider as overview. Add a "See breakdown" toggle that reveals per-axis detail. Least disruptive to current UX.</div>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <div class="page-header">
+            <div class="page-title">Your Civic Priorities</div>
+            <div class="retake-btn">↻ Retake</div>
+          </div>
+          <div class="page-subtitle">Here's where your values place you on key policy questions.</div>
+          <div class="section-label">Your policy leanings</div>
+
+          <!-- Economy (collapsed) -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">💰</span>
+                <span class="domain-name">Economy</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd invest in safety nets — with accountability built in.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Safety nets</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 35%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Lower taxes</span>
+            </div>
+            <div class="expand-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              See breakdown
+            </div>
+          </div>
+
+          <!-- Healthcare (EXPANDED to show what it looks like) -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏥</span>
+                <span class="domain-name">Healthcare</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd expand public coverage — phased in, evidence-based.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Public option</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 30%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Private market</span>
+            </div>
+
+            <div class="expand-toggle" style="color: #6366f1;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+              Hide breakdown
+            </div>
+
+            <div class="expanded-panel">
+              <div class="axis-row">
+                <div class="axis-name">Who Provides Health Insurance</div>
+                <div class="mini-meter">
+                  <span class="mini-pole left active">Gov't insurance</span>
+                  <div class="mini-track">
+                    <div class="mini-track-bar">
+                      <div class="mini-notch center" style="left: 50%"></div>
+                      <div class="mini-dot" style="left: 25%"></div>
+                    </div>
+                  </div>
+                  <span class="mini-pole right">Private</span>
+                </div>
+              </div>
+
+              <div class="axis-row">
+                <div class="axis-name">Lowering Healthcare Costs</div>
+                <div class="mini-meter">
+                  <span class="mini-pole left active">Price limits</span>
+                  <div class="mini-track">
+                    <div class="mini-track-bar">
+                      <div class="mini-notch center" style="left: 50%"></div>
+                      <div class="mini-dot" style="left: 35%"></div>
+                    </div>
+                  </div>
+                  <span class="mini-pole right">Competition</span>
+                </div>
+              </div>
+
+              <div class="axis-row">
+                <div class="axis-name">Public Health & Drug Policy</div>
+                <div class="mini-meter">
+                  <span class="mini-pole left">Prevention</span>
+                  <div class="mini-track">
+                    <div class="mini-track-bar">
+                      <div class="mini-notch center" style="left: 50%"></div>
+                      <div class="mini-dot" style="left: 42%"></div>
+                    </div>
+                  </div>
+                  <span class="mini-pole right">Enforcement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Housing (collapsed) -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🏠</span>
+                <span class="domain-name">Housing</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd mix tenant protections with market incentives.</div>
+            <div class="lean-meter">
+              <span class="pole-label left">Protections</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 48%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Market freedom</span>
+            </div>
+            <div class="expand-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              See breakdown
+            </div>
+          </div>
+
+          <!-- Justice (collapsed) -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">⚖️</span>
+                <span class="domain-name">Justice</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd reform institutions from within, not dismantle them.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Reform</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 28%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Status quo</span>
+            </div>
+            <div class="expand-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              See breakdown
+            </div>
+          </div>
+
+          <!-- Climate (collapsed) -->
+          <div class="domain-card">
+            <div class="domain-header">
+              <div class="domain-header-left">
+                <span class="domain-emoji">🌱</span>
+                <span class="domain-name">Climate</span>
+              </div>
+              <div class="fine-tune-btn">Fine-tune <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></div>
+            </div>
+            <div class="statement">You'd regulate based on science, not urgency alone.</div>
+            <div class="lean-meter">
+              <span class="pole-label left active">Regulation</span>
+              <div class="track-container">
+                <div class="track-bar">
+                  <div class="track-notch" style="left: 0%"></div>
+                  <div class="track-notch" style="left: 25%"></div>
+                  <div class="track-notch center" style="left: 50%"></div>
+                  <div class="track-notch" style="left: 75%"></div>
+                  <div class="track-notch" style="left: 100%"></div>
+                  <div class="track-dot" style="left: 32%"></div>
+                </div>
+              </div>
+              <span class="pole-label right">Market-led</span>
+            </div>
+            <div class="expand-toggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              See breakdown
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

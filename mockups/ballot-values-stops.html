@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=414" />
+<title>Ballot "Adjust Your Values" — Stop Label Options</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f3f4f6;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: #374151;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .option-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #7c3aed;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .option-desc {
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 16px;
+    max-width: 360px;
+    line-height: 1.4;
+  }
+
+  /* ── Shared card frame (simulates the collapsible section) ── */
+  .card {
+    width: 390px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+  }
+  .card-header .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-header .left svg { width: 20px; height: 20px; color: #4b5563; }
+  .card-header .left span { font-size: 15px; font-weight: 600; color: #374151; }
+  .card-header .chevron { width: 20px; height: 20px; color: #9ca3af; }
+
+  .card-body {
+    padding: 0 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card-body > .hint {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 18px;
+  }
+
+  /* ── Axis block ── */
+  .axis-block { display: flex; flex-direction: column; gap: 4px; }
+  .axis-name { font-size: 14px; font-weight: 600; color: #374151; }
+
+  /* ── Shared lean-meter track ── */
+  .meter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pole {
+    width: 70px;
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
+  .pole.left { text-align: right; color: #7c3aed; }
+  .pole.right { text-align: left; color: #9ca3af; }
+
+  .track-wrap {
+    flex: 1;
+    position: relative;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  .track {
+    height: 6px;
+    border-radius: 3px;
+    background: #f3f4f6;
+    position: relative;
+  }
+  .notches {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .notch { width: 1px; height: 6px; background: #d1d5db; }
+  .notch.center { height: 10px; background: #b0b5bf; }
+
+  .dot {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #7c3aed;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* ── Option A: current-position label below ── */
+  .position-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+    text-align: center;
+    margin-top: 2px;
+    min-height: 16px;
+  }
+  .position-sublabel {
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 1px;
+    font-style: italic;
+  }
+
+  /* ── Option B: tooltip bubble ── */
+  .tooltip-bubble {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    background: #1f2937;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .tooltip-bubble::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #1f2937;
+  }
+
+  /* ── Option C: snapped stops with mini-labels ── */
+  .stop-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding: 0 1px;
+  }
+  .stop-label {
+    font-size: 8.5px;
+    color: #9ca3af;
+    text-align: center;
+    width: 56px;
+    line-height: 1.15;
+    transition: color 0.15s;
+  }
+  .stop-label.active {
+    color: #7c3aed;
+    font-weight: 700;
+  }
+
+  /* ── Option C2: Snap dots ── */
+  .snap-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #d1d5db;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .snap-dot.active {
+    background: #7c3aed;
+    transform: scale(1.3);
+  }
+  .snap-dot.current-policy {
+    border: 1.5px solid #9ca3af;
+    background: #fff;
+  }
+
+  /* ── Option D: Inline card with position detail ── */
+  .position-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-top: 4px;
+  }
+  .position-card .pip {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7c3aed;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .position-card .text .title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    line-height: 1.3;
+  }
+  .position-card .text .desc {
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+  .current-policy-badge {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+
+  /* ── Divider ── */
+  hr {
+    width: 390px;
+    border: none;
+    border-top: 2px dashed #d1d5db;
+  }
+
+  /* Interactive dragging */
+  .track-wrap.dragging .dot { transform: translate(-50%, -50%) scale(1.2); }
+</style>
+</head>
+<body>
+
+<h1>Ballot "Adjust Your Values" — Stop Label Options</h1>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- OPTION A: Current-position label below meter -->
+<!-- ════════════════════════════════════════════ -->
+<div class="option-label">Option A — Position Label Below</div>
+<div class="option-desc">
+  Clean meter stays the same. A text label below shows the title + description
+  of the nearest stop, updating as you drag.
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="left">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <span>Adjust your values</span>
+    </div>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </div>
+  <div class="card-body">
+    <div class="hint">Changing these will update recommendations across your ballot.</div>
+
+    <!-- Axis 1 -->
+    <div class="axis-block">
+      <div class="axis-name">Government Support Programs</div>
+      <div class="meter">
+        <span class="pole left">Broader safety net</span>
+        <div class="track-wrap" data-option="a" data-axis="0">
+          <div class="track">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 30%"></div>
+          </div>
+        </div>
+        <span class="pole right">Targeted aid</span>
+      </div>
+      <div class="position-label" id="a-label-0">Broad eligibility with some conditions</div>
+      <div class="position-sublabel" id="a-sublabel-0">Wide access to assistance with basic requirements</div>
+    </div>
+
+    <!-- Axis 2 -->
+    <div class="axis-block">
+      <div class="axis-name">Taxes &amp; Public Spending</div>
+      <div class="meter">
+        <span class="pole left">More public investment</span>
+        <div class="track-wrap" data-option="a" data-axis="1">
+          <div class="track">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 50%"></div>
+          </div>
+        </div>
+        <span class="pole right">Lower taxes</span>
+      </div>
+      <div class="position-label" id="a-label-1">Maintain current balance</div>
+      <div class="position-sublabel" id="a-sublabel-1">Keep existing service and tax levels</div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- ════════════════════════════════════════════ -->
+<!-- OPTION B: Tooltip bubble on drag -->
+<!-- ════════════════════════════════════════════ -->
+<div class="option-label">Option B — Tooltip Bubble on Drag</div>
+<div class="option-desc">
+  Nothing visible at rest. When the user drags (or taps), a dark tooltip
+  appears above the dot showing the nearest position title.
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="left">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <span>Adjust your values</span>
+    </div>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </div>
+  <div class="card-body">
+    <div class="hint">Changing these will update recommendations across your ballot.</div>
+
+    <!-- Axis 1 -->
+    <div class="axis-block">
+      <div class="axis-name">Government Support Programs</div>
+      <div class="meter">
+        <span class="pole left">Broader safety net</span>
+        <div class="track-wrap" data-option="b" data-axis="0" style="overflow: visible;">
+          <div class="track" style="overflow: visible;">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 30%"></div>
+            <div class="tooltip-bubble" id="b-tip-0" style="left: 30%; display: none;">Broad eligibility with some conditions</div>
+          </div>
+        </div>
+        <span class="pole right">Targeted aid</span>
+      </div>
+    </div>
+
+    <!-- Axis 2 -->
+    <div class="axis-block">
+      <div class="axis-name">Taxes &amp; Public Spending</div>
+      <div class="meter">
+        <span class="pole left">More public investment</span>
+        <div class="track-wrap" data-option="b" data-axis="1" style="overflow: visible;">
+          <div class="track" style="overflow: visible;">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 50%"></div>
+            <div class="tooltip-bubble" id="b-tip-1" style="left: 50%; display: none;">Maintain current balance</div>
+          </div>
+        </div>
+        <span class="pole right">Lower taxes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- ════════════════════════════════════════════ -->
+<!-- OPTION C: Snap stops with mini-labels -->
+<!-- ════════════════════════════════════════════ -->
+<div class="option-label">Option C — Snap Stops with Mini-Labels</div>
+<div class="option-desc">
+  The 5 notches become visible snap points. Tiny labels under each stop
+  show abbreviated position names. The active stop is highlighted in purple.
+  A "current US policy" indicator marks the center.
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="left">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <span>Adjust your values</span>
+    </div>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </div>
+  <div class="card-body">
+    <div class="hint">Changing these will update recommendations across your ballot.</div>
+
+    <!-- Axis 1 -->
+    <div class="axis-block">
+      <div class="axis-name">Government Support Programs</div>
+      <div class="meter">
+        <span class="pole left">Broader safety net</span>
+        <div class="track-wrap" data-option="c" data-axis="0">
+          <div class="track">
+            <div class="notches">
+              <div class="snap-dot"></div>
+              <div class="snap-dot active"></div>
+              <div class="snap-dot current-policy"></div>
+              <div class="snap-dot"></div>
+              <div class="snap-dot"></div>
+            </div>
+            <div class="dot" style="left: 25%"></div>
+          </div>
+          <div class="stop-labels">
+            <div class="stop-label">Universal support</div>
+            <div class="stop-label active">Broad eligibility</div>
+            <div class="stop-label">Targeted + work<br><span style="font-size:7px;color:#9ca3af;">&#9679; US policy</span></div>
+            <div class="stop-label">Strict eligibility</div>
+            <div class="stop-label">Minimal safety net</div>
+          </div>
+        </div>
+        <span class="pole right">Targeted aid</span>
+      </div>
+    </div>
+
+    <!-- Axis 2 -->
+    <div class="axis-block">
+      <div class="axis-name">Taxes &amp; Public Spending</div>
+      <div class="meter">
+        <span class="pole left">More public investment</span>
+        <div class="track-wrap" data-option="c" data-axis="1">
+          <div class="track">
+            <div class="notches">
+              <div class="snap-dot"></div>
+              <div class="snap-dot"></div>
+              <div class="snap-dot active current-policy"></div>
+              <div class="snap-dot"></div>
+              <div class="snap-dot"></div>
+            </div>
+            <div class="dot" style="left: 50%"></div>
+          </div>
+          <div class="stop-labels">
+            <div class="stop-label">Major expansion</div>
+            <div class="stop-label">Targeted investments</div>
+            <div class="stop-label active">Current balance<br><span style="font-size:7px;color:#9ca3af;">&#9679; US policy</span></div>
+            <div class="stop-label">Reduce & lower</div>
+            <div class="stop-label">Minimal spending</div>
+          </div>
+        </div>
+        <span class="pole right">Lower taxes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- ════════════════════════════════════════════ -->
+<!-- OPTION D: Position detail card below meter -->
+<!-- ════════════════════════════════════════════ -->
+<div class="option-label">Option D — Detail Card Below</div>
+<div class="option-desc">
+  Clean meter with a small card underneath that shows the full position title,
+  description, and a "current US policy" badge when applicable. Richest info
+  but takes the most vertical space.
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="left">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <span>Adjust your values</span>
+    </div>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </div>
+  <div class="card-body">
+    <div class="hint">Changing these will update recommendations across your ballot.</div>
+
+    <!-- Axis 1 -->
+    <div class="axis-block">
+      <div class="axis-name">Government Support Programs</div>
+      <div class="meter">
+        <span class="pole left">Broader safety net</span>
+        <div class="track-wrap" data-option="d" data-axis="0">
+          <div class="track">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 30%"></div>
+          </div>
+        </div>
+        <span class="pole right">Targeted aid</span>
+      </div>
+      <div class="position-card" id="d-card-0">
+        <div class="pip"></div>
+        <div class="text">
+          <div class="title">Broad eligibility with some conditions</div>
+          <div class="desc">Wide access to assistance with basic requirements</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Axis 2 -->
+    <div class="axis-block">
+      <div class="axis-name">Taxes &amp; Public Spending</div>
+      <div class="meter">
+        <span class="pole left">More public investment</span>
+        <div class="track-wrap" data-option="d" data-axis="1">
+          <div class="track">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 50%"></div>
+          </div>
+        </div>
+        <span class="pole right">Lower taxes</span>
+      </div>
+      <div class="position-card" id="d-card-1">
+        <div class="pip"></div>
+        <div class="text">
+          <div class="title">Maintain current balance<span class="current-policy-badge">Current US policy</span></div>
+          <div class="desc">Keep existing service and tax levels</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<!-- ════════════════════════════════════════════ -->
+<!-- OPTION A+D HYBRID: Label below + expandable detail -->
+<!-- ════════════════════════════════════════════ -->
+<div class="option-label">Option E — Hybrid: Label + Tap-to-Expand</div>
+<div class="option-desc">
+  Position title shown below the meter (like A), but tapping it reveals
+  the full description card (like D). Keeps things compact by default
+  but info is accessible.
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="left">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      <span>Adjust your values</span>
+    </div>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </div>
+  <div class="card-body">
+    <div class="hint">Changing these will update recommendations across your ballot.</div>
+
+    <!-- Axis 1 — expanded state -->
+    <div class="axis-block">
+      <div class="axis-name">Government Support Programs</div>
+      <div class="meter">
+        <span class="pole left">Broader safety net</span>
+        <div class="track-wrap" data-option="e" data-axis="0">
+          <div class="track">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 30%"></div>
+          </div>
+        </div>
+        <span class="pole right">Targeted aid</span>
+      </div>
+      <!-- Tappable label — shown as "expanded" here -->
+      <div style="text-align:center; cursor:pointer;" onclick="this.querySelector('.e-detail').style.display = this.querySelector('.e-detail').style.display === 'none' ? 'block' : 'none'">
+        <div class="position-label" style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+          Broad eligibility with some conditions
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="e-detail" style="display: block;">
+          <div style="font-size: 11px; color: #9ca3af; margin-top: 2px; font-style: italic; line-height: 1.35;">
+            Wide access to assistance with basic requirements
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Axis 2 — collapsed state -->
+    <div class="axis-block">
+      <div class="axis-name">Taxes &amp; Public Spending</div>
+      <div class="meter">
+        <span class="pole left">More public investment</span>
+        <div class="track-wrap" data-option="e" data-axis="1">
+          <div class="track">
+            <div class="notches"><div class="notch"></div><div class="notch"></div><div class="notch center"></div><div class="notch"></div><div class="notch"></div></div>
+            <div class="dot" style="left: 50%"></div>
+          </div>
+        </div>
+        <span class="pole right">Lower taxes</span>
+      </div>
+      <!-- Tappable label — shown as "collapsed" here -->
+      <div style="text-align:center; cursor:pointer;" onclick="this.querySelector('.e-detail').style.display = this.querySelector('.e-detail').style.display === 'none' ? 'block' : 'none'">
+        <div class="position-label" style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+          Maintain current balance
+          <span class="current-policy-badge" style="font-size:8px;">US policy</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="e-detail" style="display: none;">
+          <div style="font-size: 11px; color: #9ca3af; margin-top: 2px; font-style: italic; line-height: 1.35;">
+            Keep existing service and tax levels
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════ -->
+<!-- Interactive drag behavior for all  -->
+<!-- ═══════════════════════════════════ -->
+<script>
+// Position data for the two example axes
+const POSITIONS = [
+  [
+    { title: 'Universal support programs', desc: 'Robust benefits available to all with minimal conditions', isCurrentPolicy: false },
+    { title: 'Broad eligibility with some conditions', desc: 'Wide access to assistance with basic requirements', isCurrentPolicy: false },
+    { title: 'Targeted programs with work incentives', desc: 'Benefits for those in need with participation requirements', isCurrentPolicy: true },
+    { title: 'Strict eligibility and conditions', desc: 'Aid limited to verified need with strong work requirements', isCurrentPolicy: false },
+    { title: 'Minimal safety net', desc: 'Limited government assistance, emphasize self-reliance', isCurrentPolicy: false },
+  ],
+  [
+    { title: 'Major expansion of public services', desc: 'Significantly increase spending on schools, infrastructure, and services', isCurrentPolicy: false },
+    { title: 'Targeted public investments', desc: 'Increase funding for high-priority community needs', isCurrentPolicy: false },
+    { title: 'Maintain current balance', desc: 'Keep existing service and tax levels', isCurrentPolicy: true },
+    { title: 'Reduce spending, lower taxes', desc: 'Cut programs to return money to taxpayers', isCurrentPolicy: false },
+    { title: 'Minimal government spending', desc: 'Dramatically reduce taxes and public programs', isCurrentPolicy: false },
+  ],
+];
+
+function getStopIndex(pct) {
+  // Map 0-100 to nearest stop 0-4
+  return Math.round((pct / 100) * 4);
+}
+
+document.querySelectorAll('.track-wrap').forEach(wrap => {
+  const option = wrap.dataset.option;
+  const axisIdx = parseInt(wrap.dataset.axis);
+  const dot = wrap.querySelector('.dot');
+  let dragging = false;
+
+  function updatePosition(clientX) {
+    const rect = wrap.getBoundingClientRect();
+    let pct = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+
+    // For option C, snap to stops
+    if (option === 'c') {
+      const stopIdx = getStopIndex(pct);
+      pct = (stopIdx / 4) * 100;
+    }
+
+    dot.style.left = pct + '%';
+
+    const stopIdx = getStopIndex(pct);
+    const pos = POSITIONS[axisIdx][stopIdx];
+
+    // Update labels based on option
+    if (option === 'a') {
+      document.getElementById('a-label-' + axisIdx).textContent = pos.title;
+      document.getElementById('a-sublabel-' + axisIdx).textContent = pos.desc;
+    } else if (option === 'b') {
+      const tip = document.getElementById('b-tip-' + axisIdx);
+      tip.textContent = pos.title;
+      tip.style.left = pct + '%';
+    } else if (option === 'c') {
+      // Update active states
+      const labels = wrap.querySelectorAll('.stop-label');
+      const dots = wrap.querySelectorAll('.snap-dot');
+      labels.forEach((l, i) => l.classList.toggle('active', i === stopIdx));
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === stopIdx);
+      });
+    } else if (option === 'd') {
+      const card = document.getElementById('d-card-' + axisIdx);
+      card.querySelector('.title').innerHTML = pos.title + (pos.isCurrentPolicy ? '<span class="current-policy-badge">Current US policy</span>' : '');
+      card.querySelector('.desc').textContent = pos.desc;
+    } else if (option === 'e') {
+      // Update the label in the parent axis-block
+      const block = wrap.closest('.axis-block');
+      const label = block.querySelector('.position-label');
+      const detail = block.querySelector('.e-detail div');
+      // Clear existing content and rebuild
+      label.innerHTML = pos.title +
+        (pos.isCurrentPolicy ? ' <span class="current-policy-badge" style="font-size:8px;">US policy</span>' : '') +
+        ' <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+      detail.textContent = pos.desc;
+    }
+  }
+
+  wrap.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    wrap.classList.add('dragging');
+    wrap.setPointerCapture(e.pointerId);
+    updatePosition(e.clientX);
+    if (option === 'b') {
+      document.getElementById('b-tip-' + axisIdx).style.display = 'block';
+    }
+  });
+
+  wrap.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    updatePosition(e.clientX);
+  });
+
+  wrap.addEventListener('pointerup', () => {
+    dragging = false;
+    wrap.classList.remove('dragging');
+    if (option === 'b') {
+      // Keep tooltip visible briefly then hide
+      setTimeout(() => {
+        document.getElementById('b-tip-' + axisIdx).style.display = 'none';
+      }, 1200);
+    }
+  });
+});
+</script>
+
+</body>
+</html>

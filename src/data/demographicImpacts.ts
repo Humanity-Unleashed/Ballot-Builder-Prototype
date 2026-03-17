@@ -6,6 +6,10 @@ export interface DemographicImpactRule {
   effect: 'benefit' | 'concern' | 'mixed' | 'context';
   headline: string;
   detail?: string;
+  /** Attribution for the claim (e.g., "Kaiser Family Foundation, 2024") */
+  source?: string;
+  /** URL to the source */
+  sourceUrl?: string;
 }
 
 export const demographicImpacts: Record<string, DemographicImpactRule[]> = {

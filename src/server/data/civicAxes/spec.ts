@@ -3,8 +3,8 @@
  *
  * This file contains the complete civic axes specification including:
  * - 5 policy domains
- * - 15 axes (3 per domain)
- * - 144 assessment items
+ * - 17 axes (3-4 per domain)
+ * - 150 assessment items
  *
  * Generated: 2026-01-14T17:07:19Z
  */
@@ -74,11 +74,11 @@ export const civicAxesSpec: CivicAxesSpec = {
       id: 'justice',
       name: 'Public Safety & Justice',
       why: 'Predicts candidate choice and ballot positions on policing budgets/oversight, sentencing, diversion programs, and firearm policy.',
-      axes: ['justice_policing_accountability', 'justice_sentencing_goals', 'justice_firearms'],
+      axes: ['justice_policing_accountability', 'justice_sentencing_goals', 'justice_firearms', 'justice_reproductive'],
       ballot_mapping_examples: {
-        local: ['police budget and staffing', 'civilian oversight boards', 'crisis response programs', 'DA/judge elections'],
-        state: ['bail rules', 'sentencing reforms', 'statewide policing standards', 'carry/permit laws'],
-        national: ['federal gun rules', 'justice grants', 'DOJ priorities'],
+        local: ['police budget and staffing', 'civilian oversight boards', 'crisis response programs', 'DA/judge elections', 'clinic funding', 'buffer zones'],
+        state: ['bail rules', 'sentencing reforms', 'statewide policing standards', 'carry/permit laws', 'gestational limits', 'trigger bans', 'Medicaid coverage of abortion'],
+        national: ['federal gun rules', 'justice grants', 'DOJ priorities', 'federal abortion legislation', 'Comstock Act enforcement', 'Title X funding', 'FDA mifepristone access'],
       },
     },
     {
@@ -290,6 +290,21 @@ export const civicAxesSpec: CivicAxesSpec = {
       recommended_cards_per_session: 6,
     },
     {
+      id: 'justice_reproductive',
+      domain_id: 'justice',
+      name: 'Reproductive Rights',
+      description: 'Should abortion and reproductive healthcare be broadly legal and government-funded, or should government restrict access to protect fetal life?',
+      poleA: {
+        label: 'Full reproductive rights',
+        interpretation: 'Supports broad legal access to abortion and reproductive healthcare with government funding and minimal restrictions.',
+      },
+      poleB: {
+        label: 'Protect fetal life',
+        interpretation: 'Supports legal restrictions on abortion with limited exceptions; opposes public funding for abortion services.',
+      },
+      recommended_cards_per_session: 6,
+    },
+    {
       id: 'climate_ambition',
       domain_id: 'climate',
       name: 'How Fast to Act on Climate',
@@ -414,6 +429,12 @@ export const civicAxesSpec: CivicAxesSpec = {
     { id: 'justice_firearms_04', text: 'Bans on certain firearms go too far.', axis_keys: { justice_firearms: -1 }, level: 'national', tags: ['regulation'], tradeoff: null },
     { id: 'justice_firearms_05', text: 'Safe storage laws are reasonable to prevent accidents and theft.', axis_keys: { justice_firearms: 1 }, level: 'state', tags: ['safety'], tradeoff: null },
     { id: 'justice_firearms_06', text: 'Gun ownership is a fundamental right that should face few limits.', axis_keys: { justice_firearms: -1 }, level: 'general', tags: ['rights'], tradeoff: null },
+    { id: 'justice_reproductive_01', text: 'Abortion should be legal and accessible throughout pregnancy with minimal restrictions.', axis_keys: { justice_reproductive: 1 }, level: 'general', tags: ['access'], tradeoff: null },
+    { id: 'justice_reproductive_02', text: 'Government should not fund abortion services with taxpayer money.', axis_keys: { justice_reproductive: -1 }, level: 'national', tags: ['funding'], tradeoff: null },
+    { id: 'justice_reproductive_03', text: 'States should set their own abortion laws without federal interference.', axis_keys: { justice_reproductive: -1 }, level: 'state', tags: ['federalism'], tradeoff: 'Creates unequal access by geography' },
+    { id: 'justice_reproductive_04', text: 'Medication abortion (like mifepristone) should remain available by mail.', axis_keys: { justice_reproductive: 1 }, level: 'national', tags: ['medication', 'access'], tradeoff: null },
+    { id: 'justice_reproductive_05', text: 'Abortion should be banned except in cases of rape, incest, or threat to the mother\'s life.', axis_keys: { justice_reproductive: -1 }, level: 'state', tags: ['exceptions'], tradeoff: null },
+    { id: 'justice_reproductive_06', text: 'Federal law should guarantee abortion access nationwide, regardless of state laws.', axis_keys: { justice_reproductive: 1 }, level: 'national', tags: ['federal_protection'], tradeoff: 'Overrides state-level decisions' },
     { id: 'climate_ambition_01', text: 'The U.S. should set strong targets to cut emissions this decade.', axis_keys: { climate_ambition: 1 }, level: 'national', tags: ['targets'], tradeoff: null },
     { id: 'climate_ambition_02', text: 'Energy policy should prioritize affordability and reliability, even if emissions fall slowly.', axis_keys: { climate_ambition: -1 }, level: 'general', tags: ['affordability'], tradeoff: null },
     { id: 'climate_ambition_03', text: 'States should require utilities to increase clean energy over time.', axis_keys: { climate_ambition: 1 }, level: 'state', tags: ['standards'], tradeoff: 'May raise short-term electricity costs' },

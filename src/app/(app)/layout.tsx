@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
-import TopNav from '@/components/layout/TopNav';
+import WizardNav from '@/components/layout/WizardNav';
 
 export default function AppLayout({
   children,
@@ -41,14 +41,14 @@ export default function AppLayout({
   }
 
   return (
-    <>
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-white text-center text-[11px] font-medium py-0.5 tracking-wide">
+    <div className="flex flex-col h-[100dvh]">
+      <div className="shrink-0 bg-amber-500 text-white text-center text-[11px] font-medium py-0.5 tracking-wide">
         Prototype for evaluation only — not an official voter guide
       </div>
-      <TopNav />
-      <main className="mx-auto max-w-lg px-4 pt-[4.75rem]">
+      <WizardNav />
+      <main className="flex-1 min-h-0 overflow-y-auto mx-auto max-w-lg px-4 w-full">
         {children}
       </main>
-    </>
+    </div>
   );
 }

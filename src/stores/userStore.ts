@@ -38,6 +38,8 @@ export interface AssessmentProgress {
   currentAxisIndex: number;
   sliderPositions: Record<string, number>;
   strengthValues: Record<string, number>;
+  /** Axes that appear on the user's ballot — used to filter assessment questions */
+  ballotRelevantAxes?: string[];
 }
 
 interface UserState {
@@ -71,6 +73,8 @@ interface UserActions {
   setAxisScores: (scores: AxisScore[]) => void;
   initializeFromSwipes: (swipes: SwipeInput[]) => Promise<void>;
   applySliderValues: (responses: Record<string, number>, importances: Record<string, number>) => void;
+  /** Bridge: apply a hybrid assessment profile (from conversation flow) to the Blueprint profile */
+  applyHybridProfile: (hybridProfile: Record<string, { score: number; confidence: number; isImputed: boolean; sourceModality?: string }>) => void;
   getAxisScore: (axisId: string) => AxisScore | null;
   saveAssessmentProgress: (progress: AssessmentProgress) => void;
   clearAssessmentProgress: () => void;
@@ -83,6 +87,72 @@ interface UserActions {
 type UserStore = UserState & UserActions;
 
 const PROFILE_VERSION = '1.0.0';
+
+/**
+ * Backfill any axes that exist in the spec but are missing from a persisted profile.
+ * This handles the case where a new axis (e.g. justice_reproductive) was added to the
+ * spec after the user already completed their assessment and saved a profile to localStorage.
+ */
+function migrateProfileToCurrentSpec(
+  profile: BlueprintProfile,
+  spec: Spec
+): BlueprintProfile {
+  let changed = false;
+  const updatedDomains = spec.domains.map((specDomain) => {
+    const existingDomain = profile.domains.find(
+      (d) => d.domain_id === specDomain.id
+    );
+    if (!existingDomain) {
+      // Entire domain is new — create it with defaults
+      changed = true;
+      return {
+        domain_id: specDomain.id,
+        importance: {
+          value_0_10: 5,
+          source: 'default' as ProfileSource,
+          confidence_0_1: 0,
+          last_updated_at: new Date().toISOString(),
+        },
+        axes: specDomain.axes.map((axisId) => ({
+          axis_id: axisId,
+          value_0_10: 5,
+          source: 'default' as ProfileSource,
+          confidence_0_1: 0,
+          locked: false,
+          learning_mode: 'normal' as LearningMode,
+          estimates: { learned_score: 0, learned_value_float: 5 },
+          evidence: { n_items_answered: 0, n_unsure: 0, top_driver_item_ids: [] },
+        })),
+      };
+    }
+
+    // Domain exists — check for missing axes
+    const existingAxisIds = new Set(existingDomain.axes.map((a) => a.axis_id));
+    const missingAxes = specDomain.axes.filter((id) => !existingAxisIds.has(id));
+    if (missingAxes.length === 0) return existingDomain;
+
+    changed = true;
+    return {
+      ...existingDomain,
+      axes: [
+        ...existingDomain.axes,
+        ...missingAxes.map((axisId) => ({
+          axis_id: axisId,
+          value_0_10: 5,
+          source: 'default' as ProfileSource,
+          confidence_0_1: 0,
+          locked: false,
+          learning_mode: 'normal' as LearningMode,
+          estimates: { learned_score: 0, learned_value_float: 5 },
+          evidence: { n_items_answered: 0, n_unsure: 0, top_driver_item_ids: [] },
+        })),
+      ],
+    };
+  });
+
+  if (!changed) return profile;
+  return { ...profile, domains: updatedDomains };
+}
 
 function createDefaultProfile(spec: Spec, userId: string): BlueprintProfile {
   const domains: DomainProfile[] = spec.domains.map((domain) => ({
@@ -207,6 +277,12 @@ export const useUserStore = create<UserStore>()(
           const { blueprintProfile } = get();
           if (!blueprintProfile) {
             set({ blueprintProfile: createDefaultProfile(fetchedSpec, 'prototype-user') });
+          } else {
+            // Backfill any axes added to the spec since the profile was saved
+            const migrated = migrateProfileToCurrentSpec(blueprintProfile, fetchedSpec);
+            if (migrated !== blueprintProfile) {
+              set({ blueprintProfile: migrated });
+            }
           }
         } catch (error) {
           console.error('Failed to load civic axes spec:', error);
@@ -487,6 +563,66 @@ export const useUserStore = create<UserStore>()(
           blueprintProfile: {
             ...blueprintProfile,
             updated_at: new Date().toISOString(),
+            domains: updatedDomains,
+          },
+          hasCompletedAssessment: true,
+        });
+      },
+
+      applyHybridProfile: (hybridProfile) => {
+        const { blueprintProfile } = get();
+        if (!blueprintProfile) return;
+
+        const now = new Date().toISOString();
+
+        const updatedDomains = blueprintProfile.domains.map((domain) => {
+          const updatedAxes = domain.axes.map((axis) => {
+            const record = hybridProfile[axis.axis_id];
+            if (!record) return axis;
+
+            const value = Math.round(Math.max(0, Math.min(10, record.score)));
+            const source: ProfileSource = record.isImputed ? 'default' : 'learned_from_swipes';
+
+            return {
+              ...axis,
+              value_0_10: value,
+              source,
+              confidence_0_1: record.confidence,
+              learning_mode: 'normal' as LearningMode,
+              estimates: {
+                learned_score: (record.score - 5) / 5, // Map 0-10 → -1 to 1
+                learned_value_float: record.score,
+              },
+              evidence: {
+                n_items_answered: record.isImputed ? 0 : 1,
+                n_unsure: 0,
+                top_driver_item_ids: [],
+              },
+            };
+          });
+
+          // Domain importance = average confidence of answered axes (proxy for engagement)
+          const answeredAxes = updatedAxes.filter((a) => a.source !== 'default');
+          const domainConf = answeredAxes.length > 0
+            ? answeredAxes.reduce((s, a) => s + a.confidence_0_1, 0) / answeredAxes.length
+            : 0;
+
+          return {
+            ...domain,
+            importance: {
+              ...domain.importance,
+              value_0_10: Math.round(domainConf * 10),
+              source: answeredAxes.length > 0 ? 'learned_from_swipes' as ProfileSource : domain.importance.source,
+              last_updated_at: now,
+            },
+            axes: updatedAxes,
+          };
+        });
+
+        set({
+          blueprintProfile: {
+            ...blueprintProfile,
+            updated_at: now,
             domains: updatedDomains,
           },
           hasCompletedAssessment: true,
