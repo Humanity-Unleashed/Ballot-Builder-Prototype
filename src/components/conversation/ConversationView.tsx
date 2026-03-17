@@ -25,9 +25,11 @@ interface ConversationViewProps {
   axisDefinitions: AxisDef[];
   onVoteConfirmed: (itemId: string, choice: string | null) => void;
   onSkip: (itemId: string) => void;
-  /** 'drawer' = opened from Ask AI button (user already sees the ballot item);
+  /** 'drawer' = opened from Ask AI button (answer-only mode);
    *  'standalone' = primary conversation flow (AI guides through items) */
   mode?: 'drawer' | 'standalone';
+  /** Which candidate the user was viewing when they opened the drawer */
+  focusedCandidateId?: string | null;
 }
 
 /**
@@ -80,7 +82,11 @@ function buildStandaloneOpener(item: BallotItem, rec: PropositionRecommendation 
  * Build an opening line for drawer mode (user tapped "Ask AI" on an item they're already viewing).
  * Skips restating what they can already see; leads with a useful insight or an invitation.
  */
-function buildDrawerOpener(item: BallotItem, rec: PropositionRecommendation | CandidateMatch[] | null): string {
+function buildDrawerOpener(
+  item: BallotItem,
+  rec: PropositionRecommendation | CandidateMatch[] | null,
+  focusedCandidateId?: string | null,
+): string {
   if (item.type === 'proposition') {
     const propRec = rec as PropositionRecommendation | null;
     if (propRec?.vote) {
@@ -96,7 +102,18 @@ function buildDrawerOpener(item: BallotItem, rec: PropositionRecommendation | Ca
     return `I can help you think through this measure. Ask me anything — what it means in practice, how it connects to your values, or what the arguments on each side look like.`;
   }
 
-  // Candidate race
+  // Candidate race — check if user is focused on a specific candidate
+  if (focusedCandidateId && item.candidates) {
+    const focused = item.candidates.find((c) => c.id === focusedCandidateId);
+    if (focused && rec && Array.isArray(rec)) {
+      const match = rec.find((m) => m.candidateId === focusedCandidateId);
+      if (match) {
+        return `I see you're looking at **${focused.name}** (${match.matchPercent}% match). Ask me anything — their positions, voting record, or how they compare to other candidates.`;
+      }
+      return `I see you're looking at **${focused.name}**. Ask me anything about their positions or how they compare.`;
+    }
+  }
+
   if (rec && Array.isArray(rec) && rec.length > 0) {
     const sorted = [...rec].sort((a, b) => b.matchPercent - a.matchPercent);
     const best = sorted[0];
@@ -104,14 +121,14 @@ function buildDrawerOpener(item: BallotItem, rec: PropositionRecommendation | Ca
     if (sorted.length >= 2) {
       const gap = best.matchPercent - sorted[1].matchPercent;
       if (gap < 5) {
-        return `This is a close one — your top candidates are within a few points of each other. I can help you dig into where they differ.`;
+        return `This is a close one — your top candidates are within a few points of each other. Ask me about any of them or how they differ on a specific issue.`;
       }
-      return `**${bestName}** looks like your strongest match at ${best.matchPercent}%. Want to know why, or compare on a specific issue?`;
+      return `**${bestName}** looks like your strongest match at ${best.matchPercent}%. Ask me why, or about any candidate's positions.`;
     }
-    return `**${bestName}** is your closest match at ${best.matchPercent}%. I can explain the reasoning or answer questions about any candidate.`;
+    return `**${bestName}** is your closest match at ${best.matchPercent}%. Ask me anything about the candidates.`;
   }
 
-  return `I can help you learn more about the candidates in this race. What would you like to know?`;
+  return `Ask me anything about the candidates in this race — their positions, records, or how they compare.`;
 }
 
 export default function ConversationView({
@@ -120,6 +137,7 @@ export default function ConversationView({
   onVoteConfirmed,
   onSkip,
   mode = 'standalone',
+  focusedCandidateId,
 }: ConversationViewProps) {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -193,7 +211,7 @@ export default function ConversationView({
     openerSentRef.current = ballotItem.id;
 
     const openerContent = mode === 'drawer'
-      ? buildDrawerOpener(ballotItem, immediateRecommendation)
+      ? buildDrawerOpener(ballotItem, immediateRecommendation, focusedCandidateId)
       : buildStandaloneOpener(ballotItem, immediateRecommendation);
 
     const introMessage: ConversationMessage = {
@@ -243,6 +261,8 @@ export default function ConversationView({
           userMessage: text.trim(),
           currentProfile: session.profile,
           conversationHistory: currentMessages,
+          mode,
+          focusedCandidateId: focusedCandidateId || undefined,
           ballotItem: {
             id: ballotItem.id,
             type: ballotItem.type,

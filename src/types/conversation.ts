@@ -173,6 +173,10 @@ export interface ConversationTurnRequest {
   userMessage: string;
   currentProfile: Record<string, ProgressiveAxisValue>;
   conversationHistory: ConversationMessage[];
+  /** 'drawer' = user tapped Ask AI (answer-only mode); 'standalone' = guided flow */
+  mode?: 'drawer' | 'standalone';
+  /** If the user is focused on a specific candidate when they open the drawer */
+  focusedCandidateId?: string;
   ballotItem: {
     id: string;
     type: 'proposition' | 'candidate_race';

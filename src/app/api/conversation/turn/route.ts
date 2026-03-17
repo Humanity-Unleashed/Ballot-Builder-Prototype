@@ -113,7 +113,8 @@ export async function POST(req: NextRequest) {
       body.ballotItem,
       allMessages,
       body.currentProfile || {},
-      axisDefinitions
+      axisDefinitions,
+      { mode: body.mode, focusedCandidateId: body.focusedCandidateId },
     );
 
     // Step 2: Merge value signals into profile

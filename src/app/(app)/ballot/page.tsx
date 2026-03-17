@@ -915,6 +915,7 @@ export default function UnifiedBallotPage() {
           onToggle={() => setAiDrawerOpen((v) => !v)}
           ballotItem={currentItem}
           axisDefinitions={blueprintSpec?.axes ?? []}
+          focusedCandidateId={currentItem.type === 'candidate_race' ? currentVote : undefined}
         />
       </div>
     );

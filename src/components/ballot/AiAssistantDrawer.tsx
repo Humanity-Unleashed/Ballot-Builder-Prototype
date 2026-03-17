@@ -20,6 +20,8 @@ interface AiAssistantDrawerProps {
   onToggle: () => void;
   ballotItem: BallotItem;
   axisDefinitions: AxisDef[];
+  /** Which candidate the user was viewing when they opened the drawer */
+  focusedCandidateId?: string | null;
 }
 
 export default function AiAssistantDrawer({
@@ -27,6 +29,7 @@ export default function AiAssistantDrawer({
   onToggle,
   ballotItem,
   axisDefinitions,
+  focusedCandidateId,
 }: AiAssistantDrawerProps) {
   const saveVote = useBallotStore((s) => s.saveVote);
   const recordVote = useConversationStore((s) => s.recordVote);
@@ -101,6 +104,7 @@ export default function AiAssistantDrawer({
               onVoteConfirmed={handleVoteConfirmed}
               onSkip={handleSkip}
               mode="drawer"
+              focusedCandidateId={focusedCandidateId}
             />
           )}
         </div>

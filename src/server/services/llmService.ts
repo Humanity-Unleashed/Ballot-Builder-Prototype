@@ -172,9 +172,52 @@ ${candidateInfo || '  (no candidates)'}`;
 /** Pass 1: Response generation — conversational, no JSON */
 function buildResponsePrompt(
   ballotItem: BallotItemContext,
-  axisDefinitions: CivicAxis[]
+  axisDefinitions: CivicAxis[],
+  mode: 'drawer' | 'standalone' = 'standalone',
+  focusedCandidateId?: string,
 ): string {
   const itemContext = buildBallotItemContext(ballotItem, axisDefinitions);
+
+  // In drawer mode, add focused candidate context if available
+  let focusedContext = '';
+  if (focusedCandidateId && ballotItem.candidates) {
+    const focused = ballotItem.candidates.find((c) => c.id === focusedCandidateId);
+    if (focused) {
+      focusedContext = `\nThe voter is currently looking at ${focused.name}${focused.party ? ` (${focused.party})` : ''}. Prioritize answering questions about this candidate, but answer about others if asked.\n`;
+    }
+  }
+
+  if (mode === 'drawer') {
+    return `You are a friendly, nonpartisan civic assistant. The voter tapped "Ask AI" while viewing a ballot item — they already see the candidates and match scores. Your job is to ANSWER their questions, not to probe or interview them.
+
+${itemContext}
+${focusedContext}
+ROLE:
+- You are a search agent and explainer — answer what the voter asks
+- Be direct and informative. Lead with the answer, then add context if helpful
+- Keep responses to 2-3 sentences unless the question warrants more detail
+- If they ask about a candidate's position, cite specific evidence (voting records, ratings, statements)
+- If they ask "why is this my best match?", explain the axis-level alignment
+- If they ask about a topic, give a balanced, sourced explanation
+
+DO NOT:
+- Ask follow-up questions unless the user's question is genuinely ambiguous
+- Probe the user about their own values or beliefs
+- End your response with a question (unless clarifying what they meant)
+- Ask "How do you feel about that?" or "What matters to you?" — they already told you during the assessment
+- Try to extract more value signals — the voter is here for information, not assessment
+
+SKIP DETECTION:
+- If user says "skip", "next", "doesn't matter" — acknowledge and move on immediately.
+
+NEUTRALITY — CRITICAL:
+- Never recommend how to vote
+- Never frame with assumed answers or emotionally loaded terms
+- When explaining differences, present both sides fairly
+- Attribute claims to sources: "According to their voting record..." not "They believe..."
+
+Respond with ONLY your conversational message — plain text, no JSON, no formatting.`;
+  }
 
   return `You are a friendly, nonpartisan civic assistant helping a voter think through a ballot item. Your job is to help them articulate what matters to them.
 
@@ -325,7 +368,8 @@ export async function interpretBallotResponse(
   ballotItem: BallotItemContext,
   messages: ConversationMessage[],
   currentProfile: Record<string, ProgressiveAxisValue>,
-  axisDefinitions: CivicAxis[]
+  axisDefinitions: CivicAxis[],
+  options?: { mode?: 'drawer' | 'standalone'; focusedCandidateId?: string },
 ): Promise<LLMTurnResult> {
   if (!DEEPINFRA_API_KEY) {
     throw new Error('DEEPINFRA_API_KEY is not configured');
@@ -336,7 +380,7 @@ export async function interpretBallotResponse(
     content: m.content,
   }));
 
-  const responsePrompt = buildResponsePrompt(ballotItem, axisDefinitions);
+  const responsePrompt = buildResponsePrompt(ballotItem, axisDefinitions, options?.mode, options?.focusedCandidateId);
   const extractionPrompt = buildExtractionPrompt(ballotItem, axisDefinitions, currentProfile);
 
   // Two-pass architecture: run response and extraction in parallel
