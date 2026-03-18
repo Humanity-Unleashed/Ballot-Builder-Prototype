@@ -1001,8 +1001,8 @@ export const allFineTuningConfigs: Record<string, AxisFineTuning> = {
         currentPolicyIndex: 2,
         positions: [
           { title: 'Strengthen environmental review', description: 'More analysis, more public input' },
-          { title: 'Current NEPA process', description: 'Full environmental impact statements' },
-          { title: 'Modest reforms for efficiency', description: 'Timelines and page limits', isCurrentPolicy: true },
+          { title: 'Pre-2023 NEPA process', description: 'Full reviews without time or page limits' },
+          { title: 'Current reformed process', description: '2023 law added timelines and page limits', isCurrentPolicy: true },
           { title: 'Significant streamlining', description: 'Faster approvals, categorical exclusions' },
           { title: 'Minimal environmental review', description: 'Remove most requirements' },
         ],

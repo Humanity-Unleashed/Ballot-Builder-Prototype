@@ -99,11 +99,16 @@ export default function CandidateComparisonSheet({
   if (!visible || !candidate || !match) return null;
 
   // Separate aligned and conflicting axes
+  // Match the card thresholds: diff <= 2 = aligned, diff >= 4 = conflicting
   const alignedDetails = match.axisComparisons.filter(
     (d) => d.alignment === 'strong' || d.alignment === 'moderate'
   );
-  const conflictingDetails = match.axisComparisons.filter((d) => d.alignment === 'opposed');
-  const neutralDetails = match.axisComparisons.filter((d) => d.alignment === 'weak');
+  const conflictingDetails = match.axisComparisons.filter(
+    (d) => d.alignment === 'opposed' || (d.alignment === 'weak' && d.difference >= 4)
+  );
+  const neutralDetails = match.axisComparisons.filter(
+    (d) => d.alignment === 'weak' && d.difference < 4
+  );
 
   return (
     <div
@@ -208,20 +213,26 @@ export default function CandidateComparisonSheet({
             </div>
           )}
 
-          {/* Neutral areas (if any significant ones) */}
-          {neutralDetails.length > 0 && alignedDetails.length + conflictingDetails.length < 4 && (
+          {/* Neutral areas */}
+          {neutralDetails.length > 0 && (
             <div className="space-y-2.5">
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wide">
                 Similar stance on
               </p>
-              {neutralDetails.slice(0, 2).map((detail) => (
+              {neutralDetails.slice(0, 3).map((detail) => (
                 <div key={detail.axisId} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
                     <Minus className="h-3 w-3 text-gray-500" />
                   </div>
-                  <p className="text-[13px] text-gray-600 leading-relaxed flex-1">
-                    {detail.axisName}
-                  </p>
+                  <div className="flex-1">
+                    <p className="text-[13px] text-gray-700 leading-relaxed">
+                      <strong className="text-gray-900">{detail.axisName}:</strong>{' '}
+                      You: {detail.userLabel} / Candidate: {detail.candidateLabel}
+                    </p>
+                    {detail.candidateEvidence && detail.candidateEvidence.length > 0 && (
+                      <EvidenceRow evidence={detail.candidateEvidence} />
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
