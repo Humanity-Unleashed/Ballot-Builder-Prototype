@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { Mic, Check, ChevronDown } from 'lucide-react';
 import type { AxisSliderConfig } from '@/data/sliderPositions';
 
@@ -35,7 +35,8 @@ export default function CardQuestion({
 }: CardQuestionProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [confirmed, setConfirmed] = useState(false);
-  const mountTimeRef = useRef(Date.now());
+  const mountTimeRef = useRef(0);
+  useEffect(() => { mountTimeRef.current = Date.now(); }, []);
 
   const cardValues = useMemo(
     () => computeCardValues(axisConfig.positions.length),

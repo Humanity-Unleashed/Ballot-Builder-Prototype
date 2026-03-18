@@ -92,25 +92,18 @@ export default function HybridFineTuningView({
   const [error, setError] = useState<string | null>(null);
   const [signalReview, setSignalReview] = useState<SignalReviewState | null>(null);
 
-  if (!fineTuningConfig || !axis) {
-    return (
-      <div className="flex min-h-[calc(100vh-56px)] items-center justify-center bg-gray-50">
-        <p className="text-gray-500">Fine-tuning data not available for this topic.</p>
-      </div>
-    );
-  }
+  const subDimensions = fineTuningConfig?.subDimensions;
+  const currentSub = subDimensions?.[currentIndex] ?? null;
+  const totalQuestions = subDimensions?.length ?? 0;
+  const progressPercentage = totalQuestions > 0 ? ((currentIndex + 1) / totalQuestions) * 100 : 0;
 
-  const subDimensions = fineTuningConfig.subDimensions;
-  const currentSub = subDimensions[currentIndex];
-  const totalQuestions = subDimensions.length;
-  const progressPercentage = ((currentIndex + 1) / totalQuestions) * 100;
-
-  const currentAxisConfig = subDimensionToAxisConfig(currentSub);
+  const currentAxisConfig = currentSub ? subDimensionToAxisConfig(currentSub) : null;
 
   // ── Advance to next sub-dimension (or complete) ──
 
   const advance = useCallback(
     (positionIndex: number) => {
+      if (!currentSub) return;
       const newResponses = { ...responses, [currentSub.id]: positionIndex };
       setResponses(newResponses);
 
@@ -125,18 +118,19 @@ export default function HybridFineTuningView({
         setError(null);
       }
     },
-    [responses, currentSub.id, currentIndex, totalQuestions, axisId, onComplete, track],
+    [responses, currentSub, currentIndex, totalQuestions, axisId, onComplete, track],
   );
 
   // ── Structured card selection ──
 
   const handleCardSelect = useCallback(
     (value: number, _dwellTimeMs: number) => {
+      if (!currentSub) return;
       // Convert 0-10 card value to position index
       const positionIndex = scoreToPositionIndex(value, currentSub.positions.length);
       advance(positionIndex);
     },
-    [currentSub.positions.length, advance],
+    [currentSub, advance],
   );
 
   // ── Escape hatch — switch to NLP ──
@@ -157,6 +151,7 @@ export default function HybridFineTuningView({
 
   const handleNlpSubmit = useCallback(
     async (text: string) => {
+      if (!currentSub) return;
       setIsExtracting(true);
       setError(null);
 
@@ -218,13 +213,13 @@ export default function HybridFineTuningView({
   // ── Signal review: accept ──
 
   const handleSignalAccept = useCallback(() => {
-    if (!signalReview) return;
+    if (!signalReview || !currentSub) return;
     const positionIndex = scoreToPositionIndex(
       signalReview.extractedScore,
       currentSub.positions.length,
     );
     advance(positionIndex);
-  }, [signalReview, currentSub.positions.length, advance]);
+  }, [signalReview, currentSub, advance]);
 
   // ── Signal review: refine (go back to NLP) ──
 
@@ -236,13 +231,22 @@ export default function HybridFineTuningView({
   // ── Skip ──
 
   const handleSkip = useCallback(() => {
+    if (!currentSub) return;
     track('click', { element: 'finetune_skip', axisId, questionIndex: currentIndex });
     // Use middle position as default
     const middleIndex = Math.floor(currentSub.positions.length / 2);
     advance(middleIndex);
-  }, [currentSub.positions.length, advance, track, axisId, currentIndex]);
+  }, [currentSub, advance, track, axisId, currentIndex]);
 
   // ── Render ──
+
+  if (!fineTuningConfig || !axis || !currentSub || !currentAxisConfig) {
+    return (
+      <div className="flex min-h-[calc(100vh-56px)] items-center justify-center bg-gray-50">
+        <p className="text-gray-500">Fine-tuning data not available for this topic.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gray-50">

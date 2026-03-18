@@ -57,7 +57,7 @@ export function validateExtractionOutput(
     // 2. Clamp values to valid ranges
     //    Use nullish coalescing (??) not logical OR (||) — 0 is a valid direction score!
     const rawDirection = Number(signal.direction);
-    let direction = Math.max(0, Math.min(10, Number.isFinite(rawDirection) ? rawDirection : 5));
+    const direction = Math.max(0, Math.min(10, Number.isFinite(rawDirection) ? rawDirection : 5));
     const rawConfidence = Number(signal.confidence);
     let confidence = Math.max(0, Math.min(1, Number.isFinite(rawConfidence) ? rawConfidence : 0.5));
     const rawImportance = Number(signal.importance);
