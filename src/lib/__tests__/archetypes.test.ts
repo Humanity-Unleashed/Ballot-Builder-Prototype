@@ -201,8 +201,8 @@ describe('META_AXIS_MAP completeness', () => {
 });
 
 describe('ARCHETYPES', () => {
-  it('has 8 archetypes', () => {
-    expect(ARCHETYPES).toHaveLength(8);
+  it('has 9 archetypes', () => {
+    expect(ARCHETYPES).toHaveLength(9);
   });
 
   it('each archetype has required fields', () => {

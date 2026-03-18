@@ -111,39 +111,39 @@ export interface ArchetypeDef {
   summary: string;
 }
 
-// The 8 animal archetypes
+// The 9 animal archetypes
 export const ARCHETYPES: ArchetypeDef[] = [
+  {
+    id: 'resolute_whale',
+    emoji: '🐋',
+    name: 'Resolute Whale',
+    traits: ['Values-driven', 'Reform-minded', 'Collective action'],
+    centroid: { responsibility_orientation: -0.8, change_tempo: -0.7, governance_style: -0.6 },
+    summary: 'You tend to believe strong systems can be improved, supporting decisive reforms that protect and uplift the broader community.'
+  },
+  {
+    id: 'balanced_raccoon',
+    emoji: '🦝',
+    name: 'Balanced Raccoon',
+    traits: ['Resourceful', 'Coalition-builder', 'Pragmatic reformer'],
+    centroid: { responsibility_orientation: -0.4, change_tempo: -0.3, governance_style: -0.3 },
+    summary: 'You tend to favor practical improvements to shared systems, building coalitions and finding workable compromises that move things forward.'
+  },
   {
     id: 'caring_koala',
     emoji: '🐨',
     name: 'Caring Koala',
     traits: ['Community-minded', 'Steady', 'Systems-oriented'],
-    centroid: { responsibility_orientation: -0.7, change_tempo: 0.5, governance_style: -0.4 },
+    centroid: { responsibility_orientation: -0.6, change_tempo: 0.5, governance_style: -0.3 },
     summary: 'You tend to prioritize shared well-being and steady solutions, especially when systems protect people from harm.'
-  },
-  {
-    id: 'independent_stallion',
-    emoji: '🐎',
-    name: 'Independent Stallion',
-    traits: ['Autonomy-first', 'Action-oriented', 'Choice-focused'],
-    centroid: { responsibility_orientation: 0.7, change_tempo: -0.4, governance_style: 0.4 },
-    summary: 'You tend to value autonomy and momentum, preferring solutions that give people room to choose and adapt.'
   },
   {
     id: 'thoughtful_owl',
     emoji: '🦉',
     name: 'Thoughtful Owl',
     traits: ['Evidence-driven', 'Fairness-minded', 'Process-aware'],
-    centroid: { responsibility_orientation: -0.3, change_tempo: 0.6, governance_style: -0.7 },
+    centroid: { responsibility_orientation: -0.2, change_tempo: 0.5, governance_style: -0.7 },
     summary: 'You tend to favor careful, consistent rules and evidence-based decisions that feel fair across people and places.'
-  },
-  {
-    id: 'pragmatic_fox',
-    emoji: '🦊',
-    name: 'Pragmatic Fox',
-    traits: ['Practical', 'Flexible', 'Context-aware'],
-    centroid: { responsibility_orientation: 0.0, change_tempo: -0.2, governance_style: 0.4 },
-    summary: 'You tend to mix tools and adjust as you go, focusing on what works in practice more than rigid labels.'
   },
   {
     id: 'steady_turtle',
@@ -154,28 +154,36 @@ export const ARCHETYPES: ArchetypeDef[] = [
     summary: 'You tend to prioritize durable solutions and risk reduction, preferring proven approaches with clear safeguards.'
   },
   {
-    id: 'agile_panther',
-    emoji: '🐆',
-    name: 'Agile Panther',
-    traits: ['Fast-moving', 'Decisive', 'Adaptive'],
-    centroid: { responsibility_orientation: 0.4, change_tempo: -0.7, governance_style: 0.1 },
-    summary: 'You tend to move quickly and adapt, preferring approaches that respond fast when conditions change.'
+    id: 'pragmatic_fox',
+    emoji: '🦊',
+    name: 'Pragmatic Fox',
+    traits: ['Practical', 'Flexible', 'Context-aware'],
+    centroid: { responsibility_orientation: 0.0, change_tempo: -0.2, governance_style: 0.4 },
+    summary: 'You tend to mix tools and adjust as you go, focusing on what works in practice more than rigid labels.'
   },
   {
-    id: 'principled_elephant',
-    emoji: '🐘',
-    name: 'Principled Elephant',
-    traits: ['Values-driven', 'Reform-minded', 'Collective action'],
-    centroid: { responsibility_orientation: -0.6, change_tempo: -0.6, governance_style: -0.2 },
-    summary: 'You tend to believe strong systems can be improved, supporting decisive reforms when core values are at stake.'
+    id: 'independent_stallion',
+    emoji: '🐎',
+    name: 'Independent Stallion',
+    traits: ['Autonomy-first', 'Action-oriented', 'Choice-focused'],
+    centroid: { responsibility_orientation: 0.7, change_tempo: -0.3, governance_style: 0.3 },
+    summary: 'You tend to value autonomy and momentum, preferring solutions that give people room to choose and adapt.'
   },
   {
     id: 'loyal_retriever',
     emoji: '🐕',
     name: 'Loyal Retriever',
     traits: ['Trust-building', 'Community glue', 'Continuity'],
-    centroid: { responsibility_orientation: -0.1, change_tempo: 0.7, governance_style: 0.5 },
+    centroid: { responsibility_orientation: 0.3, change_tempo: 0.6, governance_style: 0.5 },
     summary: 'You tend to value trust and continuity, preferring solutions that feel socially grounded and workable for your community.'
+  },
+  {
+    id: 'steadfast_bison',
+    emoji: '🦬',
+    name: 'Steadfast Bison',
+    traits: ['Self-reliant', 'Tradition-rooted', 'Strong convictions'],
+    centroid: { responsibility_orientation: 0.7, change_tempo: 0.8, governance_style: 0.7 },
+    summary: 'You tend to trust individual responsibility and time-tested approaches, preferring stability and personal freedom over government-led change.'
   }
 ];
 

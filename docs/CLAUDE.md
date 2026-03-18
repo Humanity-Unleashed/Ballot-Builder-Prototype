@@ -350,6 +350,6 @@ OPENSTATES_API_KEY=...
 ## What NOT to Change
 
 - **Assessment logic**: The Civic Blueprint Assessment (slider quiz → shrinkage scoring) and Schwartz Values Assessment (vignettes → ipsatization) are working correctly. Don't modify `civicAxesService.ts` or `schwartzService.ts` scoring algorithms.
-- **Archetype system**: The 8 archetypes and 3 meta-dimensions are working. Don't touch `archetypes.ts`.
+- **Archetype system**: The 9 archetypes and 3 meta-dimensions are working. Don't touch `archetypes.ts`.
 - **Client-side scoring utilities**: `src/lib/scoring.ts` handles the user-side math. Changes should only be needed on the *candidate data input* side, not the scoring math itself.
 - **UI component structure**: The `ballot/`, `blueprint/`, and `schwartz/` component directories are well-organized. Add to them, don't restructure.
