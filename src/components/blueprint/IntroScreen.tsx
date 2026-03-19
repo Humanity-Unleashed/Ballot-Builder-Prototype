@@ -17,20 +17,20 @@ const slides = [
         <div className="rounded-xl bg-gray-100 px-5 py-4">
           <p className="mb-2 text-sm font-semibold text-gray-500">Without Ballot Builder</p>
           <ul className="space-y-1 text-sm leading-relaxed text-gray-500">
-            <li>Research every candidate</li>
-            <li>Read voter guides</li>
-            <li>Cross-reference positions</li>
-            <li>Figure out ballot measures</li>
-            <li>Hope you didn\u2019t miss anything</li>
+            <li>You research every candidate yourself</li>
+            <li>You read through voter guides</li>
+            <li>You compare positions by hand</li>
+            <li>You decode each ballot measure</li>
+            <li>You hope you didn\u2019t miss anything</li>
           </ul>
         </div>
         <div className="rounded-xl bg-brand-primary/5 px-5 py-4">
           <p className="mb-2 text-sm font-semibold text-brand-primary">With Ballot Builder</p>
           <ul className="space-y-1 text-sm leading-relaxed text-brand-primary">
-            <li>5-minute values assessment</li>
-            <li>Personalized match scores</li>
-            <li>Every race explained</li>
-            <li>Done in about 15 minutes</li>
+            <li>Take a 5-minute values quiz</li>
+            <li>Get match scores for your ballot</li>
+            <li>See every race explained simply</li>
+            <li>Finish in about 15 minutes</li>
           </ul>
         </div>
       </div>
@@ -40,21 +40,21 @@ const slides = [
     icon: ListChecks,
     title: 'Know Your Ballot',
     description:
-      'Most ballots have 8\u201315 races you\u2019ve never heard of. We walk you through all of them \u2014 candidates, measures, and what each office actually does \u2014 so nothing catches you off guard at the polls.',
+      'Most ballots have 8\u201315 races you\u2019ve never heard of. We walk you through each one: the candidates, the measures, and what the office does. No surprises at the polls.',
     customContent: null,
   },
   {
     icon: Compass,
     title: 'Vote Your Values',
     description:
-      'Take a 5-minute assessment. We\u2019ll map your priorities to real candidates and ballot measures \u2014 no party labels, no spin. Just your values matched to your choices.',
+      'Take a 5-minute quiz about what matters to you. We\u2019ll match your values to real candidates and ballot measures. No party labels. No spin. Just your views matched to your choices.',
     customContent: null,
   },
   {
     icon: Users,
     title: 'Prep Together',
     description:
-      'Create a Voting Squad with friends or family. Track who\u2019s ballot-ready without seeing anyone\u2019s votes. Hold each other accountable.',
+      'Start a Voting Squad with friends or family. See who is ballot-ready without seeing their votes. Keep each other on track.',
     customContent: null,
     note: 'Note: This demo uses sample ballot data for Austin, TX to show how the full experience works.',
   },
