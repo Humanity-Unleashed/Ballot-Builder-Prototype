@@ -5,7 +5,8 @@ import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electio
 import { ballotApi, type BallotLookupResponse } from '@/services/api';
 import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
-import { RefreshCw, ChevronRight } from 'lucide-react';
+import { RefreshCw, ChevronRight, Share2 } from 'lucide-react';
+import ArchetypeShareCard from './ArchetypeShareCard';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
 import {
@@ -45,6 +46,7 @@ export default function BlueprintSummaryView({
   const router = useRouter();
   const { track } = useAnalyticsContext();
   const demographicProfile = useDemographicStore((s) => s.profile);
+  const [showShareCard, setShowShareCard] = useState(false);
   // ── Election date ──
   const { electionLabel, daysRemaining } = useMemo(() => {
     const electionDay = getNextElectionDay();
@@ -128,7 +130,19 @@ export default function BlueprintSummaryView({
           <div className="flex items-start gap-3">
             <span className="text-3xl leading-none mt-0.5">{archetype.primary.emoji}</span>
             <div className="flex-1 min-w-0">
-              <h2 className="text-[15px] font-bold text-gray-900">{archetype.primary.name}</h2>
+              <div className="flex items-center justify-between">
+                <h2 className="text-[15px] font-bold text-gray-900">{archetype.primary.name}</h2>
+                <button
+                  onClick={() => {
+                    track('click', { element: 'share_archetype_toggle' });
+                    setShowShareCard(!showShareCard);
+                  }}
+                  className="flex items-center gap-1 text-[11px] font-semibold text-brand-primary"
+                >
+                  <Share2 className="h-3 w-3" />
+                  Share
+                </button>
+              </div>
               <p className="text-[13px] leading-[1.45] text-gray-500 mt-1">
                 {archetype.primary.summary}
               </p>
@@ -149,6 +163,11 @@ export default function BlueprintSummaryView({
               )}
             </div>
           </div>
+          {showShareCard && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <ArchetypeShareCard archetype={archetype} onClose={() => setShowShareCard(false)} />
+            </div>
+          )}
         </div>
 
         {/* ── Domain cards (vertical stack, sorted by importance) ── */}

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useRef } from 'react';
-import { ArrowRight, ClipboardCheck, Compass, MessageSquarePlus, Users, X } from 'lucide-react';
+import { ArrowRight, Clock, Compass, ListChecks, Users, X } from 'lucide-react';
 
 interface IntroScreenProps {
   onClose: () => void;
@@ -9,28 +9,54 @@ interface IntroScreenProps {
 
 const slides = [
   {
-    icon: MessageSquarePlus,
-    title: null,
-    description:
-      'Ballot Builder helps you fill out your ballot by showing how candidates and measures align with your values and priorities, regardless of party affiliation.\n\nPlease consider leaving feedback so we can make Ballot Builder unbiased, accurate, and useful.',
+    icon: Clock,
+    title: 'Ballot prep shouldn\u2019t take hours',
+    description: null,
+    customContent: (
+      <div className="mx-auto flex max-w-sm flex-col gap-4 text-left">
+        <div className="rounded-xl bg-gray-100 px-5 py-4">
+          <p className="mb-2 text-sm font-semibold text-gray-500">Without Ballot Builder</p>
+          <ul className="space-y-1 text-sm leading-relaxed text-gray-500">
+            <li>Research every candidate</li>
+            <li>Read voter guides</li>
+            <li>Cross-reference positions</li>
+            <li>Figure out ballot measures</li>
+            <li>Hope you didn\u2019t miss anything</li>
+          </ul>
+        </div>
+        <div className="rounded-xl bg-brand-primary/5 px-5 py-4">
+          <p className="mb-2 text-sm font-semibold text-brand-primary">With Ballot Builder</p>
+          <ul className="space-y-1 text-sm leading-relaxed text-brand-primary">
+            <li>5-minute values assessment</li>
+            <li>Personalized match scores</li>
+            <li>Every race explained</li>
+            <li>Done in about 15 minutes</li>
+          </ul>
+        </div>
+      </div>
+    ),
   },
   {
-    icon: ClipboardCheck,
+    icon: ListChecks,
     title: 'Know Your Ballot',
     description:
-      'Every election has races and measures you\u2019ve never heard of. Ballot Builder walks you through your actual ballot so you can vote with confidence \u2014 not confusion.',
+      'Most ballots have 8\u201315 races you\u2019ve never heard of. We walk you through all of them \u2014 candidates, measures, and what each office actually does \u2014 so nothing catches you off guard at the polls.',
+    customContent: null,
   },
   {
     icon: Compass,
     title: 'Vote Your Values',
     description:
       'Take a 5-minute assessment. We\u2019ll map your priorities to real candidates and ballot measures \u2014 no party labels, no spin. Just your values matched to your choices.',
+    customContent: null,
   },
   {
     icon: Users,
     title: 'Prep Together',
     description:
-      'Invite a few friends or family to your Voting Squad. See who\u2019s registered, who\u2019s prepped, and who\u2019s voted \u2014 without sharing what anyone chose. Election prep is easier together.\n\nThis is a demo. All ballot data, candidates, and recommendations shown are fictional and not reflective of your actual location or demographics.',
+      'Create a Voting Squad with friends or family. Track who\u2019s ballot-ready without seeing anyone\u2019s votes. Hold each other accountable.',
+    customContent: null,
+    note: 'Note: This demo uses sample ballot data for Austin, TX to show how the full experience works.',
   },
 ];
 
@@ -107,9 +133,21 @@ export default function IntroScreen({ onClose }: IntroScreenProps) {
           )}
 
           {/* Description */}
-          <p className="mx-auto max-w-sm whitespace-pre-line leading-relaxed text-text-secondary">
-            {slide.description}
-          </p>
+          {slide.description && (
+            <p className="mx-auto max-w-sm whitespace-pre-line leading-relaxed text-text-secondary">
+              {slide.description}
+            </p>
+          )}
+
+          {/* Custom content (e.g. comparison cards on slide 0) */}
+          {slide.customContent}
+
+          {/* Note */}
+          {'note' in slide && slide.note && (
+            <p className="mx-auto mt-4 max-w-sm text-xs leading-relaxed text-text-secondary/70">
+              {slide.note}
+            </p>
+          )}
         </div>
       </div>
 

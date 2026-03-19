@@ -46,6 +46,9 @@ interface BallotSummaryProps {
   onPrint: () => void;
   voterInfo?: VoterInfo | null;
   location?: LocationInfo | null;
+  sessionMinutes?: number;
+  archetypeName?: string;
+  archetypeEmoji?: string;
 }
 
 // Map category icon strings to lucide components
@@ -63,6 +66,9 @@ export default function BallotSummary({
   onPrint,
   voterInfo,
   location,
+  sessionMinutes,
+  archetypeName,
+  archetypeEmoji,
 }: BallotSummaryProps) {
   const { track } = useAnalyticsContext();
   const [reviewOpen, setReviewOpen] = useState(true);
@@ -109,7 +115,7 @@ export default function BallotSummary({
       <Confetti />
 
       {/* Celebration header with stats */}
-      <CelebrationHeader ballotItems={ballotItems} />
+      <CelebrationHeader ballotItems={ballotItems} sessionMinutes={sessionMinutes} />
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
@@ -231,7 +237,12 @@ export default function BallotSummary({
         <SquadInviteCard />
 
         {/* Share */}
-        <ShareSection />
+        <ShareSection
+          racesCount={ballotItems.filter((i) => i.type === 'candidate_race').length}
+          sessionMinutes={sessionMinutes}
+          archetypeName={archetypeName}
+          archetypeEmoji={archetypeEmoji}
+        />
 
         {/* Disclaimer */}
         <div className="mx-4 flex items-start gap-2.5 bg-gray-100 p-3.5 rounded-xl mb-10">

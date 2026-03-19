@@ -60,7 +60,7 @@ import type { UserValueRecord } from '@/types/hybridAssessment';
 import type { ProgressiveAxisValue } from '@/types/conversation';
 import type { DemoState } from '@/stores/demographicStore';
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
-import { deriveMetaDimensions } from '@/lib/archetypes';
+import { deriveMetaDimensions, computeArchetype } from '@/lib/archetypes';
 import { calculateFineTunedScore } from '@/data/fineTuningPositions';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 
@@ -944,6 +944,9 @@ export default function UnifiedBallotPage() {
           onPrint={handlePrint}
           voterInfo={voterInfo}
           location={location}
+          sessionMinutes={useBallotStore.getState().getSessionDurationMinutes()}
+          archetypeName={blueprintProfile ? computeArchetype(blueprintProfile).primary.name : undefined}
+          archetypeEmoji={blueprintProfile ? computeArchetype(blueprintProfile).primary.emoji : undefined}
         />
 
         {/* Start fresh button */}

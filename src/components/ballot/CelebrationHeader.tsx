@@ -10,9 +10,10 @@ import {
 
 interface CelebrationHeaderProps {
   ballotItems: BallotItem[];
+  sessionMinutes?: number;
 }
 
-export default function CelebrationHeader({ ballotItems }: CelebrationHeaderProps) {
+export default function CelebrationHeader({ ballotItems, sessionMinutes }: CelebrationHeaderProps) {
   const electionDay = getNextElectionDay();
   const days = daysUntil(electionDay);
   const dateStr = formatElectionDate(electionDay);
@@ -45,7 +46,21 @@ export default function CelebrationHeader({ ballotItems }: CelebrationHeaderProp
             <p className="text-3xl font-bold text-brand-primary">{measures}</p>
             <p className="text-xs text-text-secondary mt-1">Ballot measures</p>
           </div>
+          {sessionMinutes != null && sessionMinutes > 0 && (
+            <>
+              <div className="w-px h-12 bg-border-default" />
+              <div className="text-center">
+                <p className="text-3xl font-bold text-brand-primary">{sessionMinutes}</p>
+                <p className="text-xs text-text-secondary mt-1">Minutes spent</p>
+              </div>
+            </>
+          )}
         </div>
+        {sessionMinutes != null && sessionMinutes > 0 && (
+          <p className="text-[13px] text-text-secondary mt-3 pt-3 border-t border-border-default text-center">
+            You just prepped your entire ballot in {sessionMinutes} minute{sessionMinutes !== 1 ? 's' : ''}
+          </p>
+        )}
       </div>
     </div>
   );
