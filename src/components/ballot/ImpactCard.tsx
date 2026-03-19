@@ -70,16 +70,21 @@ export default function ImpactCard({ ballotItems, sessionMinutes }: ImpactCardPr
             <p className="text-3xl font-extrabold">{measures}</p>
             <p className="text-[11px] text-white/70">measures</p>
           </div>
-          {sessionMinutes != null && sessionMinutes > 0 && (
+          {sessionMinutes != null && sessionMinutes >= 0 && (
             <>
               <div className="w-px h-10 bg-white/20" />
               <div className="text-center">
-                <p className="text-3xl font-extrabold">{sessionMinutes}</p>
+                <p className="text-3xl font-extrabold">{sessionMinutes < 1 ? '<1' : sessionMinutes}</p>
                 <p className="text-[11px] text-white/70">minutes</p>
               </div>
             </>
           )}
         </div>
+        {sessionMinutes != null && sessionMinutes > 0 && (
+          <p className="text-white/80 text-[13px] mt-3 pt-3 border-t border-white/20">
+            You prepped your entire ballot in {sessionMinutes} minute{sessionMinutes !== 1 ? 's' : ''} — under {Math.ceil((sessionMinutes || 1) / Math.max(races + measures, 1))} minute{Math.ceil((sessionMinutes || 1) / Math.max(races + measures, 1)) !== 1 ? 's' : ''} per item, with evidence for each.
+          </p>
+        )}
       </div>
 
       {/* Insight cards */}
