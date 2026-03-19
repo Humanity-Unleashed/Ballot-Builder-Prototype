@@ -251,6 +251,11 @@ export interface Measure {
   type: 'measure';
   title: string; // e.g., "Proposition 42: Education Funding Act"
   shortTitle: string; // e.g., "Prop 42"
+  /**
+   * OFFICIAL BALLOT TEXT — verbatim from the election authority.
+   * DO NOT alter, rephrase, correct punctuation, or simplify.
+   * Use `explanation` for plain-language descriptions instead.
+   */
   description: string;
   vector?: number[]; // Legacy policy alignment vector (deprecated)
   /** Axis effects: how YES vote affects each axis. Negative = toward poleA, Positive = toward poleB */

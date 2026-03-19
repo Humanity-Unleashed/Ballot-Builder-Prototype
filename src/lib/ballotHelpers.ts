@@ -50,7 +50,12 @@ export interface BallotItem {
   categoryId: string;
   type: 'proposition' | 'candidate_race';
   title: string;
+  /**
+   * For measures: OFFICIAL BALLOT TEXT — verbatim, never altered.
+   * For contests: auto-generated "Vote for ONE candidate for {office}".
+   */
   questionText: string;
+  /** Plain-language explanation. OK to simplify — this is NOT official text. */
   explanation: string;
   candidates?: Candidate[];
   allowWriteIn?: boolean;
