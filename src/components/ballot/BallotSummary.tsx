@@ -20,6 +20,7 @@ import type { VoteAmericaStateRules } from '@/server/types/externalApis';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import Confetti from './Confetti';
 import CelebrationHeader from './CelebrationHeader';
+import ImpactCard from './ImpactCard';
 import NextStepsCard from './NextStepsCard';
 import SquadInviteCard from './SquadInviteCard';
 import ShareSection from './ShareSection';
@@ -115,7 +116,12 @@ export default function BallotSummary({
       <Confetti />
 
       {/* Celebration header with stats */}
-      <CelebrationHeader ballotItems={ballotItems} sessionMinutes={sessionMinutes} />
+      <CelebrationHeader />
+
+      {/* Impact card — research-backed context */}
+      <div className="pt-4">
+        <ImpactCard ballotItems={ballotItems} sessionMinutes={sessionMinutes} />
+      </div>
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-4 pb-6 space-y-5">
