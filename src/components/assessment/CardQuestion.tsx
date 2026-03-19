@@ -43,6 +43,20 @@ export default function CardQuestion({
     [axisConfig.positions.length],
   );
 
+  // Randomly flip the display order per question to avoid top-always-progressive bias.
+  // Determined once per mount (per axisConfig.axisId) so it doesn't change while answering.
+  const isFlipped = useMemo(
+    () => Math.random() < 0.5,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [axisConfig.axisId],
+  );
+
+  // Build display-order indices: either [0,1,2,3,4] or [4,3,2,1,0]
+  const displayOrder = useMemo(() => {
+    const indices = axisConfig.positions.map((_, i) => i);
+    return isFlipped ? indices.reverse() : indices;
+  }, [axisConfig.positions, isFlipped]);
+
   const handleCardTap = (index: number) => {
     if (disabled || confirmed) return;
     // Toggle selection — tapping same card deselects
@@ -69,15 +83,16 @@ export default function CardQuestion({
       {/* Position cards + inline action */}
       <div className="flex-1 overflow-y-auto px-4 pb-4">
         <div className="space-y-2">
-          {axisConfig.positions.map((position, index) => {
-            const isSelected = selectedIndex === index;
+          {displayOrder.map((originalIndex) => {
+            const position = axisConfig.positions[originalIndex];
+            const isSelected = selectedIndex === originalIndex;
             const isCurrentPolicy = position.isCurrentPolicy;
             const hasTradeoffs = position.tradeoffs && position.tradeoffs.length > 0;
 
             return (
-              <div key={index}>
+              <div key={originalIndex}>
                 <button
-                  onClick={() => handleCardTap(index)}
+                  onClick={() => handleCardTap(originalIndex)}
                   disabled={disabled || confirmed}
                   className={`w-full text-left p-3.5 rounded-xl border-2 transition-all duration-150 ${
                     isSelected
