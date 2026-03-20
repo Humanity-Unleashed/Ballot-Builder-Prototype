@@ -103,16 +103,24 @@ export default function SignalReviewCard({
                   {signal.rawSignal.reasoning && (
                     <p className="text-[12px] text-green-700 leading-snug mt-1.5 italic">
                       <MessageSquareText className="h-3 w-3 inline-block mr-1 -mt-0.5" />
-                      {signal.rawSignal.reasoning
-                        .replace(/\s*\(?\bscore\s*\d+\.?\d*\)?\s*/gi, ' ')
-                        .replace(/\s*\(?\bposition\s*\d+\)?\s*/gi, ' ')
-                        .replace(/\s*which is on the \w+ axis\.?\s*/gi, ' ')
-                        .replace(/\s*on the \w+ axis\.?\s*/gi, ' ')
-                        .replace(/\s*\(\w+\)\s*axis\.?\s*/gi, ' ')
-                        .replace(/\bpole [AB]\b/gi, '')
-                        .replace(/\bthe user\b/gi, 'you')
-                        .replace(/\s{2,}/g, ' ')
-                        .trim()}
+                      {(() => {
+                        let text = signal.rawSignal.reasoning
+                          .replace(/\s*\(?\bscore\s*\d+\.?\d*\)?\s*/gi, ' ')
+                          .replace(/\s*\(?\bposition\s*\d+\)?\s*/gi, ' ')
+                          .replace(/\s*which is on the \w+ axis\.?\s*/gi, ' ')
+                          .replace(/\s*on the \w+ axis\.?\s*/gi, ' ')
+                          .replace(/\s*\(\w+\)\s*axis\.?\s*/gi, ' ')
+                          .replace(/\bpole [AB]\b/gi, '')
+                          .replace(/\bThe user\b/g, 'You')
+                          .replace(/\bthe user\b/g, 'you')
+                          .replace(/\s{2,}/g, ' ')
+                          .trim();
+                        // Capitalize first letter
+                        if (text.length > 0) {
+                          text = text[0].toUpperCase() + text.slice(1);
+                        }
+                        return text;
+                      })()}
                     </p>
                   )}
                 </div>
