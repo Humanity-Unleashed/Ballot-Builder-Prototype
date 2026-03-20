@@ -52,7 +52,7 @@ export default function NlpPanel({
     }
   };
 
-  const topicName = axisConfig.question.replace(/\?$/, '').toLowerCase();
+  const question = axisConfig.question;
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
@@ -75,9 +75,11 @@ export default function NlpPanel({
       {/* Prompt area */}
       <div className="flex-1 overflow-y-auto px-5 pb-4">
         <div className="bg-gray-50 rounded-2xl p-5">
-          <p className="text-[14px] text-gray-600 leading-relaxed">
-            Tell us what you think about {topicName} in your own words.
-            A sentence or two is plenty, but say as much as you&apos;d like.
+          <p className="text-[14px] text-gray-700 leading-relaxed font-medium mb-1.5">
+            {question}
+          </p>
+          <p className="text-[13px] text-gray-500 leading-relaxed">
+            Share your take — a sentence or two is plenty.
           </p>
 
         </div>
