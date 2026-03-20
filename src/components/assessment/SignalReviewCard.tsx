@@ -103,7 +103,13 @@ export default function SignalReviewCard({
                   {signal.rawSignal.reasoning && (
                     <p className="text-[12px] text-green-700 leading-snug mt-1.5 italic">
                       <MessageSquareText className="h-3 w-3 inline-block mr-1 -mt-0.5" />
-                      {signal.rawSignal.reasoning.replace(/\s*\(?\bscore\s*\d+\.?\d*\)?\s*/gi, ' ').replace(/\s*\(?\bposition\s*\d+\)?\s*/gi, ' ').trim()}
+                      {signal.rawSignal.reasoning
+                        .replace(/\s*\(?\bscore\s*\d+\.?\d*\)?\s*/gi, ' ')
+                        .replace(/\s*\(?\bposition\s*\d+\)?\s*/gi, ' ')
+                        .replace(/\s*which is on the \w+ axis\.?\s*/gi, ' ')
+                        .replace(/\s*on the \w+ axis\.?\s*/gi, ' ')
+                        .replace(/\s*\(\w+\)\s*axis\.?\s*/gi, ' ')
+                        .trim()}
                     </p>
                   )}
                 </div>
