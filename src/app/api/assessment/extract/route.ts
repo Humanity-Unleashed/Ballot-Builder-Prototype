@@ -179,7 +179,7 @@ Respond with valid JSON:
       "confidence": "number 0-1",
       "importance": "number 0-10",
       "source": "direct quote from user",
-      "reasoning": "1-2 plain sentences explaining why the user's words match this position. Write for the user, not a developer — no axis IDs, score numbers, or internal labels. REQUIRED.",
+      "reasoning": "1-2 plain sentences explaining why this position fits. Address the user as 'you' (e.g. 'You said...', 'Your answer suggests...'). NEVER use: 'the user', axis IDs, score numbers, 'pole A', 'pole B', or any internal labels. REQUIRED.",
       "warnings": ["optional ambiguity notes"],
       "conflictsWith": "null or quote from prior evidence"
     }

@@ -109,6 +109,9 @@ export default function SignalReviewCard({
                         .replace(/\s*which is on the \w+ axis\.?\s*/gi, ' ')
                         .replace(/\s*on the \w+ axis\.?\s*/gi, ' ')
                         .replace(/\s*\(\w+\)\s*axis\.?\s*/gi, ' ')
+                        .replace(/\bpole [AB]\b/gi, '')
+                        .replace(/\bthe user\b/gi, 'you')
+                        .replace(/\s{2,}/g, ' ')
                         .trim()}
                     </p>
                   )}
