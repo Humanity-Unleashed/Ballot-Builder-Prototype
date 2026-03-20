@@ -1,8 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, Mail, Copy, Check, Share2 } from 'lucide-react';
-import { ARCHETYPES, type ArchetypeResult } from '@/lib/archetypes';
+import { MessageCircle, Mail, Copy, Check } from 'lucide-react';
+import {
+  ARCHETYPES,
+  type ArchetypeResult,
+  type ArchetypeVariant,
+  getArchetypeVariant,
+  getArchetypeDisplayName,
+  getArchetypeDisplayEmoji,
+  getArchetypeDisplaySummary,
+} from '@/lib/archetypes';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 
 interface ArchetypeShareCardProps {
@@ -15,17 +23,23 @@ const SHARE_URL = 'https://ballotbuilder.org';
 export default function ArchetypeShareCard({ archetype, onClose }: ArchetypeShareCardProps) {
   const [copied, setCopied] = useState(false);
   const { track } = useAnalyticsContext();
+  const [variant] = useState<ArchetypeVariant>(() => getArchetypeVariant());
 
   const { primary } = archetype;
-  const shareMessage = `My civic style is ${primary.emoji} ${primary.name}! What's yours? Take the 5-minute quiz: ${SHARE_URL}`;
+  const displayName = getArchetypeDisplayName(primary, variant);
+  const displayEmoji = getArchetypeDisplayEmoji(primary, variant);
+  const displaySummary = getArchetypeDisplaySummary(primary, variant);
+  const shareLabel = displayEmoji ? `${displayEmoji} ${displayName}` : displayName;
+
+  const shareMessage = `My civic style is ${shareLabel}! What's yours? Take the 5-minute quiz: ${SHARE_URL}`;
 
   const handleText = () => {
-    track('click', { element: 'share_archetype_text', archetype: primary.id });
+    track('click', { element: 'share_archetype_text', archetype: primary.id, variant });
     window.open(`sms:?body=${encodeURIComponent(shareMessage)}`, '_self');
   };
 
   const handleEmail = () => {
-    track('click', { element: 'share_archetype_email', archetype: primary.id });
+    track('click', { element: 'share_archetype_email', archetype: primary.id, variant });
     window.open(
       `mailto:?subject=${encodeURIComponent("What's your civic style?")}&body=${encodeURIComponent(shareMessage)}`,
       '_self',
@@ -34,9 +48,9 @@ export default function ArchetypeShareCard({ archetype, onClose }: ArchetypeShar
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(`${shareMessage}`);
+      await navigator.clipboard.writeText(shareMessage);
       setCopied(true);
-      track('click', { element: 'share_archetype_copy', archetype: primary.id });
+      track('click', { element: 'share_archetype_copy', archetype: primary.id, variant });
       setTimeout(() => setCopied(false), 2000);
     } catch { /* silent */ }
   };
@@ -51,10 +65,10 @@ export default function ArchetypeShareCard({ archetype, onClose }: ArchetypeShar
         <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">
           Your Civic Style
         </p>
-        <div className="text-5xl mb-3">{primary.emoji}</div>
-        <h2 className="text-xl font-extrabold mb-2">{primary.name}</h2>
+        {displayEmoji && <div className="text-5xl mb-3">{displayEmoji}</div>}
+        <h2 className="text-xl font-extrabold mb-2">{displayName}</h2>
         <p className="text-white/80 text-sm leading-relaxed max-w-[260px] mx-auto">
-          {primary.summary}
+          {displaySummary}
         </p>
         <div className="mt-5 pt-4 border-t border-white/20">
           <p className="text-white/50 text-[11px] font-semibold">ballotbuilder.org</p>
@@ -67,18 +81,22 @@ export default function ArchetypeShareCard({ archetype, onClose }: ArchetypeShar
           All 9 Civic Styles
         </p>
         <div className="flex flex-wrap gap-1.5">
-          {ARCHETYPES.map((a) => (
-            <span
-              key={a.id}
-              className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold ${
-                a.id === primary.id
-                  ? 'bg-brand-primary text-white'
-                  : 'bg-gray-100 text-gray-500'
-              }`}
-            >
-              {a.emoji} {a.name}
-            </span>
-          ))}
+          {ARCHETYPES.map((a) => {
+            const aEmoji = getArchetypeDisplayEmoji(a, variant);
+            const aName = getArchetypeDisplayName(a, variant);
+            return (
+              <span
+                key={a.id}
+                className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold ${
+                  a.id === primary.id
+                    ? 'bg-brand-primary text-white'
+                    : 'bg-gray-100 text-gray-500'
+                }`}
+              >
+                {aEmoji && <span>{aEmoji}</span>} {aName}
+              </span>
+            );
+          })}
         </div>
       </div>
 

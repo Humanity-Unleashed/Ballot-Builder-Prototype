@@ -13,7 +13,15 @@ import {
   DOMAIN_DISPLAY_NAMES,
   getDomainEmoji,
 } from '@/lib/blueprintHelpers';
-import { computeArchetype, type ArchetypeResult } from '@/lib/archetypes';
+import {
+  computeArchetype,
+  type ArchetypeResult,
+  type ArchetypeVariant,
+  getArchetypeVariant,
+  getArchetypeDisplayName,
+  getArchetypeDisplayEmoji,
+  getArchetypeDisplaySummary,
+} from '@/lib/archetypes';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import { useDemographicStore } from '@/stores/demographicStore';
 import DomainLeanMeter from './DomainLeanMeter';
@@ -47,6 +55,7 @@ export default function BlueprintSummaryView({
   const { track } = useAnalyticsContext();
   const demographicProfile = useDemographicStore((s) => s.profile);
   const [showShareCard, setShowShareCard] = useState(false);
+  const [abVariant] = useState<ArchetypeVariant>(() => getArchetypeVariant());
   // ── Election date ──
   const { electionLabel, daysRemaining } = useMemo(() => {
     const electionDay = getNextElectionDay();
@@ -128,13 +137,15 @@ export default function BlueprintSummaryView({
         {/* ── Archetype card ── */}
         <div className="mb-4 rounded-[14px] border border-gray-200 bg-white px-4 py-4 shadow-sm">
           <div className="flex items-start gap-3">
-            <span className="text-3xl leading-none mt-0.5">{archetype.primary.emoji}</span>
+            {getArchetypeDisplayEmoji(archetype.primary, abVariant) && (
+              <span className="text-3xl leading-none mt-0.5">{getArchetypeDisplayEmoji(archetype.primary, abVariant)}</span>
+            )}
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <h2 className="text-[15px] font-bold text-gray-900">{archetype.primary.name}</h2>
+                <h2 className="text-[15px] font-bold text-gray-900">{getArchetypeDisplayName(archetype.primary, abVariant)}</h2>
                 <button
                   onClick={() => {
-                    track('click', { element: 'share_archetype_toggle' });
+                    track('click', { element: 'share_archetype_toggle', variant: abVariant });
                     setShowShareCard(!showShareCard);
                   }}
                   className="flex items-center gap-1 text-[11px] font-semibold text-brand-primary"
@@ -144,7 +155,7 @@ export default function BlueprintSummaryView({
                 </button>
               </div>
               <p className="text-[13px] leading-[1.45] text-gray-500 mt-1">
-                {archetype.primary.summary}
+                {getArchetypeDisplaySummary(archetype.primary, abVariant)}
               </p>
               <div className="flex flex-wrap gap-1.5 mt-2.5">
                 {archetype.primary.traits.map((trait) => (
@@ -158,7 +169,7 @@ export default function BlueprintSummaryView({
               </div>
               {archetype.secondary && archetype.margin < 0.3 && (
                 <p className="text-[11px] text-gray-400 mt-2.5">
-                  Also close to <span className="font-semibold">{archetype.secondary.emoji} {archetype.secondary.name}</span>
+                  Also close to <span className="font-semibold">{getArchetypeDisplayEmoji(archetype.secondary, abVariant)} {getArchetypeDisplayName(archetype.secondary, abVariant)}</span>
                 </p>
               )}
             </div>
