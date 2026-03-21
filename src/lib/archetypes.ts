@@ -221,7 +221,7 @@ export const ARCHETYPES: ArchetypeDef[] = [
     id: 'independent_stallion',
     emoji: '🐎',
     name: 'Independent Stallion',
-    neutralName: 'Freedom Advocate',
+    neutralName: 'Independent Trailblazer',
     traits: ['Autonomy-first', 'Action-oriented', 'Choice-focused'],
     centroid: { responsibility_orientation: 0.7, change_tempo: -0.3, governance_style: 0.3 },
     summary: 'You tend to value autonomy and momentum, preferring solutions that give people room to choose and adapt.',
