@@ -310,27 +310,60 @@ export default function BallotSummary({
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-5 pb-6 space-y-5">
-        {/* 4. Vote review — collapsed by default */}
-        <div className="px-4">
+        {/* 4. Your sample ballot — card with actions always visible */}
+        <div className="mx-4 rounded-2xl border border-gray-200 bg-white overflow-hidden">
+          {/* Header — always visible */}
           <button
             onClick={() => {
               setReviewOpen((prev) => !prev);
               track('click', { element: 'toggle_review', open: !reviewOpen });
             }}
-            className="w-full flex items-center justify-between py-3 text-sm font-semibold text-text-secondary"
+            className="w-full flex items-center gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors"
           >
-            <span>
-              Review your selections ({votedCount} voted{skippedCount > 0 ? `, ${skippedCount} skipped` : ''})
-            </span>
+            <div className="w-9 h-9 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">
+              <FileText className="h-4 w-4 text-brand-primary" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-[14px] font-bold text-gray-900">Your sample ballot</p>
+              <p className="text-[12px] text-gray-500">
+                {votedCount} voted{skippedCount > 0 ? `, ${skippedCount} skipped` : ''} — tap to {reviewOpen ? 'collapse' : 'review'}
+              </p>
+            </div>
             {reviewOpen ? (
-              <ChevronUp className="h-4 w-4 text-text-muted" />
+              <ChevronUp className="h-4 w-4 text-gray-400 shrink-0" />
             ) : (
-              <ChevronDown className="h-4 w-4 text-text-muted" />
+              <ChevronDown className="h-4 w-4 text-gray-400 shrink-0" />
             )}
           </button>
 
+          {/* Actions — always visible */}
+          <div className="flex items-center border-t border-gray-100">
+            <button
+              onClick={() => {
+                track('click', { element: 'print_ballot', votedCount, skippedCount });
+                onPrint();
+              }}
+              className="flex-1 flex items-center justify-center gap-1.5 py-3 text-[13px] font-semibold text-brand-primary hover:bg-brand-primary/5 transition-colors"
+            >
+              <Printer className="h-3.5 w-3.5" />
+              Print
+            </button>
+            <div className="w-px h-6 bg-gray-100" />
+            <button
+              onClick={() => {
+                track('click', { element: 'start_over' });
+                onStartOver();
+              }}
+              className="flex-1 flex items-center justify-center gap-1.5 py-3 text-[13px] font-semibold text-gray-500 hover:bg-gray-50 transition-colors"
+            >
+              <RefreshCw className="h-3.5 w-3.5" />
+              Start Over
+            </button>
+          </div>
+
+          {/* Expanded selections */}
           {reviewOpen && (
-            <div className="space-y-5 animate-fade-in-up">
+            <div className="border-t border-gray-100 px-4 py-3 space-y-4 animate-fade-in-up">
               {groupedItems.map(({ category, items }) => {
                 const CategoryIcon = iconMap[category.icon] || FileText;
 
@@ -338,7 +371,7 @@ export default function BallotSummary({
                   <div key={category.id}>
                     {/* Category badge */}
                     <div
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full mb-3"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full mb-2.5"
                       style={{ backgroundColor: category.color + '20' }}
                     >
                       <CategoryIcon className="h-4 w-4" style={{ color: category.color }} />
@@ -355,10 +388,10 @@ export default function BallotSummary({
                         return (
                           <div
                             key={item.id}
-                            className="flex items-center bg-white rounded-xl p-3.5 border border-gray-200"
+                            className="flex items-center bg-gray-50 rounded-xl p-3 border border-gray-100"
                           >
-                            <div className="flex-1 space-y-1.5">
-                              <p className="text-[15px] font-semibold text-gray-900 leading-5">
+                            <div className="flex-1 space-y-1">
+                              <p className="text-[14px] font-semibold text-gray-900 leading-5">
                                 {item.title}
                               </p>
                               {isSkipped ? (
@@ -381,9 +414,9 @@ export default function BallotSummary({
                             {/* Edit button */}
                             <button
                               onClick={() => onEditItem(index)}
-                              className="ml-3 w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
+                              className="ml-3 w-8 h-8 rounded-full bg-white flex items-center justify-center border border-gray-200 hover:bg-brand-primary/10 transition-colors"
                             >
-                              <Pencil className="h-[18px] w-[18px] text-brand-primary" />
+                              <Pencil className="h-3.5 w-3.5 text-brand-primary" />
                             </button>
                           </div>
                         );
@@ -392,31 +425,6 @@ export default function BallotSummary({
                   </div>
                 );
               })}
-
-              {/* Demoted action links */}
-              <div className="flex items-center justify-center gap-4 pt-2 pb-1">
-                <button
-                  onClick={() => {
-                    track('click', { element: 'print_ballot', votedCount, skippedCount });
-                    onPrint();
-                  }}
-                  className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-brand-primary transition-colors"
-                >
-                  <Printer className="h-4 w-4" />
-                  Print Ballot
-                </button>
-                <span className="text-text-muted">|</span>
-                <button
-                  onClick={() => {
-                    track('click', { element: 'start_over' });
-                    onStartOver();
-                  }}
-                  className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-brand-primary transition-colors"
-                >
-                  <RefreshCw className="h-4 w-4" />
-                  Start Over
-                </button>
-              </div>
             </div>
           )}
         </div>

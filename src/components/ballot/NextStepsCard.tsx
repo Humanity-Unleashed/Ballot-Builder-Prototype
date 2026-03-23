@@ -71,89 +71,77 @@ export default function NextStepsCard({ voterInfo, location }: NextStepsCardProp
   const pollingUrl = voterInfo?.pollingPlaceUrl ?? voterInfo?.stateRules?.polling_place_url ?? stateDefaults.pollingUrl;
   const absenteeUrl = voterInfo?.absenteeBallotUrl ?? voterInfo?.stateRules?.absentee_ballot_url ?? stateDefaults.absenteeUrl;
 
-  const actionLinks = [
-    {
-      id: 'polling_place',
-      icon: MapPin,
-      label: 'Find your polling place',
-      subtitle: 'Look up by your address',
-      href: pollingUrl,
-    },
-    {
-      id: 'mail_in_ballot',
-      icon: Mail,
-      label: 'Request a mail-in ballot',
-      subtitle: 'Apply for an absentee ballot',
-      href: absenteeUrl,
-    },
-  ];
-
   return (
-    <div className="px-4 animate-fade-in-up space-y-6">
-      {/* Nearby Polling Places (preview) */}
-      <div>
-        <div className="flex items-center gap-2 mb-3">
-          <h2 className="text-sm font-semibold text-text-secondary">
-            Nearby polling places
-          </h2>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-primary/10 text-brand-primary">
+    <div className="mx-4 rounded-2xl border border-gray-200 bg-white overflow-hidden">
+      {/* Section header */}
+      <div className="px-4 pt-4 pb-2">
+        <h2 className="text-[15px] font-bold text-gray-900">Get ready to vote</h2>
+        <p className="text-[12px] text-gray-500 flex items-center gap-1 mt-0.5">
+          <MapPin className="h-3 w-3" />
+          Showing info for {locationLabel}
+        </p>
+      </div>
+
+      {/* Polling places */}
+      <div className="px-4 pb-2">
+        <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+          Nearby polling places
+          <span className="px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary text-[10px] normal-case tracking-normal">
             Preview
           </span>
-        </div>
-        <div className="bg-white rounded-xl border border-border-default divide-y divide-border-default">
+        </p>
+        <div className="rounded-xl border border-gray-100 divide-y divide-gray-100">
           {SAMPLE_LOCATIONS.map((loc) => (
-            <div key={loc.name} className="flex items-center gap-3 px-4 py-3">
-              <MapPin className="h-4 w-4 text-text-muted shrink-0" />
+            <div key={loc.name} className="flex items-center gap-3 px-3.5 py-2.5">
+              <MapPin className="h-4 w-4 text-gray-400 shrink-0" />
               <div className="min-w-0">
-                <p className="text-[14px] font-semibold text-text-primary leading-5">
+                <p className="text-[13px] font-semibold text-gray-800 leading-5">
                   {loc.name}
                 </p>
-                <p className="text-xs text-text-muted">{loc.address}</p>
+                <p className="text-[12px] text-gray-400">{loc.address}</p>
               </div>
             </div>
           ))}
         </div>
-        <p className="text-xs text-text-muted italic mt-2 px-1">
-          In the full version, we&apos;ll show real locations based on your address
+        {/* Find your polling place — right under the list */}
+        <a
+          href={pollingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track('click', { element: 'next_step_polling_place' })}
+          className="flex items-center gap-2 mt-2 px-1 text-[13px] font-semibold text-brand-primary hover:underline"
+        >
+          <MapPin className="h-3.5 w-3.5" />
+          Find your actual polling place
+          <ExternalLink className="h-3 w-3" />
+        </a>
+        <p className="text-[11px] text-gray-400 italic mt-1 px-1">
+          In the full version, we&apos;ll show real locations based on your address.
         </p>
       </div>
 
-      {/* Take Action links */}
-      <div>
-        <h2 className="text-sm font-semibold text-text-secondary">
-          Take action
-        </h2>
-        <p className="text-xs text-text-muted mb-3 flex items-center gap-1">
-          <MapPin className="h-3 w-3" />
-          Showing info for {locationLabel}
-        </p>
-        <div className="space-y-3">
-          {actionLinks.map((step) => {
-            const Icon = step.icon;
-            return (
-              <a
-                key={step.id}
-                href={step.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track('click', { element: `next_step_${step.id}` })}
-                className="flex items-center gap-3 bg-white rounded-xl p-4 border border-border-default hover:border-brand-primary/30 transition-colors"
-              >
-                <div className="w-10 h-10 rounded-full bg-brand-primary-light flex items-center justify-center shrink-0">
-                  <Icon className="h-5 w-5 text-brand-primary" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[15px] font-semibold text-text-primary leading-5">
-                    {step.label}
-                  </p>
-                  <p className="text-xs text-text-muted truncate">{step.subtitle}</p>
-                </div>
-                <ExternalLink className="h-4 w-4 text-text-muted shrink-0" />
-              </a>
-            );
-          })}
+      {/* Divider */}
+      <div className="mx-4 h-px bg-gray-100" />
+
+      {/* Mail-in ballot */}
+      <a
+        href={absenteeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => track('click', { element: 'next_step_mail_in_ballot' })}
+        className="flex items-center gap-3 px-4 py-3.5 hover:bg-gray-50 transition-colors"
+      >
+        <div className="w-9 h-9 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">
+          <Mail className="h-4 w-4 text-brand-primary" />
         </div>
-      </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-[14px] font-semibold text-gray-800 leading-5">
+            Request a mail-in ballot
+          </p>
+          <p className="text-[12px] text-gray-400">Apply for an absentee ballot</p>
+        </div>
+        <ExternalLink className="h-4 w-4 text-gray-400 shrink-0" />
+      </a>
     </div>
   );
 }
