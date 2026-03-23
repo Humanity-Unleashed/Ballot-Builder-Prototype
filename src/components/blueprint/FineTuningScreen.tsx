@@ -66,6 +66,15 @@ export default function FineTuningScreen({
     [],
   );
 
+  // Deterministic flip per sub-dimension to avoid top-always-progressive bias.
+  // Must be called before early return to satisfy Rules of Hooks.
+  const currentSubDimension = fineTuningConfig?.subDimensions[currentIndex] ?? null;
+  const displayOrder = useMemo(() => {
+    if (!currentSubDimension) return [];
+    const indices = currentSubDimension.positions.map((_, i) => i);
+    return shouldFlip(currentSubDimension.id) ? indices.reverse() : indices;
+  }, [currentSubDimension]);
+
   if (!fineTuningConfig || !axis) {
     return (
       <div className="flex min-h-[calc(100vh-56px)] items-center justify-center bg-gray-50">
@@ -75,24 +84,19 @@ export default function FineTuningScreen({
   }
 
   const subDimensions = fineTuningConfig.subDimensions;
-  const currentSubDimension = subDimensions[currentIndex];
+  // Safe to assert: early return above guarantees fineTuningConfig exists
+  const currentSub = currentSubDimension!;
   const totalQuestions = subDimensions.length;
   const progressPercentage = (currentIndex / totalQuestions) * 100;
-
-  // Deterministic flip per sub-dimension to avoid top-always-progressive bias
-  const displayOrder = useMemo(() => {
-    const indices = currentSubDimension.positions.map((_, i) => i);
-    return shouldFlip(currentSubDimension.id) ? indices.reverse() : indices;
-  }, [currentSubDimension]);
 
   const handleNext = () => {
     const isLast = currentIndex >= totalQuestions - 1;
     track('click', { element: isLast ? 'finetune_finish' : 'finetune_next', axisId, questionIndex: currentIndex });
 
-    const newResponses = { ...responses, [currentSubDimension.id]: sliderPosition };
+    const newResponses = { ...responses, [currentSub.id]: sliderPosition };
     setResponses(newResponses);
 
-    const newStrength = { ...strengthResponses, [currentSubDimension.id]: currentStrength };
+    const newStrength = { ...strengthResponses, [currentSub.id]: currentStrength };
     setStrengthResponses(newStrength);
 
     animateTransition(() => {
@@ -122,12 +126,12 @@ export default function FineTuningScreen({
 
   const handleSkip = () => {
     track('click', { element: 'finetune_skip', axisId, questionIndex: currentIndex });
-    const newResponses = { ...responses, [currentSubDimension.id]: 2 };
+    const newResponses = { ...responses, [currentSub.id]: 2 };
     setResponses(newResponses);
 
     const newStrength = {
       ...strengthResponses,
-      [currentSubDimension.id]: DEFAULT_STRENGTH_VALUE,
+      [currentSub.id]: DEFAULT_STRENGTH_VALUE,
     };
     setStrengthResponses(newStrength);
 
@@ -183,16 +187,16 @@ export default function FineTuningScreen({
           style={{ opacity: fadeVisible ? 1 : 0 }}
         >
           <h3 className="mb-2 text-base font-bold leading-6 text-gray-900">
-            {currentSubDimension.name}
+            {currentSub.name}
           </h3>
           <p className="mb-4 text-base font-semibold leading-relaxed text-gray-800">
-            {currentSubDimension.question}
+            {currentSub.question}
           </p>
 
           {/* All position options as tappable cards (order randomized per question) */}
           <div className="flex flex-col gap-2.5">
             {displayOrder.map((originalIndex) => {
-              const position = currentSubDimension.positions[originalIndex];
+              const position = currentSub.positions[originalIndex];
               const isSelected = originalIndex === sliderPosition;
               return (
                 <button

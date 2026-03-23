@@ -8,6 +8,13 @@ import { useFeedbackStore, type FeedbackEntry } from '@/stores/feedbackStore';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 import { getScreenName } from '@/lib/screenNames';
 
+function generateId(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  return Math.random().toString(36).slice(2) + Date.now().toString(36);
+}
+
 const FEEDBACK_TYPES = [
   { value: 'bug', label: 'Bug' },
   { value: 'suggestion', label: 'Suggestion' },
@@ -52,9 +59,7 @@ export default function FeedbackButton() {
     if (!message.trim()) return;
 
     const entry: FeedbackEntry = {
-      id: typeof crypto.randomUUID === 'function'
-        ? crypto.randomUUID()
-        : Math.random().toString(36).slice(2) + Date.now().toString(36),
+      id: generateId(),
       timestamp: new Date().toISOString(),
       screen: pathname,
       screenName,
