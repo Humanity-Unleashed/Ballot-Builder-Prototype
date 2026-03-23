@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import WizardNav from '@/components/layout/WizardNav';
 
@@ -10,34 +8,17 @@ export default function AppLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { isAuthenticated, isLoading } = useAuth();
-  const router = useRouter();
-  const [authUnavailable, setAuthUnavailable] = useState(false);
+  const { isLoading } = useAuth();
 
-  // If auth stays in loading state too long, assume auth backend is unavailable
-  useEffect(() => {
-    if (isLoading) {
-      const timeout = setTimeout(() => setAuthUnavailable(true), 3000);
-      return () => clearTimeout(timeout);
-    }
-  }, [isLoading]);
-
-  useEffect(() => {
-    if (!isLoading && !isAuthenticated && !authUnavailable) {
-      router.replace('/');
-    }
-  }, [isAuthenticated, isLoading, authUnavailable, router]);
-
-  if (isLoading && !authUnavailable) {
+  // isLoading already handles the timeout (3s) in useAuth — once it resolves
+  // to false and user is still not authenticated, allow through anyway so the
+  // unauthenticated flow works (per CLAUDE.md invariant #6).
+  if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <p className="text-gray-500">Loading...</p>
       </div>
     );
-  }
-
-  if (!isAuthenticated && !authUnavailable) {
-    return null;
   }
 
   return (

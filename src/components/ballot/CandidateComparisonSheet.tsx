@@ -125,7 +125,7 @@ export default function CandidateComparisonSheet({
         </div>
 
         {/* Header */}
-        <div className="px-5 py-3 border-b border-gray-200">
+        <div className="px-5 py-3 border-b border-border-default">
           <div className="flex items-center justify-between">
             <div className="flex-1">
               <h3 className="text-lg font-bold text-gray-900">
@@ -166,13 +166,13 @@ export default function CandidateComparisonSheet({
           {/* Where you align */}
           {alignedDetails.length > 0 && (
             <div className="space-y-2.5">
-              <p className="text-xs font-bold text-green-600 uppercase tracking-wide">
+              <p className="text-xs font-bold text-success uppercase tracking-wide">
                 Where you align
               </p>
               {alignedDetails.map((detail) => (
                 <div key={detail.axisId} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-green-600" />
+                  <div className="w-5 h-5 rounded-full bg-success-light flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-success" />
                   </div>
                   <div className="flex-1">
                     <p className="text-[13px] text-gray-700 leading-relaxed">
@@ -246,12 +246,12 @@ export default function CandidateComparisonSheet({
           )}
 
           {/* Summary */}
-          <div className="pt-4 border-t border-gray-200">
+          <div className="pt-4 border-t border-border-default">
             <div className="bg-gray-50 rounded-xl p-4">
               <p className="text-sm text-gray-700 leading-relaxed text-center">
                 {alignedDetails.length > conflictingDetails.length ? (
                   <>
-                    <strong className="text-green-600">Overall:</strong> You share common ground on{' '}
+                    <strong className="text-success">Overall:</strong> You share common ground on{' '}
                     {alignedDetails.length} key value{alignedDetails.length !== 1 ? 's' : ''}
                     {conflictingDetails.length > 0 &&
                       `, with some differences on ${conflictingDetails.length}`}

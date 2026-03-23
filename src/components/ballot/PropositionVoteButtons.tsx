@@ -31,12 +31,12 @@ export default function PropositionVoteButtons({
           className={[
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'yes'
-              ? 'bg-green-500 border-green-500 text-white'
-              : 'bg-white border-gray-300 text-gray-700 hover:border-green-400',
+              ? 'bg-success border-success text-white'
+              : 'bg-white border-border-default text-gray-700 hover:border-success/60',
           ].join(' ')}
         >
           {isYesRecommended && selected !== 'yes' && (
-            <span className="absolute -top-2 right-2 bg-green-100 text-green-600 text-[10px] font-bold px-1.5 py-0.5 rounded-md">
+            <span className="absolute -top-2 right-2 bg-success-light text-success text-[10px] font-bold px-1.5 py-0.5 rounded-md">
               Recommended
             </span>
           )}
@@ -53,7 +53,7 @@ export default function PropositionVoteButtons({
             'relative flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 transition-colors',
             selected === 'no'
               ? 'bg-negative border-negative text-white'
-              : 'bg-white border-gray-300 text-gray-700 hover:border-negative',
+              : 'bg-white border-border-default text-gray-700 hover:border-negative',
           ].join(' ')}
         >
           {isNoRecommended && selected !== 'no' && (

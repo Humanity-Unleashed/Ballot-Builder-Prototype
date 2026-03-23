@@ -27,7 +27,7 @@ export default function ValuesSection({
   if (relevantAxes.length === 0) return null;
 
   return (
-    <div className="bg-gray-50 rounded-[14px] border border-gray-200 overflow-hidden">
+    <div className="bg-gray-50 rounded-2xl border border-border-default overflow-hidden">
       {/* Collapsible header */}
       <button
         onClick={() => { track('click', { element: 'toggle_values', expanded: !expanded }); onToggle(); }}

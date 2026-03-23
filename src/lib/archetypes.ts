@@ -109,6 +109,50 @@ export interface ArchetypeDef {
   traits: string[];
   centroid: MetaDimensionScores;
   summary: string;
+  /** Neutral (non-animal) label for A/B testing */
+  neutralName: string;
+  /** Neutral summary without animal personality framing */
+  neutralSummary: string;
+}
+
+// ── A/B Test Variant ──
+
+export type ArchetypeVariant = 'animal' | 'neutral';
+
+const VARIANT_KEY = 'bb_archetype_variant';
+
+/** Get or assign the user's A/B test variant. Persists in localStorage. */
+export function getArchetypeVariant(): ArchetypeVariant {
+  if (typeof window === 'undefined') return 'animal';
+  const stored = localStorage.getItem(VARIANT_KEY);
+  if (stored === 'animal' || stored === 'neutral') return stored;
+  const variant: ArchetypeVariant = Math.random() < 0.5 ? 'animal' : 'neutral';
+  localStorage.setItem(VARIANT_KEY, variant);
+  return variant;
+}
+
+/** Override the variant (for testing or admin). */
+export function setArchetypeVariant(variant: ArchetypeVariant): void {
+  if (typeof window === 'undefined') return;
+  localStorage.setItem(VARIANT_KEY, variant);
+}
+
+/** Get the display name for an archetype based on the current variant. */
+export function getArchetypeDisplayName(archetype: ArchetypeDef, variant?: ArchetypeVariant): string {
+  const v = variant ?? getArchetypeVariant();
+  return v === 'neutral' ? archetype.neutralName : archetype.name;
+}
+
+/** Get the display emoji — empty string for neutral variant. */
+export function getArchetypeDisplayEmoji(archetype: ArchetypeDef, variant?: ArchetypeVariant): string {
+  const v = variant ?? getArchetypeVariant();
+  return v === 'neutral' ? '' : archetype.emoji;
+}
+
+/** Get the display summary based on the current variant. */
+export function getArchetypeDisplaySummary(archetype: ArchetypeDef, variant?: ArchetypeVariant): string {
+  const v = variant ?? getArchetypeVariant();
+  return v === 'neutral' ? archetype.neutralSummary : archetype.summary;
 }
 
 // The 9 animal archetypes
@@ -117,73 +161,91 @@ export const ARCHETYPES: ArchetypeDef[] = [
     id: 'resolute_whale',
     emoji: '🐋',
     name: 'Resolute Whale',
+    neutralName: 'Systems Reformer',
     traits: ['Values-driven', 'Reform-minded', 'Collective action'],
     centroid: { responsibility_orientation: -0.8, change_tempo: -0.7, governance_style: -0.6 },
-    summary: 'You tend to believe strong systems can be improved, supporting decisive reforms that protect and uplift the broader community.'
+    summary: 'You tend to believe strong systems can be improved, supporting decisive reforms that protect and uplift the broader community.',
+    neutralSummary: 'You believe shared systems can be improved. You support decisive action to make them work better for more people.',
   },
   {
     id: 'balanced_raccoon',
     emoji: '🦝',
     name: 'Balanced Raccoon',
+    neutralName: 'Coalition Builder',
     traits: ['Resourceful', 'Coalition-builder', 'Pragmatic reformer'],
     centroid: { responsibility_orientation: -0.4, change_tempo: -0.3, governance_style: -0.3 },
-    summary: 'You tend to favor practical improvements to shared systems, building coalitions and finding workable compromises that move things forward.'
+    summary: 'You tend to favor practical improvements to shared systems, building coalitions and finding workable compromises that move things forward.',
+    neutralSummary: 'You favor practical improvements through compromise. You build coalitions and find workable deals that move things forward.',
   },
   {
     id: 'caring_koala',
     emoji: '🐨',
     name: 'Caring Koala',
+    neutralName: 'Community Steward',
     traits: ['Community-minded', 'Steady', 'Systems-oriented'],
     centroid: { responsibility_orientation: -0.6, change_tempo: 0.5, governance_style: -0.3 },
-    summary: 'You tend to prioritize shared well-being and steady solutions, especially when systems protect people from harm.'
+    summary: 'You tend to prioritize shared well-being and steady solutions, especially when systems protect people from harm.',
+    neutralSummary: 'You prioritize shared well-being and steady progress. You trust systems that protect people from harm.',
   },
   {
     id: 'thoughtful_owl',
     emoji: '🦉',
     name: 'Thoughtful Owl',
+    neutralName: 'Evidence Analyst',
     traits: ['Evidence-driven', 'Fairness-minded', 'Process-aware'],
     centroid: { responsibility_orientation: -0.2, change_tempo: 0.5, governance_style: -0.7 },
-    summary: 'You tend to favor careful, consistent rules and evidence-based decisions that feel fair across people and places.'
+    summary: 'You tend to favor careful, consistent rules and evidence-based decisions that feel fair across people and places.',
+    neutralSummary: 'You want consistent rules backed by data. You favor approaches that are fair and measurable across the board.',
   },
   {
     id: 'steady_turtle',
     emoji: '🐢',
     name: 'Steady Turtle',
+    neutralName: 'Cautious Guardian',
     traits: ['Cautious', 'Resilient', 'Long-term'],
     centroid: { responsibility_orientation: -0.2, change_tempo: 0.8, governance_style: 0.1 },
-    summary: 'You tend to prioritize durable solutions and risk reduction, preferring proven approaches with clear safeguards.'
+    summary: 'You tend to prioritize durable solutions and risk reduction, preferring proven approaches with clear safeguards.',
+    neutralSummary: 'You prioritize durable solutions and risk reduction. You prefer proven approaches with clear safeguards.',
   },
   {
     id: 'pragmatic_fox',
     emoji: '🦊',
     name: 'Pragmatic Fox',
+    neutralName: 'Flexible Pragmatist',
     traits: ['Practical', 'Flexible', 'Context-aware'],
     centroid: { responsibility_orientation: 0.0, change_tempo: -0.2, governance_style: 0.4 },
-    summary: 'You tend to mix tools and adjust as you go, focusing on what works in practice more than rigid labels.'
+    summary: 'You tend to mix tools and adjust as you go, focusing on what works in practice more than rigid labels.',
+    neutralSummary: 'You mix tools and adjust as you go. You focus on what works in practice more than rigid labels.',
   },
   {
     id: 'independent_stallion',
     emoji: '🐎',
     name: 'Independent Stallion',
+    neutralName: 'Independent Trailblazer',
     traits: ['Autonomy-first', 'Action-oriented', 'Choice-focused'],
     centroid: { responsibility_orientation: 0.7, change_tempo: -0.3, governance_style: 0.3 },
-    summary: 'You tend to value autonomy and momentum, preferring solutions that give people room to choose and adapt.'
+    summary: 'You tend to value autonomy and momentum, preferring solutions that give people room to choose and adapt.',
+    neutralSummary: 'You value personal autonomy and forward momentum. You prefer solutions that give people room to choose and adapt.',
   },
   {
     id: 'loyal_retriever',
     emoji: '🐕',
     name: 'Loyal Retriever',
+    neutralName: 'Community Anchor',
     traits: ['Trust-building', 'Community glue', 'Continuity'],
     centroid: { responsibility_orientation: 0.3, change_tempo: 0.6, governance_style: 0.5 },
-    summary: 'You tend to value trust and continuity, preferring solutions that feel socially grounded and workable for your community.'
+    summary: 'You tend to value trust and continuity, preferring solutions that feel socially grounded and workable for your community.',
+    neutralSummary: 'You value trust and continuity. You prefer solutions that feel grounded and workable for your community.',
   },
   {
     id: 'steadfast_bison',
     emoji: '🦬',
     name: 'Steadfast Bison',
+    neutralName: 'Tradition Keeper',
     traits: ['Self-reliant', 'Tradition-rooted', 'Strong convictions'],
     centroid: { responsibility_orientation: 0.7, change_tempo: 0.8, governance_style: 0.7 },
-    summary: 'You tend to trust individual responsibility and time-tested approaches, preferring stability and personal freedom over government-led change.'
+    summary: 'You tend to trust individual responsibility and time-tested approaches, preferring stability and personal freedom over government-led change.',
+    neutralSummary: 'You trust individual responsibility and time-tested approaches. You prefer stability and personal freedom over government-led change.',
   }
 ];
 

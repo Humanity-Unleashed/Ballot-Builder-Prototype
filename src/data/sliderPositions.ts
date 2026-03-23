@@ -34,7 +34,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   econ_safetynet: {
     axisId: 'econ_safetynet',
-    question: 'Should government help be available to more people with fewer requirements?',
+    question: 'How much should the government help people?',
     poleALabel: 'Broader\nSafety Net',
     poleBLabel: 'More Conditional\nSafety Net',
     currentPolicyIndex: 2,
@@ -90,7 +90,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   econ_investment: {
     axisId: 'econ_investment',
-    question: 'Should we pay more in taxes to fund public services?',
+    question: 'How should we balance taxes and public services?',
     poleALabel: 'More Public\nInvestment',
     poleBLabel: 'Lower Taxes\nLess Spending',
     currentPolicyIndex: 2,
@@ -202,7 +202,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   econ_tax_structure: {
     axisId: 'econ_tax_structure',
-    question: 'How should the tax burden be distributed across income levels?',
+    question: 'Should higher earners pay a larger share of taxes?',
     poleALabel: 'Progressive\nTaxation',
     poleBLabel: 'Flat / Sales\nTax',
     currentPolicyIndex: 1,
@@ -258,7 +258,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   health_coverage_model: {
     axisId: 'health_coverage_model',
-    question: 'Should government offer health insurance to everyone?',
+    question: 'Who should provide health insurance?',
     poleALabel: 'More Government\nInsurance',
     poleBLabel: 'More Private\nInsurance',
     currentPolicyIndex: 3,
@@ -380,7 +380,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   health_public_health: {
     axisId: 'health_public_health',
-    question: 'How should government approach public health and drug policy?',
+    question: 'How involved should government be in public health?',
     poleALabel: 'Prevention &\nTreatment',
     poleBLabel: 'Personal Choice\n& Enforcement',
     currentPolicyIndex: 2,
@@ -485,7 +485,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   housing_affordability_tools: {
     axisId: 'housing_affordability_tools',
-    question: 'Should government control rents and build public housing?',
+    question: 'How should we make housing more affordable?',
     poleALabel: 'Rent Limits &\nPublic Housing',
     poleBLabel: 'Build More\nFewer Rules',
     currentPolicyIndex: 2,
@@ -957,7 +957,7 @@ export const axisSliderConfigs: Record<string, AxisSliderConfig> = {
 
   climate_permitting: {
     axisId: 'climate_permitting',
-    question: 'How should we balance environmental review with project speed?',
+    question: 'Should new projects go through more environmental review or get built faster?',
     poleALabel: 'Thorough\nReview First',
     poleBLabel: 'Faster\nApprovals',
     currentPolicyIndex: 1,

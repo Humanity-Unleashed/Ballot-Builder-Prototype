@@ -25,6 +25,26 @@ function computeCardValues(positionCount: number): number[] {
   );
 }
 
+/** Deterministic flip based on axis ID — same ID always flips the same way per session */
+function shouldFlip(axisId: string): boolean {
+  let hash = 0;
+  for (let i = 0; i < axisId.length; i++) {
+    hash = ((hash << 5) - hash + axisId.charCodeAt(i)) | 0;
+  }
+  // Mix in session-level seed so the same user sees different orders on retake
+  const sessionSeed = typeof window !== 'undefined'
+    ? (sessionStorage.getItem('card_flip_seed') || (() => {
+        const seed = String(Math.random());
+        sessionStorage.setItem('card_flip_seed', seed);
+        return seed;
+      })())
+    : '0';
+  for (let i = 0; i < sessionSeed.length; i++) {
+    hash = ((hash << 5) - hash + sessionSeed.charCodeAt(i)) | 0;
+  }
+  return (hash & 1) === 0;
+}
+
 export default function CardQuestion({
   axisConfig,
   isNuancedAxis,
@@ -42,6 +62,20 @@ export default function CardQuestion({
     () => computeCardValues(axisConfig.positions.length),
     [axisConfig.positions.length],
   );
+
+  // Deterministic flip per axis to avoid top-always-progressive bias.
+  // Uses a hash of axis ID + session seed so it's stable during the question
+  // but varies across sessions (retakes).
+  const isFlipped = useMemo(
+    () => shouldFlip(axisConfig.axisId),
+    [axisConfig.axisId],
+  );
+
+  // Build display-order indices: either [0,1,2,3,4] or [4,3,2,1,0]
+  const displayOrder = useMemo(() => {
+    const indices = axisConfig.positions.map((_, i) => i);
+    return isFlipped ? indices.reverse() : indices;
+  }, [axisConfig.positions, isFlipped]);
 
   const handleCardTap = (index: number) => {
     if (disabled || confirmed) return;
@@ -69,15 +103,16 @@ export default function CardQuestion({
       {/* Position cards + inline action */}
       <div className="flex-1 overflow-y-auto px-4 pb-4">
         <div className="space-y-2">
-          {axisConfig.positions.map((position, index) => {
-            const isSelected = selectedIndex === index;
+          {displayOrder.map((originalIndex) => {
+            const position = axisConfig.positions[originalIndex];
+            const isSelected = selectedIndex === originalIndex;
             const isCurrentPolicy = position.isCurrentPolicy;
             const hasTradeoffs = position.tradeoffs && position.tradeoffs.length > 0;
 
             return (
-              <div key={index}>
+              <div key={originalIndex}>
                 <button
-                  onClick={() => handleCardTap(index)}
+                  onClick={() => handleCardTap(originalIndex)}
                   disabled={disabled || confirmed}
                   className={`w-full text-left p-3.5 rounded-xl border-2 transition-all duration-150 ${
                     isSelected

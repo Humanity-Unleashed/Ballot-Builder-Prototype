@@ -1,12 +1,31 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { X } from 'lucide-react';
 import { getFineTuningConfig } from '@/data/fineTuningPositions';
 import type { Spec } from '@/types/civicAssessment';
 import { DEFAULT_STRENGTH_VALUE } from '@/lib/blueprintHelpers';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import ImportanceSlider from './ImportanceSlider';
+
+/** Deterministic flip based on a string ID — stable per session */
+function shouldFlip(id: string): boolean {
+  let hash = 0;
+  for (let i = 0; i < id.length; i++) {
+    hash = ((hash << 5) - hash + id.charCodeAt(i)) | 0;
+  }
+  const sessionSeed = typeof window !== 'undefined'
+    ? (sessionStorage.getItem('card_flip_seed') || (() => {
+        const seed = String(Math.random());
+        sessionStorage.setItem('card_flip_seed', seed);
+        return seed;
+      })())
+    : '0';
+  for (let i = 0; i < sessionSeed.length; i++) {
+    hash = ((hash << 5) - hash + sessionSeed.charCodeAt(i)) | 0;
+  }
+  return (hash & 1) === 0;
+}
 
 interface FineTuningScreenProps {
   axisId: string;
@@ -59,6 +78,12 @@ export default function FineTuningScreen({
   const currentSubDimension = subDimensions[currentIndex];
   const totalQuestions = subDimensions.length;
   const progressPercentage = (currentIndex / totalQuestions) * 100;
+
+  // Deterministic flip per sub-dimension to avoid top-always-progressive bias
+  const displayOrder = useMemo(() => {
+    const indices = currentSubDimension.positions.map((_, i) => i);
+    return shouldFlip(currentSubDimension.id) ? indices.reverse() : indices;
+  }, [currentSubDimension]);
 
   const handleNext = () => {
     const isLast = currentIndex >= totalQuestions - 1;
@@ -164,14 +189,15 @@ export default function FineTuningScreen({
             {currentSubDimension.question}
           </p>
 
-          {/* All position options as tappable cards */}
+          {/* All position options as tappable cards (order randomized per question) */}
           <div className="flex flex-col gap-2.5">
-            {currentSubDimension.positions.map((position, index) => {
-              const isSelected = index === sliderPosition;
+            {displayOrder.map((originalIndex) => {
+              const position = currentSubDimension.positions[originalIndex];
+              const isSelected = originalIndex === sliderPosition;
               return (
                 <button
-                  key={index}
-                  onClick={() => setSliderPosition(index)}
+                  key={originalIndex}
+                  onClick={() => setSliderPosition(originalIndex)}
                   className={[
                     'w-full rounded-xl border-2 px-4 py-3 text-left transition-colors',
                     isSelected

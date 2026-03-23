@@ -66,7 +66,7 @@ export default function CandidateVoteButtons({
               'w-full flex items-start gap-2.5 p-3 rounded-xl border-2 text-left',
               isWriteIn
                 ? 'border-brand-primary bg-brand-primary/[0.03]'
-                : 'border-gray-200 bg-white',
+                : 'border-border-default bg-white',
             ].join(' ')}
           >
             {/* Radio */}
@@ -88,7 +88,7 @@ export default function CandidateVoteButtons({
               {isWriteIn && (
                 <input
                   type="text"
-                  className="mt-2 w-full p-3 rounded-[10px] border border-gray-300 bg-white text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                  className="mt-2 w-full p-3 rounded-xl border border-border-default bg-white text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary"
                   placeholder="Enter candidate name..."
                   value={writeInName}
                   onChange={(e) => onWriteInChange(e.target.value)}
@@ -99,7 +99,7 @@ export default function CandidateVoteButtons({
 
             {/* Unknown match */}
             <div className="flex flex-col items-center shrink-0">
-              <div className="w-11 h-11 rounded-full border-[2.5px] border-gray-200 bg-gray-50 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-full border-[2.5px] border-border-default bg-gray-50 flex items-center justify-center">
                 <span className="text-[13px] font-extrabold text-gray-900">?</span>
               </div>
             </div>

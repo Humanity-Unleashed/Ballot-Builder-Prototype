@@ -32,7 +32,7 @@ export default function BallotNavigator({
   };
 
   return (
-    <div className="bg-gray-50 py-2.5 px-4 border-b border-gray-200">
+    <div className="bg-gray-50 py-2.5 px-4 border-b border-border-default">
       <p className="text-xs font-medium text-gray-500 mb-2 text-center">
         {currentIndex + 1} of {ballotItems.length} &middot; {completedCount} completed
       </p>

@@ -60,7 +60,7 @@ import type { UserValueRecord } from '@/types/hybridAssessment';
 import type { ProgressiveAxisValue } from '@/types/conversation';
 import type { DemoState } from '@/stores/demographicStore';
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
-import { deriveMetaDimensions } from '@/lib/archetypes';
+import { deriveMetaDimensions, computeArchetype, getArchetypeVariant, getArchetypeDisplayName, getArchetypeDisplayEmoji } from '@/lib/archetypes';
 import { calculateFineTunedScore } from '@/data/fineTuningPositions';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 
@@ -70,7 +70,6 @@ import DemographicGate from '@/components/conversation/DemographicGate';
 import HybridAssessmentView from '@/components/assessment/HybridAssessmentView';
 import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
 import HybridFineTuningView from '@/components/blueprint/HybridFineTuningView';
-import ElectionBanner from '@/components/blueprint/ElectionBanner';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
 import PersonalImpactSection from '@/components/ballot/PersonalImpactSection';
@@ -926,15 +925,6 @@ export default function UnifiedBallotPage() {
   if (currentPhase === 'summary') {
     return (
       <div>
-        <div className="px-4 pt-4 space-y-3">
-          <DemoBanner />
-          <ElectionBanner
-            daysUntilElection={daysRemaining}
-            electionLabel={electionLabel}
-            voterInfo={voterInfo}
-            location={location}
-          />
-        </div>
         <BallotSummary
           votes={savedVotes}
           ballotItems={ballotItems}
@@ -944,6 +934,9 @@ export default function UnifiedBallotPage() {
           onPrint={handlePrint}
           voterInfo={voterInfo}
           location={location}
+          sessionMinutes={useBallotStore.getState().getSessionDurationMinutes()}
+          archetypeName={blueprintProfile ? getArchetypeDisplayName(computeArchetype(blueprintProfile).primary, getArchetypeVariant()) : undefined}
+          archetypeEmoji={blueprintProfile ? getArchetypeDisplayEmoji(computeArchetype(blueprintProfile).primary, getArchetypeVariant()) : undefined}
         />
 
         {/* Start fresh button */}

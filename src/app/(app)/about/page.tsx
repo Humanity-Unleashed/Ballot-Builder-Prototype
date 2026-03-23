@@ -15,19 +15,19 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'What is Ballot Builder?',
-        a: 'A nonpartisan tool that matches you with candidates and ballot measures based on your own values — not party labels. It is a prototype being evaluated for accuracy, fairness, and usefulness. It is not an official voter guide.',
+        a: 'Ballot Builder matches you with candidates and ballot measures based on your values. It is not tied to any party. This is a test version. It is not an official voter guide.',
       },
       {
         q: 'How does the assessment work?',
         a: [
-          'You answer a short adaptive assessment that covers 17 policy topics across five domains: Economy, Healthcare, Housing, Justice, and Climate.',
-          'The assessment tracks how much uncertainty remains about each of your positions and picks questions that will tell it the most about your values. It also prioritizes topics that matter most for your specific ballot. Once the remaining uncertainty is low enough, it wraps up automatically — most people finish in 5\u201310 questions instead of answering all 17.',
-          'You can respond with quick slider picks or switch to typing/speaking in your own words. When you use natural language, the system extracts signals across multiple topics from a single response — so one thoughtful answer can cover several issues at once.',
+          'You answer a short quiz that covers 17 policy topics. These span five areas: Economy, Healthcare, Housing, Justice, and Climate.',
+          'The quiz tracks what it still needs to learn about you. It picks the questions that tell it the most about your values. It also focuses on topics that matter most for your ballot. Once it knows enough, it stops on its own. Most people finish in 5\u201310 questions instead of all 17.',
+          'You can pick from preset options or type in your own words. When you type a longer answer, the system can pull out your views on several topics at once. One good answer can cover multiple issues.',
         ],
       },
       {
         q: 'What happens after the assessment?',
-        a: 'You get a Civic Blueprint showing where you land on each topic, grouped by domain. You can fine-tune any position before moving on. Then the system compares your blueprint against each candidate and ballot measure on your actual ballot to produce match scores.',
+        a: 'You get a Civic Blueprint that shows where you stand on each topic. Topics are grouped by area. You can adjust any position before moving on. Then the system compares your blueprint to each candidate and ballot measure on your real ballot. The result is a match score for each one.',
       },
       {
         q: 'Is this affiliated with any political party?',
@@ -40,22 +40,22 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'How does the natural language option work?',
-        a: 'When you type or speak a response, the system analyzes it to extract your position on the topic it asked about, plus any other topics you touched on. Each signal is classified by strength — a direct statement carries more weight than an implication — and snapped to a concrete position to avoid false precision.',
+        a: 'When you type or speak an answer, the system finds your stance on the topic it asked about. It also picks up views on other topics you mention. A clear statement counts more than a hint. Your answer is matched to a set position so the score stays accurate.',
       },
       {
         q: 'How are candidates scored?',
         a: [
-          'Candidates are independently scored on the same 17 topics using public evidence. Voting records and interest group scorecards (from organizations across the political spectrum) carry the most weight. Campaign statements, interviews, and endorsements fill in the gaps.',
-          'When a candidate\'s voting record contradicts their campaign trail statements, the record wins and the discrepancy is flagged.',
+          'Each candidate is scored on the same 17 topics using public records. Voting history and ratings from groups across the political spectrum carry the most weight. Campaign statements, interviews, and endorsements fill in the gaps.',
+          'When a candidate\'s votes in office contradict what they say on the campaign trail, the voting record wins. The conflict is flagged so you can see it.',
         ],
       },
       {
         q: 'How are match percentages calculated?',
-        a: 'Your positions are compared to each candidate\'s documented positions across all scored topics, weighted by how much you said each topic matters. The result is a percentage reflecting how closely you align. Topics where the candidate has no data are excluded rather than filled with a guess.',
+        a: 'Your views are compared to each candidate\'s known positions on every scored topic. Topics you said matter more count more in the score. The result is a percentage showing how closely you match. If a candidate has no data on a topic, that topic is left out instead of guessed.',
       },
       {
         q: 'How are ballot measure recommendations made?',
-        a: 'Each measure is analyzed for which policy topics it affects and in what direction. If the measure pushes policy in your direction, the system recommends YES; if away, NO. If it\'s genuinely close, it says so and shows you the breakdown.',
+        a: 'Each measure is checked to see which topics it touches and which way it pushes policy. If it moves things your way, the system says YES. If it moves things away from your values, it says NO. If it is a close call, the system tells you and shows the details.',
       },
     ],
   },
@@ -64,23 +64,23 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'How do you keep political bias out?',
-        a: 'By prioritizing objective evidence — voting records and numerical ratings from established organizations on both sides of the aisle. Interest group scorecards come from left-leaning groups (League of Conservation Voters, AFL-CIO) and right-leaning ones (NRA, Chamber of Commerce) alike. Every score shows its sources.',
+        a: 'We rely on hard evidence: voting records and ratings from well-known groups on both sides. We use scores from left-leaning groups (League of Conservation Voters, AFL-CIO) and right-leaning ones (NRA, Chamber of Commerce) alike. Every score shows its sources.',
       },
       {
         q: 'What are confidence levels?',
-        a: 'High means multiple independent sources agree. Medium means one strong source. Low means limited evidence — treat those with more caution. First-time candidates without voting records will naturally have fewer scored topics and lower confidence.',
+        a: 'High means several sources agree. Medium means one solid source. Low means we have little evidence \u2014 take those scores with a grain of salt. First-time candidates with no voting record will have fewer scored topics and lower confidence.',
       },
       {
         q: 'Can I see the evidence behind a score?',
-        a: 'Yes. Tap "See value comparison" on any candidate to see the per-topic breakdown with sources and links to original evidence where available.',
+        a: 'Yes. Tap "See value comparison" on any candidate. You will see a topic-by-topic breakdown with sources and links to the original evidence.',
       },
       {
         q: "What if a candidate's position changed recently?",
-        a: "The most recent position is scored, but the change is flagged. If a candidate voted one way for years but took a different stance during the campaign, you'll see both data points.",
+        a: "The most recent stance is scored, but the change is flagged. If a candidate voted one way for years but says something different now, you will see both data points.",
       },
       {
         q: 'Does the system favor incumbents?',
-        a: 'Incumbents have more data available, so their scores are more precise. Challengers are scored on what exists, with lower confidence. Incumbents don\'t get higher match scores — there\'s just more certainty about where they stand.',
+        a: 'No. Incumbents have more data, so their scores are more precise. Challengers are scored on what exists, with lower confidence. More data does not mean a higher match \u2014 it just means more certainty about where they stand.',
       },
     ],
   },
@@ -89,11 +89,11 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'Where does my data go?',
-        a: 'Your assessment results, demographics, and ballot selections stay in your browser\'s local storage. Nothing is sent to a server unless you explicitly submit feedback. No account is required.',
+        a: 'Your quiz results, background info, and ballot picks stay in your browser. Nothing is sent to a server unless you submit feedback. No account is needed.',
       },
       {
         q: 'What about the AI assistant?',
-        a: 'When you use the "Ask AI" feature on a ballot item, your question and your civic blueprint are sent to generate a response. The conversation is not stored on our servers after the response is returned.',
+        a: 'When you use "Ask AI" on a ballot item, your question and your civic blueprint are sent to get an answer. The conversation is not saved on our servers after the answer comes back.',
       },
     ],
   },
@@ -120,7 +120,7 @@ export default function AboutPage() {
         <div className="flex-1">
           <h1 className="text-lg font-bold text-gray-900">About Ballot Builder</h1>
           <p className="text-xs text-gray-500">
-            Nonpartisan, values-based voter guidance
+            Values-based voter guidance, not tied to any party
           </p>
         </div>
         <button

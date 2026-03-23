@@ -5,14 +5,24 @@ import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electio
 import { ballotApi, type BallotLookupResponse } from '@/services/api';
 import ElectionBanner from './ElectionBanner';
 import { useRouter } from 'next/navigation';
-import { RefreshCw, ChevronRight } from 'lucide-react';
+import { RefreshCw, ChevronRight, Share2 } from 'lucide-react';
+import ArchetypeShareCard from './ArchetypeShareCard';
 import type { BlueprintProfile } from '@/types/blueprintProfile';
 import type { Spec } from '@/types/civicAssessment';
 import {
   DOMAIN_DISPLAY_NAMES,
   getDomainEmoji,
+  getDomainSummary,
 } from '@/lib/blueprintHelpers';
-import { computeArchetype, type ArchetypeResult } from '@/lib/archetypes';
+import {
+  computeArchetype,
+  type ArchetypeResult,
+  type ArchetypeVariant,
+  getArchetypeVariant,
+  getArchetypeDisplayName,
+  getArchetypeDisplayEmoji,
+  getArchetypeDisplaySummary,
+} from '@/lib/archetypes';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
 import { useDemographicStore } from '@/stores/demographicStore';
 import DomainLeanMeter from './DomainLeanMeter';
@@ -45,6 +55,9 @@ export default function BlueprintSummaryView({
   const router = useRouter();
   const { track } = useAnalyticsContext();
   const demographicProfile = useDemographicStore((s) => s.profile);
+  const [showShareCard, setShowShareCard] = useState(false);
+  const [confirmation, setConfirmation] = useState<'none' | 'confirmed' | 'off'>('none');
+  const [abVariant] = useState<ArchetypeVariant>(() => getArchetypeVariant());
   // ── Election date ──
   const { electionLabel, daysRemaining } = useMemo(() => {
     const electionDay = getNextElectionDay();
@@ -105,16 +118,9 @@ export default function BlueprintSummaryView({
   return (
     <div className="min-h-[calc(100vh-56px)] bg-gray-50">
       <div className="overflow-y-auto px-4 pt-4 pb-10">
-        {/* ── Title + Retake ── */}
-        <div className="mb-1 flex items-center justify-between">
+        {/* ── Title ── */}
+        <div className="mb-1">
           <h1 className="text-xl font-extrabold text-gray-900">Your Civic Blueprint</h1>
-          <button
-            onClick={() => { track('click', { element: 'retake_blueprint' }); onRetake(); }}
-            className="flex items-center gap-1 rounded-lg bg-gray-100 px-3 py-2 transition-colors hover:bg-gray-200"
-          >
-            <RefreshCw className="h-4 w-4 text-gray-600" />
-            <span className="text-xs font-semibold text-gray-600">Retake</span>
-          </button>
         </div>
         <p className="mb-5 text-[13px] leading-[1.4] text-gray-500">
           Here&apos;s where your values place you on key policy questions.
@@ -126,11 +132,25 @@ export default function BlueprintSummaryView({
         {/* ── Archetype card ── */}
         <div className="mb-4 rounded-[14px] border border-gray-200 bg-white px-4 py-4 shadow-sm">
           <div className="flex items-start gap-3">
-            <span className="text-3xl leading-none mt-0.5">{archetype.primary.emoji}</span>
+            {getArchetypeDisplayEmoji(archetype.primary, abVariant) && (
+              <span className="text-3xl leading-none mt-0.5">{getArchetypeDisplayEmoji(archetype.primary, abVariant)}</span>
+            )}
             <div className="flex-1 min-w-0">
-              <h2 className="text-[15px] font-bold text-gray-900">{archetype.primary.name}</h2>
+              <div className="flex items-center justify-between">
+                <h2 className="text-[15px] font-bold text-gray-900">{getArchetypeDisplayName(archetype.primary, abVariant)}</h2>
+                <button
+                  onClick={() => {
+                    track('click', { element: 'share_archetype_toggle', variant: abVariant });
+                    setShowShareCard(!showShareCard);
+                  }}
+                  className="flex items-center gap-1 text-[11px] font-semibold text-brand-primary"
+                >
+                  <Share2 className="h-3 w-3" />
+                  Share
+                </button>
+              </div>
               <p className="text-[13px] leading-[1.45] text-gray-500 mt-1">
-                {archetype.primary.summary}
+                {getArchetypeDisplaySummary(archetype.primary, abVariant)}
               </p>
               <div className="flex flex-wrap gap-1.5 mt-2.5">
                 {archetype.primary.traits.map((trait) => (
@@ -144,11 +164,17 @@ export default function BlueprintSummaryView({
               </div>
               {archetype.secondary && archetype.margin < 0.3 && (
                 <p className="text-[11px] text-gray-400 mt-2.5">
-                  Also close to <span className="font-semibold">{archetype.secondary.emoji} {archetype.secondary.name}</span>
+                  Also close to <span className="font-semibold">{getArchetypeDisplayEmoji(archetype.secondary, abVariant)} {getArchetypeDisplayName(archetype.secondary, abVariant)}</span>
                 </p>
               )}
             </div>
           </div>
+
+          {showShareCard && (
+            <div className="mt-4 pt-4 border-t border-gray-100">
+              <ArchetypeShareCard archetype={archetype} onClose={() => setShowShareCard(false)} />
+            </div>
+          )}
         </div>
 
         {/* ── Domain cards (vertical stack, sorted by importance) ── */}
@@ -178,6 +204,19 @@ export default function BlueprintSummaryView({
                     <ChevronRight className="h-3 w-3" />
                   </button>
                 </div>
+
+                {/* Domain summary sentence */}
+                {profileDomain && (
+                  <p className="text-[12px] leading-[1.5] text-gray-500 mb-3">
+                    {getDomainSummary(
+                      specDomain.id,
+                      specDomain.axes.map((axisId) => ({
+                        axisId,
+                        value: profileDomain.axes.find((a) => a.axis_id === axisId)?.value_0_10 ?? 5,
+                      })),
+                    )}
+                  </p>
+                )}
 
                 {/* Per-axis compact meters */}
                 <div className="flex flex-col gap-2">
@@ -211,6 +250,96 @@ export default function BlueprintSummaryView({
               </div>
             );
           })}
+        </div>
+
+        {/* ── Confirmation section ── */}
+        <div className="mt-5 rounded-[14px] border border-gray-200 bg-white px-4 py-5 shadow-sm">
+          {confirmation === 'none' && (
+            <>
+              <h3 className="text-[15px] font-bold text-gray-900 mb-1">Does this feel like you?</h3>
+              <p className="text-[12px] text-gray-500 leading-[1.5] mb-4">
+                Your positions above are what we&apos;ll use to match you with candidates and ballot measures.
+              </p>
+              <div className="space-y-2.5">
+                <button
+                  onClick={() => {
+                    track('click', { element: 'profile_confirmed' });
+                    setConfirmation('confirmed');
+                  }}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-border-default bg-white hover:bg-gray-50 transition-colors text-left"
+                >
+                  <span className="text-lg">✓</span>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">Yes, this feels right</p>
+                    <p className="text-[11px] text-gray-400">Continue to build your ballot</p>
+                  </div>
+                </button>
+                <button
+                  onClick={() => {
+                    track('click', { element: 'profile_something_off' });
+                    setConfirmation('off');
+                  }}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-border-default bg-white hover:bg-gray-50 transition-colors text-left"
+                >
+                  <span className="text-lg">✎</span>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">Something&apos;s off</p>
+                    <p className="text-[11px] text-gray-400">Review and adjust specific areas</p>
+                  </div>
+                </button>
+              </div>
+            </>
+          )}
+
+          {confirmation === 'confirmed' && (
+            <div className="text-center animate-fade-in-up">
+              <span className="text-2xl">✓</span>
+              <p className="text-sm font-semibold text-gray-900 mt-1">Great, you&apos;re all set.</p>
+              <p className="text-[12px] text-gray-500 mt-0.5">
+                We&apos;ll use these positions to find your best matches.
+              </p>
+            </div>
+          )}
+
+          {confirmation === 'off' && (
+            <div className="animate-fade-in-up">
+              <p className="text-sm font-semibold text-gray-900 mb-1">Which area feels off?</p>
+              <p className="text-[12px] text-gray-500 leading-[1.5] mb-3">
+                Tap a domain to scroll up and adjust your positions. Your civic style will update automatically.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {sortedDomains.map((d) => (
+                  <button
+                    key={d.id}
+                    onClick={() => {
+                      track('click', { element: 'review_domain', domainId: d.id });
+                      handleFineTune(d.id);
+                      setConfirmation('none');
+                    }}
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-border-default bg-white hover:bg-brand-primary/5 hover:border-brand-primary/30 transition-colors"
+                  >
+                    <span className="text-sm">{getDomainEmoji(d.id)}</span>
+                    <span className="text-xs font-semibold text-gray-700">{DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}</span>
+                  </button>
+                ))}
+              </div>
+              <div className="flex items-center justify-between">
+                <button
+                  onClick={() => setConfirmation('none')}
+                  className="text-[11px] text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  ← Back
+                </button>
+                <button
+                  onClick={() => { track('click', { element: 'retake_blueprint' }); onRetake(); }}
+                  className="flex items-center gap-1 text-[11px] text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <RefreshCw className="h-3 w-3" />
+                  Start over from scratch
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Spacer for floating CTA */}

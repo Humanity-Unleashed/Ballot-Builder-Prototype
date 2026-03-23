@@ -102,6 +102,10 @@ interface BallotState {
 
   // Per-item AI chat messages (keyed by ballot item ID)
   itemMessages: Record<string, ConversationMessage[]>;
+
+  // Session timing
+  sessionStartedAt: string | null;
+  sessionEndedAt: string | null;
 }
 
 interface BallotActions {
@@ -126,6 +130,9 @@ interface BallotActions {
   getItemMessages: (itemId: string) => ConversationMessage[];
   clearItemMessages: (itemId: string) => void;
 
+  // Session timing
+  getSessionDurationMinutes: () => number;
+
   // Two-tier reset
   redoVotes: () => void;
   startFresh: () => void;
@@ -142,6 +149,8 @@ const initialState: BallotState = {
   showSummary: false,
   hasSeenIntro: false,
   itemMessages: {},
+  sessionStartedAt: null,
+  sessionEndedAt: null,
 };
 
 export const useBallotStore = create<BallotStore>()(
@@ -152,7 +161,14 @@ export const useBallotStore = create<BallotStore>()(
       // ── Wizard navigation ──
 
       setPhase: (phase) => {
-        set({ currentPhase: phase });
+        const updates: Partial<BallotState> = { currentPhase: phase };
+        if ((phase === 'demographics' || phase === 'assessment') && get().sessionStartedAt === null) {
+          updates.sessionStartedAt = new Date().toISOString();
+        }
+        if (phase === 'summary') {
+          updates.sessionEndedAt = new Date().toISOString();
+        }
+        set(updates);
       },
 
       advancePhase: () => {
@@ -259,6 +275,15 @@ export const useBallotStore = create<BallotStore>()(
         });
       },
 
+      // ── Session timing ──
+
+      getSessionDurationMinutes: () => {
+        const { sessionStartedAt, sessionEndedAt } = get();
+        if (!sessionStartedAt || !sessionEndedAt) return 0;
+        const ms = new Date(sessionEndedAt).getTime() - new Date(sessionStartedAt).getTime();
+        return Math.round(ms / 60000);
+      },
+
       // ── Two-tier reset ──
 
       /** Clear votes only, keep profile and demographics, go back to first ballot item */
@@ -286,6 +311,8 @@ export const useBallotStore = create<BallotStore>()(
           currentPhase: 'state-select',
           completedPhases: [],
           itemMessages: {},
+          sessionStartedAt: null,
+          sessionEndedAt: null,
         });
       },
     }),
@@ -300,6 +327,8 @@ export const useBallotStore = create<BallotStore>()(
         showSummary: state.showSummary,
         hasSeenIntro: state.hasSeenIntro,
         itemMessages: state.itemMessages,
+        sessionStartedAt: state.sessionStartedAt,
+        sessionEndedAt: state.sessionEndedAt,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {

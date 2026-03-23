@@ -27,7 +27,7 @@ export default function DemographicSection({ expanded, onToggle }: DemographicSe
   const { profile, setField } = useDemographicStore();
 
   return (
-    <div className="bg-gray-50 rounded-[14px] border border-gray-200 overflow-hidden">
+    <div className="bg-gray-50 rounded-2xl border border-border-default overflow-hidden">
       {/* Collapsible header */}
       <button
         onClick={() => { track('click', { element: 'toggle_demographics', expanded: !expanded }); onToggle(); }}

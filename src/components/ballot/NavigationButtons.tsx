@@ -50,10 +50,10 @@ export default function NavigationButtons({
           onClick={onBack}
           disabled={!canGoBack}
           className={[
-            'flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-[10px] border bg-white text-sm font-semibold transition-colors',
+            'flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border bg-white text-sm font-semibold transition-colors',
             canGoBack
-              ? 'border-gray-300 text-gray-600 hover:bg-gray-50'
-              : 'border-gray-200 text-gray-300 cursor-not-allowed',
+              ? 'border-border-default text-gray-600 hover:bg-gray-50'
+              : 'border-border-default/60 text-gray-300 cursor-not-allowed',
           ].join(' ')}
         >
           <ArrowLeft
@@ -64,7 +64,7 @@ export default function NavigationButtons({
 
         <button
           onClick={() => { track('click', { element: 'skip_item' }); onSkip(); }}
-          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-[10px] border border-gray-300 bg-white text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
+          className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border border-border-default bg-white text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors"
         >
           <span>Skip for now</span>
         </button>

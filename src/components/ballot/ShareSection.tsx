@@ -1,17 +1,45 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, Copy, Check } from 'lucide-react';
+import { MessageCircle, Copy, Check, Mail } from 'lucide-react';
 import { useAnalyticsContext } from '@/components/analytics/AnalyticsProvider';
-
-const SHARE_MESSAGE =
-  'I just finished my sample ballot on Ballot Builder. It walks you through every race and measure on your actual ballot. Try it: ballotbuilder.org';
 
 const SHARE_URL = 'https://ballotbuilder.org';
 
-export default function ShareSection() {
+interface ShareSectionProps {
+  racesCount?: number;
+  sessionMinutes?: number;
+  archetypeName?: string;
+  archetypeEmoji?: string;
+}
+
+function buildShareMessage(props: ShareSectionProps): string {
+  const { racesCount, sessionMinutes, archetypeName, archetypeEmoji } = props;
+  const parts: string[] = [];
+
+  if (racesCount && sessionMinutes) {
+    parts.push(`I just prepped ${racesCount} races in ${sessionMinutes} minutes on Ballot Builder.`);
+  } else {
+    parts.push('I just finished my sample ballot on Ballot Builder.');
+  }
+
+  if (archetypeName && archetypeEmoji) {
+    parts.push(`My civic style: ${archetypeEmoji} ${archetypeName}.`);
+  }
+
+  parts.push(`It walks you through every race and measure on your ballot. Try it: ${SHARE_URL}`);
+  return parts.join(' ');
+}
+
+export default function ShareSection({
+  racesCount,
+  sessionMinutes,
+  archetypeName,
+  archetypeEmoji,
+}: ShareSectionProps) {
   const [copied, setCopied] = useState(false);
   const { track } = useAnalyticsContext();
+  const shareMessage = buildShareMessage({ racesCount, sessionMinutes, archetypeName, archetypeEmoji });
 
   const handleCopy = async () => {
     try {
@@ -26,7 +54,16 @@ export default function ShareSection() {
 
   const handleText = () => {
     track('click', { element: 'text_a_friend' });
-    window.open(`sms:?body=${encodeURIComponent(SHARE_MESSAGE)}`, '_self');
+    window.open(`sms:?body=${encodeURIComponent(shareMessage)}`, '_self');
+  };
+
+  const handleEmail = () => {
+    track('click', { element: 'email_a_friend' });
+    const subject = 'Check out Ballot Builder';
+    window.open(
+      `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(shareMessage)}`,
+      '_self',
+    );
   };
 
   return (
@@ -40,21 +77,28 @@ export default function ShareSection() {
 
       {/* Message preview */}
       <div className="bg-brand-primary-surface rounded-xl p-4 mb-4 text-sm text-text-secondary leading-relaxed border border-border-default">
-        &ldquo;{SHARE_MESSAGE}&rdquo;
+        &ldquo;{shareMessage}&rdquo;
       </div>
 
       {/* Buttons */}
-      <div className="flex gap-3">
+      <div className="flex gap-2.5">
         <button
           onClick={handleText}
-          className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold"
+          className="flex-1 flex items-center justify-center gap-1.5 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold"
         >
           <MessageCircle className="h-4 w-4" />
-          Text a Friend
+          Text
+        </button>
+        <button
+          onClick={handleEmail}
+          className="flex-1 flex items-center justify-center gap-1.5 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold"
+        >
+          <Mail className="h-4 w-4" />
+          Email
         </button>
         <button
           onClick={handleCopy}
-          className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-border-default bg-white hover:bg-gray-50 transition-colors text-text-primary text-sm font-semibold"
+          className="flex-1 flex items-center justify-center gap-1.5 py-3.5 rounded-xl border-2 border-border-default bg-white hover:bg-gray-50 transition-colors text-text-primary text-sm font-semibold"
         >
           {copied ? (
             <>

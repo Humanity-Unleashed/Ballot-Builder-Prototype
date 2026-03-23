@@ -90,7 +90,8 @@ Additional docs in `docs/`:
 4. **Confidence scales linearly into match scores.** Confidence errors propagate directly. See Research 06 §2 for failure modes.
 5. **Blueprint profile seeds the AI chat.** The conversation store's profile must be initialized from the Blueprint assessment so the AI doesn't re-ask positions the user already provided.
 6. **Unauthenticated flow must work.** Users can take the full assessment and view recommendations without signing up. Auth is only required to save results.
-7. **The 16 axes and 5 domains are the canonical framework.** All user-facing values, candidate scores, and match computations go through this framework. Do not introduce parallel scoring systems.
+7. **The 17 axes and 5 domains are the canonical framework.** All user-facing values, candidate scores, and match computations go through this framework. Do not introduce parallel scoring systems.
+8. **Official ballot text is sacred.** The `Measure.description` field and `BallotItem.questionText` (for measures) contain verbatim text from the election authority. Never alter, rephrase, fix punctuation, or simplify official ballot language. Use the `explanation` field for plain-language descriptions instead.
 
 ---
 

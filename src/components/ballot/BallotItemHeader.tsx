@@ -17,7 +17,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
       </span>
 
       {/* Official ballot language */}
-      <div className="bg-white border border-gray-300 border-l-[3px] border-l-gray-500 rounded-lg p-3 space-y-1">
+      <div className="bg-white border border-border-default border-l-[3px] border-l-gray-500 rounded-xl p-3 space-y-1">
         <span className="block text-[10px] font-bold text-gray-400 tracking-wide">
           FROM YOUR BALLOT
         </span>
@@ -27,7 +27,7 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
       </div>
 
       {/* Explanation */}
-      <div className="flex gap-2 bg-gray-100 p-2.5 rounded-[10px] items-start">
+      <div className="flex gap-2 bg-gray-100 p-2.5 rounded-xl items-start">
         <Lightbulb className="h-4 w-4 text-gray-500 mt-0.5 shrink-0" />
         <div className="flex-1 space-y-0.5">
           <span className="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">

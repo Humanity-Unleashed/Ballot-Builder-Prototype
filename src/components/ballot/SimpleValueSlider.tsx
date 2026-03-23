@@ -57,7 +57,7 @@ export default function SimpleValueSlider({ axis, onChange }: SimpleValueSliderP
   const thumbPercent = (axis.value / 10) * 100;
 
   return (
-    <div className="bg-white p-3.5 rounded-xl border border-gray-200 space-y-2">
+    <div className="bg-white p-3.5 rounded-xl border border-border-default space-y-2">
       <p className="text-sm font-semibold text-gray-900">{axis.name}</p>
 
       <div className="flex items-center gap-2">

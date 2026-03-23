@@ -102,7 +102,7 @@ function ConfiguredSlider({
   const accentColor = thumbColor;
 
   return (
-    <div className="bg-white p-3.5 rounded-xl border border-gray-200 space-y-2">
+    <div className="bg-white p-3.5 rounded-xl border border-border-default space-y-2">
       <p className="text-sm font-semibold text-gray-900">{axis.name}</p>
 
       {/* Position title card */}

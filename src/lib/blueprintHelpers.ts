@@ -78,6 +78,171 @@ export function getPositionLabel(axisId: string, value: number): string {
 }
 
 // ────────────────────────────────────────────
+// Domain summary sentence generator
+// ────────────────────────────────────────────
+
+type Lean = 'left' | 'center' | 'right';
+
+function classifyLean(value: number): Lean {
+  if (value <= 3) return 'left';
+  if (value >= 7) return 'right';
+  return 'center';
+}
+
+function dominantLean(leans: Lean[]): Lean {
+  const counts = { left: 0, center: 0, right: 0 };
+  for (const l of leans) counts[l]++;
+  if (counts.left > counts.right && counts.left >= counts.center) return 'left';
+  if (counts.right > counts.left && counts.right >= counts.center) return 'right';
+  return 'center';
+}
+
+/**
+ * Generates a synthesized plain-language summary for a domain.
+ * Not a list of positions — reads like a human characterization.
+ * Identifies the overall pattern + calls out tensions or nuances.
+ */
+export function getDomainSummary(
+  domainId: string,
+  axisValues: { axisId: string; value: number }[],
+): string {
+  const v = (id: string) => axisValues.find((a) => a.axisId === id)?.value ?? 5;
+  const l = (id: string) => classifyLean(v(id));
+
+  switch (domainId) {
+    case 'econ':
+      return getEconSummary(v, l);
+    case 'health':
+      return getHealthSummary(v, l);
+    case 'housing':
+      return getHousingSummary(v, l);
+    case 'justice':
+      return getJusticeSummary(v, l);
+    case 'climate':
+      return getClimateSummary(v, l);
+    default:
+      return '';
+  }
+}
+
+function getEconSummary(v: (id: string) => number, l: (id: string) => Lean): string {
+  const leans = ['econ_safetynet', 'econ_investment', 'econ_school_choice', 'econ_tax_structure'].map(l);
+  const overall = dominantLean(leans);
+
+  // Check for interesting tensions
+  const schoolChoiceLean = l('econ_school_choice');
+  const spendingLean = dominantLean([l('econ_safetynet'), l('econ_investment')]);
+
+  if (overall === 'left') {
+    const base = 'You see government as having a strong role in the economy — broader safety nets, public investment, and progressive taxation.';
+    if (schoolChoiceLean === 'right') return base + ' That said, you\'re open to expanding school choice options.';
+    return base;
+  }
+  if (overall === 'right') {
+    const base = 'You favor a leaner economic approach — more targeted programs, lower spending, and keeping taxes simple.';
+    if (l('econ_safetynet') === 'left') return base + ' Though you still support a relatively broad safety net.';
+    return base;
+  }
+  // Center / mixed
+  if (spendingLean === 'left' && schoolChoiceLean === 'right') {
+    return 'You support public investment and a solid safety net, but you also want families to have more educational choices — a mix of public commitment and personal flexibility.';
+  }
+  return 'You take a balanced approach to the economy — weighing public investment against fiscal restraint, and looking for practical tradeoffs rather than sweeping changes.';
+}
+
+function getHealthSummary(v: (id: string) => number, l: (id: string) => Lean): string {
+  const leans = ['health_coverage_model', 'health_cost_control', 'health_public_health'].map(l);
+  const overall = dominantLean(leans);
+
+  if (overall === 'left') {
+    const base = 'You believe healthcare should be more of a public good — broader coverage, government cost controls, and proactive public health measures.';
+    if (l('health_public_health') === 'right') return 'You want broader coverage and government cost controls, but prefer a lighter touch on public health mandates — people should mostly make their own health decisions.';
+    return base;
+  }
+  if (overall === 'right') {
+    const base = 'You favor market-driven healthcare — private coverage options, competition to control costs, and individual choice on public health decisions.';
+    if (l('health_coverage_model') === 'left') return 'You want broader access to coverage, but think competition and individual choice are the best tools for controlling costs and managing public health.';
+    return base;
+  }
+  // Center
+  if (l('health_coverage_model') === 'left' && l('health_cost_control') === 'right') {
+    return 'You want more people covered, but think market competition is a better cost control tool than price regulation — a pragmatic split.';
+  }
+  return 'You see merit on both sides of the healthcare debate — some public role in coverage and costs, but with room for markets and personal choice.';
+}
+
+function getHousingSummary(v: (id: string) => number, l: (id: string) => Lean): string {
+  const leans = ['housing_supply_zoning', 'housing_affordability_tools', 'housing_transport_priority'].map(l);
+  const overall = dominantLean(leans);
+
+  if (overall === 'left') {
+    const base = 'You want to see more housing built, stronger affordability protections, and better public transit — an active approach to making cities work for more people.';
+    if (l('housing_supply_zoning') === 'right') return 'You support affordability tools and transit investment, but think local communities should have more say over what gets built in their neighborhoods.';
+    return base;
+  }
+  if (overall === 'right') {
+    const base = 'You trust the market to sort out housing and transportation — less zoning regulation, fewer affordability mandates, and car-friendly infrastructure.';
+    if (l('housing_transport_priority') === 'left') return 'You prefer lighter regulation on housing and zoning, but you do see value in investing in public transit options.';
+    return base;
+  }
+  // Center
+  if (l('housing_supply_zoning') === 'left' && l('housing_affordability_tools') === 'right') {
+    return 'You want to build more housing by loosening zoning rules, but think the market — not rent controls — is the best path to affordability. A supply-side approach.';
+  }
+  return 'You take a moderate approach to housing — balancing development with neighborhood input, and mixing market solutions with some affordability protections.';
+}
+
+function getJusticeSummary(v: (id: string) => number, l: (id: string) => Lean): string {
+  const leans = ['justice_policing_accountability', 'justice_sentencing_goals', 'justice_firearms', 'justice_reproductive'].map(l);
+  const overall = dominantLean(leans);
+
+  const firearmsLean = l('justice_firearms');
+  const reproLean = l('justice_reproductive');
+
+  if (overall === 'left') {
+    const base = 'You lean toward reform on justice issues — more police oversight, rehabilitation over punishment, and stronger safeguards.';
+    if (firearmsLean === 'right') return base + ' Though you take a more permissive stance on firearms.';
+    if (reproLean === 'right') return base + ' Though you hold a more restrictive view on reproductive policy.';
+    return base;
+  }
+  if (overall === 'right') {
+    const base = 'You prioritize public safety and accountability — supporting law enforcement, firm sentencing, and individual rights.';
+    if (firearmsLean === 'left') return base + ' Though you do support stronger gun regulations.';
+    if (reproLean === 'left') return base + ' Though you support broader reproductive rights.';
+    return base;
+  }
+  // Center / mixed — common pattern: split on guns vs. policing
+  if (l('justice_policing_accountability') === 'left' && firearmsLean === 'right') {
+    return 'You want more police oversight and reform-minded sentencing, but take a more permissive view on gun rights — a civil-liberties-across-the-board approach.';
+  }
+  if (l('justice_policing_accountability') === 'right' && firearmsLean === 'left') {
+    return 'You support law enforcement with stronger gun regulations — prioritizing public safety tools on both sides of the badge.';
+  }
+  return 'You hold a mix of views on justice issues — looking at each question on its own merits rather than following a single ideological thread.';
+}
+
+function getClimateSummary(v: (id: string) => number, l: (id: string) => Lean): string {
+  const leans = ['climate_ambition', 'climate_energy_portfolio', 'climate_permitting'].map(l);
+  const overall = dominantLean(leans);
+
+  if (overall === 'left') {
+    const base = 'You want aggressive action on climate — fast transition to clean energy with thorough environmental review.';
+    if (l('climate_permitting') === 'right') return 'You want ambitious climate action and a clean energy transition, and you\'re willing to streamline permitting to get projects built faster.';
+    return base;
+  }
+  if (overall === 'right') {
+    const base = 'You favor a gradual approach to energy transition — keeping all options on the table and avoiding regulations that could raise costs too quickly.';
+    if (l('climate_ambition') === 'left') return 'You recognize the urgency of climate change, but think a diverse energy mix and faster permitting are more practical than aggressive mandates.';
+    return base;
+  }
+  // Center
+  if (l('climate_ambition') === 'left' && l('climate_energy_portfolio') === 'right') {
+    return 'You want to move faster on climate, but think we need all energy sources — including fossil fuels — during the transition. Ambitious goals, pragmatic tools.';
+  }
+  return 'You take a balanced approach to climate — supporting a steady transition without drastic mandates, and weighing environmental goals against economic costs.';
+}
+
+// ────────────────────────────────────────────
 // Strength / importance helpers
 // ────────────────────────────────────────────
 

@@ -210,9 +210,11 @@ describe('ARCHETYPES', () => {
       expect(a.id).toBeTruthy();
       expect(a.emoji).toBeTruthy();
       expect(a.name).toBeTruthy();
+      expect(a.neutralName).toBeTruthy();
       expect(a.traits.length).toBeGreaterThan(0);
       expect(a.centroid).toHaveProperty('responsibility_orientation');
       expect(a.summary).toBeTruthy();
+      expect(a.neutralSummary).toBeTruthy();
     }
   });
 });

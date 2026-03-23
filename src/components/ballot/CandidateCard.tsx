@@ -30,16 +30,16 @@ export default function CandidateCard({
   const borderClass = isSelected
     ? 'border-brand-primary bg-brand-primary/[0.03]'
     : isBestMatch
-      ? 'border-green-300 bg-green-50'
-      : 'border-gray-200 bg-white';
+      ? 'border-success/40 bg-success-light'
+      : 'border-border-default bg-white';
 
   // Match circle classes
   const matchCircleClass =
     matchPercent >= 65
-      ? 'border-green-500 bg-green-50'
+      ? 'border-success bg-success-light'
       : matchPercent >= 45
         ? 'border-amber-500 bg-amber-50'
-        : 'border-gray-300 bg-gray-50';
+        : 'border-border-default bg-gray-50';
 
   return (
     <div className={`p-3 rounded-xl border-2 ${borderClass}`}>
@@ -91,7 +91,7 @@ export default function CandidateCard({
                   <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">
                     Shared values
                   </span>
-                  <p className="text-[11px] text-green-600 leading-[15px]">
+                  <p className="text-[11px] text-success leading-[15px]">
                     {alignedValues.join(', ')}
                   </p>
                 </>
@@ -127,7 +127,7 @@ export default function CandidateCard({
         {/* Match percentage circle */}
         <div className="flex flex-col items-center gap-1 shrink-0">
           {isBestMatch && (
-            <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center mb-0.5">
+            <div className="w-4 h-4 rounded-full bg-success flex items-center justify-center mb-0.5">
               <Sparkles className="h-2.5 w-2.5 text-white" />
             </div>
           )}

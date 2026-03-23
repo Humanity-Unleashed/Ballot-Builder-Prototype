@@ -17,12 +17,14 @@ interface SignalReviewCardProps {
   disabled?: boolean;
 }
 
-/** Human-readable axis name */
-function getAxisShortName(axisId: string): string {
+/** Map a 0-10 score to the nearest position card for an axis */
+function scoreToPosition(axisId: string, score: number): { title: string; description: string } | null {
   const config = axisSliderConfigs[axisId];
-  if (!config) return axisId;
-  // Use the question text, trimmed
-  return config.question.replace(/^Should /, '').replace(/^How should /, '').replace(/\?$/, '');
+  if (!config || config.positions.length === 0) return null;
+  const count = config.positions.length;
+  const index = Math.round((score / 10) * (count - 1));
+  const clamped = Math.max(0, Math.min(count - 1, index));
+  return config.positions[clamped];
 }
 
 /** Confidence label */
@@ -68,42 +70,61 @@ export default function SignalReviewCard({
         </p>
       </div>
 
-      {/* Per-axis signal bars */}
-      <div className="px-4 pb-2 space-y-3">
+      {/* Per-axis matched position cards */}
+      <div className="px-4 pb-2 space-y-2.5">
         {visibleSignals.map((signal) => {
-          const config = axisSliderConfigs[signal.axisId];
-          const score = signal.rawSignal.direction; // 0-10
-          const pct = Math.round((score / 10) * 100);
+          const position = scoreToPosition(signal.axisId, signal.rawSignal.direction);
 
           return (
-            <div key={signal.axisId}>
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-[11px] font-semibold text-gray-500">
-                  {getAxisShortName(signal.axisId)}
-                </span>
-                {signal.strength === 'secondary' && (
-                  <span className="text-[9px] font-medium text-purple-500 bg-purple-50 px-1.5 py-0.5 rounded">
-                    bonus
-                  </span>
-                )}
+            <div
+              key={signal.axisId}
+              className="rounded-xl border-2 border-green-300 bg-white px-3.5 py-3"
+            >
+              <div className="flex items-start gap-2.5">
+                <div className="w-5 h-5 rounded-full border-2 border-green-500 bg-green-500 flex items-center justify-center mt-0.5 shrink-0">
+                  <Check className="h-3 w-3 text-white" strokeWidth={3} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[14px] font-semibold text-gray-900">
+                      {position?.title ?? 'Position detected'}
+                    </span>
+                    {signal.strength === 'secondary' && (
+                      <span className="text-[9px] font-medium text-purple-500 bg-purple-50 px-1.5 py-0.5 rounded">
+                        bonus
+                      </span>
+                    )}
+                  </div>
+                  {position?.description && (
+                    <p className="text-[12px] text-gray-500 mt-0.5">
+                      {position.description}
+                    </p>
+                  )}
+                  {signal.rawSignal.reasoning && (
+                    <p className="text-[12px] text-green-700 leading-snug mt-1.5 italic">
+                      <MessageSquareText className="h-3 w-3 inline-block mr-1 -mt-0.5" />
+                      {(() => {
+                        let text = signal.rawSignal.reasoning
+                          .replace(/\s*\(?\bscore\s*\d+\.?\d*\)?\s*/gi, ' ')
+                          .replace(/\s*\(?\bposition\s*\d+\)?\s*/gi, ' ')
+                          .replace(/\s*which is on the \w+ axis\.?\s*/gi, ' ')
+                          .replace(/\s*on the \w+ axis\.?\s*/gi, ' ')
+                          .replace(/\s*\(\w+\)\s*axis\.?\s*/gi, ' ')
+                          .replace(/\bpole [AB]\b/gi, '')
+                          .replace(/\bThe user\b/g, 'You')
+                          .replace(/\bthe user\b/g, 'you')
+                          .replace(/\s{2,}/g, ' ')
+                          .trim();
+                        // Capitalize first letter
+                        if (text.length > 0) {
+                          text = text[0].toUpperCase() + text.slice(1);
+                        }
+                        return text;
+                      })()}
+                    </p>
+                  )}
+                </div>
               </div>
-              {/* Bar */}
-              <div className="relative h-2 bg-gray-200 rounded-full">
-                <div
-                  className="absolute h-2 rounded-full bg-gradient-to-r from-[#8B7AAF] to-[#6C2BD9]"
-                  style={{ width: `${pct}%` }}
-                />
-                <div
-                  className="absolute top-[-3px] w-[14px] h-[14px] bg-[#6C2BD9] border-2 border-white rounded-full shadow-sm"
-                  style={{ left: `calc(${pct}% - 7px)` }}
-                />
-              </div>
-              {/* LLM reasoning */}
-              {signal.rawSignal.reasoning && (
-                <p className="text-[11px] text-gray-500 leading-snug mt-1 italic">
-                  {signal.rawSignal.reasoning}
-                </p>
-              )}
             </div>
           );
         })}
@@ -114,7 +135,7 @@ export default function SignalReviewCard({
         <p className="text-[11px] text-gray-500">
           Confidence: <strong className={confColor}>{confLabel}</strong>
           {axesCount > 1 && (
-            <span> — your answer touched {axesCount} axes</span>
+            <span> — your answer touched {axesCount} topics</span>
           )}
         </p>
       </div>
