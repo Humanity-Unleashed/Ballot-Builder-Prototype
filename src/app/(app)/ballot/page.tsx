@@ -925,9 +925,6 @@ export default function UnifiedBallotPage() {
   if (currentPhase === 'summary') {
     return (
       <div>
-        <div className="px-4 pt-4">
-          <DemoBanner />
-        </div>
         <BallotSummary
           votes={savedVotes}
           ballotItems={ballotItems}

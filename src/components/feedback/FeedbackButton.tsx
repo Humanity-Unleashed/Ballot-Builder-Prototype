@@ -52,7 +52,9 @@ export default function FeedbackButton() {
     if (!message.trim()) return;
 
     const entry: FeedbackEntry = {
-      id: crypto.randomUUID(),
+      id: typeof crypto.randomUUID === 'function'
+        ? crypto.randomUUID()
+        : Math.random().toString(36).slice(2) + Date.now().toString(36),
       timestamp: new Date().toISOString(),
       screen: pathname,
       screenName,

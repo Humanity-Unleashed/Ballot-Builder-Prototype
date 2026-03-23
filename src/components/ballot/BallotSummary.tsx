@@ -185,30 +185,31 @@ function SurveySoftAsk({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div className="mx-4 rounded-2xl border border-border-default bg-white px-5 py-5 text-center">
-      <p className="text-[15px] font-bold text-gray-900 mb-1">Help us make this better</p>
-      <p className="text-[13px] text-gray-500 mb-4">
-        We&apos;re building this for everyone. Your honest take helps us get it right.
+      <p className="text-[15px] font-bold text-gray-900 mb-1">How was that?</p>
+      <p className="text-[13px] text-gray-500 mb-1">
+        4 quick taps + 1 optional thought. Takes under a minute.
       </p>
-      <div className="flex gap-3 justify-center">
-        <button
-          onClick={() => {
-            track('click', { element: 'survey_expand' });
-            setExpanded(true);
-          }}
-          className="px-6 py-2.5 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold"
-        >
-          Give quick feedback
-        </button>
-        <button
-          onClick={() => {
-            track('click', { element: 'survey_skip_softask' });
-            onComplete();
-          }}
-          className="px-6 py-2.5 rounded-xl border border-border-default bg-white hover:bg-gray-50 transition-colors text-gray-500 text-sm font-semibold"
-        >
-          Skip
-        </button>
-      </div>
+      <p className="text-[12px] text-gray-400 mb-4">
+        We&apos;re building this for everyone — your honest take shapes what comes next.
+      </p>
+      <button
+        onClick={() => {
+          track('click', { element: 'survey_expand' });
+          setExpanded(true);
+        }}
+        className="w-full py-3 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold mb-2"
+      >
+        Give quick feedback
+      </button>
+      <button
+        onClick={() => {
+          track('click', { element: 'survey_skip_softask' });
+          onComplete();
+        }}
+        className="text-[12px] text-gray-400 hover:text-gray-600 transition-colors"
+      >
+        Skip
+      </button>
     </div>
   );
 }

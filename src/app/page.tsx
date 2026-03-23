@@ -47,15 +47,24 @@ export default function WelcomePage() {
 
   const handleGoogle = async () => {
     track('click', { element: 'continue_with_google' });
-    await signInWithGoogle();
+    try {
+      await signInWithGoogle();
+    } catch {
+      // Auth unavailable — continue as guest
+      router.replace('/blueprint');
+    }
   };
 
   const handleGuest = async () => {
     track('click', { element: 'continue_as_guest' });
+    // Race the sign-in against a short timeout so the button never hangs
     try {
-      await signInAnonymously();
+      await Promise.race([
+        signInAnonymously(),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 3000)),
+      ]);
     } catch {
-      // Auth unavailable (no DB) — continue without auth
+      // Auth unavailable (no DB or network timeout) — continue without auth
     }
     router.replace('/blueprint');
   };
