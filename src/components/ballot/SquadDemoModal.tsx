@@ -13,8 +13,8 @@ interface SquadDemoModalProps {
 
 function CheckDot() {
   return (
-    <span className="w-6 h-6 rounded-full bg-green-500/15 flex items-center justify-center shrink-0">
-      <Check className="w-3.5 h-3.5 text-green-500" strokeWidth={2.5} />
+    <span className="w-6 h-6 rounded-full bg-success/15 flex items-center justify-center shrink-0">
+      <Check className="w-3.5 h-3.5 text-success" strokeWidth={2.5} />
     </span>
   );
 }
@@ -37,8 +37,8 @@ function BanIcon() {
 
 function CheckIcon() {
   return (
-    <span className="w-5 h-5 rounded bg-green-500/15 flex items-center justify-center shrink-0">
-      <Check className="w-3.5 h-3.5 text-green-500" strokeWidth={2.5} />
+    <span className="w-5 h-5 rounded bg-success/15 flex items-center justify-center shrink-0">
+      <Check className="w-3.5 h-3.5 text-success" strokeWidth={2.5} />
     </span>
   );
 }
@@ -55,7 +55,7 @@ function SlidePrivacy() {
 
       <h3 className="text-lg font-bold text-text-primary text-center mb-4">Your ballot stays private</h3>
 
-      <div className="rounded-xl border border-gray-200 overflow-hidden">
+      <div className="rounded-xl border border-border-default overflow-hidden">
         <div className="p-4">
           <p className="text-sm font-semibold text-text-primary mb-3">What squad members can see:</p>
           <div className="space-y-2.5">
@@ -68,7 +68,7 @@ function SlidePrivacy() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200" />
+        <div className="border-t border-border-default" />
 
         <div className="p-4 bg-red-50/30">
           <p className="text-sm font-semibold text-text-primary mb-3">What they can NEVER see:</p>
@@ -107,7 +107,7 @@ function SlideNameSquad({ squadName, setSquadName }: { squadName: string; setSqu
         onChange={(e) => setSquadName(e.target.value)}
         placeholder="e.g., Smith Family"
         maxLength={40}
-        className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors"
+        className="w-full px-4 py-3 rounded-xl border border-border-default text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-colors"
         autoFocus
       />
     </div>
@@ -152,8 +152,8 @@ function SlideShare({ inviteUrl }: { inviteUrl: string }) {
   return (
     <div className="animate-fade-in-up">
       <div className="flex justify-center mb-4">
-        <div className="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center">
-          <Check className="w-7 h-7 text-green-500" />
+        <div className="w-14 h-14 rounded-full bg-success/10 flex items-center justify-center">
+          <Check className="w-7 h-7 text-success" />
         </div>
       </div>
 
@@ -165,7 +165,7 @@ function SlideShare({ inviteUrl }: { inviteUrl: string }) {
         <span className="flex-1 text-xs text-text-secondary truncate font-mono">{inviteUrl}</span>
         <button
           onClick={handleCopy}
-          className="shrink-0 px-3 py-1.5 rounded-lg bg-white border border-gray-200 text-xs font-medium text-text-primary hover:bg-gray-50 transition-colors flex items-center gap-1.5"
+          className="shrink-0 px-3 py-1.5 rounded-lg bg-white border border-border-default text-xs font-medium text-text-primary hover:bg-gray-50 transition-colors flex items-center gap-1.5"
         >
           <Copy className="w-3.5 h-3.5" />
           {copied ? 'Copied!' : 'Copy'}
@@ -176,21 +176,21 @@ function SlideShare({ inviteUrl }: { inviteUrl: string }) {
       <div className="grid grid-cols-3 gap-3">
         <button
           onClick={handleText}
-          className="flex flex-col items-center gap-2 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          className="flex flex-col items-center gap-2 py-3 rounded-xl border border-border-default hover:bg-gray-50 transition-colors"
         >
-          <MessageSquare className="w-5 h-5 text-green-600" />
+          <MessageSquare className="w-5 h-5 text-success" />
           <span className="text-xs font-medium text-text-primary">Text</span>
         </button>
         <button
           onClick={handleEmail}
-          className="flex flex-col items-center gap-2 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          className="flex flex-col items-center gap-2 py-3 rounded-xl border border-border-default hover:bg-gray-50 transition-colors"
         >
           <Mail className="w-5 h-5 text-blue-600" />
           <span className="text-xs font-medium text-text-primary">Email</span>
         </button>
         <button
           onClick={handleCopy}
-          className="flex flex-col items-center gap-2 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          className="flex flex-col items-center gap-2 py-3 rounded-xl border border-border-default hover:bg-gray-50 transition-colors"
         >
           <Copy className="w-5 h-5 text-brand-primary" />
           <span className="text-xs font-medium text-text-primary">{copied ? 'Copied!' : 'Copy Link'}</span>
@@ -244,7 +244,7 @@ function SquadDashboard({ onClose }: { onClose: () => void }) {
           <span className="flex-1 text-xs text-text-secondary truncate font-mono">{inviteUrl}</span>
           <button
             onClick={handleCopy}
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-white border border-gray-200 text-xs font-medium text-text-primary hover:bg-gray-50 transition-colors flex items-center gap-1.5"
+            className="shrink-0 px-3 py-1.5 rounded-lg bg-white border border-border-default text-xs font-medium text-text-primary hover:bg-gray-50 transition-colors flex items-center gap-1.5"
           >
             <Copy className="w-3.5 h-3.5" />
             {copied ? 'Copied!' : 'Copy'}
@@ -254,21 +254,21 @@ function SquadDashboard({ onClose }: { onClose: () => void }) {
         <div className="grid grid-cols-3 gap-3 mb-4">
           <button
             onClick={() => window.open(`sms:?body=${encodeURIComponent(shareMessage)}`, '_blank')}
-            className="flex flex-col items-center gap-2 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="flex flex-col items-center gap-2 py-3 rounded-xl border border-border-default hover:bg-gray-50 transition-colors"
           >
-            <MessageSquare className="w-5 h-5 text-green-600" />
+            <MessageSquare className="w-5 h-5 text-success" />
             <span className="text-xs font-medium text-text-primary">Text</span>
           </button>
           <button
             onClick={() => window.open(`mailto:?subject=${encodeURIComponent('Join my Voting Squad!')}&body=${encodeURIComponent(shareMessage)}`, '_blank')}
-            className="flex flex-col items-center gap-2 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="flex flex-col items-center gap-2 py-3 rounded-xl border border-border-default hover:bg-gray-50 transition-colors"
           >
             <Mail className="w-5 h-5 text-blue-600" />
             <span className="text-xs font-medium text-text-primary">Email</span>
           </button>
           <button
             onClick={handleCopy}
-            className="flex flex-col items-center gap-2 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="flex flex-col items-center gap-2 py-3 rounded-xl border border-border-default hover:bg-gray-50 transition-colors"
           >
             <Copy className="w-5 h-5 text-brand-primary" />
             <span className="text-xs font-medium text-text-primary">{copied ? 'Copied!' : 'Copy Link'}</span>
@@ -304,7 +304,7 @@ function SquadDashboard({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* Member rows */}
-      <div className="rounded-xl border border-gray-200 overflow-hidden mb-4">
+      <div className="rounded-xl border border-border-default overflow-hidden mb-4">
         {members.map((member, idx) => {
           const completedCount = CHECKPOINT_KEYS.filter((k) => member.checkpoints[k]).length;
           return (

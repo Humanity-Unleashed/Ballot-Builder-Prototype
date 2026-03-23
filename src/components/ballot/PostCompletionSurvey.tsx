@@ -150,7 +150,7 @@ export default function PostCompletionSurvey({
   // Thank-you state
   if (submitted) {
     return (
-      <div className="mx-4 rounded-2xl border border-gray-200 bg-white px-5 py-8 text-center">
+      <div className="mx-4 rounded-2xl border border-border-default bg-white px-5 py-8 text-center">
         <p className="text-2xl mb-2">🙏</p>
         <p className="text-[15px] font-bold text-gray-900">Thank you!</p>
         <p className="text-[13px] text-gray-500 mt-1">Your feedback helps us make this better.</p>
@@ -159,7 +159,7 @@ export default function PostCompletionSurvey({
   }
 
   return (
-    <div className="mx-4 rounded-2xl border border-gray-200 bg-white overflow-hidden">
+    <div className="mx-4 rounded-2xl border border-border-default bg-white overflow-hidden">
       {/* Progress bar */}
       <div className="h-1 bg-gray-100">
         <div
@@ -194,7 +194,7 @@ export default function PostCompletionSurvey({
               <button
                 key={opt.value}
                 onClick={() => handleChoice(opt.value)}
-                className="w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-brand-primary hover:bg-brand-primary/[0.03] transition-all text-[14px] text-gray-700 font-medium flex items-center justify-between group"
+                className="w-full text-left px-4 py-3 rounded-xl border-2 border-border-default bg-white hover:border-brand-primary hover:bg-brand-primary/[0.03] transition-all text-[14px] text-gray-700 font-medium flex items-center justify-between group"
               >
                 <span>{opt.label}</span>
                 <ChevronRight className="h-4 w-4 text-gray-300 group-hover:text-brand-primary transition-colors" />
@@ -220,7 +220,7 @@ export default function PostCompletionSurvey({
                 }}
                 placeholder={question.placeholder}
                 rows={3}
-                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 pr-12 text-[14px] text-gray-700 placeholder-gray-400 focus:border-brand-primary focus:outline-none resize-none"
+                className="w-full rounded-xl border-2 border-border-default px-4 py-3 pr-12 text-[14px] text-gray-700 placeholder-gray-400 focus:border-brand-primary focus:outline-none resize-none"
               />
               {/* Mic button */}
               <button

@@ -70,7 +70,6 @@ import DemographicGate from '@/components/conversation/DemographicGate';
 import HybridAssessmentView from '@/components/assessment/HybridAssessmentView';
 import BlueprintSummaryView from '@/components/blueprint/BlueprintSummaryView';
 import HybridFineTuningView from '@/components/blueprint/HybridFineTuningView';
-import ElectionBanner from '@/components/blueprint/ElectionBanner';
 import BallotItemHeader from '@/components/ballot/BallotItemHeader';
 import RecommendationBanner from '@/components/ballot/RecommendationBanner';
 import PersonalImpactSection from '@/components/ballot/PersonalImpactSection';
@@ -926,14 +925,8 @@ export default function UnifiedBallotPage() {
   if (currentPhase === 'summary') {
     return (
       <div>
-        <div className="px-4 pt-4 space-y-3">
+        <div className="px-4 pt-4">
           <DemoBanner />
-          <ElectionBanner
-            daysUntilElection={daysRemaining}
-            electionLabel={electionLabel}
-            voterInfo={voterInfo}
-            location={location}
-          />
         </div>
         <BallotSummary
           votes={savedVotes}

@@ -80,7 +80,7 @@ export default function AiAssistantDrawer({
         style={{ height: '70vh' }}
       >
         {/* Drawer handle / header */}
-        <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
+        <div className="flex items-center justify-between border-b border-border-default px-4 py-3">
           <div className="flex items-center gap-2">
             <MessageCircle className="h-4 w-4 text-brand-primary" />
             <span className="text-sm font-semibold text-gray-800">AI Assistant</span>

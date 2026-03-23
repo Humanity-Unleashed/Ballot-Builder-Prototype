@@ -21,39 +21,47 @@ export default function DomainLeanMeter({
 }: DomainLeanMeterProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  // Local draft value used during drag to avoid triggering store recalculations mid-drag
+  const [draftValue, setDraftValue] = useState<number | null>(null);
 
-  const clampValue = useCallback(
+  const displayValue = draftValue ?? value;
+
+  const computeValue = useCallback(
     (clientX: number) => {
       const track = trackRef.current;
-      if (!track) return;
+      if (!track) return value;
       const rect = track.getBoundingClientRect();
       const x = clientX - rect.left;
       const ratio = Math.max(0, Math.min(1, x / rect.width));
-      onChange(Math.round(ratio * 100));
+      return Math.round(ratio * 100);
     },
-    [onChange],
+    [value],
   );
 
   const handlePointerDown = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       setIsDragging(true);
       (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
-      clampValue(e.clientX);
+      setDraftValue(computeValue(e.clientX));
     },
-    [clampValue],
+    [computeValue],
   );
 
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       if (!isDragging) return;
-      clampValue(e.clientX);
+      setDraftValue(computeValue(e.clientX));
     },
-    [isDragging, clampValue],
+    [isDragging, computeValue],
   );
 
   const handlePointerUp = useCallback(() => {
     setIsDragging(false);
-  }, []);
+    if (draftValue !== null) {
+      onChange(draftValue);
+      setDraftValue(null);
+    }
+  }, [draftValue, onChange]);
 
   const trackHeight = compact ? 'h-1' : 'h-1.5';
   const trackRadius = compact ? 'rounded-[2px]' : 'rounded-[3px]';
@@ -65,12 +73,12 @@ export default function DomainLeanMeter({
     : 'h-3.5 w-3.5 rounded-full bg-brand-primary shadow-[0_1px_4px_rgba(0,0,0,0.2)]';
 
   const leftLabelClass = compact
-    ? `w-[80px] shrink-0 text-right text-[10px] font-semibold leading-snug ${value < 50 ? 'text-brand-primary' : 'text-gray-400'}`
-    : `w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value < 50 ? 'text-brand-primary' : 'text-gray-400'}`;
+    ? `w-[80px] shrink-0 text-right text-[10px] font-semibold leading-snug ${displayValue < 50 ? 'text-brand-primary' : 'text-gray-400'}`
+    : `w-[70px] shrink-0 text-right text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${displayValue < 50 ? 'text-brand-primary' : 'text-gray-400'}`;
 
   const rightLabelClass = compact
-    ? `w-[80px] shrink-0 text-left text-[10px] font-semibold leading-snug ${value > 50 ? 'text-brand-primary' : 'text-gray-400'}`
-    : `w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${value > 50 ? 'text-brand-primary' : 'text-gray-400'}`;
+    ? `w-[80px] shrink-0 text-left text-[10px] font-semibold leading-snug ${displayValue > 50 ? 'text-brand-primary' : 'text-gray-400'}`
+    : `w-[70px] shrink-0 text-left text-[10px] font-bold uppercase leading-[1.2] tracking-[0.3px] ${displayValue > 50 ? 'text-brand-primary' : 'text-gray-400'}`;
 
   return (
     <div className="flex items-center gap-1.5">
@@ -104,7 +112,7 @@ export default function DomainLeanMeter({
           <div
             className="pointer-events-none absolute top-1/2"
             style={{
-              left: `${value}%`,
+              left: `${displayValue}%`,
               transform: 'translate(-50%, -50%)',
             }}
           >

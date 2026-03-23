@@ -62,7 +62,7 @@ export default function PropositionBreakdownSheet({
         </div>
 
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-border-default">
           <h3 className="text-lg font-bold text-gray-900 flex-1">How This Connects to Your Values</h3>
           <button
             onClick={onClose}
@@ -77,13 +77,13 @@ export default function PropositionBreakdownSheet({
           {/* Resonance section */}
           {resonanceItems.length > 0 && (
             <div className="space-y-2.5">
-              <p className="text-xs font-bold text-green-600 uppercase tracking-wide">
+              <p className="text-xs font-bold text-success uppercase tracking-wide">
                 Where it aligns
               </p>
               {resonanceItems.map((item) => (
                 <div key={item.axisId} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="h-3 w-3 text-green-600" />
+                  <div className="w-5 h-5 rounded-full bg-success-light flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="h-3 w-3 text-success" />
                   </div>
                   <p className="text-[13px] text-gray-700 leading-relaxed flex-1">
                     {renderBoldText(getResonancePhrase(item.axisName))}
@@ -125,7 +125,7 @@ export default function PropositionBreakdownSheet({
           )}
 
           {/* Summary */}
-          <div className="pt-4 border-t border-gray-200">
+          <div className="pt-4 border-t border-border-default">
             <div className="bg-gray-50 rounded-xl p-4">
               <p className="text-sm text-gray-700 leading-relaxed">
                 {recommendation.vote === 'yes' ? (

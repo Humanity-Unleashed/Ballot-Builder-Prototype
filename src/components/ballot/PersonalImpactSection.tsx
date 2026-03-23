@@ -5,7 +5,7 @@ import { User } from 'lucide-react';
 import type { PersonalImpact } from '@/lib/ballotHelpers';
 
 const EFFECT_DOT_COLOR: Record<PersonalImpact['effect'], string> = {
-  benefit: 'bg-green-500',
+  benefit: 'bg-success',
   concern: 'bg-amber-500',
   mixed: 'bg-brand-primary',
   context: 'bg-gray-400',

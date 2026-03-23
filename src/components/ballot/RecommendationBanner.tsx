@@ -63,7 +63,7 @@ export default function RecommendationBanner({
   };
 
   return (
-    <div className="rounded-xl bg-gray-50 border border-gray-200 overflow-hidden">
+    <div className="rounded-xl bg-gray-50 border border-border-default overflow-hidden">
       {renderVoteLine()}
 
       <div className="p-3 space-y-2">
@@ -73,7 +73,7 @@ export default function RecommendationBanner({
           <>
             {valueFraming.resonance.map((phrase, i) => (
               <div key={`r-${i}`} className="flex items-start gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 mt-[5px] shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-success mt-[5px] shrink-0" />
                 <span className="text-[13px] text-gray-700 leading-[18px] flex-1">
                   {capitalize(phrase)}
                 </span>

@@ -9,7 +9,7 @@ import { getNextElectionDay, daysUntil } from '@/lib/electionDate';
 
 const AVATARS = [
   { initials: 'MS', bg: 'bg-brand-primary/20', text: 'text-brand-primary' },
-  { initials: 'JK', bg: 'bg-green-100', text: 'text-green-700' },
+  { initials: 'JK', bg: 'bg-success-light', text: 'text-success' },
   { initials: 'LR', bg: 'bg-orange-100', text: 'text-orange-700' },
   { initials: 'DP', bg: 'bg-purple-100', text: 'text-purple-700' },
 ];
@@ -24,8 +24,8 @@ export default function SquadInviteCard() {
 
   return (
     <>
-      <div className="px-4 animate-fade-in-up">
-        <div className="bg-white rounded-2xl border border-border-default p-6 text-center">
+      <div className="animate-fade-in-up">
+        <div className="bg-white rounded-2xl border border-border-default p-5 text-center">
           {squadExists ? (
             <>
               {/* Squad exists view */}
