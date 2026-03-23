@@ -162,7 +162,7 @@ export const useBallotStore = create<BallotStore>()(
 
       setPhase: (phase) => {
         const updates: Partial<BallotState> = { currentPhase: phase };
-        if ((phase === 'demographics' || phase === 'assessment') && get().sessionStartedAt === null) {
+        if (phase !== 'summary' && get().sessionStartedAt === null) {
           updates.sessionStartedAt = new Date().toISOString();
         }
         if (phase === 'summary') {

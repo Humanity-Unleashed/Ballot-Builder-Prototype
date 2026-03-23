@@ -50,4 +50,5 @@ export const MEASURE_IDS = {
   MI_INVEST_IN_KIDS: 'mi-2026-invest-in-mi-kids',
   GA_CONSERVATION_USE: 'ga-2026-conservation-use-acreage',
   NC_VOTER_ID: 'nc-2026-voter-id-amendment',
+  TX_SCHOOL_VOUCHERS: 'tx-2026-school-vouchers',
 } as const;
