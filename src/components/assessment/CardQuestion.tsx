@@ -25,6 +25,26 @@ function computeCardValues(positionCount: number): number[] {
   );
 }
 
+/** Deterministic flip based on axis ID — same ID always flips the same way per session */
+function shouldFlip(axisId: string): boolean {
+  let hash = 0;
+  for (let i = 0; i < axisId.length; i++) {
+    hash = ((hash << 5) - hash + axisId.charCodeAt(i)) | 0;
+  }
+  // Mix in session-level seed so the same user sees different orders on retake
+  const sessionSeed = typeof window !== 'undefined'
+    ? (sessionStorage.getItem('card_flip_seed') || (() => {
+        const seed = String(Math.random());
+        sessionStorage.setItem('card_flip_seed', seed);
+        return seed;
+      })())
+    : '0';
+  for (let i = 0; i < sessionSeed.length; i++) {
+    hash = ((hash << 5) - hash + sessionSeed.charCodeAt(i)) | 0;
+  }
+  return (hash & 1) === 0;
+}
+
 export default function CardQuestion({
   axisConfig,
   isNuancedAxis,
@@ -43,11 +63,11 @@ export default function CardQuestion({
     [axisConfig.positions.length],
   );
 
-  // Randomly flip the display order per question to avoid top-always-progressive bias.
-  // Determined once per mount (per axisConfig.axisId) so it doesn't change while answering.
+  // Deterministic flip per axis to avoid top-always-progressive bias.
+  // Uses a hash of axis ID + session seed so it's stable during the question
+  // but varies across sessions (retakes).
   const isFlipped = useMemo(
-    () => Math.random() < 0.5,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    () => shouldFlip(axisConfig.axisId),
     [axisConfig.axisId],
   );
 
