@@ -37,7 +37,7 @@ export default function StateSelectView({ onStateSelected }: StateSelectViewProp
 
         {/* Demo note */}
         <p className="text-center text-xs text-gray-400">
-          Demo mode — 9 contests, 21 candidates scored from real-world data
+          Demo mode — 9 contests, 1 ballot measure, 21 candidates scored from real-world data
         </p>
       </div>
     </div>

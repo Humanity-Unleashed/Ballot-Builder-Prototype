@@ -36,8 +36,8 @@ export default function DistrictSelector({ showError }: DistrictSelectorProps) {
         <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
         <p className="text-xs leading-relaxed text-blue-800">
           <strong>Demo ballot:</strong> This is a real ballot for Austin, TX (78721) in the
-          November 2026 general election. All 9 contests and 21 candidates are scored
-          from real-world data.
+          November 2026 general election. All 9 contests, 1 ballot measure, and 21 candidates
+          are scored from real-world data.
         </p>
       </div>
 
