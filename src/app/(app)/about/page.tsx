@@ -60,6 +60,31 @@ const SECTIONS: { heading: string; items: FaqItem[] }[] = [
     ],
   },
   {
+    heading: 'How It Works',
+    items: [
+      {
+        q: 'How is my civic style determined?',
+        a: [
+          'Your civic style is based on three patterns we look for across all your policy positions: where responsibility lands (community-led vs. individual-led), how fast you want to move (change-seeking vs. stability-seeking), and how much structure you prefer (rules and standards vs. flexibility and choice).',
+          'Each of the 17 policy topics feeds into one or more of these patterns. The combination places you closest to one of 9 civic styles. People with similar styles can still disagree on specific issues \u2014 it\u2019s a shorthand for your overall priorities, not a rigid box.',
+        ],
+      },
+      {
+        q: 'How do you estimate the time saved?',
+        a: [
+          'We model three phases of independent ballot research: discovery (finding your ballot and reliable sources), per-item research (reading voter guides and measure arguments), and decision-making (weighing options with no tool to help).',
+          'Discovery takes roughly 15 minutes \u2014 most people don\u2019t know what\u2019s on their ballot, much less where to find trustworthy information about it. Per-item research runs about 7 minutes per candidate race and 12 minutes per ballot measure, based on published reading speeds for civic text (~220 words per minute) and typical voter guide lengths (~600 words per candidate, ~1,500 words per measure). We add about 2 minutes per item for the decision itself.',
+          'The low end of the range assumes you skim quickly and skip some items. The high end assumes thorough reading. Neither includes the time most people spend just trying to figure out where to start.',
+          'Sources: Brysbaert (2019) reading speed meta-analysis, Ballotpedia ballot measure readability data (2024), US Alliance for Election Excellence voting time study (11,990 voters).',
+        ],
+      },
+      {
+        q: 'What do the domain summaries mean?',
+        a: 'Each of the five policy areas (Economy, Healthcare, Housing, Justice, Climate) shows a plain-language summary of your overall stance. These are generated from your actual slider positions \u2014 not from AI or guesswork. If you adjust a slider, the summary updates immediately to reflect the change.',
+      },
+    ],
+  },
+  {
     heading: 'Trust & Transparency',
     items: [
       {
