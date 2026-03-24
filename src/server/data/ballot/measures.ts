@@ -270,7 +270,44 @@ export const michiganMeasures: Measure[] = [
   },
 ];
 
-export const allMeasures: Measure[] = [...measures, ...michiganMeasures];
+// === TEXAS 2026 MEASURES ===
+// Based on HJR 2 / SB 2 (89th Legislature, 2025) — school voucher constitutional amendment
+// Governor Abbott's top priority; passed both chambers in 2025; likely on Nov 2026 ballot
+
+export const texasMeasures: Measure[] = [
+  {
+    id: MEASURE_IDS.TX_SCHOOL_VOUCHERS,
+    type: 'measure',
+    title: 'Proposition 1: Education Savings Accounts',
+    shortTitle: 'School Vouchers',
+    description:
+      'The constitutional amendment authorizing the legislature to provide education savings accounts to parents for the education expenses of their children.',
+    vector: [0, 0, 0, 0, 0],
+    relevantAxes: ['econ_school_choice', 'econ_investment', 'econ_tax_structure'],
+    yesAxisEffects: {
+      econ_school_choice: 0.9,
+      econ_investment: 0.4,
+      econ_tax_structure: 0.2,
+    },
+    yesValueEffects: {
+      self_direction: 0.8,
+      tradition: 0.5,
+      achievement: 0.4,
+      universalism: -0.5,
+      benevolence: -0.2,
+    },
+    outcomes: {
+      yes: 'Parents could receive ~$10,500 per child per year in state-funded education savings accounts to spend on private school tuition, homeschool materials, tutoring, or other approved education expenses. Public school per-pupil funding would remain, but total enrollment-driven funding could decrease as students leave.',
+      no: 'No education savings accounts. Texas public schools continue as the sole recipients of state per-pupil education funding. The legislature could revisit the issue in future sessions.',
+    },
+    explanation:
+      'This proposed constitutional amendment would allow the Texas legislature to create education savings accounts (ESAs) — publicly funded accounts parents can use for private school tuition and other education costs. Governor Abbott made this his top legislative priority, calling it "school choice." Supporters say it empowers parents, especially in underperforming districts. The Texas State Teachers Association and rural Republican legislators have opposed it, arguing it diverts funding from the 5.4 million students in public schools — particularly in rural areas where private alternatives don\'t exist. The fiscal note estimates $2–4 billion in costs over the first biennium depending on uptake.',
+    supporters: ['Governor Greg Abbott', 'Lt. Gov. Dan Patrick', 'American Federation for Children', 'Texas Public Policy Foundation'],
+    opponents: ['Texas State Teachers Association', 'Texas AFT', 'Rural school districts', 'Texas PTA', 'Multiple rural Republican legislators'],
+  },
+];
+
+export const allMeasures: Measure[] = [...measures, ...michiganMeasures, ...texasMeasures];
 
 export function getMeasureById(measureId: string): Measure | null {
   return allMeasures.find((m) => m.id === measureId) || null;

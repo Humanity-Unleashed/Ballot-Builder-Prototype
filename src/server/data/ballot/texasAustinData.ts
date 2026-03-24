@@ -42,6 +42,7 @@
 
 import type { Candidate, Contest, Ballot } from '../../types';
 import { BALLOT_IDS, CONTEST_IDS } from './ids';
+import { texasMeasures } from './measures';
 
 const allCandidates: Candidate[] = [
 
@@ -2582,5 +2583,5 @@ export const texasAustinBallot: Ballot = {
   electionType: 'General Election',
   state: 'Texas',
   county: 'Travis',
-  items: [...txAustinContests],
+  items: [...txAustinContests, ...texasMeasures],
 };
