@@ -16,7 +16,7 @@ export function useActiveTimer() {
   const tickActiveTime = useBallotStore((s) => s.tickActiveTime);
   const sessionFinished = useBallotStore((s) => s.sessionFinished);
   const tickRef = useRef(tickActiveTime);
-  tickRef.current = tickActiveTime;
+  useEffect(() => { tickRef.current = tickActiveTime; }, [tickActiveTime]);
 
   useEffect(() => {
     if (sessionFinished) return;

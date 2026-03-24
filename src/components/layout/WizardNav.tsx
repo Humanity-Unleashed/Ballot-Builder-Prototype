@@ -4,7 +4,6 @@ import React, { useMemo } from 'react';
 import {
   CheckSquare,
   Check,
-  Info,
   LogIn,
   LogOut,
   Layers,
