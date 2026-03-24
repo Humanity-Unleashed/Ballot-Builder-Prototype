@@ -11,22 +11,33 @@ interface ImpactCardProps {
 
 // ── Time-saved estimation model ──
 // See docs/TIME_SAVED_METHODOLOGY.md for full rationale and sources.
+//
+// The model accounts for three phases of independent ballot research:
+//   1. Discovery: figuring out what's on your ballot and finding reliable sources
+//   2. Per-item research: reading voter guides, candidate profiles, measure arguments
+//   3. Decision-making: comparing options, weighing tradeoffs
+//
+// Most time estimates only cover phase 2. We include all three because Ballot
+// Builder replaces the entire workflow — not just the reading.
 
-const MINUTES_PER_CANDIDATE_RACE = 7;
-const MINUTES_PER_BALLOT_MEASURE = 10;
-const SESSION_OVERHEAD = 5;
-const CONSERVATIVE_MULTIPLIER = 0.5;
+const DISCOVERY_OVERHEAD = 15;           // finding your ballot, identifying sources, navigating portals
+const MINUTES_PER_CANDIDATE_RACE = 7;   // 2 sources × 600 words ÷ 220 wpm + search overhead
+const MINUTES_PER_BALLOT_MEASURE = 12;  // longer text, harder language, pro/con arguments
+const DECISION_MINUTES_PER_ITEM = 2;    // weighing options after reading (no tool to help)
+const CONSERVATIVE_MULTIPLIER = 0.5;    // some voters skim; this is the lower bound
 
 function estimateManualResearchTime(numRaces: number, numMeasures: number) {
+  const totalItems = numRaces + numMeasures;
   const midpoint =
+    DISCOVERY_OVERHEAD +
     numRaces * MINUTES_PER_CANDIDATE_RACE +
     numMeasures * MINUTES_PER_BALLOT_MEASURE +
-    SESSION_OVERHEAD;
+    totalItems * DECISION_MINUTES_PER_ITEM;
 
-  const low = Math.round((midpoint * CONSERVATIVE_MULTIPLIER) / 5) * 5; // round to nearest 5
+  const low = Math.round((midpoint * CONSERVATIVE_MULTIPLIER) / 5) * 5;
   const high = Math.round(midpoint / 5) * 5;
 
-  return { low: Math.max(low, 5), high: Math.max(high, 10) };
+  return { low: Math.max(low, 10), high: Math.max(high, 15) };
 }
 
 const INSIGHTS = [
@@ -158,32 +169,34 @@ export default function ImpactCard({ ballotItems, sessionMinutes }: ImpactCardPr
         {methodOpen && (
           <div className="px-4 pb-3 text-[12px] text-gray-500 leading-relaxed space-y-2">
             <p>
-              We estimated manual research time based on published data: adults read civic
-              content at ~220 words per minute{' '}
+              Our estimate covers the full research workflow, not just reading time:
+              figuring out what&apos;s on your ballot (~15 min to find your sample ballot,
+              identify reliable sources, and navigate government portals), reading about
+              each race and measure (~7 min per candidate race, ~12 min per ballot measure
+              based on{' '}
               <a
                 href="https://www.sciencedirect.com/science/article/abs/pii/S0749596X19300786"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand-primary underline decoration-dotted"
               >
-                (Brysbaert&nbsp;2019)
+                published reading speeds
               </a>
-              , a typical voter guide entry runs ~600 words per candidate, and ballot measure
-              arguments total ~1,500 words each{' '}
+              {' '}and{' '}
               <a
                 href="https://ballotpedia.org/Ballot_measure_readability_scores,_2024"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand-primary underline decoration-dotted"
               >
-                (Ballotpedia)
+                typical voter guide lengths
               </a>
-              .
+              ), plus ~2 min per item weighing your options with no tool to help.
             </p>
             <p>
-              We assumed a voter reads 2 sources per item and added time for searching
-              and navigating between sources. The range reflects a conservative lower
-              bound (quick skim) and a midpoint estimate (thorough reading).
+              The low end assumes you skim quickly and skip some items. The high end
+              assumes you read thoroughly. Neither includes the time most people spend
+              just trying to figure out where to start.
             </p>
           </div>
         )}
