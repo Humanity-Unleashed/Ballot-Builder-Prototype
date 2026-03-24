@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Nav Redesign Options — Ballot Builder</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f3f4f6; padding: 20px; }
+
+    .option-header {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-top: 48px;
+      margin-bottom: 4px;
+    }
+    .option-header:first-of-type { margin-top: 0; }
+    .option-desc {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      max-width: 600px;
+    }
+    .mockup-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      margin-top: 20px;
+    }
+    .mockup-label:first-of-type { margin-top: 0; }
+
+    .phone-frame {
+      width: 375px;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      margin-bottom: 16px;
+    }
+
+    /* Prototype bar */
+    .proto-bar {
+      background: #f59e0b;
+      color: white;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 0;
+      letter-spacing: 0.3px;
+    }
+
+    /* Shared nav styles */
+    .nav-row {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      height: 44px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .nav-back {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+      margin-right: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .nav-back:hover { background: #f3f4f6; }
+    .nav-back svg { width: 18px; height: 18px; }
+    .nav-title {
+      flex: 1;
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .nav-step {
+      font-size: 12px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin-right: 8px;
+    }
+    .nav-icon-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .nav-icon-btn:hover { background: #f3f4f6; }
+    .nav-icon-btn svg { width: 14px; height: 14px; }
+
+    /* Logo icon */
+    .nav-logo {
+      width: 20px;
+      height: 20px;
+      color: #6C2BD9;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Progress bar (Option B) */
+    .progress-bar {
+      display: flex;
+      gap: 3px;
+      padding: 0 16px 8px;
+      background: white;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .progress-seg {
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: #e5e7eb;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress-seg.done { background: #10b981; }
+    .progress-seg.active { background: #e5e7eb; }
+    .progress-seg.active::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background: #6C2BD9;
+      border-radius: 2px;
+    }
+    .progress-seg.active.p33::after { width: 33%; }
+    .progress-seg.active.p50::after { width: 50%; }
+    .progress-seg.active.p66::after { width: 66%; }
+    .progress-seg.active.p100::after { width: 100%; }
+    .progress-seg.active.p20::after { width: 20%; }
+
+    /* Breadcrumb (Option C) */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .crumb {
+      font-size: 13px;
+      color: #9ca3af;
+      cursor: pointer;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .crumb:hover { color: #6C2BD9; }
+    .crumb-sep {
+      font-size: 11px;
+      color: #d1d5db;
+      margin: 0 6px;
+      flex-shrink: 0;
+    }
+    .crumb-current {
+      font-size: 13px;
+      font-weight: 700;
+      color: #111827;
+      white-space: nowrap;
+    }
+    .crumb-count {
+      font-size: 11px;
+      color: #9ca3af;
+      font-weight: 500;
+      margin-left: 4px;
+    }
+
+    /* Placeholder content */
+    .content-placeholder {
+      padding: 20px 16px 32px;
+    }
+    .content-placeholder .fake-heading {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+    .content-placeholder .fake-text {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .fake-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+    .fake-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 4px;
+    }
+    .fake-card-body {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    .fake-slider {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 3px;
+      margin-top: 10px;
+      position: relative;
+    }
+    .fake-slider::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 60%;
+      background: #6C2BD9;
+      border-radius: 3px;
+    }
+
+    /* Back dropdown (Option A) */
+    .back-dropdown {
+      position: absolute;
+      top: 48px;
+      left: 12px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      padding: 4px;
+      z-index: 10;
+      width: 200px;
+    }
+    .back-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #374151;
+      cursor: pointer;
+    }
+    .back-dropdown-item:hover { background: #f3f4f6; }
+    .back-dropdown-check {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #d1fae5;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .row { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Comparison banner */
+    .compare-banner {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .compare-banner strong { font-weight: 700; }
+
+    .section-divider {
+      border: none;
+      border-top: 2px solid #e5e7eb;
+      margin: 48px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== CURRENT (for comparison) ===== -->
+<div class="option-header">Current: Chips + Banner</div>
+<p class="option-desc">For reference — what we have now. Completed phases show as green chips, current phase as a gradient banner with sub-step dots. Takes 90-120px of vertical space.</p>
+
+<div class="row">
+  <!-- Current: Blueprint phase -->
+  <div>
+    <p class="mockup-label">Blueprint — Assessment step</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <!-- Current nav -->
+      <div style="padding: 0 16px;">
+        <div style="display: flex; align-items: center; height: 40px;">
+          <svg style="width:20px;height:20px;color:#6C2BD9;margin-right:8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <span style="font-size:15px;font-weight:700;color:#111827;">Ballot Builder</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:12px;color:#9ca3af;cursor:pointer;">ⓘ</span>
+        </div>
+        <!-- Chip -->
+        <div style="display:flex;gap:6px;margin-bottom:8px;">
+          <span style="display:inline-flex;align-items:center;gap:4px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;color:#059669;">✓ Austin, TX</span>
+        </div>
+        <!-- Banner -->
+        <div style="background:linear-gradient(to right,#8B7AAF,#7B6A9F);border-radius:14px;padding:12px 14px;color:white;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 12h20M12 2v20"/></svg>
+            <span style="font-size:13px;font-weight:700;">Civic Blueprint</span>
+            <span style="flex:1;"></span>
+            <span style="background:rgba(255,255,255,0.2);padding:2px 10px;border-radius:999px;font-size:11px;font-weight:700;">2 of 3</span>
+          </div>
+          <p style="font-size:11px;opacity:0.8;margin-top:4px;margin-left:24px;">Values Assessment — Share your perspective on key issues</p>
+          <div style="display:flex;gap:4px;margin-top:8px;margin-left:24px;">
+            <div style="width:24px;height:3px;border-radius:2px;background:rgba(255,255,255,0.5);"></div>
+            <div style="width:24px;height:3px;border-radius:2px;background:white;"></div>
+            <div style="width:24px;height:3px;border-radius:2px;background:rgba(255,255,255,0.25);"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+          <div class="fake-slider"></div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Climate Action</div>
+          <div class="fake-card-body">How aggressively should we address climate change?</div>
+          <div class="fake-slider" style="--fill: 40%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Current: Build phase -->
+  <div>
+    <p class="mockup-label">Build — Ballot item</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div style="padding: 0 16px;">
+        <div style="display: flex; align-items: center; height: 40px;">
+          <svg style="width:20px;height:20px;color:#6C2BD9;margin-right:8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <span style="font-size:15px;font-weight:700;color:#111827;">Ballot Builder</span>
+          <span style="flex:1;"></span>
+          <span style="font-size:12px;color:#9ca3af;cursor:pointer;">ⓘ</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:8px;">
+          <span style="display:inline-flex;align-items:center;gap:4px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;color:#059669;">✓ Austin, TX</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;color:#059669;">✓ Blueprint</span>
+        </div>
+        <div style="background:linear-gradient(to right,#2563eb,#1d4ed8);border-radius:14px;padding:12px 14px;color:white;margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            <span style="font-size:13px;font-weight:700;">Build Your Ballot</span>
+            <span style="flex:1;"></span>
+            <span style="background:rgba(255,255,255,0.2);padding:2px 10px;border-radius:999px;font-size:11px;font-weight:700;">3 of 3</span>
+          </div>
+          <p style="font-size:11px;opacity:0.8;margin-top:4px;margin-left:24px;">Review candidates and make your picks</p>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Austin City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Incumbent. Focused on housing affordability and transit.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Small business owner. Priorities: public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION A: TITLE BAR ONLY ===== -->
+<div class="option-header">Option A: Contextual Title Bar</div>
+<p class="option-desc">
+  One row: back arrow + contextual title + step count. No progress indicator.
+  Back arrow opens a dropdown of completed phases. Maximum content space — 60px total chrome.
+</p>
+
+<div class="row">
+  <!-- A: State select -->
+  <div>
+    <p class="mockup-label">A.1 — Select ballot (no back arrow)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="nav-title">Select Your Ballot</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">📍 Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">📍 Detroit, MI</div></div>
+        <div class="fake-card"><div class="fake-card-title">📍 Atlanta, GA</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A: Demographics -->
+  <div>
+    <p class="mockup-label">A.2 — About you</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">About You</span>
+        <span class="nav-step">1 of 3</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <p class="fake-text">A few optional questions to personalize your experience.</p>
+        <div class="fake-card">
+          <div class="fake-card-title">Age Range</div>
+          <div class="fake-card-body">25-34</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Housing</div>
+          <div class="fake-card-body">Renting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A: Assessment -->
+  <div>
+    <p class="mockup-label">A.3 — Values assessment</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">Values Assessment</span>
+        <span class="nav-step">2 of 3</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+          <div class="fake-slider"></div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Climate Action</div>
+          <div class="fake-card-body">How aggressively should we address climate change?</div>
+          <div class="fake-slider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A: Build with back dropdown shown -->
+  <div>
+    <p class="mockup-label">A.4 — Build (back menu open)</p>
+    <div class="phone-frame" style="position:relative;">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <div class="nav-back" style="background:#f3f4f6;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">Build Your Ballot</span>
+        <span class="nav-step">3 of 9</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <!-- Dropdown -->
+      <div class="back-dropdown">
+        <div class="back-dropdown-item">
+          <div class="back-dropdown-check">✓</div>
+          Austin, TX
+        </div>
+        <div class="back-dropdown-item">
+          <div class="back-dropdown-check">✓</div>
+          Civic Blueprint
+        </div>
+      </div>
+      <div class="content-placeholder" style="padding-top: 80px;">
+        <div class="fake-heading">Austin City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Incumbent. Focused on housing affordability and transit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION B: TITLE + PROGRESS BAR ===== -->
+<div class="option-header">Option B: Title Bar + Segmented Progress Line</div>
+<p class="option-desc">
+  Same title row as A, plus a thin 4px bar split into 3 segments (one per phase).
+  Completed = green, active = purple (partial fill), future = gray. Tap completed segments to navigate back. 68px total chrome.
+</p>
+
+<div class="row">
+  <!-- B: State select -->
+  <div>
+    <p class="mockup-label">B.1 — Select ballot</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row" style="border-bottom:none;">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="nav-title">Select Your Ballot</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-seg active p50"></div>
+        <div class="progress-seg"></div>
+        <div class="progress-seg"></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">📍 Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">📍 Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Demographics -->
+  <div>
+    <p class="mockup-label">B.2 — About you (Blueprint 1/3)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row" style="border-bottom:none;">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">About You</span>
+        <span class="nav-step">1 of 3</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-seg done"></div>
+        <div class="progress-seg active p33"></div>
+        <div class="progress-seg"></div>
+      </div>
+      <div class="content-placeholder">
+        <p class="fake-text">A few optional questions to personalize your experience.</p>
+        <div class="fake-card">
+          <div class="fake-card-title">Age Range</div>
+          <div class="fake-card-body">25-34</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Assessment -->
+  <div>
+    <p class="mockup-label">B.3 — Assessment (Blueprint 2/3)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row" style="border-bottom:none;">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">Values Assessment</span>
+        <span class="nav-step">2 of 3</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-seg done"></div>
+        <div class="progress-seg active p66"></div>
+        <div class="progress-seg"></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+          <div class="fake-slider"></div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Firearms Policy</div>
+          <div class="fake-card-body">What level of gun regulation do you support?</div>
+          <div class="fake-slider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Profile Review -->
+  <div>
+    <p class="mockup-label">B.4 — Profile review (Blueprint 3/3)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row" style="border-bottom:none;">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">Your Profile</span>
+        <span class="nav-step">3 of 3</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-seg done"></div>
+        <div class="progress-seg active p100"></div>
+        <div class="progress-seg"></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Civic Blueprint</div>
+        <p class="fake-text">Here's what your values assessment revealed.</p>
+        <div class="fake-card">
+          <div class="fake-card-title">🏥 Healthcare</div>
+          <div class="fake-card-body">Leans toward universal coverage, government price controls</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">🌍 Climate</div>
+          <div class="fake-card-body">Supports aggressive climate action, renewables priority</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Build -->
+  <div>
+    <p class="mockup-label">B.5 — Build your ballot (item 3 of 9)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row" style="border-bottom:none;">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">Build Your Ballot</span>
+        <span class="nav-step">3 of 9</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-seg done"></div>
+        <div class="progress-seg done"></div>
+        <div class="progress-seg active p33"></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Austin City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Incumbent. Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Small business owner. Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Summary -->
+  <div>
+    <p class="mockup-label">B.6 — Summary (done)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row" style="border-bottom:none;">
+        <div class="nav-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+        <span class="nav-title">Your Ballot</span>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-seg done"></div>
+        <div class="progress-seg done"></div>
+        <div class="progress-seg done"></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">🎉 Ballot Complete!</div>
+        <p class="fake-text">You voted on 9 items. Here's your summary.</p>
+        <div class="fake-card">
+          <div class="fake-card-title">Mayor — Kirk Watson</div>
+          <div class="fake-card-body">82% match</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Prop A — Transit Bond</div>
+          <div class="fake-card-body">YES</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION C: BREADCRUMBS ===== -->
+<div class="option-header">Option C: Breadcrumb Trail</div>
+<p class="option-desc">
+  Single row with tappable breadcrumb segments showing the journey path.
+  Each completed crumb is a link for back-navigation. Step count shown inline. 60px total chrome.
+</p>
+
+<div class="row">
+  <!-- C: State select -->
+  <div>
+    <p class="mockup-label">C.1 — Select ballot</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <div class="breadcrumb">
+          <span class="crumb-current">Select Your Ballot</span>
+        </div>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">📍 Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">📍 Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Assessment -->
+  <div>
+    <p class="mockup-label">C.2 — Assessment</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <div class="breadcrumb">
+          <span class="crumb">Austin</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb-current">Assessment</span>
+          <span class="crumb-count">2/3</span>
+        </div>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+          <div class="fake-slider"></div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Climate Action</div>
+          <div class="fake-card-body">How aggressively should we address climate change?</div>
+          <div class="fake-slider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Profile Review -->
+  <div>
+    <p class="mockup-label">C.3 — Profile review</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <div class="breadcrumb">
+          <span class="crumb">Austin</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb-current">Profile</span>
+          <span class="crumb-count">3/3</span>
+        </div>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Civic Blueprint</div>
+        <p class="fake-text">Here's what your values assessment revealed.</p>
+        <div class="fake-card">
+          <div class="fake-card-title">🏥 Healthcare</div>
+          <div class="fake-card-body">Leans toward universal coverage</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">🌍 Climate</div>
+          <div class="fake-card-body">Aggressive action, renewables priority</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Build -->
+  <div>
+    <p class="mockup-label">C.4 — Build (ballot item 3/9)</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <div class="breadcrumb">
+          <span class="crumb">Austin</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb">Blueprint</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb-current">Build</span>
+          <span class="crumb-count">3/9</span>
+        </div>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Austin City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Incumbent. Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Small business owner. Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Summary -->
+  <div>
+    <p class="mockup-label">C.5 — Summary</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="nav-row">
+        <svg class="nav-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <div class="breadcrumb">
+          <span class="crumb">Austin</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb">Blueprint</span>
+          <span class="crumb-sep">›</span>
+          <span class="crumb-current">Summary</span>
+        </div>
+        <div class="nav-icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">🎉 Ballot Complete!</div>
+        <p class="fake-text">You voted on 9 items. Here's your summary.</p>
+        <div class="fake-card">
+          <div class="fake-card-title">Mayor — Kirk Watson</div>
+          <div class="fake-card-body">82% match</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Prop A — Transit Bond</div>
+          <div class="fake-card-body">YES</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+</body>
+</html>

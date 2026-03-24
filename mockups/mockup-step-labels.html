@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Step Label Redesign — Ballot Builder</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f3f4f6;
+      padding: 24px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .page-desc {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+
+    .option-header {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-top: 56px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .option-header:first-of-type { margin-top: 0; }
+    .rec-badge {
+      background: #6C2BD9;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .option-desc {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+    .option-labels {
+      font-size: 13px;
+      color: #374151;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .option-labels span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .option-labels .arrow {
+      color: #9ca3af;
+      font-weight: 400;
+      margin: 0 6px;
+    }
+
+    .mockup-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      margin-top: 20px;
+    }
+    .mockup-label:first-child { margin-top: 0; }
+
+    .phone-frame {
+      width: 375px;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      margin-bottom: 16px;
+    }
+
+    .proto-bar {
+      background: #f59e0b;
+      color: white;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 0;
+      letter-spacing: 0.3px;
+    }
+
+    /* Top row: logo + auth */
+    .top-row {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      height: 40px;
+    }
+    .logo-icon {
+      width: 20px;
+      height: 20px;
+      color: #6C2BD9;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .top-row-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .info-btn {
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      color: #9ca3af; border-radius: 6px; cursor: pointer;
+    }
+    .info-btn:hover { background: #f3f4f6; }
+    .info-btn svg { width: 14px; height: 14px; }
+
+    /* Banner */
+    .banner {
+      margin: 0 16px 10px;
+      background: linear-gradient(to right, #8B7AAF, #7B6A9F);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: white;
+    }
+
+    /* Stepper row */
+    .stepper {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      margin: 0 -4px;
+      white-space: nowrap;
+    }
+    .step-circle {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 9px; font-weight: 700;
+    }
+    .step-circle.current {
+      background: white;
+      color: #7B6A9F;
+    }
+    .step-circle.completed {
+      background: rgba(255,255,255,0.9);
+      color: #7B6A9F;
+    }
+    .step-circle.future {
+      background: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.5);
+    }
+    .step-label {
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .step-label.current { color: white; }
+    .step-label.completed { color: rgba(255,255,255,0.9); }
+    .step-label.future { color: rgba(255,255,255,0.4); }
+
+    .connector {
+      flex: 1;
+      height: 1px;
+      margin: 0 4px;
+    }
+    .connector.done { background: rgba(255,255,255,0.5); }
+    .connector.future { background: rgba(255,255,255,0.2); }
+
+    /* Check SVG for completed */
+    .check-svg {
+      width: 10px; height: 10px;
+    }
+
+    /* Subtitle */
+    .banner-subtitle {
+      font-size: 11px;
+      opacity: 0.8;
+      margin-top: 6px;
+      margin-left: 4px;
+    }
+
+    /* Sub-dots */
+    .sub-dots {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+      margin-left: 4px;
+    }
+    .sub-dot {
+      width: 24px;
+      height: 3px;
+      border-radius: 2px;
+    }
+    .sub-dot.active { background: white; }
+    .sub-dot.done { background: rgba(255,255,255,0.5); }
+    .sub-dot.upcoming { background: rgba(255,255,255,0.25); }
+
+    /* Content placeholder */
+    .content-placeholder {
+      padding: 16px 16px 32px;
+    }
+    .fake-heading {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+    .fake-text {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .fake-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+    .fake-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 4px;
+    }
+    .fake-card-body {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    .fake-slider {
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 3px;
+      margin-top: 10px;
+      position: relative;
+    }
+    .fake-slider::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 60%;
+      background: #6C2BD9;
+      border-radius: 3px;
+    }
+
+    .row { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .section-divider {
+      border: none;
+      border-top: 2px solid #e5e7eb;
+      margin: 48px 0;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 375px);
+      gap: 16px;
+    }
+
+    .subdot-note {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #1e40af;
+      line-height: 1.5;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Step Label Redesign</h1>
+<p class="page-desc">
+  David's feedback: the current labels ("Austin, TX" / "Blueprint" / "Build") don't clearly communicate what the user is <em>giving</em> vs. what they're <em>getting back</em>. Below are 4 label sets, each shown at 3 key phases of the flow: Step 1 (current), Step 2 (current), and Step 3 (current).
+</p>
+
+<!-- ===== CURRENT (for reference) ===== -->
+<div class="option-header">Current Labels (for reference)</div>
+<div class="option-labels">
+  <span>Austin, TX</span>
+  <span class="arrow">→</span>
+  <span>Blueprint</span>
+  <span class="arrow">→</span>
+  <span>Build</span>
+</div>
+<p class="option-desc">Internal jargon. "Blueprint" and "Build" don't tell a first-time user what they're doing or what they'll get.</p>
+
+<div class="row">
+  <!-- Current: Step 1 active -->
+  <div>
+    <p class="mockup-label">Step 1 — Selecting ballot</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle current">1</div>
+            <span class="step-label current">Ballot</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">2</div>
+            <span class="step-label future">Blueprint</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Build</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Current: Step 2 active (assessment) -->
+  <div>
+    <p class="mockup-label">Step 2 — Values assessment</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">2</div>
+            <span class="step-label current">Blueprint</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Build</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Values Assessment — Share your perspective</p>
+        <div class="sub-dots">
+          <div class="sub-dot done"></div>
+          <div class="sub-dot active"></div>
+          <div class="sub-dot upcoming"></div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Current: Step 3 active (build) -->
+  <div>
+    <p class="mockup-label">Step 3 — Building ballot</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Blueprint</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">3</div>
+            <span class="step-label current">Build</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Review candidates and make your picks</p>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION 1: YOUR BALLOT / YOUR VALUES / YOUR MATCHES (RECOMMENDED) ===== -->
+<div class="option-header">Option 1: Your Ballot / Your Values / Your Matches <span class="rec-badge">Recommended</span></div>
+<div class="option-labels">
+  <span>Your Ballot</span>
+  <span class="arrow">→</span>
+  <span>Your Values</span>
+  <span class="arrow">→</span>
+  <span>Your Matches</span>
+</div>
+<p class="option-desc">
+  The "Your ___" pattern creates a consistent possessive frame — the user owns the process. "Ballot" grounds them geographically, "Values" signals they'll share preferences, "Matches" clearly says "here's what you get back." All 2 words, fits mobile.
+</p>
+
+<div class="row">
+  <!-- O1: Step 1 active -->
+  <div>
+    <p class="mockup-label">Step 1 — Selecting ballot</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle current">1</div>
+            <span class="step-label current">Your Ballot</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">2</div>
+            <span class="step-label future">Your Values</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Your Matches</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O1: Step 2 active (assessment) -->
+  <div>
+    <p class="mockup-label">Step 2 — Values assessment</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">2</div>
+            <span class="step-label current">Your Values</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Your Matches</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Share your perspective on key issues</p>
+        <div class="sub-dots">
+          <div class="sub-dot done"></div>
+          <div class="sub-dot active"></div>
+          <div class="sub-dot upcoming"></div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O1: Step 3 active (matches) -->
+  <div>
+    <p class="mockup-label">Step 3 — Reviewing matches</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Your Values</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">3</div>
+            <span class="step-label current">Your Matches</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Review candidates and make your picks</p>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION 2: LOCATION / VALUES / RECOMMENDATIONS ===== -->
+<div class="option-header">Option 2: Location / Values / Recommendations</div>
+<div class="option-labels">
+  <span>Location</span>
+  <span class="arrow">→</span>
+  <span>Values</span>
+  <span class="arrow">→</span>
+  <span>Recommendations</span>
+</div>
+<p class="option-desc">
+  Closest to David's original suggestion. Most literal reading of each phase. "Recommendations" is the clearest possible output label. Tradeoff: "Location" undersells the demographics, and "Recommendations" is long (15 chars) — may truncate on narrow phones.
+</p>
+
+<div class="row">
+  <!-- O2: Step 1 -->
+  <div>
+    <p class="mockup-label">Step 1 — Selecting location</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle current">1</div>
+            <span class="step-label current">Location</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">2</div>
+            <span class="step-label future">Values</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Recommendations</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O2: Step 2 -->
+  <div>
+    <p class="mockup-label">Step 2 — Values assessment</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">2</div>
+            <span class="step-label current">Values</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Recommendations</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Share your perspective on key issues</p>
+        <div class="sub-dots">
+          <div class="sub-dot done"></div>
+          <div class="sub-dot active"></div>
+          <div class="sub-dot upcoming"></div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O2: Step 3 -->
+  <div>
+    <p class="mockup-label">Step 3 — Recommendations</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Values</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">3</div>
+            <span class="step-label current">Recommendations</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Review candidates and make your picks</p>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION 3: ABOUT YOU / WHAT MATTERS / YOUR PICKS ===== -->
+<div class="option-header">Option 3: About You / What Matters / Your Picks</div>
+<div class="option-labels">
+  <span>About You</span>
+  <span class="arrow">→</span>
+  <span>What Matters</span>
+  <span class="arrow">→</span>
+  <span>Your Picks</span>
+</div>
+<p class="option-desc">
+  Conversational and warm. "About You" naturally covers both location and demographics. "What Matters" frames values as personal priorities rather than a quiz. "Your Picks" implies agency — the system helps, the voter decides. Tradeoff: slightly more casual; "About You" is vague about ballot/location.
+</p>
+
+<div class="row">
+  <!-- O3: Step 1 -->
+  <div>
+    <p class="mockup-label">Step 1 — About you</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle current">1</div>
+            <span class="step-label current">About You</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">2</div>
+            <span class="step-label future">What Matters</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Your Picks</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O3: Step 2 -->
+  <div>
+    <p class="mockup-label">Step 2 — What matters</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">2</div>
+            <span class="step-label current">What Matters</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Your Picks</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Share your perspective on key issues</p>
+        <div class="sub-dots">
+          <div class="sub-dot done"></div>
+          <div class="sub-dot active"></div>
+          <div class="sub-dot upcoming"></div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O3: Step 3 -->
+  <div>
+    <p class="mockup-label">Step 3 — Your picks</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">What Matters</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">3</div>
+            <span class="step-label current">Your Picks</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Review candidates and make your picks</p>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ===== OPTION 4: YOUR INFO / YOUR PRIORITIES / YOUR GUIDE ===== -->
+<div class="option-header">Option 4: Your Info / Your Priorities / Your Guide</div>
+<div class="option-labels">
+  <span>Your Info</span>
+  <span class="arrow">→</span>
+  <span>Your Priorities</span>
+  <span class="arrow">→</span>
+  <span>Your Guide</span>
+</div>
+<p class="option-desc">
+  "Info" is a natural bucket for location + demographics. "Priorities" signals values without sounding academic. "Guide" positions the output as helpful rather than prescriptive — you're getting a voting guide, not commands. Tradeoff: "Info" is generic, "Guide" is slightly vague about what you're getting.
+</p>
+
+<div class="row">
+  <!-- O4: Step 1 -->
+  <div>
+    <p class="mockup-label">Step 1 — Your info</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle current">1</div>
+            <span class="step-label current">Your Info</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">2</div>
+            <span class="step-label future">Your Priorities</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Your Guide</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">Where do you vote?</div>
+        <p class="fake-text">Select your location to load your local ballot.</p>
+        <div class="fake-card"><div class="fake-card-title">Austin, TX</div></div>
+        <div class="fake-card"><div class="fake-card-title">Detroit, MI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O4: Step 2 -->
+  <div>
+    <p class="mockup-label">Step 2 — Your priorities</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">2</div>
+            <span class="step-label current">Your Priorities</span>
+          </div>
+          <div class="connector future"></div>
+          <div class="step">
+            <div class="step-circle future">3</div>
+            <span class="step-label future">Your Guide</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Share your perspective on key issues</p>
+        <div class="sub-dots">
+          <div class="sub-dot done"></div>
+          <div class="sub-dot active"></div>
+          <div class="sub-dot upcoming"></div>
+        </div>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-card">
+          <div class="fake-card-title">Healthcare Coverage</div>
+          <div class="fake-card-body">Where should healthcare coverage come from?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O4: Step 3 -->
+  <div>
+    <p class="mockup-label">Step 3 — Your guide</p>
+    <div class="phone-frame">
+      <div class="proto-bar">Prototype for evaluation only — not an official voter guide</div>
+      <div class="top-row">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="logo-text">Ballot Builder</span>
+        <div class="top-row-right">
+          <div class="info-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="stepper">
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Austin, TX</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle completed">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="step-label completed">Your Priorities</span>
+          </div>
+          <div class="connector done"></div>
+          <div class="step">
+            <div class="step-circle current">3</div>
+            <span class="step-label current">Your Guide</span>
+          </div>
+        </div>
+        <p class="banner-subtitle">Review candidates and make your picks</p>
+      </div>
+      <div class="content-placeholder">
+        <div class="fake-heading">City Council, District 5</div>
+        <div class="fake-card">
+          <div class="fake-card-title">Ryan Alter (D) — 78% match</div>
+          <div class="fake-card-body">Housing affordability, transit investment.</div>
+        </div>
+        <div class="fake-card">
+          <div class="fake-card-title">Bill Harper (R) — 54% match</div>
+          <div class="fake-card-body">Public safety, lower taxes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- Sub-dot notes -->
+<div class="option-header">Notes on Sub-dots</div>
+<div class="subdot-note">
+  <strong>No textual changes needed.</strong> The sub-dots are non-textual progress bars (small bars under the banner). The banner subtitle text ("Share your perspective on key issues", etc.) already describes the current sub-step and doesn't reference the top label, so it works with all label sets. No changes recommended.
+</div>
+
+<div style="height: 60px;"></div>
+</body>
+</html>

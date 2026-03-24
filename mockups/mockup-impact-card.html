@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Card Mockup — Ballot Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#2B5797',
+            'brand-dark': '#1E3F6F',
+            success: '#22C55E',
+            'success-light': '#F0FDF4',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F9FAFB; }
+  </style>
+</head>
+<body>
+  <div class="max-w-md mx-auto px-4 py-6 space-y-6">
+
+    <p class="text-xs text-gray-400 text-center">— Shown after the celebration header, before vote review —</p>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- COMBINED: A header + B cards + clickable sources -->
+    <!-- ════════════════════════════════════════════ -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white overflow-hidden">
+      <!-- Gradient stats header (from Option A) -->
+      <div class="bg-gradient-to-r from-brand to-brand-dark px-5 py-4 text-white text-center">
+        <p class="text-white/70 text-[11px] font-semibold uppercase tracking-wider mb-1">Your ballot prep</p>
+        <div class="flex items-center justify-center gap-6">
+          <div class="text-center">
+            <p class="text-3xl font-extrabold">9</p>
+            <p class="text-[11px] text-white/70">races</p>
+          </div>
+          <div class="w-px h-10 bg-white/20"></div>
+          <div class="text-center">
+            <p class="text-3xl font-extrabold">2</p>
+            <p class="text-[11px] text-white/70">measures</p>
+          </div>
+          <div class="w-px h-10 bg-white/20"></div>
+          <div class="text-center">
+            <p class="text-3xl font-extrabold">14</p>
+            <p class="text-[11px] text-white/70">minutes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emoji context cards (from Option B) with clickable sources -->
+      <div class="px-4 py-4 space-y-2.5">
+        <div class="flex items-center gap-2.5 bg-gray-50 rounded-xl px-4 py-3">
+          <span class="text-lg shrink-0">📋</span>
+          <p class="text-[13px] text-gray-600 leading-snug flex-1">
+            <span class="font-semibold text-gray-800">1 in 3 voters</span> leave down-ballot races blank. You reviewed every one.
+            <a href="https://sisterdistrict.com/b/down-ballot-roll-off-patterns-in-2022/" target="_blank" rel="noopener noreferrer" class="inline-block ml-0.5 text-[11px] text-brand underline decoration-dotted hover:text-brand-dark">Source</a>
+          </p>
+        </div>
+        <div class="flex items-center gap-2.5 bg-gray-50 rounded-xl px-4 py-3">
+          <span class="text-lg shrink-0">📖</span>
+          <p class="text-[13px] text-gray-600 leading-snug flex-1">
+            Ballot measures are written at a <span class="font-semibold text-gray-800">college reading level</span>. You got plain-language breakdowns.
+            <a href="https://ballotpedia.org/Ballot_measure_readability_scores,_2024" target="_blank" rel="noopener noreferrer" class="inline-block ml-0.5 text-[11px] text-brand underline decoration-dotted hover:text-brand-dark">Source</a>
+          </p>
+        </div>
+        <div class="flex items-center gap-2.5 bg-gray-50 rounded-xl px-4 py-3">
+          <span class="text-lg shrink-0">🔍</span>
+          <p class="text-[13px] text-gray-600 leading-snug flex-1">
+            AI chatbots get election questions <span class="font-semibold text-gray-800">wrong 27% of the time</span>. Your matches use voting records and public evidence.
+            <a href="https://www.nbcnews.com/tech/tech-news/ai-chatbots-got-questions-2024-election-wrong-27-time-study-finds-rcna155640" target="_blank" rel="noopener noreferrer" class="inline-block ml-0.5 text-[11px] text-brand underline decoration-dotted hover:text-brand-dark">Source</a>
+          </p>
+        </div>
+        <div class="flex items-center gap-2.5 bg-gray-50 rounded-xl px-4 py-3">
+          <span class="text-lg shrink-0">📊</span>
+          <p class="text-[13px] text-gray-600 leading-snug flex-1">
+            Traditional voter guides show <span class="font-semibold text-gray-800">no measurable impact</span> on voter behavior — they mostly reach people who'd vote anyway.
+            <a href="https://www.science.org/doi/10.1126/sciadv.aaw2612" target="_blank" rel="noopener noreferrer" class="inline-block ml-0.5 text-[11px] text-brand underline decoration-dotted hover:text-brand-dark">Source</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Context: what comes after -->
+    <div class="border-t border-gray-200 pt-4">
+      <p class="text-xs text-gray-400 text-center mb-3">↓ Then the existing share section follows ↓</p>
+
+      <div class="rounded-2xl border border-gray-200 bg-white px-5 py-4">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <span class="text-xs text-gray-400">Help someone else get ready</span>
+          <div class="flex-1 h-px bg-gray-200"></div>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-4 mb-3 text-[13px] text-gray-600 leading-relaxed border border-blue-100">
+          "I just prepped 9 races in 14 minutes on Ballot Builder. My civic style: 🦝 Balanced Raccoon. It walks you through every race and measure on your ballot. Try it: ballotbuilder.org"
+        </div>
+        <div class="flex gap-2.5">
+          <button class="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-xl bg-brand text-white text-sm font-semibold">
+            💬 Text
+          </button>
+          <button class="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-xl bg-brand text-white text-sm font-semibold">
+            ✉️ Email
+          </button>
+          <button class="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-xl border-2 border-gray-200 bg-white text-gray-900 text-sm font-semibold">
+            📋 Copy
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
