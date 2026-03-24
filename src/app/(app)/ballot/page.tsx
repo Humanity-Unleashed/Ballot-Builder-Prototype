@@ -35,6 +35,7 @@ import {
   selectHasSeenIntro,
   type WizardPhase,
 } from '@/stores/ballotStore';
+import { useActiveTimer } from '@/hooks/useActiveTimer';
 import {
   useConversationStore,
   selectConversationHasHydrated,
@@ -150,6 +151,9 @@ export default function UnifiedBallotPage() {
   const demoSetField = useDemographicStore((s) => s.setField);
   const demoSubmitProfile = useDemographicStore((s) => s.submitProfile);
   const demoSkipProfile = useDemographicStore((s) => s.skipProfile);
+
+  // Track active session time (pauses when tab is hidden)
+  useActiveTimer();
 
   const ballotHydrated = useBallotStore(selectBallotHasHydrated);
   const currentPhase = useBallotStore(selectCurrentPhase);

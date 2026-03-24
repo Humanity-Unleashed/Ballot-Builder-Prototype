@@ -103,9 +103,9 @@ interface BallotState {
   // Per-item AI chat messages (keyed by ballot item ID)
   itemMessages: Record<string, ConversationMessage[]>;
 
-  // Session timing
-  sessionStartedAt: string | null;
-  sessionEndedAt: string | null;
+  // Session timing (active time only — pauses when tab is hidden)
+  activeSessionSeconds: number;
+  sessionFinished: boolean;
 }
 
 interface BallotActions {
@@ -131,6 +131,7 @@ interface BallotActions {
   clearItemMessages: (itemId: string) => void;
 
   // Session timing
+  tickActiveTime: (seconds: number) => void;
   getSessionDurationMinutes: () => number;
 
   // Two-tier reset
@@ -149,8 +150,8 @@ const initialState: BallotState = {
   showSummary: false,
   hasSeenIntro: false,
   itemMessages: {},
-  sessionStartedAt: null,
-  sessionEndedAt: null,
+  activeSessionSeconds: 0,
+  sessionFinished: false,
 };
 
 export const useBallotStore = create<BallotStore>()(
@@ -162,11 +163,8 @@ export const useBallotStore = create<BallotStore>()(
 
       setPhase: (phase) => {
         const updates: Partial<BallotState> = { currentPhase: phase };
-        if (phase !== 'summary' && get().sessionStartedAt === null) {
-          updates.sessionStartedAt = new Date().toISOString();
-        }
         if (phase === 'summary') {
-          updates.sessionEndedAt = new Date().toISOString();
+          updates.sessionFinished = true;
         }
         set(updates);
       },
@@ -275,13 +273,17 @@ export const useBallotStore = create<BallotStore>()(
         });
       },
 
-      // ── Session timing ──
+      // ── Session timing (active time) ──
+
+      tickActiveTime: (seconds: number) => {
+        if (get().sessionFinished) return; // stop accumulating after summary
+        set((state) => ({ activeSessionSeconds: state.activeSessionSeconds + seconds }));
+      },
 
       getSessionDurationMinutes: () => {
-        const { sessionStartedAt, sessionEndedAt } = get();
-        if (!sessionStartedAt || !sessionEndedAt) return 0;
-        const ms = new Date(sessionEndedAt).getTime() - new Date(sessionStartedAt).getTime();
-        return Math.round(ms / 60000);
+        const secs = get().activeSessionSeconds;
+        if (secs <= 0) return 0;
+        return Math.max(1, Math.round(secs / 60));
       },
 
       // ── Two-tier reset ──
@@ -311,8 +313,8 @@ export const useBallotStore = create<BallotStore>()(
           currentPhase: 'state-select',
           completedPhases: [],
           itemMessages: {},
-          sessionStartedAt: null,
-          sessionEndedAt: null,
+          activeSessionSeconds: 0,
+          sessionFinished: false,
         });
       },
     }),
@@ -327,8 +329,8 @@ export const useBallotStore = create<BallotStore>()(
         showSummary: state.showSummary,
         hasSeenIntro: state.hasSeenIntro,
         itemMessages: state.itemMessages,
-        sessionStartedAt: state.sessionStartedAt,
-        sessionEndedAt: state.sessionEndedAt,
+        activeSessionSeconds: state.activeSessionSeconds,
+        sessionFinished: state.sessionFinished,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {
