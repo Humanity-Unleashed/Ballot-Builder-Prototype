@@ -126,9 +126,9 @@ export default function WizardNav() {
                   ? 'text-brand-primary bg-gray-100'
                   : 'text-gray-500 hover:bg-gray-100',
               ].join(' ')}
-              aria-label="About Ballot Builder"
+              aria-label="FAQ"
             >
-              <Info className="h-3.5 w-3.5" />
+              <span className="text-[11px] font-semibold">FAQ</span>
             </Link>
             {isAnonymous ? (
               <button
