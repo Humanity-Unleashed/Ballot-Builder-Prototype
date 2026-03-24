@@ -943,13 +943,20 @@ export default function UnifiedBallotPage() {
           archetypeEmoji={blueprintProfile ? getArchetypeDisplayEmoji(computeArchetype(blueprintProfile).primary, getArchetypeVariant()) : undefined}
         />
 
-        {/* Start fresh button */}
-        <div className="px-4 pb-8">
+        {/* Try again CTA — encourage testers to explore different positions */}
+        <div className="mx-4 mb-8 rounded-2xl border border-border-default bg-white px-5 py-5 text-center">
+          <p className="text-[15px] font-bold text-gray-900 mb-1">
+            Try it with different views
+          </p>
+          <p className="text-[13px] text-gray-500 leading-relaxed mb-4">
+            Curious how the results change? Go through the assessment again with
+            different policy positions or demographics and see how your matches shift.
+          </p>
           <button
             onClick={() => setShowFreshConfirm(true)}
-            className="w-full py-3 bg-gray-100 text-gray-600 border border-gray-200 rounded-xl text-sm font-semibold hover:bg-gray-200 transition-colors"
+            className="w-full py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold"
           >
-            Start fresh
+            Start a new session
           </button>
         </div>
 
@@ -968,10 +975,10 @@ export default function UnifiedBallotPage() {
         {/* Start fresh confirmation dialog */}
         {showFreshConfirm && (
           <ConfirmDialog
-            title="Start completely fresh?"
-            message="This will clear all your votes, your values assessment, and demographics. You'll start the wizard from the beginning."
-            confirmLabel="Start fresh"
-            confirmStyle="destructive"
+            title="Start a new session?"
+            message="This will clear your votes, values assessment, and demographics so you can go through the whole experience again with different positions."
+            confirmLabel="Let's go"
+            confirmStyle="primary"
             onConfirm={handleStartFresh}
             onCancel={() => setShowFreshConfirm(false)}
           />
