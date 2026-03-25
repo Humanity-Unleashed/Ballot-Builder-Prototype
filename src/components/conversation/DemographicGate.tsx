@@ -9,6 +9,7 @@ import {
   housingOptions,
   incomeOptions,
   employmentOptions,
+  dependentsOptions,
   insuranceOptions,
 } from '@/components/demographics/DemographicScreen';
 
@@ -64,6 +65,15 @@ export default function DemographicGate({ relevantAxes, onComplete, onSkip }: De
             value={profile.housingSituation}
             onChange={(v) => setField('housingSituation', v)}
             columns={2}
+          />
+        </QuestionSection>
+
+        <QuestionSection label="Dependents">
+          <OptionButtonGroup
+            options={dependentsOptions}
+            value={profile.dependents}
+            onChange={(v) => setField('dependents', v)}
+            columns={4}
           />
         </QuestionSection>
 
