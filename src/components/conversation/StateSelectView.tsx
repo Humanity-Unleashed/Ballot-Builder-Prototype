@@ -21,6 +21,36 @@ export default function StateSelectView({ onStateSelected }: StateSelectViewProp
           </p>
         </div>
 
+        {/* Address input (coming soon) */}
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between">
+            <label className="text-sm font-medium text-gray-400">
+              Enter your address
+            </label>
+            <span className="text-xs font-medium text-brand-primary bg-brand-primary-light px-2 py-0.5 rounded-full">
+              Coming soon
+            </span>
+          </div>
+          <div className="relative">
+            <input
+              type="text"
+              disabled
+              placeholder="123 Main St, City, State"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-400 placeholder-gray-300 cursor-not-allowed"
+            />
+          </div>
+          <p className="text-xs text-gray-400">
+            In the full version, we&apos;ll look up your exact ballot based on your address.
+          </p>
+        </div>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3">
+          <div className="flex-1 h-px bg-gray-200" />
+          <span className="text-xs text-gray-400 font-medium">Try the demo</span>
+          <div className="flex-1 h-px bg-gray-200" />
+        </div>
+
         {/* Single ballot card */}
         <button
           type="button"
