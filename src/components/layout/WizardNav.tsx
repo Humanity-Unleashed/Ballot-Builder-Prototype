@@ -46,7 +46,7 @@ function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
   if (dp === 'blueprint') {
     const subIndex = getSubStepIndex(wizardPhase);
     switch (subIndex) {
-      case 0: return 'Share your perspective on key issues';
+      case 0: return 'Share where you stand on a few key issues \u2014 no wrong answers. We\u2019ll use this to find your best-fit candidates and measures.';
       case 1: return 'Fine-tune your positions before matching';
       default: return '';
     }
@@ -217,7 +217,7 @@ export default function WizardNav() {
             {(
               <>
                 {subtitle && (
-                  <p className="text-[11px] opacity-80 mt-2 ml-1">{subtitle}</p>
+                  <p className="text-xs opacity-90 mt-2 ml-1 leading-relaxed">{subtitle}</p>
                 )}
                 {/* Sub-step dots */}
                 {config.subSteps.length > 0 && (

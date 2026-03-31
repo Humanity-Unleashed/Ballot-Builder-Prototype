@@ -785,7 +785,7 @@ export default function UnifiedBallotPage() {
               Your Personalized Ballot
             </h1>
             <p className="mb-6 text-center text-sm text-gray-500">
-              Here&apos;s what to expect as you work through each item.
+              Here&apos;s what to expect as you work through each race and measure on your ballot.
             </p>
             <div className="space-y-4">
               <div className="flex gap-3">
@@ -793,7 +793,7 @@ export default function UnifiedBallotPage() {
                 <div>
                   <p className="text-sm font-semibold text-gray-800">Match scores</p>
                   <p className="text-[13px] leading-snug text-gray-500">
-                    Each candidate gets a match percentage based on your values.
+                    See suggested candidates ranked by how closely they align with your values — but the final vote is always yours.
                   </p>
                 </div>
               </div>

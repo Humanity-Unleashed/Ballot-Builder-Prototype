@@ -124,7 +124,7 @@ export default function CandidateComparisonSheet({
           <div className="w-9 h-1 bg-gray-300 rounded-full" />
         </div>
 
-        {/* Header */}
+        {/* Header — compact, stays fixed */}
         <div className="px-5 py-3 border-b border-border-default">
           <div className="flex items-center justify-between">
             <div className="flex-1">
@@ -140,29 +140,30 @@ export default function CandidateComparisonSheet({
               <X className="h-5 w-5 text-gray-600" />
             </button>
           </div>
-
-          {/* Full summary */}
-          {candidate.profile.summary && (
-            <p className="text-[13px] text-gray-600 leading-relaxed mt-2">
-              {candidate.profile.summary}
-            </p>
-          )}
-
-          {/* Policy positions */}
-          {candidate.profile.positions && candidate.profile.positions.length > 0 && (
-            <ul className="mt-2 space-y-1">
-              {candidate.profile.positions.map((position, i) => (
-                <li key={i} className="text-[12px] text-gray-500 leading-[17px] flex items-start gap-1.5">
-                  <span className="text-gray-400 mt-0.5 shrink-0">&bull;</span>
-                  <span>{position}</span>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
 
-        {/* Content */}
+        {/* Scrollable content — summary, positions, and value comparisons */}
         <div className="overflow-y-auto flex-1 min-h-0 p-5 space-y-4">
+          {/* Summary & positions (now scrollable) */}
+          {(candidate.profile.summary || (candidate.profile.positions && candidate.profile.positions.length > 0)) && (
+            <div className="pb-3 border-b border-border-default space-y-2">
+              {candidate.profile.summary && (
+                <p className="text-[13px] text-gray-600 leading-relaxed">
+                  {candidate.profile.summary}
+                </p>
+              )}
+              {candidate.profile.positions && candidate.profile.positions.length > 0 && (
+                <ul className="space-y-1">
+                  {candidate.profile.positions.map((position, i) => (
+                    <li key={i} className="text-[12px] text-gray-500 leading-[17px] flex items-start gap-1.5">
+                      <span className="text-gray-400 mt-0.5 shrink-0">&bull;</span>
+                      <span>{position}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
           {/* Where you align */}
           {alignedDetails.length > 0 && (
             <div className="space-y-2.5">
