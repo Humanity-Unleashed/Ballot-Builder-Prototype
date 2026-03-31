@@ -71,14 +71,14 @@
 - [x] **Clarify "each item" wording** — Changed to "each race and measure on your ballot."
 - [x] **Match scores text too suggestive** — Changed to "See suggested candidates ranked by how closely they align with your values — but the final vote is always yours."
 - [ ] **Clarify it's candidates AND measures** — Some language only mentions ballot measures; make sure both are covered.
-- [ ] **Make Ask AI more discoverable** — Was hard to notice. Add contextual prompts per page: "Ask AI to help clarify your views" or "Ask AI about candidates and how you match with them."
-- [ ] **Distinguish shared values vs. different priorities visually** — Consider placing them on left/right of cards.
+- [x] **Make Ask AI more discoverable** — Floating button now expands with a contextual hint when each ballot item loads ("Break down this measure in plain language" / "Compare these candidates to your values"), then collapses after 4 seconds. Suppressed after 3 expansions to avoid annoyance.
+- [x] **Distinguish shared values vs. different priorities visually** — Now side-by-side in a two-column grid with green (shared) and amber (different) left borders.
 - [ ] **Add candidate info links** — Mouseovers or icons linking to Ballotpedia, Wikipedia, or candidate websites/platforms.
 - ✅ **Evidence display is cool** — Keep. Campaign, public statements, source attribution.
 - [ ] **Consider column-style matching by policy sector** — Visual comparison across issues. Evaluate if helpful.
 - [ ] **Add "No one" / skip option for candidates** — More prominently offer "Ask AI for more insights about these candidates."
 - [x] **Value comparison sheet cramped on mobile** — The candidate summary/profile section (name, bio, policy positions) is fixed in the header, leaving very little scrollable space for the actual value alignment breakdown on phones. Moved summary and positions into the scrollable area so users can see comparisons without excessive scrolling past static content.
-- [ ] **Ballot measure "Why this matters" too dense** — Font still small. Break up into paragraphs/bullets. Pros/cons arguments? Good place for an AI pop-up to explain more.
+- [x] **Ballot measure "Why this matters" too dense** — Explanation text now split into separate paragraphs at sentence boundaries, font bumped from 13px to 14px with relaxed line height. Applies to all ballot items (measures and candidate races).
 
 ## Post-Ballot / Summary Section
 

@@ -27,15 +27,17 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
       </div>
 
       {/* Explanation */}
-      <div className="flex gap-2 bg-gray-100 p-2.5 rounded-xl items-start">
+      <div className="flex gap-2.5 bg-gray-100 p-3 rounded-xl items-start">
         <Lightbulb className="h-4 w-4 text-gray-500 mt-0.5 shrink-0" />
         <div className="flex-1 space-y-0.5">
           <span className="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">
             Why this matters
           </span>
-          <p className="text-[13px] text-gray-600 leading-[19px]">
-            {item.explanation}
-          </p>
+          <div className="text-sm text-gray-600 leading-relaxed space-y-2 mt-1">
+            {item.explanation.split(/(?<=\.)\s+/).map((sentence, i) => (
+              <p key={i}>{sentence}</p>
+            ))}
+          </div>
         </div>
       </div>
     </div>

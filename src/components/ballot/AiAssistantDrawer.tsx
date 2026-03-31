@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, ChevronDown } from 'lucide-react';
 import type { BallotItem } from '@/lib/ballotHelpers';
 import ConversationView from '@/components/conversation/ConversationView';
@@ -24,6 +24,17 @@ interface AiAssistantDrawerProps {
   focusedCandidateId?: string | null;
 }
 
+/** Number of times to show the expanded hint before suppressing */
+const EXPAND_SHOW_LIMIT = 3;
+const EXPAND_DURATION_MS = 4000;
+
+function getContextualHint(item: BallotItem): string {
+  if (item.type === 'proposition') {
+    return 'Break down this measure in plain language';
+  }
+  return 'Compare these candidates to your values';
+}
+
 export default function AiAssistantDrawer({
   isOpen,
   onToggle,
@@ -34,6 +45,24 @@ export default function AiAssistantDrawer({
   const saveVote = useBallotStore((s) => s.saveVote);
   const recordVote = useConversationStore((s) => s.recordVote);
   const advanceToNext = useConversationStore((s) => s.advanceToNext);
+
+  const [expanded, setExpanded] = useState(false);
+  const expandCountRef = useRef(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Expand with contextual hint when ballot item changes
+  useEffect(() => {
+    if (isOpen) return;
+    if (expandCountRef.current >= EXPAND_SHOW_LIMIT) return;
+
+    expandCountRef.current += 1;
+    setExpanded(true);
+
+    timerRef.current = setTimeout(() => setExpanded(false), EXPAND_DURATION_MS);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [ballotItem.id, isOpen]);
 
   const handleVoteConfirmed = (itemId: string, choice: string | null) => {
     recordVote(itemId, choice);
@@ -48,17 +77,33 @@ export default function AiAssistantDrawer({
     recordVote(itemId, null);
   };
 
+  const hint = getContextualHint(ballotItem);
+
   return (
     <>
-      {/* Floating "Ask AI" button — only visible when drawer is closed */}
+      {/* Floating "Ask AI" button — expands with contextual hint on item change */}
       {!isOpen && (
         <button
           onClick={onToggle}
-          className="fixed bottom-44 right-4 z-50 flex items-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-white shadow-lg transition-all hover:bg-brand-primary/90 active:scale-95"
+          className={[
+            'fixed bottom-[88px] right-3 z-50 flex items-center gap-2.5 bg-brand-primary text-white shadow-lg',
+            'transition-all duration-400 ease-out hover:bg-brand-primary/90 active:scale-95',
+            expanded ? 'rounded-2xl px-4 py-3 max-w-[280px]' : 'rounded-full px-4 py-3 max-w-[120px]',
+          ].join(' ')}
           aria-label="Ask AI about this ballot item"
         >
-          <MessageCircle className="h-5 w-5" />
-          <span className="text-sm font-semibold">Ask AI</span>
+          <MessageCircle className="h-5 w-5 shrink-0" />
+          <span className="flex-1 min-w-0 overflow-hidden text-left">
+            <span className="text-sm font-semibold whitespace-nowrap">Ask AI</span>
+            <span
+              className={[
+                'block text-xs text-white/80 leading-snug transition-all duration-300 overflow-hidden',
+                expanded ? 'max-h-10 opacity-100 mt-0.5' : 'max-h-0 opacity-0',
+              ].join(' ')}
+            >
+              {hint}
+            </span>
+          </span>
         </button>
       )}
 

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floating Ask AI — Contextual Expansion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#2B5797',
+            'success': '#16a34a',
+            'success-light': '#f0fdf4',
+            'negative': '#dc2626',
+            'negative-light': '#fef2f2',
+            'border-default': '#e5e7eb',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { background: #f3f4f6; }
+    .phone-frame {
+      width: 375px;
+      height: 720px;
+      background: #f9fafb;
+      border-radius: 2rem;
+      border: 8px solid #1f2937;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    /* Floating button animations */
+    .fab-expanded {
+      max-width: 300px;
+      transition: max-width 0.4s ease-out, border-radius 0.3s ease;
+      border-radius: 1rem;
+    }
+    .fab-collapsed {
+      max-width: 120px;
+      transition: max-width 0.5s ease-in, border-radius 0.3s ease;
+      border-radius: 9999px;
+    }
+    .fab-icon-only {
+      max-width: 48px;
+      transition: max-width 0.5s ease-in, border-radius 0.3s ease;
+      border-radius: 9999px;
+    }
+
+    .ctx-text {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .fab-expanded .ctx-text {
+      max-height: 40px;
+      opacity: 1;
+      margin-top: 2px;
+      transition: max-height 0.3s ease, opacity 0.3s ease 0.1s;
+    }
+    .fab-collapsed .ctx-text,
+    .fab-icon-only .ctx-text {
+      max-height: 0;
+      opacity: 0;
+      margin-top: 0;
+      transition: max-height 0.2s ease, opacity 0.15s ease;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 4px 14px rgba(43, 87, 151, 0.3); }
+      50% { box-shadow: 0 4px 20px rgba(43, 87, 151, 0.5); }
+    }
+    .fab-expanded {
+      animation: pulse-glow 2s ease-in-out 1;
+    }
+
+    @keyframes slide-up-in {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .fab-enter {
+      animation: slide-up-in 0.3s ease-out;
+    }
+  </style>
+</head>
+<body class="p-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-2 text-center">Floating "Ask AI" — Contextual Expansion</h1>
+  <p class="text-sm text-gray-500 text-center mb-8">The button expands with a contextual hint when a new ballot item loads, then collapses after a few seconds.</p>
+
+  <div class="flex gap-8 justify-center flex-wrap items-start">
+
+    <!-- ============ MEASURE DEMO ============ -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-700 mb-3 text-center">Ballot Measure</h2>
+      <div class="phone-frame" id="phone-measure">
+        <div class="p-4 space-y-3 overflow-y-auto h-full pb-32">
+          <span class="text-xs font-bold text-brand-primary uppercase tracking-wide">
+            Proposal 1: Constitutional Convention Question
+          </span>
+
+          <div class="bg-white border border-border-default border-l-[3px] border-l-gray-500 rounded-xl p-3 space-y-1">
+            <span class="block text-[10px] font-bold text-gray-400 tracking-wide">FROM YOUR BALLOT</span>
+            <p class="text-lg font-bold text-gray-900 leading-snug">
+              Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution?
+            </p>
+          </div>
+
+          <!-- "Why this matters" — improved readability -->
+          <div class="flex gap-2.5 bg-gray-100 p-3 rounded-xl items-start">
+            <svg class="h-4 w-4 text-gray-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <div class="flex-1 space-y-0.5">
+              <span class="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">Why this matters</span>
+              <div class="text-sm text-gray-600 leading-relaxed space-y-2 mt-1">
+                <p>An automatic ballot referral required by Michigan's constitution every 16 years. A YES vote does not commit Michigan to any specific policy direction — it only empowers elected delegates to propose changes.</p>
+                <p>The convention's outcomes are unpredictable and would depend on who is elected as delegates. Voters have rejected this question in 1978, 1994, and 2010.</p>
+                <p>Republican legislative leaders support YES, hoping to revise voter-approved amendments. A bipartisan opposition group warns of a "runaway convention" in a polarized political environment.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommendation -->
+          <div class="rounded-xl bg-gray-50 border border-border-default overflow-hidden">
+            <div class="flex items-center gap-2 px-3.5 py-2.5 bg-gray-100">
+              <svg class="h-4 w-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01"/></svg>
+              <span class="text-[13px] font-semibold text-gray-600 flex-1 leading-[18px]">
+                Close call — your values don't clearly favor either side
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky bottom nav -->
+        <div class="absolute bottom-0 left-0 right-0 border-t border-gray-200 bg-gray-50 px-4 pb-4 pt-3">
+          <div class="flex gap-3">
+            <button class="flex-1 rounded-xl bg-gray-200 py-3 text-sm font-semibold text-gray-600">Back</button>
+            <button class="flex-1 rounded-xl bg-gray-200 py-3 text-sm font-semibold text-gray-600">Skip</button>
+            <button class="flex-1 rounded-xl bg-brand-primary py-3 text-sm font-semibold text-white">Next</button>
+          </div>
+        </div>
+
+        <!-- Floating AI button — MEASURE context -->
+        <div id="fab-measure" class="fab-enter fab-expanded absolute bottom-[88px] right-3 z-50 bg-brand-primary text-white shadow-lg cursor-pointer overflow-hidden px-4 py-3 flex items-start gap-2.5"
+             onclick="this.classList.contains('fab-collapsed') ? expandFab('measure') : collapseFab('measure')">
+          <svg class="h-5 w-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <div class="flex-1 min-w-0 overflow-hidden">
+            <span class="text-sm font-semibold whitespace-nowrap">Ask AI</span>
+            <p class="ctx-text text-xs text-white/80 leading-snug">Break down this measure in plain language</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 text-center">
+        <button onclick="resetDemo('measure')" class="text-xs text-brand-primary font-semibold hover:underline">Replay animation</button>
+      </div>
+    </div>
+
+    <!-- ============ CANDIDATE RACE DEMO ============ -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-700 mb-3 text-center">Candidate Race</h2>
+      <div class="phone-frame" id="phone-candidate">
+        <div class="p-4 space-y-3 overflow-y-auto h-full pb-32">
+          <span class="text-xs font-bold text-brand-primary uppercase tracking-wide">
+            U.S. Senate
+          </span>
+
+          <div class="bg-white border border-border-default border-l-[3px] border-l-gray-500 rounded-xl p-3 space-y-1">
+            <span class="block text-[10px] font-bold text-gray-400 tracking-wide">CHOOSE ONE CANDIDATE</span>
+            <p class="text-lg font-bold text-gray-900 leading-snug">
+              United States Senator — Michigan
+            </p>
+          </div>
+
+          <!-- Candidate cards -->
+          <div class="space-y-2.5">
+            <div class="p-3 rounded-xl border-2 border-success/40 bg-success-light">
+              <div class="flex items-start gap-2.5">
+                <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mt-0.5 shrink-0"></div>
+                <div class="flex-1 space-y-0.5">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[15px] font-bold leading-5 text-gray-900">Elissa Slotkin</span>
+                    <span class="px-2 py-0.5 rounded-full bg-gray-100 text-[11px] font-semibold text-gray-600">Incumbent</span>
+                  </div>
+                  <p class="text-[13px] text-gray-500 leading-[18px]">Democratic</p>
+                  <div class="mt-2 grid grid-cols-2 gap-2">
+                    <div class="border-l-2 border-success pl-2">
+                      <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">Shared values</span>
+                      <p class="text-[11px] text-success leading-[15px] mt-0.5">Climate action, Healthcare access</p>
+                    </div>
+                    <div class="border-l-2 border-amber-400 pl-2">
+                      <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">Different priorities</span>
+                      <p class="text-[11px] text-amber-500 leading-[15px] mt-0.5">Gun policy</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center gap-1 shrink-0">
+                  <div class="w-11 h-11 rounded-full border-[2.5px] border-success bg-success-light flex flex-col items-center justify-center">
+                    <span class="text-[13px] font-extrabold text-gray-900">78%</span>
+                    <span class="text-[8px] text-gray-500 uppercase">match</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl border-2 border-border-default bg-white">
+              <div class="flex items-start gap-2.5">
+                <div class="w-5 h-5 rounded-full border-2 border-gray-300 flex items-center justify-center mt-0.5 shrink-0"></div>
+                <div class="flex-1 space-y-0.5">
+                  <span class="text-[15px] font-bold leading-5 text-gray-900">Mike Rogers</span>
+                  <p class="text-[13px] text-gray-500 leading-[18px]">Republican</p>
+                  <div class="mt-2 grid grid-cols-2 gap-2">
+                    <div class="border-l-2 border-success pl-2">
+                      <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">Shared values</span>
+                      <p class="text-[11px] text-success leading-[15px] mt-0.5">School choice</p>
+                    </div>
+                    <div class="border-l-2 border-amber-400 pl-2">
+                      <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">Different priorities</span>
+                      <p class="text-[11px] text-amber-500 leading-[15px] mt-0.5">Climate, Healthcare, Transit</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-center gap-1 shrink-0">
+                  <div class="w-11 h-11 rounded-full border-[2.5px] border-amber-500 bg-amber-50 flex flex-col items-center justify-center">
+                    <span class="text-[13px] font-extrabold text-gray-900">45%</span>
+                    <span class="text-[8px] text-gray-500 uppercase">match</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky bottom nav -->
+        <div class="absolute bottom-0 left-0 right-0 border-t border-gray-200 bg-gray-50 px-4 pb-4 pt-3">
+          <div class="flex gap-3">
+            <button class="flex-1 rounded-xl bg-gray-200 py-3 text-sm font-semibold text-gray-600">Back</button>
+            <button class="flex-1 rounded-xl bg-gray-200 py-3 text-sm font-semibold text-gray-600">Skip</button>
+            <button class="flex-1 rounded-xl bg-brand-primary py-3 text-sm font-semibold text-white">Next</button>
+          </div>
+        </div>
+
+        <!-- Floating AI button — CANDIDATE context -->
+        <div id="fab-candidate" class="fab-enter fab-expanded absolute bottom-[88px] right-3 z-50 bg-brand-primary text-white shadow-lg cursor-pointer overflow-hidden px-4 py-3 flex items-start gap-2.5"
+             onclick="this.classList.contains('fab-collapsed') ? expandFab('candidate') : collapseFab('candidate')">
+          <svg class="h-5 w-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <div class="flex-1 min-w-0 overflow-hidden">
+            <span class="text-sm font-semibold whitespace-nowrap">Ask AI</span>
+            <p class="ctx-text text-xs text-white/80 leading-snug">Compare these candidates to your values</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 text-center">
+        <button onclick="resetDemo('candidate')" class="text-xs text-brand-primary font-semibold hover:underline">Replay animation</button>
+      </div>
+    </div>
+
+    <!-- ============ COLLAPSED STATE ============ -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-700 mb-3 text-center">After Collapse (steady state)</h2>
+      <div class="phone-frame">
+        <div class="p-4 space-y-3 overflow-y-auto h-full pb-32">
+          <span class="text-xs font-bold text-brand-primary uppercase tracking-wide">
+            Measure A: Transit Expansion
+          </span>
+          <div class="bg-white border border-border-default border-l-[3px] border-l-gray-500 rounded-xl p-3 space-y-1">
+            <span class="block text-[10px] font-bold text-gray-400 tracking-wide">FROM YOUR BALLOT</span>
+            <p class="text-lg font-bold text-gray-900 leading-snug">
+              Should the county raise sales tax by 0.5% to fund bus and rail expansion?
+            </p>
+          </div>
+          <div class="flex gap-2.5 bg-gray-100 p-3 rounded-xl items-start">
+            <svg class="h-4 w-4 text-gray-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <div class="flex-1 space-y-0.5">
+              <span class="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">Why this matters</span>
+              <div class="text-sm text-gray-600 leading-relaxed space-y-2 mt-1">
+                <p>Funds would add 3 new rail lines, increase bus frequency, and reduce fares for low-income riders.</p>
+                <p>The tax would add about $50/year for the median household.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky bottom nav -->
+        <div class="absolute bottom-0 left-0 right-0 border-t border-gray-200 bg-gray-50 px-4 pb-4 pt-3">
+          <div class="flex gap-3">
+            <button class="flex-1 rounded-xl bg-gray-200 py-3 text-sm font-semibold text-gray-600">Back</button>
+            <button class="flex-1 rounded-xl bg-gray-200 py-3 text-sm font-semibold text-gray-600">Skip</button>
+            <button class="flex-1 rounded-xl bg-brand-primary py-3 text-sm font-semibold text-white">Next</button>
+          </div>
+        </div>
+
+        <!-- Collapsed state -->
+        <div class="fab-collapsed absolute bottom-[88px] right-3 z-50 bg-brand-primary text-white shadow-lg cursor-pointer overflow-hidden px-4 py-3 flex items-start gap-2.5 rounded-full">
+          <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <div class="flex-1 min-w-0 overflow-hidden">
+            <span class="text-sm font-semibold whitespace-nowrap">Ask AI</span>
+            <p class="ctx-text text-xs text-white/80 leading-snug">Break down this measure in plain language</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 text-center mt-3 max-w-[300px]">
+        After the hint collapses, button stays as compact "Ask AI" pill.<br>
+        Tap to re-expand or open the drawer.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Behavior notes -->
+  <div class="max-w-3xl mx-auto mt-10 space-y-3 text-sm text-gray-600">
+    <h3 class="font-bold text-gray-900">How it works:</h3>
+    <ol class="list-decimal pl-5 space-y-1.5">
+      <li><strong>On ballot item load</strong> — button slides up and expands with a contextual hint. Gentle glow pulse draws the eye.</li>
+      <li><strong>After ~4 seconds</strong> — collapses back to the compact "Ask AI" pill. Not intrusive.</li>
+      <li><strong>Contextual text adapts</strong> — Measures: "Break down this measure in plain language." Candidates: "Compare these candidates to your values."</li>
+      <li><strong>Tap the collapsed pill</strong> — opens the AI drawer (same as today).</li>
+      <li><strong>Repeat suppression (optional)</strong> — after the user has seen the expanded hint 2-3 times, skip the expansion and just show the compact pill on subsequent items.</li>
+    </ol>
+  </div>
+
+  <script>
+    // Auto-collapse after 4 seconds
+    function collapseFab(id) {
+      const el = document.getElementById('fab-' + id);
+      if (el) {
+        el.classList.remove('fab-expanded');
+        el.classList.add('fab-collapsed');
+      }
+    }
+
+    function expandFab(id) {
+      const el = document.getElementById('fab-' + id);
+      if (el) {
+        el.classList.remove('fab-collapsed');
+        el.classList.add('fab-expanded');
+        // Auto-collapse again after 4s
+        setTimeout(() => collapseFab(id), 4000);
+      }
+    }
+
+    function resetDemo(id) {
+      const el = document.getElementById('fab-' + id);
+      if (el) {
+        el.classList.remove('fab-collapsed', 'fab-expanded');
+        // Force reflow for animation restart
+        void el.offsetWidth;
+        el.classList.add('fab-expanded');
+        setTimeout(() => collapseFab(id), 4000);
+      }
+    }
+
+    // Initial auto-collapse
+    setTimeout(() => collapseFab('measure'), 4000);
+    setTimeout(() => collapseFab('candidate'), 4500);
+  </script>
+</body>
+</html>

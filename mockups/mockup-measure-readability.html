@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ballot Measure Readability — Before / After</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#2B5797',
+            'success': '#16a34a',
+            'success-light': '#f0fdf4',
+            'negative': '#dc2626',
+            'negative-light': '#fef2f2',
+            'border-default': '#e5e7eb',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { background: #f3f4f6; }
+    .phone-frame {
+      width: 375px;
+      min-height: 700px;
+      background: #f9fafb;
+      border-radius: 2rem;
+      border: 8px solid #1f2937;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body class="p-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-2 text-center">Ballot Measure — Before vs After</h1>
+  <p class="text-sm text-gray-500 text-center mb-8">Side-by-side comparison on a 375px phone viewport</p>
+
+  <div class="flex gap-8 justify-center flex-wrap">
+
+    <!-- ============ BEFORE ============ -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-700 mb-3 text-center">Before</h2>
+      <div class="phone-frame">
+        <div class="p-4 space-y-3 overflow-y-auto" style="max-height: 684px;">
+
+          <!-- Item title -->
+          <span class="text-xs font-bold text-brand-primary uppercase tracking-wide">
+            Proposal 1: Constitutional Convention Question
+          </span>
+
+          <!-- Official ballot language -->
+          <div class="bg-white border border-border-default border-l-[3px] border-l-gray-500 rounded-xl p-3 space-y-1">
+            <span class="block text-[10px] font-bold text-gray-400 tracking-wide">
+              FROM YOUR BALLOT
+            </span>
+            <p class="text-lg font-bold text-gray-900 leading-snug">
+              Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution?
+            </p>
+          </div>
+
+          <!-- Why this matters — CURRENT (dense paragraph) -->
+          <div class="flex gap-2 bg-gray-100 p-2.5 rounded-xl items-start">
+            <svg class="h-4 w-4 text-gray-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <div class="flex-1 space-y-0.5">
+              <span class="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">
+                Why this matters
+              </span>
+              <p class="text-[13px] text-gray-600 leading-[19px]">
+                An automatic ballot referral required by Michigan's constitution every 16 years. A YES vote does not commit Michigan to any specific policy direction — it only empowers elected delegates to propose changes. The convention's outcomes are unpredictable and would depend on who is elected as delegates. Voters have rejected this question in 1978, 1994, and 2010. Republican legislative leaders support YES, hoping to revise voter-approved amendments. A bipartisan opposition group warns of a "runaway convention" in a polarized political environment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Recommendation banner -->
+          <div class="rounded-xl bg-gray-50 border border-border-default overflow-hidden">
+            <div class="flex items-center gap-2 px-3.5 py-2.5 bg-gray-100">
+              <svg class="h-4 w-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01"/></svg>
+              <span class="text-[13px] font-semibold text-gray-600 flex-1 leading-[18px]">
+                Close call — your values don't clearly favor either side
+              </span>
+            </div>
+            <div class="p-3 space-y-2">
+              <p class="text-[13px] text-gray-600 leading-[19px]">
+                This measure touches values you hold on both sides.
+              </p>
+              <button class="text-xs font-semibold text-brand-primary mt-1 hover:underline">
+                See full breakdown &rsaquo;
+              </button>
+            </div>
+          </div>
+
+          <!-- No Ask AI prompt — just the floating button -->
+          <div class="relative pt-12">
+            <div class="absolute bottom-0 right-0 flex items-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-white shadow-lg">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <span class="text-sm font-semibold">Ask AI</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ AFTER ============ -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-700 mb-3 text-center">After</h2>
+      <div class="phone-frame">
+        <div class="p-4 space-y-3 overflow-y-auto" style="max-height: 684px;">
+
+          <!-- Item title -->
+          <span class="text-xs font-bold text-brand-primary uppercase tracking-wide">
+            Proposal 1: Constitutional Convention Question
+          </span>
+
+          <!-- Official ballot language -->
+          <div class="bg-white border border-border-default border-l-[3px] border-l-gray-500 rounded-xl p-3 space-y-1">
+            <span class="block text-[10px] font-bold text-gray-400 tracking-wide">
+              FROM YOUR BALLOT
+            </span>
+            <p class="text-lg font-bold text-gray-900 leading-snug">
+              Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution?
+            </p>
+          </div>
+
+          <!-- Why this matters — AFTER (broken into paragraphs, larger font) -->
+          <div class="flex gap-2.5 bg-gray-100 p-3 rounded-xl items-start">
+            <svg class="h-4 w-4 text-gray-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <div class="flex-1 space-y-0.5">
+              <span class="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">
+                Why this matters
+              </span>
+              <div class="text-sm text-gray-600 leading-relaxed space-y-2 mt-1">
+                <p>An automatic ballot referral required by Michigan's constitution every 16 years. A YES vote does not commit Michigan to any specific policy direction — it only empowers elected delegates to propose changes.</p>
+                <p>The convention's outcomes are unpredictable and would depend on who is elected as delegates. Voters have rejected this question in 1978, 1994, and 2010.</p>
+                <p>Republican legislative leaders support YES, hoping to revise voter-approved amendments. A bipartisan opposition group warns of a "runaway convention" in a polarized political environment.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommendation banner -->
+          <div class="rounded-xl bg-gray-50 border border-border-default overflow-hidden">
+            <div class="flex items-center gap-2 px-3.5 py-2.5 bg-gray-100">
+              <svg class="h-4 w-4 text-gray-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01"/></svg>
+              <span class="text-[13px] font-semibold text-gray-600 flex-1 leading-[18px]">
+                Close call — your values don't clearly favor either side
+              </span>
+            </div>
+            <div class="p-3 space-y-2">
+              <p class="text-[13px] text-gray-600 leading-[19px]">
+                This measure touches values you hold on both sides.
+              </p>
+              <button class="text-xs font-semibold text-brand-primary mt-1 hover:underline">
+                See full breakdown &rsaquo;
+              </button>
+            </div>
+          </div>
+
+          <!-- Contextual Ask AI prompt (NEW) -->
+          <button class="w-full flex items-center gap-3 rounded-xl border border-brand-primary/20 bg-brand-primary/[0.04] px-3.5 py-3 text-left transition-colors hover:bg-brand-primary/[0.08] group">
+            <div class="w-8 h-8 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">
+              <svg class="h-4 w-4 text-brand-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-brand-primary leading-tight">Not sure how to vote?</p>
+              <p class="text-xs text-gray-500 leading-snug mt-0.5">Ask AI to break down this measure in plain language</p>
+            </div>
+            <svg class="h-4 w-4 text-brand-primary/50 shrink-0 group-hover:text-brand-primary transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+
+          <!-- Floating button still exists but less critical now -->
+          <div class="relative pt-8">
+            <div class="absolute bottom-0 right-0 flex items-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-white shadow-lg">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <span class="text-sm font-semibold">Ask AI</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Notes -->
+  <div class="max-w-2xl mx-auto mt-10 space-y-3 text-sm text-gray-600">
+    <h3 class="font-bold text-gray-900">Changes in the "After" version:</h3>
+    <ol class="list-decimal pl-5 space-y-1.5">
+      <li><strong>"Why this matters" broken into paragraphs</strong> — Sentences are split at natural break points (what it is, what happened before, who supports/opposes). Much easier to scan.</li>
+      <li><strong>Font bumped from 13px to 14px (text-sm)</strong> — with <code>leading-relaxed</code> for better line spacing.</li>
+      <li><strong>Slightly more padding</strong> — <code>p-3</code> instead of <code>p-2.5</code> for breathing room.</li>
+      <li><strong>Contextual "Ask AI" prompt</strong> — An inline card below the recommendation banner that says "Not sure how to vote? Ask AI to break down this measure in plain language." Opens the AI drawer on click. More discoverable than the floating button alone.</li>
+    </ol>
+  </div>
+
+</body>
+</html>

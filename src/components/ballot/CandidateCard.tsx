@@ -83,28 +83,28 @@ export default function CandidateCard({
             </p>
           )}
 
-          {/* Value-based match info */}
+          {/* Value-based match info — side by side */}
           {(alignedValues.length > 0 || conflictingValues.length > 0) && (
-            <div className="mt-1.5 space-y-0.5">
+            <div className="mt-2 grid grid-cols-2 gap-2">
               {alignedValues.length > 0 && (
-                <>
+                <div className="border-l-2 border-success pl-2">
                   <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">
                     Shared values
                   </span>
-                  <p className="text-[11px] text-success leading-[15px]">
+                  <p className="text-[11px] text-success leading-[15px] mt-0.5">
                     {alignedValues.join(', ')}
                   </p>
-                </>
+                </div>
               )}
               {conflictingValues.length > 0 && (
-                <>
-                  <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide mt-1">
+                <div className="border-l-2 border-amber-400 pl-2">
+                  <span className="block text-[10px] font-bold text-gray-400 uppercase tracking-wide">
                     Different priorities
                   </span>
-                  <p className="text-[11px] text-amber-500 leading-[15px]">
+                  <p className="text-[11px] text-amber-500 leading-[15px] mt-0.5">
                     {conflictingValues.join(', ')}
                   </p>
-                </>
+                </div>
               )}
             </div>
           )}
