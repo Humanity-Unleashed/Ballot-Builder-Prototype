@@ -156,7 +156,7 @@ export default function WizardNav() {
 
         {/* Unified banner */}
         <div className="pb-2.5">
-          <div className="bg-gradient-to-r from-[#1E3A5F] to-[#162D4A] rounded-[14px] px-3.5 py-3 text-white">
+          <div className="bg-gradient-to-r from-[#3B1F6E] to-[#2D1754] rounded-[14px] px-3.5 py-3 text-white">
             {/* Stepper row */}
             <div className="flex items-center gap-0">
               {DISPLAY_PHASES.map((dp, idx) => {
@@ -182,7 +182,7 @@ export default function WizardNav() {
                         className="flex items-center gap-1.5 hover:bg-white/15 rounded-full px-2 py-1 -mx-1 transition-colors"
                       >
                         <span className="w-5 h-5 rounded-full bg-white/90 flex items-center justify-center shrink-0">
-                          <Check className="h-3 w-3 text-[#162D4A]" strokeWidth={3} />
+                          <Check className="h-3 w-3 text-[#2D1754]" strokeWidth={3} />
                         </span>
                         <span className="text-xs font-semibold text-white/90">{label}</span>
                       </button>
@@ -192,7 +192,7 @@ export default function WizardNav() {
                           className={[
                             'w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] font-bold',
                             state === 'current'
-                              ? 'bg-white text-[#162D4A]'
+                              ? 'bg-white text-[#2D1754]'
                               : 'bg-white/30 text-white/60',
                           ].join(' ')}
                         >
