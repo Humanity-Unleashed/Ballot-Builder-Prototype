@@ -20,7 +20,7 @@ const slides = [
             <li>You research every candidate yourself</li>
             <li>You read through voter guides</li>
             <li>You compare positions by hand</li>
-            <li>You decode each ballot measure</li>
+            <li>You decode each race and ballot measure</li>
             <li>You hope you didn\u2019t miss anything</li>
           </ul>
         </div>

@@ -834,7 +834,7 @@ export default function UnifiedBallotPage() {
               <div className="flex gap-3">
                 <SlidersHorizontal className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
                 <div>
-                  <p className="text-sm font-semibold text-gray-800">Fine-tune anytime</p>
+                  <p className="text-sm font-semibold text-gray-800">Adjust anytime</p>
                   <p className="text-[13px] leading-snug text-gray-500">
                     Adjust your values on any item to see how recommendations shift.
                   </p>

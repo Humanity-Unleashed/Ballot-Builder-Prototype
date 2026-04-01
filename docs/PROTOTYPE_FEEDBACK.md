@@ -70,7 +70,7 @@
 
 - [x] **Clarify "each item" wording** — Changed to "each race and measure on your ballot."
 - [x] **Match scores text too suggestive** — Changed to "See suggested candidates ranked by how closely they align with your values — but the final vote is always yours."
-- [ ] **Clarify it's candidates AND measures** — Some language only mentions ballot measures; make sure both are covered.
+- [x] **Clarify it's candidates AND measures** — Updated IntroScreen to say "each race and ballot measure" instead of just "each ballot measure." Also renamed "Fine-tune anytime" to "Adjust anytime" in the ballot intro for consistency.
 - [x] **Make Ask AI more discoverable** — Floating button now expands with a contextual hint when each ballot item loads ("Break down this measure in plain language" / "Compare these candidates to your values"), then collapses after 4 seconds. Suppressed after 3 expansions to avoid annoyance.
 - [x] **Distinguish shared values vs. different priorities visually** — Now side-by-side in a two-column grid with green (shared) and amber (different) left borders.
 - [ ] **Add candidate info links** — Mouseovers or icons linking to Ballotpedia, Wikipedia, or candidate websites/platforms.
