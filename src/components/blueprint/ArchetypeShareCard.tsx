@@ -60,7 +60,7 @@ export default function ArchetypeShareCard({ archetype, onClose }: ArchetypeShar
       {/* Share card — gradient background */}
       <div
         className="rounded-2xl px-6 py-8 text-center text-white relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #2B5797 0%, #1E3F6F 50%, #2B5797 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #3B1F6E 0%, #2D1754 50%, #3B1F6E 100%)' }}
       >
         <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-3">
           Your Civic Style

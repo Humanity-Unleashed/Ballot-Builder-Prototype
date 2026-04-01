@@ -95,7 +95,7 @@ export default function ImpactCard({ ballotItems, sessionMinutes }: ImpactCardPr
       {/* Gradient stats header */}
       <div
         className="px-5 py-4 text-white text-center"
-        style={{ background: 'linear-gradient(to right, #2B5797, #1E3F6F)' }}
+        style={{ background: 'linear-gradient(to right, #3B1F6E, #2D1754)' }}
       >
         <p className="text-white/70 text-[11px] font-semibold uppercase tracking-wider mb-1">
           Your ballot prep
