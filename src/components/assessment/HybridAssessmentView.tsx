@@ -47,7 +47,7 @@ type ViewState =
   | { type: 'signal-review'; userText: string; classified: ClassifiedSignal[]; pendingSession: HybridAssessmentSession; confirmationCard: ConfirmationCardType | null }
   | { type: 'confirmation'; card: ConfirmationCardType; signals: ClassifiedSignal[] }
   | { type: 'refine-offer'; axisId: string; selectedValue: number }
-  | { type: 'refine'; axisId: string }
+  | { type: 'refine'; axisId: string; selectedValue: number }
   | { type: 'summary'; profile: Record<string, UserValueRecord> };
 
 interface HybridAssessmentViewProps {
@@ -155,7 +155,7 @@ export default function HybridAssessmentView({
 
   const handleRefineAccept = useCallback(() => {
     if (viewState.type !== 'refine-offer') return;
-    setViewState({ type: 'refine', axisId: viewState.axisId });
+    setViewState({ type: 'refine', axisId: viewState.axisId, selectedValue: viewState.selectedValue });
   }, [viewState]);
 
   // ── Refine offer: user declines → advance normally ──
@@ -430,6 +430,7 @@ export default function HybridAssessmentView({
         axisId={viewState.axisId}
         spec={civicAxesSpec}
         existingResponses={{}}
+        parentPositionTitle={getPositionLabel(viewState.axisId, viewState.selectedValue)}
         onComplete={handleFineTuningComplete}
         onCancel={handleFineTuningCancel}
       />

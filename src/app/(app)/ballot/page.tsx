@@ -63,6 +63,7 @@ import type { DemoState } from '@/stores/demographicStore';
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
 import { deriveMetaDimensions, computeArchetype, getArchetypeVariant, getArchetypeDisplayName, getArchetypeDisplayEmoji } from '@/lib/archetypes';
 import { calculateFineTunedScore } from '@/data/fineTuningPositions';
+import { getSliderConfig } from '@/data/sliderPositions';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 
 // ── Phase components ──
@@ -706,11 +707,26 @@ export default function UnifiedBallotPage() {
   if (currentPhase === 'profile-review') {
     // Fine-tuning sub-screen
     if (fineTuningAxisId && blueprintSpec) {
+      // Derive the parent position title from the user's current axis value
+      const parentSliderConfig = getSliderConfig(fineTuningAxisId);
+      let parentPositionTitle: string | undefined;
+      if (parentSliderConfig && blueprintProfile) {
+        const axisProfile = blueprintProfile.domains
+          .flatMap((d) => d.axes)
+          .find((a) => a.axis_id === fineTuningAxisId);
+        if (axisProfile) {
+          const posCount = parentSliderConfig.positions.length;
+          const posIndex = Math.round((axisProfile.value_0_10 / 10) * (posCount - 1));
+          parentPositionTitle = parentSliderConfig.positions[Math.max(0, Math.min(posCount - 1, posIndex))]?.title;
+        }
+      }
+
       return (
         <HybridFineTuningView
           axisId={fineTuningAxisId}
           spec={blueprintSpec}
           existingResponses={fineTuningResponses[fineTuningAxisId] || {}}
+          parentPositionTitle={parentPositionTitle}
           onComplete={handleFineTuningComplete}
           onCancel={handleFineTuningCancel}
         />

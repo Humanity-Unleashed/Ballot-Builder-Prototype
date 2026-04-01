@@ -40,6 +40,8 @@ interface HybridFineTuningViewProps {
   axisId: string;
   spec: Spec;
   existingResponses: Record<string, number>;
+  /** The title of the position the user selected on the parent axis card */
+  parentPositionTitle?: string;
   onComplete: (responses: Record<string, number>) => void;
   onCancel: () => void;
 }
@@ -78,6 +80,7 @@ export default function HybridFineTuningView({
   axisId,
   spec,
   existingResponses,
+  parentPositionTitle,
   onComplete,
   onCancel,
 }: HybridFineTuningViewProps) {
@@ -85,6 +88,8 @@ export default function HybridFineTuningView({
   const fineTuningConfig = getFineTuningConfig(axisId);
   const axis = spec.axes.find((a) => a.id === axisId);
 
+  const hasExisting = Object.keys(existingResponses).length > 0;
+  const [showIntro, setShowIntro] = useState(!hasExisting);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [responses, setResponses] = useState<Record<string, number>>(existingResponses);
   const [viewMode, setViewMode] = useState<ViewMode>('card');
@@ -243,7 +248,69 @@ export default function HybridFineTuningView({
   if (!fineTuningConfig || !axis || !currentSub || !currentAxisConfig) {
     return (
       <div className="flex min-h-[calc(100vh-56px)] items-center justify-center bg-gray-50">
-        <p className="text-gray-500">Fine-tuning data not available for this topic.</p>
+        <p className="text-gray-500">Adjustment data not available for this topic.</p>
+      </div>
+    );
+  }
+
+  // ── Intro screen ──
+  if (showIntro) {
+    return (
+      <div className="flex min-h-[calc(100vh-56px)] flex-col bg-gray-50">
+        <div className="border-b border-gray-200 bg-white px-5 py-4">
+          <div className="flex items-center">
+            <button
+              onClick={() => { track('click', { element: 'finetune_cancel', axisId }); onCancel(); }}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-gray-200"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <div className="flex-1 text-center">
+              <span className="block text-xs font-semibold uppercase tracking-wide text-brand-primary">
+                Adjusting
+              </span>
+              <span className="mt-0.5 block text-base font-bold text-gray-900">
+                {axis.name}
+              </span>
+            </div>
+            <div className="w-10" />
+          </div>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center px-5">
+          <div className="max-w-sm w-full space-y-5">
+            {parentPositionTitle && (
+              <div className="rounded-xl bg-brand-primary/[0.04] border border-brand-primary/20 px-4 py-3">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400 mb-1">
+                  Your overall pick
+                </p>
+                <p className="text-sm font-semibold text-gray-900">
+                  {parentPositionTitle}
+                </p>
+              </div>
+            )}
+
+            <div className="space-y-2">
+              <h2 className="text-lg font-bold text-gray-900">
+                {totalQuestions} sub-topic{totalQuestions !== 1 ? 's' : ''} to adjust
+              </h2>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                These let you adjust where your view differs from your general position on {axis.name.toLowerCase()}.
+                It&apos;s okay to skip any you&apos;re not sure about.
+              </p>
+            </div>
+
+            <button
+              onClick={() => {
+                track('click', { element: 'finetune_intro_start', axisId });
+                setShowIntro(false);
+              }}
+              className="w-full py-3 rounded-xl bg-brand-primary text-white text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
+            >
+              Let&apos;s go
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
@@ -264,7 +331,7 @@ export default function HybridFineTuningView({
           </button>
           <div className="flex-1 text-center">
             <span className="block text-xs font-semibold uppercase tracking-wide text-brand-primary">
-              Fine-tuning
+              Adjusting
             </span>
             <span className="mt-0.5 block text-base font-bold text-gray-900">
               {axis.name}

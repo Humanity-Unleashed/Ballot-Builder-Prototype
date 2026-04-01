@@ -200,7 +200,7 @@ export default function BlueprintSummaryView({
                     onClick={() => { track('click', { element: 'fine_tune', domainId: specDomain.id }); handleFineTune(specDomain.id); }}
                     className="flex items-center gap-0.5 text-[11px] font-semibold text-brand-primary transition-colors hover:text-brand-primary/80"
                   >
-                    {hasFT ? 'Fine-tuned' : 'Fine-tune'}
+                    {hasFT ? 'Adjusted' : 'Adjust'}
                     <ChevronRight className="h-3 w-3" />
                   </button>
                 </div>
@@ -305,9 +305,9 @@ export default function BlueprintSummaryView({
             <div className="animate-fade-in-up">
               <p className="text-sm font-semibold text-gray-900 mb-1">Which area feels off?</p>
               <p className="text-[12px] text-gray-500 leading-[1.5] mb-3">
-                Tap a domain to scroll up and adjust your positions. Your civic style will update automatically.
+                Pick a domain to adjust your positions on its sub-topics.
               </p>
-              <div className="flex flex-wrap gap-2 mb-3">
+              <div className="flex flex-col gap-2 mb-3">
                 {sortedDomains.map((d) => (
                   <button
                     key={d.id}
@@ -316,10 +316,11 @@ export default function BlueprintSummaryView({
                       handleFineTune(d.id);
                       setConfirmation('none');
                     }}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-border-default bg-white hover:bg-brand-primary/5 hover:border-brand-primary/30 transition-colors"
+                    className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-border-default bg-white hover:bg-brand-primary/5 hover:border-brand-primary/30 transition-colors text-left"
                   >
                     <span className="text-sm">{getDomainEmoji(d.id)}</span>
-                    <span className="text-xs font-semibold text-gray-700">{DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}</span>
+                    <span className="text-xs font-semibold text-gray-700 flex-1">{DOMAIN_DISPLAY_NAMES[d.id] ?? d.name}</span>
+                    <ChevronRight className="h-3.5 w-3.5 text-gray-400" />
                   </button>
                 ))}
               </div>

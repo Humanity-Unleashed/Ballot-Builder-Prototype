@@ -62,9 +62,9 @@
 - ✅ **Animal icons are fun** — Keep. Consider adding an info icon to learn/see more, like Pew typologies.
 - [ ] **Consider cluster comparisons** — Like Pew's "what percentage of people share your views." Fun second-order feature, not critical.
 - [ ] **Fonts feel small / accessibility** — Generally the UI feels harder for accessibility. Increase font sizes.
-- [ ] **Clarify "Fine-tune"** — Unclear what it means. Does it mean changing answers or adding open-ended text? Consider "This doesn't feel exactly right" or "Let me refine this." Maybe "Yes, this feels right" / "Something's off" under each option.
-- [ ] **Improve fine-tune flow** — Currently just re-answers the same questions. Add a primer: "The way we summarized your views doesn't feel exactly right. Now you can change your answers." Could integrate chatbot for users to say in their own words what feels wrong.
-- [ ] **Multi-area fine-tune unclear** — Clicking areas off/on wasn't intuitive. Should it be multi-select? Highlight previously picked answer. When skipping, preserving old answers may or may not be right — consider "No preference" or "Not sure about my views."
+- [x] **Clarify "Fine-tune"** — Renamed to "Adjust" / "Adjusted" throughout (domain cards, header label, wizard nav subtitle). Clearer and less technical.
+- [x] **Improve fine-tune flow** — Added an intro screen before the first sub-topic showing the user's original pick and explaining what the sub-topics do: "These let you adjust where your view differs from your general position." Includes a "Let's go" button to start.
+- [x] **Multi-area fine-tune unclear** — Domain buttons in "Something's off" changed from wrap grid to vertical list with chevrons, making it clear each is a navigation action (not a toggle). Copy simplified to "Pick a domain to adjust your positions on its sub-topics."
 
 ## Personalized Ballot
 

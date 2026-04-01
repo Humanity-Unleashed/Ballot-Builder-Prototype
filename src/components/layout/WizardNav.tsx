@@ -47,7 +47,7 @@ function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
     const subIndex = getSubStepIndex(wizardPhase);
     switch (subIndex) {
       case 0: return 'Share where you stand on a few key issues \u2014 no wrong answers. We\u2019ll use this to find your best-fit candidates and measures.';
-      case 1: return 'Fine-tune your positions before matching';
+      case 1: return 'Review and adjust your positions before matching';
       default: return '';
     }
   }
