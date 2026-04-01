@@ -76,6 +76,7 @@
 - [ ] **Add candidate info links** — Mouseovers or icons linking to Ballotpedia, Wikipedia, or candidate websites/platforms.
 - ✅ **Evidence display is cool** — Keep. Campaign, public statements, source attribution.
 - [ ] **Consider column-style matching by policy sector** — Visual comparison across issues. Evaluate if helpful.
+- [x] **Remove confusing "?" match circle on write-in option** — The write-in candidate card showed a "?" in a match-score circle, which looked like a broken match score. Removed it.
 - [ ] **Add "No one" / skip option for candidates** — More prominently offer "Ask AI for more insights about these candidates."
 - [x] **Value comparison sheet cramped on mobile** — The candidate summary/profile section (name, bio, policy positions) is fixed in the header, leaving very little scrollable space for the actual value alignment breakdown on phones. Moved summary and positions into the scrollable area so users can see comparisons without excessive scrolling past static content.
 - [x] **Ballot measure "Why this matters" too dense** — Explanation text now split into separate paragraphs at sentence boundaries, font bumped from 13px to 14px with relaxed line height. Applies to all ballot items (measures and candidate races).

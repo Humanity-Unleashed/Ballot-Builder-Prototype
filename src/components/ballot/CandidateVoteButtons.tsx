@@ -97,12 +97,6 @@ export default function CandidateVoteButtons({
               )}
             </div>
 
-            {/* Unknown match */}
-            <div className="flex flex-col items-center shrink-0">
-              <div className="w-11 h-11 rounded-full border-[2.5px] border-border-default bg-gray-50 flex items-center justify-center">
-                <span className="text-[13px] font-extrabold text-gray-900">?</span>
-              </div>
-            </div>
           </button>
         )}
       </div>
