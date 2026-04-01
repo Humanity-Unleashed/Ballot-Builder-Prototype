@@ -40,6 +40,7 @@
 - [ ] **Consider a thermometer/spectrum visual** — If options are ordered liberal-to-conservative or restrictive-to-permissive, a visual scale could help orient users. May introduce bias but could reduce info burden with 6-7 options.
 
 ### Trade-offs & Evidence
+- [ ] **Key tradeoffs feel too shallow** — Current tradeoff bullets don't do justice to the complexity of each policy choice. Consider linking to longer articles, opinion pieces, or policy briefs so users can read more deeply before deciding. The goal is informed value judgments, not just quick summaries.
 - [ ] **Trade-offs: icons/links for more info?** — Worth exploring from an evidence perspective, though adds burden.
 - [ ] **"Trade-offs" vs. "Pros and cons"** — Consider which label is clearer for users.
 - [ ] **In-text citations** — Consider (CDC 2023) style or mouseovers with more info and sources. Many people won't know IRA, Paris Agreement, IPCC. Chatbot integration could offer pre-set questions like "What is the Paris Agreement?" or "What does net zero mean?"
