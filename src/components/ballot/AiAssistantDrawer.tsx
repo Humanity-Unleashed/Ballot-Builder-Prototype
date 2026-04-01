@@ -56,10 +56,11 @@ export default function AiAssistantDrawer({
     if (expandCountRef.current >= EXPAND_SHOW_LIMIT) return;
 
     expandCountRef.current += 1;
-    setExpanded(true);
-
+    // Defer setState to avoid synchronous call in effect body
+    const expandTimer = setTimeout(() => setExpanded(true), 0);
     timerRef.current = setTimeout(() => setExpanded(false), EXPAND_DURATION_MS);
     return () => {
+      clearTimeout(expandTimer);
       if (timerRef.current) clearTimeout(timerRef.current);
     };
   }, [ballotItem.id, isOpen]);
