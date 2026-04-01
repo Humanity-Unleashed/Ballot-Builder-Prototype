@@ -13,7 +13,7 @@
 
 - [x] **Three-step selector feels dark and small** — Bumped step number circles (4→5px), labels (11→12px), and check icons. Improved contrast on future steps (white/40→white/50) and connector lines (1→1.5px). Steps now easier to read against the dark banner.
 - [ ] **Confusing blank space** — Review layout for unnecessary whitespace.
-- [ ] **FAQ and sign-in too small/confusing** — Rethink layout and UX. Bigger letters, clearer hierarchy.
+- [x] **FAQ and sign-in too small/confusing** — Bumped FAQ from 11px to 12px with more padding. Sign-in button now bolder (font-semibold, darker text, larger icon). Logout icon enlarged. Wider gaps between elements.
 - [ ] **State card needs more info** — e.g., "Texas — November 2026 midterm elections. Who's on the ballot? U.S. Senate, Governor, Attorney General, etc."
 - [ ] **Add address/zip code lookup** — "Type in your zip code or address" feature that auto-matches to relevant likely ballots.
 
