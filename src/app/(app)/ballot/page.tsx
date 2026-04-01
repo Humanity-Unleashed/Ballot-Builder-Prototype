@@ -63,6 +63,7 @@ import type { DemoState } from '@/stores/demographicStore';
 import { getNextElectionDay, daysUntil, formatElectionDate } from '@/lib/electionDate';
 import { deriveMetaDimensions, computeArchetype, getArchetypeVariant, getArchetypeDisplayName, getArchetypeDisplayEmoji } from '@/lib/archetypes';
 import { calculateFineTunedScore } from '@/data/fineTuningPositions';
+import { getFullProfile } from '@/lib/hybridSession';
 import { getSliderConfig } from '@/data/sliderPositions';
 import { useFeedbackScreen } from '@/context/FeedbackScreenContext';
 
@@ -146,6 +147,8 @@ export default function UnifiedBallotPage() {
   const updateAxisValue = useUserStore((s) => s.updateAxisValue);
   const updateAxisImportance = useUserStore((s) => s.updateAxisImportance);
   const completeAssessment = useUserStore((s) => s.completeAssessment);
+  const savedHybridSession = useUserStore((s) => s.savedHybridSession);
+  const clearHybridSession = useUserStore((s) => s.clearHybridSession);
 
   const demographicProfile = useDemographicStore((s) => s.profile);
   const demographicsWasSkipped = useDemographicStore((s) => s.wasSkipped);
@@ -203,6 +206,9 @@ export default function UnifiedBallotPage() {
   const [fineTuningResponses, setFineTuningResponses] = useState<
     Record<string, Record<string, number>>
   >({});
+
+  // Resume prompt for saved assessment session
+  const [resumeDecision, setResumeDecision] = useState<'pending' | 'resume' | 'fresh'>('pending');
 
   // AI assistant drawer
   const [aiDrawerOpen, setAiDrawerOpen] = useState(false);
@@ -696,9 +702,95 @@ export default function UnifiedBallotPage() {
 
   // ── Phase: Assessment (hybrid structured + NLP) ──
   if (currentPhase === 'assessment') {
+    // Resume prompt — show if there's a saved session with answers
+    const hasSavedSession = savedHybridSession && savedHybridSession.answeredAxes.length > 0;
+    if (hasSavedSession && resumeDecision === 'pending') {
+      const answered = savedHybridSession.answeredAxes.length;
+      const domainMap: Record<string, string> = {
+        econ: 'Economy', health: 'Healthcare', housing: 'Housing',
+        justice: 'Justice', climate: 'Climate',
+      };
+      const coveredDomains = new Set(
+        savedHybridSession.answeredAxes.map((id: string) => id.split('_')[0])
+      );
+
+      return (
+        <div className="flex flex-col items-center justify-center h-full px-6">
+          <div className="w-full max-w-sm space-y-5">
+            <div className="text-center">
+              <span className="text-3xl mb-3 block">👋</span>
+              <h2 className="text-lg font-bold text-gray-900">Welcome back!</h2>
+              <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                You answered {answered} question{answered !== 1 ? 's' : ''} last time.
+                Pick up where you left off, or start fresh.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-border-default p-4 space-y-2">
+              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Your progress</p>
+              <div className="flex items-center gap-2">
+                <div className="flex gap-0.5 flex-1">
+                  {Array.from({ length: 17 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-2 flex-1 rounded-full ${i < answered ? 'bg-brand-primary' : 'bg-gray-200'}`}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs font-semibold text-gray-500 shrink-0">{answered}/17</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5 mt-1">
+                {Object.entries(domainMap).map(([key, name]) => (
+                  <span
+                    key={key}
+                    className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
+                      coveredDomains.has(key)
+                        ? 'bg-brand-primary/10 text-brand-primary'
+                        : 'bg-gray-100 text-gray-400'
+                    }`}
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-2.5">
+              <button
+                onClick={() => setResumeDecision('resume')}
+                className="w-full py-3.5 rounded-xl bg-brand-primary text-white text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
+              >
+                Continue where I left off
+              </button>
+              {answered >= 5 && (
+                <button
+                  onClick={() => {
+                    handleAssessmentComplete(getFullProfile(savedHybridSession));
+                    clearHybridSession();
+                  }}
+                  className="w-full py-3 rounded-xl border border-border-default bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+                >
+                  See results with what I have
+                </button>
+              )}
+              <button
+                onClick={() => { clearHybridSession(); setResumeDecision('fresh'); }}
+                className="w-full py-2 text-[12px] text-gray-400 font-medium hover:text-gray-600 transition-colors"
+              >
+                Start over from scratch
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="flex flex-col h-full">
-        <HybridAssessmentView onComplete={handleAssessmentComplete} />
+        <HybridAssessmentView
+          resumeSession={resumeDecision === 'resume' ? savedHybridSession : undefined}
+          onComplete={handleAssessmentComplete}
+        />
       </div>
     );
   }

@@ -9,6 +9,7 @@ import type {
   LearningMode,
 } from '../types/blueprintProfile';
 import type { Spec, SwipeResponse } from '../types/civicAssessment';
+import type { HybridAssessmentSession } from '../types/hybridAssessment';
 
 export interface SwipeEvent {
   item_id: string;
@@ -33,12 +34,12 @@ export interface AxisScore {
   top_drivers: string[];
 }
 
+/** Legacy type — replaced by HybridAssessmentSession for persistence */
 export interface AssessmentProgress {
   axisQueue: string[];
   currentAxisIndex: number;
   sliderPositions: Record<string, number>;
   strengthValues: Record<string, number>;
-  /** Axes that appear on the user's ballot — used to filter assessment questions */
   ballotRelevantAxes?: string[];
 }
 
@@ -54,6 +55,8 @@ interface UserState {
   hasCompletedOnboarding: boolean;
   hasCompletedAssessment: boolean;
   assessmentProgress: AssessmentProgress | null;
+  /** Persisted hybrid session for resume support */
+  savedHybridSession: HybridAssessmentSession | null;
 }
 
 interface UserActions {
@@ -78,6 +81,8 @@ interface UserActions {
   getAxisScore: (axisId: string) => AxisScore | null;
   saveAssessmentProgress: (progress: AssessmentProgress) => void;
   clearAssessmentProgress: () => void;
+  saveHybridSession: (session: HybridAssessmentSession) => void;
+  clearHybridSession: () => void;
   completeOnboarding: () => void;
   completeAssessment: () => void;
   resetUserData: () => void;
@@ -258,6 +263,7 @@ const initialState: UserState = {
   hasCompletedOnboarding: false,
   hasCompletedAssessment: false,
   assessmentProgress: null,
+  savedHybridSession: null,
 };
 
 export const useUserStore = create<UserStore>()(
@@ -642,6 +648,14 @@ export const useUserStore = create<UserStore>()(
         set({ assessmentProgress: null });
       },
 
+      saveHybridSession: (session) => {
+        set({ savedHybridSession: session });
+      },
+
+      clearHybridSession: () => {
+        set({ savedHybridSession: null });
+      },
+
       completeOnboarding: () => {
         set({ hasCompletedOnboarding: true });
       },
@@ -662,6 +676,7 @@ export const useUserStore = create<UserStore>()(
           hasCompletedOnboarding: false,
           hasCompletedAssessment: false,
           assessmentProgress: null,
+          savedHybridSession: null,
         });
       },
 
@@ -680,6 +695,7 @@ export const useUserStore = create<UserStore>()(
         hasCompletedOnboarding: state.hasCompletedOnboarding,
         hasCompletedAssessment: state.hasCompletedAssessment,
         assessmentProgress: state.assessmentProgress,
+        savedHybridSession: state.savedHybridSession,
       }),
       onRehydrateStorage: () => (state) => {
         if (state) {

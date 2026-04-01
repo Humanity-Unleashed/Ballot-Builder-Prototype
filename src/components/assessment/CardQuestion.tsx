@@ -14,6 +14,8 @@ interface CardQuestionProps {
   onEscapeHatch: () => void;
   /** Called when user skips */
   onSkip: () => void;
+  /** Called when user wants to finish early (shown after 5+ questions) */
+  onFinishEarly?: () => void;
   disabled?: boolean;
 }
 
@@ -51,6 +53,7 @@ export default function CardQuestion({
   onSelect,
   onEscapeHatch,
   onSkip,
+  onFinishEarly,
   disabled = false,
 }: CardQuestionProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -225,6 +228,16 @@ export default function CardQuestion({
             >
               Skip this question
             </button>
+          )}
+          {onFinishEarly && (
+            <div className="mt-1 pt-2 border-t border-gray-100">
+              <button
+                onClick={onFinishEarly}
+                className="w-full py-2 text-[12px] text-brand-primary/60 font-medium hover:text-brand-primary transition-colors flex items-center justify-center gap-1"
+              >
+                Answered enough? See your results now &rsaquo;
+              </button>
+            </div>
           )}
         </div>
       </div>

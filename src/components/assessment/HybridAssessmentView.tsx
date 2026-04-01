@@ -30,6 +30,7 @@ import { classifySignals, buildConfirmationCard } from '@/lib/multiAxisExtractio
 import type { BallotRelevanceWeights } from '@/lib/adaptiveSequencer';
 import { civicAxesSpec } from '@/server/data/civicAxes/spec';
 
+import { useUserStore } from '@/stores/userStore';
 import AssessmentProgress from './AssessmentProgress';
 import CardQuestion from './CardQuestion';
 import NlpPanel from './NlpPanel';
@@ -48,6 +49,7 @@ type ViewState =
   | { type: 'confirmation'; card: ConfirmationCardType; signals: ClassifiedSignal[] }
   | { type: 'refine-offer'; axisId: string; selectedValue: number }
   | { type: 'refine'; axisId: string; selectedValue: number }
+  | { type: 'finish-early' }
   | { type: 'summary'; profile: Record<string, UserValueRecord> };
 
 interface HybridAssessmentViewProps {
@@ -55,6 +57,8 @@ interface HybridAssessmentViewProps {
   ballotWeights?: BallotRelevanceWeights;
   /** Returning user profile for warm start */
   returningProfile?: Record<string, { value: number; confidence: number }>;
+  /** Saved session to resume (from localStorage) */
+  resumeSession?: HybridAssessmentSession | null;
   /** Called when assessment is complete and user confirms profile */
   onComplete: (profile: Record<string, UserValueRecord>) => void;
 }
@@ -75,14 +79,25 @@ function getPositionLabel(axisId: string, score: number): string {
 export default function HybridAssessmentView({
   ballotWeights = {},
   returningProfile,
+  resumeSession,
   onComplete,
 }: HybridAssessmentViewProps) {
   const [session, setSession] = useState<HybridAssessmentSession>(() =>
-    createHybridSession(`hybrid-${Date.now()}`, ballotWeights, returningProfile),
+    resumeSession ?? createHybridSession(`hybrid-${Date.now()}`, ballotWeights, returningProfile),
   );
   const [viewState, setViewState] = useState<ViewState>({ type: 'card' });
   const [isExtracting, setIsExtracting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Persist session to localStorage after each answer
+  const saveHybridSession = useUserStore((s) => s.saveHybridSession);
+  const clearHybridSession = useUserStore((s) => s.clearHybridSession);
+
+  useEffect(() => {
+    if (!session.readyForMatching) {
+      saveHybridSession(session);
+    }
+  }, [session, saveHybridSession]);
 
   // Track the trigger that opened NLP for recording modality switches
   const nlpTriggerRef = useRef<string | null>(null);
@@ -91,6 +106,7 @@ export default function HybridAssessmentView({
   const currentAxisConfig = currentAxisId ? axisSliderConfigs[currentAxisId] : null;
   const progress = useMemo(() => getProgress(session, ballotWeights), [session, ballotWeights]);
   const stopping = useMemo(() => evaluateHybridStopping(session, ballotWeights), [session, ballotWeights]);
+  const canFinishEarly = session.interactionCount >= 5;
 
   // ── Advance to next question or stop ──
 
@@ -363,6 +379,20 @@ export default function HybridAssessmentView({
     advanceOrStop(updated);
   }, [session, currentAxisId, ballotWeights, advanceOrStop]);
 
+  // ── Finish early ──
+
+  const handleFinishEarly = useCallback(() => {
+    setViewState({ type: 'finish-early' });
+  }, []);
+
+  const handleFinishEarlyConfirm = useCallback(() => {
+    setViewState({ type: 'summary', profile: getFullProfile(session) });
+  }, [session]);
+
+  const handleFinishEarlyCancel = useCallback(() => {
+    setViewState({ type: 'card' });
+  }, []);
+
   // ── Override imputed axis from summary ──
 
   const handleOverrideAxis = useCallback(
@@ -378,6 +408,7 @@ export default function HybridAssessmentView({
 
   useEffect(() => {
     if (viewState.type === 'summary') {
+      clearHybridSession();
       const profile = getFullProfile(session);
       onComplete(profile);
     }
@@ -391,6 +422,85 @@ export default function HybridAssessmentView({
       <div className="flex flex-col items-center justify-center h-full gap-3">
         <Loader2 className="h-8 w-8 text-brand-primary animate-spin" />
         <p className="text-sm text-gray-500">Building your profile...</p>
+      </div>
+    );
+  }
+
+  // Finish early interstitial
+  if (viewState.type === 'finish-early') {
+    const answered = session.answeredAxes.length;
+    const total = 17;
+    const domainMap: Record<string, string> = {
+      econ: 'Economy', health: 'Healthcare', housing: 'Housing',
+      justice: 'Justice', climate: 'Climate',
+    };
+    const coveredDomains = new Set(
+      session.answeredAxes.map((id) => id.split('_')[0])
+    );
+    const uncoveredDomains = Object.entries(domainMap)
+      .filter(([key]) => !coveredDomains.has(key))
+      .map(([, name]) => name);
+
+    return (
+      <div className="flex flex-col h-full">
+        <AssessmentProgress
+          progress={progress}
+          questionsAnswered={answered}
+          estimatedRemaining={stopping.shouldStop ? 0 : session.estimatedRemainingInteractions}
+        />
+        <div className="flex-1 flex items-center justify-center px-6">
+          <div className="w-full max-w-sm space-y-5">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 bg-brand-primary/10 rounded-full px-4 py-2 mb-3">
+                <span className="text-sm font-semibold text-brand-primary">
+                  {answered} of {total} topics covered
+                </span>
+              </div>
+              <h2 className="text-lg font-bold text-gray-900">Good start!</h2>
+              <p className="text-sm text-gray-500 leading-relaxed mt-2">
+                You&apos;ve covered enough for initial matches.
+                {uncoveredDomains.length > 0 && (
+                  <> Answering more — especially on{' '}
+                    <strong className="text-gray-700">
+                      {uncoveredDomains.slice(0, 2).join(' and ')}
+                    </strong>
+                    {' '}— will make your results more accurate.</>
+                )}
+              </p>
+            </div>
+
+            {uncoveredDomains.length > 0 && (
+              <div className="bg-gray-50 rounded-xl p-3 space-y-1.5">
+                <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Still uncovered</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {uncoveredDomains.map((name) => (
+                    <span key={name} className="px-2.5 py-1 rounded-full bg-white border border-border-default text-[11px] font-medium text-gray-600">
+                      {name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="space-y-2.5 pt-2">
+              <button
+                onClick={handleFinishEarlyCancel}
+                className="w-full py-3 rounded-xl bg-brand-primary text-white text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
+              >
+                Keep going (~{session.estimatedRemainingInteractions} more question{session.estimatedRemainingInteractions !== 1 ? 's' : ''})
+              </button>
+              <button
+                onClick={handleFinishEarlyConfirm}
+                className="w-full py-3 rounded-xl border border-border-default bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                See my results now
+              </button>
+              <p className="text-[11px] text-gray-400 text-center">
+                You can always come back to answer more later.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -526,6 +636,7 @@ export default function HybridAssessmentView({
         onSelect={handleCardSelect}
         onEscapeHatch={handleEscapeHatch}
         onSkip={handleSkip}
+        onFinishEarly={canFinishEarly ? handleFinishEarly : undefined}
       />
       {error && (
         <div className="mx-4 mb-3 rounded-lg bg-red-50 border border-red-200 p-3">

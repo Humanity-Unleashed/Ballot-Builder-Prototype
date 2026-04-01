@@ -51,7 +51,7 @@
 - [ ] **Rework "Go Deeper" prompt** — "Where your views might differ from the card you picked" is confusing. Try "Refine your views" or "Go deeper." First time it appears, show an educational sidebar explaining the benefits. Consider showing the refinement inline (same page under selected card) to reduce feeling of survey length.
 
 ### Effort Scaffolding & Save Progress
-- [ ] **Add save progress / skip all option** — People may tire after 5 questions. Like iSideWith, let users answer just a few, then encourage going back. "Next time" or "Recommendation: answer a few more questions about climate and healthcare." Let people build out views over time.
+- [x] **Add save progress / skip all option** — Added three features: (1) "Answered enough? See your results now" link appears after 5+ questions, (2) finish-early interstitial shows coverage, uncovered domains, and encourages continuing, (3) session auto-saves to localStorage after each answer so users can resume on return. Resume prompt shows progress with domain coverage pills.
 - [x] **Adaptive question selection** — Does picking a certain area subset to the most relevant questions? Strategically optimize burden, then encourage additional answers later. *(Already implemented in `src/lib/adaptiveSequencer.ts`.)*
 
 ### Reference
