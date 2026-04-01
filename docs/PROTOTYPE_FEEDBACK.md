@@ -11,7 +11,7 @@
 
 ## Main Ballot Builder Page (State/Election Selector)
 
-- [ ] **Three-step selector feels dark and small** — Hard to know where to start vs. very prominent selection options. Consider bigger fonts, clearer first step ("Choose your state" gets highlighted).
+- [x] **Three-step selector feels dark and small** — Bumped step number circles (4→5px), labels (11→12px), and check icons. Improved contrast on future steps (white/40→white/50) and connector lines (1→1.5px). Steps now easier to read against the dark banner.
 - [ ] **Confusing blank space** — Review layout for unnecessary whitespace.
 - [ ] **FAQ and sign-in too small/confusing** — Rethink layout and UX. Bigger letters, clearer hierarchy.
 - [ ] **State card needs more info** — e.g., "Texas — November 2026 midterm elections. Who's on the ballot? U.S. Senate, Governor, Attorney General, etc."

@@ -170,8 +170,8 @@ export default function WizardNav() {
                     {idx > 0 && (
                       <div
                         className={[
-                          'flex-1 h-px mx-1',
-                          state === 'future' ? 'bg-white/20' : 'bg-white/50',
+                          'flex-1 h-[1.5px] mx-1',
+                          state === 'future' ? 'bg-white/25' : 'bg-white/50',
                         ].join(' ')}
                       />
                     )}
@@ -179,29 +179,29 @@ export default function WizardNav() {
                     {isClickable ? (
                       <button
                         onClick={() => handleStepClick(dp)}
-                        className="flex items-center gap-1 hover:bg-white/15 rounded-full px-2 py-1 -mx-1 transition-colors"
+                        className="flex items-center gap-1.5 hover:bg-white/15 rounded-full px-2 py-1 -mx-1 transition-colors"
                       >
-                        <span className="w-4 h-4 rounded-full bg-white/90 flex items-center justify-center shrink-0">
-                          <Check className="h-2.5 w-2.5 text-[#162D4A]" strokeWidth={3} />
+                        <span className="w-5 h-5 rounded-full bg-white/90 flex items-center justify-center shrink-0">
+                          <Check className="h-3 w-3 text-[#162D4A]" strokeWidth={3} />
                         </span>
-                        <span className="text-[11px] font-semibold text-white/90">{label}</span>
+                        <span className="text-xs font-semibold text-white/90">{label}</span>
                       </button>
                     ) : (
-                      <div className="flex items-center gap-1 px-2 py-1 -mx-1">
+                      <div className="flex items-center gap-1.5 px-2 py-1 -mx-1">
                         <span
                           className={[
-                            'w-4 h-4 rounded-full flex items-center justify-center shrink-0 text-[9px] font-bold',
+                            'w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px] font-bold',
                             state === 'current'
                               ? 'bg-white text-[#162D4A]'
-                              : 'bg-white/20 text-white/50',
+                              : 'bg-white/30 text-white/60',
                           ].join(' ')}
                         >
                           {idx + 1}
                         </span>
                         <span
                           className={[
-                            'text-[11px] font-semibold',
-                            state === 'current' ? 'text-white' : 'text-white/40',
+                            'text-xs font-semibold',
+                            state === 'current' ? 'text-white' : 'text-white/50',
                           ].join(' ')}
                         >
                           {state === 'current' ? label : DISPLAY_PHASE_CONFIG[dp].label}
