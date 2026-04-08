@@ -173,47 +173,6 @@ function ShareInviteBlock({
   );
 }
 
-// ── Survey Soft Ask ──
-
-function SurveySoftAsk({ onComplete }: { onComplete: () => void }) {
-  const [expanded, setExpanded] = useState(false);
-  const { track } = useAnalyticsContext();
-
-  if (expanded) {
-    return <PostCompletionSurvey onComplete={onComplete} />;
-  }
-
-  return (
-    <div className="mx-4 rounded-2xl border border-border-default bg-white px-5 py-5 text-center">
-      <p className="text-[15px] font-bold text-gray-900 mb-1">How was that?</p>
-      <p className="text-[13px] text-gray-500 mb-1">
-        4 quick taps + 1 optional thought. Takes under a minute.
-      </p>
-      <p className="text-[12px] text-gray-400 mb-4">
-        We&apos;re building this for everyone — your honest take shapes what comes next.
-      </p>
-      <button
-        onClick={() => {
-          track('click', { element: 'survey_expand' });
-          setExpanded(true);
-        }}
-        className="w-full py-3 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold mb-2"
-      >
-        Give quick feedback
-      </button>
-      <button
-        onClick={() => {
-          track('click', { element: 'survey_skip_softask' });
-          onComplete();
-        }}
-        className="text-[12px] text-gray-400 hover:text-gray-600 transition-colors"
-      >
-        Skip
-      </button>
-    </div>
-  );
-}
-
 // ── Main Component ──
 
 export default function BallotSummary({
@@ -245,7 +204,14 @@ export default function BallotSummary({
         <ImpactCard ballotItems={ballotItems} sessionMinutes={sessionMinutes} />
       </div>
 
-      {/* 3. Sharing & invite block — strike while the iron is hot */}
+      {/* 3. Survey — auto-expanded, shown while engagement is high */}
+      {!surveyDone && (
+        <div className="pt-5 px-4">
+          <PostCompletionSurvey onComplete={() => setSurveyDone(true)} />
+        </div>
+      )}
+
+      {/* 4. Sharing & invite block */}
       <div className="pt-5">
         <ShareInviteBlock
           racesCount={racesCount}
@@ -257,7 +223,7 @@ export default function BallotSummary({
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-0 pt-5 pb-6 space-y-5">
-        {/* 4. Get ready to vote — review, print, polling, mail-in */}
+        {/* 5. Get ready to vote — review, print, polling, mail-in */}
         <NextStepsCard
           voterInfo={voterInfo}
           location={location}
@@ -268,11 +234,6 @@ export default function BallotSummary({
           onStartOver={onStartOver}
           onPrint={onPrint}
         />
-
-        {/* 5. Survey — soft ask, collapsed by default */}
-        {!surveyDone && (
-          <SurveySoftAsk onComplete={() => setSurveyDone(true)} />
-        )}
 
         {/* Disclaimer */}
         <div className="mx-4 flex items-start gap-2.5 bg-gray-100 p-3.5 rounded-xl mb-10">

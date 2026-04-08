@@ -150,7 +150,7 @@ export default function PostCompletionSurvey({
   // Thank-you state
   if (submitted) {
     return (
-      <div className="mx-4 rounded-2xl border border-border-default bg-white px-5 py-8 text-center">
+      <div className="rounded-2xl border-2 border-brand-primary bg-white px-5 py-8 text-center">
         <p className="text-2xl mb-2">🙏</p>
         <p className="text-[15px] font-bold text-gray-900">Thank you!</p>
         <p className="text-[13px] text-gray-500 mt-1">Your feedback helps us make this better.</p>
@@ -159,7 +159,7 @@ export default function PostCompletionSurvey({
   }
 
   return (
-    <div className="mx-4 rounded-2xl border border-border-default bg-white overflow-hidden">
+    <div className="rounded-2xl border-2 border-brand-primary bg-white overflow-hidden">
       {/* Progress bar */}
       <div className="h-1 bg-gray-100">
         <div
