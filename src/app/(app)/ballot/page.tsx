@@ -15,6 +15,7 @@ import {
   Sparkles,
   Hand,
   SlidersHorizontal,
+  Check,
 } from 'lucide-react';
 
 // ── Stores ──
@@ -402,19 +403,19 @@ export default function UnifiedBallotPage() {
     [demoSetField, convSelectState, markPhaseCompleted, setPhase]
   );
 
-  /** Demographics complete → go to assessment */
+  /** Demographics complete → task 1 done (validation test) */
   const handleDemographicsComplete = useCallback(() => {
     demoSubmitProfile();
     convCompleteDemographics();
     markPhaseCompleted('demographics');
-    setPhase('assessment');
+    setPhase('task-1-done');
   }, [demoSubmitProfile, convCompleteDemographics, markPhaseCompleted, setPhase]);
 
   const handleDemographicsSkip = useCallback(() => {
     demoSkipProfile();
     convSkipDemographics();
     markPhaseCompleted('demographics');
-    setPhase('assessment');
+    setPhase('task-1-done');
   }, [demoSkipProfile, convSkipDemographics, markPhaseCompleted, setPhase]);
 
   /** Hybrid assessment complete → bridge to profile, go to profile-review */
@@ -443,10 +444,10 @@ export default function UnifiedBallotPage() {
     [updateConvProfile, applyHybridProfile, completeAssessment, convFinishWarmup, markPhaseCompleted, setPhase]
   );
 
-  /** Profile review → proceed to ballot items */
+  /** Profile review → task 2 done (validation test) */
   const handleProfileReviewNext = useCallback(() => {
     markPhaseCompleted('profile-review');
-    setPhase('ballot-item');
+    setPhase('task-2-done');
   }, [markPhaseCompleted, setPhase]);
 
   // ── Fine-tuning (within profile-review phase) ──
@@ -1051,21 +1052,12 @@ export default function UnifiedBallotPage() {
           archetypeEmoji={blueprintProfile ? getArchetypeDisplayEmoji(computeArchetype(blueprintProfile).primary, getArchetypeVariant()) : undefined}
         />
 
-        {/* Try again CTA — encourage testers to explore different positions */}
-        <div className="mx-4 mb-8 rounded-2xl border border-border-default bg-white px-5 py-5 text-center">
-          <p className="text-[15px] font-bold text-gray-900 mb-1">
-            Try it with different views
+        {/* Task 3 complete — return to survey */}
+        <div className="mx-4 mb-8 rounded-2xl border-2 border-brand-primary bg-brand-primary/5 px-5 py-6 text-center">
+          <p className="text-lg font-bold text-brand-primary mb-1">Great work!</p>
+          <p className="text-[14px] text-gray-600 leading-relaxed">
+            You&apos;ve completed this task. Please return to the survey and continue.
           </p>
-          <p className="text-[13px] text-gray-500 leading-relaxed mb-4">
-            Curious how the results change? Go through the assessment again with
-            different policy positions or demographics and see how your matches shift.
-          </p>
-          <button
-            onClick={() => setShowFreshConfirm(true)}
-            className="w-full py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary/90 transition-colors text-white text-sm font-semibold"
-          >
-            Start a new session
-          </button>
         </div>
 
         {/* Redo confirmation dialog (triggered by Start Over in review section) */}
@@ -1091,6 +1083,20 @@ export default function UnifiedBallotPage() {
             onCancel={() => setShowFreshConfirm(false)}
           />
         )}
+      </div>
+    );
+  }
+
+  if (currentPhase === 'task-1-done' || currentPhase === 'task-2-done') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[70vh] px-6 text-center">
+        <div className="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center mb-5">
+          <Check className="w-8 h-8 text-brand-primary" />
+        </div>
+        <h2 className="text-xl font-bold text-gray-900 mb-2">Great work!</h2>
+        <p className="text-[15px] text-gray-500 leading-relaxed max-w-xs">
+          You&apos;ve completed this task. Please return to the survey and continue.
+        </p>
       </div>
     );
   }

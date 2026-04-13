@@ -10,7 +10,9 @@ export type WizardPhase =
   | 'assessment'
   | 'profile-review'
   | 'ballot-item'
-  | 'summary';
+  | 'summary'
+  | 'task-1-done'
+  | 'task-2-done';
 
 export const WIZARD_PHASES: WizardPhase[] = [
   'state-select',
@@ -29,6 +31,8 @@ export const WIZARD_PHASE_LABELS: Record<WizardPhase, string> = {
   'profile-review': 'Profile',
   'ballot-item': 'Build',
   'summary': 'Summary',
+  'task-1-done': 'Task 1 Done',
+  'task-2-done': 'Task 2 Done',
 };
 
 // ── Display phases for the collapsible banner nav ──
