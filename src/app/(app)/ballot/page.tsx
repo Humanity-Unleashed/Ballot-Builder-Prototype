@@ -314,14 +314,17 @@ export default function UnifiedBallotPage() {
 
     const selectedBallotId = demographicProfile.selectedBallotId;
 
-    if (task === '2' && currentPhase === 'state-select') {
+    const preBallotPhases: WizardPhase[] = ['state-select', 'demographics', 'assessment', 'profile-review', 'task-1-done', 'task-2-done'];
+    const preProfilePhases: WizardPhase[] = ['state-select', 'demographics', 'task-1-done'];
+
+    if (task === '2' && preProfilePhases.includes(currentPhase)) {
       // Jump to assessment — skip state-select and demographics
       markPhaseCompleted('state-select');
       markPhaseCompleted('demographics');
       setPhase('assessment');
     }
 
-    if (task === '3' && (currentPhase === 'state-select' || currentPhase === 'demographics' || currentPhase === 'assessment' || currentPhase === 'profile-review')) {
+    if (task === '3' && preBallotPhases.includes(currentPhase)) {
       // Jump to ballot items — mark all prior phases complete and load ballot
       markPhaseCompleted('state-select');
       markPhaseCompleted('demographics');
