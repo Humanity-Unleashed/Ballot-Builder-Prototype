@@ -157,3 +157,12 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.4s ease-out;
 }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px 2px rgba(108, 43, 217, 0.15); }
+  50%       { box-shadow: 0 0 24px 8px rgba(108, 43, 217, 0.35); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}

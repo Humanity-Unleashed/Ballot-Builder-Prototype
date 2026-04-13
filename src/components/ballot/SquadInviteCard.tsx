@@ -25,7 +25,7 @@ export default function SquadInviteCard() {
   return (
     <>
       <div className="animate-fade-in-up">
-        <div className="bg-white rounded-2xl border border-border-default p-5 text-center">
+        <div className="bg-white rounded-2xl border-2 border-brand-primary/40 p-5 text-center animate-pulse-slow">
           {squadExists ? (
             <>
               {/* Squad exists view */}
