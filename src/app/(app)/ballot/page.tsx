@@ -8,6 +8,7 @@
  */
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Loader2,
   AlertCircle,
@@ -138,6 +139,8 @@ function collectRelevantAxes(items: BallotItem[]): string[] {
 // ═══════════════════════════════════════════════════════════
 
 export default function UnifiedBallotPage() {
+  const searchParams = useSearchParams();
+
   // ── Store selectors ──
   const userHydrated = useUserStore(selectHasHydrated);
   const hasCompletedAssessment = useUserStore(selectHasCompletedAssessment);
@@ -298,6 +301,36 @@ export default function UnifiedBallotPage() {
           markPhaseCompleted('state-select');
           markPhaseCompleted('demographics');
         });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ballotHydrated, userHydrated]);
+
+  // ── Task deep-linking via ?task= param (validation test) ──
+  useEffect(() => {
+    if (!ballotHydrated || !userHydrated) return;
+    const task = searchParams.get('task');
+    if (!task) return;
+
+    const selectedBallotId = demographicProfile.selectedBallotId;
+
+    if (task === '2' && currentPhase === 'state-select') {
+      // Jump to assessment — skip state-select and demographics
+      markPhaseCompleted('state-select');
+      markPhaseCompleted('demographics');
+      setPhase('assessment');
+    }
+
+    if (task === '3' && (currentPhase === 'state-select' || currentPhase === 'demographics' || currentPhase === 'assessment' || currentPhase === 'profile-review')) {
+      // Jump to ballot items — mark all prior phases complete and load ballot
+      markPhaseCompleted('state-select');
+      markPhaseCompleted('demographics');
+      markPhaseCompleted('assessment');
+      markPhaseCompleted('profile-review');
+      if (selectedBallotId) {
+        loadBallotById(selectedBallotId).then(() => setPhase('ballot-item'));
+      } else {
+        setPhase('ballot-item');
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
