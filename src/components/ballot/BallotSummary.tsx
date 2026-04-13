@@ -204,13 +204,6 @@ export default function BallotSummary({
         <ImpactCard ballotItems={ballotItems} sessionMinutes={sessionMinutes} />
       </div>
 
-      {/* 3. Survey — auto-expanded, shown while engagement is high */}
-      {!surveyDone && (
-        <div className="pt-5 px-4">
-          <PostCompletionSurvey onComplete={() => setSurveyDone(true)} />
-        </div>
-      )}
-
       {/* 4. Sharing & invite block */}
       <div className="pt-5">
         <ShareInviteBlock
