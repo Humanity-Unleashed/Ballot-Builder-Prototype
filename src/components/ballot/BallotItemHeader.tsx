@@ -33,11 +33,9 @@ export default function BallotItemHeader({ item }: BallotItemHeaderProps) {
           <span className="block text-[10px] font-bold text-gray-400 tracking-wide uppercase">
             Why this matters
           </span>
-          <div className="text-sm text-gray-600 leading-relaxed space-y-2 mt-1">
-            {item.explanation.split(/(?<=\.)\s+/).map((sentence, i) => (
-              <p key={i}>{sentence}</p>
-            ))}
-          </div>
+          <p className="text-sm text-gray-600 leading-relaxed mt-1">
+            {item.explanation}
+          </p>
         </div>
       </div>
     </div>
