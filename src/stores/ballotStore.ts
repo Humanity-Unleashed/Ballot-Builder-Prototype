@@ -37,10 +37,10 @@ export const WIZARD_PHASE_LABELS: Record<WizardPhase, string> = {
 
 // ── Display phases for the collapsible banner nav ──
 
-/** The 3 high-level display phases shown in the nav */
-export type DisplayPhase = 'select-ballot' | 'blueprint' | 'build';
+/** The 2 high-level display phases shown in the nav */
+export type DisplayPhase = 'blueprint' | 'build';
 
-export const DISPLAY_PHASES: DisplayPhase[] = ['select-ballot', 'blueprint', 'build'];
+export const DISPLAY_PHASES: DisplayPhase[] = ['blueprint', 'build'];
 
 export const DISPLAY_PHASE_CONFIG: Record<DisplayPhase, {
   label: string;
@@ -49,15 +49,10 @@ export const DISPLAY_PHASE_CONFIG: Record<DisplayPhase, {
   /** Sub-step labels shown inside the banner */
   subSteps: string[];
 }> = {
-  'select-ballot': {
-    label: 'Your Info',
-    wizardPhases: ['state-select', 'demographics'],
-    subSteps: ['Select State', 'About You'],
-  },
   'blueprint': {
-    label: 'Your Priorities',
-    wizardPhases: ['assessment', 'profile-review'],
-    subSteps: ['Values Assessment', 'Profile Review'],
+    label: 'Your Blueprint',
+    wizardPhases: ['state-select', 'demographics', 'assessment', 'profile-review'],
+    subSteps: ['Select State', 'About You', 'Values Assessment', 'Profile Review'],
   },
   'build': {
     label: 'Your Guide',
@@ -71,7 +66,7 @@ export function getDisplayPhase(wizardPhase: WizardPhase): DisplayPhase {
   for (const [dp, config] of Object.entries(DISPLAY_PHASE_CONFIG)) {
     if (config.wizardPhases.includes(wizardPhase)) return dp as DisplayPhase;
   }
-  return 'select-ballot';
+  return 'blueprint';
 }
 
 /** Get the sub-step index within a display phase (0-based), or -1 if not applicable */

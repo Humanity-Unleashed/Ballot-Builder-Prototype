@@ -228,6 +228,12 @@ export interface HybridAssessmentSession {
   sessionEntropy: number;
   estimatedRemainingInteractions: number;
   readyForMatching: boolean;
+
+  // --- Checkpoint (quick mode) ---
+  /** Whether the user has been shown the checkpoint screen. */
+  checkpointShown: boolean;
+  /** Whether the user dismissed the checkpoint and chose to continue. */
+  checkpointDismissed: boolean;
 }
 
 // ── Trigger evaluation context ──
@@ -261,6 +267,8 @@ export interface ContradictionResolution {
 
 export interface HybridStoppingDecision {
   shouldStop: boolean;
+  /** Whether the assessment has reached the checkpoint threshold (7 questions). */
+  shouldCheckpoint: boolean;
   reason: 'minimum_not_reached' | 'max_interactions' | 'all_answered' | 'entropy_floor' | 'marginal_gain_low' | 'continue';
   interactionCount: number;
   sessionEntropy: number;

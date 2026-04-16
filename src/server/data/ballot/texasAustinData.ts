@@ -2542,16 +2542,7 @@ const txAustinContests: Contest[] = [
     votingFor: 1,
     candidates: candidatesFor(CONTEST_IDS.TX_COMPTROLLER),
   },
-  {
-    id: CONTEST_IDS.TX_LAND_COMMISSIONER,
-    type: 'candidate',
-    office: 'Land Commissioner',
-    jurisdiction: 'state',
-    officeRef: 'tx_land_commissioner_statewide',
-    termInfo: 'This office manages 13 million acres of state land and runs veteran benefits. It also handles coastal erosion and disaster relief programs. Its decisions affect oil revenue that funds public schools.',
-    votingFor: 1,
-    candidates: candidatesFor(CONTEST_IDS.TX_LAND_COMMISSIONER),
-  },
+  // Land Commissioner removed — only one candidate (uncontested race)
   {
     id: CONTEST_IDS.TX_AG_COMMISSIONER,
     type: 'candidate',

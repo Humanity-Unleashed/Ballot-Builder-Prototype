@@ -77,6 +77,9 @@ export const ANCHOR_AXES = [
 /** Hard minimum number of questions before stopping is allowed. */
 const MIN_QUESTIONS = 5;
 
+/** Number of questions at which we offer a checkpoint (quick mode breakpoint). */
+export const CHECKPOINT_QUESTIONS = 7;
+
 /** Entropy floor: stop when remaining entropy is below this fraction of max. */
 const ENTROPY_FLOOR = 0.20;
 

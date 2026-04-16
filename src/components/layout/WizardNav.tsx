@@ -4,14 +4,10 @@ import React, { useMemo } from 'react';
 import {
   CheckSquare,
   Check,
-  LogIn,
-  LogOut,
   Layers,
-  MapPin,
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useAuth } from '@/lib/auth-client';
 import {
   useBallotStore,
   selectCurrentPhase,
@@ -28,26 +24,19 @@ import {
 
 /** Short label for each display phase */
 function getStepLabel(dp: DisplayPhase): string {
-  if (dp === 'select-ballot') return 'Your Info';
-  if (dp === 'blueprint') return 'Your Priorities';
+  if (dp === 'blueprint') return 'Your Blueprint';
   return 'Your Guide';
 }
 
 /** Subtitle for the expanded current phase */
 function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
-  if (dp === 'select-ballot') {
+  if (dp === 'blueprint') {
     const subIndex = getSubStepIndex(wizardPhase);
     switch (subIndex) {
       case 0: return 'Choose your state and ballot';
       case 1: return 'Tell us a bit about yourself';
-      default: return '';
-    }
-  }
-  if (dp === 'blueprint') {
-    const subIndex = getSubStepIndex(wizardPhase);
-    switch (subIndex) {
-      case 0: return 'Share where you stand on a few key issues \u2014 no wrong answers. We\u2019ll use this to find your best-fit candidates and measures.';
-      case 1: return 'Review and adjust your positions before matching';
+      case 2: return 'Share where you stand on a few key issues \u2014 no wrong answers. We\u2019ll use this to find your best-fit candidates and measures.';
+      case 3: return 'Review and adjust your positions before matching';
       default: return '';
     }
   }
@@ -60,14 +49,12 @@ function getBannerSubtitle(dp: DisplayPhase, wizardPhase: WizardPhase): string {
 
 /** Icon for each display phase */
 function StepIcon({ dp, size = 12 }: { dp: DisplayPhase; size?: number }) {
-  if (dp === 'select-ballot') return <MapPin style={{ width: size, height: size }} />;
   if (dp === 'blueprint') return <Layers style={{ width: size, height: size }} />;
   return <CheckSquare style={{ width: size, height: size }} />;
 }
 
 export default function WizardNav() {
   const pathname = usePathname();
-  const { user, isAnonymous, signInWithGoogle, logout } = useAuth();
   const currentPhase = useBallotStore(selectCurrentPhase);
   const completedPhases = useBallotStore(selectCompletedPhases);
   const goToPhase = useBallotStore((s) => s.goToPhase);
@@ -76,7 +63,6 @@ export default function WizardNav() {
 
   const phaseStates = useMemo(() => {
     const states: Record<DisplayPhase, 'completed' | 'current' | 'future'> = {
-      'select-ballot': 'future',
       'blueprint': 'future',
       'build': 'future',
     };
@@ -129,28 +115,6 @@ export default function WizardNav() {
             >
               <span className="text-xs font-semibold">FAQ</span>
             </Link>
-            {isAnonymous ? (
-              <button
-                onClick={() => signInWithGoogle()}
-                className="flex items-center gap-1.5 rounded-lg border border-gray-200 px-3.5 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50"
-              >
-                <LogIn className="h-4 w-4" />
-                Sign in
-              </button>
-            ) : user ? (
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-medium text-gray-700 hidden sm:inline">
-                  {user.name || user.email}
-                </span>
-                <button
-                  onClick={() => logout()}
-                  className="flex items-center rounded-lg p-1.5 text-gray-500 transition-colors hover:bg-gray-100"
-                  aria-label="Sign out"
-                >
-                  <LogOut className="h-4 w-4" />
-                </button>
-              </div>
-            ) : null}
           </div>
         </div>
 

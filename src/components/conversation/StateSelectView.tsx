@@ -61,14 +61,10 @@ export default function StateSelectView({ onStateSelected }: StateSelectViewProp
             Austin, Texas — November 2026
           </span>
           <span className="block mt-1 text-xs leading-tight text-gray-500">
-            U.S. Senate · Governor · Attorney General · U.S. House TX-37 · Lt. Governor · Comptroller · Land Commissioner · Ag Commissioner · Railroad Commissioner
+            U.S. Senate · Governor · Attorney General · U.S. House TX-37 · Lt. Governor · Comptroller · Ag Commissioner · Railroad Commissioner
           </span>
         </button>
 
-        {/* Demo note */}
-        <p className="text-center text-xs text-gray-400">
-          Demo mode — 9 contests, 1 ballot measure, 21 candidates scored from real-world data
-        </p>
       </div>
     </div>
   );

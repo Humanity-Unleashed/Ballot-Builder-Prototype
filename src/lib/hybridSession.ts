@@ -49,6 +49,7 @@ import {
   evaluateStopping,
   imputeUnansweredAxes,
   estimateProgress,
+  CHECKPOINT_QUESTIONS,
   type BallotRelevanceWeights,
 } from './adaptiveSequencer';
 import {
@@ -153,6 +154,8 @@ export function createHybridSession(
     sessionEntropy,
     estimatedRemainingInteractions: questionQueue.length,
     readyForMatching: false,
+    checkpointShown: false,
+    checkpointDismissed: false,
   };
 }
 
@@ -426,10 +429,16 @@ export function evaluateHybridStopping(
 ): HybridStoppingDecision {
   const answeredSet = new Set(session.answeredAxes);
 
+  // Checkpoint: at CHECKPOINT_QUESTIONS, if user hasn't seen/dismissed yet
+  const shouldCheckpoint = session.interactionCount >= CHECKPOINT_QUESTIONS
+    && !session.checkpointShown
+    && !session.checkpointDismissed;
+
   // Hard minimum
   if (session.interactionCount < 5) {
     return {
       shouldStop: false,
+      shouldCheckpoint: false,
       reason: 'minimum_not_reached',
       interactionCount: session.interactionCount,
       sessionEntropy: session.sessionEntropy,
@@ -441,6 +450,7 @@ export function evaluateHybridStopping(
   if (session.interactionCount >= session.maxInteractions) {
     return {
       shouldStop: true,
+      shouldCheckpoint: false,
       reason: 'max_interactions',
       interactionCount: session.interactionCount,
       sessionEntropy: session.sessionEntropy,
@@ -452,6 +462,7 @@ export function evaluateHybridStopping(
   if (answeredSet.size >= AXIS_IDS.length) {
     return {
       shouldStop: true,
+      shouldCheckpoint: false,
       reason: 'all_answered',
       interactionCount: session.interactionCount,
       sessionEntropy: 0,
@@ -465,6 +476,7 @@ export function evaluateHybridStopping(
 
   return {
     shouldStop: stopping.shouldStop,
+    shouldCheckpoint,
     reason: stopping.shouldStop ? stopping.reason as HybridStoppingDecision['reason'] : 'continue',
     interactionCount: session.interactionCount,
     sessionEntropy: stopping.totalWeightedEntropy,

@@ -29,6 +29,8 @@ import { evaluateTriggers, isNuancedAxis } from '@/lib/modalityTriggers';
 import { classifySignals, buildConfirmationCard } from '@/lib/multiAxisExtraction';
 import type { BallotRelevanceWeights } from '@/lib/adaptiveSequencer';
 import { civicAxesSpec } from '@/server/data/civicAxes/spec';
+import { DOMAIN_ORDER, DOMAIN_LABELS, DOMAIN_AXES } from '@/types/conversation';
+import type { DomainId } from '@/types/conversation';
 
 import { useUserStore } from '@/stores/userStore';
 import AssessmentProgress from './AssessmentProgress';
@@ -50,6 +52,7 @@ type ViewState =
   | { type: 'refine-offer'; axisId: string; selectedValue: number }
   | { type: 'refine'; axisId: string; selectedValue: number }
   | { type: 'finish-early' }
+  | { type: 'checkpoint' }
   | { type: 'summary'; profile: Record<string, UserValueRecord> };
 
 interface HybridAssessmentViewProps {
@@ -115,6 +118,8 @@ export default function HybridAssessmentView({
       const newStopping = evaluateHybridStopping(updatedSession, ballotWeights);
       if (newStopping.shouldStop) {
         setViewState({ type: 'summary', profile: getFullProfile(updatedSession) });
+      } else if (newStopping.shouldCheckpoint) {
+        setViewState({ type: 'checkpoint' });
       } else {
         setViewState({ type: 'card' });
       }
@@ -393,6 +398,20 @@ export default function HybridAssessmentView({
     setViewState({ type: 'card' });
   }, []);
 
+  // ── Checkpoint handlers ──
+
+  const handleCheckpointSeeResults = useCallback(() => {
+    const updated = { ...session, checkpointShown: true };
+    setSession(updated);
+    setViewState({ type: 'summary', profile: getFullProfile(updated) });
+  }, [session]);
+
+  const handleCheckpointContinue = useCallback(() => {
+    const updated = { ...session, checkpointShown: true, checkpointDismissed: true };
+    setSession(updated);
+    setViewState({ type: 'card' });
+  }, [session]);
+
   // ── Override imputed axis from summary ──
 
   const handleOverrideAxis = useCallback(
@@ -499,6 +518,108 @@ export default function HybridAssessmentView({
                 You can always come back to answer more later.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Checkpoint screen — offer user a natural stopping point
+  if (viewState.type === 'checkpoint') {
+    const answered = session.answeredAxes.length;
+    const coveredAxes = new Set(session.answeredAxes);
+
+    // Compute per-domain coverage
+    type DomainCoverage = { id: DomainId; label: string; status: 'covered' | 'partial' | 'uncovered' };
+    const domainCoverage: DomainCoverage[] = DOMAIN_ORDER.map((domainId) => {
+      const axes = DOMAIN_AXES[domainId];
+      const answeredCount = axes.filter((a) => coveredAxes.has(a)).length;
+      const status: DomainCoverage['status'] =
+        answeredCount >= 2 ? 'covered'
+        : answeredCount >= 1 ? 'partial'
+        : 'uncovered';
+      return { id: domainId, label: DOMAIN_LABELS[domainId], status };
+    });
+
+    const confidencePct = Math.round(progress);
+    const remaining = session.estimatedRemainingInteractions;
+
+    return (
+      <div className="flex flex-col h-full">
+        <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
+          {/* Confidence ring */}
+          <div
+            className="w-[100px] h-[100px] rounded-full flex items-center justify-center mb-5"
+            style={{
+              background: `conic-gradient(var(--color-brand-primary) 0deg, var(--color-brand-primary) ${confidencePct * 3.6}deg, #e5e7eb ${confidencePct * 3.6}deg)`,
+            }}
+          >
+            <div className="w-[80px] h-[80px] rounded-full bg-white flex flex-col items-center justify-center">
+              <span className="text-2xl font-extrabold text-brand-primary leading-none">
+                {confidencePct}%
+              </span>
+              <span className="text-[10px] text-gray-400 font-semibold uppercase tracking-wide mt-0.5">
+                Ready
+              </span>
+            </div>
+          </div>
+
+          <h2 className="text-xl font-extrabold text-gray-900 mb-2">Your Blueprint is ready</h2>
+          <p className="text-sm text-gray-500 leading-relaxed max-w-[280px] mb-6">
+            {answered} questions gave us a strong read on your values. We inferred the rest from patterns in your answers.
+          </p>
+
+          {/* Domain coverage pills */}
+          <div className="w-full mb-6">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">
+              Topic coverage
+            </p>
+            <div className="flex flex-wrap gap-1.5 justify-center">
+              {domainCoverage.map((d) => (
+                <span
+                  key={d.id}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${
+                    d.status === 'covered'
+                      ? 'bg-green-50 border-green-200 text-green-700'
+                      : d.status === 'partial'
+                        ? 'bg-amber-50 border-amber-200 text-amber-700'
+                        : 'bg-white border-gray-200 text-gray-400'
+                  }`}
+                >
+                  <span
+                    className={`w-3.5 h-3.5 rounded-full flex items-center justify-center text-[9px] text-white ${
+                      d.status === 'covered'
+                        ? 'bg-green-500'
+                        : d.status === 'partial'
+                          ? 'bg-amber-400'
+                          : 'bg-gray-300'
+                    }`}
+                  >
+                    {d.status === 'covered' ? '\u2713' : d.status === 'partial' ? '\u2248' : '\u00B7'}
+                  </span>
+                  {d.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Actions */}
+          <div className="w-full max-w-[300px] space-y-2.5">
+            <button
+              onClick={handleCheckpointSeeResults}
+              className="w-full py-3.5 rounded-xl bg-brand-primary text-white text-sm font-semibold hover:bg-brand-primary/90 transition-colors"
+            >
+              See my results
+            </button>
+            <button
+              onClick={handleCheckpointContinue}
+              className="w-full py-3.5 rounded-xl border border-border-default bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Sharpen results (~{remaining} more question{remaining !== 1 ? 's' : ''})
+            </button>
+            <p className="text-[11px] text-gray-400">
+              You can always refine later from your profile.
+            </p>
           </div>
         </div>
       </div>
@@ -621,6 +742,14 @@ export default function HybridAssessmentView({
     );
   }
 
+  // Determine which weak domains this question helps (for post-checkpoint badge)
+  const isPostCheckpoint = session.checkpointDismissed;
+  const currentDomainLabel = (() => {
+    if (!currentAxisId || !isPostCheckpoint) return null;
+    const domainId = DOMAIN_ORDER.find((d) => DOMAIN_AXES[d].includes(currentAxisId));
+    return domainId ? DOMAIN_LABELS[domainId] : null;
+  })();
+
   // Card question view (default)
   return (
     <div className="flex flex-col h-full">
@@ -629,6 +758,13 @@ export default function HybridAssessmentView({
         questionsAnswered={session.answeredAxes.length}
         estimatedRemaining={stopping.shouldStop ? 0 : session.estimatedRemainingInteractions}
       />
+      {isPostCheckpoint && currentDomainLabel && (
+        <div className="px-4 pb-1">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-primary/[0.08] text-[11px] font-semibold text-brand-primary">
+            &#x2728; Sharpening {currentDomainLabel}
+          </span>
+        </div>
+      )}
       <CardQuestion
         key={currentAxisId}
         axisConfig={currentAxisConfig}

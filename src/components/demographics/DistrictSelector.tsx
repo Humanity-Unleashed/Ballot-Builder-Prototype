@@ -66,7 +66,7 @@ export default function DistrictSelector({ showError }: DistrictSelectorProps) {
           Austin, Texas — November 2026
         </span>
         <span className="block mt-1 text-[11px] leading-tight text-gray-500">
-          U.S. Senate · Governor · Attorney General · U.S. House TX-37 · Lt. Governor · Comptroller · Land Commissioner · Ag Commissioner · Railroad Commissioner
+          U.S. Senate · Governor · Attorney General · U.S. House TX-37 · Lt. Governor · Comptroller · Ag Commissioner · Railroad Commissioner
         </span>
       </button>
     </div>
