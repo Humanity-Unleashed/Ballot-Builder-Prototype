@@ -322,11 +322,9 @@ export default function UnifiedBallotPage() {
       markPhaseCompleted('demographics');
       markPhaseCompleted('assessment');
       markPhaseCompleted('profile-review');
-      if (selectedBallotId) {
-        loadBallotById(selectedBallotId).then(() => setPhase('ballot-item'));
-      } else {
-        setPhase('ballot-item');
-      }
+      completeAssessment();
+      const ballotId = selectedBallotId || 'tx-austin-2026-general';
+      loadBallotById(ballotId).then(() => setPhase('ballot-item'));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ballotHydrated, userHydrated]);
