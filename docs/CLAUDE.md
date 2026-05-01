@@ -57,7 +57,7 @@ model CandidateScore {
   candidateId     String   @map("candidate_id")     // External ID from Ballotpedia
   candidateName   String   @map("candidate_name")
   raceId          String   @map("race_id")
-  axisId          String   @map("axis_id")           // One of the 15 civic axis IDs
+  axisId          String   @map("axis_id")           // One of the 17 civic axis IDs
   score           Float                               // 0-10 scale
   confidence      Float                               // 0-1 scale
   evidenceSource  String   @map("evidence_source")   // "vote_smart", "voting_record", "llm_analysis"
@@ -197,27 +197,29 @@ In `src/components/blueprint/ElectionBanner.tsx`:
 ### Context
 This is the core IP of the product. Currently `src/lib/ballotHelpers.ts` has `computeCandidateMatches()` and `computePropositionRecommendation()` that work against static data. We need to populate `CandidateScore` records from real sources.
 
-### The 15 Civic Axes (from `src/server/data/civicAxes/`)
+### The 17 Civic Axes (from `src/server/data/civicAxes/`)
 
-Reference the actual axis IDs and poles from the existing spec. The axes are organized as 5 domains × 3 axes:
+Reference the actual axis IDs and poles from the existing spec. The axes are organized across 5 domains (Economic and Justice have 4 axes each; Healthcare, Housing, and Climate have 3 each):
 
 | Domain | Axis | Pole A (score 0) | Pole B (score 10) |
 |--------|------|-------------------|---------------------|
-| Economic | safety_net_breadth | Broader Safety Net | Conditional Safety Net |
-| Economic | public_investment | More Public Investment | Less Public Investment |
-| Economic | school_choice | Traditional Public Schools | More School Choice |
-| Healthcare | coverage_model | Universal/Single-Payer | Market-Based Coverage |
-| Healthcare | cost_control | Government Price Controls | Market Competition |
-| Healthcare | public_health | Collective Mandates | Individual Choice |
-| Housing | zoning_supply | Loosen Zoning / More Supply | Preserve Local Zoning |
-| Housing | affordability_tools | Government Subsidies | Market Solutions |
-| Housing | transit_priority | Public Transit Investment | Car-Centric Infrastructure |
-| Justice | police_accountability | More Oversight / Reform | Back the Blue / Status Quo |
-| Justice | sentencing_goals | Rehabilitation Focus | Punishment / Deterrence |
-| Justice | firearms_policy | More Gun Regulations | Protect Gun Rights |
-| Climate | ambition_level | Aggressive Climate Action | Gradual / No Climate Policy |
-| Climate | energy_portfolio | Renewables Priority | All-of-the-Above / Fossil |
-| Climate | permitting_speed | Faster Green Permitting | Standard Review Process |
+| Economic | econ_safetynet | Broader Safety Net | Conditional Safety Net |
+| Economic | econ_investment | More Public Investment | Less Public Investment |
+| Economic | econ_school_choice | Traditional Public Schools | More School Choice |
+| Economic | econ_tax_structure | Progressive Taxation | Flat / Consumption-Based Taxes |
+| Healthcare | health_coverage_model | Universal/Single-Payer | Market-Based Coverage |
+| Healthcare | health_cost_control | Government Price Controls | Market Competition |
+| Healthcare | health_public_health | Collective Mandates | Individual Choice |
+| Housing | housing_supply_zoning | Loosen Zoning / More Supply | Preserve Local Zoning |
+| Housing | housing_affordability_tools | Government Subsidies | Market Solutions |
+| Housing | housing_transport_priority | Public Transit Investment | Car-Centric Infrastructure |
+| Justice | justice_policing_accountability | More Oversight / Reform | Back the Blue / Status Quo |
+| Justice | justice_sentencing_goals | Rehabilitation Focus | Punishment / Deterrence |
+| Justice | justice_firearms | More Gun Regulations | Protect Gun Rights |
+| Justice | justice_reproductive | Full Reproductive Rights | Protect Fetal Life |
+| Climate | climate_ambition | Aggressive Climate Action | Gradual / No Climate Policy |
+| Climate | climate_energy_portfolio | Renewables Priority | All-of-the-Above / Fossil |
+| Climate | climate_permitting | Faster Green Permitting | Standard Review Process |
 
 ### Task 4.1: Interest Group Rating Mapper
 

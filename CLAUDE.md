@@ -13,21 +13,20 @@ The system has three flows with different compute profiles. See `docs/THREE_FLOW
 | Flow | Purpose | Runs when | Model |
 |------|---------|-----------|-------|
 | **1. Values Capture** | Discover user's policy preferences via adaptive assessment | Once per user | DeepInfra OSS (two-pass extraction) or deterministic (structured cards) |
-| **2. Data Gathering** | Research candidates and ballot measures, score on 16 axes | Once per election per geography | Claude Sonnet (research) + Opus (scoring) |
+| **2. Data Gathering** | Research candidates and ballot measures, score on 17 axes | Once per election per geography | Claude Sonnet (research) + Opus (scoring) |
 | **3. Matching** | Compare user profile to candidate/measure positions | Every page load | None — pure client-side TypeScript math |
 
-### The 16 Civic Axes
+### The 17 Civic Axes
 
-Users and candidates are both scored on 16 policy axes across 5 domains. Both structured card selection and NLP extraction produce values on the same 0–10 scale per axis. The matching formula uses weighted Euclidean distance.
+Users and candidates are both scored on 17 policy axes across 5 domains. Both structured card selection and NLP extraction produce values on the same 0–10 scale per axis. The matching formula uses weighted Euclidean distance.
 
 | Domain | Axes |
 |--------|------|
-| Economic | `safety_net_breadth`, `public_investment`, `school_choice` |
-| Healthcare | `coverage_model`, `cost_control`, `public_health` |
-| Housing | `zoning_supply`, `affordability_tools`, `transit_priority` |
-| Justice | `police_accountability`, `sentencing_goals`, `firearms_policy` |
-| Climate | `ambition_level`, `energy_portfolio`, `permitting_speed` |
-| Cross-cutting | `immigration_approach` |
+| Economic | `econ_safetynet`, `econ_investment`, `econ_school_choice`, `econ_tax_structure` |
+| Healthcare | `health_coverage_model`, `health_cost_control`, `health_public_health` |
+| Housing | `housing_supply_zoning`, `housing_affordability_tools`, `housing_transport_priority` |
+| Justice | `justice_policing_accountability`, `justice_sentencing_goals`, `justice_firearms`, `justice_reproductive` |
+| Climate | `climate_ambition`, `climate_energy_portfolio`, `climate_permitting` |
 
 Each axis has Pole A (score 0) and Pole B (score 10). See `src/server/data/civicAxes/` for full definitions and `src/data/sliderPositions.ts` for the 3–5 position cards per axis.
 
@@ -47,7 +46,7 @@ The hybrid assessment uses information-theoretic adaptive sequencing:
 
 1. **Structured cards** (primary): User picks from 3–5 position cards per axis. Deterministic scoring.
 2. **NLP escape hatch**: User speaks/types freely. Two-pass LLM extraction (response + signal extraction, run in parallel). Can extract signals across multiple axes from a single response.
-3. **Adaptive stopping**: Shannon entropy tracks remaining uncertainty per axis. Assessment ends when total weighted entropy drops below threshold, typically after 5–10 questions instead of all 16.
+3. **Adaptive stopping**: Shannon entropy tracks remaining uncertainty per axis. Assessment ends when total weighted entropy drops below threshold, typically after 5–10 questions instead of all 17.
 4. **Blueprint profile**: Output is a `BlueprintProfile` with per-axis `value_0_10`, `confidence_0_1`, and `importance`.
 
 ### AI Chat (Ask AI)
@@ -230,7 +229,7 @@ model CandidateScore {
   candidateId     String   @map("candidate_id")     // External ID from Ballotpedia
   candidateName   String   @map("candidate_name")
   raceId          String   @map("race_id")
-  axisId          String   @map("axis_id")           // One of the 16 civic axis IDs
+  axisId          String   @map("axis_id")           // One of the 17 civic axis IDs
   score           Float                               // 0-10 scale
   confidence      Float                               // 0-1 scale
   evidenceSource  String   @map("evidence_source")   // "vote_smart", "voting_record", "llm_analysis"
@@ -383,27 +382,29 @@ In `src/components/blueprint/ElectionBanner.tsx`:
 ### Context
 This is the core IP of the product. Currently `src/lib/ballotHelpers.ts` has `computeCandidateMatches()` and `computePropositionRecommendation()` that work against static data. We need to populate `CandidateScore` records from real sources.
 
-### The 16 Civic Axes (from `src/server/data/civicAxes/`)
+### The 17 Civic Axes (from `src/server/data/civicAxes/`)
 
-Reference the actual axis IDs and poles from the existing spec. The axes are organized as 5 domains × 3-4 axes:
+Reference the actual axis IDs and poles from the existing spec. The axes are organized across 5 domains (Economic and Justice have 4 axes each; Healthcare, Housing, and Climate have 3 each):
 
 | Domain | Axis | Pole A (score 0) | Pole B (score 10) |
 |--------|------|-------------------|---------------------|
-| Economic | safety_net_breadth | Broader Safety Net | Conditional Safety Net |
-| Economic | public_investment | More Public Investment | Less Public Investment |
-| Economic | school_choice | Traditional Public Schools | More School Choice |
-| Healthcare | coverage_model | Universal/Single-Payer | Market-Based Coverage |
-| Healthcare | cost_control | Government Price Controls | Market Competition |
-| Healthcare | public_health | Collective Mandates | Individual Choice |
-| Housing | zoning_supply | Loosen Zoning / More Supply | Preserve Local Zoning |
-| Housing | affordability_tools | Government Subsidies | Market Solutions |
-| Housing | transit_priority | Public Transit Investment | Car-Centric Infrastructure |
-| Justice | police_accountability | More Oversight / Reform | Back the Blue / Status Quo |
-| Justice | sentencing_goals | Rehabilitation Focus | Punishment / Deterrence |
-| Justice | firearms_policy | More Gun Regulations | Protect Gun Rights |
-| Climate | ambition_level | Aggressive Climate Action | Gradual / No Climate Policy |
-| Climate | energy_portfolio | Renewables Priority | All-of-the-Above / Fossil |
-| Climate | permitting_speed | Faster Green Permitting | Standard Review Process |
+| Economic | econ_safetynet | Broader Safety Net | Conditional Safety Net |
+| Economic | econ_investment | More Public Investment | Less Public Investment |
+| Economic | econ_school_choice | Traditional Public Schools | More School Choice |
+| Economic | econ_tax_structure | Progressive Taxation | Flat / Consumption-Based Taxes |
+| Healthcare | health_coverage_model | Universal/Single-Payer | Market-Based Coverage |
+| Healthcare | health_cost_control | Government Price Controls | Market Competition |
+| Healthcare | health_public_health | Collective Mandates | Individual Choice |
+| Housing | housing_supply_zoning | Loosen Zoning / More Supply | Preserve Local Zoning |
+| Housing | housing_affordability_tools | Government Subsidies | Market Solutions |
+| Housing | housing_transport_priority | Public Transit Investment | Car-Centric Infrastructure |
+| Justice | justice_policing_accountability | More Oversight / Reform | Back the Blue / Status Quo |
+| Justice | justice_sentencing_goals | Rehabilitation Focus | Punishment / Deterrence |
+| Justice | justice_firearms | More Gun Regulations | Protect Gun Rights |
+| Justice | justice_reproductive | Full Reproductive Rights | Protect Fetal Life |
+| Climate | climate_ambition | Aggressive Climate Action | Gradual / No Climate Policy |
+| Climate | climate_energy_portfolio | Renewables Priority | All-of-the-Above / Fossil |
+| Climate | climate_permitting | Faster Green Permitting | Standard Review Process |
 
 ### Task 4.1: Interest Group Rating Mapper
 

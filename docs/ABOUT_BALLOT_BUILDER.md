@@ -16,7 +16,7 @@ This is a prototype being evaluated for accuracy, fairness, and usefulness. It i
 
 ### Step 1: You tell us what matters to you
 
-The Civic Blueprint Assessment is a 5-minute quiz covering 15 policy topics across five areas: Economy, Healthcare, Housing, Justice, and Climate. For each topic, you choose from concrete policy positions — not vague labels like "liberal" or "conservative."
+The Civic Blueprint Assessment is a 5-minute quiz covering 17 policy topics across five areas: Economy, Healthcare, Housing, Justice, and Climate. For each topic, you choose from concrete policy positions — not vague labels like "liberal" or "conservative."
 
 You also tell us how much each topic matters to you. If you care deeply about climate but don't have strong feelings about zoning, the system weights your recommendations accordingly.
 
@@ -24,7 +24,7 @@ All of your answers stay on your device. We don't send them to a server, and we 
 
 ### Step 2: We score the candidates
 
-Every candidate on your ballot is independently scored on the same 15 policy topics you answered. These scores come from public records, not assumptions.
+Every candidate on your ballot is independently scored on the same 17 policy topics you answered. These scores come from public records, not assumptions.
 
 Our evidence sources, ranked by how much we trust them:
 

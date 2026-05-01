@@ -5,7 +5,7 @@ A Next.js application that helps users make informed voting decisions through pe
 ## Features
 
 - **Authentication**: Google OAuth and anonymous guest mode via better-auth
-- **Civic Blueprint Assessment**: Slider-based questionnaire across 15 policy axes grouped into 5 domains (Economic, Healthcare, Housing, Justice, Climate)
+- **Civic Blueprint Assessment**: Slider-based questionnaire across 17 policy axes grouped into 5 domains (Economic, Healthcare, Housing, Justice, Climate)
 - **Schwartz Values Assessment**: Personal values assessment based on the Schwartz theory of basic human values, with booster vignettes for deeper profiling
 - **Ballot Explorer**: Browse ballot items with personalized recommendations based on your civic profile
 - **Vote Tracking**: Persistent ballot vote selections stored locally via Zustand
@@ -13,6 +13,7 @@ A Next.js application that helps users make informed voting decisions through pe
 - **Fine-Tuning**: Adjust your blueprint axes after completing the assessment
 - **Archetype Classification**: Get classified into one of 8 civic archetypes based on your profile
 - **Blueprint Insights**: Personalized insights generated from your civic profile
+- **Voting Squad**: Form a small accountability group with friends and family — members can see binary status signals (registered, prepped, voted) but never see anyone's answers, values, or actual votes. Invites flow through a dedicated `/join` onboarding.
 - **Analytics & Feedback**: Vercel Web Analytics + custom event tracking and user feedback collection backed by a Neon Postgres database, with feedback mirrored to Google Sheets
 
 ## Tech Stack
@@ -188,7 +189,7 @@ docs/                           # Project documentation
 
 A user's political profile consisting of:
 - **5 Domains**: Economic, Healthcare, Housing, Justice, Climate
-- **15 Axes**: 3 policy spectrums per domain (e.g., "Safety Net Breadth", "Coverage Model")
+- **17 Axes**: Policy spectrums within each domain — Economic (4: safety net, investment, school choice, tax structure), Healthcare (3), Housing (3), Justice (4: policing, sentencing, firearms, reproductive), Climate (3)
 - **Axis Values**: 0-10 scale representing stance between two policy poles
 - **Confidence Scores**: Based on number of assessment items answered
 
