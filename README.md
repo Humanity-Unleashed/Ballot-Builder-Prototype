@@ -84,14 +84,10 @@ This will create a `.env.local` file with all the required variables including `
 The project uses [Neon Postgres](https://neon.tech) as the database (connected via Prisma ORM). It stores analytics events and user feedback.
 
 **View the database:**
-Open the Neon Console to browse tables, run queries, and inspect analytics/feedback data:
-
-> **[Neon Console — Ballot Builder Database](https://console.neon.tech/app/projects/wandering-hall-89025086/branches/br-broad-breeze-ait03zw9/tables)**
+Team members with access can browse tables, run queries, and inspect analytics/feedback data via the [Neon Console](https://console.neon.tech). The direct project link lives in the internal team wiki.
 
 **View feedback:**
-Feedback entries are automatically mirrored to a Google Sheet for easy browsing:
-
-> **[Google Sheet — Feedback Entries](https://docs.google.com/spreadsheets/d/1Ade9LhD3BSFkrdGANjHJqs8PA2j2GyOtD4U8yMckYcM/edit?gid=0#gid=0)**
+Feedback entries are automatically mirrored to a Google Sheet (restricted to humun.org accounts) for easy browsing. The direct sheet link lives in the internal team wiki.
 
 **Database commands:**
 

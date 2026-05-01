@@ -1,8 +1,8 @@
 # Team Access & Credentials Guide
 
-> **Purpose:** Central reference for all external services, consoles, and credentials needed to work on Ballot Builder. Fill in credentials before sharing with new team members.
+> **Purpose:** Reference for which external services and environment variables are needed to work on Ballot Builder.
 >
-> **Security:** Never commit this file with credentials filled in. Share via a secure channel (1Password, encrypted message, etc.).
+> **Specific resource IDs, console deep-links, and credentials live in the internal team wiki / 1Password — not in this repo.** This file documents the *shape* of access only.
 
 ---
 
@@ -37,14 +37,14 @@
 ### Vercel
 
 
-| Field          | Value                                                                                      |
-| -------------- | ------------------------------------------------------------------------------------------ |
-| Console        | [vercel.com](https://vercel.com/devs-projects-91c044cd/ballot-builder-prototype) |
-| Team           | **Humanity-Unleashed**                                                                     |
-| Project        | `ballot-builder-prototype`                                                                 |
-| Project ID     | `prj_0AQy3hJRmhvoua0CllrAST2xkESd`                                                         |
-| Org/Team ID    | `team_NZJM6njH1st82mu3jGonBHSP`                                                            |
-| Production URL | *(Vercel-assigned — check dashboard)*                                                      |
+| Field          | Value                                                          |
+| -------------- | -------------------------------------------------------------- |
+| Console        | [vercel.com](https://vercel.com) (project link in team wiki)   |
+| Team           | **Humanity-Unleashed**                                         |
+| Project        | `ballot-builder-prototype`                                     |
+| Project ID     | *(see internal wiki / 1Password)*                              |
+| Org/Team ID    | *(see internal wiki / 1Password)*                              |
+| Production URL | *(Vercel-assigned — check dashboard)*                          |
 
 
 **What lives here:**
@@ -72,12 +72,12 @@ vercel env pull .env.local   # Pull all env vars locally
 ### Neon Postgres
 
 
-| Field      | Value                                                                                                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Console    | [Neon Console — Ballot Builder](https://console.neon.tech/app/projects/wandering-hall-89025086/branches/br-broad-breeze-ait03zw9/tables) |
-| Project ID | `wandering-hall-89025086`                                                                                                                |
-| Branch     | `br-broad-breeze-ait03zw9`                                                                                                               |
-| ORM        | Prisma 7 (`prisma/schema.prisma`)                                                                                                        |
+| Field      | Value                                                            |
+| ---------- | ---------------------------------------------------------------- |
+| Console    | [Neon Console](https://console.neon.tech) (project: Ballot Builder — direct link in team wiki) |
+| Project ID | *(see internal wiki / 1Password)*                                |
+| Branch     | *(see internal wiki / 1Password)*                                |
+| ORM        | Prisma 7 (`prisma/schema.prisma`)                                |
 
 
 **What lives here:**
@@ -175,22 +175,22 @@ No additional credentials — automatically active on Vercel deployments.
 ### Custom Analytics (Postgres)
 
 
-| Field    | Value                                                                                                                   |
-| -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Endpoint | `POST /api/analytics`                                                                                                   |
-| Storage  | `analytics_events` table in Neon Postgres                                                                               |
-| Access   | [Neon Console](https://console.neon.tech/app/projects/wandering-hall-89025086/branches/br-broad-breeze-ait03zw9/tables) |
+| Field    | Value                                                  |
+| -------- | ------------------------------------------------------ |
+| Endpoint | `POST /api/analytics`                                  |
+| Storage  | `analytics_events` table in Neon Postgres              |
+| Access   | [Neon Console](https://console.neon.tech) (direct project link in team wiki) |
 
 
 ### Google Sheets — Feedback Mirror
 
 
-| Field                 | Value                                                                                                                    |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Spreadsheet           | [Feedback Entries](https://docs.google.com/spreadsheets/d/1Ade9LhD3BSFkrdGANjHJqs8PA2j2GyOtD4U8yMckYcM/edit?gid=0#gid=0) |
-| Spreadsheet ID        | `1Ade9LhD3BSFkrdGANjHJqs8PA2j2GyOtD4U8yMckYcM`                                                                           |
-| Service account setup | [Google Cloud Console — Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts)                    |
-| Code                  | `src/lib/googleSheets.ts`                                                                                                |
+| Field                 | Value                                                                                                 |
+| --------------------- | ----------------------------------------------------------------------------------------------------- |
+| Spreadsheet           | *(direct link in team wiki — restricted to humun.org accounts)*                                       |
+| Spreadsheet ID        | *(see internal wiki / 1Password)*                                                                     |
+| Service account setup | [Google Cloud Console — Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) |
+| Code                  | `src/lib/googleSheets.ts`                                                                             |
 
 
 Feedback submitted via the app is stored in Postgres **and** automatically mirrored to this Google Sheet.
@@ -198,11 +198,11 @@ Feedback submitted via the app is stored in Postgres **and** automatically mirro
 **Credentials:**
 
 
-| Env Var                        | Description                                  | Value                                          |
-| ------------------------------ | -------------------------------------------- | ---------------------------------------------- |
-| `GOOGLE_SHEETS_CLIENT_EMAIL`   | Service account email                        | `___@___.iam.gserviceaccount.com`              |
-| `GOOGLE_SHEETS_PRIVATE_KEY`    | Service account private key (PEM, with `\n`) | `___`                                          |
-| `GOOGLE_SHEETS_SPREADSHEET_ID` | Target spreadsheet ID                        | `1Ade9LhD3BSFkrdGANjHJqs8PA2j2GyOtD4U8yMckYcM` |
+| Env Var                        | Description                                  | Value                             |
+| ------------------------------ | -------------------------------------------- | --------------------------------- |
+| `GOOGLE_SHEETS_CLIENT_EMAIL`   | Service account email                        | `___@___.iam.gserviceaccount.com` |
+| `GOOGLE_SHEETS_PRIVATE_KEY`    | Service account private key (PEM, with `\n`) | `___`                             |
+| `GOOGLE_SHEETS_SPREADSHEET_ID` | Target spreadsheet ID                        | `___`                             |
 
 
 **To grant access:** Share the Google Sheet with the new member's Google account. For API access, the service account must have Editor access on the sheet.
@@ -313,7 +313,7 @@ These are referenced in the production roadmap (`docs/CLAUDE.md`) but not yet fu
 - **Vercel** — Invite to Humanity-Unleashed team
 - **Neon** — Invite to database project (if they need direct DB access)
 - **Google Cloud** — Add to project IAM (if they need to manage API keys or OAuth)
-- **Google Sheets** — Share the [Feedback spreadsheet](https://docs.google.com/spreadsheets/d/1Ade9LhD3BSFkrdGANjHJqs8PA2j2GyOtD4U8yMckYcM)
+- **Google Sheets** — Share the Feedback spreadsheet (link in internal team wiki)
 
 ### Local setup
 
